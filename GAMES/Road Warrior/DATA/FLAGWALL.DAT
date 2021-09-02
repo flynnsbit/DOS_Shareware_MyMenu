@@ -1,0 +1,32 @@
+000000003333
+000000000000
+000000000000
+000000000000
+000000000000
+000000000000
+000000000000
+000000000000
+404040404040
+404040404040
+400400040000
+400000400000
+400000400000
+004040004000
+400040400000
+
+76543210
+
+0       -       Soild collidable (most walls)
+1       -       Transparent single sided (windows)
+2       -       Double sided collidable (not common)
+3       -       Transparent Double sided (fences)
+4       -       Animated non transparent (monitors)
+5       -       Animated transparent 1 sided (audience)
+7       -       Animated 2 sided trans. collidable (fire)
+9       -       Transp. non collidable 1 side (city gates)
+B       -       Non coll. dbl sided transp. (drive thru arch)
+
+
+6 8 and A are highly unlikely and have never been used
+F doesn't work (trans. dbl. anim. non coll.)
+D may be possible for animated city gates, but hasn't been tested

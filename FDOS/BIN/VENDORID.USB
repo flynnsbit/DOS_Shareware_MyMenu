@@ -1,0 +1,2661 @@
+;==============================================================================
+;USB Vendor ID Data Sources
+;==============================================================================
+
+Source = 2004-04-15 http://members.datafast.net.au/dft0802
+Source = 2008-02-20 http://www.usb.org/developers/tools/comp_dump
+Source = 2008-02-21 http://www.driveragent.com/usb
+Source = 2008-02-21 http://www.linux-usb.org/usb.ids
+
+
+;==============================================================================
+;USB Vendor ID Data
+;NOTE: Vendor Names longer than 40 characters will be truncated to
+;        40 characters by VENDORID.COM, so it's best to do any required
+;        abbreviations here.
+;==============================================================================
+
+0001h Kavi-EVAL? Fry's Electronics?
+0002h Ingram
+0003h Club Mac
+0004h Nebraska Furniture Mart
+0066h SCM Microsystems?
+0104h Socket?
+0204h Chipsbank Microelectronics Co Ltd
+02ADh HUMAX Co Ltd
+0324h OCZ?
+0325h OCZ?
+0326h ViPowER
+0386h LTS
+03E8h EndPoints Inc
+03E9h Thesys Microelectronics
+03EAh Data Broadcasting Corp
+03EBh Atmel Corp
+03ECh Iwatsu America Inc
+03EDh Mitel Corp
+03EEh Mitsumi
+03F0h Hewlett Packard
+03F1h Genoa Technology
+03F2h Oak Technology Inc
+03F3h Adaptec Inc
+03F4h Diebold Inc
+03F5h Siemens Electromechanical
+03F8h Epson Imaging Technology Center
+03F9h KeyTronic Corp
+03FBh OPTi Inc
+03FCh Elitegroup Computer Systems
+03FDh Xilinx Inc
+03FEh Farallon Comunications
+0400h National Semiconductor Corp
+0401h National Registry Inc
+0402h Acer Labs Inc (ALi)
+0403h Future Technology Devices Int'l Ltd
+0404h NCR Corp
+0405h Synopsys Inc
+0406h Fujitsu-ICL Computers
+0407h Fujitsu Personal Systems Inc
+0408h Quanta Computer Inc
+0409h NEC Corp
+040Ah Kodak Co
+040Bh Weltrend Semiconductor
+040Ch VTech Computers Ltd
+040Dh VIA Technologies Inc
+040Eh MCCI
+040Fh Echo Speech Corp
+0411h Buffalo Inc? MelCo Inc?
+0412h Award Software International
+0413h Leadtek Research Inc
+0414h Giga-Byte Technology Co Ltd
+0416h Winbond Electronics Corp
+0417h Symbios Logic
+0418h AST Research
+0419h Samsung Info Systems America Inc
+041Ah Phoenix Technologies Ltd
+041Bh d'TV
+041Dh S3 Inc
+041Eh Creative Technology Ltd
+041Fh LCS Telegraphics
+0420h Chips & Technologies
+0421h Nokia Corp
+0422h ADI Systems Inc
+0423h Computer Access Technology Corp
+0424h Standard Microsystems Corp (SMSC)
+0425h Motorola Semiconductors HK Ltd
+0426h Integrated Device Technology Inc
+0427h Motorola Electronics Taiwan Ltd
+0428h Advanced Gravis Computer Tech Ltd
+0429h Cirrus Logic
+042Ah Ericsson Austrian AG
+042Bh Intel Corp
+042Ch Innovative Semiconductors Inc
+042Dh Micronics
+042Eh Acer Inc
+042Fh Molex Inc
+0430h Sun Microsystems Inc
+0431h Itac Systems Inc
+0432h Unisys Corp
+0433h Alps Electric Inc
+0434h Samsung Info Systems America Inc
+0435h Hyundai Electronics America
+0436h Taugagreining HF
+0437h Framatome Connectors USA
+0438h Advanced Micro Devices Inc (AMD)
+0439h Voice Technologies Group
+043Dh Lexmark International Inc
+043Eh LG Electronics USA Inc
+043Fh RadiSys Corp
+0440h Eizo Nanao Corp
+0441h Winbond Systems Lab
+0442h Ericsson Inc
+0443h Gateway Inc
+0445h Lucent Technologies Inc
+0446h NMB Technologies Corp
+0447h Momentum Microsystems
+044Ah Shamrock Tech Co Ltd
+044Bh WSI
+044Ch CCL/ITRI
+044Dh Siemens Nixdorf AG
+044Eh Alps Electric Co Ltd
+044Fh ThrustMaster Inc
+0450h DFI Inc
+0451h Texas Instruments Inc
+0452h Mitsubishi Electronics America Inc
+0453h CMD Technology
+0454h Vobis Microcomputer AG
+0455h Telematics International Inc
+0456h Analog Devices Inc
+0457h Silicon Integrated Systems Corp (SiS)
+0458h KYE Systems Corp (Mouse Systems/Genius)
+0459h Adobe Systems Inc
+045Ah SONICblue Inc
+045Bh Renasas Tech Corp? Hitachi Ltd?
+045Dh Nortel Networks Ltd
+045Eh Microsoft Corp
+0460h Ace Cad Enterprise Co Ltd
+0461h Primax Electronics Ltd
+0463h MGE Office Prot Systems by EATON Power
+0464h AMP/Tycoelectronics Corp
+0467h AT&T Paradyne
+0468h Wieson Technologies Co Ltd
+046Ah Cherry GmbH
+046Bh American Megatrends Inc (AMI)
+046Ch Toshiba Corp Digital Media Equipment
+046Dh Logitech Inc
+046Eh Behavior Tech Computer Corp
+046Fh Crystal Semiconductor
+0471h Philips Consumer Electronics
+0472h Chicony Electronics Co Ltd
+0473h Sanyo Information Business Co Ltd
+0474h Sanyo Electric Co Ltd
+0475h Relisys/Teco Information System
+0476h AESP
+0477h Seagate Technology Inc
+0478h Connectix Corp
+0479h Advanced Peripheral Laboratories
+047Ah Semtech Corp
+047Bh Silitek Corp
+047Ch Dell Computer Corp
+047Dh Kensington
+047Eh LSI Corp? Agere Systems Inc (Lucent)?
+047Fh Plantronics Inc
+0480h Toshiba America Info Systems Inc
+0481h Zenith Data Systems
+0482h Kyocera Corp
+0483h SGS Thomson Microelectronics
+0484h Specialix
+0485h Nokia Monitors
+0486h ASUS Computers Inc
+0487h Stewart Connector
+0488h Cirque Corp
+0489h Foxconn / Hon Hai
+048Ah S-MOS Systems Inc
+048Ch Alps Electric Ireland Ltd
+048Dh Integrated Technology Express Inc (ITE)
+048Fh Eicon Tech
+0490h United Microelectronics Corp
+0491h Capetronic
+0492h Samsung SemiConductor Inc
+0493h MAG Technology Co Ltd
+0495h ESS Technology Inc
+0496h Micron Electronics
+0497h Smile International
+0498h Capetronic (Kaohsiung) Corp
+0499h Yamaha Corp
+049Ah Gandalf Technologies Ltd
+049Bh Curtis Computer Products
+049Ch Acer Advanced Labs Inc
+049Dh VLSI Technology
+049Fh Compaq Computer Corp
+04A0h Digital Equipment Corp
+04A1h SystemSoft Corp
+04A2h FirePower Systems
+04A3h Trident Microsystems Inc
+04A4h Hitachi Ltd
+04A5h BenQ Corp (Acer Peripherals)
+04A6h Nokia Display Products
+04A7h Visioneer
+04A8h Multivideo Labs Inc
+04A9h Canon Inc
+04AAh DaeWoo Telecom Ltd
+04ABh Chromatic Research
+04ACh Micro Audiometrics Corp
+04ADh Dooin Electronics
+04AFh Winnov LP
+04B0h Nikon Corp
+04B1h Pan International
+04B3h IBM Corp
+04B4h Cypress Semiconductor Corp
+04B5h ROHM Co Ltd
+04B6h Hint Corp
+04B7h Compal Electronics Inc
+04B8h Seiko Epson Corp
+04B9h SafeNet Inc? Rainbow Technologies?
+04BAh Toucan Systems Ltd
+04BBh I-O Data Device Inc
+04BDh Toshiba Electronics Taiwan Corp
+04BEh Telia Research AB
+04BFh TDK Corp
+04C1h US Robotics (3Com)
+04C2h Methode Electronics Far East PTE Ltd
+04C3h Maxi Switch Inc
+04C4h Lockheed Martin Energy Research
+04C5h Fujitsu Ltd
+04C6h Toshiba America Electronic Components
+04C7h Micro Macro Technologies
+04C8h Konica Corp
+04C9h Lucent?
+04CAh Lite-On Technology Corp
+04CBh Fuji Photo Film Co Ltd
+04CCh Philips Semicond (NXP Semicond)
+04CDh Tatung Co Of America
+04CEh ScanLogic Corp
+04CFh Myson Century Inc
+04D0h Digi International
+04D1h ITT Canon
+04D2h Altec Lansing Technologies
+04D3h VidUS Inc
+04D4h LSI Logic Inc
+04D5h Forte Technologies Inc
+04D6h Mentor Graphics
+04D7h Oki Semiconductor
+04D8h Microchip Technology Inc
+04D9h Holtek Semiconductor Inc
+04DAh Panasonic (Matsushita)
+04DBh Hypertec Pty Ltd
+04DCh Huan Hsin Holdings Ltd
+04DDh Sharp Corp
+04DEh MindShare Inc
+04DFh Interlink Electronics
+04E1h Iiyama North America Inc
+04E2h Exar Corp
+04E3h Zilog Inc
+04E4h ACC Microelectronics
+04E5h Promise Technology
+04E6h SCM Microsystems Inc
+04E7h Elo TouchSystems
+04E8h Samsung Electronics Co Ltd
+04E9h PC-Tel Inc
+04EAh Brooktree Corp
+04EBh Northstar Systems Corp
+04ECh Tokyo Electron Device Ltd
+04EDh Annabooks
+04EFh Pacific Electronic International Inc
+04F0h Daewoo Electronics Co Ltd
+04F1h Victor Co of Japan Ltd
+04F2h Chicony Electronics Co Ltd
+04F3h Elan Microelectronics Corp
+04F4h Harting Elektronik Inc
+04F5h Fujitsu-ICL Systems Inc
+04F6h Norand Corp
+04F7h Newnex Technology Corp
+04F8h FuturePlus Systems
+04F9h Brother Industries Ltd
+04FAh Dallas Semiconductor
+04FBh Biostar Microtech International Corp
+04FCh Sunplus Technology Co Ltd
+04FDh Soliton Systems KK
+04FEh PFU Ltd
+04FFh E-CMOS Corp
+0500h Siam United Hi-Tech
+0501h Fujikura Ltd (DDK Connectors)
+0502h Acer Inc
+0503h Hitachi America Ltd
+0504h Hayes Microcomputer Products
+0506h 3Com Corp
+0507h Hosiden Corp
+0508h Clarion Co Ltd
+0509h Aztech Systems Ltd
+050Ah Cinch Connectors
+050Bh Cable System International
+050Ch InnoMedia Inc
+050Dh Belkin Corp
+050Eh Neon Technology Inc
+050Fh KC Technology Inc
+0510h Sejin Electron Inc
+0511h N'Able (DataBook) Technologies Inc
+0512h Hualon Microelectronics Corp
+0513h digital-X Inc
+0514h FCI Electronics
+0515h ACTC
+0516h Longwell Electronics
+0517h Butterfly Communications
+0518h EzKEY Corp
+0519h Star Micronics Co Ltd
+051Ah Wyse Technology
+051Bh Silicon Graphics
+051Ch Shuttle Inc
+051Dh American Power Conversion
+051Eh Scientific Atlanta Inc
+051Fh IO Systems Inc (Elite Electronics)
+0520h Taiwan Semiconductor Mfg Co
+0521h Airborn Connectors
+0522h Advanced-Connectek Inc (ACON)
+0523h ATEN GmbH
+0524h Sola Electronics
+0525h PLX Tech Inc? Netchip Tech Inc?
+0526h Temic MHS SA
+0527h ALTRA
+0528h ATI Technologies Inc
+0529h Aladdin Knowledge Systems
+052Ah Crescent Heart Software
+052Bh Tekom Technologies Inc
+052Ch Canon Development Americas
+052Dh Avid Electronics Corp
+052Eh Standard Microsystems Corp
+052Fh Unicore Software Inc
+0530h American Microsystems Inc
+0531h Wacom Technology Corp
+0532h Systech Corp
+0533h Alcatel Mobile Phones
+0534h Motorola Inc
+0535h Lih Tzu Electric Co Ltd
+0536h Hand Held Products (Welch Allyn Inc)
+0537h Inventec Corp
+0538h Caldera Int'l Inc (Santa Cruz Operation)
+0539h Shyh Shiun Terminals Co Ltd
+053Ah Preh Werke GmbH & Co KG
+053Bh Global Village Communication
+053Ch Inst of Microelect & Mechatronic Sys
+053Dh Silicon Architect
+053Eh Mobility Electronics
+053Fh Synopsys Inc
+0540h UniAccess AB
+0541h Sirf Technology Inc
+0543h ViewSonic Corp
+0544h Cristie Electronics Ltd
+0545h Xirlink Inc
+0546h Polaroid Corp
+0547h Anchor Chips Inc
+0548h Tyan Computer Corp
+0549h Pixera Corp
+054Ah Fujitsu Microelectronics Inc
+054Bh New Media Corp
+054Ch Sony Corp
+054Dh Try Corp
+054Eh Proside Corp
+054Fh WYSE Technology Taiwan
+0550h Fuji Xerox Co Ltd
+0551h CompuTrend Systems Inc
+0552h Philips Monitors
+0553h VLSI Vision (STMicroelect Imaging Div)
+0554h Dictaphone Corp
+0555h ANAM S&T Co Ltd
+0556h Asahi Kasei Microsystems Co Ltd
+0557h ATEN International Co Ltd
+0558h Truevision Inc
+0559h Cadence Design Systems Inc
+055Ah Kenwood USA
+055Bh KnowledgeTek Inc
+055Ch Proton Electronic Ind
+055Dh Samsung Electro-Mechanics Co
+055Eh CTX Opto-Electronics Corp
+055Fh Mustek Systems Inc
+0560h Interface Corp
+0561h Oasis Design Inc
+0562h Telex Communications Inc
+0563h Immersion Corp
+0564h Chinon Industries Inc
+0565h Peracom Networks Inc
+0566h Monterey International Corp
+0567h Xyratex International Ltd
+0568h Quartz Ingenierie
+0569h SegaSoft
+056Ah Wacom Co Ltd
+056Bh Decicon Inc
+056Ch eTEK Labs
+056Dh EIZO Corp
+056Eh Elecom Co Ltd
+056Fh Korea Data Systems Co Ltd
+0570h Epson America
+0571h Interex Inc
+0572h Conexant Systems Inc (Rockwell)
+0573h Zoran Corp (Nogatech)
+0574h City University of Hong Kong
+0575h Philips Creative Display Solutions
+0576h BAFO/Quality Computer Accessories
+0577h Elsa
+0578h Intrinsix Corp
+0579h GVC Corp
+057Ah Samsung Electronics America
+057Bh Y-E Data Inc
+057Ch AVM GmbH
+057Dh Shark Multimedia Inc
+057Eh Nintendo Co Ltd
+057Fh QuickShot Ltd
+0580h Denron Inc
+0581h Racal Data Group
+0582h Roland Corp
+0583h Padix Co Ltd (Rockfire)
+0584h Ratoc System Inc
+0585h FlashPoint Technology Inc
+0586h ZyXEL Communications Corp
+0587h America Kotobuki Elect Industries Inc
+0588h Sapien Design
+0589h Victron
+058Ah Nohau Corp
+058Bh Infineon Technologies
+058Ch In Focus Systems
+058Dh Micrel Semiconductor
+058Eh Tripath Technology Inc
+058Fh Alcor Micro Corp
+0590h Omron Corp
+0591h Questra Consulting
+0592h Powerware Corp
+0593h Incite
+0594h Princeton Graphic Systems
+0595h Zoran Microelectronics Ltd
+0596h MicroTouch Systems Inc
+0597h Trisignal Communications
+0598h Niigata Canotec Co Inc
+0599h Brilliance Semiconductor Inc
+059Ah Spectrum Signal Processing Inc
+059Bh Iomega Corp
+059Ch A-Trend Technology Co Ltd
+059Dh Advanced Input Devices
+059Eh Intelligent Instrumentation
+059Fh LaCie Ltd
+05A0h Vetronix Corp
+05A1h USC Corp
+05A2h Fuji Film Microdevices Co Ltd
+05A3h ARC International
+05A4h Ortek Technology Inc
+05A5h Sampo Technology Corp
+05A6h Cisco Systems Inc
+05A7h Bose Corp
+05A8h Spacetec IMC Corp
+05A9h OmniVision Technologies Inc
+05AAh Utilux South China Ltd
+05ABh In-System Design
+05ACh Apple Computer Inc
+05ADh YC Cable USA Inc
+05AEh Synopsys Inc
+05AFh Jing-Mold Enterprise Co Ltd
+05B0h Fountain Technologies Inc
+05B1h First International Computer Inc
+05B2h Focus
+05B4h LG Semicon Co Ltd
+05B5h Dialogic Corp
+05B6h Proxima Corp
+05B7h Medianix Semiconductor Inc
+05B8h Agiler Inc
+05B9h Philips Research Laboratories
+05BAh DigitalPersona Inc
+05BBh Grey Cell Systems
+05BCh 3G Green Green Globe Co Ltd
+05BDh RAFI GmbH & Co KG
+05BEh Tyco Electronics (Raychem)
+05BFh S & S Research
+05C0h Keil Software
+05C1h Kawasaki Microelectronics Inc
+05C2h Media Phonics (Suisse) SA
+05C5h Digi International Inc
+05C6h Qualcomm Inc
+05C7h Qtronix Corp
+05C8h Cheng Uei Precision Ind Co Ltd (FoxLink)
+05C9h Semtech Corp
+05CAh Ricoh Co Ltd
+05CBh PowerVision Technologies Inc
+05CCh Elsa AG
+05CDh Silicom Ltd
+05CEh sci-worx GmbH
+05CFh Sung Forn Co Ltd
+05D0h GE Medical Systems Lunar
+05D1h Brainboxes Ltd
+05D2h Wave Systems Corp
+05D3h Tohoku Ricoh Co Ltd
+05D5h Super Gate Technology Co Ltd
+05D6h Philips Semiconductors CICT
+05D7h Thomas & Betts Corp
+05D8h Ultima Electronics Corp
+05D9h Axiohm Transaction Solutions
+05DAh Microtek International Inc
+05DBh Sun Corp (Suntac?)
+05DCh Lexar Media Inc
+05DDh Delta Electronics Inc
+05DFh Silicon Vision Inc
+05E0h Symbol Technologies
+05E1h Syntek Semiconductor Co Ltd
+05E2h ElecVision Inc
+05E3h Genesys Logic Inc
+05E4h Red Wing Corp
+05E5h Fuji Electric FA Comp & Systems Co Ltd
+05E6h Keithley Instruments
+05E8h ICC Inc
+05E9h Kawasaki Microelectronics America Inc
+05EBh FFC Ltd
+05ECh COM21 Inc
+05EEh Cytechinfo Inc
+05EFh AVB Inc (ANKO)
+05F0h Canopus Co Ltd
+05F1h Compass Communications
+05F2h Dexin Corp Ltd
+05F3h PI Engineering Inc
+05F5h Unixtar Technology Inc
+05F6h AOC International
+05F7h RFC Distribution(s) PTE Ltd
+05F9h PSC Scanning Inc
+05FAh Siemens Telecommunications Systems Ltd
+05FCh Harman Multimedia
+05FDh InterAct Inc
+05FEh Chic Technology Corp
+05FFh LeCroy Corp
+0600h Barco Display Systems
+0601h Jazz Hipster Corp
+0602h Vista Imaging Inc
+0603h Novatek Microelectronics Corp
+0604h Jean Co Ltd
+0605h Anchor C & C Co Ltd
+0606h Royal Information Electronics Co Ltd
+0607h Bridge Information Co Ltd
+0608h Genrad Ads
+0609h SMK Mfg Inc
+060Ah Worthington Data Solutions Inc
+060Bh Solid Year
+060Ch EEH Datalink GmbH
+060Dh Auctor Corp
+060Eh Transmonde Technologies Inc
+060Fh Joinsoon Electronics Mfg Co Ltd
+0610h Costar Electronics Inc
+0611h Totoku Electric Co Ltd
+0613h TransAct Technologies Inc
+0614h Bio-Rad Laboratories
+0615h Quabbin Wire & Cable Co Inc
+0616h Future Techno Designs PVT Ltd
+0617h Swiss Federal Insitute of Technology
+0618h MacAlly
+0619h Seiko Instruments Inc
+061Ah Veridicom International Inc
+061Bh Promptus Communications Inc
+061Ch Act Labs Ltd
+061Dh Quatech Inc
+061Eh Nissei Electric Co
+0620h Alaris Inc
+0621h ODU-Steckverbindungssysteme GmbH & Co KG
+0622h Iotech Inc
+0623h Littelfuse Inc
+0624h Avocent Corp? Apex Inc?
+0625h TiMedia Technology Co Ltd
+0626h Nippon Systems Development Co Ltd
+0627h Adomax Technology Co Ltd
+0628h Tasking Software Inc
+0629h Zida Technologies Ltd
+062Ah MosArt Semicond Corp? Creative Labs?
+062Bh Greatlink Electronics Taiwan Ltd
+062Ch Institute for Information Industry
+062Dh Taiwan Tai-Hao Enterprises Co Ltd
+062Eh Main Super Enterprises Co Ltd
+062Fh Sin Sheng Terminal & Machine Inc
+0631h JUJO Electronics Corp
+0633h Cyrix Corp
+0634h Micron Technology Inc
+0635h Methode Electronics Inc
+0636h Sierra Imaging Inc
+0638h Avision Inc
+0639h Chrontel Inc
+063Ah Techwin Corp
+063Bh Taugagreining HF
+063Ch Yamaichi Electronics Co Ltd (Sakura)
+063Dh Fong Kai Industrial Co Ltd
+063Eh RealMedia Technology Inc
+063Fh New Technology Cable Ltd
+0640h Hitex Development Tools
+0641h Woods Industries Inc
+0642h VIA Medical Corp
+0644h TEAC Corp
+0645h Who? Vision Systems Inc
+0646h UMAX Computer Corp
+0647h Acton Research Corp
+0648h Inside Out Networks
+0649h Weli Science Co Ltd
+064Bh Analog Devices? White Mountain DSP?
+064Ch Ji-Haw Industrial Co Ltd
+064Dh TriTech Microelectronics Ltd
+064Eh Suyin Corp
+064Fh WIBU-Systems AG
+0650h Dynapro Systems
+0651h Likom Technology Sdn Bhd
+0652h Stargate Solutions Inc
+0653h CNF Inc
+0654h Granite Microsystems Inc
+0655h Space Shuttle Hi-Tech Co Ltd
+0656h Glory Mark Electronic Ltd
+0657h Tekcon Electronics Corp
+0658h Sigma Designs Inc
+0659h Aethra
+065Ah Optoelectronics Co Ltd
+065Bh Tracewell Systems
+065Eh Silicon Graphics
+065Fh Good Way Tech Co Ltd & GWC Tech Inc
+0660h TSAY-E (BVI) International Inc
+0661h Hamamatsu Photonics KK
+0662h Kansai Electric Co Ltd
+0663h Topmax Electronic Co Ltd
+0667h Aiwa Co Ltd
+0668h WordWand
+0669h Oce' Printing Systems GmbH
+066Ah Total Technologies Ltd
+066Bh Linksys Inc
+066Dh Entrega Inc
+066Eh Acer Semiconductor America Inc
+066Fh SigmaTel Inc
+0672h Labtec Inc
+0673h HCL
+0674h Key Mouse Electronic Enterprise Co Ltd
+0675h Draytech
+0676h Teles AG
+0677h Aiwa Co Ltd
+0678h ACard Technology Corp
+067Bh Prolific Technology Inc
+067Ch Efficient Networks Inc
+067Dh Hohner Corp
+067Eh Intermec Technologies (S) Pte Ltd
+067Fh Virata Ltd
+0680h Realtek Semicond Corp (CPP/Avance Logic)
+0681h Siemens Info & Communication Products
+0682h Victor Co of Japan Ltd
+0684h Actiontec Electronics Inc
+0686h Minolta Co Ltd
+068Ah Pertech Inc
+068Bh Potrans International Inc
+068Eh CH Products Inc
+0690h Golden Bridge Electech Inc
+0693h Hagiwara Sys-Com Co Ltd
+0694h Lego Group
+0698h Chuntex (CTX)
+0699h Tektronix Inc
+069Ah Askey Computer Corp
+069Bh Thomson Inc
+069Dh Hughes Network Systems (HNS)
+069Eh Marx
+069Fh Allied Data Technologies BV
+06A2h Topro Technology Inc
+06A3h Saitek PLC
+06A4h Xiamen Doowell Electron Co Ltd
+06A5h Divio
+06A7h MicroStore Inc
+06A8h Topaz Systems Inc
+06A9h Westell
+06AAh Sysgration Ltd
+06ACh Fujitsu Laboratories of America Inc
+06ADh Greatland Electronics Taiwan Ltd
+06AEh Professional Multimedia Testing Centre
+06AFh Harting Inc of North America
+06B8h Pixela Corp
+06B9h Alcatel Telecom
+06BAh Smooth Cord & Connector Co Ltd
+06BBh EDA Inc
+06BCh Oki Data Corp
+06BDh AGFA-Gevaert NV
+06BEh AME Optimedia Technology Co Ltd
+06BFh Leoco Corp
+06C2h Phidgets Inc (GLAB Chester)
+06C4h Bizlink International Corp
+06C5h Hagenuk GmbH
+06C6h Infowave Software Inc
+06C8h SIIG Inc
+06C9h Taxan (Europe) Ltd
+06CAh Newer Technology Inc
+06CBh Synaptics Inc
+06CCh Terayon Communication Systems
+06CDh Keyspan
+06CFh SpheronVR AG
+06D0h LapLink Inc
+06D1h Daewoo Electronics Co Ltd
+06D3h Mitsubishi Electric Corp
+06D4h Cisco Systems
+06D5h Toshiba
+06D6h Aashima Technology BV
+06D7h Network Computing Devices (NCD)
+06D8h Technical Marketing Research Inc
+06DAh Phoenixtec Power Co Ltd
+06DBh Paradyne
+06DCh Foxlink Image Technology Co Ltd
+06DEh Heisei Electronics Co Ltd
+06E0h Multi-Tech Systems Inc
+06E1h ADS Technologies Inc
+06E4h Alcatel Microelectronics
+06E6h Tiger Jet Network Inc
+06EAh Sirius Technologies
+06EBh PC Expert Tech Co Ltd
+06EFh IAC Geometrische Ingenieurs BV
+06F0h TNC Industrial Co Ltd
+06F1h Opcode Systems Inc
+06F2h Emine Technology Co
+06F6h Wintrend Technology Co Ltd
+06F7h Wailly Technology Ltd
+06F8h Guillemot Corp
+06FAh HSD SRL
+06FCh Motorola Semiconductor Products Sector
+06FDh Boston Acoustics
+06FEh Gallant Computer Inc
+0701h Supercomal Wire & Cable SDN BHD
+0703h Bvtech Industry Inc
+0705h NKK Corp
+0706h Ariel Corp
+0707h Standard Microsystems Corp
+0708h Putercom Co Ltd
+0709h Silicon Systems Ltd (SSL)
+070Ah Oki Electric Industry Co Ltd
+070Dh Comoss Electronic Co Ltd
+070Eh Excel Cell Electronic Co Ltd
+0710h Connect Tech Inc
+0711h Magic Control Technology Corp
+0713h Interval Research Corp
+0714h NewMotion Inc
+0717h ZNK Corp
+0718h Imation Corp
+0719h Tremon Enterprises Co Ltd
+071Bh Domain Technologies Inc
+071Ch Xionics Document Technologies Inc
+071Dh Dialogic Corp? Eicon Networks Corp?
+071Eh Ariston Technologies
+0723h Centillium Communications Corp
+0726h Vanguard Int'l Semiconductor-America
+0729h Amitm
+072Eh Sunix Co Ltd
+072Fh Advanced Card Systems Ltd
+0731h Susteen Inc
+0732h Goldfull Electronics & Telecom Corp
+0733h ViewQuest Technologies Inc
+0734h Lasat Communications A/S
+0735h Asuscom Network
+0736h Lorom Industrial Co Ltd
+0738h Mad Catz Inc
+073Ah Chaplet Systems Inc
+073Bh Suncom Technologies
+073Dh Eutron SPA
+073Eh NEC Inc
+0745h Syntech Information Co Ltd
+0746h Onkyo Corp
+0747h Labway Corp
+0748h Strong Man Enterprise Co Ltd
+0749h EVer Electronics Corp
+074Ah Ming Fortune Industry Co Ltd
+074Bh Polestar Tech Corp
+074Ch C-C-C Group PLC
+074Dh Micronas GmbH
+074Eh Digital Stream Corp
+0755h Aureal Semiconductor
+0757h Network Technologies Inc
+075Bh Sophisticated Circuits Inc
+0763h M-Audio? Midiman?
+0764h Cyber Power Systems Inc
+0765h X-Rite Inc
+0766h Jess-Link Products Co Ltd (JPC)
+0767h Tokheim Corp
+0768h Camtel Technology Corp
+0769h Surecom Technology Corp
+076Ah Smart Technology Enablers Inc
+076Bh OmniKey AG
+076Ch Partner Tech
+076Dh Denso Corp
+076Eh Kuan Tech Enterprise Co Ltd
+076Fh Jhen Vei Electronic Co Ltd
+0770h Welch Allyn Inc - Medical Division
+0774h AmTRAN Technology Co Ltd
+0775h Longshine Electronics Corp
+0776h Inalways Corp
+0777h Comda Enterprise Corp
+0778h Volex Inc
+0779h Fairchild Semiconductor
+077Ah Sankyo Seiki Mfg Co Ltd
+077Bh Linksys
+077Ch Forward Electronics Co Ltd
+077Dh Griffin Technology
+077Fh Well Excellent & Most Corp
+0781h SanDisk Corp
+0782h Trackerball
+0783h C3PO
+0784h Vivitar Inc
+0785h NTT-ME
+0789h Logitec Corp
+078Bh Happ Controls Inc
+078Ch GTCO/CalComp
+078Eh Brincom Inc
+0790h Pro-Image Mfg Co Ltd
+0791h Copartner Wire & Cable Mfg Corp
+0792h Axis Communications AB
+0793h Wha Yu Industrial Co Ltd
+0794h ABL Electronics Corp
+0795h RealChip Inc
+0796h Certicom Corp
+0797h Grandtech Semiconductor Corp
+0798h Optelec
+079Bh Sagem
+079Dh Alfadata Computer Corp
+07A1h Digicom SPA
+07A2h National Technical Systems
+07A3h Onnto Corp
+07A4h Be Inc
+07A6h ADMtek Inc
+07AAh Corega KK
+07ABh Freecom Technologies
+07AFh Microtech
+07B0h Trust Technologies
+07B1h IMP Inc
+07B2h Motorola BCS Inc
+07B3h Plustek Inc
+07B4h Olympus Optical Co Ltd
+07B5h Mega World International Ltd
+07B6h Marubun Corp
+07B7h Time Interconnect Ltd
+07B8h D-Link Corp
+07BCh Canon Computer Systems Inc
+07BDh Webgear Inc
+07BEh Veridicom
+07C0h Code Mercenaries Hard- und Software GmbH
+07C1h Keisokugiken
+07C4h Datafab Systems Inc
+07C5h APG Cash Drawer
+07C6h ShareWave Inc
+07C7h Powertech Industrial Co Ltd
+07C8h BUG Inc
+07C9h Allied Telesyn International
+07CAh AVerMedia Technologies Inc
+07CBh Kingmax Technology Inc
+07CCh Carry Computer Eng Co Ltd
+07CDh Elektor
+07CFh Casio Computer Co Ltd
+07D0h Dazzle
+07D1h D-Link Corp
+07D2h Aptio Products Inc
+07D3h CyberData Corp
+07D7h GCC Technologies Inc
+07DAh Arasan Chip Systems Inc
+07DFh David Electronics Co Ltd
+07E1h Ambient Technologies Inc
+07E2h Elmeg GmbH & Co Ltd
+07E3h Planex Communications Inc
+07E4h Movado Enterprise Co Ltd
+07E5h QPS Inc
+07E6h Allied Cable Corp
+07E7h Mirvo Toys Inc
+07E8h Labsystems
+07EAh Iwatsu Electric Co Ltd
+07EBh Double-H Technology Co Ltd
+07ECh Taiyo Electric Wire & Cable Co Ltd
+07EEh Torex Retail (formerly Logware)
+07EFh STSN
+07F2h General CADD
+07F6h Circuit Assembly Corp
+07F7h Century Corp
+07F9h Dotop Technology Inc
+07FAh Draytek
+07FDh Mark of the Unicorn
+0801h Mag-Tek
+0802h Mako Technologies LLC
+0803h Zoom Telephonics Inc
+0809h Genicom Technology Inc
+080Ah Evermuch Technology Co Ltd
+080Ch Datalogic SPA
+080Dh Teco Image Systems Co Ltd
+0810h Personal Communication Systems Inc
+0813h Mattel Inc
+081Ah MG Logic
+081Bh Indigita Corp
+081Ch Mipsys
+081Eh AlphaSmart Inc
+0822h Reudo Corp
+0825h GC Protronics
+0826h Data Transit
+0827h BroadLogic Inc
+0828h Sato Corp
+0829h DirecTV Broadband Inc (Telocity)
+082Dh Handspring
+0830h Palm Inc
+0832h Kouwell Electronics Corp
+0833h Sourcenext Corp
+0835h Action Star Enterprise Co Ltd
+0839h Samsung Techwin Co Ltd
+083Ah Accton Technology Corp
+083Fh Global Village
+0840h Argosy Research Inc
+0841h Rioport.Com Inc
+0844h Welland Industrial Co Ltd
+0846h NetGear Inc
+084Dh Minton Optic Industry Co Inc
+084Eh KB Gear
+084Fh Empeg
+0850h Fast Point Technologies Inc
+0851h Macronix International Co Ltd
+0852h CSEM
+0853h Topre Corp
+0854h ActiveWire Inc
+0856h B&B Electronics
+0858h Hitachi Maxell Ltd
+0859h Minolta Systems Laboratory Inc
+085Ah Xircom
+085Ch ColorVision Inc
+0862h Teletrol Systems Inc
+0863h Filanet Corp
+0864h NetGear Inc
+0867h Data Translation Inc
+086Ah Emagic Soft-und Hardware GmbH
+086Ch DeTeWe - Deutsche Telephonwerke AG & Co
+086Eh System TALKS Inc
+086Fh MEC IMEX Inc (HPT)
+0870h Metricom
+0871h SanDisk Inc
+0873h Xpeed Inc
+0874h A-Tec Subsystem Inc
+0879h Comtrol Corp
+087Ch Adesso/Kbtek America Inc
+087Dh Jaton Corp
+087Eh Fujitsu Computer Products of America
+087Fh Virtual IP Group Inc
+0880h APT Technologies Inc
+0883h Recording Industry Assn of Amer (RIAA)
+0885h Boca Research Inc
+0886h XAC Automation Corp
+0887h Hannstar Electronics Corp
+088Bh MassWorks Inc
+0892h DioGraphy Inc
+0897h Lauterbach
+089Ch United Technologies Research Center
+089Dh Icron Technologies Corp
+089Eh NST Co Ltd
+089Fh Primex Aerospace Co
+08A5h e9 Inc
+08A8h Andrea Electronics
+08AEh Macally (Mace Group Inc)
+08B4h Sorenson Vision Inc
+08B8h J Gordon Electronic Design Inc
+08B9h RadioShack Corp (Tandy)
+08BBh Texas Instruments Japan
+08BDh Citizen Watch Co Ltd
+08C3h Precise Biometrics
+08C4h Proxim Inc
+08C7h Tai Twun? Key Nice?
+08C8h 2Wire Inc
+08C9h Nippon Telegraph & Telephone Corp
+08CAh Aiptek International Inc
+08CDh Jue Hsun Ind Corp
+08CEh Long Well Electronics Corp
+08CFh Productivity Enhancement Products
+08D1h smartBridges Inc
+08D3h Virtual Ink
+08D4h Fujitsu Siemens Computers
+08D9h Increment P Corp
+08DDh Billionton Systems Inc
+08DFh Spyrus Inc
+08E3h Olitec Inc
+08E4h Pioneer Corp
+08E5h Litronic
+08E6h Gemplus
+08E7h Pan-International Wire & Cable
+08E8h Integrated Memory Logic
+08E9h Extended Systems Inc
+08EAh Ericsson Inc Blue Ridge Labs
+08ECh M-Systems Flash Disk Pioneers
+08EEh CCSI/Hesso
+08F0h CardScan Inc? Corex Technologies?
+08F1h CTI Electronics Corp
+08F5h SysTec Co Ltd
+08F6h Logic 3 International Ltd
+08F7h Vernier
+08F8h Keen Top International Enterprise Co Ltd
+08F9h Wipro Technologies
+08FAh Caere
+08FBh Socket Communications
+08FCh Sicon Cable Technology Co Ltd
+08FDh Digianswer A/S
+08FFh AuthenTec Inc
+0900h Pinnacle Systems Inc
+0901h VST Technologies
+0906h Faraday Technology Corp
+0909h Audio-Technica Corp
+090Ah Trumpion Microelectronics Inc
+090Bh Neurosmith
+090Ch Silicon Motion Taiwan? Feiya Tech?
+090Dh Multiport Computer Vertriebs GmbH
+090Eh Shining Technology Inc
+090Fh Fujitsu Devices Inc
+0910h Alation Systems Inc
+0911h Philips Speech Processing
+0912h Voquette Inc
+0915h GlobeSpan Inc
+0917h SmartDisk Corp
+0919h Tiger Electronics
+091Eh Garmin International
+0920h Echelon Co
+0921h GoHubs Inc
+0922h Dymo-CoStar Corp
+0923h IC Media Corp
+0924h Xerox Corp
+0925h Lakeview Resesrch? Wisegroup Ltd?
+0927h Summus Ltd
+0928h Oxford Semiconductor Ltd
+0929h American Biometric Co
+092Ah Toshiba Info & Industrial Sys & Svcs
+092Bh Sena Technologies Inc
+092Fh Northern Embedded Science/CAVNEX
+0930h Toshiba Corp
+0931h Harmonic Data Systems Ltd
+0932h Crescentec Corp
+0933h Quantum Corp
+0934h Netcom Systems
+0939h Lumberg Inc
+093Ah Pixart Imaging Inc
+093Bh Plextor LLC
+093Ch Intrepid Control Systems Inc
+093Dh InnoSync Inc
+093Eh JST Mfg Co Ltd
+093Fh Olympia Telecom Vertriebs GmbH
+0940h Japan Storage Battery Co Ltd
+0941h Photobit Corp
+0942h i2Go.Com LLC
+0943h HCL Technologies Ltd
+0944h KORG Inc
+0945h Pasco Scientific
+0948h Kronauer music in digital
+094Bh Linkup Systems Corp
+094Dh Cable Television Laboratories
+094Fh Yano
+0951h Kingston Technology Co
+0954h RPM Systems Corp
+0955h NVidia Corp
+0956h BSquare Corp
+0957h Agilent Technologies Inc
+0958h CompuLink Research Inc
+0959h Cologne Chip AG
+095Ah Portsmith
+095Bh Medialogic Corp
+095Ch K-Tec Electronics
+095Dh Polycom Inc
+0960h BCOM?
+0961h Portatec?
+0967h Acer?
+0968h Catalyst Enterprises Inc
+096Eh Feitian Technologies Inc
+0971h Gretag-Macbeth AG
+0973h Axalto? Schlumberger?
+0974h Anacomp (Datagraphix)
+0975h OL'E Communications Inc
+0976h Adirondack Wire & Cable
+0977h Lightsurf Technologies
+0978h Beckhoff GmbH
+0979h Jeilin Technology Corp Ltd
+097Ah Minds At Work LLC
+097Bh Knudsen Engineering Ltd
+097Ch Marunix Co Ltd
+097Dh Rosun Technologies Inc
+097Fh Barun Electronics Co Ltd
+0981h Oak Technology Ltd
+0984h Apricorn
+0985h cab Produkttechnik GmbH & Co KG
+0986h Matsushita Electric Works Ltd
+098Ch Vitana Corp
+098Dh INDesign
+098Eh Integrated Intellectual Property Inc
+098Fh Kenwood TMI Corp
+0993h Gemstar eBook Group Ltd
+0996h Integrated Telecom Express Inc
+099Ah Zippy Technology Corp
+09A3h PairGain Technologies
+09A4h Contech Research Inc
+09A5h VCON Telecommunications
+09A6h Poinchips
+09A7h Data Transmission Network Corp
+09A8h Lin Shiung Enterprise Co Ltd
+09A9h Smart Card Technologies Co Ltd
+09AAh Intersil Corp
+09ABh Japan Cash Machine Co Ltd
+09AEh Tripp Lite
+09B2h Franklin Electronic Publishers Inc
+09B3h Altius Solutions Inc
+09B4h MDS Telephone Systems
+09B5h Celltrix Technology Co Ltd
+09BCh Grundig
+09BEh MySmart.Com
+09BFh Auerswald GmbH & Co KG
+09C1h ARRIS Interactive LLC
+09C2h Nisca Corp
+09C3h ActivCard Inc
+09C4h ACTiSYS Corp
+09C5h Memory Corp
+09CCh Workbit Corp
+09CDh Psion Dacom Home Networks Ltd
+09CEh City Electronics Ltd
+09CFh Electronics Testing Center Taiwan
+09D1h NeoMagic Inc
+09D2h Vreelin Engineering Inc
+09D3h Com One
+09D7h Novatel Wireless
+09D9h Jungo? KRF Tech Ltd?
+09DAh A-Four Tech Co Ltd
+09DBh Measurement Computing Corp
+09DCh Aimex Corp
+09DDh Fellowes Inc
+09DFh Addonics Technologies Corp
+09E1h Intellon Corp
+09E5h Jo-Dan International Inc
+09E6h Silutia Inc
+09E7h Real 3D Inc
+09E8h AKAI Professional MI Corp
+09E9h Chen-Source Inc
+09EBh IM Networks Inc
+09EFh Xitel
+09F5h AresCom
+09F6h RocketChips Inc
+09F7h Edu-Science (HK) Ltd
+09F8h SoftConnex Technologies Inc
+09F9h Bay Associates
+09FAh Mtek Vision
+09FBh Altera
+09FFh Gain Technology Corp
+0A00h Liquid Audio
+0A01h ViA Inc
+0A07h Ontrak Control Systems Inc
+0A0Bh Cybex Computer Products Co
+0A11h Xentec Inc
+0A12h Cambridge Silicon Radio Ltd
+0A13h Telebyte Inc
+0A14h Spacelabs Medical Inc
+0A15h Scalar Corp
+0A16h Trek Technology (S) PTE Ltd
+0A17h Pentax Corp
+0A18h Heidelberger Druckmaschinen AG
+0A19h Hua Geng Technologies Inc
+0A1Ch SoftGSM?
+0A21h Medtronic Physio Control Corp
+0A22h Century Semiconductor USA Inc
+0A2Ch AK-Modul-Bus Computer GmbH
+0A34h TG3 Electronics Inc
+0A39h Gilat Satellite Networks Ltd
+0A3Ah PentaMedia Co Ltd
+0A3Ch NTT DoCoMo Inc
+0A3Dh Varo Vision
+0A3Fh Swissonic AG
+0A43h Boca Systems Inc
+0A46h Davicom Semiconductor Inc
+0A47h Hirose Electric
+0A48h I/O Interconnect
+0A4Bh Fujitsu Media Devices Ltd
+0A4Ch Computex Co Ltd
+0A4Dh Evolution Electronics Ltd
+0A4Eh Steinberg Soft-und Hardware GmbH
+0A4Fh Litton Systems Inc
+0A50h Mimaki Engineering Co Ltd
+0A51h Sony Electronics Inc
+0A52h Jebsee Electronics Co Ltd
+0A53h Portable Peripheral Co Ltd
+0A5Ah Electronics For Imaging Inc
+0A5Bh EAsics NV
+0A5Ch Broadcom Corp
+0A5Dh Diatrend Corp
+0A5Fh Zebra
+0A62h MPMan
+0A66h ClearCube Technology
+0A67h Medeli Electronics Co Ltd
+0A68h Comaide Corp
+0A69h Chroma ate Inc
+0A6Bh Green House Co Ltd
+0A6Ch Integrated Circuit Systems Inc
+0A6Dh UPS Mfg
+0A6Eh Benwin
+0A6Fh Core Technology Inc
+0A70h International Game Technology
+0A72h Sanwa Denshi
+0A7Ah ChipDrive
+0A7Dh NSTL Inc
+0A7Eh Octagon Systems Corp
+0A80h Rexon Technology Corp Ltd
+0A81h Chesen Electronics Corp
+0A82h Syscan
+0A83h NextComm Inc
+0A84h Maui Innovative Peripherals
+0A85h Idexx Labs
+0A86h NITGen Co Ltd
+0A8Dh Picturetel
+0A8Eh Japan Aviation Electronics Ind Ltd (JAE)
+0A90h Candy Technology Co Ltd
+0A91h Globlink Technology Inc
+0A92h EGO SYStems Inc
+0A93h C Technologies AB
+0A94h Intersense
+0AA3h Lava Computer Mfg Inc
+0AA4h Develco Elektronik
+0AA5h First International Digital
+0AA6h Perception Digital Ltd
+0AA7h Wincor Nixdorf International GmbH
+0AA8h TriGem Computer Inc
+0AA9h Baromtec Co
+0AAAh Japan CBM Corp
+0AABh Vision Shape Europe SA
+0AACh iCompression Inc
+0AADh Rohde & Schwarz GmbH & Co KG
+0AAEh NEC infrontia Corp (Nitsuko)
+0AAFh Digitalway Co Ltd
+0AB0h Arrow Strong Electronics Co Ltd
+0ABAh Ellisys
+0ABEh Stereo-Link
+0AC3h Sanyo Semiconductor Co Micro
+0AC4h Leco Corp
+0AC5h I & C Corp
+0AC6h Singing Electrons Inc
+0AC7h Panwest Corp
+0AC8h Vimicro Corp? Z-Star Micro Corp?
+0AC9h Micro Solutions Inc
+0ACAh OPEN Networks Ltd
+0ACCh Koga Electronics Co
+0ACDh ID Tech
+0ACEh ZyXEL? ZyDAS?
+0ACFh Intoto Inc
+0AD0h Intellix Corp
+0AD1h Remotec Technology Ltd
+0AD2h Service & Quality Technology Co Ltd
+0AE3h Allion Computer Inc
+0AE4h Taito Corp
+0AE7h Neodym Systems Inc
+0AE8h System Support Co Ltd
+0AE9h North Shore Circuit Design LLP
+0AEAh SciEssence LLC
+0AEBh TTP Communications Ltd
+0AECh Neodio Technologies Corp
+0AF0h Option
+0AF6h Silver I Co Ltd
+0AF7h B2C2 Inc
+0AF9h Hama Inc
+0AFCh Zaptronix Ltd
+0AFDh Tateno Dennou Inc
+0AFEh Cummins Engine Co
+0AFFh Jump Zone Network Products Inc
+0B00h Ingenico
+0B05h ASUSTek Computer Inc
+0B0Ch Todos Data System AB
+0B0Eh GN Netcom
+0B0Fh AVID Technology
+0B10h Pcally
+0B11h I Tech Solutions Co Ltd
+0B1Eh Electronic Warfare Assoc Inc (EWA)
+0B1Fh Insyde Software Corp
+0B20h TransDimension Inc
+0B21h Yokogawa Electric Corp
+0B22h Japan System Development Co Ltd
+0B23h Pan-Asia Electronics Co Ltd
+0B24h Link Evolution Corp
+0B27h Ritek Corp
+0B28h Kenwood Corp
+0B2Ch Village Center Inc
+0B30h PNY Technologies Inc
+0B33h Contour Design Inc
+0B37h Hitachi ULSI Systems Co Ltd
+0B39h Omnidirectional Control Technology Inc
+0B3Ah IPaxess
+0B3Bh Tekram Technology Co Ltd
+0B3Ch Olivetti SPA
+0B3Eh Kikusui Electronics Corp
+0B41h Hal Corp
+0B43h Play.Com Inc
+0B47h Sportbug.Com Inc
+0B48h TechnoTrend AG
+0B49h ASCII Corp
+0B4Bh Pine Corp Ltd
+0B4Dh Graphtec America Inc
+0B4Eh Musical Electronics Ltd
+0B50h Dumpries Co Ltd
+0B51h Comfort Keyboard Co
+0B52h Colorado MicroDisplay Inc
+0B54h Sinbon Electronics Co Ltd
+0B56h TYI Systems Ltd
+0B57h Beijing HanwangTechnology Co Ltd
+0B59h Lake Communications Ltd
+0B5Ah Corel Corp
+0B5Fh Green Electronics Co Ltd
+0B60h Nsine Ltd
+0B61h NEC Viewtechnology Ltd
+0B62h Orange Micro Inc
+0B63h ADLink Technology Inc
+0B64h Wonderful Wire Cable Co Ltd
+0B65h Expert Magnetics Corp
+0B69h CacheVision
+0B6Ah Maxim Integrated Products
+0B6Fh Nagano Japan Radio Co Ltd
+0B70h PortalPlayer Inc
+0B71h Shin-EI Sangyo Co Ltd
+0B72h Embedded Wireless Technology Co Ltd
+0B73h Computone Corp
+0B75h Roland DG Corp
+0B79h Sunrise Telecom Inc
+0B7Ah Zeevo Inc
+0B7Bh Taiko Denki Co Ltd
+0B7Ch ITRAN Communications Ltd
+0B7Dh Astrodesign Inc
+0B84h Rextron Technology Inc
+0B85h Elkat Electronics Sdn Bhd
+0B86h Exputer Systems Inc
+0B87h Plus-One I & T Inc
+0B88h Sigma Koki Co Ltd Technology Center
+0B89h Advanced Digital Broadcast Ltd
+0B95h ASIX Electronics Corp
+0B96h Sewon Telecom
+0B97h O2 Micro Inc
+0B98h Playmates Toys Inc
+0B99h Audio International Inc
+0B9Bh Dipl-Ing Stefan Kunde
+0B9Dh Softprotec Co
+0B9Fh Chippo Technologies
+0BAFh US Robotics
+0BB0h Concord Camera Corp
+0BB1h Infinilink Corp
+0BB2h Ambit Microsystems Corp
+0BB3h Ofuji Technology
+0BB4h High Tech Computer Corp (HTC)
+0BB5h Murata Mfg Co Ltd
+0BB6h Network Alchemy
+0BB7h Joytech Computer Co Ltd
+0BB8h Hitachi Semicond & Devices Sales Co Ltd
+0BB9h Eiger M&C Co Ltd
+0BBAh ZAccess Systems
+0BBBh General Meters Corp
+0BBCh Assistive Technology Inc
+0BBDh System Connection Inc
+0BC0h Knilink Technology Inc
+0BC1h Fuw Yng Electronics Co Ltd
+0BC2h Seagate RSS LLC
+0BC3h IPWireless Inc
+0BC4h Microcube Corp
+0BC5h JCN Co Ltd
+0BC6h ExWAY Inc
+0BC7h X10 Wireless Technology Inc
+0BC8h Telmax Communications
+0BC9h ECI Telecom Ltd
+0BCAh Startek Engineering Inc
+0BCBh Perfect Technic Enterprise Co Ltd
+0BD7h Andrew Pargeter & Associates
+0BDAh Realtek Semiconductor Corp
+0BDBh Ericsson Business Mobile Networks BV
+0BDCh Y Media Corp
+0BDDh Orange PCS
+0BE2h Kanda Tsushin Kogyo Co Ltd
+0BE3h Toyo Corp
+0BE4h Elka International Ltd
+0BE5h DOME imaging systems Inc
+0BE6h Dong Guan Humen Wonderful Wire Cable
+0BEEh LTK International Ltd
+0BEFh Way2Call Communications
+0BF0h Pace Micro Technology PLC
+0BF1h Intracom SA
+0BF2h Konexx
+0BF6h Addonics Technologies Inc
+0BF7h Sunny Giken Inc
+0BF8h Fujitsu Siemens Computers GmbH
+0C04h MOTO Development Group Inc
+0C05h Appian Graphics
+0C06h Hasbro Inc
+0C07h Infinite Data Storage Ltd
+0C08h Agate
+0C09h Comjet Information System
+0C0Ah Highpoint Technologies Inc
+0C0Bh Dura Micro Inc (Acomdata)
+0C10h Silicon Wave?
+0C12h Zeroplus
+0C15h Iris Graphics
+0C16h Gyration Inc
+0C17h Cyberboard A/S
+0C18h SynerTek Korea Inc
+0C19h cyberPIXIE Inc
+0C1Ah Silicon Motion Inc
+0C1Bh MIPS Technologies
+0C1Ch Hang Zhou Silan Microelectronics Co Ltd
+0C22h TallyGenicom LP
+0C23h Lernout + Hauspie
+0C24h Taiyo Yuden
+0C25h Sampo Corp
+0C2Eh Metro
+0C35h Eagletron Inc
+0C36h E Ink Corp
+0C37h e.Digital
+0C38h Der An Electric Wire & Cable Co Ltd
+0C39h IFR
+0C3Ah Furui Precise Component (Kunshan) Co Ltd
+0C3Bh Komatsu Ltd
+0C3Ch Radius Co Ltd
+0C3Dh Innocom Inc
+0C3Eh Nextcell Inc
+0C44h Motorola iDEN
+0C45h Sonix Technology Co? Microdia?
+0C46h WaveRider Communications Inc
+0C4Bh Reiner SCT Kartensysteme GmbH
+0C52h Sealevel Systems Inc
+0C53h ViewPLUS Inc
+0C54h Glory Ltd
+0C55h Spectrum Digital Inc
+0C56h Billion Bright Ltd
+0C57h Imaginative Design Operation Co Ltd
+0C58h Vidar Systems Corp
+0C59h Dong Guan Shinko Wire Co Ltd
+0C5Ah TRS International Mfg Inc
+0C5Eh Xytronix Research & Design
+0C62h Chant Sincere Co Ltd
+0C63h Toko Inc
+0C64h Signality System Engineering Co Ltd
+0C65h Eminence Enterprise Co Ltd
+0C66h Rexon Electronics Corp
+0C67h Concept Telecom Ltd
+0C70h MCT Elektronikladen
+0C74h Optronic Laboratories Inc
+0C76h Solid State System Co? JMTek LLC?
+0C77h Sipix Group Ltd
+0C78h Detto Corp
+0C79h NuConnex Technologies Pte Ltd
+0C7Ah Wing-Span Enterprise Co Ltd
+0C86h NDA Technologies Inc
+0C88h Kyocera Wireless Corp
+0C89h Honda Tsushin Kogyo Co Ltd
+0C8Ah Pathway Connectivity Inc
+0C8Bh Wavefly Corp
+0C8Ch Coactive Networks
+0C8Dh Tempo
+0C8Eh Cesscom Co Ltd
+0C8Fh Applied Microsystems
+0C98h Berkshire Products Inc
+0C99h Innochips Co Ltd
+0C9Ah Hanwool Robotics Corp
+0C9Bh Jobin Yvon Inc
+0C9Dh SemTek
+0CA2h Zyfer
+0CA3h Sega Corp
+0CA4h ST&T Instrument Corp
+0CA5h BAE Systems Canada Inc
+0CA6h Castles Technology Co Ltd
+0CA7h Information Systems Laboratories
+0CADh Motorola CGISS
+0CAEh Ascom Business Systems Ltd
+0CAFh Buslink
+0CB0h Flying Pig Systems
+0CB1h Innovonics Inc
+0CB6h Celestix Networks Pte Ltd
+0CB7h Singatron Enterprise Co Ltd
+0CB8h Opticis Co Ltd
+0CBAh Trust Electronic (Shanghai) Co Ltd
+0CBBh Shanghai Darong Electronics Co Ltd
+0CBCh Palmax Technology Co Ltd
+0CBDh Pentel Co Ltd (Electronics Eqpt Div)
+0CBEh Keryx Technologies Inc
+0CBFh Union Genius Computer Co Ltd
+0CC0h Kuon Yi Industrial Corp
+0CC1h Given Imaging Ltd
+0CC2h Timex Corp
+0CC3h Rimage Corp
+0CC4h emsys GmbH
+0CC5h Sendo
+0CC6h Intermagic Corp
+0CC7h Kontron Medical AG
+0CC8h Technotools Corp
+0CC9h BroadMAX Technologies Inc
+0CCAh Amphenol
+0CCBh SKNet Co Ltd
+0CCCh Domex Technology Corp
+0CCDh TerraTec Electronic GmbH
+0CD2h C-Map
+0CD4h Bang Olufsen
+0CD7h NewChip SRL
+0CD8h JS Digitech Inc
+0CD9h Hitachi Shin Din Cable Ltd
+0CDEh Z-Com
+0CE9h pico Technology
+0CF1h e-Conn Electronic Co Ltd
+0CF2h ENE Technology Inc
+0CF3h Atheros Communications Inc
+0CF4h Fomtex Corp
+0CF5h Cellink Co Ltd
+0CF6h Compucable Corp
+0CF7h ishoni Networks
+0CF8h Clarisys Inc
+0CF9h Central System Research Co Ltd
+0CFAh Inviso Inc
+0CFCh Minolta-QMS Inc
+0CFFh Safa Media Co Ltd
+0D06h telos EDV Systementwicklung GmbH
+0D08h UTStarcom
+0D0Bh Contemporary Controls
+0D0Ch Astron Electronics Co Ltd
+0D0Dh MKNet Corp
+0D0Eh Hybrid Networks Inc
+0D0Fh Feng Shin Cable Co Ltd
+0D10h Elastic Networks
+0D11h Maspro Denkoh Corp
+0D12h Hansol Electronics Inc
+0D13h BMF Corp
+0D14h Array Comm Inc
+0D15h OnStream BV
+0D16h Hi-Touch Imaging Technologies Co Ltd
+0D17h NALTEC Inc
+0D18h coaXmedia
+0D19h Hank Connection Industrial Co Ltd
+0D32h Leo Hui Electric Wire & Cable Co Ltd
+0D33h AirSpeak Inc
+0D34h Rearden Steel Technologies
+0D35h Dah Kun Co Ltd
+0D3Ah Posiflex Technologies Inc
+0D3Ch Sri Cable Technology Ltd
+0D3Dh Tangtop Technology Co Ltd
+0D3Eh Fitcom inc
+0D3Fh MTS Systems Corp
+0D40h Ascor Inc
+0D41h Ta Yun Terminals Industrial Co Ltd
+0D42h Full Der Co Ltd
+0D46h Kobil Systems GmbH
+0D49h Maxtor
+0D4Ah NF Corp
+0D4Bh Grape Systems Inc
+0D4Ch Tedas AG
+0D4Dh Coherent Inc
+0D4Eh Agere Systems Netherland BV
+0D4Fh EADS Airbus France
+0D50h Cleware GmbH
+0D51h Volex (Asia) Pte Ltd
+0D53h HMI Co Ltd
+0D54h Holon Corp
+0D55h ASKA Technologies Inc
+0D56h AVLAB Technology Inc
+0D57h Solomon Microtech Ltd
+0D5Ch Belkin
+0D5Eh Myacom Ltd
+0D5Fh CSI Inc
+0D60h IVL Technologies Ltd
+0D61h Meilu Electronics (Shenzhen) Co Ltd
+0D62h Darfon Electronics Corp
+0D63h Fritz Gegauf AG
+0D64h DXG Technology Corp
+0D65h KMJP Co Ltd
+0D66h TMT
+0D67h Advanet Inc
+0D68h Super Link Electronics Co Ltd
+0D69h NSI
+0D6Ah Megapower International Corp
+0D6Bh And-Or Logic
+0D70h Try Computer Co Ltd
+0D71h Hirakawa Hewtech Corp
+0D72h Winmate Communication Inc
+0D73h Hit's Communications Inc
+0D76h MFP Korea Inc
+0D77h Power Sentry/Newpoint
+0D78h Japan Distributor Corp
+0D7Ah MARX Datentechnik GmbH
+0D7Bh Wellco Technology Co Ltd
+0D7Ch Taiwan Line Tek Electronic Co Ltd
+0D7Dh Phison Electronics Corp
+0D7Eh American Computer & Digital Components
+0D7Fh Essential Reality LLC
+0D80h HR Silvine Electronics Inc
+0D81h TechnoVision
+0D83h Think Outside Inc
+0D89h Oz Software
+0D8Ah King Jim Co Ltd
+0D8Bh Ascom Telecommunications Ltd
+0D8Ch C-Media Electronics Inc
+0D8Dh Promotion & Display Technology Ltd
+0D8Eh Global Sun Technology Inc
+0D8Fh Pitney Bowes
+0D90h Sure-Fire Electrical Corp
+0D96h Skanhex Technology Inc? Traveler?
+0D97h Santa Barbara Instrument Group
+0D98h Mars Semiconductor Corp
+0D99h Trazer Technologies Inc
+0D9Ah RTX Telecom AS
+0D9Bh Tat Shing Electrical Co
+0D9Ch Chee Chen Hi-Technology Co Ltd
+0D9Dh Sanwa Supply Inc
+0D9Eh Avaya
+0D9Fh Powercom Co Ltd
+0DA0h Danger Research
+0DA1h Suzhou Peter's Precise Industrial Co Ltd
+0DA2h Land Instruments International Ltd
+0DA3h Nippon Electro-Sensory Devices Corp
+0DA4h Polar Electro OY
+0DA7h IOGear Inc
+0DA8h softDSP Co Ltd
+0DABh Cubig Group
+0DADh Westover Scientific
+0DB0h Micro-Star International Co Ltd
+0DB1h Wen Te Electronics Co Ltd
+0DB2h Shian Hwi Plug Parts Plastic Factory
+0DB3h Tekram Technology Co Ltd
+0DB4h Chung Fu Chen Yeh Enterprise Corp
+0DB7h Elcon Systemtechnik
+0DBEh Jiuh Shiuh Precision Industry Co Ltd
+0DBFh Quik Tech Solutions
+0DC0h Great Notions
+0DC1h Tamagawa Seiki Co Ltd
+0DC3h Athena Smartcard Solutions Inc
+0DC4h Macpower & Tytech Technology Co Ltd
+0DC5h SDK Co Ltd
+0DC6h Precision Squared Technology Corp
+0DC7h First Cable Line Inc
+0DCAh Ultra-Pocket?
+0DCBh DrivePod?
+0DCDh NetworkFab Corp
+0DD0h Access Solutions
+0DD1h Contek Electronics Co Ltd
+0DD2h Power Quotient International Co Ltd
+0DD3h MediaQ
+0DD4h Custom Engineering SPA
+0DD5h California Micro Devices
+0DD7h Kocom Co Ltd
+0DD8h Netac Technology Co Ltd
+0DD9h HighSpeed Surfing
+0DDAh Integrated Circuit Solution Inc
+0DDBh Tamarack Inc
+0DDDh Datelink Technology Co Ltd
+0DDEh Ubicom Inc
+0DE0h BD Consumer Healthcare
+0DEAh UTECH Electronic (DG) Co Ltd
+0DEDh Novasonics
+0DEEh Lifetime Memory Products
+0DEFh Full Rise Electronic Co Ltd
+0DF6h Sitecom Europe BV
+0DF7h Mobile Action Technology Inc
+0DF8h Hoya Computer
+0DFAh Toyo Communication Equipment Co Ltd
+0DFCh GeneralTouch Technology Co Ltd
+0E02h Doowon
+0E03h Nippon Systemware Co Ltd
+0E08h Winbest Technology Co Ltd
+0E0Ch Gesytec
+0E0Fh VMware?
+0E14h Hunter Engineering
+0E16h JMTek LLC
+0E17h Walex Electronic Ltd
+0E1Bh Crewave
+0E21h Cowon Systems Inc
+0E22h Symbian Ltd
+0E23h Liou Yuane International Ltd
+0E25h VinChip Systems Inc
+0E26h J-Phone East Co Ltd
+0E30h HeartMath LLC
+0E34h Micro Computer Control Corp
+0E35h 3Pea Technologies Inc
+0E36h TiePie Engineering
+0E38h Stratitec Inc
+0E39h Smart Modular Technologies Inc
+0E3Ah Neostar Technology Co Ltd
+0E3Bh Mansella Ltd
+0E41h Line6 Inc
+0E42h Puretek Industrial
+0E44h Sun-Riseful Technology Co Ltd
+0E46h Delphi
+0E48h Julia Corp Ltd
+0E4Ah Shenzhen Bao Hing Wire & Cable Mfg Co
+0E4Ch Radica Games Ltd
+0E55h Speed Dragon Multimedia Ltd
+0E56h Kingston Technology Co Inc
+0E5Ah Active Co Ltd
+0E5Bh Union Power Info Industrial Co Ltd
+0E5Ch Bitland Information Technology Co Ltd
+0E5Dh Neltron Industrial Co Ltd
+0E60h Fujitsu?
+0E66h Hawking
+0E67h Fossil Inc
+0E6Ah Megawin Technology Co Ltd
+0E70h Tokyo Electronic Industry Co Ltd
+0E72h Hsi-Chin Electronics Co Ltd
+0E75h TVS Electronics Ltd
+0E79h Archos Inc
+0E7Bh On-Tech Industry Co Ltd
+0E7Eh Gmate Inc
+0E82h Ching Tai Electric Wire & Cable Co Ltd
+0E83h Shin An Wire & Cable Co
+0E87h Internet Security Co Ltd?
+0E8Ah FinePoint?
+0E8Bh Kao Shin Precision Industry
+0E8Ch Well Force Electronic Co Ltd
+0E8Dh MediaTek Inc
+0E8Fh GreenAsia Inc
+0E90h WiebeTech LLC
+0E91h VTech Engineering Canada Ltd
+0E92h C's Glory Enterprise Co Ltd
+0E93h eM Technics Co Ltd
+0E95h Future Technology Co Ltd
+0E96h Aplux Communications Ltd
+0E97h Fingerworks Inc
+0E98h Advanced Analogic Technologies Inc
+0E99h Parallel Dice Co Ltd
+0E9Ah Ta Hsing Industries Ltd
+0E9Bh ADTEC Corp
+0E9Ch Streamzap Inc
+0E9Fh Tamura Corp
+0EA0h Ours Technology Inc
+0EA6h Nihon Computer Co Ltd
+0EA7h MSL Enterprises Corp
+0EA8h CenDyne Inc
+0EADh Humax Co Ltd
+0EB0h NovaTech
+0EB1h WIS Technology Inc
+0EB2h Y-S Electronic Co Ltd
+0EB3h Saint Technology Corp
+0EB6h GamePark?
+0EB7h Endor AG
+0EBAh IWOW Connections Pte Ltd (iTegno)
+0EBEh VWeb Corp
+0EBFh Omega Technology of Taiwan Inc
+0EC0h LHI Technology (China) Co Ltd
+0EC1h Abit Computer Corp
+0EC2h Sweetray Industrial Ltd
+0EC3h Axell Co Ltd
+0EC4h Ballracing Developments Ltd
+0EC5h GT Information System Co Ltd
+0EC6h InnoVISION Multimedia Ltd
+0EC7h Theta Link Corp
+0ECDh Lite-On IT Corp
+0ECEh TaiSol Electronics Co Ltd
+0ECFh Phogenix Imaging LLC
+0ED1h WinMaxGroup
+0ED2h Kyoto Micro Computer Co Ltd
+0ED3h Wing-Tech Enterprise Co Ltd
+0ED5h Fiberbyte
+0EDAh Noriake Itron Corp
+0EDFh e-MDT Co Ltd
+0EE0h Shima Seiki Mfg Ltd
+0EE1h Sarotech Co Ltd
+0EE2h AMI Semiconductor Inc
+0EE3h ComTrue Technology Corp
+0EE4h Sunrich Technology Ltd
+0EEEh Digital Stream Technology Inc
+0EEFh D-Wav Scientific Co Ltd
+0EF0h Hitachi Cable Ltd
+0EF1h Aichi Micro Intelligent Corp
+0EF2h I/O Magic Corp
+0EF3h Lynn Products Inc
+0EF4h DSI Datotech
+0EF5h PointChips
+0EF6h Yield Microelectronics Corp
+0EF7h SM Tech Co Ltd (Tulip Computers Int'l)
+0EFDh Oasis Semiconductor
+0EFEh Wem Technology Inc
+0F06h Visual Frontier Enterprise Co Ltd
+0F08h CSL Wire & Plug (Shen Zhen) Co
+0F0Bh GCC?
+0F0Ch CAS Corp
+0F0Dh Hori Co Ltd
+0F0Eh Energy Full Corp
+0F12h Mars Engineering Corp
+0F13h Acetek Technology Co Ltd
+0F19h Oracom Co Ltd
+0F1Bh Onset Computer Corp
+0F1Ch Funai Electric Co Ltd
+0F1Dh Iwill Corp
+0F20h Gennum Corp
+0F21h IOI Technology Corp
+0F22h Senior Industries Inc
+0F23h Leader Tech Mfg Co Ltd
+0F24h Flex-P Industries Snd Bhd
+0F2Dh ViPower Inc
+0F2Eh Good Man Corp? Geniality Maple Tech?
+0F2Fh Priva Design Services
+0F30h Jess Technology Co Ltd
+0F31h Chrysalis Development
+0F32h YFC-BonEagle Electric Co Ltd
+0F37h Kokuyo Co Ltd
+0F38h Nien-Yi Industrial Corp
+0F3Dh Airprime Inc
+0F41h RDC Semiconductor Co Ltd
+0F42h Nital Consulting Services Inc
+0F44h Polhemus
+0F4Bh St John Technology Co Ltd
+0F4Ch WorldWide Cable Opto Corp
+0F4Dh Microtune Inc
+0F4Eh Freedom Scientific
+0F52h Wing Kei Electrical Co Ltd
+0F53h Taiyo Cable (Dongguan) Co Ltd
+0F54h Kawai Musical Instruments Mfg Co Ltd
+0F55h AmbiCom Inc
+0F5Ch Prairiecomm Inc
+0F5Dh NewAge International LLC
+0F5Fh Key Technology Corp
+0F60h NTK Ltd
+0F61h Varian Inc
+0F62h Acrox Technologies Co Ltd
+0F68h Tepco Uquest Ltd? Kobe Steel Ltd?
+0F69h Dionex Corp
+0F6Ah Vibren Technologies Inc
+0F6Eh Intelligent Systems
+0F73h DFI
+0F7Ch DQ Technology Inc
+0F7Dh NetBotz Inc
+0F7Eh Fluke Corp
+0F88h VTech Holdings Ltd
+0F8Bh Yazaki Corp
+0F8Ch Young Generation International Corp
+0F8Dh Uniwill Computer Corp
+0F8Eh Kingnet Technology Co Ltd
+0F8Fh Soma Networks
+0F97h CviLux Corp
+0F98h CyberBank Corp
+0F9Ch Hyun Won Inc
+0F9Eh Lucent Technologies
+0FA3h Starconn Electronic Co Ltd
+0FA4h ATL Technology
+0FA5h Sotec Co Ltd
+0FA7h Epox Computer Co Ltd
+0FA8h Logic Controls Inc
+0FAFh Winpoint Electronic Corp
+0FB0h Haurtian Wire & Cable Co Ltd
+0FB1h Inclose Design Inc
+0FB2h Conteck Co Ltd? Juan-Chern Ind Co?
+0FB8h Wistron Corp
+0FB9h AACom Corp
+0FBAh San Shing Electronics Co Ltd
+0FBBh Bitwise Systems Inc
+0FC1h Mitac Internatinal Corp
+0FC2h Plug & Jack Industrial Inc
+0FC5h Delcom Engineering
+0FC6h Dataplus Supplies Inc
+0FCAh Research In Motion Ltd
+0FCEh Sony Ericsson Mobile Communications AB
+0FCFh Dynastream Innovations Inc
+0FD0h Tulip Computers BV
+0FD1h Giant Electronics Ltd
+0FD4h Tenovis GmbH & Co KG
+0FD5h Direct Access Technology Inc
+0FDCh Micro Plus
+0FDEh Oregon Scientific?
+0FE4h IN-Tech Electronics Ltd
+0FE5h Greenconn (USA) Inc
+0FE9h DVICO
+0FEAh United Computer Accessories
+0FEBh CRS Electronic Co Ltd
+0FECh UMC Electronics Co Ltd
+0FEDh Access Co Ltd
+0FEEh Xsido Corp
+0FEFh MJ Research Inc
+0FF6h Core Valley Co Ltd
+0FF7h Chi Shing Computer Accessories Co Ltd
+0FFFh Aopen Inc
+1000h Speed Tech Corp
+1001h Ritronics Components (S) Pte Ltd
+1003h Sigma Corp
+1004h LG Electronics Inc
+1005h Apacer Technology Inc
+1006h iRiver Ltd
+1009h Lumanate Inc? Emuzed Inc?
+100Ah AV Chaseway Ltd
+100Bh Chou Chin Industrial Co Ltd
+100Dh Netopia Inc
+1010h Fukuda Denshi Co Ltd
+1011h Mobile Media Tech
+1012h SDKM Fibres Wires & Cables Berhad
+1013h TST-Touchless Sensor Technology AG
+1014h Densitron Technologies PLC
+1015h Softronics Pty Ltd
+1016h Xiamen Hung's Enterprise Co Ltd
+1017h Speedy Industrial Supplies Pte Ltd
+1019h Elitegroup Computer (ECS)? I-Buddie?
+1020h Labtec
+1022h Shinko Shoji Co Ltd
+1025h Hyper-Paltek
+1026h Newly Corp
+1027h Time Domain
+1028h Inovys Corp
+1029h Atlantic Coast Telesys
+102Ah Ramos Technology Co Ltd
+102Bh Infotronic America Inc
+102Ch Etoms Electronics Corp
+102Dh Winic Corp
+1031h Comax Technology Inc
+1032h C-One Technology Corp
+1033h Nucam Corp
+1038h Ideazon Inc
+1039h Devolo AG
+1043h iCreate Technologies Corp
+1044h Chu Yuen Enterprise Co Ltd
+1046h Winbond Electronics Corp
+1048h Targus Group International
+104Ch AMCO TEC International Inc
+1053h Immanuel Electronics Co Ltd
+1054h BMS International Beheer NV
+1055h Complex Micro Interconnection Co Ltd
+1056h Hsin Chen Ent Co Ltd
+1057h ON Semiconductor
+1058h Western Digital Technologies Inc
+1059h Giesecke & Devrient GmbH
+105Ch Freeway Cable? Hong Ji Cable?
+105Dh Delkin Devices Inc
+105Eh Valence Semiconductor Design Ltd
+105Fh Chin Shong Enterprise Co Ltd
+1060h Easthome Industrial Co Ltd
+1063h Motorola Electronics Taiwan Ltd
+1065h CCYU Technology
+106Ah Loyal Legend Ltd
+106Ch Curitel Communications Inc
+106Dh San Chieh Mfg Ltd
+106Eh ConectL
+106Fh Money Controls
+1076h GCT Semiconductor Inc
+107Dh Arlec Australia Ltd
+107Eh Midoriya Electric Co Ltd
+107Fh KidzMouse Inc
+1082h Shin-Etsukaken Co Ltd
+1083h Canon Electronics Inc
+1084h Pantech Co Ltd
+108Ah Chloride Power Protection
+108Bh Grand-tek Technology Co Ltd
+108Ch Robert Bosch GmbH
+108Eh Lotes Co Ltd
+1099h Surface Optics Corp
+109Ah DataSoft Systems GmbH
+109Fh eSOL Co Ltd
+10A0h Hirotech Inc
+10A3h Mitsubishi Materials Corp
+10A9h SK Teletech Co Ltd
+10AAh Cables To Go
+10ABh USI Co Ltd
+10ACh Honeywell Inc
+10AEh Princeton Technology Corp
+10AFh Liebert Corp
+10B5h Comodo (PLX?)
+10B8h DiBcom
+10BBh TM Technology Inc
+10BCh Dinging Technology Co Ltd
+10BDh TMT Technology Inc
+10BFh SmartHome
+10C4h Silicon Labs Inc? Cygnal Integrated?
+10C5h Sanei Electric Inc
+10C6h Intec Inc
+10CBh Eratech
+10CCh GBM Connector Co Ltd
+10CDh Kycon Inc
+10CEh Silicon Labs
+10CFh Velleman Components Inc
+10D1h Hottinger Baldwin Measurement
+10D4h Man Boon Mfg Ltd
+10D5h Uni Class Technology Co Ltd
+10D6h Actions Semiconductor Co Ltd
+10DEh Authenex Inc
+10DFh In-Win Development Inc
+10E0h Post-Op Video Inc
+10E1h CablePlus Ltd
+10E2h Nada Electronics Ltd
+10ECh Vast Technologies Inc
+10FBh Pictos Technologies Inc
+10FDh Anubis Electronics Ltd
+1100h VirTouch Ltd
+1101h EasyPass Industrial Co Ltd
+1108h Brightcom Technologies Ltd
+110Ah MOXA Technologies
+1110h Analog Dvcs Canada Ltd (Allied Telesyn)
+1111h Pandora International Ltd
+1112h YM Electric Co Ltd
+1113h Medion AG
+111Eh VSO Electric Co Ltd
+112Eh Master Hill Electric Wire & Cable Co Ltd
+112Fh Cellon International Inc
+1130h Tenx Technology Inc
+1131h Integrated System Solution Corp
+1132h Toshiba Corp Digital Media Equipment
+113Ch Arin Tech Co Ltd
+113Dh Mapower Electronics Co Ltd
+113Fh Testech
+1141h V One Multimedia Pte Ltd
+1142h CyberScan Technologies Inc
+1145h Japan Radio Co
+1146h Shimane Sanyo Electric Co Ltd
+1147h Ever Great Electric Wire & Cable Co Ltd
+114Bh Sphairon Access Systems GmbH
+114Ch Tinius Olsen Testing Machine Co Inc
+114Dh Alpha Imaging Technology Corp
+115Bh Salix Technology Co Ltd
+1162h Secugen Corp
+1163h DeLorme Publishing Inc
+1164h YUAN High-Tech Development Co Ltd
+1165h Telson Electronics Co Ltd
+1166h Bantam Interactive Technologies
+1167h Salient Systems Corp
+1168h BizConn International Corp
+116Eh Gigastorage Corp
+116Fh Silicon 10 Technology Corp
+1175h Sheng Yih Technologies Co Ltd
+117Dh Santa Electronic Inc
+117Eh JNC Inc
+1182h Venture Corp Ltd
+1183h Compaq Computer Corp (Digital Dream?)
+1184h Kyocera Elco Corp
+1188h Bloomberg LP
+1189h Trisat Industrial? Acer Comm?
+118Fh You Yang Technology Co Ltd
+1190h Tripace
+1191h Loyalty Founder Enterprise Co Ltd
+1196h Yankee Robotics LLC
+1197h Technoimagia Co Ltd
+1198h StarShine Technology Corp
+1199h Sierra Wireless Inc
+119Ah Dong Guan Jalink Co? Zhan Qi Co?
+119Bh ruwido austria GmbH
+11A0h Chipcon AS
+11A3h Technovas Co Ltd
+11AAh GlobalMedia Group LLC
+11ABh Exito Electronics Co Ltd
+11AFh Valence Semiconductor
+11B0h ATECH Flash Technology
+11B1h New Motion Tec
+11C0h Sanmos Microelectronics
+11C8h Fullcom Technology
+11C9h Monster Cable Products
+11CFh Nemoto Kyorindo
+11D6h FujiFilm Axia
+11DBh Topfield Co Ltd
+11E5h CHUFON Technology
+11E6h KI Technology Co Ltd
+11E7h Rockford
+11E8h NAAT Technology
+11E9h Wincan Technology
+11EAh PAN RAM International
+11EBh VTech Innovation LP dba Adv Amer Teleph
+11ECh Hitachi Computer Peripherals
+11EFh Cableplus Industrial
+11F5h Siemens Mobile Phones
+11F6h Prolific
+11F7h Alcatel
+1202h Kuk Je Tong Shin
+1209h InterBiometrics
+120Eh Hudson Soft Co Ltd
+1217h Goyatek Technology
+1218h Geutebrueck GmbH
+1219h Compal Communications Inc
+121Eh Jungsoft Co Ltd
+1223h SkyCable Enterprise Co Ltd
+1229h EPO Science & Technology
+122Fh Takasic
+1230h Chipidea-Microelectronica SA
+1231h Che Mei Communication Systems
+123Bh De La Rue Systems Automatizacao
+123Ch K-Won C & C
+1241h Belkin? Holtek?
+1242h MAC System
+124Ah AirVast Technology
+124Bh NYKO Technologies Inc (Honey Bee)
+1251h Iwaya
+1252h Nextway
+1253h Erebus
+125Ah Shintake Sangyo
+125Fh A-DATA Technology Co Ltd
+1261h All Ring Tech
+1262h Micro Vision
+1263h Opti Japan
+1264h Covidien Energy-based Devices
+1267h Logic3 / SpectraVideo plc
+126Bh Veridian Systems
+126Ch Aristocrat Technologies
+126Dh Bel Stewart
+126Eh Strobe Data Inc
+126Fh TwinMOS Technologies Inc
+1270h Procomp Informatics
+1271h Foxda Technology Industrial (Shenzhen)
+1272h Linear Technology
+1275h Xaxero Marine Software Engineering Ltd
+1280h Animeta Systems
+1281h Gean Sen Electronic Co Ltd
+1286h Marvell Semiconductor Inc
+1291h Flarion Technologies
+1292h Innomedia
+1293h Belkin Components
+1294h Riso Kagaku Corp
+129Bh CyberTAN Technology
+129Ch Min Aik Technology
+129Dh Yueqing Longhua Electronics Factory
+12A3h Kent World
+12A4h Guangdong Matsunichi Communications Tech
+12A7h Trendchip Technologies Corp
+12ABh Honey Bee Electronic International Ltd
+12ADh Asahi Seiko
+12B2h Dickson Co
+12B3h Megaforce Co
+12B8h Zhejiang Xinya Electronic Technology
+12B9h Freehand Systems
+12BAh Sony Computer Entertainment America
+12BDh Sun Light Application
+12C9h Newmen Technology
+12D1h Huawei Technologies
+12D2h Line Tech Industrial Co Ltd
+12D7h Better Wire Factory Co Ltd
+12D8h Araneus Information Systems Oy
+12D9h DigitFab International
+12DDh Alec Electronics
+12DEh National Display Systems
+12E4h Bruel & Kjaer Sound & Vibration Meas A/S
+12E9h Mindspeed Technologies
+12EFh Tapwave Inc
+12F4h Glovic Electronics
+12F5h Dynamic System Electronics Corp
+12F7h Memorex Products Inc
+12F9h RF-Link Systems
+12FAh RF Micro Devices
+12FDh AIN Comm Technology Co Ltd
+12FEh EU Connector (M) SDN BHD
+1306h Torcon Instruments
+1307h USBest Technology? Transcend Info?
+1310h Roper
+1312h ICS Electronics
+1317h PC-Craft
+1318h O'Rite Technology
+131Dh Natural Point
+131Fh Ayuttha Technology
+1323h Zeustech Co
+1324h H-Mod
+1329h Appairent Technologies
+132Ah Envara
+132Bh Konica Minolta Holdings Inc
+132Ch Le Prestique International (HK)
+133Bh Flash Support Group
+133Ch G-Design Technology
+1342h Mobility
+1345h Sino Lite Technology
+1348h Katsuragawa Electric Co Ltd
+134Eh Digby's Bitpile Inc DBA D Bit
+1356h Techpoint Electric Wire & Cable
+135Bh M-System
+136Ah Pelco
+136Bh SimpleTech (STEC)
+136Ch Datastor Technology
+1370h Swissbit AG
+1371h Dick Smith Electronics
+1374h American Anko
+1375h TCL Mobile Communication
+1376h Vimtron Electronics Co Ltd
+137Ch Yaskawa Electric
+137Dh Pericom Taiwan
+137Eh XL Microwave
+1385h Netgear Inc
+1389h Coolnection Technology
+1390h TomTom BV
+1395h Sennheiser Communications A/S
+1396h Silicon Storage Technology
+1398h Q-tec
+13A4h Equipment Systems & Devices
+13A5h Sammy
+13A6h Jeppesen Sanderson
+13A8h Grandtec Electronic
+13ADh Baltech
+13B0h Alesis? PerkinElmer Optoelectronics?
+13B1h Cisco-Linksys LLC
+13B2h ALESIS
+13B3h Nippon Dics Co Ltd
+13B8h PDM Electronic
+13BEh Ricoh Printing? Hitachi Printing?
+13BFh Accusys
+13C0h Stream Labs
+13C1h Vivitar
+13C9h LinearX Systems
+13CAh JyeTai Precision Industrial Co Ltd
+13CBh JTEK Technology
+13CCh Cellvic
+13CFh Wisair Ltd
+13D1h A-Max Tech Macao Commercial Offshore Co
+13D2h Shark Multimedia
+13D3h AzureWave? IMC Networks? TwinHan?
+13DCh Alereon Inc
+13DDh i.Tech Dynamic Ltd
+13DEh Lankom Electronics
+13DFh Good Fancy Enterprise
+13E0h Taiwan Silicon Electronics
+13E1h Kaibo Wire & Cable (Shenzhen) Co Ltd
+13E6h TechnoScope Co Ltd
+13EAh I/F - COM A/S
+13F4h Verisity Design
+13F6h Aspen Touch Solutions
+13F7h CoreValley
+13F8h EZPnP Technologies
+13FDh Initio Corp
+13FEh Phison Electronics? Kingston Tech?
+13FFh ViewCon Electronic
+1400h Axxion Group Corp
+1401h Fulhua Microelectronics
+1402h Bowe Bell & Howell
+1403h Sitronix Technology
+140Eh Telechips Inc
+1410h Novatel Wireless Inc
+1415h Sony Europe? Nam Tai (OmniVision)?
+1419h Ability Enterprise Co Ltd
+141Ah Realm Systems
+141Bh MetraWare
+141Ch Leviton Mfg
+1421h Sensor Technologies America
+1429h Vega Tech Industrial (Austria) Co
+1430h RedOctane
+1431h Pertech Resources Inc
+1434h Comart System
+1435h Wistron NeWeb Corp
+1436h Denali Software Inc
+1438h My3ia (Beijing) Technology
+1439h Wind River Systems
+143Ah CP Technologies
+143Ch Altek Corp
+1442h Canadian Bank Note Co
+1445h Juster
+1453h Radio Shack
+1455h Georgia Technology
+1456h Extending Wire & Cable Co Ltd
+1457h First International Computer Inc
+1459h Shanghai Simax Micro-electronics
+145Bh Lead-Type Precision Electronics
+145Eh Forschungszentrum Karlsruhe GmbH
+1461h Staccato Communications
+1462h Micro Star Int'l? Bright Computech?
+1463h BBWM
+1464h Asiamajor
+146Dh Progeny
+146Eh ClearOne Communications
+146Fh Unity Electrical Ind
+1470h StarRiver Technology
+1472h Hangzhou Huawei-3Com Tech Co Ltd
+1473h Dingo
+147Ah Formosa Industrial Computing Inc
+147Fh Hama GmbH & Co KG
+1484h Elsa AG
+1485h OrangeWare? Silicom?
+1487h DSP Group Ltd
+148Eh Evatronix SA
+148Fh Ralink Technology Corp
+1497h Panstrong Co Ltd
+149Ah Imagination Technologies
+14AAh AVerMedia (again) or C&E
+14ADh CTK Corp
+14AEh Printronix Inc
+14AFh ATP Electronics Inc
+14B0h StarTech.Com Ltd
+14B2h Atheros Communications Inc
+14C0h Rockwell Automation Inc
+14C2h Gemlight Computer Ltd
+14CDh Moai Electronics Corp? Super Top?
+14D8h Jamer Industries Co Ltd
+14DDh Raritan Computer Inc
+14E5h SAIN Information & Communications Co Ltd
+14EAh Planex Communications
+14EDh Shure Inc
+14FFh Twinhead International
+1500h Ellisys
+1501h Pine-Tum Enterprise Co Ltd
+1513h Hypercom
+1516h Skymedi Corp? CompUSA?
+1518h Cheshire Engineering Corp
+151Ch VeriSilicon Holdings Co Ltd
+1520h Bitwire Corp
+1524h ENE Technology Inc
+1527h Silicon Portals
+1529h Ubiquam Co Ltd
+152Dh JMicron Technology Corp
+152Eh Hitachi-LG Data Storage Inc (HLDS)
+1532h Razer USA Ltd
+1546h U-Blox AG
+154Bh PNY Technologies Inc
+154Dh ConnectCounty Holdings Berhad
+154Eh D & M Holdings Inc
+1554h Prolink Microsystems Corp
+1557h OQO
+1568h Sunf Pu Technology Co Ltd
+156Fh Quantum Corp
+1570h Alltop Technology Co Ltd
+157Bh Ketron SRL
+157Eh U-MEDIA Communications Inc? TRENDNet?
+1582h Fiberline
+1587h SMA Technologie AG
+158Dh Oakley Inc
+1598h Kunshan Guoji Electronics Co Ltd
+15A2h Freescale Semiconductor Inc
+15A8h Teams Power Ltd
+15AAh Gearway Electronics (Dong Guan) Co Ltd
+15BAh Olimex Ltd
+15C2h SoundGraph Inc
+15C6h Laboratoires MXM
+15C9h D-Box Technologies
+15CAh Textech International Ltd
+15D5h Coulomb Electronics Ltd
+15DCh Hynix Semiconductor Inc
+15E0h Seong Ji Industrial Co Ltd
+15E1h RSA
+15E8h SohoWare
+15E9h Pacific Digital Corp
+15ECh Belcarra Technologies Corp
+15F4h HanfTek
+1604h Tascam
+1606h UMAX Computer Corp
+1608h Inside Out Networks
+160Dh Samtec
+1619h L & K Precision Technology Co Ltd
+1621h Wionics Research
+1628h Stonestreet One Inc
+162Ah Airgo Networks Inc
+162Fh WiQuest Communications Inc
+1631h Focus Enhancements? Good Way Tech?
+1645h Entrega
+164Ah ChipX
+1657h Struck Innovative Systeme GmbH
+1660h Creatix Polymedia GmbH
+1668h Actiontec Electronics Inc
+1669h PiKRON Ltd
+1679h Total Phase
+1682h Maxwise Production Enterprise Ltd
+1684h Godspeed Computer Corp
+1686h ZOOM Corp
+1687h Kingmax Digital Inc
+168Ch Atheros Communications
+1690h Askey Computer Corp
+1696h Hitachi Video & Information Systems Inc
+1697h VTec Test Inc
+16A5h Shenzhen Zhengerya Cable Co Ltd
+16ABh Global Sun Technology
+16ACh Dongguan ChingLung Wire & Cable Co Ltd
+16C0h VOTI
+16CCh Silex Technology Inc
+16D3h Frontline Test Equipment Inc
+16D5h AnyDATA Corp
+16D8h CMOTECH Co Ltd
+16DFh King Billion Electronics Co Ltd
+16F5h Futurelogic Inc
+1706h BlueView Technologies Inc
+1707h ARTIMI
+170Dh Avnera
+1733h Cellink Technology Co Ltd
+1736h Canon Imaging System Technologies Inc
+1737h Hong Kong Appl Science? LinkSys?
+1740h Senao
+1743h General Atomics
+174Ch ASMedia Technology Inc
+174Fh Syntek
+1759h LucidPort Technology Inc
+1772h System Level Solutions Inc
+1781h Multiple Vendors
+1782h Spreadtrum Communications Inc
+1784h TopSeed Technology Corp
+1788h ShenZhen Litkconn Technology Co Ltd
+1796h Printrex Inc
+1797h Jalco Co Ltd
+17A5h Advanced Connection Technology Inc
+17A7h Micomsoft Co Ltd
+17B3h Grey Innovation
+17C3h Singim International Corp
+17CFh Hip Hing Cable & Plug Mfy Ltd
+17D0h Sanford LP
+17D3h Korea Techtron Co Ltd
+17E9h DisplayLink? Newnham Research?
+17EBh Cornice Inc
+17EFh Lenovo
+17F5h KK Rocky
+17F6h Unicomp Inc
+1822h Twinhan
+1829h Suzhou YuQiu Technology Co Ltd
+1831h Gwo Jinn Industries Co Ltd
+1832h Huizhou Shenghua Industrial Co Ltd
+1854h Memory Devices Ltd
+185Bh Compro
+1861h Tech Technology Industrial Co
+1862h Teridian Semiconductor Corp
+1871h Aveo Technology Corp
+187Fh Siano Mobile Silicon Ltd
+1894h SyntheSys Research Inc? Topseed?
+1897h Evertop Wire Cable Co
+18B6h Mikkon Technology Ltd
+18B7h Zotek Electronic Co Ltd
+18C5h AMIT
+18D5h Starline International Group Ltd
+18D9h Kaba
+18E3h Fitipower Integrated Technology Inc
+18E8h Qcom
+18EAh Matrox Graphics Inc
+18FDh FineArch Inc
+190Dh Motorola GSG
+1914h Alco Digital Devices Ltd
+1915h Nordic Semiconductor ASA? Linksys?
+1919h Pixelworks
+192Fh Avago Technologies Pte
+1930h Shenzhen Xianhe Technology Co Ltd
+1931h Ningbo Broad Telecommunication Co Ltd
+1949h Lab126
+1951h Hyperstone AG
+1953h Ironkey Inc
+1954h Radiient Technologies
+195Dh Itron Technology iONE
+1967h Casio Hitachi Mobile Comm Co Ltd
+196Bh Wispro Technology Inc
+1970h Dane-Elec Corp USA
+1975h Dongguan Guneetal Wire & Cable Co Ltd
+1976h Chipsbrand Microelectronics (HK) Co Ltd
+1977h T-Logic
+1989h Nuconn Technology Corp
+198Dh Fairchild Imaging
+198Fh Beceem Communications Inc
+1990h Acron Precision Industrial Co Ltd
+1995h Trillium Technology Pty Ltd
+199Ch Richtek Technology Corp
+199Eh The Imaging Source Europe GmbH
+199Fh Benica Corp
+19A8h Biforst Technology Inc
+19AFh S Life
+19B5h B & W Group
+19B6h Infotech Logistic LLC
+19CAh Mindtribe
+19CFh Parrot SA
+19E1h WeiDuan Electronic Accessory (SZ) Co Ltd
+19E8h Industrial Technology Research Institute
+19EFh Pak Heng Technology (Shenzhen) Co Ltd
+19FFh Best Buy
+1A08h Bellwood International Inc
+1A0Ah USB-IF non-workshop
+1A12h KES Co Ltd
+1A25h Amphenol East Asia Ltd
+1A2Ah Seagate Branded Solutions
+1A35h Astec Power (Emerson Network Power)
+1A36h Biwin Technology Ltd
+1A40h Terminus Technology Inc
+1A41h Action Electronics Co Ltd
+1A4Ah Silicon Image
+1A4Bh SafeBoot International BV
+1A61h Abbott Diabetes Care
+1A6Ah Spansion Inc
+1A6Dh SamYoung Electronics Co Ltd
+1A6Eh Global Unichip Corp
+1A6Fh Sagem Orga GmbH
+1A79h Bayer Health Care LLC
+1A7Bh Lumberg Connect GmbH & Co KG
+1A82h Proconn Technology Co Ltd
+1A89h Dynalith Systems Co Ltd
+1A8Bh SGS Taiwan Ltd
+1A98h Leica Camera AG
+1AA4h Data Drive Thru Inc
+1AA5h UBeacon Technologies Inc
+1AA6h eFortune Technology Corp
+1AAEh Johnson Component & Equipments Co Ltd
+1ACBh Salcomp Plc
+1AD1h Desay Wire Co Ltd
+1AE4h ic-design Reinhard Gottinger GmbH
+1AEDh High Top Precision Electronic Co Ltd
+1AEEh Dongguan Chang'an Jinxia Rex Elect Fact
+1AEFh Conntech Electronic (Suzhou) Corp
+1B04h Meilhaus Electronic GmbH
+1B1Ch Corsair Memory Inc
+1B20h MStar Semiconductor Inc
+1B22h WiLinx Corp
+1B26h Cellex Power Products Inc
+1B27h Current Electronics Inc
+1B28h NAVIsis Inc
+1B32h Ugobe Life Forms Inc
+1B36h ViXS Systems Inc
+1B3Fh Generalplus Technology Inc
+1B47h Energizer Holdings Inc
+1B48h Plastron Precision Co Ltd
+1B59h KS Terminals Inc
+1B5Ah Chao Zhou Kai Yuan Electric Co Ltd
+1B65h Hong Kong Standards & Testing Centre Ltd
+1B72h Atergi Technology Co Ltd
+1B76h Legend Silicon Corp
+1B86h Dongguan Guanshang Electronics Co Ltd
+1B88h ShenMing Electron (Dong Guan) Co Ltd
+1B8Ch Altium Ltd
+1B8Dh e-MOVE Technology Co Ltd
+1B8Eh Amlogic Inc
+1B8Fh MA Labs Inc
+1B98h YMax Communications Corp
+1B99h Shenzhen Yuanchuan Electronic
+1BA1h Jinq Chern Enterprise Co Ltd
+1BA2h Lite Metals & Plastic (Shenzhen) Co Ltd
+1BA4h Ember Corp
+1BA8h China Telecommunication Technology Labs
+1BADh Harmonix Music
+1BBBh T & A Mobile Phones
+1BC4h Ford Motor Co
+1BC5h AVIXE Technology (China) Ltd
+1BCEh Contac Cable Industrial Ltd
+1BCFh Sunplus Innovation Technology Inc
+1BD0h Hangzhou Riyue Electronic Co Ltd
+1BDEh P-Two Industries Inc
+1BEFh Shenzhen Tongyuan Ntwk-Comm Cables Co
+1BF0h RealVision Inc
+1BF5h Extranet Systems Inc
+1BF6h Orient Semiconductor Electronics Ltd
+1C02h Kreton Corp
+1C04h QNAP System Inc
+1C0Dh Relm Wireless
+1C10h Lanterra Industrial Co Ltd
+1C13h Alectronic Ltd
+1C1Ah Datel Electronics Ltd
+1C1Bh Volkswagen of America Inc
+1C1Fh Goldvish SA
+1C20h Fuji Electric Device Technology Co Ltd
+1C21h ADDMM LLC
+1C22h Zhongshan Chiang Yu Electric Co Ltd
+1C26h Shanghai Haiying Electronics Co Ltd
+1C27h HuiYang D & S Cable Co Ltd
+1C31h LS Cable Ltd
+1C37h Authorizer Technologies Inc
+1C3Dh Nonin Medical Inc
+1C3Eh Wep Peripherals
+1C49h Cherng Weei Technology Corp
+1C6Bh Philips & Lite-ON Digital Solutions Corp
+1C6Ch Skydigital Inc
+1C77h Kaetat Industrial Co Ltd
+1C78h Datascope Corp
+1C79h Unigen Corp
+1C7Ah LighTuning Technology Inc
+1C7Bh Luxshare Precision Ind (Shenzhen) Co Ltd
+1C87h 2N Telekomunikace AS
+1C88h Somagic Inc
+1C89h Hongkong Weidida Electron Ltd
+1C8Eh Astron International Corp
+1C98h Alpine Electronics Inc
+1CA0h ACCARIO Inc
+1CA1h Symwave Inc
+1CB3h Aces Electronic Co Ltd
+1CB4h Opex Corp
+1CBEh Luminary Micro Inc
+1CBFh Fortat Skymark Industrial Co
+1CC0h PlantSense
+1CCAh NextWave Broadband Inc
+1CCDh Bodatong Technology (Shenzhen) Co Ltd
+1CD4h adp corp
+1CD5h Firecomms Ltd
+1CD6h Antonio Precise Products Mfg Ltd
+1CDEh Telecom Technology Association (TTA)
+1CDFh WonTen Technology Co Ltd
+1CE0h Edimax Technology Co Ltd
+1CE1h Amphenol KAE
+1CFCh Andes Technology Corp
+1CFDh Flextronics Digital Design Japan Ltd
+1D08h Ningbo Hentek Dragon Electronics Co Ltd
+1D09h TechFaith Wireless Technology Ltd
+1D0Ah Johnson Controls Inc (Automotive Unit)
+1D0Bh Han Hua Cable & Wire Tech (JX) Co Ltd
+1D0Dh TDK Media?
+1D14h Alpha-Sat Technology Ltd
+1D1Fh Diostech Co Ltd
+1D20h Samtack Inc
+1D29h Horng Tong Enterprise Co Ltd
+1D31h Xintronix Ltd
+1D42h Dragon Joy Ltd
+1D43h Montage Technology Inc
+1D44h Adirondack Digital Imaging Systems Inc
+1D45h Qisda Corp
+1D46h nSys Design Systems
+1D48h Shenzhen XinYonghui Precise Tech Co Ltd
+1D49h Shenzhen Linkconn Electronics Co Ltd
+1D4Dh Pegatron Corp
+1D4Eh Inphi Corp
+1D4Fh Advanced Chip Express Inc
+1D50h OpenMoko Inc
+1D5Ch Fresco Logic Inc
+1D5Dh Qixing Industrial (HK) Co
+1D5Fh ViVOtech Inc
+1D60h Aslink (HK) Precision Co Ltd
+1D69h Walta Electronic Co Ltd
+1D6Ah Aricent Technologies (Holdings) Ltd
+1D6Bh Linux Foundation
+1D71h Finisar Corp
+1D76h LongCheng Electronic & Comm Co Ltd
+1D77h Yueqing Changling Elect Instrument Corp
+1D78h Cambridge Semiconductor Ltd
+1D79h Shenzhen My-Power Technology Co Ltd
+1D7Ah Shinwa International Holdings Ltd
+1D7Fh Ecrio
+1D80h PLDA
+1D81h YongXin Plastic & Hardware Co Ltd
+1D84h Kechenda Plastic Electronic Factory
+1D85h Ningbo Shunsheng Comm Apparatus Co Ltd
+1D8Ch Wuxi AlphaScale IC Systems Inc
+1D9Eh CSR Inc
+1D9Fh Kunming Electronics Co Ltd
+1DA0h Parade Technologies Inc
+1E1Dh Kanguru?
+1E3Dh Chipsbank?
+1EBBh NuCORE Technology Inc
+2001h D-Link Corp
+2008h Hisun?
+2019h Planex
+2040h Hauppauge Computer Works Inc
+2101h ActionStar
+2162h Creative?
+2222h MacAlly
+2233h RadioShack Corp
+22B8h Motorola MDS
+22B9h eTurboTouch Technology Inc
+22BAh Technology Innovation Holdings Ltd
+2304h Pinnacle Systems Inc
+2318h Shining Technologies Inc
+2375h Digit@lway Inc
+2406h SANHO Digital Electronics Co Ltd
+2478h Tripp-Lite
+2632h TwinMOS
+2645h Lead Data
+2650h Electronics For Imaging Inc
+2730h Citizen
+2735h DigitalWay
+2770h NHJ Ltd
+2899h Toptronic Industrial Co Ltd
+2C02h Planex Communications
+2FB2h Fujitsu Ltd
+3125h Eagletron
+3176h Whanam Electronics Co Ltd
+3275h VidzMedia Pte Ltd
+3334h AEI
+3340h Yakumo
+3504h Micro Star
+3538h Power Quotient International Co Ltd
+3579h DIVA
+3636h InVibro
+3838h WEM
+3923h National Instruments Corp
+40BBh I-O Data
+4101h i-rocks
+4102h iRiver Ltd
+413Ch Dell Computer Corp
+4146h USBest Technology
+4242h USB Design by Example
+4348h WinChipHead
+4572h Shuttle Inc
+4586h Panram
+4670h EMS Production
+4766h Aceeca
+4855h Memorex
+4971h STECH?
+5000h Genesys Logic Inc
+5032h Grandtec
+5041h Linksys?
+5173h Sweex
+5345h Owon
+544Dh Transmeta Corp
+5543h UC-Logic Technology Corp
+5555h KeyFive?
+55AAh OnSpec Electronic Inc
+5A57h Zinwell
+5E04h Sagem?
+6189h Sitecom
+6253h TwinHan Technology Co Ltd
+636Ch CoreLogic Inc
+6400h Springer Design
+6547h Arkmicro Technologies Inc
+6666h Prototype Product Vendor ID
+6891h 3Com
+6993h Freshtel
+6A75h Shanghai Jujo Electronics Co Ltd
+7104h CME (Central Music Co)
+8086h Intel Corp
+8192h TwinMOS?
+8341h EGO Systems Inc
+9016h Sitecom
+9710h Moschip Semiconductor Technology
+A727h 3Com
+C251h Keil Software Inc
+D209h Ultimarc?
+EB1Ah eMPIA Technology Inc
+F003h Hewlett Packard (Misprogrammed)
+FEDAh D-Link?
+FFFFh USB Diagnostic Dvc? Illegal Vendor ID?

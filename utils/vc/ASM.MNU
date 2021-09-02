@@ -1,0 +1,5 @@
+F1:	Compile
+	tasm /w0/m9 !;
+	tlink /t !;
+F2:	Edit
+	edit !.!

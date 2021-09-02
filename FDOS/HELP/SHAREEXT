@@ -1,0 +1,556 @@
+		  
+		  MS-DOS SHARE Extender, V2.0
+		(C), by Gennady S. Kolesnik, 1995
+			FIDO: 2:467/60.2
+
+*************************************************************
+*   Please, read this document carefully before using the   *
+*                       SHARE Extender.                     *
+*************************************************************
+
+			   Contents
+
+1. Licence Agreement                                        2
+2. What is this program for?                                3
+3. How Does this Program Work?                              4
+4. Changed and Added Features                               5
+5. Command Line Options                                     6
+6. Extender's Application Programs Interface (API)          7
+7. Internal Data Area					   10
+7. Error messages                                          11 
+8. Control Panel                                           12
+9. Control Panel Error Messages                            13
+10.Running SHARE Extender Under Multitasking Environments  14
+11.Running SHARE Extender on Networks			   15
+
+			- 2 -
+
+		  Licence Agreement
+
+This program is distributed under the terms of GNU General Public
+Licence, as published by the Free Software Foundation.
+
+This program is distributed "as is". This means that author(s)
+are not responsible for any problems, caused by usage of this 
+program. You may use it on your own risk, if you want, or not.
+
+If you are not ready to follow the agreement, described above,
+you must stop to use this program.
+
+			- 3 -
+
+		What is this program for?
+
+It is known that DOS is a single-task operating system. This
+means that only one program may operate at the current moment.
+When only one task works at the same time, there are no problems
+sharing resources, particularly, file system. But there are some
+cases when this is not true. The first case is the network 
+environment, when several workstations share one file server and
+may refer to the same file simultaneously. The second case is 
+the multitasking environment, like Microsoft Windows or DesqView, 
+that allow to run several DOS applications simultaneously.
+
+DOS 3.1+ provides the solution of this problem. It has special 
+TSR, called SHARE, that provides file system sharing and file 
+locking. This is really the solution of the problem, but only 
+when programs are specially designed to work on shared file sys-
+tem.
+
+When the file is open in the compatibility mode (like there is no 
+SHARE program installed), SHARE denies all concurent references to 
+the file, even if it is open for reading only. That is why you 
+cannot run more than one copy of, for example, Norton Commander 
+under MS Windows 386 Enchanced mode, if you have SHARE installed 
+in your system. This program allows you to overcome this problem 
+changing the access mode to the file your application opens. 
+Using the SHARE Extender you will have no problems running stan-
+dard (non-network) DOS applications on shared file systems.
+
+			- 4 -
+
+		How does this program work?
+
+SHARE Extender intercepts the DOS interface interrupt (21h) and 
+checks, what DOS function is called. It proceeds the 3Dh DOS 
+function (open file via file handle) and 6Ch (extended open, 
+DOS 4.0+). When the file is open in the Compatibility mode for
+reading, SHARE Extender changes the access mode to DENY WRITE.
+This means that no other process may write this file while it is 
+open, but any other process may read it. If the file is open
+for writing, SHARE Extender opens it in DENY ALL mode. When 
+application opens a file in the shared mode, SHARE Extender makes no 
+changes and program works in the same way as there is no SHARE
+Extender. These are default values that are set when SHARE 
+Extender starts, but you can than change them with the SHEXTCTL 
+program to any desired mode (see the "Control Panel" chapter of this 
+manual for more detailes). You can also turn SHARE Extender off and 
+than on if you experience compatibility problems.
+
+Unfortunately, it is impossible to change the access mode when 
+the file is open via FCB - DOS always opens it in compatibility 
+mode. But since FCB is a very rarely used technique, this is not 
+an important lack.
+
+It is also important that access mode may not be changed if the file
+is open by "creat" DOS calls (3Ch, 5Ah, 5Bh) because DOS always 
+opens just created files in compatibility mode.
+
+When SHARE Extender starts, it checks whether SHARE was installed
+via INT 2Fh, AX=1000h and stays resident only if SHARE has been 
+found. If it is OK to install, it also intercepts the interrupt 
+2Fh with multiplex number 81h. If SHAREEXT was installed, call to 
+INT 2Fh, AX=8100h would return the value of 0FFh in the AL register. 
+This is used to prevent reentrancy and installation check.
+
+SHARE Extender may be loaded into the High Memory Area (HMA) if working
+under DOS 5.0+ with an Expanded Memory Manager (EMM386, QEMM, etc) 
+with DOS LOADHI command. The amount of memory it uses, depends on
+number of disk drives in your system and is about 1K.
+
+			- 5 -
+			
+		Changed and Added Features
+			
+Some new interface features have been added (see "Extender's API"). 
+Version 2.0 allows to specify different sharing modes masks for 
+each disk drive. When application opens file in COMPATIBILITY mode, 
+Extender is looking for the drive letter in the file path string. 
+If no drive letter specified, Extender assumes it's a current drive. 
+Than Extender determins the sharing mode mask for this drive and 
+changes the sharing mode of the file. By default, DENY WRITE and 
+DENY ALL modes are assumed for all drives for read-only and read-
+write files.
+
+Because of the feature described above some API functions have 
+changed and added. Old API calls operate in approximately the same 
+way for compatibility, but work now with current drive (see 
+"Extender's Application Programs Interface" for detailes.)
+
+This version also may uninstall itself from memory even if some 
+programs that intercept interrupts vectors 21h and 2Fh have been
+run after Extender, when running with the "-t" command line option 
+(see "Command Line Options" for details). This became possible 
+because of the new technique of interrupts vectors interception 
+used. This new technique is called "Always-On-Top" because it 
+guarantees that interrupts vectors always point to the Extender's 
+handlers, even if other program intercepts these vectors.
+
+This technique works only if other programs access interrupts 
+vectors table with standard way, using 35h and 25h DOS calls and 
+change them using standard scheme (see "Compatibility Problems" 
+for details).
+
+			- 6 -
+
+		Command Line Options
+
+There are three command line options used by SHARE Extender. Two 
+of them are the same as in previous versions (1.x) - the "/?" 
+option displays the help screen, the "/u" uninstalls Extender from
+memory. The third one, "/t", is used at strartup to force "Always-
+On-Top" interrupts vectors interception technique, that gives more
+flexibility when uninstalling Extender from memory. Probably, you'd
+like to use this option always, except of seldom used ill-behaved
+TSRs. Run Extender without "/t" option only if if you experience
+problems with unloading TSRs, started after SHARE Extender. 
+
+			- 7 -
+
+		   Extender's API
+
+SHARE Extender provides 6 service functions, available via inter-
+rupt 2Fh. Their interface is described above.
+
+For all functions the extender multiplex number must be specified 
+in AH. By default, this number is equal 81h. AL contains the 
+function number. Usage of other registers depends on function to 
+be called.
+
+AL=00h - Get Extender's Info and Installation Check
+Output:
+	AX=0FFFFh if installed,
+	DL=1 if extended service is supported, 0 otherwise,
+	ES - resident block segment address (used to uninstall),
+	BL - read-only sharing mode bit mask,
+	BH - read-write sharing mode bit mask,
+*       CL - Extender's main version number (2 of 2.0),
+*       CH - Extender's subversion number (0 of 2.0).
+
+Note: CX register returns version number starting with version 
+2.0. This feature is not available in previous versions.
+
+This function must be called first in any application, that uses 
+any Extended Shared File System Service (ESFSS). If contents of 
+AL register is not equal to 0FFh after call, neither of ESFSS 
+functions should be used. If application is version-dependant, 
+it must check the contents of AH register after call. If AH=0FFh, 
+CX register contains ESFSS version number as described above. Do 
+not trust values less than 200h if AH contains the multiplex 
+number instead of 0FFh - you're using ESFSS version 1.x. This is 
+the reason why it is not recommended to use 0FFh as multiplex 
+number.
+
+
+AL=01h - switch extended service support
+Input:
+	BL=1 to turn extended service ON, 0 - to turn OFF.
+	CH=0FFh - change the multiplex number,
+	CL - new multiplex number.
+Output: none.
+
+This function turns ESFSS On/Off. When Extender starts, ESFSS is
+ON by default. Application may turn it OFF if experiences compa-
+tibility problems and restore ESFSS mode before quit. Use Fn's 0
+DL output register to get current state.
+
+			- 8 -
+
+Function 01h may be used to avoid multiplex numbers conflicts if
+you are using another program that intercepts interrupt 2Fh using
+multiplex number 81h, same as SHARE Extender. In this case you 
+may try to change extender's multiplex number before running a
+concurrent program. Note, that you must return the multiplex 
+number back to 81h before you uninstall extender.
+
+
+AL=02h - Set global read-only files sharing mode
+Input:
+	BL - sharing mode
+Output: none.
+
+AL=03h - Set global read-write files sharing mode
+Input:
+	BL - sharing mode
+Output: none
+
+Functions 2 and 3 change files sharing modes for all drives in
+the system. They are fully compatible with version 1.x calls.
+Note, that calls to these functions will cancel individual drives
+settings.
+
+
+AL=04h - Set read-only files sharing mode
+	(version 2.x only)
+Input:
+	BH - drive (0-A:, 1-B:, etc.)
+	BL - sharing mode
+Output:
+	CF=0 - call completed successfully
+	CF=1 - error, AX contains DOS error code
+
+
+AL=05h - Set read-write files sharing mode
+	(version 2.x only)
+Input:
+	BH - drive (0-A:, 1-B:, etc.)
+	BL - sharing mode
+Output:
+	CF=0 - call completed successfully
+	CF=1 - error, AX contains DOS error code
+
+Functions 4 and 5 have been added to version 2.0. They allow to
+set sharing modes for each drive independantly.
+
+Register BL in functions 2-5 will be ORed with file open mode 
+byte when calling to DOS 3Dh and 6Ch DOS calls if open mode 
+byte is less that 0Fh.
+
+			- 9 -
+
+AL=06h - Get sharing mode for the specified drive 
+	(version 2.x only)
+Input:
+	BH - drive (0-A:, 1-B:, etc)
+Output:
+	CF=0 - call completed successfully, 
+		AL - read-only files sharing mode
+		AH - read-write files sharing mode
+	CF=1 - error, AX contains DOS error code
+
+
+AL=07h - Get/set "Always-On-Top" vectors interception strategy 
+	(version 2.x only)
+Input:
+	BX - strategy code:
+		0 - no change, return current state
+		1 - turn "Always-On-Top" technique OFF
+		2 - turn "Always-On-Top" technique ON
+Output:
+	CF=0 - call completed successfully.
+	CF=1, AX contains DOS error code.
+
+Function 07h may be used to control "Always-On-Top" vectors
+interception technique. When Extender is running with "/t" com-
+mand line option, or after AL=06h, BX=2h call has been perform-
+ed, DOS functions 25h and 35h are processed by Extender's hand-
+ler. When another program attempts to intercept interrupts vec-
+tors, used by Extender, they call DOS function 35h to get cur-
+rent interrupt's handler address. When "Always-On-Top" is ON, 
+DOS call 35h returns the address of previous interrupt handler 
+instead of the current and DOS call 25h changes Extender's internal 
+variable instead of the interrupt vector. This causes interrupts 
+vectors always point to the Extender's handlers, that call all other
+interrupt handlers. When "Always-On-Top" mode is OFF, Extender
+performs vectors interception using standard technique.
+
+"Always-On-Top" technique is quite useful, allowing TSRs to un-
+install in random order. You may unload SHARE Extender at any time
+even if other TSRs intercepted 21h and 2Fh vectors after it. It
+doesn't prevent other TSRs to unload, if they have been loaded
+after Extender.
+
+"Always-On-Top" technique is useless when other programs access
+interrupts table directly, not using DOS calls. If you use such
+TSRs, you must load them before Extender or do not use "Always-
+On-Top" technique.
+
+			- 10 -
+
+		   Internal Data Area
+
+You may get a pointer to internal data area using function 0
+"Get Extender's Info and Installation Check". ES register con-
+tains the segment address of the Extender's PSP. Your applica-
+tion may reach the Extender's internal data according to the
+following table (offsets are given relatively to the PSP (ES)):
+
+ ADDR SIZE  NAME
+ 0103  10   Signature (NULL-terminated)
+ 010E   2   Version (Low byte - main version, high - subversion)
+ 0110   1   Multiplex Number
+ 0111   4   Original INT 21h handler address
+ 0115   4   Original INT 2Fh handler address
+ 0119   1   Mode (1 when ESFSS is ON, 0 otherwise)
+ 011C   1   Always-On-Top (1 when Always-On-Top mode is ON)
+ 011D   1   Drives table size (number of disk drives)
+ 011E   2   Drives table offset (relatively to PSP)
+
+Drives table is an array of descriptors, each of them determines
+the sharing mode for each drive in the system. Descriptor is a
+two-bytes structure, where the first byte determines sharing mode
+for read-only files (open for reading only, not with READONLY
+attribute set) and the second byte determines sharing mode for
+files, open for both reading and writing. Values, specified in
+these structures than ORed with the sharing modes, specified in
+DOS Open and DOS Extended Open calls if files are open in the
+COMPATIBILITY mode.
+
+Note that this data area became documented first only in version
+2.0 and quite different from version 1.x.
+ 
+			- 11 -
+
+		    Error Messages.
+
+As it was described above, there are several cases, when SHARE 
+Extender cannot be used. Messages, printed by SHARE Extender, 
+completely describe the situation.
+
+"SHARE extended service installed." - this means that every-
+thing is fine and SHAREEXT has been successfully installed 
+residently.
+
+"SHARE extended service uninstalled." - this means that SHARE 
+Extender has been successfully removed from memory.
+
+"SHARE extended service not installed." - you're trying to 
+uninstall SHARE extender before it has been loaded.
+
+"SHARE not installed." - when SHARE program is not installed, 
+it is obsolete to use the SHARE Extender. SHAREEXT determines 
+this using the DOS multiplex interrupt (2Fh) with AX=1000h 
+(SHARE installation check (see Ralph Brown's Interrupts List, 
+V1.5)). Install the SHARE program and run SHAREEXT again.
+
+"SHARE extended service already installed." - SHARE Extender 
+has found itself installed via Installation check function 
+(INT 2Fh, AX=8100h). If you're sure that you haven't installed 
+SHARE Extender, this message may be caused with multiplex num-
+bers conflict with another TSR, loaded before SHARE Extender. 
+Try to change TSRs loading order until this message disappears.
+
+"Incorrect DOS version." - The first DOS version that provided 
+SHARE program was 3.10. That is why SHARE Extender doesn't run 
+on older versions. Since Extender proceeds DOS 6Ch call, first
+appeared in DOS 4.0, ESFSS is not available in older DOS versi-
+ons.
+
+"AT or PS/2 compatible computer required." - SHARE Extender 
+uses 286 CPU commands set, that is why it will not run on XTs 
+and PS/2 models 25 and 30.
+
+"Wrong command line option specified." - you've specified com-
+mand line option other than "-?", "-T" or "-U".
+
+"Not safe to uninstall." - you've probably loaded another prog-
+ram that intercepts interrupt vectors 21h or 2Fh. Restoring 
+these vectors may turn other programs off - that is why extender 
+does not uninstall itself. First stop the programs, that inter-
+cepted vectors 21h and 2Fh and than uninstall SHARE Extender.
+If you got this message running Extender with "/T" command line
+option, you've probably met an ill-behaved TSR, that intercepts
+interrupts vectors directly modifying interrupts table. Try to
+change TSRs loading order.
+
+"Wrong ESFSS version." - you've tried to uninstall ESFSS using
+Extender of version, other than loaded.
+
+			- 12 -
+
+		    Control Panel.
+
+There is a special program to control SHARE Extender from the 
+DOS command line. It is called "SHARE Extender Control Panel". 
+To run it just type at the DOS command prompt:
+
+	SHEXTCTL <command line options>
+
+The list of command options is specified below. 
+
+	/? or /H        - display help screen
+	/ON             - turn extended service support ON 
+			  (default)
+	/OFF            - turn extended service support OFF
+	/I              - display current extended service 
+			  support system status
+	/MUX=num        - specify the current multiplex number
+	/SETMUX=num     - change multiplex number
+	/DRIVE=drive    - set drive to process
+	/RPAT=value     - set read-only acccess sharing mode
+	/WPAT=value     - set read-write access sharing mode
+	
+	<value> is a bit field that determines a sharing mode:
+	
+	Sharing Modes:
+		COMPAT    - compatibility mode (no change)
+		EXCLUSIVE - deny read/write (exclusive)  
+		DENYALL   - same as EXCLUSIVE
+		DENYWRITE - deny write                   
+		DENYREAD  - deny read                    
+		DENYNONE  - deny none                    
+
+Note that options are proceeded sequentilly from the left to the 
+right. This means, that if you type option A before option B, 
+at the moment when option A is proceeding, option B hasn't been 
+proceeded yet. You must note this when you use a multiplex num-
+ber other than default (81h). That is why you must specify the 
+/MUX option BEFORE any other option, that forces calls to SHARE 
+Extender's API functions. You may also specify several options 
+simultaneously.
+
+Multiplex numbers may be specified in both decimal and hexadecimal
+forms. Add the 'H' character at the end for hexadecimal form. 
+
+When no drive specified in the "/DRIVE" option, "/RPAT" and 
+"/WPAT" options change settings for all drives present in the
+system. If the "/DRIVE" option specified, these options change
+settings for the specified drive only. To make the "/DRIVE" option
+to take effect, specify it BEFORE "/RPAT" and "/WPAT" options.
+
+Command line is not case-sensitive.
+
+			- 13 -
+
+		Control Panel Error Messages.
+
+You will probably meet some error messages specifying command line 
+options. They are described below:
+
+"Error: Invalid command line option:" - you've specified a command
+line option other than listed above in the previous chapter.
+
+"Error: SHARE extender does not respond." - you've tried to call 
+SHARE extender when it hasn't been loaded or used wrong multiplex
+number. Make sure that you've loaded Extender and used correct
+multiplex number. This error message may also be caused with multi-
+plex numbers conflict. If you're sure that you're doing everything
+right, check what TSRs are loaded after SHARE Extender. Try to find
+TSR that intercepts 2Fh interrupt vector with the same multiplex
+number. Switch SHARE Extender to another multiplex number before 
+loading such program.
+
+"Error: Invalid multiplex number:" - you've specified a multiplex 
+number less than 80h, or greater than 0FFh, or have used non-numeric 
+characters (multiplex numbers 00..79h are reserved for DOS).
+
+"Error: Invalid sharing mode:" - you've specified sharing mode other 
+than listed above, in the previous chapter. You may specify only 
+"COMPAT", "EXCLUSIVE", "DENYWRITE", "DENYREAD" or "DENYNONE" sharing 
+modes when using "/RPAT" and "/WPAT" options.
+
+"Error: EFSSS Ver.1.x doesn't support the "/DRIVE" option." - you've
+specified the "/DRIVE" option using ESFSS ver 1.x. Version 1.x doesn't
+support separate settings for different drives.
+
+"Error: Invalid drive specified: " - you've specified the disk drive 
+in the "/DRIVE" option that is not present on your system.
+
+			 - 14 -
+
+	Running SHARE Extender Under Multitasking Environments.
+
+MS Windows reports that SHARE installed via SHARE Installation Check
+even if it hasn't been installed actually (I don't know is it a bug
+or feature). But Windows doesn't emulate SHARE (one can run several 
+copies of Norton Commander 3.0 when SHARE not installed and can't 
+when it is present). That is why SHAREEXT shouldn't run from the DOS 
+window if you are not sure that SHARE has been installed before 
+Windows has started. But it is OK to run it before Windows.
+
+Since Windows DOS sessions are not isolated one from another, changes
+in one DOS session apply another one.
+
+I've found no problems running SHARE Extender under DesqView 2.42, 
+but this is the only version I've tried. I don't expect problems 
+under other versions, but there are no guaranties.
+
+You may run SHARE Extender in the OS/2 DOS box. Settings do not 
+infuence other DOS boxes.
+
+			- 15 -
+
+	   Running SHARE Extender on Networks
+
+DOS-based networks.
+
+It is strongly recommended to run SHARE Extender on all DOS-based
+servers, such as Windows for Workgroups, Lantastic, PC-NET, Netware
+Lite, Personal Netware, etc. because all of them require SHARE and 
+often open non-network applications files in the COMPATIBILITY mode. 
+Try to start the same application at several workstations simultaneously
+and if you experience problems running it load SHARE Extender on
+the server.
+
+Novell Netware.
+
+If you run Windows or DesqView on the Novell Netware workstation
+you need SHARE installed. File server correctly processes network
+drives, but not local drives. There must be different loading order
+dependantly on the workstation shell used.
+
+If you use NETx.COM shell, you must specify your last local drive
+in the LASTDRIVE variable in your CONFIG.SYS file. Network shell
+adjusts this value after it attaches the workstation to server and
+when mapping network drives after login. SHARE Extender determines
+the size of its own drives table using LASTDRIVE setting. That is
+why you must start SHARE Extender AFTER your workstation is logged
+in to network.
+
+ODI shell (Netware 3.12 or Personal Netware) doesn't change the
+LASTDRIVE value after login, so SHARE Extender may be started at
+any time.
+
+Windows for Workgroups.
+
+If you map your network drives from Windows, you must assign the
+last possible drive letter to the LASTDRIVE variable in your
+CONFIG.SYS file. If your computer doesn't share its resources, 
+you may load SHARE Extender after NET START WORKSTATION command.
+
+Banyan Vines.
+
+Banyan Vines shell is incompatible with SHARE, so there's no sence
+to run SHARE Extender on the workstation. You may try to avoid 
+problems specifying COMPATIBILITY mode for network drives at the
+SHARE Extender's Control Panel command line.

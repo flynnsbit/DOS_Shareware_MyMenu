@@ -1,0 +1,19 @@
+Significant changes:
+--------------------
+
+08-07-2000: Full support to mp3 files that contain ID3 tag v2.
+            Now, they are played correctly.           
+
+20-06-2000: Song search engine
+
+14-06-2000: Now you can play the samples without have to play any mp3.
+            Improved the parameter recognizing from the command line,
+            now accept Winamp filelists and lots of files (*.*).
+            Jgmod library is used to play modules.
+            Others....
+
+26-05-2000: Talkover Sampler in SAMPLES.INI to trigger samples with the keys
+	    ALT + N§ while mp3 playing
+
+20-05-2000: First Release
+

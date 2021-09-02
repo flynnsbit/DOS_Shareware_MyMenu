@@ -1,0 +1,5 @@
+DOSUSB
+
+DOSUSB is an opensource driver for some USB controllers.
+Currently it can only work with UHCI controllers, thus USB 1.1
+There's no support for USB 2.0 and USB3.0 yet

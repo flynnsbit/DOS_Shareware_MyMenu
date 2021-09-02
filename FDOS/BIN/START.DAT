@@ -1,0 +1,80 @@
+; This is the Start extension definition file.
+; MODIFY AS YOU WISH  -- ONLY IF YOU KNOW WHAT YOU ARE DOING.
+
+[DEFAULT]
+Program=Edit
+
+[C]
+Program=edit
+Description=C Source File
+
+[CPP]
+Program=edit
+Description=C++ Source File
+
+[H]
+Program=edit
+Description=Header File
+
+[HPP]
+Program=edit
+Description=Header File
+
+[BAS]
+Program=bwbasic
+Description=BASIC Source File
+
+[TXT]
+Program=Edit
+Description=Text file
+
+[INI]
+Program=Edit
+Description=INI file
+
+[BAT]
+Program=Edit
+Description=Batch file
+
+[SYS]
+Program=devload
+Description=System file
+
+[HLP]
+Program=Help
+Description=Help file
+
+[PAS]
+Program=edit
+Description=Pascal source file
+
+[ASM]
+Program=Edit
+Description=Assembler source file
+
+[LSM]
+Program=Edit
+Description=Linux Software Map file
+
+[PL]
+Program=perl
+Description=Perl script
+
+[PY]
+Program=pythond
+Description=Python script
+
+[REX]
+Program=rexx
+Description=REXX script
+
+[R]
+Program=brexx
+Description=Brexx script
+
+[LUA]
+Program=lua
+Description=Lua script
+
+; End of file marker below...do not remove.
+999

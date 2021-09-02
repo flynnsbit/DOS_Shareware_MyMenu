@@ -1,0 +1,15 @@
+Begin3
+Title:          FDSHIELD
+Version:        06aug2006
+Entered-date:   2016-05-19
+Description:    malware action blocker and warner, helps to reduce virus activity on your DOS
+Keywords:       freedos, vsafe, virus, shield
+Author:         Eric Auer eric -at- coli.uni-sb.de
+Maintained-by:  Eric Auer eric -at- coli.uni-sb.de
+Primary-site:          http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/fdshield.html
+Alternate-site: http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/fdshield/
+Platforms:      DOS
+Copying-policy: GNU General Public License, Version 2
+Defunct-Original-Site: http://www.coli.uni-sb.de/~eric/stuff/soft/specials/
+Defunct-Primary-Site:  http://www.coli.uni-sb.de/~eric/stuff/soft/specials/
+End

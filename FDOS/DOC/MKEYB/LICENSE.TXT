@@ -1,0 +1,8 @@
+FREE! OPEN! SOURCE! license
+
+This program and it's sources is distributed under the terms 
+of the GNU GPL with one major exception:
+
+you may use any exepacker you want to process the resulting 
+executable.
+

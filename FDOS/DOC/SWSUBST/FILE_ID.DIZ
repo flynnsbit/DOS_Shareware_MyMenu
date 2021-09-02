@@ -1,0 +1,9 @@
+SWSUBST: Alternate DOS-CDS manipulator v3.2 GPL
+replaces SUBST and JOIN
+The compiling requires:
+the message library release 3
+the supplemental library v2.7
+Makefile for:
+the DMake package patchlevel 2
+Target compilers:
+Borland C v3.1+

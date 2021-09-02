@@ -1,0 +1,13 @@
+2.0:Geáersiz parametre\r\n
+0.0:    SORT [/R] [/+num] [/A] [/?] [dosya]\r\n
+0.1:    /R    Ters sçralama\r\n
+# 0.2:    /N    Enable NLS support\r\n - removed 7/2004
+0.2:    /A    COUNTRY (Ålke) sçralamasç yerine ASCII kullan\r\n
+0.3:    /+num sçralamaya sÅtun numarasç ile baüla, 1 temelli\r\n
+0.4:    /?    yardçm\r\n
+2.1:NLS harmanlama tablosunun okunmasçnda hata\r\n
+2.2:ASCII sçralamasç kullançlçyor (eski DOS sÅrÅmÅ).\r\n
+2.3:SORT: dosya aáçlamadç 
+2.4: okumak iáin\r\n
+2.5:SORT: yetersiz bellek\r\n
+2.6:SORT: kayçtlarçn sayçsç azami deßeri aüçyor\r\n

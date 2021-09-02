@@ -1,0 +1,15 @@
+[Select]
+00=
+[Search]
+00=
+01=
+[List]
+00=filelist.bat
+01=%f\n
+[FindFile]
+00=*.*
+01=
+[Directory]
+00=240,0,0,C:\
+[Doskey]
+[.]

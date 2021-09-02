@@ -1,0 +1,24 @@
+Crush (drozerix_-_crush.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=179581
+Renamed to "CRUSH.XM" because of DOS 8-character limit
+
+Summary
+
+    drozerix_-_crush.xm is a XM format module.
+    Uploaded to modarchive.org on Mon 16th Jan 2017
+
+Info Info
+
+    Mod Archive ID: 179581
+    MD5: 1613a27c819396c6d4e74b426c21a36a
+    Format: XM
+    Channels: 18
+    Genre: Chiptune
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     Drozerix (https://modarchive.org/member.php?84702)

@@ -1,0 +1,9 @@
+Game: Descent 2 / Descent II
+Year: 1996
+Composed by: Johann Langlie, Brian Luzietti, Mark Morgan, Larry Peacock, Peter Rotter, Leslie Spitzer
+MIDI versions: GM
+Platform: DOS
+
+Additional info: The game contains twelve HMP files as well as CD audio tracks. However, MIDI tracks are completely different from CD audio tracks. There are also seven MIDI files which are the same as seven HMP files.
+
+https://www.karlsitretro.com/game_midi

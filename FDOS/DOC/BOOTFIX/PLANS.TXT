@@ -1,0 +1,7 @@
+- use different errorlevels for different events. For example:
+	0 all ok
+	1 no such drive or substed/networked drive
+	2 founded inconsistencies (using may be dangerous)
+	3 errors in command line
+
+- analyze boot sector from file and disk images.

@@ -1,0 +1,6 @@
+                      Frontier Developments present
+                           FRONTIER: ELITE II
+
+        Press  [Y]  to start game. By doing this you accept the terms
+         detailed in licence.txt. If you do not agree to these terms,
+                           press   [N]  to quit.

@@ -1,0 +1,9 @@
+Game: Death Gate
+Year: 1994
+Composed by: Eric Heberling
+MIDI versions: GM, FM, MT-32
+Platform: DOS
+
+Additional info: Original soundtrack is in XMI format. It consists of General MIDI, FM and MT-32 versions. General MIDI and MT-32 were converted without problems, but I'm not able to convert FM version, so I left it there just in the XMI format, which is playable in Winamp for instance.
+
+https://www.karlsitretro.com/game_midi

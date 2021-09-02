@@ -1,0 +1,8 @@
+Game: Tetris Classic
+Year: 1992
+Composed by: Paul Mogg
+MIDI versions: Adlib, GS, MT-32, PC Speaker, Tandy
+Platform: DOS
+
+
+https://www.karlsitretro.com/game_midi

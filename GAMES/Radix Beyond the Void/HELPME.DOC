@@ -1,0 +1,628 @@
+=============================================================================
+                           Radix: Beyond The Void
+                         Shareware Version 2.0 REMIX
+                On-Disk Troubleshooting and Technical Support
+
+                    (c) Copyright 1995 Epic MegaGames, Inc.
+=============================================================================
+
+To play Radix: Beyond The Void, you'll need at least:
+
+    * 486-33MHz or better CPU.
+    * VGA graphics.
+    * 4 megabytes of RAM.
+    * A 14,400 baud modem for modem play.
+
+Radix also supports:
+    
+    * Sound Blaster and 100% compatible sound cards.
+    * Gravis Ultrasound.
+    * Joystick or Gravis PC Gamepad.
+    * Mouse.
+
+We recommend the following to achieve the full Radix experience:
+
+   * Pentium 60 or faster computer
+   * Local bus VGA graphics
+   * 8+ MB of RAM (more is better)
+   * A Sound Blaster or 100% compatible sound card
+   * Mouse and keyboard controls
+   * A 14.4 or faster modem or an IPX network
+
+To play Radix for the first time, you must run the SETUP program.  This is
+accomplished by the following:
+
+1. Switch to the drive where the game is installed (C:)
+2. Switch to the subdirectory where the game is installed (CD\RADIX)
+3. Type SETUP.
+
+Please read the section "HOW TO SETUP RADIX" for exact information on
+setting up and configuring the game.  Once you have setup the game, you 
+can start playing by typing RADIX.
+
+NOTE:  You only need to run the setup program the first time you play, or
+anytime you wish to re-configure your settings.
+
+=============================================================================
+                             HOW TO SETUP RADIX
+=============================================================================
+
+****************************************************************************
+NOTE!: All descriptions marked with an asterik (*) are new to version 2.0 or
+are different from version 1.0, and are not described in the manual included
+with the registered version of this game.
+****************************************************************************
+
+Select Sound Card
+-----------------
+This option allows you to select the digital sound card to hear sound
+effects and music with in the game.  You can select from a list of sound
+cards.  If you do not have a sound card you can select none.  Otherwise
+select the card that you have. If you are unsure what your sound card type is
+or it's compatibility, then try selecting SoundBlaster(tm).
+
+Once you have selected the sound card that you have, you must fill in the
+base address, IRQ and DMA of our sound card.  The base address is the address
+the card is installed on.  Most of the time this will be 220.  The IRQ of
+most sound cards is either 7 or 5.  Most newer cards are set to 5, and old
+cards at 7.  If you are unsure of the settings try one of these.  The DMA is
+which DMA you want your sounds to play through.  Again if you are unsure,
+select 1.  Most of the defaults in these menus are set so that they should
+work on the majority of standard sound cards.
+
+Gravis Ultrasound(tm) owners should note that if you only have 256k memory
+on the GUS, you probably won't get all of the sounds effects.  This is
+because all of the sounds and music score can't fit in only 256k.
+
+Set Controller
+--------------
+When selecting a controller to play Radix, you have several choices.  You
+can use just the keyboard, the keyboard and the mouse or the keyboard with
+the joystick.  Select which combination you would like to use.  We HIGHLY
+recommend using the keyborad/mouse combination.
+
+Configure Controller
+--------------------
+You can configure each of the three controller types individually.  The
+keyboard, mouse and joystick can each be configured to act differently from
+their defaults.
+
+Configuring the Keyboard
+------------------------
+To configure the keyboard you can select which key performs each function.
+Certain keys are reserved and cannot be configured, examples are Tab,
+function keys, Esc, etc. Simply move down the menu to the function
+you want to change, press enter, and then you will be asked to hit the new
+key to be assigned to that function. The functions you can change include
+ship movement, weapon firing and activation, after burners, back view, the
+throttle keys and leveling.
+
+  *NEW* The PGUP and PGDN keys are no longer reserved keys in v2.0.  You
+        can use them for whatever function you wish.  The default
+        configuration still uses the PAGE keys for the view-size
+        changing, however.
+
+Configuring the Mouse
+---------------------
+Configuring the mouse is similar to configuring the keyboard. You assign
+different mouse buttons to perform different functions. Simply move the
+cursor down to the function you want to change, press ENTER, and select the
+new mouse button to perform that function.  Note that you must have your
+mouse driver installed to select new mouse functions. For an explanation of
+the "Leveling" and "Reverse Flight Controls" options, see the
+sections below labeled "Auto-Leveling" and "Reverse Flight Control"
+respectively.
+
+Configuring the Joystick
+------------------------
+The joystick configuration allows you to assign different buttons to
+different functions. It will support joysticks with up to four buttons such
+as the Gravis Gamepad(tm). For an explanation of the "Auto Leveling" and
+"Reverse Flight Controls" options, see the sections below labeled "Auto
+Leveling" and "Reverse Flight Control" respectively.
+
+Auto-Leveling
+-------------
+In Radix, you can configure the leveling key. This is a key that allows
+you to momentarily toggle the auto-leveling of the ship. The default setup is
+that the ship will NOT level out unless the leveling key is pressed.
+This setup is recommended for mouse and joystick control. There is also an
+option called "Auto Leveling," which when set to ON, will reverse the
+control so that the plane will always level out, but will NOT do so when
+you press the leveling button. This type of setup is recommended for gravis
+gamepad and keyboard control. The Auto-Leveling option can be toggled within
+the game using the F8 key.
+
+Reverse Flight Controls
+-----------------------
+For joystick and mouse support, there is an option to reverse the flight
+controls from the default flight simulator control (when you pull back on the
+joystick, the plane pitch goes up) to the reverse where the plane pitch will
+go down when pulling back on the joystick.  We recommend that you leave the
+Reverse Flight Controls option off, but it's a matter of personal preference.
+
+Configure Network/Modem
+-----------------------
+You must select this option if you plan on playing modem/null modem games.
+See the sections about Configuring Modem and Configuring Null Modem
+respectively.
+
+Configuring the Network
+-----------------------
+The only option you have under "Setting up Network" is changing the socket
+number that the game is running under.  The only reason you might want to
+change the socket is if there is a conflict with another network program.
+For instance you get an error "Cannot open network socket."  In this case
+everyone must go through and change the socket in the setup program.  Any
+hexadecimal number between 4000h and 7FFFh is OK.  If you don't know what
+hexadecimal is then a number between 4000 and 7999 is fine.  In most cases
+you won't have to change this number.
+
+Configuring the Modem
+---------------------
+First of all you have to fill in which Comm port your modem is on.  If you
+don't know, check your modem to see which one it's set to (your modem
+documentation should help you do this).  If you have an external modem and
+your mouse is on comm 1 then your modem is probably on comm 2 and vice-versa.
+
+Next select which speed you are going to run at.  We suggest running at
+38400.  The options you have are 19200 and 38400.  Don't worry about how fast
+your modem is, this is how fast your port is going to run.  You should have
+at least a 14,400 baud modem.  If you only have 9600 baud you can try with
+compression turned off but you may not have enough bandwidth to run Radix. 
+
+Most modems are already set correctly, so all you should really require in
+the way of an init string is ATZ.  You should turn on Error Correction and
+turn Data Compression of,f as doing so will help the game run smoother.
+
+NOTE:   For most modems, ATZ is a sufficient init string.
+        For USR Sportsters, AT &K0 seems to work best (data compression off)
+
+        If the standard ATZ init string does not work properly and you don't
+        know exactly how to set error correction and data compression, please
+        consult your modem's manual.
+
+There are two additional options you can select.  You can change the
+address and IRQ of your UART.  The only reason you would want to do this is
+if your BIOS does not register them correctly.  Most of the time you would
+only need to do this if you are running on COM3 or COM4.  Check your term
+program for these settings.
+
+Configuring null modem
+----------------------
+Null modem setup is very similar to modem setup.  You can select the Comm
+port and speed as well as the optional UART address and IRQ. 
+
+
+=============================================================================
+                         NOTES ON OPERATING SYSTEMS
+=============================================================================
+
+Running with Windows
+---------------------
+Radix does not work reliably under Windows 3.xx with sound on.  Please run
+SETUP from DOS and select "No Sound Card" under setup if you need to run
+Radix from Windows.  If you still have problems, exit Windows and run Radix
+from DOS.
+
+Radix should work under Windows 95 on most computers.  However, if you
+have any problems running under Windows 95, you'll have to run Radix from
+MS-DOS Mode instead.
+
+If you are running Radix through Windows, make sure you change the keyboard
+configuration in the options menu, so the ALT and Shift keys will not be used.
+Windows has specific uses for the Alt key that may interfere with the game.
+You may also disable these functions in Windows so that Radix can use these
+keys.
+
+Running with OS/2
+-----------------
+Though Radix may work reliably under OS/2 on some computers, we don't
+recommend this because it might result in the game locking up.  Please
+run Radix through DOS, instead.
+
+Multiplayer Note
+----------------
+When playing a multiplayer game of Radix, all players should be running
+Radix under the same operating system.  Running under different operating
+systems may cause timing conflicts and/or lock-ups.
+
+=============================================================================
+		      HOW TO BOOT YOUR COMPUTER CLEAN
+=============================================================================
+			    
+If you're having problems running Radix, you might be able to get it
+up and running by "Booting your computer clean."  By this, we mean starting
+your computer without loading all of the memory managers and device drivers
+that might interfere with the game.  It's a relatively simple process, so
+please bear with us.
+
+If you have DOS 5.0
+-------------------
+
+   Please skip this section if you have DOS 6.0 or later!
+
+   You need to create a "boot disk" to allow you to start your computer
+   without loading all the TSR's and memory managers that take away 
+   memory.  Here's how.
+
+   A. Put a blank disk in your A: drive and format it as a DOS disk.  (Don't
+      do this in your B: drive - it won't work!)  To do this, type the
+      following command:
+      
+      FORMAT A: /S
+
+   B.  Wait while your computer formats the disk.
+   C.  Label the disk "Boot Disk" and keep it handy.  You'll need this
+       disk whenever you want to start Radix.
+
+   Now, you can reboot your computer and play Radix:
+
+   A.  Put the boot disk in your A: drive.
+   B.  Restart your computer,  either by pressing CTRL-ALT-DELETE,  by
+       hitting your reset button,  or by turning it on.
+   C.  Wait while your computer boots from the boot disk.
+   D.  After a little while, your computer will stop and give you the A>
+       prompt.
+   E.  Now change to your hard disk by typing "C:".
+   F.  Go into the Radix directory by typing "CD \RADIX".
+   G.  Begin by typing "RADIX".
+
+If you have DOS 6.0 or later
+----------------------------
+
+MS-DOS 6.00 and greater has a special built-in function that makes it very
+easy to boot your computer clean.  When first booting your computer, MS-DOS
+will display the message "Starting MS-DOS...".  When you see this message,
+hit your F5 key.  This will bypass your AUTOEXEC.BAT and CONFIG.SYS thereby 
+allowing your computer to boot without memory managers and TSRs.
+
+Now change into the RADIX directory and begin the game.
+
+
+=============================================================================
+                        COMMON PROBLEMS AND SOLUTIONS
+=============================================================================
+
+General Problems
+----------------
+
+If the computer dumps you to the command line and gives you an error message,
+see the section below describing these messages.
+
+PROBLEM:  I can't seem to get ANYTHING on the screen.  I type Radix and the
+          system "hangs."  What now?
+SOLUTION: Make sure you have the system requirements mentioned earlier in
+          the manual. If you do, you may have TSR's that conflict with
+          Radix. Remove the TSR's and try running Radix with a "clean boot"
+          from a DOS diskette.  Also try running Radix without sound, to
+          determine if there is a sound-related conflict.
+
+PROBLEM:  Radix runs slowly on my 386 or 486 computer and sometimes gets
+          very "choppy."  What can I do?
+SOLUTION: Your computer or VGA card isn't as fast as the game would like.
+          You can speed up the game by changing the Detail setting to a
+          lower value and/or decreasing the view size (for full-screen mode)
+          by pressing the PAGE DOWN key.  Note that the Cockpit view causes
+          the greatest slowdown, so this view is only recommended on
+          fast (486-66 local bus or Pentium) computers.  Also see the
+          section near the end of this document called "OPTIMAL RUNNING."
+
+PROBLEM:  I can't find any way to recalibrate my joystick.  How do I do that?
+SOLUTION: The joystick will automatically prompt you to recalibrate if the
+          calibration is off, or if you do something which invalidates the
+          calibration (such as change joysticks from a gamepad to a flight
+          stick). If you must recalibrate though, you can hold the joystick
+          to one side during Radix's startup procedure - this should
+          "invalidate" the current calibration and force you to recalibrate
+          the joystick.
+
+PROBLEM:  My computer locks up or times out during modem games.
+SOLUTION: Here are a few possible causes and solutions:
+
+        1. Make sure both players are running under the same operating
+           system. If you experience problems under Windows, reboot into
+           a DOS session.
+
+        2. Make sure that "call waiting" is disabled. If the phone line
+           you are using has call waiting and receives an incoming call
+           while you are playing, you will be disconnected. To disable
+           call waiting, you can type *70 in front of the number you
+           are dialing (Note that only the "dialing" person can disable
+           call waiting.)
+
+        3. Your modem may not be fast enough to keep Radix in sync. Radix
+           requires a 14.4 connection or faster. 
+
+PROBLEM:  Radix fails to connect when using my null-modem cable.
+SOLUTION: Here is a checklist that may help:
+
+        1. Check the setup for null modem to make sure that the comm port
+           is set correctly.
+
+        2. Check to make sure that both players are using the same "port
+           speed" in the comm port setup, they must be the same!
+
+        3. If the comm port is on a non-standard IRQ or base address, make
+           sure those fields in the setup are filled in.
+
+        4. You can also try to connect in a term program.
+
+         - If you can communicate with the other player properly, then
+           you may want to try copying the port, speed, IRQ and base address
+           that the term program is using to Radix setup.
+
+         - NOTE: If you receive garbage from the other player, then you are
+           probably connected at two different port speeds.
+
+
+Sound Problems
+--------------
+
+PROBLEM:  When I start the game, I hear music for just a short time, but
+          then it cuts off.
+SOLUTION: You have chosen an incorrect soundcard IRQ.  Please re-run the 
+          setup program and verify your IRQ setting.  You may want to 
+          consult that manual that came with your soundcard for information
+          on figuring out the correct setting.  The most command IRQ settings
+          are 5 and 7.
+
+PROBLEM:  I don't here any sound at all when I play Radix.
+SOLUTION: During your sound card selection, you must have chosen an 
+          incorrect IRQ and/or DMA channel.  Please re-run the setup 
+          program and select the proper settings.  You may want to consult
+          your soundcard manual for details on figuring out the correct 
+          settings.
+
+PROBLEM:  When I run the program, it does not recognize my soundcard.
+SOLUTION: This problem can be caused by 1 of 3 things:
+
+       1. You may have selected the wrong soundcard IO port address.  You
+          must re-run the setup program and verify that you have selected 
+          the proper address.  You may want to consult your soundcard 
+          manual for details on figuring out the correct base address.
+          Also, if you are using a Sound Blaster 16 or Sound Blaster 
+          compatible card, please ensure that the proper drivers are loaded 
+          in your CONFIG.SYS and AUTOEXEC.BAT files.
+        
+       2. You have selected the wrong soundcard.  For instance, you may 
+          have selected a Sound Blaster 16 when you have a Gravis Ultrasound. 
+
+       3. If you are using a Sound Blaster clone, you must choose only the 
+          regular Sound Blaster as your soundcard in the setup program.  If 
+          this problem persists, your Sound Blaster clone may not be 100%
+          register level compatible.  
+
+PROBLEM:  I can only hear the sound effects.
+SOLUTION: If you are using a Gravis Ultrasound, you must have chosen an
+          improper sound card IRQ.  Please, re-run the setup program and 
+          verify your IRQ.  You may want to consult your soundcard manual
+          for information on figuring out the correct settings.
+
+          If you are not using a Gravis Ultrasound, you must have your 
+          Music Volume turned down too low.  Use the in-game option to
+          increase your Music Volume.
+
+PROBLEM:  I hear music, but it skips like a broken record.
+SOLUTION: Sometimes this proble occurs on slower systems running in
+          Windows 95.  Try rebooting into an MS-DOS MODE to correct the
+          problem.
+
+=============================================================================
+			     SOUND CARD NOTES
+=============================================================================
+
+   Since new models of sound cards are always being manufactured and revised,
+   sometimes a new sound card will come out that's not compatible with
+   Radix.  To determine whether you are having a sound-related conflict,
+   try setting up Radix for "No Sound Card" or run Radix by typing:
+
+        RADIX -NOSOUND
+
+   If Radix works without sound, but locks up with sound on, chances are that
+   you are having a sound-related conflict.
+
+   Here's how to contact the top sound card makers for information about
+   sound card problems and obtaining the latest driver files.
+
+   Company       Sound Card         Phone        BBS           CompuServe GO
+   ------------- ------------------ ------------ ------------  -------------
+   Media Vision  Pro Audio Spectrum 800-638-2807 510-770-0527  MultiVen (12)
+   Creative Labs Sound Blaster      405-742-6622 405-742-6660  Blaster 
+   Gravis        Ultrasound         604-431-1708 604-431-5927  PcVenB (14)
+
+=============================================================================
+                               ERROR MESSAGES
+=============================================================================
+
+Memory Error Messages
+---------------------
+Here are some common memory error messages and the solutions to resolve
+them. Just a quick note about "low memory" situations. Many DOS programs
+require you to have a relatively large amount of DOS memory (<640k) available
+to run. They also may require EMS to be loaded, etc.  Radix does not
+require any memory related drivers to be run.  In fact, if you have DOS 6.00
+or greater, you can just hold down the F5 key when booting (see "Booting
+Your Computer Clean," above), load your mouse driver and run Radix. See the
+section on optimal running of Radix found below.
+
+> Memory Error: (InitMemory) Not enough memory available.
+
+This error is due to the fact that Radix cannot allocate enough memory to
+run properly. There are 2 memory sizes printed above this error message: high
+memory available and low memory available.  These two must add up to be at
+least 1,250,000 bytes to run radix properly.  This does not mean that you can
+run Radix with 1.25 Mb of memory; Radix requires 4Mb of RAM, and the values
+printed are residual memory available for each level.  To free up more
+memory, you can try to create a boot diskette where only those drivers
+required to run Radix are loaded in.  See the section on "Booting Clean."
+
+> Memory Error: (Malloc) [###] Failed on allocation of * bytes.
+
+If you encounter an error of this type it most probably means that the
+high memory available and low memory available is really close to 1.25 Mb and
+that there is not enough memory available in either the low block or the high
+block to allocate memory. The solution to this is to free up more memory by
+creating a boot diskette with only those drivers required to play radix to be
+loaded.  See the section on "Booting Clean."
+
+Common Error Messages
+---------------------
+
+>  Error: (InitJoy) Joystick Calibration Failure.
+
+This error is caused by an improper calibration of the joystick.  There may
+be a number of causes.  Here is a list of items to check if you encounter
+this error.
+
+   1. Make sure your joystick is plugged firmly into the gameport.
+
+   2. Check the vertical/horizontal fine-tuning adjusters found on many
+      joysticks. These adjusters should be centered, if they are far off to
+      one side, this error will occur.
+
+   3. Make sure you follow the instructions carefully when calibrating the
+      joystick.
+
+   4. If you have a Gravis gamepad, make sure that if the "left/right hand"
+      switch is in the right hand position, that you are holding the gamepad
+      upside-down.
+
+> Error: (LoadGame) CRC Failure!  Level not compatible!
+
+This error occurs when you try to load a game when the level that you have
+saved under has changed! This could only occur if you modify the resource
+file or add an external resource file. DO NOT phone for technical assistance
+if you have modified your resource file or added and external resource file.
+
+Multiplayer Error Messages
+--------------------------
+
+> NET ERROR: (Fatal) Cannot open IPX socket.
+
+This error is an indication that the default IPX socket is being used by
+another network program. If this occurs, change the socket value in the
+setup program.
+
+> Malformed Packet, Bad Checksum, Bad Packet Errors
+
+These are network/modem based errors indicating that there was a problem
+with the connection. If you are using a modem connection, try changing your
+init string to have error correction on and data compression on.
+
+Resource Error Messages
+-----------------------
+
+> Error: (GameInit) Cannot read resource file.
+
+   This error is usually caused by running RADIX.EXE while outside of the
+directory containing RADIX.DAT. Change your directory prior to running
+RADIX.EXE to the Radix game directory. If this problem persists, see the
+comment below.
+
+   If you get an error message starting with "Resource Error:", this usually
+means that there is a problem with the RADIX.DAT resource file. If you have
+any of these errors and suspect corruption of radix.dat, try running
+CHKDSK/F. If any lost clusters or cross-linked entries involved RADIX.DAT,
+you should re-install the game.
+
+=============================================================================
+                               OPTIMAL RUNNING
+=============================================================================
+
+This section discusses the optimum memory/machine configuration for Radix.
+Radix uses Rational System's DOS extender, so it is usually not necessary to
+free up DOS memory by loading drivers, etc to high memory. If you want to
+create a boot diskette, or optimize your system config, here is what you
+should consider:
+
+4Mb Machine
+-----------
+1. Do not run Smartdrv. Running Smartdrv will speed up the loading process of
+   the game, but it will steal memory that the game requires. If you have
+   more than 4Mb, say 6Mb, you can try a 512K Smartdrv that will increase
+   loading time performance dramatically.
+
+2. Do not run EMM386 or QEMM. The expanded memory manager will consume memory
+   and will also deteriorate the performance of the game.
+
+3. Load a mouse driver. It does not have to be loaded high.
+
+4. Load any sound drivers required.
+
+8Mb+ Machine
+-----------
+1. Run at least a 512K smartdrv. This will dramatically improve the loading
+   of the game and each level. We have found that a 512K to 1Mb Smartdrv is a
+   good balance for an 8 meg machine. On most 8Mb machines, Smartdrv defaults
+   to 2Mb. To switch this to 1Mb, change your AUTOEXEC.BAT to have
+   SMARTDRV.EXE 1024.
+
+2. The more memory the better! :)
+
+=============================================================================
+                               VERSION HISTORY
+=============================================================================
+
+Version 1.0  (10/30/95): First public release (registered and shareware)
+Version 1.1  (12/25/95): Major upgrade:
+
+        - Some levels modified.
+        - Changed some Multi-player (dogfight & Capture the Flag) rules.
+        - Tweaked the keyboard and joystick controls (mouse and keyboard
+          still recommended).
+        - New controls (such as keys for 4-way strafing) and throttle added.
+        - The player's ship now has inertia.
+        - Made the registered and shareware versions compatible for
+          Multiplayer games.
+        - New cheat codes.
+        - Fixed various minor bugs.
+
+Version 2.0  (10/26/96): "REMIX":
+
+        - Brand new shareware mission 8.
+        - Hovering, move backwards.
+        - Massive explosion enhancements, including rubble that remains.
+        - 2 new weapons, the enhanced and advanced EPC's 
+        - Tons of new environmental and sprite art added and enhanced.
+        - Fixed mouse, joystick and keyboard controls
+        - Countless minor changes, tweaks and bug-fixes
+        
+Note: For multiplayer games, all players must have the same version number of
+Radix (although the shareware and registered versions are now compatible).
+
+=============================================================================
+                        CONTACTING EPIC'S TECH SUPPORT
+=============================================================================
+
+If you need further assistance, please call our tech support department:
+
+In the USA:      voice: 301-983-9771          fax: 301-299-3841
+In the Europe:   voice: +44 (0) 1767-260903   fax: +44 (0) 1737-262043
+In Germany:      voice: 0130 822887           fax: 0130 822886
+
+You can also contact us online:
+
+CompuServe:     GO EPIC
+WorldWide Web:  http://www.epicgames.com/
+Internet Mail:  help@epicgames.com
+Internet FTP:   ftp.uwp.edu/pub/games/epic
+Internet News:  We answer questions in comp.sys.ibm.pc.games.action
+America Online: We answer questions posted in the PCGames (keyword) area
+
+EXEC-PC BBS
+   Contact:     Epic MegaGames
+   2400 Baud:   414-789-4210
+   14.4K Baud:  414-789-4360
+   
+=============================================================================
+
+Epic's Email list:
+   
+To subscribe to Epic's email list and receive late-breaking news 
+from Epic every month or so, just send an Internet message to
+list@epicgames.com with the subject: SUBSCRIBE EPIC
+
+==============================================================================
+             That's all.  Enjoy playing Radix: Beyond The Void!
+==============================================================================

@@ -1,0 +1,41 @@
+#vert offset near
+0
+
+#vert offset far
+0
+
+#zoffset near
+0
+
+#zoffset far
+0
+
+#height near
+0
+
+#height far
+48
+
+#radius near
+0
+
+#radius far
+96
+
+#colour top
+0 1 2
+
+#colour bottom
+3 4 5
+
+#ring type? (1 is TRUE, 0 is FALSE)
+1
+
+#ring y offset (bigger places horizon further down)
+-80
+
+#ring height
+112
+
+
+

@@ -1,0 +1,83 @@
+# Deutsche Texte fÅr (r)xcopy 1.2, öbersetzung: Eric Auer 7/2005
+
+# prompts and error messages
+1.1:Falsche Anzahl von Argumenten
+1.2:UngÅltiges Datum
+1.3:UngÅltige Option
+1.4:Quell-Pfad zu lang
+1.5:Quell-Laufwerk ungÅltig
+1.6:Quell-Pfad nicht gefunden
+1.7:Quell-Pfad zu lang
+1.8:Ziel-Pfad zu lang
+1.9:Ziel-Laufwerk ungÅltig
+1.10:Bezeichnet
+1.11:einen Dateinamen
+1.12:oder einen Verzeichnisnamen als Ziel?
+1.13:Datei
+1.14:Verzeichnis
+1.15:Ziel-Pfad zu lang
+1.16:Ziel-Pfad ist Unterverzeichnis des Quell-Pfades
+1.17:Bitte Eingabetaste drÅcken...
+1.18:Datei nicht gefunden
+
+# the help message
+2.1:Kopiert Dateien und Verzeichnisse, optional mit Unterverzeichnissen
+2.2:XCOPY Quelle [Ziel] [/Optionen]
+2.3:  Quelle     Die zu kopierenden Dateien oder Verzeichnisse
+2.4:  Ziel       Der Zielort des Kopiervorganges
+2.5:  /A         Kopiert nur Dateien, deren Archiv-Attribut gesetzt ist
+2.6:             und Ñndert das Attribut nicht.
+2.7:  /C         Setzt auch nach einem Fehler den Kopiervorgang fort.
+2.8:  /D[:M/D/Y] Kopiert nur Dateien, die an oder nach dem angegebenen Datum
+2.9:             bearbeitet wurden. Wird kein Datum angegeben, werden nur
+2.10:             Dateien kopiert, die neuer als existierende Zieldateien sind.
+2.11:  /E         Kopiert rekursiv, auch leere Unterverzeichnisse.
+2.12:  /F         Zeigt Quell- und Ziel-Dateiname fÅr jede kopierte Datei an.
+2.13:  /H         Kopiert auch versteckte Dateien.
+2.14:  /I         Wenn das Ziel nicht existiert, und mehr als eine Datei
+2.15:             kopiert wird, wird das Ziel als Verzeichnis angelegt.
+2.16:  /L         Simulation: Dateien auflisten, aber nicht kopieren.
+2.17:  /M         Kopiert nur Dateien, deren Archiv-Attribut gesetzt ist,
+2.18:             und lîscht das Archiv-Attribut bei den Kopien.
+2.19:  /N         öberspringt Dateien, wenn die Zieldatei schon existiert,
+2.20:             ohne den Anwender zu fragen.
+2.21:  /P         Fragt fÅr jede Datei erst, bevor die Kopie erstellt wird.
+2.22:  /Q         UnterdrÅckt die Anzeige von Dateinamen beim Kopieren.
+2.23:  /R         Kopiert auch schreibgeschÅtzte Dateien.
+2.24:  /S         Kopiert rekursiv auch (nicht-leere) Unterverzeichniss.
+2.25:  /T         Kopiert nur den Verzeichnisbaum ohne die enthaltenen Dateien.
+2.26:             Um auch leere Verzeichnisse zu berÅcksichtigen: /T /E.
+2.27:  /V         Verifiziert jede kopierte Datei.
+2.28:  /W         Wartet zu Beginn auf einen Tastendruck.
+2.29:  /Y         UnterdrÅckt die Abfrage, ob Zieldateien Åberschrieben werden
+2.30:             sollen: Zieldateien werden ohne RÅckfrage Åberschrieben.
+2.31:  /-Y        Erzwingt eine RÅckfrage, bevor existierende Zieldateien
+2.32:             Åberschrieben werden.
+2.33:Die /Y und /N Optionen kînnen Åber die COPYCMD Umgebungsvariable
+2.34:eingestellt werden. Die Option /-Y Åbergeht diese Voreinstellung.
+2.35:Enter fÅr nÑchste Seite
+
+# more messages
+1.19:Datei(en) kopiert
+1.20:Kann Verzeichnis nicht erstellen
+1.21:Datei kann nicht auf sichselbst kopiert werden
+1.22:Lesezugriff verweigert
+1.23:Ziellaufwerk ist voll
+1.24:Schreibzugriff verweigert
+1.25:Ziellaufwerk ist voll
+1.26:Kopiere
+
+# the following three are used in shared.inc:
+25.0:Kann Quelldatei nicht îffnen
+25.1:Kann Zieldatei nicht erzeugen
+25.2:Kann Zieldatei nicht schreiben
+
+# more confirmation messages, must start upper case:
+# 3.2 to 3.5 must have unique start...
+3.1:öberschreibe
+3.2:Ja
+3.3:Nein
+3.4:Alle
+3.5:Keine
+
+

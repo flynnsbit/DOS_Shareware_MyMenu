@@ -1,0 +1,24 @@
+The Drunken Monkey (fb-drunkmonkey.it)
+https://modarchive.org/index.php?request=view_by_moduleid&query=41544
+Renamed to "DRNKMNKY.IT" because of DOS 8-character limit
+
+ummary
+
+    fb-drunkmonkey.it is a IT format module.
+    Uploaded to modarchive.org on Tue 29th Jul 2003
+
+Info Info
+
+    Mod Archive ID: 41544
+    MD5: 9e1893fc128f99d324f8d996cea48262
+    Format: IT
+    Channels: 16
+    Genre: Funk
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     christofori (https://modarchive.org/member.php?69248)

@@ -1,0 +1,320 @@
+Epic MegaGames(TM)
+SOFTWARE LICENSE AGREEMENT
+
+
+This document, describes the terms and conditions by which
+Epic MegaGames, Inc. ("Epic") will license the use and
+distribution of this software program which is intended solely
+for distribution at no charge (the "Program") by an end-user
+("You").  No use, reproduction or distribution of the Program,
+or of copies of the Program, is authorized except in
+compliance with the terms and conditions set forth below.
+By installing the Program You agree to be bound by the terms
+of this Agreement.  If You do not agree to these terms, please
+remove the Program from Your hard drive and/or any other
+storage media You may have stored the Program.
+
+NOTE
+You may not distribute this program in any retail distribution
+channel without explicit written permission from Epic(TM).  
+
+The Program is protected by copyright in the United States, as
+well as in other countries pursuant to international treaties.
+The Program is NOT public domain or free software or
+"freeware". It is, however, being distributed at no cost to
+You.  Any use, copying or distribution of the Program, or of
+any copies or elements thereof, that is not in compliance
+with the terms and conditions of this Agreement is prohibited.
+
+Limited License:
+
+Epic authorizes the use, distribution and/or copying of the
+Program only in accordance with the following terms and
+conditions (the "General Terms and Conditions") and with other
+terms and conditions set forth below that may be applicable:
+
+1.    Epic hereby grants You a limited right to use the
+Program for Your gaming enjoyment.  You acknowledge that the
+Program is a valuable asset of Epic and Epic is the owner of
+the Program. Enjoy! 
+
+2.	Epic MegaGames, Inc. shall be credited as the owner of
+the Program, in any and all packaging, documentation,
+catalogs, program descriptions, advertising, promotion and
+public relations relating to the distribution of the Program
+as well as the actual distribution of the Program (the
+"Distribution").
+	
+3.	The Program shall be identified by name and shall not
+be identified or described as "freeware", "public domain
+software", or the like in any Distribution.
+	
+4.	You may copy and/or distribute the Program only in
+its original, unaltered form, with all files included
+unmodified, and without making any additions, modifications or
+deletions except as provided in this paragraph.  You may not
+modify the Program or any of its files, and the Program must
+be distributed as a complete package. You may not change,
+delete, merge or rename any files or elements of the Program
+in any manner, and You may not add any files or new elements
+(except for installation routines which do not interfere with
+the proper operation or installation of the Program).
+	
+5.	You may not decompile, recompile, disassemble, reverse
+engineer, adapt or create derivative works of the Program or
+any files or elements thereof .  You may not use the artwork
+from the Program without Epic's prior written permission.
+	
+6.	You shall not charge any fee or other compensation for
+the Program, although You may charge a distribution fee for
+costs associated with distributing the Program.  You are
+permitted, and encouraged, to make and distribute copies of
+the Program to Your friends, family members and co-workers
+without charge, for Your and their private noncommercial use,
+in compliance with the terms and conditions hereof.
+	
+7.	Epic strongly discourages charging users or recipients
+more than $9.00 (U.S.) for distribution of the Program (or any
+elements thereof).  If You charge more than $9.00 for
+distribution of the Program or any elements thereof (inclusive
+of all fees, costs, expenses and other charges, including
+without limitation charges for copying, shipping, postage and
+handling, but not including sales taxes), then You shall pay
+Epic a royalty equal to fifty percent (50%) of the excess of
+such charges above $9.00 with respect to each individual user
+or recipient.  (By way of illustration and not limitation, if
+You distribute the Program at a charge of $8.00 for disks and
+$4.00 for shipping and handling (for a total of $12.00), You
+shall pay Epic a royalty of $1.50 with respect to each user
+or recipient.)  In the event that such a royalty is payable to
+Epic, You shall provide Epic with quarterly statements of
+account setting forth the royalty owed in reasonable detail,
+accompanied by payment thereof; and Epic or its designee shall
+have the right to inspect and audit Your books and records
+from time to time to verify the amounts of the royalties due
+Epic hereunder.  You must notify Epic in writing before You
+undertake any Distribution of the Program for which You plan
+on charging or do charge end users of the Program a fee. 
+	
+8.	You may not remove or alter any copyright or
+trademark information on the Program, and You must take
+reasonable steps to protect the copyrights, trademarks and
+other rights of Epic in the Program.
+	
+9.	You recognize that Your right to distribute the
+Program is nonexclusive and that Epic can terminate the
+license granted to You hereunder at any time for any reason
+upon written notice. Epic reserves the right to withhold or
+withdraw permission to distribute the Program from anyone at
+any time for any reason.You acknowledge that You have no
+reasonable basis or expectation to make a profit regarding the
+Distribution of the Program.  The provisions of paragraphs 4,
+7, 13, 16, 17, 20, 21 and 22 hereof shall survive any
+expiration or termination of this Agreement.
+	
+10.	You shall take all necessary steps to ensure that
+the Program and any other software, documentation and other
+materials distributed with the Program are free from viruses
+or other harmful programs or routines.
+	
+11.	This is the current version of the Program and all
+previous versions of this Program have been withdrawn from
+distribution.  You shall use reasonable efforts to distribute
+only the latest version of the Program.  If You have a
+question about this, please contact Epic to confirm what is
+the latest version (You can do this through Epic's web site
+at www.epicgames.com).
+	
+12.	Your limited right to distribute under this Agreement
+is personal and does not include any right of sublicense.
+	
+13.	You may not use, copy, modify, distribute or
+transfer the Program or any element thereof in whole or in
+part, except as expressly provided for herein.
+	
+14.	You may not "rent" or "lease" the Program to anyone.
+	
+15.	Any permission, consent or approval of Epic referred
+to herein may be granted or withheld in Epic's sole discretion
+(and, unless expressly granted in writing, shall be deemed to
+be withheld).
+	
+16.	DISCLAIMER OF WARRANTY AND LIMITATION OF LIABILITY.
+
+THIS PROGRAM IS PROVIDED "AS IS".   YOU HEREBY ACKNOWLEDGE
+THAT YOU HAVE PAID NO FEE FOR THE PROGRAM.  
+
+EPIC  MAKES NO WARRANTY OR REPRESENTATION OF ANY KIND, EITHER
+EXPRESS OR IMPLIED, WITH RESPECT TO THIS PROGRAM OR ANY FILES,
+DOCUMENTATION OR ELEMENTS THEREOF OR RELATING THERETO OR ANY
+MEDIUM THE PROGRAM MAY BE ON (INCLUDING, WITHOUT LIMITATION,
+ANY WARRANTY OF MERCHANTABILITY, OF FITNESS FOR A PARTICULAR
+PURPOSE, OF QUALITY OR PERFORMANCE OR OF NON-INFRINGEMENT).
+EPIC HEREBY DISCLAIMS ANY AND ALL WARRANTIES TO THE MAXIMUM
+EXTENT PERMITTED BY LAW.
+
+SUBJECT TO ANY CONTRARY PROVISIONS OF APPLICABLE STATE LAW,
+IN NO EVENT WILL EPIC BE LIABLE FOR DIRECT, INDIRECT, SPECIAL,
+INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM
+THE USE OF OR INABILITY TO USE THE PROGRAM OR ANY FILES,
+DOCUMENTATION OR ELEMENTS THEREOF, INCLUDING FROM NEGLIGENCE,
+STRICT LIABILITY, OR BREACH OF WARRANTY OR CONTRACT, EVEN IF
+EPIC  IS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  IN
+PARTICULAR, EPIC  IS NOT RESPONSIBLE FOR ANY COSTS OR
+EXPENSES, INCLUDING BUT NOT LIMITED TO THOSE INCURRED AS A
+RESULT OF LOST PROFITS OR REVENUE, LOSS OF USE OF COMPUTER
+PROGRAMS, LOSS OF DATA, THE COST OF A SUBSTITUTE PROGRAM, OR
+CLAIMS BY THIRD PARTIES.  IN NO EVENT SHALL THE LIABILITY OF
+EPIC  FOR ANY DAMAGES EVER EXCEED THE PRICE PAID FOR THE
+LICENSE TO USE THE PROGRAM, REGARDLESS OF THE FORM OF CLAIM.
+THE USER OF THE PROGRAM BEARS ALL RISK AS TO THE QUALITY AND
+PERFORMANCE OF THE PROGRAM AND ALL OTHER RISKS RELATING TO
+THE USE OF OR INABILITY TO USE THE PROGRAM.  BECAUSE SOFTWARE
+IS INHERENTLY COMPLEX AND MAY NOT BE COMPLETELY FREE OF
+ERRORS, ALL USERS ARE ADVISED TO VERIFY THEIR WORK AND TO
+MAKE BACK-UP COPIES.
+
+THE PROVISIONS OF THIS SECTION ARE AN ESSENTIAL COMPONENT OF
+EPIC'S WILLINGNESS TO ENTER INTO THIS AGREEMENT.
+	
+17.	This Software License Agreement shall be governed by
+and construed in accordance with the internal laws of the
+State of Maryland applicable to agreements entered into and
+wholly to be performed therein, without reference to conflicts
+of laws.  It shall inure to the benefit of Epic and its
+successors and assigns.  With respect to every matter arising
+under this Agreement, You consent to the jurisdiction and
+venue of the state and federal courts located in Maryland, and
+to service by certified mail, return receipt requested, or as
+otherwise permitted by law.
+	
+18.	Epic reserves the right to update the contents of the
+Program and/or its associated files, documentation and/or
+other elements, at its discretion from time to time, without
+the consent of, or any obligation to, any licensed users or
+distributors.
+	
+19.	All rights not expressly granted herein are reserved
+by Epic.
+	
+20.	In the event of any violation of this Agreement or
+failure to comply with any of the terms and conditions set
+forth herein, or any other violation or infringement of any
+of Epic's rights, Epic shall have available all rights and
+remedies at law and in equity.  Without limiting the
+foregoing, in the event of any such violation or failure to
+comply, then in addition to its other rights and remedies, if
+Epic so elects Epic shall have the right to seek damages of
+not less than the full registration fee for the registered
+version of the software program with the same name as the
+Program, with respect to each copy of the Program distributed
+or copied and/or each user or recipient to whom the Program
+was distributed.  (By way of illustration and not limitation,
+if the registration fee for the registered version is $50.00
+and distribution to 1,000 persons was made in violation of
+this Agreement, then if Epic so elects Epic shall have the
+right to seek damages of not less than $50,000 under the
+provisions of this paragraph, in addition to its other rights
+and remedies at law or in equity.)
+	
+21.	You will hold Epic, its officers, directors,
+employees, contractors, attorneys, and agents, harmless from
+and against any and all claims, actions, damages, losses,
+liabilities, costs and expenses (including reasonable
+attorney's fees) arising directly or indirectly from Your acts
+and omissions in copying and distributing the Program
+(including without limitation from any installation routine
+that You may add).
+	
+22.	If any provision of this Agreement is held to be void,
+invalid or unenforceable, it will not affect the validity of
+the balance of this Agreement, which shall remain valid and
+enforceable according to its terms and conditions.
+
+
+In addition to the above General Terms and Conditions, the
+following special provisions apply to the types of
+distribution set forth below:
+
+Distribution by BBS's and Online Services:
+
+Epic allows bulletin board systems and online services to
+distribute the Program by modem as long as You comply with the
+General Terms and Conditions set forth above.
+
+Distribution of the Program By Itself on Floppy Disk in non-
+retail environment:
+
+You may distribute the Program alone on one or more floppy
+disk(s) as long as You comply with the General Terms and
+Conditions set forth above, and provided that other than
+installation routines which do not interfere with the proper
+operation or installation of the Program, no other programs or
+files are included on the floppy disk(s) that contain this
+Program (i.e., there is no bundling or multi-program disks
+or packs).
+
+No Distribution of the Program on CD-ROM's:
+
+You may not distribute this Program on CD-Rom without
+obtaining explicit written permission from Epic.
+
+No Distribution in a Retail Environment:
+
+You may not distribute this Program in a retail environment
+(in stores or otherwise) without obtaining explicit written
+permission from Epic.
+
+No Distribution via Subscriptions, "Disk-of-the-Month,"
+Magazine "Cover Disks" and "Cover CDs":
+
+As a general matter You may not distribute this Program as
+a "disk-of-the-month," "cover disk" or "cover CD."  Any party
+wishing to distribute this Program via subscriptions,
+"disk-of-the-month," magazine "cover disks" and/or "cover
+CDs" must obtain Epic's written permission, in addition to
+complying with the General Terms and Conditions set forth
+above and other applicable terms and conditions.  Please
+contact Epic and we'll be glad to consider granting permission
+to You in appropriate cases.
+
+Bundling with Hardware:
+
+You may bundle this Program with new hardware (computers,
+sound cards, etc.) as long as You notify Epic in writing of
+Your intent to do so,  comply with the General Terms and
+Conditions set forth above, and as long as You provide the
+Program free of charge (i.e., at no cost in addition to the
+hardware) to the purchaser when the hardware is purchased.
+
+If You would like more information about OEM and hardware
+bundling opportunities, please contact Epic! We greatly
+appreciate the opportunity to work with hardware manufacturers
+and resellers.
+
+Other Distribution Opportunities:
+
+Please contact us if You would like to distribute Epic
+products in a new and unique way.  We are open to new
+opportunities, and we appreciate new and unique forms of
+distribution as a way of reaching new customers.
+
+Epic MegaGames can be contacted at:
+
+	Epic MegaGames, Inc.
+	3204 Tower Oaks Blvd., #410
+	Rockville, MD 20852
+	Tel:  +(301) 983-9771
+	Fax:  +(301) 299-3841
+
+In Europe, we can be contacted at:
+
+	Epic MegaGames UK
+	39 Norton Road
+	Bournemouth
+	Dorset BH9 2PY
+	United Kingdom
+	Tel:  +44 (0) 1202 52 10 11
+	Fax:  +44 (0) 1202 522837
+
+

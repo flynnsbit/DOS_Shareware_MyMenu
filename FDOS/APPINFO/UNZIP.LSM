@@ -1,0 +1,14 @@
+Begin3
+Title:          UnZip
+Version:        6.00
+Entered-date:   2012-09-23
+Description:    A file decompression tool, like PKUNZIP.
+Keywords:       freedos, unzip, infozip, pkunzip
+Author:         info-zip@wkuvx1.wku.edu
+Maintained-by:  info-zip@wkuvx1.wku.edu
+Primary-site:          http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/unzip.html
+Platforms:      dos, unix, mac
+Copying-policy: Open Source, see license
+Defunct-Original-Site: ftp://ftp.cdrom.com/pub/infozip/
+Defunct-Primary-Site:  ftp://ftp.freesoftware.com/pub/infozip/
+End

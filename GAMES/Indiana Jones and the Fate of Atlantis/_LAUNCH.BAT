@@ -1,0 +1,3 @@
+@echo off
+playfate s
+

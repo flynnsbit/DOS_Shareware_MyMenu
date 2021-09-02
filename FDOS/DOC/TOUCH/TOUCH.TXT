@@ -1,0 +1,302 @@
+        Program usage documentation for the FreeDOS TOUCH program
+
+        (c) Copyright 1995,2010 by Kris Heidenstrom
+
+        Modified:
+
+        KH.19950605.001  (TOUCH 1.4.0)  First version
+        KH.19950716.002  (TOUCH 1.4.1)  Added -Dpathname command
+        KH.19950722.003  (TOUCH 1.4.2)  Bug fixed
+        KH.19951005.004  (TOUCH 1.4.3)  CREATE conditional, am/pm suffix
+        Rugxulo 2010     (TOUCH 1.4.4)  -C works on +R; translated to NASM
+
+1.  LEGAL
+
+        This program is Copyright 1989-1995, 2010 by K. Heidenstrom.
+        The author may be reached at k -at- heidenstrom.gen.nz on the
+        Internet or by snail mail:
+        K. Heidenstrom c/- P.O. Box 27-103, Wellington, New Zealand.
+
+        This program is free software.  You may redistribute the source and
+        executable and/or modify the program under the terms of the GNU
+        General Public License as published by the Free Software Foundation;
+        either version 2 of the License, or (at your option) any later version.
+
+        This program is distributed in the hope that it will be useful,
+        but is provided "as-is", without any warranty of any kind, including
+        the implied warranty of merchantability or fitness for a particular
+        purpose.  In no event will the author be liable for any damages of
+        any kind related to the use of this program.  See the GNU General
+        Public License for more details.
+
+        You should have received a copy of the GNU General Public License
+        along with this program; if not, write to:
+
+        Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor
+        Boston, MA 02110-1301 USA
+
+2.  FUNCTION AND USAGE SYNTAX
+
+        The TOUCH program modifies the date and/or time of files on disk.
+        TOUCH is originally from the Unix operating system, and there are
+        many other DOS ports of this utility.  This implementation has the
+        following features.
+
+        TOUCH allows the date, time, or both date and time of the file to be
+        modified.  TOUCH can set the date and time to the current date and
+        time, or to any date and time specified by the user.  The date and time
+        can also be set to zero, which causes the values to be displayed as
+        blank in the directory listing under some versions of DOS.
+
+        TOUCH can copy the date and time from one file to one or more other
+        files.
+
+        TOUCH can also scan the file for a textual version string and set the
+        file time according to the value of the string.  I find this useful as
+        the version number of the program can be seen at a glance from the
+        directory listing.  I first noticed this convention of setting the file
+        time according to the version number on PKWARE products, and it has
+        been adopted by many software companies.
+
+        The program usage syntax is:
+
+        TOUCH [-?] [-C] [-Dpathname] [-F] [Date] [Time] Pathspec [...]
+
+        Parameters may be specified in any order.  More than one Date is not
+        allowed.  More than one Time is also not allowed.  If the -Dpathname
+        option is used, no Date or Time may be specified, and vice versa.
+
+        The 'Pathspec' may be repeated as needed.  Each Pathspec specifies a
+        file or group of files to be touched, and may contain an initial drive
+        specification, a directory path specification, and/or a file
+        specification, and may specify a group of files (using the '?' and '*'
+        wildcard characters) or a single file (an unambiguous specification).
+
+        If a directory is specified, with no file specification, the default
+        file mask of '*.*' is appended.  This can also be forced by specifying
+        a trailing backslash.
+
+        All parameters are case-insensitive.  Switches may begin with '-' or
+        with the currently active DOS switch character (switchar) which is
+        normally '/'.  TOUCH does not support the forward slash as a directory
+        separator character, regardless of the setting of the switchar.
+
+        The -C, -Dpathname, and -F option switches may be combined (e.g. -CF)
+        but the -Dpathname switch, if combined in this way, must be the last,
+        to ensure that the command is unambiguous.
+
+        If no parameters are specified, or the -? parameter is specified, or if
+        an illegal number is specified, the program issues a usage summary
+        message and terminates, returning errorlevel 255.
+
+2.1.  DATE PARAMETER
+
+        The Date and Time parameters are distinguished from Pathspecs according
+        to the characters they contain.  A date must be formatted as:
+
+                nn-nn-nn
+
+        where each 'nn' is a one or more digit number, and the '-' character
+        may alternatively be a '/' or the date separator character provided
+        by DOS according to the country number specified in your CONFIG.SYS
+        file.  Usually this will be a '-' though it may be a '.' in Japan.
+        Whatever the two date separator characters are, they must be the same.
+
+        The order in which the numbers are interpreted depends on the country
+        number.  There are three standard date orders:
+
+                mm-dd-yy        (American)
+                dd-mm-yy        (European)
+                yy.mm.dd        (Japanese)
+
+        The year may be specified in full (e.g. 1995) in which case it must be
+        in the range 1980 to 2099 inclusive.  It may be specified in shorthand
+        form as two digits in the range 80 to 99, in which case it is assumed
+        to be 19xx where xx are the two digits supplied, or as two digits in
+        the range 00 to 79, in which case it is assumed to be 20xx where xx are
+        the two digits supplied.
+
+        A date value of 0-0-0 may be specified.  With some versions of DOS
+        (3.30, I believe, and possibly others), this will result in the date
+        column in the directory listing being blank.
+
+2.2.  TIME PARAMETER
+
+        A time parameter must be formatted as:
+
+                hh:mm[:ss][a|p]
+
+        where each value is a one or more digit number.  The second colon and
+        the 'ss' value are optional.  If they are not given, a seconds value
+        of zero will be used.  The 'a' and 'p' suffixes (a.m and p.m) are
+        optional, and if neither is used, TOUCH will assume that the time is
+        being specified in 24-hour format.
+
+        A time value of 0:0 may be specified.  With some versions of DOS (as
+        noted earlier), this will result in the time column in the directory
+        listing being blank.
+
+2.3.  THE -DPATHNAME OPTION
+
+        This option tells TOUCH to get the date and time values from the file
+        specified by 'pathname'.  If the file does not exist, TOUCH will exit
+        with an error message.  If the file does exist, TOUCH will request its
+        date and time, and use this date and time to set the date and time of
+        the other files specified in the command.
+
+2.4.  TOUCH DATE AND TIME SETTING BEHAVIOUR
+
+        If the -Dpathname option is used, each file will be touched to the date
+        and time of the specified file.
+
+        If date and time values are both present, each file will be touched to
+        that date and time.  If only one value is present, each file will be
+        touched to that value but the other will be unchanged; in other words,
+        if only a date is specified, each file will have its date set to the
+        specified date but its time will be unchanged, or if only a time is
+        specified, each file will have its time set to the specified time but
+        its date will be unchanged.  For files created by TOUCH, values that
+        are not specified will be the current value at the date and time when
+        TOUCH was started.
+
+        If neither date nor time are specified, the current date and time are
+        used (unless the -F switch is present).  TOUCH reads the current date
+        and time once when it starts up, so regardless of how many files are
+        touched, they will all be touched to the same date and time.
+
+2.5.  THE -C OPTION
+
+        TOUCH will (by default) create files specified unambiguously (i.e.
+        named explicitly, without wildcards) if they don't already exist.
+        This is apparently the behaviour of the Unix 'touch', though it is
+        not usual in DOS implementations.  This feature can be overridden
+        by the -C command line switch, which tells TOUCH not to create the
+        specified file if it does not already exist.  I believe this is also
+        standard in Unix implementations.
+
+        For example, the command TOUCH NOSUCH.FIL (if NOSUCH.FIL does not
+        already exist), will create an empty (zero bytes long) file called
+        NOSUCH.FIL.  The command TOUCH -C NOSUCH.FIL will report an error
+        and will not create the file.
+
+        If you don't like this behaviour, and would rather TOUCH defaulted to
+        not creating files that don't exist, and you have TASM and a linker,
+        you can edit the source file, change the CREATE equate to 0 and
+        reassemble the program.  The usage message is conditional on the
+        CREATE equate and will reflect the change.
+
+2.6.  THE -F OPTION
+
+        The -F option specifies touching the file(s) according to the version
+        strings within each file.  If this option is specified, the Date and
+        Time parameters must not be specified.  TOUCH will scan the contents
+        of each file for a string indicating the file's version number.  It
+        scans only the first 48K (approximately) of the file.  The version
+        string is taken in two parts - the 'version' string, and the version
+        number.  The 'version' string is matched using a case-insensitive
+        comparison.  Recognised strings are:
+
+                "version "                      "ver. "
+                "vers "                         "v "
+                "vers. "                        "v."
+                "ver "                          "v"
+
+        Immediately following the 'version' string is the version number, which
+        may be in any of the following forms (where 'x', 'y', and 'z' are
+        single digits):
+
+                "x"
+                "x.y"
+                "x.yz"
+                "x.y.z"
+
+        The 'x' and 'z' values must both be in the range 0 to 9.  The 'y' value
+        must be in the range 0 to 5.
+
+        The file will be touched with a time value created from the values
+        given, so that the time stamp indicates the version number.  For
+        example, if the version number in the file is 2.12, it will be
+        touched to 2:12 a.m.  Its date will be unchanged.
+
+        If TOUCH cannot locate a version string in the file, it will issue an
+        error message, leave the file date and time unmodified, and continue
+        processing.
+
+        If the file was created by TOUCH (i.e. the file specified was an
+        unambiguous pathname that did not already exist), TOUCH will not scan
+        the file for a version string if -F is specified; TOUCH will just touch
+        the file with the current date and time.  No error message is issued.
+
+2.7.  ERRORLEVELS
+
+        TOUCH always reports an errorlevel when it terminates.  This may be
+        useful when TOUCH is used within batch files.  A message will be also
+        issued if an error occurs.  The errorlevels that may be returned by
+        TOUCH are as follows:
+
+        0       Normal completion; no errors
+        2       One or more errors occurred during processing
+        48      Error during processing of -Dpathname option
+        162     Insufficient memory (approx. 64K of memory is required)
+        255     Incorrect usage syntax
+
+3.  EXAMPLES
+
+        There aren't many examples I can suggest, but here is a useful batch
+        file that uses the -Dpathname feature of TOUCH.  Recently I archived
+        a lot of old ZIP archive files and wanted to add archive comments to
+        them.  Adding a comment to a ZIP file causes the ZIP file's date and
+        time to be updated to the current date and time, and I wanted to retain
+        the original date and time of the ZIP file.  The following batch file
+        called ZIPC.BAT does this.
+
+                @ECHO OFF
+                REM
+                REM  Add a comment to a ZIP file without modifying date and time
+                REM
+                IF NOT .%1 == . GOTO Cont1
+                ECHO Usage: ZIPC Zipfilename
+                ECHO.
+                ECHO Note: Give the full pathname of the ZIPfile
+                ECHO Note: The .ZIP extension is optional
+                ECHO.
+                GOTO Exit
+                :Cont1
+                IF EXIST %1 GOTO Cont2
+                IF EXIST %1.ZIP GOTO Cont3
+                ECHO Archive file %1 or %1.ZIP does not exist
+                GOTO Exit
+                :Cont2
+                TOUCH -D%1 %TMP%\$ZIPC$.$$$
+                PKZIP -z %1
+                TOUCH -D%TMP%\$ZIPC$.$$$ %1
+                DEL %TMP%\$ZIPC$.$$$
+                GOTO Exit
+                :Cont3
+                TOUCH -D%1.ZIP %TMP%\$ZIPC$.$$$
+                PKZIP -z %1
+                TOUCH -D%TMP%\$ZIPC$.$$$ %1.ZIP
+                DEL %TMP%\$ZIPC$.$$$
+                :Exit
+
+        This batch file assumes that the TMP environment variable is set to the
+        drive specifier of a RAM drive or the pathname of a temporary directory,
+        for example "E:" or "C:\MISC\TMP".  It creates a temporary file in that
+        location, called $ZIPC$.$$$, that is set to the date and time of the
+        ZIP file before the comment update is done.  It then restores the ZIP
+        file date and time from the temporary file, and deletes the temporary
+        file.
+
+        The same technique can be used to preserve date and time information
+        when converting a file from one format to another, for example when
+        re-ZIPping an old ZIP file created with PKZIP version 1, or when
+        converting an archive, picture, or data file from one format to another.
+
+4.  BUGS
+
+        Versions 1.4.0 and 1.4.1 had a bug which caused them to try to touch
+        directories, including the '.' and '..' directory entries (sometimes
+        called "fules").  Version 1.4.2 fixes this problem.
+
+                                   ----//----
+

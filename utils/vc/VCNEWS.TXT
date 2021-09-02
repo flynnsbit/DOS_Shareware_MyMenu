@@ -1,0 +1,631 @@
+
+                      History of Changes
+        The Volkov Commander versions 4.99.00 - 4.99.08
+
+- Fixed bugs
++ New features
+* Changes
+
+
+Changes in version 4.99.00 alpha (10-Jun-1997)
+
+  First version for testing
+
++ EMS, XMS  memory or swap file can be used to load program code
++ Temporary  files  are  created in the directory of environment
+  variables VCTEMP= or TEMP=, or in the home directory of VC
++ It's possible to enter to archives as directories
++ Optionally Ins key calculates directory size
++ Shift-Gray+ and Shift-Gray* select files and directories
+* Maximal size of *.MNU and *.EXT files now is unlimited
++ More  than  one  extension or file mask can be associated with
+  every command in *.EXT files
++ All filters are defined by user
++ Size  of  panels  and width of 'Name' columns in panels can be
+  changing by mouse
++ Mouse  cursor  is changing depending of its position to prompt
+  available action
++ All text modes including VESA modes are supported
++ Clicking  mouse  on  key  bar  when  Shift, Ctrl or Alt key is
+  pressed  call  the  same  action  as F1...F10 keys with Shift,
+  Ctrl or Alt
++ Descriptions of files are shown in file panels
++ Added  command  line switches. Run VC /? to view all available
+  switches
+* File  TREEINFO.VCD  instead  of  TREEINFO.NCD is used to store
+  directory tree information
++ TREEINFO.VCD   is   updated  when  create,  remove  or  delete
+  subdirectory
+* When executing group operations, window is not blinking
++ Added new macros for inactive panel: %, %.%, %:, %\
++ Environment  variable PATH= is used for executing all external
+  viewers and editors
++ Critical error dialog box has 'Ignore' choise
+* Executing  command  from  history  moves  this  command to the
+  bottom of history
+* Alt-F6  key  is  removed. Use Ctrl-F7 key to calculate size of
+  selected directories
+* 'Change label' function  only  shows  volume  lebel of network
+  drives and CD-ROM
++ Attributes of directories can be changed in tree panel
++ Extended attributes .LONGNAME of OS/2 are shown as description
+* Symbol after * in file masks are not ignored
++ List  of  masks  separated  by  coma  or semicolon can be used
+  instead of mask
++ Screen saver is disabled in windowed DOS sessions under OS/2
+
+
+Changes in version 4.99.01 alpha (27-Jun-1997)
+
+- Video Mode function (Ctlr-F9) is not displayed in KeyBar
+- Tabs in descriptions are displayed as ASCII characters 09h
+- Trying to press  Enter  when cursor bar is set on file without
+  extension  and  there  is  no local VC.EXT file in the current
+  directory executes incorrect command
+- Error reading empty disks under Windows 95
+- Trying to read extended attributes under OS/2 from remote disk
+  of Windows NT Server when reading panels, copying and changing
+  attributes causes critical error
+* No  files  were  displayed when custom filter is a blank line.
+  Now all files displayed in this case
+- Error moving not empty directories from remote disk of Windows
+  NT Server
++ Hidden  files  are marked with symbol '°' when long names mode
+  is switched on
+- Error reading root directory of NFS volume mounted under OS/2
+- 'Mouse options' and 'Zoom options' in Interface dialog box are
+  mixed
+- Enter and Ctrl-Enter on key pad don't work
+* New  description  file  is  created  with  the  same  name and
+  attributes as source description file
+- Deleting of description file and all files which are contained
+  in this description file causes beep
+- Trying  to delete description file and one or more files which
+  are  contained  in this description file recreates description
+  file
+- Trying  to  start  VC  from  OS/2 session locks DOS session if
+  current path is illegal for DOS session (for example C:\.NAME)
+- Entering  to  remote  directory  with  'no access' permissions
+  causes hanging
+- Reading  panel  with  directory  deleted  from another session
+  under Windows 95 causes hanging
+- Date and time of some subdirectories in archives are displayed
+  incorrectly
+- Date  and time of directory entry .. in archives are displayed
+  incorrectly
+- Trying to call external editor calls external viewer
+- Reading  directories  contained  a  lot  of files (for example
+  5000) causes hanging
+- Reading  directories of archives contained a lot of files (for
+  example 5000) causes hanging
+- Incorrect  order  of  files  in  unsorted  mode  when  reading
+  contents of archive by external utility
++ New switch '\' of archive parser line (VCARCH.EXT)
+- Error reading archives with invalid parser line
+- Incorrect values of macros !, !.!, %, %.% are substituted when
+  viewing or editing file from archive by external program
+- Incorrect  values  of macros ! and % are substituted for files
+  with more than one points
+- Temporary  file  is  not removed arter viewing or editing file
+  from archive by external program
+- Subdirectories  with  calculated  size  and  subdirectories of
+  archives are not displayed when option 'Offlines' in Filter is
+  switched off
+- VC does not release time slices in windowed DOS sessions under
+  OS/2
+- Screen saver does not work under DOS and Windows 95
+- Mouse cursor is blinking under DOS and Windows 95
+- Error deleting archive which is opened in panel
++ Using environment variable PATH for searching external viewers
+  and editors
+- Searching text is displayed incorrectly in 'Search' dialog box
+  of internal viewer
++ Command line switches /VESA and /noVESA
+- Shadow is not displayed under pull down menus Left and Right
+- Functions  'Select group'  and  'Invert group' from  pull-down
+  menu  act  on files and directories.  They should act on files
+  only
++ New  keystrokes  Ctrl-Gray+, Ctrl-Gray- and Ctrl-Gray* act  on
+  all files without dialog box
+- Pressing Ctrl-C keystroke causes ^C is displayed on the screen
+- Descriptions  of  files  with  mixed  case  are  displayed  as
+  offlines
+- Starting  VC  when  150 Kbytes  memory  free causes hanging or
+  strange behaviour
+
+
+Changes in version 4.99.02 alpha (05-Aug-1997)
+
+- Can't  copy, move, delete  and  calculate  size  of  not empty
+  subdirectory, if  both panels are in Brief and Long names mode
+  and width of columns with files are 12 characters
+- Long path in command prompt overlaps key bar
++ Some  input  lines  in  dialog  boxes  now  are longer than 64
+  characters and can be scrolled left or right
+- First  symbol  in 'Auto change directory time delay' field  of
+  'Panel options' is ignored
+- Lines  of  description files containing symbols those can't be
+  in file names are displayed as offline files
+- Random  strings are appeared at the top of history window when
+  history buffer is full
++ Symbol  '+' as  first  character  of  description  line  means
+  continuation of the description
+- Trying  to  enter  to  the directory longer than 64 characters
+  causes closing task under Windows 95
+- Current path and path in title line of file panel sometimes is
+  displayed in short form
+- Function 'Directory sizes' resorts  subdirectories  when panel
+  is sorted by size, but cursor bar stays on previous position
+- If  directories in file panel were sorted by size and sizes of
+  directoties  were  calculated using Ins key then trying to set
+  sort order by size does not resorts directories
+- Searched  substring  in  hexadecimal  viewer is highlighted by
+  wrong colors
+- Switching  to  another  text video mode with higher resolution
+  causes a crash when there is not enough momory to increase the
+  size of intrnal video buffer
+- Some  external  viewers  and  editors  change  video mode that
+  violates  representation  of text on the screen if this viewer
+  or  editor  is  placed in VCVIEW.EXT or VCEDIT.EXT file in the
+  following format: EXT: VIEWER.EXE
++ Video  mode  is restored after executing programs from VC.EXT,
+  VCVIEW.EXT and VCEDIT.EXT files
+- Menu 'Files' is  highlighted in menu bar instead of 'Commands'
+  when changing volume label and menu bar is swithed on
+- Renaming  file  to  itself  under DOS causes following dialog:
+  'File already exists. Overwrite/All/Append/Skip/Cancel'
+- Multiple  switching  panel  between Tree and file list or Info
+  causes strange behaviour or crash of program
+- If  one  file is present in description more then one time and
+  file  with  such  name  exists  on  a  disk, first description
+  belongs  to  this  file, other  descriptions  are displayed as
+  offlines.  Trying  to  copy,  move, rename, delete  or  change
+  attributes of those offline files make action on real file
+- Incorrect  date  is set when copying a directory and incorrect
+  date  is  displayed  when  changing  attributes of a directory
+  under Windows 95
++ It is possible to copy, move or rename offline files
+- Pressing  End  or  Ctrl-PgDn  in internal viewer after loading
+  file  with  size  16-32 Kbytes causes empty screen and strange
+  behaviour when press PgUp and PgDn keys
+- Copying of file with fully uppercased name creates target file
+  with lowercased name under Windows 95
+- Part  of  menu bar stays on the screen when switching menu bar
+  off and one of panels is switched off
+- Files  of  archives which have \, .\, ..\, C: at the beginning
+  of file names are not displayed
++ The  most  of  input  lines in dialog boxes have local history
+  which can be accessed by pressing Ctrl-E and Ctrl-X keystrokes
+* New description files were created with the same attributes as
+  source  description  files.  Now  new  description  files  are
+  created without read-only attribute even if source description
+  files have this attribute
+- Error  copying  or  moving  files  to  or  from  drive X: when
+  archiver  X1 is defined in VCARCH.EXT file to support archives
+  with extension .X
+- Deleting  the  directory  of  mounted under Windows 95 disk of
+  Windows NT Server  which is displayed in inactive panel leaves
+  path of this panel the same
+- When  copying  directories to remote disk of Windows NT Server
+  created directories sometimes have incorrect attributes
++ Ctrl-Enter, Ctrl-[  and  Ctrl-]  keystrokes  pressed  in input
+  lines of dialog boxes make the same actions as in command line
+* When  copying or renaming/moving single file or directory path
+  and name of this file or directory were substituted as default
+  target. Now only path is substituted
+- Contents of the panels are not refreshed after saving settings
+* Pressing   Ctrl-\  keystroke  causes  cursor  bar  is  put  on
+  directory which was current before
+* Left  part of long name was displayed in mini status line. Now
+  right part is diplayed
+- Copying of moving directory into itself causes recursion
+- The  following conditions cause crash: inactive panel contains
+  tree  of directories, floppy disk is not inserted in drive A:,
+  type 'A:' in command line and press Enter
+- When  directory  for  temporary  files is displayed on a panel
+  temporary  file  is  appeared on this panel after viewing file
+  from archive
+
+
+Changes in version 4.99.03 alpha (31-Oct-1997)
+
+- Copying  description  file  and  one  or  more files which are
+  contained  in this description file updetes target description
+  if it exists
++ Trying  to  enter  to  directory  of tree panel which does not
+  exist on a disk causes this directory is removed from TREEINFO
+- Starting VC sometimes causes hanging
+- Error reading empty disks under Windows 95
+- 'Not enough memory' warning  appears  when  splitting file and
+  there  is  enough  free space on a target disk for the rest of
+  source file but not enough for the whole file
+- 'Change drive' dialog  box  sometimes appears on the bottom of
+  screen when copying/moving/renaming the files
+- Copying or moving file from substed drive to its real location
+  tryes to copy this file to itself
+- When  changing  directory  by  Ctrl-\ from archive included in
+  archive, last one stays in the temporary directory
+* Ctrl-Enter, Ctrl-[, Ctrl-] and Ctrl-I keystrokes insert quoted
+  names in command line if these names cantain spaces
++ Ctrl-Enter, Ctrl-[, Ctrl-] and Ctrl-I keystrokes insert  short
+  names in command line when Shift is pressed
++ Ctrl-Enter, Ctrl-[ and Ctrl-] keystrokes insert short names in
+  dialogs when Shift is pressed
++ New  macros for short names added in *.MNU, VC.EXT, VCVIEW.EXT
+  and VCEDIT.EXT files: !~, %~, !~.!, %~.%, !~\, %~\
++ Macros !@, %@, !~@, %~@ work now
++ Added new macros ![text], !0,..., !9
+* Term 'offline' is changed to 'absent'
+* Names  of  files are transformed to short names when executing
+  standard viewers
+* Keystrokes Ctrl-Enter, Ctrl-[, Ctrl-], Ctrl-E and Ctrl-X don't
+  work now in short (up to 10 chars) input lines of dialog boxes
++ New dialog box 'Characters' in pull-down menu 'Options' allows
+  to edit characters of borders and mouse pointers
++ Added hot key Shift-F1 for change attributes function
+* Changed  '^M'  to  'Ctrl-M'  in  'Restore selection'  line  of
+  pull-down menu 'Files'
+* Hot  keys  of  pull-down  menu items are marked only by color,
+  they are not uppercased now
+* Input  string  of Speed search dialog box is increased from 12
+  to 24 characters
+* Speed search accepts wildcard characters ? and *
++ Added option 'Command shell options' in 'General options'
++ Extension or file mask in files VC.EXT, VCVIEW.EXT, VCEDIT.EXT
+  can be associated with menu file (*.MNU)
+- Can not execute standard viewer with long name
+- Can not execute archiver with long name
+- Wrong  position of cursor in 'Choose drive' dialg box on right
+  panel when number of drive letters is 16 or 18
+- Can  not  select/unselect  file  without extension by Grey +/-
+  when it is specified as a file mask
+- Error  executing  number  of commands from VC.EXT, VCVIEW.EXT,
+  VCEDIT.EXT and *.MNU files in XMS mode
+- Overwriting  file  with  long name using its short name causes
+  new target file is created with long name of overwrited file
+- Copy/Move/Rename/Delete  by mask functions match files only by
+  their long names
+
+
+Changes in version 4.99.04 alpha (13-Jan-1998)
+
+- VC  sometimes changes current drive when executing commands in
+  'Quick execute commands' mode
++ VC   makes   hidden   cursor   visible  after  returning  from
+  applications
+- Names  of  standard viewers and menu files should be quoted if
+  they contain spaces
+* Short  path  and  short names of files are shown in panel when
+  'Long names' mode is off
+* Macros !\, !~\, %\, %~\ insert  path inside archive instead of
+  path of archive when this archive is opened
+* Key  strokes  Ctrl-[  and  Ctrl-]  insert  path inside archive
+  instead of path of archive when this archive is opened
+- Pressing  Shift-Ctrl-I  and  Ctrl-M when there are no selected
+  files in panel causes file under cursor bar becomes selected
+- Can  not  insert file name in command line by Ctrl-I keystroke
+  if the rest of command line space equal to length of this file
+  name
+- Can not run executable file with spaces in name by Enter
++ Empty  line  in  menu  file  called from VC.EXT file allows to
+  enter to archives and run executable files
+* Pressing  Esc  key  in  input  box of ![text] macro terminates
+  operation
+* Extended  attribute  .LONGNAME  is shown as file name in 'Long
+  names' mode under OS/2
+* Removed  option  'Show OS/2 logical names as description' from
+  'Panel options'
+* Removed  hot  keys  Ctrl-A  and  Ctrl-F  which  were  equal to
+  Ctrl-Left and Ctrl-Right
++ Added hot key Ctrl-N for switching long names on/off
++ Added hot key Ctrl-F for calling 'Filter' dialog box
++ Added hot key Ctrl-C for comparing directories
++ Added hot key Ctrl-Del that is equal to Ctrl-T
++ Added  hot  keys  Alt-Up  and  Alt-Down for changing height of
+  panels
++ Added  hot  keys  Alt-Left and Alt-Right for changing width of
+  'Name' column on file panel in 'Long names' mode
+- Functions  'Select group', 'Unselect group' and 'Invert group'
+  work too slow when mask contain sequense of some symbols '*'
++ Masks with  symbol '|' at the beginning are used for excluding
+  files
+* Changed  windows that displays status during group operations.
+  All messages are aligned to left
+- Shift-F1  does  not  invoke  dialog box 'Change attrubutes' in
+  archives and when cursor bar is on absent file
+* Removed attribute 'Read-only' from filter
+* Attribute 'Archive' in  filter works in different way. When it
+  is unchecked, files without this attribute are not displayed
+- Copying  file  with description to the same directory but with
+  another long name causes description of new file is wrong
+- Copying of moving directory into itself causes recursion under
+  Windows 95
+- Copying  subdirectories  and files with descriptions sometimes
+  causes hanging
+- Fixed  problem  that  prevents  to copy, move or rename absent
+  files
+* Copying  of  lowercase  file  with name up to 8 characters and
+  extension  up  to 3 characters does not create long file entry
+  under Windows 95
+- Copying, renaming  or  moving  absent  file undes DOS and OS/2
+  srinks  its  name  up  to  8  characters and extension up to 3
+  characters
+- Error supporting absent files with spaces in names
+* Names of files are stored in short form in description file
+* Option  'Auto directory sizes' is  moved  from  pull-down menu
+  'Options' to dialog box 'Panel options'
+* Options 'Process descriptions' from dialog box 'Copy and Move'
+  and  'Description files' from 'General options' are  moved  to
+  dialog box 'Descriptions'
+* Option 'Process descriptions' allows  to  update  descriptions
+  only if they are displayed
+* Attribute 'Absent' in filters now is disabled by default
+* Changed format of file TREEINFO
++ Names of directories in tree panel can be displayed in long or
+  short form
+- 'Change drive' dialog  box  sometimes appears on the bottom of
+  screen when copying/moving/renaming number of files
+- Pressing  Grey+ or Grey* on Tree or Info panel causes entering
+  wrong symbol in command line
+- Moving by arrows in tree panel from directory with name longer
+  than width of panel leaves yellow color on the right border of
+  the panel
+- Error  reading panels after deleting directory from tree panel
+  under Windows 95 if this directory is the current directory
+- Renaming  directory  containig subdirectories does not updates
+  subdirectories in TREEINFO
++ Function 'Save Setup' (Shift-F9) allows to enter path and name
+  of INI-file
+- Error renaming or moving directories which are current or part
+  of current directory
+* Ctrl-Enter, Ctrl-[, Ctrl-] and Ctrl-I keystrokes insert quoted
+  names in command line if these names contain symbols [],;=+ or
+  spaces
+- Error processing entries '...' in path
++ Pressing Shift skips startup command when starting VC
++ Trying  to  enter  to  directory  of file panel which does not
+  exist  on  a   tree   panel  causes  this  directory  and  its
+  subdirectories are added to TREEINFO
++ Added  hot  key  Ctrl-H  to  show  hidden and system files and
+  directories on file panel and directories on tree panel
++ Pressing  Grey- and Grey+ keys  in  tree panel moves cursor up
+  and down to the directory with the same level
++ Keystroke  Ctrl-PgUp  in tree panel moves cursor to the parent
+  directory
++ Keystroke Ctrl-PgDn in tree panel changes current directory to
+  directory pointed by cursor
++ Keystroke  Ctrl-\  in  tree  panel  moves  cursor  to the root
+  directory
++ Added two  options in 'Panels...' dialog box of 'Options' menu
+  which  allow  to  create  TREEINFO  files  in root and in home
+  directory of VC
+
+
+Changes in version 4.99.05 alpha (06-Apr-1998)
+
+- Error  deleting  TREEINFO  when less than 5 directories on the
+  drive
+- Switching  panel  on, switching  to full screen and increasing
+  size  of the panel  by  mouse or Alt-Down when second panel is
+  off and command  prompt is on the top of screen causes command
+  prompt is moved down but it stays on the previous location too
+- Message 'Saving  treeinfo' appears  even  both  options  'Save
+  TREEINFO  in  root  directory'  and  'Save  TREEINFO  in  home
+  directory' are off
+- Some directories of NT servers' drives mounted under Windows95
+  are displayed in lower case in short names mode
+- Ctrl-PgUp  function does not work when option 'Directories' in
+  filter is switched off
+* Option 'Save TREEINFO in root directory' is on by default
+* Lowercased  names  of  directories  are not converted to upper
+  case  and long  uppercased names of files are not converted to
+  lower  case  when  displaying  contents  of archive and option
+  'File case converting' switched to 'Auto convert'
+- Executing PKZIP/PKUNZIP from command line when VC is loaded in
+  EMS and option 'Quick execute commands' is on causes hanging
+- Changing  attributes  of  selected empty directory and file(s)
+  or copying them to device causes switching panel to Quick View
+  mode
+- Pressing  F5  when  panels are off or current panel is Info or
+  Quick View causes appearing 'Rename or Move' dialog box
+- Error creating file list with long names
+- Selecting  item 'Ignore' in  critical  error dialog box causes
+  the same result as 'Abort'
+- Using  mouse  in  dialog  box  'Characters'  sometimes  causes
+  strange  effect  and  mouse cursor is blinking when one of the
+  mouse buttons is pressed
+- If before  copying file to disk there was no free space at all
+  VC will try to create file (if choose continue), failing to do
+  so it will create this file on another disk (if choose Split),
+  but  this new file will be treated as if it is the second part
+  of the file (its date and time will be current)
+- Can  not  continue  searching  in viewer if found substring is
+  located on top and next line in wrap mode
++ Internal  viewer  supports all types of line feed: CrLf (DOS),
+  Cr, Lf (Unix)
+* Internal viewer wraps long lines by whole words
++ Internal viewer automaticaly updates screen if file is changed
++ Added new hotkey F3 (Quit) in internal viewer that is equal to
+  F10 or Esc
++ Added hotkey Ctrl-F7 for reverse searching in internal viewer
++ Added option 'Case sensitive' in Search dialog box in internal
+  viewer
++ Pressing  a  key  that  is  an  ASCII character invokes Search
+  dialog box in internal viewer
++ Internal  viewer  supports translation tables with single-byte
+  and double-byte character set (F8)
++ Hotkeys  Tab and Shift-F8  switch translation from odd or even
+  byte when double-byte table is used in internal viewer
++ Enter  switch  text  or  hexadecimal  mode  in internal viewer
+  (equal to F4)
++ Added   function  'Go  to  offset'  (F5)  in  internal  viewer
+  (hexadecimal mode)
+
+
+Changes in version 4.99.06 alpha (14-May-1998)
+
+- Path  of  the  file  panel  in 'Long names' mode  is displayed
+  incorrectly   when   error  reading  the  panel  occurs  after
+  executing command
+- Empty  file  panel  is displayed if enter from command line to
+  directory protected by password under DR-DOS or Novell DOS
+* Any  type  of  line  feed  (i. e. CrLf, Cr, Lf) can be used in
+  descriptions, *.EXT and *.MNU files
+- Progress bar is displayed with wrong colour when appending the
+  file during move operation
+- Strange  effects  occur after viewing file with size more than
+  9 Kbytes containing only spaces
+- Copying  file  with  description  causes incorrect updating of
+  target description file if it has EOF symbol at the end or the
+  last line has no line feed at the end
+- Mouse cursor looks as a symbol when error occures reading file
+  panel after returning from external program
++ Added  Choose Tree  function (Alt-F10) and Tree in copy dialog
+  boxes
+- Sometimes  random  symbols  appears  on the screen after using
+  mouse in dialog box 'Characters'
+- Functions  'Compare  directories'  selects  equal  files  with
+  different short names
+- Running  under  Windows 95  in session with option 'Protected'
+  sometimes   error   message   'Your  program  accessed  memory
+  currently in use at 00000470 from XXXX:XXXX' occurs
+* Option 'File case converting' in  dialog box 'General options'
+  is replaced with option 'Show short names in lower case'
+- Only  part  of files are shown with description if description
+  file has symbol EOF in the middle
+- Lines  of description files containing symbols with codes less
+  than 20h in file names are displayed as absent files
+
+
+Changes in version 4.99.07 alpha (20-Jul-1998)
+
+- Setting  mouse  cursor  to right border of panel in brief mode
+  when  option 'Long names' is on  and width of column 'Name' is
+  12  characters  causes  mouse cursor displays arrow that means
+  moving left or right but moving is disabled
+- Functions View and Edit are disabled for absent files
+- Multiple  excluded  masks in VC.EXT, VCVIEW.EXT and VCEDIT.EXT
+  don't work
+- When  active  panel contains maximal number of files, the next
+  sequences  crashes  the  program:  Tab,  Ctrl-R, Tab, enter to
+  archive; or view file by external viewer, enter to archive
+* Entering into  archive in archive and viewing files in archive
+  extract  temporary  file  in  its  own  subdirectory  to avoid
+  overwriting existent files with the same names
+- Temporary  archives  are  not  deleted after changing drive by
+  Alt-F1 and Alt-F2
+- Temporary  archives  are  not  deleted after changing drive or
+  directory  from  command  line  and  panel  displays  the same
+  archive directory
+- Temporary archives are not deleted after exiting VC
+- Pressing  a  key  that  is  an  ASCII character did not invoke
+  Search dialog box in internal viewer
+* Critical error handler is rewritten
++ Added possibility to skip file when it can not be opened while
+  copying  group  because  critical  error  occurs, for  example
+  'Sharing violation'
+- Error 'Not enough room to copy' occurs  copying file to device
+  that is not present in system (COM4, LPT3)
+* Binary  mode  is  used for copying files to devices instead of
+  ASCII one
++ VC.COM and VC.OVL can be compressed
++ VC.COM  can  be converted to VC.EXE and VC.OVL can be appended
+  to it
+* The list of files of inactive panel created by %@ is stored in
+  file VCLIST.nnn instead of VCLIST2.nnn
+* The  swap  file  is  stored  in  file  VCSWAP.nnn  instead  of
+  VCSWAPnn.TMP
+* TSR manager is disabled by default
+* Hotkey  for function 'Directory sizes' is changed from Ctrl-F7
+  back to Alt-F6
+* Hotkey  for  function 'Attributes' is changed from Shift-F1 to
+  Ctrl-A
+* Hotkey  for  function 'Restore selection' in pull-down menu is
+  changed from 't' to 's'
+* Presence  of VESA  text modes is checked before changing video
+  mode instead of startup
+* Removed command line switches /VESA and /noVESA
+- Error reading file panel if current directory was removed
+- Current directory was changed to temporary one after viewing a
+  file  from  archive  on  any  drive  except drive of temporary
+  directory
++ Sizes of  FAT-32 partitions larger than 2 Gbytes are displayed
+  correctly
++ Added Quick View function for files, directories and archives
++ Added directory information window in Info panel
+- VC  hangs  up  after  executing  DOS command when option 'Auto
+  directory sizes' is on
+
+
+Changes in version 4.99.08 alpha (02-Jun-2000)
+
+- Can't enter to directories with long names on some CD-ROMs
+- Error level 6 is returned by ARJ 2.60 when enter to archive
+- Trying to enter to large non-archive file causes big delay
+- Color of panels becomes white when Black & White screen colors
+  are selected and error reading file in Quick View panel occurs
+- Association of group of extension with command works only with
+  first extension (i. e. 'txt;doc: view.exe' works only for txt)
+- Size and free space of some disks are displayed as zero
+- Changing  drive  to  another one leaves Dirinfo window in info
+  panel when can't read new drive
+- First  line  is displayed incorrectly in internal viewer after
+  switching from Unicode character table
+- Can't  view  files  with long name from archive using archiver
+  which is not support long names
+- Function Zoom in Quick View mode does not hide cursor
+* Removed confirmation dialg box on deleting read-only directory
++ Added item 'Skip all' to all dialog boxes of group operations
+* Menu  cursor  in  dialog boxes remembers its previous position
+  during group operations.
+* Keystrokes  Ctrl-Q,  Ctrl-A, Ctrl-F quit speed search mode and
+  do appropriate action
+* Keystrokes  Ctrl-Left,  Ctrl-Right,  Ctrl-Home,  Ctrl-End move
+  cursor in speed search string
+- If  archive  contains  files and directories with illegal date
+  (for example 0-0-80), they are not displayed
+- Alt-F10  in  Copy/Move  dialog sets cursor bar to directory of
+  inactive  panel instead of current directory if inactive panel
+  is  displayed  contents  of the same disk as active panel, but
+  another directory
+- Entering  characters  in  Copy/Move  dialog  box  after  path,
+  inserted by Tree function, clears input line
+- Can't  enter  into  sinle  volume ZIP archive created by PKZIP
+  with option -&
+* Ctrl-R  does  not unselect files and move cursor to first file
+  until removable media is not changed in drive
+- Error reading some ZIP archives with long file names
+- Incorrect  path is inserted in command line if press Ctrl-[ or
+  Ctrl-] to insert path of panel that is switched off
+- Text message does not appears returning from graphic mode when
+  ANSI driver is loaded and some codes were used
+- Error 'Program too big to fit in memory' running  VC in XMS or
+  EMS mode after compressing VC.OVL by PKLITE
+- Pressing  PgDn  in hexadecimal viewer at the end of file jumps
+  to the beginning of the file in some cases
+- Deleting  directory  with  archive  opened  in  inactive panel
+  causes error message
+- Deleting  archive  with  included in archives leaves temporary
+  files
+- Incorrect total and free space of DriveSpace 3 disks
+- Incorrect total and free space of  FAT-32  disks are displayed
+  if TSR manager is on
+- Filter, Tree  and Directory sizes functions highlights item in
+  menu bar correctly
+- Command  line  overlaps  clock  and menu bar if it is in first
+  line
+* Ctrl-Enter inserts file to command line after '@' symbol
+- Fixed error displaying list of video modes on some VGA
+* Removed handler 'Divide overflow'
+* Format  of  year in function 'File Attributes' is changed from
+  2-digit to 4-digit
+- Fixed  problem exiting from VC if critical error occurs during
+  loading command processor or VC.COM when TSR manager is on
+- Call  Copy/Move/Delete functions via pull-down menu just after
+  start  of  VC  sometimes process only single file under cursor
+  even if some files were selected
+- Fixed  error  searching  for  previous match (Ctrl-F7) in long
+  files in viewer
+- Pointer  in Tree panel does not follow current directory after
+  rescanning tree
++ Added 'Find File' function

@@ -1,0 +1,9 @@
+Game: Quest for Glory IV: Shadows of Darkness
+Year: 1993
+Composed by: Aubrey Hodges
+MIDI versions: GM
+Platform: DOS
+
+Additional info: Single file in the folder root is a complete soundtrack made for General MIDI. I've also included some single tracks.
+
+https://www.karlsitretro.com/game_midi

@@ -1,0 +1,100 @@
+[?7h[40m[2J[2C[0;34;46m€ﬂﬂ‹[2Cﬂ€ﬂﬂ‹[2C‹‹[4Cﬂ‹[2C‹ﬂﬂﬂ‹[1C‹ﬂ€ﬂﬂﬂﬂ[40m
+  [46m€[3C€[2C€[3C€[2C€[5C€[1C€[8C€[40m
+ [46mﬂ€ﬂﬂﬂ€[1Cﬂ€ﬂﬂﬂ€[2C€[5C€[2Cﬂﬂ‹‹[3C‹€‹‹[40m
+  [46m€[3C€[2C€[3C€[2C€[5C€[6C€[1Cﬂ[1C€[40m
+ [46m‹ﬂ[2C‹ﬂ[1Cﬂ[1Cﬂﬂﬂ[2C‹ﬂ‹‹‹‹‹ﬂ[1Cﬂ‹‹‹‹ﬂ[2C‹ﬂ‹‹‹‹[40m
+[14C[1;37mA B U S E
+------------------------------------------------------------------------
+[8CGENRE: Action Shooter
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+[14CCONTROLS
+------------------------------------------------------------------------
+a : Toggle toolbar window.
+A : Disable auto lighting (when computer is too slow, lighting shuts off)
+b : Toggle background tile picker window.
+B : Make background window wider.
+c : Center on player.
+C : Clone object under cursor.
+d : Delete object under cursor.
+D : Toggle delays.
+E : Toggle enlarged render.
+f : Toggle foreground tile picker window.
+F : Make foreground tile picker window wider.
+g :
+h : Help!
+i : Invert color black (for foreground tile window, for discerning
+    transparent and non-transparent tiles)
+j : Jump player to mouse position.
+k : Kill first link of object under cursor.
+K : Kill last link of object under cursor.
+l : Toggle light picker window.
+L : Toggle layer show window.
+m : Toggle map.
+n : Next player focus (not working/useful).
+o : Toggle object picker window.
+p : Toggle palette picker window.
+P : Toggle profiler window.
+Q : Quit (does not ask permission).
+r : Raise/lower tile under cursor.
+s : Search for object. Not working yet.
+S : Save level.
+t : Flood fill the current tile. If "grabbing" a palette window, flood
+    fills with the palette pattern.
+U : Ultra smooth drawing. Not working yet.
+v : Volume.
+w : Where. Tells the x & y position of the mouse in the game.
+x : Flip object under cursor on the X axis.
+z : Clear weapons.
+Z : Toggle god mode. Cursor must be inside of view to toggle god-mode.
+
+space : Pick up object, so that you can move it around (click to drop).
+ctrl  : When moving an object : Hold down to align on a tile grid.
+[8CWhen not moving an objects : Hold down on one object and let go on
+[8Ctop of another to make a link.
+alt   : Hold down while moving to align to center of tile grid.
+`[5C: "Pick up" the foreground tile the mouse is current on.
+F1    : Help!
+F2    : Save a single screen shot to scrnshot.pcx.
+F3    : Save a single screen shot, but name shot0001.pcx, shot0002.pcx...
+F5    : Save a series of screen shots, one every 5 frames.
+F10   : Reduce screen to what it would for 320x200. Useful for hi-res editing.
++[5C: Increase view size.
+SHIFT+: Increase view size a lot.
++[5C: Decrease view size.
+SHIFT-: Decrease view size a lot.
+arrows: Scroll view.
+TAB   : Toggle edit/play mode.
+/[5C: Toggle console window.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[0m[255D

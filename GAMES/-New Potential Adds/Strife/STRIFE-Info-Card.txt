@@ -1,0 +1,122 @@
+==============================================================================
+DOS Games Archive Game Info Card                                     Version 3
+==============================================================================
+* General Information *
+
+Game title              : Strife
+Alternate title(s)      : Strife: Quest for the Sigil
+Developer               : Rogue Entertainment
+Publisher               : Velocity
+Country of origin       : USA
+Distribution model      : Commercial
+
+* Release Information *
+
+Release type            : Demo (interactive)
+Exclusive level(s)      : No (modified full version levels)
+Version                 : 1.1
+Release date            : Mar 1996
+Language                : English
+License file(s)         : README.TXT
+License/Permissions     : Not stated
+
+* Distribution Information *
+
+Distribution type       : Digital download
+File name               : strife11.zip
+File size               : 4 851 519 bytes
+Installer provided      : No
+Original location       : ftp.gamers.org/pub/games/strife/
+Retrieved from          : http://www.gamers.org/pub/idgames/roguestuff/
+
+Additional files        : 
+                          DOS/32 Advanced DOS Extender
+File names & sizes      : dos32a.exe (27 504 bytes)
+                          LICENSE (1 860 bytes)
+Retrieved from          : https://dos32a.narechk.net/index_en.html
+File name               : dos32a-912-bin.zip
+File size               : 215 399 bytes
+
+Maintainer              : MrFlibble <mrflibble86@gmail.com>
+==============================================================================
+* Note for DOSBox users *
+
+This software is fully installed and configured to run in the DOSBox emulator.
+You can simply drag and drop the file STRIFE.BAT over the DOSBox icon to start
+playing. Experienced DOSBox users may choose other methods of startup.
+
+The software was configured and tested to work with the official DOSBox build
+v0.74-3 available from www.dosbox.com. It may or may not work with any other
+third-party DOSBox distributions that are available.
+
+For playing instructions and other information, please refer to the README.TXT
+file found in the STRIFE directory.
+==============================================================================
+* Note on the use of DOS/32 Advanced DOS Extender *
+
+This product uses DOS/32 Advanced DOS Extender technology.
+
+Copyright (C) 1996-2006 by Narech K. All rights reserved.
+
+DOS/32 Advanced DOS Extender is used instead of the standard DOS/4GW extender
+shipped with Strife Teaser to improve stability and performance in DOSBox.
+
+DOS/32 Advanced DOS Extender is free software. Please see the LICENSE file in
+the STRIFE directory for license details.
+==============================================================================
+* Source ports *
+
+This game can also be played natively (no DOSBox required) on Windows, MacOS,
+Linux and other modern platforms using one of the source ports.
+
+> Chocolate Strife (as close to the original as possible):
+  https://www.chocolate-doom.org/wiki/index.php/Downloads
+
+> ZDoom (many optional enhancements):
+  https://zdoom.org/index
+
+Other ports (may not provide optimal experience):
+
+https://doomwiki.org/wiki/SvStrife
+https://doomwiki.org/wiki/SvStrife-plus
+https://doomwiki.org/wiki/Vavoom
+==============================================================================
+* Game related websites *
+
+Developer website (access via the Wayback Machine):
+http://gamers.org/~rogue/strife.html
+http://www.rogue.stomped.com/
+
+Gamers.org game page:
+http://gamers.org/games/strife/
+
+NOTE: Some sites are only available as copies made by the Wayback Machine:
+http://web.archive.org/
+==============================================================================
+* Disclaimer *
+
+THE GAME DATA IN THIS ARCHIVE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING AND NOT LIMITED TO ANY IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+All game content is copyright to their respective owners.
+
+No files from the original software package provided by the developer and/or
+publisher were modified except for the configuration files needed to set up
+sound devices and input methods.
+
+This software was tested to work with the current official DOSBox build
+(v0.74-3) and was scanned by an antivirus/anti-malware tool.
+
+You use this software at your own risk. DOS Games Archive is not liable for
+any unwanted consequences that may arise from your using this software.
+==============================================================================
+* Download and online play *
+
+This game is available from DOS Games Archive at:
+https://www.dosgamesarchive.com/download/strife/
+
+It can be played online at:
+https://www.dosgamesarchive.com/play/strife/
+
+--- END OF FILE (2020/12/21) ---

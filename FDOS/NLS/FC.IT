@@ -1,0 +1,42 @@
+#### Help        ####
+1.0:Confronta due file o insiemi di file e ne visualizza le differenze
+1.1:FC [switches] [drive1:][path1]filename1 [drive2][path2]filename2 [switches]
+1.2: /A    Visualizza solo la prima e l'ultima linea per ogni gruppo di differenze
+1.3: /B    Effettua un confronto binario
+1.4: /C    Ignora maiuscole/minuscole
+1.5: /L    Confronta i file come testo ASCII
+1.6: /Mn   Imposta a n byte il numero massimo di differenze in confronto binario
+1.7:       (default = %d, 0 = illimitato, /M = /M0)
+1.8: /N    Visualizza i numeri di linea nei confronti in modo testo
+1.9: /S    Estende la scansione ai file nelle subdirectory
+1.10: /T    Non espande i tab in spazi
+1.11: /W    Impacca tab e spazi nei confronti in modo testo
+1.12: /X    Non mostrare le linee di contesto nei confronti in modo testo
+1.13: /LBn  Imposta a n il massimo numero di righe ASCII differenti consecutive
+1.14: /nnn  Imposta a nnn il minimo numero di righe ASCII corrispondenti
+1.15:       consecutive per la risincronizzazione
+1.16: /R    Visualizza un breve resoconto finale (automatico se si usa /S)
+1.17: /Q    Non visualizza la lista delle differenze
+1.18: /U    Visualizza il nome dei file privi del file corrispondente
+#### Messages    ####
+2.0:Switch non valido: %s
+2.1:Troppe specifiche di file
+2.2:Nome di file non valido
+2.3:Non Š stato specificato nessun file
+2.4:Attenzione: i file hanno dimensioni differenti!
+2.5:Confronto interrotto dopo %d differenze
+2.6:Nessuna differenza
+2.7:Attenzione: confronto interrotto dopo %d linee
+2.8:Memoria insufficiente
+2.9:Errore nell'apertura del file %s
+2.10:Confronto in corso di %s e %s
+2.11:Non esiste nessun tale file o directory
+2.12:Risincronizzazione fallita: i file sono troppo differenti
+2.13:I file hanno dimensioni differenti
+2.14:I file sono differenti
+2.15:Il file %s non ha corrispondente (%s)
+#### Report text ####
+3.0:Confrontati %d file
+3.1: in %d directory
+3.2:%d file coincidono, %d file sono differenti
+3.3:%d file non hanno il file corrispondente

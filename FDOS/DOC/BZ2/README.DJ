@@ -1,0 +1,246 @@
+This is a DJGPP port of bzip2 1.0.5.
+
+
+1.  DJGPP specific changes:
+    -----------------------
+
+    When compressing a file, bzip records the attribute bits, time stamp and
+    the original file name in the compressed file giving the compressed file
+    the same attributes, time stamp and file name as the original one. To
+    identify this file as bzip compressed, an ".bz2" extension is appended
+    to the file name. When bzip decompress a file, the new file gets the
+    same file name as the compressed one, after the ".bz2" extension has been
+    removed, and the same  attribute bits and time stamp. Thus the decompressed 
+    file will have the same attribute bits, time stamp and file name as the 
+    original file.
+    This way of recording attribute bits, time stamp and original file name
+    presents no difficulty in LFN environments like UNIX or WIN9X but it does
+    in SFN environments like MSDOS or WIN9X with LFN=n where 8.3 file name 
+    restrictions applies.
+    This DJGPP port of bzip will detect at run time if LFN support is
+    available or not and will select an appropiate rule for create the
+    file names.
+
+    Due to the 8.3 file name retriction under MSDOS and WIN9X with LFN=n,
+    there is no way to properly preserve file name and extension at the
+    same time.
+    This port offers the user the choice between two rules to create the
+    name of the compressed files. The first rule (default) will preserve
+    the file name at the cost of truncating the extension. The second rule
+    will preserve the extension and truncate the file name. The different 
+    rules are selected by omitting or setting the -n flag.
+
+    Rule 1: file name preserving and extension truncating.
+    This is the default rule. If the "-n" flag is omitted then this rule
+    will be used.
+    With this rule the following types of file names will be generated:
+
+    When compressing:
+    filename     becomes filename.bz2
+    filename.e   becomes filename.ebz
+    filename.ex  becomes filename.exb
+    filename.ext becomes filename.exb
+    filename.tar becomes filename.tbz
+
+    And when uncompressing:
+    filename.bz2 becomes filename
+    filename.bz  becomes filename
+    filename.ebz becomes filename.e
+    filename.exb becomes filename.ex
+    filename.tbz becomes filename.tar
+    anyothername becomes anyothername.out
+
+
+    Rule 2: file name truncating and extension preserving.
+    This rule must be explicity enabled by setting the "-n" flag.
+    With this rule backward compatibility with other MSDOS ports of
+    bzip2 is achieved.
+    With this rule the following types of file names will be generated:
+
+    When compressing:
+    filename     becomes filename.bz2
+    filename.e   becomes filena_e.bz2
+    filename.ex  becomes filen_ex.bz2
+    filename.ext becomes file_ext.bz2
+    filename.tar becomes filename.tbz
+    
+    And when uncompressing:
+    filename.bz2 becomes filename
+    filena_e.bz2 becomes filena.e
+    filen_ex.bz2 becomes filen.ex
+    file_ext.bz2 becomes file.ext
+    filename.tbz becomes filename.tar
+    anyothername becomes anyothername.out
+
+    The same rule must be used for compression and uncompression.
+    Under WIN9X with LFN=y the "-n" flag is ignored.
+    
+    Under WIN9X, where file name restriction does not apply, the default 
+    naming rules for compressed and original files are used:
+    
+    When compressing:
+    longfilename               becomes longfilename.bz2
+    longfilename.extension     becomes longfilename.extension.bz2
+    longfilename.tar           becomes longfilename.tar.bz2
+
+    And when uncompressing:
+    longfilename.bz2           becomes longfilename
+    longfilename.extension.bz2 becomes longfilename.extension
+    longfilename.tar.bz2       becomes longfilename.tar
+    anyothername               becomes anyothername.out
+
+
+
+2.  Installation.
+    -------------
+
+  - Unzip the binary package bz2-105b.zip preserving the directory
+    structure (-d switch to PKUNZIP) from the top DJGPP directory.
+    This will install bzip2.exe and bzip2recover.exe and some other
+    shell scripts in the /bin directory.  It will also install the
+    man pages but it will not install the header and library.  These
+    are distributed in a separate zip file.
+
+  - If you need the header and library (bzlib.h and libbz2.a) to link
+    with your own applications, unzip the library package bz2-105a.zip
+    preserving the directory structure (-d switch to PKUNZIP) from the
+    top DJGPP directory.
+
+  - If you want to install the HTML, pdf, ps docs, unzip the docs package
+    bz2-105d.zip preserving the directory structure (-d switch to PKUNZIP)
+    from the top DJGPP directory. This creates a directory
+    gnudocs/bzip2-1.0-5.
+
+  - You can add to your DJGPP.ENV file the following lines to setup
+    the BZIP2 and BZIP environment variables:
+
+[bzip2]
+BZIP2=
+BZIP=
+
+[bunzip2]
+BZIP2=
+BZIP=
+
+[bzcat]
+BZIP2=
+BZIP=
+
+    bzip2, bunzip2 or bzcat will read arguments from the environment
+    variables BZIP2 and BZIP, in that order, and will process them
+    before any arguments read from the command line. This gives
+    you a convenient way to supply default arguments.
+    For the list of arguments available, read the HTML and man docs.
+
+  - The bzmore, bzdiff and bzgrep shell scripts will require the DJGPP
+    ports of less, cmp, diff, grep and mktemp.
+
+
+4.  Building bzip2.
+     ---------------
+
+  - In addition to the standard DJGPP tools, this are v2/djdev203.zip
+    v2gnu/bnu217b.zip and v2gnu/gcc423b.zip or any later version,
+    you will need Make, Fileutils, Textutils, Diffutils, and Texinfo. 
+    They are available as v2gnu/makNNNb.zip, v2gnu/filNNNb.zip,
+    v2gnu/txtNNNb.zip, v2gnu/difNNNb.zip, and v2gnu/txiNNNb.zip
+    accordingly, from the usual DJGPP sites.
+    Diffutils are needed to run the tests.
+
+  - Unzip the source package bz2-105s.zip preserving the directory
+    structure (-d switch to PKUNZIP) from the top DJGPP directory.
+    This creates a directory contrib/bzip2-1.0-5.
+    IMPORTANT: Take care that no LF to CR/LF conversion takes place
+    when extracting the sources or the tests will fail.This happens
+    when you use WinZIP to unzip the sources and the option:
+      "TAR File Smart CR/LF Conversion"
+    in the Options/Configurtion menu is activated.In this case
+    deactivate this option, delete the bzip2 directory and unzip the
+    sources again.
+    To avoid this difficulties use unzip32 or djtar that are available from
+    the usual DJGPP sites.
+
+  - Chdir to the bzip2 directory and type the following command to
+    compile and link bzip:
+
+        make
+
+    If the test failed, then the files sample?.bz2 and sample?.ref had been
+    converted from UNIX style to MSDOS style. In this case you will have to
+    unzip the sources into a new directory and copy the files:
+
+        sample1.bz2, sample2.bz2, sample3.bz2,
+        sample1.ref, sample2.ref, sample3.ref
+
+    manually to the directory bzip2-1.0-5.
+    Then type the command:
+
+        make test
+
+ - To see what the installation process will do, type the following command:
+
+        make -n install                            or
+        make -n install PREFIX=z:/some/other/dir   respectively.
+
+    PREFIX will default to /dev/env/DJDIR. If you prefer to install into
+    some other directory then set PREFIX to the appropiate value at the command
+    line. The -n instructs make to show the commands it would execute, but
+    does not actually execute them.
+    
+  - To install the binaries and docs only (bzip2.exe, bunzip2.exe, bzcat.exe,
+    bzip2recover.exe and the Info and man docs) type the following command:
+
+        make install-bin                               or
+        make install-bin PREFIX=z:/some/other/dir      respectively.
+
+  - To install the header and library only (bzlib.h and libbz2.a)
+    type the following command:
+
+        make install-lib                               or
+        make install-lib PREFIX=z:/some/other/dir      respectively.
+
+  - To install everything (bzip2.exe, bunzip2.exe, bzcat.exe, bzip2recover.exe,
+    the library libbz2.a and the header bzlib.h, and the Info and man docs)
+    type the following command:
+
+        make install                               or
+        make install PREFIX=z:/some/other/dir      respectively.
+
+  - You can add to your DJGPP.ENV file the following lines to setup
+    the BZIP2 and BZIP environment variables:
+
+[bzip2]
+BZIP2=
+BZIP=
+
+[bunzip2]
+BZIP2=
+BZIP=
+
+[bzcat]
+BZIP2=
+BZIP=
+
+    bzip2, bunzip2 or bzcat will read arguments from the environment
+    variables BZIP2 and BZIP, in that order, and will process them
+    before any arguments read from the command line. This gives
+    you a convenient way to supply default arguments.
+    For the list of arguments available, read the HTML, pdf, ps or
+    man docs.
+
+  - The diffs file describes the changes that I've done relative to
+    the official bzip distribution.
+
+  - Please read the file LICENCE, for the terms upon which bzip2
+    can be used and distributed.
+
+  - For more information about bzip2, visit the official bzip2 homepage:
+        http://www.bzip.org/
+
+  - Send suggestions and bug reports concerning the DJGPP port to
+    comp.os.msdos.djgpp or <djgpp@delorie.com>.
+
+
+Enjoy.
+
+        Guerrero, Juan Manuel <juan.guerrero@gmx.de>

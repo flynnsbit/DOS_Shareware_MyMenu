@@ -1,0 +1,898 @@
+
+                          XGREP USER MANUAL
+                          =================
+
+
+
+TABLE OF CONTENTS
+=================
+
+
+ 1. Introduction
+ 2. What is XGREP?
+ 3. Command line syntax
+ 4. Regular expressions
+ 5. Options
+ 6. Return codes
+ 7. Performance
+ 8. Compatibility
+
+
+
+1. INTRODUCTION
+===============
+
+
+XGREP is an implementation of GREP for computers running MS-DOS.
+Written entirely in assembly language, XGREP is very fast and very
+compact. XGREP is also intended to be a particularly "UNIX-compatible"
+implementation of GREP.
+
+If you have already used GREP or a GREP-like utility, you may want to
+try out XGREP before reading the documentation. For experienced GREP
+users, PERFORMANCE and COMPATIBILITY sections are included in the
+manual. To display the help screen, just enter XGREP (with no
+arguments) at the command line.
+
+If you are not familiar with GREP, you should probably read through at
+least the first part of the documentation. Numerous examples are
+included. Bear in mind that much of the material here is presented for
+completeness. XGREP is not difficult to use.
+
+XGREP has been extensively tested both against UNIX GREP and against
+various GREP-like programs and utilities. Bug reports are welcome and
+will, where necessary, be dealt with in future releases.
+
+XGREP may be used and distributed in unmodified form without payment
+to the author, provided that this document accompanies the program.
+
+NOTE: As used here, XGREP refers to the software documented in this
+manual; other brand or product names are trademarks or registered
+trademarks of their respective companies.
+
+
+
+2. WHAT IS XGREP?
+=================
+
+
+XGREP is program for searching text files, and is based on the UNIX
+utility GREP.
+
+You can use XGREP to --
+
+
+          display the lines in a file that contain a particular word,
+          phrase, or pattern;
+
+          count those lines in which a particular pattern occurs; or
+
+          generate a list of files that refer to a given topic.
+
+
+Here are some simple XGREP commands:
+
+          xgrep "Hello World" *.c
+          xgrep -c jill group
+          xgrep -l SCSI *.doc
+
+Like GREP, XGREP works best on plain text files: the sort of files
+that do not contain binary data or non-ASCII control characters, and
+which are divided into lines or records ending in a '\n' (newline).
+These files might contain:
+
+          program source code
+          documentation
+          e-mail
+          system configuration or log/audit data
+          data as it is stored in some databases and archives
+          anything typed in using a standard text editor
+          anything "printed to disk"
+          the output of other programs and utilities
+
+XGREP supports text files in both UNIX (LF) and MS-DOS (CR, LF)
+formats.
+
+What makes XGREP (and GREP) a particularly useful and powerful
+searching tool is its support for regular expressions. The "RE" in
+XGREP stands for "regular expression".
+
+A XGREP regular expression may be a simple (literal) string as in
+
+          "Hello World"
+
+but it can also contain special (meta) characters for more flexible
+searching, for example:
+
+          "H[eu]llo  *[Ww]orld"
+
+Much more complex regular expressions are possible. The expression
+
+          "([0-9]\{3\}) [0-9]\{3\}-[0-9]\{4\}"
+
+which will match telephone numbers in the form
+
+          (999) 999-9999
+
+It is not necessary to know much about regular expressions to use
+XGREP, but they can be invaluable for elaborate searches.
+
+
+
+3. COMMAND LINE SYNTAX
+======================
+
+
+3.1. The Command Line
+---------------------
+
+Help is available by entering
+
+          xgrep
+
+by itself at the DOS prompt. Otherwise, an XGREP command has the
+following syntax:
+
+          xgrep [options] expression [files]
+
+The square brackets [ ] do not form part of the command. They indicate
+that the "options" and "files" portions of the command may be omitted.
+
+The following examples use the same expression, but differ as to the
+options and files specified:
+
+          xgrep widgets
+          xgrep -n widgets notes.txt
+          xgrep -n -rs widgets \*.txt \*.doc
+
+The options, expressions, and files appearing on the command line are
+referred to collectively as arguments. In the examples, the commands
+have one, three, and five arguments respectively. Arguments are
+separated by spaces or tab characters, but this may be overridden by
+quoting (discussed below).
+
+Subject to restrictions imposed by MS-DOS, any character may appear on
+the command line except '\0' (ASCII NUL) and '\n' (ASCII LF).
+
+
+3.2. Specifying Options
+-----------------------
+
+Options must appear before the expression on the command line. An
+option specification consists of an option indicator or "switchchar"
+(a - or / character) followed by one or more option identifiers. The
+following are all valid, and equivalent, option specifications:
+
+          -n -s -v
+          /ns /v
+          /s -nv
+          -vns
+
+If required, an argument consisting of two consecutive identical
+switchars (that is, -- or //) may be used to indicate the end of the
+options list. This will prevent incorrect parsing where the
+expression itself begins with a switchchar:
+
+          xgrep -n -- -32768 math.txt
+
+An argument consisting of just a single switchchar also has a special
+significance. It does not specify an option, and is therefore parsed
+as an expression:
+
+          xgrep -n -
+
+(This usage is primarily for compatibility with UNIX.)
+
+
+3.3. Specifying an Expression
+-----------------------------
+
+Regular expression syntax is discussed in detail in following
+sections. This section is limited to a discussion of quoting on the
+command line.
+
+It may be necessary to quote an expression for two reasons. One is to
+override the command line argument-parsing mechanism. Since spaces and
+tab characters are argument separators, an expression containing
+spaces or tab characters must be delimited by quotes:
+
+          xgrep "Acme Widgets" notes.txt
+
+In addition, an expression that contains characters of special
+significance to the MS-DOS shell must be protected by quotes:
+
+          xgrep "a>b" math.txt
+
+Of necessity, XGREP follows the simple quoting conventions of the MS-
+DOS shell rather than those of UNIX. Double quotes are used and only
+pairs of quote characters (as in "this is quoted") are of special
+significance. An unpaired quote is merely a literal character and the
+sequence \" is not (and cannot be properly) supported.
+
+To embed a quote character within quotes, end one quote sequence and
+immediately begin another:
+
+          xgrep "<"">" test.txt
+
+Functionally, XGREP differs from UNIX GREP in that only an expression
+may be quoted. Quoting of option and file arguments is unnecessary in
+this implementation and is not supported. It is therefore also
+possible to quote an expression to prevent it being interpreted as an
+option:
+
+          xgrep -n "-32768" math.txt
+
+
+
+3.4. Specifying Files
+---------------------
+
+One or more files may be specified on the command line, following the
+expression. Each file specification must include at least a file name,
+but may also include drive and path specifiers. MS-DOS wildcards (*
+and ?) are supported. All of the following examples are valid:
+
+          note01.txt
+          note01.txt note02.txt
+          \notes\note??.txt
+          a:*.* c:notes\*.txt *.doc
+
+UNIX-style path separators, as in
+
+          /usr/jill/*.txt
+
+are supported, and are translated to their MS-DOS equivalents during
+command line parsing.
+
+If files are not specified, use may be made of I/O redirection as
+supported by MS-DOS:
+
+          dir | xgrep "^[^ ]"
+
+          xgrep -v ^$ <notes.txt >notes.out
+
+
+
+
+4. REGULAR EXPRESSIONS
+======================
+
+
+4.1. Literal Strings
+--------------------
+
+Literal strings, as in
+
+          widgets
+
+or
+
+          "Hello World"
+
+are the simplest and most used regular expressions.
+
+When specifying literal strings using XGREP (or any GREP-like
+utility), you should, however, bear in mind that certain characters
+are (by default) treated as regular expression operators. To ensure
+that they are interpreted literally, these characters must be escaped
+(quoted) with a \ (backslash).
+
+As far as XGREP is concerned, the special characters to remember are
+the following:
+
+          \ . [ * + ? ^ $
+
+For example, to search for the C fragment
+
+          *p++ = '\0';
+
+you should escape (quote) the * and + and \ characters:
+
+          \*p\+\+ = '\\0';
+
+Strictly speaking, in the above example the * character need not have
+been quoted. This is because of the way XGREP parses expressions.
+However, routinely quoting all special characters it is a good habit
+to cultivate, and may be required by certain implementations (for
+example, by EGREP, another of the UNIX GREP family).
+
+
+4.2. Specifying Context
+-----------------------
+
+The ^ (caret) and $ (dollar sign) may be used to specify the context
+of an expression. The expression
+
+          ^Hello
+
+will match "Hello" only where it occurs at the very start of a line,
+and the expression
+
+          Hello$
+
+will match "Hello" only where it occurs at the very end of a line. The
+two may also be used together, as in
+
+          ^Hello$
+
+which will match only lines consisting of a single "Hello" and nothing
+else. A useful expression is
+
+          ^$
+
+which matches any blank line.
+
+The ^ must appear as the first character of the expression, and the $
+must appear as the last character of the expression, if they are to be
+used to specify context. The expression
+
+          $^
+
+has no special significance and simply matches a $ character followed
+by a ^ character.
+
+
+4.3. The Wildcard
+-----------------
+
+A . (dot) appearing in a regular expression will match any single
+character. The expression
+
+          x.z
+
+will match the strings
+
+          xyz
+          x+z
+          x z
+
+(among others), but will not match
+
+          xz
+          x==z
+
+By itself, a single . (dot) will match anything on any line but will
+not match a blank line.
+
+
+4.4. The Character Class
+------------------------
+
+Characters appearing between [  ] (square brackets) constitute a class
+that will match a single character. A simple example of a character
+class is
+
+          [0123456789]
+
+which will match any single digit. This same class may also be
+expressed as
+
+          [0-9]
+
+and, because in XGREP the class of digits is a predefined one, by the
+even shorter form
+
+          [:d]
+
+Within a class, all the otherwise special characters -- even the \
+(backslash) -- lose their significance. Only four characters may be
+special: the ^ (caret), the - (dash), the : (colon), and the ] (right
+square bracket).
+
+The ^ (caret) is special if it immediately follows the [ that opens
+the class. This sequence denotes an inverse class: a class that
+matches anything except a member of the class. For example, where the
+class
+
+          [02468]
+
+will match any even digit, the (inverse) class
+
+          [^02468]
+
+will match any character but an even digit. And the (inverse) class
+
+          [^^]
+
+will match anything but a ^ character.
+
+A ] (right square bracket) is special unless it immediately follows
+the opening [ or follows the [^ sequence in the case of an inverse
+class. Thus the class
+
+          []^]
+
+will match a ] or ^ character, and the (inverse) class
+
+          [^]^]
+
+will match anything but a ] or ^ character.
+
+The - (dash) can be used to specify ranges within a class. XGREP
+differs with slightly with GREP over how ranges are handled. The XGREP
+rule is as follows: if any literal is followed by a - (dash) and
+another literal, the three collectively constitute a range. The class
+
+          [0-9-+]
+
+therefore specifies a range 0 through 9 as well the - and +
+characters, while the class
+
+          [0-9--/]
+
+specifies two ranges: the range 0 through 9 and the range - through /
+as well.
+
+An out-of-sequence range, as in
+
+          [z-a]
+
+matches nothing.
+
+In XGREP, the : (colon) may be used to refer to predefined classes.
+The twelve predefined classes, together with their definitions, are as
+follows:
+
+------------------------------------------------------------------
+ID Name    Description   Class           ASCII ranges (decimal)
+------------------------------------------------------------------
+a  alpha   alphabetic    [A-Za-z]        65-90,97-122
+c  cntrl   control                       0-31,127
+d  digit   digits        [0-9]           48-57
+g  graph   graphics      [!-~]           33-126
+l  lower   lowercase     [a-z]           97-122
+n  alnum   alphanumeric  [0-9A-Za-z]     48-57,65-90,97-122
+p  punct   punctuation   [!-/:-@[-`{-~]  33-47,58-64,91-96,123-126
+s  space   whitespace                    9-13,32
+p  print   printable     [ -~]           32-126
+u  upper   uppercase     [A-Z]           65-90
+x  xdigit  hex digits    [0-9A-Fa-f]     48-57,65-70,97-102
+z  ascii                                 0-127
+------------------------------------------------------------------
+
+
+The : (colon) has a higher precedence than the - (dash). Thus the
+class
+
+          [:d-:l]
+
+is equivalent to the class
+
+          [:d:l-]
+
+and matches digits, lowercase letters, and the - character.
+
+
+If a : (colon) precedes anything other than one of the twelve
+predefined class identifiers, it has no special significance. The
+class
+
+          [:y]
+
+simply matches the characters : or y.
+
+
+4.5. The Repeat Operators
+-------------------------
+
+XGREP features four repeat operators: the * and \{  \} operators
+supported by GREP and the + and ? operators added by EGREP.
+
+A repeat operator can be applied to a literal character:
+
+          x*
+
+to a wildcard:
+
+          .*
+
+or to a character class:
+
+          [0-9]*
+
+The most general repeat operator is \{  \} which has three forms:
+
+          \{m\}
+          \{m,\}
+          \{m,u\}
+
+The m (minimum) and the u (upper limit) are not literal characters but
+represent integers between 0 and 255.
+
+The usage \{m\} simply specifies a fixed number of repetitions. The
+expression
+
+          xy{3\}z
+
+specifies three repetitions of y and is equivalent to the expression
+
+          xyyyz
+
+The usage \{m,\} means "m or more repetitions". The expression
+
+          xy\{0,\}z
+
+specifies zero or more repetitions of y and will match
+
+          xz
+          xyz
+          xyyz
+          xyyyz
+
+and however many other repetitions of y can fit on a line between x
+and z.
+
+The usage \{m,u\} means "at least m, but as many as u repetitions".
+The expression
+
+          xy\{1,3\}z
+
+specifies at least one, but not more than three, repetitions of y and
+will match
+
+          xyz
+          xyyz
+          xyyyz
+
+and nothing else.
+
+The other repeat operators are merely shorthand forms of \{  \} as
+follows:
+
+          *         \{0,\}         (0 or more)
+          +         \{1,\}         (1 or more)
+          ?         \{0,1\}        (0 or 1)
+
+
+
+
+5. OPTIONS
+==========
+
+
+XGREP supports the following command line options:
+
+          -c  Line count only
+          -h  No file names
+          -l  File names only
+          -n  Number lines
+          -o  Errors to stdout
+          -r  Recursively search subdirectories
+          -s  Silent about inaccessible files
+          -v  Non-matching lines
+          -x  No magic: all operators need \
+          -y  Case-insensitive match
+
+Two further options are supported as aliases for other options:
+
+          -d  is an alias for  -r
+          -i  is an alias for  -y
+
+The command line options permit control over the following aspects of
+program behavior:
+
+          (a)  Output                        -c -h -l -n -o
+          (b)  File access                   -r -s
+          (c)  Expression matching           -v -y
+          (d)  Regular expression syntax     -x
+
+
+5.1. Output options
+-------------------
+
+XGREP operates in one of three basic output modes. Either it outputs
+matching lines; or it outputs a count of matching lines; or it outputs
+a list of the files containing matching lines. This behavior is
+summarized in the following table:
+
+          ---------------------------------------
+          MODE      OUTPUT FORMAT
+          ---------------------------------------
+          Line      [Filename] [Line number] Line
+          Count     [Filename] Count
+          List      Filename
+          ---------------------------------------
+
+(The square brackets [ ] do not form part of the output. They indicate
+that the "Filename" and "Line number" elements may, or may not, be
+present.)
+
+By default, XGREP operates in Line Mode. It will output filenames only
+if multiple files were specified, and it will not number lines.
+
+The four options -c -h -l -n may be specified in various combinations
+to control output modes and formats. Any one of the fifteen possible
+combinations is acceptable; however, some combinations are redundant:
+
+
+     LINE MODE:
+
+          -n   Line numbers: yes   Filenames: maybe
+          -h   Line numbers: no    Filenames: never
+          -hn  Line numbers: yes   Filenames: never
+          -nl  Line numbers: yes   Filenames: always
+
+
+     COUNT MODE:
+
+          -c   -cn  -cln           Filenames: maybe
+          -ch  -chl -chn -chln     Filenames: never
+          -cl                      Filenames: always
+
+
+     LIST MODE:
+
+          -l   -lh  -lhn
+
+
+A further output-related option is -o, which relates to error
+messages. By default, error messages are not affected by output
+redirection. However, if option -o is specified, error messages will
+be redirected along with standard output. For example, in the command
+
+          xgrep widgets *.txt >prn
+
+standard output will be sent to the printer but any error messages
+will be displayed on the screen. However, in the command
+
+          xgrep -o widgets *.txt >prn
+
+both standard output and any error messages will be sent to the
+printer. (However, if a write fault occurs, option -o will be ignored
+and an error message will be displayed.)
+
+
+5.2 File-Related Options
+------------------------
+
+Option -r (or -d) will cause XGREP to look for files not only in the
+specified (or default) directory, but in all the subdirectories of
+that directory. For example, the command
+
+          xgrep -r widgets \*.txt
+
+will look for *.TXT files not only in the specified (root) directory
+but in all subdirectories off the root.
+
+If option -s if specified, XGREP will not output a warning message if
+it cannot open a file. In some multi-user environments (eg. networks)
+permission to open a file may be denied either because the user has
+insufficient rights to the file or because the file is locked.
+
+
+5.3. Controlling Matching
+-------------------------
+
+Option -v will cause XGREP to "invert" the result of any match. For
+example, the command
+
+          xgrep -c ^$ test.txt
+
+will output a count of blank lines in a file, whereas the command
+
+          xgrep -cv ^$ test.txt
+
+will output a count of non-blank lines.
+
+If option -y (or -i) is specified, matching is not case-sensitive.
+While the command
+
+          xgrep hello test.txt
+
+will match only the string
+
+          hello
+
+the command
+
+          xgrep -y hello test.txt
+
+will match the strings
+
+          hello
+          Hello
+          hELLO
+
+among others.
+
+
+5.4. Changing Syntax
+--------------------
+
+The -x option causes the ordinarily "special" characters
+
+     . [ * + ? ^ $
+
+to be parsed, by default, as literals. For example, the following
+command are equivalent:
+
+         xgrep    "p\[0] \* 3" test.c
+         xgrep -x "p[0] * 3"   test.c
+
+All regular expression operators are still accessible, but must be
+preceded by a \ (backslash).
+
+
+
+6. RETURN CODES
+===============
+
+On completion, XGREP always exits with a return code. If XGREP is run
+from within a batch file or another program, this code can be
+retrieved and tested. Return codes are as follows:
+
+          2    Error(s) occurred
+          1    No matches found
+          0    At least one match found
+
+
+
+
+7. PERFORMANCE
+==============
+
+
+The following benchmarks are intended to give some idea of the
+performance you can expect from XGREP.
+
+Along with XGREP, the following three programs were rated:
+
+
+     (a)  "find"    FIND.EXE (MS-DOS 3.30)
+
+          The MS-DOS "FIND" command does not handle regular
+          expressions or wildcards, and will not recursively
+          search subdirectories, but does a reasonable job
+          of looking for fixed (literal) strings.
+
+     (b)  "tgrep"   Borland's Turbo GREP 3.0
+
+          Turbo GREP comes packaged with Borland's C++ and
+          Pascal language products. Not a very standard
+          GREP, Turbo GREP will also search binary (eg.
+          executable and object) files, and is very fast in
+          this mode. For line-orientated searches, Turbo
+          GREP appears to use a different algorithm, and is
+          slower.
+
+     (c)  "dgrep"   DECUS GREP
+
+          DECUS GREP is a UNIX "freeware" GREP written in C.
+          Although there are faster C-language GREPs, DECUS
+          GREP shows the order of performance to be expected
+          of a straightforward "portability first"
+          implementation.
+
+
+Timings are for a 386 CPU (one wait state) and are dependent on CPU
+type, wait states, disk access speed, and various other factors.
+
+All measurements are to the nearest tenth of a second.
+
+
+1.   Count the lines in CARGS.DIS, a 396733 byte UNIX-style
+     disassembly of a short C program:
+
+     xgrep -c ^ cargs.dis                         0.4
+     tgrep -c ^ cargs.dis                         2.1
+     dgrep -c ^ cargs.dis                         3.1
+
+     (9845 lines)
+
+
+2.   Look for malloc() in CARGS.DIS:
+
+     xgrep -n malloc( cargs.dis                   0.4
+     find /n "malloc(" cargs.dis                  0.7
+     tgrep -n malloc( cargs.dis                   1.4
+     dgrep -n malloc( cargs.dis                   9.7
+
+     (found at line 8946)
+
+
+3.   List the functions used in CARGS.DIS:
+
+     xgrep "^[^ ]+(" cargs.dis >x                 0.7
+     tgrep "^[^ ]+(" cargs.dis >t                 0.9
+     dgrep "^[^ ]+(" cargs.dis >d                 8.8
+
+     (77 matches found)
+
+
+4.   Find "stdin" in \BORLANDC\INCLUDE\*.H (47 files totalling 192515
+     bytes):
+
+     xgrep -nl stdin \borlandc\include\*.h        0.6
+     tgrep -no stdin \borlandc\include\*.h        1.1
+
+     (3 matches found in 1 file)
+
+
+5.   Look for datestamps in all the .ASM files on disk (350 files in
+     36 directories totalling 1897004 bytes):
+
+     xgrep -r [0-9][/-][0-9]+[/-][0-9] \*.asm     26.5
+     tgrep -d [0-9][/\-][0-9]+[/\-][0-9] \*.asm   56.4
+
+     (7 matches found in 6 files)
+
+
+Bear in mind that all benchmarks are to some extent artificial
+indicators of performance, and that the only true test is actual use.
+
+
+
+8. COMPATIBILITY
+================
+
+XGREP is intended to be closely compatible with UNIX implementations
+of GREP, specifically GREP under UNIX System V 3.2.2.
+
+This section outlines major compatibility issues.
+
+
+8.1. Omissions
+--------------
+
+The \( and \) (tagging) operators are not supported.
+
+Options -b (block number) and -f (take expression from file)
+are not supported.
+
+Locale-specific collating sequences are not supported.
+
+
+8.2. Deviations
+---------------
+
+The (redundant) option -e (expression) is not supported. UNIX
+System V "getopt" syntax permits "--" to end the options list.
+
+GREP's parsing of the - (range) operator within character classes in
+a source of trouble and confusion. Where a well-formed range is not
+specified, XGREP will treat the - character as a literal. XGREP parses
+a class such as "[0-9-+]" as referring to a range ('0'..'9') and two
+literals ('-' and '+').
+
+XGREP supports "ctype classes" differently, and uses a more compact
+syntax, as in "[:a]" versus "[:alpha:]".
+
+XGREP does not permit "zero-repetition" as in "a\{0\}" or "a\{0,0\}".
+
+
+8.3. Enhancements
+-----------------
+
+Option -l may be combined with option -c or option -n to force output
+of the name of file, even where multiple files are not searched. This
+preserves consistency and is useful where the output is intended to
+be parsed by a "smart" editor or another program.
+
+Option -o redirects error messages to stdout. Such an option is not
+required under UNIX but is useful under MS-DOS since stderr cannot be
+redirected.
+
+Option -r provides for the recursive search of subdirectories.
+
+The -x (no magic) option causes ordinarily "special" characters to be
+parsed, by default, as literals. For example:
+
+         xgrep    "p\[0] \* 3" test.c
+         xgrep -x "p[0] * 3"   test.c
+
+All regular expression operators are still accessible, but must be
+preceded by a \ (backslash).
+
+XGREP supports the repeat operators + and ? as shorthand forms of
+\{1,\} and \{0,1\} respectively.
+
+
+__
+Robert Nordier
+rnordier@iafrica.com
+
+PO Box 11266
+Marine Parade
+4056
+South Africa
+

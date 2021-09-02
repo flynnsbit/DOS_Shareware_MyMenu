@@ -1,0 +1,14 @@
+Begin3
+Title:          Spool
+Version:        2.2
+Entered-date:   1995-06-28
+Description:    Spools file printing in the background. This does not require the use of a PRINT command.
+Keywords:       print, spool, spooler
+Author:         Craig Derouen
+Maintained-by:
+Primary-site:   http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/print/
+Alternate-site:
+Original-site:  http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/print/
+Platforms:      DOS, FreeDOS
+Copying-policy: Public Domain
+End

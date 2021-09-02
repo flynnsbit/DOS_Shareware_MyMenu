@@ -1,0 +1,14 @@
+Begin3
+Title:          switchar
+Version:        1.0
+Entered-date:   1998-09-30
+Description:    Display and set the DOS switchar
+Keywords:       freedos
+Author:         cdye _AT_ unm.edu
+Maintained-by:  raster _at_ highfiber.com
+Primary-site:         http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/switchar.html
+Alternate-site:
+Platforms:      DOS, FreeDOS
+Copying-policy: GNU General Public License, Version 2
+Defunct-Primary-Site: http://www.highfiber.com/~raster/freeware.htm
+End

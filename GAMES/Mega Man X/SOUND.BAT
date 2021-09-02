@@ -1,0 +1,3 @@
+CD DRV
+SETSOUND.EXE
+CD ..

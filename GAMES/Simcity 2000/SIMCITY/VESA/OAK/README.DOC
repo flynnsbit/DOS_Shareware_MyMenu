@@ -1,0 +1,9 @@
+Oak Technologies has several different VESA drivers each for a 
+specific video card.  If you are unsure which video card you have,
+contact the manufacturer.
+
+67VESA.COM   is for boards that use the Oak Technology OTI-67 chip.
+37VESA.COM   is for boards that use the Oak Technology OTI-37 chip.
+
+To use one of the two above programs, simply type in the name of the
+program at the DOS prompt.

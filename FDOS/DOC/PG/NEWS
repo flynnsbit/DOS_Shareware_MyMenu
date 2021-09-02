@@ -1,0 +1,347 @@
+Revision Notes
+==============
+
+(BAHCL) 11 Dec 2007 (PG 1.16)
+   - Use a buffer to reduce physical disk access
+   - Support Traditional Chinese
+   - redefine filemark
+   - over 1000 filemarks
+   - 10 bookmarks
+   - 10 search history
+   - remove files to save screen "PG.SAV" and filemark "PG.PG"
+   - store "PG.SAV" and "PG.PG" to %TEMP% or %TMP
+
+
+(BAHCL) 11 Apr 2007 (PG 1.15)
+   Bug fix for @file to view files from other drives
+   Assembly opcode for 8088 CPU
+
+   Save viewed file with foreground/background color
+     Pressing function key F8, the full path and filename being viewed,
+     together with the color that is set is saved to C:\PG.PG.
+     Its operation is just as @file introduced in version 1.14.
+     This is the answer to users with different colour appetite.
+
+   Load other language fonts
+     Another plugin CPIFNT is introduced to allow user to change to
+     a different language font for certain situations.
+
+     The font size is limited to 16x8x256 only.
+     Those font files mentioned here are actually from a FreeDOS
+     multi-language project maintained by Aitor.
+     CPIFNT is used to extract a set of font files from EGA?.CPI.
+     CPIFNT is another program I created for DOS users covered by the
+     GNU GPL 2. DOS user are welcomed to download it from Johnson's
+     website. Please read CPIFNT.MAN to learn how to use it.
+
+     Operation is simple, press F7 launch plugin CPIFNT to search a
+     wanted code page font from the current directory or from C:\CPI
+     a *.CPF name is displayed on the status line, press Enter to
+     accept and return to PG, ESC to abort, other keys will display
+     the next font name in a circular fashion. Caller program may get
+     the selected code page from the memory 40:F0..FF
+     Please note the filename of a font file is the code page number.
+
+
+
+(BAHCL) 11 Apr 2006 (PG 1.14)
+        - interactive batch mode -- @file
+          @file is a file containing a list of files PG get to view,
+          it is generated with the "DIR" command or created with any
+          editor, e.g. "DIR c:\source\pg /b/s /a-d > file", then
+          "PG @file" will view all the files in @file, with
+          C-PgUp/C-PgDn to move back and forth.
+        - Alt-F shows the content of @file, move mouse cursor to the path
+          and press Alt-F directly loads the new file.
+        - @file can be edited with any text editor.
+        - any invalid filename within @file will cause PG to abort.
+        - @file is not mixed with other command line arguments.
+        - F9,F10 are disabled with @file.
+        - Alt-E toggles VGA 25/28/50 lines
+        - cursor moved to a found string with auto panning feature.
+        - top status line shows the mouse rests at a column;
+        - turn mouse user subroutine off/on when shell out to DOS.
+        - plugins enhanced/bug fixed.
+          svtxt keeps a long wrapped word together in the next line;
+          a bug fixed in svhex as counter overrun;
+          both svhex and svtxt handle regular/piped file with no limits.
+
+   @file -- response file
+     a list of file PG get to view generated with the "DIR" command
+       e.g. "DIR c:\source\*.c /b/s /a-d > file"
+       then "PG @file" and navigate the files with C-PgUp/C-PgDn;
+     F9,F10 disabled with @file, to choose a new file, press Alt-f to
+       displays @file, move mouse pointer over a path, Alt-f loads a new file;
+     @file does not work with other arguments;
+   Cursor moves to a string found with search
+   Information in top/bottom status line relocated:
+     " PG --" removed; screen line number and total line number swapped location
+     "<top>" / "<end>" replace screen line number at BOF / EOF
+   Search result in bottom status line removed;
+   Show mouse cursor x-coord. in top status line;
+   Handle mouse user subroutine while shell out to DOS;
+   Alt-e changes VGA display to 25/28/50 lines
+   SVTXT
+     keep long wrapped word together in next line;
+     support unlimited file size;
+   SVHEX
+     bug fixed as a counter overruns;
+     support unlimited file size;
+
+
+(BAHCL) 10 Sep 2005 (PG 1.13)
+   Mouse aids to begin a search
+     place the mouse pointer over the word and press F4,
+     the word is stuffed into the search string, the search
+     string is 18 bytes only.
+     Note the mouse driver does not synchonize actual mouse pointer
+     without a move.
+   Input new path to read additional files
+     Press Alt-f to input a new file specification, note the
+     DOS conventional filename restriction rule. No long file name.
+   Add 5 filemarks for recall
+     the path of a file being viewed can be saved and later recalled
+     as user inputs new paths for additional files, key 6..0 under the
+     function keys stores the full path and topline as filemark,
+     Alt-6..0 recall the files saved and topline restored as well.
+     PG preassigns the first file to all filemarks.
+   Command line arguments
+     PG supports multiple command line arguments. Each argument is
+     a set of files can be access with F9 / F10 which corresponds
+     to proceeding and following set, page up / down will access all
+     files in a sequential fashion. The files input from Alt-F always
+     be the last set of files, and only one set of files allowed.
+     Invalid argument triggers error message.
+   Show column, line number at the bottom status line if search is OK
+   Plugin handles polluted IACA
+     Plugin receives parameters from IACA, if it is polluted,
+     the requested starting position > file size, that caused
+     plugin, when started as standalone, to abort.
+     In such cases, plugins will start from BOF instead.
+
+
+(BAHCL) 18 May 2004 (PG 1.12)
+   Cursor missing as jump to and search result -- fixed
+   Tracking starting line for multiple files viewing
+   Remove redundant coding -- move cursor
+   Speed up screen update, and reduce flickering
+   Mouse interface
+   !long line breaking!
+
+
+(BAHCL) 18 May 2004 (PG 1.11)
+   In extraoridinary situation, a very long line with no LF,
+   PG was unable to handle properly, logical lines of 256 columns
+   are inserted, say, a line of 600 bytes will be treated as 3 lines,
+   256+256+88.
+   PG    crashes with very long line -- fixed
+   PG    supports file with 1024 x 1024 lines
+   PG    garage bug -- fixed
+   PG    shows curor at line after a jump to -- ok
+   PG    exit plugin with the same invoking keys -- ok
+   SVTXT crashes with very long line -- fixed
+   SVTXT crashes with only CR,LF in stream file -- fixed
+   SVHEX discards unwanted lines in screen -- ok
+
+
+(BAHCL) 29 Feb 2004 (PG 1.10)
+   25,28,50 lines video modes work fine and clean
+   Returns more memory to system (uses 35K only)
+   Finds PG.MAN where PG.EXE located
+   Lower cases b=B, h=H, w=W, q=Q
+   displays panning offset if > 0
+   Plugins synchronize data line by line
+
+
+(BAHCL) 22 Feb 2004 (PG 1.09)
+   Replace clone paths with spawnlp()
+   Display pancolumn in top line
+
+
+(BAHCL) 15 Feb 2004 (PG 1.08)
+   New development platform Linux+DOSEMU+TurboC 2.01+NASM 0.98;
+   Bug fix -- small file searching may cause screen to blur;
+   Fix unintent exit for multiple files;
+   Relocate keys for Next/Last file again, works now in DOSEMU 1.2.0;
+   Relocate keys for Jump (BS), search mode (F4), save file (F5);
+   Case sensitive search forward/backward (Shift-F3),(Shift-F4);
+   Jump to DOS Shell (Alt-D);
+   Quit PG (Q) and Esc;
+   Plugin for Hex view (H);
+   Plugin for wrap long line (W);
+   Set Bit 7 on/off (B);
+   where
+       (B) = uppercase B
+       (H) = uppercase H
+       (Q) = uppercase Q
+       (W) = uppercase W
+       (BS) = backspace
+   Able to get input from "gzip -c -d file.gz | pg" now;
+   Display panning between column 1..256 and right / left +- 30 columns;
+   Set cursor over found string;
+   Cloneable for plugin path and manual path, type
+       "PG /PLUGIN=C:\PATHNAME\"   to clone plugin path
+       "PG /MANUAL=C:\PATHNAME\"   to clone manual path
+   2 plugins are included: (SVHEX.ASM and SVTXT.ASM)
+       read pg.mak to see how to setup the plugin paths;
+   Plugins are standalone programs, may be used at command line,
+       type "type filename.txt | svhex" for a hex view and
+       type "svhex filename.txt is the same of above
+       type "type filename.txt | svtxt" for a warp view and
+       type "svtxt filename.txt is the same as above
+     Keys: Up, Down, Page up, Page down, Home, End, Esc
+
+
+(BAHCL) 20 Dec 2003 (PG 1.07)
+   Bug fix -- reverse search key may cause program to crash;
+   Switching Forward / Reverse search is smarter;
+   Search wraps around if BOF / EOF is hit;
+   Search result updates top of line;
+   Turbo charges infile loading time with block read assembly language routines.
+
+
+(BAHCL) 08 Dec 2003 (PG 1.06)
+   Finally, PG breaks through the line number limitation,
+   it handles file up to 262144 lines;
+   PG reads as many as 256 files in a single directory;
+   hidden bugs fixed;
+   PG 1.06 has overcome all obstacles left over in previous version.
+
+
+(BAHCL) 29 Nov 2003 (PG 1.05)
+   gets rid of the evil PG.TMP and C:\TEMP;
+   user's choice which drive to keep the screen images;
+   relocate keys for next file and previous file to make DOSEMU happy;
+   PG 1.05 was changed to use conventional memory to store its data.
+      it works perfectly for files line number < 5000;
+   PG 1.05 excludes certain files considered binary format
+      with extensions like BIN,COM,EXE,SYS,ZIP..., as these files
+      are not displayed properly with PG.
+
+
+(BAHCL) 25 Nov 2003 (PG 1.04)
+   PG has been revamped drastically, please note:
+   Migrate to Turbo C 2.01;
+   Change dynamic memory allocation to file handling infile
+        line addresses;
+   Handle very large files > 134,024 lines tested ok;
+   Temporary file and save file are created in C:\TEMP;
+   Copy text from display screen to a savefile;
+   Saved screens appends in PG.SAV with an identifying message;
+   Add 'jump to' feature;
+   Add online help feature;
+   Mulitple file browsing;
+   PG remembers the starting line of a file in the file list;
+   Filename may contain '*' to ease typing;
+   Shows total lines in top status line;
+   Remove beeping sound;
+   Redefine and add several keyboard scan codes;
+   Assembly subroutines assembled by NASM;
+   Use int 10h to handle scrolling;
+   Add comments for global, local variables and functions;
+   User manual updated;
+   Include a Make file;
+   This file is changed to latest news on top;
+   PG 1.04 is an experimental version, some problems have to be solved later.
+
+
+(BAHCL) 1 Nov 2003 (PG 1.03)
+   Search text from infile back and forth;
+   Move most asm subroutine to pgasm.asm;
+   This is the final version for DDS C compiler;
+   After version 1.03, PG will be migrated to Borland Turbo C 2.01
+   for these reasons:
+   1. conform to ANSI C standard
+   2. long integer support
+   3. better programming environment for development
+   4. easier to debug (not so true!)
+   5. extracted assembly subroutines may be usable by other programs
+   6. I failed to compile PG with an earlier version of Micro-C.
+      The version of DDS Micro-C version 3.22 I once downloaded
+      disappears in the internet, I doubt if Dave Dunfield has
+      stopped offering version 3.22 as a freeware.
+
+   So, after version 1.03, I'll stop using Micro-C to maintain PG.
+
+
+(BAHCL) 4 Oct 2003 (PG 1.02)
+   Update usage function
+   Show usage if filename omitted
+   Install file renamed to pg.man
+   Improvement - Add 5 bookmarks
+               - View panning
+
+(BAHCL) 26 Sep 2003 (PG 1.01)
+   Fix enter key to scroll up 1 line
+   Close opened file on exit
+   Move global #define statements to pg.h
+   Convert #defined constants to upper case
+   Source code indentation
+
+
+
+
+Messages from previous PG maintainer(s):
+============================================================
+I have made a few changes to the source, but didn't (technically)
+delete anything.  I removed the verbose GNU License statement in the
+usage() function.  To put it back in, add this to the code:
+
+   #define SHOW_GNU_COPYING
+
+or, compile like this:
+
+  cc pg.c -fop SHOW_GNU_COPYING=1
+
+============================================================
+I have set the default behavior of the program to operate in
+mono-mode only.  This is a color scheme that should work well on all
+monitors, even a mono display.  To build using Bill's original
+colors, add this to the code:
+
+   #define USE_COLOR_MODE
+
+or, compile like this:
+
+  cc pg.c -fop USE_COLOR_MODE=1
+
+
+
+============================================================
+(Jim Hall, jhall1@isd.net)
+
+
+
+(jh) 25 Aug 1998 (PG 1.0)
+   Cleaned up the code so constants, structs, typedefs, .. are
+   grouped together.  Also cleaned up comment style.
+
+(jh) 24 Aug 1998 (PG 0.96)
+   Updated the C++ comments so they are C comments now.  Still to do:
+   clean up the indenting, release as 1.0
+
+(wew) 21 Aug 1998 (PG 0.95)
+   add tab processing. 8 chars for now.
+   updated my email address in the code
+
+(jh) 18 Aug 1998 (PG 0.94)
+   set the default colors to be in mono mode, which is guaranteed to
+   work on all monitors, even mono displays.
+
+(jh) 18 Aug 1998 (PG 0.93)
+   set RETURN to scroll down one line, SPACE to scroll down one page,
+   and 'Q' and 'q' to quit.  These are all extensions.
+
+(jh) 17 Aug 1998 (PG 0.92)
+   started doing code cleanup, and put usage text in usage() function,
+   instead of leaving the text split from the function.
+   Also, moved the revision notes to this 'NEWS' file.
+
+BH 95.04.19  Fixed small bug in clreol
+BH 95.04.18  Added scroll_[up & down] & clreol to get rid of flickering
+BH 95.04.04  Read in whole file of line addrs first
+BH 95.03.16  Revisions of memory scheme
+BH 95.02.07  Begin Coding
+
+(note: BH is an old pseudo for wew)
+

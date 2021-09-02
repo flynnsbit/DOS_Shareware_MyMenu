@@ -1,0 +1,8 @@
+January 24, 1995	1.0 Initial effort                        (Jim Lynch)
+May 12, 2003		1.1 Added NLS sort support            (Eric Auer, EA)
+May 30, 2003		1.2 Improved i18n (KITTEN) usage                 (EA)
+July 4, 2004		1.3 New languages. Enabled NLS sort by default,
+                            replaced /N (enable) by /A (disable) switch  (EA)
+July 9, 2004	        1.4 sort.exe/.com can sort max 395k/28k of data now
+                            Old sort.com could only sort max 15k of data (EA)
+September 23, 2007	1.5 added long file name support (Imre Leber)

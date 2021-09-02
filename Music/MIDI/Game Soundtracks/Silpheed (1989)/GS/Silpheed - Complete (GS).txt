@@ -1,0 +1,77 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ================================================
+                               SILPHEED                           
+
+
+                            THE SOUNDTRACK
+                               Game Arts
+           ================================================
+                 Copyright (c)1988 Sierra On-Line, Inc.  
+           ================================================
+
+                          ROLAND GS VERSION
+                            (Updated 5/99)
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- Roland Sound Canvas GS MIDI device
+   (Must contain MT-32 variation tone set.)
+
+
+This Standard MIDI File was recorded directly from Sierra's "Silpheed"
+action/arcade game using Sierra's MT-32 driver.  It has been converted
+and arranged for playback on 100% Roland GS compatible devices.  GS cards and
+modules must contain the MT-32 variation tone set for proper playback.
+THIS FILE IS NOT DESIGNED FOR GENERAL MIDI PLAYBACK.
+
+EDITOR'S NOTE:
+When played through a Roland Sound Canvas GS card or module, playback will
+closely match the Roland MT-32 Sound Module version!  Most of the primary
+instruments used for this soundtrack are those found in the default timbre
+map of the MT-32.  Therefore, the MT-32 Variation Tone Bank of the Sound
+Canvas is utilized extensively throughout this conversion.
+
+Recorded/converted/edited/compiled/arranged for Roland GS by Tom Lewandowski.
+Address questions or comments to:
+
+Special thanks to Eric Wing, Mark Farinas, and John R. Johns II for providing
+save games files for SILPHEED.
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+       =================================================================
+                           TRACK SHEET  (GS VERSION)
+
+                               S I L P H E E D
+
+                      Not all selections are in the order
+                       in which they appear in the game.
+       =================================================================
+
+   SONG TITLE                                      START MEASURE/TIME *
+   -------------------------------------------------------------------------
+   1. Introduction/Opening Theme                          2  00:00:02
+   2. Fighting In Normal Space                           71  00:02:20
+   3. Mini Boss Battle                                  138  00:04:34
+   4. Attacking The Enemy Base                          183  00:06:04
+   5. Cutscene 1: Planet Flyby                          239  00:07:56
+   6. The Asteroid Belt                                 281  00:09:20
+   7. Battle Over The Moon                              333  00:11:04
+   8. Gloire: The Big Boss                              432  00:14:22
+   9. Cutscene 2: Space Dock                            529  00:17:36
+  10. Closing Theme                                     555  00:18:28
+  11. Cutscene 3: Planet Flyby 2                        617  00:20:32
+  --------------------------------------------------------------------------
+                                                TOTAL TIME:  00:21:40
+
+
+      * Note:  Start Times are approximate.
+

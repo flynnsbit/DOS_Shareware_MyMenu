@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Advanced usage</TITLE>
+<META NAME="description" CONTENT="Advanced usage">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="node5.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html187"
+ HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html185"
+ HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html179"
+ HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html188"
+ HREF="node9.html">Reference</A>
+<B> Up:</B> <A NAME="tex2html186"
+ HREF="node5.html">Fileselector</A>
+<B> Previous:</B> <A NAME="tex2html180"
+ HREF="node7.html">Usage of the fileselector</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00430000000000000000">&#160;</A>
+<A NAME="fileselectoradvance">&#160;</A>
+<BR>
+Advanced usage
+</H1>
+The appearance and behaviour of the fileselector can be edited in the
+<TT>cp.ini</TT> (page <A HREF="node30.html#cp.ini"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="cross_ref_motif.gif"></A>) file or by pressing <TT>&lt;ALT&gt;</TT>+<TT>&lt;c&gt;</TT>. Changes made to the
+<TT>cp.ini</TT> are permanently, while configuration applied with  <TT>&lt;ALT&gt;</TT>+<TT>&lt;c&gt;</TT>
+is only valid until <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP is running.
+
+<P>
+Afer pressing <TT>&lt;ALT&gt;</TT>+<TT>&lt;c&gt;</TT> you can toggle 13 options with keys
+<TT>&lt;1&gt;</TT><IMG
+ WIDTH="23" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\ldots$"><TT>&lt;9&gt;</TT> and <TT>&lt;a&gt;</TT><IMG
+ WIDTH="23" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\ldots$"><TT>&lt;d&gt;</TT>. The following list
+will explain every option:
+<DL COMPACT>
+<DT>1
+<DD><EM>screen mode:</EM> you can change the screen mode for the fileselector.
+80x25 and 80x50 are standard screen modes and should be available on every
+vga card. 80x30, 80x60, 132x25, 132x30, 132x50 and 132x60 are only available
+with a proper VESA bios installed.
+<DT>2
+<DD><EM>scramble module list order:</EM> if this options is enabled the
+files inside the playlist will be played in random order. Otherwise the
+order shown in the fileselector from top to bottom will be used.
+<DT>3
+<DD><EM>remove modules from playlist when played:</EM> normally you will
+want this enabled as modules are only played once. If you disable this option
+you playlist can be processed foreever.
+<DT>4
+<DD><EM>loop modules:</EM> if the music file ends it will start again. The
+next file will be played after pressing <TT>&lt;Enter&gt;</TT>. If you turn off this
+option the playlist will play all modules without any user interaction.
+<DT>5
+<DD><EM>scan module information:</EM> When entering a directory the files
+are processed to gather module information which can be shown. If you disable
+this option directories will be processed quicker.
+<DT>6
+<DD><EM>scan module information files:</EM> the module information cache
+in the home directory of <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP will be read if this option is enabled.
+<DT>7
+<DD><EM>scan archive contents:</EM> to save hard disk space you can store
+your files inside archives like arj or zip. If the fileselector finds an
+archive it will open it to scan for files.
+<DT>8
+<DD><EM>scan module information in archives:</EM> if modules are found
+inside archives they will be decrunched to find any module information. This
+option will can take several minutes if many modules are stored in archives
+<DT>9
+<DD><EM>save module information to disk:</EM> toggles weather to save
+gathered informations in the module information chache.
+<DT>A
+<DD><EM>edit window:</EM> If you don't want the module information window
+at the bottom disable this option. The directory and playlist windows will
+strech over the complete screen.
+<DT>B
+<DD><EM>module type colors:</EM> different file types are shown in
+different colors on the screen. When watched on monochrome monitors or laptops
+you might want to disable this option.
+<DT>C
+<DD><EM>module information display mode:</EM> changes the contents of the
+directory window. You can also use <TT>&lt;ALT&gt;</TT>+<TT>&lt;tab&gt;</TT> or <TT>&lt;ALT&gt;</TT>+<TT>&lt;i&gt;</TT>
+inside the fileselector.
+<DT>D
+<DD><EM>put archives:</EM> Show archives, so they can be accessed like directories.
+Normally this should be disabled if archives are scanned automatically.
+</DL>
+<P>
+The screen size can be changed by pressing <TT>&lt;ALT&gt;</TT>+<TT>&lt;z&gt;</TT>. In 132 columns
+mode some additional module information can be shown in the directory window.
+If the fileselector is busy scanning the current directory for files, you can
+interrupt the scanning with <TT>&lt;ALT&gt;</TT>+<TT>&lt;s&gt;</TT>.
+
+<P>
+You can delete a file with
+<TT>&lt;ALT&gt;</TT>+<TT>&lt;k&gt;</TT>. You will be prompted if you really want to delete this
+file. When pressing <TT>&lt;y&gt;</TT> the file will be deletet. If the file is stored
+inside an archive the file will be deleted from the archive. Note: <FONT SIZE="-1">If
+onyl one file was stored inside a <TT>.zip</TT> archive pkzip will leave an
+empty archive of 22 bytes on your harddisk. See section <A HREF="node30.html#cp.ini">5</A> on how to
+avoid this.</FONT> The current file can be moved by <TT>&lt;ALT&gt;</TT>+<TT>&lt;m&gt;</TT>. You will
+have to type the new path in the path window into which the file will be
+moved. If the file is inside an archive it will be extracted. You can specify
+an existing <TT>.arj</TT> file and the file will be packed into the archive.<A NAME="tex2html12"
+ HREF="#foot274"><SUP>4.2</SUP></A>
+
+<P>
+The module information shown in the module information window can be saved to
+a portable ascii file. You may want this feature if you are a composer of
+music and want to trade your music together with already processed module
+information files. Start the fileselector and edit the information for the
+file. Then switch back to the directory window and press <TT>&lt;ALT&gt;</TT>+<TT>&lt;w&gt;</TT>.
+The fileselector will save a file with the extension <TT>.mdz</TT> and the
+filename of the selected file, which stores all module information seen in
+the module information window. If a directory is scanned and the fileselector
+finds such <TT>.mdz</TT> files they will be read and processed. The module
+information for all files in the current directory can be saved with
+<TT>&lt;ALT&gt;</TT>+<TT>&lt;a&gt;</TT>. You have to type the filename manually in the path window
+without extension!
+
+<P>
+You may want to change the entry <EM>type</EM> in the module information window
+if you have old amiga modules or a non-standard midi file. Very old Noise- and
+SoundTracker modules only had 15 instruments and no file identification. So
+the fileselector is not able to detect those files as valid modules and refuses
+to play them. You habe to insert <TT>M15</TT> in the <EM>type</EM> entry. If
+the module does not differ between tempo and speed and is of the 15 instrument
+type insert <TT>M15t</TT>. Some ProTracker modules do not differ between tempo
+and speed too. It you habe one of those modules use <TT>MODt</TT>. A module
+player for PC called DMP introduced a feature called panning. To enable this
+(non-standard) feature insert <TT>MODd</TT>. If you want to play midi files
+with a second drum track on channel 16 use the <TT>MIDd</TT> option. Any other
+file should be autodetected correctly. <FONT SIZE="-1">If you habe renamed a module
+to a different extension (say <TT>hello.mod</TT> to <TT>hello.s3m</TT>) <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP will refuse to play it, because the file type is wrong. You could correct this
+by inserting the right file type in the module information as shown above. But
+it is recommended to rename the file to the right extension that tweaking the
+autodetetion of the player.</FONT>
+
+<P>
+The current playlist can be saved into the .PLS format by pressing
+<TT>&lt;ALT&gt;</TT>+p. You have to type the filename without extension in the path
+window. A standard extension <TT>.pls</TT> is appended. The playlist can be
+loaded just like any other module from the fileselector or at startup.
+
+<P>
+<A NAME="specialdrive">&#160;</A>The drive <TT>:</TT> is a special device which can be used to change the
+hardware configuration without leaving the player. If you access this drive
+you will see two subdirectories.
+
+<P>
+In the <TT>INPUTS</TT> subdirectory you can choose the device which will be
+used when sampling from external sources (when playing CD audio tracks or
+starting <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP in sample mode. The <TT>DEVICES</TT> directory displays all
+devices which where detected at startup. Normally you might want to change
+this if you want to save the next file as a <TT>.wav</TT> or <TT>.mp3</TT>
+file to the harddisk.<A NAME="tex2html13"
+ HREF="#foot1005"><SUP>4.3</SUP></A>
+If you have a soundcard with hardware mixing support
+(Gravis, AWE, EWS) you can enable softwaremixing.
+
+<P>
+If you are the lucky owner of a soundcard capable of hardware sample
+playing<A NAME="tex2html14"
+ HREF="#foot300"><SUP>4.4</SUP></A> you only have limited sample memory. If the sample data of the music
+is larger than the available ram <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP will try to reduce the sample size by
+applying the following steps:
+<DL COMPACT>
+<DT>1.
+<DD>Convert 16bit of 8bit samples. This is indicated by a ''!'' in the bit
+entry of the instrument section.
+<DT>2.
+<DD>Half the size of an 8bit sample. This is shown by a small 
+<!-- MATH: $\frac{1}{2}$ -->
+<IMG
+ WIDTH="14" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\frac{1}{2}$">.
+<DT>3.
+<DD>Quarter the size of an 8bit sample, indicated by a 
+<!-- MATH: $\frac{1}{4}$ -->
+<IMG
+ WIDTH="14" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$\frac{1}{4}$"></DL>
+<P>
+Before <EM>downsampling</EM> the sample data <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP will search for the sample with
+the lowest frequency spectrum. This sample will be converted first. If enough
+space is freed up <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP will stop downsampling. If not the loader will continue
+until the sample data fits into the sound card memory.
+
+<P>
+<A NAME="bigmodules">&#160;</A>The above behaviour can be avoided if a file is marked <EM>big</EM> by pressing
+<TT>&lt;ALT&gt;</TT>+<TT>&lt;b&gt;</TT> in the fileselector. The filesize will turn red. Now a file
+will not be loaded into the soundcard memory, but played with the internal
+mixing routines. This limits the size of files only to the size of physical
+memory.<A NAME="tex2html15"
+ HREF="#foot1006"><SUP>4.5</SUP></A>
+
+<P>
+
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot274">... archive.</A><A NAME="foot274"
+ HREF="node8.html#tex2html12"><SUP>4.2</SUP></A>
+<DD>this
+works only with arj archives by now.
+
+<DT><A NAME="foot1005">... harddisk.</A><A NAME="foot1005"
+ HREF="node8.html#tex2html13"><SUP>4.3</SUP></A>
+<DD>See section <A HREF="node27.html#diskwriter">4.5</A>.
+
+<DT><A NAME="foot300">...
+playing</A><A NAME="foot300"
+ HREF="node8.html#tex2html14"><SUP>4.4</SUP></A>
+<DD>Gravis Ultrasounds, Sound Blaster AWE series and Terratec EWS
+series
+
+<DT><A NAME="foot1006">...
+memory.</A><A NAME="foot1006"
+ HREF="node8.html#tex2html15"><SUP>4.5</SUP></A>
+<DD>You habe to apply a valid <EM>playback-</EM> and <EM>mix-device</EM>
+to use this feature. See section Configuring on page <A HREF="node30.html#cp.ini"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="cross_ref_motif.gif"></A> for
+details.
+
+</DL><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html187"
+ HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html185"
+ HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html179"
+ HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html188"
+ HREF="node9.html">Reference</A>
+<B> Up:</B> <A NAME="tex2html186"
+ HREF="node5.html">Fileselector</A>
+<B> Previous:</B> <A NAME="tex2html180"
+ HREF="node7.html">Usage of the fileselector</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

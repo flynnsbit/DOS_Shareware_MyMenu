@@ -1,0 +1,9 @@
+Game: Zorro
+Year: 1995
+Composed by: Bobby Prince, Rob Wallace
+MIDI versions: GM
+Platform: DOS
+
+Additional Info: Original files are in XMI format. For some reason, mus4 file contains 5 tracks, four of them composed by Rob Wallace.
+
+https://www.karlsitretro.com/game_midi

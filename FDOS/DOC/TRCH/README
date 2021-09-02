@@ -1,0 +1,12 @@
+This is the readme for the FreeDOS TRCH program
+
+TRCH converts characters from one to another.  This is really useful
+if you need to convert a text file between UNIX (end of line is "^J")
+and DOS (end of line is "^M^J" or "\n").
+
+This program has international support using the "Cats" library
+(catopen/catgets implementation for DOS).  You can download "Cats"
+from http://www.freedos.org/jhall/cats
+
+TRCH is distributed under the GNU GPL.  See the file COPYING for
+details.  Cats is distributed under the GNU LGPL.

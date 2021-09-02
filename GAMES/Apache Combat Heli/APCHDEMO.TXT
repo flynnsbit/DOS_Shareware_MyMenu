@@ -1,0 +1,175 @@
+APACHE  THE  COMBAT HELICOPTER SIMULATOR  
+
+Published by:   Interactive Magic (I-MAGIC)
+Developed by:   Digital Integration (DI)
+
+INSTALL:
+
+	Change drive to CD ROM
+	D:
+	CD APCHDEMO
+	INSTALL
+
+SYSTEM REQUIREMENTS:
+
+	486DX/33, DOS 5.0 or higher, 8MB RAM, PCI or VLB Bus,
+	SVGA. Supports SoundBlaster, Adlib, Roland, Gravis and
+	compatibles. Thrustmaster Flight/Weapon Control System.
+
+
+ORDER DIRECT:                   1-800-789-1534
+
+
+CUSTOMER SUPPORT NUMBER:        (919) 461-0948
+						9:30AM - 5:00PM EST
+On-line Support                
+				CompuServe:     75162,1202
+				AOL:            SSIMAGIC
+				PRODIGY:        IMAGIC
+				GEnie:          I-MAGIC
+
+
+CONTROL SUMMARY
+
+MISCELLANEOUS CONTROLS
+
+End mission                             Ctrl-Esc, Ctrl-Q or Alt-X
+
+Pause/resume                            P
+
+Select time compression                 Tab
+Cancel time compression                 Ctrl-Tab
+
+Joystick on/off                         Ctrl-J
+Joystick recalibrate                    Alt-J
+
+Help                                    F1
+
+PRIMARY FLIGHT CONTROLS
+
+Cyclic forward                          Cursor up
+Cyclic backward                         Cursor down
+Cyclic left                             Cursor left
+Cyclic right                            Cursor right
+
+Collective up                           Q or Keypad +
+Collective down                         A or Keypad -
+
+Tail rotor left                         Z or Keypad Ins
+Tail rotor right                        X or Keypad Del
+
+Brakes                                  B
+Auto Hover                          O (must be going less than 10 miles per hour to engage)
+
+COCKPIT CONTROLS
+
+Left MFD select function                [
+Left MFD select previous function       Shift-[
+Left MFD on/off                         Ctrl-[
+Right MFD select function               ]
+Right MFD select previous function      Shift-]
+Right MFD on/off                        Ctrl-]
+
+Lower moving map magnification         <
+Raise moving map magnification          >
+
+IHADSS contrast adjust                I
+
+Skip to next waypoint                   N
+Skip to previous waypoint               Shift-N
+
+Skip to next target                     Backspace
+Skip to previous target                 Shift-Backspace
+
+Lock/unlock target                      L
+
+TADS view, select TADS mode             T (use Alt+cyclic controls to adjust view)
+TADS/radar target select                Y
+Lower TADS magnification                <
+Raise TADS magnification                >
+
+Helmet tracking view                    H (use Alt+cyclic controls to adjust view)
+
+Select radar mode                       R
+Select radar range                      G
+
+Hold/resume radar update                U
+
+Select tactical display range           K
+
+PNVS on/off                             V
+
+ECM on/off                              E
+
+Transmit reconnaissance data            D
+
+WEAPONS CONTROLS
+
+Arm and select weapon                   Enter
+Unarm weapon                            Ctrl-Enter
+
+Fire weapon                             Space
+
+Release chaff                           C
+Release flare                           F
+
+Auto-chaff/auto-flare on/off            Crtl-C
+
+Hydra-pods up                           W
+Hydra-pods down                         S
+
+COCKPIT VIEW CONTROLS
+
+Pilot front view                        F2 or Home
+Gunner front view                       F3 or PgUp
+Look left                               F4 or End
+Look right                              F5 or PgDn
+
+EXTERNAL VIEW CONTROLS
+
+Apache external view                 F6 (rotate and zoom available)
+Weapon view                              F7 (rotate and zoom available)
+Weapon target view                    F8
+Target lock view                          F9
+Remote view                                F10
+Spectator view                             F11 (rotate available)
+
+Rotate view                             Alt + cyclic controls
+Adjust zoom                             < and >
+
+
+DEMO FAQ
+
+Q. What do I do when my cockpit view keeps changing ?
+A You probably need to recalibrate your joystick's coolie hat, 
+  Press ALT J. The view will start shifting, press the coolie 
+  hat up with your thumb, and you should be in the gunner view 
+  point and the joystick will be correctly set.
+
+Q. What should I do if the Demo ABORTS?
+A.  If the game ABORTS on you please run SCANDISK to be sure
+   that any allocated virtual memory disk space is released.  Re-runnig 
+   the game will also free up and reuse the disk space.
+
+Q. What is the difference between Arcade and Invincible modes in 
+   the main menu of the demo ?
+A. In Arcade mode you are flying shooting down targets and can be 
+   shot down, but when you die or crash the game will record your 
+   high score. In invincible mode you are unstoppable, and cannot 
+   be shot down, but the game will not record your high score. 
+
+Q. I was flying in  invincible mode and the game went back to the 
+   menu screen without any warning, it also did not put my high  
+   score on the list.
+A. This is just a demo version of Apache and you only have a limited 
+   amount of flying time (10 minutes). In invincible mode, your score
+    is not recorded. This would be unfair to the people flying in Arcade 
+   mode who run the risk of being shot down.
+
+Q. What is the difference between Realistic and Arcade mode of 
+   flight in the Preferences screen ?
+A. With Realistic flight you are able to do rolls, loops and exploit 
+   the true potential of the Apache flight model. In Arcade mode you 
+   are not able to do rolls and loops, but the Apache is easier to 
+   control and does not require the degree of manual dexterity that 
+   Realistic flight requires.

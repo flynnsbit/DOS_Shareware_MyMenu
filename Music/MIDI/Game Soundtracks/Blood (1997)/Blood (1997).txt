@@ -1,0 +1,8 @@
+Game: Blood
+Year: 1997
+Composed by: Daniel Bernstein, Guy Whitmore
+MIDI versions: GM, GS
+Platform: DOS
+
+
+https://www.karlsitretro.com/game_midi

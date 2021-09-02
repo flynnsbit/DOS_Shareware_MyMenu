@@ -1,0 +1,23 @@
+Drunk Reflections (drnkref.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=168639
+
+Summary
+
+    drnkref.xm is a XM format module.
+    Uploaded to modarchive.org on Mon 21st Dec 2009
+
+Info Info
+
+    Mod Archive ID: 168639
+    MD5: e9eee3d799ff283d6d707be710a4e83a
+    Format: XM
+    Channels: 10
+    Genre: Experimental
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     JAM (https://modarchive.org/member.php?81691)

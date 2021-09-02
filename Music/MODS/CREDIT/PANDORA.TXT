@@ -1,0 +1,24 @@
+Pandora's Box (FB Mix) (fb-pandora.it)
+https://modarchive.org/index.php?request=view_by_moduleid&query=41557
+Renamed to "PANDORA.IT" because of DOS 8-character limit
+
+Summary
+
+    fb-pandora.it is a IT format module.
+    Uploaded to modarchive.org on Mon 11th Aug 2003
+
+Info Info
+
+    Mod Archive ID: 41557
+    MD5: b25a167ab10e20626dc5f4c103402327
+    Format: IT
+    Channels: 62
+    Genre: Pop - Synth
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     christofori (https://modarchive.org/member.php?69248)

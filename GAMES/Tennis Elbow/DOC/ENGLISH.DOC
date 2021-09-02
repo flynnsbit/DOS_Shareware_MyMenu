@@ -1,0 +1,537 @@
+Info Shareware
+
+				TENNIS ELBOW
+				************
+				     by
+				     **
+				  Manu TOO
+				  ********
+
+		       Copyright GOTO Informatique - 1997
+		      Web site: http://www.tenniselbow.com
+
+Content:
+********
+        1. Introduction
+        2. The Shareware
+        3. Menus & Game
+        4. Keys & Known Problems
+        5. Conclusion
+
+
+
+*******************
+* 1. Introduction *
+*******************
+
+	Tennis Elbow is a tennis game in SVGA with digital sounds and
+exceptional graphics. To configure the game on your PC, launch 'SETUP.EXE' 
+after all files are installed on your hard drive.
+	The minimum system requirements are:
+- PC Compatible 486 or higher,
+- 8 Mb of RAM
+- SVGA card,
+- Sound Card like Sound Blaster(c)
+  (=optional, the game works without a sound card)
+- 550 Kb of conventional memory,
+- 2500 Kb of XMS free,
+- 400 Kb on your hard drive to have sound digits,
+- 1 Mb extra to play a double (4 players),
+- Mouse or Keyboard or Joystick (1 or 2) to play.
+
+
+The minimum configuration for Tennis Elbow is:
+- 486DX2-80
+- 8 Mb of RAM
+- 2 Mb of Smartdrive
+- Fast SVGA card
+- Sound Blaster card + Wave Table card
+- Numeric joystick, like Gravis Gamepad
+
+
+Windows 3.x and 95:
+*******************
+	If you have problems with Tennis Elbow because your machine is not
+powerfull enough, the better is to start the game in MS-DOS mode:
+
+- Under Windows 3.x:
+  Quit Windows 3.1x by entering Alt+F4 in the program manager, then go to
+  Tennis Elbow's directory from the MS-DOS prompt, and launch Tennis.Exe;
+
+- Under Windows 95:
+  Restart your computer in MS-Dos mode, then go to Tennis Elbow's directory,
+  and launch Tennis.Exe;
+
+
+Key Features:
+*************
+.Animation:
+ ---------
+- 60 frames per second on a PC 486DX2-80 VLB
+- 20 sprites per striked animations
+- The crowd follows the ball during a point & applauds at the end of each 
+  point.
+- Line judges say the faults and point the balls on the lines
+
+.Tournament (options not available in the shareware version):
+ ------------------------------------------------------------
+- 95 tournaments
+- Team Cup
+- 250 registered players
+- Ranking
+- Best games of the 12 last months
+
+.Miscelleanous (some options only in the complete version):
+ ----------------------------------------------------------
+- 5 grounds: clay, cement, grass, indoor, synthetic
+- 2 players with changing colors (skin, hair, T-Shirt, ...)
+- 4 different game styles: Single, Dirty up, Dirty down, Double
+- 5 levels of difficulty
+
+
+
+*****************
+* 2. Shareware *
+*****************
+
+	Tennis Elbow exists in 2 versions:
+The complete version:
+---------------------
+	The complete version is the full game version with all the above
+mentioned features. If you would like to receive this version, you should
+fill the order form (see Order.txt) and send it back to us or purchase it
+directly from one of our retailers. To know the name of the closest retailer
+from you please email to contact@goto.fr or consult Tennis Elbow Web site at
+http://www.tenniselbow.com.
+
+The shareware version:
+----------------------
+	The shareware is a version of the game which is not complete, free of
+charge which allows you to evaluate the software. If you often play and/or if
+you want to have all advantages of the complete version, you will have to
+purchase the complete version.
+	You may have a copy of the version on your hard disk or on floppies
+only to test it. You cannot sell this version, neither can you replicate it
+without GOTO Software's authorization. You must not change any files of this
+version for your own use.
+        Tennis Elbow Shareware cannot be diffused or distributed on any
+CD-ROM, or on any support without the editor's legal authorization.
+If you would like to diffuse this shareware version, please read the
+attached file vendor.txt or contact us directly by email at contact@goto.fr
+or by fax +33 (0)3 20 66 55 09.
+        Any diffusion on the Internet is completely illegal without the
+authorization of GOTO Software.
+
+
+*********************
+* 3. Menus & Play *
+*********************
+
+In the menus:
+*************
+	You control the little yellow ball which rotates using the device
+you have chosen (Joystick/Keyboard/Mouse).
+Bring this ball on an icon and click on the button nø1 (of your mouse/
+joystick) or on ALT to go to the next menu.
+When the ball is on a icon, its description appears in the bottom box.
+
+- shift + F5:   Decrease the sound volume
+- shift + F6:   Increase the sound voulume
+- shift + F7:   Decrease the music volume
+- shift + F8:   Increase the music volume
+
+- Back: To return to the previous menu; click on the button nø2 or on the
+	BackSpace Key to have the equivalent of "Back".
+
+- Quit: To return to DOS; click on "Escape" to have the same impact.
+
+
+In the main menu:
+*****************
+
+	- Quick Play: to start quickly a game, with either the default
+	  criteria or your own ones.
+	- World Tour: to enter the World tournaments and be ranked.
+           (not available on the shareware)
+	- Thanks & Credits: guess!
+
+
+In the "Quick Play" menu:
+*************************
+
+	- Play: to launch the game with the saved options.
+
+	- Characters info: to change the player's info.
+
+	- Play Option: to choose the ground, the set number, the number of
+	  player and if a side change occurs during the match or not.
+          NOTE : There is only one ground in the shareware version : grass!
+
+        - Play Style: to choose between do a warm-up and a match.
+          NOTE: to play by modem or via a local network: buy the complete
+          version!
+
+
+In the character menu:
+**********************
+
+	- Click on the characteristics to change them.
+	  You can view the details in the message box at the bottom of your
+	  screen. You can change the color of T-Shirt, Short, Cuffs, Hairs
+	  and Skin. You can choose between right-handed and left-handed
+	  player and between two players'profile. Just click on the
+	  character to change his features.
+          NOTE: to change the player's profile, you should have the complete
+          version
+
+	- Statistics: To see the statistics of the player's career.
+
+	- Human/CPU: To choose between human control and CPU control.
+
+	- Defender/puncher/varied/volleyer: To choose the play style.
+
+	- Load/save: To load and save a game or a player's characteristics.
+
+
+Available strikes during the game:
+**********************************
+                        Joystick/mouse          Keyboard
+                        -----------------/-----------------
+        b1 =            Left Button      /      ALT
+        b2 =            Right Button     /      CTRL 
+        up/down =       movement of      /      Up arrow
+                        your mouse or    /      Down arrow
+                        joystick         /
+
+b1 = normal strike              b2 = secured strike
+b1+b2 = acceleration            b1 + up = short ball
+b2 + up = slice                 b1 + down = lift
+b2 + down = defended lob        b1+b2+up = drop shot
+b1+b2+down = fighting lob
+
+Up and down are inverted when you control the player who is on the top of the
+screen.
+
+
+How we are playing?
+*******************
+
+.Move and strike:
+-----------------
+
+With a joystick or mouse:
+
+     When you do not press a button, swirl the Joystick in all directions
+to run where you want, or move your mouse in all directions. 
+     When you push on a button, your player move slowly to the ideal
+position, more you push the Joystick on the left (or the right), more the
+ball will go to the left (or the right).
+-==>> You must maintain the button pushed when you strike the ball <<==-
+When you do not give a special direction, the ball goes to the center on the
+opposite ground.
+	At the volley, when the ball passes away from your player, push on
+a button (any of them) so that he will jump toward the ball.
+
+     To do a crossed strike in the opposite direction of your run, stop
+your run before you strike.
+     It means that you have to stop pressing the button (or the stick)
+which allows to run, before you press the button (or the buttons) which
+commands the strike.
+
+
+With a keyboard:
+
+     To move your player, you can use the arrow keys or the keys you
+determined during the setup.
+     If you try to move your player while you hit the ALT or CTRL keys,
+he will not move att all!
+
+
+.Service:
+---------
+	The service is executed with the same method than the other strikes,
+with the difference that whatever is the buttons combination, a push-up causes
+a slice and a push-down causes a lift. You can move your player to the left
+or to the right so you can find a special angle for your service. The
+quicklier the ball leaves your racket, the greater the imprecision will be:
+- at 175 km/h: the imprecision is negligible
+- at 195 km/h: the imprecision is of 15 cm
+- at 215 km/h: the imprecision is of 30 cm
+
+.Score:
+-------
+	Player 1's score is written in the up slots of the score
+blackboard, and player 2's score is written in the down slots. If the
+little ball is in the up slot, then player 1 serves, otherwise player 2
+will serve.
+
+.Ball Trace:
+------------
+	In the Very Easy, Easy and Medium Difficulties (option in the World
+tournaments or when playing a quick game against a CPU player), the impact of
+the ball on the ground during the service is marked before the ball hits the
+ground in order to help you with your next strike.
+	In the Very Easy and Easy difficulties, the impact of the ball on the
+ground during the exchanges is also marked earlier to help you.
+
+
+During the game:
+****************
+
+- Esc: Exit to previous menus.
+- P:   Pause - strike again P to return to the game.
+- F1:  Swap to the Replay mode;
+       In this mode, there are 9 different speeds, you have to press on the
+       keys from 1 to 9 to select them:
+     1 - Quick Rewind
+     2 - Rewind
+     3 - Slow Rewind
+     4 - Slower Rewind
+     5 - Step by Step
+     6 - Very Slow Motion
+     7 - Slow Motion
+     8 - Normal Speed
+     9 - Speed * 2
+     Home - Beginning of the Replay
+     End - End of the Replay
+     In Step by Step mode, '-' on the numerical keyboard do a rewind, and '+'
+     do a normal play.
+     With the Joystick, a push and a laxity:
+     to left: go to previous speed, if the 1 is currently on, goes to the
+	      the beginning of the replay;
+     to right: go to next speed, if th 9 is currently on, goes to the end of
+	       the replay;
+     In Step by Step mode:
+     Button 1: advance of 1 image;
+     Button 2: move back of 1 image;
+     To leave the Replay, push on both buttons at the same time, or on
+     the Escape key.
+- F2: to change of side at the end of a point.
+- F3: to display the service speed in Kmh or in Mph.
+- F5: to display player 1's statistics.
+- F6: to display player 2's statistics.
+- F7: to display player 3's statistics.
+- F8: to display player 4's statistics.
+- F9: to adjust the graphic detail level:
+	.low: the crowd applauds
+	.medium: the R in the replay appears, the judges are animated
+	.high: the crowd turns the head to follow the ball
+
+
+Characteristics' Influence:
+***************************
+- Fore Hand, Back Hand, Fore Volley, Back Volley and Smash:
+	.the highest the percentage is, the strongest the player strikes
+
+- Service:            Success          Max Speed (also in Mph/h in the game)
+	  0% =>  b1:     50%            150 Km/h
+		 b2:    100%            120 Km/h
+		 b1+b2:  25%            190 Km/h
+
+	  25% => b1:    100%            150 Km/h
+		 b2:    100%            126 Km/h
+		 b1+b2:  25%            190 Km/h
+
+	  50% => b1:    100%            175 Km/h
+		 b2:    100%            132 Km/h
+		 b1+b2:  25%            190 Km/h
+
+	  75% => b1:    100%            175 Km/h
+		 b2:    100%            138 Km/h
+		 b1+b2:  75%            190 Km/h
+
+	 100% => b1:    100%            175 Km/h
+		 b2:    100%            145 Km/h
+		 b1+b2:  75%            215 Km/h
+
+- The higher the percentage of "Form" is,
+	    . the faster the player will run
+	    . the faster the player will start running
+	    . the further the player will jump at the volley
+
+  The player will be able to do:
+  Form: from 0% to 20%      =>      2 acc
+	    21% to 41%      =>      3 acc
+	    42% to 62%      =>      4 acc
+	    63% to 83%      =>      5 acc
+	    84% to 100%     =>      6 acc
+  "acc" represents the accelerations + fighting lobs
+
+- Player's style:
+	.Defender: can do as many fighting lobs as he wants
+		   and has 1 extra accelaration
+	.Puncher:  has 2 extra accelerations
+	.Varied:   has 1 extra acceleration and do medium jumps at the volley
+	.Volleyer: do big jumps at the volley
+
+- Skill:
+	.for human players:
+		all: sees all ball impacts before the ball hits the ground
+		service: sees ball impacts before the ball hist the ground at
+			 the service.
+		none: doesn't see any ball impacts early
+	.for CPU players: rules the overall computer force
+
+
+Statistics screen:
+******************
+	This screen shows the player's strike strength, and the number
+of striked balls, the number of inside balls, and the player's success
+percentage; we can also see the number of aces, the number of double faults,
+and the running distance.
+	The player's rank only appears in a tournament. The strength
+percentage at the right of "Second Service" indicates the player's form
+strength.
+	If you access to this screen during a warm-up/training or a match, the
+statistics displayed concern only the current party; if you access it via the
+player menu, the statistics concern the whole player career.
+
+
+Double:
+*******
+	During a double, player nø1 will team up with player nø3, and player
+nø2 will team up with player nø4. You should thus define four players before
+you start a game otherwise the computer will pick up the default ones.
+
+
+**********************************************
+OPTIONS AVAILABLE IN THE COMPLETE VERSION ONLY
+***********************************************
+- World Tour
+        - Play 95 tournaments
+        - Meet the 250 world best players
+        - Be ranked
+- Normal
+        - Play on clay, grass, cement, synthetic, indoor
+        - Change player's profile
+        - Play with your modem, or using your local network
+        - And so on....
+
+
+*****************************
+* 4. Keys & Known problems *
+*****************************
+
+Default keys:
+*************
+- keyboard 1:
+up: arrow up or '8'
+down:   down or '2'
+left:   left or '4'
+right: right or '6'
+button 1: 'Left Alt'
+button 2: 'Left Ctrl'
+
+- keyboard 2:
+up:    'I'
+down:  'K'
+left:  'J'
+right: 'L'
+button 1: Tab
+button 2: Caps Lock
+
+
+Known problems:
+***************
+- With a Flystick Pro from CH Products, you can push on 2 buttons at the same
+  time; so push the hat to left to have the good effect;
+- To check your Joystick, launch 'JOY.EXE'; hit a key to exit;
+- The animation may be very bad on a PC without a VLB or PCI card: it is
+  possible that the game runs with less frames or even worse (normally, it
+  runs at 60 frames per second); the CPU power is secondary, the CPU time
+  used is almost the same on a 486dx33 and a 486dx2-66;
+- If you encounter display problems on your video card, launch UNIVBE.EXE or
+  UNIVESA.EXE before you launch TENNIS.EXE;
+- If the quality of the game seems to be poor, try to change the detail level 
+  pushing on F9, and verify that the video card frequency in 640*480 is 60 hz.
+- When you end a match, to go back to the main menu, press ESC.
+
+Music:
+*********
+If you install Tennis Elbow on your hard drive and then launch the game while 
+you have an audio CD in the CDROM drive, TENNIS ELBOW will play this audio CD 
+instead of the game music. To modify this, you should read "DATA\cdtracks.txt"
+
+
+*****************
+* 5. Conclusion *
+*****************
+
+Credits:
+*******
+- Code, Design, Sound: Manu TOO.
+- Graphisms: Eric Rivoire.
+- Testers: Manu TOO, GoldenFeet, Adzaze.
+- Sleeves and Manual: Estelle, Yannick & Jef, LRSM.
+
+Thanks to:
+**********
+- Zork / The Ultimates: for his help about programmation.
+- Skill / Lego System: for his help about zoom in generated code.
+- Franck Pouilly / Sysop de Nexus One BBS: for his encouragements, and the
+		 files founded on his BBS.
+
+Hello to:
+*********
+- Pollux / Lego System
+- Gandalf / Infiny
+- Blaise Gassend
+- Fred Pesh / IO Design
+- Scarfman / Real Time
+- GoldenFeet
+- Floppy / AD
+- Puznik / ToadStood
+
+Now you know everything, so let's play!
+Have fun!
+
+
+			Manu TOO & GOTO Informatique
+				   May 1997
+		    Web site: http://www.tenniselbow.com
+				*************
+
+Hey ! What about the Cheat Codes ???
+**************************************
+	Ok, ok, but use them wisely!
+	Find yourself how and when to enter them....
+	mtkil => win the match
+	mtwin => win the current set
+	mtbal => increase the ball size
+	mtrun => run faster
+	'ý' + Right Shift + '-' at the same time => win all points
+	Ctrl + Alt + Del => stop win all points
+
+
+To contact the authors:
+***********************
+
+	Emmanuel RIVOIRE                 Emmanuel RIVOIRE
+	Eric RIVOIRE                     37, rue D‚richbourg
+	10 rue J-J Rousseau      or      94 550 Chevilly Larue
+	26 000 Valence                   FRANCE
+	FRANCE
+
+Email:  Internet: manutoo@imaginet.fr
+		  emmanuel.rivoire@p6.f305.n320.z2.fidonet.org
+	Fidonet:  2:320/305.6
+	SparkNet: 74:320/300.6
+
+Publisher:
+**********
+GOTO Informatique
+Chƒteau de la Bonnerie
+111 rue de Croix
+59510 Hem
+FRANCE
+Tel: +33 3 (0)3 20 66 55 00
+Fax: +33 3 (0)3 20 66 55 09
+Email: contact@goto.fr
+Hotline: hotline@goto.fr (for your technical problems)
+For International distribution, please email to Mrs Delahaye at chd@goto.fr.
+
+ALL RIGHTS RESERVED - (c) GOTO Informatique 1997
+No illegal diffusion of the Shareware or Complete Version of this software is
+permitted. Restrictions apply for distributing both versions. Please contact
+GOTO at +33 3 20 66 55 00 or by email at chd@goto.fr to have information
+regarding distribution rights.

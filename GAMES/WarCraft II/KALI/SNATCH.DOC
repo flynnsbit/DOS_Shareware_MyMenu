@@ -1,0 +1,45 @@
+ÚÄÄÄÄÄÄÄÄ¿
+³ SNATCH ³ v1.20  (c) 1995 CyWorks                       *FREEWARE*
+ÀÄÄÄÄÄÄÄÄÙ
+
+Disclaimer:  Use this software at your own risk. The author assumes 
+             NO responsibility to any damages incurred by using this
+             software.
+
+Description: Automagic IP Address Snatcher for use with KALI. Useful only
+             to dial-up Internet users that have different IP Addresses 
+             with every call. In other words, this is for lazy forgetful
+             people who need something to edit the WATTCP.CFG file for them.
+
+How to use :   
+             SNATCH 
+             or
+             SNATCH [first.3.digits]
+
+             You must have an existing WATTCP.CFG file. SNATCH will read
+             the first 3 digits from the   my_ip = X.X.X.X   line and
+             use them as the basis for it's search. Once your IP address is
+             found, SNATCH will replace the old address with the newly found
+             one.  
+   
+             If SNATCH finds a parameter, it will use it as the search
+             basis rather than the one in the WATTCP.CFG file.
+
+             Add SNATCH.EXE to your batch file that calls the PPP.EXE file
+             Place SNATCH in your KALI directory.
+
+             example batch file:
+             -   
+             PPP <parameters>
+             SNATCH 
+             KALI <parameters>
+	     DESCENT
+             -
+
+Problems   : Email me at raven@icon.net
+--
+ Thanks to JAY COTTON for making Multiplayer Descent on Internet so easy!
+ Thanks to Pramod Gumpeni for the FAQ
+ Thanks to Parallax Software for Descent.
+ Thanks to KnightLine (jmhart@ionet.net) for the catchy name and idea!
+   

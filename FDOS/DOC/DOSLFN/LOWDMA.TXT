@@ -1,0 +1,89 @@
+For english text, see middle of file
+For change log, see end of file
+
+--------------------------------
+
+LOWDMA - Treiber fÅr Disketten-Sektorzugriff auf nicht-DMA-fÑhigen UMB
+
+Hinweis: Dieser Treiber wird nur benîtigt, wenn [1] Sie den Treiber UMBPCI
+(oder einen vergleichbaren UMB-Treiber fÅr echten Real Mode) verwenden,
+[2] der zur VerfÅgung gestellte UMB-RAM nicht DMA-fÑhig ist,
+[3] DOSLFN (oder auch ein Disk-Cache-Programm) hochgeladen werden soll,
+und [4] Disketten (betrifft nicht LS120-Laufwerke) benutzt werden.
+Das gilt insbesondere fÅr Bootdisketten mit UMBPCI.
+
+FÅr weitere Informationen zu DMA im UMB lesen Sie bitte die Dokumentation
+zu UMBPCI. LOWDMA soll kÅnftig im UMBPCI.ZIP-Archiv enthalten sein.
+
+LOWDMA muss vor DOSLFN geladen werden.
+Entweder als TSR (.COM-Datei) per Kommandozeile oder AUTOEXEC.BAT
+oder (bevorzugt) als .SYS-Treiber in der CONFIG.SYS:
+Folgende Zeilen sollten unmittelbar aufenander folgen
+
+device=c:\util\umbpci.sys
+device=c:\util\lowdma.sys
+
+LOWDMA darf niemals hochgeladen werden, ansonsten kommt eine Fehlermeldung.
+Es ist empfehlenswert, LOWDMA frÅhzeitig zu laden.
+
+LOWDMA tut nichts anderes als vor jedem Sektorschreiben die Daten aus
+dem UMB in den sicheren konventionellen Speicher (<640K) zu kopieren
+und dann den Int40 aufzurufen, sowie umgekehrt beim Sektorlesen.
+Bei Festplatten und bei Sektoradressen au·erhalb des UMB tut LOWDMA
+nichts als den Aufruf weiterzuleiten.
+Falls Int40 leer ist, weil kein Festplatten-BIOS aktiv ist, wird
+stattdessen Int13 genommen. (Dieser Test kînnte schiefgehen, da ungetestet.)
+
+Nebeneffekte wurden noch nicht beobachtet.
+
+--------------------------------
+
+LOWDMA - driver for handling floppy disk sectors in non-DMA UMB
+
+Hint: You have to use this driver in no other case then:
+* You use a real mode UMB driver like UMBPCI
+* the UMB RAM is not capable for DMA transfers
+* you want to load DOSLFN (or another disk cache program) high into UMB
+* you want to access floppy disks (in non-LS120 drives)
+Especially you need this driver on bootable floppy disks with UMBPCI.
+
+For more information about DMA in UMB, please read the documentation
+of UMBPCI. LOWDMA will be later bundled within UMBPCI.ZIP archive.
+
+LOWDMA must be loaded before DOSLFN.
+You may load LOWDMA either as .COM TSR e.g. by typing onto command line,
+or (preferable) load the .SYS driver by modifying CONFIG.SYS and reboot.
+The following lines should be contiguous:
+
+device=c:\util\umbpci.sys
+device=c:\util\lowdma.sys
+
+LOWDMA must not be loaded high. (Otherwise, an error message occurs.)
+You should load LOWDMA as soon as possible.
+
+Internal operation: LOWDMA hooks interrupt 40 (floppy sector operations).
+It copies the sector from risky UMB to the safe conventional memory
+below 640KB before issuing Int40, and vice versa for a read access.
+This is only be done for floppy disks, and for data in UMB; otherwise,
+a call to Int40 is passed through.
+In case of an empty Int40 vector (due to missing hard disk BIOS), LOWDMA
+uses Int13 instead, but this check is neither bullet-proof nor tested.
+
+There is a possible risk of side effects, but they doesn't occur yet.
+
+--------------------------------
+change log (+ = added, - = bugfix, * = changed)
+
+10/01
++ wrote the original .COM driver
+
+10/01
++ changed source to generate either .COM or .SYS file, depending on an
+  external symbol
+
+11/01
++ added explanation of internal work of LOWDMA
+
+11/01
+* hooks Int40 instead of Int13, users are no more required to put this
+  driver to IOS.INI's [SafeList] section [Franck Uberto <uberto@esrf.fr>]

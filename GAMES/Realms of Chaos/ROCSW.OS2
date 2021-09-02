@@ -1,0 +1,294 @@
+s=DCF
+i=Realms of Chaos
+Unregistered Shareware
+Version 1.0 - Settings
+p=AUDIO_ADAPTER_SHARING
+t=2
+v=Required
+d=1  On
+
+p=COM_DIRECT_ACCESS
+t=0
+v=0  Off
+d=1  On
+
+p=COM_HOLD
+t=0
+v=0  Off
+d=1  On
+
+p=COM_RECEIVE_BUFFER_FLUSH
+t=2
+v=NONE
+d=1  On
+
+p=COM_SELECT
+t=2
+v= ALL
+d=1  On
+
+p=DOS_AUTOEXEC
+t=3
+v=C:\AUTOEXEC.BAT
+d=0  Off
+
+p=DOS_BACKGROUND_EXECUTION
+t=0
+v=0  Off
+d=0  Off
+
+p=DOS_BREAK
+t=0
+v=0  Off
+d=1  On
+
+p=DOS_DEVICE
+t=4
+v=
+d=0  Off
+
+p=DOS_FCBS
+t=1
+v=16
+d=1  On
+
+p=DOS_FCBS_KEEP
+t=1
+v=8
+d=1  On
+
+p=DOS_FILES
+t=1
+v=60
+d=1  On
+
+p=DOS_HIGH
+t=0
+v=1  On
+d=1  On
+
+p=DOS_LASTDRIVE
+t=3
+v=Z
+d=1  On
+
+p=DOS_RMSIZE
+t=1
+v=640
+d=1  On
+
+p=DOS_SHELL
+t=3
+v=C:\OS2\MDOS\COMMAND.COM C:\OS2\MDOS /E:512 /P
+d=0  Off
+
+p=DOS_STARTUP_DRIVE
+t=3
+v=
+d=1  On
+
+p=DOS_UMB
+t=0
+v=1  On
+d=1  On
+
+p=DOS_VERSION
+t=4
+v=DCJSS02.EXE,3,40,255
+v=DFIA0MOD.SYS,3,40,255
+v=DXMA0MOD.SYS,3,40,255
+v=EXCEL.EXE,10,10,4
+v=IBMCACHE.COM,3,40,255
+v=IBMCACHE.SYS,3,40,255
+v=ISAM.EXE,3,40,255
+v=ISAM2.EXE,3,40,255
+v=ISQL.EXE,3,40,255
+v=MSD.EXE,5,00,255
+v=NET3.COM,3,40,255
+v=NETX.COM,4,00,255
+v=NETX.EXE,5,00,255
+v=PSCPG.COM,3,40,255
+v=SAF.EXE,3,40,255
+v=WIN200.BIN,10,10,4
+d=1  On
+
+p=DPMI_DOS_API
+t=2
+v=AUTO
+d=1  On
+
+p=DPMI_MEMORY_LIMIT
+t=1
+v=4
+d=1  On
+
+p=DPMI_NETWORK_BUFF_SIZE
+t=1
+v=8
+d=1  On
+
+p=EMS_FRAME_LOCATION
+t=2
+v=AUTO
+d=1  On
+
+p=EMS_HIGH_OS_MAP_REGION
+t=1
+v=0
+d=1  On
+
+p=EMS_LOW_OS_MAP_REGION
+t=1
+v=384
+d=1  On
+
+p=EMS_MEMORY_LIMIT
+t=1
+v=2048
+d=1  On
+
+p=HW_NOSOUND
+t=0
+v=0  Off
+d=1  On
+
+p=HW_ROM_TO_RAM
+t=0
+v=0  Off
+d=1  On
+
+p=HW_TIMER
+t=0
+v=1  On
+d=0  Off
+
+p=IDLE_SECONDS
+t=1
+v=60
+d=0  Off
+
+p=IDLE_SENSITIVITY
+t=1
+v=100
+d=0  Off
+
+p=INT_DURING_IO
+t=0
+v=1  On
+d=0  Off
+
+p=KBD_ALTHOME_BYPASS
+t=0
+v=0  Off
+d=1  On
+
+p=KBD_BUFFER_EXTEND
+t=0
+v=1  On
+d=1  On
+
+p=KBD_CTRL_BYPASS
+t=2
+v=NONE
+d=1  On
+
+p=KBD_RATE_LOCK
+t=0
+v=0  Off
+d=1  On
+
+p=MEM_EXCLUDE_REGIONS
+t=3
+v=
+d=1  On
+
+p=MEM_INCLUDE_REGIONS
+t=3
+v=
+d=1  On
+
+p=MOUSE_EXCLUSIVE_ACCESS
+t=0
+v=0  Off
+d=1  On
+
+p=NETWARE_RESOURCES
+t=2
+v=NONE   
+d=0  Off
+
+p=PRINT_SEPARATE_OUTPUT
+t=0
+v=1  On
+d=1  On
+
+p=PRINT_TIMEOUT
+t=1
+v=15
+d=1  On
+
+p=SESSION_PRIORITY
+t=1
+v=32
+d=0  Off
+
+p=VIDEO_8514A_XGA_IOTRAP
+t=0
+v=0  Off
+d=0  Off
+
+p=VIDEO_FASTPASTE
+t=0
+v=0  Off
+d=1  On
+
+p=VIDEO_MODE_RESTRICTION
+t=2
+v=NONE        
+d=1  On
+
+p=VIDEO_ONDEMAND_MEMORY
+t=0
+v=0  Off
+d=0  Off
+
+p=VIDEO_RETRACE_EMULATION
+t=0
+v=0  Off
+d=0  Off
+
+p=VIDEO_ROM_EMULATION
+t=0
+v=0  Off
+d=0  Off
+
+p=VIDEO_SWITCH_NOTIFICATION
+t=0
+v=0  Off
+d=1  On
+
+p=VIDEO_WINDOW_REFRESH
+t=1
+v=1
+d=1  On
+
+p=VIPX_ENABLED
+t=0
+v=0  Off
+d=0  Off
+
+p=XMS_HANDLES
+t=1
+v=0
+d=0  Off
+
+p=XMS_MEMORY_LIMIT
+t=1
+v=0
+d=0  Off
+
+p=XMS_MINIMUM_HMA
+t=1
+v=0
+d=1  On
+

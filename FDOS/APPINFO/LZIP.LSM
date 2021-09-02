@@ -1,0 +1,14 @@
+Begin3
+Title:          Lzip
+Version:        1.9
+Entered-date:   2013-02-01
+Description:    A data compressor based on the LZMA algorithm.
+Keywords:       command.com, shell, interactive
+Author:         Antonio Diaz Diaz
+Maintained-by:
+Primary-site:   http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/lzip.html
+Alternate-site:
+Original-site:
+Platforms:      DOS
+Copying-policy: GNU General Public License, Version 3
+End

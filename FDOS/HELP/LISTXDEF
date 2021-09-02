@@ -1,0 +1,34 @@
+NAME
+
+   LISTXDEF - List all current XKeyb key allocations to STDOUT
+
+SYNOPSIS
+
+   LISTXDEF
+
+
+RELATED COMMANDS
+
+   XKEYB        Main version of XKEYB 
+   XKEYBRES     "Lite" version of XKEYB
+   KEYMAN       XKeyb macro recorder
+
+NOTES
+   
+   LISTXDEF is used to output (to STDOUT) the definition file currently
+   being used by XKeyb (including any keys defined using KEYMAN.EXE).
+
+   It is most commonly used to save a custom definition file (ie. one created
+   by loading one of the standard definition files with XKEYB then assigning
+   additional macros using KEYMAN).
+
+   This is done using the command:
+
+      KEYMAN >xyz.KEY
+      
+   Please see the manual XKEYB.TXT for further information.
+
+AUTHOR
+
+   Program:             Dietmar Hohmann, d.hoehmann@gmx.net
+   This documentation:  Ben Berry, za2bb@hotmail.com    

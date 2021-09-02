@@ -1,0 +1,115 @@
+
+      ------------------------------------------------------------------
+      SWITCHAR.COM   v1.00a   08-13-1998   C. Dye   raster@highfiber.com
+            Freeware.  Copyright 1998, Charles Dye.  No warranty!
+      ------------------------------------------------------------------
+
+SWITCHAR.COM provides an easy way to get and set the switch character from
+the DOS command line.  If run under a version of DOS which doesn't provide
+the set-switchar function, it will automatically install a small piece of
+resident code to handle set-switchar and get-switchar correctly.
+
+
+                               --------------
+                               GENERAL SYNTAX
+                               --------------
+
+SWITCHAR      With no parameters, displays the current switch character.
+SWITCHAR /    Set switch character to slash (DOS default)
+SWITCHAR -    Set switch character to dash  (UNIX style)
+
+SWITCHAR `    These two nonstandard characters are also permitted.  To
+SWITCHAR ~    add more legal characters to the list, you must reassemble.
+
+SWITCHAR U    Uninstall resident code, if possible.
+SWITCHAR L    Do not install to upper memory.
+
+
+                                ------------
+                                RETURN CODES
+                                ------------
+
+Normally, ERRORLEVEL will indicate the current value of switchar (to allow
+batch files to check it.)  If switchar is set to "/" (the DOS default) the
+return code will be 0.  Otherwise, ERRORLEVEL will contain the ASCII code of
+the current switchar.  The most likely alternative is 45 for the dash "-"
+
+In case of errors, the return code will be between 16 and 31.  The only
+error codes currently defined are 16 (syntax error) and 17 (memory error.)
+
+
+                              ----------------
+                              TECHNICAL TRIVIA
+                              ----------------
+
+Windows 95 note:  If the resident code is loaded before Windows starts (from
+AUTOEXEC.BAT, say) then the switch character is global.  Changing the current
+switchar in one DOS box changes it in all DOS boxes.  If the resident code is
+not loaded before Windows, the switch character is local -- each DOS box can
+have its own copy.
+
+I'm So Ashamed of Myself moment:  The resident code is installed via direct
+manipulation of the DOS arena header.  It's entirely possible that this nasty
+technique might cause problems under some advanced memory managers, or in
+some emulated-DOS environment.  If so, let me know and I'll write a more
+compatible installation routine.
+
+
+                                ------------
+                                DR DOS NOTES
+                                ------------
+
+This section applies to all the versions of DR DOS that I've been able to
+study.  These are DR DOS 6, the original retail version of Novell DOS 7, the
+U15 update of Novell DOS 7, and most of Caldera's DR-and/or-Open DOSses.
+
+All of these versions (I'll call them DR DOS collectively) support the
+switchar API correctly.  Many of the DR DOS utilities will check the current
+switchar, and some even modify their syntax displays accordingly.
+
+The DR DOS COMMAND.COM also checks the current switchar, and modifies its
+behavior accordingly.  However, some of the changes are unpleasant:  if
+switchar is set to anything but a slash, COMMAND.COM no longer recognizes
+backslash as a path separator on the command line.  Some changes seem to
+interfere with application programs -- for example, my editor can't find its
+.INI file if switchar is changed.  DR DOS COMMAND.COM support for switchar
+is pretty flakey.
+
+I've found it useful to patch DR DOS COMMAND.COM to *ignore* the switchar.
+General instructions for advanced users are below.  If you don't understand
+this section, ignore it!  As always, try this at your own risk.  I won't be
+responsible for crashes, lost data, flaming hardware, etc.
+
+Be sure to make a backup copy of COMMAND.COM before beginning!  Then use any
+hex editor to search for the following series of bytes:
+
+B8 00 37 CD 21 2A E4 8A C2 C3
+
+Change the fourth and fifth bytes (CD 21) to B2 2F.  Save the modified copy
+of COMMAND.COM and reboot.  This change has the effect of forcing COMMAND.COM
+to always use the slash as switchar.
+
+
+                                -----------
+                                WHAT'S NEW?
+                                -----------
+
+Version 1.00a fixes an incompatibility with 8086 and 8088 CPUs.
+
+
+                                ------------
+                                DISTRIBUTION
+                                ------------
+
+This program is licensed under the terms of the Free Software Foundation's
+GNU General Public license.  You may freely distribute it under the terms of
+version 2 of that License, or at your option, any later version thereof.
+
+You should have received a copy of the GNU General Public License with this
+program, as a file named COPYING.  If you did not receive a copy of the
+License, one is available from:
+
+     Free Software Foundation, Inc.
+     59 Temple Place - Suite 330
+     Boston, MA  02111-1307, USA
+

@@ -1,0 +1,229 @@
+
+  History of the HTML Help viewer
+  ===============================
+
+------------------------
+         LEGEND
+    * = Added feature  
+    ! = Bug Fixed      
+    ~ = Changed                              
+------------------------
+
+NOTE: No changes of the help viewer in version 1.0.6 and version 1.0.7
+of the help as I am no programmer!
+
+
+Version 5.3.3
+  * Will still load English version if %LANG% is set to a language
+    that htmlhelp cannot find in the help directory.
+  * Support for Wheelmouse API when using Cutemouse 2 Alpha (untested).
+
+Version 5.3.2
+Robert Platt:
+  * Unicode (UTF-8) decoding
+  * All HTML 4.0 character entities now defined
+  * Numeric Character References (e.g. &#1234;) allowed
+  * Support of the above three items for the following codepages:
+    437, 737, 808, 850, 851, 852, 853, 855, 857,
+    858, 860, 861, 863, 865, 866, 869, 872.
+  * Autodetect of the codepage
+  * NLS catalogue support - allows translation of user interface strings
+  * Two fancy color schemes added, through options /f1 and /f2
+  * Can open zip files directly from command line
+  * Back/Forward browsing now remembers bookmarks within pages
+  * Improved file loading. Zips no longer need to be in a
+    subdirectory of the help directory. Help will look for index.htm
+    in same directory as exe, and in current directory, if no found
+    in help directory.
+  * Alt+F4 can exit help
+  ! Fixed ability to load files from outside of the help directory
+  ! Fixed bug in topic search mechanism, where for example format would
+    be loaded when user asked for "for"
+  ! Fixed little bugs in how errors are reported when file cannot be opened
+  ! html files greater than 32k in zip files no longer report an error
+  ! Formatting mistake on search box help screen fixed.
+  ! keyboard browses correctly after going to a NAME anchor (bookmark).
+
+Version 5.3.1
+Robert Platt:
+  * Search Box: search the help content or a single page.
+  * Can press letters to navigate links
+  ! Plain text files (files without .htm extension) can now contain < and >
+  ! bold, italics and links that span two or more lines will now display
+    properly even if the they start off the top of the screen
+  ! console cursor position is restored on exiting
+  ! The /O and /L command line work again (broken in v5.3.0)
+  ! Links which contain ".." directories now work even with zips
+  ~ Maximum allowed length of link text in html increased
+  ~ html parsing speed improved
+  ~ code structure improvements and general optimisation
+
+Version 5.3.0
+Robert Platt:
+  * Support for compressed help in zip files
+
+Version 5.2.1
+Robert Platt:
+  ~ Exact matches of topics in index.htm now take precedence over
+    files (so that the typical usage is faster).
+  * user abort possible during long search for nearest match to a topic
+  * /A switch added, which tells help to use standard ASCII characters
+    instead of extended character block graphics.
+  * HELPCMD environment variable can be used to preset /A and /M switches.
+  ! fixed bug in user interface - ghost links occasionally loaded
+    e.g. when using scroll bar (The check for whether the mouse was
+    within the main window (where the links are) had the wrong boundary
+    conditions.) 
+  ! Detect, rather than assume, enhanced (101/102 key) keyboard
+  ~ GNU Indent run to beautify the source code (this to be done on
+    all future releases).
+
+Version 5.2
+Robert Platt:
+  ~ New help system will use ..\help\index.htm as default help path.
+  * Checks %helppath% environment variable to locate index.htm
+    (previously only fasthelp used this)
+  * Support for multiple help file sets:
+    Checks to see whether a topic specified on the command line
+    matches any files on the help path before doing the usual search
+    in index.htm. A subtopic can be passed to such a file.
+  * Enhanced keyboard browsing. Arrow keys now move between links.
+    Alt+Left and Alt+Right moves back and forth between history (Netscape
+    and IE use these).
+    (Also, Alt+Up and Alt+Down behave how Up and Down used to.)
+  * Semi-infinite browsing
+  * Allows html files to have parameters in the body tag
+  * Full support for comments <!-- -->
+  * F5/Ctrl+R can be used to refresh the current document (useful for
+    writing documents in a windowing environment)
+  ! Fixed memory bug in the GUI
+  ! Fixed memory bug in the header tag code
+  ! Fixed slight bug in scroll bar positioning
+  ! Fixed bug conflicts when browsing links with both mouse and keyboard
+    together
+  ! Word-wrapping is now aware of character entities (&copy; etc).
+  ~ Code clean-up
+  ~ Bright Yellow used for links (still much more readable on laptops
+    than the older colour system, but much better than green is for
+    CRT monitor users.) (Joe Cosentino's idea - thanks Joe)
+
+--------------------------------------------------------------------------
+      From Version 5.1.2B onwards, the new help file set was
+      introduced - hhstndrd - under the GNU FDL license. This has
+      its own seperate history and version number.
+--------------------------------------------------------------------------
+
+Version 5.1.0B
+Robert Platt:
+  ~ old /files documentation removed from this release.
+  ~ The home page has been changed from help.htm to htmldocs\index.htm.
+  * Neater rendering of HTML through detection of excessive newlines
+  ! Fixed a bug in the word wrapping
+  ! Fixed a bug where <A NAME="something"> tags are treated as <A HREF="..."
+    tags.
+  ~ various tags tweaked
+  * Support for two new character entities: &para; and &sect;
+
+--------------------------------------------------------------------------
+      From Version 5.1.0B onwards, support of the old /files HTML
+      documentation ceased.
+--------------------------------------------------------------------------
+
+Version 5.0.1   13/11/2002
+Robert Platt:
+  * in 43- and 50- line color text modes, help now takes advantage of the
+    additional screen space.
+  ! the command-prompt screen is now restored on exiting help (unless the
+    video mode is changed)
+  ! the cursor is restored after exiting
+  ! the video-mode is only set when necessary
+  ! fixed some flaws in the interpretation of relative links
+  ~ improved interpretation of the <h1> and <pre> tags: h1 is now bold and
+    these two tags begin new paragraphs
+  ~ 'Next' has been renamed to 'Forward' in the navigation
+  ~ Alt+B, as well as backspace, can be used to navigate 'Back'
+
+Version 5.0.0B  01/11/2002
+Robert Platt became maintainer.
+Paul Hsieh and Robert Platt:
+  * Less need for HTML files to be preformatted (built in word wrapping)
+  * Supports HTML '&___;' escape codes such as &nbsp; and &copy;
+  * header tags <h1> through <h3> are supported. <h1> puts a border around
+    text for titles, removing the need for non-standard characters in the
+    HTML files which were used to create this effect.
+  * Improved navigation with 'Exit', 'Contents', 'Next' and 'Help on Help'
+  * Support for Shift-Tab, to complement Tab for going between links.
+  * Mouse can now page up and down by clicking on scroll bar area.
+  * /o command-line option can be used to open many other text and HTML
+    files.
+  ! Fixed a problem where the machine hanged after browsing links deeply.
+  ! Fixed various minor bugs
+  ! Accessibility improved: new color schemes are readable on LCD screens,
+    and on monochrome (especially with the /m command-line option)
+  ! Status-bar does not just show links that the mouse hovers over, it also
+    show links highlighted by the keyboard.
+
+--------------------------------------------------------------------------
+      Joe Cosentino (creator of the html help viewer) was maintainer
+      for versions before 5.0 BETA.
+      Rob Platt became new maintainer with release 5.
+--------------------------------------------------------------------------
+
+Version 4.2     12/10/2001
+  * Added cd.htm, md.htm, and rd.htm.
+  ! Fixed nasty bug which crashed HTML help after a while (thanks Jeremy).
+  ~ Updated the FreeDOS History.
+  ~ Made the display better on monochrome monitors.
+  ~ Updated the files with my new email address.
+  ~ Updated the XKeyb documentation.
+      
+Version 4.0     07/24/2000
+  ! The bug that cut off the first letter in the status bar was fixed
+    (thanks again Brian).
+  * When you press the back button, it goes back a topic. 
+  ~ Updated the Defrag help file.
+  ~ Updated the FreeDOS history.
+  ! Cleaned up some of the keyboard functions.
+
+Version 4.1     10/11/2000
+  ! Fixed bug that crashed help if more than 1 help command was entered on
+    the command line.
+  ~ Updated the FreeDOS history.
+  ~ Updated the Debug help file.
+  ~ Updated the Fastopen help file.
+  * Julien Etelian has updated all the HTML files so they can be viewed
+    with any web browser as well as HTML Help.
+  * Added ScanDisk help file.
+  ~ Updated the Defrag help file.
+
+Version 3.2     05/21/2000
+  * Bob Stammers added keyboard support (Tab key goes between topics).
+  ~ Bob also changed the italic text to magenta so it would contrast better.
+  ~ Updated the Replace help file.
+
+Version 3.1     05/5/2000
+  * Added the italics command <i> and </i>. Italics is displayed in
+    gray text.
+  ~ Updated rest of the HTML files so they have loads of information.
+
+Version 3.0a    04/27/2000 (Never released)
+  * Added the <li> tag.
+  ~ Seriously updated many of the HTML files.
+  ~ Added the FreeDOS history.
+
+Version 3.0     04/03/2000
+  * Added the bold command <b> and </b>. Bold is displayed in white text.
+  * Added the <br> and <p> commands. -- Brian E. Reifsnyder.
+
+Version 2.1     04/02/2000
+  ! Fixed bug that when you viewed a command from the command line, the
+    program crashed.
+  ! Fixed the memory allocation bug.
+
+Version 2.0     01/12/2000
+  ~ Code cleanup.
+  ~ Rewrote some code.
+  ~ Changed help files so they can link to one another.
+
+Version 1.0     10/16/1998
+  * Initial release.

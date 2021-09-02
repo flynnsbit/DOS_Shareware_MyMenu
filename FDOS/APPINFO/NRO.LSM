@@ -1,0 +1,14 @@
+Begin3
+Title:          nro
+Version:        1.2
+Entered-date:   1997-01-26
+Description:    A text processor similar to nroff on UNIX
+Keywords:       nroff, roff, nro, micro-c
+Author:         Steffen Kaiser (steffen.kaiser _AT_ fh-rhein-sieg.de)
+Maintained-by:  Steffen Kaiser (steffen.kaiser _AT_ fh-rhein-sieg.de)
+Primary-site:   http://www2.inf.fh-rhein-sieg.de/~skaise2a/ska/sources.html#nro
+Alternate-site: http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/user/
+Original-site:  http://www2.inf.fh-rhein-sieg.de/~skaise2a/ska/sources.html#nro
+Platforms:      FreeDOS, DOS (Micro-C)
+Copying-policy: Public Domain
+End

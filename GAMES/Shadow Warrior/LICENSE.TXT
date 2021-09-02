@@ -1,0 +1,126 @@
+Shareware Episode of Shadow Warrior, starring Lo Wang,
+including all versions, patches and upgrades (the "Game")
+Copyright (c) 1997 3D Realms Entertainment, a division of Apogee Software, Ltd.
+P.O. Box 496489, Garland, TX 75049
+(herein "3D Realms").  All worldwide rights reserved.
+
+BY COPYING, USING OR DISTRIBUTING THE GAME, YOU INDICATE YOUR AGREEMENT TO
+THIS LICENSE
+
+======================= LICENSE ============================
+
+[1]  DEFINITIONS: The "Trademarks" consist of the "3D Realms" words and logo,
+     "Apogee" words and logo, the name of the Game, game characters, and all
+     other marks used by 3D Realms in connection with the Game.  Other trademarks
+     used for description or comparison purposes are the property of their
+     respective owners.
+
+[2]  OWNERSHIP: Except to the extent expressly licensed, 3D Realms owns and
+     reserves the exclusive right to distribute the Game, and the right to use
+     the Trademarks in connection with it.  Its content, layout and format are
+     the property of 3D Realms to the extent permitted by law.
+
+[3]  GRANT: 3D Realms grants a non-exclusive, non-transferable, royalty-free
+     license to distribute the Game only as follows:
+
+ [A] INDIVIDUALS are encouraged to share and give copies of the Game to
+     friends, family, coworkers, and members of any not-for-profit
+     organization, but only without charge.
+
+ [B] GT Interactive Software (GTIS) has special and exclusive rights to the
+     shareware Episode One of the Game, until September 1, 1997, and until
+     that date is the only entity that may commercially distribute the
+     shareware Episode One in stores, and in a retail environment.
+
+ [C] Compuserve and America Online:  Until September 1, 1997, distribution
+     of shareware Episode One of the Game is strictly prohibited, except
+     within 3D Realms' on-line forums.  After this date, any forum on these
+     two services may freely distribute the Game.
+
+ [D] These grants are subject to the conditions that no copyright information
+     or trademark will be added or removed, and all of the Game's files as
+     released by 3D Realms will be included without modification (except for
+     "New Levels" as permitted below by this license).
+
+[4]  NEW LEVELS.
+
+     "New Levels" are data that modify or substitute for Game data, thus
+     modifying or replacing one or more Game levels.  Creating or distributing
+     a New Level or a software tool that has no substantial purpose other than
+     to contribute to the creation of a New Level infringes rights of Apogee
+     and is prohibited by law except as permitted by Apogee.  3D REALMS PERMITS
+     NEW LEVELS ONLY THAT MEET ALL OF THE FOLLOWING CONDITIONS:
+
+ [A] The Level must only work with a RETAIL episode of the Game. It must NOT
+     work with this Episode One (shareware episode).
+
+ [B] The level must not contain modifications to any COM, EXE, or DLL, or to
+     other executable file.
+
+ [C] The level must not contain any illegal material, or (without
+     appropriate irrevocable licenses) any trademarks, copyright protected
+     work, or other property of third parties.
+
+ [D] The level must prominently identify at least in every online description
+     and with reasonable duration on an opening screen
+     (1) the name and email address of the level's creators, and
+     (2) the words "THIS LEVEL IS NOT MADE BY OR SUPPORTED BY 3D REALMS".
+
+ [E] The level and any use of it must be offered solely for free (other than
+     any incidental online charges).
+
+ [F] By distributing or permitting the distribution of any New Level, all
+     owners of any trademark, copyright or other right, title or interest
+     therein (to the extent different from the Game as originally distributed
+     by 3D Realms) grant back to 3D Realms an irrevocable royalty free right
+     to distribute the level.
+
+ [G] The distributor of any New Level or Level Editor must be authorized to
+     distribute the Game itself (either in writing, or by being within a
+     category where no writing is needed under this LICENSE.DOC).
+
+[5]  TERM: Unless terminated for cause, grants by 3D Realms under this
+     LICENSE.DOC terminate 30 days after receipt of written notice, or such
+     longer period as the notice may provide.  Sections [2], [6], and [7]
+     survive termination.
+
+[6]  LIMITED WARRANTY AND LIMITATION OF REMEDIES: If 3D Realms provides a
+     physically defective copy of the Game, 3D Realms will replace it upon
+     prompt submission of the defective one.  THE GAME IS OTHERWISE PROVIDED
+     "AS-IS", AND NO WARRANTIES OF ANY KIND (INCLUDING IMPLIED WARRANTIES OF
+     MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE), EXPRESS OR IMPLIED,
+     ARE MADE AS TO IT OR ANY MEDIUM IT MAY BE ON.  OUR ENTIRE LIABILITY AND
+     YOUR EXCLUSIVE REMEDY IS SUCH REPLACEMENT, AND UNDER NO CIRCUMSTANCES
+     WILL WE PROVIDE ANY OTHER REMEDY FOR DIRECT, INDIRECT, SPECIAL,
+     CONSEQUENTIAL, PUNITIVE, INCIDENTAL OR OTHER DAMAGES ARISING FROM IT,
+     INCLUDING SUCH FROM NEGLIGENCE, STRICT LIABILITY, OR BREACH OF WARRANTY
+     OR CONTRACT, EVEN AFTER NOTICE OF THE POSSIBILITY OF SUCH DAMAGES.
+
+[7]  MISCELLANY
+
+ [A] Since 3D Realms would be irreparably damaged if Sections [2], [3],
+     [4], or [7][D] were not specifically enforced, 3D Realms will be entitled
+     without bond, other security or proof of damages, to appropriate equitable
+     remedies with respect to breaches of such sections, in addition to such
+     other remedies as 3D Realms may have.
+
+ [B] You will indemnify and hold 3D Realms, our partners, affiliates, contractors,
+     employees and agents harmless from damage, loss and expense arising
+     directly or indirectly from your acts and omissions in copying,
+     distributing or modifying the Game or any New Level.
+
+ [C] With respect to every matter arising under this, you consent to the
+     exclusive jurisdiction and venue of the state and federal courts sitting
+     in Dallas, Texas, and to service by certified mail, return receipt
+     requested, or as otherwise permitted by law.
+
+ [D] Except as explicitly permitted herein, you will not modify the Game.
+     Except to the extent, if any, applicable law may require otherwise, you
+     will not decompile, disassemble, or reverse engineer the Game, or use or
+     disclose any confidential information that it contains.
+
+This version of the license.doc supercedes any previous versions of said
+document relating to the Game.  (This Game specifically, and not other titles
+published by 3D Realms or Apogee.)
+
+[V.5.01.97]

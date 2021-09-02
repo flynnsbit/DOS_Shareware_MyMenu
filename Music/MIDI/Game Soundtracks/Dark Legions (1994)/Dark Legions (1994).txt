@@ -1,0 +1,10 @@
+Game: Dark Legions
+Year: 1994
+Composed by: Eugene Koh
+MIDI versions: GM
+Platform: DOS
+
+Additional info: I couldn't find out proper names for the tracks, so I left them in their original form.
+
+
+https://www.karlsitretro.com/game_midi

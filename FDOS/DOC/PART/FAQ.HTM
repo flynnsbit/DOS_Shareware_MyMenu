@@ -1,0 +1,479 @@
+<HTML>
+<HEAD>
+   <TITLE>Partition Manager FAQ</TITLE>
+</HEAD>
+<BODY>
+<H2>Partition Manager FAQ</H2>
+<HR>
+<DL>
+<DT><FONT COLOR="Red">Important!!!</FONT> <A HREF="#award_bios">If you got a computer with Award BIOS dated October 1998 (or newer) you MUST read this!</A>
+<DT><A HREF="#award_bios_fix">If you already cannot access your disk on such motherboard read instructions how to fix it.</A>
+<DT><p>
+<DT><A HREF="#partition">Can I partition my disk without losing data with your Partition Manager?</A>
+<DT><A HREF="#bloodhound">When I install Boot Manager Norton Antivirus reports virus Bloodhound.MBR. What do I do?</A>
+<DT><A HREF="#still_big">I have changed size of my FAT-32 partition from 6G down to 2G, but Explorer still shows 6G.</A>
+<DT><A HREF="#recovery">My hard disk was corrupted by &lt;some bad program&gt;. Could your tool help me to recover my partitions?</A>
+<DT><p>
+<DT><A HREF="#pqmagic">Partition Manager vs Partition Magic</A>
+<DT><A HREF="#syscom">Advanced Boot Manager vs System Commander</A>
+<DT><A HREF="#boot31">Why would anyone need 31 bootable partitions?</A>
+<DT><A HREF="#8Gb">Does Partition Manager support disks larger than 8G?</A>
+<DT><p>
+<DT><A HREF="#nt_inst">When I try to install Windows NT it couldn't continue after reboot. What's wrong with it?</A>
+<DT><p>
+<DT><A HREF="#last_cyl">When I run Partition Manager I get the message "Note that BIOS reports only 624 cylinders." Is there a problem with my computer?</A>
+<DT><p>
+<DT><A HREF="#linux">What is the proper way for installing Linux with Advanced Boot Manager?</A>
+<DT><p>
+<DT><A HREF="#default">How do I set default partition?</A>
+<DT><A HREF="#timeout">How do I set boot menu timeout?</A>
+<DT><A HREF="#hd2">How do I boot my old MS-DOS from the second hard drive?</A>
+<DT><p>
+<DT><A HREF="#shrink">Can I shrink FAT partition?</A>
+<DT><A HREF="#enlarge">Can I enlarge FAT partition?</A>
+<DT><A HREF="#fat16to32">Can I convert FAT-16 to FAT-32?</A>
+<DT><A HREF="#fat32to16">Can I convert FAT-32 back to FAT-16?</A>
+<DT><A HREF="#merge">Can I merge two FAT-16 partitions into a single FAT-32?</A>
+<DT><p>
+<DT><A HREF="#fat16_above_2G">Why I cannot boot MS-DOS from FAT-16 if it is located above 2G?</A>
+<DT><A HREF="#fat32_ntfs">Is it possible to have Windows 95 with FAT-32 and NT with NTFS on the same disk?</A>
+<DT><A HREF="#SU0013">When I tried to install Windows 95 onto the second hard drive setup failed with error "SU0013". What should I do?</A>
+<DT><p>
+<DT><A HREF="#noext">I installed Advanced Boot Manager and now I cannot see Extended partition.</A>
+<DT><A HREF="#os_inst">I installed Advanced Boot Manager. Should I do anyting before installing a new OS?</A>
+<DT><A HREF="#os_inst">I installed Windows 95 and Advanced Boot Manager has disappeared. What happened?</A>
+<DT><p>
+<DT><A HREF="#adv_part_choices">Why are there only four choices - Last, Next, Prev, Last3 - in Advanced Boot Manager?</A>
+<DT><A HREF="#why_do_you_do_it">Why are you spending so much energy writing this program and giving it out for free?</A>
+</DL>
+<HR>
+<A NAME="partition"></A>Q: Can I partition my disk without losing data with your Partition Manager?
+<P>A: Yes. You can. If you have one large FAT-16 or FAT-32 partition and you
+want to create another partitions, without losing existing data you have to do
+the following:
+<br>1. Defragment your C: disk.
+<br>2. Run partition manager and change partition size in <b>TWO</b> places:
+    partition table and boot record (you get there when you press Enter).
+    Make sure the size does not drop below minimum partition size.
+<br>3. Reboot computer and run SCANDISK to check for errors / adjust FAT-32
+    free space.
+<br>4. Create new partitions.
+
+<HR>
+<A NAME="pqmagic"></A>Q: Why do I need your Partition Manager, if I already
+have Partition Magic by <A HREF="http://www.powerquest.com">Powerquest</A>?
+
+<P>A: Partition Manager and Partition Magic are different programs. They
+are complementing each other. While Partition Magic isolates you from small
+details and does all work for you, Partition Manager lets you see all those
+details in the partition table (cylinders', heads', and sectors' numbers)
+and you have to make all decisions yourself. I use Partition Manager for
+non-standard tasks, such as creating more than one primary (bootable) FAT
+partitions on the disk, and use Partition Magic to resize partitions or
+change their cluster size.
+<HR>
+<A NAME="syscom"></A>Q: What is the difference between Advanced Boot
+Manager and <A HREF="http://www.systemcommander.com">System Commander</A>?
+
+<P>A: While both programs allow you to have multiple Operating Systems
+on one hard drive they do it in the different ways. System Commander lets
+you boot several OS from one partition by manipulating with system files
+(for example you can put several versions of MS-DOS, Windows 95, and Windows
+NT into a single FAT partition). With System Commander you still have a
+limitation of four partitions per disk, but you can put many OS in each
+of those partitions. On the other hand Advanced Boot Manager does not
+manipulate inside partitions, but, instead, lets you create up to 31 bootable
+partitions on your disk, and then boot from them different OS. I have not
+tried, but it might be possible to use both at the same time.
+<HR>
+<A NAME="boot31"></A>Q: Why would anyone in the right mind want to create 31
+bootable partitions?
+
+<P>A: Probably 31 is too much, but the current limitation of four partitions
+is a problem. For example, I have six partitions on my 5.1G hard disk.
+I have an old version of MS-DOS, Windows 95, Solaris x86, another Windows
+95 partition for programs downloaded from web, some empty space to test
+Partition Manager, and an Extended DOS partition. When I boot from DOS or
+Windows 95 I can see two partitions: one, from which I have booted and an
+extended partition with my files and programs.
+<P>In addition, it is now common to have several OS, such as Windows 95/98,
+Windows NT, and various flavors of Linux in order to develop crossplatform
+applications.
+<HR>
+<A NAME="linux"></A>Q: What is the proper way for installing Linux with
+Advanced Boot Manager?
+<p>First you have to create two Linux partitions (ext2fs and swap):
+<pre>
+  # File System     Size
+  1 FAT-16          200M    <- This your old DOS 
+  2 FAT-32         2000M    <- This is Windows 95
+> 3 Linux (ext2fs)  800M
+> 4 Linux swap       40M
+  5 Extended        500M
+      FAT-16        500M    <- This is shared FAT-16 partition inside 
+                               extended partition, visible to all OS.
+</pre>
+<p>Then you have to edit Advanced Boot Manager boot menu:
+<pre>
+  #  Partitions   Name
+  1  1/1  Last    MS-DOS 6.22
+  2  2/2  Last    Windows 95
+  3  3/3  Last3   Linux
+</pre>
+<P>After that save it and reboot computer. Then in boot menu you have to 
+highlight "Linux" and press 'A' to boot from Linux boot floppy disk.
+<p>When Linux setup will ask you where to put LILO you have to answer
+"In the first sector of the partition" (NOT "in MBR").
+<HR>
+<A NAME="noext"></A>Q: I just have installed Advanced Boot Manager but I
+cannot see my extended DOS partition? Here is my disk layout:
+<pre>
+  1 DOS FAT-16     500Mb
+  2 DOS Extended   300Mb
+  3 Linux          400Mb
+  4 Linux swap      20Mb
+</pre>
+<P>A: When you install Advanced Boot Manager it automatically picks extended
+partition only if it is last on the disk. In your case you have to edit
+boot menu (press Space in the main screen) so it will look as follows:
+<pre>
+  #  Partitions  Name
+  1  1/1  Next   MS-DOS
+  2  3/3  Next   Linux
+  3  3/3  Last3  Linux (sees D:)
+</pre>
+<P>After that you will be able to see extanded partition from both DOS
+and Linux.
+<p>If you did this, but you still cannot see Extended partition, it might be
+that you have unused space at the end of the disk, which is considered to be
+the last partition. Then you have to enlarge Extended partition up to the end
+of the disk (just increase its size in MBR).
+<HR>
+<A NAME="adv_part_choices"></A>Q: Why are there only four choices - Last, Next, Prev, Last3 - in Advanced Boot Manager?
+<P>A: The reason, why number of choices was limited, is that I wanted to keep
+all occupied (by partitions) space covered in MBR. Then if somebody runs fdisk
+or similar utility, it wouldn't think that disk space not mentioned in MBR is
+empty (and available), even though it has some valuable information.
+
+<p>This is a reasonable behaviour, since most people want to hide primary
+partitions from each other and put all shared data in the Extended partition,
+making it visible to all of the systems, and implemented set of choices seems
+to be enough.
+<HR>
+<A NAME="os_inst"></A>Q: After I installed Windows 95 Advanced Boot Manager has disappeared.</A>
+<P>A: Click <A HREF="help.htm#os_inst">here</A> to see what you should 
+do before installing a new OS in the Partition Manager's help.
+<HR>
+<A NAME="hd2"></A>Q: Can I boot my old MS-DOS from the second hard drive?
+<P>A: Yes you can do that. See an <A HREF="help.htm#setup_adv_example">example</A> in the Partition Manager's help.
+<HR>
+<A NAME="default"></A>Q: I have Windows 95 and Linux on my computer, after
+installing your boot manager I have added another Windows 95 partition for
+my little brother. The problem is that every time I leave my computer I have
+to reboot from second Windows partition, so my brother won't get into Linux,
+when he turns it on. Is there a better solution?
+
+<P>A: Yes, there is a solution for this case. You have to set a
+"default partition" in the boot manager's options. Then, instead of booting
+from rememberd "last time booted" partition, boot manager will always start
+with the default partition highlighted.
+<HR>
+<A NAME="timeout"></A>Q: My computer is so slow that when I turn it on I can
+go and get a cup of tea before it finishes BIOS tests. But some times there
+is a line in the cafeteria and I miss the boot manager's prompt. Is there any
+way to hold the prompt?
+
+<P>A: Yes, there are several ways. First of all you can set the prompt timeout
+up to 100 seconds - this will give you some time, or you can set it 0 -
+this will force boot manager to wait forever, even if you had to go to
+China for your tea, you still couldn't miss it. (In case of compact boot
+manager setting default partition to Space will have similar effect). And
+finally, you can get a faster machine, which will solve most of the problems.
+<HR>
+<A NAME="8Gb"></A>Q: Does Partition Manaer support disks larger than 8G?
+
+<P>A: Yes. Version 2.38 supports disks over 8Gb in size.
+
+<p>The old standard for partition table has an 8G limit for the size of
+the hard disk and partitions. Version 2.37 of the Partition Manager
+follows that standard and if you have 8G or greater disk it will not be able
+to see anything beyond 8G boundary. However, you can operate as usual
+under 8G line. 
+<HR>
+<A NAME="fat16to32"></A>Q: How do I convert FAT-16 to FAT-32?
+<P>A: There is a program which does one-way conversion from FAT-16 to
+FAT-32. You can download a copy of <A HREF="cvt16-32.zip">cvt.exe</A>.
+This utility appears to be written by Microsoft, but I couldn't find any
+documentation or reference for it on their web site. So use it at your own risk.
+<HR>
+<A NAME="fat32to16"></A>Q: I have a 6G FAT-32 partition. I want to convert it
+back to FAT-16, because I am going to install Windows NT. Can Partition 
+Manager do that?
+<P>A: Even if Partition Manager could do it - you still cannot have 6G FAT-16
+partition. The limit for FAT-16 partition is 2G. I would suggest you to shrink
+FAT-32 partition down to 4G and create a 2G FAT-16 partition on the freed space.
+<p><A HREF="#fat32to16in_place">Another case (more details)</A>
+<HR>
+<A NAME="shrink"></A>Q: How do I shrink a partition?
+<P>A: First of all run SCANDISK and DEFRAG utilities. Then start
+Partition Manager and change partition size. Then go to the setup screen
+(press Enter on the partition)
+and change size there. Make sure that you do not go below MINIMUM partition
+size. Reboot computer. Then run SCANDISK to make sure there is no errors and let
+it adjust amount of free space on the disk. Done.
+<p>Note: DEFRAG moves all files to the beginning of the partition, but it 
+leaves system and hidden files untouched. Therefore even after you run DEFRAG
+there still might be files at the end of partition. In this case you would have
+to find those files and remove system and hidden attributes, then defragment
+the disk again and after that restore those attributes.
+<HR>
+<A NAME="still_big"></A>Q:I have changed size of my FAT-32 partition from 6G
+down to 2G, but Explorer still shows 6G of the free space. What's wrong.
+<P>A: You either forgot to change partition's size in its boot sector
+(you get there when you press Enter on the partition record) or you
+didn't run SCANDISK afterwards.
+<HR>
+<A NAME="enlarge"></A>Q: Can I enlarge existing FAT partition?
+<P>A: Yes, but only if it was shrinked before. The problem is the size of the
+FAT - it must be large enough to address all clusters on the disk. However,
+if you don't want to backup and restore all files so much that you are willing
+to spend $70, get <A HREF="http://www.powerquest.com">Partition Magic</A> and
+it will do it in a few minutes. (I am going to add this feature to my program
+in a near future).
+<BR>Note: you can format partitions with option /x:max_number_of_sectors
+so that you can enlarge them in the future. For example if you want to extend
+partition up to 4G you should put /x:8,000,000 as an option.
+<HR>
+<A NAME="merge"></A>Q: Can Partition Manager merge two 2G FAT-16 partitions into
+a single 4G FAT-32, without erasing all data?
+<P>A: Yes, but it isn't automatic. You would have to do the following steps:
+<BR>
+<pre><B>Pictures:</B>
+
+Original:      [ FAT-16  Data......... Free.... ] [ FAT-16 Data.... Free..... ]
+Move files:    [ FAT-16  Free.................. ] [ Data.................. F. ]
+Format:        [ FAT-32  Free.................. ] [ Data.................. F. ]
+Move files:    [ FAT-32  Data................ F ] [ Free..................... ]
+Enlarge:       [ FAT-32  Data................ Free........................... ]
+Unzip:         [ FAT-32  Data............................. Free.............. ]
+</pre>       
+<DL>
+  <DT><p><B>Descriptions:</B>
+  <DT><p>
+ <DT>1. Copy all files from the first partition to the second one (better zip them)
+ <DT>2. Using Partition Manager format first partition as FAT-32 with option
+/x:max_num_of_sectors (to make FAT tables large enough for the future expansion)
+ <DT>3. Reboot computer
+ <DT>4. Copy all files back to the first partition
+ <DT>5. Delete second FAT-16 and enlarge FAT-32 up to 4G
+ <DT>6. Reboot computer
+</DL>
+Note: be careful with copying system and hidden files. Also, if the first
+partition was bootable, you would need to run "sys.com" to install system 
+files rather then just copying them back after formatting.
+<HR>
+<A NAME="fat32to16in_place"></A>Q: I desperately need to convert 2G FAT-32 back to FAT-16.
+And I don't have money to buy Partition Magic.
+<P>OK. Lets go step by step.
+<BR>Suppose that you have 1.2G of data on your partition.
+<BR>
+<pre><B>Pictures:</B>
+
+Original:      [ FAT-32  Data... Free... Data... Free... Data... ............ ]
+After Defrag:  [ FAT-32  Data................... Free........................ ]
+Shrink:        [ FAT-32  Data................... F] [ FAT-16 Free............ ]
+Move or zip:   [ FAT-32  Free.................... ] [ Data................... ]
+Format:        [ FAT-16  Free.................... ] [ Data................... ]
+Move back:     [ FAT-16  Data................... F] [ Free................... ]
+Enlarge:       [ FAT-16  Data................... Free........................ ]
+</pre>       
+<DL>
+  <DT><p><B>Descriptions:</B>
+  <DT><p>
+  <DT>1. Defragment and shrink FAT-32 partition down to 1.3G.
+  <DT>2. On the freed space create a temporary FAT-16 partition.
+  <DT>3. Reboot computer and move (or zip) as much as possible files to the 
+         second partition.
+  <DT>4. If there is no more files on FAT-32 go to step 5. Otherwise return 
+         to step 1 and keep creating those FAT-16 partitions until you move
+         all files from FAT-32.
+  <DT>5. Format former FAT-32 partition as FAT-16 with option /x:4,000,000 -
+         this tells partition manager to make FAT tables large enough to
+         extend partition up to 2G in the future.
+  <DT>6. Reboot computer
+  <DT>7. Move all files from the closest temporary FAT-16 partition to the
+         newly formated one. Delete that temporary partition and enlarge
+         our destination FAT-16 up to that space.
+  <DT>8. Reboot computer.
+  <DT>9. If there are more temporary partitions go back to step 7.
+</DL>
+<p>If you have enough free space on the original partition the process will
+involve only one temporary partition and one copy cycle "to and back."
+<p>When you do copy use appropriate utility - one which handles long file names
+and hidden files.
+<HR>
+<A NAME="why_do_you_do_it"></A>Q: Why are you spending so much energy writing this program and giving it out for free?
+<P>A: I am a poor student. :-) &nbsp;And I know how it feels not being able to
+do simple things because you don't have money to buy software. It feels miserable,
+but you learn a lot, if you have enough determination. Now I know a lot
+(because I did all those things) and now I want to help other people.
+<p>If you think that I am not getting anything in exchange for my work - you
+are wrong. I am getting people to learn the staff. It is in Partition Magic
+you just click and it moves data around and you don't know what is going on
+(which is cool by the way). In my program, unlike the others, you will not
+get anywhere, unless you know which numbers to enter. Partition Manager will,
+obviously, help you and show everything it can, but it will require some
+efforts from the user side - basicly to think (that's why it is so small -
+it leaves decision making up to the user's brain :).
+<p>So, my program directed to people who learn, just like me or a bit younger.
+And I expect that when they become more experienced, they will also write
+something, which I and everybody else could use.
+<HR>
+<A NAME="fat16_above_2G"></A>Q: Why I cannot boot MS-DOS from FAT-16 partition
+if it is located above 2G?
+<P>A: There is a bug in MS-DOS boot sector code. It will not work if partition
+is above 2G. I have written a replacement for that boot sector code. To install
+it you have to run Partition Manager, select FAT-16 partition and press Enter.
+You will get into boot sector configuration screen. Then press F6 to install
+the new code and F2 to save it.
+<p>In addition to fixing 2G problem with the new boot sector code you can now
+dual boot Windows 95 OSR2 with no problem (which was not possible before,
+because of the bugs in OSR2 code).
+<p>The new code is independent from Partition Manager and, once installed,
+it can be used with any other Boot Manager. To uninstall it simply run
+"sys.com" which comes with your OS.
+<HR>
+<A NAME="fat32_ntfs"></A>Q: Is it possible to have Windows 95 with FAT-32 and NT with NTFS on the same disk?
+<P>A: Yes. You simply have to create FAT-32 and NTFS partitions with Partition
+Manager, and format FAT-32. Then you have to install Windows 95 into FAT-32 and
+NT into NTFS. After that you can use Compact or Advanced Boot Managers to switch
+between the systems.
+<p> In order to share files you can either create a small FAT-16 partition
+at the end of the disk (which both OS can read) or get NTFS driver for
+Windows 95 and FAT-32 driver for NT at
+<A HREF="http://www.sysinternals.com">http://www.sysinternals.com</A>
+<HR>
+<A NAME="SU0013"></A>Q: When I tried to install Windows 95 onto the second hard drive setup failed with error "SU0013". What should I do?
+<P>A: This problem exists with both Windows 95 and 98. However there is a way around.
+<p>First of all you have to create and format FAT-16 or FAT-32 partition 
+for Windows 95/98 on the second disk. Then you have to reboot computer and in 
+BIOS setup swap first and second hard drives or simply disable your first
+hard drive. After that you can boot computer with Windows 95 setup floppy
+and install Windows.
+<p>After Windows will be configured you have to reenable your first hard
+disk in BIOS setup. Then run Partition Manager and go to the second disk, 
+install boot manager and change in the FAT-16/32 boot sector drive number from
+128 to 129. (To get into the boot sector configuration select partition and
+press Enter).
+<p>When you will boot Windows from the second disk make sure that all
+primary FAT partitions on the first disk are hidden. (It can be configured
+automatically with Advanced Boot Manager).
+<HR>
+<A NAME="last_cyl"></A>Q: When I run Partition Manager I get the message "Note
+that BIOS reports only 624 cylinders." Is there a problem with my computer?
+<P>A: No. Your computer is OK. Most of the BIOSes follow an "old custom" to
+reserve last cylinder "for testing purposes." Newer BIOSes and OS (such as NT)
+ignore that and use last cylinder. To be compartible with them Partition
+Manager tries to detect the last cylinder.
+<HR>
+<A NAME="nt_inst"></A>Q:When I try to install Windows NT it couldn't continue
+after reboot. What's wrong with it?
+
+<P>A: There is a problem with NT - it wouldn't boot from partitions above 2G.
+You have to place NT partition under 2G or make a small FAT-16 partition
+at the beginning of the disk where NT could put its boot files. However it
+seems that this bug was fixed in SP4. So you may want to try it out.
+
+<HR>
+<A NAME="bloodhound"></A>Q: When I install Boot Manager <A HREF="http://www.symantec.com/nav">Norton Antivirus</A> reports virus Bloodhound.MBR. What do I do?
+<P>A: Boot Manager's IPL (Initial Program Loader) code have been identified
+by NAV as Bloodhound.MBR virus. This is a <b>false alarm</b>. There is no virus
+on your system. To remove this warning you have to disable "MBR Virus Detection"
+option in NAV configuration:
+<p><IMG ALIGN=CENTER SRC="navopt.gif">
+<p>People have submitted this false alarm to 
+<A HREF="http://www.symantec.com/avcenter">Symantec Antivirus Center</A>
+so you may expect it to be fixed in the future.
+
+<HR>
+<A NAME="recovery"></A>Q: My hard disk was corrupted by &lt;some bad program&gt;.
+Could your tool help me to recover my partitions?
+<P>A: You could try to guess starting partition locations and their sizes.
+For that first read <A HREF="primer.htm">Partitioning Primer</A> and second 
+download <A HREF="partbeta.zip">Partition Manager version 2.38</A>.
+<p>In 90% of the cases your disk will look similar to the example given
+in the primer. You will have to guess starting location of the partition
+and then see if in the right bottom corner correct information about its
+boot sector (i.e. volume label) will appear. If it does try to set partition's 
+ending location according to the information in the boot sector. Repeat it for
+all the partitions that you might have on your disk.
+
+<p>Also you might want to use some recovery tools listed on the 
+<A HREF="../links.htm#recovery">links page</A>.
+
+<HR>
+<A NAME="award_bios"></A>
+<A NAME="award_bios_fix"></A>
+There were reported problems with Award Modular BIOS v4.51
+dated October 1998 on some P5 and P6 motherboards. For some reason BIOS does
+not let user to select values for Cylinders/Heads/Sectors for large disks,
+where CHS translation is needed. Instead at the startup it picks number of
+heads by looking at the ending head of the first partition record in the MBR.
+<p>For example if your first partition starts at Cyl=0, Head=1, Sect=1 and 
+ends at Cyl=400, Head=254, Sect=63 it assumes that your OS expects to see
+disk with 255 heads and 63 sectors (heads are numbered 0..254, sectors - 1..63).
+<br>And if partition ending head is 127, then it assumes that OS expects 128
+heads per cylinder.
+<p>So how will it influence Partition Manager users?
+<br>First of all if you create partition, which does not end on the last head,
+and you put that partition into the first row in MBR then on the next reboot BIOS
+will report wrong number of heads. Even if you do not create such partition
+yourself, but you have installed Advanced Boot Manager this will
+also happen, because by default Boot Manager creates very small partition
+at the beginning of the disk which both starts and ends on the first head.
+<p>The simptoms of the problem would be that after installation of Advanced Boot
+Manager or after you created a new partition you have rebooted and first time
+everything would work, but when you rebooted for the second time nothing would
+work and hard drive would report 128 heads instead of 255 and 4G instead of its
+normal size (8G, 10G, 13G, ... ).
+<p>I am going to make these checks in the next version of the program.
+<p>For now the solution would be to make sure that Advanced Boot Manager
+partition takes up entire cylinder (ie. starts at Cyl=0, Head=1, Sect=1 and ends
+at Cyl=0, Head=254, Sect=63). This will waste about 8M of the disk space, but
+everything will work.
+<br>Another solution would be either to move Boot Manager to the end of the disk
+or make sure that it never appears in the first row in MBR. To do that you have
+to go into the boot menu configuration screen and force bootable partitions
+to be placed in the first row (replace "3/*", "4/*", ... with "3/1", "4/1", ...).
+But make sure that those partitions do not end in the middle of the cylinder.
+<p>If you already run into this problem and cannot access your disk here is what you have to do:
+<p> 1. Reboot computer from DOS or Windows 95/98 system floppy. 
+       It will not be able to see C:, D:, ... But this is normal.
+<br> 2. Run partition manager from the floppy. 
+       It will show you your partition, but it will complain about disk size.
+       Ignore the complains and press 'S' to save partition table to a file on the floppy
+       (or press 'F4' and write down file system types, starting sectors, and number of sectors for all partitions).
+<br> 3. Delete all partitions. That's correct - DELETE them!
+<br> 4. Press 'U' to uninstall Advanced Boot Manager. You should see partition table with four rows of only zeros.
+<br> 5. Press 'F2' to save it.
+<br> 6. Reboot computer and enter BIOS setup (hit 'DEL' when it prompts).
+<br> 7. Run "Hard Disk Auto Detection". Choose line with correct size of your disk (it also should say "LBA").
+<br> 8. Save changes and reboot computer from floppy.
+<br> 9. Run Partition Manager and load partition table from the saved file or
+        enter partition types and locations manually.
+<br> 10. If you still want to use Advanced Boot Manager make sure that it's and all other
+        partitions ends with head=254 (if you have 255 heads).
+<br> 11. Save changes to the disk.
+
+<p>  If this doesn't work, try to take your disk to computer with older BIOS,
+     which is not so smart :).  The last option usually works.
+
+<!--
+<HR>
+<A NAME=""></A>Q:
+<P>A:
+-->
+
+<HR>
+</BODY>
+</HTML>

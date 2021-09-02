@@ -1,0 +1,25 @@
+Version 2.00: Restart from scratch
+Version 2.01: Fixed a conceptual bug in MatchNames
+	      Added the /S switch and relevant routines
+Version 2.10: Fixed a stupid bug in ScanArguments in case of
+	      a comparison of just two files
+	      Added cats for easier internationalisation
+Version 2.20: Added the /LBn and /nnn switches
+	      Used CRC15 as hashing function
+Version 2.21: Used the current DOS code page for the upcase routine
+Version 2.22: Bug fix for ASCII compare
+Version 3.00: Bug fix for the /S switch: failed because of filenames
+	      used as directory name
+	      Added automatic support for long filenames
+	      Added the /R switch for a final report (always active when using /S)
+	      Added the /Q switch for suppressing the list of differences
+	      Moved some routines to FCTOOLS.C
+Version 3.01: Used the simpler kitten instead of cats
+Version 3.02: Bug fix: file not found when the target pattern extension was
+	      shorter than the source pattern extension
+	      Bug fix: ASCII compare result display routine rewritten to avoid
+	      an endless loop condition
+	      Added the /U switch to show the source files who don't have
+	      a correspondent target file
+Version 3.03: Bug fix: /M was not allowed
+	      Added a switch termination check

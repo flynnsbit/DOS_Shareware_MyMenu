@@ -1,0 +1,36 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+         ====================================================
+                    THE ADVENTURES OF WILLY BEAMISH          
+
+
+                             INTRODUCTION II                 
+         Don Latarski, Christopher Stevens, Jan Paul Moorhead
+         ====================================================
+                     Copyright (c)1990 Dynamix, Inc.         
+         ====================================================
+
+               ROLAND SOUND CANVAS GENERAL MIDI VERSION
+
+
+System Requirements:
+
+- MIDI File player
+- General MIDI Sound Device  (Roland Sound Canvas Recommended.)
+
+
+This Standard MIDI File was recorded directly from Dynamix's "The Adventures
+of Willy Beamish" adventure game.  It has been converted from the Roland
+MT-32 version for playback on Roland Sound Canvas cards and modules.
+
+Converted for General MIDI in Standard MIDI File format by Tom Lewandowski.
+Address E-Mail questions or comments to:
+
+      Tom Lewandowski
+      tom@queststudios.com
+
+
+      QUEST STUDIOS/THE SIERRA SOUNDTRACK SERIES
+      www.QuestStudios.com
+
+

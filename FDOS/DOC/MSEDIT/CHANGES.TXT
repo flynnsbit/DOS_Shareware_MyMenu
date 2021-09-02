@@ -1,0 +1,29 @@
+Mateusz's Saucy Editor's changes history.
+
+What's new in v0.11 [12 Oct 2008]:
+- Fixed a bug in TAB handling (was ignored),
+- Added a (rather simplistic) "Compile & Run" function when in FB mode.
+
+What's new in v0.10 [20 Jul 2008]:
+- Implementation of the menu system,
+- Added multiple files support (up to 9 files at a time),
+- Dynamically resizes the file's buffer when needed (was hardcoded to a fixed size),
+- Checks the video mode before starting (won't run on less than 80 columns),
+- Added the "File/New" function,
+- Added a (very basic) "File/Open" function,
+- Added the "File/Save" function,
+- Added a (very basic) "File/Save As" function,
+- Added the "File/Close" function,
+- Added the "FBC mode" (doesn't work yet),
+- Added "scrolling" ability without changing cursor's position (CTRL+UP/DOWN),
+- Possibility to load several files (up to 9) from the command line,
+- Displays percents of progress when saving/loading a file,
+- Fixed a bug related to the DEL key (when pressed at the end of a line, it was erasing the first char of the next line),
+- Limited the internal screen refresh rate to 40 Hz,
+- When creating a new line (ENTER), any spaces at the end of the current line are removed,
+- Added auto-indentation for every new created line (ENTER),
+- Added an "About" info-screen (F2, or Help/About),
+- Adding an empty last line.
+
+What's new in v0.05 [13 Jul 2008]:
+- First public release.

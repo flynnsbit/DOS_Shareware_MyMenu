@@ -1,0 +1,299 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>sound</TITLE>
+<META NAME="description" CONTENT="sound">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="next" HREF="node34.html">
+<LINK REL="previous" HREF="node32.html">
+<LINK REL="up" HREF="node30.html">
+<LINK REL="next" HREF="node34.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html475"
+ HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html473"
+ HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html467"
+ HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html476"
+ HREF="node34.html">screen</A>
+<B> Up:</B> <A NAME="tex2html474"
+ HREF="node30.html">Configuration</A>
+<B> Previous:</B> <A NAME="tex2html468"
+ HREF="node32.html">defaultconfig</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00630000000000000000">
+sound</A>
+</H1>
+This section is the most important one for using <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP. If you want to change
+the configuration permanently you have to modify the entries of this section.
+<PRE>
+[sound] ; default sound section
+  playerdevices=devpWSS devpEWS devpSB devpESS devpGUS devpPAS \
+                devpNone devpDisk devpMPx
+  samplerdevices=devsWSS devsSB devsGUS devsNone
+  wavetabledevices=devwMixQ devwIW devwGUS devwSB32 devwDGUS \
+                   devwMix devwNone
+  ampegtomono=off
+  ampegmaxrate=48000
+  mixrate=44100          
+  mixprocrate=4096000   
+  mix16bit=on            
+  mixstereo=on          
+  plrbufsize=500        
+  mixbufsize=500        
+  samprate=44100        
+  samp16bit=on          
+  sampstereo=on        
+  smpbufsize=2000       
+  defplayer=             
+  defsampler=            
+  defwavetable=        
+  midichan=64           
+  itchan=64
+  cdsamplelinein=off     
+  bigmodules=devwMixQ    
+  wavetostereo=1         
+  waveratetolerance=50  
+  amplify=100  
+  panning=100 
+  volume=100  
+  balance=0  
+  reverb=0   
+  chorus=0    
+  surround=off
+  filter=1
+</PRE><DL COMPACT><DT>playerdevices
+<DD><FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP uses three different devices to communicate with the
+hardware. The <EM>playerdevices</EM> are used to play a stream of samples. As
+all sound cards support this feature you will find <EM>playerdevices</EM> for
+every sound card supported by <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP. This device is needed for playing
+<TT>.wav</TT> and <TT>.mp3</TT> files and if you want/have to use the software
+(quality) mixer. <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP searches for all devices listed in this option at
+startup and only those found are actually loaded. You can delete all devices
+you have not installed to speed up to startup procedure. If you have multiple
+sound cards installed be sure to list all devices if you want to use more than
+one sound card.<A NAME="tex2html38"
+ HREF="#foot1058"><SUP>6.5</SUP></A>. If more than one
+device is listed the first in the list will be used as default.
+<DT>samplerdevices
+<DD>these devices are the least important ones. They are
+only needed if you want to use <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP when playing cd audio tracks or start the
+player in sample mode. The sample data is not calculated from files, but
+sampled from either the cd, line or microphone jack of the sound card. You
+can then use the graphical screens to view the sounds.
+<DT>wavetabledevices
+<DD>for mixing several channels you have to use
+<EM>wavetabledevices</EM>. Most sound cards are only able to play to channels
+simultaniously normally assigned to the left and right channel or your home
+stereo. The <EM>mixer</EM> devices are used to mix the sample data of module
+files to those two channels. However modern sound cards have special hardware
+to mix channels ''onboard''. But all hardware mixers have a maximum amount of
+channels to mix<A NAME="tex2html39"
+ HREF="#foot730"><SUP>6.6</SUP></A>. Especially <TT>.it</TT> files
+often use more than 32 channels so an errorfree playback can not be guaranteed
+when using hardware mixing. You should include one of the software mixers for
+this case.
+<DT>ampegtomono
+<DD>play <TT>.mp3</TT> files only mono. This might be necessary
+if you don't have the latest generation of Intel processors.
+<DT>ampegmaxrate
+<DD>the highest playback sample rate to use for <TT>.mp3</TT>
+files.
+<DT>mixrate
+<DD>the default mixrate. Unless you have a very old sound
+card<A NAME="tex2html40"
+ HREF="#foot734"><SUP>6.7</SUP></A> or
+a very old processor<A NAME="tex2html41"
+ HREF="#foot735"><SUP>6.8</SUP></A> there is no need to change
+this option.
+<DT>mixprocrate
+<DD>if you have a slow cpu<A NAME="tex2html42"
+ HREF="#foot736"><SUP>6.9</SUP></A> you might not be
+able to play 32 channels at full mixrate. This value defines the maximum
+''calculation power'' to which <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP tries to use the full mixrate.
+<DT>mix16bit
+<DD>Leave this option enables unless you have a 8bit sound card.
+<DT>mixstereo
+<DD>dito for stereo cards
+<DT>plrbufsize
+<DD>When using a <EM>playerdevice</EM> to play sample streams a DMA
+buffer is used to minimize cpu resources for handling the sample stream. This
+option sets the DMA buffer length in miliseconds.
+<DT>mixbufsize
+<DD>When running <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP in a multitasking environment there is no
+guarantee for constant cpu resources. To avoid a break in the sample stream
+<FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP will calculate in advance. This option sets the buffer lenth in
+miliseconds.
+<DT>samprate
+<DD>When using a <EM>samplerdevice</EM> this value will be used.
+<DT>samp16bit
+<DD>dito
+<DT>sampstereo
+<DD>dito
+<DT>smpbufsize
+<DD>this options sets the length of the sample DMA buffer in
+miliseconds.
+<DT>defplayer
+<DD>with this option you can override the default
+<EM>playerdevice</EM>. Normally you don't need to set this option, as the
+default device can also be set by the order in the <EM>playerdevice</EM> option.
+This option can also be specified by using the <TT>-sp</TT> options from command
+line.
+<DT>defwavetable
+<DD>this option sets the default <EM>wavetabledevice</EM>. Can
+also be set with <TT>-sw</TT> command.
+<DT>defsampler
+<DD>the same as the <TT>-ss</TT> command line option.
+<DT>midichan
+<DD>unlike the module file types the MIDI file format does not
+specify the exact amount of channles to use. Complex <TT>.mid</TT> files can
+easily try to play several dozens of channels simultaniously. This option sets
+the maximum amount of channels to mix when playing <TT>.mid</TT> files. Note
+that this value has no effect when a hardware mixing device is used, as the
+maximum number is limited by the hardware.
+<DT>itchan
+<DD>the <TT>.it</TT> format can play more than one sample per channel
+simultaniously. A maximum number of channels to mix is required for this
+file type too. When playing <TT>.it</TT> files using a hardware mixer the
+maximum number of channels is again limited to the hardware.
+<DT>cdsamplelinein
+<DD>If you select a <TT>.cda</TT> file the cd input of your
+sound card is used to sample the current music. If you do not have a cd input
+or if you have connected your cd-rom to the line-in jack enable this option
+to change to sample input.
+<DT>bigmodules
+<DD>This option is os interest for users of hardware mixing
+devices only. Sound cards capable of mixing channels are not only limited by
+the amount of channels played simultaniously, but by the amount of onboard
+memory to store the sample data too. If files are marked as ''big'' in the
+fileselector this device listed in this option will be used for mixing this
+module.<A NAME="tex2html43"
+ HREF="#foot1059"><SUP>6.10</SUP></A>
+<DT>wavetostereo
+<DD>When playing a mono wave the sound card can either be
+switched to mono mode or the wave can be played as a stereo file.<A NAME="tex2html44"
+ HREF="#foot752"><SUP>6.11</SUP></A>
+<DT>waveratetolerance
+<DD>if the sample rate of the wave file is not equal to
+a sample rate supported by your sound card, <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP will not resample unless this
+value is exceeded. Divide the value by 1000 to get the percentage.
+<DT>amplify
+<DD>the default amplification to use within the player. The following
+options are described in section <A HREF="node11.html#playerGeneral">4.1</A> in detail. The command line
+option <TT>-va</TT> overrides this option.
+<DT>panning
+<DD>the default panning (command <TT>-vp</TT>)
+<DT>volume
+<DD>the default volume (command <TT>-vv</TT>)
+<DT>balance
+<DD>the default balance (command <TT>-vb</TT>)
+<DT>reverb
+<DD>some sound cards have an onboard effect processor<A NAME="tex2html45"
+ HREF="#foot758"><SUP>6.12</SUP></A> which features a reverb effect. This
+option controls the intensity of the onboard effect. (command <TT>-vr</TT>)
+<DT>chorus
+<DD>dito as reverb (command <TT>-vc</TT>)
+<DT>surround
+<DD>this options controls the fake surround effect<A NAME="tex2html46"
+ HREF="#foot761"><SUP>6.13</SUP></A> (command <TT>-vs</TT>)
+<DT>filter
+<DD>The software mixer can use a software filter to enhance the
+playback quality. Different algorithms can be used. (command <TT>-vf</TT>)
+  <DL COMPACT>
+<DT>0
+<DD>no filter
+<DT>1
+<DD>AOI - only filter samples when filtering is necessary
+  <DT>2
+<DD>FOI - filter every sample even if filtering has no effect
+  </DL></DL>
+<P>
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot1058">... card.</A><A NAME="foot1058"
+ HREF="node33.html#tex2html38"><SUP>6.5</SUP></A>
+<DD>you can change devices by using the special
+<TT>@:</TT> drive described in section <A HREF="node7.html#fileselector">3.2</A>
+
+<DT><A NAME="foot730">... mix</A><A NAME="foot730"
+ HREF="node33.html#tex2html39"><SUP>6.6</SUP></A>
+<DD>mostly 32 channels
+
+<DT><A NAME="foot734">...
+card</A><A NAME="foot734"
+ HREF="node33.html#tex2html40"><SUP>6.7</SUP></A>
+<DD>SoundBlaster 1.x or SoundBlaster Pro and compatibles
+
+<DT><A NAME="foot735">... processor</A><A NAME="foot735"
+ HREF="node33.html#tex2html41"><SUP>6.8</SUP></A>
+<DD>Something like 386SX
+
+<DT><A NAME="foot736">... cpu</A><A NAME="foot736"
+ HREF="node33.html#tex2html42"><SUP>6.9</SUP></A>
+<DD>&lt;486DX
+
+<DT><A NAME="foot1059">...
+module.</A><A NAME="foot1059"
+ HREF="node33.html#tex2html43"><SUP>6.10</SUP></A>
+<DD>See section <A HREF="node8.html#bigmodules">3.3</A> on page <A HREF="node8.html#bigmodules"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="cross_ref_motif.gif"></A> for
+details about this feature
+
+<DT><A NAME="foot752">... file.</A><A NAME="foot752"
+ HREF="node33.html#tex2html44"><SUP>6.11</SUP></A>
+<DD>switching
+the soundcard may cause problems so enable this option.
+
+<DT><A NAME="foot758">... processor</A><A NAME="foot758"
+ HREF="node33.html#tex2html45"><SUP>6.12</SUP></A>
+<DD>currently
+the SoundBlasterAWE and the TerraTecEWS
+
+<DT><A NAME="foot761">... effect</A><A NAME="foot761"
+ HREF="node33.html#tex2html46"><SUP>6.13</SUP></A>
+<DD>this
+has little to do with real Dolby Surround although there should be a certain
+effect if you have such an amplifier
+
+</DL><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html475"
+ HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html473"
+ HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html467"
+ HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html476"
+ HREF="node34.html">screen</A>
+<B> Up:</B> <A NAME="tex2html474"
+ HREF="node30.html">Configuration</A>
+<B> Previous:</B> <A NAME="tex2html468"
+ HREF="node32.html">defaultconfig</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

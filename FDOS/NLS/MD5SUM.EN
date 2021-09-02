@@ -1,0 +1,37 @@
+# Help message
+
+0.0:Usage: MD5SUM [/TBV] [/C [file]] | [file...]
+0.1:Generates or checks MD5 Message Digests
+0.2:    /C           check message digests (default is generate)
+0.3:    /[-]V        enable or disable verbose mode (default is off)
+0.4:    /[-]L        enable or disable LFN usage (default is enable if supported)
+0.5:    /[-]R[num]   enable or disable recursing (default is off)
+0.6:                 num is a number from 1 to 9 and limits recursion (default=4)
+0.7:    /[-]S        same as /[-]R=]
+0.8:    /T           read files in text mode
+0.9:    /B           read files in binary mode (default; overrides /T)
+0.10:    /M[:|=]mode  select the digest mode (SHA or MD5)
+0.11:The input for /C should be the list of message digests and file names
+0.12:that is printed on stdout by this program when it generates digests.
+0.13:The argument for /M should be a digest mode, which could possibly be SHA,
+0.14:CRC32, SHA256, or MD5, depending on how MD5SUM was compiled.
+
+# Various other messages
+
+1.0:Invalid option in
+1.1:File does not exist
+1.2:read error on stdin
+1.3:error reading
+1.4:unrecognized line
+1.5:can't open
+1.6:FAILED
+1.7:check failed for
+1.8:of
+1.9:file(s) failed icheck
+1.10:no files checked
+1.11:File is a subdirectory
+1.12:Warning: LFNs not supported
+1.13:Option missing argument
+1.14:Invalid checksum mode
+1.15:Directory does not exist
+1.16:Could not get the current directory

@@ -1,0 +1,23 @@
+Subject: 
+        contribution
+   Date: 
+        Tue, 06 Jun 2000 07:16:51 -0500
+   From: 
+        Robert Canup <rcanup@hal-pc.org>
+    To: 
+        jhall1@isd.net
+
+
+
+
+Jim,
+First of all I would like to thank you and the other FreeDos programmers
+for all of their great work in producing FreeDos. As part of my
+contribution to the project I would like to include my former shareware
+program "Topspin" which I am re-releasing under the GPL. Topspin is a
+menu interpreter program which will allow users to create 'integrated'
+environments where none exist.
+
+I would like to urge all of the DOS shareware authors to contribute
+their software under the GPL to the FreeDos project.
+Bob Canup

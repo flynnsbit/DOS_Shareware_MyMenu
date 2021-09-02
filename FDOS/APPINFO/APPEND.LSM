@@ -1,0 +1,14 @@
+Begin3
+Title:          APPEND
+Version:        5.0-0.6
+Entered-date:   2006-01-23
+Description:    APPEND enables programs to open data files in specified directories as if the files were in the current directory.
+Keywords:       freedos, append, data, files, directories
+Author:         Eduardo Casino-Almao <mail@eduardocasino.es>
+Maintained-by:  Eduardo Casino-Almao <mail@eduardocasino.es>
+Primary-site:   http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/append/
+Original-site:https://www.eduardocasino.es/code/append/
+Platforms:      DOS (nasm)
+Copying-policy: GNU General Public License, Version 2
+Wiki-site:      http://wiki.freedos.org/wiki/index.php/Append
+End

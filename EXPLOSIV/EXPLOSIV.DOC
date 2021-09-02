@@ -1,0 +1,1194 @@
+
+
+
+
+			EXPLOSIV USER MANUAL
+
+
+ Explosiv Screen Saver is copyright (c) Reidar Gresseth & Chris Hook 1989-1994
+
+
+	DISCLAIMER: Explosiv is offered on an as-is-basis without any
+	guarantee as to the correct functioning or fitness for specific
+	purpose. The authors believe this program to work as described but
+	the program is used at your own risk. The authors will not be
+	responsible for any hardware or software damage, loss of data, or
+	incidental or consequential damage that may result from its use,
+	whether or not such use is in accordance with the instructions.
+
+
+  Explosiv is distributed as shareware and is not free.  This means that
+  you may freely distribute Explosiv to others provided you do not charge
+  for the software, that you distribute the package unaltered and that
+  you clearly state that Explosiv is shareware.  You may use this software
+  for a limited period not to exceed 30 days after which timer you must
+  register the program.  Also, you must purchase a separate licence for
+  each terminal or workstation on which you wish to use this software. 
+
+
+  If, after the trial period, you decide that you wish to continue using
+  Explosiv it is strongly recommended that you register the program.  Besides
+  being illegal to use this software after the trial period, there are many
+  advantages to registration.  You will receive:
+
+
+	- the latest version of the program
+
+	- eight additional displays
+
+	- a 16 page printed manual
+
+	- Image Maker support for 256 color GIF images
+
+	- Create Explosiv for Windows displays from BMP images
+
+	- create screen savers from text messages
+
+	- notification of future updates
+
+	- special upgrade offers
+
+	- technical support
+
+
+  Please see the file "order.frm" for details.  See "products" for
+  information about other products offered by H&G Software.
+
+
+
+
+
+
+
+
+
+
+
+			TABLE OF CONTENTS
+
+
+		PART 1) BASICS AND INSTALLATION
+
+		  1.  About Explosiv
+		  2.  Getting Started
+		  3.  Explosiv Summary
+
+
+		PART 2) EXPLOSIV FOR DOS
+
+		  4.  Using Explosiv For DOS
+		  5.  Configuration Options
+		  6.  Display Librarian
+		  7.  Image Maker
+
+
+		PART 3) EXPLOSIV FOR WINDOWS
+
+		  8.  Using Explosiv For Windows
+		  9.  Setup Dialog Box
+		  10. Password Protection
+		  11. Windows Explosiv Logo
+
+
+		PART 4) APPENDIX
+
+		  12. Running Explosiv On A network
+		  13. Command Line Arguments
+		  14. Trouble Shooting
+		  15. About H&G Software
+
+
+
+
+
+
+
+
+		PART 1        BASICS AND INSTALLATION
+
+
+
+Chapter 1)        ABOUT EXPLOSIV
+
+
+Explosiv is a DOS and Windows screen saver that offers a safe reliable
+means of preventing monitor burn-in with a library of several exciting
+and imaginative displays.  Unique fractal modules can run hours
+without any repetition in the displayed pattern.  In addition,
+Explosiv can dynamically create new displays from color images or
+using typed in messages.  Among its many features, Explosiv includes:
+
+ - A DOS and Windows screen saver with 16 displays
+ - The ability to take GIF files and turn them into Explosiv displays
+   ( EGA and VGA only ).  The shareware version only supports 16 colors.
+ - Turn any DOS program into a Windows screen saver.
+ - Add, change or delete displays from Explosiv.
+ - A source code template for writing your own displays.
+
+
+
+Chapter 2)        GETTING STARTED
+
+
+  Before Installing Explosiv
+
+Check that your computer satisfies the minimum software and hardware
+recommendations listed below:
+
+    Explosiv for DOS
+
+	- DOS 3.1 or later
+	- VGA, EGA, MCGA, CGA, HERC or MDA monitor
+	- Mouse ( optional )
+	- Hard Disk ( optional )
+
+    Explosiv for Windows
+
+	- 386 processor
+	- Windows 3.0 or later
+	- A Windows compatible mouse
+	 - color VGA video card ( optional )
+
+If your computer does not satisfy all of the above then this does not
+necessarily mean that Explosiv will not work on your system, many
+aspects may still work.  Specifically, if you have NOT installed
+Windows on your computer then you will not be able to access Explosiv
+for Windows even though the DOS version will work fine. 
+
+Also, make sure that you are familiar with the basic workings of your
+computer operating system.  In particular, PART 3 assumes that you are
+acquainted with Microsoft Windows. 
+
+
+  Installing Explosiv
+
+To install the software follow these steps:
+
+1. Turn on your computer and insert the Explosiv diskette.  If you are
+installing Explosiv from more than one disk then insert disk one and
+replace diskettes when prompted.  For simplicity, assume that the
+software is being installed from drive A.  From this drive run the
+Explosiv Install program:
+
+	A:\> install
+
+2. Install asks whether it is being run from a DOS session in Windows.
+Explosiv cannot be installed properly from Windows.  You must
+terminate Install, exit Windows and restart the installation.  If you
+are not running Windows select YES to continue ( i.e., click on YES ). 
+
+3. If you are running version 2.0 of Explosiv then it is important
+that you delete any copies of Explosiv.com that may in your path.
+Install searches for this file and prompts to see whether it should
+erase this file or not.  If you select NO then you should make sure
+that you delete the file manually. 
+
+4. If you are running version 3.0 or greater of Explosiv then you may
+not wish to upgrade to the latest version of Explosiv for DOS. If you
+do upgrade then this will overwrite the Explosiv for DOS display
+library, you will lose any new displays you have made or any changes
+you have made to the library. 
+
+5. For optimal performance, Explosiv should be copied onto a hard
+drive.  The default directory that Explosiv will be installed to is
+C:\EXPLOSIV.  At the prompt select INSTALL if the default is okay.  If
+you wish to install Explosiv in another directory enter the new name
+then click INSTALL. 
+
+6. To properly access Explosiv for DOS from any directory on your
+computer you should copy the file explosiv.bat to your path.  Install
+offers to copy this file to your path for you.  Install will display a
+list of path directories, select the one you wish to copy explosiv.bat
+to or select CANCEL to bypass this feature. 
+
+7. Explosiv for DOS may be run automatically whenever you boot your
+computer by appending the line:
+
+	C:\EXPLOSIV\EXPLOSIV -
+
+at the end of your autoexec.bat.  Install will optionally do this for
+you if you wish.  If you select YES then Install will scan the
+contents of your autoexec.bat to see if Explosiv is already being run
+from start-up.  If not, a call to Explosiv is appended to the end of
+the file. 
+
+8. Explosiv for Windows may be run automatically whenever you start
+Windows by including the line
+
+	LOAD=C:\EXPLOSIV\WX.EXE
+
+in your win.ini file.  Install will optionally do this for you if you
+wish, select YES at Install s prompt. 
+
+9.  Install will start Windows so that it may create the Program
+Manager icons.  Once done, installation will be complete.  To run
+Explosiv for DOS type:
+
+	C:\> EXPLOSIV
+
+and to run Explosiv for Windows run:
+
+	C:\EXPLOSIV> win WX.EXE
+
+
+  Manually Installing Explosiv
+
+You may prefer to install Explosiv manually instead of using the
+Install program.  In this case, you must create the directory
+C:\EXPLOSIV, copy the Explosiv files to this directory, copy knife.vbx
+to your Windows system directory ( Explosiv Deluxe only ), modify
+autoexec.bat and win.ini to start Explosiv automatically, and finally,
+run win wxinst to create the Explosiv icons in the Program Manager. 
+
+
+  Possible Problems
+
+If for any reason Explosiv fails to run when you boot your computer
+you should check the autoexec.bat file to make sure that the EXPLOSIV
+line was correctly appended and that you are not running a menu system
+or .bat file without the CALL prefix before you run Explosiv.  If you
+are, you must manually edit the start-up file to ensure that Explosiv
+is being run ( for example, move the Explosiv line higher up in the
+file ). 
+
+Other possible errors may occur if your distribution files are
+incomplete ( check readme for details ), if the Program Manager could
+not be updated, or if knife.vbx could not be copied into your Windows
+system directory ( Explosiv Deluxe only ). 
+
+
+
+Chapter 3)        EXPLOSIV SUMMARY
+
+
+This chapter gives a brief summary of the operation of the Explosiv
+Screen Saver.  It is advised that you familiarize yourself with the
+contents of this chapter before using Explosiv so that you can make
+the best use of the screen saver.  The information given here is
+described in more detail in the remaining sections of this manual. 
+
+
+  Installing Explosiv for DOS
+
+You may either run Explosiv as a memory resident screen saver or
+simply demo the displays through the full screen interface.  To have
+Explosiv become resident run the command:
+
+	C:\> EXPLOSIV -
+
+When the program is resident you may activate it immediately by
+pressing Ctrl-Alt-Shift, disable it using Ctrl-Alt-E and re-enable it
+using Ctrl-Alt-B. 
+
+Once in memory the program may be manipulated in many ways.  Most
+importantly are the commands:
+
+	C:\> EXPLOSIV REMOVE	- Remove Explosiv from memory
+	C:\> EXPLOSIV OFF	- Deactivate Explosiv
+	C:\> EXPLOSIV ON	- Activate Explosiv
+
+
+  Running Explosiv for DOS
+
+To run the full screen interface simply enter "EXPLOSIV" at the
+command line with no arguments.  The program will list the available
+displays and their individual settings.  To demo a display move the
+cursor to the display name and press ENTER or click on the name with
+the mouse. Once you have set Explosiv to the desired configuration
+exit the program.  The program gives two options for doing this,
+either exit normally or stay resident ( that is, become a screen
+saver ). 
+
+
+  Installing Explosiv For Windows
+
+To run Explosiv for Windows click on the Explosiv icon in the Program
+Manager.  The icon should appear at the bottom of the screen.  If you
+move the mouse to the top left corner of the screen Explosiv will
+activate immediately. 
+
+
+  Configuring Explosiv For Windows
+
+To configure the program, double click on the icon name ( while it is
+running ) and select Setup Explosiv .  Choose the settings that you
+prefer and click OKAY.  If you select the Multipak display then
+Explosiv will allow you to select those displays that you wish the
+screen saver to cycle through. 
+
+
+  About Explosiv Deluxe
+
+If you have purchased Explosiv Deluxe then Explosiv also includes a
+complete Windows image processing program.  View a variety of image
+formats, do image conversions, set your Windows background or make an
+image into a Windows screen saver with this program. 
+
+
+
+		PART 2        EXPLOSIV FOR DOS
+
+
+
+Chapter 4)        USING EXPLOSIV FOR DOS
+
+
+The DOS version of Explosiv is a Terminate and Stay Resident (TSR)
+program that loads into memory when you like ( for example,
+automatically at boot up time ) and stays out of your way until you
+want it to become active. Occupying from 1 to 47 KB of memory, the DOS
+version of Explosiv ( which can be loaded above the 640KB limit ) renders
+several beautifully animated displays. In fact, if you prefer, you can
+invoke the full screen user interface and just point and click on the
+displays you want to see. Just sit back and watch the show! 
+
+
+  Running Explosiv
+
+To invoke the DOS version of Explosiv simply go to the DOS command
+line prompt and type:
+
+	C:\> EXPLOSIV
+
+and the full screen interface will appear.  Alternatively, Explosiv
+accepts a full range of command line options ( which are discussed in
+detail in the appendix ).  For example, to install Explosiv as a
+memory resident screen saver, simply enter:
+
+	C:\> EXPLOSIV -
+
+The above command would also be the recommended way of running
+Explosiv directly from your autoexec.bat file on bootup.  Once
+resident the screen saver will start a display if you are in text mode
+and blank the screen if you are in a graphics mode. 
+
+
+  Running Displays Using The Hotkey
+
+To activate Explosiv immediately without waiting press and release the
+Ctrl-Alt-Shift keys combination at the same time.  The display can
+then be deactivated by pressing any key or by clicking on the mouse
+button. Note that some programs grab the keyboard in such a way that
+Explosiv does not detect key presses, in many cases pressing the mouse
+button will still work to deactivate Explosiv and return you to your
+work. 
+
+
+  Disabling and Enabling Explosiv
+
+If you want to temporarily turn the screen saver off you can press
+Ctrl-Alt-E ( and then Ctrl-Alt-B to turn the screen saver on again ).
+You can also run EXPLOSIV OFF on the command line to turn the screen
+saver off and EXPLOSIV ON to turn the screen saver on.  You can set
+this up in a batch file if you want to automatically disable Explosiv
+while you are running a particular program.  The hot keys listed above
+can also be changed ( see the next chapter for details ). 
+
+
+  Removing Explosiv From Memory
+
+If you want to free Explosiv from memory you can type EXPLOSIV REMOVE.
+This will remove Explosiv from memory if there are no other programs
+loaded above it.  If it is not possible to remove Explosiv from memory
+an error message will be printed and no action will be taken. 
+
+
+  Running Explosiv s Interface
+
+If you start Explosiv with no command line options a full screen
+interface will appear.  From this environment you can demo displays,
+change screen saver settings or even create new displays.  For the
+interface to work properly it is important that the three files
+EXPLOSIV.COM, EXPLOSIV.EXE and EXPLOSIV.OVL are stored in the same
+directory.  To use Explosiv, either copy these three files to your
+path or put a separate copy of EXPLOSIV.COM in your path and set the
+environment variable EXPLOSIV to the directory name of the three
+files.  For example, you can copy the three screen saver files to the
+directory C:\EXPLOSIV then put EXPLOSIV.COM in your path and run the
+command
+
+	SET EXPLOSIV=C:\EXPLOSIV.
+
+When the interface starts you will see several windows. Note that the
+active window will appear with a highlighted title.  To make another
+window active you can either press the TAB key, the Shift-TAB key or
+simply click the mouse cursor on the window you wish to activate.
+Most active windows will also have a cursor within the window. This
+cursor can be moved with the up or down cursor keys or by clicking the
+unselected item with the mouse.  If the selected item has a value
+associated with it ( for example, the number in the minutes field )
+then this can be changed by using the right and left cursor keys or
+by clicking on the selected item. 
+
+
+  On-Line Help
+
+You can see on-line help for any window by pressing the F1 key, a box
+will appear describing the window s function and disappear again when
+you press any key. 
+
+
+  Key Bindings
+
+If you press F10 ( or ESC ) a popup window will appear with a list of
+options.  You can activate any option by pressing the first letter in
+the description or by clicking on the entry with the mouse. The popup
+window is divided into two parts, the top part lists the screens that
+can be viewed - from Image Maker to Display Librarian - while the
+bottom part lists alternate methods of exiting the interface. 
+
+
+  Quitting The Interface
+
+If you want to quit the interface without Explosiv becoming resident
+then press ESC E. If you want Explosiv to become a screen saver press
+ESC Q. To remove a resident copy of Explosiv from memory press ESC R.
+Finally, to abort all changes made, press Ctrl-C at any time in the
+Explosiv interface. 
+
+
+  Viewing Displays
+
+When the Explosiv interface initially starts the DISPLAYS window will
+be active; by moving the cursor to the desired display name you can
+select a new module.  To demo the display from within the interface
+simply press ENTER or click on the selected entry.  Each entry will
+have its own values of color, delay or objects.
+
+
+  Color And Minutes
+
+The color of the display will have one of three values, Mono will
+force the display into monochrome mode, Color will force color
+patterns and Tinge gives an alternate color pattern.  Although setting
+the latter does not affect very many displays it does give different
+patterns for Aranea, Fireworks and Serinde.  Once Explosiv is
+resident, the minutes field indicates the number of minutes of
+inactivity the screen saver should wait before it starts the selected
+display.  This can be set to as little as one minute or to as much as
+one half hour. 
+
+
+  Delay Factor And Objects
+
+The delay is a number from 1 to 255 which controls how fast the
+display changes.  Set this to the default to use the value calculated
+from your CPU speed ( this value is shown by running EXPLOSIV ?  at
+the command line ).  The object number of the display indicates one of
+several things; for example, it can be the density of the fractal
+pattern, the number or type of objects that appear or may have no
+meaning at all.  The meaning varies according to which display you are
+using. 
+
+
+
+Chapter 5)        CONFIGURATION OPTIONS
+
+
+Change to the configuration screen by pressing the Alt-C keys.  The
+fields that you will see control specific aspects, such as monitor
+type and the hot keys of Explosiv when it becomes resident.  Changing
+these options may not change the operation of the screen saver until
+the next time you install Explosiv. 
+
+
+  Customizing Memory Usage
+
+The Display Memory Size controls how much memory is allocated to run
+Explosiv displays.  Explosiv has the ability to load new displays
+directly into the resident program itself.  You do not need to first
+remove Explosiv and install it again with the new settings!  Simply
+set the display size to a value large enough to load the desired
+display and run Explosiv.  You can then change to a new display simply
+by running the command
+
+ C:\> EXPLOSIV  NEW <DISPLAY>
+
+or by using the Explosiv interface.  Note that if you are not going to
+use this feature then set the display memory size to MIN. This will
+force Explosiv to allocate just enough memory to store the display. 
+
+The Memory Usage determines how much memory Explosiv should allocate
+for saving the screen state. See the following table:
+
+	VALUE		MEMORY	50 LINE MODE	USER DEFINED FONTS 
+	Small		4K	no		no 
+	Medium A	8K	yes		no
+	Medium		8K	yes		yes, if 25 line mode
+	Medium B	8K	no		yes
+	Large		12K	yes		yes
+
+
+  Forcing The Monitor Type
+
+By default Explosiv will automatically select the appropriate monitor
+type to use.  You can use the Monitor field to force Explosiv to run
+displays for another video card.  For example, set the field to VGA to
+force a VGA screen saver ( but note that you should only do this if
+you are sure Explosiv picks the wrong monitor type ). 
+
+
+  Avoiding Conflicts
+
+The Multiplex field indicates the number Explosiv should use to
+communicate with resident copies of the screen saver.  Do not change
+this value unless Explosiv conflicts with another memory resident
+program.  Similarly, the Start and Stop keys indicate the hot keys
+that Explosiv should use.  By default Explosiv sets these to
+Ctrl-Alt-B and Ctrl-Alt-E, respectively. These fields, which should
+not be changed unless a conflict occurs, allow the users to alter the
+letters used for the Explosiv hot keys. 
+
+
+  Disabling Video Checking
+
+If you have a memory resident clock ( or other video activities ) then
+Explosiv will not start if Video Checking is on.  By turning this off
+Explosiv should start properly regardless of clocks or other screen
+changes. 
+
+
+
+Chapter 6)        DISPLAY LIBRARIAN
+
+
+The Displays Librarian allows the user to control which displays are
+available to Explosiv.  This information is stored in EXPLOSIV.OVL and
+since this file will be changed whenever you use the Librarian it is
+important to backup the distributed EXPLOSIV.OVL before using any of
+the features described in this section. 
+
+
+  How Are Displays Accessed
+
+The Explosiv displays are stored in a compressed format in the file
+EXPLOSIV.OVL.  Each original display is put into this library once for
+each monitor type it supports.  For example, the display Aranea will
+have a separate entry for VGA and one for EGA, etc.  If you wish to
+save space and allow more room for your own displays ( Explosiv can
+store a maximum of 250 displays in the library ) then it is suggested
+that you remove all displays for other monitors.  For example, if you
+have a VGA monitor then you may remove all entries for EGA, CGA, HERC
+and MDA cards. 
+
+
+  Adding New Displays
+
+To add a new display simply click on the Add button.  A dialog box
+will appear asking you for a description of the display and a
+filename.  The description is the name of the display that will appear
+in the DISPLAYS window, this must be a unique name for your monitor
+and be less than 12 characters long.  The filename is the path name of
+the program that you wish to archive.  This function will only work
+for programs that satisfy the necessary format, for example, Image
+Maker programs work fine. 
+
+
+  Changing A Display
+
+If you wish to change the name of the selected display then click on
+the Change button.  A dialog box will appear with the description and
+filename of the display you wish to change.  Remember that the
+description must be unique for that monitor and if the filename is not
+given then DISPLAY.COM is used by default. 
+
+
+  Dumping A Display
+
+Since the Explosiv library stores displays in compressed format in the
+file EXPLOSIV.OVL it is possible to uncompress these displays and
+write them to disk. The Dump button will write the display into the
+current directory using the name given when the program was first
+added. The dumped program will be completely independent of Explosiv
+and can be used by WIM.EXE or with screen capturing software to save
+patterns to image files. 
+
+
+  Disabling A Display
+
+Clicking the On/Off button will disable a display.  The display will
+remain intact in the Explosiv library but can no longer be run by the
+screen saver. Use this feature to disable displays you do not like but
+do not want to remove permanently.  To erase a display permanently use
+the Remove button. These modules will be permanently erased from the
+library.  Removing unwanted displays has the advantage of making the
+file EXPLOSIV.OVL smaller and making more entries available for new
+modules ( up to a maximum of 250 ). 
+
+
+
+Chapter 7)        IMAGE MAKER
+
+
+Image Maker will allow the user to view GIF images and create programs
+from them. These programs can be stand alone or can be incorporated
+directly into the Explosiv library.  When you first start the Image
+Maker screen a message box will appear telling you that Image Maker is
+reading the current directory for files.  The program will only allow
+you to see the GIF files and .COM files that are in the directory.  To
+read another directory select the item in the DIRS window, a new
+message box will appear telling you that Image Maker is searching the
+new directory.  Similarly, to read a new drive select the drive from
+the DISK window. 
+
+
+  Selecting The Image Size
+
+Image Maker allows you to select the video mode that the selected
+image will be drawn in.  The possible options are listed in the MODES
+window, where the desired mode will appear with a mark beside it.  If
+the mark is an X, which is the default, Image Maker will allow you to
+crop as much of the image as possible.  If the mark is a check, which
+can be set by pressing the right or left key within the MODES window,
+then the cropped images will be smaller.  The Explosiv library will
+only archive files that are smaller than 34K, while Image Maker can
+produce much larger programs. Only by setting the check mark can you
+be sure that the image you are capturing will be small enough to be
+made into a screen saver. The Add button is equivalent in function to
+the Add feature described for the Display Librarian. 
+
+
+  Viewing An Image
+
+To view the file that you have selected simply press ENTER from within
+the FILES window.  If the file is a .COM file then the program will be
+run, while if the file is a GIF image then the image will be drawn.
+Once the image is drawn a box will appear ( this box may be difficult
+to see ).  You can move the box around the screen by with the cursor
+keys. If you hold the Control key down then the cursor keys will
+change the size of the box.  Press ESC at any time to abort. If the
+Ctrl-Arrows keys do not work on your machine you may use the Home,
+End, PgUp, and PgDn keys instead. 
+
+
+  Scrolling Around An Image
+
+If the image is larger than the screen then press the TAB key to go
+into scroll mode.  The box will disappear and the cursor keys can be
+used to reposition the image.  Hold the Control key down at the same
+time to move the image around in smaller increments.  Press TAB again
+to exit scrolling. The box, which will appear again, can be positioned
+as described above. 
+
+
+  Saving The Image
+
+Once you are done press the ENTER key to save your image or the ESC
+key to abort. If you press ENTER then the entire image within the box
+will be saved to a file with the same name as the image but with a
+.COM extension.  The Image Maker interface will reappear with the new
+entry added and the cursor positioned on it, you may then press ENTER
+to view the program that you have created.  Saving the image to disk
+may take a little longer if the background color is not black. In this
+case, Image Maker will beep twice to tell you to be patient while the
+color palette is being adjusted. 
+
+
+  Fixing Jerky Motion
+
+A program that was created for an EGA video mode may appear with jerky
+motion on some VGA monitors.  In this case, you will have to set the
+object level to 1 to view the image properly.  You cannot do this from
+the Image Maker screen but if you exit Explosiv then you can run the
+new program with the e1 command line option. To slow down a 256 color
+image's movement use the e5 command line option. 
+
+
+
+
+		PART 3        EXPLOSIV FOR WINDOWS
+
+
+
+Chapter 8)        USING EXPLOSIV FOR WINDOWS
+
+
+  Running Explosiv
+
+To start the Windows version of Explosiv, you must first do one of the
+following:
+
+ 1. Set Explosiv for Windows to be run automatically when Windows starts.
+ 2. Run Explosiv manually each time Windows is executed.
+
+To invoke Explosiv for Windows double click on the Explosiv icon
+within the Explosiv group in the Windows Program Manager.  To access
+Explosiv's configuration menus double click on the Explosiv icon name
+that appears at the bottom of the Windows Desktop and select Explosiv
+Setup. 
+
+
+  Explosiv Menu Commands
+
+Once started, you can set, modify, and view all parameters through the
+Explosiv icon dialog boxes. There are four important menu choices to
+be made after clicking on the Explosiv Icon:
+
+    Explosiv Setup	This leads to a group of three dialog boxes;
+			the Main box ( displayed after clicking on the
+			icon menu choice ), the Display Options box
+			( displayed after clicking on the Options...
+			button in the Main dialog box ),  and the
+			Password box ( displayed after clicking on the
+			Password... button ).
+
+    Start Explosiv	Starts Explosiv immediately.
+
+    Registration Info	Information on registering copies of Explosiv.
+
+    About Explosiv	This displays a simple window that refers to the
+			release date of the program.
+
+
+
+Chapter 9)        SETUP DIALOG BOX
+
+
+  Changing Screen Saver Attributes
+
+The Setup dialog box controls are very similar in functionality to
+those in the DOS version of Explosiv. To begin with, the Select
+Display box contains a scrollable list of display choices. Clicking
+the mouse on a choice makes that choice the active display. 
+
+The Select Time box contains a scrollable list of times, ranging from
+1 to 30 minutes.  Clicking on a value causes that time to be the time
+until activation for the screen saver. 
+
+The Screen Saver On box indicates whether or not Explosiv will come on
+as a screen saver at the activation time. Clicking on this box toggles
+the screen saver On and Off. 
+
+The Demo button lets you preview any of the selected displays. This
+button should be clicked on SLOWLY to avoid immediate deactivation. 
+
+NOTE that double clicking the mouse on the Multipak display opens the
+Multi Display dialog box where you can add or delete displays.  You
+can make the display choices run in the order you have selected or
+randomly. Finally, you can select the interval that you want the
+displays to change ( the value selected is the number of minutes
+before the display will change, ranging from 1 to 60 minutes ).
+Selecting 0 means that the display will only change when Explosiv is
+activated. 
+
+
+  Display Options Dialog Box
+
+Display Options ( activated via the Options... button ) contains two
+Mouse Corner groups. Clicking on any one corner will make the
+corresponding point on the screen either :
+
+	- The corner in which the screen saver is INSTANTLY activated.
+
+	- The corner in which the screen saver will NEVER come on, even
+	  at the activation time.
+
+The Display Preferences section of the window contains two scrollable
+boxes that set:
+
+	Delay rate	If you find a particular display too fast or slow
+			change the delay rate to a value between 0 to 3.
+
+	Object number	This is not defined for all displays, but the
+			displays that do use this control will alter the
+			type or number of displayed objects as the number
+			value selected changes ( with values ranging
+			from 1 to 9 ).
+
+For many of the displays selecting a value greater than 6 will give
+you a randomly varying display.  This is especially prominent in the
+Gyro display. 
+
+
+  Settings To Prevent Conflicts
+
+Toggling the Detect Mouse Movement box On or Off ( by clicking on it
+with the Mouse ) either enables or disables the screen saver's
+monitoring of mouse movement. This is especially useful for certain
+situations, such as laptop computing. Also, some graphics co-processor
+boards work better when the Mouse Movement Detection is turned off. 
+
+The Auto - Off Print Manager box disables Explosiv if the Windows
+Print Manager is running. This is especially effective if spooling is
+turned on in the Print Manager. 
+
+
+
+Chapter 10)        PASSWORD PROTECTION
+
+
+The Password dialog box is opened by clicking on the Password...
+button. To enter a new password, type in your new password in the
+Enter Password box, then repeat it in the Confirm Password box. Click
+on the Accept button to permanently set your new password. If you have
+made a mistake in either your original or confirmation entries, a
+failure sign will show up when you press the Accept button. Just start
+all over again or erase the WX.INI file to remove all configuration
+information. If your password was successfully entered a success
+message will be displayed. 
+
+NOTE that passwords can be up to 8 characters in length, and can be
+any combination of ASCII characters, including numbers and symbols.
+Also, upper and lower case of the same letter are seen as two
+different values to the password algorithm. 
+
+
+  Change A Password
+
+To change a password, first enter your old password in the Old
+Password box, and then proceed as outlined above for setting a new
+password. If any error is made ( i.e., the Accept button indicates a
+Failure ), just start the entire process over again or erase the
+WX.INI to clear all the configuration information. 
+
+
+  Using Password Protection
+
+After you have successfully entered ( or changed ) a password, the
+Password On button will be enabled. If this button is selected, then a
+Password box will pop up and ask you for your password every time you
+try to stop an active display.  Enter your password and then click on
+the Accept button or click on the Cancel button to immediately start
+the screen saver display again. If you do nothing, the Password Prompt
+box will disappear after 8 seconds and the screen saver display will
+resume activity. 
+
+
+
+Chapter 11)        WINDOWS EXPLOSIV LOGO
+
+
+Explosiv Logo for Windows is a separate screen saver package that
+works in conjunction with Explosiv.  You can toggle between Explosiv
+and Explosiv Logo simply by clicking on the Explosiv or Explosiv Logo"
+button that appears in the dialog box.  This will stop the current
+screen saver and start the other program. 
+
+
+  Turning DOS Programs Into Screen Savers
+
+Using Explosiv Logo you can turn any DOS program into a screen saver,
+simply create a .bat file in the same directory as Explosiv Logo that
+runs the program and select the .bat file from Explosiv Logo s list
+box. 
+
+
+
+		PART 4        APPENDIX
+
+
+
+Chapter 12)        RUNNING EXPLOSIV ON A NETWORK
+
+
+Explosiv is compatible with most PC networks, the screen saver does
+interrupt any other program that is running so it is important that you
+do not install Explosiv on the network server ( run Explosiv on the
+network clients instead ). 
+
+Explosiv does experience conflicts with certain networks, most
+notably, with Novell Lite.  If you find that Explosiv does have a
+conflict with your network then you may not be able to run an Explosiv
+display without losing the network connection.  The blank display will
+still work since this does not interrupt the computer s operation, it
+simply turns off the monitor and lets any background process continue. 
+
+
+
+Chapter 13)        COMMAND LINE ARGUMENTS
+
+
+This chapter discusses the entire list of options supported by version
+3 of the Explosiv screen saver.  The interface was designed so that
+you will never have to know or use the majority of these options.
+However, they are all listed here for reference.  The options that are
+most useful to know are:
+
+	Explosiv	- run the interface
+	Explosiv -	- read the configuration file
+	Explosiv on	- activate ( normal, herc=text )
+	Explosiv +on	- activate (animate only, herc=graphics 0)
+	Explosiv -on	- activate (blank only, herc=graphics 1)
+	Explosiv off	- deactivate
+	Explosiv remove	- remove the tsr
+
+all the other options can be and should be controlled by the interface.
+A complete list of options is listed below:
+
+	blank	This is the only display that does not halt the
+		underlying program when it is resident.  The delay
+		factor and object variables have no meaning.  No mouse
+		support is given to this display if it is resident and
+		if blank is resident then no other display can be
+		loaded unless you first remove Explosiv.
+
+	random	Select a random display from the Explosiv library.  If
+		a display is not found in EXPLOSIV.OVL then a blanking
+		display is used   If no display name is specified on the
+		command line then random is used.
+
+	<display>  Select the module associated with the display name.
+		For example, if Aranea is available in the Explosiv
+		library then it can be run simply by typing the command
+		EXPLOSIV ARANEA .
+
+	new	Force Explosiv to load the specified configuration into
+		the memory resident Explosiv.  Use this parameters to
+		change characteristics such as minutes, objects and
+		display without first removing Explosiv from memory. 
+
+	on	This option will turn the screen saver on.  If the
+		monitor is Hercules then this also tells the screen
+		saver to restore the screen to text mode.  If the
+		monitor is not Hercules then this tells the screen saver
+		to use the animation when possible and to blank the
+		screen when it feels that the screen cannot be saved
+		properly ( for example, in graphics modes ). 
+
+	+on	This option will turn the screen saver on.  If the
+		monitor is Hercules then this also tells the screen
+		saver to restore the screen to graphics mode ( page 0 ).
+		If the monitor is not Hercules then this tells the
+		screen saver to use the animation when possible and not
+		to activate when it feels that the screen cannot be
+		saved properly ( for example, in graphics modes ).
+
+	-on	This option will turn the screen saver on.  If the
+		monitor is Hercules then this also tells the screen saver
+		to restore the screen to graphics mode ( page 1 ). If the
+		monitor is not Hercules then this tells the screen saver
+		to blank the screen under all possible circumstances.
+
+	off	This option will turn the screen saver off.
+
+	+video	This option tells the screen saver that it should check
+		for BIOS screen updates.  Any character that is written
+		to the screen will reset the screen saver s timer.
+
+	-video	This option tells the screen saver that it should not
+		check for BIOS screen updates.  Any character that is
+		written to the screen will not reset the screen saver's
+		timer.  This option should be used if you are using some
+		sort of RAM resident clock.
+
+	mono	This option specifies that the display should be in
+		monochrome. 
+
+	color	This option specifies that the display should be in color.
+
+	tinge	This option specifies that the display should be in color.
+		This is used to give alternate color patterns to displays
+		like Fireworks, Aranea and Serinde.
+
+	d<n>	This option specifies the delay factor that should be
+		used.  Here <n> is a number from 1 to 255.  By default,
+		Explosiv will check your CPU and generally deduce the
+		proper delay factor.  This option should only be used if
+		you find the default unreasonable. Run the command
+		Explosiv ? to find the default delay for your CPU.
+
+	m<n>	This option must be used if Explosiv is to become a screen
+		saver.  Here <n> ranges from 1 to 30 and refers to how
+		many minutes of inactivity Explosiv should wait before
+		activating.
+
+	e<n>	This option specifies the object level.  This value ranges
+		from 1 to 9 ( the default is 4 ).  Not all displays use
+		this option and those that do do not always use it in the
+		same way. 
+
+	?	This option will display the help screen.  This gives you
+		information such as hot keys, Explosiv's working
+		directory, monitor type, delay factor, multiplex number
+		and some simple command line options.
+
+	-	This option specifies to read the configuration file.  The
+		screen saver will also parse the command line but using
+		this option will guarantee that the program will become
+		memory resident.
+
+	remove	This option tells Explosiv to remove the resident copy of
+		the screen saver from memory.  If this is not possible
+		because other TSRs are loaded above Explosiv then a
+		message will be printed and the screen saver will remain
+		active and resident.
+
+	vga	This option specifies that you wish to override the
+		Explosiv auto-detection and assume you are using a vga
+		monitor.
+
+	ega	This option specifies that you wish to override the
+		Explosiv auto-detection and assume you are using an ega
+		monitor.
+
+	mcga	This option specifies that you wish to override the
+		Explosiv auto-detection and assume you are using a mcga
+		monitor.  This option is functionally equivalent to cga. 
+
+	cga	This option specifies that you wish to override the
+		Explosiv auto-detection and assume you are using a cga
+		monitor.  This option is functionally equivalent to mcga. 
+
+	herc	This option specifies that you wish to override the
+		Explosiv auto-detection and assume that you are using a
+		Hercules monitor.
+
+	mda	This option specifies that you wish to override the
+		Explosiv auto-detection and assume that you are using an
+		mda monitor. 
+
+	default	This option sets the screen saver to the default delay
+		factor.  Use this to reset a resident copy of the screen
+		saver to the default setting ( to do this you must also
+		use the New option ).
+
+	mem1	This option tells Explosiv to allocate 4K of memory to
+		save the text buffer.  This is the only valid option
+		unless you have an EGA or VGA monitor.  Explosiv will
+		not be able to restore 43 or 50 line mode if you use
+		this option.
+
+	mem2	This option is valid for EGA or VGA monitors only.
+		Explosiv will allocate 8K of memory to save the text
+		buffer.  This will save 43 or 50 line mode but will not
+		restore user defined fonts.  This is the default for EGA.
+
+	mem3	This option is valid for VGA monitors only.  Explosiv will
+		allocate 8K of memory to save the text buffer or font
+		table.  If you are using 50 line mode then the full text
+		buffer will be restored but user defined fonts will not.
+		If you are running in 25 line mode then user defined
+		fonts will be restored. This is the default value for VGA.
+
+	mem4	This option is valid for VGA monitors only.  Explosiv will
+		allocate 8K of memory to save the text buffer or font
+		table.  User defined fonts will be restored but 50 line
+		mode will not.
+
+	mem5	This option is valid for a VGA monitor only. Explosiv will
+		allocate 12K of memory to save the text buffer and font
+		table.  User defined fonts will be restored as well as 
+		50 line mode.
+
+
+
+Chapter 14)        TROUBLE SHOOTING
+
+
+Some special things to be aware of include:
+
+
+  DOS Graphics Mode
+
+When a DOS program is running in graphics mode, Explosiv for DOS will
+NOT display the currently selected module, but rather will simply
+blank the screen. This ensures the best possible restoration of any
+screen state ( this blanking may occur even in text mode if Explosiv
+cannot reliably determine the systems state ).
+
+
+  Windows 3.0 Real Mode
+
+Explosiv for Windows does NOT work in Real Mode ( with or without
+expanded memory ) in Windows 3.0. It can only be used in Standard or
+Enhanced Modes. If you try to start Explosiv for Windows in Real Mode,
+Explosiv will simply terminate itself with a explanatory message.
+Explosiv for DOS will NOT ACTIVATE when Windows 3.0 is running unless
+Windows is running in Real Mode. To disable this ( as it could produce
+undesirable side effects ), enter the line "EXPLOSIV OFF" before you
+start up Windows in Real Mode ( i.e., win /r ), and then enter
+"EXPLOSIV ON" after exiting the Windows Real Mode session. This could
+easily be made into a batch file. 
+
+
+  File Transfers And Printing Under Windows
+
+If you are doing large file transfers over a serial communication line
+in Windows, it is advised that you use one of the following displays
+in Explosiv:
+
+	CLOCK, STARS, BLAZON, BLANK
+
+These displays will not impede your file transfers to any noticeable
+degree. The other displays may slow or even completely stop the
+transfers.  The same holds true for printing jobs, with the exception
+that if you do all your printing through the Print Manager spooler
+then you can then select the Options window and enable the Auto - Off
+for Print Manger button. If the Print Manager starts ( even if it starts
+on a time delayed command ), Explosiv turns off until all the printing
+is finished. 
+
+
+  Hercules Display
+
+If you are using a Hercules monochrome display and are you unsure as
+to whether or not your program is in graphics mode, set Explosiv off
+before starting the program to give maximum compatibility with the
+underlying program ( alternatively, you can try the +on and -on
+option ). 
+
+
+  Hot Keys
+
+Explosiv for DOS has certain Hot Key assignments that are very
+important. They are:
+
+	Ctrl-Alt-Shift	This key combination starts Explosiv
+			immediately
+
+	Ctrl-Alt-E	This key combination temporarily disables
+			Explosiv
+
+	Ctrl-Alt-B	This key combination enables Explosiv after
+			it had been disabled.
+
+These hotkeys may be changed in the configuration screen of the
+Explosiv interface. 
+
+
+  Problems With High Memory
+
+If you have problems installing Explosiv in high memory then you may
+need to reconfigure EMM386.EXE so that you use the NOEMS switch rather
+than RAM.  DOS requires that at least 48K of memory is available in
+high memory before it will load Explosiv ( Explosiv cannot control
+this ), only once it is loaded is Explosiv able to reduce its memory
+usage.  The RAM switch may have problems loading large programs into
+high memory. 
+
+
+  Key Presses Are Unable To Stop A Display
+
+If a display cannot be disabled by pressing a key try clicking on a
+mouse button.  There are a few programs that grab the keyboard in such
+a way that Explosiv cannot sense key presses, the result is that the
+keyboard appears locked when the display is active.  The mouse,
+however, cannot be locked in this manner. 
+
+
+
+Chapter 15)        ABOUT H&G SOFTWARE
+
+
+For information about this product, technical advice or help using
+this software please do not hesitate to contact H&G Software directly.
+We will do our best to resolve any problems or answer any questions
+that you might have.  We can be reached by mail at:
+
+	H&G Software
+	P.O. Box 3013
+	Vancouver, B.C.
+	Canada  V6B 3X5
+
+or if you have access to electronic mail we can be contacted through
+CompuServe at:
+
+	Reidar Gresseth		73042,3653
+	( Internet: 73042.3653@compuserve.com )
+
+
+  Ordering Software
+
+To order additional copies of Explosiv or Explosiv Deluxe see the
+ORDER.FRM for details.  To obtain information about other software
+offered by H&G Software see the file PRODUCTS. 

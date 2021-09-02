@@ -1,0 +1,55 @@
++---------------------------------------------------------------+
+| DOSLFN - A Real-mode driver for Long File Names missed in DOS |
+|	   With full Unicode and DBCS support!			|
++---------------------------------------------------------------+
+
+This is a version of DOSLFN that uses MSCDEX for CD-ROM support.
+As you've probably noticed, it is a bare-bones package. You will
+need an earlier version for complete documentation, as well as
+a code page file. An earlier version is also necessary in order
+to compile. (When I say earlier, I actually mean 0.40.)
+
+Joliet (how Windows encodes long names) is a separate file system
+entirely to ISO. This means it is necessary to "link" a long name
+with its corresponding short name, so it can be accessed by MSCDEX.
+MKLINK is provided to create the link table, which DOSLFN uses to
+perform the linking.
+
+From the 0.32o documentation:
+
+-----------------------------------------------------------------------------
+MKLINK (name may change in future) creates "Joliet Directory Link Tables"
+for each Joliet CD found.
+By default, it scans all CD drives, and creates this table using a rather
+complex, recursive processing. MKLINK chooses file names derivated from
+CD's Volume Label, and appends .JLT, for each CD processed.
+Therefore one can scan in his CD collection and create tables for all.
+These tables will be used by DOSLFN to gain access
+to long file names on media not created by WinOnCD.
+
+MKLINK accepts some command line parameters. There are following options:
+ /b	* interactive batch processing of a whole CD collection
+ /f	* force reading CD even when link table file is already present
+	* force reading CD ignoring CeQuadrat WinOnCD Table
+ /v	* show reading process in multiple lines (as a table, recommended)
+ /v-	* don't show reading process
+ /c	* compare order of ISO and Joliet tree
+ /h	* show help
+Selecting drives is done by typing single drive letter(s).
+
+You should let MKLINK drop its .JLT files to the working directory of DOSLFN,
+this is the default when you leave MKLINK beside DOSLFN.
+It is not a good idea to burn a .JLT file on its CDROM in a multi-session
+because burning another session skews all directory sectors.
+-----------------------------------------------------------------------------
+
+This shall probably be the last version of DOSLFN to support MSCDEX (or any
+other CD-ROM redirector other than SHSUCDX). SHSUCDX provides much better
+access to Joliet, as well as long ISO names. It can be found at:
+
+http://shsucdx.adoxa.cjb.net/
+
+Jason Hood <jadoxa@yahoo.com.au>, 30 November, 2004.
+
+PS: DOSLFNMM.COM is the equivalent of DOSLFNMS.COM (if you don't know what
+    that is, you've not got the earlier version, or it's *too* early).

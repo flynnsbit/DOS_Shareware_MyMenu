@@ -1,0 +1,12 @@
+# TÅrkáe iáin TEE Kitten dosyasç
+0.0:Giriüin bir kopyasçnç bir dosyaya kaydeder ve onu yazdçrçr.
+0.1:Kullançm
+0.3:DOSYA(lar)
+0.4:Verilen DOSYAYI/DOSYALARI ekler.
+0.5:Kullançcç tarafçndan oluüturulan kesmeleri yoksayar
+0.6:Yardçm iletisini gîrÅntÅler
+1.0:Bilinmeyen seáenek
+1.1:Dosya iülemeyi/iülemeleri iáin boüluk ayçrma hatasç
+1.2:Äçktç dosyasç aáma hatasç
+1.3:Dosyaya yazma hatasç
+1.4:Dosya kapama hatasç

@@ -1,0 +1,101 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ================================================
+               LEISURE SUIT LARRY 5:  PASSIONATE PATTI
+                    DOES A LITTLE UNDERCOVER WORK
+                                                        
+
+                        THE COMPLETE SOUNDTRACK
+                     (See below for song titles.)
+                     Craig Safan and Chris Brayman
+                       "Larry Theme" by Al Lowe
+           ================================================
+                 Copyright (c)1991 Sierra On-Line, Inc.  
+           ================================================
+
+                         GENERAL MIDI VERSION
+                     (Roland Sound Canvas GM Mix)
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- General MIDI sound device  (Roland Sound Canvas recommended)
+
+
+This Standard MIDI File was recorded directly from Sierra's "Leisure Suit
+Larry 5" adventure game.  It has been converted from the Roland MT-32 version
+for playback on General MIDI sound cards.  A Roland Sound Canvas is highly
+recommended for optimal playback.
+
+Recorded/converted/edited/compiled/arranged for General MIDI by
+Tom Lewandowski.  Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+   =========================================================================
+                      TRACK SHEET  (GENERAL MIDI VERSION)
+
+                    LEISURE SUIT LARRY 5: PASSIONATE PATTI
+                        DOES A LITTLE UNDERCOVER WORK
+   =========================================================================
+
+   SONG TITLE                                         START MEASURE/TIME *
+   -------------------------------------------------------------------------
+    1. Introduction/Opening Scenes                           2  00:00:02
+    2. Mr. Bigg                                             42  00:01:38
+    3. Flight To New York (Larry's Dream)                  284  00:11:19
+    4. The Piano Pit (Andy)                                300  00:11:57
+    5. Inspector Desmond                                   353  00:14:04
+    6. Dr. Phil Hopian                                     409  00:16:19
+    7. Larry Wakes Up (New York)                           428  00:17:04
+    8. Hard Disk Cafe I                                    466  00:18:36
+    9. Hard Disk Cafe II                                   512  00:20:26
+   10. Hard Disk Cafe III                                  555  00:22:09
+   11. The Music Box                                       598  00:23:52
+   12. Michelle Milken                                     612  00:24:26
+   13. Flight To Atlanta (Larry's Dream 2 - Venice)        694  00:27:43
+   14. Patti's Personal Driver                             736  00:29:24
+   15. Shill Building                                      754  00:30:07
+   16. Playing The Gold Record                             808  00:32:16
+   17. A Studio Session                                    839  00:33:31
+   18. Tramp Casino                                        872  00:34:50
+   19. Tramp Casino Ballroom                               945  00:37:45
+   20. On The Boardwalk                                    976  00:39:00
+   21. Ivana Skates                                       1025  00:40:57
+   22. Lana Lucious                                       1056  00:42:12
+   23. Flight To Miami (Larry's Dream 3 - Patti Live!)    1096  00:43:48
+   24. K-RAP Radio I                                      1139  00:45:31
+   25. K-RAP Radio II                                     1188  00:47:28
+   26. K-RAP Radio III                                    1244  00:49:43
+   27. Doc Pulliam's Office                               1296  00:51:48
+   28. Chi chi                                            1342  00:53:38
+   29. Flight Back To Los Angeles                         1391  00:55:36
+   30. Airplane Disaster                                  1411  00:56:24
+   31. The Hero                                           1424  00:56:55
+   32. White House Reception                              1459  00:58:19
+   33. Larry & Patti's Reunion                            1529  01:01:07
+   34. Mr. Bigg Busted                                    1548  01:01:52
+   35. Closing Themes                                     1635  01:05:21
+   -------------------------------------------------------------------------
+                                                TOTAL TIME:  01:08:09
+
+
+      * Note:  Start Times are approximate.
+
+        The actual song titles as listed in the game were not used so that
+        the scenes could be more readily recognized by the listener.
+
+        This MIDI file may not play properly on some sound cards.  It has
+        been mixed specifically for use with Roland Sound Canvas General MIDI
+        devices and will produce optimal results on these cards and modules.
+        Satisfactory results are also obtained on Yamaha XG MIDI devices.
+
+        May 1999
+
+

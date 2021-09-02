@@ -1,0 +1,59 @@
+    SORT(1)                     FREEDOS                     SORT(1)
+
+
+     NAME
+          sort - ASCII sort files
+
+     SYNOPSIS
+          sort [ sort_options ] [file]
+
+     DESCRIPTION
+          Sort is used to sort the input file. Lines of input are
+          taken from the file named on the sort command or if no file
+          is given, input is taken from standard input.
+
+     OPTIONS
+          The following command line options are supported.  The
+          options are not case sensitive, so /r is equivalent to /R.
+
+          /r          Sort in reverse order.
+
+          /h          Display a brief help message.
+
+          The notation /+num causes the sort key to begin in column
+          num. The first column is 1.
+
+     EXAMPLES
+          Sort the contents of file1 using the entire line as the sort
+          key.
+
+               Example% sort file1
+
+          or
+
+               Example% sort <file1
+
+          Sort file1 in reverse order (Z-A) based on the key starting
+          in column 21.
+
+               Example% sort /R /+21 <file1
+
+          Sort c:\tmp\foobar.dat using the key in column 5 and put the
+          output on a file called data.out residing on the B: floppy
+          drive.
+
+               Example% sort /+5 c:\tmp\foobar.dat >b:data.out
+
+     BUGS
+          This version of sort only uses conventional ram and  does
+          not do an out-of-memory sort, so it is limited to what can
+          fit in available memory.  The maximum record length is 1000
+          characters and the maximum number of records that can be
+          sorted is 10,000.  This does not mean that you will be able
+          to sort 10,000 records of 1000 characters each, since you
+          would run out of memory before you read all of the data in.
+
+
+     COPYRIGHT
+          Copyright 1995 Jim Lynch
+          K4GVO@america.net

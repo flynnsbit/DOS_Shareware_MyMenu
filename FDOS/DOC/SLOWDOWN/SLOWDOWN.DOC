@@ -1,0 +1,4277 @@
+
+
+
+
+                                   SLOWDOWN 3.10
+
+                                 TABLE OF CONTENTS
+
+
+     WHAT IS SLOWDOWN? . . . . . . . . . . . . . . . . . . . . . . . . .    3
+
+     HOW TO USE SLOWDOWN . . . . . . . . . . . . . . . . . . . . . . . .    5
+
+     OPTIONS . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    6
+       to control how fast you want the computer to run  . . . . . . . .    7
+          MHz486:nn  . . . . . . . . . . . . . . . . . . . . . . . . . .    7
+          MHz286:nn  . . . . . . . . . . . . . . . . . . . . . . . . . .    8
+          MHz8088:nn . . . . . . . . . . . . . . . . . . . . . . . . . .    8
+          Percent:nn.nn  . . . . . . . . . . . . . . . . . . . . . . . .    9
+          XTSpeed [:speed] . . . . . . . . . . . . . . . . . . . . . . .   10
+          ATSpeed [:speed] . . . . . . . . . . . . . . . . . . . . . . .   11
+          RememberSpeed [:speed] . . . . . . . . . . . . . . . . . . . .   11
+          Speed:nn . . . . . . . . . . . . . . . . . . . . . . . . . . .   12
+          Slowdown-factor  . . . . . . . . . . . . . . . . . . . . . . .   12
+          TableOfCPUSpeeds . . . . . . . . . . . . . . . . . . . . . . .   14
+            CPU Speed Table  . . . . . . . . . . . . . . . . . . . . . .   14
+       to control how SLOWDOWN will Slow the computer Down . . . . . . .   18
+          UseInterrupt08 . . . . . . . . . . . . . . . . . . . . . . . .   19
+          UseInterrupt70 . . . . . . . . . . . . . . . . . . . . . . . .   19
+          UseCPUCache:Yes|No . . . . . . . . . . . . . . . . . . . . . .   21
+          UseTrace:Yes|No  . . . . . . . . . . . . . . . . . . . . . . .   25
+       to run a single PROGRAM "slowly"  . . . . . . . . . . . . . . . .   29
+          {Program} [ProgramOptions] . . . . . . . . . . . . . . . . . .   29
+       to configure and control the Hot-Keys . . . . . . . . . . . . . .   34
+          HotKeyShiftMask:shift-mask   . . . . . . . . . . . . . . . . .   34
+          EnableHotKeys  . . . . . . . . . . . . . . . . . . . . . . . .   36
+          DisableHotKeys . . . . . . . . . . . . . . . . . . . . . . . .   36
+          Beep:Yes|No  . . . . . . . . . . . . . . . . . . . . . . . . .   37
+          TableOfHotKeys . . . . . . . . . . . . . . . . . . . . . . . .   38
+       miscellaneous (housekeeping) Options  . . . . . . . . . . . . . .   39
+          Quiet  . . . . . . . . . . . . . . . . . . . . . . . . . . . .   39
+          Verbose  . . . . . . . . . . . . . . . . . . . . . . . . . . .   39
+          Uninstall  . . . . . . . . . . . . . . . . . . . . . . . . . .   40
+          Help . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   40
+
+     THE SLOWDOWN ENVIRONMENT VARIABLE . . . . . . . . . . . . . . . . .   41
+
+     ERRORLEVELS . . . . . . . . . . . . . . . . . . . . . . . . . . . .   43
+
+     HOT-KEYS  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   44
+       HOT-KEY TABLE . . . . . . . . . . . . . . . . . . . . . . . . . .   44
+
+     SLOWDOWN AND WINDOWS  . . . . . . . . . . . . . . . . . . . . . . .   46
+       SLOWING DOWN WINDOWS AND WINDOWS-NATIVE APPLICATIONS  . . . . . .   48
+       SLOWING DOWN DOS PROGRAMS UNDERNEATH WINDOWS  . . . . . . . . . .   53
+
+
+                       SLOWDOWN 3.10            Page 1 of 75
+
+
+
+     HOW SLOWDOWN WORKS  . . . . . . . . . . . . . . . . . . . . . . . .   56
+
+     EMM386.EXE AND THE CPU CACHE  . . . . . . . . . . . . . . . . . . .   59
+
+     THE DOS EXEC FUNCTION AND COMMAND.COM . . . . . . . . . . . . . . .   65
+
+     THE IBM INTERRUPT SHARING PROTOCOL  . . . . . . . . . . . . . . . .   67
+
+     A WORD FROM THE SPONSOR . . . . . . . . . . . . . . . . . . . . . .   70
+
+     OTHER PROGRAMS BY BRET JOHNSON  . . . . . . . . . . . . . . . . . .   71
+
+     WARRANTY  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   72
+
+     REVISION HISTORY  . . . . . . . . . . . . . . . . . . . . . . . . .   73
+
+     INDEX . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   74
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       SLOWDOWN 3.10            Page 2 of 75
+
+
+
+     WHAT IS SLOWDOWN?
+     อออออออออออออออออ
+
+     SLOWDOWN is a DOS program that temporarily Slows Down your computer, so
+     that it runs like one of the older, slower computers.  Of course,
+     nowadays people are willing to spend a lot of money to make sure their
+     computer is as fast as it can possibly be -- why would anyone in their
+     right mind ever want to slow a computer down?  Believe it or not, there
+     are a some really good reasons.
+
+     The first reason is that there are many very good, useful (old) programs
+     that were designed to run on the old, slow computers, and they do not
+     run correctly on a new, fast computer.  The old programs either don't
+     run at all (they "blow up" -- the computer totally locks up, or you get
+     a "Run-time Error" or "Divide by Zero" of some sort), or they run in
+     such a way that you can't use them.  When I first wrote SLOWDOWN (many
+     years ago), about the only kinds of programs that really seemed to have
+     problems were ones that required lots of "real-time" interaction with
+     the user (like arcade-type games).  In my opinion, any program that
+     requires such "real-time" interaction should be designed to run on any
+     computer, no matter how fast (or how slow) it is.  Unfortunately, very
+     few programs are actually designed that way.
+
+     Nowadays, especially with the really fast computers, there are lots of
+     different types of programs that have problems with fast computers (not
+     just games).  I've personally seen or heard of different typing tutors,
+     communications, network, database, and copy-protection programs that
+     have problems on new computers.  I'm sure there is at least one program
+     in just about any software category you could name that would either
+     blow up or be unusable on one of the latest computers.  You can't even
+     buy the old, slow computers anymore, but with SLOWDOWN you may still be
+     able to use the programs.
+
+     The second reason you may want to temporarily slow down your computer is
+     when you are trying troubleshoot something that is going wrong with
+     another program.  Sometimes, you know something is wrong, but things
+     happen so fast you can't tell exactly what or even where the problem is
+     (error messages or status messages flash by on the screen so fast you
+     can't read them).  With SLOWDOWN, you may actually be able to see what's
+     on the screen before it disappears again.
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       SLOWDOWN 3.10            Page 3 of 75
+
+
+
+     SLOWDOWN has several different "methods" or "modes" it can use to slow
+     the computer down.  Some of the methods work better with certain
+     computers or programs than other methods do.  Exactly what the different
+     methods are, and when you may and may not want to use them, are
+     described in the various sections below.  For now, suffice it to say
+     that every reasonable method I know of to Slow Down computers is built
+     into SLOWDOWN.  If SLOWDOWN is unable to Slow the computer Down
+     appropriately, it probably can't be done at all.
+
+
+     While SLOWDOWN is installed in memory, you are usually able to change
+     the Speed of the computer with the keyboard using Hot-Keys, even while
+     other programs are running.  The Hot-Keys are discussed in detail in the
+     "HOT-KEYS" section below (page 44).  This lets you control exactly when
+     and how fast your computer runs, and you can change the computer speed
+     in "real time."  There are also several different ways of telling
+     SLOWDOWN how fast you want your computer to run from the command-line
+     (the different ways are discussed in the "OPTIONS" section below,
+     starting on page 6).
+
+
+     There are dozens of other "slowdown" programs already out there, so what
+     makes SLOWDOWN different enough from the others that I even bothered to
+     write it?  The main thing is flexibility -- SLOWDOWN includes in one
+     program features that you may find sporadically in other "slowdown"
+     programs, but never all together in one place.  SLOWDOWN also contains
+     some features that I've NEVER seen in any other "slowdown" program. 
+     SLOWDOWN is also very small (it only uses about 3000 bytes of memory),
+     and, perhaps most importantly, is free.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       SLOWDOWN 3.10            Page 4 of 75
+
+
+
+     HOW TO USE SLOWDOWN
+     อออออออออออออออออออ
+
+     SLOWDOWN can be used in two basic ways.  The first way is to install
+     SLOWDOWN "permanently" as a Terminate-but-Stay-Resident (TSR) program on
+     your computer.  If you do this, the SLOWDOWN Hot-Keys will be available
+     for you to use almost any time you want (see the "HOT-KEYS" section
+     below on page 44).  You can instantly Slow Down or speed up your
+     computer using the keyboard, even while other programs are running. 
+     This gives you much more control of your computer than you have now.
+
+     To have SLOWDOWN be "permanent" like this, you should make sure it is
+     installed every time you turn your computer on.  You can do this by
+     putting a simple "SLOWDOWN" line in your AUTOEXEC.BAT file.  A
+     "SLOWDOWN" line (with no Options) will install SLOWDOWN into memory, but
+     SLOWDOWN will not do anything to change the speed of your computer yet. 
+     You can then "activate" and "deactivate" SLOWDOWN when you want, either
+     by using the HOT-KEYS, or by running SLOWDOWN again with command-line
+     Options.  SLOWDOWN will never install itself into memory more than once,
+     so if you do try to run it more than once, it will simply update (change
+     the settings of) the SLOWDOWN that is already in memory.
+
+     When installed as a TSR, SLOWDOWN only uses about 3K of memory.  This is
+     not a lot of memory, but then again computer memory is quite precious.  
+     You can use the DOS LH or LOADHI commands to load SLOWDOWN into High
+     Memory (this will preserve more memory for your "normal" applications). 
+     You can also Uninstall SLOWDOWN from memory completely with the
+     UNINSTALL Option (page 40).
+
+
+     Of course, many people would rather have the computer simply run as fast
+     as it can nearly all of the time.  You may only have a few programs that
+     require the use of SLOWDOWN, you don't want the SLOWDOWN Hot-Keys
+     cluttering things up and confusing you, and you don't want SLOWDOWN
+     wasting any of your computer's memory at times when it's not actually
+     doing something.  You can also have SLOWDOWN Slow a single Program Down,
+     and when that Program is finished, your computer will automatically
+     return back to normal speed.  How to do this is discussed more fully
+     under the PROGRAM Option below (page 29).
+
+
+     SLOWDOWN is a DOS program, and, as with nearly all DOS programs, the
+     easiest and best way to use it is in DOS batch files.  If you use any
+     DOS programs at all (including most versions of Microsoft Windows, which
+     are in fact nothing more than large, slow DOS programs themselves
+     anyway), you really need to learn to write and use batch files.  It will
+     save you literally hours of unnecessary work and frustration in the
+     years to come.  There are some example batch file excerpts given in the
+     sections below.  Once you figure out the settings you need to get
+     SLOWDOWN to work with a particular program, for heaven's sake, write
+     yourself a batch file to automate the process for you the next time.
+
+
+                       SLOWDOWN 3.10            Page 5 of 75
+
+
+
+     OPTIONS
+     อออออออ
+
+     SLOWDOWN is fairly liberal in what it will accept as command-line
+     Options.  Each Option must be entered separately, must start with a "/"
+     (except the PROGRAM Option), and can either be upper- or lower-case. 
+     The Options do not need to be separated by spaces (except the PROGRAM
+     Option), and can be entered in any order (except the PROGRAM Option,
+     which must be last).  If the same Option is entered twice with two
+     different settings, or conflicting Options are entered, the last one
+     entered takes precedence.  Options that require a number or character to
+     be entered as part of the Option (indicated by a ":" separator in the
+     Option details below) can either use a ":" or "=" as the separator.
+
+     Note also that there are usually several different ways to enter the
+     same Option.  For example, to have SLOWDOWN be QUIET (not give you any
+     status messages as it is loading), you could type any of the following
+     from the command line (or from a batch file):
+
+       SLOWDOWN /Q
+       SLOWDOWN /Quiet
+       SLOWDOWN /ShutUp
+
+     Most of the Options have a "shorthand" code ("/Q" in this case) and one
+     or more "longhand" codes ("/Quiet" and "/ShutUp" in this example).  The
+     shorthand codes take up less room and are faster and easier to type, but
+     the longhand codes are easier to remember and to read and to understand. 
+     You can use whichever makes the most sense to you.
+
+
+     For instance, the following are equivalent:
+
+       SLOWDOWN /Quiet/Speed=1000 PROGRAM ProgramOptions
+       SLOWDOWN /Q        /s:1000 PROGRAM ProgramOptions
+
+
+     The PROGRAM Option, if you have one, must be the last thing entered on
+     the command-line.  The PROGRAM Option allows you to run a single
+     executable PROGRAM (here called "PROGRAM ProgramOptions"), and after the
+     PROGRAM is done, SLOWDOWN will automatically return the computer back to
+     the way it was running before you started running PROGRAM.  The PROGRAM
+     Option is discussed more fully below (page 29).
+
+
+
+
+
+
+
+
+
+
+
+                       SLOWDOWN 3.10            Page 6 of 75
+
+
+
+     There are several Options to control how fast you want the computer to
+     run.
+
+     In general, the "speed control" Options have a wide range of input
+     values.  At one end of the range of values, you will be telling SLOWDOWN
+     to slow down the computer as much as it can.  If you select this value,
+     SLOWDOWN will run the computer as slow as it believes it can safely do. 
+     SLOWDOWN should not stop the computer completely, but the computer will
+     run VERY slowly and may even seem like it is completely stopped.
+
+     At the other end of the range of values, you will be telling SLOWDOWN to
+     run the computer faster than it can possibly go.  In this case, SLOWDOWN
+     will not Slow Down the computer at all.  Exactly what value you use to
+     tell SLOWDOWN how much to slow the computer down depends on which "speed
+     control" Option you decide to use.  This should become obvious as you
+     read the details for each Option.
+
+
+     Some of the "speed control" Options also refer to a thing called a
+     Slowdown-Unit (or an SU).  This is a Unit of Speed that SLOWDOWN uses
+     internally, both to measure how fast the computer is and to Slow the
+     computer Down.  Slowdown-Units are unique to SLOWDOWN, and a slightly
+     more detailed description of exactly what they are is given below in
+     "HOW SLOWDOWN WORKS" (page 56).  When you see the references to
+     Slowdown-Units or SU's, just remember that they are the "things"
+     SLOWDOWN uses internally to measure Speed.
+
+
+     * /M:nn
+     * /MHz:nn  /MHz486:nn  /MHz80486:nn
+
+          This Option tells SLOWDOWN to run your computer at approximately
+          the same speed as a computer with a nn-MHz 80486 (or Pentium-
+          something) CPU.  Then "nn" (the number of MHz) must be a number
+          between 0 and 5000.  A MHz value of 0 runs the computer as slow as
+          is safe, and a MHz value that is at least as large as your computer
+          is capable of will not Slow the computer Down at all.
+
+          In testing with SLOWDOWN, I have discovered that the only thing
+          that really affects Speed significantly (at least for DOS programs)
+          on new computers is how many MHz the CPU is running at.  It really
+          doesn't matter whether the CPU is an 80486 or the latest version of
+          Pentium-something (though the AMD chips are quite a bit faster than
+          the equivalent Intel chips).  If Intel made a 2-GHz 80486, it would
+          probably run pretty close to the same speed as a Pentium-4 running
+          at 2-GHz (of course, Intel stopped making 80486's a long time
+          before CPU speeds even got close to a GigaHertz).  For CPU's
+          previous to the 80486 (80386, 80286, 80186, 8086, or 8088), the
+          type of CPU as well as the CPU MHz both affect the speed.  There is
+          a comparison of some CPU Speeds you can see with the TABLE Option
+          described below (page 14).
+
+
+                       SLOWDOWN 3.10            Page 7 of 75
+
+
+
+     * /MHz286:nn
+     * /MHz80286:nn
+
+          This Option tells SLOWDOWN to run your computer at approximately
+          the same speed as a computer with a nn-MHz 80286 CPU.  Then "nn"
+          (the number of MHz) must be a number between 0 and 100.  This is
+          very similar to the MHz486 Option directly above (page 7), except
+          the reference CPU is an 80286 (the CPU used in the original IBM
+          PC/AT) instead of an 80486.
+
+
+     * /MHz8088:nn
+
+          This Option tells SLOWDOWN to run your computer at approximately
+          the same speed as a computer with a nn-MHz 8088 CPU.  Then "nn"
+          (the number of MHz) must be a number between 0 and 100.  This is
+          very similar to the both MHz486 and MHz286 Options above (pages 7
+          and 8, respectively), except the reference CPU is an 8088 (the CPU
+          used in the original IBM PC and PC/XT) instead of an 80486 or
+          80286.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       SLOWDOWN 3.10            Page 8 of 75
+
+
+
+     * /P:nn.nn
+     * /Percent:nn.nn  /Pct:nn.nn
+
+          This Option tells SLOWDOWN to run the computer at approximately
+          Nn.nn% (PERCENT) of normal speed.  The Nn.nn must be a number
+          between 0.00 and 100.00, and can include precision down the 1/100
+          of a percent (up to two numerals after the decimal point).  For
+          instance, the following are acceptable percentage values to use:
+
+            0  10  00010.0  0.13  .13  50.4  75.04  100  99.99  100.00
+
+          The following percentage values would cause errors:
+
+             -1      Can't be less than 0
+            100.01   Can't be more than 100
+              0.345  Can't have more than 2 numerals after the decimal point
+
+          A PERCENT of 0 slows the computer down as much as is safe, and a
+          PERCENT of 100 does not Slow the computer Down at all.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       SLOWDOWN 3.10            Page 9 of 75
+
+
+
+     * /X [:speed]
+     * /XTSpeed [:speed]  /XTSpd [:speed]  /XT [:speed]
+     * /XSpeed [:speed]   /XSpd [:speed]
+
+          This is sort of like two Options in one.  If you simply do the "/X"
+          (or "/XT" or "XTSpeed" or ...), you are telling SLOWDOWN to run the
+          computer at approximately the same speed as an IBM PC/XT (a
+          computer with a 4.77-MHz 8088 CPU).
+
+          If you enter the ":speed" part of the Option (for example,
+          "SLOWDOWN /X:100"), you are telling SLOWDOWN to change how fast it
+          thinks an XT is.  If there, the "speed" part of the Option must be
+          a number between 0 and 65535, and is the number of Slowdown-Units
+          (SU's) you want SLOWDOWN to assume an XT is.  See the section
+          below, "HOW SLOWDOWN WORKS" (page 56), for a more detailed
+          explanation of Slowdown-Units.
+
+          I have actually measured a computer with a 4.77-MHz 8088 CPU, and
+          have found the Speed to be approximately 12 SU's (this is also
+          detailed in the TABLE Option below on page 14).  For whatever
+          reason, you may not agree with this.  Perhaps, for some reason, on
+          your computer, you think a Speed of 20 SU's is more like what an XT
+          is really like.  To change the SLOWDOWN XT-Speed to 20 Slowdown-
+          Units, you would do a:
+
+            SLOWDOWN /XT:20
+
+          As long as SLOWDOWN is not UNINSTALLed from memory (see page 40),
+          SLOWDOWN will continue to remember the XT-Speed that you told it. 
+          Then, when you tell SLOWDOWN to run the computer at the same Speed
+          as an XT (either with the plain XT command-line Option or by using
+          the Hot-Keys described below on page 44), SLOWDOWN will use the XT-
+          Speed you told it to use, instead of using the default value of 12
+          SU's.  See "THE SLOWDOWN ENVIRONMENT VARIABLE" below (page 41) for
+          details on how you can make the XT-Speed change truly "permanent",
+          even if you UNINSTALL SLOWDOWN from memory.
+
+
+          It's important to note that there are really two different Options
+          described here.  One Option (the one with the ":speed" part) simply
+          tells SLOWDOWN what the XT-Speed should be, but does not actually
+          change the speed of the computer.  The other Option (the one
+          without the ":speed" part) is the one that will actually change the
+          speed of the computer.  If you want to have SLOWDOWN both change
+          the XT-Speed and to start running the computer at that XT-Speed at
+          the same time, you will need to enter both Options.  For example:
+
+            SLOWDOWN /XTSpeed=20 /XTSpeed
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 10 of 75
+
+
+
+     * /A [:speed]
+     * /ATSpeed [:speed]  /ATSpd [:speed]  /AT [:speed]
+     * /ASpeed [:speed]   /ASpd [:speed]
+
+          This Option is very similar to the XT Option described directly
+          above (page 10).  However, the XT Option above is based on the IBM
+          PC/XT (4.77-MHz 8088 CPU), while this AT Option is based on the IBM
+          PC/AT (8-MHz 80286 CPU).  Read the XT Option above if you want full
+          details on exactly how this Option works.
+
+          This AT Option tells SLOWDOWN to run the computer at approximately
+          the same Speed as an IBM PC/AT (with an 8-MHz 80286 CPU).  If you
+          enter the ":speed" part of the Option, you are telling SLOWDOWN to
+          use the Speed you give it (in SU's) as the AT-Speed, instead of
+          using the default (measured) AT-Speed of 54 SU's.  "Speed" can be a
+          number between 0 and 65535.  Again, read the details of the XT
+          Option (directly above, page 10), and replace "XT" with "AT" when
+          appropriate.
+
+
+     * /R [:speed]
+     * /RememberSpeed [:speed]  /RememberSpd [:speed]  /Remember [:speed]
+     * /RemSpeed [:speed]       /RemSpd [:speed]       /Rem [:speed]
+
+          This Option is very similar to both the XT Option (above, page 10)
+          and the AT Option (also above, page 11).  Read the XT Option above
+          if you want full details on exactly how this Option works.
+
+          While the XT and AT Options are based on specific models of
+          computer (the IBM PC/XT and the IBM PC/AT, respectively), this
+          REMEMBER Option can be based on anything you want it to be.  It is
+          simply a particular Speed you want SLOWDOWN to REMEMBER for some
+          reason, and want to easily be able to have SLOWDOWN start running
+          the computer at that Speed.  You can use SLOWDOWN's HOT-KEYS (see
+          page 44 below) to "switch" the computer to the REMEMBER-Speed (and
+          also to set a new REMEMBER-Speed), which is probably the best way
+          to use the REMEMBER Option.  See the HOT-KEYS section below (page
+          44) for details on this.
+
+          By default, the REMEMBER-Speed is set at 65535 Slowdown-Units,
+          which means that it will not slow the computer down at all.  If you
+          enter the ":speed" part of the Option, you are telling SLOWDOWN to
+          use the Speed you give it (in SU's) as the REMEMBER-Speed, instead
+          of using the default REMEMBER-Speed of 65535 SU's.  "Speed" must be
+          a number between 0 and 65535.  Again, read the details of the XT
+          Option (above, page 10), and replace "XT" with "REMEMBER-Speed"
+          when appropriate.
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 11 of 75
+
+
+
+     * /S:nn
+     * /Speed:nn  /Spd:nn
+
+     * /Slowdown-factor
+
+          There are actually two Options described here, the SPEED Option
+          (/S:nn, /Spd:nn, or /Speed:nn) and the SLOWDOWN-FACTOR Option
+          (/Slowdown-factor).  Although they are in a sense "opposites" of
+          each other, they are also very similar to each other.  Therefore,
+          I'm going to describe them together.
+
+          With the SPEED Option, you are telling SLOWDOWN how fast you want
+          the computer to be (in Slowdown-Units or SU's) after it gets done
+          Slowing the computer Down (and SLOWDOWN will calculate how much to
+          Slow the computer Down to make that happen).  With the SLOWDOWN-
+          FACTOR Option, you are telling SLOWDOWN how many SU's to Slow the
+          computer Down by (and SLOWDOWN will leave however many SU's the
+          computer has left for the other "real" programs to use).
+
+          The "nn" in the SPEED Option, and the "Slowdown-factor" in the
+          SLOWDOWN-FACTOR Option, must be a number between 0 and 65535, and
+          is the number of Slowdown-Units (SU's) to "leave" (in the SPEED
+          Option) or to "waste" (in the SLOWDOWN-FACTOR Option).  In the
+          SPEED Option, the larger the number of SU's, the faster the
+          computer will run.  In the SLOWDOWN-FACTOR Option, the larger the
+          number of SU's, the slower the computer will run.  A SPEED of 0
+          SU's will slow the computer down as much as is safe, and a SPEED at
+          least as large as the computer is capable of running will not Slow
+          it Down at all.  A SLOWDOWN-FACTOR of 0 SU's will not Slow the
+          computer Down at all, and a SLOWDOWN-FACTOR at least as large as
+          your computer is capable of will Slow the computer Down as much as
+          is safe.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 12 of 75
+
+
+
+          A SlowDown-Unit (SU) is something unique to SLOWDOWN, and is the
+          method of measurement it uses internally both to calculate the
+          Speed of the computer and to Slow the computer Down.  If you're
+          interested, a more detailed description of SU's is given below in
+          "HOW SLOWDOWN WORKS" (page 56).  There is also a CPU Speed Table
+          below under the TABLE Option (page 14) that shows the measured
+          Speed of several different computers (in SU's).  You can compare
+          your computer to this TABLE to see how fast your computer really
+          is.
+
+
+          Whether it is better to use the SPEED Option or the SLOWDOWN-FACTOR
+          Option depends on exactly what you're trying to accomplish.  If
+          you're trying to make your computer "perform like" some other
+          particular computer that you just happen to know the SPEED of, the
+          SPEED Option is probably easier to use.  If you're just trying to
+          "Slow the computer Down some", the SLOWDOWN-FACTOR Option is
+          probably the appropriate choice.
+
+
+          If you want your computer to run the same speed as some other
+          particular type of computer (like a PC/XT or a PC/AT), it is
+          generally easier to use one of the other "speed control" Options
+          (MHz486 - page 7, MHz286 - page 8, MHz8088 - page 8, PERCENT - page
+          9, XT - page 10, or AT - page 11), instead of the SPEED or
+          SLOWDOWN-FACTOR Options.  The SPEED and SLOWDOWN-FACTOR Options are
+          really designed for "fine-tuning" SLOWDOWN for some special purpose
+          (although it's entirely up to you exactly how you use SLOWDOWN).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 13 of 75
+
+
+
+     * /T
+     * /Table /TableOfCPUSpeeds /TableOfCPUSpds /TableOfSpeeds /TableOfSpds
+     * /Tbl   /TblOfCPUSpeeds   /TblOfCPUSpds   /TblOfSpeeds   /TblOfSpds
+     * /CPUSpeedTable /CPUSpeedTbl /CPUSpdTable /CPUSpdTbl
+     * /SpeedTable /SpeedTbl /SpdTable /SpdTbl
+
+          This Option shows you an on-line TABLE of CPU Speeds for different
+          computers which have been measured with SLOWDOWN.  The intent of
+          the TABLE is to help you figure out what kind of SPEED or SLOWDOWN-
+          FACTOR Option you might want to use, since Slowdown-Units (which is
+          what SLOWDOWN uses to measure Speed) are not something you're
+          accustomed to remembering.  The on-line TABLE looks like this:
+
+
+        ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+        บ                         CPU Speed Table                        บ
+        ฬอออออออออออออออออออออออออหอออออออออัอออออออออออออัออออออัอออออออน
+        บ     Computer Model      บ CPU Mfg ณ  CPU Model  ณ  MHz ณ Speed บ
+        วฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤืฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤลฤฤฤฤฤฤฤถ
+        บ Generic                 บ Intel   ณ 8088        ณ 4.77 ณ    12 บ
+        บ Generic                 บ NEC     ณ V20         ณ 4.77 ณ    14 บ
+        บ Generic                 บ Intel   ณ 80286       ณ    8 ณ    54 บ
+        บ Generic                 บ AMD     ณ AM386DX     ณ   20 ณ   123 บ
+        บ Generic                 บ AMD     ณ AM386DX     ณ   33 ณ   334 บ
+        บ Compaq Prelinea 4/50    บ Intel   ณ 80486 DX/2  ณ   50 ณ   639 บ
+        บ IBM ThinkPad 701C       บ Intel   ณ 80486 DX/4  ณ   75 ณ   889 บ
+        บ Generic                 บ AMD     ณ AM486DX4    ณ  100 ณ  1300 บ
+        บ Generic                 บ Intel   ณ Pentium     ณ  133 ณ  1926 บ
+        บ Compaq DeskPro          บ Intel   ณ Celeron-2   ณ  566eณ  3394 บ
+        บ Generic                 บ Intel   ณ Pentium-3   ณ  622eณ  3514 บ
+        บ Dell Optiplex GX1 350M+ บ Intel   ณ Pentium-2   ณ  350 ณ  3640 บ
+        บ Dell Precision 620MT    บ Intel   ณ Pent-3 Xeon ณ  800 ณ  4307 บ
+        บ Unknown                 บ Intel   ณ Pentium-3   ณ  650 ณ  4611 บ
+        บ Generic                 บ AMD     ณ K6-2        ณ  350 ณ  4780 บ
+        ศอออออออออออออออออออออออออสอออออออออฯอออออออออออออฯออออออฯอออออออผ
+                 NOTE: Speed is measured in Slowdown-Units (SU's)
+
+
+          If you want your computer to "look like" some other particular type
+          of computer, and one of standard SLOWDOWN "speed-control" Options
+          doesn't seem to work for you, you can use this TABLE.  Usually, one
+          of the standard Options (/XT, /AT, /MHZ486, /MHz286, or /MHz8088)
+          will do a pretty good job for you, but there may be times when they
+          just aren't quite what you're looking for.  You can pick an
+          appropriate Speed from the TABLE, and then possibly do a little bit
+          of multiplication or division to get an exact fit for what you're
+          trying to accomplish.
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 14 of 75
+
+
+
+          The Speed measurements in the TABLE were taken by booting the
+          measured computer with a "clean" DOS floppy disk (nothing in
+          CONFIG.SYS and nothing in AUTOEXEC.BAT), and then running SLOWDOWN. 
+          If you use SLOWDOWN yourself to measure the Speed of a computer
+          that is similar to one in the TABLE, you may find your actual
+          measured Speed to be slightly different than the TABLE entry (but
+          it should be pretty close).  In particular, every Driver or TSR you
+          install (either with CONFIG.SYS or AUTOEXEC.BAT) before running
+          SLOWDOWN will cause the computer to Slow Down at least a little
+          bit.  Trust me, the values in the TABLE are pretty accurate and you
+          should not worry about trying to modify them (as I know some of you
+          perfectionists will be tempted to do).
+
+
+          If you have a really fast computer, and if you pay attention as you
+          are using SLOWDOWN, you will notice that the Speed of your computer
+          (as measured by SLOWDOWN) can vary from one time to the next.  For
+          example, you can run SLOWDOWN once at get a measured computer Speed
+          of 3000 SU's, and then run it again and get a measured Speed of
+          3002 SU's.  This is due to the unpredictable nature of how long it
+          takes other background Applications (like other TSR's you have
+          installed in memory) to do what they need to do.  When running
+          "real" DOS (not running a DOS Box underneath Windows), the numbers
+          usually only vary by 1 or 2.  Underneath Windows, though, the
+          numbers can vary significantly.  They usually don't vary by more
+          than about 5, but I have seen them vary by as much as several
+          hundred.  This is because of the unpredictable nature of Windows
+          running other programs (including just itself) in the background.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 15 of 75
+
+
+
+          Also, if you have a really fast computer, you may notice that some
+          programs do not run smoothly, especially if you are trying to slow
+          the computer down a lot.  In other words, some programs are "jerky"
+          (some parts of the programs run too fast, some parts run OK, and
+          some parts run too slow).  Not all programs are jerky (at least not
+          so jerky that you can't use them), but some are.  Again, this is
+          due to the unpredictable nature of how long it takes to do any
+          particular thing on the computer (newer computers don't do
+          EVERYTHING faster than the old computers -- they only do SOME
+          things faster).  The larger the discrepancy between the actual
+          Speed of the Computer and the desired Speed, the more likely it is
+          to be jerky.
+
+          SLOWDOWN has several different "methods" it can use to slow down
+          the computer.  These are discussed below (see the /UseInt08,
+          /UseInt70, /UseCPUCache, and /UseTrace Options below on pages 19 -
+          25).  Some of these methods are "smoother" (less "jerky") than
+          others.  But, in general, the "smoother" the method works, the less
+          compatible it is with certain other programs.  For example, the
+          /UseInt08 method is the "jerkiest" method to use, but it ALWAYS
+          works, and will slow down EVERY program you try to use it with. 
+          The other methods (UseInt70, UseCPUCache, and UseTrace) are almost
+          always "smoother" than /UseInt08, but sometimes they work and
+          sometimes they don't.  This is all discussed in detail underneath
+          the details for each specific Option (see pages 19 - 25 below).
+
+
+          Some computers also have a way where you can change the speed (the
+          actual MHz) of the CPU.  With some computers, you will need to get
+          into the BIOS Setup when you first turn the computer on (which
+          means you will need to reboot).  Other computers have a physical
+          switch on the computer case (usually labeled "Turbo").  Your
+          computer may also have some sort of BIOS Hot-Key that lets you do
+          it from the keyboard (the most common Hot-Keys I've seen are
+          <Ctrl>-<Alt>-<Grey-> to have the CPU run slow, and
+          <Ctrl>-<Alt>-<Grey+> to have the CPU run fast).  Sometimes slowing
+          down the actual CPU Speed before you run SLOWDOWN can help things
+          run smoother, and sometimes can even let you avoid using SLOWDOWN
+          altogether.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 16 of 75
+
+
+
+          If anyone wants to, they can also send me information on more
+          computers that I can add to the TABLE.  I do have a few
+          stipulations on what you should send me, however.  First of all,
+          the computer MUST be booted with "clean" DOS (nothing in CONFIG.SYS
+          and nothing in AUTOEXEC.BAT).  Also, you should verify what your
+          CPU Type and Speed really are with an external program (I
+          personally use a free program called NSSI).  I also really only
+          want information on CPU's that are significantly different than
+          those already in the Table, or that for some reason show my
+          conclusion that "the CPU MHz number is the only thing that really
+          affects things very much" is incorrect.  I would definitely like
+          some tests performed on 8086, 80186, 80286, 80386, Pentium,
+          Pentium 4, Celeron, and non-Intel CPU's (like AMD, Cyrix, and NEC).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 17 of 75
+
+
+
+     There are several Options to control how SLOWDOWN will Slow the computer
+     Down.
+
+     Before we discuss these particular Options, I think it is necessary to
+     describe a little bit about how SLOWDOWN fundamentally works.  This will
+     hopefully be relatively short and sweet -- a slightly more detailed
+     description is given in the "HOW SLOWDOWN WORKS" section below (page
+     56).
+
+     There are certain hardware devices (Clocks) that are constantly keeping
+     time in the background on your computer.  The Clocks, at very precise
+     and periodic intervals, "interrupt" the computer to tell it that the
+     Clock has been updated.  If a program needs to do something at regular
+     (periodic) intervals, the program can monitor exactly when these Clock
+     Interrupts occur and do whatever they need to do at the appropriate
+     times.
+
+     SLOWDOWN monitors these Clock Interrupts, and whenever appropriate,
+     SLOWDOWN wastes some time.  To "Slow Down" the computer, SLOWDOWN
+     basically has the CPU do a bunch of stuff that doesn't provide any
+     useful output (sort of like what Windows does continuously).  While the
+     CPU is busy doing the stuff SLOWDOWN wants it to do, the CPU can't do
+     what any other "real" program wants it to do.  The other program won't
+     get access to the CPU as much as it normally would, and, as a result,
+     the other program effectively runs more slowly.
+
+     All modern computers have two Clock Interrupts that can be monitored
+     (VERY old computers only have one Clock).  The first Clock is called
+     Interrupt 8, and every computer has it (even really old computers).  In
+     fact, the Interrupt 8 Clock is so important to the operation of the
+     computer that it cannot be changed and it cannot be stopped.  The only
+     drawback with Interrupt 8 (at least as far as using SLOWDOWN is
+     concerned) is that it only occurs about 18 times a second, and the
+     frequency cannot be changed without REALLY screwing up the computer. 
+     While 18 times a second seems pretty fast in human terms, it is pretty
+     slow in computer terms.  When SLOWDOWN is using Interrupt 8 to Slow
+     things Down, the computer can seem "jerky".
+
+     The other Clock Interrupt (on modern computers) that can be monitored is
+     called Interrupt 70.  The nice thing about Interrupt 70 is that it
+     occurs much more often than Interrupt 8 (Interrupt 70 normally occurs
+     1024 times a second).  In general, programs will appear to run
+     "smoother" when SLOWDOWN is using Interrupt 70 than they do when
+     SLOWDOWN is using Interrupt 8.  The drawback with Interrupt 70 is that
+     it is not designed to be "shared" among different programs.  If one
+     program is using Interrupt 70, it is just about impossible for another
+     program to use it reliably at the same time.  If the program you're
+     trying to Slow Down uses Interrupt 70 itself to do something (a lot of
+     programs do), then it can (and almost always will) keep SLOWDOWN from
+     working properly if SLOWDOWN is trying to use Interrupt 70 at the same
+     time.
+
+
+                      SLOWDOWN 3.10            Page 18 of 75
+
+
+
+     * /UseInterrupt08
+     * /UseInterrupt08h  /UseInt08h  /UseInt08
+     * /UseInterrupt8h  /UseInt8h  /UseInterrupt8  /UseInt8
+     * /Interrupt08h  /Int08h  /Interrupt08  /Int08
+     * /Interrupt8h  /Int8h  /Interrupt8  /Int8
+
+     * /UseInterrupt70
+     * /UseInterrupt70h  /UseInt70h  /UseInt70
+     * /Interrupt70h  /Int70h  /Interrupt70  /Int70
+
+          There are two Options discussed here (/UseInterrupt08 and
+          /UseInterrupt70).  They are in fact "opposites" of each other, in
+          that you can only use one at a time.  We are going to discuss them
+          both at the same time.
+
+          As discussed on the previous page, there are two different hardware
+          Clocks that SLOWDOWN can "tie" itself to:  Interrupt 8 and
+          Interrupt 70.  Interrupt 8 occurs approximately 18 times a second,
+          and your computer can be "jerky" when SLOWDOWN uses Interrupt 8. 
+          But, Interrupt 8 ALWAYS works (there's no way another program can
+          stop it).  Interrupt 70 occurs 1024 times a second, and your
+          computer will usually be "smoother" when SLOWDOWN uses Interrupt 70
+          than when it uses Interrupt 8.  But, Interrupt 70 doesn't always
+          work.  Another program can keep SLOWDOWN from Slowing the computer
+          Down, or SLOWDOWN can keep the other program from working properly
+          (or even cause it to crash).  There's no way of telling for sure
+          whether any particular program will work with SLOWDOWN in Interrupt
+          70 mode or not, so you will just have to experiment and see.
+
+          You should be able to toggle back and forth between using Interrupt
+          8 and Interrupt 70 whenever you want, and should not notice much
+          (if any) difference in how fast the computer appears to be running. 
+          Internally to SLOWDOWN, things work VERY differently when it is
+          using Interrupt 8 than when it is using Interrupt 70.  But,
+          SLOWDOWN is designed so that the "Slow Down effect" should be
+          approximately the same no matter which Interrupt method it is
+          using.  You may notice a very small amount of difference in Speed
+          between the two Interrupt methods, but if there is a large
+          difference, it probably means that the program you're trying to
+          Slow Down is not compatible with Interrupt 70.  It's not really
+          possible for a program to be "incompatible" with Interrupt 8.
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 19 of 75
+
+
+
+          The way I would use SLOWDOWN if I were you (the way I use it,
+          anyway) is this.  By default, SLOWDOWN uses Interrupt 8 (the most
+          "compatible" Interrupt method).  For many, if not most, programs,
+          Interrupt 8 will work just fine and you should not have any
+          problems.  For the (hopefully very few) programs where Interrupt 8
+          is too "jerky", try using Interrupt 70 instead.  If you find that
+          Interrupt 70 works for that particular program, PLEASE write
+          yourself a batch file to automate the whole SLOWDOWN thing for you
+          the next time you run the program.  With the PROGRAM Option (page
+          29, below) you can easily run a single program in Interrupt 70
+          mode, and automatically return things back to the default Interrupt
+          8 mode when the program is done.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 20 of 75
+
+
+
+     * /C:Yes|No
+     * /UseCPUCache:Yes|No  /UseCache:Yes|No
+     * /CPUCache:Yes|No  /Cache:Yes|No
+
+       Synonyms for Yes: Y True  Enable  Enabled  On
+       Synonyms for No:  N False Disable Disabled Off
+
+          Before we talk about how this Option works, we need to discuss a
+          little bit about exactly what the CPU Cache is.  All modern
+          computers have a CPU Cache (all computers with at least an 80486
+          CPU, which includes all Pentium-class computers).  The CPU Cache is
+          a chunk of memory that is "special" in two ways: it is extremely
+          fast (faster than "regular" memory), and it is "close" to the CPU
+          ("closer" than regular memory).  As you will discover as you read
+          on and play with SLOWDOWN, the Cache is the main thing that makes
+          modern computers so much faster than older computers.  The Cache
+          is, in fact, FAR more important than the MHz of the CPU in
+          determining how fast your computer actually runs.
+
+          Whenever a program requests that the CPU do something, the CPU will
+          store the instructions in the Cache.  Programs, by nature, tend to
+          do the exact same things over and over and over again.  So, if a
+          program asks the CPU to do the same thing it did just a little
+          while ago (which is pretty likely), it's possible that the
+          instructions for what to do will still be in the Cache.  If so, the
+          CPU will retrieve the instructions from the Cache instead of
+          retrieving them from regular memory (which is much slower than the
+          Cache), or from the hard drive (which is even slower than memory). 
+          As CPU's have progressed, the Caches have gotten larger and faster,
+          and do a better job of "guessing" what instructions the CPU may
+          need in the near future.  This is the main reason that modern CPU's
+          are so much faster than the older CPU's.  In fact, from what I can
+          tell with my experimentation, the efficiency and effectiveness of
+          the Cache seems to have FAR more effect on the "speed" of the
+          computer than the MHz of the CPU.  In fact, if you simply Disable
+          the CPU Cache on your computer, and don't do anything else, you
+          probably won't believe how Slow your computer really is.
+
+
+          It turns out that all CPU's with a Cache have also provided a
+          standard, relatively easy way to Disable (turn off) the Cache. 
+          When the Cache is Disabled, the computer will run MUCH slower than
+          it normally does (usually, it will run somewhere between 5% and 20%
+          of the "normal" speed).  Exactly how much the computer slows down
+          when you Disable the Cache varies significantly from computer to
+          computer, and is just about impossible to accurately predict -- it
+          must actually be measured.  For the purposes of the rest of this
+          discussion, let's just say that Disabling the Cache Slows the
+          computer Down A LOT.
+
+
+
+
+                      SLOWDOWN 3.10            Page 21 of 75
+
+
+
+          Another thing to note about Disabling the Cache is that although
+          your computer runs much slower than normal, it will never be
+          "jerky".  Disabling the Cache is about the closest thing you can do
+          to simulate literally decreasing the MHz of the CPU to slow the
+          computer down (which is something most computers won't let you do
+          after the computer is already running).
+
+          Because the effect of the Cache is so significant, and because it
+          is a binary (on-or-off) kind of thing (it's not "adjustable"), it
+          is very difficult for you to determine exactly when you may or may
+          not want the Cache to be Disabled.  So, SLOWDOWN will automatically
+          Control (Enable or Disable) the Cache when it is appropriate (and
+          if you give it "permission" to do it).  If you give SLOWDOWN
+          permission to Control the Cache, and you tell SLOWDOWN you want to
+          make the computer run slow enough to get over the "CPU Cache Speed
+          Hump", then SLOWDOWN will automatically Disable the Cache. 
+          SLOWDOWN will then add in enough Slowdown Units (using Interrupt 8
+          or Interrupt 70) to try and simulate the precise speed you
+          requested.  Of course, when it's time to speed the computer back up
+          again, SLOWDOWN will automatically re-Enable the Cache.
+
+
+          This UseCPUCache Option is how you give (or deny) SLOWDOWN
+          permission to Control (Disable and Enable) the CPU Cache
+          automatically.  It is EXTREMELY important for you to keep in mind
+          that this Option does NOT directly Enable or Disable the CPU
+          Cache -- it simply gives permission (or denies permission) for
+          SLOWDOWN to automatically Control the Cache at the appropriate
+          times.
+
+          By default, the UseCPUCache Option is Enabled (SLOWDOWN will
+          automatically Disable and Enable the CPU Cache when appropriate). 
+          If you don't want SLOWDOWN to be able to Control the Cache, set the
+          Option to False (or Off or Disabled), by doing something similar to
+          the following:
+
+            SLOWDOWN /UseCPUCache: No
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 22 of 75
+
+
+
+          Controlling, or even monitoring, the status of the CPU Cache is
+          something that is normally only done at an "Operating System" level
+          (it should NEVER be done by a "standard" Application).  In general,
+          programs do not care whether the Cache is Enabled or not, so
+          Disabling the Cache should not cause any compatibility problems. 
+          Therefore, there is normally not a good reason to deny SLOWDOWN
+          permission to Control the Cache, so you will probably just want to
+          leave the permission Enabled (the default).  If you ever run into a
+          program that is not compatible with a Disabled Cache (other than
+          Microsoft Windows or HIMEM.SYS/EMM386.EXE), I would appreciate
+          hearing about it.  If you do find such a program, for heaven's
+          sake, write yourself a batch file to automate the whole process for
+          you the next time you run the program.
+
+
+          There are only two programs I have run across so far that have
+          compatibility issues with the CPU Cache, and they are both made by
+          Microsoft.  The first program is the combination of HIMEM.SYS and
+          EMM386.EXE.  Technically, HIMEM.SYS and EMM386.EXE are two
+          distinctly separate programs, but for purposes of this discussion I
+          will treat them as one, because they are dependent on each other. 
+          Some versions of HIMEM.SYS/EMM386.EXE do not like to have the CPU
+          Cache Disabled.  In particular, the version of HIMEM/EMM386 that
+          came with DOS 6.22 crashes the computer whenever SLOWDOWN (or any
+          other program) tries to Disable the CPU Cache.  There may also be
+          other versions of HIMEM.SYS/EMM386 besides the one that came with
+          DOS 6.22, or even other Memory Managers besides
+          HIMEM.SYS/EMM386.EXE, that have the problem.  I don't know.  But I
+          do know that the HIMEM.SYS/EMM386.EXE that came with DOS 6.22
+          definitely has the problem.
+
+          If your computer has the problem, SLOWDOWN will instantly lock up
+          the computer as soon as you try and run it.  The fix for this is
+          relatively simple -- replace HIMEM.SYS & EMM386.EXE with newer
+          versions.  You can download the versions of HIMEM.SYS/EMM386.EXE
+          that came with Windows 98 Second Edition from my web site
+          (http://members.aol.com/bretjohn).  There is a much more detailed
+          (and much more technical) discussion of exactly what this problem
+          is down below, in the section called "EMM386.EXE AND THE CPU CACHE"
+          (page 59).  If your computer locks up as soon as you run SLOWDOWN,
+          please read that section down below to see what you can do to fix
+          it.
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 23 of 75
+
+
+
+          The other program I've run across that has a compatibility issue
+          with a Disabled Cache is Microsoft Windows.  If you Disable the
+          Cache before starting Windows, Windows crashes.  IMHO (In My Humble
+          Opinion), Windows SHOULD just run slowly, like any other DOS
+          program would do.  Instead, it crashes.  In addition, Windows will
+          not let a DOS Program (like SLOWDOWN), running in a DOS Box
+          underneath Windows, control the Cache.  Windows doesn't crash or
+          anything, but it won't let the status of the Cache be changed from
+          a DOS Box.  Therefore, underneath Windows, SLOWDOWN must do all of
+          its Slowing-Down using other methods (Interrupt 8 or Interrupt 70),
+          which, as a rule, aren't as smooth or as effective as Disabling the
+          Cache.  This is one reason (though not the only reason) that
+          programs running in a DOS Box underneath Windows will almost never
+          run as well as they do under "real" DOS.
+
+
+          I am also including with this distribution of SLOWDOWN a separate
+          program called CPUCACHE.  It is a relatively simple program, that
+          does just one thing -- Controls the CPU Cache.  It will Enable,
+          Disable, Toggle, or simply show you the current status of the CPU
+          Cache.  It includes its own documentation, so I won't go into
+          details here.  The main reason for including it is to allow you to
+          "mess around" with the CPU Cache if you want, to investigate
+          exactly how it affects your computer.  SLOWDOWN functionally does
+          the same thing that CPUCACHE does, but does it automatically at the
+          appropriate times based on what you're trying to accomplish. 
+          CPUCACHE gives you manual control of the Cache.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 24 of 75
+
+
+
+     * /UseTrace:Yes|No
+     * /UseTraceMode:Yes|No  /Trace:Yes|No  /TraceMode:Yes|No
+     * /UseSingleStep:Yes|No  /UseSnglStep:Yes|No
+     * /UseStep:Yes|No  /UseSST:Yes|No
+     * /SingleStep:Yes|No  /SnglStep:Yes|No  /Step:Yes|No  /SST:Yes|No
+     * /UseDebugMode:Yes|No  /UseDebug:Yes|No
+     * /UseDbgMode:Yes|No  /UseDbg:Yes|No
+     * /DebugMode:Yes|No  /Debug:Yes|No  /DbgMode:Yes|No  /Dbg:Yes|No
+     * /UseInterrupt01h:Yes|No  /UseInterrupt01:Yes|No
+     * /UseInt01h:Yes|No  /UseInt01:Yes:No
+     * /UseInterrupt1h:Yes|No  /UseInterrupt1:Yes|No
+     * /UseInt1h:Yes|No  /UseInt1:Yes:No
+     * /Interrupt01h:Yes|No  /Interrupt01:Yes|No
+     * /Int01h:Yes|No  /Int01:Yes:No
+     * /Interrupt1h:Yes|No  /Interrupt1:Yes|No
+     * /Int1h:Yes|No  /Int1:Yes:No
+
+       Synonyms for Yes: Y True  Enable  Enabled  On
+       Synonyms for No:  N False Disable Disabled Off
+
+
+          Before we talk about how this Option works, we need to discuss a
+          little bit about exactly what Trace Mode is.  All CPU's have a
+          special Mode they can operate in, called "Trace Mode" or "Debug
+          Mode" or "Single-Step Mode".  The main purpose for this special
+          Mode is so that you can run a particular program "underneath"
+          another special program called a Debugger.  The Debugger lets you
+          Single-Step through the other program as it is running, temporarily
+          stopping in between each CPU instruction.  This lets you see
+          exactly what the program is doing, step by step, in minuscule
+          detail.  That way, you can figure out exactly where problems (bugs)
+          are happening so that you can fix (debug) them.  Programmers use
+          Debuggers all the time.
+
+          While the main reason for Trace Mode is to Debug programs, it turns
+          out that you can use Trace Mode to do other things also.  SLOWDOWN
+          is able to use Trace Mode to make the computer run MUCH more slowly
+          than it regularly does.  When the CPU is in Trace Mode, the CPU
+          runs a special "program" in between each "regular" CPU instruction. 
+          The Special "program" associated with Trace Mode is called
+          Interrupt 1.
+
+          If you allow it to, SLOWDOWN will (at the appropriate times) put
+          the CPU into Trace Mode, and run a special "SLOWDOWN program" for
+          Interrupt 1.  Because the special "program" is performed between
+          each CPU instruction, in effect, each "regular" CPU instruction is
+          turned into several CPU instructions.  The extra Trace Mode CPU
+          instructions really don't do anything useful (they just slow things
+          down).
+
+
+
+
+                      SLOWDOWN 3.10            Page 25 of 75
+
+
+
+          There are four facts that are pretty important for you to know
+          about Trace Mode (at least as far as using SLOWDOWN is concerned). 
+          The first thing to know is that, much like the UseCPUCache Option
+          discussed above (page 21), it is a binary (on-or-off) thing.  It's
+          not really possible to "adjust" the speed with the Trace Mode
+          Option itself.
+
+          The second thing to note about Trace mode is that it slows the
+          computer down A LOT.  In Trace Mode, the computer will usually run
+          at less than 2% of normal speed, which is even slower than it does
+          when the CPU Cache is Disabled (see the UseCPUCache Option above,
+          page 21).
+
+          The third thing to note about Trace Mode is that it is EXTREMELY
+          smooth (not "jerky" the way Interrupt 8, or even Interrupt 70, can
+          be).  Because it is an extremely smooth way to slow the computer
+          down a lot, it is extremely effective if you want to make a REALLY
+          fast computer run REALLY slowly.  With this Trace Mode Option, I am
+          able to perfectly run many, many programs designed for a PC/XT
+          (4.77Mhz 8088 CPU) on my 350-Mhz Pentium-class computer.
+
+
+          The last, and perhaps most important, thing to know about Trace
+          Mode, is that it is EXTREMELY INcompatible with certain computers
+          and programs.  It has so many compatibility issues, in fact, that
+          you may not want to use it at all.  But, when the use of Trace Mode
+          is appropriate, it is almost unbelievably effective.
+
+          The first major compatibility problem with SLOWDOWN in Trace Mode
+          is your computers clock.  While in Trace Mode, your computers clock
+          may lose time.  I don't understand how or why it does this (it
+          shouldn't), but sometimes it happens anyway.  So, if you use
+          SLOWDOWN in Trace Mode, and you want your computers Date and Time
+          to be correct, you may constantly need to be setting the correct
+          Date and Time.  Someday, I may figure out why this is happening and
+          fix it.  Until then, you may need to keep updating your clock.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 26 of 75
+
+
+
+          The second major compatibility issue with SLOWDOWN is Microsoft
+          Windows.  Simply put, Windows HATES Trace Mode.  If you are running
+          in a DOS Box underneath Windows, and try to put the CPU into Trace
+          Mode, Windows will crash.  Sometimes it will crash the entire
+          Windows Operating Environment, and sometimes it will just crash the
+          DOS Box you were trying to turn on Trace Mode from.  Bottom line is
+          that you can't use Trace Mode underneath Windows.  So, even if you
+          give SLOWDOWN permission to use Trace Mode, it won't ever try to
+          turn Trace Mode on while Windows is running.
+
+          On one particular computer I've tested, Windows is EXTREMELY
+          incompatible with Trace Mode.  Trace mode doesn't even need to be
+          turned on when Windows is running for the computer to crash.  All
+          SLOWDOWN needs to do is TEST Trace Mode before Windows starts, and
+          Windows instantly crashes.  The specific computer that crashes on
+          me is a Dell Laptop.  I have a Dell Desktop that was made about the
+          same time as the Dell Laptop, and it works fine, so it's not a
+          problem with all Dells.  The Dell Laptop is the only Laptop I've
+          tested it on, so it's possible (though EXTREMELY unlikely) that the
+          problem occurs on all (or at least many) Laptops.  It's also
+          possible that my particular Dell Laptop is the only one with a
+          problem (though I doubt that, also).  I just don't know.
+
+
+          Now, after listening to me warn you about all of these
+          compatibility issues, you may think I'm trying to discourage you
+          from using Trace Mode.  I'm not.  I'm just warning you that if you
+          do try to use it, you may run into some problems.  But, I can also
+          tell you that, when used appropriately, Trace Mode is almost
+          unbelievably effective in Slowing your computer Down.  In fact,
+          sometimes, it is the only way you can slow your computer down A LOT
+          and still have it be usable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 27 of 75
+
+
+
+          Because it slows the computer down so much, it is very difficult
+          for you to know exactly when it may or may not be appropriate to
+          turn Trace Mode on.  So, SLOWDOWN will do it automatically for you
+          at the appropriate times (if you give it "permission" to do it). 
+          If you give SLOWDOWN permission to use Trace Mode, and you tell
+          SLOWDOWN you want to make the computer run slow enough to get over
+          the "Trace Mode Speed Hump", then SLOWDOWN will automatically put
+          the CPU into Trace Mode.  SLOWDOWN will then add in enough Slowdown
+          Units (using Interrupt 8 or Interrupt 70) to try and simulate the
+          precise speed you requested.  When it's time to speed the computer
+          back up again, SLOWDOWN will automatically put the CPU back into
+          "normal" (non-Trace) Mode.
+
+          This UseTrace Option is how you give (or deny) SLOWDOWN permission
+          to automatically put the CPU into Trace Mode.  It is EXTREMELY
+          important for you to keep in mind that this Option does NOT
+          directly put the CPU into Trace Mode -- it simply gives permission
+          (or denies permission) for SLOWDOWN to automatically do it at the
+          appropriate times.
+
+
+          By default, the UseTrace Option is Disabled (SLOWDOWN will NOT, by
+          default, ever try to put the CPU into Trace Mode).  It is Disabled,
+          by default, because of all the compatibility problems you can have
+          with it.  If you want to give SLOWDOWN permission to automatically
+          put the CPU into Trace Mode when appropriate, you must EXPLICITLY
+          give it permission.  You can do this from the DOS command line:
+
+            SLOWDOWN /UseTraceMode: Enabled
+
+          You can also do it by setting the SLOWDOWN Environment variable
+          (which you would probably do in your AUTOEXEC.BAT file):
+
+            SET SLOWDOWN=/Trace:On
+
+          See "THE SLOWDOWN ENVIRONMENT VARIABLE" section below (page 41) for
+          a little bit more information on the Environment, if you don't
+          understand what that means.
+
+
+          I am also including with this distribution of SLOWDOWN a separate
+          program called SLOWINT1.  It is a small TSR program that puts the
+          CPU into Trace Mode, just like SLOWDOWN does.  It includes its own
+          documentation, so I won't go into details here.  The main reason
+          for including it is to allow you to "mess around" with Trace Mode
+          if you want, to investigate exactly how it affects your computer
+          and how it affects other programs.  SLOWDOWN functionally does the
+          same thing that SLOWINT1 does, but does it automatically at the
+          appropriate times based on what you're trying to accomplish. 
+          SLOWINT1 gives you manual control.
+
+
+
+                      SLOWDOWN 3.10            Page 28 of 75
+
+
+
+     There is an Option to run a single PROGRAM "slowly", after which
+     SLOWDOWN will return the computer to the way it was running before.
+
+
+     * {Program} [ProgramOptions]
+
+          {Program} is the name of a single PROGRAM that you want SLOWDOWN to
+          run "slowly", and [ProgramOptions] are the command-line Options
+          that PROGRAM needs to operate correctly.  If you are using the
+          PROGRAM Option, it MUST be the last Option on the command-line (any
+          other SLOWDOWN command-line Options must come before it).  After
+          PROGRAM is finished, SLOWDOWN will automatically return the
+          computer to the way it was running before you started running
+          PROGRAM.  For example:
+
+            SLOWDOWN /MHz486=100 /UseInterrupt70  EDIT C:\AUTOEXEC.BAT
+
+          will slow your computer down to approximately the same speed as a
+          100-Mhz 80486 computer using the Interrupt 70 Method, and then
+          start running "EDIT C:\AUTOEXEC.BAT".  Note that the HOT-KEYS
+          (described below on page 44) will still work in EDIT, allowing you
+          to change Speeds while using EDIT -- the "/MHz486=100" will simply
+          set the Speed of the computer while EDIT is first starting.  When
+          you exit out of EDIT, SLOWDOWN will automatically return your
+          computer to the way it was running before you started EDIT.
+
+          {Program} must be the name of an executable file (one that ends in
+          .COM, .EXE, or .BAT).  You do not need to put the .COM, .EXE. or
+          .BAT extension as part of {Program}, however.  When DOS is deciding
+          which program it will run, it uses a set of internal rules which
+          will totally ignore the extension that you give it anyway.  I won't
+          go into details about how DOS decides which program to run, but
+          will tell you that it involves internal DOS commands, the current
+          directory (folder), the PATH environment variable, and filename
+          extensions (though not the extension that you give it).  You'll
+          need to read a book or magazine article or internet page on DOS if
+          you want to know the details.
+
+          Although you don't need a filename extension, you may need to
+          include a drive and path (for example, "C:\DOS\EDIT" instead of
+          just "EDIT") as part of {Program}.  If you don't, DOS may either
+          not be able to find the PROGRAM at all, or, worse yet, may run the
+          wrong PROGRAM (you could have two different versions of "EDIT", for
+          example, and not even know it).  SLOWDOWN uses DOS to run the
+          PROGRAM, so all of the DOS rules about file names, PATHs, etc.,
+          apply.
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 29 of 75
+
+
+
+          If you use this PROGRAM Option to run a single program "slowly",
+          SLOWDOWN does not install itself permanently into memory as a TSR. 
+          That is, after PROGRAM is finished running, SLOWDOWN removes itself
+          from memory and returns your computer to exactly the way it was
+          before you started.  SLOWDOWN doesn't use a lot of memory when
+          installed as a TSR (just over 3000 bytes), but by using the PROGRAM
+          Option, you can be sure SLOWDOWN doesn't use ANY memory at all
+          except when it is actually doing something.
+
+          Note that it is also possible to both install SLOWDOWN as a TSR and
+          to run a single program "slowly".  For instance, you could do the
+          following:
+
+            SLOWDOWN /MHz486=50 /UseInt08
+            SLOWDOWN /MHz486=25 /UseInt70 /DisableHotKeys PROGRAM1
+
+          The first line installs SLOWDOWN as a TSR, and starts running the
+          computer at the same Speed as a 50-MHz 80486 computer using the
+          Interrupt 08 Method.  The second line will run PROGRAM1 (whatever
+          that is) at an initial Speed of 25-MHz, using the Interrupt 70
+          Method, and with the SLOWDOWN Hot-Keys Disabled.  After PROGRAM1 is
+          done, the computer will automatically return to the way it was
+          running before PROGRAM1 started (in this case, 50-MHz, using
+          Interrupt 08, with Hot-Keys Enabled).  The SLOWDOWN TSR will
+          continue to remain in memory (perhaps forever) even after PROGRAM1
+          has stopped.  If you want to permanently remove the SLOWDOWN TSR
+          from memory for some reason, you need to use the UNINSTALL Option
+          (page 40 below).
+
+
+          After the PROGRAM is done, SLOWDOWN will return the computer to the
+          way it was before PROGRAM started.  That is, the Interrupt Method
+          (UseInt08/UseInt70 - page 19), UseCache - page 21, UseTrace - page
+          25, and Hot-Keys (ShiftMask - page 34, Enable/Disable - page 36,
+          and Beep - page 37) are restored back to the way they were before. 
+          This allows you to "temporarily" (long enough for a single program
+          to run) change the Speed or Hot-Keys or Interrupt Method or
+          whatever for compatibility or convenience reasons.  When the
+          Program is finished, SLOWDOWN will automatically restore the
+          "default" settings that you normally use.
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 30 of 75
+
+
+
+          You should not use the PROGRAM Option of SLOWDOWN to install
+          another PROGRAM that is itself a TSR.  By definition, after a TSR
+          is finished running (and has been "installed" into memory), it
+          leaves part of itself behind in memory (it does not ever completely
+          remove itself).  With the PROGRAM Option, SLOWDOWN completely
+          itself from memory when it is done.  If PROGRAM is a TSR (which
+          does not completely remove itself from memory when it is done), you
+          can run into major problems.  In the best scenario, everything may
+          work fine (though this scenario is highly unlikely).  In the
+          middle-of-the-road scenario, you will be leaving unusable "holes"
+          in your memory, even though all of the programs may work like
+          they're supposed to.  In the worst scenario, your computer will
+          crash and burn.
+
+          If, for some reason, you want (or need) to use SLOWDOWN to install
+          another Program that is a TSR, you should first install SLOWDOWN as
+          a TSR (by NOT using the PROGRAM Option).  You can then either use
+          HOT-KEYS (described on page 44) or command-line Options to have
+          SLOWDOWN temporarily slow the computer down while the other TSR
+          Program is installing.  After the other TSR is installed, you can
+          return the computer back to normal Speed if you want (again, either
+          with SLOWDOWN HOT-KEYS or command-line Options).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 31 of 75
+
+
+
+          If you want to run several programs in a row "slowly" (instead of
+          just a single PROGRAM), and have the computer automatically return
+          to "normal" after you are done, there are three different ways you
+          can approach it.  All three approaches will involve you writing
+          batch files, however.  Let's say you want to run three separate
+          programs in a row, called Program1, Program2, and Program3.  You
+          want to have the computer be Slowed Down to 10% of normal speed for
+          all three programs, and you want the computer to return to normal
+          speed after the three programs are done.  Here are some different
+          batch files you could use to do it.
+
+          This first example installs SLOWDOWN as a TSR, runs the three
+          Programs, and then UNINSTALLs the SLOWDOWN TSR from memory:
+
+            BATCH1.BAT:
+              SLOWDOWN /Percent=10
+              Program1
+              Program2
+              Program3
+              SLOWDOWN /Uninstall
+
+          This second example actually slows down each Program individually
+          (using the SLOWDOWN PROGRAM Option three separate times).  Because
+          it does this all in the same batch file, though, it will appear
+          almost as though the computer is continuously running "slowly" the
+          whole time:
+
+            BATCH2.BAT:
+              SLOWDOWN /Percent=10  Program1
+              SLOWDOWN /Percent=10  Program2
+              SLOWDOWN /Percent=10  Program3
+
+          This last example actually uses two separate batch files, and one
+          batch file calls (runs) the other one:
+
+            BATCH3A.BAT:
+              SLOWDOWN /Percent=10  BATCH3B
+
+            BATCH3B.BAT:
+              Program1
+              Program2
+              Program3
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 32 of 75
+
+
+
+          Another thing to keep in mind when using the PROGRAM Option is that
+          you will not know what the ERRORLEVEL (return code) of the PROGRAM
+          you are running is.  ERRORLEVEL's are returned by all DOS programs
+          after they execute.  Their main purpose is to allow DOS batch files
+          to "automatically" make decisions about what to do next based on
+          whether the previous Program worked properly or not.  However, the
+          ERRORLEVEL of the SLOWDOWN'd PROGRAM is not returned when you use
+          the PROGRAM Option with SLOWDOWN -- what is returned is the
+          SLOWDOWN ERRORLEVEL (see "ERRORLEVELS" below on page 43).  Let's
+          compare the following two excerpts from batch files designed to run
+          PROGRAM1 "slowly", and then remove SLOWDOWN from memory:
+
+          BATCH1.BAT:
+              SLOWDOWN /AT
+              PROGRAM1
+              IF NOT ERRORLEVEL 1 GOTO NoError
+                REM Handle the PROGRAM1 Error Here
+            :NoError
+              SLOWDOWN /Uninstall
+                REM This could be "SLOWDOWN /0", if you don't
+                REM   want to completely remove SLOWDOWN from memory.
+
+          BATCH2.BAT:
+            SLOWDOWN /AT PROGRAM1
+              REM Can't do a PROGRAM1 ERRORLEVEL check Here!
+
+          As you can see by the REMark lines, with the first batch file
+          (BATCH1.BAT), you can do any sort of ERRORLEVEL stuff related to
+          PROGRAM1 you want.  In the second example (BATCH2.BAT), the
+          ERRORLEVELs from PROGRAM1 are "lost", and you can't use them to do
+          any sort of "smart" Batch file programming.  If you don't need or
+          don't care about or don't understand ERRORLEVELs, then it doesn't
+          matter which method you use to run PROGRAM1.  If the PROGRAM1
+          ERRORORLEVELs matter to you for some reason, then you must install
+          SLOWDOWN as a TSR, and then Uninstall it after PROGRAM1 is finished
+          (look at BATCH1.BAT).
+
+          When using the PROGRAM Option, SLOWDOWN requires quite a bit more
+          memory than it does as a TSR.  When using the PROGRAM Option,
+          SLOWDOWN itself requires just over 4500 bytes (4.5K) of memory.  In
+          addition, when using the PROGRAM Option, SLOWDOWN loads a temporary
+          copy of the DOS Command Shell (usually, this is COMMAND.COM).  The
+          memory required by the DOS Command Shell is normally somewhere
+          between 3K and 8K (exactly how big it is depends on which version
+          of DOS you're using and how you have DOS configured).  Therefore,
+          the total amount of memory required by SLOWDOWN when using the
+          PROGRAM Option will usually be somewhere between 8K and 13K (a lot
+          more than the 3K required by SLOWDOWN when it is installed as a
+          TSR).  There is a more detailed discussion of this below in the
+          "THE DOS EXEC FUNCTION AND COMMAND.COM" (page 65), if you're
+          interested.
+
+
+                      SLOWDOWN 3.10            Page 33 of 75
+
+
+
+     There are Options to configure and control the Hot-Keys.
+
+
+     * /K:shift-mask
+     * /Hot-KeyShiftMask:shift-mask  /Hot-KeySftMask:shift-mask
+     * /HotKeyShiftMask:shift-mask   /HotKeySftMask:shift-mask
+     * /Hot-KeyMask:shift-mask       /Hot-Key:shift-mask
+     * /HotKeyMask:shift-mask        /HotKey:shift-mask
+     * /KeyShiftMask:shift-mask      /KeySftMask:shift-mask
+     * /KeyMask:shift-mask           /Key:shift-mask
+     * /ShiftMask:shift-mask         /SftMask:shift-mask
+
+          This Option is used to set the SHIFT-MASK for the SLOWDOWN Hot-
+          Keys.  These Hot-Keys allow you to control the speed of the
+          computer with the keyboard, even while you are in the middle of
+          another program.  There are several keys on the keyboard that
+          SLOWDOWN uses to do this, which are described more completely in
+          the "HOT-KEYS" section below (page 44).
+
+          It actually takes four "pieces" for the Hot-Keys to work, though. 
+          There are the Hot-Keys themselves (described in the "HOT-KEYS"
+          section below, page 44).  In addition, there are three different
+          command-line Options associated with the Hot-Keys: the
+          ENABLE/DISABLE Options described directly below (page 36), the BEEP
+          Option described below that (page 37), and the SHIFT-MASK Option
+          (discussed right here).
+
+
+          The SHIFT-MASK is some combination of the <Shift>, <Ctrl>, and
+          <Alt> keys that must be already be pressed before you press one of
+          the Hot-Keys.  The default SHIFT-MASK that SLOWDOWN uses is
+          <Ctrl>-<Alt>.  To change the SLOWDOWN SHIFT-MASK, you give SLOWDOWN
+          (as the "shift-mask" part of the Option) a list of shift-keys
+          (Shift, Ctrl, or Alt) that you would like it to use, separated by
+          dashes ("-").
+
+          For example, to change the SHIFT-MASK from whatever it was before
+          to <Shift>-<Alt>, you could do the following:
+
+            SLOWDOWN /ShiftMask = Shift-Alt
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 34 of 75
+
+
+
+          The SHIFT-MASK can be any combination of 0, 1, 2, or all 3 shift-
+          keys, and the order doesn't matter ("Shift-Alt" is the same as
+          "Alt-Shift", etc.).  Here are the words you can use to describe
+          each of the shift-keys in the "shift-mask" part of the Option:
+
+            Shift  Sft  S
+            Control  Cntrl  Cntl  Ctrl  Ctl  C  Strg  Stg
+            Alt  AltGr  A
+
+          You can also have the SHIFT-MASK be "nothing" (no shift-keys at
+          all) by using one of the following as the "shift-mask":
+
+            0  Empty  Nada  No  None  Nothing  Nil  Null
+
+
+          Although SLOWDOWN will let you set the SHIFT-MASK to "Nothing", or
+          to a simple "Shift" key, under normal circumstances you do not want
+          to do this.  It can cause you a great amount of confusion and
+          weeping, since you will probably think your keyboard is broken
+          (trust me -- I went through this more than once as I was testing
+          SLOWDOWN, and it was not at all fun).
+
+
+          Here are some "shift-mask" Options that would be OK:
+
+            S-C-A  Sft-Ctl-Alt  Control  Alt-Cntrl  None
+
+          These "shift-mask" Options would generate error messages:
+
+            Ctrl-Ctrl    Can only use the same shift-key once
+            None-Shift   The None shift-mask must be by itself
+            Ctrl Alt     Must put a dash ("-") between each shift-key
+
+
+          Again, exactly what the Hot-Keys are and how to use them is
+          discussed in detail below in the "HOT-KEYS" section (page 44). 
+          Read that section if you want to know more.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 35 of 75
+
+
+
+     * /E
+     * /EnableHot-Keys  /EnableHotKeys  /EnableKeys  /Enable  /On
+
+     * /D
+     * /DisableHot-Keys  /DisableHotKeys  /DisableKeys  /Disable  /Off
+
+          These Options allow you to ENABLE (turn on) or DISABLE (turn off)
+          the SLOWDOWN Hot-Keys.  Exactly what the Hot-Keys are and what they
+          do is described below in the "HOT-KEYS" section (page 44).  In
+          addition, the SHIFT-MASK Option discussed directly above (page 34),
+          and the BEEP Option discussed directly below (page 37), detail more
+          aspects of the Hot-Keys.  These ENABLE and DISABLE Options control
+          only one particular aspect of getting the SLOWDOWN Hot-Keys to
+          work.
+
+          By default, the SLOWDOWN Hot-Keys are ENABLEd.  This means that, by
+          default, if you press one of the appropriate SHIFT-MASK and Hot-Key
+          combinations, SLOWDOWN will change the Speed of the computer
+          "on-the-fly" even if you are in the middle of another program.  If
+          you want to turn the Hot-Keys completely off, you will need to
+          DISABLE them (by giving SLOWDOWN the DISABLE Option).
+
+
+          Under normal circumstances, it is best to leave the Hot-Keys
+          ENABLEd all the time, especially if you have the SHIFT-MASK set to
+          something relatively obscure (like the default SHIFT-MASK of
+          <Ctrl>-<Alt>).  If the SHIFT-MASK (discussed above) is "uncommon",
+          and if the BEEP Option (discussed directly below) is Enabled, it is
+          very unlikely that you can accidentally change the Speed of your
+          computer without knowing it.
+
+          The only reason you might want to DISABLE the Hot-Keys is if, for
+          some reason, you don't want to be able to change the Speed of the
+          computer "on-the-fly", and you are also afraid, for some reason,
+          that you will accidentally type a SLOWDOWN Hot-Key and not realize
+          that you did it.  As long as you realized that the Speed of the
+          computer has changed, even if you did it by accident, you should
+          easily be able to "undo" the change with another Hot-Key.
+
+          Again, read the "HOT-KEYS" section below (page 44) if you want
+          details on exactly what the Hot-Keys are and what they do.
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 36 of 75
+
+
+
+     * /B:Yes|No
+     * /Beep:Yes|No  /SpeedBeep:Yes|No  /SpdBeep:Yes|No
+
+       Synonyms for Yes: Y True  Enable  Enabled  On
+       Synonyms for No:  N False Disable Disabled Off
+
+          This Option allows you to control whether or not SLOWDOWN BEEPs at
+          you or not when you use the Hot-Keys to change Speeds "on-the-fly". 
+          Exactly what the Hot-Keys are and what they do is described below
+          in the "HOT-KEYS" section (page 44).  In addition, the SHIFT-MASK
+          Option discussed above (page 34), and the ENABLE/DISABLE Options
+          described directly above (page 36), detail more aspects of the Hot-
+          Keys.  This BEEP Option controls only one particular aspect of
+          getting the SLOWDOWN Hot-Keys to work.
+
+          Normally, when you use one of the Hot-Keys to change the Speed of
+          the computer "on-the-fly", SLOWDOWN will BEEP at you (see the "HOT-
+          KEYS" section below on page 44 if you don't understand Hot-Keys). 
+          The frequency of the BEEP is proportional to the Speed of the
+          computer.  That is, a high-pitched BEEP indicates that the computer
+          is running fast (SLOWDOWN is not Slowing things Down very much),
+          and a low-pitched BEEP indicates that the computer is running
+          slowly (SLOWDOWN is Slowing things Down a lot).  In certain
+          programs, you may need to change the Speed of the computer every
+          little while, and the constant BEEPing can become quite annoying.
+
+
+          When BEEP is set to Yes (or On or Enabled or True), SLOWDOWN will
+          BEEP at you when you change Speeds with a Hot-Key.  This lets you
+          know that SLOWDOWN did in fact recognize what you wanted it to do,
+          and the Computer is now running at the "new" Speed.  As stated
+          above, the frequency (pitch) of the BEEP gives you an indication of
+          just how fast the computer is running.  When BEEP is set to No (or
+          Off or Disabled or False), SLOWDOWN will still change the Speed of
+          the Computer when you press a Hot-Key, but it will not BEEP at you
+          to give you a positive indication that it actually did anything. 
+          Of course, the computer will generally start reacting "differently"
+          (either faster or slower) than it did before you pressed the Hot-
+          Key, but most of the time it's better (and safer) to get that
+          immediate, positive indication that something actually happened.
+
+          It is usually best to leave BEEPing Enabled (which it is by
+          default).  The only time I can imagine where you would really want
+          to turn off the BEEPing is in a program where you know you are
+          going to constantly be changing the computer speed with Hot-Keys,
+          and the BEEPing really annoys or distracts you.
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 37 of 75
+
+
+
+     * /TableOfHot-Keys
+     * /TableOfHotKeys  /TableOfKeys  /TblOfHot-Keys  /TblOfHotKeys
+     * /TblOfKeys  /KeysTable  /KeysTbl  /KeyTable  /KeyTbl  /Keys
+     * /Hot-KeysTable  /HotKeysTable  /Hot-KeyTable  /HotKeyTable
+     * /Hot-KeysTbl  /HotKeysTbl  /Hot-KeyTbl  /HotKeyTbl
+
+          This Option simply pulls up a Reference Table of the current Hot-
+          Keys, just as a reminder to you of what they are (in case you
+          forget).  The Table looks something like the Hot-Key Table below on
+          page 44.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 38 of 75
+
+
+
+     There are also some miscellaneous (housekeeping) Options.
+     * /Q
+     * /Quiet /ShutUp
+
+     * /V
+     * /Verbose /Talk
+
+          These Options are complements of each other.  With the VERBOSE
+          Option selected, when you type "SLOWDOWN {Options}" at the command-
+          line, SLOWDOWN provides you with several lines of information about
+          how SLOWDOWN is currently configured (information such as the Speed
+          of your computer and the current status of the SHIFT-MASK). 
+          Exactly what SLOWDOWN tells you depends on several factors, so I
+          won't go into details (you can view the information for yourself). 
+          However, this information does take up several lines of your
+          screen, and can in fact clutter up your screen with a lot of stuff
+          you may not normally care to see.
+
+          With the QUIET Option selected, SLOWDOWN does not display any of
+          this information.  Your screen is much less cluttered, but it is
+          also not telling you some things that you may want to know about
+          what SLOWDOWN is doing (you are "running blind").  Note that
+          SLOWDOWN will always print error messages to the screen, even if
+          the QUIET Option is set.  The QUIET Option only prevents
+          configuration information from being displayed, not error
+          information.
+
+          The most common way to use the QUIET and VERBOSE Options is with
+          the SLOWDOWN Environment variable (see "THE SLOWDOWN ENVIRONMENT
+          VARIABLE" below on page 41).  If you want SLOWDOWN to normally be
+          QUIET, set the QUIET Option in the SLOWDOWN Environment variable. 
+          If you then decide, for some reason, that you want to temporarily
+          override the QUIET Option so SLOWDOWN will show you what it is
+          doing, you can enter the VERBOSE Option on the command-line.  Read
+          "THE SLOWDOWN ENVIRONMENT VARIABLE" section below (page 41) for
+          more details.
+
+          The default is for SLOWDOWN to be VERBOSE.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 39 of 75
+
+
+
+     * /U
+     * /Uninstall /Remove /Out
+
+          This will permanently UNINSTALL (or at least try to UNINSTALL)
+          SLOWDOWN from memory, if it was installed as a TSR (if it was not 
+          installed with the PROGRAM Option described above, page 29).  If
+          all you are trying to do is stop Slowing the computer Down, you can
+          just use an appropriate speed-control Option (such as
+          "SLOWDOWN /0", "SLOWDOWN /Speed=65535", "SLOWDOWN /Percent=100", 
+          or "SLOWDOWN /MHz486=5000").  This UNINSTALL Option will stop
+          Slowing the computer Down just like one of the speed-control
+          Options, but will also attempt to remove the SLOWDOWN TSR from
+          memory.  If SLOWDOWN is successfully UNINSTALLed, there will be
+          about 3000 bytes more memory for other programs to use, and the
+          SLOWDOWN Hot-Keys will be permanently Disabled.
+
+
+     * /?
+       /H /Help
+
+          This Option will pull up a HELP screen which gives a quick summary
+          of the possible command-line Options for SLOWDOWN.  This will also
+          give you a quick summary of how fast SLOWDOWN thinks your computer
+          is, without actually Slowing the computer Down, or without
+          installing itself into memory.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 40 of 75
+
+
+
+     THE SLOWDOWN ENVIRONMENT VARIABLE
+     อออออออออออออออออออออออออออออออออ
+
+     SLOWDOWN also looks for an Environment variable called SLOWDOWN.  This
+     variable can contain some of the standard command-line Options listed
+     starting above on page 6.  The Options it CANNOT contain are the Options
+     that directly change the speed of the computer (/MHz486:nn, /MHz286:nn,
+     /MHz8088:nn, /Percent:nn.nn, /Speed:nn, /Slowdown-Factor, /XT, /AT,
+     /Remember), or the PROGRAM Option.  The SLOWDOWN Environment variable
+     CAN contain any of the other Options detailed above (/XT:speed,
+     /AT:speed, /Remember:speed, /UseInt08, /UseInt70, /UseCPUCache:Yes|No,
+     /UseTrace:Yes|No, /Table, /ShiftMask:shift-mask, /Enable, /Disable,
+     /Beep:Yes|No, /Quiet, /Verbose, /Uninstall, or /Help).
+
+     SLOWDOWN reads the Options from the SLOWDOWN Environment variable before
+     it reads the Options from the DOS command-line.  Any Options you have in
+     the SLOWDOWN Environment variable act like they are entered at the
+     beginning of each command-line, and effectively become your "default"
+     settings.  Because Options entered later on the command-line take
+     precedence over Options entered earlier on the command-line, though, you
+     can easily override the "default" settings contained in the Environment
+     variable any time you want.  For example, let's say you set the SLOWDOWN
+     Environment variable as follows:
+
+       SET SLOWDOWN=/ShiftMask:Shift-Alt /XTSpeed:20
+
+     This would SET the "default" SLOWDOWN SHIFT-MASK to <Shift>-<Alt>, and
+     also SET the "default" XT-Speed to 20 Slowdown-Units.  Let's say you
+     then ran SLOWDOWN as follows from the command-line (or a batch file):
+
+       SLOWDOWN /ShiftMask:Ctrl-Alt
+
+     The combination of the Environment variable and the command-line Options
+     would act as if you had done this:
+
+       SLOWDOWN /ShiftMask:Shift-Alt /XTSpeed:20 /ShiftMask:Ctrl-Alt
+
+     You have overridden the "default" SHIFT-MASK (<Shift>-<Alt>) with a
+     "temporary" SHIFT-MASK (<Ctrl>-<Alt>).  SLOWDOWN will continue to use
+     the "temporary" SHIFT-MASK until you run SLOWDOWN at the command-line
+     again, when it will start using the "default" SHIFT-MASK from the
+     Environment variable again.  Also, Environment variables are "permanent"
+     (they continue to be remembered by the computer until they are reset or
+     until DOS stops running).  This means that even if you UNINSTALL
+     SLOWDOWN from memory, SLOWDOWN will still know about the "default"
+     settings next time you run it.
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 41 of 75
+
+
+
+     Although you can SET Environment variables at any time from the DOS
+     command-line (or from batch files), it is usually better to SET them in
+     your AUTOEXEC.BAT file.  That way, they are truly "permanent", and will
+     automatically be there every time you start your computer.  Another
+     thing you need to know about Environment variables is that, with some
+     versions of DOS, an Environment variable cannot contain an equals ("="). 
+     In the SLOWDOWN Options, Equals ("=") and Colon (":") are
+     interchangeable.  You should try to remember to use ":" when setting
+     Environment variables, but can either use ":" or "=" on the command-
+     line.  For instance, let's compare the following two lines which SET the
+     SLOWDOWN Environment variable:
+
+       SET SLOWDOWN= /ATSpeed = 100
+       SET SLOWDOWN= /ATSpeed : 100
+
+     The first line may not work on some computers, but it would on others. 
+     The second line will work on all computers.
+
+
+     If you do not have the QUIET Option set (above, page 39), or temporarily
+     override the QUIET Option with the VERBOSE Option (also above on page
+     39), SLOWDOWN will show you what the SLOWDOWN Environment variable is
+     set to every time you run it.  If SLOWDOWN is doing something that you
+     don't expect it to, it could be because of a setting you put in your
+     Environment variable and forgot was there.  When troubleshooting, make
+     sure you look at the SLOWDOWN Environment variable -- that could be
+     where the problem is.
+
+     If you don't know what an Environment is, or what it is used for, I
+     suggest you read about it in your favorite DOS book.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 42 of 75
+
+
+
+     ERRORLEVELS
+     อออออออออออ
+
+     SLOWDOWN sets the following ERRORLEVELs after it executes, to give you
+     an indication of what happened.  If you don't understand the purpose or
+     value of ERRORLEVELs, I suggest you read about them in your DOS manual.
+
+       ษออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+       บ ERRORLEVEL บ                      MEANING                          บ
+       ฬออออออออออออฮอออออออออออออออออออออออออออออออออออออออออออออออออออออออน
+       บ     0      บ No problem - everything worked as requested           บ
+       บ     1      บ Couldn't understand one or more of the Options        บ
+       บ     2      บ Your computer isn't fast enough to use SLOWDOWN       บ
+       บ     3      บ Memory problem / Memory conflict with another program บ
+       บ     4      บ Tried UNINSTALL without SLOWDOWN installed yet        บ
+       บ     5      บ A different version of SLOWDOWN was found in memory   บ
+       ศออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 43 of 75
+
+
+
+     HOT-KEYS
+     ออออออออ
+
+     SLOWDOWN has several Hot-Keys that you can use to control and change the
+     speed of the computer "on-the-fly", even while you are in the middle of
+     another program.  There are some command-line Options that also control
+     certain aspects of how the Hot-Keys work (specifically, the SHIFT-MASK
+     Option on page 34, the ENABLE/DISABLE Options on page 36, and the BEEP
+     Option on page 37).  Read the details about those Options if you want
+     more information.
+
+     In the following Table, though, we will assume that the SHIFT-MASK is
+     set at the default value of <Control>-<Alt> (see page 34), and that the
+     Hot-Keys are ENABLEd (see page 36).  Here are the Hot-Keys, and what
+     they will do if you press them:
+
+                                   HOT-KEY TABLE
+       อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+       <Ctrl>-<Alt>-<`>     Run at 0% of normal Speed  (like /Pct:0)
+       <Ctrl>-<Alt>-<1>     Run at 10% of normal Speed  (like /Pct:10)
+       <Ctrl>-<Alt>-<2>     Run at 20% of normal Speed  (like /Pct:20)
+       <Ctrl>-<Alt>-<3>     Run at 30% of normal Speed  (like /Pct:30)
+       <Ctrl>-<Alt>-<4>     Run at 40% of normal Speed  (like /Pct:40)
+       <Ctrl>-<Alt>-<5>     Run at 50% of normal Speed  (like /Pct:50)
+       <Ctrl>-<Alt>-<6>     Run at 60% of normal Speed  (like /Pct:60)
+       <Ctrl>-<Alt>-<7>     Run at 70% of normal Speed  (like /Pct:70)
+       <Ctrl>-<Alt>-<8>     Run at 80% of normal Speed  (like /Pct:80)
+       <Ctrl>-<Alt>-<9>     Run at 90% of normal Speed  (like /Pct:90)
+       <Ctrl>-<Alt>-<0>     Run at 100% of normal Speed  (like /Pct:100)
+       <Ctrl>-<Alt>-<->     Lower the computer speed by one Slowdown-Unit
+       <Ctrl>-<Alt>-<=>     Increase the computer speed by one Slowdown-Unit
+       <Ctrl>-<Alt>-<BkSp>  Lower the computer speed by approximately 1%
+       <Ctrl>-<Alt>-<Tab>   Increase the computer speed by approximately 1%
+       <Ctrl>-<Alt>-<X>     Run at XT-Speed  (like /XT)
+       <Ctrl>-<Alt>-<A>     Run at AT-Speed  (like /AT)
+       <Ctrl>-<Alt>-<R>     Run at the REMEMBER-Speed  (like /Remember)
+       <Ctrl>-<Alt>-<S>     Store the current Speed as the REMEMBER-speed
+
+     If the SHIFT-MASK is something other than <Ctrl>-<Alt>, you should
+     replace the "<Ctrl>-<Alt>" parts of the table with the appropriate
+     SHIFT-MASK.  If the Hot-Keys are DISABLED (see page 36), then pressing
+     the Hot-Keys will, of course, not do anything at all.
+
+     When you press one of the Hot-Keys (causing SLOWDOWN to do something to
+     the Speed of the Computer), and if the BEEP Option is Enabled (see page
+     37), SLOWDOWN will BEEP at you.  The frequency (or pitch) of the beep
+     corresponds to the current speed of the computer.  A low-frequency beep
+     indicates the computer is running slowly (such as when you press <Ctrl>-
+     <Alt>-<`>), and a high-frequency beep indicates the computer is running
+     quickly (such as when you press <Ctrl>-<Alt>-<0>).
+
+
+
+                      SLOWDOWN 3.10            Page 44 of 75
+
+
+
+     It is also possible that when you try to change the speed of the
+     computer with a Hot-Key, SLOWDOWN will not change the speed of the
+     computer at all.  If SLOWDOWN is not sure how fast your computer is when
+     you press a Hot-Key, it will simply beep at you twice (and not change
+     the computer speed).  SLOWDOWN will only do this under certain
+     circumstances if you are using Microsoft Windows.  It revolves around
+     the fact that "real" DOS is several times faster than a DOS box running
+     underneath Windows, and the details are discussed below under "SLOWING
+     DOWN DOS PROGRAMS UNDERNEATH WINDOWS" (page 53).
+
+
+     Also note that the Hot-Keys that are numbers (<1>, <2>, etc.) are the
+     number keys along the top row of the keyboard, NOT on the NumberPad on
+     the right side of the keyboard.  In addition, the descriptions given for
+     the Hot-Keys are only accurate for a standard United States English
+     keyboard.  If you use any other kind of keyboard, the descriptions may
+     not be accurate (the Hot-Keys are determined by the physical location of
+     the keys on the keyboard, not on how the keys are labeled).
+
+
+     There may also be times when you're in the middle of another program and
+     the Hot-Keys don't do anything (they don't beep at you and they don't
+     change the speed of the computer).  This happens when the other program
+     completely "takes over" the keyboard and doesn't allow any other program
+     (like SLOWDOWN) to use the keyboard at the same time (Windows is one
+     program that completely takes over the keyboard like this).  If you
+     press a keystroke that the program doesn't understand (like one of
+     SLOWDOWN's Hot-Keys), a program should assume that there might be a TSR
+     that does understand the keystroke.  Unfortunately, not all programs do
+     what I think they should.
+
+     You will not be able to use the Hot-Keys in a program that completely
+     takes over the keyboard like this.  Instead, you will have to set the
+     correct computer Speed BEFORE the program starts.  And, to automate the
+     entire process, you will probably want to create yourself a batch file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 45 of 75
+
+
+
+     SLOWDOWN AND WINDOWS
+     ออออออออออออออออออออ
+
+     When talking about SLOWDOWN and its interaction with Microsoft Windows,
+     we need to talk about things at two different "levels".  The first level
+     concerns how you can use SLOWDOWN to Slow Down Windows itself, and to
+     Slow Down Windows-native applications.  Version 1 of SLOWDOWN was able
+     to Slow Down Windows, but I removed that capability in version 2 (it's
+     still hard for me to believe that people actually WANT to make Windows
+     run slower than it already does).  Because enough people inquired about
+     the ability to Slow Down Microsoft Windows again, though, I added that
+     capability back into version 3 of SLOWDOWN.  See the section below,
+     "SLOWING DOWN WINDOWS AND WINDOWS-NATIVE APPLICATIONS" (page 48), for
+     details.
+
+     I will let you know this up front, though.  Because SLOWDOWN is a DOS
+     application, not a Windows-native application, and because of the nature
+     of how Windows works, SLOWDOWN has some pretty severe limitations and
+     quirks about it that you may not like when you are trying to Slow Down
+     Windows.  If that is the case, you may want to use a Windows-native
+     slowdown-type program when you are trying to Slow Down Windows-native
+     applications, instead of using SLOWDOWN.  There are several Windows-
+     native slowdown-type programs available.
+
+     There are also some Windows-native Slowdown-type programs that can Slow
+     Down DOS applications running underneath Windows (in what Windows calls
+     a "DOS Box").  Again, because of the nature of how Windows works,
+     though, Windows-native slowdown-type programs have some pretty severe
+     limitations and quirks when they are trying to Slow Down DOS programs. 
+     Typically, a DOS program (like SLOWDOWN) does a MUCH better job of
+     Slowing Down DOS programs than a Windows-native program can ever do (and
+     vice-versa).
+
+
+     The second level of interaction between SLOWDOWN and Windows concerns
+     Slowing Down DOS applications that are run "underneath" Windows (in DOS
+     Boxes).  See the section below, "SLOWING DOWN DOS PROGRAMS UNDERNEATH
+     WINDOWS" (page 53), for details.
+
+     In general, SLOWDOWN does a very good job of Slowing Down DOS programs,
+     whether you are using "real DOS" or using a DOS Box underneath Windows. 
+     Underneath Windows, though, things work a little bit differently than
+     they do under real DOS.  In order for you to understand what's going on,
+     I'm going to explain a few technical details about Microsoft Windows. 
+     Some (perhaps many) of you will be quite upset with me and believe I'm
+     wasting your time by going into this much detail.  But if you read on,
+     you will probably learn some things that you should have known already
+     (things that Microsoft won't tell you).  I can almost certainly
+     guarantee that this may shed some light on why you've had trouble with
+     Windows in the past, and why you'll probably always have trouble using
+     Windows in the future.
+
+
+                      SLOWDOWN 3.10            Page 46 of 75
+
+
+
+     While there have been several different versions of Microsoft Windows
+     over the years, they can be classified into two general categories: 
+     DOS-based versions and NT-based versions.  The DOS-based versions
+     include 1.x, 2.x, 3.x, 9x, and ME.  The NT-based versions include NT,
+     2000, and XP.  Microsoft claims that all future versions of Windows will
+     be NT-based (whatever Microsoft decides to call them).
+
+     Whether you are running a DOS-based or an NT-based version of Windows,
+     what you see when Windows starts is called the Shell.  The default Shell
+     that modern versions of Windows use is a program called Explorer
+     (EXPLORER.EXE).  By default, the Explorer Shell has an aqua blue
+     background with a bunch of icons sitting on it and a "Start" button in
+     the lower left corner.  Most people think that Explorer is unique to
+     Windows, and that it's the only Shell that Windows can use, and that, in
+     effect, the Explorer Shell "IS" the Windows Operating System.  Nothing
+     could be further from the truth.
+
+     The same thing holds true for DOS.  The default Shell that DOS uses is a
+     program named COMMAND.COM, and it provides the familiar "C:\>" command-
+     line prompt.  Most people think that the command-line Shell provided by
+     the COMMAND.COM program "IS" DOS.  It's not.  It's just one of many
+     Shells that you can get for the DOS Operating System.  An Operating
+     System simply provides services that other programs (like the Shell) can
+     use to use to get access to the computer's hardware (memory, hard drive,
+     keyboard, mouse, video card, etc.).  You do not ever actually "see" the
+     Operating System -- you "see" the Shell.
+
+
+     If you are using a DOS-based version of Windows, Windows is not an
+     Operating System, and Windows is not even a DOS Shell.  Windows is
+     nothing more than a really big, really slow, DOS program (much like any
+     other DOS program).  When you turn your computer on, the DOS Operating
+     System loads, which in turn loads the DOS Shell (COMMAND.COM by
+     default).  You can play around in DOS for awhile doing things (running
+     DOS programs) if you want.  When you decide you want to use the DOS
+     program called Windows, you simply run the DOS executable file named
+     WIN.COM.  This starts the Windows Environment, which in turn loads the
+     Windows Shell program (by default, EXPLORER.EXE on newer versions of
+     Windows and FILEMAN.EXE on older versions).  Try this, if you don't
+     believe me:  Edit the C:\WINDOWS\SYSTEM.INI file, changing the line that
+     says "SHELL=EXPLORER.EXE" or "SHELL=FILEMAN.EXE" to "SHELL=COMMAND.COM". 
+     It will blow your mind (PLEASE don't try this if you're squeamish about
+     how to "restore" SYSTEM.INI back to "normal" again, though).
+
+     The more recent DOS-based versions of Windows go to great lengths to
+     make sure Windows loads automatically, so that you never actually see
+     the DOS C:\> prompt, so that you don't believe you're really running
+     DOS, so that you believe Windows is an Operating System.  But the real
+     Operating System is DOS, no matter what Microsoft wants you to believe.
+
+
+
+
+                      SLOWDOWN 3.10            Page 47 of 75
+
+
+
+     SLOWING DOWN WINDOWS AND WINDOWS-NATIVE APPLICATIONS
+     ออออออออออออออออออออออออออออออออออออออออออออออออออออ
+
+     SLOWDOWN is a DOS program, and is designed to work with DOS programs. 
+     If you are using a DOS-based version of Windows (1.x, 2.x, 3.x, 9x, or
+     ME), you can use SLOWDOWN to Slow Down Windows and Windows-native
+     applications.  Just as with any other DOS program, though, you must
+     install SLOWDOWN into memory BEFORE you start Windows.  You typically do
+     that in your AUTOEXEC.BAT file, with a simple "SLOWDOWN" line.  A
+     "SLOWDOWN" line (with no Options) in your AUTOEXEC.BAT file will install
+     SLOWDOWN into memory, but it will not do anything to Slow Down the
+     computer just yet.  Later on, when you actually want things to run
+     Slowly, is when you tell SLOWDOWN exactly what to do.
+
+     Here is the quirk you have when you try to use a DOS Program to Slow
+     Down Windows, though.  Windows itself is the DOS application that
+     SLOWDOWN Slows Down.  Windows-native programs, for all practical
+     purposes, are "invisible" to DOS (and, therefore, "invisible" to
+     SLOWDOWN).  As far as DOS is concerned, whenever you start a new
+     Windows-native application, you are simply "extending" or "growing"
+     Windows (causing it to consume more resources than it did before).  As
+     far as SLOWDOWN (DOS) is concerned, it is all just one big, slow DOS
+     application called Windows.
+
+     Because SLOWDOWN cannot tell which Windows-native application is running
+     at any particular instant, it cannot treat each one differently (like it
+     can with DOS programs).  Basically, with SLOWDOWN, either EVERYTHING in
+     Windows is Slowed Down or NOTHING is Slowed Down.  Also, because Windows
+     so completely and obtrusively controls the keyboard, it's not possible
+     to use the SLOWDOWN Hot-Keys to control the Speed while Windows is
+     running.  SLOWDOWN does in fact let you control the Speed that Windows
+     is running, but you must do it manually (from a DOS command-line running
+     inside a DOS Box).
+
+     The way you control the Speed that Windows runs is from the DOS command-
+     line.  You use the same basic format for SLOWDOWN Options as you do to
+     Slow Down a "regular" DOS program, but you preface the Option with a "W"
+     or a "WINDOWS".  For example, to have Windows (and all Windows-native
+     programs) run at approximately the same speed as a 100-MHz 486, you
+     would something like this:
+
+       SLOWDOWN /WindowsMHz486 = 100     or
+       SLOWDOWN /WMHz=100
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 48 of 75
+
+
+
+     Only the Options that make sense as specifically applying to Slowing
+     Down Windows are the ones you can preface with a "W" or a "Windows". 
+     Those Options are:
+
+       /WindowsMHz80486=nnn  (Run Windows at same Speed as nnn-MHz 80486)
+       /WindowsMHz80286=nnn  (Run Windows at same Speed as nnn-MHz 80286)
+       /WindowsMHz8088=nnn   (Run Windows at same Speed as nnn-MHz 8088)
+       /WindowsSpeed=nnn     (Run Windows at a Speed of nnn SlowDown Units)
+       /Windows=nnn          (Slow Down Windows by nnn SlowDown-Units)
+
+       /WindowsUseInt08      (Use Interrupt 08 to Slow Down Windows)
+       /WindowsUseInt70      (Use Interrupt 70 to Slow Down Windows)
+
+     There are some other Options that, at first glance, you might think
+     could apply to Slowing Down Windows.  Here is what they are and why (at
+     least in my mind) they don't apply to Windows.  You can NOT preface
+     these with a "W" or "WINDOWS":
+
+       /XT or /AT       (trust me, you NEVER want to run Windows this slow)
+       /RememberSpeed   (Can't be set by keyboard from inside Windows)
+       /UseTraceMode    (Trace Mode crashes Windows)
+       /UseCPUCache     (The Cache can't be controlled underneath Windows)
+       /ShiftMask=mask  (Hot-Keys don't work in Windows)
+
+     The remaining Options (/Help, /Quiet, /CPUSpeedTable, etc.) are
+     "general" Options that don't have anything to do with actually Slowing
+     Down the computer at all.  So, you can't preface these with a "W" or
+     "WINDOWS", either.  All of the Options are discussed in detail in
+     various sections up above, if you're not already familiar with them.
+
+
+     In order for SLOWDOWN to have an effect on Windows, it must be installed
+     into memory BEFORE you start Windows (you typically do this in your
+     AUTOEXEC.BAT file).  If you do a Windows-applicable Option in the
+     SLOWDOWN that you install before Windows starts (probably in your
+     AUTOEXEC.BAT file), then it will affect (Slow Down) Windows while
+     Windows is loading.  You usually don't want to do this, though.  Windows
+     already takes an EXTREMELY long time to load, and it's usually VERY
+     frustrating to make it happen any slower than it already does.
+
+     However, there may be legitimate reasons to do it.  It's possible that
+     Slowing Down Windows while it is loading could cause it to run better. 
+     For example, I know there's a patch I was required to download from
+     Microsoft and install for my AMD K6-2 350-MHz computer at home.  The
+     symptom was that the computer would crash every time I tried to Shut
+     Down (that's right, it would crash when I tried to turn it off
+     "gracefully" like I was supposed to do).  I think (but am not completely
+     sure) that the patch is required because the AMD CPU is too fast for
+     Windows (at least too fast for Windows 95).  I never actually tried
+     using SLOWDOWN to fix the problem, but it might have worked, and I might
+     not have needed to install the Microsoft "fix".
+
+
+                      SLOWDOWN 3.10            Page 49 of 75
+
+
+
+     Usually, the more appropriate way to use SLOWDOWN with Windows is to
+     change the Speed of the computer after Windows has already started. 
+     What you must do is open up a DOS Box underneath Windows (Windows
+     usually calls it an "MS-DOS Prompt"), and run SLOWDOWN with the
+     appropriate Windows-related Options from inside the DOS Box.  The
+     SLOWDOWN that is inside the DOS Box actually can't do anything to Slow
+     Down Windows, though.  The SLOWDOWN that was installed BEFORE Windows is
+     the one that actually does the Slowing Down.  The SLOWDOWN you run from
+     inside the DOS Box simply "tells" the SLOWDOWN that was installed before
+     Windows what to do.
+
+     It is possible to "automate" the process of starting a Windows-native
+     application Slowly using SLOWDOWN.  I will assume already that you're
+     running a DOS-based version of Windows, and also that you installed
+     SLOWDOWN into memory before you loaded Windows.  What you then need to
+     do is create a DOS batch file with lines similar to the following:
+
+       RUNPROG.BAT:
+         @ECHO OFF
+         SLOWDOWN /WindowsMHz=100
+         C:\DIR\PROGRAM
+         PAUSE
+         SLOWDOWN /Windows=0
+
+     where C:\DIR\PROGRAM is the drive (C:), directory (\DIR\), and file name
+     (PROGRAM) of the Windows executable file (usually with a .EXE extension)
+     that loads the Windows-native program you want to run slowly.  Then when
+     you want to run the PROGRAM, instead of running the PROGRAM.EXE file
+     directly like you used to do, you run this batch file instead.  A batch
+     file is literally an executable file (one that you can easily create
+     yourself), so can drag the batch file to your desktop and create
+     shortcuts to it and add it to your menus and do all of the other stuff
+     you can normally do with ANY executable file.
+
+     In order to run a batch file, Windows must open up a DOS Box.  You can
+     either execute the batch file from a DOS Box that you have already
+     opened, or you can tell Windows to execute the Batch file.  If you tell
+     Windows to execute it (for example, by double-clicking on it from File
+     Manager or Windows Explorer), then Windows will automatically open up a
+     DOS Box for you.
+
+     The Batch file tells SLOWDOWN to run Windows at approximately the same
+     speed as a 100-MHz 486, and then executes "C:\DIR\PROGRAM" (the Windows-
+     native application).  When the Windows-Native application called PROGRAM
+     begins to execute, Windows will automatically switch tasks, and make
+     PROGRAM the new foreground application (PROGRAM will now have the
+     Windows Focus instead of the Batch file).  The Batch file will still be
+     executing, but it will running in the background (it will not have the
+     Windows Focus).
+
+
+
+
+                      SLOWDOWN 3.10            Page 50 of 75
+
+
+
+     After you are done using PROGRAM, and you want to speed the computer
+     back up again, you will need to (manually) switch the Windows Focus back
+     to the Batch File (make the Batch file the Foreground Application).  The
+     Batch file has actually been running the whole time (in the background),
+     and the program that the batch file is currently running is PAUSE.  The
+     PAUSE program has been sitting there patiently this whole time, waiting
+     for you to press a key on the keyboard.  Now that the PAUSE program has
+     the Windows Focus (it is the program where Windows will send the
+     keystrokes), you can press a key on the keyboard.  This will continue
+     running the batch file, which then tells SLOWDOWN to run the computer at
+     full speed again (SLOWDOWN /Windows=0).
+
+
+     The other issue with this batch file is that if you try to task-switch
+     (in Windows) between this PROGRAM and another Windows-native program
+     (let's call it Program2), then Program2 will run Slowly just like
+     PROGRAM does.  Depending on exactly what you're trying to do, and
+     exactly what PROGRAM and Program2 are, this could cause you some grief. 
+     If you simply can't live with these limitations that Windows forces
+     SLOWDOWN (DOS) to live by, then you may need to get a Windows-native
+     Slowdown-type program.
+
+
+     Here are a few other things you should know about using SLOWDOWN to Slow
+     Down Windows.  Much like in plain old DOS, the Interrupt 8 (the default)
+     method works MUCH better than the Interrupt 70 method when you are
+     trying to Slow Down Windows (see page 19 above if you don't know what
+     that means).  I give you option to use Interrupt 70 to Slow Down Windows
+     if you want, but don't recommend it.
+
+     Also, all of the quirks and limitations detailed above only apply when
+     you are trying to Slow Down Windows-NATIVE applications.  If you are
+     simply using Windows as a DOS Task-Switcher, and are only trying to Slow
+     Down DOS-based Applications that are running inside DOS Boxes, none of
+     those limitations apply.  SLOWDOWN does a very good job (at least as
+     good as any other program I've seen) of Slowing Down DOS program
+     underneath Windows.
+
+
+     In version 1 of SLOWDOWN, the way you Slowed Down Windows was to load
+     the DOS executable file used to start Windows (WIN.COM) using the
+     PROGRAM Option of SLOWDOWN, like this:
+
+       SLOWDOWN {SlowDown Options} WIN
+
+     While that approach could still work with this version of SLOWDOWN, I do
+     not recommend it.  I haven't really experimented with it to know for
+     sure, but suspect it could cause you some problems.  It is MUCH better
+     to simply load SLOWDOWN as a TSR, with no Options, in your AUTOEXEC.BAT
+     file (before Windows starts).  Then, you can control SLOWDOWN after
+     Windows is loaded by using DOS Boxes underneath Windows.
+
+
+                      SLOWDOWN 3.10            Page 51 of 75
+
+
+
+     PLEASE keep in mind that this entire section about Slowing Down Windows
+     and Windows-native applications only applies to DOS-based versions of
+     Windows (1.x, 2.x, 3.x, 9x, and ME).  If you are using an NT-based
+     version of Windows, you have no choice but to use a Windows-native
+     Slowdown-type program in order to Slow Down Windows-native applications. 
+     You can still use SLOWDOWN to Slow Down DOS applications that you run
+     inside the DOS Boxes underneath Windows, though.
+
+
+     Let me also say this.  I've never actually tried using SLOWDOWN with
+     Windows ME (actually, I've never tried using Windows ME at all).  ME is
+     supposedly the last DOS-based Windows that Microsoft will ever make. 
+     I've also heard that it is impossible to have Windows ME boot to a
+     command-line Shell (like COMMAND.COM).  I have a very hard time
+     believing it's really impossible (I CAN see Microsoft making it
+     DIFFICULT, but not impossible).  But then again, we're talking about
+     Microsoft here.  They have a long track record of doing things that
+     don't make sense from a technical perspective -- many things they do
+     only make sense from a marketing perspective (all they are intended to
+     do is maintain and increase Microsoft's dominance of the market place). 
+     Anyway, the point of this paragraph is simply to let you know that
+     Windows ME is DOS-based.  Even if you are unable to see a DOS command-
+     line Shell before you start Windows ME, you should still be able to load
+     SLOWDOWN before you start Windows, and SLOWDOWN should work with it just
+     fine.  I don't even know if Windows ME has an AUTOEXEC.BAT file, but I
+     suspect that it does.  And, if you want to use SLOWDOWN to Slow Down
+     Windows, you will probably want to load SLOWDOWN in AUTOEXEC.BAT.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 52 of 75
+
+
+
+     SLOWING DOWN DOS PROGRAMS UNDERNEATH WINDOWS
+     ออออออออออออออออออออออออออออออออออออออออออออ
+
+     One way you can use Microsoft Windows is as a DOS Task-Switcher.  You
+     can run several DOS applications at the same time underneath Windows,
+     and "switch" between them.  Windows puts each DOS application in a
+     separate thing called a "DOS box", and you can use SLOWDOWN to Slow Down
+     the DOS boxes that run underneath Windows.  In fact, SLOWDOWN will allow
+     you to have each separate DOS box underneath Windows running at a
+     separate SLOWDOWN speed, and a different SLOWDOWN "mode" (Interrupt
+     8/Interrupt 70), and with the Hot-Keys configured differently, than all
+     of the other DOS boxes.  Let's talk a little bit about how DOS Boxes
+     work.
+
+     If you open more than one DOS Box underneath Windows, they are almost
+     totally isolated from each other.  Anything that is done to the memory
+     of one DOS Box can't be seen by any of the other DOS boxes.  For
+     example, if you load SLOWDOWN into memory in one DOS Box, it does not
+     affect any of the other DOS Boxes that might be running at the same
+     time.  Each DOS box can have its own independent copy of SLOWDOWN loaded
+     into memory, and they will not affect or interfere with each other.  In
+     technical terms, each DOS Box is running in a different "Virtual
+     Machine."
+
+     However, anything you do to the memory of the computer BEFORE you start
+     Windows (such as a installing SLOWDOWN with your AUTOEXEC.BAT file) is
+     automatically available to all DOS Boxes that DOS-based versions of
+     Windows may open up after it starts.  Windows has no choice but to
+     "copy" what was there before it started, because Windows is itself
+     nothing more than a large, slow DOS program.  It must work with DOS
+     programs (TSR's like SLOWDOWN) that were installed before it was.
+
+     What SLOWDOWN is able to do (if you want it to) is to load a single copy
+     of SLOWDOWN into memory (before Windows starts), and also to have each
+     separate DOS Box running at a separate SLOWDOWN speed, using a different
+     SLOWDOWN "Mode" (Interrupt 8 or Interrupt 70), and using a different set
+     of Hot-Keys.  The single copy of SLOWDOWN (installed before Windows was
+     started) will automatically change speeds and modes and Hot-Keys
+     appropriately as you switch between the different DOS boxes.  This can
+     make it seem as if you have several different copies of SLOWDOWN running
+     at the same time, even though there is really only one.  SLOWDOWN will
+     automatically keep track of and switch between 16 different DOS Boxes
+     underneath Windows.  You can also use SLOWDOWN to Slow Down Windows
+     itself, as described above in "SLOWING DOWN WINDOWS AND WINDOWS-NATIVE
+     APPLICATIONS" (page 48).
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 53 of 75
+
+
+
+     Note that this Task-Switching capability of SLOWDOWN is only used if you
+     install SLOWDOWN into memory before you start your DOS-based version of
+     Windows (such as if you put a "SLOWDOWN" line in your AUTOEXEC.BAT
+     file).  If you do this, SLOWDOWN (including the SLOWDOWN Hot-Keys) will
+     be automatically accessible in all DOS Boxes that you start underneath
+     Windows.  The other choice is to install SLOWDOWN only inside the DOS
+     Boxes that will actually need SLOWDOWN, but, in my opinion, that is more
+     complicated and more confusing.
+
+
+     Windows is not the only DOS Task-Switching program there is.  Other
+     Task-Switchers include DesqView, Software Carousel, and the DOSSHELL
+     program that comes with later versions of DOS (to name a few).  The
+     Task-Switching capability of SLOWDOWN will only work in Windows,
+     however.  If a non-Windows Task-Switching program is used, you will
+     probably want to load SLOWDOWN individually in each DOS box underneath
+     the Task-Switcher.  If you try to load SLOWDOWN before you load the
+     Task-Switcher, SLOWDOWN won't be able to "isolate" the DOS Boxes from
+     each other (and this will cause you a lot of headaches).
+
+
+     Another thing to keep in mind is that "real" DOS is a LOT faster than a
+     DOS Box underneath Windows.  If you actually do a comparison of the two
+     with SLOWDOWN, you will see that "real" DOS is AT LEAST twice as fast as
+     a Windows DOS box on the same computer.  The difference in speed is so
+     significant that you need to take some special precautions when using
+     SLOWDOWN with Windows.
+
+     Let's say you install SLOWDOWN before you start Windows, and when you
+     do, SLOWDOWN says the maximum SPEED of your computer is 2400 Slowdown-
+     Units (SU's).  Then you start Windows, and start a DOS Box underneath
+     Windows, and run SLOWDOWN again.  Let's say SLOWDOWN now tells you the
+     Maximum SPEED of your computer is 800 Slowdown-Units (1/3 as fast as it
+     was before you installed Windows).  When you ran SLOWDOWN the second
+     time (inside the DOS box), SLOWDOWN updated itself with the new Maximum
+     SPEED of the computer (now only 800 Slowdown-Units, because it is
+     running in a DOS Box underneath Windows).  SLOWDOWN will continue to
+     work properly in all DOS Boxes until you exit from Windows (when the
+     computer will automatically speed up again).
+
+     Let's go through another scenario.  You do the same things as before, up
+     to the point where you run SLOWDOWN the second time (you install
+     SLOWDOWN, start Windows, and start a DOS Box underneath Windows). 
+     Instead of running SLOWDOWN a second time, though, you just try to
+     change the speed of the computer with one of the SLOWDOWN Hot-Keys,
+     <Ctrl>-<Alt>-<1> (which is supposed to start running the computer at 10%
+     of "Normal" Speed).  The problem is, "Normal" Speed now is only 800
+     SU's, but SLOWDOWN still thinks it is 2400 SU's.  This could cause your
+     computer to crash (SLOWDOWN will try to Slow Down your computer more
+     than it is safe to do).
+
+
+
+                      SLOWDOWN 3.10            Page 54 of 75
+
+
+
+     While SLOWDOWN can automatically tell whether or not Windows is running,
+     it cannot automatically tell exactly how much Windows has Slowed Down
+     the DOS Boxes that run underneath it.  If you install SLOWDOWN before
+     you run Windows, and don't update SLOWDOWN (by running SLOWDOWN from the
+     command-line inside at least one DOS Box), SLOWDOWN will ignore any Hot-
+     Key requests you try to perform.  Instead of changing the Speed of the
+     computer, SLOWDOWN will instead simply beep at you twice (indicating a
+     problem).  If you want the Hot-Keys to work correctly, you need to make
+     sure you run SLOWDOWN at least once from a DOS Box after Windows has
+     started.
+
+     If you quit Windows and start running "real" DOS again (which you can't
+     reliably do with Windows versions later than 3.x), or "Restart in MS-DOS
+     Mode" (in versions of Windows later than 3.x), the opposite problem
+     happens.  DOS just naturally starts running several times faster than it
+     did while Windows was running.  However, SLOWDOWN can handle this
+     situation automatically.  It remembers how fast the computer was before
+     Windows started, and will automatically convert everything back to what
+     it needs to be for "real" DOS again.
+
+
+     In summary, each DOS Box can be running at a different SLOWDOWN Speed,
+     using a different SLOWDOWN mode (Interrupt 8/Interrupt 70), and using a
+     different configuration for the Hot-Keys (Shift-mask, Enable/Disable,
+     and Beep).  You can either load a separate copy of SLOWDOWN in each DOS
+     Box, or load a single copy of SLOWDOWN before Windows starts (such as
+     with your AUTOEXEC.BAT file).  If you load SLOWDOWN before Windows
+     starts, you will also need to run SLOWDOWN from the command-line at
+     least once inside a DOS Box before SLOWDOWN will work correctly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 55 of 75
+
+
+
+     HOW SLOWDOWN WORKS
+     ออออออออออออออออออ
+
+     Every DOS-based slowdown-type of program I've seen works essentially the
+     same way.  They "tie" themselves to a Clock Interrupt (either Interrupt
+     8 or Interrupt 70).  SLOWDOWN basically works the same way (see the
+     /UseInt08 and /UseInt70 Options above on page 19).
+
+     SLOWDOWN either ties itself to Interrupt 8, which occurs approximately
+     18 times per second, or to Interrupt 70, which occurs approximately 1024
+     times per second.  These Clock Interrupts are always occurring as long
+     as your computer is turned on, even if the computer isn't "doing
+     anything".  Each time one of these Interrupts occurs, SLOWDOWN "wastes"
+     an appropriate amount of time by doing a series of "do-nothing" loops (a
+     do-nothing loop is called a Slowdown-Unit or an SU).  Each Slowdown-Unit
+     is a complicated and time-consuming set of things for the CPU (Central
+     Processing Unit) to do, but doesn't provide any useful output -- it just
+     wastes time (sounds a lot like Windows, doesn't it?).  Because SLOWDOWN
+     is constantly wasting time (in the background) whenever there is a Clock
+     Interrupt, a normal program (running in the foreground) is unable to get
+     access to the CPU (your computer's "brain") as much as it normally does. 
+     This makes the computer appear to run more slowly.
+
+
+     In the Options you use to tell SLOWDOWN how fast (or how slow) you want
+     the computer to run, you are telling SLOWDOWN (either directly or
+     indirectly) how many Slowdown-Units (do-nothing loops) you want it to do
+     each time there is a Clock Interrupt.  To calculate how fast your
+     computer is compared to an XT or an AT or an 80486 computer, SLOWDOWN
+     counts how many Slowdown-Units your computer can continuously do between
+     each Interrupt 8.  SLOWDOWN knows that an XT (4.77-MHz 8088) can do
+     approximately 12 Slowdown-Units between each Interrupt 8, an AT (8-MHz
+     80286) can do about 54 SU's, and a 75-MHz 80486 can do about 889 SU's. 
+     Because SLOWDOWN uses the same method (Slowdown-Units) to measure the
+     Speed as it does to Slow Down the computer, it can simulate pretty
+     accurately the Speed of almost any computer.  Note, though, that while
+     SLOWDOWN attempts to simulate a particular CPU speed, the CPU speed is
+     NOT the only thing that controls how fast a computer performs (though it
+     is usually the main thing).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 56 of 75
+
+
+
+     For example, to simulate an XT, SLOWDOWN needs to waste some time each
+     Clock Interrupt.  How much time?  Well, let's assume the maximum Speed
+     of your computer is 120 Slowdown-Units (SU's).  SLOWDOWN needs to leave
+     enough time for your computer to do the equivalent of 12 "do-nothing"
+     loops between each Interrupt 8, so SLOWDOWN will "waste" 108 (120-12)
+     SU's every time there is an Interrupt 8.  This will leave 12 SU's worth
+     of time for your computer to run other programs.  To simulate an AT
+     (whose Speed is 54 SU's), SLOWDOWN will "waste" 66 (120-54) SU's each
+     time there is an Interrupt 8.  The maximum Slowdown-Factor SLOWDOWN
+     would actually use is 120.  A Slowdown-Factor of 120 would Slow the
+     computer Down enough that it would be very frustrating to use, but
+     should not stop the computer completely.
+
+
+     No "slowdown" or Benchmark program can do a perfect job of telling you
+     exactly how fast your computer will run any particular program.  Suppose
+     you have a Benchmark program (or a salesman) tell you your computer is
+     50 times faster than an AT.  That doesn't mean every program you have
+     will run 50 times faster on your computer than it will on an AT.  Some
+     programs will, in fact, run about 50 times faster.  But, some may run
+     only about 10 times faster, some may run at about the same speed, some
+     may actually run slower, and some may not even run at all.  It all
+     depends on how the program is written and what the program is supposed
+     to do.
+
+     I'm telling you this because the default Speeds SLOWDOWN uses to
+     simulate XT's and AT's and 80486's and whatever will not always work
+     correctly -- you may have to experiment a little with each program (the
+     SLOWDOWN Hot-Keys can help you "fine-tune" things).  If your program
+     doesn't do anything too weird, SLOWDOWN's default values should work
+     pretty well.  If you find values other than the defaults work better for
+     a particular program, for heaven's sake write yourself a Batch file to
+     automate the process for you the next time.
+
+     One thing SLOWDOWN (and every other DOS slowdown-type program I've seen)
+     doesn't always do very well is sound.  The way a PC generates sounds
+     through its speaker is not very sophisticated and not very controllable,
+     and sometimes SLOWDOWN has a hard time dealing with it.  It just depends
+     on how the program is written.  If the funky sounds or the extremely
+     long beeps bother you, and the program has the option to turn off the
+     sound, you may want to do just that.
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 57 of 75
+
+
+
+     Interrupt 8 and Interrupt 70 (both described above on page 19) are the
+     fundamental methods that SLOWDOWN that uses to Slow a computer Down. 
+     Interrupt 8 is the most "compatible" method (it always works), but a
+     program can be "jerky" when it is being Slowed Down with Interrupt 8. 
+     This is because Interrupt 8 occurs very infrequently (only about 18
+     times per second).
+
+     Programs Slowed Down with Interrupt 70 will usually run "smoother" than
+     they do with Interrupt 8, because Interrupt 70 occurs much more often
+     than Interrupt 8 (about 1024 times per second).  In fact, the frequency
+     of Interrupt 70 is easily programmable, and can be programmed to occur
+     as often as 8192 times per second.  The problem with using Interrupt 70
+     to Slow the computer Down is that it doesn't always work.  Sometimes it
+     just plain doesn't work at all, sometimes it Slows the computer Down too
+     much or too little, and sometimes it crashes the computer.  Also,
+     changing the frequency to anything other than 1024 times per second
+     (which some other slowdown-type programs do) causes even more
+     compatibility problems.  When Interrupt 70 works, it's very nice.  When
+     it doesn't, it's a real pain.  That's why SLOWDOWN let's you toggle back
+     and forth between Interrupt 8 and Interrupt 70 any time you want.
+
+
+
+     SLOWDOWN also has two other "methods" of Slowing Down the computer,
+     (detailed above on page 21) and UseTrace (detailed above page 25). 
+     These two methods are fundamentally very different than Interrupt 8 and
+     Interrupt 70, though.  Because the sections above describe these methods
+     in detail, I won't repeat the details here.  The important thing is that
+     you know they are available, and you can refer to the sections above if
+     you want to know the details.
+
+     There is one thing you might want to know about the UseCPUCache and
+     UseTrace methods, though, that isn't mentioned anywhere else.  SLOWDOWN
+     will never both Disable the CPU Cache and turn on Trace Mode at the same
+     time.  Under the correct circumstances, SLOWDOWN may do one or the other
+     to Slow the computer Down, but it will not do both at the same time. 
+     The main reason for this is that doing both at the same time makes your
+     computer run unbelievably slowly.  I don't think there's a computer out
+     there fast enough that could ever warrant being Slowed Down that much.
+
+     If you want to experiment with doing both at the same time, however, you
+     can do it.  You will just need to experiment with the two other programs
+     that are distributed with this version of SLOWDOWN -- SLOWINT1 (which
+     can turn on Trace Mode) and CPUCACHE (which can control the CPU Cache). 
+     If computers ever get fast enough to warrant being slowed down that
+     much, I may add the capability into SLOWDOWN.  Until then, you will need
+     to use SLOWINT1 and CPUCACHE.
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 58 of 75
+
+
+
+     EMM386.EXE AND THE CPU CACHE
+     ออออออออออออออออออออออออออออ
+
+     This section is going to be a pretty technical discussion about the
+     USECPUCACHE Option discussed above (page 21).  In particular, it will
+     describe certain compatibility issues that have been discovered between
+     HIMEM.SYS/EMM386.EXE and the CPU Cache.  Note that the problems
+     discovered are not actually issues with SLOWDOWN itself, but affect
+     SLOWDOWN because it attempts to manipulate the CPU Cache.  This will get
+     fairly technical, so if you're not currently having a problem with
+     SLOWDOWN, you should be able to safely skip this section.  If your
+     computer is locking up when you use SLOWDOWN, this section will
+     definitely interest you.
+
+     There have been two different issues reported with the CPU Cache and
+     HIMEM.SYS/EMM386.EXE (the Extended/Expanded Memory Managers that
+     Microsoft includes with later versions of DOS).  The first problem
+     happens on some computers if HIMEM.SYS and EMM386.EXE are NOT loaded in
+     memory.  With these particular computers, any attempt by SLOWDOWN to
+     manipulate the CPU Cache will cause the computer to lock up.  However,
+     if HIMEM.SYS and EMM386.EXE ARE loaded into memory before you try to run
+     SLOWDOWN, everything works just fine.  The SLOWDOWN user that discovered
+     this problem has also reported that everything works fine if the CPU
+     Cache is Disabled before you run SLOWDOWN, even if you re-Enable the CPU
+     Cache afterwards.
+
+     The most obvious solution to this problem, if you have it, is to make
+     sure HIMEM.SYS and EMM386.EXE are always loaded into memory before you
+     use SLOWDOWN.  Most computers these days are already set up so that
+     HIMEM.SYS and EMM386.EXE are loaded automatically (via the C:\CONFIG.SYS
+     file).  So even if your computer actually has the problem, you probably
+     will not even know it unless you happen to play around with the
+     HIMEM.SYS and EMM386.EXE lines in your C:\CONFIG.SYS file (which, of
+     course, most people never do). 
+
+     Unfortunately, there are also a (very) few programs out there that will
+     not work correctly if HIMEM.SYS and EMM386.EXE are installed, but the
+     programs also require the use of SLOWDOWN.  If your computer has the
+     problem we're discussing here (SLOWDOWN locks up the computer when
+     HIMEM.SYS and EMM386.EXE are NOT installed), and you want to run a
+     program that does NOT work if HIMEM.SYS and EMM386.EXE ARE installed,
+     here is how to get around the problem.  What you need to do is Disable
+     the Cache before installing SLOWDOWN into memory.  There are two
+     different ways to do this.
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 59 of 75
+
+
+
+     The first way to do this is to Disable the CPU Cache in the BIOS (this
+     will Disable the Cache every time your computer starts).  You will need
+     to get into the BIOS Setup program to change this setting.  On most
+     computers, this requires hitting some special keystroke combination as
+     the computer is first starting (exactly how to do it varies from
+     computer to computer, so you pretty much need to figure out the details
+     by yourself).  In many BIOS's, the menu item referring to the CPU Cache
+     is referred to the "L1 Cache".
+
+     Of course, you normally don't want to leave the Cache Disabled
+     permanently.  You really only want the Cache to be Disabled long enough
+     for SLOWDOWN to get installed, and then you will want to re-Enable the
+     Cache.  You can use the enclosed CPUCACHE program to do that.  If the
+     Cache is Disabled in the BIOS, the following excerpt from your
+     AUTOEXEC.BAT file will leave the Cache Disabled just long enough for
+     SLOWDOWN to get installed, and then will re-Enable the Cache:
+
+       SLOWDOWN            {Install SLOWDOWN into memory}
+       CPUCACHE Enable     {Enable the Cache}
+       SLOWDOWN            {Have SLOWDOWN recalculate the Computer Speed}
+
+
+     A second way to Disable the Cache just long enough for SLOWDOWN to get
+     installed is to use CPUCACHE to both Disable and Enable the Cache
+     (instead of using the BIOS to Disable the Cache and CPUCACHE to Enable
+     the Cache, as was done above).  The following excerpt from an
+     AUTOEXEC.BAT file would do this:
+
+       CPUCACHE Disable    {Disable the Cache}
+       SLOWDOWN            {Install SLOWDOWN into memory}
+       CPUCACHE Enable     {Enable the Cache}
+       SLOWDOWN            {Have SLOWDOWN recalculate the Computer Speed}
+
+
+     Because I do not actually own a computer that has this problem, I cannot
+     verify whether both of these methods will actually work.  At least in
+     theory, the first method (Disabling the Cache with the BIOS and Enabling
+     it with CPUCACHE) should always work.  The second method (using CPUCACHE
+     to both Disable and Enable the Cache) may or may not work on some
+     computers (the computer may lock up the first time CPUCACHE tries to
+     manipulate the Cache, just like it does when SLOWDOWN tries to
+     manipulate the Cache).
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 60 of 75
+
+
+
+     There has also been a problem reported on some computers when HIMEM.SYS
+     and EMM386.EXE ARE installed before you try to run SLOWDOWN (almost the
+     exact opposite problem as the one discussed above).  In this case, the
+     problem actually appears to be a bug in certain versions of
+     HIMEM.SYS/EMM386.EXE.  In particular, the problem happens with the
+     HIMEM.SYS/EMM386.EXE that came with MS-DOS version 6.22.  It does appear
+     to be limited to a only a small number of MS-DOS versions, since MS-DOS
+     6.20 (which was released shortly before MS-DOS 6.22) does NOT have the
+     problem, and neither does MS-DOS 7.00 (which was the version that came
+     immediately after MS-DOS 6.22).
+
+     The solution to this problem is to replace the buggy versions of
+     HIMEM.SYS and EMM386.EXE.  You can download from my web site
+     (http://members.aol.com/bretjohn) the versions of HIMEM.SYS and
+     EMM386.EXE that were distributed by Microsoft with MS-DOS 7.10 (a.k.a
+     "DOS 98 SE", the DOS that came with Windows 98 Second Edition).  You
+     will need to replace the "bad" versions of HIMEM.SYS and EMM386.EXE with
+     these new versions, and everything should work just fine after you
+     reboot.
+
+     Unfortunately, simply "replacing" the bad versions of HIMEM.SYS and
+     EMM386.EXE may not be as easy as it sounds.  First of all, many
+     computers have more than one copy (and possibly more than one version)
+     of these programs on the hard drive already.  The places they may
+     typically be located are in C:\, C:\DOS, C:\WINDOWS, and
+     C:\WINDOWS\COMMAND.  Copies of HIMEM.SYS and EMM386.EXE could be in
+     other places as well, but these are the most common.  And, if your
+     computer does have more than one copy of these programs (which would not
+     surprise me at all), you need to figure out which one is actually being
+     loaded into memory when the computer is booting up.  This is exacerbated
+     even further by the fact that MS-DOS 7.00 (a.k.a. "DOS 95"), MS-DOS 7.10
+     (a.k.a. "DOS 98"), and probably MS-DOS 8.00 (a.k.a. "DOS ME")
+     automatically try to load C:\WINDOWS\HIMEM.SYS even if you don't want
+     them to.  In case you care, they also try to automatically try to load
+     C:\WINDOWS\IFSHLP.SYS and C:\WINDOWS\SETVER.EXE, though those programs
+     don't seem to affect SLOWDOWN.
+
+     In addition, Microsoft doesn't seem to be very diligent about monitoring
+     version numbers on HIMEM.SYS and EMM386.EXE.  The version of EMM386.EXE
+     that came with Windows 95 OSR 2 claims to be version 4.95, and so does
+     the version of EMM386.EXE that came with Windows 98 SE (the one you can
+     download from my web site).  Yet, if you physically compare the two
+     files, they are very different from each other.  I do not know if the
+     differences actually affect how the programs actually work, but I do
+     know that there's no way there should be two COMPLETELY different
+     Microsoft EMM386.EXE Version 4.95's floating around.  Normally, newer
+     versions of software tend to be "better" than older versions, which is
+     why I allow you to download the HIMEM.SYS and EMM386.EXE that came with
+     Window 98 SE instead of the ones that came with Windows 95 OSR 2.
+
+
+
+
+                      SLOWDOWN 3.10            Page 61 of 75
+
+
+
+     Because of all of this confusion that Microsoft has created surrounding
+     HIMEM.SYS and EMM386.EXE, you will need to be careful if you try to
+     update them.  Because it can get so complicated, I cannot describe
+     exactly, step-by-step, what you need to do.  I will give you some things
+     to keep in mind, though.
+
+     First of all, you do need to find all of the different copies of the
+     programs on your hard drive.  You may only have one copy, in which case
+     your life becomes quite a bit easier.  If you have more than one copy,
+     you may want to get rid of some of them, since you really only need one. 
+     If you do have more than one copy, you will need to figure out which
+     ones are actually being loaded as your computer is booting (look inside
+     your C:\CONFIG.SYS file).  Also, as with any type of computer upgrade,
+     you should make a backup copy of the existing programs, just in case you
+     may need to get back to where you were before you started (sometimes
+     "upgrades" make things worse instead of better).  Good Luck!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 62 of 75
+
+
+
+     Now that I've discussed some possible solutions to the problems, I'm
+     actually going to discuss in technical detail exactly what the problem
+     appears to be.  I'm including the details here for anyone who might be
+     having a similar problem with another program, or if you happen to use a
+     non-Microsoft Memory Manager.  If you're having a problem this
+     description may help you figure out exactly what the problem is so you
+     can fix it.
+
+     There are two steps involved in Disabling the CPU Cache.  The first step
+     is to modify a couple of bits in a special CPU Register called CR0
+     (Control Register 0).  This step does not completely Disable the CPU
+     Cache, though.  What this step does is to simply prevent any new data
+     from getting put into the CPU Cache.  Any data that is already in the
+     Cache stays there, and the CPU will automatically use the data that's in
+     the Cache whenever it can.
+
+     The second step involved in Disabling the CPU Cache is to issue a
+     special CPU Instruction, whose mnemonic is WBINVD (Write Back and
+     INValiDate the cache).  What this instruction does is tell the CPU to
+     write back any data in the Cache to "real" memory (so that the real
+     memory has the real data), and then to mark all of the data in the Cache
+     as invalid ("dirty") so the CPU won't try to use it.  Only after this
+     second step is done (issuing the WBINVD instruction to the CPU) is the
+     Cache truly Disabled.
+
+     Now comes the real issue.  Unfortunately, all of the CPU instructions it
+     takes to Disable the CPU Cache (Reading and Writing CR0, and WBINVD) are
+     special instructions that the CPU considers "Privileged".  That is, not
+     just any program is allowed to issue these instructions any time it
+     wants to.  Any program trying to issue these instructions must be
+     running at Privilege Level 0 (PL0).  If the CPU is running in Real Mode,
+     which it is if you boot the computer to DOS and do NOT load EMM386.EXE,
+     all programs run at PL0.  If this is the case, SLOWDOWN can Disable the
+     Cache without any problem (on most computers, anyway).
+
+     When EMM386 loads, it puts the CPU into Protected Mode, and DOS is
+     actually running in a Virtual-80x86 (V86) machine.  Any time a program
+     is running in a V86 machine, it is NOT running at PL0, and is not
+     allowed to perform any Privileged instructions.  The program that's
+     managing the Protected Mode processes (in this case, EMM386.EXE) is
+     supposed to intercept anything "funny" that the V86 (DOS) program does,
+     and handle it appropriately.  When SLOWDOWN tries to execute a CR0 or
+     WBINVD Instruction from V86 (underneath EMM386), the Protected Mode
+     control program (EMM386) is supposed to intercept the "illegal"
+     instruction and "fix" it so the computer doesn't crash.  If EMM386 does
+     not handle things appropriately, the CPU will simply stop.  This appears
+     to be what's happening with the "bad" version(s) of EMM386.  The obvious
+     solution is to use a "good" version of EMM386 (such as the one you can
+     download from my web site, http://members.aol.com/bretjohn).
+
+
+
+
+                      SLOWDOWN 3.10            Page 63 of 75
+
+
+
+     There are many lengthy dissertations available out on the Internet (and
+     elsewhere) that discuss things like Protected Mode, Real Mode, Privilege
+     Levels, etc., in great detail, so I didn't try to explain all of that
+     here.  I limited this discussion specifically to SLOWDOWN the CPU Cache,
+     and the EMM386.EXE bug.  If you want to learn more about all of the
+     other stuff, there's no end to what you can find out if you want do a
+     little bit more research.
+
+     This section also refers to another program of mine, called CPUCACHE
+     (which is included with this distribution of SLOWDOWN).  CPUCACHE is a
+     relatively simple program, that does just one thing -- Controls the CPU
+     Cache.  It will Enable, Disable, Toggle, or simply show you the current
+     status of the CPU Cache.  It includes its own documentation, so I won't
+     go into details here.  It's simply available to you if you want to (or
+     need to) use it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 64 of 75
+
+
+
+     THE DOS EXEC FUNCTION AND COMMAND.COM
+     อออออออออออออออออออออออออออออออออออออ
+
+     When you use the PROGRAM Option (page 29) to have SLOWDOWN execute a
+     single Program (slowly), it uses a function in DOS called EXEC.  The
+     EXEC function allows one program (SLOWDOWN) to call (run) another
+     program (which is called the "Child program").  The Child program that
+     SLOWDOWN calls is always COMMAND.COM, or whatever the COMSPEC
+     Environment variable is set to (COMMAND.COM is called the "DOS Shell").
+
+     If you type a PROGRAM name at the end of the SLOWDOWN command line
+     (telling SLOWDOWN to execute just one particular PROGRAM slowly),
+     SLOWDOWN Slows Down the computer, and then EXEC's a "COMMAND /C {Program
+     with Options}".  When the PROGRAM is finished (actually, when
+     COMMAND.COM is finished), SLOWDOWN returns the computer to the way it
+     was running before it did the EXEC.
+
+     It would also be possible for SLOWDOWN to EXEC the PROGRAM directly
+     (which is what some other "slowdown" programs do), instead of using
+     COMMAND.COM as a "middleman".  The reason SLOWDOWN EXEC's the DOS Shell
+     instead of directly EXEC'ing the PROGRAM is three-fold.  First of all,
+     being in a DOS Shell is the only way you can execute a Batch file.  You
+     cannot EXEC a Batch file directly - you can only EXEC a .COM or .EXE
+     file.  Batch files are far too useful and prevalent to not allow
+     SLOWDOWN to work with them.
+
+     Secondly, a DOS Shell is the only way to execute internal DOS commands
+     (COPY, DEL, DIR, FOR, SET, etc.).  These internal commands are "inside"
+     the DOS Shell (COMMAND.COM), and are impossible to EXEC directly.  As
+     with Batch files, internal commands are far too useful to not allow
+     SLOWDOWN to work with them.
+
+     Lastly, using the DOS Shell allows all of your PATH's, file
+     redirections, etc. to remain in full use.  The DOS Shell already knows
+     how to use the PATH to find executable files, how to edit command line
+     arguments, etc.  If SLOWDOWN didn't use the DOS Shell to handle these
+     details, SLOWDOWN would become much more complicated, take up much more
+     memory, and would probably have all kinds of compatibility problems.  As
+     it is, SLOWDOWN uses about 4.5K of memory, plus whatever COMMAND.COM
+     uses (usually around 3-8k).
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 65 of 75
+
+
+
+     Enough with the good things about EXEC and COMMAND.COM.  There is one
+     minor "gotcha" that you need to be concerned about when using SLOWDOWN
+     to EXEC a Batch file.  With some versions of DOS, when the DOS EXEC
+     function calls a Child program, it gives the Child a copy of the current
+     Environment to use.  Instead of giving it a copy of the entire
+     Environment, however, it only gives it a copy that is barely big enough
+     to hold the current state of the Environment.  There is no extra space
+     given to add more Environment variables to the list.
+
+     If the Batch file you're EXEC'ing with SLOWDOWN tries to SET (create or
+     modify) any Environment variables, you may get an "Out of Environment
+     Space" error message.  There's probably a good reason the Batch file is
+     trying to change the Environment variable, and will probably not work
+     correctly if it can't SET it.  The only Batch files you sometimes have
+     problems getting to work with SLOWDOWN are those that try to SET new
+     Environment variables, and even then only if you are using a version of
+     DOS that limits the size of the Environment (not all of them do).  As a
+     rule, Batch files don't SET Environment variables (Environment variables
+     are most often created in the AUTOEXEC.BAT file, which runs when you
+     first turn the computer on).  Batch files that don't try to increase the
+     size of the Environment should work just fine.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 66 of 75
+
+
+
+     THE IBM INTERRUPT SHARING PROTOCOL
+     ออออออออออออออออออออออออออออออออออ
+
+     Beginning with version 2, SLOWDOWN implemented something called the "IBM
+     Interrupt Sharing Protocol".  The details of the Protocol are pretty
+     technical, and I won't go into them here.  I'm going to try to discuss,
+     at a high level, the advantages (and disadvantages) of the Protocol,
+     however.  As a user of SLOWDOWN, there are some things you should know
+     that are discussed here.  I'm also trying to promote the Protocol to
+     other programmers, so you'll see a little bit of that bias in here,
+     also.  Please bear with me.
+
+     Most people who use DOS very much at all install several TSR's into
+     memory at the same time (TSR's like DOSKEY, MSCDEX, and, of course,
+     SLOWDOWN).  There are also times when, for various reasons, you may want
+     to (or need to) "Disable" a particular TSR.  You may either need to
+     Disable it temporarily (and will later want to "Enable" it again), or
+     you may want to Disable it permanently (and would prefer to "Uninstall"
+     it from memory completely).  Unfortunately, many TSR's don't have
+     "Enable" or "Disable" Options, and many also do not have "Uninstall"
+     Options.
+
+     Even if they do have an "Uninstall" Option, though, it is still possible
+     that they cannot be Uninstalled from memory.  It is usually not possible
+     to Uninstall a particular TSR unless it was the last TSR installed into
+     memory (or at least very close to the last).  You must usually Uninstall
+     TSR's in the reverse order they were installed (sometimes called FILO --
+     First In, Last Out).
+
+     For example, let's say you have 6 different TSR's in memory, all doing
+     different things.  You need to "Disable" TSR #4, but it doesn't have a
+     "Disable" Option.  It does have an "Uninstall" Option, but it can't be
+     Uninstalled because TSR's 5 & 6 are "in the way".  In order to Uninstall
+     TSR #4, you must first Uninstall TSR #6 (if you can), then Uninstall TSR
+     #5 (if you can), then Uninstall TSR #4 (we're assuming here that you
+     can), then re-install TSR #5 (if you can), then re-install TSR #6 (if
+     you can).  Or, you can edit your AUTOEXEC.BAT file, REMark out the line
+     that installs TSR #4, reboot the computer, do the thing you need to do
+     without TSR #4, then edit AUTOEXEC.BAT again, un-REMark back in the line
+     that installs TSR #4, and reboot again.  Talk about a PAIN!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 67 of 75
+
+
+
+     Many years ago, IBM came up with a Protocol that solves this problem
+     (and it is the only Protocol I've ever seen that even attempts to solve
+     this problem).  IBM calls it the "Interrupt Sharing Protocol".  It is a
+     Protocol that allows any TSR to remove itself from memory at any time,
+     no matter how many programs were installed after it was.  I think it is
+     a very good idea.  Unfortunately, in order for it to work properly, all
+     programs need to use it (not just some programs, and not just TSR's). 
+     For some reason, IBM didn't promote the Protocol very much, so not very
+     many programmers even know about it, and, as a result, very few programs
+     use it.  I consider myself fairly savvy about DOS (I have been writing
+     TSR's for over a decade), and I first stumbled across this Protocol only
+     a couple of years ago.
+
+     The way "normal" (non-Protocol-using) programs work, you can't "see
+     past" the last program installed into memory to be able to modify or
+     remove any previously-installed programs.  This Protocol allows you to
+     "see through" the later programs to find the early programs, so that
+     they can be modified or removed.  If the TSR you're trying to Uninstall
+     uses the Protocol, and all of the programs installed AFTER the one
+     you're trying to Uninstall also use the Protocol, you can Uninstall the
+     TSR with no problem.  It doesn't matter if the TSR's installed BEFORE it
+     use the Protocol or not, all that matters is the programs installed
+     AFTER it.
+
+
+     There is one drawback to the Interrupt Sharing Protocol, however.  When
+     you Uninstall a particular TSR, if it is not the last program in memory,
+     it will leave a "hole" in your memory (where the TSR used to be).  If
+     you later decide to re-install the same TSR, it is VERY unlikely that it
+     will get installed into the same "hole" it was in before.  In fact, it
+     is VERY unlikely that you will be able to use that memory hole again for
+     any program -- it will probably be lost (wasted) until you reboot the
+     computer again.  If there is even a remote chance that you will want to
+     use the TSR again (before you reboot the computer), you should simply
+     Disable the TSR instead of Uninstalling it from memory completely.  Not
+     all TSR's have Disable/Enable Options, but any TSR sophisticated enough
+     to use the Interrupt Sharing Protocol probably does.
+
+     If the Protocol is used properly, it allows much greater flexibility in
+     when and where and how you use TSR's.  If not used properly, however, it
+     can actually end up being less efficient than if you just use TSR's that
+     don't implement the Protocol (at least in terms of memory use).  Again,
+     if there is even a remote chance that you will want to use the TSR
+     again, you should not Uninstall it -- you should simply Disable it. 
+     Only if you are certain that you will not need the TSR again (at least
+     until you reboot the computer) should you attempt to Uninstall it.
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 68 of 75
+
+
+
+     SLOWDOWN was the first program of mine to implement the Protocol
+     (SLOWDOWN just happened to be the program I was working on when I
+     discovered the Protocol).  I will be updating all of my programs to
+     include the Protocol at some time in the future, however.  If you want
+     more information about the Protocol, go to my Home Page:
+
+       http://members.aol.com/bretjohn
+
+     I have information there that will allow you to download the Protocol
+     details.  You can also look at the source code for SLOWDOWN, which is
+     available from my Home Page.  It contains a working implementation of
+     the Protocol, as well as some other stuff you might be interested in.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 69 of 75
+
+
+
+     A WORD FROM THE SPONSOR
+     อออออออออออออออออออออออ
+
+     SLOWDOWN is a free program.  If you like it and use it, do something
+     nice for someone else in return.  I will accept niceties to myself in
+     the form of $, but that is not why I wrote SLOWDOWN.  I wrote it because
+     I still have and use several programs that don't work correctly on my
+     new, fast computer.  I still haven't yet found another "slowdown"
+     program that both does exactly what I want it to do and is free.
+
+     You can freely copy and distribute SLOWDOWN.COM, as long as it is
+     distributed along with this SLOWDOWN.DOC, and neither file has been
+     modified in any way.  You cannot charge anyone in any way for SLOWDOWN,
+     except to recover your actual costs for disks and shipping (you cannot
+     charge for "handling").  You do need my permission to distribute
+     SLOWDOWN as a "companion" to some other program.
+
+
+     You can also freely download the source code for SLOWDOWN if you want. 
+     It is available from my Home Page:
+
+       http://members.aol.com/bretjohn
+
+     I don't include the source code with the program because I want to keep
+     the size of the download as small as possible, and because I know most
+     people don't care about the source code anyway.  My Home Page contains
+     the source code for some of my other programs as well (see "OTHER
+     PROGRAMS BY BRET JOHNSON" below, page 71.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 70 of 75
+
+
+
+     OTHER PROGRAMS BY BRET JOHNSON
+     ออออออออออออออออออออออออออออออ
+
+     If you like SLOWDOWN, I have written some other programs you may find
+     useful.
+
+       CLOCK
+          Shows a clock on your screen all the time.  Also has two alarms
+          that beep at you when it's time for an appointment.
+
+       JOYKEYS
+          Lets you use your joystick with ANY program.
+
+       MOUSKEYS
+          Lets you use your mouse with ANY program.
+
+       PRTSCR
+          Sends all of your PrintScreens to a file instead of a printer.  A
+          good way to transfer data between two programs, even if they won't
+          normally "talk" to each other.
+
+       PRTSCRFF
+          Modifies your PrintScreen so that each new PrintScreen gets put on
+          a new sheet of paper (especially useful if you have a Laser
+          printer).
+
+       SCANCODE
+          Type keystrokes automatically in the middle of other programs. 
+          Helpful in getting past the "starting screens" of most programs, or
+          to create macros.  Can also be used to remap the keyboard.
+
+       SDWRGMPD
+          DOS driver for a Microsoft SideWinder Digital GamePad.
+
+       SERIAL
+          Shows the status of your serial (COM) ports on screen.  Shows the
+          bit rate, parity, status of the leads (DTR, DSR, etc.).  An
+          excellent way to troubleshoot modem problems.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 71 of 75
+
+
+
+     WARRANTY
+     ออออออออ
+
+     There is no warranty of any kind, either expressed or implied, supplied
+     with SLOWDOWN.  As with any software, especially TSR's, it may or may
+     not work with other software that you may have.  I have done my best to
+     make sure SLOWDOWN won't screw anything up, but, again, there is no
+     guarantee.
+
+     If you find any "bugs" in this program, or see something that you wish
+     were different, please let me know.  I can only improve SLOWDOWN if I
+     know what you think needs to improve.
+
+
+     HAVE FUN!                                                                
+
+       Bret Johnson
+       6775 South Logan Street
+       Littleton, CO  80122-1249
+       (303) 795-5084
+
+       bretjohn@juno.com  or
+       bretjohn@aol.com
+
+
+     I intend to always keep the latest versions of all of my programs on my
+     own Internet Home Page.  The URL is:
+
+       http://members.aol.com/bretjohn
+
+     This will be the first place to find updates to my programs.  It will be
+     the only place I put beta versions of new releases.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 72 of 75
+
+
+
+     REVISION HISTORY
+     ออออออออออออออออ
+
+     1994/10/20  v1.00
+
+     1994/12/21  v1.01
+       * Changed a small part of the do-nothing loop that would sometimes
+         lock up a computer when a serial port was accessed (such as when a
+         mouse was moved).
+
+     2000/05/30  v2.00
+       * Converted from a "simulated TSR" using COMMAND.COM to a true TSR.
+       * Added Hot-Keys to change Speeds "on-the-fly".
+       * Changed the verbiage "Speed" to "Slowdown-Factor".  The old meaning
+         of "Speed" was backwards from what people normally think, and very
+         often confused them.
+       * Added the MHZ, PERCENT, SPEED, REMEMBER-Speed, and TABLE Options.
+       * Added longhand forms for Options.
+       * Added Windows multi-tasking awareness, and removed the ability to
+         Slow Down Windows.
+       * Allowed SLOWDOWN to be used on any computer, including XT's
+         (previous versions considered an XT already "too slow").
+       * Started using the IBM Interrupt Sharing Protocol, which sometimes
+         allows SLOWDOWN to be removed from memory even if other programs
+         were installed after it.
+       * SLOWDOWN should be less "jerky" now when trying to make a really
+         fast computer run really slow.
+       * Lots and lots of small changes.
+
+     2002/03/06  v3.00
+       * Added use of Interrupt 70 (/UseInt8 & /UseInt70 Options).
+       * Added /UseCPUCache Option.
+       * Added /UseTrace Option.
+       * Added /MHz286 & /MHz8088 Options.
+       * Re-Added the ability to Slow Down Windows (/WindowsXXX Options)
+       * Moved Hot-Keys from "system-level" (where all Programs must use the
+         same Hot-Keys) to "program-level" (each program can have a different
+         set of Hot-Keys).
+
+     2002/11/24  v3.10
+       * Fixed /UseInt70 (sometimes didn't work at all on some computers).
+       * Added the /Beep Option, to allow SLOWDOWN to finally be quiet if you
+         want it to be.
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 73 of 75
+
+
+
+                                       INDEX
+
+
+     AT (IBM PC/AT)  . . . . . . . . . . .  8, 11, 13, 14, 41, 44, 49, 56, 57
+     BIOS  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16, 60
+     Cache, CPU (L1) . . . . . . . . . . . . . . . . 21-24, 30, 41, 49, 58-64
+     CPU
+       80186 . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  7, 17
+       80286 . . . . . . . . . . . . . . . . 7, 8, 11, 13, 14, 17, 41, 49, 56
+       80386 . . . . . . . . . . . . . . . . . . . . . . . . . . .  7, 14, 17
+       80486 . . . . . . . . . . . . . . . . .  7, 13, 14, 21, 41, 49, 56, 57
+       8086  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  7, 17
+       8088  . . . . . . . . . . . . . . . . 7, 8, 10, 13, 14, 26, 41, 49, 56
+       AMD . . . . . . . . . . . . . . . . . . . . . . . . . .  7, 14, 17, 49
+       Cyrix . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+       Intel . . . . . . . . . . . . . . . . . . . . . . . . . . .  7, 14, 17
+       NEC . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14, 17
+       Pentium-class . . . . . . . . . . . . . . . . . . .  7, 14, 17, 21, 26
+     CPUCACHE.COM  . . . . . . . . . . . . . . . . . . . . . . 24, 58, 60, 64
+     Defaults, changing   10, 11, 20, 22, 23, 28, 30, 34, 36, 37, 39, 41, 44,
+                                                                       51, 57
+     DOS
+       AUTOEXEC.BAT  . . . . . . 5, 15, 17, 28, 42, 48, 49, 51-55, 60, 66, 67
+       Batch files . . . . . . . .  5, 20, 23, 32, 33, 45, 50, 51, 57, 65, 66
+       CONFIG.SYS  . . . . . . . . . . . . . . . . . . . . . . 15, 17, 59, 62
+       Environment . . . . . . . . . . . . . . 10, 28, 29, 39, 41, 42, 65, 66
+       ErrorLevels . . . . . . . . . . . . . . . . . . . . . . . . . . 33, 43
+     Hiding Status Messages  . . . . . . . . . . . . . . .  6, 39, 41, 42, 49
+     HIMEM.SYS/EMM386.EXE  . . . . . . . . . . . . . . . . . . . .  23, 59-64
+     Hot-Keys
+       Beeping . . . . . . . . . . . . . . . . . . . . . . . . 30, 37, 44, 45
+       Disabling . . . . . . . . . . . . . . . . . . . . . . . 30, 36, 40, 44
+       Modifying . . . . . . . . . . . . . . . . . . . . . . . 30, 34, 35, 44
+       Problems with . . . . . . . . . . . . . . . . . . . 45, 48, 49, 54, 55
+       Using . . . . . . . 4, 5, 10, 11, 16, 29-31, 38, 44, 45, 49, 53-55, 57
+     IBM Interrupt Sharing Protocol  . . . . . . . . . . . . . . . . .  67-69
+     Interrupts
+       CMOS Clock (Int 70h)  . . . . .  18-20, 30, 41, 49, 51, 53, 55, 56, 58
+       Debug/Trace Mode (Int 1)  . . . . . . . . . . .  25-28, 30, 41, 49, 58
+       Timer Tick (Int 8)  . . . . . . . . . 18-20, 30, 41, 49, 51, 53, 55-58
+     Jerkiness . . . . . . . . . . . . . . . . . . . .  16, 18-20, 22, 26, 58
+     Memory
+       LOADHI command  . . . . . . . . . . . . . . . . . . . . . . . . . .  5
+       SLOWDOWN usage  . . . .  4, 5, 10, 30-33, 40, 48-50, 53, 54, 65, 67-69
+     Multiple Programs in a row Running Slowly . . . . . . . . . . . . . . 32
+     Other Programs
+       non-Windows Task-switchers  . . . . . . . . . . . . . . . . . . . . 54
+       TSR's . . . . . . . . . . . . . . . . . . . . . . .  15, 28, 31, 67-69
+     Remembering Current Speed of Computer . . . . . . . . . . 11, 41, 44, 49
+     Restore Speed after Program is Done . . . . . . . .  5, 6, 20, 29-33, 65
+     Slowdown-type programs  . . . . . . . . . . . . . . .  46, 51, 52, 56-58
+
+
+                      SLOWDOWN 3.10            Page 74 of 75
+
+
+
+     Slowdown-Unit (SU)  . . . . . . 7, 10-14, 22, 28, 41, 44, 49, 54, 56, 57
+     SLOWINT1.COM  . . . . . . . . . . . . . . . . . . . . . . . . . . 28, 58
+     Support, How to get . . . . . . . . . . . . . . . . . . . . . . . . . 72
+     Time, Computer Clock Losing . . . . . . . . . . . . . . . . . . . . . 26
+     Uninstall from Memory . . . . . . . . . . .  5, 10, 30-33, 40, 41, 67-69
+     URL (Web Site)  . . . . . . . . . . . . . . . . . 23, 61, 63, 69, 70, 72
+     Windows, Microsoft
+       Problems with . . . . . . . . . . . 15, 23, 24, 27, 45, 48, 51, 54, 55
+       Slowing Down DOS Boxes Underneath Windows 15, 24, 27, 45, 46, 51, 53-55
+       Slowing Down Windows & Windows-native Programs  . .  24, 27, 46, 48-52
+       Windows-specific Options  . . . . . . . . . . . . . . . . . . . 48, 49
+     XT (IBM PC/XT)  . . . . . . . . .  8, 10, 13, 14, 26, 41, 44, 49, 56, 57
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWDOWN 3.10            Page 75 of 75
+

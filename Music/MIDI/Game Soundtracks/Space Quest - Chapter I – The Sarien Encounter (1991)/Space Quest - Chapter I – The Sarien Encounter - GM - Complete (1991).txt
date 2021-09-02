@@ -1,0 +1,93 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ===============================================
+                 SPACE QUEST 1: The Sarien Encounter
+                                                        
+
+                       THE COMPLETE SOUNDTRACK
+                     (See below for song titles.)
+                       	      Ken Allen
+           =============================================
+               Copyright (c)1991 Sierra On-Line, Inc.  
+           =============================================
+
+                       GENERAL MIDI VERSION
+            (Designed for Roland Sound Canvas SC-55 GM)
+                  
+		      
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- General MIDI sound card or module  (Roland Sound Canvas SC-55 recommended)
+
+
+This Standard MIDI File was recorded directly from Sierra's "Space
+Quest 1" adventure game.  It has been recorded using Sierra's
+MT-32 driver and converted to GM format. Note that MIDI files containing embedded SysEx data are not compatible with all MIDI file playback programs.
+
+
+
+Edited/compiled/arranged/converted for General MIDI by Ari Stone.
+Address questions or comments to:
+
+  Ari Stone
+  ari_stone@hotmail.com
+
+or:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+      ===================================================================
+                               TRACK SHEET
+
+                     SPACE QUEST 1: THE SARIEN ENCOUNTER
+      ===================================================================
+      SONG TITLE                                   START MEASURE/TIME *
+      -------------------------------------------------------------------
+   1. Introduction                                       2   00:00:02
+   2. Arcada Corridors                                 101   00:04:00
+   3. The Dying Scientist                              142   00:05:38
+   4. Star Generator Room                              175   00:06:57    
+   5. Escape from the Arcada                           202   00:08:02
+   6. Inside Escape Pod                                207   00:08:14
+   7  Oops! Wrong Button (Death Sequence)              236   00:09:24
+   8. Navigating to Kerona                             260   00:10:21
+   9. Keronian Desert                                  282   00:11:14
+  10. Touring the Skeleton                             310   00:12:22
+  11. The Spider-Droid                                 340   00:13:33
+  12. Underground Tunnels                              362   00:14:26
+  13. Instant Replay                                   412   00:16:26
+  14. Strange Holographic Image (Part 1)               445   00:17:47
+  15. Orat's Cave	                               481   00:19:13
+  16. Strange Holographic Image (Part 2)               500   00:19:59
+  17. Story of the Keronians                           519   00:20:43
+  18. Reading Cartridge from Arcada                    553   00:22:04
+  19. Skimmer Arcade Sequence                          601   00:24:00
+  20. Ulence Flats                                     626   00:25:00
+  21. The Rocket Bar (part 1)                          676   00:27:00
+  22. The Rocket Bar (part 2)                          714   00:28:31
+  23. The Rocket Bar (part 3)                          748   00:29:52
+  24. Droids-B-Us                                      799   00:31:55
+  25. Tony's Used Spaceships                           832   00:33:14
+  26. Flying to the Deltaur                            869   00:34:43
+  27. Approaching the Deltaur                          928   00:37:04
+  28. Rog-in-a-box                                     957   00:38:14
+  29. Deltaur Corridors                                968   00:38:40
+  30. Closing Scenes                                   993   00:39:40
+  
+      -------------------------------------------------------------------
+                                             TOTAL TIME:     00:43:50
+
+      
+     
+
+        December 2004
+
+

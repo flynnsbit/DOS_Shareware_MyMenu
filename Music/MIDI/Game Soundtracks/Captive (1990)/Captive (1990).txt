@@ -1,0 +1,9 @@
+Game: Captive
+Year: 1990
+Composed by: David R. Punshon
+MIDI versions: GM
+Platform: DOS
+
+Additional info: Couldn't find out proper names for the files, so I kept them in their original form.
+
+https://www.karlsitretro.com/game_midi

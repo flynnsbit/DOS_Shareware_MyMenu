@@ -1,0 +1,40 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+         ====================================================
+                    THE ADVENTURES OF WILLY BEAMISH          
+                                                             
+
+                           "THE FERRY RIDE"
+                  Don Latarski and Christopher Stevens       
+         ====================================================
+                     Copyright (c)1991 Dynamix, Inc.         
+         ====================================================
+
+                G E N E R A L   M I D I   V E R S I O N
+                      (ROLAND SOUND CANVAS MIX)
+
+System Requirements:
+
+- MIDI File player capable of reading embedded SysEx data.
+- General MIDI Sound Device  (Roland Sound Canvas recommended)
+
+
+This Standard MIDI File was recorded directly from Dynamix's
+"The Adventures of Willy Beamish" adventure game.  It has been converted
+from the Roland MT-32 version for playback on General MIDI sound cards.  A
+Roland Sound Canvas is highly recommended for optimal playback.
+
+Converted for General MIDI by Tom Lewandowski.
+Address questions or comments to:
+
+      Tom Lewandowski
+      tom@queststudios.com
+
+
+
+      QUEST STUDIOS/THE SIERRA SOUNDTRACK SERIES
+      www.QuestStudios.com
+
+
+
+

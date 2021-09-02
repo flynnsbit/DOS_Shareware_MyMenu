@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Spectrum Analyzer</TITLE>
+<META NAME="description" CONTENT="Spectrum Analyzer">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="next" HREF="node18.html">
+<LINK REL="previous" HREF="node16.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node18.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html301"
+ HREF="node18.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html299"
+ HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html293"
+ HREF="node16.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html302"
+ HREF="node18.html">peak power levels</A>
+<B> Up:</B> <A NAME="tex2html300"
+ HREF="node13.html">Text mode functions</A>
+<B> Previous:</B> <A NAME="tex2html294"
+ HREF="node16.html">Pattern view</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00534000000000000000">
+Spectrum Analyzer</A>
+</H2>
+The spectrum analyzer uses the fast fourier interpolation to gether information
+on the audio spectrum used in sample data. The analyzer is started with
+<TT>&lt;a&gt;</TT>. This function splits the sound data into many <EM>bands</EM> of pure
+sine waves. This is called the spectrum of the sample.
+
+<P>
+The status bar of this function shows you the range each bar covers and the
+highest frequency processed (left leftmost bar corresbonds to this frequency).
+Use <TT>&lt;Pgup&gt;</TT>,<TT>&lt;Pgdown&gt;</TT> to change the range. <TT>&lt;Home&gt;</TT> will set the
+default value ov 2756Hz.<A NAME="tex2html27"
+ HREF="#foot590"><SUP>5.10</SUP></A>
+
+<P>
+With <TT>&lt;ALT&gt;</TT>+<TT>&lt;a&gt;</TT> the mode of the spectrum function can be toggled.
+Stereo using two analyzers, mono using only one and a single mode are available.
+In the single mode the currently selected channel is used as sound source for
+the analyzer.
+
+<P>
+<TT>&lt;tab&gt;</TT> changes the color used for the analyzer.
+
+<P>
+<FONT SIZE="-1">To get a smooth view the default charset of the graphics adapter is
+modified. This is working fine with every graphics card under MS-DOS. However
+Windows95 does not allow the manipulition of characters, so the spectrum
+analyzer function is not shown properly when running under Windows95. If you
+see a distorted screen while using the spectrum analyzer function this is normal.</FONT>
+
+<P>
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot590">... 2756Hz.</A><A NAME="foot590"
+ HREF="node17.html#tex2html27"><SUP>5.10</SUP></A>
+<DD>The highest possible frequency is half the
+output frequency (22KHz when playing at 44Khz).
+
+</DL><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html301"
+ HREF="node18.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html299"
+ HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html293"
+ HREF="node16.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html302"
+ HREF="node18.html">peak power levels</A>
+<B> Up:</B> <A NAME="tex2html300"
+ HREF="node13.html">Text mode functions</A>
+<B> Previous:</B> <A NAME="tex2html294"
+ HREF="node16.html">Pattern view</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

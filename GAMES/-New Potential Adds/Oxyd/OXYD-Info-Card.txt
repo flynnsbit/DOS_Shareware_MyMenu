@@ -1,0 +1,102 @@
+==============================================================================
+DOS Games Archive Game Info Card                                     Version 3
+==============================================================================
+* General Information *
+
+Game title              : Oxyd
+Alternate title(s)      : None
+Developer               : Dongleware
+Publisher               : Dongleware
+Country of origin       : Germany
+Distribution model      : Shareware
+
+* Release Information *
+
+Release type            : Shareware (partial game)
+Version                 : 3.B
+Release date            : 1994/03/09
+Language                : English, German, French
+License file            : README.TXT
+License/Permissions     : [shown in-game]
+
+"                         THIS IS A
+"
+"                D O N G L E W A R E - D I S K !
+"
+"                 COPYING AND PASSING THIS DISK
+"                   ON TO OTHERS IS EXPRESSLY
+"                    PERMITTED AND DESIRED!"
+
+* Distribution Information *
+
+Distribution type       : Digital download
+File name               : oxyd_v3b.zip
+File size               : 1 271 380 bytes
+Installer provided      : Yes
+Original location       : http://www.dongleware.de/html/eng/euv/download.html
+Retrieved from          : Software Vault: Games 2 (Jan 1995)
+                          http://cd.textfil.es/sv/svgames9501/CDR13/
+
+Additional files        :
+                          Official playing hints
+File name               : HINTS.TXT
+File size               : 5 223 bytes
+Retrieved from          : shareware version 3.9
+
+Maintainer              : MrFlibble <mrflibble86@gmail.com>
+==============================================================================
+* Note for DOSBox users *
+
+This software is fully installed and configured to run in the DOSBox emulator.
+You can simply drag and drop the file OXYD.BAT over the DOSBox icon to start
+playing. Experienced DOSBox users may choose other methods of startup.
+
+The software was configured and tested to work with the official DOSBox build
+v0.74-3 available from www.dosbox.com. It may or may not work with any other
+third-party DOSBox distributions that are available.
+
+For playing instructions, please see the Instructions screen available from
+the main menu of the game. Additionally, the file HINTS.TXT found in the OXYD
+directory contains hints for the first 11 levels of the game.
+==============================================================================
+* Game related websites *
+
+Developer website:
+https://www.dongleware.com/
+
+Developer website (access via the Wayback Machine):
+http://www.dongleware.de/html/eng/euv/ox.html
+
+Officially sanctioned freeware remake (access via the Wayback Machine):
+http://oxyd-game.com/news_eng.html
+
+NOTE: Some sites are only available as copies made by the Wayback Machine:
+http://web.archive.org/
+==============================================================================
+* Disclaimer *
+
+THE GAME DATA IN THIS ARCHIVE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING AND NOT LIMITED TO ANY IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+All game content is copyright to their respective owners.
+
+No files from the original software package provided by the developer and/or
+publisher were modified except for the configuration files needed to set up
+sound devices and input methods.
+
+This software was tested to work with the current official DOSBox build
+(v0.74-3) and was scanned by an antivirus/anti-malware tool.
+
+You use this software at your own risk. DOS Games Archive is not liable for
+any unwanted consequences that may arise from your using this software.
+==============================================================================
+* Download and online play *
+
+This game is available from DOS Games Archive at:
+https://www.dosgamesarchive.com/download/oxyd/
+
+It can be played online at:
+https://www.dosgamesarchive.com/play/oxyd/
+
+--- END OF FILE (2021/04/07) ---

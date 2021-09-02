@@ -1,0 +1,60 @@
+# Help Message
+
+0.0:Move
+0.1:Moves a file/directory to another location.
+0.2:(C) 1997-2002 by Joe Cosentino
+0.3:(C) 2003-2004 by Imre Leber
+0.4:Syntax: MOVE
+0.5:source1[, source2[,...]] destination
+0.6: source      The name of the file or directory you want to move (rename)
+0.7: destination Where you want to move the file(s) to
+0.8:          Supresses prompting to confirm you want to overwrite
+0.9:             an existing destination file.
+0.10:         Causes prompting to confirm you want to overwrite an
+0.11:             existing destination file.
+0.12:          Verifies each file as it is written to the destination file
+0.13:             to make sure that the destination files are identical to the
+0.14:             source files
+0.15:Remark:
+0.16:You can move directories with this tool
+
+# Various messages
+
+1.0:does not exist!
+1.1:already exists!
+1.2:Overwrite file
+1.3:Problem moving directory
+1.4:Problem moving file
+1.5:Invalid parameter
+1.6:Invalid source drive specification
+1.7:Invalid destination file
+1.8: does not exist as directory. Create it?
+1.9:Invalid source file
+1.10:Unable to create directory
+1.11:File cannot be copied onto itself
+1.12:Cannot move a file to a directory
+1.13:File already exists
+1.14:File cannot be copied onto itself
+1.15:Access denied
+1.16:Insufficient disk space in destination path
+1.17:Insufficient disk space
+1.18:Required parameter missing
+1.19:Invalid source specification
+1.20:Source path not found
+1.21:Source path too long\n
+1.22:Destination path too long\n
+1.23:Invalid destination drive specification\n
+1.24:Destination path too long\n
+1.25:Cannot open source file
+1.26:Cannot create destination file
+1.27:Write error on destination file
+1.28:Unable to create directory
+1.29:Insufficient disk space in destination path
+
+# Y/N/All/None; Simple messages
+
+2.0:Y
+2.1:N
+2.2:All
+2.3:None
+2.4:ok

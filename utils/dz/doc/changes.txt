@@ -1,0 +1,39 @@
+Changes in 3.59 - 20 Nov 2020
+- Update for Windows 10 Console -- exec / clip board
+
+Changes in 3.55 - 9 Mar 2019
+- fixed bug in delete - stack fault in _rmdir()
+- fixed bug %edit% command - failed if panel not visible.
+- fixed bug in Text-View. Long lines in large files error.
+- fixed mouse-lock in dialogs when check box active..
+- fixed zip error: compression method
+
+Changes in 3.54 - 9 Nov 2017
+- fixed bug in compression engine. Compression level was
+  set incorrectly from v3.48 and potentially leaving some
+  archives created with Doszip up to version 3.53 corrupted.
+  The bug mostly effected large files.
+- fixed bug in Compare Directory (Shift-F6)
+- fixed a few bugs in HexEdit..
+
+Changes in 3.53 - 19 Oct 2017
+- added Class Edit to HexEdit (Ctrl-F4)
+
+Changes in 3.52 - 15 Oct 2017
+- fixed a few bugs in TextView (F3)
+
+Changes in 3.51 - 14 Oct 2017
+- added HexEdit (Ctrl-F4)
+
+Changes in 3.50 - 6 Jun 2017
+- fixed bug in Confirm Copy -- target deleted on Cancel..
+- fixed bug in FindFile -- memory leak..
+
+Changes in 3.49 - 4 Jun 2017
+- added Edit/Add to Transfer dialog
+- removed memory restriction in panels -- max file count
+- fixed bug edit.style() -- buffer overflow
+- fixed memory leak in unzip functions
+- fixed memory leak file panels
+- fixed bug in [Path] -- failed to updated panels
+- fixed bug in editor using Auto Indent with no Tabs

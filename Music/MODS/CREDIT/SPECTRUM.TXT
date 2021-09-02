@@ -1,0 +1,24 @@
+Spectrum (peak_and_drozerix_-_spectrum.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=177960
+Renamed to "SPECTRUM.XM" because of DOS 8-character limit
+
+Summary
+
+    peak_and_drozerix_-_spectrum.xm is a XM format module.
+    Uploaded to modarchive.org on Thu 24th Dec 2015
+
+Info Info
+
+    Mod Archive ID: 177960
+    MD5: 37a23fbb81eb5d44888fbeebf4852404
+    Format: XM
+    Channels: 4
+    Genre: n/a
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     Drozerix (https://modarchive.org/member.php?84702)

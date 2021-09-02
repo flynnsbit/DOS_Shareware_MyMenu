@@ -1,0 +1,19 @@
+                  === SLEUTH ===
+ 
+To run SLEUTH ...
+ 
+-- Type 'SLEUTH' <Enter> at the DOS system prompt.
+ 
+To see the documentation for SLEUTH, select the 'Review Instructions'
+option from the main menu of the SLEUTH program.
+ 
+NOTE:  Some black-and-white computer monitors will not be able to
+       display the SLEUTH houses.  This situation only holds for
+       non-IBM displays.  If you are unable to see the outline of
+       some of the SLEUTH houses, you can turn off all color in
+       the picture by running the batch file BW.  To start this
+       batch file, simply type 'BW' at the system prompt.
+       WARNING!!  This procedure permanently erases files for
+       use with color monitors.  Do not use this procedure with
+       your original distribution diskette!
+

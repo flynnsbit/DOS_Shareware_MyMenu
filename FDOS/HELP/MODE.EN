@@ -1,0 +1,365 @@
+	Program usage documentation for the Free-DOS MODE program
+
+	(c) Copyright 1994-1995 by K. Heidenstrom.
+
+	Modified:
+
+	KH.19941231.001  (MODE 1.0.0)  First version
+	KH.19950116.002  (MODE 1.0.2)  Added switchar documentation
+	KH.19950520.003  (MODE 1.0.3)  No changes to functionality
+	KH.19950805.004  (MODE 1.0.4)  Added modifier (shift-state) stuff
+
+
+1.  LEGAL
+
+	This program is Copyright 1994-1995 by K. Heidenstrom.	It was
+	written specifically for the Free-DOS project.	The author may
+	be reached at kheidens@actrix.gen.nz on the Internet or by snail
+	mail: K. Heidenstrom c/- P.O. Box 27-103, Wellington, New Zealand.
+
+	This program is free software.	You may redistribute the source and
+	executable and/or modify the program under the terms of the GNU
+	General Public License as published by the Free Software Foundation;
+	either version 2 of the License, or (at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but is provided "as-is", without any warranty of any kind, including
+	the implied warranty of merchantability or fitness for a particular
+	purpose.  In no event will the author be liable for any damages of
+	any kind related to the use of this program.  See the GNU General
+	Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program; if not, write to the Free Software
+	Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+2.  FUNCTION AND USAGE SYNTAX
+
+	The MODE program performs six separate functions, which are
+	described separately below.
+
+2.1.  SET VIDEO MODE AND NUMBER OF SCREEN LINES
+
+	MODE allows the video mode to be set to one of five modes.  The
+	syntax is:
+
+	MODE Videomode[,Lines]
+
+	The modes are:
+
+	MONO	Monochrome mode, as used with the MDA and Hercules adapter
+		cards, and also emulated on EGA and VGA cards.	This mode
+		is the only mode which has the ability to underline
+		characters on the screen by default.  This mode cannot be
+		selected on the CGA video card.
+
+	BW40	40-column color-suppressed mode.  This mode is specific to
+		the CGA adapter, and gives a display of 40 columns by 25
+		lines.	The color information of the composite video signal
+		from the CGA card is turned off, so that the display is in
+		black and white on a composite color monitor, with sixteen
+		shades of grey.
+		If this mode is selected on an EGA or VGA card, or a CGA card
+		that is not connected to a television set or a composite color
+		monitor, it will appear the same as the CO40 mode (i.e. the
+		color will not be suppressed).	This mode cannot be selected
+		on MDA and Hercules video cards.
+
+	BW80	80-column color-suppressed mode.  This mode is also specific
+		to the CGA adapter and is the same as BW40 except that there
+		are 80 columns.
+		If this mode is selected on an EGA or VGA card, or a CGA card
+		that is not connected to a television set or a composite color
+		monitor, it will appear the same as the CO40 mode (i.e. the
+		color will not be suppressed).	This mode cannot be selected
+		on MDA and Hercules video cards.
+
+	CO40	40-column color mode.  This mode gives 40 columns by 25 lines
+		color display.	It is supported by CGA, EGA, and VGA adapters
+		but not by MDA and Hercules cards.
+
+	CO80	80-column color mode.  This mode gives an 80 column by 25 line
+		display and is the normal display mode for CGA, EGA and VGA
+		cards.	It is not supported by MDA and Hercules cards.	On EGA
+		cards, this mode also supports a 43-line variant, and on VGA
+		cards, the 43-line variant and a 50-line variant are supported.
+
+		The 43-line and 50-line modes can be selected by specifying
+		",43" or ",50" after the CO80 on the MODE command line.  If
+		this parameter is not specified, the default of 25 lines will
+		be used.
+
+	Once set, the video mode will remain in effect until changed by
+	a MODE command or by a program.  The video mode is not locked
+	permanently - programs are free to change video modes as they
+	require.
+
+2.2.  CONFIGURE SERIAL PORT PARAMETERS
+
+	MODE allows the communication parameters of a serial port to be
+	configured.  The syntax is:
+
+	MODE COMn:r,p,d,s
+
+	n	Specifies which serial port is to be configured, in the range
+		1 to 4.  If the serial port does not exist, MODE will report
+		an error.
+
+	r	Specifies the baud rate in bits per second.  Values are:
+		50, 110, 150, 300, 600, 1200, 2400, 4800, 9600, 14400,
+		19200, 28800, 38400, 57600, and 115200.
+
+		1200, 2400, 4800, and 9600 may be abbreviated to 12, 24,
+		48 and 96 respectively.  14400, 19200, 28800, 38400, and
+		57600 may be abbreviated to their first two or three digits.
+		115200 may be abbreviated to 115 or 1152.
+
+	p	Specifies the type of parity generated and checked on
+		the data bytes.  Values are:
+
+		E = Even parity
+		O = Odd parity
+		N = No parity
+
+	d	Specifies the number of data bits that will be transmitted
+		and received.  The allowable values are 5, 6, 7, and 8.
+
+	s	Specifies the number of stop bits that will be transmitted
+		and expected.  This may be 1 or 2.  If 2 stop bits are
+		used in conjunction with 5 data bits, the serial port will
+		actually generate and check 1 1/2 stop bits.
+
+	Once set, the serial port parameters will remain in effect until
+	changed by a MODE command or by a program.  The serial port settings
+	are not locked permanently - programs are free to change them as
+	they require.
+
+2.3.  PARALLEL PORT REDIRECTION AND INFINITE RETRIES
+
+	MODE allows parallel (LPT) port output to be redirected to a serial
+	(COM) port, to NUL (i.e. nothing), and also can retry indefinitely
+	if the peripheral fails to respond.
+
+	These functions are performed by the resident portion of MODE, which
+	will be automatically installed if necessary when the function is
+	requested.
+
+	The syntax is:
+
+	MODE LPTn:P		Infinite timeout on parallel port
+	MODE LPTn:=COMx		Redirect printer output to COM port
+	MODE LPTn:=NUL:		Redirect printer output to NUL
+	MODE LPTn:		Remove redirection and infinite timeout
+
+	The LPTn:P function specifies infinite retries on timeout.  If
+	this is enabled, MODE will retry continuously if the printer
+	fails to respond.  If this is not enabled, and the printer fails
+	to respond within a certain length of time (typically about half
+	a minute), a write fault error will be reported.
+
+	The LPTn:=COMx and LPTn:=NUL: functions specify redirection of
+	printer output.  Any parallel port (whether it exists or not) may
+	be redirected to any existing serial port, or to NUL.  More than
+	one parallel port may be redirected to the same serial port or
+	to NUL.  These functions are useful if you have a serial printer,
+	or if you have no printer and want to avoid locking up the computer
+	if a program attempts to print to a nonexistent printer.
+
+	The LPTn: function removes any redirection and infinite timeout
+	that may be configured for the specified port, and returns it to
+	normal operation.
+
+2.4.  HARD DISK PARK FUNCTIONS
+
+	MODE will park the hard disk or hard disks (only the first two
+	physical hard disks in the system), either immediately, or after
+	the disk has been idle for a period of time.
+
+	The timed park function is performed by the resident portion of MODE,
+	which will be automatically installed if necessary when the function
+	is requested.
+
+	The syntax is:
+
+	MODE PARK			Park now
+	MODE PARK,minutes[:seconds]	Park after hard disk has been idle
+
+	The PARK function parks the hard disk(s) immediately and waits for
+	you to switch off the computer.  You can also press Ctrl-C to quit
+	and return to DOS.
+
+	The PARK,minutes[:seconds] function causes the hard disk(s) to be
+	parked after a certain period of inactivity, which may be up to
+	50 minutes.  If you have two physical hard disks, they are both
+	handled separately.
+
+	Once set, you can change the time period by executing the command
+	again with a different time value.  The timed park function cannot
+	be turned off - you must reboot to remove it.
+
+	These functions are generally only useful for older machines.
+	Modern hard drives park themselves automatically when switched
+	off.
+
+2.5.  TYPEMATIC FUNCTIONS
+
+	MODE allows the typematic (auto-repeat) initial repeat delay and
+	repeat rate parameters to be set, and optionally locked.
+
+	The typematic lock function is performed by the resident portion of
+	MODE, which will be automatically installed if necessary when the
+	function is requested.
+
+	The syntax is:
+
+	MODE DELAY=d RATE=r		Set typematic parameters
+	MODE DELAY=d RATE=r LOCK	Set and lock typematic parameters
+
+	d	Specifies the initial delay, the range is 1 to 4 and the
+		delay is between 1/4 second (1) and one second (4).
+
+	r	Specifies the auto-repeat rate.  The range is 1 to 32 and
+		the rate is between two repeats per second (1) and 30 repeats
+		per second (32).
+
+	LOCK	Specifies that the typematic parameters should be locked.
+		Once this is done, the typematic parameters may be changed
+		by runing MODE again, but cannot be changed by most other
+		programs.  This can be useful, as some programs will change
+		the typematic parameters without your permission.  It is
+		not completely foolproof, however, and there are several
+		things that a program could do which will defeat the locking
+		feature of MODE.
+
+	Note that both DELAY and REPEAT must be specified for these functions.
+
+	MODE does not attempt to confirm that typematic setting is available
+	on the machine.  I tried to do this using int 15h function 0C0h and
+	int 16h function 9 but it seems that these are not fully supported
+	by enough machines to be a reliable indicator.	MODE will accept all
+	typematic commands, whether or not the machine actually supports them.
+
+2.6.  SWITCHAR FUNCTIONS
+
+	MODE can display and set the DOS switch character (switchar).
+	The default switchar is the forward slash, '/'.  The switchar is the
+	character that is used to indicate the start of an option switch, e.g.
+	the /P switch to the DIR command.  Typically, the switchar may be
+	changed to '-'.  The switchar is an undocumented DOS feature that is
+	properly supported by few programs.
+
+	The syntax is:
+
+	MODE SWITCHAR			Display current switchar
+	MODE SWITCHAR=x			Set switchar to character
+	MODE SWITCHAR=n			Set switchar to ASCII value n
+
+	The SWITCHAR parameter by itself causes MODE to display the current
+	switchar.  The SWITCHAR= usage sets the switchar.  The new switchar
+	may be specified as a character (e.g. 'MODE SWITCHAR=/') or as a
+	number (e.g. 'MODE SWITCHAR=45').
+
+2.7.  MODIFIER (SHIFT STATE) FUNCTIONS
+
+	MODE can change the three sticky shift-states (caps lock, numlock,
+	and scroll lock).  This function should not be used on machines with
+	original PC or XT keyboards, because the indicator LEDs on these
+	keyboards cannot be controlled from the computer, and will become
+	out of step with the computer's shift-states.  MODE does not detect
+	these machines, however.  On ATs and later machines, there is no
+	problem.
+
+	The parameter syntax for this command consists of the following
+	options:
+
+		CAPSLOCK=ON	CAPSLOCK=OFF
+		NUMLOCK=ON	NUMLOCK=OFF
+		SCRLOCK=ON	SCRLOCK=OFF
+
+	Any non-conflicting and non-duplicated combinations of these options
+	is allowed.  Also, SCRLOCK can be expanded to SCROLLLOCK.
+
+3.  GENERAL
+
+	Parameters to MODE are not case sensitive.
+
+	MODE can only process one command on each invocation.  If you
+	want to redirect several LPT ports, you must use a separate
+	MODE command for each.	Commands of different types cannot be
+	combined on the command line.
+
+	Error messages are always sent to StdErr, which is not redirected
+	by the DOS output redirection facilities.  Informational messages
+	are sent to standard output, and may be redirected to NUL: for
+	'quiet' operation.
+
+	Errorlevels returned by MODE are as follows:
+
+	0	No error
+	115	Serial port does not exist (either for COMn: or LPTn:=COMx)
+	117	No hard disk(s) found to park
+	118	Specified video mode is not supported on this machine
+	162	Insufficient memory (MODE requires about 6K of memory)
+	241	Parameter out of range (e.g. time value, LPT port number etc)
+	242	Cannot have 43-line or 50-line modes with modes other than CO80
+	243	Unknown baud rate
+	244	Must specify both DELAY= and RATE= for typematic setting
+	246	More than one command or command type was given
+	255	Incorrect usage syntax (all usage syntax errors)
+
+	MODE is a TSR program.	If required, MODE will install part of itself
+	resident in the computer's memory.  This resident portion performs
+	printer redirection and timeout handling, automatic parking of the
+	hard drive, and locking of the typematic parameters, and cannot be
+	removed without rebooting (unless the public domain MARK and RELEASE
+	programs are used).  If additional resident functions are required
+	and the resident portion is installed, MODE will enable those
+	functions in the resident portion rather than installing another
+	resident portion.
+
+	Because MODE is a TSR, it may be incompatible with applications
+	or other TSRs you may be using.  If problems occur, try to establish
+	which programs are conflicting.  It may be possible to avoid the
+	problem by installing the programs in a different order.
+
+	If you find a bug in MODE, please inform the author.  The contact
+	details are given in section 1 of this document and in the source
+	code.
+
+4.  USAGE EXAMPLES
+
+	Here is a sample of MODE's usage in AUTOEXEC.BAT, demonstrating all
+	features:
+
+	mode co80,43			>nul:
+	mode com1:96,n,8,1		>nul:
+	mode com2:19,n,8,1		>nul:
+	mode com3:24,n,8,1		>nul:
+	mode lpt1:=com2			>nul:
+	mode lpt1:p			>nul:
+	mode lpt2:=nul:			>nul:
+	mode lpt3:=nul:			>nul:
+	mode park,0:30			>nul:
+	mode delay=1 rate=32 lock	>nul:
+	mode switchar=-			>nul:
+	mode numlock=off		>nul:
+
+	This sequence firsts selects 43-line color display mode, then
+	configures the serial port parameters for COM1, COM2 and COM3
+	(9600, 19200, and 2400 bps respectively, with no parity, eight
+	data bits and one stop bit).  These serial port parameters are
+	not locked permanently, and another MODE command or another
+	program may change these at any time.
+	Then, LPT1 output is redirected to COM2, so anything that is
+	printed to LPT1 will be sent out COM2 instead, at 19200 bps
+	(for example, to a serial laser printer), and LPT2 and LPT3
+	are redirected to NUL so that anything that is sent to them
+	will go nowhere.
+	Then a timed hard disk park is installed, which will park the
+	hard disk(s) after 30 seconds of no hard disk activity.
+	Finally, the shortest delay and fastest rate for the keyboard
+	typematic function is selected and locked, and the DOS switchar
+	is set to a hyphen ('-').
+
+				   ----//----
+

@@ -1,0 +1,92 @@
+"WarCraft II: Tides of Darkness"  Shareware
+Copyright 1995 Blizzard Entertainment
+ 
+Released by: Blizzard Entertainment 
+PO Box 18979 Irvine, CA 92713
+ 
+BY COPYING, USING OR DISTRIBUTING THIS SHAREWARE PROGRAM, 
+YOU INDICATE YOUR AGREEMENT TO THE TERMS OF THIS VENDOR.TXT
+ 
+If you want to distribute the WarCraft II shareware in a retail location
+(such as on a rack), or as part of a hardware or software bundle, or on
+CD-ROM, you must get PRIOR signed written permission from Blizzard
+Entertainment.  Blizzard Entertainment reserves its right to withhold
+permission. For licensing contact:
+        
+        Dealer Sales (800) 545-7677
+
+Everyone can -- and is encouraged! -- to copy, upload and generally pass
+around this Program electronically WITHOUT CHARGING FOR IT. 
+ 
+The Program is marked "Shareware" and contains "six playable scenarios".  No
+right is given by this vendor.txt to copy, use or distribute any other
+version, including any version that is registered, or not marked shareware,
+or that contains any episodes other than the six original playable scenarios. 
+ 
+====================== 
+LICENSE 
+====================== 
+ 
+[1] DEFINITIONS:  "Program" means the shareware version of WarCraft II: Tides
+of Darkness consisting of the files listed below.  The "Trademarks" consist
+of Blizzard Entertainment and the Blizzard Entertainment logo. 
+ 
+[2] OWNERSHIP:  Blizzard Entertainment owns and reserves the exclusive right
+to distribute the Program, and to use the Trademarks in connection with it.
+Its content, layout and format are the property of Blizzard Entertainment to
+the extent permitted by law.
+ 
+[3] GRANT AND CONDITIONS:  Blizzard Entertainment grants a non-exclusive
+license to distribute the Program on IBM compatible media under the
+Trademarks subject to the following conditions:
+ 
+  CONDITIONS FOR FREE DISTRIBUTION: 
+ 
+  [A] All of the Program's files, including this one, must be included as
+released by Blizzard Entertainment, without modification.   
+ 
+  [B] No copyright or trademark information contained or displayed in the
+original files may be removed.
+ 
+  [C] You must not [a] distribute any version of the Program with unauthorized
+changes, such as additional or different levels, or changed characters or
+scenarios; or [b] characterize such versions as an "add-on" or "extension" of
+any Blizzard Entertainment product.  
+ 
+[4] LIMITED WARRANTY AND LIMITATION OF REMEDIES: If Blizzard Entertainment
+provides a physically defective copy of the Program,  Blizzard Entertainment
+will replace that copy upon submission of the defective one.  Aside from
+this, the Program IS PROVIDED "AS-IS", AND NO WARRANTIES OF ANY KIND
+(INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR
+PURPOSE), EXPRESS OR IMPLIED, ARE MADE AS TO IT OR ANY MEDIUM IT MAY BE ON.
+OUR ENTIRE LIABILITY AND YOUR EXCLUSIVE REMEDY IS SUCH REPLACEMENT, AND
+UNDER NO CIRCUMSTANCES WILL WE PROVIDE ANY OTHER REMEDY FOR DIRECT, INDIRECT,
+SPECIAL, CONSEQUENTIAL, PUNITIVE, INCIDENTAL OR OTHER DAMAGES ARISING FROM IT,
+INCLUDING SUCH FROM NEGLIGENCE, STRICT LIABILITY, OR BREACH OF WARRANTY OR
+CONTRACT, EVEN AFTER NOTICE OF THE POSSIBILITY OF SUCH DAMAGES. 
+ 
+[5] MISCELLANY:  For all distribution or other activity regarding the Program
+for which registration with Blizzard Entertainment or Blizzard Entertainment
+consent or approval is required, the following provisions shall apply. 
+ 
+  [A] Since Blizzard Entertainment would be irreparably damaged if Section
+[3] or [5][D] were not specifically enforced, we will be entitled
+without bond, other security or proof of damages, to appropriate equitable
+remedies with respect to breaches of such sections, in addition to such
+other remedies as we may have.
+ 
+  [B] You will hold Blizzard Entertainment, our partners, contractors,
+employees and agents harmless from damage, loss and expense arising directly
+or indirectly from your acts and omissions in copying and distributing the
+Program.
+ 
+  [C] With respect to every matter arising under this, you consent to the
+exclusive jurisdiction and venue of the state and federal courts sitting in
+Irvine, California, and to service by certified mail, return receipt
+requested, or as otherwise permitted by law.
+ 
+  [D] You will not modify, reverse compile, disassemble, or reverse engineer
+the Program, or use or disclose any confidential information that it contains. 
+ 
+[V.10.03.95] 
+

@@ -1,0 +1,153 @@
+SJGPLAY - "Extras" Documentation -- Dec 1/96           (C)1996 Steve J. Gray
+=======
+
+The files in the EXTRAS.ZIP include the following:
+
+  SJGPLAY.MSG  - Alternate program messages.
+  SJGPLAY.FNT  - Sample alternate big-character font (uses SJGFNT8/16.COM) 
+  *.FNT        - More sample fonts
+  SJGFNT8.COM  - Program to load an 8-pixel tall font into the video card
+  SJGFNT16.COM - Program to load a 16-pixel tall font into the video card
+  FONTEX.EXE   - Font exporter utility - exports font from video card
+  
+
+IMPORTANT!
+----------
+
+  SJGPlay version 1.29 automatically loads SJGPLAY.MSG and/or SJGPLAY.FNT
+if they exist in the directory where SJGPLAY.EXE is run from (the CURRENT
+directory, NOT the path specified by the SJGPLAY environment variable).
+If you do not want them to load each time, you must either; delete them,
+rename them, or move them to a different directory!
+
+
+SJGPLAY.MSG
+-----------
+  This file contains messages that replace SOME of the internal messages. 
+The HELP, SYNC-HELP, UTILITIES and some other screens are NOT changed.
+
+  Each line in the file is a separate message. You can modify the included 
+file but be sure not to add or delete lines. Some messages can be of any 
+(reasonable) length, however some must be a specific length. Making a string 
+too long or too short may affect the screen display!
+
+There are different types of messages: 
+
+ 1. Display-only (regular strings or titles)
+ 2. Display with special command characters (color changes, eg $#@!)
+ 3. Group Messages (Must not change the spacing or length!)
+ 4. Control strings (keyboard scan codes, eg: @77)
+ 5. Program strings (shell commands, eg pkzip)
+
+
+SJGFNT8.COM and SJGFNT16.COM
+----------------------------
+  These two files (executable programs) are designed to load and activate
+an alternate character set for your VGA card. The character sets have been
+modified by me to include a better selection of "block" characters to give
+you more flexibility in designing your fonts. The normal character set only
+has half-block characters. I have created "quarter-block" characters
+(ie: divide one character into 4 sections and have every possible combination
+of those 4 sections lit). The "8" file is for 50-line VGA mode and the "16"
+is for 25-line vga mode.
+
+  These two files were created by a program called FONTEDIT from PC Magazine,
+included with the book "BASIC LAB NOTES" (ZIFF-DAVIS PRESS).
+
+
+FONTEX.EXE
+----------
+  This program reads the font from your VGA card and exports it to a format
+that SJGPlay understands. At the moment the most useful font to export is the
+8-line font using either (H)alf-block or (E)dited (SJGFNTx.com as above) mode
+using 5 export lines. When exporting the proper ASCII range is 32 to 126.
+
+ If you want to view the entire font you can export characters 0 to 255 in
+(N)ormal mode, with the same number of export lines as the font (8/14/16).
+
+ To have a font load automatically when SJGPlay starts you must save it with
+the name "SJGPLAY.FNT".
+
+
+SJGPLAY FONT FORMAT
+-------------------
+
+  SJGPlay fonts are big letters and numbers that are made up of a matrix of
+normal (built into the video card) or external (modified and loaded) characters.
+The built-in SJGPlay font contains characters from ASCII 32 ("space") to
+ASCII 126 (the ~ character). Loaded fonts may contain as many as needed up to
+ASCII 255.
+
+  The first line of the file must contain the following information:
+
+     HEIGHT, CHRS, FILE1, FILE2
+
+  where;
+     HEIGHT...is the number of lines in the font (usually 5)
+     CHRS.....is the number of characters in the font (usually 95)
+     FILE1....is an external VGA font com file for 25-line video screens
+     FILE2....is an external VGA font com file for 43 or 50-line video screens
+
+  examples;
+     5, 95, "", ""
+     5, 224, sjgfnt16.com, sjgfnt8.com
+
+     * If you specify an empty (ie "") FILE1 or FILE2 the normal character set
+       will be used.
+
+  The remaining lines are the actual font data.
+
+  The standard font is 5 lines tall. Currently SJGPlay is optimized to work with
+fonts that are 5 lines high, however font sizes up to 16 are supported (To make
+the time and track display look correct the numerical characters should be
+limited to 4 lines high by 5 characters wide).
+
+  Each character must have the exact number of strings specified by HEIGHT and
+each MUST be enclosed with QUOTES to ensure spaces within each character are
+not ignored! The font can be proportional (each character can be a different
+width). The first string of each character determines the width of the
+character. The last 4 strings will be padded or truncated if nessessary to
+this width!
+
+Example:
+
+The letter "V" could be entered like this:
+
+"*   * "   <-- The fist line is 6 characters wide
+"*   * "   <-- Each entry on a separate line
+" * *  "   <-- Notice the last 4 lines have trailing spaces included,
+"  *   "   <--   however they are not required
+"      "   <-- The last line is usually for lowercase descenders)
+
+Or, all on one line, and no trailing spaces, except for the first line, 
+like this:
+
+"*   * ","*   *"," * *","  *",""  
+
+  Make sure there are NO blank lines in the file! You can include comment
+lines anywhere AFTER the first line provided the line BEGINS with a
+semicolon (";").
+
+  Most likely you will be using the upper 128 ASCII characters (like the 
+block or half-block characters or the line characters) to make up one big 
+character, so you will need an editor that will allow you to enter them in 
+properly (the MS-DOS EDIT command works for most characters) and to save it
+as a "text" file (no special formatting codes). Of course, the built-in font
+editor in SJGPlay can also be used...
+
+Note: the internal SJGPlay font editor can only edit an existing font. It
+      can NOT create new fonts or add extra characters to a font. To create
+      an extended font use the FONTEX program or add the appropriate entries
+      to the end of a normal font and adjust the first line as needed (ie:
+      create "HEIGHT" lines for each character you want to add then increase
+      the number of characters specified on line 1 of the font file).
+
+
+FINAL NOTE
+----------
+
+  If you design some really nice fonts, or you translate the messages to
+another language, please send them to me so I can include them in future
+releases of the program. Thanks!
+
+Steve   sgray@acs.ryerson.ca

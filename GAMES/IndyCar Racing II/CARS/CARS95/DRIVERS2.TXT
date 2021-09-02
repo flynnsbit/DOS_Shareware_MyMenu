@@ -1,0 +1,41 @@
+VERSN 1
+NUMDR 40
+NUMCH 3
+NUMEN 3
+CHASS Lola Penske Reynard
+ENGIN Cosworth Mercedes-Benz Honda
+NUMT  2
+TIRES Goodyear Firestone
+DINFO   0 2 0 0 375 562 375 562 387 562 375 562 Pace_Car Pacer New_York,_NY USA USA INDYCAR
+DINFO  95 1 0 0 500 562 500 562 100 150 500 562 John_Smith John Somerville,_MA USA USA Papyrus_Racing
+DINFO 100 0 0 0   1 250 200 350 800 900 125 250 Fred_Jones Fred Newton,_MA USA USA Papyrus_Racing
+DINFO  16 1 1 0 350 500 325 500 500 501 500 700 Stefan_Johansson Stefan Vaxjo,_Sweden Sweden SWE Bettenhausen_Motorsports
+DINFO  18 2 0 0 350 525 325 550 500 501 500 600 Mauricio_Gugelmin Mauricio Joinville,_Brazil Brazil BRA PacWest_Racing
+DINFO  17 2 0 0 325 500 300 475 500 501 300 500 Danny_Sullivan Danny Louisville,_KY USA USA PacWest_Racing
+DINFO   8 2 1 0 375 550 350 550 500 501 500 600 Gil_deFerran Gil Paris,_France France FRA Hall_Racing_Inc
+DINFO  20 0 0 1 375 550 375 550 500 501 500 700 Scott_Pruett Scott Sacramento,_CA USA USA Patrick_Racing
+DINFO   1 1 1 0 375 562 400 562 500 501 800 900 Al_Unser_Jr. Al Albuquerque,_NM USA USA Penske
+DINFO   2 1 1 0 350 550 350 500 500 501 600 700 Emerson_Fittipaldi Emmo Sao_Paulo,_Brazil USA USA Penske
+DINFO   9 0 1 0 375 562 385 550 500 501 700 800 Bobby_Rahal Bobby Medina,_OH USA USA Rahal_Hogan_Racing
+DINFO   4 2 0 0 350 550 325 525 500 501 500 650 Bryan_Herta Bryan Warren,_MI MI USA Target_Chip_Ganassi_Racing
+DINFO  12 2 0 0 375 550 350 550 500 501 750 850 Jimmy_Vasser Jimmy Canoga_Park,_CA USA USA Target_Chip_Ganassi_Racing
+DINFO   5 2 0 0 375 562 325 562 500 501 998 999 Robby_Gordon Robby Cerritos,_CA USA USA Walker_Racing
+DINFO  15 2 0 0 375 500 350 500 500 501 700 800 Christian_Fittipaldi Christian Sao_Paulo,_Brazil Brazil BRA Walker_Racing
+DINFO  11 0 1 0 350 500 325 500 500 501 650 750 Raul_Boesel Raul Curitiba,_Brazil Brazil BRA Rahal_Hogan_Racing
+DINFO  96 2 1 1   1 250 200 450 800 900 125 250 Andrew_Craig Andrew Troy,_MI USA USA Team_IndyCar
+DINFO  25 0 0 1 350 500 225 425 799 800 600 800 Hiro_Matsushita Hiro Kobe,_Japan Japan JAP Arciero_Wells_Racing
+DINFO  31 2 2 1 325 525 300 500 500 501 650 800 Andre_Ribeiro Andre Sao_Paulo,_Brazil Brazil BRA Tasman_Motorsport
+DINFO  86 0 0 0 300 450 300 425 800 900 125 250 Frank_Anderson Frank Palo_Alto,_CA USA USA Peters_Racing
+DINFO  55 1 2 1 150 350 225 450 800 900 125 250 Chris_Gibson Chris New_York,_NY USA USA City_Lights_Racing
+DINFO  42 0 1 0 150 350 200 375 800 900 125 250 Michael_Lake Michael Las_Vegas,_NV USA USA Trax_Motorsports
+DINFO  35 0 0 0 150 250 225 325 800 900 250 475 Riccardo_Pantano Riccardo Venice,_Italy Italy ITA Southern_Racing
+DINFO  40 0 0 0 300 475 300 500 800 900 250 475 Pete_Balboni Pete Hartford,_CT USA USA Steel_Motorsports
+DINFO  72 0 0 1   1 350 225 450 800 900 125 250 Brendan_Edwards Brendan Skagway,_AK USA USA Smithfield_Racing
+DINFO  98 1 0 1 150 375 200 475 800 900 250 475 John_Mason John Raleigh,_NC USA USA Fellows_Inc.
+DINFO  71 1 0 0 325 525 300 525 800 900 125 250 Bill_McGowan Bill Cheraw,_SC USA USA Cheraw_Associates
+DINFO  21 2 1 0 150 375 225 425 800 900 250 475 Jack_Salerno Jack Stone_Mountain,_GA USA USA Mullins_Sports
+DINFO  66 2 0 0 150 425 200 375 800 900 250 475 Robert_Ham Robert Chelsea,_England England ENG Morel_Racing
+DINFO  82 1 0 0 300 500 325 475 800 900 125 250 Wayne_Kimball Wayne Marblehead,_MA USA USA Back_Bay_Motorsports
+DINFO  74 2 0 1 125 425 225 400 800 900 250 475 Dan_Shoreman Dan Portland,_ME USA USA Pit_Lane_Racing
+DINFO  69 0 0 0 300 500 275 475 800 900 250 475 John_Reblando John Manila,_Philippines Philippine PHI Lyman_Racing
+DINFO  33 0 0 1 125 250 225 375 800 900 125 250 Sean_Clancy Sean Tralee,_Ireland Ireland IRL Sean_Clancy_Motorsports

@@ -1,0 +1,13 @@
+Begin3
+Title:          Welcome to FreeDOS
+Version:        1.2
+Entered-date:   12/20/2016
+Description:    The "Welcome to FreeDOS 1.2" message that is displayed at system start up.
+Keywords:       welcome boot message autoexec config
+Author:         Jerome Shidel <jerome _AT_ shidel.net>
+Maintained-by:  Jerome Shidel <jerome _AT_ shidel.net>
+Primary-site:   https://github.com/shidel/FDI
+Platforms:      DOS
+Copying-policy: GNU General Public License, Version 2
+End
+

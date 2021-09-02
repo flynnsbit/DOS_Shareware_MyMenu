@@ -1,0 +1,15 @@
+Begin3
+Title:          keyb
+Version:        2.01
+Entered-date:   2013-12-14
+Description:    Keyboard driver (BIOS level) for international support
+Keywords:       keyb, keyboard, driver
+Author:         Aitor SANTAMARIA MERINO
+Maintained-by:  Aitor SANTAMARIA MERINO
+Primary-site:   http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/keyb/
+Alternate-site:
+Original-site:
+Platforms:      DOS
+Copying-policy: GNU General Public License, Version 2
+Wiki-site:      http://wiki.freedos.org/wiki/index.php/Keyb
+End

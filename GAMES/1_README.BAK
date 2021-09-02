@@ -1,0 +1,100 @@
+[?7h[40m[2J[0;1mษอ[33mMyMenu Introduction[37mออออออออ[32mF1-HELP[37mออป
+บ MyMenu is a DOS frontend designed   บ
+บ to allow you to quickly launch DOS  บ
+บ [0mgames[1m, [0mapplications[1m, and [0mmusic[1m.[5Cบ
+บ[37Cบ
+บ Launch scripts, exe, bat, or any    บ
+บ custom extension that you configure บ
+บ in the MYMENU.INI config file.[6Cบ
+บ Features: DOS Long File Name supportบ
+บ [36mA[31mN[33mS[35mI [37mand ASCII art, Terminal (COM), บ
+บ MiSTer Speed, Screensavers, CGA/VGA,บ
+บ Music support for MOD, MIDI, XM, A2Mบ
+บ and MP3. Terminal supports MidiLink,บ
+บ Serial, and BBS connections.[8Cบ
+บ[37Cบ
+บ [36mSee the MYMENU.INI file for options.[37mบ
+ศอออออออออออออออออออออออออออออออออออออผ
+   [33;45mฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ[40m
+   [45mณF7 or Click here for more info ณ[40m
+   [45mภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู[40m
+[0;32m [D [D [D [D [D [D [D [1;37mSCROLL DOWN FOR MORE [0;32m [D [D [D [D [D [D [D [D [D [D
+[26C[1;37mฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ
+[26Cณ  Quick Shortcut keys  ณ
+ษอออออออออออออออออออออออออฯอออออออออออออออออออออออฯอออออออออออออออออออออออออป
+บ[33mALT-S[37m: Screensaver Menu, last item is default[30Cบ
+บ[33mALT-U[37m: Utilities Menu see Mymenu.ini[39Cบ
+บ[33mALT-C[37m: Quick Command Prompt[48Cบ
+บ[33mREADME.ANS[37m: Default ANSI screen for Folder[33Cบ
+บ[33mAUTORUN.BAT[37m: If exists, Folder selection will auto launch script[11Cบ
+บ[33m1_[37m, [33m2_[37m,: Autosort will have files that start with this above any (DIR)[5Cบ
+บ[33mF10[37m: Terminal window has shortcut keys for Mp3 integration with MidiLink   บ
+บ[5CMP3's go in your /media/fat/MP3 folder on your Mister or MidiLink Pi  บ
+บ[5CTerminal supports BBS connections.[36Cบ
+บ[5Csee [32mgithub.com/bbond007/MiSTer_MidiLink[31C[37mบ
+บ[75Cบ
+บ[31mALT-D[37m, [31mALT-R[37m: Power User Options ONLY[38Cบ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+ [44mษออออออออ[40mF1 - for Help Menu[44mอออออออออออป[5C[30;47mษ[37;40mF2 - Change Drive[30;47mอป[40m
+ [37;44mบ [33mF1  - Help (This screen)            [37mบ[5C[30;47mบ[37;41mC:\GAMES\         [30;47mบ[40m
+ [37;44mบ [33mF2  - Change Drive                  [37mบ[5C[30;47mบ[37mC:\ANSI ART\      [30mบ[40m
+ [37;44mบ [33mF3  - Set MiSTer Speed              [37mบ[5C[30;47mบ[37mC:\Music\         [30mบ[40m
+ [37;44mบ [33mF4  - Enable/Disable Info Popup     [37mบ[5C[30;47mบ[37mC:\MIDI\          [30mบ[40m
+ [37;44mบ [33mF5  - Refresh/Redraw                [37mบ[5C[30;47mบ[37mC:\MODS\          [30mบ[40m
+ [37;44mบ [33mF6  - MIDI Menu                     [37mบ[5C[30;47mบ[37mD:\MP3\           [30mบ[40m
+ [37;44mบ [33mF7  - Fullscreen Preview            [37mบ[5C[30;47mบ[37mE:\               [30mบ[40m
+ [37;44mบ [33mF8  - Color Theme Options           [37mบ[5C[30;47mบ[37mF:\               [30mบ[40m
+ [37;44mบ [33mF9  - Toggle Sort Order             [37mบ[5C[30;47mบ[37mZ:\               [30mบ[40m
+ [37;44mบ [33mF10 - Terminal Window               [37mบ[5C[30;47mศออออออออออออออออออผ[40m
+ [37;44mศอออออออออออออออออออออออออออออออออออออผ[40m
+
+[6C[33;42mษออ[37;40mF3 - MiSTer core speed[33;42mออออป[8C[37;41mษอ[40mF4 - Preview Screen[41mออป[40m
+[6C[33;42mบ SLOW speed will be used... บ[8C[37;41mบ  Info Popup on/off   บ[40m
+[6C[33;42mศออออออออออออออออออออออออออออผ[8C[37;41mศออออออออออออออออออออออผ[40m
+[6C[33;43mษออออออออออออออออออออออออออออป[40m
+[6C[43mบ MED speed will be used...  บ[5C[37;40mF5 - Refresh/Redraw the screen
+[6C[33;43mศออออออออออออออออออออออออออออผ[40m
+[6C[41mษออออออออออออออออออออออออออออป[40m
+[6C[41mบ FAST speed will be used... บ[40m
+[6C[41mศออออออออออออออออออออออออออออผ[40m
+
+[27C[30;47mษอออ[37;40mF6 - MT32-Pi Sound[30;47mออออป[40m
+[27C[47mบ[37;41mReset stuck notes [47m       [30mบ[40m
+[27C[47mบ[37mMT32-Pi MT-32 mode       [30mบ[40m
+[27C[47mบ [37m- Old ROM               [30mบ[40m
+[27C[47mบ [37m- New ROM               [30mบ[40m
+[27C[47mบ                         บ[40m
+[27C[47mบ[37mMT32-Pi FluidSynth mode  [30mบ[40m
+[27C[47mบ [37m- SoundFont 0           [30mบ[40m
+[27C[47mบ [37m- SoundFont 1           [30mบ[40m
+[27C[47mบ [37m- SoundFont 2           [30mบ[40m
+[27C[47mบ [37m- SoundFont 3           [30mบ[40m
+[27C[47mบ [37m- SoundFont 4           [30mบ[40m
+[27C[47mบ [37m- SoundFont 5           [30mบ[40m
+[27C[47mบ [37m- SoundFont 6           [30mบ[40m
+[27C[47mบ [37m- SoundFont 7           [30mบ[40m
+[27C[47mศอออออออออออออออออออออออออผ[40m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[0m[255D

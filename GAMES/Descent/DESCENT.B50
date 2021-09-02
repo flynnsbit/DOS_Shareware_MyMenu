@@ -1,0 +1,71 @@
+REM          ษออออออออออออออออออออออออออออออออออป
+REM          บ      FLCS & WCS II file (v1.0)   บ
+REM          บ                for               บ
+REM          บ DESCENT by Interplay Productions บ
+REM          บ      and Parallax Software       บ
+REM          ศออออออออออออออออออออออออออออออออออผ
+REM   Written & tested by Adam Pletcher, Parallax Software
+
+REM ษออออออออออออออออออออออออออออออออออป
+REM บ WCS Mark II Base Switch Settings บ
+REM บ Black Switch = Digital           บ
+REM บ Red Switch   = Analog            บ
+REM ศออออออออออออออออออออออออออออออออออผ
+
+MDEF DESCENT
+
+REM ษออออออออออออป
+REM บ Enable WCS บ
+REM ศออออออออออออผ
+
+USE WCS
+
+REM ษอออออออออออออออออออป
+REM บ Set Keypress Rate บ
+REM ศอออออออออออออออออออผ
+
+RATE 20
+
+REM ษอออออออออออออออป
+REM บ FLCS Commands บ
+REM ศอออออออออออออออผ
+
+BTN TG1 /H Fire_Primary
+BTN TG2 /H Fire_Primary
+
+BTN S1 /H Fire_Primary
+BTN S2 /N Fire_Secondary
+BTN S3 /H Drop_Bomb
+BTN S4 /H Fire_Flare
+
+BTN H1U /H Slide_Up
+BTN H1D /H Slide_Down
+BTN H1L /H Slide_Left
+BTN H1R /H Slide_Right
+
+BTN H2U /N Taunt_Macro1
+BTN H2D /N Taunt_Macro4
+BTN H2L /N Taunt_Macro2
+BTN H2R /N Taunt_Macro3
+
+BTN H3U /H Forward
+BTN H3D /H Reverse
+BTN H3L /H Roll_Left
+BTN H3R /H Roll_Right
+
+BTN H4U /H Forward
+BTN H4D /H Reverse
+BTN H4L /H Slide_Left
+BTN H4R /H Slide_Right
+
+REM ษออออออออออออออออป
+REM บWCS II Commands บ
+REM ศออออออออออออออออผ
+
+BTN T1 /N Taunt_Macro1
+BTN T2 /N Taunt_Macro2
+BTN T3 /N Taunt_Macro3
+BTN T4 /H Roll_Left
+BTN T5 /H Roll_Right
+BTN T6 /N Rear_View
+

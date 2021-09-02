@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>archivers</TITLE>
+<META NAME="description" CONTENT="archivers">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="next" HREF="node45.html">
+<LINK REL="previous" HREF="node36.html">
+<LINK REL="up" HREF="node30.html">
+<LINK REL="next" HREF="node45.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html590"
+ HREF="node45.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html588"
+ HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html582"
+ HREF="node43.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html591"
+ HREF="node45.html">filetypes</A>
+<B> Up:</B> <A NAME="tex2html589"
+ HREF="node30.html">Configuration</A>
+<B> Previous:</B> <A NAME="tex2html583"
+ HREF="node43.html">software mixers</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00670000000000000000">
+archivers</A>
+</H1>
+When processing files inside archives <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP has to know how to call the
+programs. The following sections define the usage of different archivers
+supported by the <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP fileselector.
+
+<P>
+When substituting the command line 4 special variables are processed by the
+fileselector for accessing the archives:<DL COMPACT><DT>%%
+<DD>evaluates to ''%''
+<DT>%a
+<DD>evaluates to the archiv name preceeded by the path to process.
+<DT>%n
+<DD>evaluates to the filename of the file to process inside the archive.
+<DT>%d
+<DD>evaluates to the destination directory used to extract files out of archive.</DL>
+<P>
+Three default command are defined for the arc modules:<DL COMPACT><DT>get
+<DD>this command is used when a file should be extracted out of an archive.
+<DT>put
+<DD>if a file should be added to the archive this command line is used.
+<DT>delete
+<DD>with <TT>&lt;ALT&gt;</TT>+<TT>&lt;k&gt;</TT> you can delete files out of archives.</DL>
+<P>
+The following two archivers contain special options described below:
+<PRE>
+[arcZIP]
+  get=pkunzip %a %d %n
+  put=pkzip %a %n
+  delete=pkzip -d %a %n
+  deleteempty=on
+</PRE><DL COMPACT><DT>deleteempty
+<DD>the program pkzip/pkunzip used by <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP to process <TT>.zip</TT>
+files have a bug when deleting the last file inside an archive. An empty archive
+of 22 bytes is left on the hard disk. With this option enabled the fileselector
+will delete those ''zip zombies''.</DL>
+<P>
+<PRE>
+[arcACE]
+  get=ace32 e %a %n %d
+  scaninsolid=false
+</PRE><DL COMPACT><DT>scaninsolid
+<DD>?</DL>
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html590"
+ HREF="node45.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html588"
+ HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html582"
+ HREF="node43.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html591"
+ HREF="node45.html">filetypes</A>
+<B> Up:</B> <A NAME="tex2html589"
+ HREF="node30.html">Configuration</A>
+<B> Previous:</B> <A NAME="tex2html583"
+ HREF="node43.html">software mixers</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

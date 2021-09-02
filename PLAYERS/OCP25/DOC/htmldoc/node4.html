@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Starting OpenCP</TITLE>
+<META NAME="description" CONTENT="Starting OpenCP">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node2.html">
+<LINK REL="up" HREF="opencp.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html143"
+ HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html141"
+ HREF="opencp.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html135"
+ HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html144"
+ HREF="node5.html">Fileselector</A>
+<B> Up:</B> <A NAME="tex2html142"
+ HREF="opencp.html">OPENCP 2.5</A>
+<B> Previous:</B> <A NAME="tex2html136"
+ HREF="node3.html">Third party plugins</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00300000000000000000">
+Starting OpenCP</A>
+</H1>
+After starting <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP from the command line the dos extender is loaded. By
+default <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP looks for a file <TT>cplaunch.exe</TT> in the home directory. If
+it can not find this file it will look for <TT>dos4gw.exe</TT> in all
+directories included in the path statement. When none if these files are found
+<FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP exists with the error message <TT>could not execute : No such
+file or directory</TT>.
+
+<P>
+<FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP then tries to detect the sound cards defined in the <TT>cp.ini</TT> file.
+If the card is not found you can not use it. If more than one sound card is
+installed and found by <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP the first one listed in the <TT>cp.ini</TT> is
+used as the default device.<A NAME="tex2html6"
+ HREF="#foot989"><SUP>3.1</SUP></A>
+
+<P>
+By entering a filename as paramter onto the command line you can load a module.
+If one file is given the module will be loaded and <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP starts with the
+player.<A NAME="tex2html7"
+ HREF="#foot89"><SUP>3.2</SUP></A> When the parameter is
+the name of a directory the fileselector starts with the given directory.
+If the parameter equals a certain archive all files found inside the archive
+will be played (by adding them to the playlist).
+
+<P>
+If more than one parameter is given a playlist will be set up, containing all
+found files. You can mix filenames of archives, files in archives and normal
+files on the hard disk.
+
+<P>
+You normally don't habe to supply the right file extensions, as they are
+guessed by the fileselector. If the filename is not complete the file will
+not be processed (unlike the quickfind function).
+
+<P>
+<FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP can be configured using the command line, although the configuration
+through the <TT>cp.ini</TT> file is more comfortable. The options split up
+into three main sections each starting with ''-'' followed by a letter. For
+each section different options are given, which will configure the player
+accordingly. You can precede each option with the section prefix every time
+or supply multiple options seperated with '',''. Some special options do not
+require the use of a sections prefix, like the <EM>help</EM> switch.
+
+<P>
+The command line looks like: <BR>
+<TT>cp [prefix option[,option]] [specialOption] [filename]</TT><A NAME="tex2html8"
+ HREF="#foot93"><SUP>3.3</SUP></A>
+
+<P>
+Special options include: <DL COMPACT><DT><TT>-h</TT>
+<DD>show a help screen 
+<DT><TT>-m</TT>
+<DD>use a monochrome graphics card (hercules or mda). Useful when starting <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP under windows. 
+<DT><TT>-c&lt;name&gt;</TT>
+<DD>use a configuration defined in <TT>cp.ini</TT> </DL>
+<P>
+Fileselector options are envoked with <TT>-f</TT>. The values in square brackets define
+a choice that must be made when using one of these options. <DL COMPACT><DT><TT>r[0|1]</TT>
+<DD>remove played files from module list 
+<DT><TT>o[0|1]</TT>
+<DD>don't scramble module list order 
+<DT><TT>l[0|1]</TT>
+<DD>loop modules </DL>
+<P>
+Playback options are preceded by <TT>-v</TT>. Values in sharp brackets define a range
+in which the value must be taken. <DL COMPACT><DT><TT>a&lt;0<IMG
+ WIDTH="23" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\ldots$">800&gt;</TT>
+<DD>set amplification 
+<DT><TT>v&lt;0<IMG
+ WIDTH="23" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\ldots$">100&gt;</TT>
+<DD>set volume 
+<DT><TT>b&lt;-100<IMG
+ WIDTH="23" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\ldots$">100&gt;</TT>
+<DD>set balance 
+<DT><TT>p&lt;-100<IMG
+ WIDTH="23" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\ldots$">100&gt;</TT>
+<DD>set panning 
+<DT><TT>r&lt;-100<IMG
+ WIDTH="23" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\ldots$">100&gt;</TT>
+<DD>set reverb 
+<DT><TT>c&lt;-100<IMG
+ WIDTH="23" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\ldots$">100&gt;</TT>
+<DD>set chorus 
+<DT><TT>s[0|1]</TT>
+<DD>set surround 
+<DT><TT>f[0|1|2]</TT>
+<DD>set filter (0=off, 1=AOI, 2=FOI) </DL>
+<P>
+Device setting are accomplished with the suffix <TT>-s</TT>. <DL COMPACT><DT><TT>p&lt;name&gt;</TT>
+<DD>use specific player device 
+<DT><TT>s&lt;name&gt;</TT>
+<DD>use specific sampler device 
+<DT><TT>w&lt;name&gt;</TT>
+<DD>use specific wavetable device 
+<DT><TT>r&lt;0<IMG
+ WIDTH="23" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\ldots$">64000&gt;</TT>
+<DD>sample at specific rate 
+<DT><TT>8</TT>
+<DD>play/sample/mix as 8bit 
+<DT><TT>m</TT>
+<DD>play/sample/mix mono </DL>
+<P>
+Finally an example to illustrate the above features:
+<BLOCKQUOTE>
+<TT>cp -fl0,r1 -va80,p50,f2 -spdevpdisk -sr44100 ftstar.xm</TT>
+</BLOCKQUOTE>This will start <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP and load the file <TT>ftstar.xm</TT><A NAME="tex2html9"
+ HREF="#foot130"><SUP>3.4</SUP></A>. The music will be played once
+and will not loop (<TT>-fl0,r1</TT>). Further the player is advised to amplify
+this file with 80%, set the panning to 50% and interpolate every sample
+(<TT>-va80,p50,f2</TT>). The mixed output will be saved into <TT>.wav</TT>
+format through the <EM>diskwriter</EM> device (<TT>-spdevpdisk</TT>) with a
+sample rate of 44.1KHz (<TT>-sr44100</TT>).
+
+<P>
+You can curn this WAV file directly onto a CD-Audio and play it with every
+normal CD player. A much simpler and more convinient way to make such a
+<EM>sample image</EM> out of a module is by using predefined configurations with
+the <TT>-c</TT> switch. Have a look at the section <EM>Using the diskwriter</EM>
+on page <A HREF="node27.html#diskwriter"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="cross_ref_motif.gif"></A>.
+
+<P>
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot989">... device.</A><A NAME="foot989"
+ HREF="node4.html#tex2html6"><SUP>3.1</SUP></A>
+<DD>You can change this in the player by using
+the <TT>:</TT> device. See page <A HREF="node8.html#specialdrive"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="cross_ref_motif.gif"></A> for detail.
+
+<DT><A NAME="foot89">...
+player.</A><A NAME="foot89"
+ HREF="node4.html#tex2html7"><SUP>3.2</SUP></A>
+<DD>This will work if the file is inside an archiv located in the
+current directory. If no (unpacked) file is found all archives in the current
+directory are searched for an appropriate filename.
+
+<DT><A NAME="foot93">...&nbsp;</A><A NAME="foot93"
+ HREF="node4.html#tex2html8"><SUP>3.3</SUP></A>
+<DD>Square
+brackets [] indicate an optional items that can be repeated.
+
+<DT><A NAME="foot130">...<TT>ftstar.xm</TT></A><A NAME="foot130"
+ HREF="node4.html#tex2html9"><SUP>3.4</SUP></A>
+<DD>A marvelous piece of
+music composed by KB which won The Party 1997.
+
+</DL><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html143"
+ HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html141"
+ HREF="opencp.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html135"
+ HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html144"
+ HREF="node5.html">Fileselector</A>
+<B> Up:</B> <A NAME="tex2html142"
+ HREF="opencp.html">OPENCP 2.5</A>
+<B> Previous:</B> <A NAME="tex2html136"
+ HREF="node3.html">Third party plugins</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

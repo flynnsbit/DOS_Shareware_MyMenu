@@ -1,0 +1,15 @@
+Begin3
+Title:         TEE
+Version:       2.0.3
+Entered-date:   2008-07-27
+Description:   Saves a copy of its input to a file, while printing a copy to stdout
+Keywords:      tee, unix
+Author:        Jim Hall <jhall -at- freedos.org>
+Maintained-by: Alex Malozemoff <amalozemoff1 -at- gmail.com>
+Primary-site:         http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/tee.html
+Alternate-site:http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/file/tee/
+Original-site: http://www.freedos.org/jhall
+Platforms:     DOS (OpenWatcom C), FreeDOS
+Copying-policy: GNU General Public License, Version 2
+Defunct-Primary-Site: http://www.cs.mcgill.ca/~amaloz/FreeDOS/TEE
+End

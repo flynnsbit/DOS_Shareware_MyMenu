@@ -1,0 +1,109 @@
+
+			STAMP 2.0
+
+
+Contents
+--------
+
+	1. Features
+	2. Errorlevels
+	3. Todo
+	4. History
+	5. Author
+
+
+1. Features
+-----------
+
+- change date/time for files
+- change attributes for files and directories
+- compare date/time and attributes for files and directories
+- date/time options allow get values from current and file date/time
+  simultaneously with explicit numbers
+- complex date/time comparision with current date/time, likewise with file
+- date/time in formats, that conforms COUNTRY settings
+- UNC and NetWare pathes allowed
+- multiply targets in one command line
+- extended wildcards: names can contain any number of '*', also as '?';
+  "name" mean "name.", but "*" mean "*.*"
+- option character ('/' or '-') autosense
+- option to include directories names in wildcards search
+- option to process files and directories in all of target's subdirectories
+- option to process file with list of targets; missed argument mean
+  standard input
+
+
+2. Errorlevels
+--------------
+
+0   - date/time and attributes setting or comparing successful
+1   - compare (one of) is unsuccessful
+2   - error file access or set file date/time/attributes
+128 - invalid or diplicated option
+129 - incompatible options, none targets or invalid arguments
+130 - internal error (not enough memory or too deep directory)
+
+
+3. Todo
+-------
+
+- show lists of processed files
+- compare/copy date/time/attributes file-to-files
+- increment/decrement for date/time fields
+- greater/lesser comparision for attributes
+
+
+4. History
+----------
+
+	1.0 [16.02.98]
++ First edition
+
+	1.1 [19.02.98]
++ Now accepts date/time in formats, which conforms COUNTRY settings
+
+	1.2 [21.02.98]
+* Slightly improved intepretation of ommited fields and arguments
+* Decreased executable file size
++ Added -a option to modify files and directories attributes
+
+	1.3 [21.02.98]
++ Now accepted multuply targets in one command line
++ -a option now can be used in comparision
+
+	1.4 [26.02.98]
+# Now execution not stop when error for file found, but continues for next
+  targets
+# Ouput now is not duplicated to console when they redirected to file
+* -@ option renamed to -c
++ Directories date/time now also can be checked in comparision
++ Now wildcards for targets accepted
++ -r enables directories processing by wildcards
+
+	1.41 [28.02.98]
++ Character for options autoselected by first occurence of '/' or '-'
++ Alone pair of option characters ("--" or "//") stop next options search
++ Alone option character mean standard input
+- Adding option character before name with same character at start for
+  enabling such name as argument now causes error message; for passing
+  arbitrary names insert alone pair of option characters before
+
+	1.5 [14.03.98]
+# Bugfix: for some conditions explicitly passed correctly day values 30
+  and 31 was rejects
+# Bugfix: targets name now uppercased according to COUNTRY settings
++ /s processes files and directories also in all target's subdirectories
+
+	2.0 [14.04.98]
+# Bugfix: lost seconds most sign bit when read file time
++ /@ to process file with list of targets
+* Alone option character now specified standard input only as /@ option
+  argument
+* Decreased executable file size
++ DIET used for executable file squeezing
+
+
+5. Author
+---------
+					Arkady Belousov
+					E-mail: ark@mos.ru

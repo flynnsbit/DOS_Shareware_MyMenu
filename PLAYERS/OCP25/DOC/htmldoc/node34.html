@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>screen</TITLE>
+<META NAME="description" CONTENT="screen">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="next" HREF="node35.html">
+<LINK REL="previous" HREF="node33.html">
+<LINK REL="up" HREF="node30.html">
+<LINK REL="next" HREF="node35.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html485"
+ HREF="node35.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html483"
+ HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html477"
+ HREF="node33.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html486"
+ HREF="node35.html">fileselector</A>
+<B> Up:</B> <A NAME="tex2html484"
+ HREF="node30.html">Configuration</A>
+<B> Previous:</B> <A NAME="tex2html478"
+ HREF="node33.html">sound</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00640000000000000000">
+screen</A>
+</H1>
+When the player starts it will use the options in this section as the start
+appearance.
+<PRE>
+[screen] 
+  usepics=opencp01.tga
+  compomode=off  
+  startupmode=text 
+  screentype=2    
+  analyser=on
+  mvoltype=1
+  pattern=on
+  insttype=0
+  channeltype=1
+  palette=0 1 2 3 4 5 6 7 8 9 a b c d e f
+</PRE><DL COMPACT><DT>usepics
+<DD>When using graphics modes you can use a picture to show in the
+background. <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP will load any TGA files with 640x384 dimensions and 256 colors.
+As the TGA format is poorly implemented in modern graphic programs this might
+change in the future. As some colors out of the 256 are used by <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP you should
+leave either the first or the last 16 colors in the palette black.<A NAME="tex2html47"
+ HREF="#foot771"><SUP>6.14</SUP></A> The pictures should be copied to the home directory of <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP, unless
+you specify a different location in the <EM>defaultconfig</EM> section.
+<DT>compomode
+<DD>this option will enable the compo mode. Section <A HREF="node28.html#compomode">4.6</A>
+describes the details.
+<DT>startupmode
+<DD>start the player in either text or graphic mode
+<DT>screentype
+<DD>the default screentextmode: <BR>
+  <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">80x25</TD>
+</TR>
+<TR><TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">80x30</TD>
+</TR>
+<TR><TD ALIGN="LEFT">2</TD>
+<TD ALIGN="LEFT">80x50</TD>
+</TR>
+<TR><TD ALIGN="LEFT">3</TD>
+<TD ALIGN="LEFT">80x60</TD>
+</TR>
+<TR><TD ALIGN="LEFT">4</TD>
+<TD ALIGN="LEFT">132x25</TD>
+</TR>
+<TR><TD ALIGN="LEFT">5</TD>
+<TD ALIGN="LEFT">132x30</TD>
+</TR>
+<TR><TD ALIGN="LEFT">6</TD>
+<TD ALIGN="LEFT">132x50</TD>
+</TR>
+<TR><TD ALIGN="LEFT">7</TD>
+<TD ALIGN="LEFT">132x60</TD>
+</TR>
+</TABLE><DT>analyzer
+<DD>if the player starts in textmode show the analyzer (or not)
+<DT>mvoltype
+<DD>the appearance of the peak power levels: <BR>
+  <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">big</TD>
+</TR>
+<TR><TD ALIGN="LEFT">2</TD>
+<TD ALIGN="LEFT">small</TD>
+</TR>
+</TABLE><DT>pattern
+<DD>show the tracklist when starting <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP in textmode
+<DT>insttype
+<DD>the appearance of the instrument function: <BR>
+  <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">short</TD>
+</TR>
+<TR><TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">long</TD>
+</TR>
+<TR><TD ALIGN="LEFT">2</TD>
+<TD ALIGN="LEFT">side (only in 132 column modes)</TD>
+</TR>
+</TABLE><DT>channeltype
+<DD>the appearance of the channels in textmode: <BR>
+  <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">short</TD>
+</TR>
+<TR><TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">long</TD>
+</TR>
+<TR><TD ALIGN="LEFT">2</TD>
+<TD ALIGN="LEFT">side (only in 132 column mode)</TD>
+</TR>
+</TABLE><DT>palette
+<DD>with this options you can redifine the default colors used in
+textmode. The first entry defines which color to use for the original color
+with number 0. Leave things as they are if you are satisfied with the visual
+appearance of <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP. We will provide new color schemes in the future.</DL>
+<P>
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot771">... black.</A><A NAME="foot771"
+ HREF="node34.html#tex2html47"><SUP>6.14</SUP></A>
+<DD>Have
+a look at the <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP homepage for a convinient program to generate background
+pictures.
+
+</DL><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html485"
+ HREF="node35.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html483"
+ HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html477"
+ HREF="node33.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html486"
+ HREF="node35.html">fileselector</A>
+<B> Up:</B> <A NAME="tex2html484"
+ HREF="node30.html">Configuration</A>
+<B> Previous:</B> <A NAME="tex2html478"
+ HREF="node33.html">sound</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

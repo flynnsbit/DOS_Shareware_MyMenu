@@ -1,0 +1,59 @@
+History for FreeDOS tree.
+
+03 September 2002   Tree 3.7.2 - Jeremy Davis <jeremyd@computer.org>
+    Added German translation (tree.de) thanks to Achim Sondermann.
+
+16 October 2001    Tree 3.7.1 - Jim Hall <jhall@freedos.org>
+    added getopt.c, getopt.h to support better command line parsing
+    modified tree.c to add getopt.c
+    created tree.mak, to replace cmplall.bat (didn't delete cmplall.bat)
+
+07 July 2001    Tree 3.7 - Jeremy Davis <jeremyd@computer.org>
+    Reorganized files to better match required format for FreeDOS dist
+    Added back Serial # support (that also works in WinNT DOS box)
+    Added Pacific C and Digital Mars [Symantec] support
+    Added /DA and /DS to display attributes and file sizes respectively
+
+Feb 2001    Tree 3.6.1
+     Aitor Santamaria Merino reviewed and updated Spanish
+     message catalog (tree.es).  No source changes.
+
+January 2001    Tree 3.6 - Jeremy Davis <jeremyd@computer.org>
+     Modified tree to properly compile for DOS with Micro-C/PC (tested 
+     with versions 3.14, 3.15, and 3.21), Borland's Turbo C 2.01,
+     Turbo C/C++ 1.01 and 3.0 (and BCC3.1); and to compile
+     for Win32 using Borland's BCC5.5.1, and Microsoft Visual C/C++ 5.
+     Directly supports volume label.  Includes optional support for
+     cats message library.  DOS versions are short names only (8.3)
+     and Win32 versions are long names only.  Released Feb 7, 2001
+
+July 2000    Tree 3.5 - Joe Cosentino <jayc17@mediaone.net>
+     Changed tree to use external vol command.
+     Improved command line parser.
+     Added the bugs.txt file
+
+16 June 2000    Tree 3.4 - Joe Cosentino <jayc17@mediaone.net>
+     Made a quick and dirty way to get the label and serial number,
+     (uses direct disk reading, will not work under NT dos box).
+     Made the code a little easier to read.
+
+30 May 2000     Tree 3.3 - Steve Nickolas <dosius@sdf.lonestar.org>
+     Dave Dunfied releases Tree as GPL.
+     Source added from GPL'd label for volume/serial #. 
+     Compiles with Borland's freely downloadable TC 2.01.
+
+February 2000    Tree 3.2 modified - Imre Leber
+     Modified tree v3.2 so it will compile using Borland's TC 2.01,
+     a freely downloable DOS compiler (http://www.borland.com).
+
+February 2000    Tree 3.2 - Jeremy Davis <jeremyd@computer.org>
+     Modified tree so will compile using Borland TC3.0, as
+     requested on fd-dev.
+
+1995            FreeDOS tree ?v3.1? - Dave Dunfield <dave@dunfield.com>
+     Tree source is part of Micro-C/PC example archive.  Freely distributable.
+     Basis for tree versions 3.2 through 3.6. 
+     Dave Dunfield - Dunfield Development Systems
+     http://www.dunfield.com
+
+

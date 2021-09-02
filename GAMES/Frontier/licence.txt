@@ -1,0 +1,253 @@
+Frontier Elite 2
+Copyright (C) 1995-2001, Frontier Developments Ltd
+All rights reserved.
+
+SOFTWARE LICENCE AGREEMENT FOR 
+FRONTIER ELITE 2
+
+This SOFTWARE License Agreement ("AGREEMENT") is a legal agreement between you (an 
+individual, company or a single entity), and Frontier Developments Ltd ("AUTHOR") for the 
+computer program entitled FRONTIER ELITE 2, any associated software 
+components, media, printed materials, "online" or electronic documentation, any enclosed 
+documentation and/or accompanying items ("SOFTWARE"). This AGREEMENT states the terms 
+and conditions upon which AUTHOR offers to licence the SOFTWARE. 
+This agreement is binding upon you as well as anyone taking any action with regard to your copy 
+of the SOFTWARE at your direction or not.  
+
+You should carefully read the following terms and conditions before using this 
+SOFTWARE. AUTHOR has the right to grant any licenses for any users based solely on 
+AUTHOR's decision. Unless you have a different licence AGREEMENT signed by AUTHOR 
+your use of this SOFTWARE indicates your acceptance of this licence AGREEMENT and 
+warranty. 
+By installing, running or copying to a computer or otherwise using this SOFTWARE, you 
+agree to be bound by the terms and conditions of this AGREEMENT. 
+ 
+
+TERMS AND CONDITIONS
+
+1. EVALUATION LICENCE. This is not free software. Subject to the terms and conditions of this 
+AGREEMENT, AUTHOR grants you the limited right to use the SOFTWARE for evaluation 
+purposes without charge for a period of 30 (thirty) days ("Evaluation Period"). If you use the 
+SOFTWARE after the Evaluation Period you must pay the registration fee of £5 (Five Pounds 
+Sterling). You may not copy any of the printed material (if any) for any reason. You have no 
+ownership or proprietary rights in or to the SOFTWARE. You agree that the SOFTWARE will not 
+be used, in any manner, in violation of any applicable law. 
+
+2. COPYRIGHT. The SOFTWARE is owned and copyrighted by AUTHOR and is protected by 
+United Kingdom copyright laws, other copyright laws and international copyright treaties, as well 
+as other intellectual property laws and treaties. AUTHOR reserves all the rights regarding the 
+SOFTWARE. You acknowledge that no title to the intellectual property in the SOFTWARE is 
+transferred to you. You further acknowledge that all ownership, title and intellectual property rights 
+in and to the SOFTWARE (including but not limited to any images, photographs, animations, 
+video, audio, music, text and "applets" incorporated into the SOFTWARE "Proprietary Rights"), 
+and any copies you are permitted to make herein remain the exclusive property of AUTHOR or its 
+suppliers and you will not acquire any rights to the SOFTWARE except as expressly set forth in 
+this license. You agree that any copies of the SOFTWARE will contain the same proprietary 
+notices, which appear on and in the SOFTWARE. All ownership, title and intellectual property 
+rights in and to the content which may be accessed through use of the SOFTWARE is the 
+property of the respective content owner and may be protected by applicable copyright or other 
+intellectual property laws and treaties. This AGREEMENT grants you no rights to use such 
+content. 
+You acknowledge that this AGREEMENT in no way shall be construed to provide an express or 
+implied license to use, modify or improve any of the content of the SOFTWARE, including without 
+limitation, any works, inventions, discoveries, technology or other items which are the subject 
+matter of AUTHOR's Proprietary Rights or otherwise to use or exploit the SOFTWARE or the 
+Proprietary Rights in any matter not expressly permitted herein. You have no ownership or 
+proprietary rights in or to the SOFTWARE. 
+AUTHOR authorises usage of the SOFTWARE only in accordance with the terms and conditions 
+stated in this AGREEMENT. You may not remove any copyright or proprietary notices from the 
+SOFTWARE.  
+
+3. GENERAL USAGE. You may not use the SOFTWARE to perform any unauthorized transfer of 
+information (e.g. transfer of files in violation of a copyright) or for any illegal purpose. 
+You agree to provide notice to AUTHOR immediately after learning of or having reason to suspect 
+a breach of any of the provisions set forth in this AGREEMENT.   
+You agree to prevent any unauthorised copying of the software.  
+You may not permit other individuals to use or permit concurrent use of the SOFTWARE except 
+under the terms listed herein. 
+Neither you, anyone at your direction, nor any third party, shall take the following actions with 
+regard to the SOFTWARE, or any portion thereof to modify, change, decompile, recompile, 
+disassemble, reverse engineer, adapt, create derivative works, translate, create or derive any of 
+the source code or other technology or data within the SOFTWARE, reduce the SOFTWARE to a 
+human-perceivable form or reproduce the SOFTWARE, except and only to the extent that such 
+activity is expressly permitted by applicable law notwithstanding this limitation. In any event, you 
+will notify AUTHOR of any information derived from reverse engineering or such activities and the 
+results thereof will constitute confidential information of AUTHOR, which may be used only in 
+connection with the SOFTWARE. 
+
+4. COMMERCIAL USAGE. Any commercial use is prohibited. Under no circumstances shall you, 
+the end-user, be permitted, allowed or authorised to commercially exploit the SOFTWARE, or any 
+portion thereof. Neither you, anyone at your direction nor any third party shall take the following 
+actions with regard to the SOFTWARE, or any portion thereof to sell, rent, lend, lease, sublicense, 
+grant a security interest in, commercially exploit or use the SOFTWARE for any commercial 
+purpose. 
+
+5. DISTRIBUTION.  
+Limited Distribution License for Redistribution of Evaluation Copy.  
+You may without making any payment to AUTHOR make copies of the evaluation SOFTWARE as 
+you wish; give exact copies of the original evaluation SOFTWARE to anyone; and distribute the 
+evaluation SOFTWARE in its unmodified form via electronic means (either directly or through the 
+posting of a copy of the SOFTWARE on the Internet, BBS's, Shareware distribution libraries, CD-
+ROMs, etc.) to third parties who are interested in evaluating the SOFTWARE except for the 
+purpose of extending their evaluation period; provided that you comply with each of the following: 
+  i) You distribute the SOFTWARE unmodified and in its entirety (with this AGREEMENT and any 
+copyright or other proprietary notices intact and unaltered); 
+ ii) Anyone to whom you distribute the SOFTWARE is subject to this AGREEMENT. 
+iii) You are bound by the terms and conditions of this AGREEMENT while you continue to 
+distribute copies of the Evaluation version nonwithstanding termination of this license agreement 
+for use of the software. 
+iv) You may not charge any fee for the copy or use of the evaluation SOFTWARE or costs in 
+connection with such distribution; 
+ v) You must not represent in any way that you are selling the SOFTWARE itself. 
+vi) Your distribution of the evaluation SOFTWARE will not entitle you to any compensation from 
+AUTHOR. 
+vii) You promptly cease distribution upon the request of AUTHOR 
+ix)  In no case may this product be bundled with hardware or other non-evaluation copy of 
+software without written permission from AUTHOR. 
+ x) Permission to distribute the SOFTWARE is not transferable, assignable, saleable, or 
+franchisable. Each entity wishing to distribute the package must independently satisfy the terms of 
+the AGREEMENT. 
+xi) User Groups and Magazines may include the SOFTWARE on CD-ROM or floppy collections 
+subject to the terms of this license provided such collections are not sold for profit. 
+xii) Information Service Providers may post the SOFTWARE on an information service which 
+charges for general connection time but not for the specific right to download the SOFTWARE, 
+subject to the terms of this license. 
+ 
+6. UPDATES. AUTHOR reserves the right to update the contents of the SOFTWARE and its 
+associated files, documentation and/or other elements, at its discretion from time to time, without 
+the consent of or any obligation to, any licensed users or distributors. 
+
+7. NO WARRANTY. THE SOFTWARE IS PROVIDED "AS-IS" WITHOUT WARRANTY OF ANY 
+KIND. AUTHOR EXPRESSLY DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF DESIGN, 
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT 
+OF THIRD PARTY RIGHTS, ANY WARRANTIES ARISING FROM A COURSE OF DEALING, 
+USAGE, OR TRADE PRACTICE, OR ANY WARRANTIES OF NON-INFRINGEMENT OF ANY 
+THIRD PARTY'S PATENT(S), TRADE SECRET(S), COPYRIGHT(S) OR OTHER 
+INTELLECTUAL PROPERTY RIGHTS WITH RESPECT TO THE SOFTWARE ARE MADE AS 
+TO IT OR ANY MEDIUM IT MAY BE ON.  
+AUTHOR DOES NOT WARRANT THAT THE OPERATION OF THE SOFTWARE WILL BE 
+ERROR FREE OR MEET ANY REQUIREMENTS, OR THAT DEFECTS IN THE SOFTWARE 
+WILL BE CORRECTED.  
+FURTHERMORE, AUTHOR DOES NOT WARRANT OR MAKE ANY REPRESENTATIONS 
+REGARDING THE USE OR THE RESULTS OF THE USE OF THE SOFTWARE OR RELATED 
+DOCUMENTATION IN TERMS OF THEIR CORRECTNESS, ACCURACY, RELIABILITY, OR 
+OTHERWISE.  NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY AUTHOR OR 
+AUTHOR'S AUTHORIZED REPRESENTATIVE SHALL CREATE ANY WARRANTY OR IN ANY 
+WAY INCREASE THE SCOPE OF THIS WARRANTY.  SHOULD THE SOFTWARE PROVE 
+DEFECTIVE, YOU (AND NOT AUTHOR OR AUTHOR'S AUTHORIZED REPRESENTATIVE) 
+ASSUME THE ENTIRE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION. 
+THE PERSON USING THE SOFTWARE BEARS ALL RISK ARISING OUT OF USE OF OF THE 
+SOFTWARE AND THE QUALITY AND PERFORMANCE OF THE SOFTWARE. 
+THE WARRANTY SET FORTH ABOVE IS IN LIEU OF ALL OTHER WARRANTIES WHETHER 
+ORAL OR WRITTEN. NO ONE BUT AUTHOR IS AUTHORISED TO MAKE MODIFICATIONS 
+OR ADDITIONS TO THIS WARRANTY. 
+
+8. REMEDIES AND LIMITATION OF LIABILITY. TO THE MAXIMUM EXTENT PERMITTED BY 
+APPLICABLE LAW, IN NO EVENT, INCLUDING NEGLIGENCE, SHALL AUTHOR, ITS 
+SUPPLIERS NOR ANYONE INVOLVED IN THE CREATION, PRODUCTION, OR DELIVERY OF 
+THE SOFTWARE BE LIABLE FOR OR PROVIDE REMEDY TO YOU OR ANY OTHER PERSON 
+FOR INCLUDING, WITHOUT LIMITATION ANY LOST DATA, LOST SAVINGS, LOST 
+REVENUE OR PROFITS, LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE 
+OR MALFUNCTION, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, OR 
+ANY OTHER PECUNIARY LOSS OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR 
+LOSSES, PUNITIVE, CONSEQUENTIAL, SPECIAL, INCIDENTAL, DIRECT, INDIRECT OR ANY 
+OTHER DAMAGES OF ANY CHARACTER ARISING FROM NEGLIGENCE, STRICT LIABILITY, 
+BREACH OF WARRANTY, BREACH OF CONTACT, ANY LEGAL THEORY OR OUT OF THE 
+DELIVERY, PERFORMANCE OR USE OR INABILITY TO USE THE SOFTWARE OR THE 
+PROVISION OF OR FAILURE TO PROVIDE SUPPORT SERVICES, EVEN IF AUTHOR OR 
+AUTHORS AUTHORIZED REPRESENTATIVE HAS BEEN ADVISED OF THE POSSIBILITY OF 
+SUCH DAMAGES OR FOR ANY CLAIM BY ANY OTHER PARTY. 
+IN NO EVENT WILL AUTHOR'S TOTAL LIABILITY TO YOU FOR ANY CLAIM, DAMAGES, 
+LOSSES, AND CAUSES OF ACTION WHETHER IN CONTRACT, TORT (INCLUDING 
+NEGLIGENCE) OR ANY OTHER THEORY OF LIABILITY, EXCEED THE LICENSE FEE PAID 
+BY YOU, IF ANY. 
+THIS LIMITATION OF LIABILITY SHALL NOT APPLY TO LIABILITY FOR DEATH OR 
+PERSONAL INJURY TO THE EXTENT APPLICABLE LAW PROHIBITS SUCH LIMITATION. 
+SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES OR 
+LIMITATIONS ON HOW LONG AN IMPLIED WARRANTY MAY LAST, OR THE EXCLUSION OR 
+LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THE ABOVE 
+LIMITATIONS OR EXCLUSIONS MAY NOT APPLY TO YOU. THIS WARRANTY GIVES YOU 
+SPECIFIC LEGAL RIGHTS AND YOU MAY ALSO HAVE OTHER RIGHTS, WHICH VARY 
+FROM JURISDICTION TO JURISDICTION.   
+HIGH RISK ACTIVITIES. THE SOFTWARE IS NOT FAULT-TOLERANT AND IS NOT 
+DESIGNED, MANUFACTURED OR INTENDED FOR USE OR RESALE AS ON-LINE CONTROL 
+EQUIPMENT IN HAZARDOUS ENVIRONMENTS REQUIRING FAIL-SAFE PERFORMANCE, 
+SUCH AS IN THE OPERATION OF NUCLEAR FACILITIES, AIRCRAFT NAVIGATION OR 
+COMMUNICATION SYSTEMS, AIR TRAFFIC CONTROL, DIRECT LIFE SUPPORT MACHINES, 
+OR WEAPONS SYSTEMS, IN WHICH THE FAILURE OF THE SOFTWARE COULD LEAD 
+DIRECTLY TO DEATH, PERSONAL INJURY, OR SEVERE PHYSICAL OR ENVIRONMENTAL 
+DAMAGE ("HIGH RISK ACTIVITIES"). AUTHOR AND ITS SUPPLIERS SPECIFICALLY 
+DISCLAIM ANY EXPRESS OR IMPLIED WARRANTY OF FITNESS FOR HIGH RISK 
+ACTIVITIES.  ANY SUCH USE BY YOU IS ENTIRELY AT YOUR OWN RISK, AND YOU AGREE 
+TO HOLD AUTHOR HARMLESS FROM ANY CLAIMS OR LOSSES RELATING TO SUCH 
+UNAUTHORIZED USE. 
+
+9. TRANSFER. You may permanently transfer all of your rights under this AGREEMENT provided 
+you transfer all copies of the SOFTWARE (including copies of all prior versions if the SOFTWARE 
+is an upgrade) and retain none, and the recipient agrees to the terms of this AGREEMENT. 
+Nether this AGREEMENT nor any part or portion of it shall be assigned or sublicensed, except as 
+described herein.
+
+10. TERM. This AGREEMENT is effective until terminated.  You may terminate this AGREEMENT 
+at any time by destroying the SOFTWARE, and all copies thereof.  This AGREEMENT will 
+terminate immediately without notice from AUTHOR if you fail to comply with any provision of this 
+AGREEMENT. Without prejudice to any other rights, AUTHOR may terminate this AGREEMENT 
+if you fail to comply with the terms and conditions of this AGREEMENT. Upon termination you 
+must destroy the SOFTWARE and all copies thereof and AUTHOR may enforce any rights 
+provided by law. 
+
+11. INDEMNIFICATION. You hereby agree to indemnify, hold harmless and defend AUTHOR, his 
+family, relatives, licensees, sub-licensees, distributors and lawyers against any and all damages, 
+losses, claims, courses of action, lawsuits, liabilities, judgements and all expenses arising from, 
+resulting to, or in connection with a breach of this AGREEMENT by you and arising from, relating 
+to, or in connection with your use or non-use of the SOFTWARE. 
+
+12. RESTRICTED RIGHTS. The SOFTWARE is provided with RESTRICTED RIGHTS. Use, 
+duplication or disclosure by the U.S. Government is subject to restrictions set forth in 
+subparagraphs (a) through (d) of the Commercial Computer-Restricted Rights clause at FAR 
+52.227-19 when applicable, or in subparagraph (c)(1) and (2) of the Rights in Technical Data and 
+Computer SOFTWARE clause at DFARS 252.227-7013 (Oct 1988), or at 252.211-7015 (Jun 
+1987), and in similar clauses in the NASA FAR Supplement. Contractor/manufacturer is Frontier 
+Developments Ltd, Saxon Farm, Longmeadow, Lode, Cambridge, CB5 9HA, England.  
+If you are evaluating the purchase of the SOFTWARE for use by the federal government or any of 
+its agencies, you need to enter into a separate restricted rights agreement with Frontier 
+Developments Ltd. If you are using this software outside the U.S. you agree to be bound by the 
+applicable laws in your country.
+
+13. SURVIVAL. 
+Should any provision of this AGREEMENT be held to be void, invalid, unenforceable or illegal by a 
+court, the validity and enforceability of the other provisions shall not be affected thereby. If any 
+provision is determined to be unenforceable, you agree to a modification of such provision to 
+provide for enforcement of the provision's intent, to the extent permitted by applicable law. Failure 
+of a party to enforce any provision of this AGREEMENT shall not constitute or be construed as a 
+waiver of such provision or the right to enforce the provision. 
+The following provisions shall survive the expiration or early termination of this AGREEMENT: 
+paragraphs 2., 3., 4. and 11. 
+
+14. ENTIRE AGREEMENT. This AGREEMENT constitutes the entire AGREEMENT between you, 
+and AUTHOR and supersedes any prior written or oral agreement concerning the SOFTWARE. 
+AUTHOR is not bound by any action, statements, or any provisions made by anyone else. No 
+modification or change in this AGREEMENT shall be valid or binding upon AUTHOR unless in 
+writing. 
+
+15. APPLICABLE LAW. This AGREEMENT shall be governed by the laws of the United 
+Kingdom. You agree to jurisdiction and venue in the courts located in Cambridge, U.K. for all 
+claims, disputes and litigation arising under or related to this AGREEMENT. The export of this 
+product is governed by U.K. export regulations. 
+
+BY USING THE SOFTWARE YOU ACKNOWLEDGE THAT YOU HAVE READ AND 
+UNDERSTOOD THIS AGREEMENT AND YOU AGREE TO BE BOUND BY THIS 
+AGREEMENT'S TERMS AND CONDITIONS. YOU ALSO AGREE THAT THIS AGREEMENT IS 
+THE COMPLETE AND EXCLUSIVE STATEMENT OF THE RIGHTS AND LIABILITIES OF THE 
+PARTIES AND SUPERSEDES ALL PROPOSALS OR PRIOR AGREEMENTS, ORAL OR 
+WRITTEN AND ANY OTHER COMMUNICATION BETWEEN THE PARTIES RELATING TO 
+THE SUBJECT MATTER OF THIS AGREEMENT. 
+
+If you do not agree with the terms and conditions of this AGREEMENT or do not understand any 
+of them you should un-install and destroy your copy of the SOFTWARE immediately. 
+ 
+Should you have any questions concerning this License, or if you desire to contact Frontier 
+Developments Ltd for any reason, please visit Frontier Development's website at 
+http://www.frontier.co.uk or write to: Frontier Developments Ltd, Saxon Farm, Longmeadow, Lode, 
+Cambridge, CB5 9HA, England

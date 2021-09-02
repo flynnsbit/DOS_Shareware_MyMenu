@@ -1,0 +1,24 @@
+The_Epic_Chip (the_epic_chip.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=172424
+Renamed to "EPICCHIP.XM" because of DOS 8-character limit
+
+Summary
+
+    the_epic_chip.xm is a XM format module.
+    Uploaded to modarchive.org on Sun 27th May 2012
+
+Info Info
+
+    Mod Archive ID: 172424
+    MD5: 9995e495297486a39b9eded1707d60fd
+    Format: XM
+    Channels: 10
+    Genre: Chiptune
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     Drozerix (https://modarchive.org/member.php?84702)

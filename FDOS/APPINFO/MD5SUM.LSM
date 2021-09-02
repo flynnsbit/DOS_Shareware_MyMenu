@@ -1,0 +1,13 @@
+Begin3
+Title:          MD5SUM
+Version:        3.0
+Entered-date:   2005-11-21
+Description:    MD5 Checksummer
+Keywords:       md5, md5sum, checksum, checksummer, cryptographic, sha, crc
+Author:         Colin Plumb
+Maintained-by:  Blair Campbell <Blairdude AT gmail DOT com>
+Primary-site:   http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/file/
+Original-site:  http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/file/
+Platforms:      DOS, OpenWatcom 1.3, Pacific C 7.51, Turbo C 2.01, Turbo C++ 1.01
+Copying-policy: GNU General Public License, Version 2
+End

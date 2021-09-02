@@ -1,0 +1,769 @@
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                                                                           บ
+บ                                 EGA TREK                                  บ
+บ                      Version 3.00  January 22, 1992                       บ
+บ                                                                           บ
+บ                              Nels Anderson                                บ
+บ                             92 Bishop Drive                               บ
+บ                        Framingham, MA 01701-6515                          บ
+บ                                   U.S.A.                                  บ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+       A space combat game similar to EGATrek was one of the first
+       computer games ever written.  The first versions were written
+       for mini and mainframe computers back in the early 1970's.
+       There have probably been more versions of this game written than
+       any other as there is probably at least one version around for
+       every type of computer ever made.  This game is definitely a
+       classic.
+
+       The version you now have is related to the other versions in its
+       basic game play, but fully takes advantage of the high resolution
+       of the EGA or VGA display.  I originally discovered the game
+       around 1974 running on a DEC System 10 mini and was soon hooked.
+       I've since written several other versions of the game for
+       computers including the Timex-Sinclair ZX81, Apple ][, Prime
+       50-series minis and MS-DOS machines, all using BASIC of one sort
+       or another.
+
+       This game requires an MS-DOS computer with an EGA or VGA capable
+       card and monitor.  It should work fine on VGA systems as well.
+       If you're still running an older display adapter that doesn't
+       support EGA or VGA I'm afraid you're out of luck running this
+       particular game.  I suspect you can find a version that supports
+       your system though.
+  
+       SHAREWARE
+  
+       EGATrek is distributed under the "shareware" concept, also known
+       as "user-supported software".  Under this concept, you save the
+       high cost of packaging and distribution while still receiving
+       high quality software.  You are free, and in fact encouraged, to
+       distribute this software to your friends, to BBS's and to user
+       groups.  Companies that provide software duplication services may
+       include EGATrek in their catalog and provide copies for a
+       reasonable duplication fee.  All copies must include the files
+       "egatrek.exe", "egatrek.doc", "egatrek.ref", "orderfrm.txt",
+       "egatrek.txt", and "file_id.diz".  You are not allowed to modify
+       the files in any way, and this shareware notice must be kept
+       intact.  The author retains all other rights to the program.
+  
+       Under the Shareware system you may freely try out this program,
+       but if you continue to use it you are expected to register with
+       the author and pay the $15 (plus $2 shipping/handling)
+       registration fee.  In return for your registration you'll
+       receive the latest version of the game, and if possible another
+       game to try out.  There is also a "deluxe" version available
+       which includes a binder, printed manual and quick reference
+       card.  The "deluxe" version is $22 (plus $4 shipping/handling).
+
+       I'd be happy to hear of any improvements you'd like to see, as
+       well as any bug reports.  Many of the new features since the
+       original version of the game came about as suggestions from users.
+  
+       When you register, please let me know what version you have
+       and I'd also be interested in knowing where you got it from.
+       Please, make sure to put your name and address on the letter!
+       It's amazing how many people don't do this.  Or, you can use
+       the instant registration form in the file "orderfrm.txt".
+       Just copy the file to your printer.
+
+       If you live outside the U.S., the best way to register appears
+       to be by using postal money orders.  I've received these from
+       quite a few countries.  In general, foreign checks are not
+       accepted by U.S. banks (Canadian checks are an exception, but
+       please allow for the difference in U.S. and Canadian dollars).
+       EuroCheques, for example, are not acceptable to the bank.  You
+       can also charge your registration to VISA or MasterCard.
+
+       If you live in the U.K. you can register through Nildram
+       Software.  Please print the file UKORDER.TXT for an order form
+       all ready to go or just send #12.95 to:
+
+         Nildram Software
+         26 Stanley Hill Avenue
+         Amersham
+         Bucks HP7 9BD
+
+       When registering, or writing for any reason, please include the
+       following:
+  
+           *  EGATrek revision (this information is at the top of
+              the title screen)
+           *  where you obtained your copy from
+           *  a description of your system  
+           *  your full name and address
+  
+       If you have any suggestions or discover any problems with the
+       program you can reach me via the )(evious BBS system (300/1200/
+       2400/9600-HST/v.32, 8N1) at 508-875-3618 or 617-449-7322.  Leave
+       a C)omment to the sysop to reach me.  )(evious is the official
+       support BBS for all my software and the latest versions are
+       always available for downloading there.  )(evious is also a
+       member of RelayNet so if you use a local BBS that is also on
+       RelayNet you can mail me by sending a routed message to node
+       XEVIOUS.  The Shareware conference is the preferred place to
+       do this.
+
+       I'm also available through CompuServe's mail system.  Send mail
+       to me at 71020,2613, or join me and other authors in the 
+       Shareware forum (GO SHAREWARE).  You can also reach me through
+       InterNet at address 71020.2613@compuserve.com.
+
+
+       CHANGES IN V3.00:
+
+           o  All items renamed to avoid copyright infringement
+           o  MSGS command improved
+           o  Minor change in impulse engine use
+           o  Planets needing evacuation now report their quadrant
+
+       CHANGES IN V2.31:
+
+           o  Several bug fixes related to saved games
+           o  Updates to documentation
+
+       CHANGES IN V2.3:
+
+           o  The previous version had a serious problem in loading
+              saved games which has now been fixed
+
+       CHANGES IN V2.2:
+
+           o  Replays allowed
+           o  Expanded help screens
+           o  Added rank names to rank numbers in hall of fame, etc.
+           o  Long range scanner/galaxy chart now operates automatically
+           o  New repair status chart on screen at all times
+           o  Bug fixes
+
+       CHANGES IN V2.1:
+
+           o  Boss Mode replaced with shell to DOS
+           o  MAX command added
+           o  Saved games now have default file name available
+           o  Several minor bug fixes
+
+       CHANGES IN V2.0:
+
+           o  Enemy ships are generally tougher
+           o  New enemy ship types
+           o  Enemies have some other new abilities
+           o  MINE and LOAD commands replaced by LAND and USE
+           o  Additional random occurrences
+           o  FIX command enhanced to allow fixing specific devices
+           o  Games can be saved by file name
+           o  Top two scores for each level saved in Hall of Fame
+           o  Move command and coordinates can be entered together
+           o  Warp command and warp factor can be entered together
+           o  Laser temperature/efficiency graph on screen
+           o  MSGS command replays most recent messages
+           o  Viewer shows closest enemy ship instead of closest object
+           o  Successful rescues increase score
+           o  Enemy lasers shown on short range scanner
+           o  Black holes
+           o  Enemy ships can be scanned using INFO command
+           o  Death Ray weapon
+
+
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                          EGATREK QUICK START                              บ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+       If you're already familiar with this type of game and just need
+       enough information to get started, here it is...
+
+           Start up the game from DOS command level by typing "EGATREK".
+
+           When the title screen comes up hit any key to go on.
+
+           You will first be asked if you want a briefing or not.
+           Your choice...
+
+           The "command level" you select determines the difficulty of the
+           game.  Unless you've never played this type of game before skip
+           level 1 and possibly level 2.
+
+           Once the game starts up, use F1 to view the command list as
+           needed.
+
+
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                                 BRIEFING                                  บ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+       As humans ventured into deep space it was inevitable that other
+       races of intelligent beings would be discovered.  While many
+       races are friendly and some have even become allies several
+       hostile and violent races have been discovered.  The two most
+       notable hostile races are known as the Mongols and the Vandals.
+       Though these are not their real names (the words they use for
+       their names being impossible for the human tongue to pronounce)
+       these terms have been assigned as standard terminology based on
+       the convention of using the names of appropriately violent early
+       human cultures.
+
+       Recently, the Mongol Empire has declared war on the Union.  As a
+       result, a Mongol invasion fleet is now present in parts of Union
+       territory.  A large number of enemy cruisers, a few command
+       vessels and a Mongol starbase have been observed.
+
+       The Vandal Empire has joined the hostilities in some areas but
+       should be avoided if possible.  They will generally only be
+       found near their own territory.  Their actions in response to
+       your contact are unpredictable.
+
+       You will be in command of the Class IX Research/Battle Cruiser
+       Lexington, fleet designation RCB-92.  As is common fleet
+       procedure the ship is named after a historic earth ocean ship.
+       It is fully battle ready with 430 officers and crew members on
+       board.
+
+       Your mission as commander of the Lexington is to secure a 64
+       quadrant section of the galaxy as quickly as possible.  You will
+       have to destroy any Mongol vessels you find, including normal
+       Mongol battle cruisers, command vessels and possibly other types
+       as well.  Depending on the command level (your military rank)
+       that you enter when starting you will be given a more or less
+       difficult section.  In general, higher levels must contend with
+       more enemy ships and with more abilities and phenomena in the
+       enemy.  Success in your mission may earn you a promotion to a
+       higher rank.
+
+       Ranks are as follows:
+
+              Level Number    Name of Rank
+              ------------    ------------
+                   1          Lieutenant Commander
+                   2          Commander
+                   3          Captain
+                   4          Commodore
+                   5          Admiral
+
+       Any officer in command of a ship may be referred to as captain
+       regardless of his actual rank.
+  
+       The Lexington has a cruising speed of up to warp factor 6, and
+       is allowed warp 8 in emergencies.  The main engines are for
+       moving between quadrants of the galaxy.  Beware of excessive
+       speed as damage to the engines is a possible result.  Within a
+       quadrant, you have the use of impulse engines.  If your main
+       engines are damaged your maximum warp speed will be lower than
+       normal.  Travel at warp speeds with the shields raised requires
+       double the normal amount of energy.
+
+       All energy is provided by the Space Industries EnergyConverter.
+       The energy conversion system is normally adequate to supply all
+       needed power for many years of operation.  However, war with the
+       Mongols is hardly normal operations.  Because the ship is moving
+       more often than normal and using a great deal of energy to fire
+       lasers and provide shielding you will most likely be using
+       energy faster than you can regenerate it.  The converter will
+       supply 400 units of energy per stardate when working at 100%.
+
+       The ship is provided with two types of scanners.  The short range
+       scanners show you everything in your current quadrant.  Because
+       of their importance they continue scanning at all times and the
+       display is always available and up to date.  The most important
+       thing you will see is, of course, Mongol ships of which there
+       are several types.  Standard Mongol battleships will display in
+       light blue, command ships in red, scout ships in purple and
+       supply ships in green.
+
+       Your long range scanners show what is in adjacent quadrants and
+       thus are very useful for planning your movements.  The ships
+       computer keeps a record of all past scans and this galaxy chart
+       is shown at all times unless the computer is damaged.  Damage to
+       the scanners will affect their performance of course.  A small
+       amount of damage will prevent them from seeing smaller objects
+       (including, unfortunately, enemy ships) but they may still be
+       able to see stars.  If damage becomes too severe they will fail
+       to work at all.
+
+       The long range display is numerical; the three digit number for
+       each quadrant represents the number of Mongols, type of friendly
+       star base, and number of stars (respectively) that the scanners
+       have found.  Quadrants containing Mongols are highlighted in
+       red.  Bases are highlighted in orange and the number indicates
+       base type (1 is a StarBase, 2 a research station and 3 a supply
+       depot).  Quadrants with supernovas cause the scanners to
+       overload and display all 9's.
+
+       You also receive information through the main viewer.  This
+       display alternates between a view from outside the ship and a
+       graphical display of some ship function.  When looking outside
+       the ship the viewer always looks in the direction of whatever
+       enemy ship is closest to your ship.  The view includes an
+       identification of the object and its relative distance and
+       direction from the ship.  Directions are based on 0 degrees being
+       directly to the right as seen on scanner displays.
+
+       The graphical displays appearing on the viewer can be more or
+       less useful depending on what's currently going on.  Some of the
+       displays are not of much use to a ships commander however.
+
+       You will constantly be receiving communications from both inside
+       and outside your ship.  Each message will include the ships
+       department that originated it.  It is important that you pay
+       attention to all incoming messages.  Up to four messages can be
+       displayed on your command console at a time.  Each new message
+       will overwrite the oldest existing message or you can acknowledge
+       one or all messages and so leave space for new ones.
+
+       Your ship has two major weapons available, energy torpedoes
+       (EnTorps) and lasers.  Torpedoes are very effective at close
+       range, with a single torpedo being capable of destroying a
+       standard Mongol ship.  However, you are limited in the number of
+       torpedoes you can carry and they can only be replenished at a
+       StarBase or supply station.  At longer distances they are less
+       effective and their accuracy is also thrown off when fired with
+       your shields raised.
+
+       Lasers are your general purpose weapon.  The damage lasers do is
+       highly influenced by distance to the target.  There are two
+       gauges that monitor laser performance.  You should watch the
+       laser temperature gauge when firing to prevent overheating.  The
+       laser effectiveness gauge shows how well the lasers are working.
+       Laser effectiveness goes down due to excess heat and due to
+       damage from enemy fire.
+
+       The ship is capable of repulsing enemy fire through the use of
+       its shields.  When the shields are raised and at 100% energy no
+       enemy fire will penetrate them; the only effect will be that
+       energy will drain from the shields.  It is thus to your
+       advantage to have shields raised when in direct battle.  Once
+       enemy fire starts to penetrate the shields main energy is lost
+       and ships systems may be damaged.  Raising the shields draws a
+       small amount of energy from the main energy banks so you do not
+       want to raise the shields needlessly.  Lowering shields causes
+       no energy change.  Because the shields affect the performance of
+       other ships systems their correct usage is very important to the
+       success of your mission.
+
+       The Lexington was originally used for exploration and is well
+       suited for this purpose.  Obviously, with the Union under attack
+       there is no time for normal exploration at the present.
+       However, there are planets in the galaxy that may contain the
+       energium used to power the ship and it is worth exploring these
+       planets for emergency energium supplies.  Note, though, that
+       regulations prohibit the use of raw energium except in extreme
+       emergencies; your shields must be under 50% and main energy
+       under 20%.
+
+       There are several types of Union bases in space.  A StarBase is
+       the most useful because you can replenish all ships supplies
+       there.  Supply stations can provide life support supplies and
+       energy torpedoes.  Research stations can provide only life
+       support supplies.  You are responsible for the protection of all
+       bases in your designated area.
+
+       During warfare many of the ships systems may be damaged.  The
+       effects of damage on your mission can vary greatly depending on
+       what systems are affected:
+
+       EnergyConverter: The ship's energy converter generates energy
+         for the ship at a rate of 400 units/day times percentage of
+         repair.
+       Shields: The shields percentage of repair indicates how
+         efficiently the shield generators can convert the energy
+         available in the shield system into actual shielding of the ship.
+       Warp Engines: The warp engines are virtually impossible to
+         destroy completely, but their level of damage affects the maximum
+         possible warp speed.  The maximum warp speed is approximately
+         warp 1 plus 0.09 times percentage of repair.
+       Impulse Engines: Impulse engines are much simpler than warp
+         engines; they either work or they don't.  When they are at less
+         than 50% they simply stop functioning.
+       Lasers: Laser percentage of repair is a direct indication of
+         what percentage of energy is converted to destructive force at
+         the point of impact.  In other words, for a given level of laser
+         energy, 100% working lasers will do twice the damage of 50%
+         working lasers.
+       EnTorp Tubes: Like impulse engines, torpedo tubes either work or
+         they don't.  At 100% there are three functional tubes, 67-99% only
+         two tubes work and 34-66% only one. 
+       Short Range Scanners: Short range scanners lose resolution when
+         they are damaged.  Above 90% they are fully functional, but below
+         90% they are unable to detect anything smaller than a star.
+         Below 50% they do not function at all.
+       Long Range Scanners: Long range scanners also lose resolution
+         when damaged.  When less than 100% repaired they can no longer
+         detect enemy ships.  Below 50% they are not functional.
+       Computer: A modern starship is highly computerized, so loss of
+         computer function affects a number of things.  Portions of the
+         ships charts can be lost if the computer is sufficiently damaged
+         and can only be recovered by re-scanning.  Automatic navigation
+         requires the computer to be 100% repaired.
+       Life Support: Life support systems must be 100% to generate food
+         and oxygen needed to sustain life.  Without a functioning life
+         support system the ship can last only two days on reserves.
+       Transporter:  The transporter must be at 100% to be used.
+       Shuttlecraft:  The shuttlecraft must be at 100% to be used.
+
+       When your mission ends, one way or another, you'll receive a
+       detailed evaluation of your performance from headquarters.  If
+       you get one of the top two scores for your command level, your
+       name will be entered in the hall of fame.  If you wish to delete
+       the hall of fame simply delete the file trek.scr.
+
+
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                                 COMMANDS                                  บ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+       To start the game, enter "egatrek" from the DOS prompt.  If you do
+       not want sound during the game, enter "egatrek -n"; note that the
+       space before the dash is required.
+
+       The following is a list of commands and their description.  Most
+       commands can be abbreviated to just their first letter.  Use the
+       "HELP" command at any time to get the list of commands and their
+       abbreviations.
+  
+         A#:
+              To acknowledge a message you should enter the letter A
+              immediately followed by the number of the message you wish
+              to acknowledge, i.e. A2.  Messages are numbered from 1 to 4
+              going from top to bottom.  To acknowledge all messages enter
+              just A without a number.
+  
+         DOCK:
+              You will need to visit StarBases often to refuel your ship
+              as well as to make repairs.  When you are in a sector
+              directly adjacent to a StarBase, issue this command.  You
+              can also dock at Research Stations and Supply Bases, but
+              they cannot provide everything that a StarBase can.  When
+              docked at a StarBase its shields will protect your ship from
+              enemy lasers.
+  
+         ENERGY:
+              Energy is used by a number of different systems aboard the
+              ship and you can use this command to move energy between
+              systems as needed.  It will also show you the exact energy
+              levels of all systems.
+  
+         FIX:
+              Engineering has a certain number of crewmen available to do
+              repairs on damaged systems and they normally divide their
+              time evenly among all damaged systems.  Since some systems
+              are more important than others you can use this command to
+              concentrate repairs on one system at the expense of other
+              systems.  When the system you selected is repaired, repair
+              work will automatically be divided among all damaged
+              systems once again.
+
+              In addition, you will be asked if you want to spend time
+              just making repairs.  In space, repairs will take place no
+              faster than normal.  If docked at a StarBase you can use
+              their facilities to speed repairs.
+       
+              Relative repair speeds are as follows:
+       
+                1x    Normal repairs, work evenly divided among systems
+                2.5x  Normal repairs while docked at a starbase
+                3x    Repairing only a selected system
+                5x    Repairing a selected system while docked at a starbase
+  
+         HAIL:
+              Use this command to hail a StarBase.  If none is close by,
+              it will take some time to receive a reply.
+
+         HELP:
+              Use this command to get a list of all available commands and
+              their abbreviations.
+  
+         INFO:
+              This command allows you to get information about the enemy
+              ships in the present quadrant from the computer.  The
+              display will show the ship type, location, distance and
+              heading from you, and the condition of its shields.
+
+         LAND:
+              If you are orbiting a planet which has something of
+              interest on it you can use this command to land on the
+              planet.  You have the option of using the transporter or
+              shuttlecraft to reach the planet.  Normally the transporter
+              is the better choice since the shuttlecraft takes 0.2
+              stardays to make the round trip whereas the transporter is
+              virtually instantaneous.
+
+              To use this command, you must first successfully use the
+              ORBIT command.
+  
+         MAX:
+              This command diverts the maximum possible amount of power
+              to the ship's main shields.  You can do the same thing with
+              the E)nergy command by transferring power to the shields
+              until they are at 2500.  This command is a quick way to 
+              make sure that your shields are at full strength.
+
+         MOVE:
+              This ship is quite sophisticated, so getting from one place
+              to another requires only that you specify where you want to
+              go.  The galaxy is divided into 64 quadrants and each
+              quadrant is divided into 64 sectors.  You need only to
+              specify the quadrant and sector you wish to move to; for
+              example 6,2,3,5 moves you to quadrant 6,2 sector 3,5.
+              Vertical coordinates are always entered first.  To use
+              impulse power to move within a quadrant specify only the
+              sector you wish to move to (i.e. 3,5).
+  
+              If the navigation computer is damaged, however, you will
+              have to calculate movements manually.  You will be asked
+              first for a DeltaX (vertical) movement which can be
+              negative, positive or zero.  The number before the decimal
+              point is the number of quadrants to move, and the number
+              after the decimal point the number of sectors.  Both digits
+              must be in the range 0 to 7.  The DeltaY (horizontal)
+              movement works the same way.  For example, if you want to
+              move one quadrant down and two quadrants plus two sectors
+              left (i.e., from 1,8,1,8 to 2,6,1,6) DeltaX would be 1.0
+              and DeltaY would be -2.2.  If you prefer using this method
+              even when the computer is functional, enter just an "M"
+              when asked for the coordinates and the computer will switch
+              movement entry to manual.
+  
+              The key to understanding manual movement is that you are
+              specifying a distance to move relative to your current position
+              whereas with automated movement you just select the actual
+              position you wish to move to.
+
+              If you prefer, you can enter the move coordinates without
+              anything separating them.  For example, 6,2,3,5 is
+              equivalent to 6235 and 3,5 is equivalent to 35.  When using
+              the long form, you can use whatever is most convenient for
+              separators between the numbers.
+
+              For an even more abbreviated way of entering move
+              coordinates, enter them right on the initial command line
+              along with the "M".  For example, use m6235 for quadrant 6,2
+              sector 3,5 or use m35 to move to sector 3,5 within the
+              current quadrant.  When using this method do not use any
+              spaces, commas, etc. to separate the "m" and the coordinate
+              numbers.
+
+         MSGS:
+              Often during a heated battle messages will come for you so
+              fast that it's possible to miss some of them.  You can use
+              this command to review the most recent messages that have
+              appeared.  The newest messages will be displayed at first
+              and you can use the up arrow and down arrow keys to scroll
+              through the messages.  Hit the ESC key when done.
+
+         ORBIT:
+              Use this command to enter a standard orbit around a planet.
+              This will allow the planet to be scanned for the presence of
+              energium crystals and other things.  Once in orbit, you can
+              use the LAND command to visit the planet surface.
+  
+         LASERS:
+              Use this command to fire the laser banks.  The laser
+              control officer will request instructions on firing at each
+              enemy vessel in the quadrant.
+
+         QUIT:
+              Use this command to quit the game.  You can also save a game
+              before you quit; see the SAVE command.
+  
+         RAY:
+              This command fires the experimental death ray.  This is a
+              very powerful weapon that will destroy every enemy ship in
+              the whole quadrant...if it works.  If it doesn't work,
+              there's no telling what may happen, since the technology is
+              not yet completely understood.
+
+         REPAIR:
+              This command is a request to engineering to provide the
+              state of repair of all ship systems.  Any systems that are
+              damaged will include an estimated time to repair.
+  
+         SAVE:
+              You can save your game so that you can come back and
+              continue it later.  After saving, the game continues until
+              you give the quit command.  You can only restore a saved
+              game when first starting up; you will be asked if you want
+              to restore a saved game right after you are asked if you
+              want a briefing.  You select the name of the file that is to
+              contain the saved game information.  Any valid MS-DOS file
+              name can be used; just hit <Enter> to use the default name
+              "egatrek.sav".
+  
+         SELF:
+              If the situation becomes hopeless, use this command to self-
+              destruct.  With any luck, you will at least take a few
+              enemy ships along with you.
+  
+         SHUP:
+              This command raises the shields.  Engineering will
+              acknowledge when the shields are up, and the image of your
+              ship on the short range scanner will change to yellow.  You
+              can also use the up arrow key to issue this command.
+  
+         SHDN:
+              This command lowers the shields.  Engineering will
+              acknowledge, and the image of the ship on the short range
+              scanner will return to white.  You can also use the down
+              arrow key for this command.
+  
+         SND:
+              Use this command at any time during the game to toggle sound
+              on and off.  A message will flash briefly on the screen
+              acknowledging the command.
+
+         TORPEDO:
+              You have three torpedo tubes available.  The torpedo control
+              officer will request instructions on the number of torpedoes
+              to fire and the sectors to fire them at.
+  
+         USE:
+              Any miscellaneous objects that you find during the game,
+              such as energium crystals mined from planets, can be used
+              with this command.
+
+         WARP:
+              Use this command to inform engineering of the warp speed you
+              require from the engines when moving between quadrants.
+              Invalid warp speeds will be ignored.
+
+              If you wish, you can include the warp factor on the command
+              line.  For example, enter w5.2 to set the warp factor to
+              5.2.
+  
+         BOSS:
+              Argh!  The boss is coming, and he's going to catch you
+              playing games again.  Hit Shift-F1 and you shell to MS-DOS.
+              You can now do simple MS-DOS commands, but be careful that
+              you do not run anything that changes the screen mode as
+              when you return to EGATrek you must still be in graphics
+              mode to be able to continue the game.  Simple commands like
+              DIR should work fine.  When you're ready to return to the
+              game, type 'EXIT'.  (If you *are* the boss, you didn't see
+              this command; it's hidden by a cloaking device.)
+
+
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                              FUNCTION KEYS                                บ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+       Some of the more commonly used commands have been bound to the
+       function keys.  Use the following chart as a reference:
+  
+  
+         ฺฤF1ฤฤฤฤฤฤยฤF2ฤฤฤฤฤฤฟ 
+         ณ         ณ         ณ
+         ณ  Help   ณ  Lasers ณ
+         ณ         ณ         ณ
+         ณ         ณ         ณ
+         รฤF3ฤฤฤฤฤฤลฤF4ฤฤฤฤฤฤด
+         ณ         ณ         ณ
+         ณ  Fire   ณ  Move   ณ
+         ณ Torpedo ณ  Ship   ณ
+         ณ         ณ         ณ
+         รฤF5ฤฤฤฤฤฤลฤF6ฤฤฤฤฤฤด
+         ณ         ณ         ณ
+         ณ   Max   ณ   Fix   ณ
+         ณ  Energy ณ Systems ณ
+         ณ         ณ         ณ
+         รฤF7ฤฤฤฤฤฤลฤF8ฤฤฤฤฤฤด
+         ณ         ณ         ณ
+         ณ   Xfer  ณ  Repair ณ
+         ณ  Energy ณ  Status ณ
+         ณ         ณ         ณ
+         รฤF9ฤฤฤฤฤฤลฤF10ฤฤฤฤฤด
+         ณ         ณ         ณ
+         ณ   Set   ณ  Dock   ณ
+         ณ  Speed  ณ         ณ
+         ณ         ณ         ณ
+         ภฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤู
+
+
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                               REGISTRATION                                บ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+       Please remember that EGATrek is not free software.  As with all
+       Shareware you are expected to purchase it after you've given it
+       a reasonable trial.
+
+       The registration price for EGATrek is $15 (plus $2 shipping), for
+       which you'll receive by return mail a copy of the latest version,
+       and possibly another Shareware game to try out.
+
+       A deluxe version of EGATrek is also available.  This includes a
+       storage case, printed manual, quick reference card, plus the
+       registered version of the game.  This version is available for
+       $22 (plus $4 shipping).
+
+       Outside North America please include $4 for shipping/handling on
+       all orders.
+
+       Orders from outside the U.S. should be in U.S. funds.  Using a
+       credit card is probably the easiest way to do this, but postal
+       money orders, cash or bank drafts drawn on U.S. banks are
+       acceptable.  Eurocheques will not be accepted even if drafted
+       in U.S. funds.
+
+       If you live in the U.K. you can register through Nildram
+       Software.  Please print the file UKORDER.TXT for an order form
+       all ready to go or just send #12.95 to:
+
+         Nildram Software
+         26 Stanley Hill Avenue
+         Amersham
+         Bucks HP7 9BD
+
+
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                               LEGAL STUFF                                 บ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+       The author hereby disclaims all warranties relating to this product,
+       whether express or implied, including without limitation any implied
+       warranties of merchantability or fitness for a particular purpose. The
+       author cannot and will not be liable for any special, incidental,
+       consequential, indirect or similar damages due to loss of data or any
+       other reason, even if the author or an authorized agent has been
+       advised of the possibility of such damages.  In no event shall the
+       liability for any damages ever exceed the price paid for the license
+       to use software, regardless of the form and/or extent of the claim.
+       The user of this program bears all risk as to the quality and
+       performance of the software.
+
+
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                 ASSOCIATION OF SHAREWARE PROFESSIONALS                    บ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+       This software is produced by Nels Anderson who is a member of the
+       Association of Shareware Professionals (ASP).  ASP wants to make sure
+       that the shareware principle works for you.  If you are unable to
+       resolve a shareware-related problem with an ASP member by contacting
+       the member directly, ASP may be able to help.
+
+       The ASP Ombudsman can help you resolve a dispute or problem with an
+       ASP member, but does not provide technical support for members'
+       products.  Please write to the ASP Ombudsman at 545 Grover Road,
+       Muskegon, MI 49442, USA or send a CompuServe message via email to
+       ASP Ombudsman 70007,3536.
+
+                             _______
+                        ____|__     |               (R)
+                     --|       |    |-------------------
+                       |   ____|__  |  Association of
+                       |  |       |_|  Shareware
+                       |__|   o   |    Professionals
+                     -----|   |   |---------------------
+                          |___|___|    MEMBER
+
+
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                          LIVE LONG AND PROSPER!                           บ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+  EGATrek is copyright (c) 1988-1992 by Nels Anderson.  All rights reserved.

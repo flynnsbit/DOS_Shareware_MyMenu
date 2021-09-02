@@ -1,0 +1,93 @@
+Note: LBAcache versions 9/2004 and later no longer contain a
+separate TICKLEHD tool. TICKLE now handles both floppy and harddisk,
+avoids tickling MEMDISK "floppy" drives, and has an help screen.
+If you do not enable harddisk read-ahead, the harddisk-related part
+of TICKLE will not stay in RAM. So TICKLEHD.COM is obsolete now :-).
+The help screen of the initial combined floppy-harddisk TICKLE.COM
+version (14aug2004, available as separate download then) tells:
+
+
+TICKLE read-ahead tool for LBAcache by Eric Auer 2003-2004
+By eric -at- coli.uni-sb.de, License GPL (see www.gnu.org)
+Options: /? shows this help
+         /CHS old harddisk readahead enable
+         /LBA new harddisk readahead enable
+Load LBACACHE with FLOP option enabled first! Floppy
+read-ahead (fast!) always enabled. Unless you are sure
+that your UMBs are okay for all kinds of DMA, do NOT
+load TICKLE high, risk of data loss!    VERSION: 14aug2004
+
+
+[This is from a mail which announces the updated TICKLE harddisk
+read-ahead feature. It is compiled into TICKLEHD.COM but not into
+TICKLE.COM - you will note the size difference in RAM + on disk.]
+
+
+*** IMPORTANT: TICKLE is mostly meant to speed up floppy access,
+*** read the main LBACACHE.TXT file for information about that.
+*** Also important: TICKLEHD will crash on older-than-386 systems.
+*** (But LBAcache itself will refuse to run there at all, so...)
+
+
+... Other than the old TICKLE versions (which did not have harddisk
+read-ahead enabled at all in the default compile), this TICKLEHD uses
+a new harddisk read-ahead algorithm AND that feature is compiled in
+in the provided binary :-). However, you have to activate it at
+runtime:
+1. Load LBAcache as usual
+2. Load TICKLEHD LB (for LBA harddisk read-ahead) 
+or load TICKLEHD HD (for classic HardDisk read-ahead) 
+or load TICKLEHD LB HD (to enable both harddisk read-ahead modes)
+
+You have to use the FLOP option with LBAcache for this, otherwise
+loading TICKLE(HD) will slow down floppy access. You must *not* load
+TICKLE(HD) into UMBs if your UMBs have DMA troubles, or you will get
+data corruption at least with floppy access and possibly also for
+SCSI disks. EMM386 UMBs should be fine, unless you use UDMA. When
+in doubt, load TICKLE(HD) low.
+
+Old TICKLE used a very dumb algorithm for harddisk read-ahead
+(although the floppy read-ahead algorithm is great!). New TICKLEHD
+(of 5/2004) should be much better. Logics are:
+
+If sector number is a multiple of TSIZE
+and read would be less than TMAX sectors long
+and (new!) position is not on a list of 64 recently used read-ahead
+positions
+then read TSIZE sectors first (looking ahead of what was requested) before
+  doing the normal read (which will be served from cache then).
+
+TSIZE and TMAX (hm... was "not more", not "less" probably) default to
+8 and 4 in this compile. Try TSIZE of 16 if you have big clusters.
+
+Other caches in the 1980s used algorithms like "if part of a track is
+accessed, read the whole track" (or 1/4 of it, depending on the taste
+of the cache author). Because "tracks" are "purely virtual" on modern
+harddisks, the notion of "track read-ahead" is no longer useful there.
+
+Now do some cache test thing - e.g. compile something.
+Compared to LBAcache without TICKLEHD, you should get more read hits
+(read-ahead was useful) but not considerable more read misses (else
+read-ahead has prefetched many unused sectors). If your read hits
+went up by more than the read miss count, TICKLEHD probably prefetched
+the same sectors several times, which is not too useful either.
+
+Most interesting will probably be the change in "how long does the
+test thing take". You can measure that with the RUNTIME tool which
+is listed in the FreeDOS software list under the UTIL category. Example:
+
+RUNTIME MAKE
+
+To see cache statistics, use LBAcache STAT command. Please use LBAcache
+01may2004 (or newer) for this test. Thanks for testing! First tests
+suggest that TICKLEHD has almost no effect on newer systems, though.
+
+Eric.
+
+PS: read-ahead is a tricky issue. If you read ahead too far, you
+just keep the disk busy without use. Somebody reported long ago that
+he did a test with NWCACHE (read-ahead: 0, 4, 8, 12 or 16k) and found
+that 8-12k only helps little more than 4k and that 16k even degrades
+performance for his test case, as far as I remember. The TICKLEHD version
+which you are about to test uses 4k for now. If this proves to be useful
+at all, I will include it in the main LBAcache download soon.

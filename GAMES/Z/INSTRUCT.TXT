@@ -1,0 +1,392 @@
+13th August 1996
+----------------
+
+Z DEMO Key Guide
+
+LEFT MOUSE	Main control button
+RIGHT MOUSE	Direct mouse scroll
+MIDDLE MOUSE	Toggle selected unit
+SPACEBAR	Toggle selected unit
+
+If you are in the process of placing a gun the SPACEBAR will scroll
+to the factory which manufactured the it.
+
+F1		Cycle through your available robot units
+F2		Cycle through your available vehicles
+F3		Cycle through your available buildings
+F4		Cycle through your available guns
+F5		Cycle through your units which are under attack
+
+RETURN		Scroll to your fort
+
+DELETE		Dissolve currently selected multi group
+SHIFT		Add or remove the unit which you click from a multi group.
+		(Note : you cannot scroll the screen whilst holding down the
+		Shift key.)
+A		Select all the units on screen to form a multi group.
+
+M		Bring up the game menu
+L		Bring up the load menu
+S		Bring up the save menu
+P		Pause / Unpause the game
+CTRL R		Restart level
+CTRL Q		Quit game
+
+ALT X		Quit from the main menu to DOS
+
+
+Z Demo Instructions
+
+  Your objective in Z is to defeat your opponent by destroying all his forces
+or by entering or destroying his fort, while simultaneously defending your
+forces and fort from attack.
+
+  Your forces consist of robots. These robots are capable of occupying guns
+and vehicles.  Your robot army is divided into units. You give orders to
+units by selecting them (click on any member of the unit), then moving the
+cursor over the location or object you want the order to apply to. The
+intelligent cursor system will automatically change the cursor to show the
+type of order that will be applied. The most common order types are "Go To"
+(cross) and "Attack" (crosshair). Clicking again will confirm the order.
+
+  The battlefield in Z is divided into several territories. At the start of
+a battle the red and blue armies each own a single territory (which also
+contains that army's fort), and a few units of robots and vehicles. The rest
+of the territories will be neutral. Either side can capture them by simply
+having a friendly unit touch the flag that marks that territory. The flag
+will then turn the corresponding colour to show that the territory has been
+captured.  Beware though, that the other side can take territories just as
+easily so you must defend the ones you capture. It is important to capture
+and hold as many territories as you can.
+
+  Some territories contain buildings: factories and radar stations. Whichever
+side holds the territory they are located in can use these. Factories create
+new robots or vehicles to replace or reinforce those you start with.  Radar
+stations show you the location of enemy units.  As you conquer more
+territories your factories will build units faster and your radar stations
+will increase in range. If you lose territories, the efficiency of these
+buildings decreases.
+
+  You can change which unit is being built by one of your factories
+(including your fort) by clicking on it and selecting a new item to
+manufacture from the control box.
+
+
+(1) The Main Menu
+
+NEW GAME
+ Select this to start a new game.
+
+QUIT TO DOS
+ Select this to quit the game to the operating system.
+
+The CONTROL window on the right hand side of the screen contains the
+following functions:
+
+SVGA:
+ This changes the display resolution of the game between super VGA high
+ resolution and normal VGA.
+
+Scenes:
+ This controls whether the cut scenes will be shown between levels.
+
+Gamma :
+ This adjusts the brightness of the screen.  Move the marker to the left
+ to darken the screen or to the right to brighten it.
+
+(2) The Play Screen
+
+(A) Status Panel:
+
+  (1) Attack Button: This flashes whenever a unit is under attack. Clicking
+      on it will cycle through the units currently under attack.  This
+      function is duplicated by the F5 key.
+
+  (2) Time Elapsed: The clock shows the time elapsed since the start of the
+      battle. This is important because the longer you take to complete the
+      battle, the lower your rank will be.
+
+  (3) Reporting Unit: This shows the name and portrait of the unit that you
+      have selected or is reporting back. If the unit is reporting back, but
+      is not currently selected, you can select it by simply clicking the
+      left mouse button on the portrait.
+
+  (4) Weapons/Vehicle: This shows either the weapon type that the unit is
+      carrying or the vehicle or gun that it is occupying.
+
+  (5) Grenades:  If the unit is capable of using grenades, the number of
+      grenades it has remaining is also shown.
+
+  (6) Energy Bar: This shows how much energy the unit has remaining.
+
+
+(B) Mini Map:
+
+  The mini map always shows your own units and a rectangle marking the
+  position of the battlefield view. It will also show the scanning range of
+  any radar stations you have captured and the position of any enemy units
+  within the radar scan. The scanning range will increase as you capture
+  territories and decrease as you lose them. You can move the battlefield
+  view directly to any spot on the mini map by clicking with the left mouse
+  button.  Holding down the left mouse button as you move the pointer over
+  the mini map will also move the battlefield view to track the pointer.
+
+  (1) Overlay Buttons: Clicking the left mouse button on these buttons
+      toggles the mini map overlays on and off. The overlays are:
+
+      T: Terrain Overlay. This shows roads, rock formations, water and
+         other terrain features.
+
+      D: Description Overlay. This shows brief descriptions of units and
+         buildings as you move the pointer over them on the mini map.
+
+      Z: Zone Overlay. This shows a grid marking the territories owned by
+         either of the armies.
+
+  (2) Screen Position: This indicates the section of the battlefield shown
+      in the battlefield view.
+
+(C) Command Bar:
+
+  (1) Cycle Unit Buttons: Clicking the left mouse button on the R, V, B or G
+      buttons will cycle through the available Robots, Vehicles, Buildings
+      and Guns respectively, starting with the unit that is closest to the
+      one currently selected. This function is also duplicated on the first
+      four function keys (F1: Robots, F2: Vehicles; F3: Buildings; F4:Guns).
+
+  (2) Army Strength: The bar graphs show the number of units each side has.
+
+  (3) Menu: Clicking the left mouse button on this button will pause the
+      game and bring up the game menu (see below).
+
+(D)
+
+  Battlefield: The main section of the screen shows a bird's-eye view of a
+  portion of the battlefield. This is where you view and control your units.
+
+  (3) Viewing the Battlefield
+      There are three different ways to move the battlefield:
+
+      (i)   Moving the pointer to the edge of the screen will cause the
+            display to scroll slowly in that direction. The longer you keep
+            the pointer there, the faster the screen will scroll.
+
+      (ii)  Holding down the right mouse button while moving the mouse will
+            cause the display to scroll quickly in the direction the mouse
+            is moving.
+
+      (iii) Clicking with the left mouse button directly on the mini map
+            will cause the battlefield view to be centred immediately on
+            that point.
+
+  (4) Selecting Units
+      There are two different ways of selecting units.
+
+      (i)  Click with the left mouse button directly on any member of the
+           unit in the battlefield view.
+      (ii) Cycle through the available units with the relevant button on
+           the command bar, or the relevant function key.
+
+      When selected, a box will be drawn around the unit and its portrait
+      will appear in the status panel. While the unit is selected its route
+      will be marked as a dotted line. At its destination an animated icon
+      will show the order it is intending to carry out when it gets there.
+      You can see the route that your unit will take to its target location
+      on the mini map, this will be updated as you move the cursor around
+      the battlefield.
+
+      A dotted circle shows the range of vision of the selected unit.  Units
+      will only attack, return fire or capture hardware and flags which come
+      within this circle.
+
+      The SPACEBAR toggles between the last selected unit and no selected
+      unit. If you have a three button mouse installed the middle mouse
+      button will perform the same action as the SPACEBAR.
+
+   (5) Building Units into Groups
+       You can build multiple units into groups. Only units that are on
+       screen at the same time can be grouped. To group units drag a box
+       around the ones you want to include.  You can also press the A key
+       to form a group out of all of the units on the screen.
+
+       You can also build groups by holding down either SHIFT key and
+       clicking on each unit you wish to be part of the group. You cannot
+       scroll the screen whilst you have a SHIFT key held down.
+
+       You can remove units from groups, or split groups up, by selecting
+       them in the same way with the dotted box. A new group will be formed
+       from the unit(s) included in the box. You can also split a single
+       unit from a group by holding down either SHIFT key and clicking on
+       the unit. If you wish to completely disband a group, select any unit
+       in it and press the DELETE key.
+
+  (6) Giving Orders to Units
+      To give an order to a unit, first select it as detailed above.
+
+      Simply move the cursor over the object or location that you want the
+      order to apply to and the cursor will change to show what type of
+      order the computer will give the unit. Confirm the order by simply
+      clicking the left mouse button.
+
+      (i) Cross:
+          The unit will attempt to take the shortest route to the selected
+          destination. If the unit is capable of doing so it may destroy
+          objects like rocks and vehicle wreckage that are in its way.
+
+      (ii) Crosshair:
+           The unit will attack and attempt to destroy the selected target.
+           You can target units anywhere in the battlefield.  Your unit
+           will find its way to the enemy and attack it when it comes into
+           range.  If the unit you attack moves location your unit will
+           automatically track it.
+
+      (iii) Grasping Hand:
+            Capture a flag or some grenades.
+
+      (iv) Up Arrow:
+           This cursor is shown when an occupied gun is selected and the
+           cursor is then moved over the selected unit. Clicking to confirm
+           will cause the robot(s) occupying the unit to get out.
+
+      (v) Down Arrow:
+          Vehicles and guns can be seized by robot units.
+
+      (vi) Wagging Finger:
+           No order possible.
+
+  (7) Units reporting
+      Whenever a unit has completed an order or is under attack they will
+      report it to you. Click on the portrait of the robot on the status
+      panel to move to it.  The unit will be selected automatically.
+
+  (8) Attacking Buildings and Bridges
+      Buildings can be damaged and destroyed. To target a building simply
+      select the unit you want to conduct the attack and then move the
+      cursor over any part of the building other than the entrance. If the
+      unit is capable of attacking the building, the cursor will change to
+      a crosshair.  Now click the left mouse button to send your units to
+      attack. To attack bridges you must use the same procedure but move the
+      cursor over the edge of the bridge so that cursor changes to a
+      crosshair.  Clicking on the centre of the bridge will merely send the
+      unit to that location.
+
+  (9) Using Buildings
+      There are three different types of building in this demo. These are
+      described individually below:
+
+      (i) Fort
+          This is your most important building, and must therefore be your
+          greatest concern.  Your fort is capable of building a variety of
+          units. Your fort has four locations (one on each corner) on which
+          gun emplacements can be built. You can scroll to your fort from
+          anywhere on the battlefield by pressing the RETURN key.
+
+      (ii) Factories
+           There are two types of factory: those that manufacture robots,
+           and those that manufacture vehicles. The more stars a factory
+           has, the more unit types it can manufacture. Both types of
+           factory are capable of manufacturing guns. A factory will not
+           begin to manufacture anything until the flag controlling it
+           has been captured by one side or the other. Once a factory has
+           been captured it will begin to manufacture its default item.
+
+           Different units take different times to manufacture. The more
+           powerful a unit is, the longer it takes to manufacture.
+           Manufacturing times will also be influenced by the number of
+           territories you hold. The time to manufacture the selected unit
+           will be displayed on the front of the building and in the
+           control box.
+
+           If a factory has been damaged it will be operating at a reduced
+           efficiency. You can check a factory's operating efficiency by
+           calling up the control box where it is displayed as a percentage
+           in the top right hand corner.
+
+           (a) Selecting units for manufacture
+               You may change the type of unit being manufactured:
+               While no unit is selected, click on the factory or fort with
+               the left mouse button.  This calls up a control box showing a
+               portrait of the unit currently being built, and, in the case
+               of robots, the number of robots that will be in the unit.
+               Beside the portrait is a bar graph showing how far the
+               building operation has progressed. The time left until
+               completion is also shown. To build a different type of unit
+               click on the CANCEL button with the left mouse button. You
+               will now be able to select a new unit type to build by
+               clicking on the arrows to the side of the portrait. As you
+               cycle through the available units the time required to build
+               them will be shown. To proceed with construction of a new
+               unit type click the OK button or the unit's portrait with
+               the left mouse button. If you change your mind and wish to
+               continue building the unit that was previously being
+               constructed you may do so without losing the current amount
+               manufactured by simply re-selecting it or clicking on CANCEL.
+
+               You can exit the control box by simply clicking anywhere on
+               the screen off the box or by clicking the CANCEL button
+               when no unit is selected for manufacture.  If you exit with
+               no unit selected the factory will continue to manufacture
+               the previously selected unit.
+
+               When a factory has completed construction of a unit, a
+               message will appear for a short time at the top of the
+               screen informing you that a new unit has been manufactured.
+               Clicking on the message box will scroll the screen to the
+               newly constructed unit and select it.
+
+           (b) Placing Guns
+               When a gun is manufactured, a message will appear at the
+               top of the screen to inform you that the gun has been
+               constructed and a G will appear in the top left hand corner
+               of the screen.  When you are ready to place a gun, click on
+               the G or the Gun Manufactured message with the left mouse
+               button. The screen will scroll to the relevant factory and
+               its control box will appear. Click on PLACE and the
+               manufactured gun will become your cursor, move it until it
+               is over the site that you wish to place it and then click
+               with the left mouse button.
+
+               Guns must be placed within the territory in which they were
+               manufactured and they may not be placed on roads or
+               buildings (except for the fort). A cross will appear over
+               the gun if you move it over a location in which it can't be
+               placed. If you try to place the gun more than twice in an
+               illegal position an orange crosshatch will appear around the
+               gun to show you the areas where it can be placed.  If you
+               move the gun away from the territory that made it by mistake
+               you can press the SPACEBAR to return to it.
+
+               There is no time limit in which you must place a gun once it
+               has been manufactured, but any guns still not placed when
+               the territory is captured by the enemy will be lost.
+
+               You can place a maximum of four guns in a territory. Once
+               four guns have been placed, no more guns can be
+               manufactured and a cross will appear over the portrait of
+               the guns in the control box.
+
+      (iii) Radar Stations
+            When you capture a radar station, it will begin to scan a
+            circular area around it. Within this area you will be able to
+            see the exact location of enemy units on the mini map. If you
+            move your cursor over an enemy unit that is within range of
+            one of your radar stations, the unit will be identified.
+
+  (10) Game Menu
+       The game menu can be accessed at any time during play by clicking
+       the MENU button at the right of the command bar with the left mouse
+       button or by pressing the M key. This menu provides the following
+       functions:
+
+       QUIT GAME
+
+       GAME CONTROL
+         This gives control over Scroll Rate, Screen Resolution, Detail
+         Level and Gamma Correction
+
+       SOUND CONTROL
+         This gives control over Music and Sound Effects.
+
+
+
+

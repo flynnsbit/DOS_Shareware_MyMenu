@@ -1,0 +1,171 @@
+Programming infos:
+
+Extender (DOS/32a, DOS/4G, PMODE/W):
+
+Q: There are more different versions of Mpxplay, with different DPMI extenders.
+   Which one is the best for me?
+A: You have to test this yourself. Every one have its own problems/bugs, 
+   depending on the used OS, TSRs, hw/sw environment and on the used Mpxplay functions.
+   DOS/4G: 
+    + this is the official Watcom extender (v2.60)
+    + we can use external DLLs with it (output and visual plugins)
+    - recommended for the (Watcom/DOS4GW based) DOS-SB16 emulator of SB Live/Audigy (emu10dos.zip)
+    - requires a large (400k) runtime library (DOS4G.EXE) besides the Mpxplay.exe
+    - it does swapping (on the HD) at low memory (slows down the program)
+    + memory limit: 64 Mb (this is usually enough)
+   DOS/32a: 
+    - starts a little slower
+    - exception/pagefault error handling is not correct (when the program crashes)
+    - it can crash with the SB Live emulator
+    - uses more conventional (low DOS) memory (due to the higher memory limit)
+    + memory limit: 128 Mb
+   PMODE/W: 
+    - irq handling problems using mouse (and serial control?): program can freeze or reset your computer
+    - memory allocation bugs (DOS 7.x + SB Live drivers)
+    - memory limit: 16 Mb (sometimes it's not enough)
+
+Source:
+
+Q: Is Mpxplay opensource? May I get it?
+A: You can download the source of Mpxplay from my homepage. 
+   If you need a Watcom C compiler (to compile Mpxplay), you can find it 
+   on http://www.openwatcom.org site.
+
+Q: I would like to write my own MP3 Player. Do you have any tips, or know any
+   sites where I can download sample codes or any mpeg documents?
+A: You can find some usable freeware mp3 decoder sources on the net:
+    - Freeamp (www.freeamp.org)
+    - MPG123  (www.mpg123.de)
+    - OpenCP  (www.cubic.org/player)
+    - AMP11   (http://www.ph.tum.de/~nbeisert/amp11.html)
+   Ogg Vorbis tools and sources:
+    - www.xiph.org
+   and some other usable sources on
+    - www.programmersheaven.com
+
+Mpxplay won't start:
+
+Q: I get '[PMODE/W]: Not Enough Memory Available' error message, 
+   or other (XMS/conventional) memory allocation errors when I start Mpxplay.
+
+A: 1. In some cases (ie: DOS 7.x & SB Live) the PMODE/W extender cannot work.
+      I made a DOS/4GW version too (commented with 'for MS-DOS 7.x users'), 
+      you can download it from my homepage (or try the DOS/32a version).
+   2. You have not enough free XMS memory. 
+      Mpxplay requires min. 3-4 Mb XMS and 200-300 kbyte conventional memory.
+
+Q: I get 'Soundcard init failed' message when I start Mpxplay.
+A: 1.Check the 'supported soundcards' list in the README.TXT / SNDCARDS.TXT, 
+     maybe your card is not there...
+   2.Try the -sct option to autodetect your card and to get the correct settings.
+   3.I think so PCI card handling doesn't work under Win2k/XP (use DOS)
+
+Sound quality problems:
+
+Q: Will your mp3 player give me the same sound quality as Winamp or another
+   win32 product?
+A: I think so there isn't too much sound quality difference between Mpxplay
+   and other players.
+   (I know the Sonique is better, but try to use it on a 486 CPU ...)
+   Maybe the problem is your sound card, because if Mpxplay detects your
+   card as SBpro, then it will not give good (CD) quality (only 22khz with 8 bit).
+
+LFN problems:
+
+Q: How can I use LFNs (long filenames) with your program?
+A: 1. Mpxplay can support LFNs under Win9x through a (windows) software 
+      interrupt (API).
+   2. Under DOS, you have to use an LFN emulator (witch emulates this API function).
+      Only one program can do this: DOSLFN
+      You can download it: http://www-user.tu-chemnitz.de/~heha/hs_freeware/freew.html
+      Please don't ask about this program... I can't help...
+      I know, this program has a limited functionality, 
+      but I hope the developer will implement the missing functions...
+      (ie: it doesn't support some type of LFN-CDs (LFN CD modes), 
+       and it seems it doesn't work under DOS 6.xx (only under 7.xx))
+   3. Don't forget to set the UseLFN=1 in the mpxplay.ini (enabled by default)
+
+Q: I wrote a CD with long filenames and directories, I can use it under
+   Windows, but I can't read (open) the directories and files under DOS
+   (with Mpxplay nor with any other DOS programs).
+A: 1. I think so you wrote the CD in JOLIET or in a similar LFN mode.
+      If you use CDRWIN (cd-writer software) and you enable 'DOS compatibility mode'
+      in the program, you will able to use the CD under DOS too (of course you'll
+      see the long filenames in LONGFI~1.MP3 format).
+   2. Use SHSUCDX.EXE, an alternative cd-driver instead of MSCDEX.EXE
+
+Audio-CD problems:
+
+Q: Why don't you implement a normal CD player instead of the real-time CD-ripper?
+A  1. It was easier to implement (I can handle a CD-track like a normal file)
+   2. On this way, you can use CROSSFADE, AUTOVOLUME, SPEED CONTROL and
+      SURROUND on AUDIO CD tracks. You couldn't do these in a normal
+      CD audio player.
+
+   In fact, the CDW doesn't work on every CD-ROMs (especially on old ones).
+   (if the CD-reading is buggy, try the CDWcontrol=1 setting in mpxplay.ini)
+   (smartdrv also can cause problems, so don't use it for CDW playing)
+
+Speed problems:
+
+Q: I have a DX4-100, you wrote in the readme.txt, this CPU is enough
+   to play MP3s, but Mpxplay can't play properly on it...
+A: 1. Of course it depends on the other parts of your computer too,
+      maybe your hard disk or/and CD is slow (or you use a non-Intel CPU).
+      If you don't use SMARTDRV, NCACHE or other similar disk cache softwares,
+      try to add this lines to your config.sys file:
+
+      BUFFERS=63,8
+      FCBS=32
+
+   2. disable (don't use) the extra functions: autovolume, surround and
+      spectrum analiser
+
+Q: 1. I have a 386-25 computer. Could you optimize your player that runs
+      on my pc too?
+   2. I have a 386-DX40 and I use your program to convert mp3 files to wav.
+      And sometimes it makes an empty (or zero-length) wav file.
+A: My program is optimized (compiled) for pentium processor, but it can
+   run on a 486 CPU too. But it CAN'T on a 386, nor with external FPU.
+   (sometimes it may works, but usually: NOT)
+   I don't plan (and I'm not really able) to improve the audio decoding speed
+   further. It's too much work and not really required for the newer CPUs. 
+   (Mpxplay shows less than 1% CPU usage at MP3 decoding on my 3 years old AMD XP)
+   (btw. higher bitrates (320kbit) use more CPU than the lower ones (128kbit))
+
+Prebuffer problems on CD-ROMs:
+
+Q: I use the -bp option and my CD-ROM usually stops at the end of the songs, and
+   there's too much pause between the songs or/and the crossfade is not perfect.
+   (the program playing the sound from the buffer, and it doesn't read the CD,
+    because of this some CD-ROMs automatically stops after 15-20 seconds).
+   How can I solve this problem?
+A: Reduce the size of prebuffer with the -bbn option (ie: -bbn 10)(default:32)
+
+LCD-display:
+
+Q: I would like to use an LCD display for Mpxplay. How can I do this?
+A: You can find some hardware infos in the source : DISPLAY\LCD.C (from mpxsrc.zip).
+   You can find more informations in the LCD_DISP.TXT too.
+   You can enable/configure the LCD in the MPXPLAY.INI file.
+   Otherwise I haven't got LCD, because of this I can't help too much
+   if you have problems using an LCD (hardware problems)...
+
+Other:
+
+Q: Mpxplay sometimes cuts the end of the songs (losing 4-5 seconds).
+   Is there any way to play the song completly?
+A: You can disable this function (cut) with the '-sl 0' command line option
+   or with the SoundLimit=0 setting (in the mpxplay.ini).
+   (or try a low value: 1-5)
+
+Q: I can copy CD tracks into a wav file, but how can I convert them directly
+   into MP3s with Mpxplay?
+A: Use the DOS4G version of Mpxplay with the LAME output plugin DLL.
+   (you can download these from my homepage)
+
+Q: I would like to use an external (TSR) program to control Mpxplay,
+   but it doesn't work. Why?
+A: I don't use the 'normal' BIOS or DOS routines to read keyboard,
+   I wrote my own low-level functions. You can find them in the newfunc\keyboard.c (pds_kbhit,pds_extgetch,pds_pushkey)
+   If you write a TSR for Mpxplay, use this way to control my program.

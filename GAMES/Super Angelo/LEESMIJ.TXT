@@ -1,0 +1,110 @@
+                                SUPER ANGELO
+
+                                 Versie 2.2
+         (C) Copyright 1997-2003, door Mike Wiering/Wiering Software
+               www.wieringsoftware.nl, info@wieringsoftware.nl
+
+
+LICENTIE
+
+     Zie LICENTIE.TXT voor de licentieovereenkomst.
+
+
+SYSTEEMEISEN
+
+     Om het spel Super Angelo te spelen, het je een PC nodig met:
+
+        -  286 processor of hoger (486 of Pentium aanbevolen)
+        -  VGA kaart
+
+     Indien aanwezig, maakt dit spel ook gebruik van:
+
+        -  MPU401 (MIDI) / AdLib compatible geluidskaart
+        -  joystick
+
+
+SUPER ANGELO STARTEN
+
+     Heb je het speciale installatieprogramma voor Windows gebruikt, dan kun
+     je het spel eenvoudig opstarten door op het icoontje te klikken in de
+     'Super Angelo' folder.
+
+     Heb je het spel in DOS ge‹nstalleerd, dan kun je het opstarten met het
+     commando:
+
+        ANGELO
+
+     Eventueel kunnen er opties meegegeven worden aan het spel:
+
+        ANGELO -?    Laat alle beschikbare opties zien
+        ANGELO -E    Start het spel in het Engels
+        ANGELO -N    Start het spel in het Nederlands
+        ANGELO -S    Gebruik PC-speaker geluid i.p.v. geluidskaart
+        ANGELO -M    Gebruik GEEN MPU401 (midi) geluid, maar Adlib
+        ANGELO -Q    Start het spel zonder geluid
+        ANGELO -R    Registratiegegevens invullen
+        ANGELO -P    Maak een ANGELO.PIF bestand voor Windows
+
+
+BESTURING
+
+     In het hele zijn de menu-opties te veranderen met <Pijl Omhoog/Omlaag>.
+     Met <Spatie> of <Enter> kun je een keuze maken. Met <Esc> kun je terug
+     naar een vorige menu of het spel verlaten.
+
+     Heb je een joystick, ga dan vanuit het hoofdmenu naar INSTELLINGEN,
+     BESTURING, SOORT BESTURING en kies JOYSTICK om deze te configureren.
+
+     Charlie is als volgt te sturen:
+
+        <Pijl Links/Rechts>   -  Lopen
+        <Pijl Omlaag>         -  Duiken (in sommige poeltjes)
+        <Alt>                 -  Springen
+        <Ctrl>                -  Versnellen
+
+     Wil je hiervoor andere toetsen gebruiken, ga dan vanuit het hoofdmenu
+     naar INSTELLINGEN, BESTURING en dan TOETSEN.
+
+     Tijdens het spel zijn ook nog de volgende toetsen te gebruiken:
+
+        <F1>                  -  Help
+        <F2>                  -  Spel bewaren
+        <F3>                  -  Spel laden
+        <F4>                  -  Geluid aan/uit
+        <P>                   -  Pauze
+        <Esc>                 -  Einde
+
+
+VEELGESTELDE VRAGEN
+
+     Hieronder vind je enkele vragen die veel mensen stellen:
+
+     -----
+
+     V:   Waarom krijg ik geen geluid?
+
+     A:   Als je gebruik maakt van Windows 98 of hoger, zou je gewoonlijk
+          geluid moeten kunnen krijgen via MIDI. Controleer wel of de MIDI-
+          volume hoog genoeg staat en of het niet gedempt is (zie daarvoor
+          het configuratiescherm van Windows, vervolgens afhankelijk van
+          de Windows-versie Multimedia of Geluiden). Werk je met DOS, dan
+          kun je meestal geluid krijgen via Adlib, tenminste als je kaart
+          dat ondersteunt. Als niets werkt, gebruik dan PC-speaker-geluid.
+          Start daarvoor het spel op met: ANGELO -S (zie ook volgende vraag).
+
+     -----
+
+     V:   Waar moet je zo'n commando met opties typen (zoals ANGELO -S)?
+
+     A:   Kies vanaf je Windows bureaublad Start, Programma's, MS-DOS prompt.
+          Ga dan naar de directory waar Super Angelo staat, bijvoorbeeld met
+          CD \ANGELO en type vervolgens het commando dat je wilt uitvoeren.
+
+     -----
+
+     V:   Ik krijg geen geluid met de shareware versie. Is er wel geluid bij
+          de volledige versie?
+
+     A:   Nee, de volledige versie is exact hetzelfde als de shareware
+          versie (maar dan met meer levels).
+

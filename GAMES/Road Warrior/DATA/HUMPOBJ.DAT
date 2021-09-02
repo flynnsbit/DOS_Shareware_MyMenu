@@ -1,0 +1,83 @@
+0 burner
+0 hanging flood
+0 cyber
+0 valve
+0 cyber
+0 valve
+0 cyber
+0 guage
+0 junk
+0 clamp
+0 safety valve
+0 burn
+0 meta
+0 cyb
+0 switch
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+EOF
+
+New line for each obj page.
+0 none                         5 slide
+1 weak jump                    6 big slide
+2 jump                         7 stop no bounce
+3 big jump                     8 stop & bounce
+4 subtle slide
+

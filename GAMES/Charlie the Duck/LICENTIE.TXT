@@ -1,0 +1,114 @@
+CHARLIE DE EEND
+
+WIERING SOFTWARE LICENTIEVOORWAARDEN
+
+
+BELANGRIJK - LEES AANDACHTIG: Deze licentieovereenkomst
+("OVEREENKOMST") is een overeenkomst tussen u en
+Wiering Software ("WIERING SOFTWARE") voor het hierboven
+genoemde softwareprodukt, inclusief alle bijbehorende
+media en gedrukte of on-line documentatie en ook
+eventuele toekomstige versies, patches of updates
+("SOFTWAREPRODUKT").
+
+Door het SOFTWAREPRODUKT te installeren en/of te
+gebruiken, aanvaardt u alle voorwaarden en bepalingen van
+deze OVEREENKOMST.
+
+
+LICENTIEOVEREENKOMST
+
+Dit SOFTWAREPRODUKT is intellectueel eigendom van
+WIERING SOFTWARE en is beschermd op grond van de
+Nederlandse auteurswet en internationale
+verdragsbepalingen. Niet het SOFTWAREPRODUKT zelf wordt
+verkocht, maar licenties daarop.
+
+Het SOFTWAREPRODUKT wordt gedistribueerd als SHAREWARE.
+Een gelimiteerde versie ("SHAREWARE VERSIE") is gratis
+beschikbaar voor evalutatie. Het is mogelijk om het
+SOFTWAREPRODUKT te "registreren", zodat u met een
+persoonlijke registratiecode de volledige versie
+("GEREGISTREERDE VERSIE") van het SOFTWAREPRODUKT kunt
+gebruiken.
+
+
+VOORWAARDEN VOOR DE SHAREWARE VERSIE
+
+Met betrekking tot de SHAREWARE VERSIE gelden de volgende
+bepalingen:
+
+  - U mag de SHAREWARE VERSIE installeren en gebruiken
+    voor een ongelimiteerde periode.
+
+  - U mag kopieën van het SOFTWAREPRODUKT aan anderen
+    geven en distribueren, maar alleen in de
+    oorspronkelijke vorm (zoals het beschikbaar is op de
+    website van WIERING SOFTWARE), zonder veranderingen.
+
+  - Het is voor distributeurs toegestaan om de SHAREWARE
+    VERSIE te verkopen tegen een redelijke prijs voor
+    opslagmedia en distributie, mits het voor de koper
+    duidelijk is dat de software "shareware" is.
+
+  - Computertijdschriften mogen de SHAREWARE VERSIE op
+    hun disk, CD-ROM of andere media plaatsen, zonder daar
+    eerst toestemming voor te vragen aan WIERING SOFTWARE
+    (een bericht hierover wordt echter wel op prijs
+    gesteld).
+
+  - Het is niet toegestaan om het SOFTWAREPRODUKT te
+    decompileren, disassembleren, te onderwerpen aan
+    reverse engineering of op andere manier te proberen
+    aan de broncode te komen.
+
+  - Om het SOFTWAREPRODUKT te registreren, mag u alleen
+    uw persoonlijke registratiecode gebruiken, die u op
+    legale wijze heeft verkregen. Het is niet toegestaan
+    om uw code te proberen te 'ontdekken' of software te
+    schrijven die dat doet. Ook mag u geen code gebruiken
+    van een ander.
+
+
+VOORWAARDEN VOOR DE GEREGISTREERDE VERSIE
+
+Met betrekking tot de GEREGISTREERDE VERSIE gelden de
+volgende bepalingen:
+
+  - U mag het de GEREGISTREERDE VERSIE installeren en
+    gebruiken op uw eigen computer. Bent u eigenaar van
+    meerdere computers, dan mag u de het ook op uw overige
+    computers installeren, mits de GEREGISTREERDE VERSIE
+    slechts op een enkele computer tegelijk wordt
+    gebruikt.
+
+  - U mag een kopie van de GEREGISTREERDE VERSIE bewaren
+    als backup.
+
+  - Het is niet toegestaan om kopieën te maken van de
+    GEREGISTREERDE VERSIE voor anderen.
+
+  - U mag uw registratiecode niet aan anderen geven of
+    openbaar maken.
+
+  - Het is niet toegestaan om het SOFTWAREPRODUKT te
+    decompileren, disassembleren, te onderwerpen aan
+    reverse engineering of op andere manier te proberen
+    aan de broncode te komen.
+
+
+DISCLAIMER
+
+DIT SOFTWAREPRODUCT WORDT U VERSTREKT "IN DE STAAT WAARIN
+HET VERKEERT" EN WIERING SOFTWARE VERLEENT HIEROP GEEN
+ENKELE GARANTIE, HETZIJ UITDRUKKELIJK HETZIJ IMPLICIET,
+MET BETREKKING TOT VERHANDELBAARHEID OF GESCHIKTHEID VOOR
+ENIG SPECIFIEK DOEL. GEBRUIK HET SOFTWAREPRODUKT OP EIGEN
+RISICO.
+
+WIERING SOFTWARE IS IN GEEN GEVAL AANSPRAKELIJK JEGENS U
+VOOR DIRECTE OF INDIRECTE SCHADE, GEVOLGSCHADE,
+INCIDENTELE OF BIJZONDERE SCHADE (INCLUSIEF VERLIES VAN
+DATA, GEDERFDE WINST OF VORDERINGEN VAN DERDEN), ZELFS
+WANNEER WIERING SOFTWARE IN KENNIS IS GESTELD DAT EEN
+DERGELIJKE SCHADE MOGELIJK ZOU KUNNEN OPTREDEN.

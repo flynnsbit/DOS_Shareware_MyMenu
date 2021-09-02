@@ -1,0 +1,330 @@
+
+     NRO (1)                    Unix V7 Version                     NRO (1)
+
+
+
+     NAME 
+          nro - text processor 
+
+     SYNOPSIS 
+          nro  [-n]  [+n]  [-pxx]  [-v]  [-u] [-b] [-mmfile] ifile ...
+          [>ofile] 
+
+     DESCRIPTION 
+          NRO is a text processor and formatter based  on  the  design
+          provided in  "Software Tools" by Kernighan and Plauger.  The 
+          text  and  commands  found  in the ifile(s) are processed to
+          generate formatted text.  The output may be directed into  a
+          file or to the printer, otherwise, the output will appear at 
+          the user console.  
+
+          The +n  option  causes the output to start with page n.  The
+          -n option causes the output to stop after page n.  
+
+          The -v option prints the version number to the console.  
+
+          The -p option causes the output to be shifted to  the  right
+          by xx spaces.  This has the same effect as the .po command.  
+
+          The  -u option enables underlining and bold to appear in the
+          output text.  
+
+          The -b option allows backspaces to be used when  underlining
+          or overstriking.     Otherwise  a  carriage  return  without
+          linefeed is used.   This has the  same  effect  as  the  .bs
+          command with a non-zero argument.  
+
+          The   -m   option   processes   the  file  mfile  for  macro
+          definitions.  Note that files processed in this  way  should
+          contain  only  macro definitions, no immediate output should
+          be generated from this file.  
+
+          Commands typically are distinguished by a period  in  column
+          one  of  the  input followed by a two character abbreviation
+          for the command funtion.    The  abbreviation  may  then  be
+          followed by  an optional numeric or character argument.  The
+          numeric argument may be an absolute value  such  as  setting
+          the right margin to a particular column, or the argument may 
+          be  preceded by a plus sign or a minus sign to indicate that
+          the parameter should be  modified  relative  to  a  previous
+          setting.  The following commands are recognized: 
+
+          .bo - causes the following lines of text to appear in 
+                boldface.  The optional argument specifies the number 
+                of lines to be typed in boldface.  Boldface and 
+                underlining are mutually exclusive features.  The 
+                appearance of a boldface command will cause any 
+                underlining to cease.  
+
+          .bp - causes succeeding text to appear at the top of a new 
+                page.  The optional argument specifies the page number 
+                for the new page.  The initial value is one and the 
+                default value is one more than the previous page 
+
+
+                                      -1-
+
+
+     NRO (1)                    Unix V7 Version                     NRO (1)
+
+
+                number.  
+
+          .br - causes succeeding text to start on a new line at the 
+                current left margin.  There is no numeric argument for 
+                this command.  
+
+          .bs - enables or disables the appearance of backspaces in 
+                the output text.  Underlining and boldface options are 
+                implemented by inserting character - backspace - 
+                character combinations into the output buffer.  This 
+                is fine for devices which properly recognize the 
+                backspace character.  Some printers, however, do not 
+                recognize backspaces, so the option is provided to 
+                overprint one line buffer with another.  The first 
+                line buffer is terminated with just a carriage return 
+                rather than the carriage return - linefeed 
+                combination.  A zero argument or no argument to the 
+                backspace command removes backspaces from the output.  
+                A non-zero argument leaves them in the output.  The 
+                default is to remove backspaces.  
+
+          .cc - changes the NRO command character to that specified by 
+                the character argument.  If no argument is provided, 
+                the default is a period.  
+
+          .ce - causes the next line of text to appear centered on the 
+                output.  The optional argument specifies if more than 
+                one line is to be centered.  
+
+          .de - causes all text and commands following to be used to 
+                define a macro.  The definition is terminated by a .en 
+                command.  The first two characters of the argument 
+                following the .de command become the name of the new 
+                command.  It should be noted that upper and lower case 
+                arguments are considered different.  Thus, the 
+                commands .PP and .pp could define two different 
+                macros.  Care should be exercised since existing 
+                commands may be redefined.  
+
+                A macro may contain up to ten arguments.  In the macro 
+                definition, the placement of arguments is designated 
+                by the two character sequences, $0, $1, ... $9.  When 
+                the macro is invoked, each argument of the macro 
+                command line is substituted for its corresponding 
+                designator in the expansion.  The first argument of 
+                the macro command is substituted for the $0 in the 
+                expansion, the second argument for the $1, and so 
+                forth.  Arguments are typically strings which do not 
+                contain blanks or tabs.  If an argument is to contain 
+                blanks, then it should be surrounded by either single 
+                or double quotes.  
+
+          .cu - causes the next line(s) of text to be continuously 
+                underlined.  Unlike the underline command (see .ul) 
+                which underlines only alphanumerics, continuous 
+                underlining underlines all printable characters.  The 
+                optional argument specifies the number of lines of 
+                text to underlined.  Any normal underlining or 
+
+
+                                      -2-
+
+
+     NRO (1)                    Unix V7 Version                     NRO (1)
+
+
+                boldface commands currently in effect will be 
+                terminated.  
+
+          .ef - specifies the text for the footer on even numbered 
+                pages.  The format is the same as for the footer 
+                command (see .fo).  
+
+          .eh - specifies the text for the header on even numbered 
+                pages.  The format is the same as for the footer 
+                command (see .fo).  
+
+          .en - designates the end of a macro definition.  
+
+          .fi - causes the input text to be rearranged or filled to 
+                obtain the maximum word count possible between the 
+                previously set left and right margins.  No argument is 
+                expected.  
+
+          .fo - specifies text to be used for a footer.  The footer 
+                text contains three strings seperated by a delimiter 
+                character.  The first non-blank character following 
+                the command is designated as the delimiter.  The first 
+                text string is left justified to the current 
+                indentation value (specified by .in).  The second 
+                string is centered between the current indentation 
+                value and the current right margin value (specified by 
+                .rm).  The third string is right justified to the 
+                current right margin value.  The absence of footer 
+                text will result in the footer being printed as one 
+                blank line.  The presence of the page number character 
+                (set by .pc) in the footer text results in the current 
+                page number being inserted at that position.  Multiple 
+                occurrances of the page number character are allowed.  
+
+          .he - specifies text to be used for a header.  The format is 
+                the same as for the footer (see .fo).  
+
+          .in - indents the left margin to the column value specified 
+                by the argument.  The default left margin is set to 
+                zero.  
+
+          .ju - causes blanks to be inserted between words in a line 
+                of output in order to align or justify the right 
+                margin.  The default is to justify.  
+
+          .ls - sets the line spacing to the value specified by the 
+                argument.  The default is for single spacing.  
+
+          .m1 - specifies the number of lines in the header margin.  
+                This is the space from the physical top of page to and 
+                including the header text.  A value of zero causes the 
+                header to not be printed.  A value of one causes the 
+                header to appear at the physical top of page.  Larger 
+                argument values cause the appropriate number of blank 
+                lines to appear before the header is printed.  
+
+          .m2 - specifies the number of blank lines to be printed 
+                between the header line and the first line of the 
+
+
+                                      -3-
+
+
+     NRO (1)                    Unix V7 Version                     NRO (1)
+
+
+                processed text.  
+
+          .m3 - specifies the number of blank lines to be printed 
+                between the last line of processed text and the footer 
+                line.  
+
+          .m4 - specifies the number of lines in the footer margin.  
+                This command affects the footer the same way the .m1 
+                command affects the header.  
+
+          .ne - specifies a number of lines which should not be broken 
+                across a page boundary.  If the number of lines 
+                remaining on a page is less than the value needed, 
+                then a new output page is started.  
+
+          .nf - specifies that succeeding text should be printed 
+                without rearrangement, or with no fill.  No argument 
+                is expected.  
+
+          .nj - specifies that no attempt should be made to align or 
+                justify the right margin.  No argument is expected.  
+
+          .nr - causes the value of a number register to be set or 
+                modified.  A total of twenty-six number registers are 
+                available designated @na through @nz (either upper or 
+                lower case is allowed).  When the sequence @nc is 
+                imbedded in the text, the current value of number 
+                register c replaces the sequence, thus, such things as 
+                paragraph numbering can be accomplished with relative 
+                ease.  
+
+          .of - specifies the text for the footer on odd numbered 
+                pages.  The format is the same as the footer command 
+                (see .fo).  
+
+          .oh - specifies the text for the header on odd numbered 
+                pages.  The format is the same as the footer command 
+                (see .fo).  
+
+          .pc - specifies the page number character to be used in 
+                headers and footers.  The occurrance of this character 
+                in the header or footer text results in the current 
+                page number being printed.  The default for this 
+                character is the hash mark (#).  
+
+          .pl - specifies the page lenght or the number of lines per 
+                output page.  The default is sixty-six.  
+
+          .po - specifies a page offset value.  This allows the 
+                formatted text to be shifted to the right by the 
+                number of spaces specified.  This feature may also be 
+                invoked by a switch on the command line.  
+
+          .rm - sets the column value for the right margin.  The 
+                default is eighty.  
+
+          .so - causes input to be retrieved from the file specified 
+                by the command's character string argument.  The 
+
+
+                                      -4-
+
+
+     NRO (1)                    Unix V7 Version                     NRO (1)
+
+
+                contents of the new file are inserted into the output 
+                stream until an EOF is detected.  Processing of the 
+                original file is then resumed.  Command nesting is 
+                allowed.  
+
+          .sp - specifies a number of blank lines to be output before 
+                printing the next line of text.  
+
+          .ti - temporarily alters the indentation or left margin 
+                value for a single succeeding line of text.  
+
+          .ul - underlines the alphanumeric text in the following 
+                line(s).  The optional argument specifies the number 
+                of lines to be underlined.  Underlining and boldface 
+                are mutually exclusive features.  The appearance of an 
+                underline command cancels any existing boldface 
+                operations.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      -5-
+

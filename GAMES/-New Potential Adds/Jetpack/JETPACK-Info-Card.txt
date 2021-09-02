@@ -1,0 +1,98 @@
+==============================================================================
+DOS Games Archive Game Info Card                                     Version 3
+==============================================================================
+* General Information *
+
+Game title              : Jetpack
+Alternate title(s)      : None
+Developer               : Adam Pedersen
+Publisher               : Impulse Software/Software Creations
+Country of origin       : USA
+Distribution model      : Freeware (originally Shareware)
+
+* Release Information *
+
+Release type            : Full version
+Version                 : 1.5
+Release date            : 1998/12/17
+Language                : English
+License file            : README.TXT
+License/Permissions     : 
+
+"Thanks to everyone who supported and enjoyed my games,
+"Jetpack and Squarez Deluxe.  They are now released as freeware,
+"since they are old and there's no way to order them any more.
+"
+"In the main folder is the final freeware version of Jetpack.
+"Also included is the Jetpack Graphics Module Switcher, with
+"Christmas Jetpack and Jetpack Junior modules.
+"
+""SQUAREZ" is the final freeware version of Squarez Deluxe."
+
+* Distribution Information *
+
+Distribution type       : Digital download
+File name               : jetpak15.zip
+File size               : 494 745 bytes
+Installer provided      : No
+Original location       : https://www.adeptsoftware.com/jetpack/
+Retrieved from          : Same as above
+
+Additional files        : None
+
+Maintainer              : MrFlibble <mrflibble86@gmail.com>
+==============================================================================
+* Note for DOSBox users *
+
+This software is fully installed and configured to run in the DOSBox emulator.
+You can simply drag and drop the file JETPACK.BAT over the DOSBox icon to start
+playing. Experienced DOSBox users may choose other methods of startup.
+
+The software was configured and tested to work with the official DOSBox build
+v0.74-3 available from www.dosbox.com. It may or may not work with any other
+third-party DOSBox distributions that are available.
+
+For playing instructions and other information, please refer to the supplied
+electronic manual (MANUAL.TXT) found in the JETPACK15 directory.
+==============================================================================
+* Note on the freeware release *
+
+Author Adam Pedersen made the full version of Jetpack freeware. It is 
+available for download from the official site:
+https://www.adeptsoftware.com/jetpack/
+==============================================================================
+* Game related websites *
+
+Official website:
+https://www.adeptsoftware.com/jetpack/
+
+NOTE: Some sites are only available as copies made by the Wayback Machine:
+http://web.archive.org/
+==============================================================================
+* Disclaimer *
+
+THE GAME DATA IN THIS ARCHIVE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING AND NOT LIMITED TO ANY IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+All game content is copyright to their respective owners.
+
+No files from the original software package provided by the developer and/or
+publisher were modified except for the configuration files needed to set up
+sound devices and input methods.
+
+This software was tested to work with the current official DOSBox build
+(v0.74-3) and was scanned by an antivirus/anti-malware tool.
+
+You use this software at your own risk. DOS Games Archive is not liable for
+any unwanted consequences that may arise from your using this software.
+==============================================================================
+* Download and online play *
+
+This game is available from DOS Games Archive at:
+https://www.dosgamesarchive.com/download/jetpack/
+
+It can be played online at:
+https://www.dosgamesarchive.com/play/jetpack/
+
+--- END OF FILE (2021/03/12) ---

@@ -1,0 +1,85 @@
+Major changes in version 2.61:
+- Fix video playback crash with processors that do not support the cmov
+  instruction like K6-III or Via C3
+- Fix video playback crash with AMD K6-2 and K6-III processors
+
+Major changes in version 2.60:
+- MP4 support
+- H.264 and AAC codec support
+
+Major changes in version 2.58:
+- Support of AVI multiple audio streams. Select the stream with the -UAx
+  parameter.
+- Switch between stereo, left channel and right channel during playback
+  using the "L" key.
+- Added support for these video codecs:
+    WMV1  Windows Media Video V7
+    WMV2  Windows Media Video V8
+    WMV3  VC-1 Main Profile
+    WVC1  VC-1 Advanced Profile
+    KMVC  Karl Morton's Video Codec
+    TSCC  TechSmith Camtasia Screen Capture-Codec
+    ZMBV  DosBox Capture Codec
+
+Major changes in version 2.57:
+- Increased performance and quality of video playback by using the hardware
+  acceleration features of many graphics chips. Note that not all graphics
+  chips have been tested. If you discover any problem like black or garbled
+  screen please notify the author and use software scaling until the
+  problem is fixed in the next version.
+- Improved frame dropping for low end systems.
+- Snapshot function. Press the "S" key during video playback and a
+  screenshot it written into the QV.EXE directory.
+
+Major changes in version 2.56:
+- Possibility to store the command line parameters in the config file;
+  You'll be asked when you save a config file in the options
+- Improved VideoCD support (forward and rewind over track borders & random
+  access)
+- Support of cyrillic subtitle fonts
+- Built in sound drivers for Sound Blaster Live 24 and several motherboards 
+  with VIA chipsets
+- Possibilty to list only supported files in the menu by pressing ALT+M
+  or using the -UM option
+
+Major changes in version 2.55:
+- Bookmark setting during playback with CTRL+F1 until CTRL+F12 and 
+  retrieving the position with F1 - F12.
+- Random access to 0%, 10%, ..., 90% of the file length using the
+  keys 0 - 9.
+- Alt+R rereads the directory
+- Added support for these video codecs:
+	Autodesk Animator-Codec [AASC]
+	Indeo 2 [RT21]
+	Miro VideoXL [VIXL]
+
+Major changes in version 2.54:
+- New high quality scaling algorithm for DivX and MPEG-1 videos
+
+Major changes in version 2.53:
+- Ogg Vorbis support
+- New video codecs: ASV2, COL1, CJPG, UYVY, VCR1
+- Autodetect of file type even if the filename suffix is not correct
+
+Major changes in version 2.52:
+- Added support of video codecs HFYU and ASV1
+- Improved handling of DOS sound drivers for PCI cards
+
+Major changes in version 2.51:
+- DivX Audio Support
+- Improved handling of DivX AVI files with MP3 VBR codec
+- DV codec support
+- Support of external sound drivers
+
+Major changes in version 2.50:
+- Added support for these video codecs:
+	Angel Potion 4 definitive version 1 [AP41],
+	Microsoft MPEG-4 Version 1 [MPG4],
+	Microsoft MPEG-4 Version 2 [MP42],
+	Microsoft H.263 [M263],
+	H.263 [H263],
+	Intel I263 H.263 [I263],
+	Xirlink H.263 Video Codec [X263],
+	Sorenson v1 [SVQ1],
+- Faster DivX decompression
+

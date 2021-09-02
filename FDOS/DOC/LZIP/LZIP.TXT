@@ -1,0 +1,132 @@
+
+
+
+LZIP(1)                   User Commands                   LZIP(1)
+
+
+NAME
+       Lzip - data compressor based on the LZMA algorithm
+
+SYNOPSIS
+       lzip [options] [files]
+
+DESCRIPTION
+       Lzip - A data compressor based on the LZMA algorithm.
+
+OPTIONS
+       -h, --help
+              display this help and exit
+
+       -V, --version
+              output version information and exit
+
+       -b, --member-size=<n>
+              set member size limit in bytes
+
+       -c, --stdout
+              send output to standard output
+
+       -d, --decompress
+              decompress
+
+       -f, --force
+              overwrite existing output files
+
+       -k, --keep
+              keep (don't delete) input files
+
+       -m, --match-length=<n>
+              set match length limit in bytes [80]
+
+       -o, --output=<file>
+              if reading stdin, place the output into <file>
+
+       -q, --quiet
+              suppress all messages
+
+       -s, --dictionary-size=<n>
+              set dictionary size limit in bytes [8MiB]
+
+       -S, --volume-size=<n>
+              set volume size limit in bytes
+
+       -t, --test
+              test compressed file integrity
+
+       -v, --verbose
+              be verbose (a 2nd -v gives more)
+
+       -1 .. -9
+              set compression level [default 6]
+
+
+
+Lzip 1.9                   January 2010                         1
+
+
+
+
+
+LZIP(1)                   User Commands                   LZIP(1)
+
+
+       --fast alias for -1
+
+       --best alias for -9
+
+       If  no  file  names  are  given, lzip compresses or decom-
+       presses from standard input to standard  output.   Numbers
+       may  be followed by a multiplier: k = kB = 10^3 = 1000, Ki
+       = KiB = 2^10 = 1024, M = 10^6, Mi = 2^20, G = 10^9,  Gi  =
+       2^30, etc...
+
+REPORTING BUGS
+       Report   bugs   to  lzip-bug@nongnu.org  Lzip  home  page:
+       http://www.nongnu.org/lzip/lzip.html
+
+COPYRIGHT
+       Copyright (C) 2010 Antonio Diaz Diaz.  License GPLv3+: GNU
+       GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+       This  is  free software: you are free to change and redis-
+       tribute it.  There is NO WARRANTY, to the extent permitted
+       by law.
+
+SEE ALSO
+       The full documentation for Lzip is maintained as a Texinfo
+       manual.  If  the  info  and  Lzip  programs  are  properly
+       installed at your site, the command
+
+              info Lzip
+
+       should give you access to the complete manual.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lzip 1.9                   January 2010                         2
+
+

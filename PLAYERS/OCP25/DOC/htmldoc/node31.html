@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>general</TITLE>
+<META NAME="description" CONTENT="general">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="next" HREF="node32.html">
+<LINK REL="previous" HREF="node30.html">
+<LINK REL="up" HREF="node30.html">
+<LINK REL="next" HREF="node32.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html455"
+ HREF="node32.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html453"
+ HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html447"
+ HREF="node30.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html456"
+ HREF="node32.html">defaultconfig</A>
+<B> Up:</B> <A NAME="tex2html454"
+ HREF="node30.html">Configuration</A>
+<B> Previous:</B> <A NAME="tex2html448"
+ HREF="node30.html">Configuration</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00610000000000000000">
+general</A>
+</H1>
+The <EM>general</EM> section describes which internal modules or plugins to load
+at startup. Most of them are required for normal operation of <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP so you
+should not remove any of the contents. All options listed in this section are
+loaded every time <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP starts!
+The default <EM>general</EM> section
+looks like:
+<PRE>
+[general]
+  link=dos4gfix mmcmphlp poutput hardware inflate pfilesel \
+       cpiface fstypes
+  ultradir=c:\sys\iw\  
+  dos4gfix=off
+;  datapath=   
+;  tempdir=
+</PRE><DL COMPACT><DT>link
+<DD>this options describes the modules to load when starting <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP.
+There is no need to change this option, unless you have coded a basic internal
+module.
+<DT>ultradir
+<DD>If you want to hear MIDI music you need samples for the
+general midi instrument set.<A NAME="tex2html35"
+ HREF="#foot697"><SUP>6.2</SUP></A>
+This option contains the path to the midi patches. Section <A HREF="node29.html#midi">4.7</A> describes
+how to set up <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP for midi playback.
+<DT>dos4gfix
+<DD>DOS4GW is a protected mode extender used by the watcom c++
+compiler. However this extender has problems with IRQ greater than 7. If you
+use the default dos extender <TT>cplaunch</TT> you should disable this option.
+If you want to use DOS4GW for whatever reason and your soundcard uses an IRQ
+greater than 7 you have to enable this.
+<DT>datapath
+<DD><FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP searches for background pictures and animations in its
+home directory. If you want to store your artwork at a different place use this
+option to set the right directory.
+<DT>tempdir
+<DD>this directory is used for extracting modules from archives.
+If you have set a DOS environment variable called either <TT>TEMP</TT> or
+<TT>TMP</TT> these will be used.<A NAME="tex2html36"
+ HREF="#foot1056"><SUP>6.3</SUP></A></DL>
+<P>
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot697">... set.</A><A NAME="foot697"
+ HREF="node31.html#tex2html35"><SUP>6.2</SUP></A>
+<DD>a so called midi patch set
+
+<DT><A NAME="foot1056">... used.</A><A NAME="foot1056"
+ HREF="node31.html#tex2html36"><SUP>6.3</SUP></A>
+<DD>Most programs make use of those
+environments, so you should set them at startup in your <TT>autoexec.bat</TT>
+file.
+
+</DL><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html455"
+ HREF="node32.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html453"
+ HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html447"
+ HREF="node30.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html456"
+ HREF="node32.html">defaultconfig</A>
+<B> Up:</B> <A NAME="tex2html454"
+ HREF="node30.html">Configuration</A>
+<B> Previous:</B> <A NAME="tex2html448"
+ HREF="node30.html">Configuration</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

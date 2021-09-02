@@ -1,0 +1,342 @@
+Ÿ For English text and changes see DOSLFN.TXT.
+Ÿ This is the German documentation for v0.32o; see DOSLFN.TXT for v0.40.
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³DOSLFN - Treiber fr lange Dateinamen unter nacktem DOS³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+³Anstoá:
+ÀÄÄÄÄÄÄÄ
+Sicher h„tte ich dieses Programm seit etwa 1996 gebraucht, aber damals dachte
+ich, irgendjemand wird's ja wohl schreiben. Also wartete ich, und wartete...
+und fand erst 2000 ein halbwegs geeignetes Programm LFNDOS.EXE, geschrieben
+1998.
+
+Offenbar wurde jenes Programm fr die Win9x COMMAND.COM geschrieben,
+denn mit dem Volkov Commander (VC) geht es nicht (man kann nicht in
+Verzeichnisse mit langem Namen hineinwechseln), und es ist schrecklich
+langsam.
+Auáerdem will der Treiber gleich mal 64 KB Speicher haben.
+
+Beim Anlegen von Verzeichnissen wird alles grundlos in Groábuchstaben
+umgewandelt, man hat keine M”glichkeit, den Schlangen zu entkommen
+(NameNumericTail=0), und, der Hammer, beim Umlaut-Test fiel das Programm
+komplett durch! Unicode scheint immer noch ein Fremdwort zu sein.
+Ich fand schlieálich auch noch andere solche Programme, mit „hnlichen
+Effekten, so sie denn berhaupt liefen.
+
+So muáte ich also (mal wieder!) feststellen, dass Warten nicht lohnt,
+und dass offenbar der Rest der Welt unf„hig ist, richtig zu programmieren;-)
+Nebenbei, den Quelltext zu LFNDOS zu finden ist mit Netscape unm”glich;
+nur mit Internet Explorer kommt man an die Seite mit dem Quelltext heran.
+Ergo: selbst das an sich kinderleichte HTML kann nicht jeder.
+
+
+³Der eigene Versuch:
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Natrlich schreibt man ein solches Programm in Assembler und nur in Assembler.
+Und da ich Borland Turbo Assembler habe, habe ich diesen genommen, und
+verwende den IDEAL-Modus, um in den Genuss lokaler Strukturelemente
+zu kommen und dem Rest der Welt (der offenbar nur MASM verwendet) ein kleines
+Schnippchen zu schlagen.
+
+Ich wollte natrlich in allen kritikwrdigen Punkten deutlich besser sein,
+und auch noch CDFS (genauer: Joliet) untersttzen.
+Dann w„re es ja auch "richtig" verwendbar.
+
+Hauptaugenmerk liegt in der gnstigen Verwendbarkeit in Verbindung mit
+dem Volkov Commander, den ich fr den besten Norton-Commander-Klon halte,
+auch wenn da noch ein paar Sachen wirklich fehlen. Nachdem in der krzlich
+erschienenen neuesten Version endlich Alt+F7 funktioniert, vermisse ich
+nun noch einen NC-Link, m”glichst auch noch via ECP (ca. 500KB/s).
+
+W„hrend der Programmierung nun stellte sich heraus, dass es doch nicht
+ganz so einfach ist, die Funktionalit„ten so abzubilden, wie es Windows tut.
+Also nun doch kein Wunder, dass man sich da so schwer tat. Von den einst
+anvisierten 4KB resident bin ich schon wieder weit entfernt, und es
+funktioniert beileibe noch vieles nicht. Beispielsweise ist die Funktion
+von "cd .." klar, von "cd ..." merkwrdig und neuartig, aber nett,
+und "cd ...." konsequent. Oder aber dass die COMMAND.COM ausgiebig von
+der DOS-Funktion "Erweiterte Fehler-Information holen" Gebrauch macht,
+um letztlich doch nur den Fehlerkode zu verwenden, erfordert andererseits
+den Gebrauch der (l„stigen) Umkehrfunktion zum Setzen des DOS-Fehlerkodes.
+
+Die Implementation des Joliet-Zugriffs fhrte jedoch zur totalen Ausuferung.
+Nicht nur, dass ich mittels Hilfsprogrammen gezwungen war, aus der drftigen
+Information zu Joliet einen brauchbaren Zugriff hinzubekommen, musste
+ein Problem gel”st werden, worum, wie sich sp„ter herausstellte, sich sogar
+Windows 9x und Windows NT auf „hnlichen, aber leicht anderen Wegen,
+herumdrcken. Es geht um die Verbindung zweier an sich selbst„ndiger
+Verzeichnis-B„ume, ISO und Joliet. Windows verwendet nur den Joliet-Baum,
+falls vorhanden, und "erfindet" neue, andere kurze DOS-Namen, als die im
+ISO-Baum enthaltenen. Stellt sich die Frage nach "Querverbindungen".
+
+Das Programm WinOnCD speichert freundlicherweise eine "link table" auf die
+CD, die genau diesen Brckenschlag m”glich macht, aber andere Brennprogramme
+tun dies nicht. Das nachtr„gliche Erstellen einer solchen Tabelle ist
+aufw„ndig (will sagen: je nach Komplexit„t der CD langsam) und im brigen
+nicht immer m”glich, bspw. bei leeren Verzeichnissen oder unterschiedlichen
+Dateien zwischen ISO und Joliet (noch nicht beobachtet, aber m”glich).
+Drei L”sungswege standen deshalb offen, in Anbetracht der schwierigen Lage,
+und dass man unter nacktem DOS nicht gerade als Diskjockey arbeiten wird:
+
+* Dynamisches Anlegen der Link-Tabelle (noch gr”áeres TSR)
+* Anlegen der Tabelle beim CD-Zugriff (u.U. reaktionstr„ges TSR)
+* Bereitstellung der Tabelle durch ein externes Programm auf Festplatte
+
+Wenn eine WinOnCD-gebrannte CD gefunden wird, entfallen diese Probleme.
+
+
+³Programmier-Umst„nde:
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Entwickelt wurde unter NT4, getestet mit SoftICE. Ist zwar etwas hart,
+wegen der DOS-Box gleich den ganzen Rechner samt Netzkarte einzufrieren,
+aber SoftICE ist eben auch kaum aus der Ruhe zu bringen (es sei denn, man
+schieát damit die DOS-Box ab, dann kann man auch gleich das NT booten).
+
+Zuerst wurden die Lesezugriffe implementiert. Noch war des TSR sch”n klein,
+mit reichlich 3 KB resident. Dabei stellte sich heraus, dass der VC wie
+auch bei den anderen LFN-Treibern sehr langsam wurde. Ursache sind viele
+LFN<->SFN-Konvertierungen, die der VC ausl”st, und dass offenbar das DOS
+nicht cachen will, wenn man (auch nur lesend) auf Diskette oder Platte
+zugreift. Bei jeder Pfadkomponente musste das entsprechende Verzeichnis
+durchsucht werden, und da l„ppert sich einiges zusammen. Die Verwendung
+"undokumentierter" Felder im DTA bei FindFirst fiel aus, weil's dann nicht
+mehr unter NT4 funktionieren wrde, und wohl auch bei anderen DOS-Exoten
+wie OS/2-DOS oder Caldera. (Linux DOSEMU wird wohl nicht untersttzt.)
+Das Problem gab's schon mal frher, und die L”sung nannte MS FASTOPEN.
+Das war anfangs ein .SYS-Treiber (?), und sp„ter fest eingebaut. Kurz und
+gut, genauso etwas habe ich noch mit eingebaut (h„lt die Verbindung
+kurzer Name, langer Name und Startcluster), und der Geschwindigkeits-
+vorteil ist so enorm, dass ich da das halbe Kilobyte extra gerne spendiere.
+
+Wegen der von vornherein eingebauten FAT32-Untersttzung und wegen
+vieler kleiner weiterer Annehmlichkeiten beim Programmieren habe ich
+das Programm auf Mindestanspruch 386er festgelegt. So kann ich mit
+32-bit-Registern hantieren, und das Segment-Register FS als "Quell-Segment"
+verwenden. Geschwindigkeit und Kodegr”áe profitieren davon.
+Ansonsten arbeitet das Programm im Speichermodell TINY (CS=DS!=SS), wrde
+jedoch im Speichermodell SMALL genauso effektiv arbeiten. Andere Modelle
+w„ren hier schlichtweg Platzverschwendung.
+
+Die Art der Adressierung von gepushten "Client-Registern" sollte jedem
+sofort bekannt vorkommen, der schon mal VxDs programmiert hat: ist
+eine wirklich sch”ne Idee, und gar nicht so schwer.
+
+Selbstverst„ndlich ist dieses Programm deinstallierbar (wie auch die
+"Konkurrenz" LFNDOS), das ist ja heutzutage Standard, auáer bei Microsoft.
+Zwei Sprachen bietet das Programm ber eine Art String-Ressource.
+Meldet das DOS den L„nderkode Deutschland, ™sterreich oder Schweiz, wird
+automatisch Deutsch ausgegeben, sonst englisch. Bei Nichtgefallen dieser
+Automatik gibt es einen Kommandozeilen-Schalter.
+
+Bei der Implementierung des Schreibzugriffes kam ich jedoch vom Hundertsten
+ins Tausendste: man muss das Verzeichnis einen oder sogar mehrere Cluster
+verl„ngern, wenn der LFN-Eintrag nicht hineinpasst. (Ob die Konkurrenz
+diesen Fall berhaupt beachtet, habe ich noch gar nicht getestet.)
+DOS hat intern solche Routinen, die sowohl fr Dateien als auch fr
+Verzeichnisse gut sind, aber leider fehlen dazu die dokumentierten Einsprnge.
+Handarbeit ist angesagt, und da man soviel wie m”glich Arbeit auf
+andere(n Kode) abw„lzen sollte, l”se ich das Problem ber eine tempor„re
+kreuzverbundene Datei im Wurzelverzeichnis. Zwei Pferdefáe: da muss
+im Wurzelverzeichnis noch ein Eintrag Platz sein - aber das bis zum Rand
+zu fllen ist sowieso eine tickende Zeitbombe. Und falls diese Datei
+irrtmlicherweise liegenbleibt, passiert der GAU, wenn man sie l”scht.
+(Also: NICHT l”schen, stattdessen SCANDISK oder DISKEDIT starten!)
+
+
+³Getestet in folgenden Situationen:
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+* MS Windows NT 4 DOS-Box, FAT12- und FAT16-Laufwerk
+  (aber man sollte doch besser zum NTLFN-Paket greifen, ist auch Freeware)
+* MS-DOS 6.2
+* MS-DOS 7.10, FAT32
+* DR-DOS 7, magneto-optisches Laufwerk
+
+jeweils mit Windows 9x COMMAND.COM (zum Start h#s GiveVer benutzen!) und
+Volkov Commander 4.99.08, Schreibzugriffe sicherheitshalber nur auf Disketten
+
+
+³Erkl„rung einiger Schalter:
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+~ Tilde: Normalerweise verh„lt sich Windows9x wie folgt:
+
+  * "Kurze" Dateinamen (d.h. 8.3-Form und keine unerlaubten Zeichen) komplett
+    in Groábuchstaben und ohne Umlaut bekommen berhaupt keinen LFN-Eintrag
+  * "Kurze" Dateinamen mit Kleinbuchstaben oder Umlauten erhalten einen
+    LFN-Eintrag; der (normale) FCB-Name bekommt keine Schlange (Tilde)
+  * Alles andere bekommt einen eindeutigen FCB-Namen mit ~1, ~2 usw.,
+    wobei als Extensions-Trenner der LETZTE Punkt gilt. Nur im LFN erlaubte
+    Zeichen werden durch '_' ersetzt, mit der Ausnahme '.' und Leerzeichen,
+    diese fallen ganz weg. NT setzt hinter die Tilde einen zweistelligen
+    Buchstaben-Zahlen-Code, DOSLFN und 9x arbeiten mit fortlaufenden Zahlen.
+
+  Mit dem Registry-Schalter NameNumericTail=0 l„sst sich (nicht unter NT)
+  die Tilde-Einfgung verhindern, falls der kurze Name noch eindeutig
+  bleibt. Vorteil: man kann die Datei mit ihrem langen Namen auch noch
+  unter DOS (ohne LFN-Treiber), nach einem (fatalen) Angriff alter
+  Direktzugriffs-Software oder bei einem versauten System ansprechen,
+  weil DOS intern auf 8.3 krzt.
+  Nachteil: Es ist nicht nachtr„glich m”glich, eine echte 8.3-Datei neu
+  zu erstellen, wenn der Name passt, oder schlimmer noch, der Inhalt wird
+  (ungewollt) gel”scht, im Glauben, unter LFN adressieren zwei verschiedene
+  Dateinamen zwei verschiedene Dateien.
+  Also: ~- entspricht NameNumericTail=0 und ~+ dem Standard.
+
+t Tunneleffekt: Programme, speziell Text-Editoren fr DOS, die keine
+  langen Dateinamen untersttzen, speichern, indem sie
+
+  * eine Datei *.bak l”schen
+  * die Datei *.txt in *.bak umbenennen
+  * die Datei *.txt neu erstellen.
+
+  Damit wrde der lange Dateiname der *.txt verloren gehen.
+  Der "Tunneleffekt" sorgt dafr, dass bei der Umbenennung der dem kurzen
+  Namen zugeordnete lange Name gespeichert wird und beim Wieder-Erzeugen
+  der kurzen Datei der lange Name mit etwas "Zauberei" wieder herangeheftet
+  wird. Die Speicherzeit ist lt. Dokumentation auf 15 s begrenzt, eigene
+  Tests konnten bei 9x keinerlei "Ged„chtnisschwund" nachweisen.
+  Es wird getunnelt von
+
+  * l”schen -> erstellen
+  * umbenennen -> erstellen
+  * l”schen -> umbenennen -> erstellen
+
+  Windows9x hat mehrere gleichzeitig arbeitende Speicher, die auch
+  kompliziertere "Datei-Man”ver" und auch Verzeichnisse berwachen;
+  aus Aufwandsgrnden wird es in DOSLFN bei maximal einem Tunnel bleiben.
+
+c (CDROM-Untersttzung): Schaltet die CDROM-Untersttzung ein.
+  Damit ben”tigt DOSLFN erheblich mehr RAM fr den Code zur
+  CDROM-Initialisierung und -Zugriff sowie als Datenpuffer fr eine
+  .JLT-Datei und zwei Sektorenpuffer (je 2 KB).
+  Je nach Anwesenheit von MSCDEX beim Laden ist die Vorgabe Ein oder Aus.
+  Sie mssen diesen Schalter auf c+ setzen, wenn Sie DOSLFN _vor_ MSCDEX
+  laden und lange CD-Dateinamen haben wollen!
+
+i (InDOS-Flag-Benutzung): Zur Untersttzung von speicherresidenten Programmen
+  (TSRs), welche ihrerseits LFNs verwenden oder auch nur Dateien l”schen
+  [DOSLFN versucht, LFN-Verzeichniseintr„ge zu l”schen] oder anlegen
+  [DOSLFN versucht, per Tunneleffekt einen LFN hinzuzusetzen],
+  schaltet DOSLFN das InDOS-Flag w„hrend seiner "Arbeitszeit" ein,
+  um reentrante Aufrufe zu verhindern.
+  Leider steigt so der Wert von InDOS auf 2, wenn DOSLFN den OldInt21 ruft,
+  was problematisch sein k”nnte, aber ich wsste keinen besseren
+  (kugelsicheren) Weg, wie DOSLFN InDOS auf <>0 halten und DOS aufrufen soll.
+  Falls Probleme auftauchen, bitte diesen Schalter ausschalten.
+
+z Standardm„áig arbeitet DOSLFN mit der aktuellen Codeseite, um
+  die Umwandlung OEM<->Unicode durchzufhren; das gengt auch fr die
+  Verarbeitung der deutschen Umlaute. Man kann aber auch eine andere
+  Codeseite zur Konvertierung laden, so z.B. cp850uni.tbl fr die (bl”derweise)
+  blichere Codeseite 850, die einfach nur ein paar mehr akzentuierte
+  Buchstaben hat (und sich deshalb besser mit dem Windows-Zeichensatz deckt),
+  oder aber kyrillische Tabellen.
+  Problem unter DOS: Fr die Anzeige der langen Dateinamen wird die momentan
+  geladene Codeseite herangezogen, d.h. Umlaute, die in kyrillisch nicht
+  enthalten sind, werden als '_' ausgegeben; rein kyrillische Namen unter
+  437 sehen so aus: '_____ ____ ___.___'
+  Problem unter Windows9x: Windows hat auf Anwender-Ebene praktisch kein
+  Unicode, und auch der Explorer zeigt nur Zeichensalat an. SCANDISK
+  findet solche LFN-Eintr„ge unpassend und will sie l”schen.
+  Problem unter WindowsNT: Hier st”rt nur SCANDISK(?)
+  Deshalb: Codeseite konstant lassen und in Deckung mit Windows bringen!
+  DOSLFN hat seit 01/03 volle DBCS-Untersttzung (chinesisch, japanisch u.a.).
+  Neunzehn šbersetzungs-Tabellen sind DOSLFN beigefgt.
+  Beim Wechsel der Codeseite l„dt DOSLFN "im Hintergrund"
+  die richtige Tabelle nach.
+
+l Sprache setzen: sollte nicht weiter erkl„rungsbedrftig sein...
+  Ist DOSLFN resident, merkt es sich die Einstellung bis zum Herauswurf.
+
+m Heap-Gr”áe setzen; dieser wird fr FindFirst/FindNext, die CD-Link-Tabelle
+  und sp„ter fr Sektor-Puffer ben”tigt.
+
+TZ Zeitzonen-Variable: Unter UNIX und NT gang und g„be, aber unter DOS und 95
+  scheint sie niemand zu kennen, obwohl viele (C-)Programme diese ebenfalls
+  implizit brauchen! Der Aufbau ist schlicht, dass nach 3 x-beliebigen
+  Buchstaben, die den Namen der Zeitzone angeben, eine vorzeichenbehaftete
+  Gleitkommazahl folgt, die die Verschiebung in Stunden zur UTC (oder GMT?)
+  angibt. Danach k”nnen drei weitere Buchstaben zur Festlegung der Sommerzeit-
+  Regel folgen. Da diese sowieso sich st„ndig „ndert und in der Standard-
+  Implementierung mit regelm„áiger Bosheit immer wieder nur fr Amerika
+  gemacht wird (kotz!), ist von dieser Angabe abzuraten, sodass im Sommer
+  "TZ=MET-2" und im Winter "TZ=MET-1" (in Mitteleuropa) angegeben werden
+  sollte.
+  [Genau genommen arbeitet die Angabe yyy=DST (daylight savings time
+  =Sommerzeit) schlieálich mit der Angabe xxx zusammen, um festzustellen,
+  ob gerade Sommerzeit ist oder nicht. Ansonsten ist xxx belanglos.
+  Nichtsdestotrotz bleibt uneindeutig, ob 2.30 Uhr in der bewussten Herbstnacht
+  in Sommerzeit oder Winterzeit gemeint ist, sodass man diese Angabe eigentlich
+  in einem solchen Fall immer dazuschreiben msste, etwa 2.30 Uhr MESZ!
+  Auf der Festplatte jedenfalls steht diese Angabe nicht; auch die Zeitzone
+  des Ortes des Speicherns der Datei fehlt.] DOSLFN verwendet TZ (noch) nicht.
+
+
+³Funktioniert nicht oder noch nicht:
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+* Uhrzeitangaben in Windows-NT-Zeit (100-ns-Schritte seit 1.1.1601),
+  die FAT-Dateizeiten werden jedoch in eine stetig wachsende Zahl konvertiert.
+  Praktisch jedes Programm verwendet diese NT-Zeit nicht, und l„sst sie
+  sp„ter in die DOS-Zeit umrechnen.
+  Fhrt zu sichtbarem Fehler, wenn NTFSDOS nachgeladen wird.
+* Funktion auf geJOINten Laufwerken (geSUBSTet funktioniert seit 12/02)
+* Funktion auf ASSIGNeten Laufwerken (ungetestet)
+* Unter Windows 3.11 mit eingeschaltetem 32-Bit-Dateizugriff arbeitet
+  DOSLFN auf Festplatte im Rckfall-Modus (ohne LFN), weil Windows (VCACHE.386)
+  den direkten Zugriff per Int25/26 sowie Int21/AH=32 verweigert.
+  Schalten Sie den 32-Bit-Dateizugriff aus.
+  (Der 32-Bit-Laufwerkszugriff kann eingeschaltet bleiben.)
+Noch schlimmer:
+* Erweitertes L”schen mit Platzhalterzeichen auf Nicht-FAT-Laufwerken
+* Umbenennen mit (eigentlich) gleichem kurzen Dateinamen 
+  -> da entsteht leider ein anderer kurzer Name
+
+Untersttzt die Int21/AH=71-Schnittstelle gem„á Ralf-Brown-Liste, auáer
+folgende Punkte:
+* Funktionen mit SUBST, AL=AAh		("SUBST-Abfrage" ist OK)
+* Datei-Erstellung vom Server, AL=A9h
+* Handle-Information holen, AL=A6h
+* Laufwerk rcksetzen, AL=0Dh
+
+Unl”sbares(?) Kompatibilit„tsproblem:
+Bei Int21/AX=7141h (lfn_unlink) mit Platzhalterzeichen kann das L”schen
+auch teilweise versagen.
+In jedem Fall werden alle l”schbaren Dateien gel”scht.
+Win95 (1. Ausgabe) meldet Fehler, wenn ALLE Dateien nicht l”schbar waren
+Win98 (1. Ausgabe) meldet Fehler, wenn EINE Datei nicht l”schbar war.
+
+
+³Programme MK_TABLE, MKLINK und LOWDMA
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+MK_TABLE konvertiert eine Unicode-Tabelle in ASCII-Form, wie man sie
+bei www.unicode.org herunterladen kann, in die Volkov-Commander-Form um.
+
+MKLINK (Name kann sich in Zukunft „ndern) generiert eine sog.
+"Joliet-Verzeichnis-Verbindungs-Tabelle" (Joliet Directory Link Table)
+fr jede gefundene Joliet-CD.
+Dazu durchsucht es s„mtliche Laufwerke, und erstellt diese Tabelle nach
+einem mittelm„áig komplexen, rekursiven Verfahren, ber das ich bei der
+Entwicklung lange gegrbelt habe. Als Dateinamen w„hlt es die Datentr„ger-
+Bezeichnung (Volume Label) mit der Endung .JLT.
+So kann man seine CD-Sammlung nacheinander einlesen und Tabellen generieren
+lassen.
+Die so gewonnenen kleinen .JLT-Dateien werden bei Bedarf von
+DOSLFN eingelesen, um auch bei nicht mit WinOnCD erstellten Medien
+lange Dateinamen zu nutzen.
+
+Auf der Kommandozeile kann man die Laufwerkssuche einschr„nken (besonders
+ntzlich bei CD-Wechsellaufwerken), und es gibt folgende Schalter:
+ /b	* "Stapelbetrieb" zum interaktiven Einlesen einer ganzen CD-Sammlung
+ /f	* CD auch dann einlesen, wenn Zieldatei bereits existiert
+	* CD auch dann einlesen, wenn sie eine CeQuadrat-WinOnCD-Tabelle hat
+ /v	* Einlese-Operation mehrzeilig (als Tabelle) anzeigen (empfehlenswert)
+ /v-	* Einlese-Operation nicht anzeigen
+ /c	* Vergleich der Reihenfolge im ISO- und Joliet-Baum
+ /h	* Hilfe (in englisch) anzeigen
+Die Angabe von zu durchsuchenden Laufwerken erfolgt durch einzelnstehende
+Buchstaben.
+
+LOWDMA: Siehe LOWDMA.TXT
+

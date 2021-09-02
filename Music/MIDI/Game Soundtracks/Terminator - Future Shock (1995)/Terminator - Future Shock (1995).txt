@@ -1,0 +1,9 @@
+Game: The Terminator: Future Shock
+Year: 1995
+Composed by: Andy Warr
+MIDI versions: GM, FM
+Platform: DOS
+
+Additional info: This is a CD version rip. There two types of files, HMI and XMI. XMI are kind of leftovers from diskette version, which contain GM and FM version. CD version is GM only and contains more tracks.
+
+https://www.karlsitretro.com/game_midi

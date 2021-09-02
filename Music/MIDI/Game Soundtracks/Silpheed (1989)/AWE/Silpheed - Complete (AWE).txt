@@ -1,0 +1,64 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ================================================
+                               SILPHEED                           
+
+
+                            THE SOUNDTRACK
+                               Game Arts
+           ================================================
+                 Copyright (c)1988 Sierra On-Line, Inc.  
+           ================================================
+
+                  SOUND BLASTER AWE32/64/LIVE! VERSION
+
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format 
+- Sound Blaster AWE32, AWE64/GOLD, Sound Blaster Live! (Emu)
+
+
+This Standard MIDI File was recorded directly from Sierra's "Silpheed"
+action/arcade game using Sierra's MT-32 driver.  It has been converted
+and arranged for playback on Sound Blaster Wavetable (Emu) devices and
+designed for use with the default (ROM) GM soundfont.
+
+Recorded/converted/edited/compiled/arranged for Sound Blaster wavetable
+by Tom Lewandowski.  Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+       =================================================================
+                     TRACK SHEET  (Sound Blaster Version)
+
+                               S I L P H E E D
+
+                      Not all selections are in the order
+                       in which they appear in the game.
+       =================================================================
+
+   SONG TITLE                                      START MEASURE/TIME *
+   -------------------------------------------------------------------------
+   1. Introduction/Opening Theme                          2  00:00:02
+   2. Fighting In Normal Space                           71  00:02:20
+   3. Mini Boss Battle                                  138  00:04:34
+   4. Attacking The Enemy Base                          183  00:06:04
+   5. Cutscene 1: Planet Flyby                          239  00:07:56
+   6. The Asteroid Belt                                 281  00:09:20
+   7. Battle Over The Moon                              333  00:11:04
+   8. Gloire: The Big Boss                              432  00:14:22
+   9. Cutscene 2: Space Dock                            529  00:17:36
+  10. Closing Theme                                     555  00:18:28
+  --------------------------------------------------------------------------
+                                                TOTAL TIME:  00:20:30
+
+
+      * Note:  Start times/measures are approximate.
+

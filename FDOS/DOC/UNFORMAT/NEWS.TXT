@@ -1,0 +1,81 @@
+News:
+
+
+Version History:
+
+Version 0.1     First version, unformats quick-formatted DOS 6.22 hard
+		drives.  Program does not unformat floppy drives.
+
+Version 0.2     Second version, unformats floppy disks; but, terminates
+		with an error as it completes unformatting the floppy
+		drive.  The floppy disk is completely and apparently
+		successfully unformatted.
+
+Version 0.3     Removed 2 unnecessary libraries under the "includes"
+		section.  Temporarily fixed termination error when
+		unformatting floppy disks.  I'll have to look for a
+		better solution, though.
+
+Version 0.4     Changed "cout" statements to "printf" statements for
+		C compatibility.  As an added bonus, removing the
+		"iostream.h" library for "cout" and using "stdio.h"
+		for "printf" reduced the executable size by 15K.
+		there still may be a problem with the "dos.h" library
+		and C code compatability.  I also tested this program
+		under Windows 95 in DOS mode with success.
+
+		Note:  Before running program in Windows 95's DOS mode
+		       type "lock" and when prompted, type "y" and [ENTER].
+
+Version 0.5     Added /J function to verify the mirror image with the boot
+		sector, the FAT tables, and the root directory.  Added a 
+		message to let the user know that the unformat was 
+		successful.  Removed the code that scans for the pointer
+		to the mirror's location from the unformat function
+		and made it a separate function to allow this function to be
+		re-used by other parts of the program. 
+		
+		Discovered that this program really does not work with
+		Windows 95.  Windows 95's format program does not write
+		a mirror image to the disk.  When I originally was testing
+		my program, the test drive was running under DOS 6.22.
+		When I was testing the program, I quick-formatted the hard
+		drive under DOS 6.22.  Then, I put the drive in a Windows 95
+		machine and tested it again without wiping the drive.  So,
+		the image was still there from DOS 6.22--oops!
+
+		Found and fixed a bug in the unformatting loop for the FAT
+		tables.  The counter was off by 1.
+
+Version 0.6     Permanently fixed the problem unformatting the floppy drives
+		as I mentioned in Version .3 and removed the temporary
+		patch code.
+
+		Added the /L function to list files and subdirectories in
+		the root directory that were recovered.  (A quick format
+		only removes root directory information, it does not affect
+		the subdirectories themselves.)
+
+		Changed the variable names for the 2 total number of sectors
+		variables.
+
+		Fixed the bug that prevented the unformatting of FAT12
+		formatted hard disks.
+
+		Found and fixed a bug that prevented the program from
+		unformatting a drive with more than approx. 32767 sectors.
+
+Version 0.7     Major modifications to the code:  Removed code that used
+                interrupt 0x21 and replaced it with the code from the 
+                format command that determines the drive location and
+                uses interrupt 0x13 for drive access.  In consequence, the
+                program now works with FreeDOS.
+
+Version 0.8     Now supports up to 8 hard disks.
+
+                Fixed a bug that prevented the program from accessing
+                sectors above sector 1677216.
+
+                Added the /PARTN function to restore partition tables
+                saved with the "MIRROR /PARTN" command for FreeDOS.
+

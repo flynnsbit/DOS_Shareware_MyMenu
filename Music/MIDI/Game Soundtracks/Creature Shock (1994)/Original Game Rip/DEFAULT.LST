@@ -1,0 +1,155 @@
+1 pianob.pat
+2 use 1
+3 use 1
+4 use 1
+5 use 1
+6 use 1
+7 use 1
+8 use 1
+9 glock.pat
+10 use 9
+11 use 9
+12 use 9
+13 marimba.pat
+14 use 13
+15 use 13
+16 percorg.pat
+17 use 16
+18 use 16
+19 use 16
+20 use 16
+21 use 16
+22 use 16
+23 use 16
+24 use 16
+25 acguitar.pat
+26 use 25
+27 use 25
+28 use 25
+29 use 25
+30 odguitar.pat
+31 use 30
+32 use 30
+33 acbass.pat
+34 use 33
+35 use 33
+36 use 33
+37 use 33
+38 synbass2.pat
+39 use 38
+40 use 38
+41 scstr2.pat
+42 use 41
+43 use 41
+44 use 41
+45 use 41
+46 use 41
+47 harp.pat
+48 timpani.pat
+49 use 41
+50 use 41
+51 use 25
+52 use 41
+53 choir.pat
+54 use 53
+55 use 53
+56 use 53
+57 use 53
+58 use 53
+59 use 53
+60 use 53
+61 use 53
+62 use 53
+63 sawwave.pat
+64 use 63
+65 use 63
+66 use 63
+67 use 63
+68 use 63
+69 use 63
+70 use 63
+71 use 63
+72 use 63
+73 use 63
+74 use 63
+75 use 63
+76 use 63
+77 use 63
+78 use 63
+79 use 63
+80 use 63
+81 use 63
+82 use 63
+83 use 63
+84 use 63
+85 use 16
+86 use 63
+87 use 63
+88 use 63
+89 fantasia.pat
+90 use 89
+91 use 89
+92 use 89
+93 use 89
+94 use 89
+95 use 89
+96 use 89
+97 use 89
+98 use 89
+99 use 89
+100 use 89
+101 use	89
+102 use	89
+103 use	89
+104 use	89
+105 use	89
+106 use	89
+107 use	89
+108 use	89
+109 use	89
+110 use	89
+111 use	89
+112 use	89
+162 kick.pat
+163 use 162
+164 use 162
+165 rimshot.pat
+166 snare.pat
+167 use 166
+168 use 166
+169 use 166
+170 clhat.pat
+171 hitom.pat
+172 use 170
+173 use 171
+174 ophat.pat
+175 use 171
+176 use 171
+177 crash.pat
+179 use 177
+180 use 177
+181 use 177
+182 tambs.pat
+183 use 177
+185 use 177
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

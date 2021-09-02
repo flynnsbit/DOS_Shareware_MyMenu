@@ -1,0 +1,22 @@
+This is a new version of the omega modplayer 
+written by Cygnus X-1 modifications made by 
+Markus Hein hein@cs.tu-berlin.de Changes from 
+v0.6: + modified source for use with Borland 
+C++ + optional lineary sample interpolation 
+added (sounds very good on older mods with 
+bad samples) Known bugs: - sometimes program 
+crashes if you press a mouse button to move a 
+slider, it seems that the mouse interrupt 
+interfers with the timer interrupt and/or 
+graphic output - maximum sample interpolation 
+(/o or /o4) works only for smaller mods 
+(<200k) if you want to hear greater ones try 
+/o1 /o3, I think it's a sample overrun, e.g. 
+if samplesize*(oversamples+1) exceeds 32k or 
+65k the modplayer starts to play wrong 
+samples: instead of playing correct period 
+with a correct sample it plays the correct 
+period with a different sample. though 
+various debugging sessions I couldn't fix the 
+problem, maybe the original author of omega 
+mod is able to fix it Have phun, Markus

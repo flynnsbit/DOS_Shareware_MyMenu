@@ -1,0 +1,46 @@
+NAME
+    sleep -- suspend execution for a specified time
+
+SYNOPSIS
+    sleep [--help] [--version] seconds
+
+DESCRIPTION
+    The sleep command continues running until the specified number of
+    seconds has elapsed.  sleep can delay execution of a program or
+    produce periodic execution in conjunction with shell commands.
+
+    The seconds argument can be either a number of seconds or a more
+    general time description of the form nhnmns, with nh, nm, and s being
+    optional. The maximum sleep duration is 2,147,483,647 seconds, which
+    works out to 596,523 hours, 14 minutes and 7 seconds. That, I think,
+    should be just about long enough for anybody. ;-)
+
+OPTIONS
+    sleep accepts the following options:
+
+    --help
+    /? *        displays help and exits successfully. When this option is
+                used, sleep does not suspend execution. This option cannot
+                be used with other options.  * Note: sleep checks for the
+                switchar defined in DOS. If you have set a different
+                switchar in DOS, sleep will honour your preferred setting.
+
+    --version
+    /v *        displays version and exits successfully. When this option
+                is used, sleep does not suspend execution. This option
+                cannot be used with other options.  * Note: sleep checks
+                for the switchar defined in DOS. If you have set a
+                different switchar in DOS, sleep will honour your preferred
+                setting.
+
+EXAMPLES
+    sleep 360           sleeps for 360 seconds
+    sleep 5m            sleeps for 5 minutes
+    sleep 1h15m30s      sleeps for 1 hour, 5 minutes, 30 seconds
+
+DIAGNOSTICS
+    Possible exit status values are:
+
+    0    Successful completion.
+
+    2    Failure because seconds value was not specified or is invalid.

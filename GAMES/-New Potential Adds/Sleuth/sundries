@@ -1,0 +1,45 @@
+ACCUSE,7
+QUIT,6
+HELP,5
+ASSEMBLE,4
+GATHER,4
+PICK UP,3
+TAKE,3
+GET,3
+ALIBI,2
+QUESTION,2
+"Q ",2
+LOOK AT,1
+SEARCH,1
+EXAMINE,1
+"EX ",1
+DROP,8
+RESTART,9
+KNOCK,12
+GUEST,13
+PEOPLE,13
+\,0
+FLOOR,1
+GROUND,1
+CEILING,2
+ROOF,2
+WALL,3
+SHEL,4
+ENTRANCE,5
+DOOR,5
+TABLE,6
+CHAIR,7
+ROOM,8
+HOUSE,9
+\,0
+floor.,You can't take the floor no matter how hard you try!
+ceiling.,You can't even reach the ceiling.
+walls.,The walls are rather firmly embedded in the foundation of the house.
+shelves.,The shelves are nailed to the wall.
+door.,The door is quite sturdy and cannot be moved.
+table.,The table is quite heavy and cannot be moved.
+All of the chairs are quite innocuous.,All of the chairs are nailed to the floor!
+You can't search the entire room.  Try examining the objects in the room.,Don't be ridiculous!
+You can't search the entire house all at once.  Try one room at a time!,Don't be ridiculous!
+\,0
+

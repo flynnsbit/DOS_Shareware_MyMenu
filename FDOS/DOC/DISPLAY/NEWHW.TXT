@@ -1,0 +1,280 @@
+Expanding the hardware capabilities of DISPLAY/PRINTER ver 2.0
+======================================================
+
+FreeDOS DISPLAY.SYS and PRINTER.SYS have some routines which are dependant on
+the hardware type that they work on. This hardware is selected in the first
+parameter of the commandline.
+For example:
+
+  DEVICE=C:\FDOS\DISPLAY.SYS  CON=(EGA,437,1)
+
+specifies a hardware type "EGA".
+
+In addition, DISPLAY/PRINTER give the hardware-specific routine to have an
+additional numeric parameter n introduced by the user:
+
+  DEVICE=C:\FDOS\DISPLAY.SYS  CON=(EGA,437,(1,n))
+
+
+At the last edition of this document (20060805) there are six hardware
+routines into DISPLAY (none for PRINTER). All of them are related to 
+CGA/EGA/VGA hardware routines. For this hardware, a codepage is divided into one
+or more sub-fonts. The additional parameter is used to determine the minimum
+number of subfonts that will be used.
+
+The CGA routines can be considered as a replacement for GRAFTABL.
+
+They are
+
+  CGA
+
+  EGA        (automatic detection of number of subfonts, depending whether
+              you use EGA or VGA)
+
+  EGA 8      (these two are equivalent to DISPLAY.SYS CON=(EGA,437,(1,1)) )
+  LCD
+
+  EGA 14     (this is equivalent to  DISPLAY.SYS CON=(EGA,437,(1,2)) )
+
+  VGA        (this is equivalent to  DISPLAY.SYS CON=(EGA,437,(1,3)) )
+
+
+The routines for the EGA/VGA come from the original implementation of FreeDOS
+DISPLAY, by Ilya V. Vasilyev.
+
+The notes below explain how to donate code to DISPLAY.SYS and PRINTER.SYS if
+you want to write new routines for a new hardware type.
+
+
+
+How can I contribute a new hardware type?
+=========================================
+
+To write a routine for a new hardware type, you would need to write new NASM
+code (or NASM-callable code) doing basically these three things:
+
+  - Initialisation routine
+  - Codepage activation routine (for hardware and software codepages)
+  - Codepage read routine (for codepages of the type you will be using)
+
+(Notice that the codepages in a CPI file come with a hardware-specific mark,
+and this is the reason why an specific codepage read routine is required)
+  
+Licensewise, DISPLAY/PRINTER is GNU-LGPL. Note however that the CGA/EGA/VGA
+routines are written under the GNU-GPL, so you will not be able to  bind your
+code and EGA/VGA selection routines in the same binary, if your license is not
+compatible with GNU-GPL version 2.0. Please read the GNU-GPL 2.0 documentation
+at the Free Software Foundation for further details.
+
+This file contains the details of how to write those three routines. Note that
+part of your code will be resident in memory, whereas other part will not.  In
+addition, you will have to fill in a new entry at the Hardware Table on the
+file
+
+  HWINITD.ASM   - For DISPLAY
+  HWINITP.ASM   - For PRINTER
+
+of the following type:
+
+    HwName     DB  "xxxxxxxx"
+    InitP      DW
+    InitParam  DW
+
+HwName:     0-padded hardware name (such as "EGA") as it should appear in the
+            DISPLAY.SYS or PRINTER.SYS command line
+InitP:      Near pointer to the hardware device initialisation procedure
+InitParam:  A param to be passed to the previous procedure, so that the same
+            procedure can be used for different table entries
+
+The code must be written in a separate directory. Please do make use of the -i
+option in NASM to access this code.
+
+
+
+What are the differences between DISPLAY and PRINTER?
+=====================================================
+
+You may be wondering wether your code is to be written for DISPLAY or PRINTER.
+In principle, DISPLAY should contain hardware routines for devices related to
+output devices similar to screens, whereas PRINTER is to be used for PRINTER.
+
+However, here they are the differences in practice:
+- DISPLAY uses the font driver signature 1 in CPI files
+  PRINTER uses the font driver signature 2 in CPI files
+- DISPLAY selection routine calls KEYB to request the change of codepage
+  PRINTER selection routine calls PRINT to freeze printing
+- Only DISPLAY hooks int 2Fh, thus only DISPLAY can check wether it
+  was installed
+
+In versions of DISPLAY/PRINTER previous to 1.0, the last feature determines that
+PRINTER is NOT YET callable (so in the latter case you'll have to wait to
+PRINTER.SYS 1.0).
+
+
+What procedures can I call?
+===========================
+
+The DISPLIB.ASM contains a series of various NON-RESIDENT procedures that you
+can make use of.
+
+These routines are documented in the file itself, so I recommend reading that
+files to see the support functions that you have available.
+
+In particular, there is one important procedure: AllocateBuffers, that must be
+mandatorily called at the Init procedure (see details below).
+
+
+The Initialisation routine
+==========================
+
+After all of the commandline has been parsed, the hardware specific
+initialisation routine is called. The interface to this routine should be:
+
+IN:  AX:    Initialisation parameter on the Hardware Table
+     BX:    User-specified parameter (n) in the commandline
+            (0 if no parameter was specified)
+     Segment registers set to the single segment
+OUT: Carry: Clear if OK, set on Error
+     Free ussage of registers
+     
+The following tasks are to be performed by the Initialisation Routine:
+- Test the hardware (optional)
+- Stablish the appropriate run-time variables (see below)
+- Set the buffer size, and allocate the buffers by calling AllocateBuffers
+
+There are some variables that must be mandatorily updated, whereas other can be
+optionally read or modified. The following table summarizes the memory ussage.
+
+
+Mandatory: YES means that must be mandatorily filled in the Initialisation
+           routine
+Runtime:   YES means that it can be read/modified at runtime without problems
+
+-----------------------------------------------------------------------------
+VarName          Mandatory  Runtime  Type  Meaning
+-----------------------------------------------------------------------------
+wBufferSize       YES       NO       DW    Size of the buffer to contain the
+                                           codepage information
+pRefreshHWcp      YES       YES            Hardware codepage select procedure
+pRefreshSWcp      YES       YES      DW    Software codepage select procedure
+pReadFont         YES       YES      DW    Codepage reading routine
+psCPIHardwareType YES       YES      DW    (Near pointer to a string of 8
+                                            characters)
+                                           Name (#32 padded) of the hardware
+                                           name that will appear on the CPI
+                                           file
+wUserParam        NO        YES      DW    Parameter by user on commandline
+wNumHardCPs       NO        NO       DW    Number of hardware codepages
+                                           specified by user
+wCPList           NO        NO       DW    List of codepages
+                                           (HW codepages first, SW codepages)
+-----------------------------------------------------------------------------
+NOTES
+-----------------------------------------------------------------------------
+- wBufferSize must be filled BEFORE calling AllocateBuffers
+- For the interfaces and description of the three procedures, see below
+- The variables pReadFont and psCPIHardwareType should not be modified within
+  the codepage reading routine (results can be unexpected if you do so)
+- wCPList has the wNumHardCPs hardware codepages first. These can be read or
+  altered (but only at Init)
+-----------------------------------------------------------------------------
+
+
+What are the interfaces to the procedures?
+==========================================
+
+In this section it is described the interfaces of each of the three
+procedures, and the registers they may use. Please note that there isn't 
+much stack space so you shouldn't abuse the stack.
+
+RefreshHWcp
+-----------
+Refreshes certain hardware (hardcoded) codepage, if possible
+  IN:  CL: the number of hardware codepage to be set, starting on 0
+  OUT: CFlag set on error, clear on success
+  REGISTERS: AX,CX,DS,ES,DI can be freely used, the others must be
+             preserved
+
+RefreshSWcp
+-----------
+Sets a user defined codepage from user loaded font info
+  IN:  - (The buffer to be selected resides in the real memory location 
+         CS:SelectBuffer)
+  OUT: CFlag set on error, clear on success
+  REGISTERS: AX,CX,DS,ES,DI can be freely used, the others must be
+             preserved
+
+ReadFont
+--------
+Reads codepage information from the CP information on a CPI file into a prepare
+buffer.
+  IN:   DS:SI -> Position in the CPI file where the font header starts
+        DX       Number of the prepare buffer where to store the information
+  OUT: CFlag set on error, clear on success
+  REGISTERS: All registers can be freely used, except for DS, ES
+        
+
+The FONT HEADER has the following structure:
+
+FONT HEADER
+-----------
+ 0  DW   Signature (Should be: 1 (FONT))
+ 2  DW   Number of subfonts (for EGA/VGA-style buffers)
+ 4  DW   Size of the whole subfonts block (EGA/VGA-stytle buffers with 3
+         subfonts have usually 9746 bytes)
+
+In order to store the buffer, PREPARE.ASM provides the following routine:
+
+MoveDataToBuffer
+----------------
+Moves bytes from certain location to certain offset into one of the prepare
+buffers.
+ IN:      DS:SI-> Data origin
+          CX      Data size
+          DL      Target buffer
+          DI      Offset on buffer
+ OUT:     CF      clear on success, set on error
+          SI      updated to byte after data
+          DL      preserved
+
+
+when are these routines to be inserted?
+=======================================
+
+When you have them ready, please mail them to me to (aitor.sm -AT- gmail.com),
+and they will be launched with the next version of DISPLAY.SYS and PRINTER.SYS
+starting on version 0.14, which at the moment in which these notes are
+written, is not yet ready.
+
+
+are you going to write more of these routines?
+==============================================
+
+Personally I am fully satisfied with having support for EGA/VGA displays, and
+am not planning to write any more hardware support, although you can easily
+write your own routines, that can be easily attached to the current
+DISPLAY/PRINTER scheme.
+
+However, as there's no PRINTER.SYS hardware management routine, I would
+consider writing one for PRINTER.SYS *provided that*:
+(a) You plan to use it, and you can show you really need it
+(b) You have CPI fonts to use with it, which the FreeDOS project can
+    benefit from
+(c) Someone (maybe me, maybe you) has enough technical information about
+    the routines, because I have very little information about it...
+
+
+===================
+  Aitor SANTAMARIA MERINO
+  The FreeDOS Project, 7th of AUGUST, 2003
+
+Version 1.1: 15th of September, 2003
+  (thanks to Martin Stromberg)
+
+version 1.2: 11th of October, 2003
+  (thanks to Martin Stromberg)
+
+version 2.0: 7th of August, 2006
+  (includes true separation of DISPLAY from EGA/VGA routines)
+
+==============

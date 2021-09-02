@@ -1,0 +1,16 @@
+Begin3
+Title:          choice
+Version:        4.4
+Entered-date:   2003-07-15
+Description:    Present a choice to the user and wait for a key (uses kitten instead of cats)
+Keywords:       freedos
+Author:         Jim Hall <jhall@freedos.org>
+Maintained-by:  Tom Ehlert <te@drivesnapshot.de>
+Primary-site:         http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/choice.html
+Alternate-site: http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/choice/
+Original-site:  http://www.isd.net/jhall1/freedos/utils.html
+Platforms:      DOS **requires KITTEN
+Copying-policy: GNU General Public License, Version 2
+Wiki-site:      http://wiki.freedos.org/wiki/index.php/Choice
+Defunct-Primary-Site: http://www.freedos.org/jhall/utils/
+End

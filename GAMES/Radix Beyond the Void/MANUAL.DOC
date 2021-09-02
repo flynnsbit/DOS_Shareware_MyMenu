@@ -1,0 +1,748 @@
+=============================================================================
+                   Radix: Beyond The Void -- On-Disk Manual
+                         Shareware Version 2.0 REMIX
+
+                   (c) Copyright 1995 Epic MegaGames, Inc.
+=============================================================================
+                The Incident -- The Reason Why You're Here!
+=============================================================================
+
+In the 22nd century, after centuries of global strife and tyranny, the
+people of Earth united to form a sovereign world government. The United
+Earth Space Alliance (UESA) launched a dynamic plan to expand the reaches
+of the human race beyond that of our solar system. In the year 2147, this
+effort resulted in the launching of the first of two colony ships. These
+massive vessels were destined to colonize a huge asteroid, designated
+Theta-2, on the outskirts of our solar system. After five months of space
+travel, the first ship safely arrived at Theta-2 and initiated the colony.
+Soon after, the second of the two ships departed from earth with 10,000
+colonists to bring the Theta-2 base into full operation. Once the colony
+was fully established, mankind would finally have the opportunity to leave
+the confines of the solar system.
+
+It happened on October 24, 2148; While the second vessel approached the
+colony, something unnatural occurred. A dark shape began to form out of
+nothing, blacking out the starscape and chewing away at the very fabric
+of reality. The commander of the colony vessel "Salvation" had barely
+managed to dispatch an emergency message to Earth confirming that there were
+multitudes of alien ships emerging from this "Void."  Just after the
+transmission, the largest of the alien ships tore the Salvation apart with
+an immensely powerful particle beam.
+
+The gigantic alien craft dragged both portions of the Salvation into a huge
+hangar bay, sealing the fates of the 10,000 human beings aboard.
+
+According to the information received from the destruct beacon
+(the "black box") there were 45 alien vessels in the vicinity of Theta-2.
+The largest ship, which captured the Salvation, moved to orbit the asteroid.
+The remaining ships started converting the Theta-2  base into a base of
+their own.
+
+Immediately after the incident, UESA went on level one alert status and
+began assembling a fleet to eliminate the alien force. UESA's ships reached
+the Theta-2 asteroid and began an intense battle with the alien fleet. UESA's
+3 battlecruisers, 10 frigates and 15 destroyers fought well, but their
+weaponry was no match against the massive alien dreadnought. The mission was
+a devastating failure. The Alliance realized that a large frontal assault
+was not the way to defeat the invaders. It was decided that a small, heavily
+armed, fast attack ship might be able to make it past the ships in orbit and
+reclaim the Theta-2 base.
+
+Back on Earth, scientists combined their knowledge and pooled their ideas,
+and concluded that the black space, dubbed "The Void," was some sort of
+inter-dimensional portal; a tear in the structure of our universe. Using
+the current knowledge of multi-dimensional physics, they were able to
+develop a device that would allow a small spacecraft, preferably a fighter
+of some sort, to enter The Void and possibly leap into a different universe.
+
+Three months after the invasion of Theta-2, the Radix class inter-dimensional
+starfighter was built.  Due to the enormous amount of resources required to
+build this powerful fighter, only one was built. Although the Radix class
+had just barely begun the experimental stage of it's development, there was
+no time left. The Radix-class fighter was loaded onto The Defiance, a
+battlecruiser, and Operation Vengeance commenced. The Defiance had to leave,
+and the Radix, the last desperate hope for humanity, was going with it.
+
+=============================================================================
+             Introduction -- What is Radix: Beyond The Void!        
+=============================================================================
+
+Radix: Beyond The Void is an intense 3D flying action game developed for the
+PC platform.  While playing Radix, you'll fly down the alien-infested tunnels 
+of the Theta-2 base, and even deep into the massive alien ship. You will
+also fly into The Void, where unknown terrors await you. It will take great
+persistence and skill to navigate the small assault fighter through the
+winding tunnels and corridors to successfully accomplish your mission.
+You will undoubtedly encounter heavy alien resistance.
+
+Radix: Beyond The Void has 3 large episodes; with each one consisting of 8
+regular missions and a 9th secret mission. The action is non-stop, with
+only short breaks for the mission briefings. In each mission, you will
+have a unique primary objective to accomplish. These objectives range from
+destroying key navigation systems to recon missions. Before each mission,
+you will receive an informative briefing instructing you about key areas of
+the upcoming mission that could give you difficulty. While in the mission 
+briefing, you can bring up a record which keeps track of a few useful player
+statistics.  After the briefing is over, the action begins.
+
+Within the game, you have complete control of the fighter, including lateral 
+and horizontal movement.  You are free to fly around inside the alien world
+in any direction you wish.  There are indicators on the status bar that
+provide you with important information.  This includes a threat indicator
+that will alert you if an enemy homing missile is locked onto your ship, an
+LPS system that acts as RADAR to detect enemy fighters, and as ammo and
+damage meters.  On top of the obvious "move" and "fire" keys, you can also
+use the "leveling" key to keep climbing or diving steadily for those tricky
+sloped tunnels and shafts, and you can also glance behind to help orient
+yourself with the aliens ships.  The Radix-class starfighter's neutron and
+plasma cannons can even fire at ships behind directly behind it.
+
+You will require the use of all 7 (4 in the shareware version) weapon
+systems, which you must to find during your missions. Hazards such as enemy
+ships, mindless zombie alien things, missile launchers, crushing floors and
+ceilings, steeply sloped tunnels, tractor beams, gravity wells, and more
+attempt to prevent your fighter from completing its goal. Your job is to
+destroy them, complete your primary objective and make it out alive. In
+Radix: Beyond the Void, you will fight for the glory of the United Earth
+Space Alliance and avenge the deaths of thousands of humans.
+
+
+Requirements
+------------
+
+  Minimum Requirements          Highly Recommended
+  --------------------          ------------------
+  486-33MHz computer            486-66MHz or faster CPU
+  4 MB of RAM                   8+ MB of RAM
+  VGA graphics                  local bus video
+  14,400 baud modem             14.4 or 28.8 modem for modem play
+       (for modem play)
+
+
+=============================================================================
+                              Getting Started
+=============================================================================
+
+****************************************************************************
+NOTE!: All descriptions marked with an asterik (*) are new to version 2.0 or
+are different from version 1.0, and are not described in the manaul included
+with the registered version of this game.
+****************************************************************************
+
+Before playing Radix: Beyond The Void, you must run the SETUP.EXE program
+to configure the game. To do so, change to the drive and directory where the
+game is installed and type SETUP.  When you're done, choose "Save & Exit."
+Then, type RADIX to start the game.
+
+Main Menu
+---------
+Upon running Radix, you will be taken to the main menu. The menu options
+available are described below
+
+NEW GAME: Starts a new game.
+
+LOAD GAME: Loads a previously saved game.
+
+OPTIONS: Lets you adjust the music volume, sound effects volume, and
+mouse/joystick sensitivity.
+
+NETWORK/MODEM: Brings up the network/modem play options.
+
+ORDERING INFO: Has detailed information on how to order Radix or other cool
+Epic games.
+
+DEMO: Plays a random demo.
+
+TOP TEN: Displays the top players and their skill ratings. You must complete
+an entire episode of Radix to appear on the Top Ten chart.
+
+QUIT: Exits the game.
+
+=============================================================================
+                            Starting a New Game
+=============================================================================
+
+Select Skill Level
+------------------
+After selecting "New Game," you must enter your name and choose a difficulty
+level. It is recommended that first time players play on the "I can't do
+this. I just can't do this," skill level, since the game can be difficult
+for beginners. However, the game designers feel that the hardest level,
+"Let's kick some xenomorphic butt" is the best way to experience Radix.
+
+Select Episode
+--------------
+Next, you must select which episode you would like to play. The three
+episodes in the full version of Radix: Beyond The Void are "Theta 2,"
+"Vengeance," and "The Void." It is highly recommended that beginners play
+"Theta-2" on an easy skill level.
+
+Mission Briefing
+----------------
+Before each mission, you'll enter a mission briefing. Certain areas of
+difficulty will be pointed out, as well as your primary and secondary
+objectives. There are several options to choose from here:
+
+PLAYER STATS: Brings up the stat screen, described below.
+
+SAVE/LOAD: Brings up the save or load screen respectively.
+
+QUIT: Quits the current game and returns you to the main menu.
+
+BEGIN: Begins the mission. The <<<, <<, ||, and >> symbols may be used to
+restart, back-up, pause or advance the mission briefing instructions
+respectively.
+
+The Stat Screen
+---------------
+If you select the "Show Stats" option in the briefing, your info folder
+pops up showing your statistics. The stats collected are:
+
+CURRENT ASSIGNMENT: Represented by "E" for episode number and "M" for
+mission number.
+
+SKILL LEVEL: Your overall skill rating, represented by a percentage. A high
+percentage equals high skill.
+
+SECONDARY OBJECTIVES COMPLETED: Records the number of secondary missions
+you have completed. A ratio is displayed, showing the number completed
+versus the number of secondary objectives possible.
+
+KILL RATIO: The number of enemies killed versus the total number of enemies
+in the game so far.
+
+TOTAL FLYING: Shows the amount of time you have spent flying.
+
+PAR TIME: The amount of time it has taken to complete each level that you
+have finished.
+
+PAR RESET ON: Displays the missions in which you beat the "par" time. For
+these missions shown, the par will be reset to whatever time you took to
+fly the mission.
+
+=============================================================================
+                                In The Game
+=============================================================================
+
+Game Controls
+-------------
+Most of the in-game controls can be reconfigured in the SETUP.EXE. The
+default controls and their functions are listed below. If you have changed
+the controls, you can press F1 during the game to view your current
+configuration.
+
+NOTE: We HIGHLY recommend using the mouse/keyboard combination for
+      controlling your ship.
+
+UP ARROW:       Pull up.
+
+DOWN ARRROW:    Pull down.
+
+LEFT ARROW:     Bank left.
+
+RIGHT ARROW:    Bank right.
+
+RIGHT SHIFT:    *Move Forward*
+
+M:              *Move Backwards*
+
+FORESLASH (/):  Afterburners!
+
+CONTROL:        Fire current weapon.
+
+SPACEBAR:       Plasma Bomb!
+
+ALT:            Strafe mode.
+
+A:              *Strafe up*
+
+Z:              *Strafe down*
+
+COMMA:          *Strafe left*
+
+PERIOD:         *Strafe right*
+
+RGT BRACKET (]):*Increases throttle*
+
+LFT BRACKET ([):*Decreases throttle*
+
+BACKSPACE:      *Switch Weapon*
+
+L:              *Toggles leveling on/off*
+
+ENTER:          Backview.
+
+
+*Use Recommended Mouse/Keyboard Controls:  This setting can be selected in
+the SETUP program; it swaps the 4-way strafe keys with the movement keys (so
+you can strafe with the arrow/cursor keys and contol the pitch/yaw with the
+mouse) and is ideal for playing Radix (especially in multiplayer modes).
+
+
+Other Controls (non-configurable)
+
+NUMBERS 1-7:    Each number corresponds to a weapon. Press one of these number
+                keys to select a weapon (which you must currently possess).
+                
+F1:             Help Screen (scroll up and down with arrows/number pad).
+
+F2:             Toggle your view between chase plane, cockpit, and full
+                screen first-person mode.
+
+F3:             Save game.
+
+F4:             Load game.
+
+F5:             Adjust detail level.
+
+F6:             Toggle auto-detail adjust.
+
+F7:             Quick save.
+
+F8:             Toggle auto leveling.
+
+F9:             Quick load.
+
+F10:            Gamma correction adjustment.
+
+F11:            Review mission objectives.
+
+PG/UP           Increase view size. *NEW* Configurable in SETUP.EXE
+
+PG/DOWN         Decrease view size. *NEW* Configurable in SETUP.EXE
+
+PAUSE           Pauses the game.
+
+TAB             Toggle automap (-/+ to zoom).
+
+ESC             Brings up in-game Menu (Chat mode in Multiplayer).
+
+
+The Statbar
+-----------
+If you are not in full-screen mode, a status bar will appear at the bottom
+of the screen. This bar displays important information including weapon
+inventory, ammunition levels, energy levels, mission time, and the
+mission kill ratio.
+
+Weapon Picture: A picture of the weapon currently selected is displayed here.
+
+Weapon Numbers: Each number displayed here represents a weapon. Red numbers
+indicate that you have the corresponding weapon system but do not currently
+have it selected. The yellow number indicates the current/selected weapon.
+Gray numbers indicate weapons that you have not yet acquired.
+
+Ammo Meters: These boxes show the amount of ammo for the four weapons which
+use ammunition. "SHELL" is for the EPC, "MISL" is for the Seeking Missiles,
+"TORP" is for the Phase Torpedoes and "NUKE" is for Nuclear Missiles. The
+other weapons use energy, so no ammo is shown.
+
+Mission Timer: This timer tells you how long you've spent on the current
+level.
+
+Kill Ratio: The first number indicates the number of enemies that you have
+destroyed. The second number is the total number of enemies in the current
+level.
+
+Status Bars: The three red and blue bars on the stat bar indicate the status
+of the ship's armor, shields, and energy.
+
+L.P.S: The Laser Probing System on the Radix fighter is similar to what was
+know as "RADAR" in the 21st century. The L.P.S. can give you an accurate
+account of where enemy fighters are in relation to your ship.
+
+Threat Indicator: The threat indicator tells you if a seeking missile has
+locked on to you. You know that a missile has a lock on you when this
+indicator is lit.
+
+*Speed Indicator: The speed indicator shows how fast you're moving compared
+to the minimum and maximum speeds. It is actually possible to go faster than
+what is indicated by using your afterburners with the maneuvering jets
+power-up active.  If you do this, the indicator bar will fill and turn a
+bright yellow, which means that you are really moving!!
+
+=============================================================================
+                      Energy, Weapons, and Power-ups
+=============================================================================
+
+Energy
+------
+There are two things which use energy on the Radix fighter - Energy weapons
+(see below) and Afterburners. Afterburners use energy to achieve a high speed
+increase. To maximize the use of the extra speed, while minimizing the amount
+of energy consumed, use your afterburners in spurts.
+
+The Weapons
+-----------
+There are two classes of weapons that the Radix ship can use. One class
+requires ammunition to function, and the other requires the use of the ships
+energy to function. Your energy always regenerates, so energy-weapons
+(neutron and plasma) should be used the most.
+
+1. Neutron Cannon: The Neutron Cannon is your basic energy cannon. It can be
+   powered up by running into a neutron weapon power-up. Neutron Cannons can
+   be powered up four times. The Neutron system is configured so that you are
+   able to fire backwards, by using the back view key.
+
+2. Explosive Projectile Cannon (EPC): Rapid fire cannons can cause heavy
+   damage if you can keep them trained on enemies long enough. 
+
+   *NEW* There are three different power levels of the Explosive
+         Projectile Cannons.  To access the more powerful versions, you
+         must collect more EPC powerups.  You can change between
+         types by continually pressing "2".  The three versions are:
+
+   Standard EPC's:  A dual cannon that is the weapon of choice for
+   clearing rooms full of mines or drones.
+
+   Enhanced EPC's: A Quad cannon that delivers a much bigger punch to
+   enemies, but will suck ammo twice as fast.
+
+   Advanced EPC's: Watch out.  NOTHING will stand in your way if you use
+   these Gatling-Gun like machines of death.  Rivals the Phase Torpedoes
+   as the most efficient killer that can be equipped on the Radix.  Ammo
+   will be sucked up like crazy, however...
+
+3. Plasma Spreader: This weapon creates powerful, weaving packets of plasma
+   energy, and is powered by the ship's energy core. The Plasma Spreader can
+   be especially deadly if powered up to the fourth level. The Plasma Spreader
+   is especially effective in narrow corridors and, like the Neutron Cannon,
+   it can be fired backwards.
+
+4. Seeking Missile System: This launcher fires two enemy-seeking missiles.
+   Although not nearly as powerful as the seeking phase-torpedoes, these
+   missiles lock on faster than the torpedoes and are found more often.
+
+5. Nukes: This weapon fires a powerful nuclear missile that detonates in
+   a huge explosion. The explosion affects all enemies in the immediate area,
+   so a direct hit isn't always necessary to kill an enemy.
+
+6. Phase Torpedoes: Phase torpedoes fire in a cluster of three torpedoes
+   which travel close together. These torpedoes act as one projectile until
+   they each arm themselves and split out into three powerful enemy-seeking
+   torps. Overall, the phase torpedoes are the most effective weapon in the
+   game.
+
+7. Gravity Wave Device: The Gravity Wave is an incredibly powerful energy
+   weapon that inflicts massive destruction on anything in its path. Use it
+   sparingly, as it will drain your energy dry.
+
+   *NEW* The Gravity wave has 5 charges total.  Once fired 5 times (still
+   limited by available energy), you must find another power-up for this
+   weapon to use it again.
+
+Weapon Power-ups and Ammo
+-------------------------
+Weapon power-ups may have different functions, depending on which kind of
+weapon the icon represents. In all cases, collecting a power-up for a weapon
+which you do not possess gives you that weapon-capability. Collecting
+weapons which use ammunition will usually provide you with more ammo as well.
+The Neutron Cannon, Plasma Spreader and EPC's can be "powered-up," by
+collecting several weapon power-ups after the first. The Plasma Spreader
+and Neutron Cannons can be powered-up four levels, resulting in a faster
+firing rate for the weapon and making it much more effective for destroying
+enemies.  The EPC's can be powered up twice. Note that collecting power-ups
+for energy weapons always restores your energy level to its maximum.
+
+*NEW*  There were some changes made to the weapons and ammo in 2.0.
+
+-The "BOOM PACK" now gives the player 210 torpedoes and 25 nukes.
+-The first "nuke-pack" will now give the player only 4 nukes.  The larger
+ one will give the player 10 nukes.  Also, the player can now only have 50
+ nukes stored on the Radix ship at once.  The nukes now have a much
+ improved seeking ability, but you must acquire a target lock for the
+ nuke to "seek".  The Nuclear Missile power-up will give the player 2 nukes.
+-The first "torp-pack" will now give the player 15 torps.  The larger one
+ will give the player 75 torps. Also, the player can now only have 1500
+ torpedoes stored on the Radix ship at once.  The Phase Torpedo power-up
+ will give the player 15 torps.
+-The Gravity Wave has been made more powerful and should be more usable
+ in smaller areas.
+
+Other Important Power-ups
+-------------------------
+All power-ups, including weapons and ammo, have green identifier arrows which
+point inward toward the item. If an object in Radix does not have these
+arrows, shoot it! Some power-ups only last for a limited period of time;
+These items are in effect for as long as the corresponding indicator-icon
+appears on the right side of your screen.
+
+Full Armor (gray) - Restores your armor to its maximum amount
+
+Full Shields (blue) - Restores your shields to their maximum amount
+
+Full Energy (green) - Restores your energy to its maximum amount
+
+    *NEW* In Multiplayer Dogfight or Capture the Flag games, each of the
+    above power-ups increases the respective level by 30% (instead of 100%).
+
+Rapid Shield Regeneration (blue): Increases the rate at which your shields
+regenerate for a limited duration.
+
+Rapid Energy Regeneration (green): Increases the rate at which your energy
+regenerates for a limited duration.
+
+Super Shields (red): Enclose the fighter in a protective shield that makes
+the ship completely invulnerable to enemy fire and collisions for a limited
+time. 
+
+Maneuvering Jets: Increase the rate at which your ship moves up, down, left
+and right - very useful in combat. Limited duration.
+
+Plasma Bomb: A plasma bomb flashes in a powerful pulse of plasma energy that
+can incinerate visible enemies instantaneously. Each power-up icon gives you
+one plasma bomb. The icon at the top right of the screen shows how many
+plasma bombs you have left.
+
+A.L.D.S: The Automated Laser Defense System is a complex system that hovers
+around the Radix craft. When it senses an enemy nearby, it shoots a stream
+of laser bolts, attempting to destroy the target. The A.L.D.S stays with the
+fighter throughout the current level.
+
+BOOM Pack: Provides ammo for all of your weapons.
+
+=============================================================================
+                              The Environment
+=============================================================================
+
+*Flying*
+--------
+Flying has been COMPLETELY changed in 2.0.  Now, the player hovers at all
+times and is in no danger from hitting surfaces.  You can even move backwards.
+To move around in Radix simply point your view in the direction that you
+want to go, and press the "Move Forward" key (RGT SHIFT is default).
+
+There is a leveling option (F8) that can be used to help keep you vertically
+oriented, and many first time players find it very handy.
+
+There is a stat that keeps track of how well you fly (without bashing into
+walls), but it has no real purpose now save for personal interest.
+
+
+Doors, Moving Surfaces and Holographic Walls
+--------------------------------------------
+There are a number of different moving surfaces in Radix. Doors are the
+most common variety. Most doors are activated by "triggers" that you must
+fly over. Most triggers will have a special graphic that will tell you that
+a trigger is there, but sometimes triggers may be hidden. Some doors may
+also be opened by shooting at them.  Many of these "shooting" type doors
+are there to hide a secret area. If you suspect a wall to be concealing a
+secret door, shoot at it. Note that some secret doors can be quite resilient
+to damage, so make sure you really pound the possible door with lots of
+firepower before moving on.
+
+Holographic walls are also commonly used to hide secret areas. They look
+like regular walls, but they don’t really exist! Simply fly through them.
+Holographic walls can be easily discovered by firing a weapon through them.
+
+Environmental Dangers
+=====================
+There are a number of deadly things in the Radix environment besides enemies
+and their ships...
+
+Fans:
+  There are large fans in the game that can push or pull your ship up or
+  down.  These are no real threat to the Radix ship, but they can distract
+  you in combat.  Watch for them.
+
+Forced Ship Movement/Force Fields:
+  Some areas exhibit strange gravitational disturbances that can "pull" the
+  Radix fighter in any direction and at any speed. These disturbances are
+  practically undetectable, so if you hit one, you'll be at its mercy.
+
+Teleporters:
+  These are energy areas that transport your ship into a different area of
+  the current level. Teleporters are very alien in nature, and are usually
+  undetectable. Some of these may be marked with a specific alien symbol,
+  but some might pop out of nowhere. Fly with caution!
+
+Missile Walls:
+  Missile Walls are a special type of wall that shoots missiles at you.
+  These walls can always be destroyed, but the amount of damage that they
+  can sustain varies. Therefore, it's best to simply keep shooting at
+  these walls until they explode. Any weapon that causes an explosion will
+  be the extra effective against missile walls, as it may destroy multiple
+  missile walls at once. There is a variety of the missile wall
+  that shoots missiles which lock onto your ship. Watch out for these
+  seeking missiles...they are VERY deadly.
+
+Barrels:
+  Barrels explode after taking a few shots. Use them to your advantage.
+
+Stationary Vehicles
+  Ground-based vehicles can sometimes be found scattered throughout levels.
+  These vehicles were probably left by the colonists of Theta-2 and serve
+  no real purpose.
+
+Enemies
+-------
+As if the environmental hazards aren't enough to hinder your goal, you'll
+face heavy opposition by alien craft in Radix. Some of the enemies you'll
+encounter are described below.
+
+Mines:
+  These floating mines usually move in a straight line, if they're found
+  moving at all. They are easy to destroy, but if you run into a couple of
+  them you're dead.
+
+Bio-Mines:
+  Bio-mines are intelligent mines which follow you around, trying to
+  detonate on your ship. There are two types of these mines, strong and
+  weak.
+
+Bio-Mechs:
+  Bio-Mechs are moving cannons which fire energy bolts at anything in front
+  of them. Some of these turrets move across floors, walls and even ceilings.
+  Bio-Mechs are easily destroyed, but several of them together can barrage
+  you with energy bolts.
+
+Alien Fodder:
+  These guys are large, zombie-like aliens. They walk around operating
+  computer consoles, among other tasks. These aliens will attempt to shoot
+  you with their guns. However, they are very weak and can be killed by
+  simply flying through them.
+
+Defense Drone:
+  Defense drones are the weakest ships that you will encounter in Radix.
+  Defense drones fire two weak bolts of energy, and are only a real threat
+  when encountered in large numbers.
+
+Battle Drone:
+  Battle drones are more powerful than the Defense drones, but still not a
+  real threat. These drones fire a single energy bolt and are fairly
+  resilient to damage.
+
+Skyfire Assault Fighter:
+  This fighter is the most powerful ship encountered in the first episode.
+  The Skyfire fires small red bolts rapidly, making it a tough ship to
+  fight head-on.
+
+Missile Boat:
+  This ship looks similar to the Skyfire (especially from the front), but
+  is much more powerful. Given the chance, a Missile boat will launch
+  streams of powerful missiles at your ship.
+
+Stormbird Heavy Bomber:
+  The Stormbird is the most deadly ship you will ever face in Radix (not
+  including the bosses, of course). This ship fires regular missiles as
+  well as laser guided missiles, which lock onto your ship and follow you.
+
+Exo-Droids:
+  These massive metal monstrosities are very tough to destroy and shoot
+  missiles at you. You won't encounter one until the end of the first
+  episode, and you may see one or two later in the game. Luckily, you'll
+  probably hear them before you see them!
+
+
+=============================================================================
+                     Running Radix in Multiplayer Mode
+=============================================================================
+
+NOTE: Before playing a modem, network, or null modem game, you'll have to
+configure your hardware in the SETUP.EXE. For details on configuring your
+modem, network, or null modem, refer to the HELPME.DOC file in the Radix
+directory.
+
+To start a multiplayer game, select "Network/Modem" from the main menu. Then
+choose your "Connection type," "Play type," and select any other options you
+wish to use. To start the network game, click on the "Go" button at the
+bottom of the screen.
+
+Modem Options: In the Modem window, there are 3 options to choose from:
+"Wait For Call," "Dial," and "Already Connected." Usually one person
+dials and the other waits to answer. If you are dialing, you must click on
+the number window to enter a number to dial.
+
+Number Of Players: Modem and serial connections support two players. Network
+games allow up to four players to play Radix at once.
+
+Select Skill: The skill levels in a multiplayer game of Radix correspond
+to the difficulty levels in the regular game; Skill level 1 is the easiest
+and skill level 4 is the hardest.
+
+Multiplayer Options: There are 3 optional settings for modem/network games:
+"No Enemies," "Respawning Powerups," and "Warp." "No Enemies" eliminates
+all enemies from the maps, pitting you head to head against the other
+players. "Respawning power-ups" causes power-ups to reappear after two
+minutes. We recommend that these options remain selected unless you are
+playing a cooperative game. "Warp" allows you to start the game on the
+specified episode and level.
+
+Game Type: Radix supports three different modes of play for multiplayer
+games: "Dogfight," "Cooperative," and "Capture the Flag." In Dogfight mode,
+your goal is to destroy the other human opponents as often as possible. In
+Cooperative mode, play is the same as in a normal game, but your seeking
+missiles will not seek the other players, and powerups must be shared between
+players. "Capture the Flag" mode presents a new challenge as you must capture
+all of the flags from the other players to complete the level, while
+destroying the other players to reach this objective (All flags are dropped
+when a player is killed, and each player begins with a flag).
+
+=============================================================================
+                             Gameplay Strategies
+=============================================================================
+
+Greg's *NEW* 3 Laws of Radix:
+
+Here are a few hints and tips to help you play Radix:
+
+1. Save your game all of the time. Radix has a fast and furious gameplay
+environment, and novice players will die often. If you save your game all
+the time, you can prevent yourself from having to start at the beginning of
+the level with no weapons.
+
+2. Use the mouse for the player movement.  The mouse will give you the
+most control over the Radix craft, enabling to spin around very fast and
+"circle-strafe" by using strafe keys.  Think of the Radix "ship" as more
+of a flying, maneuverable tank and select controls accordingly...
+
+3. Conserve your energy. Energy is a valuable commodity in Radix. It's wise
+to keep your energy level at least above 50% at all times, especially if you
+are low on E.P.C shells and missiles. A good way to do so is to conserve the
+energy power-ups and energy weapon power-ups (Neutron Cannon, Plasma
+Spreader, or Gravity Wave). Only pick up these powerups if you need them.
+
+=============================================================================
+                             Troubleshooting
+=============================================================================
+
+If you encounter any problems running Radix: Beyond the Void, please consult
+the HELPME.DOC file for tips and solutions.  You can view this file with a
+standard text editor, or by typing HELPME from the directory in which the
+game installed. If, after reading this file, you still can not get Radix
+working, you can contact Epic’s technical support at the following places:
+
+In the USA:    tech: +1 (301) 983-9771     fax: +1 (301) 299-3841
+In the U.K.:   tech: +44 (0) 1767-260903   fax: +44 (0) 1767-262043
+In Germany:    tech: 0130-822-887          fax: 0130 822-887
+
+
+=============================================================================
+            Radix: Into The Void Credits - In Alphabetical Order.
+=============================================================================
+
+Programming:            Dan Dufeu, Shahzad Malik, Jonathan Mavor
+
+Additional Programming: Mark Lewis
+
+Graphics and Artwork:   Cygnus Multimedia, Greg MacMartin, Jason Struck
+
+Additional Artwork:     James Schmalz
+
+Music:                  Marc Gravelle
+
+Sound Effects:          Mark Totti
+
+Special Thanks (in no particular order):
+
+Jim Lowell and "Xenomorph", for all their hard work in making cool
+                            Radix homepages!
+Gavin Abbott, for his advice and support.
+Nolan Pflug, for finding more bugs in Radix than anyone else!
+Everyone else who gave any support, advice and general assistance
+in making Radix a better game...you know who you are!
+
+
+=============================================================================
+                       Enjoy playing Radix REMIX 2.0!
+=============================================================================

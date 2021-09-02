@@ -1,0 +1,83 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ================================================
+            SPACE QUEST V: ROGER WILCO - THE NEXT MUTATION
+                                                        
+
+                            THE SOUNDTRACK
+                     (See below for song titles.)
+                   Christopher Stevens & Tim Clarke
+           ================================================
+                 Copyright (c)1992 Sierra On-Line, Inc.  
+           ================================================
+
+                         GENERAL MIDI VERSION
+                  (Designed for Roland Sound Canvas)
+
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- General MIDI sound card or module  (Roland SC or Yamaha XG recommended)
+
+
+This Standard MIDI File was recorded directly from Sierra's "Space Quest V"
+adventure game.  It has been recorded using Sierra's General MIDI sound
+driver and is therefore optimized for Roland Sound Canvas based MIDI cards
+and modules.  
+
+Recorded/edited/compiled/arranged for General MIDI by Tom Lewandowski.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+       =================================================================
+                                  TRACK SHEET
+
+                SPACE QUEST V: ROGER WILCO - THE NEXT MUTATION
+       =================================================================
+
+   SONG TITLE                                      START MEASURE/TIME *
+   -------------------------------------------------------------------------
+   1. Sierra Fanfare                                      2  00:00:02
+   2. Introduction/Opening Scene                         10  00:00:21
+   3. StarCon Academy                                    96  00:03:48
+   4. StarCon Aptitude Test                             129  00:05:07
+   5. Restart-Restore-Quit                              166  00:06:36
+   6. Academy Crest                                     220  00:08:45
+   7. Ambassadorial Tour                                264  00:10:31
+   8. The Briefing/Computer Mishap                      332  00:13:14
+   9. Graduation Day                                    361  00:14:24
+  10. Ship Sounds (Gangularis Mission)                  387  00:15:26
+  11. Introducing...Spike!                              430  00:17:09
+  12. Intercepting The Transmission                     461  00:18:24
+  13. Gipazoid Novelty Bust (WD-40)                     474  00:18:55
+  14. Kiz Urazgubi (WD-40)                              528  00:21:04
+  15. The Space Bar                                     552  00:22:02
+  16. Battle Cruiser Game                               604  00:24:07
+  17. The Brig                                          663  00:26:28
+  18. Space Monkeys                                     690  00:27:33
+  19. Space Monkey Jive                                 703  00:28:04
+  20. "StarCon Central, Please Hold"                    713  00:28:28
+  21. Planetside                                        756  00:30:12
+  22. Beatrice                                          797  00:31:50
+  23. Goliath Attacks!                                  838  00:33:28
+  24. The Pod                                           872  00:34:50
+  25. Genetix Research Lab                              913  00:36:28
+  26. Spike!  ("What's that you said, Spike?")          985  00:39:21
+  27. Bea Is Saved!                                    1022  00:40:50
+  28. Quirk's Escape                                   1040  00:41:33
+  29. The Final Countdown                              1065  00:42:33
+  30. Closing Theme                                    1103  00:44:04
+  --------------------------------------------------------------------------
+                                                TOTAL TIME:  00:45:57
+
+
+      * Note:  Start Times are approximate.
+

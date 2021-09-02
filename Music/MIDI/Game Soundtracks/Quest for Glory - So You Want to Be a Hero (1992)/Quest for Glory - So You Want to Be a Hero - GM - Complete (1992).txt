@@ -1,0 +1,87 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ===============================================
+             QUEST FOR GLORY 1: SO YOU WANT TO BE A HERO
+                  (Originally titled "Hero's Quest")                                   
+
+
+                       THE COMPLETE SOUNDTRACK
+                     (See below for song titles.)
+                             Mark Seibert
+           =============================================
+            Copyright (c)1989, 1992 Sierra On-Line, Inc.  
+           =============================================
+
+                         GENERAL MIDI VERSION
+                  (Designed for Roland Sound Canvas)
+
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- General MIDI sound card or module  (Roland SC or Yamaha XG recommended)
+
+
+This Standard MIDI File was recorded directly from Sierra's "Quest For
+Glory 1" (VGA) adventure game.  It has been recorded using Sierra's General
+MIDI sound driver and is therefore optimized for Roland Sound Canvas
+based MIDI cards and modules.  Satisfactory results can also be obtained
+on Yamaha XG devices.  See below for song titles.
+
+Recorded/edited/compiled/arranged for General MIDI by Tom Lewandowski.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+      ==================================================================
+                                TRACK SHEET
+
+                 QUEST FOR GLORY 1: SO YOU WANT TO BE A HERO
+                        (Not all selections in order.)
+      ==================================================================
+
+      SONG TITLE                                      START MEASURE/TIME *
+      ------------------------------------------------------------------
+   1. Sierra Fanfare                                        2   00:00:02
+   2. Introduction                                         11   00:00:24
+      a. Hero's March                                      73   00:02:52
+   3. The Guild Hall                                       81   00:03:12
+   4. Zara (The Magic Shoppe)                             102   00:04:02
+   5. The Bar                                             123   00:04:52
+   6. Amelia Appleberry (The Healer)                      177   00:07:02
+   7. Erana's Peace                                       195   00:07:45
+   8. Dryad Theme                                         288   00:11:28
+   9. The Graveyard                                       295   00:11:45
+  10. Thief's Theme                                       333   00:13:16
+  11. Fairey Ring & Hero Dance                            376   00:15:00
+  12. The Hero Can't Dance                                400   00:15:57
+  13. Baba Yaga                                           423   00:16:52
+  14. Erasmus' Castle                                     492   00:19:38
+  15. The Mages Maze                                      544   00:21:43
+  16. The Kobold                                          554   00:22:07
+  17. The Baron's Castle                                  580   00:23:09
+  18. Goblins                                             617   00:24:38
+  19. Goblin Battle                                       635   00:25:21
+  20. 'Enry the 'ermit                                    648   00:25:52
+  21. The Battle                                          680   00:27:09
+  22. Brigand Fortress                                    711   00:28:24
+  23. Yorick                                              757   00:30:14
+  24. Weapon's Master                                     776   00:31:00
+  25. Stable Work                                         792   00:31:38
+  26. Finale **                                           808   00:32:16
+  27. Hero's Tale Inn ***                                 898   --------
+  ----------------------------------------------------------------------
+                                             TOTAL TIME:        00:35:50
+
+      * Start times are approximate.
+
+     ** Recorded from the EGA version of Quest For Glory 1, and converted
+        from the MT-32 sequence for General MIDI by Quest Studios.
+
+    *** "Hero's Tale Inn" theme added at Bar 898.

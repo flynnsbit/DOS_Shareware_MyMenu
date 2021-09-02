@@ -1,0 +1,79 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+       ========================================================
+               SPACE QUEST III: THE PIRATES OF PESTULON
+                                                        
+
+                            THE SOUNDTRACK
+                     (See below for song titles.)
+             Music Composed & Performed by Bob Seibenberg
+       "Space Quest Theme" written by Scott Murphy & Mark Crowe
+       ========================================================
+                 Copyright (c)1989 Sierra On-Line, Inc.  
+       ========================================================
+
+                        ROLAND MT-32 VERSION
+
+                     ** NOT FOR GENERAL MIDI ** 
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- Roland MT-32/CM-32/CM-64/MT-100/LAPC-I MIDI device
+
+
+
+This Standard MIDI File was recorded directly from Sierra's "Space Quest 3"
+adventure game using Sierra's MT-32 driver.  It contains numerous System
+Exclusive instructions for reverb and data which will write new sounds to
+your MT-32.  Note that MIDI files containing embedded SysEx data are not
+compatible with all MIDI file playback programs.
+
+
+          THIS FILE IS NOT DESIGNED FOR GENERAL MIDI PLAYBACK!
+
+
+Recorded/edited/compiled/arranged for the MT-32 by Tom Lewandowski.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+       =================================================================
+                         TRACK SHEET  (MT-32 VERSION)
+
+                   SPACE QUEST III:  THE PIRATES OF PESTULON
+       =================================================================
+
+   SONG TITLE                                      START MEASURE/TIME *
+   -------------------------------------------------------------------------
+   1. Introduction                                        4     00:07
+   2. Opening Sequence                                   38     01:28
+   3. Robot Garbage Freighter                            97     03:50
+   4. The Grabber                                       159     06:19
+   5. The Rat Cave                                      175     06:57
+   6. Leaving Freighter, Navigation Screen,
+         & Arnoid's Pursuit                             195     07:45
+   7. Phleebhut                                         259     10:19
+   8. Fester's World 'O Wonders                         300     11:57
+   9. Arnoid Destroyed (Roger Dies #1)                  323     12:52
+  10. Monolith Burger                                   346     13:48
+  11. Astro Chicken                                     381     15:12
+  12. Planet Ortega                                     397     15:50
+  13. ScumSoft Entrance                                 441     17:36
+  14. ScumSoft Corridors                                460     18:24
+  15. ScumSoft Offices (Roger Dies #2)                  491     19:36
+  16. The Black Hole                                    515     20:33
+  17. Two Guys On Earth                                 550     21:57
+  18. Closing Medley                                    601     24:00
+  --------------------------------------------------------------------------
+                                                TOTAL TIME:     26:48
+
+
+      * Note:  Start Times are approximate.
+

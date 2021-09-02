@@ -1,0 +1,71 @@
+REM ษอออออออออออออออออออออออออออออออออออออออป
+REM บ                                       บ
+REM บ APACHE LONGBOW by Digital Integration บ
+REM บ                                       บ
+REM ศอออออออออออออออออออออออออออออออออออออออผ
+REM
+REM ษอออออออออออออออออออออออออออออออออออออออป
+REM บ                                       บ
+REM บ WCS Mark II base switch settings:-    บ
+REM บ                                       บ
+REM บ Black hat switch = DIGITAL            บ
+REM บ Red switch       = ANALOG             บ
+REM บ                                       บ
+REM ศอออออออออออออออออออออออออออออออออออออออผ
+REM
+    MDEF APACHE
+REM
+    @AnalogueThrottle
+REM
+REM ษออออออออออออออป
+REM บ FCS SETTINGS บ
+REM ศออออออออออออออผ
+REM
+    BTN TG FireWeapon
+REM
+    BTN UB /U PNVSOnOff
+           /M ArmAndSelectWeapon
+           /D UnarmWeapon
+    BTN MB /U ECMOnOff
+           /M SelectTimeCompression
+           /D CancelTimeCompression
+    BTN LB /U TransmitReconData
+           /M RotateExternalView
+           /D JoystickRecalibrate
+REM
+    BTN HU /U ApacheExternalView
+           /M GunnerFrontView
+           /D NextWaypoint
+    BTN HD /U RemoteView
+           /M PilotFrontView
+           /D PrevWaypoint
+    BTN HL /U WeaponView
+           /M LookLeft
+           /D TailRotorLeft
+    BTN HR /U WeaponTargetView
+           /M LookRight
+           /D TailRotorRight
+REM
+REM ษออออออออออออออป
+REM บ WCS SETTINGS บ
+REM ศออออออออออออออผ
+REM
+    BTN 1 /U TADSRadarSelect
+          /M ReleaseChaffAndFlare
+          /D TacticalDisplayRange
+    BTN 2 /U HelmetView
+          /M HydraPodsDown
+          /D NextLeftMFD
+    BTN 3 /U TADSView
+          /M HydraPodsUp
+          /D NextRightMFD
+    BTN 4 /U RaiseMagnification
+          /M NextTarget
+          /D RadarMode
+    BTN 5 /U LowerMagnification
+          /M PrevTarget
+          /D RadarRange
+    BTN 6 /U Brakes
+          /M LockUnlockTarget
+          /D HoldResumeRadarUpdate
+

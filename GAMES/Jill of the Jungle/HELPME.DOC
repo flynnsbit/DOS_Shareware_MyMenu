@@ -1,0 +1,147 @@
+=============================================================================
+Jill of the Jungle  version 1.2      *           Troubleshooting & Hints
+=============================================================================
+
+Requirements:
+     þ  CGA, EGA, or VGA graphics (supports high-quality 256-color graphics.)
+     þ  80286 or faster processor recommended
+     þ  512K memory and DOS 3.0 or later
+
+Also supports:
+     þ  Sound Blaster & compatible music cards
+     þ  Joystick
+
+=============================================================================
+
+
+Jill of the Jungle is a Nintendo-style arcade adventure game with 256-color
+VGA graphics,  great sound effects,  and a Sound Blaster-compatible musical
+sound track.  This immense game world,  Volume I in the Jill series,
+challenges both your mind and your arcade reflexes -- fun for the whole
+family!
+
+We are Epic MegaGames and we're here to bring you the best in animated games
+for your PC.  Our 20-person team is busy at work to make new products to
+challenge and entertain you.
+
+
+   HOW TO START:
+   =============
+
+To play Jill,
+  1. Change to the drive which the game installed to (C:)
+  2. Change to the directory which the game installed to (CD \JILL)
+  3. Type JILL
+
+
+   NOTE TO SOUND BLASTER OWNERS:
+   =============================
+
+Jill sports a musical sound track and digitized sound effects.  If you
+experience trouble with Jill (lockups or aborts), try booting from a blank
+floppy disk with no TSR's loaded.  If this doesn't solve the problem, your
+best bet is to <gasp> TURN OFF THE DIGITAL SOUND EFFECTS and MUSIC.
+
+Sorry, Jill doesn't support the Adlib card.  Only Sound Blaster & compatibles.
+
+Because Jill was programmed before 16-bit sound technology, it may not support    
+all 16 bit sound cards.  If you own a Sound Blaster 16, Jill's sound effects
+may be slow and distorted.  The only soution to this problem is to turn off
+all digital sound effects.
+
+
+   NOTE TO OS/2 USERS
+   ==================
+
+On some computers,  Jill only runs under OS/2 with ALL SOUND DISABLED.  So if
+Jill isn't working properly under OS/2, run the game by typing:
+   JILL /NOSND
+
+
+   TROUBLE-SHOOTING
+   ================
+
+There is a known conflict with Jill and disk compression utilities (such as
+Doublespace, Stacker, etc).  If you must use disk compression, install Jill
+on an uncompressed partition or drive.
+
+If Jill locks up when you first run the game, type:
+   JILL /NOSB  (if you don't have a Sound Blaster)
+   JILL /SB    (if you do have a Sound Blaster)
+   JILL /NOSND (as a last resort, disables all sound)
+
+If Jill is giving you intermittent problems, boot from a blank floppy disk
+with no TSR's in memory.  You might possibly run into problems with:
+   - Memory managers like QEMM
+   - Disk Caches
+   - Any other kind of TSR program
+
+Any ERROR CODE means you have insufficent conventional memory.  Try booting 
+from a blank floppy.
+
+Make sure your FILES= and BUFFERS= lines in CONFIG.SYS are set to at least 25.
+
+
+   HINT
+
+This game is equiped with a "Save" feature -- so remember to save your game
+often.  Later on,  if your bratty little brother unplugs the computer
+while you are playing,  you won't need to start over!
+
+
+   MEMBER, ASP
+
+This program is produced by a member of the Association of Shareware
+Professionals (ASP).  ASP wants to make sure that the shareware principal
+works for you.  If you are unable to resolve a shareware-related problem
+with an ASP member by contacting the member directly,  ASP may be able to
+help.  The ASP Ombudsman can help you resolve a dispute with an ASP member,
+but does not provide technical support for members' products.  Please write
+to the ASP Ombudsman at 545 Grover Road,  Muskogeon, MI 49442-9427 or send
+a Compuserve message via CompuServe Mail to ASP Ombudsman 70007,3536.
+
+
+CONTACTING EPIC'S TECH SUPPORT
+==============================
+
+If you need further assistance, please call our tech support department
+at 301-983-9771 between 9AM and 5PM Eastern Standard Time,  or fax us
+at 301-299-3841.  You can also contact us online:
+
+CompuServe:     GO EPIC
+Internet Mail:  help@epicgames.com
+Internet FTP:   ftp.uml.edu
+Internet News:  We answer questions in comp.sys.ibm.pc.games.action
+WorldWide Web:  http://www.epicgames.com/
+America Online: We answer questions posted in the "Games" area
+GEnie:          We answer questions in the Games Roundtable
+
+EXEC-PC BBS
+   Contact:     Epic MegaGames
+   2400 Baud:   414-789-4210
+   14.4K Baud:  414-789-4360
+   
+Epic's Email list:
+   
+   To subscribe to Epic's email list and receive late-breaking news 
+from Epic every month or so, just send an Internet message to
+list@epicgames.com with the subject: SUBSCRIBE EPIC.
+
+   
+   CREDITS
+
+Tim Sweeney, programming and design; John Pallett-Plowright and
+Joe Hitchens, artwork; Dan Froelich, musical sound track.  With thanks to
+Larry Tipton and Adam Rixey.
+
+=============================================================================
+
+Thank you for being an Epic MegaGames customer!
+
+                                    Tim Sweeney
+                                    Founder,
+                                    Epic MegaGames
+
+
+
+

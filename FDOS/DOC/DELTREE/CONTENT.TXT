@@ -1,0 +1,19 @@
+Contents of this package:
+-------------------------
+
+deltree.lsm	- package description file
+
+BIN\
+deltree.com	- DELTREE utility binary, [DEFAULT-BUILD]
+deltree2.com	- DELTREE utility binary, [DEFANGED-BUILD]
+deltree!.com	- DELTREE utility binary, [DANGER-BUILD]
+
+DOC\
+content.txt	- this file: content of this package
+copying		- GNU General Public License file, version 2
+deltree.txt	- main documentation for DELTREE
+history.txt	- detailed version log and history
+file_id.diz	- short package description file
+
+SOURCE\
+deltree.asm	- DELTREE utility source code

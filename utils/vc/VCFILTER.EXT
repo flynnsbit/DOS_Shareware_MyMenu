@@ -1,0 +1,91 @@
+' The following define the filters that are used in the panels.
+' You may add more filters up to a max of 10. 
+' All blank lines, and lines beginning with ' are ignored.
+
+All files
+	*.*
+
+All but descriptions
+	|files.bbs
+	|descript.ion
+
+PROGS:	Executable files
+	*.exe
+	*.com
+	*.bat
+	*.btm
+	*.cmd
+
+DBASE:	Database files
+	*.dbf
+	*.rbf
+	*.rxd
+	*.dtf
+	*.wdb
+	*.db
+	*.dtf
+
+SSHEET:	Spreadsheet files
+	*.wks
+	*.wk1
+	*.wk3
+	*.wkt
+	*.wkq
+	*.wr1
+	*.wrk
+	*.xls
+	*.wq1
+	*.vpp
+	*.mod
+ 
+WORD:	Word processor files
+	*.doc
+	*.txt
+	*.wps
+	*.vw4
+	*.wri
+	*.sam
+	*.jw
+	*.ws7
+	*.htm;*.html
+
+GRAPHICS:Graphics files
+	*.jpg;*.jpeg
+	*.bmp
+	*.wmf
+	*.pic
+	*.wpg
+	*.wpb
+	*.tif
+	*.gif
+	*.ico
+	*.pcx
+	*.grf
+	*.drw
+	*.clp
+	*.msp
+
+COMPRESSED:Compressed files
+	*.zip
+	*.arj;*.a0?;*.a1?
+	*.rar;*.r0?;*.r1?
+	*.lzh
+	*.ace;*.c0?;*.c1?
+	*.ain
+	*.arc
+	*.cab
+	*.esp
+	*.ha
+	*.hpk
+	*.hyp
+	*.j;*.j0?;*.j1?
+	*.lim
+	*.pak
+	*.sar
+	*.sqz
+	*.tar
+	*.tgz
+	*.uc2
+	*.x
+	*.z
+	*.zoo

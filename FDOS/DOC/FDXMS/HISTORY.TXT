@@ -1,0 +1,230 @@
+Development history of FDXMS:
+
+The version number this time are names of fruits. Fruits taste great
+and are nutritious.
+
+
+Version 0.94.Bananas - 2005-05-28 - Martin Str”mberg
+
+- After chaining INT 0x15 AH=0x87, execute a correct return.
+- Functions 0xf and 0x8f (realloc) broken because BX was destroyed
+    before used.
+- Don't touch BL on a successful calls unless the specification says
+    it should be zeroed (bug 1894).
+- Thank you to Peter Nagy for testing.
+
+
+Version 0.93.Strawberries - 2005-05-05 - Martin Str”mberg
+
+- Changed assmebler to GNU as.
+- Device driver calls don't mess up registers anymore.
+- Added proper handling of input and output status device commands
+    according to information from Bob Smith.
+- Unecessary pushf/popfs removed from int2f_handler.
+- Modify int15_handler to not clobber return flags when function 0x87
+    is forwarded to previous int15 handler.
+- Rearranged order of the fields in the handle struct for smaller
+    resident memory size.
+- Merged the variables hma_used and a20state into flags.
+- Resident VDISK detection added back. According to the specification
+    it isn't sufficient to just check for VDISK at installation
+    time. (Note that I mistakenly removed the resident checking, not
+    Lixing Yuan.)
+- Only check for VDISK until HMA has been allocated.
+- Proper stack frame setup made huge space savings possible.
+- Improved XXMS valid number check for smaller size. (It should be the
+    most optimal possible now, sizewise.)
+- XMStest has been removed as it requires a Borland 16-bit C
+    compiler. (If you really need the program extract it from an
+    earlier FDXMS release.)
+
+
+Version 0.92.Oranges - 2003-07-10 - Martin Str”mberg
+
+- VDISK detection in check_vdisk corrected by Lixing Yuan.
+- Only call check_vdisk at installation time by Lixing Yuan.
+   (Evidently those two corrections to VDISK handling make SMARTDRV
+   work with FDXMS.) 
+
+
+Version 0.91.Apples - 2003-02-08 - Martin Str”mberg
+
+- FDXMS now only warns if it can't disable the A20 line instead of
+	refusing to load (bug 1352).
+- INT15 parameter added.
+
+
+What's up with the version numbers this time? This time they are a
+tribute to SF writer Samuel R. Delany, <http://www.pcc.com/~jay/delany/>.
+He has written a book called Stars in My Pocket like Grains of Sand
+which is an amazing piece of work. But if you want to try his works, I
+suggest you try some of his lighter works (sentences spanning more
+than a page can be tiresome) like Babel-17 or the Neveryona series.
+
+
+Version 0.9.Sand - 2002-03-02 - Martin Str”mberg
+
+- Squeezed out some more bytes by rearranging xms_free_xms.
+- Squeezed out some more bytes in trace version by substituting test
+	with bt in xms_dispatcher.
+- Squeezed out some more bytes in validation of AH in xms_dispatcher.
+- Corrected not recognising the BIOS switch in the non-TRACE versions
+	(bug 880).
+- Corrected 386 detection by Ralf Quint and me.
+- Maximum XMS memory is 0xfcb0 KiB, not 0xffff KiB. Changed code to
+	reflect this. (Note that maximum XXMS memory is much larger.)
+- Use smsw instead of mov cr0 to detect protected mode.
+- Now fdxxms.sys has been tested with 512MiB.
+- Added PS parameter that modifies the A20 line switching code so
+	FDXMS works on PS/2 Model 30 (and perhaps other PS models)
+	(bug 753).
+- Added GEODE parameter that modifies the delay routine so FDXMS works
+	on National Semiconductor's Geode GX1 200MiHz processors (bug
+	886). 
+- Added DELAY parameter and using it in enable_a20 and disable_a20
+	(bug 1038).
+- Changed a lot of "or reg1, reg1" to "test reg1, reg1".
+- Removed BIOS_FLAG from the flags variable and added insertion of
+	near jmp to do_bios_move if the BIOS parameter was given.
+
+
+Version 0.8.Grains - 2001-07-29 - Martin Str”mberg
+
+- xms_move_xms: add illegal ovelap check in BIOS path.
+- Added a flags byte. 
+- Made the bios variable a bit in the flags variable.
+- Made the initialized variable a bit in the flags variable.
+- Really only initialise once by looking at said bit.
+- Corrected my erroneous correction of xms_query_free_xms (RBIL is a
+	little confusing here).
+- Minor adjustments to XMStest.c.
+- Corrected xms_query_free_xms which didn't return BL == 0xa if all
+	XMS memory is allocated.
+- Corrected xms_get_move_addr which could be fooled by large offsets
+	or sizes while verifying length was valid.
+- Proper copyrights added to cptest.c
+- Optimised away the redundant variable xms_size.
+- Added printout of how much XMS memory that was found.
+- Added an XXMS version (fdxxms.sys) supporting 4GB (4GiB untested,
+	but up to 384MiB tested).
+- Decreased size by using a register instead of immediate in
+	xms_free_xms and xms_dispatcher.
+- Made XMStest use a better seed for more randomness.
+- Watch out for AX=0xe801 in INT15 handler.
+- Properly clear the carry flag in INT15 handler on success.
+
+
+Version 0.7.Pocket - 2001-07-10 - Martin Str”mberg
+
+- Correct lookup of variable 'bios'. I inadvertently happened to use
+	the bios without the BIOS argument (cs: override was missing).
+- Added a call to INT15 AX=0xe801 to detect more memory.
+- Merged lock and used bytes, so bookkeeping size is now down to five. 
+- Simplified and corrected xms_query_free_xms.
+- Move some of the initialisation of the handle table to initialize in
+	preparation of adding the call to INT15 AX=0xe820.
+- Increased minimum number of handles to two due to the above change.
+- XMS test program by Tom Ehlert. I include the .EXE file for test
+	purposes unitl FDXMS is ready for prime time. Minor
+	improvements by me.
+- xms_move_xms without BIOS argument didn't work right for lengths not
+	evenly divisible by four (i. e. 2, 6, 10, ...) if source
+	address was below destination address.  
+
+
+Version 0.6.Stars - 2001-07-05 - Martin Str”mberg
+
+- Correction of merging code by Tom Ehlert.
+- Keep lock counter indicating lock in case of lock overflow by Tom
+	Ehlert. Hopefully corrected now. I messed up Tom's earlier
+	correction.
+- Restore a20 state in xms_move_xms in case of failure.
+- Don't uneccessarily enable a20 if it's already is enabled in
+	xms_move_xms.
+- Improved address moving verification which could be tricked with big
+	offsets in conventional ram by Tom Ehlert.
+- Now possible to allocate 0 sized EMB if there are handles available
+	(but no memory).
+- Minor updates to invalid NUMHANDLES option argument strings.
+- Now you can install FDXMS.SYS in a directory called FDXMS.SYS.
+- Handle ovelapping moves correctly. I'm not sure if BIOS does handle
+	overlapping moves correctly though. Feedback wanted!
+- Skip move altogether if move length is 0 by Tom Ehlert.
+- Skip move altogether if src == dest by Tom Ehlert.
+
+
+What's up with the version numbers? They are a tribute to Dead Can
+Dance <http://www.evo.org/html/group/deadcandance.html>, a superb
+music group. Their third album is called "Within the Realm of a Dying
+Sun" which was the first piece I heard by them. Check it out some
+time. 
+
+
+Version 0.5.Sun - 2001-06-13 - Martin Str”mberg
+
+- The TRACE_SEPERATOR argument was never implemented. Ooops! Don't go
+	looking for it.
+- Coalesce xms_realloc_umb, xms_reqest_umb and xms_release_umb into
+	one block to save memory by Tom Ehlert.
+- Keep lock counter indicating lock in case of lock overflow by Tom
+	Ehlert.
+- Now possible to compile in the trace code conditionally.
+- Detection of end of command line in DOZE corrected.
+- Inserted P8086 and P386 at strategic places so that it ought to fail
+	gracefully on a processor earlier than 386.
+- Check the size of moves to/from XMS. Idea from Tom Ehlert.
+- Report interface version as 2.0, which it is as XXMS is not
+	implemented, from Tom Ehlert.
+- Report driver version properly from Tom Ehlert.
+- Protect bios_gdt from reentrancy properly by Tom Ehlert.
+- Only copy 0x1000 words using BIOS call without enabling interrupts
+	by Tom Ehlert.
+- Debug option IFDEFed out for now.
+- Check the size of moves to/from conventional RAM.
+
+
+Version 0.4.Dying - 2001-05-13 - Martin Str”mberg
+
+- NOTE: The license has been changed to GPL version 2
+
+- Using ax for jump to the proper function; thus no need to pop bx in
+	all functions anymore.
+- Localized most local labels.			
+- Command line arguments handling added.
+- TRACE argument added.
+- DEBUG argument added. Doesn't do anything though.
+- NUMHANDLES argument added.
+- Improved merging of adjacent free blocks by Tom Ehlert.
+- Made to work in protected mode environment (e. g. SICE) by calling
+	the BIOS by Tom Ehlert.
+- Removed limit of 16MiB in protected mode environment.
+- BIOS argument added to always use the BIOS.
+- Should be able to handle more than 32MiB now by Tom Ehlert.
+
+
+Version 0.3.Realm - 2001-04-21 - Martin Str”mberg
+
+- Validation of handle procedure added: handle_valid.
+- Use of handle_valid added to functions 0xa, 0xb, 0xc, 0xd and 0xf
+- Don't push _all_ registers in xms_move_xms.
+- Change XMS_NO_UMB_AVAILABLE to XMS_NOT_IMPLEMTED in xms_request_umb
+	by Bart Oldeman.
+
+
+Version 0.2.Within - 2001-04-15 - Martin Str”mberg
+
+- Corrected function 0xe.
+
+
+Version 0.11 - 2001-01-?? - Louis P. Santillan
+
+- Correction of A20 switch code.
+
+
+Version 0.1 - 10/11.95
+
+- initial version, uploaded for testing
+- still about 400 bytes bigger than HIMEM :(
+- poor feedback until now...
+- works with a lot of software, but Watcom Help doesn't work when run with
+  Norton Cache of Norton Utilities 8.0

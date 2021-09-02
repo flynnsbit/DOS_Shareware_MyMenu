@@ -1,0 +1,35 @@
+File URL is http://www.vgmusic.com/new-files/DukeNukem_slight_remix[1].mid
+Upload Date and Time: 10/16/2001 21:01:02
+
+Uploaded by Paparoach19_2K5@hotmail.com (ICE)
+Originating IP Address: 209.184.110.142
+
+File Type: MIDI
+Game System: Sony Playstation
+Game Name: Duke Nukem: Planet Of The Babes
+Song Title: Duke Nukem Theme (Slight Remix)
+Sequenced by: ICE
+Song Originally Composed by: 3D Realm      I guess
+
+Other Information: 
+The only difference from the original is that near the end its different.
+
+
+Midi TrackName Analysis:
+
+
+Bass
+Distortion 1
+Overdrive 1
+Sawtooth X
+Sawtooth X-2
+Sawtooth X-2-2
+Drone
+Chimes
+Snare
+Bass Drum
+Cymbals
+Toms
+Distortion D
+Distortion 2
+Tempo Track

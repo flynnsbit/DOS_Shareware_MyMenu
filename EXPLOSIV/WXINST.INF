@@ -1,0 +1,20 @@
+[Apps]
+AppName=Explosiv: Windows Explosiv
+DefDir=C:\Explosiv
+SpaceNeeded=150
+DefPMGroup=WX.GRP, Explosiv
+
+[Dirs]
+1=.
+
+[Files]
+Explosiv, WX.EXE, 1, 1, N
+Explosiv Logo, WIM.EXE, 1, 1, N
+
+[PM Info]
+WX.EXE, Explosiv
+WIM.EXE, Explosiv Logo
+
+[End]
+
+

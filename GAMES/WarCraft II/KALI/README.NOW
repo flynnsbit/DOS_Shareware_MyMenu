@@ -1,0 +1,39 @@
+This is a beta release of 1.2.  I *know* it still has a few problems
+and I'm working on it.  The mosst noticable problem is that the kali /s
+list (or /kali in kchat) doesn't workk 100% of the time.  This is the 
+side affect of some major changes in Kali and I haven't worked out all
+the details yet.
+
+Not all of the servers are running 1.2 yet.  You can use Kali Central
+and Kali World.
+
+tracker.texas.net      204.96.20.10    Kali Central  SunOS   KC0001
+kali.net               206.197.190.20  Kali World    Linux   KC0003
+
+
+If you are upgrading from a previous version of Kali, please read the
+revision.lst file and have a look at the new sample kali.cfg and
+kchat.cfg files.
+
+
+Please report any problems to jay@calc.vet.uga.edu.  Include the
+following:
+
+1. What version of Kali are you using?
+2. Connection type: {PPP, SLIP, SLiRP, ethernet}
+3. Packet driver: {etherppp, slipper, cslipper, wd8003e, 3c509, etc.}
+4. If using modem, what brand/model of modem and speed?
+5. If using modem, what init string are you using?
+6. Command line used to start packet driver.
+7. Script used when connecting to host (or at least outline the prompts)
+8. A copy of wattcp.cfg.
+9. A copy of kali.cfg.
+10. A description of the problem and what steps you have taken to try to
+    resolve the problem.  I want to know at what point in the instructions
+    in kali.doc you can't get past.  If you send me email stating that you
+    cannot connect to Kali Central and don't tell me that you can ping it
+    successfully, I will just send you a copy of this message.  Please try
+    to read the instructions first.
+
+Thanks,
+Jay

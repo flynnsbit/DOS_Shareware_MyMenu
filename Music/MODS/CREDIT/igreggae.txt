@@ -1,0 +1,23 @@
+igreggae.xm (igreggae.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=179441
+
+Summary
+
+    igreggae.xm is a XM format module.
+    Uploaded to modarchive.org on Tue 20th Dec 2016
+
+Info Info
+
+    Mod Archive ID: 179441
+    MD5: 74d78f21daf5dfbb480c7a914489366e
+    Format: XM
+    Channels: 16
+    Genre: Reggae
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     JAM (https://modarchive.org/member.php?81691)

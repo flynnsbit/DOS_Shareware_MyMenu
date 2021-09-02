@@ -1,0 +1,16 @@
+Many people contributed to the program directly or indirectly.
+I used for reference any program and source code I can, and all
+compression code in the program was taken in sorces from `net
+(see also read.me file for compression issues).
+
+I want to express special thanks to
+
+Dmitry N. Belosludtsev	<dnb@sensor.zgrad.zu>
+Igor V. Timkin		<ivt@msu.su>
+Pete A. Zaitcev		<zaitcev@ipmce.su>
+        for QIC-02 development assitance
+
+Nelson Bolyard          <nelson@bolyard.ix.netcom.com>
+        for bugfixes/enhancements is ASPI/SCSI support
+---
+

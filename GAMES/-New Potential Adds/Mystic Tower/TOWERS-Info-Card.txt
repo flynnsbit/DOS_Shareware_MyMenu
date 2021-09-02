@@ -1,0 +1,95 @@
+==============================================================================
+DOS Games Archive Game Info Card                                     Version 3
+==============================================================================
+* General Information *
+
+Game title              : Mystic Towers
+Alternate title(s)      : Mystic Towers: A Baron Baldric Game
+Developer               : Animation FX
+Publisher               : Apogee Software
+Country of origin       : Australia
+Distribution model      : Shareware
+
+* Release Information *
+
+Release type            : Shareware (episode)
+Exclusive level(s)      : No
+Version                 : 1.1
+Release date            : 1994/07/15
+Language                : English
+License file(s)         : VENDOR.DOC
+License/Permissions     :
+
+"Everyone can -- and is encouraged! -- to copy, upload and generally pass
+"around this Program without charging for it."
+
+"If you want to distribute it as provided in this Vendor.doc by catalog,
+"advertisement, BBS, on-line service, or direct mail, no written permission
+"is needed."
+
+* Distribution Information *
+
+Distribution type       : Digital download
+File name               : 1mystic.zip
+File size               : 1 074 729 bytes
+Installer provided      : Yes
+Original location       : ftp://ftp.3drealms.com/share/
+Retrieved from          : http://legacy.3drealms.com/downloads.html
+
+Additional files        : 
+                          Windows desktop icons (1 file)
+Retrieved from          : http://legacy.3drealms.com/stuff/apogicon.exe
+
+Maintainer              : MrFlibble <mrflibble86@gmail.com>
+==============================================================================
+* Note for DOSBox users *
+
+This software is fully installed and configured to run in the DOSBox emulator.
+You can simply drag and drop the file TOWERS.BAT over the DOSBox icon to start
+playing. Experienced DOSBox users may choose other methods of startup.
+
+The software was configured and tested to work with the official DOSBox build
+v0.74-3 available from www.dosbox.com. It may or may not work with any other
+third-party DOSBox distributions that are available.
+
+For playing instructions and other information, please refer to the electronic
+manual (MTHELP.EXE) found in the TOWERS directory.
+==============================================================================
+* Game related websites *
+
+Publisher website (current):
+https://3drealms.com/catalog/mystic-towers_11/
+
+Publisher website (legacy):
+http://legacy.3drealms.com/towers/index.html
+
+NOTE: Some sites are only available as copies made by the Wayback Machine:
+http://web.archive.org/
+==============================================================================
+* Disclaimer *
+
+THE GAME DATA IN THIS ARCHIVE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING AND NOT LIMITED TO ANY IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+All game content is copyright to their respective owners.
+
+No files from the original software package provided by the developer and/or
+publisher were modified except for the configuration files needed to set up
+sound devices and input methods.
+
+This software was tested to work with the current official DOSBox build
+(v0.74-3) and was scanned by an antivirus/anti-malware tool.
+
+You use this software at your own risk. DOS Games Archive is not liable for
+any unwanted consequences that may arise from your using this software.
+==============================================================================
+* Download and online play *
+
+This game is available from DOS Games Archive at:
+https://www.dosgamesarchive.com/download/mystic-towers/
+
+It can be played online at:
+https://www.dosgamesarchive.com/play/mystic-towers/
+
+--- END OF FILE (2020/07/07) ---

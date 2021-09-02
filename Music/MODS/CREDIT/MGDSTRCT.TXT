@@ -1,0 +1,24 @@
+Mega Destruction (mega_destruction.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=50252
+Renamed to "MGDSTRCT.XM" because of DOS 8-character limit
+
+Summary
+
+    mega_destruction.xm is a XM format module.
+    Uploaded to modarchive.org on Thu 31st May 2001
+
+Info Info
+
+    Mod Archive ID: 50252
+    MD5: 11a83419f6e4e0c02fac1b58d2654315
+    Format: XM
+    Channels: 10
+    Genre: Rock - Hard
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     Zilly Mike (https://modarchive.org/member.php?69027)

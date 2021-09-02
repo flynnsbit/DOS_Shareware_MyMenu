@@ -1,0 +1,13 @@
+Begin3
+Title:          Xfdisk
+Version:        0.9.3 Beta
+Entered-date:   2009-02-15
+Description:    Xfdisk is a fdisk like software that is used to partition disks.
+Keywords:       Xfdisk, fdisk, partion, hard disk, hdd
+Author:         Ulrich Mueller
+Maintained-by:  -
+Primary-site:   http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/xfdisk.html
+Alternate-site: -
+Platforms:      DOS
+Copying-policy: GNU General Public License, Version 2
+End

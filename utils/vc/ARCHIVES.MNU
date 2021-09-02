@@ -1,0 +1,11 @@
+Z:	Compress with ZIP
+	PKZIP -Pex -whs !~ @!~@
+A:	Compress with ARJ
+	ARJ A !~ !!!~@
+L:	Compress with LHA
+	LHA A -x !~ @!~@
+C:	Create the list of files
+	@ECHO The list of files was created in VC.LST file
+	@COPY !~@ VC.LST > nul
+F10:	Main Menu
+	vc.mnu

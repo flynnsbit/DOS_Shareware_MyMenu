@@ -1,0 +1,133 @@
+From:	Stephen McConnel                        steve@acadcomp.sil.org
+	7500 W. Camp Wisdom Road                phone: (214)709-3361
+	Dallas, TX 75236  U.S.A.                fax:   (214)709-3387
+Date:	March 28, 1995
+
+
+I have ported GNU grep 2.0 to MS-DOS using either Microsoft C (version
+8.00c) or GNU C (DJGPP 1.12m4).  Version 2.0 incorporates the functionality
+of fgrep (now "grep -F") and egrep (now "grep -E") as well as grep.
+
+I prefer the executable produced by Microsoft C, but it's nice that this
+free utility can be compiled by a free compiler!
+
+
+Distribution Files
+------------------
+GREP20AS.ZIP - complete sources for this program stored in the
+		following directories:
+			src/grep-20/
+			src/grep-20/msdos/
+
+GREP20AX.ZIP - (Microsoft C) compiled executables and formatted
+		documentation stored in the following directories:
+			bin/
+			docs/grep/
+
+
+Features of the Microsoft C port
+--------------------------------
+The program supports Unix style pathname wildcard expansion ("globbing").
+Backslashes are converted to forward slashes instead of being used as
+quote characters.  Thus, both MS-DOS and Unix directory delimiters are
+recognized.  Command line quoting is provided by the standard Microsoft C
+startup functions: arguments enclosed in double quotes ("") are passed
+unchanged to the program, except that backslashes immediately preceding a
+double quote perform a quoting function, being used to quote either the
+trailing double quote or the backslash before the double quote:
+	\" is passed as "
+	\\" is passed as \ with the double quote either beginning or
+		ending a quoted section of the argument
+	\\\" is passed as \"
+	\\\\" is passed as \\ with the double quote either beginning or
+		ending a quoted section of the argument
+	...
+	"\\ab" is passed as \\ab
+Double quotes are recognized even inside arguments:
+	a"b c"d is the same as "ab cd" and ab" "cd
+	"ab\\"cd is the same as ab\cd
+
+
+Features of the GNU C (DJGPP) port [binary not distributed]
+-----------------------------------------------------------
+The program supports Unix style pathname wildcard expansion ("globbing")
+unless the environment variable GO32 includes the string "noglob" as part
+of its definition.  Argument quoting involves double quotes and and
+backslashes, but a bit simpler than the Microsoft C rules.
+
+
+Compiling for yourself
+----------------------
+These are the steps to compile these programs for yourself:
+
+	  commercial/shareware		  freeware/GNUware
+	  --------------------		  ----------------
+	% pkunzip -d grep20as		# unzip grep20as
+	% cd src\grep-20		# cd src\grep-20
+	% configur			# configur
+	% nmake				# make 386
+	% copy grep.exe \bin		# copy grep386.exe \bin\grep.exe
+
+Of course, your prompt is likely not to be "%" or "#", and you may wish
+to put the executable programs somewhere other than "\bin".  Note that
+CONFIGUR.BAT uses the PATCH.EXE program, which is not supplied in this
+package.
+
+
+DISCLAIMER
+==========
+I've tried to do a good port without introducing any bugs (while fixing
+a few portability gotchas :-)), but there's no guarantee that the first
+time *you* run this program that *your* system won't coincidentally die a
+horrible death!  If you find any bugs specific to this MS-DOS port,
+please report them to me and i'll try to fix them if i can reproduce them
+locally.
+
+The following lines are copied from the file COPYING since they seem
+most apropos:
+
+			    NO WARRANTY
+
+  11. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
+FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN
+OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
+PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
+OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS
+TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE
+PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING,
+REPAIR OR CORRECTION.
+
+  12. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR
+REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,
+INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING
+OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED
+TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY
+YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER
+PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES.
+
+
+-------------------------FILE_ID.DIZ for GREP20AS.ZIP-------------------------
+GREP20AS.ZIP contains complete source code
+for GNU grep 2.0 (MS-DOS rev A).  This
+program searches files (or standard input)
+for lines that match a given pattern.  The
+pattern may be a regular expression or a
+literal string.  You need this archive (plus
+PATCH.EXE, and Microsoft C or DJGPP) only to
+compile the program.  An MS-DOS executable
+and formatted documentation are available in
+GREP20AX.ZIP. 
+-------------------------FILE_ID.DIZ for GREP20AX.ZIP-------------------------
+GREP20AX.ZIP contains GNU grep 2.0 (MS-DOS
+rev A).  This program searches files (or
+standard input) for lines that match a given
+pattern.  The pattern may be a regular
+expression or a literal string.  This program
+is free under the terms of the GNU General
+Public License (see COPYING).  This archive
+has only the MS-DOS executable and formatted
+documentation.  Complete source code is
+available in GREP20AS.ZIP.

@@ -1,0 +1,114 @@
+ UPTIME v7.02aá       Report the amount of time the computer has been running 
+
+         Free & Open DOS Utility by M.Aitchison@phys.canterbury.ac.nz
+
+USAGE: UPTIME  [options]
+
+OPTiONS:
+ /B      Brief                          /D      Day of start only             
+ /L[:fn] List to printer (or filename)  /S      System uptime (if under dosemu)
+ /T      Time of start only             /U:x    Units:[Days|Hours|Min|S|Ticks]
+
+ENViRONMENT VARiABLES:
+ UPTIME  Specify default options, e.g. SET UPTIME=/Verbosity=16
+ CLASS1=Error, CLASS2=Warn, _ANSI=NO, COMPATIBILITY=OpenDOS, LFN=NO
+
+EXPLANATiON:
+This command shows how long the system has been up and running.  The default
+format is similar to (but not exactly the same as) the Unix command of the
+same name, e.g.
+
+ 11:12am  up 2 hours, since 30-SEP-1997  9:22:12, 2 OpenDOS tasks
+    |        |                  |           |     |
+ time now    |            date of boot      |     if Taskmgr is running
+           running for                   boot time
+           (units automatic)
+
+NOTES:
+Unless you specify units with the /U option (e.g. /U=Seconds) the program
+will choose days, hours, minutes or seconds automatically. This may mean
+a loss of accuracy in the rounding-down process (in the above example, the
+system had been running for 2 hours, 10 minutes and a few seconds).
+
+To output just the amount of time the system has been running, use the /B
+option (perhaps with /U).  The /B, /D, /T and /S options can be used either
+individually or together to restrict the output format.
+
+The /System option only applies with DOESEMU is running (i.e. DOS running
+under Unix), and asks Linux to report the uptime (in its own format), since
+the time normally reported will be based on when DOS started, not the parent
+operating system.
+
+When running under TASKMAX or TASKMGR, the number of currently active tasks
+will be displayed where Unix would normally list the number of users.
+
+The command isn't "case sensitive"... I use capitals in the documentation
+simply to highlight keywords.  You may enter the command and/or its options
+using capital letters or lower case or any mixture.
+
+You can use single-letter options or the full name, and if an option can
+take parameters (e.g. /A:attr) you may use ":" or "=" to specify them (but
+not a space).  For instance /A:RH and /Attribute=Rh and /atr:rH are all
+equivalent.
+
+You can set the CLASS1 and CLASS2 environment variables to override what the
+program does when "fatal" and "non-fatal" conditions are encountered instead
+of ending the programm or outputting a warning message to stderr respecively.
+Setting CLASS1=W asks the program to continue with a warning message when an
+error (such as a disk reading error) would normally have stopped the program.
+
+You can use:
+    Ignore - program continues without a warning message if possible
+             (all the following will set the ERRORLEVEL > 0)
+    Warning - a warning message is written to "stderr" (your screen);
+              if the /L option has been used to list to the printer
+              at most ONE warning message will also be written there.
+    Error   - the program stops after writting an error message to "stderr"
+    Abort   - the program stops without writing an error message
+    Reboot  - the program halts the computer (if possible) after the message
+
+
+CONDITIONS
+
+You are free to use this software provided you accept the warranty
+disclaimer below.  You are also free to distribute this software so
+long as you EITHER distribute the software non-commercially (that means
+for free, or including a small charge simply to recover distribution
+costs), unmodified and without omission (that includes the file you are
+reading!), OR obey the following conditions:
+
+1. You may modify the software so long as you distribute the derived
+works openly with the same conditions as the original software, and
+include all the original embedded copyright notices along with this
+list of conditions and the following disclaimer.
+
+2. The name of the author(s) may not be used to endorse or promote
+products derived from this software without their specific prior
+written permission, and it must be clear to any user or buyer of the
+derived works who the original author(s) are and what changes have
+occurred.
+
+3. You must obtain the permission of the author(s) before distributing
+this software or derived works (including combining it with commercial
+systems) commercially or depart in any way from the above conditions.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR(S) ``AS IS'' AND ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR(S) BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  IF YOU USE IT IN NUCLEAR FACILITIES HAVE
+A BACKUP COPY OF EARTH AVAILABLE IN CASE THIS ONE IS ACCIDENTALLY DESTROYED.
+
+AUTHOR:
+-------------------------------------------------------------------------------
+Mark Aitchison, Physics & Astronomy   \_  Phone : +64 3 3642-947 a.h. 3371-225
+University of Canterbury,             </  Fax   : +64 3 3642-469  or  3642-999
+Christchurch, New Zealand.           /)   E-mail: phys169@csc.canterbury.ac.nz
+#include <disclaimer.std>           (/'   Callsign: ZL3TQE
+-------------------------------------------------------------------------------
+
+

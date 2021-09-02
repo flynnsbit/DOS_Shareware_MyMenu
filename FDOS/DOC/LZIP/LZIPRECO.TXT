@@ -1,0 +1,66 @@
+
+
+
+LZIPRECOVER(1)            User Commands            LZIPRECOVER(1)
+
+
+NAME
+       Lziprecover - recover undamaged members from lzip files
+
+SYNOPSIS
+       lziprecover [options] file
+
+DESCRIPTION
+       Lziprecover - Member recoverer program for lzip compressed
+       files.
+
+       Searches for members in .lz files, and writes each  member
+       in  its  own  .lz file. You can then use `lzip -t' to test
+       the integrity of the resulting files, and decompress those
+       which are undamaged.
+
+OPTIONS
+       -h, --help
+              display this help and exit
+
+       -V, --version
+              output version information and exit
+
+       -q, --quiet
+              suppress all messages
+
+       -v, --verbose
+              be verbose (a 2nd -v gives more)
+
+REPORTING BUGS
+       Report   bugs   to  lzip-bug@nongnu.org  Lzip  home  page:
+       http://www.nongnu.org/lzip/lzip.html
+
+COPYRIGHT
+       Copyright (C) 2010 Antonio Diaz Diaz.  License GPLv3+: GNU
+       GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+       This  is  free software: you are free to change and redis-
+       tribute it.  There is NO WARRANTY, to the extent permitted
+       by law.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lziprecover 1.9            January 2010                         1
+
+

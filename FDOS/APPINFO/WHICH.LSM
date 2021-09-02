@@ -1,0 +1,19 @@
+Begin3
+Title:which
+Version:2.1
+Entered-date:   2002-03-20
+Description:which is a utility born in the UNIX world that enables users
+to find executable files in directories listed in the PATH
+environment variable. Full wildcard support, relative
+pathnames, optional file details (size, date). User-definable
+program extensions, codepage-correct time/date formatting.
+New DOS switchar support.
+Keywords:DOS, extension, file, utility, find, locate, PATH
+Author:trane@gol.com (Trane Francks)
+Maintained-by:trane@gol.com (Trane Francks)
+Primary-site:http://www2.gol.com/users/trane/programming/programming.html
+29kBwhich21.zip
+1kBwhich21.lsm
+Platforms:DOS, Compiler: Borland Turbo Pascal 7.0
+Copying-policy: GNU General Public License, Version 2
+End

@@ -1,0 +1,227 @@
+' This file contains compression configuration information for VC 4.99
+' All blank lines, and lines beginning with ' are ignored.
+'
+' Line Description
+' ---- -----------
+'   1  Parser commands
+'   2  View archive contents
+'   3  Extract files
+'   4  Compress files
+'   5  Delete files
+'
+' Parser commands:
+'   N - file name with or without path
+'   P - path
+'   S - size
+'   C - compressed size
+'   A - arrtibutes
+'   T - time
+'   D - full date or day
+'   M - month
+'   Y - year
+'   L - end of line
+'   ; - description separator
+'   W or other letter  - any word
+'   'text1' or "text2" - any text
+'
+' Parser switches:
+'   \ - this entry is subdirectory
+'
+' Command line parameters:
+'   !A - archive file name with path
+'   !F - single file allowed
+'   !M - single file or multiple files allowed
+'   !@ - filelist allowed
+'   !T - temporary directory
+'   !P - password (not supported yet)
+
+'ZIP:	S W C W D T W A N L
+'	pkunzip.exe -v !A
+ZIP:	-
+	-
+	pkunzip.exe -d -Jrhs !A @!@!M
+	pkzip.exe -b!T -ex -P -whs !A @!@!M
+	pkzip.exe -b!T -d !A @!@!M
+
+'ZIP:	S W C W D T W N L
+'	unzip.exe -v !A
+'	unzip.exe -C !A !M
+'	zip.exe -S9 -b !T !A !M
+'	zip.exe -d -b !T !A !M
+
+'ZIP:	N S C W Y "-" M "-" D T W A W L
+'	x1.exe l !A
+'	x1.exe xy !A !M
+'	x1.exe a !A !M
+'	x1.exe d !A !M
+
+ARJ:
+A0?:
+A1?:	\ W N L  W W S C W Y "-" M "-" D T W A "D" W; \ W N L  W S C W Y "-" M "-" D T W A "D" W; W N L  W W S C W Y "-" M "-" D T W A W; W N L  W S C W Y "-" M "-" D T W A W
+'	³ ÀÄÅÄÅÄÄÁÄÁÄÅÄÅÄÁÄÅÄÄÅÄÄÅÄÄÅÄÄÅÄÅÄÁÄÅÄÄÅÄÄÁÄ Any word
+'	³   ³ ³      ³ ³   ³  ³  ³  ³  ³ ³   ³  ÀÄÄÄÄ Directory flag
+'	³   ³ ³      ³ ³   ³  ³  ³  ³  ³ ³   ÀÄÄÄÄÄÄÄ Attributes
+'	³   ³ ³      ³ ³   ³  ³  ³  ³  ³ ÀÄÄÄÄÄÄÄÄÄÄÄ Time
+'	³   ³ ³      ³ ³   ³  ³  ³  ³  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄ Day
+'	³   ³ ³      ³ ³   ³  ³  ÀÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Month
+'	³   ³ ³      ³ ³   ³  ÀÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Date separator
+'	³   ³ ³      ³ ³   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Year
+'	³   ³ ³      ³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Compressed size
+'	³   ³ ³      ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Size
+'	³   ³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Line feed
+'	³   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ File name
+'	ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ This entry is a directory
+	arj.exe v !A
+	arj.exe x -p !A !!!@!M
+	arj.exe a -w!T !A !!!@!M
+	arj.exe d -w!T -p !A !!!@!M
+
+'ARJ:
+'A0?:
+'A1?:	N S C W Y "-" M "-" D T W A W L
+'	x1.exe l !A
+'	x1.exe xy !A !M
+'	x1.exe a !A !M
+'	x1.exe d !A !M
+
+RAR:
+R0?:
+R1?:	"*" N L  S C W D T A W W W L; N L  S C W D T A W W W L
+	rar.exe v -c- -std !A
+	rar.exe x -c- -std !A @!@!M
+	rar.exe a -c- -std !A @!@!M
+	rar.exe d -c- -std !A @!@!M
+
+LZH:	N L  S C W Y "-" M "-" D T A W W L
+	lha.exe v !A
+	lha.exe x !A @!@!M
+	lha.exe a !A @!@!M
+	lha.exe d !A @!@!M
+
+'LZH:	N S C W Y "-" M "-" D T W A W L
+'	x1.exe l !A
+'	x1.exe xy !A !M
+'	x1.exe a !A !M
+'	x1.exe d !A !M
+
+ACE:
+C0?:
+C1?:	D "³" T "³" C "³" S "³" W N L
+	ace.exe v -c- !A
+	ace.exe x -y -t!T. -std !A @!@!M
+	ace.exe a -y -t!T. -std !A @!@!M
+	ace.exe d -y -t!T. -std !A @!@!M
+
+AIN:	N S M "." D "." Y T L; N L S M "." D "." Y T L
+	ain.exe v -y !A
+	ain.exe x -. -.em -.xm -w!T !A @!@!M
+	ain.exe a -. -.em -.xm -w!T !A @!@!M
+	ain.exe d -. -.em -.xm -w!T !A @!@!M
+
+ARC:	"Total" W W; N S P L
+	pak.exe v /path !A
+	pak.exe e /path !A @!@!M
+	pak.exe a -c !A @!@!M
+	pak.exe d !A @!@!M
+
+'ARC:	N S M "/" D "/" Y T W W C W L
+'	pak.exe v !A
+'	pak.exe e !A @!@!M
+'	pak.exe a -c !A @!@!M
+'	pak.exe d !A @!@!M
+
+'ARC:	N S W C W M "-" D "-" Y T W L
+'	pkunpak.exe -v !A
+'	pkunpak.exe !A @!@!M
+'	pkpak.exe -a !A @!@!M
+'	pkpak.exe -d !A !M
+
+CAB:	M "-" D "-" Y T A S N
+	extract.exe /d !A
+	extract.exe /e !A !M
+	makecab.exe /d InfFileName=NUL /d RptFileName=NUL /d DiskDirectoryTemplate= /d CabinetName1=!A /f !@
+
+ESP:    S M "/" D "/" Y T N
+        unesp.exe vs !A
+        unesp.exe xs !A @!@!M
+        esp.exe /p !A @!@!M
+
+HA:	N S C W W D T W L  W "(none)" P L  A L; N S C W W D T W L  W P L  A L
+	ha.exe lf !A
+	ha.exe x !A !M
+
+'HA:	N S C W Y "-" M "-" D T W A
+'	x1.exe l !A
+'	x1.exe xy !A !M
+'	x1.exe a !A !M
+'	x1.exe d !A !M
+
+HPK:	"Directory:" P L; \ "Subdirectory" D T N L; W S C W D T N L
+	hpack.exe v -r !A
+	hpack.exe x !A @!@!M
+
+HYP:	S W C W D "-" M "-" Y T N L
+	hyper.exe -v !A
+	hyper.exe -xp !A . !M
+
+J:
+J0?:
+J1?:	W N L  S A W W W Y "-" M "-" D T W W L  W W W L
+	jar16.exe v !A
+	jar16.exe x !A !!!@!M
+	jar16.exe a -w!T !A !!!@!M
+	jar16.exe d -w!T !A !!!@!M
+
+LIM:	"[\" P "]" L; N "<DIR>" A M "-" D "-" Y T W W L; N S C A M "-" D "-" Y T W W W L
+	limit.exe l !A
+	limit.exe e !A @!@!M
+
+PAK:	"Total" W W; N S P L
+	pak.exe v /path !A
+	pak.exe e /path !A @!@!M
+
+'PAK:	N S M "/" D "/" Y T W W C W L
+'	pak.exe v !A
+'	pak.exe e !A @!@!M
+
+SAR:	N S C W W W L
+	sar.exe l !A
+	sar.exe e !A !M
+
+SQZ:	N L  S C W D T A W L
+	sqz.exe v !A
+	sqz.exe x !A @!@!M
+
+TAR:	A W S M D T Y N L
+	tar.exe -tvf !A
+	tar.exe -xvf !A -T!@!M
+
+TGZ:	S D "-" M Y T N
+	untgz.exe -l !A
+	untgz.exe !A !F
+
+UC2:	"--> Directory of" P L; N S D T
+	uc.exe vs !A
+	uc.exe e !A @!@!M
+
+X:	N S C W Y "-" M "-" D T W A W L
+	x1.exe l !A
+	x1.exe xy !A !M
+	x1.exe a !A !M
+	x1.exe d !A !M
+
+Z:	M "-" D "-" Y T S A C N
+	icomp.exe -l !A
+	icomp.exe -d !A !F
+	icomp.exe -c !F !A
+	icomp.exe -r !F !A
+
+ZOO:	S W C D M Y T "C " N L; S W C D M Y T N L
+	zoo.exe l !A
+	zoo.exe x !A !M
+
+'ZOO:	N S C W W T W W L
+'	x1.exe l !A
+'	x1.exe xy !A !M
+'	x1.exe a !A !M
+'	x1.exe d !A !M

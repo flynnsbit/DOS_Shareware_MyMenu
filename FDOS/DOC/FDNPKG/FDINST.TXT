@@ -1,0 +1,23 @@
+
+               FDINST - minimalistic FreeDOS package installer
+                    Copyright (C) 2015-2016 Mateusz Viste
+
+FDINST is a very 'light' version of FDNPKG. It shares most of its source code
+with FDNPKG to ensure that both tools handle packages exactly the same way.
+
+FDINST however is a much simpler tool:
+ - no internationalization support
+ - no networking
+ - no repository handling
+ - no support for the LZMA compression method
+
+Shortly said, FDINST is able to do only two basic things:
+ - installing a single package from a local FreeDOS ZIP package
+ - removing an already installed package
+
+The advantage of FDINST is that it is a 16-bit tool with very low hardware
+requirements:
+ - 8086 CPU or compatible
+ - 200K of available conventional RAM
+
+Usage and syntax: type "FDINST --help" for usage help.

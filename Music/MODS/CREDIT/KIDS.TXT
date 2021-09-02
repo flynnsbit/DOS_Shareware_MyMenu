@@ -1,0 +1,24 @@
+kids (musix-kids.mod)
+https://modarchive.org/index.php?request=view_by_moduleid&query=53288
+Renamed to "KIDS.MOD" because of DOS 8-character limit
+
+Summary
+
+    musix-kids.mod is a MOD format module.
+    Uploaded to modarchive.org on Mon 24th Feb 2003
+
+Info Info
+
+    Mod Archive ID: 53288
+    MD5: 1e6e4da604ae51834cd0502ac388d4db
+    Format: MOD
+    Channels: 4
+    Genre: Demo Style
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     m0d (https://modarchive.org/member.php?69141)

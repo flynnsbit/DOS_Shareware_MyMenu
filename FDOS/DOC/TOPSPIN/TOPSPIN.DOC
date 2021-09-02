@@ -1,0 +1,345 @@
+             "If you are lucky the things you forgot are the things which 
+        didn't matter." 
+                                                M. Robert Showalter
+        
+
+
+
+                      TOPSPIN V3.0 (with application hints)  
+
+		Topspin is designed to allow the user of an IBM PC
+        compatible computer under DOS to construct custom menus specifically
+        tailored to the user's requirements.  Most "powerusers" of personal
+        computers do not like menu driven systems.  This is generally true
+        because the menus don't do what the user of the machine actually
+        wants done.
+		Topspin attempts to correct this by allowing the user to
+        build fast acting menus, set up to do precisely what the machine
+        operator wishes the machine to do. The ultimate limitation on the
+        amount of work which a computer user may accomplish is the number of
+        keystrokes which the user is forced to enter in order to accomplish
+        his or her ultimate goals. The Topspin package allows a user to
+        reduce this number of keystrokes to the minimum possible: 1 per
+        task.
+		Topspin is distributed under the GPL. (See the file COPYING 
+	for details).
+
+			rcanup@hal-pc.org
+
+        	Great  care  and effort has been expended in the coding  and
+        testing of these programs to insure their correct functionality. 
+        Unfortunately testing can only show a program to be faulty, no
+        amount of testing can show a program to be error free.  If, in using
+        these programs you do uncover a boundary condition which causes the
+        code to malfunction please feel free to send the specifics of the
+        circumstances which caused the failure to the above address.  Every
+        effort will be expended in order to attempt to correct bugs which
+        are uncovered in this fashion.
+        	The philosophy of Topspin is "Lean and Mean". Topspin  lacks
+        windows, colors, sound effects, and fancy opening displays. While
+        they make programs appear to be more "Professional"; such things
+        serve only to annoy someone whose goal is to accomplish as much as
+        is possible in a given period of time. In accordance with the "Lean
+        and Mean" way of doing things Topspin does not require that you wait
+        for the entire menu to be printed before accepting your choices of
+        operations: a valid entry during printing aborts the menu printout,
+        and performs the selected operation. Part of the idea of Topspin is
+        that humans tend to work on an out of sight, out of mind basis.
+		For example if one of the choices on  a  menu  system is to
+        back up current files, one is much more likely to do this on a
+        regular basis than if one is not visually reminded of it.  The other
+        way in which Topspin tends to speed up work involves "mode
+        shifting". If one is involved in a task it is annoying, and
+        confusing to have to shift modes from a creative problem solving
+        one, to a "what do I have to do to get this machine to accomplish
+        something". Not only does this tend to cause one to break chains of
+        thought, it causes momentary confusion: "What did I name that
+        file?". When the time is added for typing (and in the case of
+        errors; retyping) complex command lines, someone using Topspin is
+        well ahead of someone not using it. In developing Topspin when the
+        stage was finally reached that the program could be used to help in
+        its own development, there was a burst increase in the development
+        cycle.
+        	In  essence  Topspin is a programmable  menu  generator.  To
+        produce an output BASIC requires source code which gives it a list
+        of instructions to perform. Topspin is similar in that respect.  Let
+        us assume that you wished to display a menu which looked like this:
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        *******************************************************************************
+        
+                                        Current File: FOO
+        
+                F1 Edit current file                    F2 Make FOO.exe file
+                F3 Edit this menu                       F4 Debug FOO.exe file
+                F5 Do anything                          F6 Refetch disk parms
+
+
+
+
+
+
+                F7 Do above again                       F8 Copy FOO.exe to floppy
+                F9 Backup source                        F10 Change current file
+        
+                                        Press ESC to exit
+        
+        ******************************************************************************
+                       Selection>>
+        
+        
+        
+        
+        
+        	It  would  be  necessary to supply Topspin  with  an  ASCII
+        source file which might look something like this:
+        
+        
+        
+        
+        *******************************************************************************
+        
+                                        Current File: %1
+        
+                F1 Edit current file                    F2 Make %1.exe file
+                F3 Edit this menu                       F4 Debug %1.exe file
+                F5 Do anything                          F6 Refetch disk parms
+                F7 Do above again                       F8 Copy %1.exe to floppy
+                F9 Backup source                        F10 Change current file
+        
+                                        Press ESC to exit
+        
+        ******************************************************************************
+        #* This is an example of a comment line
+        #* The next non comment line will load WordStar (if it is in  the 
+        #* system).
+        #* The lines starting with lbs sign colon define  a  'runstream' 
+        #* that  is series of characters that will be  supplied  to  the 
+        #* computer  just  as though the operator had  typed  them.  The 
+        #* percentage number will be expanded just as they are in a batch 
+        #* file.
+        #* The line with the tilde suspends the runstream until we  exit 
+        #* WordStar,   at  which time we then  perform  the  line  which 
+        #* follows it . It is not legal to place comment lines between
+        #* the areas defined by the lbs sign colon.  See next 
+        #* comment line for next legal position.
+        ##ws
+        #:n%1.asm
+        #:~
+        #:!dir/w
+        #* This is the next legal comment area
+        #* Putting an exclamation mark at the start of a line will  cause 
+        #* the  menu to print the message "Press any  key  to  continue" 
+        #* before we return to the displayable menu
+        ##!a %1
+        #* This is also a legal comment area
+        ##.ws
+
+
+
+
+
+
+        #:ndemo.mnu
+        ##debug %1.exe demo.mnu
+        ##?!"What do you want to do? "%2 
+        ##>
+        ##!%2
+        ##;copy %1.exe b:
+        ##copy %1.asm b:
+        ##<"What is the new program to work on? "%1
+        #end
+        
+          
+        
+        	The  first  section of the source file  is  the  displayable
+        portion of the menu. The second section comprises the commands for
+        Topspin to execute. Three things may be noted: 1).  The display
+        shows the line "Selection >>" which does not appear in the source
+        file. 2). Any line beginning with '#' in the source file is not
+        shown in the displayed menu. 3). The sequence %1 in the source file
+        has been replaced with "FOO" in the displayed menu.
+        	These observations are key to the operation of Topspin.  The
+        line "Selection >>" is the Topspin prompt line, which indicates that
+        Topspin is ready to accept a user input. The lines in the source
+        file which begin with '#'are the command lines for Topspin to
+        interpret; they instruct Topspin as to what actions to take upon
+        their activation.  In a short time we will discuss the specifics of
+        these command lines. Finally %1 is a command to Topspin which tells
+        it to replace its every occurrence with the first parameter stored
+        in the disk file \menu\current.dta.
+        	A logical question to ask at this time would be "How did any
+        information get into the file 'current.dta' in the first place?" The
+        answer to that question involves the next to the last line in the
+        command section of the demonstration menu above.  This line causes
+        Topspin to print the quoted prompt line and accept user input. When
+        it is invoked, it stores the information in the file
+        \menu\current.dta. The symbol to invoke the PUT command is ##< .
+        	As  you  might  expect,  the  inverse  to  the  PUT  command
+        described above is a GET command. Normally the parameters are loaded
+        from disk only when the original menu is loaded, GET forces a reload
+        from disk when it is invoked. The symbol for a GET command is ##> .
+        	In a similar fashion the the ##? combination ( which is  the
+        PROMPT command) allows a user to supply command line information to
+        Topspin. This is done by causing Topspin to search the line for an
+        opening '"' when it finds it PROMPT clears the screen and starts
+        printing the information until it finds a closing '"'. PROMPT then
+        accepts keyboard input until a carriage return is entered.  PROMPT
+        then appends the information to all of the non quotation enclosed
+        information on its line. PROMPT then executes the information which
+        now exists on its command line.  In other words: the information
+        which follows PROMPT after it has appended the entered keystrokes
+        behaves just as though it had been entered at the DOS command
+        prompt.
+        	Topspin, upon receiving a user keystroke begins scanning the
+        source file. If the keystroke was F1 it will look for the first
+        occurrence  of a line beginning with '##'. When it finds  one  it 
+        will  take  what  ever follows the '##'(and  an  optional  single 
+        character  modifier  to  the '##') and treat  it  as  though  the 
+        remainder of the line had been entered at the dos command prompt. 
+        F2  would cause Topspin to execute the second line starting  with 
+        '##'  etc. If a character is entered for which  no  corresponding 
+        '##' line exists (example: F3 when only two cases of '##' are  in 
+        the  source  file)  then the computer will beep at  the  user  to 
+        indicate an error, and Topspin will continue waiting for a  valid 
+        keystroke.  Entry  of an invalid character (examples  :  carriage 
+        return,  backspace,or  &) will cause the same response  from  the 
+        machine.  It  is equally important to note that after  a  Topspin 
+        command line has executed it self the computer will return to the 
+        previously  displayed  menu,  ready  for  another  keystroke  and 
+        response action.
+        	The  allowable  keys for menu entry are F1  through  F10,  1
+        through 9, and A - Z. Thus a menu may have up to 45 options on one
+        screen.  Lower case a - z are converted to A - Z by the program.
+        	Please note that the source files are free form, that is; it
+        is permissible for the lines starting with '##' to come either
+        before or after the lines to be displayed, if the person writing the
+        menu wants them there. Topspin doesn't care about that. As is shown
+        in the example menu, it is not legal for a '#*' comment line to be
+        inside a control block, where a control block is defined as the
+        region from one '##' to the end of the run stream for that '##'. (
+        See example menu above for clarification ).
+        	A  little  earlier we mentioned that the '##' on  a  Topspin
+        command line could be followed by an optional single character
+        modifier. These modifier characters are :
+        
+        1). !
+        2). ;
+        3). .
+        	Using  the  '!' modifier changes the way that  Topspin  acts
+        after the command line with the '##!' on it has executed; instead of
+        immediately redisplaying the previous menu option screen Topspin
+        will print "Press any key to continue" and wait for the user to
+        press a key. This is useful if the command line were something like
+        DIR *.ASM; since otherwise the menu would overwrite the displayed
+        file names before the user had a chance to read them.
+        	The  ';'  modifier disables a menu option .  In  the  sample
+        source code pressing an F8 would cause the computer to beep at the
+        user even though sufficient '##' exist on the source screen to allow
+        an F8 to be a valid keyboard option.
+        	The  '.'  modifier causes Topspin to reload  its  menu  from
+        disk; normally after executing an option Topspin keeps the menu
+        resident in memory. If the '.' option is invoked the menu may be
+        modified and reloaded in modified form. If the '.' modifier is not
+        invoked, the new menu would not be reloaded until menu had been
+        exited, and re-entered, from the command line.
+        	It  is  quite  acceptable for the commands  entered  on  the
+        Topspin command lines to be the names of batch files. Both PROMPT
+        and GET will supply the %1 etc. parameters to batch files.
+        	One  of the most interesting capabilities of Topspin is  the
+        fact that the '~' character will suspend operation of an internal
+        runstream until the program activated by the previously active
+        runstream is exited. If we examine the Demo menu a sample of such a
+        suspension can be found. This allows us to stop supplying characters
+        to a program at an appropriate point, and then continue supplying
+        them when we leave the program.
+             Topspin symbols:
+        #* a comment line indicator line is ignored
+        #: internal character stream
+        #< put command
+        #> get command
+        #end or #END  - end of a menu indicator
+             ^M  sends out control M to program (cr).  ^G would send bell 
+        character etc., when invoked by a #: line.
+             |1  sends  out function key 1 (F1) to program |9  sends  out 
+        function key 9 (F9) etc., when invoked by a #: line.
+        example:
+        
+        ##ws
+        #:n%1.asm
+        #:|1|13
+        
+        The  above would invoke Wordstar , cause a nondocument file,  the 
+        name of which was supplied by the %1 parameter, to be edited, and 
+        the  third  line  of the example would send out  F1,F1,3,  and  a 
+        carriage return, which would cause Wordstar to set its help level 
+        to level three.
+        
+        	When Topspin is invoked it checks both the current directory
+        and the \MENU directory for the menu named in the command line. This
+        means that one need not keep copies of menus in all of the different
+        directories one works in; a single copy in the \MENU directory is
+        sufficient.
+        	Topspin  requires  that  the  file  command.com  be  on  the
+        currently logged disk.
+        	To  run Topspin type TS <menumame> at  the  command
+        line. Where <menuname> is the name and extent of the menu you
+        wish to use. Example:
+                            TS DEMO 
+
+        
+                                                Bob Canup 6/5/2000
+
+
+
+
+
+
+                            Hints for using Topspin.
+             I  find it best to put the most commonly used  functions  on 
+        the menu up at the top, reserving the bottom of the menu for less 
+        commonly  used options. The reason that I put both function  keys 
+        and  numbers  ahead of letters as menu options is the  fact  that 
+        people  use  to  command  lines  will  sometimes  start   typing, 
+        forgetting that they don't have to. If you are using large  menus 
+        with letters as options, spurious options may be selected by this 
+        typing. 
+                       THE FOLLOWING IS NECESSARY WHEN USING VERSIONS  OF 
+        DOS BEFORE 3.3. DOS 3.3 MAKES IT POSSIBLE TO SIMPLY TYPE THE NAME 
+        OF A BATCH FILE ON A ## LINE, EVEN THOUGH THE BATCH FILE  CHANGES 
+        DIRECTORIES. Earlier versions of DOS get confused if a batch file 
+        is  in  one  directory, and the batch file attempts to  go  to  a 
+        separate directory.
+        
+             To  use  Topspin with external batch files which  reside  in 
+        different directories it is necessary to do the following:
+        
+        ##
+        #:cd \DirectoryName
+        #:BatchFileName
+        
+             The last line in batch file would be:
+        
+        EXIT
+        
+             This is necessary because Topspin works by invoking a  child 
+        copy  of COMMAND.COM . The first line in the menu  selection  (## 
+        only)  simply loads in the child copy of COMMAND.COM .  To  leave 
+        this child it is necessary to perform the EXIT command. 
+             THE ABOVE PROCEDURE WILL LEAVE THE CURRENT DIRECTORY AS  THE 
+        ONE  THE  BATCH FILE RESIDED IN WHEN CONTROL IS  PASSED  BACK  TO 
+        TOPSPIN. Doing operations on files in different directories  with 
+        batch  files in DOS before v3.3 is an inherently clumsy thing  to 
+        do.
+
+	
+

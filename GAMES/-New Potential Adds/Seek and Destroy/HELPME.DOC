@@ -1,0 +1,219 @@
+=============================================================================        
+                           Seek And Destroy v1.0
+                             Shareware Version
+
+         copyright (c) 1995 Safari Software and Vision Software
+=============================================================================
+                   * Instructions/Troubleshooting Info *
+=============================================================================
+
+
+Requires:
+  þ A 486 or faster IBM-compatible PC
+  þ VGA graphics
+  þ Hard disk with about 8.2 Megs Free 
+    (approx. 16 Megs with animation file)
+  þ 4 Megabytes of RAM
+
+Also supports:
+  þ Sound Blaster, Sound Blaster Pro, Sound Blaster 16,
+    Gravis Ultrasound, and 100% compatible music cards.
+  þ Joystick or Mouse
+
+Recommended hardware:
+  þ 486/66 or faster CPU for smooth play at high detail.
+  þ GUS
+  þ Mouse or Joystick
+
+To start Seek and Destroy
+=========================
+
+  1. Switch to the drive where the game is installed (C:)
+  2. Switch to the subdirectory where the game is installed (CD \GAMES\SEEK)
+  3. Before running Seek and Destroy, you should run SETUP.EXE to configure
+     your sound, keys, mouse and joystick.  If you don't run SETUP.EXE
+     beforehand, it will run automatically when you run Seek and Destroy for
+     the first time.
+  4. Type SEEK [enter] to begin the game.
+
+
+=============================================================================
+                      Common problems and solutions
+=============================================================================
+
+Running with WINDOWS
+--------------------
+
+Seek and Destroy does not work reliably under Windows.  Sound may not work
+and you may get unexpected jerking in the scrolling.  For best results exit
+Windows before running Seek and Destroy.
+
+
+=============================================================================
+                     HOW TO BOOT YOUR COMPUTER CLEAN
+=============================================================================
+    
+If you're having problems running Seek and Destroy, you might be able to
+get it up and running by "Booting your computer clean".  By this, we mean
+starting up your computer without loading all of the little memory managers
+and device drivers that might interfere with the game.  It's a relatively
+simple process, so please bear with us.
+
+If you have DOS 5.0
+-------------------
+
+   Please skip this section if you have DOS 6.0 or later!
+   You need to create a "boot disk" to allow you to start your computer
+   without loading all the TSR's and memory managers that take away 
+   memory.  Here's how.
+
+   A. Put a blank disk in your A: drive and format it as a DOS disk.  (Don't
+      do this in your B: drive - it won't work!)  To do this, type the
+      following command:
+      
+      FORMAT A: /S
+
+   B.  Wait while your computer formats the disk.
+   C.  Label the disk "Boot Disk" and keep it handy.  You'll need this
+       disk whenever you want to start Seek and Destroy.
+
+   Now, you can reboot your computer and play Seek and Destroy:
+
+   A.  Put the boot disk in your A: drive.
+   B.  Restart your computer,  either by pressing CTRL-ALT-DELETE,  by
+       hitting your reset button,  or by turning it on.
+   C.  Wait while your computer boots from the boot disk.
+   D.  After a little while, your computer will stop and give you the A>
+       prompt.
+   E.  Now change to your hard disk by typing "C:".
+   F.  Go into the Seek and Destroy directory by typing "CD \GAMES\SEEK".
+   G.  Begin by typing "SEEK".
+
+If you have DOS 6.0 or later
+----------------------------
+
+   Reboot your computer by pressing RESET or Ctrl-Alt-Del.  Wait for the
+   message "Starting MS-DOS..." to come up.  Now press the [F5] key.
+
+   This will cause DOS 6.0 to bypass all of your TSR's, memory managers,
+   and other programs which normally occupy main memory.
+
+   Now change into the Seek and Destroy directory and begin the game.
+
+=============================================================================
+                      GENERAL QUESTIONS & ANSWERS
+=============================================================================
+
+Q: When I run Seek and Destroy,  the game refuses to start and gives
+   me the message "You do not have enough free memory."
+
+A: To run Seek and Destroy,  you'll need:
+   
+   * At least 550K of free conventional memory
+   * At least 2.5 Megs of other memory.
+   
+   Here's what you need to do:
+
+   1. Make sure you have at least 4 megabytes of memory installed in your
+   computer!  You'll need this much in order to have 2.5 Megs free.
+
+   2. If you are trying to run Seek and Destroy from Windows, completely exit
+   Windows and try running it from DOS.
+
+   3. If you are trying to run Seek and Destroy from "DOSSHELL" or any other
+   menu program,  please exit from the menu program.  Then, run Seek and
+   Destroy from the DOS prompt.  Menu programs often occupy enough memory that
+   there won't be enough left for the game.
+
+   4. If none of the above help, you can solve this problem quickly by
+   "Booting your computer clean".  See above for details!
+
+Q: When I run Seek and Destroy, the computer locks up or reboots.
+A: Run SETUP and verify that your settings are correct. If you are
+   not using a sound card, make sure that SETUP is set for "No Sound Card".
+   If you are using a sound card, verify that your sound card has no 
+   address, IRQ, or DMA conflicts with other cards in your system.  If your 
+   sound card works properly with other games, you can assume that there 
+   are no conflicts.  However, if your sound card does not work with other 
+   games,  you have a conflict.  See your sound card manual for details on 
+   fixing this.
+
+Q: Seek and Destroy runs slowly on my 386 or 486 computer.  What can I do?
+A: Your computer or VGA card isn't as fast as the game would like.
+
+   You can speed the game up by changing the detail to LOW for TERRAIN,
+   OVERLAY and EXPLOSIONS in the options screen.  If you are desperate,
+   you may want to set your sound card to NONE if you are using a Sound
+   Blaster type card (this will speed the game up).
+
+Q: While playing, I get dumped back to DOS with an error message
+   "Error initializing sound"
+A: This is probably caused by the lack of a sound.cfg file in the directory
+   that Seek and Destroy was run from.  Usually, Seek and Destroy will run
+   SETUP.EXE if no sound.cfg file is found.  If for some reason that failed
+   then when the sound library tries to initialize it will not work.  In this
+   case run SETUP.EXE manually. Make sure SETUP.EXE is in the same directory
+   that you installed Seek and Destroy to (C:\GAMES\SEEK)
+
+Q: While playing, I get dumped back to DOS with an error message
+   "Error while loading XXXXXXX"
+A: You have probably deleted one of the files needed by Seek and Destroy or
+   The game was run from a directory where the data files weren't present.
+   Re-install Seek and Destroy before running the game.
+
+Q: I can't seem to get ANYTHING on the screen.  I type SEEK and the system
+   "hangs".  What now?
+A: Make sure your computer meets the system requirements mentioned earlier in
+   the manual. If you do, you may have TSR's that conflict with Seek and
+   Destroy.  Remove the TSR's and try running the game with a "clean boot"
+   from a DOS diskette.
+
+
+=============================================================================
+                           SOUND CARD NOTES
+=============================================================================
+
+   Since new models of sound cards are always being manufactured and revised,
+   sometimes a new sound card will come out that's not compatible with
+   Seek and Destroy.  To determine whether you are having a sound-related
+   conflict, try setting up Seek and Destroy for "No Sound."  If Seek and
+   Destroy works without sound, but locks up with sound on, chances are that
+   you are having a sound-related conflict.
+
+   Here's how to contact the top sound card makers for information about
+   sound card problems and obtaining the latest driver files.
+
+
+   Company       Sound Card         Phone        BBS           CompuServe GO
+   ------------- ------------------ ------------ ------------  -------------
+   Creative Labs Sound Blaster      405-742-6622 405-742-6660  Blaster 
+   Gravis        Ultrasound         604-431-1708 604-431-5927  PcVenB (14)
+
+=============================================================================
+CONTACTING SAFARI'S TECH SUPPORT
+=============================================================================
+
+If you need further assistance, please call our tech support department:
+
+In the USA:  voice: +1 (301) 738-2349
+               fax: +1 (301) 299-3841
+
+In Europe:   voice: +44 (0) 1767 260903
+               fax: +44 (0) 1767 262043
+
+You can also contact us online:
+
+CompuServe:     GO EPIC
+WorldWide Web:  http://www.epicgames.com/
+Internet Mail:  help@epicgames.com
+Internet FTP:   ftp.uwp.edu
+Internet News:  We answer questions in comp.sys.ibm.pc.games.action
+America Online: We answer questions posted in the "PCGames" area
+
+EXEC-PC BBS
+   Contact:     Safari Software
+   2400 Baud:   414-789-4210
+   14.4K Baud:  414-789-4360
+
+   FTP: ftp.execpc.com
+=============================================================================

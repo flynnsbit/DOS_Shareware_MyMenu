@@ -1,0 +1,266 @@
+lcddrv.txt - HOW TO WRITE AN LCD DRIVER FOR DAMP
+================================================
+
+The LCD support in DAMP is driver-based.  The drivers are written
+in separate files, which look very much like a C program, but have
+the .sc extension.
+
+This document describes how to go about writing an LCD driver for DAMP.
+
+Note that although the reason these drivers originally came into being
+was in order to drive LCD displays, the overall structure should be
+treated as an "output" driver, rather than an LCD driver, as theoretically
+you could output to all kinds of weird and wonderful devices by using
+this system.
+
+First of all, it is important to note that attempting to write a driver
+without knowing what you're doing could result in damage to your LCD.
+I hereby claim no responsibility for any loss as a result of you
+attempting to write an LCD driver.
+
+Secondly, someone may have already written a driver for the particular
+LCD you have, so check the DAMP web page at http://www.damp-mp3.co.uk/
+for any driver updates.
+
+Also note that you may tweak the parameters to values which you know
+to be correct, and DAMP still won't work with your LCD.  In which
+case you need to send as much information as you can about your display
+and the chip it uses to drivers@damp-mp3.co.uk - NOTE: I WILL NOT
+WRITE DRIVERS FOR YOU! I will only make use of the info you send me
+if the reason it doesn't work is due to a problem which cannot be
+solved by setting the driver parameters to the correct values.
+
+The drivers that come with DAMP as standard, "LCDWIRE1.sc" and
+"LCDWIRE2.sc", are for two different wiring schemes of the HD44780 chip,
+and this document may use them as an example, in order to guide you through
+the driver creation process.
+
+Oh, and one last thing before we get started: If you manage to write a
+working driver, please send it to drivers@damp-mp3.co.uk so it
+can be included with future releases of DAMP, and/or made available
+from the DAMP web page.
+
+You should also send a small (less than 10Kb) 2-colour
+.GIF image, showing a wiring diagram for your LCD.
+
+
+CREATING A NEW DRIVER
+=====================
+First of all, if you don't know how to program in C, you may not
+be very successful, depending upon how much of an existing driver
+needs altering.  (eg: if you just need to alter a couple of numbers,
+I'm sure you'll do alright).
+
+DAMP LCD drivers are written in C, and are compiled at runtime by
+DAMP thanks to the excellent SeeR scripting library by Przemyslaw
+Podsiadly.  I would really suggest you go and download the SeeR package
+from his homepage as it has full instructions on what will and wont
+work when writing a script. The SeeR homepage address can be found
+in the DAMP documentation.
+
+I would suggest basing your driver on an existing one, so make a copy of
+it and rename it to whatever you want to call your driver.  Also be
+sure to alter the "driver" setting in the [lcd] section of DAMP.ini to
+the name you have chosen.
+
+However, the drivers that come with DAMP as standard are for a
+parallel port LCD.  Writing a driver for a serial port LCD will be a
+slightly different process, although it is certainly possible.
+
+Now edit your .sc file. You will notice that the first thing this does
+is #include "damplcd.sh".  This is a header file that contains all the
+necessary functions and variables for writing a driver. Here is a list
+of what they are:
+
+Variables
+---------
+
+char lcd_surround_symbol      -  The ascii code of the "Surround sound" symbol
+char lcd_play_symbol          -  The ascii code of the "Play" symbol
+char lcd_random_symbol        -  The ascii code of the "Random" symbol
+char lcd_rew_symbol           -  The ascii code of the "Rewind" symbol
+char lcd_continuous_symbol    -  The ascii code of the "Continuous play" symbol
+char lcd_driver_name[256]     -  The name of your driver
+char lcd_driver_author[256]   -  Your name
+char lcd_driver_author_email[256]   -  Your email address
+char lcd_driver_description[256]    -  A short description of your driver
+float lcd_driver_version      -  The version number of your driver
+
+int lcd_display_width         -  The width of the displa, as specified
+                                 in DAMP.INI
+
+unsigned char lcd_line[2][41] -  To be used by lcd_printf()
+
+int damp_vu                   - Contains the current vu-meter level, from
+                                0 to 63.
+
+int damp_random_play          - Non-zero if random play is enabled
+
+int damp_surround             - Non-zero if surround sound is enabled
+
+int damp_paused               - Non-zero if track is paused
+
+int damp_volume               - Volume level 0-255
+
+char damp_status[10]          - eg: PLAY> PAUSE FFWD>> <<REW etc.
+
+char damp_filename[256]       - Filename
+
+char damp_playlist_filename[1024]  - Current playlist filename (or "NONE")
+
+char damp_playlist_filename_short[256]  - Current playlist filename, without
+                                          the path. (or "NONE")
+
+char damp_id3_title[31]       - ID3 title
+
+char damp_id3_artist[31]      - ID3 artist 
+
+char damp_id3_album[31]       - ID3 album
+
+char damp_id3_year[5]         - ID3 year
+
+char damp_id3_comment[30]     - ID3 comment
+
+char damp_id3_genre[64]       - ID3 genre name, or "NONE"
+
+char damp_time[5]             - Track time xx:xx
+
+char damp_time_remaining[5]   - Track time remaining xx:xx
+
+int damp_developer            - If set to nonzero, you should output
+                                debugging information
+
+
+These are the most important ones, but have a look at dampcore.sh and
+damplcd.sh for a complete list.
+
+Functions
+---------
+
+void printf(char *,...)       -  For printing to the screen
+void sprintf(char *,char *,...)  - For printing to a string
+int strlen(char *)            - For calculating the length of a string
+int strcmp(char *, char *)    - For comparing strings (returns 0 if equal)
+void gotoxy(int,int)          - For moving the DOS-prompt cursor
+int wherey()                  - For finding the y-coord of the DOS-promt cursor
+unsigned char inportb(unsigned short)  - For reading values from a port
+void outportb(unsigned short, unsigned char) - For writing values to a port
+void delay(unsigned long)     - Waits for the given number of milliseconds
+int bioscom(int,char,int)     - For sending/receiving data from the COM ports
+
+The first part of your driver that will be called is the lcd_driver_init
+function.  This function should set all the lcd_driver_* variables, and
+then initialise the LCD.
+
+
+You should also supply an lcd_driver_clear() function which clears the lcd
+display, and an lcd_driver_home() function which returns the LCD cursor
+to the home position.
+
+
+The most important function is lcd_driver_printf().  This is called every
+time the LCD display needs updating.  It should do whatever is necessary
+to output lcd_line[0] to the top line of your LCD and lcd_line[1] to the
+second line of your LCD display. lcd_line[0] and lcd_line[1] both consist of
+41 characters, but you should output characters 0 to lcd_display_width-1.
+
+
+I think looking through the source of the LCDWIRE1.sc driver shows better
+what you should do than any description I can give here.
+
+
+More info about bioscom()
+=========================
+As this is quite a complex function, I thought I'd document it here:
+
+int bioscom(int cmd, char data, int port);
+
+This function accesses the BIOS interrupt 0x14 function, serial
+communication services.  `port' should be the COM port (0=COM1, 1=COM2,
+etc).
+
+The valid values of cmd are:
+
+0 - initialize com port (DATA is the settings)
+
+1 - write byte to port
+
+2 - read byte from port (DATA is ignored)
+
+3 - get port status
+
+For initialization, the byte is made up of the following bits:
+
+     0000 0000
+     7654 3210  Meaning
+
+     ---- --10  7 bits/character
+     ---- --11  8 bits/character
+     ---- -0--  1 stop bit
+     ---- -1--  2 stop bits
+     ---X 0---  no parity
+     ---0 1---  odd parity
+     ---1 1---  even parity
+     000- ----  110 baud
+     001- ----  150 baud
+     010- ----  300 baud
+     011- ----  600 baud
+     100- ----  1200 baud
+     101- ----  2400 baud
+     110- ----  4800 baud
+     111- ----  9600 baud
+
+For writing a character out to the port, the return value's lower 8
+bits contain the same byte as passed as the DATA argument.
+
+For reading a character from the port, the value of DATA is ignored,
+and the lower 8 bits of the return value contain the byte read.  Also,
+the "timeout" bit in the upper 8 bits is used as an error indicator in
+this case (0=success, 1=error).  If it indicates an error, you should
+call the "get port status" variant to get the detailed error bits.
+
+Return Value
+------------
+
+The return value is a sequence of bits that indicate the port status
+and, for cmd=0 and 3, the modem status.  For read/write operations, the
+lower eight bits are the character read.
+
+     1111 1100 0000 0000
+     5432 1098 7654 3210  Meaning
+
+     ---- ---- ---- ---1  CTS change
+     ---- ---- ---- --1-  DSR change
+     ---- ---- ---- -1--  ring change
+     ---- ---- ---- 1---  carrier detect change
+     ---- ---- ---1 ----  CTS present
+     ---- ---- --1- ----  DSR present
+     ---- ---- -1-- ----  ring present
+     ---- ---- 1--- ----  carrier detect
+     ---- ---1 ---- ----  data ready
+     ---- --1- ---- ----  overrun error
+     ---- -1-- ---- ----  parity error
+     ---- 1--- ---- ----  framing error
+     ---1 ---- ---- ----  break detected
+     --1- ---- ---- ----  transmit holding register empty
+     -1-- ---- ---- ----  transmit shift register empty
+     1--- ---- ---- ----  time out (=1 if error present for cmd=1,2)
+
+
+
+And that's it!
+
+I hope you have great success in building a driver for your LCD,
+and remind you once again to send any drivers to
+drivers@damp-mp3.co.uk
+
+I know this document is a bit technical, so if you don't understand it,
+you probably don't know enough about LCD displays (I only just about
+understand it myself!).  So I'm hoping all you technical people out
+there can write drivers for various LCD displays, and help those of us
+with a little less knowledge, but a strong desire to use an LCD in our
+jukebox or car stereo etc.
+
+Have fun!
+Matt Craven, Hedgehog Software.
+

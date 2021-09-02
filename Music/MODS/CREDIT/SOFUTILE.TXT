@@ -1,0 +1,24 @@
+Shades of Futility (fb-sofutile.it)
+https://modarchive.org/index.php?request=view_by_moduleid&query=41564
+Renamed to "SOFUTILE.IT" because of DOS 8-character limit
+
+Summary
+
+    fb-sofutile.it is a IT format module.
+    Uploaded to modarchive.org on Sun 15th Jun 2003
+
+Info Info
+
+    Mod Archive ID: 41564
+    MD5: ca615451a1141f341dfc026fc8255b79
+    Format: IT
+    Channels: 16
+    Genre: Blues
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     christofori (https://modarchive.org/member.php?69248)

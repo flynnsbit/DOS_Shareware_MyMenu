@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MIDI files</TITLE>
+<META NAME="description" CONTENT="MIDI files">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="previous" HREF="node28.html">
+<LINK REL="up" HREF="node10.html">
+<LINK REL="next" HREF="node30.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html420"
+ HREF="node30.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html418"
+ HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html414"
+ HREF="node28.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html421"
+ HREF="node30.html">Configuration</A>
+<B> Up:</B> <A NAME="tex2html419"
+ HREF="node10.html">Player</A>
+<B> Previous:</B> <A NAME="tex2html415"
+ HREF="node28.html">Using the Compo mode</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00570000000000000000">&#160;</A>
+<A NAME="midi">&#160;</A>
+<BR>
+MIDI files
+</H1>
+<FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP is able to play MIDI files. However there is a certain problem. Unlike the
+other file formats MIDI does not store the sample information needed to
+produce a sound output. The midi file only contains which instrument out of a
+set of 127<A NAME="tex2html30"
+ HREF="#foot654"><SUP>5.13</SUP></A>
+should play which note at a given time. This is the reason why <TT>.mid</TT>
+files are much smaller than other file types.
+
+<P>
+This has of course some disadvantages. To hear a MIDI file you need to have
+some information how to play the used instruments. Back in the old days the
+OPL2 sound chip which was present on the SoundBlaster cards was used to play
+the midi instruments. Most people find the sound capabilites of the OPL series
+rather limited and midi files were no big deal back then.<A NAME="tex2html31"
+ HREF="#foot656"><SUP>5.14</SUP></A>
+
+<P>
+Things changed when so called wavetable cards became popular. Those card have
+sample data stored onboard in a ROM plus a hardware mixer capable of mixing
+several midi channels. The MPU-401 interface from Roland is the de facto
+standard for accessing those cards, but this feature is not supported by <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP yet.<A NAME="tex2html32"
+ HREF="#foot657"><SUP>5.15</SUP></A> A disadavantage is
+that those wavetable cards only have a very limited memory for sample data
+typically 4MB. If you imagine 127 instruments and 64 drums fitting into just
+4MB you can guess what sound quality this cards have. Modern cards have normally
+much more onboard ROM/RAM, but in our opinion even 32MB are far to less for a
+good sound quality.
+
+<P>
+<FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP goes a different way. Instead of using the onboard ROM samples, the samples
+needed for a specific <TT>.mid</TT> file are loaded on demand from the harddisk
+into main memory and then processed by either the hardware mixer (if you have
+such a card and the samples fit into its memory) or by the software mixers.
+This has the advantage that you an easily change a single instrument, if you
+don't like the default sound and that only intruments are loaded (and therefore
+memory needed) which are actually used by the file.
+
+<P>
+At the moment two different formats for those midi patches are supported. Both
+were introduced with the Gravis Ultrasound Cards. The older one using files
+with the extension <TT>.pat</TT> and a file describing the patch set
+<TT>default.cfg</TT>. With the GUS PnP a new midi patch format was introduced
+using <TT>.ff</TT> files and a configuration file called <TT>ultrasnd.ini</TT>.
+
+<P>
+To use those patch sets simply copy all files into one directory and use the
+<EM>ultradir</EM> option of the <EM>general</EM> section to point to the
+appropriate directory. <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP will then process this file if a <TT>.mid</TT> file
+is selected and load the defined patch sets.
+
+<P>
+If you are not owning a Gravis Card you will have to get a patch set from our
+homepage<A NAME="tex2html33"
+ HREF="#foot666"><SUP>5.16</SUP></A> and install it in any directory.
+Note that most patch sets are not public domain or freeware, so check out if
+you are allowed to copy and use those samples.
+
+<P>
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot654">... 127</A><A NAME="foot654"
+ HREF="node29.html#tex2html30"><SUP>5.13</SUP></A>
+<DD>a set of drums is defined aswell
+
+<DT><A NAME="foot656">... then.</A><A NAME="foot656"
+ HREF="node29.html#tex2html31"><SUP>5.14</SUP></A>
+<DD>The author
+of this document find the OPL chips interesting, because they are limited in
+their sound capabilietes, but that is a different chapter...
+
+<DT><A NAME="foot657">...yet.</A><A NAME="foot657"
+ HREF="node29.html#tex2html32"><SUP>5.15</SUP></A>
+<DD>however this might change in the near future
+
+<DT><A NAME="foot666">...
+homepage</A><A NAME="foot666"
+ HREF="node29.html#tex2html33"><SUP>5.16</SUP></A>
+<DD>of from a different source
+
+</DL><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html420"
+ HREF="node30.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html418"
+ HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html414"
+ HREF="node28.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html421"
+ HREF="node30.html">Configuration</A>
+<B> Up:</B> <A NAME="tex2html419"
+ HREF="node10.html">Player</A>
+<B> Previous:</B> <A NAME="tex2html415"
+ HREF="node28.html">Using the Compo mode</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

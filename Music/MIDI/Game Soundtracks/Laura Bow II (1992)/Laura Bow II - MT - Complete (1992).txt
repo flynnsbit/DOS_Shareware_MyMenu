@@ -1,0 +1,141 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ===============================================
+                 THE DAGGER OF AMON RA!  LAURA BOW II
+                                                        
+
+                       THE COMPLETE SOUNDTRACK
+                     (See below for song titles.)
+                            Chris Brayman
+           =============================================
+               Copyright (c)1992 Sierra On-Line, Inc.  
+           =============================================
+
+                         ROLAND MT-32 VERSION
+
+                      ** NOT FOR GENERAL MIDI **
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format
+- System Exclusive patch bank utility (i.e. MidiEx, Cakewalk)
+- Roland MT-32, MT-100, CM-32L, CM-64, or LAPC-1
+- MPU-401 compatible MIDI interface
+  (Not required for LAPC-1 users.)
+
+This Standard MIDI File was recorded directly from Sierra's "Laura Bow II- Dagger Of
+Amon Ra!" adventure game using Sierra's MT-32 driver.  In order to obtain the proper 
+sounds during playback, you must first transmit the AMONRA.SYX SysEx patch bank to
+the MT-32.  Failure to do this will result in improper playback of the
+song file.  Use an utility such as MidiEx, Quick Send, Cakewalk, etc. to
+transmit the SysEx bank.  See below for song titles.
+
+NOTE: This file is designed ONLY for the MIDI devices listed above and
+is not compatible with devices which can "emulate" the MT-32, such as the Roland Sound 
+Canvas line, Creative sound cards, or any purely GM/GS/XG compatible devices.  
+  
+
+Recorded/edited/compiled/arranged for the Roland MT-32 by Alistair Gillett.
+Address questions or comments to:
+
+  Alistair Gillett
+  agillett@ihug.com.au 
+  Sierra Music Central 
+  http://smc.sq7.org
+
+  and/or:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+       =================================================================
+                      TRACK SHEET (Roland MT-32 Version)
+
+                     THE DAGGER OF AMON RA!  LAURA BOW II
+                
+                    (Themes in order as heard in the game.)
+       =================================================================
+
+   SONG TITLE                              START MEASURE/TIME (H/M/S) *
+   -------------------------------------------------------------------------
+      SIERRA LOGO/INTRODUCTION  
+   1. Sierra Fanfare/Chimes                               2  00:00:01
+   2. Introduction/Opening Scenes                        11  00:00:24
+      a. The Steamer Cruise                              11  00:00:24
+      b. A Murder!                                       27  00:01:02
+      c. Cruise Over, Character Introductions            70  00:02:45
+      d. John and Laura Bow                             164  00:06:31
+      e. The Train Ride                                 239  00:09:31
+      f. New York Train Station (Mugged!)               291  00:11:36
+      g. New York, New York!                            341  00:13:36
+      h. Sam Augustini                                  359  00:14:19
+      i. Act Theme                                      396  00:15:48
+
+      ACT I: LAURA BOW- A NOSE FOR NEWS
+   3. Tribune Offices/Outside the 'Trib                 428  00:17:04
+   4. Luigi, The Sandwich Vendor                        474  00:18:55     
+   5. Police Station (Detective Ryan Hanrahan O'Riley)  508  00:20:16
+   6. Taxi Ride                                         561  00:22:24
+   7. Lo Fat's Chinese Laundry                          584  00:23:19
+   8. The Harlem Swinger Speakeasy                      635  00:25:21
+      a. Theme #1                                       635  00:25:21
+      b. Theme #2 (Archaeologist Song)                  691  00:27:36
+      c. Theme #3                                       713  00:28:28
+   9. The 12th Street Docks (Taxi to Museum, End Act I) 785  00:31:21
+
+      ACT II: SUSPECTS ON PARADE
+  10. Security Chief Wolf Heimlich (Outside the Museum) 820  00:32:45
+  11. The Leyendecker Museum Waltz                      863  00:34:28
+  12. Steve Dorian                                      970  00:38:45
+  13. Ancient Egypt Exhibit                            1041  00:41:36
+  14. The Body of.. Dr. Pippin Carter! (End Act II)    1078  00:43:04
+  
+      ACT III: ON THE CUTTING EDGE
+  15. Detective O'Riley's Investigation                1130  00:45:09
+  16. Ernie Leach (Introduction)                       1168  00:46:40
+  17. Investigating the Leyendecker Theme #1           1185  00:47:21    
+  18. Yvette Delacroix's Office                        1250  00:49:57
+  19. The Death of Lawrence 'Ziggy' Zigfeld            1322  00:52:50
+  20. The Death of Watney Little                       1374  00:54:55
+  21. Hiding Behind the Tapestry                       1414  00:56:31
+  22. Stairway Theme (Secret Passageway)               1454  00:58:07
+  23. Wolf Heimlich's Office                           1476  00:59:00
+  24. Second Secret Passage (The Bats- Laura Dies)     1529  01:01:07
+  25. Alcoholic Preservation Lab (The Dagger!)         1547  01:01:50
+  26. Ernie Leach's Office                             1571  01:02:48
+  27. The Real Dr. Archibald Carrington- Dead          1620  01:04:45
+  28. Yvette's Men                                     1630  01:05:09
+  29. The Death of Ernie Leach (End Act III)           1665  01:06:33
+
+      ACT IV: MUSEUM OF THE DEAD
+  30. Investigating the Leyendecker Theme #2           1675  01:06:57
+  31. The Death of Yvette Delacroix                    1773  01:10:52 
+  32. Dr. Olympia Myklos's Office                      1779  01:11:07
+  33. "Barney", The Snake                              1821  01:12:48
+  34. The Death of the Countess (End Act IV)           1878  01:15:04
+  
+      ACT V: REX TAKES A BITE OUT OF CRIME
+  35. Running From Mr. 'X'                             1887  01:15:26
+  36. Hiding From Mr. 'X'                              1983  01:19:16
+  37. Elevator Ride                                    2011  01:20:24
+  38. The Cult of Amon Ra (Rameses Najeer)             2020  01:20:45
+  39. Steve and Laura's Escape                         2104  01:24:07
+  40. Rex's Bite- Mr. 'X' Revealed                     2182  01:27:14
+
+      ACT VI: THE CORONER'S INQUEST
+  41. Henri Le Mort, The Coroner                       2210  01:28:21
+  42. Bad Ending (The Death of Laura Bow)              2258  01:30:16
+  43. Case Solved, O'Riley Imprisoned                  2282  01:31:14
+  44. Laura and Steve (Love Theme)                     2296  01:31:48
+  45. Closing Scenes                                   2367  01:34:38
+  46. Closing Medley                                   2412  01:36:26
+  --------------------------------------------------------------------------
+                                           TOTAL TIME:       01:42:43
+
+
+      * Note:  Start Times are approximate.
+

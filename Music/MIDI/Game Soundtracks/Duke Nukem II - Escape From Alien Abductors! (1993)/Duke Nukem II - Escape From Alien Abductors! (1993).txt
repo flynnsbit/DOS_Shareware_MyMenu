@@ -1,0 +1,9 @@
+Game: Duke Nukem II: Escape From Alien Abductors!
+Year: 1993
+Composed by: Robert Prince
+MIDI versions: GM
+Platform: DOS
+
+Additional info: Files in the "Arranged" folder are specifically rearranged by Bobby Prince for use with GM devices, because the original IMF files were composed for Adlib.
+
+https://www.karlsitretro.com/game_midi

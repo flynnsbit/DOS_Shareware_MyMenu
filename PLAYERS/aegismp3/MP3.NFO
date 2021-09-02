@@ -1,0 +1,56 @@
+aEgis MP3 dOs player v0.5
+-------------------------
+
+new since 0.4 :
+- more stable and robust (like windows, hahahah?).
+- long filename displayed under win95.
+- vumetre.
+- support wildcards.
+
+description :
+here is another MP3 player but for DOS this time.
+it uses MIDAS for sound output so that a large variety of soundcards are
+supported.
+if you own a GUS (and you're right), choose the software mixing in MIDAS
+otherwise you'll not hear anything ...
+if you use a cyrix processor (and you're rIGHT!), use the 486 version
+(mp3-486.exe). don't bother me why but the 486 version is faster on cyrix
+processors.
+you can run it under windows 3.1 and 95 but the sound stops when you swap
+into another appli.
+under windows 95, the long filename is displayed.
+you can use wildcards for the filename (*.mp?), use SPACE for the next file.
+
+successfully tested on :
+- p120,p133,486/100,cyrix P166+,cyrix P150
+- GUS, SB pro II, SB16, AWE 32
+- lots of MP3s,MP2s
+
+known bugs :
+- GUS only works in software mixing mode.
+- some scratchs during output when playing a mono file.
+
+coming for upcoming version :
+- great ansi dezign.
+- support for other than 44.1khz files.
+- dosshell and pause support.
+- fileselector and playlists.
+
+there is no doc for how-to-use-it but if you don't understand this player,
+just buy a brain.
+
+the decoding process is based on mAplay v1.81 for win32 coded by jeff tsay.
+god may greet him.
+
+you can distribute freely this preversion of this player except on cd-rom.
+i said.
+
+you can help me if you know how to find those long filenames under plain
+DOS 7.0 (not win95), if you got docs or something write me.
+
+watch out for the final release.
+rOn/aEgis. (ron@recif.fr)
+
+greets:
+anyone i love.
+anyone we love.

@@ -1,0 +1,12 @@
+
+ Special DPMILD32 version
+
+ Please note: this version is no longer the one with LFN support!!!
+ This has changed since HXRT v1.99.
+
+ The version of DPMILD32 found in this directory will *not* use the LFN
+ versions of DOS file open functions. It should only be used if the
+ version in BIN (which will use LFN) doesn't work or causes problems.
+  
+ Japheth
+ 

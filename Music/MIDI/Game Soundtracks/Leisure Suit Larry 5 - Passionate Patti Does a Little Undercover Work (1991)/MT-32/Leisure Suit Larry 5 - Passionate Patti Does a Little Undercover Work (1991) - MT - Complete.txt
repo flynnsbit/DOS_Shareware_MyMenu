@@ -1,0 +1,114 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ================================================
+               LEISURE SUIT LARRY 5:  PASSIONATE PATTI
+                    DOES A LITTLE UNDERCOVER WORK
+                                                        
+
+                        THE COMPLETE SOUNDTRACK
+                     (See below for song titles.)
+                     Craig Safan and Chris Brayman
+                       "Larry Theme" by Al Lowe
+           ================================================
+                 Copyright (c)1991 Sierra On-Line, Inc.  
+           ================================================
+
+                        ROLAND MT-32 VERSION
+
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- Roland MT-32, LAPC-I, CM-32L, CM-64
+- 100% MPU-401 Compatible MIDI Interface
+
+
+ WARNING:  This MIDI file is NOT designed for playback on General MIDI
+           sound cards.  It contains a large amount of System Exclusive
+           data which can be read only by the Roland MT-32, MT-100,
+           CM-32L, CM-64, and LAPC-I.  
+
+This Standard MIDI File was recorded directly from Sierra's "Leisure Suit
+Larry 5" adventure game using Sierra's MT-32 driver.  It is designed ONLY
+for the MIDI devices noted above and is not compatible with devices which
+can "emulate" the MT-32.  The MIDI file contains embedded SysEx data
+which will write new sounds to your MT-32.
+
+If your playback software is incapable of transmitting the embedded SysEx
+patch bank, or if you encounter a problem during the transmission of the
+patch bank, use a seperate SysEx dump utility to transmit the included
+"LSL5.SYX" patch bank prior to MIDI playback.
+
+     NOTE:  The SysEx patch bank is embedded in
+            the first three measures of this file.
+            Therefore, normal playback begins with
+            the fourth measure.
+
+
+Recorded/edited/compiled/arranged for Standard MIDI by Tom Lewandowski.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+   =========================================================================
+                          TRACK SHEET  (MT-32 VERSION)
+
+                    LEISURE SUIT LARRY 5: PASSIONATE PATTI
+                        DOES A LITTLE UNDERCOVER WORK
+   =========================================================================
+
+   SONG TITLE                                         START MEASURE/TIME *
+   -------------------------------------------------------------------------
+    1. Introduction/Opening Scenes                           4  00:00:07
+    2. Mr. Bigg                                             44  00:01:43
+    3. Flight To New York (Larry's Dream)                  300  00:11:57
+    4. The Piano Pit (Andy)                                308  00:12:16
+    5. Inspector Desmond                                   377  00:15:02
+    6. The Lab (Dr. Phil Hopian)                           433  00:17:16
+    7. Larry Wakes Up (New York)                           476  00:19:00
+    8. Hard Disk Cafe I                                    521  00:20:48
+    9. Hard Disk Cafe II                                   567  00:22:38
+   10. Hard Disk Cafe III                                  610  00:24:21
+   11. The Music Box                                       653  00:26:04
+   12. Michelle Milken                                     667  00:26:38
+   13. Flight To Atlanta (Larry's Dream 2 - Venice)        749  00:29:55
+   14. Patti's Personal Driver                             791  00:31:36
+   15. Shill Building                                      809  00:32:19
+   16. Playing The Gold Record                             863  00:34:28
+   17. A Studio Session                                    926  00:37:00
+   18. Tramp Casino                                        959  00:38:19
+   19. Tramp Casino Ballroom                              1032  00:41:14
+   20. On The Boardwalk                                   1063  00:42:28
+   21. Ivana Skates                                       1112  00:44:26
+   22. Lana Lucious                                       1144  00:45:40
+   23. Flight To Miami (Larry's Dream 3 - Patti Live!)    1181  00:47:12
+   24. K-RAP Radio I                                      1224  00:48:55
+   25. K-RAP Radio II                                     1273  00:50:52
+   26. K-RAP Radio III                                    1329  00:53:07
+   27. Doc Pulliam's Office                               1381  00:55:12
+   28. Chi chi                                            1427  00:57:02
+   29. Flight Back To Los Angeles                         1476  00:59:00
+   30. Airplane Disaster                                  1496  00:59:48
+   31. The Hero                                           1509  01:00:19
+   32. White House Reception                              1544  01:01:43
+   33. Larry & Patti's Reunion                            1614  01:04:31
+   34. Mr. Bigg Busted                                    1633  01:05:16
+   35. Closing Themes                                     1720  01:08:45
+   -------------------------------------------------------------------------
+                                                TOTAL TIME:  01:11:31
+
+
+      * Note:  Start Times are approximate.
+
+        The actual song titles as listed in the game were not used so that
+        the scenes could be more readily recognized by the listener.
+
+        May 1999
+
+

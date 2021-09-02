@@ -1,0 +1,14 @@
+Begin3
+Title:          topspin
+Version:        3
+Entered-date:   2000-06-06
+Description:    A menu interpreter program which will allow users to create 'integrated' environments where none exist.
+Keywords:       menu, system, utility
+Author:         Robert Canup <rcanup _at_ hal-pc.org>
+Maintained-by:  Robert Canup <rcanup _at_ hal-pc.org>
+Primary-site:   http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/menu
+Alternate-site:
+Platforms:      DOS, FreeDOS
+Copying-policy: GNU General Public License, Version 2
+Defunct-Original-Site: http://www.freedos.org/files/util/menu/
+End

@@ -1,0 +1,33 @@
+
+                        ---------------------------
+                        Important Mouse Information
+                        ---------------------------
+   
+   
+   
+   Virtual Pool comes with its own mouse driver built into the game which 
+   has been specially designed for use with Virtual Pool.  Although you can 
+   use your regular DOS mouse driver, (and that is in fact the default), you 
+   will probably experience better perfomance using the built-in mouse driver.
+
+   To switch to the Virtual Pool Mouse Driver, open the main menu by pressing
+   ESCape, and select DEVICE SETUP.  The DEVICE menu will then open.  Under
+   the heading Mouse, your available options are serial ports 1-4, and DOS
+   DRIVER.  Select the proper serial port for your mouse, then select OK and
+   press enter.  If you do not know which serial port you mouse is on, you
+   can use trial and error, or just leave the mouse set to the default of
+   DOS DRIVER.
+   
+   If you do switch to the Virtual Pool Mouse Driver, you may disable your
+   normal mouse driver the next time you start the game to conserve 
+   available memory.
+
+   Note that you must have a 100% Microsoft compatible mouse connected to
+   a serial port to use the special Virtual Pool Mouse Driver.  If your
+   computer is a PS/2 or has a BUS mouse, you must use a DOS Mouse Driver
+   when running Virtual Pool.
+
+   
+
+
+<End_Of_File>

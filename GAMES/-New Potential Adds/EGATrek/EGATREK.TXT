@@ -1,0 +1,155 @@
+
+                                EGA TREK
+                      Version 3.0  January 22, 1992
+
+                              Nels Anderson                                 
+                             92 Bishop Drive
+                       Framingham, MA 01701 U.S.A.
+
+
+DESCRIPTION:  EGATrek simulates the captains console of a starship, and
+places you in command during an invasion by enemy ships.  Your task is
+to conquer all enemy ships in your assigned portion of the galaxy, using
+your ship and its weapons as efficiently as possible.
+
+You are scored on the time you take to complete your mission (IF you
+complete it!), plus other bonuses such as rescues, number of enemy ships
+destroyed, etc.
+
+REQUIREMENTS:  EGATrek runs in 640x350, 16 color EGA graphics, thus an
+EGA or VGA card and monitor are required.
+
+SHAREWARE:  EGATrek is distributed as Shareware.  You are free to try the
+game and make copies for others.  If you continue to use the game,
+however, you are asked to pay the author the registration fee of $15
+(#12.95 in the U.K.; see UKORDER.TXT for details) to support continued
+development of this and other software; in return you'll receive a copy
+of the latest version of the game.  A "deluxe" version with binder,
+printed manual and quick reference card is available for $22.  Please
+include $2 shipping/handling with your payment, or $4 for deluxe
+versions or shipping outside the U.S.  Disk vendors may include EGATrek
+in their catalog provided a copy of the catalog is supplied to the
+author.
+
+FILES:  The files included in EGATrek v3.00 are as follows:
+
+  EGATREK.EXE     EGATrek program
+  EGATREK.DOC     Documentation (instructions)
+  EGATREK.REF     Quick command reference
+  ORDERFRM.TXT    Registration form ready for printing
+  UKORDER.TXT     Order form for U.K. users
+  EGATREK.TXT     This file
+  VENDOR.TXT      Information for disk vendors, user groups, BBS sysops
+  FILE_ID.DIZ     Standard program description for BBS use
+
+All these files MUST be included when distributing this program.  If you
+archive the program for distribution through BBS's, please use the name
+EGATRK30.ZIP (or .LZH, .PAK, etc. as appropriate).
+
+SUPPORT: Support for this software is provided through the )(evious BBS.
+Call 508-875-3618 or 617-449-7322 (300/1200/2400/9600/HST/v.32, 8N1) and
+leave a C)omment for the sysop.  The latest version will always be
+available there first.  Mail support is also available; please include
+an SASE with your request.  Finally, you can contact the author by
+CompuServe's email system.  Address to Nels Anderson [71020,2613].
+
+AVAILABLE SOFTWARE:  Other software which I've either written or
+contributed to:
+
+EGATREK:   Space strategy battle game, using full EGA graphics.
+           Based on the classic star trek type games, including
+           maps, graphics, communications and even a view outside
+           the ship.  Winner of Public Brand Software's 1988
+           software contest.
+
+           "...simply an amazing program, full of surprises and
+           strategic challenges."
+             -- ProGamer Magazine, Series 2, Volume 8
+
+           "EGATrek is such a well-designed game, if you don't have
+           EGA hardware, it's a good reason to upgrade."
+             -- Shareware Magazine, July-August 1990
+
+MAHJONGG:  Addictive solitaire game played with Chinese tiles.  Very
+           easy to learn but always a challenge to win.  Many game
+           options including timed games, tournaments, etc.  Also
+           allows loading optional tile sets (tile editor included).
+           Supports EGA and Hercules graphics; mouse optional.
+
+           "Gorgeous board and tiles, challenging and addictive play."
+             -- PCWorld Magazine, December 1988
+
+           "...a visual feast and a mental workout."
+             -- Compute! Magazine, April 1989
+
+TILESETS:  Several collections of tile sets created by various
+           Mah Jongg fans are available.  Each collection includes
+           at least ten tile sets.  Requires Mah Jongg v3.3 or later.
+
+CIPHER:    A word puzzle game, yet it uses hi-res VGA or EGA graphics
+           to run (mouse optional).  Also will run in color text mode.
+           Includes over 30 puzzles to solve; registered version comes
+           with over 200 additional puzzles.  You can also enter your
+           own already encrypted puzzles and additional puzzle disks
+           are available.  A Windows version is also available.
+
+SHOOT:     "Shooting Gallery" is a colorful arcade game with several
+           different rounds to test your aim and reflexes, including
+           skeet, quick draw, carnival type shooting range and a wild 
+           west shootout.  Uses 320x200, 256 color mode and a mouse to
+           play.  Requires VGA or MCGA.
+
+           Selected as one of the top ten EGA/VGA shareware games
+           of all time.
+             -- PsL News, Public (software) Library, October 1990
+
+           "Shooting Gallery is seven rounds of pure fun!"
+             -- Patrick Grote
+
+           "...one of the most entertaining, colorful, action-packed
+           and challenging games I have seen."
+             -- Vulcan's Compute Monthly, August 1990
+
+SUPERFLY:  An action game using hi-res EGA/VGA graphics.  Chase the
+           flies and other insects through twenty different rounds.
+           Includes three levels of difficulty, hall of fame, shell
+           to DOS, etc.  Keyboard, mouse or joystick control.
+
+           "...so habit forming you'd better not start playing if
+           you have anything else to do."
+             -- PC Magazine, vol. 10 #17 (10/15/91)
+
+           "RATING: 10.0" (highest rating)
+             -- Patrick Grote
+
+BASSTOUR:  (Written by Dick Olsen).  Game that simulates a fishing
+           tournament, including rod and lure selection.  Runs in
+           EGA/CGA/Hercules graphics modes.
+
+BASSMAP:   Companion program for BassTour which allows lakes to be
+           created or modified.  EGA and CGA versions provided.
+
+
+These programs are probably available on your favorite BBS or from
+your favorite disk vendors.  To register them or to order direct, use
+the form in the file "orderfrm.txt" which is all ready to print.  The
+"deluxe" version includes the registered software on diskette, plus a
+binder and printed manual (some programs also include quick reference
+cards).  The standard version includes just the diskette with the
+registered software.  You can also use your VISA or MasterCard to
+order on-line thru the support BBS, Xevious, at 508-875-3618.  Use
+"DOOR 15" to order.
+
+                                  - - - - -
+
+  EGATrek is copyright (c) 1988-1992 by Nels Anderson.  All rights reserved.
+
+                         _______
+                    ____|__     |               (R)
+                 --|       |    |-------------------
+                   |   ____|__  |  Association of
+                   |  |       |_|  Shareware
+                   |__|   o   |    Professionals
+                 -----|   |   |---------------------
+                      |___|___|    MEMBER
+     

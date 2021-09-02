@@ -1,0 +1,29 @@
+Here are last-minute notes and additions to Portable tar documentation:
+
+!!! BE WARNED THIS IS TEST VERSION. It works fine for me, but changes
+in basic IO support make me suspicious - bugs are probable enough.
+
+Main changes since version 3.20g - not reflected in the documentation
+yet - are the following:
+
+1) Added support for DOS7/Windoze Long File Names (LFN).
+   The program is still DOS executable and have no native Win32 version.
+   Nevetherless it detects presence of LFN service and use it.
+   Note: LFN service is not available from bare DOS, you should run DOS
+        session from graphic environment.
+   Warning: new service was tested in MS-DOS 5.0 and Windows 95
+        (Chickago) only. It should run in the same manner under, let's
+        say, DOS 2.1 or Windows NT, but I did not verify it.
+
+2) Integrated bugfixes/enhancements in ASPI (especially for Windows
+   environment) from Nelson Bolyard (see also file thanks.to).
+   In particular, program prints progress indicator in "extra verbose"
+   mode (specify -v flag thrice or more).
+   In case of problems you may enforce old regime with new "slack"
+   parameter, e.g. "tar tvf aspi:slack".
+
+3) Timestamps printing with -t option in "very verbose" mode (specify
+   -v twice or more).
+
+                                tim@cronyx.ru, tim@sierra.srcc.msu.su
+

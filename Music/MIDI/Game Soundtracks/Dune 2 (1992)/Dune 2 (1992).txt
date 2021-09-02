@@ -1,0 +1,9 @@
+Game: Dune 2
+Year: 1992
+Composed by: Frank Klepacki
+MIDI versions: GM, MT-32, FM
+Platform: DOS
+
+Additional info: Original ripped XMI files are included. Number of files don't match for two reasons. First, there are 4 versions of all tracks and second, some XMI files contain multiple tracks.
+
+https://www.karlsitretro.com/game_midi

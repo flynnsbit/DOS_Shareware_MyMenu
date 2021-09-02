@@ -1,0 +1,193 @@
+                                 =========
+                                  History
+                                 =========
+
+
+=======================
+Dietmar HôHMANN - XKEYB
+=======================
+
+
+         x.x.'xx: Einbau des PI                                   -> V1.1
+        17.2.'92: Fehler bei INT15-Aufruf behoben.
+        18.2.'92: Implementation von Kombinationszeichen.         -> V1.2
+         8.4.'92: Bug-Fix: ALT-1 - ALT-0,ALT-· & ALT-'
+        26.6.'92: ^Break geÑndert in INT 1B und ^C.               -> V1.22
+                  Funktion 248 :=> Taste bewirkt nichts.
+         9.9.'92: Funktion 247: => OS/2: DOS-Box schlie·en.       -> V1.24
+
+        14.2.'94: Fehler bei Alt+Ctrl+F2 behoben                  -> V1.3
+                  Problem mit Backslash im MS-DOS-Editor behoben.
+                  Angepa·t an AMI-BIOS: Kein Speichertest beim Warmstart.
+                  Fehler mit nicht funktionierender automatischer Einrichtung
+                       des XString-Speichers behoben.
+                  Erweiterter Tastaturstaus wird gepflegt und kann Åber die
+                       entsprechenden BIOS-Funktionen abgefragt werden.
+
+
+=========================================
+Aitor SANTAMAR÷A MERINO - FreeDOS XKEYB
+=========================================
+
+
+        VER 1.5.1  xKEYB 1.5 was packed WITHOUT .key files
+      (24.9.2000)  1.5.1 is just 1.5 with all the .key files packed
+
+        VER 1.6    * Search on PATH capability (Ralf Quint)
+      (27.1.2001)  * Changes to .KEY files (Aitor):
+                     - DVORAK.KEY (Eugene Wong)
+                     - SU.KEY to RU.KEY
+                     - Bug 126 fixed (small patch to IT.KEY)
+
+        VER 1.7    *  LED support removed (Aitor, Axel)
+      (12.9.2001)  *  Improved search of .key files (also in curdir)
+                      (Aitor, Ralf)
+                   * Added XKEYB.FHL, the fast help, and it is
+                     shown with /? (Aitor)
+                   * New Copyright notice (Aitor)
+                   * XKEYBRES is now included within this file using DEFINEs
+                     this way, changes are reflected in both codes (Aitor)
+                   * Switched the reported values in BX/CX for int2Fh/AX=AD80h
+                     for MS compatibility (Aitor)
+			 * New Makefile (Axel, Ralf, Aitor)
+			 * Most of the messages are now displayed in English (Ralf)
+			 * Added br850.key (for Brazil, codepage 850) (Alain)
+        VER 1.8    * Scancodes now up to 127 (Aitor)
+      (31.12.2001) * Solved the problem with the two keys having same Scancode:
+                     the (/ ? key) and the (Gray /) key, that causes troubles in
+                     non-US keyboards) (Aitor)
+                     (thanks to Eric Auer for his hints!)
+                   * The Extended E0-keys (Ins, Supr, arrows...) do NOT behave
+                     as their normal-AT conunterparts with SHIFT (Aitor)
+                   * Translation of source comments into English
+                     (Michael Kallas, MANY, MANY thanks!)
+                   * Fixes in SCANKBD to patch it during MAKE process (Aitor)
+                   * SCANKBD is now more friendly on parameters (Aitor)
+                   * CONTRIBUTED LAYOUTS:
+                       PC860   JosÇ A. Senna
+                     MODIFIED/UPDATED LAYOUTS:
+                       ALL     Added support for extended53 key (gray /)
+                       BR850   Alain (modifies COMBI)
+                       PC850   Alain, Aitor (Adds COMBI)
+                       SP(850) Luis Ignacio Estrada Hoyos, Jose Antonio (jafras)
+                       LA(850) Luis Ignacio Estrada Hoyos
+                          (in SP and LA: added COMBIs and some useful stuff:
+                           tilde in AltGr+•)
+                     REMOVED LAYOUTS:
+                       PC8 (Standard US-437, incomplete and normally unnccessary)
+                       RU  (it was equal to SU, whence incorrect)
+                       ECMA94  (combis only, does NOT work!)
+        VER 1.9    * Alt+9 bug fixed!
+      (04.04.2002)  Problem was: Alt+9 produces virtualscancode 128, which was
+                     interpretated by StoreKey as a request for XString
+                     Solved using the dirty trick of a new variable Alt+9
+                   * Allowed immediate comments in lines which very first
+                     character is ';' (I hope there are no combis with this character!)
+                   * Now returns control to next in chain for non-defined functions:
+                     83..8F, 92, 93 and 9D..FF
+                   * All layouts include now support for [INS 0] key
+                     (thanks to Imre Leber)
+                   * MODIFIED/UPDATED LAYOUTS:
+                     - PC860   Jose A. Senna
+                     - BE      Pierre (now contains COMBIs!)
+                     CONTRIBUTED LAYOUTS
+                     - US-LV   Kristaps Kaupe
+                     - RU      Kristaps Kaupe
+                     - HU      Nagy Zsolt
+                     - PL      Michal H. Tyc
+                     - TR      <sz_chake@hotmail.com>
+        VER 1.10   * E0 keys support completed.
+      (14.4.2002)    ScanKbd and .KEY files patched accordingly
+                     Advantages:
+                     - Ctrl+Alt+Del bug fixed
+                     - Support for Win keys and multimedia keys (read the docs)
+                     Disadvantage:
+                     - Over 800b more resident memory! :-(
+                   * Before going resident, environment memory is freed
+                   * Before resetting, disk caches are flushed
+                     (Thanks to: Matthias Paul, Axel for the code for this,
+                                 imported from his FreeKEYB)
+        VER 1.11   * New hardcoded XFunctions. Default XFunction table:
+       (8.5.2002)    247: INT 19h (closes OS/2 DOS Box)
+                     250: Disables XKEYB
+                     251: Suspends PC (required APM 1.1 or later) (new!)
+                     252: Turns the PC Off (required APM 1.1 or later) (new!)
+                     253: Performs a cold reboot (new!)
+                     254: INT 5h (Print Screen)
+                     255: Performs a warm reboot
+                   * User defined xfunctions now up to 34 (was up to 39)
+                   * New way of defining COMBIs: no longer based in ASCII,
+                     but use !C1, !C2,... to assign key combination to
+                     the first, second, ... row in [COMBI] section
+                     (fixes the problem with ' character in some layouts)
+                   * TRUE support of E0-extended keys, fixing all problems
+                     that appeared with numeric keys in various editors
+                   * New switch /E, to ignore the E0-prefix, and preassign
+                     extended keys to their non-extended counterpart
+                     (warning, switch not to be used with multimedia keys,
+                     winkeys, etc)
+        VER 1.12   * Ctrl^CursorUp Ctrl^Cursor down generate correct scancode
+       (8.6.2002)    (thanks Axel for noticing)
+                   * Fixed scancode for AltGr+number key
+                   * Fixed scancode with COMBIs (should be 0!)
+                   * Fixed potential problem with Ctrl+Alt+F2 and XKEYBRES if
+                     file was not loaded (now with FileLoaded variable)
+                   * Fixed problem with character ASCII $E0
+                   * 286 and AT is now checked at the begining
+                   * All the KEY files have now the "Ctrl+Alt+F1 disable"
+                     behaviour by default (modification on the KEY files)
+                   * Updated keyboard layout: PC850
+                   * Added keyboard layout:   ECMA23 (probably buggy), BR275
+        VER 1.13   * In case of Error, DOSExitCode is set to an error code
+      (27.7.2002)  * New layout: PC437.KEY
+                   * PC437.KEY is ALWAYS read before any other, so KEY files
+                     just need to have the differences
+                   * Corrected: if Ctrl+^vInsDel is not assigned anything,
+                     then it behaves like BIOS (does NOTHING)
+                   * Fixed possibly weird behaviour of Alt+ keys affected by
+                     NumLock different from keypad
+                   * Completely new debugged header for int9handler
+                     (includes input buffer checking and timeout)
+                     Also the proto-int15h has been almost completely rewritten
+                     Fixes a potential bug with GetKey and XFunctions
+                   * StoreKey now forks into EfStoreKey, the procedure that
+                     really gets key into buffer; StoreKey simply parses any
+                     possible ASCII,Scancode to its corresponding action.
+                   * Xfunction 249: Break interrupt (for ctrl+break)
+                   * Changes of virtual ScanCode moved into StoreKey
+                   * API function 94h: AH=BH=ScanCode, no longer separation
+                     between real and virtual scancode
+                   * Removed /E option to map E0-extended into non-extended
+                     (for commandline compatibility reasons)
+                   * When overloading install, if config file is not found,
+                     action is aborted
+                   * E0-prefix is now tracked through BIOS variable
+                     0040h:0096h (KeysDown2)
+                   * Alt+NumberPad and Pause behave now the same as BIOS Keyb
+                   * F11 and F12 scancodes are now patched
+                   * New policy for testing keyStatus bits: now better
+                     behaviour with pressing multiple shifting keys
+                   * PrtScrt recovered in the KEY files
+                   * Added:  JP106 (Japanese, Takeshi Hamasaki)
+                     Reworked: PC850 and BR275 (Henrique Peron),
+                               FR (Patrice LEMONNIER)
+                     Patched:  all, so that there's response to PrtScr
+        VER 1.14   * New unified scancode translation procedure. Fixes
+      (28.10.2002)   several bugs:
+                     - Ctrl+INS, Ctrl+DEL (and Ctrl+other cursors)
+                     - Shift+F4 and Shift+F5
+                   * Minor fix in Alt+Numberpad codes
+                   * Minor optimization: with XString no need to store $FF as
+                     ASCII
+                   * Patch for ASCII character F0h
+                   * Better organization of the package
+                   * Includes the "Reduced Layout Packs v.1.0 by Henrique Peron
+
+        VER 1.15   * Patched the translate scancode routine for F11 and F12 keys,
+      (11.04.2003)   (they returned the appropriate value -1)
+
+=========================================
+Aitor SANTAMAR÷A MERINO - FreeDOS XKEYB    (ENDS HERE!)
+=========================================
+        
+<END-OF-HISTORY>

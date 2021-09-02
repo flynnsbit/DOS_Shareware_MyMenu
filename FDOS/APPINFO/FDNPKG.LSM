@@ -1,0 +1,15 @@
+Begin3
+Title:          FDNPKG
+Version:        0.99.4
+Entered-date:   2015-12-20
+Description:    FreeDOS network package manager
+Keywords:       fdnpkg,update,packages
+Author:         Mateusz Viste
+Maintained-by:  Mateusz Viste
+Primary-site:
+Alternate-site:
+Original-site:  http://fdnpkg.sourceforge.net/
+Platforms:      DOS
+Copying-policy: GNU General Public License, Version 3
+wiki-site:      http://wiki.freedos.org/wiki/index.php/FDNPKG
+End

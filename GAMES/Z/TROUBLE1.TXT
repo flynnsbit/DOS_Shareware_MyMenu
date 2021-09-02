@@ -1,0 +1,218 @@
+
+Z Trouble Shooting guide
+------------------------
+
+Loading
+-------
+
+Q: I get a message CRITICAL FILE MISSING when trying to run the
+demo.
+
+A: You have either one of the ZIP files missing, or you have not
+used the -d option when using PKUNZIP.
+There are up to four files required to run the Z demo :
+
+e_zdemo1.zip
+e_zdemo2.zip
+e_zdemo3.zip
+e_zdemow.zip
+
+(Note, the e_ prefix may be different depending on the
+language/version of the demo.)
+
+The e_zdemow.zip file is only needed if you intend to play the
+demo under Win95.
+
+To extract the files, use : PKUNZIP -d *.zip.
+
+			   ---
+
+Q: I get a message that says 'Mouse Driver Not responding' when I
+try to load the demo.
+
+A: If you are running the demo in DOS you must load a DOS mouse
+driver before you start running Z.  Please refer to the
+documentation that was supplied with your mouse.
+
+			   ---
+
+Q: I get a message that says 'Not Enough Memory' when I try to
+load the demo.
+Q: I get a message that says 'Insufficient Extended
+Memory' when I try to load the demo.
+
+A: Z will only work on computers with 8Mb or more.  If you think
+you have enough memory but see this message, it will be because
+you are running programs which use up your extended memory.  This
+is mostly likely to be due to programs like RAMDRIVE or
+SMARTDRIVE that are launched automatically by CONFIG.SYS or
+AUTOEXEC.BAT when your computer starts up.  Please refer to the
+MS- DOS documentation that came with your computer on how to
+adjust or remove them to free up some memory.
+
+			   ---
+
+Q: I get a message that says 'Sound card not responding.' when I
+try to load the demo (or possibly the demo hangs during loading.)
+
+A: This is probably because your sound card is configured
+incorrectly.  Follow the instructions in the installation guide
+to run SETSOUND, configure your sound card and then use the menu
+items to test your choices.
+
+			   ---
+
+Q: The demo crashes or hangs during loading.
+
+A: Ensure that your sound card is selected correctly and that
+you have tested it using SETSOUND.  Try changing the settings for
+UniVBE, using the SETVIDEO utility, as detailed below.
+
+Sound Cards
+-----------
+
+Q: My sound card is not detected by SETSOUND correctly.
+
+A: If you are running under DOS make that the drivers supplied
+with your card are installed and working correctly (this should
+be automatic under Win95).  SETSOUND needs this setup information
+to able to detect your card properly.  If all else fails try the
+Sound Blaster or 100% compatible options for both MIDI and
+Digital at the top of the list for each.  Remember to test any
+choices you make using the menu items.  If you have a Sound
+Blaster clone that is not directly supported by SETSOUND then you
+must make sure that it is set up correctly into Sound Blaster
+emulation.  This will normally involve setting the BLASTER
+environment variable and possibly running a TSR.  Refer to the
+documentation that came with your sound card for further
+information.
+
+			   ---
+
+Q: There's more than one sound card in my machine with one being
+used for MIDI sound and one being used for Digital and the demo
+crashes in the cut scenes.
+
+A: Use SETSOUND to configure the sound system so that both the
+MIDI and Digital are being driven by one card.
+
+			   ---
+
+Q: The sound was too loud so I reduced the volume settings from
+within the in-demo sound control panel.  There was a significant
+degradation in digital audio quality.
+
+A: The volume levels for midi music & sfx have been pre-set
+within the demo to achieve optimum audio performance. If for any
+reason these levels are too loud or too quiet for your sound
+card, it is important to adjust the relevant settings in your
+sound card sound control panel.  Consult your sound card users
+manual for instructions.  Recommended Volume Settings for In-demo
+Sound Control Panel:  Music: Set fader to maximum.  SFX:   Set
+fader to half-way.
+
+			   ---
+
+Q: Media Vision Pro Audio Spectrum is not detected properly by
+SETSOUND.
+
+A: This card will only be detected if you have the drivers
+MVSOUND.SYS installed.  The latest version of the drivers will
+install PROS.SYS instead.  With this driver installed the card
+will be detected as a Sound Blaster Pro and should be set up as
+one.
+
+			   ---
+
+Q: The Pine Wagner  iDEMA Meastro 16 is not detected properly by
+SETSOUND.
+
+A: This card uses the driver ES968.COM in CONFIG.SYS to
+configure its addresses and IRQs.  It must be set to the Sound
+Blaster defaults i.e. A:220 I:5 D:1 before SETOUND will detect it
+properly
+
+			   ---
+
+Q: The MWAVE card in the IBM APTIVA is not detected by SETSOUND
+in Windows 95.
+
+A: If you 'Shut down to DOS' the card is detected without any
+problems.  APTIVAs are supplied with all the DOS drivers
+installed correctly so there should be no problems in this mode.
+
+Video Cards
+-----------
+
+Q: The SVGA button is greyed out on the demo Control menu
+
+A: This can be caused by two different things :-
+1) You don't have enough free extended memory, see above.
+2) Your video card will not run the demo in SVGA (see the next
+section for a possible solution).
+
+			   ---
+
+Q: I'm having problems with my video display.
+I can't my demo to go into SVGA mode.
+The display seems to be running slowly, particularly in SVGA
+mode
+
+A: It is quite probable that UniVBE will help.  If your video
+card has VESA 1.2 or greater support UniVBE will not have been
+installed.  Run the utility SETVIDEO and select the option FORCE
+UNIVBE ON It is possible, that on a few video cards, UniVBE may
+cause instability. If you are experiencing problems run the
+utility SETVIDEO and select the option FORCE UNIVBE OFF
+
+A MATROX PCI card requires UniVBE to be specially configured,
+Type UVCONFIG -s28 -c1
+
+The Viper VLB card requires its own VESA driver to be run. Run
+VPRMODE
+
+Windows 95
+----------
+
+Q: I'm running Windows 95 and the demo can slows down repeatedly
+whilst a level is being played.
+
+A: Due to amount of memory used by Windows 95 on some
+installations, Z can slow down due to memory swapping on 8Mb
+machines.  If this happens 'Shut Down to DOS' and run the demo
+from there. Ensure that your 'Hardware Acceleration' setting is
+set on Full. Double click on the System icon within the System
+Panel group, click the performance tab and then the Graphics
+button to view the current setting.
+
+			   ---
+
+Q: I was running the demo in SVGA mode and I pressed the Windows
+key and now the demo cannot be restored.
+
+A: Don't press the Windows key!
+
+Performance
+-----------
+
+The demo will play cut scenes and load levels better if you
+are running a disk caching utility.  Make sure your AUTOEXC file
+calls SMARTDRV after you have loaded all your CD ROM software.
+Refer to your DOS and CD ROM documentation for more information.
+
+Q: I've changed my detail level but now I want the demo to
+re-assess my computer's specification and decide on my optimum
+detail level.
+
+A: Delete the file called OPTIONS.CFG that has been created in
+the directory from which you run the demo.  The demo will create
+a new file with default settings the next time it is run.
+
+
+-----------------------------------------------------------------
+
+File date : 14th August 1996
+
+http://www.bitmap-brothers.co.uk
+
+-----------------------------------------------------------------

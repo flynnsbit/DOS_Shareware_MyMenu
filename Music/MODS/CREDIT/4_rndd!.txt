@@ -1,0 +1,23 @@
+4_RNDD! (4_rndd!.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=172898
+
+Summary
+
+    4_rndd!.xm is a XM format module. 
+    Uploaded to modarchive.org on Mon 24th Sep 2012
+
+Info Info
+
+    Mod Archive ID: 172898
+    MD5: 1aad42ca9ff07cd4ff60b2f2e4735a48
+    Format: XM
+    Channels: 6
+    Genre: n/a
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     Drozerix (https://modarchive.org/member.php?84702)

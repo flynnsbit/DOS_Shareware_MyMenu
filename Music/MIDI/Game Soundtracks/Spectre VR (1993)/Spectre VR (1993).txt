@@ -1,0 +1,9 @@
+Game: Spectre VR
+Year: 1993
+Composed by: Morey Goldstein, Moses Ma, Kyle Johnson
+MIDI versions: GM
+Platform: DOS
+
+Additional info: In this case, I have no idea how to properly name all tracks, so I left them untouched. Maybe sometime in the future.
+
+https://www.karlsitretro.com/game_midi

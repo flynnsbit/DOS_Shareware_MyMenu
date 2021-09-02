@@ -1,0 +1,96 @@
+/* history.txt */
+
+0.10 - 20 apr 02
+
+    tom: basic design and implementation
+
+0.14 - 24 apr 02
+
+    tom: after some discussion with and help from aitor,
+    first semi public release (to Aitor, Bart + Arkady)
+    with 4 supported languages (GR,SP,NL,RU)
+
+    design seems to be working ok,
+    codetables have to be done/verified
+    waiting for feedback
+
+0.15 - 24 apr 02
+    tom: fixed decimaldingsbums 
+
+0.17 - 26 apr 02
+    tom:  fixed CAPSLOCK handling
+          added scan code display in debug mode
+    bart: added UK table
+    
+0.18 - 27 apr 02
+    tom: capslock handling for COMBI's corrected 
+         added 10 other languages
+
+0.25 - 29 mai 02
+    tom: changed table definitions, so that polish 
+    requirements (ALTGREY+SHIFT) are implementable
+    saved a few bytes by that
+    
+    arkady: changed all keyboard definitions to
+    use macros - less prone to errors
+
+0.26 - released 17 jun 02
+    some fine tuning by tom and arkady.   
+    
+    
+0.32 - 9 august 02
+    added brazil keyboard driver (BR+BX)
+    merged all executables into a single one.
+    slight increase of this single executable (4K->7K)
+    but saves installing 20 .EXE files    
+    
+0.34 - 18 september 02
+    added french keyboard
+
+0.35 - 21 october 02
+    corrections to french keyboard (provided by snoopy81)
+
+0.36 - 10 feb     03
+    added experimental belgique 
+
+0.37 - 3 march 03
+    belgian keyboard is OK for imre (after some corrections)
+    added uninstall /U support
+    added changing the layout on the fly by uninstalling old KEYB first
+    renamed MKEYB.EXE to KEYB.EXE, as users probably expect KEYB
+
+0.38 - 23 may 03    
+    version 0.38 was done entirely by Anton Zinoviev; 
+    I really appreciate it to be maintainer in that way :-))
+    here is what he writes:
+>>>    
+    I added keydefbg.h and keydefbp.h -- these are the two Bulgarian
+    keyboard layouts.
+    
+    For non-latin languages there must be some easy way to switch between
+    QWERTY and the language layout.  Alt+Ctrl+F1/F2 are too uncomfortable.
+    So I added the possibility to use the Right Ctrl as a switch for these
+    languages (currently Bulgarian, Hebrew and Russian).  The right Ctrl
+    acts as a switch only when it is pressed and immediately released.  It
+    preserves its ability to generate Control codes.
+    
+    It was a real pleasure to read the code of mkeyb. :-)
+    
+    Anton Zinoviev
+>>>    
+
+0.39 - 24 sep 03
+	finally implemented KEYB US - by deinstalling old keyboard handler
+	added experimantal Slovenian keyboard
+	
+0.40 - 17 mar 04
+	Changed the used EXE Packer; now APACK (http://www.ibsensoftware.com)
+	is the exepacker of choice (although UPX still works exellent, too)
+	This reduces KEYB.EXE by 200 Byte.
+	This also changes the licensing, as GPL doesn't allow using exepackers 
+	of my own choice :((
+	See license.txt for details
+	
+
+
+

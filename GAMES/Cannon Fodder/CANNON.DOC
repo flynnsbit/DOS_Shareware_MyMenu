@@ -1,0 +1,244 @@
+                                Cannon Fodder
+
+                       An MVP Software Shareware release
+
+                                 of a game by
+
+                       Virgin Interactive Entertainment
+
+
+Before beginning Cannon Fodder for the first time, please run the SETUP.EXE
+program.  This will setup your sound card properly.
+
+If you encounter problems running Cannon Fodder there may be insufficient low
+memory available.  Cannon Fodder requires 580K free RAM.  Here's a possible
+way to solve the problem. Place a blank diskette into drive A of your computer.
+Then type:
+
+   FORMAT A: /S /U
+
+and press enter.  When the computer is finished, type:
+
+   EDIT A:\CONFIG.SYS
+
+and press ENTER.  Then type the following lines:
+
+   DEVICE=C:\DOS\HIMEM.SYS
+   DOS=HIGH
+
+Then press the following keys: ALT, F, X, Y. Reboot your computer leaving the
+disk in the A: drive.  Load your mouse driver.  Go to the Cannon Fodder
+directory and type INSTALL to install the game.  After installation, type
+CANNON to play the game.  Whenever you want to play Cannon Fodder, simply
+reboot your computer with the boot disk you've created.
+
+NOTE: You may encounter problems with the Diamond Stealth Pro VLB video card.
+We are sorry for the inconvenience.
+
+CANNON FODDER, WINDOWS, AND MOUSE DRIVERS
+-----------------------------------------
+Although you may be able to run Cannon Fodder under Windows by opening a DOS
+window, the software is designed to run under DOS.  We recommend that you
+exit Windows completely before running the software.  If you do run Cannon
+Fodder from Windows, please note that the DOS mouse driver must be loaded.
+
+DOS requires that a mouse driver is loaded before any program can recognize
+the mouse.  Windows has a built-in mouse driver, but this will not work in
+DOS.  Before you attempt to run Cannon Fodder make sure the MOUSE.COM or
+MOUSE.SYS file is loaded.  These files are provided on a disk that came with
+your mouse.  Check your DOS manual if you don't how to load either file.
+
+INSTALLATION
+------------
+First, make sure you have the following files:
+
+CANEXIT.COM
+CANNON.COM
+CANNON.DOC      (This file)
+CFODDER.EXE
+CF_ENG.DAT
+FILE_ID.DIZ
+SETUP.EXE
+LICENSE.DOC
+ORDER.FRM
+READ.ME
+SETUP.DAT
+SYSOP.DOC
+VENDOR.DOC
+
+Before beginning Cannon Fodder for the first time, type INSTALL from your
+Cannon Fodder directory at the DOS prompt.  You MUST have a mouse on your
+system and a mouse driver loaded in memory.  Choose CONFIGURE from the menu
+to change settings for sound, and other options.  Save the settings
+and exit the install program.
+
+Type CANNON to run Cannon Fodder.
+
+Cannon Fodder is shareware.  Please read this page to find out how to register
+with MVP Software.  Thanks for playing Cannon Fodder and for supporting
+shareware.  Your honesty pays.
+
+To register Cannon Fodder, call 800-968-9684 toll-free 24 hours a day.
+Please have your Master Card or Visa ready when you call.  Or fill out the
+order form at the end of this manual and fax it to: 616-245-3204.  Make
+sure your credit card number and expiration date are legible.  Or if you
+prefer mail the order form and your check to: MVP Software, 1035 Dallas SE,
+Grand Rapids, MI 49507-1407.
+
+When you register Cannon Fodder you can get the mega-cool CD-ROM version for no
+additional cost!  That's right, Cannon Fodder is the first shareware game that
+offers a CD version to registered users!  If your system has a CD-ROM drive, be
+sure to specify that you want the CD version.  The CD version includes a killa
+8-minute video not seen on the disk version.  If your system does not have a
+CD-ROM drive, be sure to specify that you want the 3.5" disk version.  The CD
+version is available beginning in November 1994.
+
+For overseas orders or technical support call 616-245-8376.
+
+           Download All the Latest MVP Shareware Games FREE
+
+If your favorite BBS doesn't have an MVP file section, then you may be
+missing some great shareware.  To get all the latest and greatest MVP
+shareware releases, call one of the leading boards listed below, and check
+out the FREE MVP file area.
+
+In Grand Rapids, Michigan -- Ryan's Bar (616) 456-1845
+In Milwaukee, Wisconsin -- Exec-PC (414) 789-4360
+In New York, New York -- The Invention Factory (212) 274-8110
+In Boston, Massachusetts -- Channel 1 (617) 354-3230
+In Kansas City, Missouri -- Sound Advice (816) 436-8029
+In Palo Alto, California -- Space BBS (415) 323-4193
+In Reston, Virginia -- World Data Network (703) 620-8900
+
+                    _______
+                ____|__     |                (R)
+             --|       |    |-------------------
+               |   ____|__  |  Association of
+               |  |       |_|  Shareware
+               |__|   o   |    Professionals
+             -----|   |   |---------------------
+                  |___|___|    MEMBER
+     
+MVP Software is a member of the Association of Shareware Professionals (ASP).
+ASP wants to make sure that the shareware principle works for you.  If you are
+unable to resolve a shareware-related problem with an ASP member by contacting
+the member directly, ASP may be able to help.  The ASP Ombudsman can help you
+resolve a dispute or problem with an ASP member, but does not provide
+technical support for members' products.  Please write to the ASP Ombudsman
+at 545 Grover Road, Muskegon, MI 49442-9427 or send a CompuServe message via
+CompuServe Mail to ASP Ombudsman at 70007,3536.
+
+GAME PLAY
+---------
+All the action takes place in the play field which takes up most of the
+screen.  On the screen you will see the Status Panel in the upper left
+and the Map icon in the lower left.
+
+You begin at Boot Hill with recruits lining up to join your efforts.  This is
+also where you can load or save a mission, and see how to register Cannon
+Fodder (By pressing F1).  Click anywhere on Boot Hill to start your mission.
+
+Once in your mission, use the mouse to guide your pointer around the screen.
+Press the left mouse button to move your troop to the end of the pointer.
+Move the mouse to guide the pointer to an enemy and press the right mouse
+button to change the pointer into a cross-hair cursor and shoot your guns.
+Your bullets are "smart" and will not harm allies; however, grenades and
+bazookas will.
+
+In later missions, you might find grenades and/or bazookas.  To fire these,
+move the pointer to the upper left of the screen (over the status panel).  If
+you have any grenades or bazookas, there will be a quantity below their
+respective icon.  Click on that icon to highlight it.  Now move the pointer
+to where you want to fire your weapon.  Press and hold the right mouse button.
+Press the left mouse button, then let go of both buttons.  Be careful where
+you aim!  
+
+There are times when the strategy dictates that the troopers split up.  So
+long as you have enough troopers, you can make a maximum of two new troops.
+
+   - Select the name(s) of the troopers you'd like to form a new troop 
+     (the names will highlight when you click on them).
+
+   - Select the troopers logo (above the grenade & bazooka stats) to 
+     form a new troop with the troopers you highlighted.
+
+But Wait!  Who gets the weapons when you split up?  When you begin to split a
+troop, grenades and bazookas are outlined.  By clicking on these icons, you
+determine who gets what.
+
+   - The solid outline represents all quantities of that weapon.
+   - The dotted outline represents half the quantities of that weapon.
+   - No outline represents none of that weapon.
+
+To regroup troops, simply walk them into each other.  They will automatically
+regroup.
+
+The following keys are active during gameplay:
+
+   P      - Pauses and unpauses the game.
+   M      - Views the map during a phase.
+   F1     - Shows ordering information (From Boot Hill).
+   ESC    - Surrenders and restarts current phase (only press this if 
+            you're giving up and want to start this phase over).
+            Pressing ESC again will take you to Boot Hill.
+   ALT-Q  - EXITS the game!  Only press this if you want to exit to DOS.
+
+                       CANNON FODDER ORDER FORM
+
+Name ________________________________________________________________
+
+Address _____________________________________________________________
+
+City _______________________________ State ______ ZIP _______________
+
+Country (if outside USA) ____________________________________________
+
+IMPORTANT (CIRCLE ONE)    CD-ROM version     - or -     3.5 disk
+
+Price of Cannon Fodder registered version                       $34.95
+Shipping and Handling (US)                                        3.00
+Shipping and Handling (Canada)                                    4.00
+Shipping and Handling (all other countries)                       5.00
+Michigan residents add sales tax                                  2.28
+                                                                ------
+Make check payable to "MVP Software"           Total enclosed:  $
+Master Card/Visa information (credit card orders only)
+
+Card number __________________________________________
+
+Expiration number ____________________________________
+---------------------------------------------------------------------------
+VOLUNTARY QUESTIONS:  Please help us determine what features you would like
+====================  in future products.
+
+Circle what type of equipment you have:   8088    286    386    486    Pentium
+Circle the speed of your computer(Mhz): 12  16  20  25  33  40  50  66  ___ 
+Circle any that apply: Joystick  Mouse  Modem_______  SVGA card____________
+                                             (speed)              (type)
+
+Sound Capability:  Adlib   Sound Blaster   SB Pro   SB 16   SB AWE32
+    PC speaker only  Other ____________________________________
+
+Where did you get Cannon Fodder?
+    Friend   CompuServe   AOL   Prodigy   Ryan's Bar   Exec-PC   Channel 1
+    Invention Factory   Space BBS   Sound Advice   World Data Network
+    BBS (name): _______________________
+    Shareware Distributor (name): _________________________________________
+
+Are you a game player?  Please answer the following questions about what you
+like and don't like in computer games.
+
+Approx. # of retail games owned: ____  #Registered shareware games: ____
+
+Circle preference:        Beautiful Graphics     Game Complexity 
+Circle preference:    Solo against computer   -OR-   Modem 2-Player
+Circle preference:    Strategy    Action    Simulation    Other_________
+Long term game playability:   Few Levels w/ hard difficulty   Lotsa Levels
+---------------------------------------------------------------------------
+Send this order form and your check to:
+
+MVP Software, 1035 Dallas S.E., Grand Rapids, MI  49507-1407
+
+US or Canada 24-hour order line: 800-968-9684.  Fax: 616-245-3204.
+Tech support, information, or overseas order line: 616-245-8376.
+

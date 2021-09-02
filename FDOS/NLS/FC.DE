@@ -1,0 +1,43 @@
+# Translation courtesy of Achim Sondermann and Michael Fritscher
+#### Help        ####
+1.0:Zwei Dateien oder Dateiens„tze vergleichen und ihre Unterschiede anzeigen
+1.1:FC [Schalter] [Laufw1:][Pfad1]Dateiname1 [Laufw2][Pfad2]Dateiname2 [Schalter]
+1.2: /A    Nur die erste und letzte Zeile von mehreren Abweichungen in Folge zeigen
+1.3: /B    Bin„ren Vergleich durchfhren
+1.4: /C    Groá- und Kleinschreibung nicht bercksichtigen
+1.5: /L    Dateien als ASCII Text vergleichen
+1.6: /Mn   Anzeige auf n Bytes bei bin„rem Vergleich beschr„nken
+1.7:       (Standard = %d, 0 = unbegrenzt, /M = /M0)
+1.8: /N    Zeilennummern beim Textvergleich anzeigen
+1.9: /S    Dateien in Unterverzeichnissen mit einbeziehen
+1.10: /T    Tabulatoren nicht durch Leerzeichen ersetzen
+1.11: /W    Tabulatoren und Leerzeichen beim Textvergleich komprimieren
+1.12: /X    Umgebungszeilen beim Textvergleich nicht anzeigen
+1.13: /LBn  Anzeige der zusammenh„ngenden Unterschiede auf n Textzeilen beschr„nken
+1.14: /nnn  Mindestanzahl der zusammenh„ngenden šbereinstimmungen auf nnn Zeilen
+1.15:       fr die Resynchronisation des Vergleichs festlegen
+1.16: /R    Zeige einen genauen Bericht am Ende an (immer aktiv wenn /S benutzt wird)
+1.17: /Q    Zeige die Liste der Unterschiede nicht an
+1.18: /U    Zeige die Namen der Dateien, die kein Gegenstck haben
+#### Messages    ####
+2.0:Ungltiger Schalter: %s
+2.1:Zu viele Dateien angegeben
+2.2:Ungltiger Dateiname
+2.3:Keine Datei angegeben
+2.4:Achtung: Die Dateien haben eine unterschiedliche Dateigr”áe!
+2.5:Vergleich beendet nach %d Unterschieden
+2.6:Keine Unterschiede
+2.7:Achtung: Vergleich unterbrochen nach %d Zeilen
+2.8:Nicht gengend Arbeitsspeicher
+2.9:Kann Datei %s nicht ”ffnen
+2.10:Vergleiche %s mit %s
+2.11:Datei/Verzeichnis nicht vorhanden
+2.12:Resync fehlgeschlagen: Die Dateien sind zu unterschiedlich
+2.13:Die Dateien haben eine unterschiedliche Dateigr”áe
+2.14:Die Dateien sind unterschiedlich
+2.15:Datei %s hat kein Gegenstck (%s)
+#### Report text ####
+3.0 %d Dateien verglichen
+3.1: in %d Verzeichnissen
+3.2:%d Dateien sind gleich, %d Dateien sind verschieden
+3.3:%d Dateien haben kein Gegenstck

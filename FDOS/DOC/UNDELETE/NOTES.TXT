@@ -1,0 +1,114 @@
+FreeDOS Undelete - (C) Copyright 2001-2002 Eric Auer <eric@coli.uni.sb.de>
+Undelete is free software; it is distributed under the terms of the GNU
+General Public License. See COPYING for details.
+
+STANDARD USAGE
+==============
+
+SYNOPSIS: undelete [path] [/ALL|/LIST] [/Edrive[:\directory]]
+
+Prompts to undelete recoverable files from the current working directory,
+or from the given path.
+
+If /ALL is used, then Undelete will
+automatically undelete all recoverable files without prompting.
+
+If /LIST is used, then Undelete will list the recoverable files with
+prompting for recovery.
+
+/E exports any undeleted files to an external disk and directory.
+This behaves similarly to the advanced command follow.
+
+ADVANCED USAGE
+==============
+         
+SYNOPSIS: undelete [action] [what] [destination] [optional size]
+         
+Possible [action]s:               
+
+syssave Saves the 1st or 2nd copy of the FAT, boot sector or root
+        directory. Select fat1, fat2, boot, or root in [what].
+follow  Looks for a (possibly deleted) file starting at the cluster
+        [what] and saves data to a file given as [destination]. The     
+        output of DIRSAVE helps you to find the right cluster number.
+dirsave Like FOLLOW, but saves a directory to a file. Directory [what]
+        must be given by absolute path starting with \ OR by cluster
+        number. Also shows a technical directory listing on the screen.
+
+Specifying [size] is not needed, but you can override the autodetection
+by specifying [size] (in clusters for FOLLOW, in sectors for DIRSAVE).
+
+[Destination] must be on another drive than the current drive. Data is
+always read/recovered from the drive from which undelete is invoked.
+
+
+
+And here a sketch of the topics I would like to see in the HOWTO.
+
+Using undelete to "mirror" important drive data (if your filesystem
+gets completely broken, you can try to write back this data):
+> Run undelete in syssave mode for all 4 "what" values and keep the
+> resulting files in a safe place. On normal systems, you can glue
+> them together in the order "boot fat1 fat2 root" to reconstruct
+> the first part of your partition, starting with the first sector.
+> To write back the data, you could use debug (w command). You can
+> also merge saved and existing data with a hex editor, and so on.
+> IMPORTANT: While "mirror" data is very helpful to experts that try
+> to repair your system, please do not try to write it back if you
+> do not exactly know what you are doing!!!
+
+Using undelete to find undeleteable files or directories:
+> Run undelete in dirsave mode. You will see deleted directory entries
+> specially marked, and you will see their cluster numbers on the
+> screen. You can redirect screen output to a file, and you will get
+> a binary file for further processing by experts (also useful to
+> "mirror" the status of that directory, if you fear that it may break
+> soon for some reason or another). Dirsave mode is also useful to get
+> technically detailled directory listings. They are, however, not very
+> readable for humans if the directory in question contains long file
+> names. You can also cascade dirsave runs: Run dirsave on an existing
+> directory to find the starting cluster of a deleted directory. Then
+> run dirsave on that cluster to find deleted or dropped files in that
+> deleted directory, and so on. TAKE CARE: Dirsave does only accept
+> absolute paths without drive specification. As all undelete modes,
+> the source drive is implicitly selected as the drive from which you
+> invoke undelete. So those are wrong [what] values: c:\somewhere
+> somewhere, .., ..\somewhere, and so on.
+> A correct [what] value would be \here\there or 1234 (a cluster number).
+
+Using undelete to recover a file:
+> Find the starting cluster of the file using dirsave, as explained
+> above. Then run undelete follow 1234 x:rescued.bin (for example) to
+> save the contents of the deleted file starting on cluster 1234 to
+> the file rescued.bin on drive x: - You can either extract deleted or
+> existing files. The use of following existing files is that you can
+> override the size value (in clusters, undelete tells you how big a
+> cluster on the current drive is when you start undelete), so if you
+> have accidentally overwritten a long file OLD with a short new file
+> NEW, you can find the cluster number of NEW, give the size of OLD
+> and then undelete follow will give you a file that starts with the
+> contents of NEW but contains the not-overwritten end of OLD as well,
+> hopefully. Normal use, following simply deleted files, will normally
+> not need a size to be given, but auto-detect the end of the deleted
+> file.
+
+So far for my ideas on that undelete howto. Feel free to publish the
+sketch (for example to the list) if you need something for ripcord and
+do not want to wait for the better and more readable version by Emanuele
+Cipolla. It would be nice if somebody could provide some sample "screen-
+shots", for example
+undelete syssave boot >sample-syssave-screenshot.txt
+and especially similar files for a practical example of "how do I
+recover that one file which I have just deleted in directory
+d:\foo\bar\ to my temp directory e:\temp?". Maybe a short example
+of how long filenames look in undelete output and which of the
+lines then contains the 8.3 version of the filename, too?
+
+Greetings, Eric
+
+
+PS: Even a "walkthrough" style example of undeleting a single file
+could be a very useful bonus.
+
+
+

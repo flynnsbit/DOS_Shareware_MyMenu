@@ -1,0 +1,24 @@
+Bionic Girl (bionic_girl.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=174416
+Renamed to "BIONCGRL.XM" because of DOS 8-character limit
+
+Summary
+
+    bionic_girl.xm is a XM format module. 
+    Uploaded to modarchive.org on Mon 14th Oct 2013
+
+Info Info
+
+    Mod Archive ID: 174416
+    MD5: 5bfaa1deda9bd6204e672ff7a4b76709
+    Format: XM
+    Channels: 4
+    Genre: n/a
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     Drozerix (https://modarchive.org/member.php?84702)

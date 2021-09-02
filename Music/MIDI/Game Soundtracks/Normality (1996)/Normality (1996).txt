@@ -1,0 +1,9 @@
+Game: Normality
+Year: 1996
+Composed by: Chris Adams, Neil Biggin, Patrick Phelan
+MIDI versions: GM, MT-32
+Platform: DOS
+
+Additional info: Files are made for General MIDI, however, you can play the soundtrack using MT-32, but you must use MT32MAP.syx first.
+
+https://www.karlsitretro.com/game_midi

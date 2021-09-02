@@ -1,0 +1,17 @@
+Begin3
+Title:          COMP
+Version:        1.04
+Entered-date:   2006-10-21
+Description:    Compare files and display their differences
+Keywords:       compare, comp, file compare
+Author:         Paul Vojta <vojta -at- math.berkeley.edu>
+Maintained-by:  Paul Vojta <vojta -at- math.berkeley.edu>
+Primary-site:   http://math.berkeley.edu/~vojta/
+comp0104.zip
+Alternate-site: http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/comp/
+Original-site:  http://math.berkeley.edu/~vojta/
+comp0104.zip
+Platforms:      DOS, FreeDOS
+Copying-policy: Free, see COMP.ASM
+Wiki-site:      http://wiki.freedos.org/wiki/index.php/Comp
+End

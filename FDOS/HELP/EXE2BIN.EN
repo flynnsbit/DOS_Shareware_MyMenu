@@ -1,0 +1,9 @@
+Open Watcom EXE to Binary Converter Version 1.5
+Source code is available under the Sybase Open Watcom Public License.
+EXE2BIN [options] exe_file[.exe] [bin_file]
+Options:
+        /Q        suppress informational messages
+        /H        display exe-header
+        /R        display relocations
+        /L=<seg>  relocate exe_file to segment <seg>
+        /X        extended behaviour, e.g. files > 64KB

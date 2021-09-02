@@ -1,0 +1,451 @@
+
+
+
+
+             ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+             ³            CYRIL CYBERPUNK             ³
+             ³     TROUBLESHOOTING AND HELP GUIDE     ³
+             ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+                      TABLE OF CONTENTS
+                      ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+                  1. THE SETUP PROGRAM
+                  2. GENERAL TROUBLE SHOOTING
+                  3. SOUND CARD TROUBLE SHOOTING
+                  4. FREQUENTLY ASKED QUESTIONS
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+1. THE SETUP PROGRAM
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  SETUP.EXE must be run before you can start playing CYRIL CYBERPUNK.
+  The menu options and their uses are described below:
+
+  1.1 AUDIO CARD
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    You must select your sound card from the list, and choose the
+    appropriate sound card settings ( BASE I/O PORT, IRQ, DMA ).
+
+    SOUND QUALITY: The higher the sound quality, the more work the
+                   computer must do. So if CYRIL CYBERPUNK is running
+                   slowly on your machine, select low sound quality.
+
+    SOUND CHANNELS: This is the number of sound effect that can play
+                    simultaneously. One again the higher this value,
+                    the more work your computer has to perform.
+
+    TEST SOUND & MUSIC: This just enables you test if your sound card
+                        is configured correctly.
+
+  1.2 SOUND & MUSIC
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Use this menu if you wish to disable sound effects and/or music.
+
+  1.3 DETAIL LEVEL
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    If CYRIL CYBERPUNK is running slowly or the scrolling seems jerky
+    at times, you can try dropping the detail level.
+
+    HIGH DETAIL   : Everything on
+    MEDIUM DETAIL : Status bar animations off
+    LOW DETAIL    : MEDIUM + foregrounds off, certain animations off,
+                    smoke trails on CYRIL's board off.
+
+  1.4 INPUT DEVICE
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    This is where you select how you wish to control CYRIL. Remember
+    if you choose JOYSTICK or GRAVIS GAMEPAD you must calibrate it
+    first using the CALIBRATE JOYSTICK option in the SETTINGS menu
+    in the game.
+
+  1.5 WINDOWS 95 SETUP
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    This menu option sets up the directories in the CC.PIF file.
+
+    Cyril is a DOS based game, therefore we strongly recommend you
+    run it from DOS ( If you are running Windows 95 then DOS MODE ),
+    BUT it does run under Windows 95. We have therefore included an
+    ICON and PIF.
+
+    To run CYRIL CYBERPUNK from WINDOWS 95, enter the file explorer
+    and navigate to your CYRIL CYBERPUNK drive and directory.
+    Double click on CC.PIF.
+
+    You can create a shortcut to CYRIL CYBERPUNK by dragging CC.PIF
+    onto your desktop.
+
+    If you run CYRIL CYBERPUNK from a DOS window or you wish to
+    create your own PIF, make sure you run it with -WIN95 command
+    line parameter:
+
+    e.g.: CC -WIN95
+
+    When CYRIL CYBERPUNK starts we automatically turn numlock OFF.
+    Sometimes WINDOWS 95 may turn it back on, this will be easily
+    noticed as the cursor keys will not work in the menus and
+    CYRIL is in permanent FAST MODE in the game. Just press NUMLOCK
+    once to remedy this.
+
+    NOTE: On slower computers running under WINDOWS 95 may cause the
+          music to sound staggered during level loading and some
+          comic cut-scenes.
+
+  1.6 COMPATIBILITY
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    LOW MEMORY (4 Mb) MODE:
+      If your computer has 4Mb of memory you must set this to ON.
+      Because of the large amount of sprites and scenery in CYRIL
+      CYBERPUNK, the memory usage of the game is very high,
+      therefore you may have to perform a clean boot or create a
+      boot disk to free up enough memory. See the BOOT DISK section
+      of GENERAL TROUBLE SHOOTING.
+
+    ATI MACH COMPATIBILITY:
+      Certain VGA cards such as the ATI MACH32 and MACH64 do not
+      support PEL-PANNING ( A technique we use to make the scrolling
+      smooth ). If you have such a card ( or if the horizontal
+      scrolling shudders badly ) then switch this option ON.
+
+      Unfortunately the scrolling with this option ON is not as
+      smooth as it would be with a PEL-PANNING compatible video card.
+
+  1.7 SAVE AND EXIT
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Once you have correctly setup and configured CYRIL CYBERPUNK
+    choose this option to save the settings.
+
+    Then type CC and have fun!
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+2. GENERAL TROUBLESHOOTING
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  2.1 MEMORY MANAGERS
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    CYRIL CYBERPUNK can be unstable in the presence of a memory
+    manager, such as EMM386 or QEMM. We recommend removing these from
+    memory before playing. Alternatively, if you are having trouble,
+    try disabling EMS support, and remove any memory inclusions /
+    exclusions.
+
+    e.g.  DEVICE=C:\DOS\EMM386.EXE NOEMS
+
+  2.2 CREATING A BOOT DISK
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    1. Insert a new disk into your A drive ( floppy or stiffy - drive
+       dependant )
+
+    2. At the DOS prompt type: FORMAT A: /S and press ENTER
+       This will format the disk and place the system files onto
+       it.
+
+    3. At the DOS prompt type: A: and press ENTER
+
+    4. Type copy con autoexec.bat
+       You will now be entering the contents of your autoexec.bat.
+       To cancel at any time press CTRL-BREAK.
+       To save the file in its current state and exit press CTRL-Z.
+
+       Type in your SOUND driver environment variable and any
+       initialization commands it needs:
+
+       Example for SOUND BLASTER 16 with PORT 220, IRQ 7, DMA 1,5
+
+         SET BLASTER=A220 I7 D1 H5 P330 T6
+         C:\SB16\SB16SET /M:240 /VOC:240 /TREBLE:220 /OPGAIN:8,8
+         C:\SB16\SBCONFIG.EXE /S
+
+       Example for GUS MAX with PORT 220, IRQ 7, DMA 1
+
+         SET ULTRASND=220,1,1,7,7
+         C:\ULTRASND\ULTRINIT.EXE -ej
+
+       Once you have completed this press CTRL-Z
+
+    5. Type copy con config.sys
+       Enter the following:
+
+        DEVICE=C:\DOS\HIMEM.SYS
+        DEVICE=C:\DOS\EMM386.EXE NOEMS
+        FILES=20
+        BUFFERS=20,0
+        DOS=HIGH,UMB
+
+       Press CTRL-Z
+
+     6. You should now reboot your computer.
+
+     7. Goto the CYRIL CYBERPUNK directory on your hard drive
+        Example: Type C: and press ENTER
+                 Type CD \CC and press ENTER
+                 Type CC and press ENTER
+
+     NOTE: If you have an DOS text editor, use this to create 
+           your bootup files. ( It's much easier than COPY CON )
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+3. SOUND CARD TROUBLE SHOOTING
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  3.1 SOUND CARD SUPPORT
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  CYRIL CYBERPUNK supports most popular sound cards on the
+  market, including:
+
+    ş Sound Blaster 1.x
+    ş Sound Blaster 2.x
+    ş Sound Blaster Pro
+    ş Sound Blaster 16/16ASP
+    ş Sound Blaster AWE32 and WaveBlaster
+    ş Pro Audio Spectrum
+    ş Pro Audio Spectrum+
+    ş Pro Audio Spectrum 16
+    ş Logitech SoundMan
+    ş Windows Sound System
+    ş Gravis UltraSound
+    ş Gravis UltraSound Max
+
+
+ 3.2 SOUND RELATED PROBLEMS AND THEIR SOLUTIONS
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ ş  THE COMPUTER LOCKS UP OR REBOOTS
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Run SETUP and verify that your sound card settings are correct:
+
+    - Check your I/O port address, IRQ line and DMA channel settings.
+      If you don't know your sound's settings, consult your
+      manual for details.
+
+    - Make sure your sound card has no conflicts with other cards in
+      your system. If your sound card works properly with other
+      programs, you can assume that there are no such conflicts.
+
+    If this doesn't solve the problem, try booting clean --- usually
+    memory managers like QEMM, EMM386, etc. and/or TSRs loaded in
+    memory may cause problems.
+
+
+ ş  THE SOUND AND MUSIC RUNS SLOWLY ON MY COMPUTER
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Your computer is not fast enough. You can speed up the system by
+    running SETUP and setting a lower quality.
+
+
+ ş  THE SYSTEM DOES NOT RECOGNIZE MY SOUND CARD
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    You have selected the wrong sound card or I/O port address. Run
+    SETUP again and select the right settings.
+
+    If you are using a Sound Blaster 16 then you must check that the
+    right drivers are loaded in your AUTOEXEC.BAT and CONFIG.SYS
+    files.
+
+    If the problems persist, check that you have enough conventional
+    memory ( maybe the system was unable to allocate conventional
+    memory required for a DMA buffer used to communicate with your
+    sound card ).
+
+
+ ş  I DON'T HEAR ANY SOUND
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    First check that your speakers/headphones are plugged in. If they
+    are make sure the VOLUME CONTROL on your sound card is up.
+
+    If that is not the problem then check that your IRQ and/or DMA
+    settings are correct. You must run the SETUP program to select
+    the right settings, it is highly recommended to reboot your
+    computer before trying the new settings.
+
+
+ ş  MUSIC IS FINE WHEN I START, BUT GETS CUT OFF AFTER A FEW SECONDS
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    This is what happens when you select a wrong IRQ line for your
+    sound card. Run SETUP again and select the correct IRQ number.
+
+
+ ş  MY SOUND BLASTER CLONE IS NOT RECOGNIZED
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Run the SETUP program and set the right hardware parameters.
+    Choose the plain Sound Blaster. If this does not fix the problem,
+    your Sound Blaster clone may not be 100 % compatible.
+
+
+ ş  THE MUSIC SOUNDS SLOW ON MY SOUND BLASTER
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Run SETUP again and select plain Sound Blaster. You were possibly
+    using the Sound Blaster 2.0 / Pro driver and your card does not
+    support high speed DMA transfers.
+
+
+ ş  THE SYSTEM HANGS WITH MY SOUND BLASTER 16
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Your system's motherboard cannot handle high DMA at full speed.
+    On some machines, the DMA controller does not function properly
+    during high DMA transfer. To solve this problem, use a 8-bit DMA
+    channel for high DMA transfers. See your SB16 manual for details.
+
+
+ ş  I HEAR STATIC WITH MY SOUND BLASTER
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Try turning the MIC and LINE volumes to zero.
+    If you still hear static try disconnecting your parallel port
+    devices.
+
+
+ ş  I ONLY HEAR SOUND EFFECTS, NO MUSIC
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    If you are running in LOW MEMORY MODE music is automatically
+    disabled to save memory.
+
+    If your aren't running in LOW MEMORY MODE check that MUSIC is
+    ON in the SETUP program, then check your music volume in the
+    SETTINGS menu in the game.
+
+    If you have a GUS card the IRQ setting is probably incorrect
+    Run SETUP again and set the correct settings.
+
+
+ ş  SOUND BLASTER 16 SPECIFIC NOTES
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    You must select the high DMA channel in the SETUP program, this
+    is because the system uses 16-bit playback mode. See your SB16
+    manual for details.
+
+    Make sure that the right SB16 drivers are loaded in the
+    AUTOEXEC.BAT and CONFIG.SYS files. If you don't want to waste
+    memory loading these drivers, you may want to try the following:
+
+    Edit your AUTOEXEC.BAT file and insert the following lines:
+
+      REM
+      REM These lines will setup your SB16 sound card at port 220h
+      REM using IRQ 5, low DMA 1, high DMA 5 and MIDI port 330h.
+      REM
+      SET BLASTER=A220 I5 D1 H5 P330 T6
+      DIAGNOSE /S
+
+    The above lines will set your SB16 hardware configuration based
+    on the BLASTER environment variable. Make sure that the above
+    lines are setting the BLASTER variable with the right parameters.
+    See your manual for details about the BLASTER environment
+    variable.
+
+
+ ş  PRO AUDIO SPECTRUM SPECIFIC NOTES
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Make sure that the right PAS drivers are properly loaded in your
+    AUTOEXEC.BAT and CONFIG.SYS files. Without these drivers the
+    system won't recognize your PAS sound card. If you have a PAS+ or
+    PAS16 and the system does not work properly, you may want to try
+    running SETUP and tell it that you have a Sound Blaster sound
+    card.
+
+
+ ş  GRAVIS ULTRASOUND SPECIFIC NOTES
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    You must choose the GF1 IRQ line and Playback DMA channel in the
+    SETUP program. Make sure that the right GUS drivers are loaded in
+    your AUTOEXEC.BAT and CONFIG.SYS files. However, the sound system
+    should work without loading any of these drivers.
+
+    Notice that some SB emulators (SBOS) may conflict with the sound
+    system, so if you experience problems try disabling these
+    emulators.
+
+    Because of the nature of the GUS, the sound effects are uploaded
+    to the card using a caching system. This may cause slight slow
+    downs from time to time during gameplay.
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+4. FREQUENTLY ASKED QUESTIONS
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  4.1 TROUBLE SHOOTING RELATED
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  Q. I can't enter the CALIBRATE JOYSTICK option on the setup menu.
+
+  A. You must first set your input device to JOYSTICK or GRAVIS
+     GAMEPAD. This is set in the INPUT DEVICE menu of the SETUP
+     program.
+
+  Q. I selected JOYSTICK and KEYBOARD as my input device, but in the
+     game CYRIL doesn't react to the JOYSTICK or KEYBOARD ?
+
+  A. Before you can use a JOYSTICK or GRAVIS GAMEPAD in the game
+     you must calibrate it using the CALIBRATE JOYSTICK option
+     in the SETTINGS MENU. You only need to calibrate it once
+     as the settings are automatically saved.
+
+  Q. The cursor keys don't work in the menu. Why ?
+                          OR
+  Q. Cyril is permanently in TURBO mode even though I haven't
+     pressed 'T' for TURBO ?
+
+  A. Either WINDOWS 95 has set numlock ON or it was pressed on
+     your keyboard. Just press NUMLOCK once to fix this.
+
+  Q. Moving around in the menus is painfully slow.
+
+  A. Your are running under WINDOWS 95 without starting CYRIL with
+     -WIN95 parameter. Type CC -WIN95 at the DOS prompt or setup
+     the parameter in your PIF for CYRIL CYBERPUNK.
+
+  Q. Moving around in the menus is ridiculously fast!
+
+  A. You have started CYRIL CYBERPUNK with -WIN95 command line
+     parameter, but you are running from normal DOS.
+
+  Q. The scrolling shudders badly horizontally, but is OK diagonally
+     and vertically ?
+
+  A. Your video card does not support PEL-PANNING. This is prevalent
+     in the ATI MACH range. Set the ATI MACH support option ON in
+     the compatibility menu of the SETUP program.
+
+  Q. I get a MEMORY ALLOCATION ERROR when I try run CYRIL CYBERPUNK.
+
+  A. Set the LOW MEMORY MODE option ON in the compatibility menu of
+     the SETUP program. If you already have this ON, you must free
+     up more memory to run CYRIL CYBERPUNK. See the BOOTDISK section
+     of GENERAL TROUBLE SHOOTING.
+
+  Q. The music skips or sounds staggered.
+
+  A. Your computer can't handle such a high music quality. Try
+     dropping the music quality in the AUDIO SETUP menu of the
+     SETUP program. This may also happen when running under
+     Windows 95.
+
+
+  4.2 GENERAL
+  ÄÄÄÄÄÄÄÄÄÄÄ
+
+  Q. What is extra in the FULL REGISTERED version ?
+
+  A. 23 new levels and 3 secret levels. 32 levels all in all!
+     10 new enemies, bosses and the mega boss.
+     16 new songs.
+     23 MEGS of story art and 19 MEGS of total game art.
+     Higher quality sound effects.
+     A level editor to make your own CYRIL CYBERPUNK levels.
+
+  Q. Where can I get the FULL VERSION ?
+
+  A. Select ORDERING INFO from the HELP utility, or check out the
+     ORDERING INFO in the main menu of the game to see where
+     you can get it.
+
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ

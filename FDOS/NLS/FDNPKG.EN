@@ -1,0 +1,157 @@
+#
+# FDNPKG language file
+#
+# Language..: English
+# Codepage..: 437
+# Translator: Mateusz Viste
+#
+
+
+#### Help ####
+
+1.0:This is a network package manager for FreeDOS.
+1.1:Usage: FDNPKG action [parameters]
+1.2:Where action is one of the following:
+1.3: search [string]   - Search net repositories for package containing 'string'
+1.4: vsearch [string]  - Same as 'search', but prints also source repositories
+1.5: install pkg       - Install the package 'pkgname' (or local zip file)
+1.6: remove pkg        - Remove the package 'pkgname'
+1.7: dumpcfg           - print out the configuration loaded from the cfg file
+1.8: license           - print out the license of this program
+1.9:FDNPKG is linked against WatTCP version below:
+1.10: install-nosrc pkg - Install the package 'pkg' (or local zip file) w/o sources
+1.11: install-wsrc pkg  - Install the package 'pkg' (or local zip file) with sources
+1.12: showinstalled [str] - Show the list of all installed packages containing 'str'
+1.13: checkupdates      - check for available updates of packages and display them
+1.14: update pkg        - update the 'pkg' package to a newer version
+1.15: update [pkg]      - update 'pkg' to last version (or all packages if no arg)
+1.16: listlocal [str]   - List all local (installed) packages containing 'str'
+1.17:FDNPKG is linked against the Watt-32 version below:
+1.18: listfiles pkg     - List files owned by the package 'pkg'
+
+
+### General stuff ####
+
+2.0:%TEMP% not set! You should make it point to a writeable directory.
+2.1:Example: SET TEMP=C:\\TEMP
+2.2:%DOSDIR% not set! You should make it point to the FreeDOS main directory.
+2.3:Example: SET DOSDIR=C:\\FDOS
+2.4:Invalid number of arguments. Run fdnpkg without any parameter for help.
+2.5:No repository is configured. You need at least one.
+2.6:You should place in your configuration file at least one entry of such form:
+2.7:REPO www.freedos.org/repo
+2.8:The list of configured fdnpkg repositories follows:
+2.9:Refreshing %s...
+2.10:Repository download failed!
+2.11:An error occured while trying to load repository from tmp file...
+2.12:Warning: %TZ% not set! timestamps on installed files might be inaccurate.
+2.13:Package database loaded from local cache.
+2.14:Out of memory! (%s)
+2.15:Error: TCP/IP initialization failed!
+2.16:Loading %s...
+2.17:WARNING: Virtual memory too low. FDNPKG might behave unreliably.
+2.18:ERROR: Unable to write in the '%s' directory. Check your %%TEMP%% variable.
+
+
+#### Installing package ####
+
+3.0:Package %s is already installed! Remove it first if you need to upgrade.
+3.1:No package '%s' found in online repositories.
+3.2:Package '%s' is not available in repositories.
+3.3:%s is available from several repositories. Choose which one to use:
+3.4:Your choice:
+3.5:Invalid choice!
+3.6:Downloading package %s...
+3.7:Error downloading package. Aborted.
+3.8:Error: Invalid zip archive! Package not installed.
+3.9:Error: Package contains a file that already exists locally:
+3.10:Error: Could not create %s!
+3.11:Package %s installed.
+3.12:Error: Package does not contain the %s file! Not a valid FreeDOS package.
+3.13:Error: Downloaded package had wrong CRC. Installation aborted.
+3.14:Error: Failed to open the downloaded package. Installation aborted.
+3.15:Error: Out of memory while computing the CRC of the package!
+3.16:Package %s installed (with sources, if available).
+3.17:Package %s installed (without sources).
+3.18:Package %s is already installed! You might want to use the 'update' action.
+3.19:Package %s installed: %d files extracted, %d errors.
+3.20:Error: Package contains an encrypted file:
+3.21:Error: Failed to open link file '%s' for read access.
+3.22:Error: Failed to open link file '%s' for write access.
+3.23:Error: Package contains an invalid filename:
+
+
+#### Removing package ####
+
+4.0:Package %s is not installed, so not removed.
+4.1:Error opening lst file!
+4.2:Dirlist limit reached. Directory %s won't be removed!
+4.3:Out of memory! Could not store directory %s!
+4.4:removing %s
+4.5:Package %s has been removed.
+
+
+#### Searching package ####
+
+5.0:No package matched the search.
+5.1:Out of memory while processing package descriptions!
+
+
+#### Package database handling ####
+
+6.0:Error: Invalid index file (bad header)! Repository skipped.
+6.1:Error: Invalid index file! Repository skipped.
+6.2:Error: Out of memory while loading package database!
+6.3:Error: Could not open the datafile at '%s'.
+6.4:Warning: Could not open db cache file at %s!
+
+
+#### Loading configuration ####
+
+7.0:Error: repository '%s' is listed twice!
+7.1:Error: Could not open config file '%s'!
+7.2:Warning: token without value on line #%d
+7.3:Warning: Config file token overflow on line #%d
+7.4:Warning: token with empty value on line #%d
+7.5:Warning: trailing white-space(s) after value on line #%d
+7.6:Dropped a repository: too many configured (max=%d)
+7.8:Warning: Unknown token '%s' at line #%d
+7.9:Warning: Config file value overflow on line #%d
+7.10:Warning: Ignored an illegal '%s' value at line #%d
+7.11:Warning: Invalid 'DIR' directive found at line #%d
+7.12:Error: DIR path too long at line #%d
+7.13:Error: Found inexisting environnement variable '%s' at line #%d
+7.14:Error: repository '%s' is listed twice!
+7.15:Error: custom dir '%s' is not a valid absolute path!
+7.16:Error: custom dir '%s' is a reserved name!
+
+
+#### Unziping package ####
+
+8.0:Out of memory!
+8.1:unknown zip sig: 0x%08lx
+8.2:Error: Package contains a file compressed with an unsupported method (%d):
+8.3:Error while extracting '%s' to '%s'!
+
+
+#### Handling the local list of installed packages ####
+
+9.0:Error: Could not access the %s directory.
+9.1:Error: Local package %s not found.
+
+
+#### Package updates ####
+
+10.0:%s (local version: %s)
+10.1:version %s at %s
+10.2:No update found for the '%s' package.
+10.3:An update of '%s' has been found. Update in progress...
+10.4:%d package(s) checked, %d package(s) updated, %d package(s) failed.
+10.5:%d package update(s) found.
+10.6:Package %s is not installed.
+10.7:Looking for updates...
+
+
+#### Downloading ####
+
+11.0:Downloading %s... %ld bytes

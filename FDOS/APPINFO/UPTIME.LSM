@@ -1,0 +1,14 @@
+Begin3
+Title:          uptime
+Version:        7.02
+Entered-date:   1998-04-15
+Description:    Reports uptime, even inside DOSEmu. Similar to UNIX "uptime".
+Keywords:       uptime
+Author:         M.Aitchison _AT_ phys.canterbury.ac.nz
+Maintained-by:  M.Aitchison _AT_ cyberxpress.co.nz
+Primary-site:   http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/system/
+Alternate-site:
+Platforms:      DOS, FreeDOS
+Copying-policy: Source Code Available (open)
+Defunct-Original-Site: http://www.phys.canterbury.ac.nz/~physmsa/pc/mysoftware/
+End

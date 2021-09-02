@@ -1,0 +1,13 @@
+Write support for XP 8.3 lowercase names?
+Lowercase option for fallback and long ISO names?
+
+Have Volume Info return specified lengths?
+Set creation time when creating 8.3 name (need to find entry)?
+Ignore creation time altogether?
+
+Combine *.tbl files into one file (conserve disk space for boot disks)?
+  No, I think it's more flexible having individual files.
+CD timezone? (Win98 doesn't, XP does.)
+  No.
+Drive info cache (keep relevant DPB values in heap)?
+  No, it doesn't seem to make a difference (at least with extended DPB).

@@ -1,0 +1,30 @@
+
+                             Simply Docs v3.0 
+           
+           
+      Thanks for trying Simply Docs.  I hope you will find Simply Docs
+      a very useful program. 
+           
+      See the file called PACKING.LST for a complete list of all files
+      in the Simply Docs package.  To view the users guide, and get an 
+      idea of what this program is all about enter the following: 
+
+                     MANUAL        and press RETURN 
+
+      MANUAL.EXE was created with Simply Docs and will let you see  
+      some of the program features.  To print out a copy of the manual 
+      select choice 2 from the menu.  If your printer cannot print the 
+      IBM extended characters choose the ASCII character set from the 
+      print options. (enter A)
+
+      Start the compiler to create your own EXE files by entering:
+
+                     SIMDOC        and press RETURN
+
+      From within the compiler you can view the manual by pressing Alt+V
+      or print a registration form by pressing Alt+I.
+      
+      To see whats new in this version you should run the file called
+      WHATSNEW.EXE.  Registration details can be found near the end of 
+      the manual or in the REGISTER.DOC file.
+

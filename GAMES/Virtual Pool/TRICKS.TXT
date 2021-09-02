@@ -1,0 +1,40 @@
+
+
+                               -----------
+                               Trick Shots
+                               -----------
+
+
+     The Virtual Pool Demo contains several sample Trick Shots which you 
+     can load to view or practice.  To load a trick shot, first open the
+     Main Pool menu by pressing ESCape, or clickng the right mouse button.
+     Select "GAME SETUP" and the Game Setup Menu will open.  From this
+     menu select "Practice/Trick Shots" and then select OK.  The game will
+     then switch to Practice/Trick Shots Mode.  Now press ALT-L to bring up
+     the Trick Shot menu.  Simply select a trick shot from the list and
+     it will be loaded in Virtual Pool.
+
+     When a Trick Shot is first loaded, the game will be in VIEW Mode; so
+     you can move around the table as you wish without affecting the shot.
+     You may wish to turn on Tracking (T) at this point to see the finer
+     details of the shot.  When you want to see the shot in action, press
+     (R) to replay the shot.  To speed up the replay rate, press the + key;
+     to slow down the replay rate, press -.  The current replay rate is 
+     shown on the right side of the status bar.  Available replay rates are
+     1/4, 1/2, 1/8 speeds and 1, which is full speed.  The replay rate can
+     be adjusted at any time, even during a replay.  After watching the
+     shot replay, type (U) to Undo the shot to it's starting position.  You
+     may replay the shot and undo as many times as you wish in this manner.
+
+     When you're ready to try the shot yourself, type (A) to switch to Aim
+     mode, then press and hold (S) and use your mouse to attempt the shot.
+     If you accidently move the Aim before you're ready to shoot, simply
+     type (U) to undo the shot to it's starting position.
+
+     Included in the CD-ROM version of Virtual Pool are over 60 trick shots,
+     all detailed in Live Action Video by Lou "Machine Gun" Butera, as well 
+     as saved Trick Shot Setups in the game.
+
+
+
+<End_Of_File>

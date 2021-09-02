@@ -1,0 +1,256 @@
+FreeDOS GRAPHICS tool - GPL by Eric Auer eric@coli.uni-sb.de 2003/2008
+Please go to www.gnu.org if you have no copy of the GPL license yet.
+
+
+*** INTRODUCTION AND QUICK START GUIDE ***
+
+
+Usage:
+
+GRAPH-PS (options) - for laser printers only (PostScript)
+GRAPHPIN (options) - for dot matrix printers and other ESC/P (Epson)
+GRAPH-HP (options) - for HP PCL 3 printers
+
+I recommend that you copy the file that fits
+YOUR printer to GRAPHICS.COM for better overview.
+
+Run the GRAPH*.COM that fits your printer - It will stay resident in
+the background until you reboot. You can use the 'shift PrtScr' key
+while GRAPH... is resident to print hardcopies (screenshots) of your
+graphical screen contents in all standard CGA, EGA and VGA modes.
+No support for high resolution modes / VESA / Hercules yet. The print
+canvas should fit both A4 and letter paper. The screen is printed in
+landscape mode: The bottom of the screen is at the left of the paper.
+
+Make sure that you run only versions that match your type of printer.
+Otherwise, the print screen key will cause lots of nonsense to be
+printed: You can abort the printing (not in PostScript) by pressing
+'shift print screen' again. In the PostScript versions, this trick
+will only cause the rest of the printout to stay white, but this will
+not save you from printing nonsense on non-PostScript printers.
+
+Luckily, many 24-pin printers and even Epson ink jet color printers
+are compatible to Epson. When in doubt, you can always turn off the
+printer and/or reboot the PC before too much paper is wasted.
+Accidentally sending PostScript to printers that cannot handle it
+looks less weird than sending Epson code to other printers
+(PostScript only uses plain text commands).
+
+Possible options:
+
+/B - process the CGA background color setting
+/I - inverse printing (useful if lots of dark areas on screen, to
+     save ink / toner: will print black where screen is white etc.)
+/C - compatibility mode: 120x60 dpi 24 pin
+     (instead of 180x180 dpi 24 pin) in Epson case,
+     HP Laserjet extra compatibility in PostScript case,
+     300 dpi instead of 600 dpi in HP PCL case
+/9 - 9 pin, Epson only: 120x72 dpi, or 60x72 dpi in compatibility mode
+/X - Epson only: send print data for whole lines instead of in blocks
+/R - use random dither instead of ordered dither (not for PostScript)
+/E - economy mode: only 50% of the density. Done by reducing the
+     distance of every color to white to 50% of the normal value
+/2 - use LPT2 (default is to use LPT1)
+/3 - use LPT3 (you already guessed it)
+/? - show help screen instead of going resident
+   - you do not need to give any options :-)
+
+
+*** DETAILS ON SUPPORTED PRINTER TYPES ***
+
+
+PostScript version:
+
+GRAPH-PS produces PostScript output for laser printers, assuming that
+the laser printer can make some sense of 256 gray level images itself.
+If you press print screen again while print data is generated, the
+part of the screen that is not already processed will be printed in
+white. Canvas size is 9.9 x 7.43 inch, should fit A4 and letter paper.
+
+HP PCL version:
+
+GRAPH-HP is for 600dpi and 300dpi printing on HP PCL 3 compatible
+printers, like HP Ink-jets. This by default uses EconoFast (at 300dpi),
+and depletion (can be selected at compile time). You can select either
+"random" or "ordered" dither as described below. Output looks somewhat
+different, however, as "regular pattern avoidance" code is different
+in HP PCL and Epson modes. Canvas size of 7.2 x 9.6 inch should fit
+both 8.25 x 11.7 inch A4 and 8.5 x 11 inch letter size paper.
+
+No color printing or RET (up to 4 intensity levels per color / black
+channel) is supported currently. Tell me if you want colors!
+
+Epson version:
+
+GRAPHPIN is for 180dpi and 120x60dpi printing on Epson compatible dot
+matrix printers. If you do not select the /R option, dithering patterns
+will be based on a bit-mirrored counter, while the /R option enables
+"random" dither using a linear congruential pseudo random number
+generator, using both low and high byte of the random number to print
+a black pixel with probability equal to the darkness of the
+corresponding screen pixel.
+
+If you do not understand this tech-speak, look at epson.png: The left
+image is "ordered", the right image is "random". For space reasons,
+epson.png only shows about 100x100 pixels of an MCGA picture. The
+full printed screenshots will use a canvas independent of the screen
+resolution: 1320x1760 (padded to ...x1776) black and white pixels
+(less in 120x72 dpi of course, 1330x1776 with OLDRES compile option).
+
+You can use my pin-read utility for Linux to convert printer data
+(only 180x180 dpi currently) into images, I provide it in the "extra"
+subdirectory of the sources. If you press print screen again while
+printing is in progress, printing will abort at the next available
+position (a few 100 per screenshot) and some message like "aborted"
+will be printed to tell you about it.
+
+Current canvas size is 7.6 (120x60) or 7 7/9 (60x72, 120x72, 180x180)
+by 9 7/9 inch. It should fit both 8.25 x 11.7 A4 and 8.5 x 11 letter.
+
+With OLDRES, 120x72 dpi images are 6.2 x 8.2 inch landscape mode,
+and 180x180 dpi and PostScript images are 7.43 x 9.9 inch landscape
+mode. This was to make sure that 120x60 dpi (24 pin printers in
+compatibility mode) still fit the page.
+
+Other versions:
+
+Please tell me if you need a driver for yet another type of printer!
+Normally, many printers will be compabible to HP PCL, ESC/P or Post-
+Script. Image quality might not be optimal, but you should get at
+least SOME image printed.
+
+Other dot matrix or Epson ink jet printers:
+
+If you have any 9-pin or 24-pin printer, please contact me. The
+Epson driver is pretty generic, so I should be able to customize
+it for YOUR printer (for free, as long as you cooperate in finding
+the right configuration parameters for you). You can expect that
+24-pin printers are 180dpi vertical and 60..360dpi horizontal
+resolution (use more than 180dpi at your own risk!). 9-pin
+printers normally have 72dpi vertical and 60..180dpi horizontal
+resolution (60dpi instead of 72dpi for 24-pin printers in low
+resolution modes). The acronym dpi stands for dots per inch. An
+inch is 2.54cm.
+
+Other HP PCL printers:
+
+You should be able to set things like image density and paper type
+and draft / high quality mode with some configuration tool that came
+with your printer. If this is not the case, you can change the string
+in the source code (hppcl.asm, hppclINIT and hppclINITold), but take
+care not to mess up things. When in doubt, ask me to change the
+strings for you.
+
+For 300dpi or above, I compile as "depleted (50%, no gamma correction,
+up to 20% of the dots are selected for removal by the hardware to
+avoid ink bleeding), single pass (no shingling), EconoFast (300dpi).
+
+If your results do not look okay with that setting, try "nothing
+special" setting (remove the "%define HPPCL3PLUS" define line and
+recompile), maybe in combination with using some config tool or front
+panel settings. Setting the paper type (normal, glossy...) and quality
+(draft or letter) affects the same settings (letter is 600dpi, glossy
+paper uses 2 or 4 passes (shingling) to give ink more time to dry...).
+
+
+*** TECHNICAL INFORMATION, LICENSING, GOODIES AND WARNINGS ***
+
+
+To compile:
+
+nasm -DPOSTSCRIPT -o graph-ps.com graphics.asm
+nasm -DEPSON -o graphpin.com graphics.asm
+nasm -DHPPCL -o graph-hp.com graphics.asm
+
+Supported graphics modes:
+
+Numbers are horizontal and vertical resolution and colors each:
+CGA 320x200x4, CGA 640x200x2,
+EGA 320x200x16 EGA 640x350x16
+VGA 640x480x16
+MCGA 320x200x256
+
+Tell me if you need other modes. VESA / high resolution may be
+slow. Hercules might not be auto-detectable, so if I implement
+it, you may have to give a startup option like /H to GRAPHICS.
+If you need a way to remove GRAPHICS from RAM without rebooting,
+please tell me.
+
+
+GPL (GNU Public License) and other licensing issues:
+
+You may modify this for your own needs, but may not change the license.
+You may not use this in closed source projects, that is. Please send
+any improvements and bug reports to help making this version better,
+rather than only improving / repairing your local copy. Feel free to
+mail even for just telling that it works :-). As usual with GPLed
+software, if it does not work, you cannot blame me at all. However, any
+bugs are of course unintentionally and GRAPHICS -should- work fine.
+
+If you use the PostScript version for a non-PostScript printer, you
+will get a pile of printed text describing the image. Do not do that.
+
+Even worse, using the Epson version on incompatible printers will
+print even more confusing gibberish in large amounts. I recommend
+that you turn off the printer until the next reboot in that case,
+to avoid piles of paper to be printed. You can abort printing by
+pressing print screen again, but it may take a while until all the
+gibberish that is already waiting for being printed is processed.
+
+Luckily, most "Epson ESC/P language compatible" 24-pin printers will
+give useful output (e.g. NEC P2 acts just like Epson). If your 9- or
+24-pin printer or Epson color ink printer prints nonsense with my
+driver, PLEASE contact me to help me adding the right parameters
+for your printer to the list of possible settings.
+
+Printing to a file in DOSEMU:
+
+I am using the following DOSEMU configuration:
+    $_printer = "file file"
+(you need TWO printers because a bug in DOSEMU 1.1 can cause it to
+send print screen results for TEXT modes to LPT2 rather than LPT1).
+
+I am also using the following /etc/printcap entry with LPRng:
+    file|printtofile:\
+        :lp=/tmp/printtofile.ps
+        :sd=/usr/spool/lpd/file:\
+        :la@:mx#0:sh:\
+        :lf=/usr/spool/lpd/file/log:\
+        :if=/var/lib/apsfilter/bin/DJ8xx-a4dj-raw:
+    #       :of=/usr/spool/lpd/file/:
+    # la@ clears accounting flag, sh is suppress banner
+    # mx#0 sets maximum size to 0k, which means unlimited
+
+You must create the /usr/spool/lpd/file/ owned by lp.lp and
+the printtofile.ps writeable for lp etc. to make this work.
+Just delete / overwrite the file before you print to the file.
+DOSEMU usually waits a moment before actually sending data to
+the printtofile "printer". The DJ8xx-a4dj-raw filter is just ANY
+filter which is in RAW mode. Just use some which you have around.
+
+You have to create /tmp/printtofile.ps and give the printer user
+(lp on SuSE Linux) write permissions to that file. You can wipe
+the contents with the following command:
+cat /dev/null > /tmp/printtofile.ps
+
+As soon as a printout is done (you can check when the printtofile.ps
+starts and stops growing, or just wait a little while), you can
+cp /tmp/printtofile.ps screenshot.ps
+if you use the PostScript version of GRAPHICS. For the Epson version,
+you can use my pin-read tool for Linux (included):
+pin-read </tmp/printtofile.ps >bitmap.raw
+The pin-read tool will print a message telling how big bitmap.raw
+is - you can then use other software, like www.imagemagick.org (free)
+to convert the raw bitmap into other formats. Example:
+convert -verbose -size 1330x1848 gray:bitmap.raw screenshot.png
+I think the pin-read tool is a great help for debugging the dithering
+algorithms of the Epson versions of GRAPHICS.
+
+For testing the HP PCL driver, I provide an HP-READ tool for Linux.
+It works pretty much like the PIN-READ tool, so you should be able to
+use it after reading the above explanation of the pin-read tool.
+
+Have fun - and TELL ME how good or bad GRAPHICS works for you!
+
+Eric.
+

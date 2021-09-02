@@ -1,0 +1,99 @@
+#### This file is part of the FreeDOS HTML Help Viewer
+#### and is licensed under its terms.
+####
+#### Italian translation (CP850) based on version 5.3.3 by Roberto Mariottini
+
+# Program Usage Screen Strings
+1.0:Visualizzatore Guida HTML di FreeDOS
+1.1:Opzioni di base
+1.2:Visualizza la guida su questo argomento
+1.3:Visualizza questo messaggio di guida
+1.4:Forza la visualizzazione monocromatica
+1.5:Usa lo schema a colori
+1.6:Usa ASCII invece dei caratteri estesi
+1.7:Usa la tabella codici nnn, senza tentare di riconoscerla
+1.8:Opzioni avanzate
+1.9:Sostituisce il percorso di ricerca dei file di guida
+1.10:se nessun file Š specificato, usa index.htm
+1.11:Usa come indice il file specificato (cercato in HELPPATH)
+1.12:Quando l'utente preme F1 o clicca su "guida sulla guida"
+1.13:la guida caricher… questo file. Il default Š help.htm
+1.14:Variabili d'Ambiente
+1.15:Directory che contiene i file della guida
+1.16:Mettere qui /M, /A, F1, F2 per renderli default
+
+#Error Message Strings
+2.0:Impossibile allocare memoria
+2.1:Argomento non valido
+2.2:Prego specificare un solo argomento
+2.3:Non si pu• usare /f con /m
+2.4:Digitare "HELP /?" per l'uso.
+2.5:Non Š stata trovata nessuna corrispondenza esatta per l'argomento
+2.6:Impossibile trovare l'argomento
+2.7:Errore interno: Resize Fail
+2.8:Impossibile leggere il file compresso
+2.9:Impossibile aprire
+2.10:File zip vuoto o danneggiato
+2.11:File non trovato. Caricamento del primo file HTML nel file zip
+2.12:File HTML non trovato nel file zip
+2.13:Prego specificare una tabella codici valida
+2.14:La tabella codici specificata non Š supportata
+2.15:Le tabelle codici supportate sono
+
+#Menu Strings
+#### HTML Help will truncate strings 3.0 and 3.1
+#### if they exceed 14 characters.
+3.0:Esci
+3.1:Guida su Guida
+#### HTML Help will truncate strings 3.2-3.5
+#### if they exceed 10 characters.
+3.2:Indietro
+3.3:Avanti
+3.4:Indice
+3.5:Ricerca
+
+#Button Label Strings
+#### HTML Help will truncate strings 4.0-4.2
+#### if they exceed 8 characters.
+4.0:OK
+4.1:Annulla
+4.2:Guida
+
+#Status Bar Strings
+5.0:Ricerca dell'argomento...
+5.1:Ricerca completa in corso...
+5.2:(PREMERE ESC PER INTERROMPERE)...
+
+#Search Box Strings
+#### HTML Help will truncate strings:
+####    6.0      if it exceeds 35 characters;
+####    6.1      if it exceeds 20 characters;
+####    6.2-6.5  if they exceed 28 characters;
+####    6.6-6.13 if they exceed 35 characters.
+6.0:Ricerca nella guida
+6.1:Testo da ricercare:
+6.2:maiuscole/minuscole
+6.3:solo parole intere
+6.4:ricerca completa
+6.5:in questa pagina
+#Help on Search:
+6.6:Cosa fa
+#Lines 6.7-6.9 describe "Search":
+6.7:ricerca completa:
+6.8:Cerca in tutti i file
+6.9:elencati nella pagina indice.
+#Line 6.10 can be used if you need more room.
+6.11:in questa pagina:
+6.12:Cerca solo nel documento
+6.13:aperto.
+
+#Search Results Strings
+7.0:Risultati della Ricerca
+7.1:Cercato in tutti i file elencati nella pagina indice
+# The following line, 7.2, is used as "Searched [FILENAME]"
+7.2:Ricercato in
+# The following line, 7.3, is used as "for: [TEXT]"
+7.3:il testo
+7.4:Spiacente, non si pu• ricercare nei risultati della ricerca.
+7.5:INTERROTTO DALL'UTENTE (Esc premuto)
+7.6:Testo non trovato

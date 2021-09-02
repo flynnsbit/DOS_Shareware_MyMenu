@@ -1,0 +1,15 @@
+# Language: French (CP850)
+# Translated by Mateusz Viste
+#
+2.0:Paramätre invalide\r\n
+0.0:    SORT [/R] [/+num] [/?]\r\n
+0.1:    /R    Inverse l'ordre\r\n
+0.2:    /N    Active la gestion de NLS\r\n
+0.3:    /+n   Ne prend pas en compte les n premiäres colonnes\r\n
+0.4:    /?    Aide\r\n
+2.1:Erreur lors de la lecture du tableau NLS\r\n
+2.2:Seulement DOS 3.3 ou plus rÇcent supporte le NLS!\r\n
+2.3:SORT: Impossible d'ouvrir le fichier 
+2.4: pour la lecture\r\n
+2.5:SORT: MÇmoire insuffisante\r\n
+2.6:SORT: le nombre d'entrÇes excäde le maximum\r\n

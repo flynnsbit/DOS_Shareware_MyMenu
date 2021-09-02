@@ -1,0 +1,60 @@
+WORLD  4K INTRO INFO FILE
+-------------------------
+
+some stats...
+
+this intro features:
+
+- planar flight with full three-axis rotation
+- vector scenes with goraud shading and full three-axis rotation
+- camera path defined by first-order parametric continuity splines
+- compressed HSX FMtune played in background
+
+specialties and comments:
+
+- 20K sine/cosine table calculated using FPU
+- Nosound option (just try parameter N)
+- ESCAPE from anywhere
+Sorry for the slow and ugly code, but i was in an urgent
+hurry to finish the code, so i hadn't the time to care on
+optimizations. Hope it will improve next time...
+
+the further, it requires:
+
+- 520K base mem
+- i486 or compatibles, i387 or compatible coprocessor
+- recommended is 486dx2/66 with fast graphics card
+- AdLib or compatibles for HSX-sound
+
+but... it's not a bug, it's a feauture (known problems):
+
+- on 386 trident8900C machines, where univbe was hiloaded once,
+  the copyplf function didn't work. try either with a clean boot
+  or load univbe a second time
+- if it happens that the intro terminates with a "memory?"
+  message, try with less TSR or with a clean boot
+- possibly the intro won't hang if you don't have a coprozessor,
+  but the screen output will look VERY ugly.
+
+da team:
+
+  code         furball
+  player       gumball
+  tune         big bear
+
+greets:
+
+  gargamel                               (for gr8 moral support)
+  chicken                                (for even greater moral support)
+  lord excess
+  faker
+  dune / lassi nikko                     (we love you)
+  ULi                                    (where the hell is the psx list??)
+  rocksteady
+  vogi - we are proud of your progress!
+  spleen                                 (you may credit thiz intro...)
+
+if you'd like to contact me or the new, not yet named demogroup :) ...
+  modem:   The Lycaeum BBS +41-41-484-2989
+  e-mail:  furball@bluewater.ch
+

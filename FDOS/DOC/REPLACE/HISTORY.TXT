@@ -1,0 +1,16 @@
+version 1.0 (2001-03-01)
+------------------------
+- initial release
+
+version 1.1 (2001-03-03)
+------------------------
+- Removed the caching of the source-directory to prevent "Out of memory"
+  errors.
+
+version 1.2 (2001-03-25)
+------------------------
+- fixed errors associated with relative pathnames
+- fixed errors associated with incompatibilities between Borland C and DJGPP
+- included makefiles for Borland Turbo C++ and Borland C++
+- implemented exit codes
+- implemented switches /H and /N (identically equal to DR-DOS (tm) REPLACE)

@@ -1,0 +1,14 @@
+Portable tar v3.21 delta - DOS/UNIX backup/
+compressor w/hardware support.
+
+The utility allows extract from/write to
+archives in files, floppies or QIC-02 and
+ASPI-driven SCSI streamers in both regular
+'tar' format and compressed by (g)zip or
+'compress'. Program reads both System V
+and GNU multyvolume formats, supplies
+compression and number of other options.
+
+Easy way to transfer data between
+different OSes!
+

@@ -1,0 +1,10 @@
+Game: BioForge
+Year: 1995
+Composed by: John Tipton
+MIDI versions: GM, GS, FM
+Platform: DOS
+
+Additional info: Original XMI files contain General MIDI, FM and GS versions. However, I converted only General MIDI tracks, the rest is yet to come.
+
+
+https://www.karlsitretro.com/game_midi

@@ -1,0 +1,97 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ================================================
+                    QUEST FOR GLORY 2: TRIAL BY FIRE
+                                                        
+
+                            THE SOUNDTRACK
+                     (See below for song titles.)
+                             Chris Brayman
+                             Mark Seibert
+           ================================================
+                 Copyright (c)1990 Sierra On-Line, Inc.  
+           ================================================
+
+                          ROLAND GS VERSION
+
+           ** NOT FOR GENERAL MIDI ** NOT FOR YAMAHA XG **
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded System Exclusive data
+- Roland Sound Canvas GS MIDI device
+   (Must contain MT-32 and CM-32P variation tone sets.)
+
+
+This Standard MIDI File was recorded directly from Sierra's "Quest For
+Glory 2" adventure game using Sierra's MT-32 driver.  It has been converted
+and arranged for playback on 100% Roland GS compatible devices.  GS cards and
+modules must contain both the MT-32 and CM-32P variation tone sets.  THIS
+FILE IS NOT DESIGNED FOR GENERAL MIDI OR YAMAHA XG PLAYBACK.
+
+NOTE:  Not all game themes are included in the GS version due to the
+       incapability of proper translation of specific sounds which are
+       used in the Roland MT-32 version.
+
+Recorded/converted/edited/compiled/arranged for Roland GS by Tom Lewandowski.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+      ==================================================================
+                    TRACK SHEET   --   Roland GS Version
+
+                      QUEST FOR GLORY 2: TRIAL BY FIRE
+                       (Not all selections in order.)
+      ==================================================================
+
+      SONG TITLE                                      START MEASURE/TIME *
+      ------------------------------------------------------------------
+   1. Opening Selection Screen                              2   00:00:02
+   2. Introduction                                         26   00:01:00
+   3. Character Selection Screen                          117   00:04:38
+   4. Katta's Tail Inn                                    152   00:05:36
+   5. Apothecary (Harik)                                  150   00:05:57
+   6. Hero's Guild - Uhura                                171   00:06:48
+   7. Keapon Laffin                                       188   00:07:28
+   8. Aziza                                               256   00:10:12
+   9. Abu al-Njun (The Astrologer)                        314   00:12:31
+  10. Honest Ali's Used Saurus'                           361   00:14:24
+  11. The Dervish                                         399   00:15:55
+  12. Wizard's Institute Of Technocery                    444   00:17:43
+  13. Erasmus' Pre-Test                                   506   00:20:12
+  14. Shema's Dance                                       526   00:20:52
+  15. Nighttime In The Desert                             547   00:21:50
+  16. Battle Theme #1                                     571   00:22:48
+  17. The Thief                                           610   00:24:21
+  18. Battle Theme #2                                     639   00:25:31
+  19. Omar                                                659   00:26:19
+  20. Julanar                                             715   00:28:33
+  21. Caravan To Raseir (Intermission)                    740   00:29:33
+  22. Raseir!                                             823   00:32:52
+  23. Blue Parrot Inn                                     867   00:34:38
+  24. Khaveen's Home                                      915   00:36:33
+  25. Zayishah                                            951   00:38:00
+  26. Harem                                               984   00:39:19
+  27. The Eunuch                                         1026   00:41:00
+  28. Iblis Unleashed (Hero's Death)                     1050   00:41:57
+  29. Your Friend, Ad Avis                               1066   00:42:36
+  30. The Forbidden City                                 1084   00:43:19
+  31. En Route To Ad Avis                                1140   00:45:33
+  32. Battle With Khaveen                                1168   00:46:40
+  33. Battle With Ad Avis                                1195   00:47:45
+  34. Defeat Of Ad Avis                                  1222   00:48:50
+  35. Closing Cermonies                                  1271   00:50:48
+  36. Quest For Glory Postlude                           1398   00:55:52
+  ----------------------------------------------------------------------
+                                             TOTAL TIME:        00:59:14
+
+      * Start times are approximate.
+
+

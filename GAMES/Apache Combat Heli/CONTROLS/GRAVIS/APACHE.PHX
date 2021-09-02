@@ -1,0 +1,67 @@
+Phoenix Configuration File, Format 0.03A
+
+
+[Title]
+Apache Longbow by Digital Integration
+
+[Notes]
+
+[Base]
+Button1, Primary    {H}  ~Helmet tracking view
+Button1, Secondary  {F10}  ~Remote view
+Button2, Primary    {F6}  ~External view
+Button2, Secondary  {F9}  ~Target lock view
+Button3, Primary    {F7}  ~Weapon view
+Button3, Secondary  {F8}  ~Weapon target view
+Button4, Primary    {TAB}  ~Select time compression
+Button4, Secondary  {CTRL TAB}  ~Cancel time compression
+Button5, Primary    {B}  ~Brakes
+Button5, Secondary  {B}  ~Brakes
+Button6, Primary    {R}  ~Radar mode
+Button6, Secondary  {I}  ~IHADSS contrast adjust
+Button7, Primary    {G}  ~Radar range
+Button7, Secondary  {L.SHIFT N}  ~Previous waypoint
+Button8, Primary    {U}  ~Hold/resume radar update
+Button8, Secondary  {N}  ~Next waypoint
+
+[Throttle/Rudder]
+Button1, Primary    {T}  ~TADS view/mode
+Button1, Secondary  {K}  ~Tactical display range
+Button2, Primary    {Y}  ~TADS/radar target
+Button2, Secondary  {V}  ~PNVS on/off
+Button3, Primary    {,}  ~Lower magnification
+Button3, Secondary  {E}  ~ECM on/off
+Button4, Primary    {.}  ~Raise magnification
+Button4, Secondary  {D}  ~Transmit recon data
+Button5, Primary    {F4}  ~Shift left view
+Button5, Secondary  {[}  ~Left MFD select
+Button6, Primary    {F3}  ~Gunner front view
+Button6, Secondary  {W}  ~Hydra-pods up
+Button7, Primary    {F2}  ~Pilot front view
+Button7, Secondary  {S}  ~Hydra-pods down
+Button8, Primary    {F5}  ~Shift right view
+Button8, Secondary  {]}  ~Right MFD select
+Throttle  ANALOG_MODE ~Collective
+Throttle, Absolute  {NONE}  {NONE}  {NONE}  {NONE}  {NONE}  {NONE}  {NONE}  {NONE}  {NONE}  {NONE}
+Throttle, Incremental  {NONE}  {NONE}  {NONE}  {NONE}  1
+Rudder  ANALOG_MODE ~Tail rotor
+Rudder, Keystrokes  {NONE}  {NONE}  {NONE}  25
+
+[Stick]
+Button1, Primary    {SPACE}  ~Fire weapon
+Button1, Secondary  {SPACE}  ~Fire weapon
+Button2, Primary    {ENTER}  ~Arm & select weapon
+Button2, Secondary  {CTRL ENTER}  ~Unarm weapon
+Button3  SECDY_SELECTOR
+Button3, Primary    {NONE}
+Button3, Secondary  {NONE}
+Button4, Primary    {ALT NONE}  ~Rotate viewpoint
+Button4, Secondary  {ALT NONE}  ~Rotate viewpoint
+Button5, Primary    {F}  ~Release flare
+Button5, Secondary  {F}  ~Release flare
+Button6, Primary    {C}  ~Release chaff
+Button6, Secondary  {C}  ~Release chaff
+Button7, Primary    {L}  ~Lock/unlock target
+Button7, Secondary  {L}  ~Lock/unlock target
+Button8, Primary    {BSPACE}  ~Next target
+Button8, Secondary  {L.SHIFT BSPACE}  ~Previous target

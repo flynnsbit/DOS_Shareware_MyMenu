@@ -1,0 +1,81 @@
+
+                     S U P P O R T   S I T E S
+
+           The Volkov Commander, Version 4.03 shareware
+           ============================================
+
+
+WWW sites
+---------
+
+Official German/English homepage
+ http://come.to/volkov
+
+Official Polish homepage
+ http://www.kki.net.pl/~volkov
+
+Unofficial site
+ http://hjem.get2net.dk/fec/volkov/volkov.html
+
+Online registration
+ http://order.kagi.com/?POK
+
+
+Download
+--------
+
+Kiev, Ukraine
+ ftp://vvv.kiev.ua/vc
+ http://vvv.kiev.ua/vc/download
+
+Bratislava, Slovakia
+ ftp://ftp.sac.sk/pub/sac/utilfile
+
+Bratislava, Slovakia
+ ftp://sac-ftp.gratex.sk/sac/utilfile
+ http://sac-ftp.gratex.sk/utilfile1.html
+
+Banska Bystrica, Slovakia
+ ftp://sunsite.uakom.sk/pub/mirrors/sac/utilfile
+ http://sunsite.uakom.sk/pub/mirrors/sac/utilfile
+
+Prague, Czech Republic
+ ftp://ftp.vse.cz/pub/msdos/SAC/pc/utilfile
+
+Budapest, Hungary
+ ftp://ftp.bke.hu/pub/mirrors/sac/utilfile
+ http://www.hszk.bme.hu/~gb002/sac-utilfile.htm
+
+Debrecen,Hungary
+ http://esca.atomki.hu/paradise/sac/utilfile
+
+Szolnok, Hungary
+ ftp://ftp.externet.hu/pub/mirror/sac/utilfile
+
+Bucharest, Romania
+ ftp://sunsite.pub.ro/pub/mirrors/ftp.elf.stuba.sk/pub/pc/utilfile
+ http://sunsite.pub.ro/pub/mirrors/ftp.elf.stuba.sk/pub/pc/utilfile
+
+Berlin, Germany
+ ftp://ftp.cs.tu-berlin.de/pub/msdos/mirrors/stuba/pc/utilfile
+
+Wroclaw, Poland
+ ftp://ftp.pwr.wroc.pl/pub/pc/sac/utilfile
+
+Salerno, Italy
+ ftp://cert.unisa.it/pub/PC/SAC/utilfile
+ http://cert.unisa.it/pub/PC/SAC/utilfile
+
+Italy
+ ftp://ftp2.itb.it/pub/PC/SAC/utilfile
+ http://sac.itb.it/utilfile
+
+Hong Kong
+ ftp://ftp.comp.hkbu.edu.hk/pub/sac/utilfile
+
+Taiwan
+ ftp://ftp.nsysu.edu.tw/PC/SAC/utilfile
+ http://ftp.nsysu.edu.tw/PC/SAC/utilfile
+
+U.S.A.
+ ftp://ftp.cdrom.com/pub/sac/utilfile

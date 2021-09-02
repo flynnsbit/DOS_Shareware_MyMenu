@@ -1,0 +1,53 @@
+# edlin.la - Latin-language messages file
+#
+# Author: Gregory Pietsch
+#
+# DESCRIPTION:
+#
+# This file contains #defines for all the message strings in edlin.
+# For internationalization fun, just translate the messages in this
+# file.
+#
+# The strings were generated using ESR's cstrings program and moved
+# here.
+
+1.0:Bb
+1.1:\040:\040
+1.2:Bonum est?\040
+1.3:Error dum in programma inducere
+1.4:%s: %lu linea legEbar\n
+1.5:%s: %lu lineae legEbar\n
+1.6:%s: %lu linea scribiEbar\n
+1.7:%s: %lu lineae scribiEbar\n
+1.8:%lu:%c%s\n
+1.9:Deprime <Enter> continuare
+1.10:%lu:\040
+1.11:Non invediebar
+1.12:%lu: %s\n
+1.13:\nedlin hOc subjussa habet:\n
+1.14:#                 lineam editat         [#],[#],#m        movet
+1.15:a                 subscribet            [#][,#]p          paginA
+1.16:[#],[#],#,[#]c    exscribet             q                 cessit
+1.17:[#][,#]d          delet                 [#][,#][?]r$,$    reponet
+1.18:e<>               secribit et cessit    [#][,#][?]s$      quaeret
+1.19:[#]i              inseret               [#]t<>            legit
+1.20:[#][,#]l          enumerat              [#]w<>            scribet\n
+1.21:$ linea est, <> scapius est,
+1.22:# numerus est (.=linea usitata, $=linea ultima,
+1.23:vel numerus + vel - alius numerus).\n
+1.24:, copyright (c) MMIII Gregory Pietsch
+1.25:Hoc programma PRAECISE NON SATISDATIONES habet.
+1.26:Libera programma est, et quondam via GNU Generalis Publica Potesta
+1.27:-- versionem II vel recenstim -- distriberis.
+1.28:
+1.29:
+1.30:Non memoriam habeo
+1.31:ERROR: Longitudino lineae
+1.32:ERROR: Positionis lineae
+1.33:Data irrita; ?=auxilium
+1.34:Scapius non est
+1.35:ERROR: Linea magna est
+1.36:ERROR: Positionis in linea irrita
+1.37:ERROR: %s\n
+
+# END OF FILE

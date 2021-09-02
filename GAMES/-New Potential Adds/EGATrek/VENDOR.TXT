@@ -1,0 +1,85 @@
+
+                                  EGA TREK
+                        Version 3.0   January 22, 1992
+                     Copyright 1988-1991 by Nels Anderson
+                             All Rights Reserved
+
+                                Nels Anderson
+                               92 Bishop Drive
+                         Framingham, MA 01701 U.S.A.
+
+                          Xevious BBS: 508-875-3618
+                           CompuServe: 71020, 2613
+
+
+This file contains information for disk vendors, BBS sysops, user groups,
+etc. who wish to distribute this program.  For the purposes of this
+document, all of the above will be referred to as disk vendors.
+
+This software is copyrighted material and is subject to certain restrictions
+on copying and distribution.
+
+Vendors of any type, whether program distribution is free or whether a fee
+of any type is charged, may distribute this program under the following
+conditions:
+
+    - The vendor is an associate member of the Association of Shareware 
+      Professionals and follows the requirements of such membership. Or if
+      not an ASP member, the vendor properly represents the software as
+      shareware and provides customers with a complete definition of the
+      shareware concept.  You must not advertise this software as "free",
+      "cheap" or "public domain".
+
+    - The vendor must in no way imply that they are "selling" the program
+      but rather are only providing a duplication service where the program
+      is provided for evaluation.  You may not "rent" or "lease" copies of
+      this program.
+
+    - You do not rename, change or omit any of the provided files.
+
+    - The vendor should provide the author with a copy of their catalog.
+
+    - You may distribute this program in a compressed form.  You may also
+      include your own text files, "go.bat" startup files, etc. along with
+      the program.
+
+If you indicate ASP membership in your catalog, please do so for your
+listing of this program.
+
+The author reserves the right to withhold or withdraw permission to
+distribute from anyone at any time for any reason.
+
+Software reviewers: If you plan to review this software for publication,
+please contact me first to make sure you have the most recent version of
+the product and that the ordering information supplied to your readers
+will be accurate.
+
+
+Program:	EGATrek
+Version:	3.0
+Size:		8 files, 154k
+To run, type:	trek
+Registration:	$15 ($22 for printed manual/binder/reference card)
+Program Type:	Space strategy game
+Monitor Type:	EGA/VGA
+Mouse:		No (keyboard only)
+
+One line description:  Great update of classic space battle game
+
+Short description: The classic space battle type game updated to support
+EGA/VGA graphics. Includes many features such as view screen, torps,
+phasers, communications, charts, scanners, etc.
+
+Detailed description:
+
+EGATrek is based on the classic minicomputer space game but updates
+it with colorful EGA graphics.  Your computer's screen becomes the
+control console of a starship captain, complete with scanners, maps,
+communications, fire control and even an outside view of the ship.
+The object is to defeat all enemy ships in your assigned portion of
+the galaxy.
+
+The game includes several levels of difficulty, multiple saved games,
+and a detailed report of your success (or failure) at the end of each
+mission.  An extensive briefing built into the game gets you started
+quickly.

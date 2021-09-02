@@ -1,0 +1,9 @@
+Game: Fade To Black
+Year: 1995
+Composed by: Raphael Gesqua
+MIDI versions: GM, FM, GUS, MT-32
+Platform: DOS
+
+Additional info: MIDI tracks consist mainly of background music and combat scenes. There's no music from cinematic sequences in MIDI format.
+
+https://www.karlsitretro.com/game_midi

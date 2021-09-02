@@ -1,0 +1,180 @@
+Threat (c) Sami Haikonen and Niklas Penttinen / Fragment 1994-1995
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+
+                        ---  The Game Factory  ---
+
+                                presents
+
+                                   A
+
+                                fragment
+                                ﬂﬂﬂﬂﬂﬂﬂﬂ
+
+                               production
+
+
+                     €€€€€€  € €€€   €€€€ €€€€€€€€€
+                       €  €  € €  €  €    €  €  €
+                       €  €€€€ €€€   €€€  €€€€  €
+                       €  €  € €  €  €    €  €  €
+                       €  €  € €  €  €€€€ €  €  €
+
+Shareware version 1.40 Release Date: 17th May 1995
+
+License ( and other legal stuff ) :
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+   - Threat is a shareware game. Shareware game isn't free.
+     The shareware idea gives people chance to try programs
+     before they buy it! If you like Threat you have to
+     order the registered version. Registration fee helps
+     us to work on and make new products for you. See
+     ORDER.EXE and ORDER.FRM for more detail.
+
+           €€  PLEASE SUPPORT QUALITY SHAREWARE !! €€
+
+   - We are not responsible of any damage or loss of any kind
+     that may occur of using this game or programs it includes.
+
+   - Do not remove any files from this Threat package.
+
+   - COMMERCIAL PD-DISTRIBUTORS: If you are going to distribute
+     Threat Shareware version, contact us !!!
+     Otherwise, commercial distribution forbidden.
+
+How to order:
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+
+   - See ORDER.EXE and ORDER.FRM for details.
+
+New in version 1.10 :
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+   - joystick support ( during gameplay )
+   - adjustable adlib music volume ( in setup.exe  )
+   - enhanched control system
+   - fixed the load/save game bug
+   - a few minor bugfixes
+New in version 1.12 :
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+   - joystick works also in shop
+   - a few minor bugfixes
+New in version 1.20 :
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+   - grenade bugfix ( grenades didn't hit certain aliens )
+   - better wall collide
+New in version 1.30 :
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+   - some parts of code made more reliable
+   - surprise mode in battle game
+   - a few minor bugfixes
+New in version 1.31 :
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+   - bugs fixed
+New in version 1.40 :
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+   - new battle levels
+   - new fonts
+   - sb 2.0 fix
+   - cash transfer in shop
+   - new setup.exe
+   - minor changes
+
+Requirements :
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+   - 80286 or better                    ( 386 recommended )
+   - 600,000 bytes memory with sounds   ( 550,000 without sounds )
+   - 256k VGA
+   - DOS 3.3 or newer
+   - Hard disk                          ( about 1.5 Megas )
+
+Supports     :
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+   - Adlib and compatible cards         ( music  )
+   - Sound Blaster and compatible cards ( sounds )
+   - joystick ( during gameplay and shop )
+
+Features     :
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+   - 320*400 VGA graphics with 256 colors
+   - music & sound effects
+   - 1-3 PLAYERS simultaneously on same side or against each other
+   - lots of weapons and monsters
+   - intelligent monsters
+
+
+What is Threat ?
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+     Threat is a shoot em' up game in which you control a security
+force soldier. With your friends you must save the human colonists
+from attack of creatures.
+
+     Threat is Fragment's first game and it took us nearly a year
+to make Threat. ( Don't ask why... )
+
+Questions :
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+
+Call 1-203-776-8608.
+
+
+Technical support :
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+
+     internet e-mail:
+     k23404@kyyppari.hkkk.fi
+     ( please only really important messages,
+       our ( Fragment ) time is very limited )
+
+Troubleshooting :
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+
+Q: Keyboard doesn't work.
+
+A: Due to the nature of PC keyboard hardware the keyboard sometimes
+   loses keypresses if several keys are pressed simultaneously.
+   This can be avoided by selecting certain keys, which don't 'interfere'
+   with the others. Use SETUP.EXE to change them. Default keys should work
+   fine with most keyboards.
+
+Q: Why ist'n my sound card working ?
+
+A: Check that your sound card is compatible with Adlib (music) and/or
+   Sound Blaster (sound effects). Use SETUP.EXE to determine the
+   I/O base address of your card ( usually 220h ). If you find any
+   bugs in sound system please contact us.
+
+   If you have Gravis Ultrasound use SBOS - Sb driver.
+
+Q: Why I get 'sb reset' message and game slows down?
+
+A: You have chosen a wrong sound configuration in SETUP.EXE.
+   Try again using the sb2.0, pro or 16 option.
+
+Q: Why does my machine lock up while starting the game ?
+
+A: You don't have enough memory.
+   Threat needs 600,000 bytes to run with sounds and 550,000 bytes
+   to run without them.
+   - Use a boot disk to start the machine with enough memory.
+   - Create AUTOEXEC.BAT and CONFIG.SYS which loads as little
+     as possible programs into the memory.
+   - Load DOS to high memory.
+   - Threat doesn't use mouse so leave the mouse driver unloaded.
+   - See DOS manual to do all this.
+
+Q: Why don't the episodes 2 and 3 work ?
+
+A: You have to register to get the two final episodes.
+   Please see ORDER.EXE and ORDER.FRM !
+
+Q: What does message 'file error' mean ?
+
+A: One or more files are missing. Try to get a new copy of Threat.
+
+Q: Joystick doesn't work
+
+A: Joystick works ONLY during gameplay  and shop, not in menus. Joystick
+   must be plugged in Port 1. During startup of Threat the program
+   expects that the joystick is in center position. You can adjust
+   your joystick by keeping in different position while startup.
+
+See also instructions in the game.

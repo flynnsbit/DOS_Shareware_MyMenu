@@ -1,0 +1,299 @@
+
+ ÕÍÍÍÍÍÍ Vanadium Module Player v1.10 documentation ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¸
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ ÕÍÍÍÍÍÍ Contents ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¸
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+     ş Introduction
+     ş Configuring your Vanadium Module Player
+     ş Loading a song with Vanadium Module Player
+     ş Using the Playlist
+     ş General keys
+ .   ş Technical information                                               .
+ :   ş Troubleshooting                                                     :
+ |                                                                         |
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    ÛÛÛÛÛÛ Introduction...  (praising ourselves) ÛÛÛÛÛÛ
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Well I can't say much more than that I'm glad that you
+    decided to use Vanadium Module Player... or at least to
+    try it. But hey, I can assure to you that this utility is
+    worth testing. We've Spent lots of time making it userfriendly,
+    bugfree, highquality and goodlooking. And I think that we've
+    succeeded... at least a little. So if you're a SB owner
+    you will find VMP very good player indeed.
+        It might be confusing to your little minds that this
+    text is written using I and we on random periods... and
+    using bad english. Well the first one is because I am the
+    compiler of this documentation (Samuli Lehto - TooL) and
+    we are Aimo Heikkinen (the mighty codeproducer) and me again
+    (the awesome ansi artist). Yeah narcissism is a part of
+    my life.
+
+
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    ÛÛÛÛÛÛ Configuring your Vanadium Module Player ÛÛÛÛÛÛ
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    There is a program called VSETUP.EXE. By using it you
+    can configure your Vanadium Module Player. VSETUP has no
+    parameters. It only has to be run from the same directory
+    where your VMP.EXE is.
+
+    Using VSETUP is easy:
+
+ Select Sound Device
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    First when you enter VSETUP you will see the main menu.
+    Before the other options you must select a soundcard
+    you're using. You can either select the soundcard
+    manually, so you will be prompted for the DMA channels,
+    IRQ's etc. If you select autodetect VSETUP will get
+    the values for you.
+
+ Set Sound Quality
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Now that you have selected a soundcard you can configure
+    it. VSETUP detects by default the best (highest) possible
+    values for your soundcard, but you can change them from
+    the sound quality menu. Sampling rate, stereo or mono,
+    number of bits and filters can be changed from there.
+    There are two filter selections. First one is the Sound
+    Blaster Pro hardware filter which, of course, can only be
+    used with SBPro. The second is Vanadium's own software
+    filter which can be used with all cards and it increases
+    the sound quality a lot, but, on the other hand, needs a
+    lot of processor time.
+
+ Test Playback
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    When you have completed the sound quality settings you can
+    test the soundcard in the next main menu selection. Left
+    and right channel can be tested separately and if they
+    don't quite match with your stereos or whatever you're
+    using you can reverse left and right channels.
+
+ Set Player Defaults
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    From this menu selection you can set most of the startup
+    options. Default panning means that all channels are
+    not completely left or right, but a mixture. For example if
+    a channel is by default left using default panning it will
+    be 75% left and 25% right. Warning! default panning needs
+    a huge amount of processing powder. So use it with care.
+    Well, the other options should be quite obvious. I quess...
+
+ Save & Exit
+ ÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    After you've made all required configurations and you're
+    satisfied you can save your configuration and exit to dos.
+
+ Exit
+ ÄÄÄÄÄ
+
+    If you decide not to save your configuration use this
+    selection.
+
+
+
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    ÛÛÛÛÛÛ Loading a song with Vanadium Module Player ÛÛÛÛÛÛ
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    there are three ways of loading songs with VMP:
+
+ 1. Simplest way of loading modules with VMP is typing the
+    module name after VMP at the command prompt. Multiple
+    song names are separated with spaces.
+
+ 2. You can use playlist files with VMP. Playlist files are
+    the simplest thing in the whole world. They consist of
+    song names... nothing else. For example this could be
+    a playlist file:
+
+    C:\MODULES\FC\WPLSTC.S3M
+    C:\MODULES\BLITZ.MOD
+    D:\TEMP\TEST.MOD
+
+    So those files can be used with VMP by typing at the
+    dos prompt VMP @filename. The filename is ofcourse the
+    file you've created consisting of those song names.
+    Again you can use multiple playlist files separated with
+    spaces.
+
+ 3. The most splendid way of loading songs with VMP is ofcourse
+    the integrated file selector. Using the file selector
+    shouldn't cause much problems. The file selector appears
+    immediately after launching VMP (if you haven't used any
+    command line parameters). There are three fields in the
+    file selector:
+
+    1. The file field. Displays the files in the current
+       directory.
+
+    2. The directory & drive field. Shows the directories
+       and drives available.
+
+    3. The Wildcard field or the mask field. Here you can
+       insert a mask so that there are only some sort of
+       files displayed in the file field. ?'s and *'s are
+       allowed and there can be many masks separated with
+       commas. For example your mask could look like this:
+       *.S3M, T?R*.ST?
+
+    And here are the keys you can use in the file selector:
+
+    TAB     goes through those three fields
+    ENTER   selects a file or opens a directory
+    UP      goes up
+    DOWN    goes down... I guess
+    LEFT    well you can never be sure
+    RIGHT   perhaps formats your harddrive
+    PAGEUP  goes page up
+    PAGEDN  and this one goes page down
+
+    If you're tired of seeking your dear song with those
+    good old arrow keys you can use the quicksearch feature.
+    Quicksearch works just by typing the name of yer file
+    in the file field or yer directory in the dir field.
+
+    If you wat to load a song while playing other read the
+    chapter about using the playlist.
+
+    There is a little limit with VMP in loading multiple files.
+    First of all VMP loads all files in memory so the amount
+    of machines memory determines the number of songs can be
+    loaded at a time. Also there are 32 slots for songs which
+    means that if you have got enough memory to load songs
+    VMP lets you load only 32 songs at a time.
+
+
+
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    ÛÛÛÛÛÛ Using the Playlist ÛÛÛÛÛÛ
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Vanadium Module Player a playlist which has got 32 slots.
+    Each slot can be loaded with a module. You can get to
+    the playlist from almost anywhere (except from dos-shell)
+    by pressing F9.
+
+    Following keys can be used in playlist:
+
+    UP          goes one slot up
+    DOWN        goes one slot down
+    ENTER or    Goes to file selector. If file is selected
+    INSERT          there it is placed into this slot
+    DELETE      Deletes a song from memory (not from disk)
+    SPACE       Plays this song
+    ALT + N     Plays next song in the list
+    ALT + P     Plays previous song in the list
+
+
+
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    ÛÛÛÛÛÛ General keys ÛÛÛÛÛÛ
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    These keys should work almost everywhere in the VMP:
+
+    F1              Help screen(s)
+    F2-F6           Play screens (try)
+    SHIFT+F2-F5     More screens (try for gods sake)
+    F7              Instrument viewer
+    F8 & CTRL+D     Dos-shell
+    F9              Playlist
+    F10             Toggle Spectrum analyzer on / off
+                        (Useful with slow machines)
+    F11             Toggle Module looping on / off
+    F12             Toggle Orderjumps on / off
+    TAB             Toggle playscreen
+    CTRL+TAB        Select ideal playscreen
+    1, 2, 3, 4      Choose bottomline mode
+    R               Make channel right
+    L               Make channel left
+    M               Make channel middle
+    O               Mute channel
+    D               Set channel to default
+    H               Pan channel to middle
+    G               Pan channel away from middle
+    CTRL+R          Pan channel from left to right
+    CTRL+L          Pan channel from right to left
+    ALT+[RLMOD]     Using ALT with channelkeys affects
+                    on all channels. Works also with CTRL
+    + (numpad)      Increase volume
+    - (numpad)      Decrease volume
+    ALT+[+-]        Fine volume tune (Very fucken important... Yeah)
+    * (numpad)      Increase playspeed and pitch
+    / (numpad)      Decrease playspeed and pitch
+    .               Scroll orders forwards
+    ,               Scroll orders backwards
+    ALT+N           Plays next song on playlist
+    ALT+P           Plays previous song on playlist
+
+    ESC             Go back / Exit to dos
+    ALT+X           Exit to dos immediately
+
+
+
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    ÛÛÛÛÛÛ Technical information ÛÛÛÛÛÛ
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    VMP supports following soundcards (for now)
+
+    ş Soundblaster 1.x
+    ş Soundblaster 2.x
+    ş Soundblaster Pro
+    ş Soundblaster 16
+
+    Well okay thats not much, but SB is still the most popular
+    soundcard.
+
+    Following fileformats are supported
+
+    ş S3M
+    ş MOD
+
+    Ooooh... tooo much technical data... divide overflow...
+    snytzax eerro... @œ$#Ï#FDDD *zsip*
+
+
+
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    ÛÛÛÛÛÛ Troubleshooting...   yah right ÛÛÛÛÛÛ
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Well this section isn't very covering, but we try to explain
+    those problems some users of VMP have encountered.
+
+    We've had several complainings about running out of memory
+    although having lots of memory attached on board. Well well
+    well... let me put this straight... the thing is that VMP
+    is based on using EMS memory. If you run your system
+    without an Expanded Memory Manager like QEMM386, EMM386,
+    386MAX etc. VMP finds only your base memory and if it runs
+    out, like it usually does, you get the out of memory error.
+        So what to do ? The answer is pretty obvious and simple.
+    Use Expanded Memory Manager. Easiest way is to use DOS's
+    Manager. Just add this line to your CONFIG.SYS:
+
+    DEVICE=C:\DOS\EMM386.EXE RAM
+
+    Remember that you must load HIMEM.SYS before loading
+    EMM386.EXE.
+
+    If you already had the EMM386.EXE loaded but with NOEMS
+    parameter (this is commonly used to gain more upper memory)
+    remove the NOEMS parameter.
+
+
+

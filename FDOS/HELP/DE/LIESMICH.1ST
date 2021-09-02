@@ -1,0 +1,23 @@
+
+hhstndrd.zip
+============
+
+Diese Datei enthaelt die gesammelten htm Dokumente
+die fuer die Verwendung unter help.exe (htmlhelp)
+gedacht sind.
+
+Sie MUSS NICHT ENTPACKT werden - help.exe kann die
+htm Dateien von innerhalb der hhstndrd.zip lesen.
+
+(Vielleicht wollen Sie die htm-Dateien entpacken,
+damit sie mit irgendeinem anderen Browser gelesen
+werden koennen oder editiert werden koennen.
+Die Zip-Datei wird ueblicherweise den unkomprimierten
+Dateien vorgezogen; wenn Sie wollen, dass help eine
+bearbeitete, unkomprimierte Version einer Datei lesen
+soll, ersetzen Sie bitte entweder die urspruengliche
+Datei innerhalb der hhstndrd.zip oder loeschen Sie
+die gezippte Version.
+
+This contains the bulk of the html documents for use
+with help.exe (htmlhelp).

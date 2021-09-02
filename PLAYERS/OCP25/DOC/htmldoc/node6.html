@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Main screen</TITLE>
+<META NAME="description" CONTENT="Main screen">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="next" HREF="node7.html">
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="node5.html">
+<LINK REL="next" HREF="node7.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html167"
+ HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html165"
+ HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html159"
+ HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html168"
+ HREF="node7.html">Usage of the fileselector</A>
+<B> Up:</B> <A NAME="tex2html166"
+ HREF="node5.html">Fileselector</A>
+<B> Previous:</B> <A NAME="tex2html160"
+ HREF="node5.html">Fileselector</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00410000000000000000">
+Main screen</A>
+</H1>
+The fileselector splits into three main windows: directory list, playlist
+and module information as shown in figure <A HREF="node6.html#fileselectorscreen">3.1</A>.
+
+<P>
+<BR>
+<DIV ALIGN="CENTER"><A NAME="fileselectorscreen">&#160;</A><A NAME="998">&#160;</A>
+<TABLE WIDTH="50%">
+<CAPTION><STRONG>Figure 3.1:</STRONG>
+the fileselector screen</CAPTION>
+<TR><TD><IMG
+ WIDTH="485" HEIGHT="365"
+ SRC="img4.gif"
+ ALT="\begin{figure}\hfill
+\setlength{\unitlength}{0.8cm}
+\begin{picture}
+(13.3,10)
+\...
+...t(0,9.5){\makebox(13.3,0.5){title bar}}
+\end{picture}\hfill\hbox{}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+<BR>
+<P>
+The path window shows the current
+path and file mask. If you started <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP from the home directory you will get
+the following: <code>C:\OPENCP\*.*</code> means
+that the current directory is <TT>OPENCP</TT> on your <TT>C</TT> harddrive
+and all files are shown (<TT>*.*</TT>). You can edit the path and the mask
+by pressing <TT>&lt;CTRL&gt;</TT>+<TT>&lt;Enter&gt;</TT>. After editing the path press <TT>&lt;Enter&gt;</TT>
+to change to the appropriate directory. You can edit the file mask to include
+only some files.
+<BLOCKQUOTE>
+<code>C:\*.mod</code> will change to the root directory of hard disk <TT>C</TT> and
+show all files ending with <TT>.mod</TT>. The default setting should be the
+current directory with a file mask <TT>*.*</TT> to show all files.
+</BLOCKQUOTE>
+<P>
+The most important window is the directory list. Here you can see all files
+in the current directory. If the extension is known to <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP the file information
+will be shown in different colors depending on the file type. Files not known
+to <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP will be shown in standard grey.
+
+<P>
+At the most left side the file name provided by the operating system is shown.
+The extension <TT>.???</TT> will specify the file type. <FONT SIZE="-1">Note: by now
+<FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP has not checked if the file is <EM>really</EM> of that type. It is just
+assumed. If you try to load a file with an extension that is not appropriate
+to the filetype <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP will show an error message</FONT>. The next row shows the
+title of the file if the file type includes a title. In the third row the
+number of channels is displayed. Finally rightmost the filesize is shown in
+bytes. If the module is included in a ZIP archive the <EM>real</EM> file size
+is displayed.
+
+<P>
+Right to the directory list you can see the play list. All files listed in
+this window will be played, after you changed into the player. Entries in this
+window are normally sorted alphabetically. So the order in this window must not
+be the order in which files are loaded / played in the editor.
+
+<P>
+The window at the bottom is the module information. Many music formats can
+store general information which is displayed here. If the file type does not
+support those information you can edit the fields inside this window manually
+and <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP will store the information for you.
+
+<P>
+Finally at the very bottom is the quick find feature, which lets you easily
+find files in the current directory.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html167"
+ HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html165"
+ HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html159"
+ HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html168"
+ HREF="node7.html">Usage of the fileselector</A>
+<B> Up:</B> <A NAME="tex2html166"
+ HREF="node5.html">Fileselector</A>
+<B> Previous:</B> <A NAME="tex2html160"
+ HREF="node5.html">Fileselector</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,17 @@
+This is the readme for the FreeDOS TREE program
+
+Graphically displays the folder structure of a drive or path.
+
+Usage:  TREE [/A] [/F] [PATH]
+  /A    Use ASCII line drawing characters
+  /F    Displays files in directories (instead of just directories)
+  PATH  Where to begin displaying directory tree from, 
+        default is current directory.
+
+This program has international support using the "Cats" library
+(catopen/catgets implementation for DOS).  You can download "Cats"
+from http://www.freedos.org/jhall/cats
+
+TREE is distributed under the GNU GPL.  See the file
+COPYING for details.
+

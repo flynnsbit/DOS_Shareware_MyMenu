@@ -1,0 +1,30 @@
+[ Hacker Style Text reader <-||-> executable maker v1.0.0beta ]    [ FREEWARE! ]
+                       ÖÄÄÜÜÜÄÜÜÄÜÄÜÄÄÄÄÄÄÄÄÄùùùùú
+                       ÇÄÄÜÄÛÄÄÛÄÛßÛÄLtdÄþÄÄÄÄÄÄÄÄùùùúú
+                       ÇÄTheÄOfficialÄA.T.H.ÄLtd-ProductÄ·
+                       °±²  HaCKeR style text reader!  ²±°
+                        Compile your  text files into one
+                        executable.  This   provides  the
+                        the user with a Hacker Style Text
+                        Viewer.  [Also  LooK out for  the
+                        complete hacker  style procedures
+                        for Turbo  Pascal 7.0  OuT S00N!]
+                        >>>>>>>>>>> FREEWARE <<<<<<<<<<<<
+                       ÓÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄATHÄLtdÄÄ½
+
+This program compiles a textfile to an executable form. After compilation
+the user can execute the newly created file. This provides him with a hacker
+style text viewer linked with the textfile to be read.
+To create the executable you will need the following files in one directory:
+- MAKER.EXE
+- ATH_HWR.BIN
+- a plain text file
+
+
+The text file should have the following format for best results:
+1 Page = 23 lines; 1 line = 80 characters (NotE! text file should be
+of reasonable size.)
+
+
+Have FuN!
+ath@belka.bl.pg.gda.pl

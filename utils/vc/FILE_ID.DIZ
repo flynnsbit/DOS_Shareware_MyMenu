@@ -1,0 +1,14 @@
+    VC version 4.99.08 alpha
+
+File shell that is a DOS program,
+but it supports a lot of features
+of Windows 95 and OS/2.
+
+Supports:
+- Descriptions
+- Archives
+- SVGA video modes
+- EMS, XMS and disk swapping
+- Long file names of Windows 95
+- OS/2 extended attributes
+- Translation tables in viewer

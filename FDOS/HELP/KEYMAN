@@ -1,0 +1,43 @@
+NAME
+
+   KEYMAN - Interactive keyboard macro recorder for XKEYB
+
+SYNOPSIS
+
+   [LOADHI] KEYMAN
+
+
+RELATED COMMANDS
+
+   XKEYB        Main version of XKEYB 
+   XKEYBRES     "Lite" version of XKEYB
+   LISTXDEF     Lists current definition file to STDOUT
+
+NOTES
+   
+   KEYMAN is an interactive macro recorder for use with XKEYB.
+
+   Either XKEYB or XKEYBRES must be resident in memory before KEYMAN
+   can be installed (and XKEYBRES must have a configuration file
+   allocated by XKEYB).
+
+   Once installed, press F11 to pop up the KEYMAN window. Enter a macro
+   by pressing the key to assign the macro to (eg. CTRL-D), then the
+   keystrokes to be assigned to the macro, then F11 again to save the
+   macro.
+
+   You can delete macro keystrokes using the BACKSPACE key. To enter a 
+   BACKSPACE keystroke in the macro, use ALT-<Keypad 8>.
+
+   To change the Hotkey (F11 by default), pop up the KEYMAN window, 
+   press the hotkey again, then press the new hotkey.
+
+   LISTXDEF.EXE can be used to save the recorded macros as a configuration
+   file.
+   
+   Please see the manual XKEYB.TXT for further information.
+
+AUTHOR
+
+   Program:             Dietmar Hohmann, d.hoehmann@gmx.net
+   This documentation:  Ben Berry, za2bb@hotmail.com    

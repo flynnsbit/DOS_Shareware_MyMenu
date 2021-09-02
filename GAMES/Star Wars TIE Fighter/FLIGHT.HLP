@@ -1,0 +1,375 @@
+
+To print this file enter on the keyboard
+
+    TYPE FLIGHT.HLP >LPT1:
+
+at the DOS prompt.
+
+
+MISSION BRIEFING:  
+-----------------
+
+for TIE Fighter Group Alpha
+
+Your flight will be responsible for eliminating any opposition
+at the Rebel repair yard near Remitik.  In the absence of any 
+active defense you will assist in the destruction of the repair
+yard.  This is to prepare for an ambush of any ships escaping 
+the attack on Hoth.  As Rebel ships enter the area you are to
+engage and destroy them.  Take no prisoners!  Good Hunting!
+
+
+Primary Win Condition:  
+----------------------
+
+Destruction of Rebel repair yard and all disabled craft in the area.
+
+Secondary Win Condition:
+------------------------
+
+Destruction of all entering Rebel craft except A-wing Rogue.
+
+Bonus Win Condition:
+--------------------
+
+Destruction of A-wing Rogue.
+
+
+MISSION LOG:   
+------------
+
+We are all tremendously excited about the upcoming attack.
+The Rebels main base has been discovered on the ice planet Hoth.  A
+huge assault force is being sent to destroy it.  Our role will be
+to support the attack by preparing an ambush for any Rebels that
+manage to escape their doom on Hoth.  We are being sent to the
+Remitik system to destroy a small repair yard there and wait for
+the Rebel vermin to bolt from their holes.
+
+Our starfighters are to be launched from Assassin-class
+Corvettes because all of the large capital ships in the sector are
+being used at Hoth.  This will be my first real combat mission as
+a TIE Fighter pilot.  No more simulators!  
+To the glory of the Empire!
+
+
+COCKPIT INSTRUMENTATION:
+------------------------
+
+Target Tracking Display.  The TTD is the main screen at the
+bottom of the forward cockpit view.  [O, R, T, U and Y keys]
+
+Immediately above it are an Engine Power Percentage Indicator,
+three Threat Warning Lights (duplicated above the gunsight's targeting
+box) and a Speed Indicator.
+
+Above these are the right and left Laser Energy Level indicators.
+
+In the lower left is a Hull Integrity Display.
+
+Along the middle left is the Laser Energy Recharge Rate indicator,
+and above it is the Mission Elapsed Time Clock.
+
+Along the right is Engine Energy Level indicator, and above it is
+the Flight Recorder Display (on/off light and frames remaining.)
+
+In the upper corners are a Forward (on the left) and Rear (right)
+Sensor Display.  The dots indicate other craft.  They are color coded:
+red for Imperial, green for Rebel, and yellow for missiles and torpedoes.
+The brightness of the dot is also an indication of the distance (near - 
+bright, far - faint.)  The dot representing whatever is targeted in the TTD
+will have white brackets around it.
+
+
+A BRIEF NOTE ON TACTICS:
+------------------------
+
+TIE Fighters have no shields!  The hull can only withstand a few hits.
+Watch out for friendly fire.  Although, it is certainly effective to gang up
+on a single target to overwhelm it, there is great risk involved.  Avoid flying
+between a wingman and his target.  Keep an eye on the Laser Energy Level,
+the brighter green that indicates "turboblast" strength will dissipate quickly
+with constant fire.  Be sure to set your recharge rate at maximum whenever
+you can.
+
+
+A HINT FOR WINNING THE MISSION:
+-------------------------------
+
+Keep an eye out for the Rebel Freighters.  They don't stay for long, so you
+have to get them quickly.
+
+
+
+KEYBOARD COMMANDS:
+------------------
+
+Below is a list of the keyboard commands available in this demo
+version of TIE FIGHTER.  
+
+
+                    -----------------
+                    COCKPIT VIEW KEYS
+                    -----------------
+
+        -----             -----            -----
+        |   |             |   |            |   |
+        | 7 |             | 8 |            | 9 |
+        |   |             |   |            |   |
+        -----             -----            -----
+     Forward Left        Forward       Forward Right
+      10 O'clock       12 O'clock        2 O'clock 
+
+        -----             -----            -----
+        |   |             |   |            |   |
+        | 4 |             | 5 |            | 6 |
+        |   |             |   |            |   |
+        -----             -----            -----
+    Over Left Wing     Straight Up    Over Right Wing
+       9 O'clock                         3 O'clock 
+
+        -----             -----            -----
+        |   |             |   |            |   |
+        | 1 |             | 2 |            | 3 |
+        |   |             |   |            |   |
+        -----             -----            -----
+  Over Left Shoulder    Rear View   Over Right Shoulder
+       7 O'clock        6 O'clock        5 O'clock 
+
+-----
+|   |
+| 0 |  Toggles between "wing-level" view and 45 degree "high" angle view.
+|   |
+-----
+
+-----
+|   |
+| . |  Toggles between forward cockpit view and forward full-screen view.
+|   |
+-----
+
+------    -----
+|    |    |   |
+| F3 | or | / |  Toggles external camera view mode.
+|    |    |   |
+------    -----
+
+------    -----
+|    |    |   |  Repositions camera viewpoint when in external view mode.
+| F4 | or | * |  1. Use the maneuver controls to position viewpoint.
+|    |    |   |  2. Use the joystick/mouse buttons to zoom in or out.
+------    -----  3. Press F4 again to regain flight control.
+
+--------
+|      |
+| CTRL |  Toggles between forward view and the Threat Display panel.
+|      |
+--------
+
+
+                      -------------
+                      THROTTLE KEYS
+                      -------------
+
+-----
+|   |
+| + |  Increase throttle.
+|   |
+-----
+
+-----
+|   |
+| - |  Decrease throttle.
+|   |
+-----
+
+-----
+|   |
+| \ |  Sets throttle to zero power.
+|   |
+-----
+
+-----
+|   |
+| [ |  Sets throttle to 1/3 (one third) power.
+|   |
+-----
+
+-----
+|   |
+| ] |  Sets throttle to 2/3 (two thrids) power.
+|   |
+-----
+
+-------------
+|           |
+| BACKSPACE |  Sets throttle to full power.
+|           |
+-------------
+
+                      --------------
+                      COMBAT SYSTEMS
+                      --------------
+
+------
+|    |
+| F9 |  Adjusts laser recharge rate.
+|    |
+------
+
+-----
+|   |
+| X |  Toggles firing configuration.  Switches between single, dual and
+|   |  quad-fire configurations.
+-----
+
+
+                     ----------------
+                     TARGETING SYSTEM
+                     ----------------
+
+-----
+|   |
+| U |  Selects ship within Target Sight (if any) as current target.
+|   |
+-----
+
+-----
+|   |
+| R |  Selects nearest enemy starfighter as current target.
+|   |
+-----
+
+-----
+|   |
+| T |  Selects next available target.
+|   |
+-----
+
+-----
+|   |
+| Y |  Selects next available target, but in reverse order from the T key.
+|   |
+-----
+
+---------------
+|             |
+| SHIFT F5-F8 |  Stores current target as one of four "memorized" targets.
+|             |
+---------------
+
+---------
+|       |
+| F5-F8 |  Selects the corresponding "memorized" target as current target.
+|       |
+---------
+
+                  ----------------------
+                  COMMUNICATIONS SYSTEMS
+                  ----------------------
+
+------------
+|          |
+| SPACEBAR |  Approve suggestions from Onboard Computer.
+|          |
+------------
+
+-----------
+|         |
+| SHIFT H |  Instructs current target to head home.
+|         |
+-----------
+
+-----------
+|         |
+| SHIFT R |  Instructs current target to report in.
+|         |
+-----------
+
+-----------
+|         |
+| SHIFT E |  Instructs current target to take evasive action.
+|         |
+-----------
+
+-----------
+|         |
+| SHIFT W |  Instructs current target to wait for further orders.
+|         |
+-----------
+
+-----------
+|         |
+| SHIFT G |  Instructs current target to proceed with its mission.
+|         |
+-----------
+
+-----------
+|         |
+| SHIFT C |  Instructs wingmen to cover you.
+|         |
+-----------
+
+-----------
+|         |
+| SHIFT A |  Instructs wingmen to attack current target.
+|         | 
+-----------
+
+-----------
+|         |
+| SHIFT I |  Instructs wingmen to ignore their target.
+|         |
+-----------
+
+                       -------------
+                       MISCELLANEOUS
+                       -------------
+
+---------
+|       |
+| ALT E |  Initiate ejection sequence.
+|       |
+---------
+
+---------
+|       |
+| ALT C |  Calibrate joystick.
+|       |
+---------
+
+---------
+|       |
+| ALT D |  Toggles between different levels of detail.
+|       |
+---------
+
+---------
+|       |
+| ALT M |  Toggles music on and off.
+|       |
+---------
+
+---------
+|       |
+| ALT S |  Toggles sound effects on and off.
+|       |
+---------
+
+----------
+|        |
+| ESCAPE |  Exit from flight to slideshow.
+|        |
+----------
+
+-----
+|   |
+| Q |       Exit mission and fly it again.
+|   |
+-----
+
+
+
+
+
+

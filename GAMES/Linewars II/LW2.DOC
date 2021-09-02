@@ -1,0 +1,3071 @@
+
+
+
+
+
+
+
+
+
+
+
+
+      ÚÄÄ¿                       Ú¿   Ú¿                        ÚÄÄ¿ ÚÄÄ¿
+      À¿ÚÙ     ÚÄ¿               ³³   ³³                        À¿ÚÙ À¿ÚÙ
+       ³³      ÀÄÙ               ³³   ³³                         ³³   ³³
+       ³³      ÚÄ¿ ÚÄÄÄÄ¿ ÚÄÄÄÄ¿ ³³   ³³ ÚÄÄÄÄ¿ ÚÄÄÄÄ¿ ÚÄÄÄÄ¿    ³³   ³³
+       ³³      À¿³ À¿ÚÄ¿³ ³ÚÄÄ¿³ ³³   ³³ ÀÄÄÄ¿³ ³ÚÄÄ¿³ ³ÚÄÄÄÙ    ³³   ³³
+       ³³       ³³  ³³ ³³ ³³  ³³ ³³   ³³     ³³ ³³  ÀÙ ³³        ³³   ³³
+       ³³       ³³  ³³ ³³ ³ÀÄÄÙ³ ³³ÚÄ¿³³ ÚÄÄÄÙ³ ³³     ³ÀÄÄÄ¿    ³³   ³³
+       ³³       ³³  ³³ ³³ ³ÚÄÄÄÙ ³ÀÙ ÀÙ³ ³ÚÄÄ¿³ ³³     ÀÄÄÄ¿³    ³³   ³³
+       ³³  ÚÄ¿  ³³  ³³ ³³ ³³     ³ ÚÄ¿ ³ ³³  ³³ ³³         ³³    ³³   ³³
+      ÚÙÀÄÄÙ ³ ÚÙÀ¿ ³³ ³³ ³ÀÄÄÄ¿ ³ ³ ³ ³ ³ÀÄÄÙ³ ³³     ÚÄÄÄÙ³   ÚÙÀ¿ ÚÙÀ¿
+      ÀÄÄÄÄÄÄÙ ÀÄÄÙ ÀÙ ÀÙ ÀÄÄÄÄÙ ÀÄÙ ÀÄÙ ÀÄÄÄÄÙ ÀÙ     ÀÄÄÄÄÙ   ÀÄÄÙ ÀÄÄÙ
+
+
+
+
+
+                                 Developed By
+
+                                Patrick Aalto
+
+
+
+
+                                 Published By
+
+                               Safari Software
+                             10406 Holbrook Drive
+                              Potomac, MD 20854
+                                    U.S.A.
+
+                             Orders: 800-238-1393
+                             Help:   301-738-2349
+                             Fax:    301-738-0230
+
+
+             Copyright 1994 Safari Software and Patrick Aalto.  All
+             Rights Reserved.  LineWars II is a trademark of Patrick
+             Aalto. Other product and company names are trademarks
+             of their respective owners.
+
+
+
+
+                                    ACKNOWLEDGMENTS
+
+
+
+
+              I couldn't produce a product like LineWars II without help
+              and prior work of many people.  My thanks to:
+
+                   Game Storyline:          Raymond Bingham (wReam)
+
+                   Game Music:              Jim Young (U4ia of Megawatts)
+
+                   Antialiasing Algorithm:  M. Pitteway and D. Watkinson
+
+                   Interrupt Reference:     Ralf Brown
+
+                   Overlay Decompressor:    Haruyasu Yoshizaki
+
+                   Roland LAPC-I SysEx:     Ed Federmeyer
+
+                   S3 Programming Info:     S3 Incorporated
+
+                   Shading Model:           Rod Salmon and Mel Slater
+
+                   Speaker Log. Table:      Mark Cox
+
+                   Tweaked VGA Mode:        Themie Gouthas
+
+                   VGA & EGA Programming:   R. Ferraro
+
+                   Universal VESA VBE:      Kendall Bennett
+
+                   Beta Testers:            Kim Heino, Marko Happonen,
+                                            Olli M„nnist”  and others.
+
+                   A special thanks to all the registered users of
+                   the original LineWars, and to all of you who helped
+                   make LineWars II elegant, reliable, and friendly.
+
+
+              The following tools were used in creating LineWars II:
+
+                 Compiler:         Borland Turbo Assembler 2.5
+
+                 Linker:           Borland Turbo Link 5.1
+
+                 Optimization:     Borland Turbo Profiler 2.0
+
+                 Debugger:         Borland Turbo Debugger 3.1
+
+                                                                     CONTENTS
+          ___________________________________________________________________
+
+
+
+          CONTENTS
+
+
+          Introduction...............................................1
+               How to Use This Manual................................1
+               Registration and Upgrade Information..................3
+
+          Chapter 1 / LineWars II Features...........................4
+
+          Chapter 2 / Installation...................................5
+               Where To Put LineWars II..............................5
+               Unarchiving The Files.................................5
+
+          Chapter 3 / Configuration..................................6
+               SysInfo...............................................7
+               Graphics..............................................9
+                    MCGA 320 x 200...................................9
+                    VGA  320 x 480...................................9
+                    VESA 640 x 480...................................9
+                    S3 Accelerated...................................9
+                    ATI Mach8/Mach32................................10
+                    GRAPHDRV.LW2....................................10
+                    Ambient Light...................................10
+               Control..............................................10
+                    Keyboard........................................10
+                    Joystick........................................11
+                    Mouse...........................................12
+                    ThrustMaster....................................12
+                    X Scaling.......................................13
+                    Y Scaling.......................................13
+                    Laser Key.......................................14
+                    Missile Key.....................................14
+               Sound................................................14
+                    No Sound Output.................................15
+                    Covox (8-bit DAC)...............................15
+                    Sound Blaster...................................15
+                    Gravis Ultrasound...............................16
+                    Roland LAPC-I...................................16
+                    Roland SCC-1....................................16
+                    SOUNDDRV.LW2....................................17
+                    Port Address....................................17
+                    Play Frequency..................................17
+                    Timer / Stereo / 3D.............................17
+                    Music Volume....................................18
+                    SoundFX Volume..................................18
+                    Don't Say Goodbye...............................18
+                    Hardcore Hypno 4................................18
+                    Freudian Dream..................................18
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto              LineWars II Manual  /  i
+
+                                                                     CONTENTS
+          ___________________________________________________________________
+
+
+                    Japanese Intentions.............................18
+               Comms................................................18
+                    No Comms Device.................................18
+                    COM Port 1......................................18
+                    COM Port 2......................................18
+                    COM Port 3......................................18
+                    COM Port 4......................................18
+                    Shared File.....................................19
+                    Line Speed......................................20
+                    Handshaking.....................................20
+                    FIFO Options....................................20
+                    Network Dir.....................................20
+               Gaming...............................................21
+                    Default Game....................................21
+                        Demonstration...............................21
+                        Asteroid Storm..............................21
+                        The First Blood.............................21
+                        Princess Escort.............................21
+                        Pirate Ambush...............................21
+                        Disable a Base..............................21
+                        Defend the Base.............................21
+                        The Convoy..................................21
+                        Freedom Fight...............................21
+                        Final Battle................................21
+                        Duel Mode (COM).............................21
+                        Wing Mode (COM).............................21
+                        Group War (NET).............................21
+                        Star Wars (NET).............................21
+                    Game Speed......................................22
+                    Call Sign.......................................22
+               Exit.................................................22
+
+          Chapter 4 / Playing LineWars II...........................23
+               Starting Without Parameters..........................23
+               Command Line Parameters..............................24
+               The Intro............................................26
+               The Cockpit..........................................26
+                    Main Viewer Screen..............................27
+                    Info Screen.....................................28
+                    Radar Screen....................................28
+                    Shield and Armour Status Indicator..............29
+                    Ship Systems Status.............................29
+                    Other Indicators................................30
+               Controlling Your Ships...............................30
+               The Demonstration....................................31
+               Single Play Missions.................................32
+               Duel Mode............................................33
+               Wing Mode............................................33
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  ii
+
+                                                                     CONTENTS
+          ___________________________________________________________________
+
+
+               Group War............................................34
+               Star Wars............................................34
+
+          Appendix A / LineWars II Error Messages...................35
+
+          Appendix B / LineWars II Memory Usage.....................43
+
+          Appendix C / Technical Information........................44
+              Graphics..............................................44
+              Sound.................................................45
+              COM Port Routine......................................46
+              Network Routine.......................................46
+              Ship Artificial Intelligence..........................47
+              Overlay Decompressor..................................47
+
+          Appendix D / Building a Parallel Port DAC.................48
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto            LineWars II Manual  /  iii
+
+                                                     CONTACTING PATRICK AALTO
+          ___________________________________________________________________
+
+
+
+
+          CONTACTING PATRICK AALTO
+
+          You can contact Patrick Aalto at any of the following addresses,
+          but DO NOT SEND REGISTRATIONS OUTSIDE FINLAND TO PATRICK AALTO!
+          Note that it takes about a week for surface mail to travel from
+          USA to Finland, for example.
+
+
+
+              By mail:
+
+
+                   Patrick Aalto
+                   Hiekkapohjan koulu
+                   FIN-40270 PALOKKA
+                   FINLAND
+
+
+              By Fax:
+
+
+                   +358-41-637440
+
+                   (Since this number is used by a firm, please include
+                   something like 'To: Patrick Aalto'.)
+
+
+              Electronically:
+
+
+                   Internet:       ap@jyu.fi
+
+                                   (Patrick.Aalto@f151.n222.z2.fidonet.org)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  iv
+
+                                                                 INTRODUCTION
+          ___________________________________________________________________
+
+
+
+          INTRODUCTION
+
+
+          Welcome, and thanks for purchasing LineWars II !
+
+          I started developing LineWars II in 1990, just after I had finished
+          the original LineWars. At first LineWars II was coded in Turbo
+          Pascal with some Turbo Assembler subroutines, and it worked only
+          in EGA 640x350 mode with 16 colors. During the years of development
+          it was totally rewritten many times until it finally became the
+          current SVGA version that is coded 100% in assembly language.
+
+          I had three goals in mind when I developed LineWars II. It had to
+          a) feature very realistic 3D graphics, b) run with a high frames-
+          per-second rate on fast 386 machines, and c) be as small as
+          possible. I have a strong dislike of programs that consume mega-
+          bytes of hard disk space and consist of hundred-odd separate files,
+          which is why LineWars II contains almost everything it needs in a
+          single file, LW2.DAT, which is only a few hundred kilobytes in
+          size.
+
+          LineWars II will be my last program to run on 80286 processors.
+          Although I was many times tempted to switch to 386-only code,
+          I decided it was not quite the time yet to do so. However, since
+          LineWars II is targeted to owners of fast 386 and i486 machines,
+          it will most likely run too slowly on AT class machines. But it
+          WILL run.
+
+          I am something of a computer hardware addict, and thus I included
+          support for various new hardware components along the way, most
+          notably for S3 Graphical User Interface Accelerator chip, Gravis
+          UltraSound sound card and Roland SCC-1 Sound Canvas Card. I have
+          not yet seen another game that would use the accelerated features
+          of an S3 chip as well as LineWars II does, and also the Roland
+          SCC-1 support is far from common in ShareWare games. LineWars II
+          also supports SoundBlaster Pro with enhanced stereo sound.
+
+          How to Use This Manual
+
+              I have designed this manual to be more of a reference guide
+              than a tutorial. Getting started with LineWars II is very easy,
+              especially if you consider yourself an 'advanced user'. You may
+              not need to look at this manual at all unless you wish to know
+              detailed information about something. Novice users need not
+              worry either. If you do not understand some technical detail
+              in the manual, you probably don't need the info anyway, and
+              thus you may well skip the offending piece.
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto              LineWars II Manual  /  1
+
+                                                                 INTRODUCTION
+          ___________________________________________________________________
+
+
+              This manual is divided into four chapters and four
+              appendices.  Here's a brief overview of what you'll find
+              in each:
+
+
+              Chapter 1 / LineWars II Features
+
+                   I begin with a short summary of some of LineWars II's
+                   main features to give you a taste of what LineWars II
+                   is all about.  Start here if you are new to LineWars.
+
+
+              Chapter 2 / Installation
+
+                   The installation instructions are very simple indeed.
+                   You may well skip this chapter if you want.
+
+
+              Chapter 3 / LineWars II Configuration
+
+                   This chapter describes the many configuration options
+                   in detail. You can most likely run LineWars II quite
+                   succesfully without reading this chapter, but I do
+                   recommend you reading it.
+
+
+              Chapter 4 / Playing LineWars II
+
+                   This chapter is describes how to start LineWars II,
+                   what all the dials and indicators on the cockpit mean,
+                   how to control your ship, etc. It is recommended that
+                   you read this chapter before playing the game.
+
+
+              Appendices
+
+                   I have included some helpful tables here, and some
+                   information for those who like to know technical details.
+                   There are four appendices.
+
+                   Appendix A lists all LineWars II error messages.  Look
+                   here if you need an explanation of an error message.
+
+                   Appendix B describes how much memory LineWars II uses
+                   in each of the main graphics and sound configurations.
+                   Look here if you wish to check if LineWars II will have
+                   enough memory on your system or if you receive Out Of
+                   Memory errors.
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto              LineWars II Manual  /  2
+
+                                                                 INTRODUCTION
+          ___________________________________________________________________
+
+
+                   Appendix C covers technical information about LineWars II.
+                   You probably won't need this information unless you are
+                   an advanced user or a programmer yourself.
+
+                   Appendix D describes how you can build a cheap parallel
+                   port sound output device which you can use with LineWars
+                   II. The parts cost only one or two dollars and the sound
+                   quality is not that much worse than with a Sound Blaster,
+                   so the Price/Performance ratio is extremely good.
+
+
+          Registration and Upgrade Information
+
+              If you live in Finland and you have got an unregistered copy
+              of LineWars II (downloaded from a BBS, for example), you can
+              register and receive the registered version if you send me
+              the amount of 100 FIM. Please include your full name and
+              address. If you like, you can also tell me what sort of a
+              machine you run LineWars II on. And if you have found any
+              bugs, I will of course be very interested to hear about them.
+              I will send the registered version on a floppy disk within
+              a week or two.
+
+              If you live outside Finland, please contact Safari Software
+              for registration. Their telephone numbers are:
+
+                        Orders: 800-238-1393
+                        Help:   301-738-2349
+                        Fax:    301-738-0230
+
+              The registered version includes all of the missions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto              LineWars II Manual  /  3
+
+                                             CHAPTER 1 / LINEWARS II FEATURES
+          ___________________________________________________________________
+
+
+
+          CHAPTER 1 / LINEWARS II FEATURES
+
+
+          LineWars II is basically a 3-D space arcade game. It requires
+          almost no strategical thinking. What makes LineWars II special
+          is the use of realtime lightsource-shaded graphics, support for
+          high end graphics and sound cards, and the ability to play against
+          one or many human opponents.
+
+          In the star systems that you visit in LineWars II there is always
+          a sun, a planet and various other objects. All objects are very
+          realistically shaded with the light emitted from the sun. When
+          you rotate in space you will see that the brightest side of any
+          ship is always the one pointed towards the sun. This is what
+          lightsource-shaded graphics is all about.
+
+          LineWars II uses vector-based polygon graphics to represent the
+          objects in space. The planets are represented with extremely
+          optimized Gouraud-shaded balls. The routine to draw a Gouraud-
+          shaded ball is one of LineWars II's most unique features. The
+          algorithm is totally my own invention, and it uses a thoroughly
+          different approach than traditional polygon-mesh representation
+          of a ball. (More info can be found in the Appendix C.)
+
+          The registered version of LineWars II contains a demonstration
+          game, nine single-play missions, two two-player missions and two
+          multi-player missions. Unregistered shareware version has the demo
+          game, three first single-play missions and only one two-player and
+          one multi-player mission.
+
+          All the missions of LineWars II can be played many times in a
+          row. The object of the game is to shoot a lot of enemy ships while
+          not getting yourself killed. Your score increments every time you
+          kill an enemy ship, and the game keeps track of your highest scores
+          in each of the single-play missions. In the two-player and multi-
+          player missions your score is based on your victories/deaths ratio,
+          and it spans the current session only.
+
+          LineWars II uses your VESA-compatible or S3 Accelerated SVGA card
+          much better than most comparable games, and it supports a wide
+          variety of sound cards, including Gravis UltraSound and Roland
+          SCC-1. And even though it is such a complex and sophisticated
+          game, it can run in as little as 80 kilobytes of memory, and even
+          on AT class machines.
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto              LineWars II Manual  /  4
+
+                                                     CHAPTER 2 / INSTALLATION
+          ___________________________________________________________________
+
+
+
+          CHAPTER 2 / INSTALLATION
+
+
+          Actually, since you are reading this, you have already installed
+          LineWars II. Installing consists of deciding where to put the
+          LineWars II files, and then unarchiving the files there.
+
+          Where To Put LineWars II
+
+              LineWars II is not very picky about the location where it
+              sits on your disk. It is recommended that you install it on a
+              hard disk, however. It will work without problems even from
+              a 360KB floppy disk, but the loading will then be very slow.
+
+              There is no reason why you shouldn't put LineWars II onto a
+              Stacked or DoubleSpaced disk partition. However, since the
+              LW2U.DAT file is already very tightly compressed, it will
+              not compress any further on a compressed disk partition.
+
+          Unarchiving The Files
+
+              You may have gotten LineWars II from various sources, and
+              the method how LineWars II is archived will vary. If you
+              got LineWars II on a diskette, it most likely included an
+              INSTALL program which did the unarchiving for you.
+
+              Other possible distribution archives are ZIP and LZH files.
+              They are unarchived with commands 'PKUNZIP FILENAME.ZIP' and
+              'LHA E FILENAME.LZH', respectively. LineWars II archive does
+              not contain subdirectories, so you do not have to worry with
+              giving certain flags to the unarchive commands.
+
+          After you have unarchived LineWars II, you are ready to start
+          playing it. However, I STRONGLY recommend that you first take
+          some time to check the various configuration options (see the
+          next chapter) LineWars II has to offer. Selecting the
+          configuration that best suits your hardware will make the game
+          much more enjoyable.
+
+
+
+
+
+
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto              LineWars II Manual  /  5
+
+                                                    CHAPTER 3 / CONFIGURATION
+          ___________________________________________________________________
+
+
+
+          CHAPTER 3 / CONFIGURATION
+
+
+          To get the most out of LineWars II you must configure it for your
+          hardware. LineWars II includes a configuration screen with which
+          this is accomplished. To get to the configuration screen you have
+          two options:
+
+              1) Start LineWars II without any options (that is, write just
+                 LW2 at the DOS prompt and press enter) and select the menu
+                 option 'Configure LineWars II', or
+
+              2) Start LineWars II with a command LW2 CFG at the DOS
+                 prompt (you don't have to use capital letters).
+
+          In the configuration screen you may use cursors or mouse to select
+          an option in the menu. Pressing F1 will show help about the current
+          menu item. The configuration screen looks somewhat like this:
+
+          ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+          ³ SysInfo  Graphics  Control  Sound  Comms  Gaming  Exit   F1=Help ³
+          ³°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°³
+          ³ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ Current Configuration ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»³
+          ³ºÚ Graphics ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ Ú Control ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿º³
+          ³º³ Graphics Mode: S3 GUI Accel. ³ ³      Device: ThrustMaster   ³º³
+          ³º³    Resolution: 800 x 600     ³ ³     Scaling:  1.00 x 1.00 y ³º³
+          ³º³        Colors: 256           ³ ³   Laser Key: Alt            ³º³
+          ³º³ Ambient Light: 25 %          ³ ³ Missile Key: Ctrl           ³º³
+          ³ºÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙº³
+          ³ºÚ Sound ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ Ú Communications ÄÄÄÄÄÄÄÄÄÄÄÄÄ¿º³
+          ³º³       Device: Sound Blaster  ³ ³      Device: COM Port 1     ³º³
+          ³º³ Port Address: 220 Hex        ³ ³  Line Speed: 115200 bps     ³º³
+          ³º³    Frequency: 23040 Hz       ³ ³ Handshaking: Use CTS/RTS    ³º³
+          ³º³  Stereo Mode: Enhanced       ³ ³   FIFO size: 14 bytes       ³º³
+          ³º³ Music Volume: 100 %          ³ ³                             ³º³
+          ³º³   SFX Volume: 100 %          ³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙº³
+          ³º³                              ³ Ú Gaming Options ÄÄÄÄÄÄÄÄÄÄÄÄÄ¿º³
+          ³ºÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ³  Game Mode: Duel Mode       ³º³
+          ³ºÚ Network Directory ÄÄÄÄÄÄÄÄÄÄÄ¿ ³ Game Speed: 116 %           ³º³
+          ³º³ N/A                          ³ ³  Call Sign: The Terminator  ³º³
+          ³ºÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙº³
+          ³ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼³
+          ³°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°³
+          ³ Save configuration and Quit          ³ LineWars II Configuration ³
+          ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto              LineWars II Manual  /  6
+
+                                                    CHAPTER 3 / CONFIGURATION
+          ___________________________________________________________________
+
+
+          The first thing you should do after starting Configuration is to
+          select SysInfo. Do this by pressing Enter when the 'SysInfo' text
+          on the top menu row is highlighted, or by clicking on this menu
+          item with the mouse.
+
+
+          SysInfo
+
+              When you select 'SysInfo' from the main menu screen, LineWars
+              II will attempt to find out the available hardware options.
+              To check the hardware LineWars II needs to 'poke around' in
+              your computer, and there is a chance some of the checks might
+              cause your system to crash. Therefore you should never select
+              SysInfo under a multitasker (such as Windows, DESQview or OS/2)
+              unless you have saved all your work in other processes.
+              The chance of LineWars II SysInfo crashing your system is
+              quite small, but it never hurts to be cautious. If your system
+              should crash, just do not select SysInfo again in the future.
+
+              The SysInfo screen looks somewhat like this:
+
+          ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+          ³ SysInfo  Graphics  Control  Sound  Comms  Gaming  Exit   F1=Help ³
+          ³°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°³
+          ³ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ System Information ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»³
+          ³ºÚ Display Hardware ÄÄÄÄÄÄÄÄÄÄÄÄ¿ Ú Control Hardware ÄÄÄÄÄÄÄÄÄÄÄ¿º³
+          ³º³ Adapter: S3 Accelerated SVGA ³ ³ Keyboard: YES (Enhanced)    ³º³
+          ³º³ Chipset: 86C911              ³ ³ Joystick: ThrustMaster FCS  ³º³
+          ³º³  Memory: 1024 KB             ³ ³    Mouse: YES               ³º³
+          ³º³                              ³ ³                             ³º³
+          ³ºÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙº³
+          ³ºÚ Sound Hardware ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ Ú Com Ports  (UART type) ÄÄÄÄÄ¿º³
+          ³º³ Covox (LPT 1): 378h          ³ ³ COM1: 3F8h (NS16550A)       ³º³
+          ³º³ Covox (LPT 2): 278h          ³ ³ COM2: 2F8h (NS16450)        ³º³
+          ³º³ Covox (LPT 3): NONE          ³ ³ COM3: NONE                  ³º³
+          ³º³ Sound Blaster: 220h (Pro I5) ³ ³ COM4: NONE                  ³º³
+          ³º³    UltraSound: 220h (1024KB) ³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙº³
+          ³º³        Roland: 330h (SCC-1)  ³ Ú Network Packet Driver ÄÄÄÄÄÄ¿º³
+          ³º³                              ³ ³ ARCEther                    ³º³
+          ³ºÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙº³
+          ³ºÚ Processor Type ÄÄÄÄÄÄÄ¿  ÚÄÄÄÄÄÄÄÄ¿  Ú Operating System ÄÄÄÄÄ¿º³
+          ³º³ i486 (in V86 mode)    ³  ³   OK   ³  ³ DOS version 6.20      ³º³
+          ³ºÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ  ÀÄÄÄÄÄÄÄÄÙ  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙº³
+          ³ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼³
+          ³°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°³
+          ³ Show information about this system   ³ LineWars II Configuration ³
+          ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto              LineWars II Manual  /  7
+
+                                                    CHAPTER 3 / CONFIGURATION
+          ___________________________________________________________________
+
+
+              The SysInfo screen is divided into several distinct areas.
+              The most important of these are 'Display Hardware', 'Control
+              Hardware', 'Sound Hardware', and 'Com Ports'. In the bottom
+              two boxes you can also see the CPU type and the current
+              operating system version.
+
+              The 'Display Hardware' section shows which type of graphics
+              card your computer has, the Chipset of the card (if known),
+              and how much memory the card has. The information presented
+              is not necessarily 100 % accurate, it just displays what
+              sort of display hardware LineWars II thinks you have.
+
+              You can use the 'Control Hardware' section to verify that
+              LineWars II correctly detects your Joystick and Mouse, if
+              you have them.
+
+              The 'Sound Hardware' section is perhaps the most interesting
+              of them all. The three 'Covox' ports are not necessarily
+              real, since there is no sure way to detect parallel port DAC
+              devices. But if you DO have a parallel port DAC device, it
+              will be located in one of these Covox addresses. Value 'NONE'
+              means that the BIOS thinks the port does not exist.
+
+              The Sound Blaster row gives the Sound Blaster port address, and
+              in parenthesis the IRQ line, for example (IRQ 5). If LineWars
+              II determined that the card is a Sound Blaster Pro, it will be
+              shown as (Pro I5), where the Ix gives the IRQ line number.
+
+              The next row displays Gravis Ultrasound port address and the
+              amount of DRAM installed on the card. The last row tells the
+              Roland MPU-401 port address, if found. LineWars II tries to
+              detect which Roland version you have by looking at the MPU
+              firmware revision. If the firmware revision equals that of
+              an LAPC-I or an SCC-1, it will be shown in parenthesis.
+
+              The 'COM Ports' section displays your COM port base addresses
+              and UART types. The important thing is to check if LineWars II
+              correctly detects your NS16550A or IBM Type 3 UARTs, which
+              feature a FIFO buffer.
+
+              To exit the SysInfo screen you may press any key or click a
+              mouse button. When you select SysInfo and then return from it,
+              LineWars II hides the configuration options that are not
+              available with your hardware.
+
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto              LineWars II Manual  /  8
+
+                                                    CHAPTER 3 / CONFIGURATION
+          ___________________________________________________________________
+
+
+          Graphics
+
+              When you highlight the 'Graphics' top menu item, you will be
+              presented with the graphics submenu. In this menu you may
+              select the graphics mode you wish LineWars II to use, and
+              the ambient light value.
+
+              MCGA 320 x 200
+
+                   The MCGA mode is the traditional 256-color mode which is
+                   available on every MCGA and VGA card. The graphics are
+                   very fast but blocky due to the very low resolution. If
+                   you have a very slow machine, an MCGA card, or a non-IBM-
+                   compatible VGA card, this is the mode for you.
+
+              VGA  320 x 480
+
+                   This is a non-standard (that is, the BIOS of your display
+                   card does not support it) mode, and thus it requires a
+                   100 % IBM-compatible VGA or SVGA card. This mode is also
+                   quite fast, especially on local bus machines, and it uses
+                   the least amount of main memory of all the graphics modes.
+                   If you have an IBM-compatible VGA card with only 256 KB of
+                   memory, this is the mode for you. Note that it takes a
+                   little while for a monitor to settle to this weird mode.
+
+              VESA 640 x 480
+
+                   This is a very nice mode on SVGA cards with at least 512
+                   kilobytes of memory, because of the high resolution.
+                   However, this mode requires an additional 256 kilobytes of
+                   main memory to run, and your SVGA card must either have a
+                   VESA-compatible BIOS, or you must load a VESA driver for
+                   your SVGA card. Also, since the amount of data to update
+                   on the screen is over four times more than with MCGA,
+                   this mode requires quite a fast machine with a fast SVGA
+                   card and at least a 386 processor.
+
+              S3 Accelerated
+
+                   If you have a Graphics Accelerator SVGA card with an S3
+                   chip and with one megabyte of display memory, you are in
+                   luck. The S3 mode of LineWars II displays spectacular and
+                   fast graphics, and still uses as little main memory as the
+                   VGA mode. This mode requires at least a 386 processor.
+                   Note that in this mode the screen might seem to slightly
+                   'jump' occassionally. This is not a real bug but a feature
+                   having to do with the way I use the memory of the card.
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto              LineWars II Manual  /  9
+
+                                                    CHAPTER 3 / CONFIGURATION
+          ___________________________________________________________________
+
+
+              ATI Mach8/Mach32
+
+                   If you have one of the ATI Ultra family of graphics
+                   accelerator cards, like ATI Ultra, ATI Ultra+ or ATI
+                   Ultra Pro, you are in luck. The ATI mode displays
+                   spectacular and fast graphics, and still uses as little
+                   main memory as the VGA mode. This mode requires at least
+                   a 386 processor and at least one megabyte of display
+                   memory.
+
+              GRAPHDRV.LW2
+
+                   If none of the standard LineWars II graphics modes suit
+                   your hardware, you need to use a separate add-on graphics
+                   driver. This driver needs to be renamed to 'GRAPHDRV.LW2'
+                   and it needs to be in the current directory (the directory
+                   where you are when you start LW2.EXE) for LineWars II to
+                   be able to use it. At the time of this writing there are
+                   two add-on drivers available: HERCULES.LW2 and EGA.LW2
+                   for Hercules Monochrome and EGA, respectively.
+
+              Ambient Light
+
+                   Ambient Light is a Computer Graphics term which means back-
+                   ground light at constant intensity throughout the scene.
+                   In LineWars II this controls the brightness of polygons
+                   that are in shadow. A very low amount of ambient light
+                   would be the most realistic, but it will make the game
+                   harder to play, since you will have trouble seeing ships
+                   that come directly from the sun.
+
+
+          Control
+
+              When you highlight the 'Control' top menu item, you will be
+              presented with the control submenu. In this menu you may
+              select the steering device you wish to use, the scaling
+              factors of the device, and keys to use for Laser and Missile.
+
+              Keyboard
+
+                   If you select Keyboard as your steering device, you will
+                   use the cursor keys (either on the numeric keypad or the
+                   separate inverted-T keys) for steering. The table on the
+                   following page shows the steering keys on the keypad:
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  10
+
+                                                    CHAPTER 3 / CONFIGURATION
+          ___________________________________________________________________
+
+
+                   ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                   ³ (Num Lock)  ³ ( ./. )     ³ ( X )        ³ - SpeedDown ³
+                   ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+                   ³ 7 Dive Left ³ 8 Dive      ³ 9 Dive Right ³             ³
+                   ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´ + Speed Up  ³
+                   ³ 4 Turn Left ³ 5 Stop Turn ³ 6 Turn Right ³             ³
+                   ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+                   ³ 1 Rise Left ³ 2 Rise      ³ 3 Rise Right ³             ³
+                   ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´  ( Enter )  ³
+                   ³ 0 Roll Ship Left          ³ , Roll Right ³             ³
+                   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+              Joystick
+
+                   The joystick has two distinct 'modes', which are selected
+                   with the second fire button.
+
+                   1) If button 2 is UP (not pressed down):
+
+                        - Horizontal stick position controls left and right
+                          turning of the ship.
+
+                        - Vertical stick position controls ship diving and
+                          climbing.
+
+                        - Firebutton 1 fires a laser beam.
+
+                   2) If button 2 is DOWN (pressed down):
+
+                        - Horizontal stick position rolls the ship.
+
+                        - Vertical stick position controls the speed of the
+                          ship.
+
+                        - Firebutton 1 fires a missile, if any ships are
+                          targeted in your crosshairs and you have any
+                          missiles left.
+
+                   Note that using a joystick as a steering device will slow
+                   the game down slightly. This is because accurately reading
+                   the joystick position requires waiting for the joystick
+                   to report the current position, and during this waiting
+                   no other processing can be done. This means also that
+                   Covox and Internal Speaker sound output will be distorted
+                   if you use joystick, and if you use a COM port that does
+                   not have a FIFO support, it is likely that data loss will
+                   occur especially on higher COM port bps rates.
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  11
+
+                                                    CHAPTER 3 / CONFIGURATION
+          ___________________________________________________________________
+
+
+                   LineWars II automatically calibrates the joystick when you
+                   start the game. However, for a succesfull calibration the
+                   joystick needs to be centered when you start LineWars II.
+                   (You may recalibrate the joystick even during the play
+                   by pressing F4, though.)
+
+              Mouse
+
+                   Using a mouse as your steering device will make the cross-
+                   hairs slide on your screen. However, your lasers and
+                   missiles will still be launched directly ahead.
+
+                   The mouse has two distinct 'modes', which are selected
+                   with the rightmost mouse button.
+
+                   1) If the rightmost button is UP (not pressed down):
+
+                        - Horizontal mouse position controls left and right
+                          turning of the ship.
+
+                        - Vertical mouse position controls ship diving and
+                          climbing. You can change the polarity of the
+                          controls using the 'Y Scaling' setting, if you
+                          feel that the default direction is 'backwards'.
+
+                        - Leftmost mouse button fires a laser beam.
+
+                   2) If the rightmost button is DOWN (pressed down):
+
+                        - Horizontal mouse position rolls the ship.
+
+                        - Vertical mouse position controls the speed of the
+                          ship. Move the mouse forward to accelerate, and
+                          move the mouse backward to brake.
+
+                        - Leftmost mouse button fires a missile, if any
+                          ships are targeted in your crosshairs and you
+                          have any missiles left.
+
+              ThrustMaster
+
+                   The best steering device when playing LineWars II is the
+                   ThrustMaster Flight Control System.  With it you can
+                   control almost everything without touching the keyboard.
+                   The controls available when using the ThrustMaster FCS
+                   are described on the following page:
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  12
+
+                                                    CHAPTER 3 / CONFIGURATION
+          ___________________________________________________________________
+
+
+                        - Main Joystick
+                                - Push forward  Ship dives.
+                                - Pull back     Ship rises.
+                                - Turn left     Ship turns left.
+                                - Turn right    Ship turns right.
+
+                        - Top Joystick
+                                - Push forward  Ship accelerates.
+                                - Pull back     Ship brakes.
+                                - Turn left     Ship rolls counterclockwise.
+                                - Turn right    Ship rolls clockwise.
+
+                        - Trigger               Fire a laser beam.
+
+                        - Top thumb button      Launch a missile, if a ship
+                                                is currently in crosshairs
+                                                and you have missiles left.
+
+                        - Middle button         Toggle between forward and
+                                                aft view.
+
+                        - Low button            Teleport to another ship.
+
+                   Note that using a ThrustMaster FCS as a steering device
+                   will slow the game down slightly. This is because
+                   accurately reading the joystick positions requires
+                   waiting for the joystick to report the current position,
+                   and during this waiting no other processing can be done.
+                   This means also that Covox and Internal Speaker sound
+                   output will be distorted if you use ThustMaster FCS,
+                   and if you use a COM port that does not have a FIFO
+                   support, it is likely that data loss will occur
+                   especially on higher COM port bps rates.
+
+                   LineWars II automatically calibrates the ThrustMaster FCS
+                   when you start the game. However, for a succesfull
+                   calibration the joysticks need to be centered when you
+                   start LineWars II. (You may recalibrate the joysticks
+                   even during the play by pressing F4, though.)
+
+              X Scaling
+              Y Scaling
+
+                   If you find the control device to be too sensitive or
+                   not sensitive enough, you can change the sensitivity
+                   with these settings. When you select either 'X Scaling'
+                   or 'Y Scaling', you will be presented a submenu where
+                   you can select the new sensitivity value. The possible
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  13
+
+                                                    CHAPTER 3 / CONFIGURATION
+          ___________________________________________________________________
+
+
+                   options are 0.25, 0.50, 1.00, 2.00 and 4.00. A value of
+                   2.00 will make the controls twice as sensitive as the
+                   default value of 1.00, for example.
+
+                   The menu has also negative values for the sensitivity.
+                   These negative values work just like the positive ones,
+                   but they swap the polarity of the control, too. If you
+                   originally had to turn the stick left to turn left,
+                   and you select X Scaling value of -1.00, you will now
+                   have to turn the stick right to turn left.
+
+                   Note that the steering device sensitivity seems to
+                   change also if you select a lower or faster Game Speed
+                   value. The sensitivity does not actually change, but
+                   since the time of the game will run slower or faster,
+                   the ship will also turn slower or faster. You should
+                   always first select the Game Speed you wish to use, and
+                   only then if the sensitivity of the controls still isn't
+                   right, change the scaling factors.
+
+              Laser Key
+              Missile Key
+
+                   The Laser Key and Missile Key settings let you change
+                   the key you wish to use for firing lasers or launching
+                   missiles, respectively. Of course, if you use joystick
+                   or mouse as your steering device, you need not use either
+                   of these keys, so you most likely need not change them.
+
+                   When you select Laser Key or Missile Key, you will see
+                   a submenu with the possible keys for the setting. The
+                   keys are: Alt, Ctrl, Tab, Caps Lock, Num Lock, Scroll
+                   Lock, Keypad X, and Keypad ./. You may select the key
+                   that seems the most natural to use. The default keys
+                   are Alt for lasers, and Ctrl for missiles. You should
+                   not select the same key for both.
+
+
+          Sound
+
+              The sound menu lets you select all the options conserning
+              music and sound effects playing in LineWars II. The menu is
+              split into four areas. The topmost area lets you select the
+              sound output device. The second area lets you control some
+              additional parameters, depending on the sound output device.
+              The third area lets you control the sound volume, and the
+              bottom area lets you select the song you wish to play in the
+              background while you are playing LineWars II.
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  14
+
+                                                    CHAPTER 3 / CONFIGURATION
+          ___________________________________________________________________
+
+
+              No Sound Output
+
+                   The first sound output device is No Sound Output, which
+                   means you wish not play any music nor hear any sound
+                   effects. This settings uses the least amount of memory,
+                   so you may want to use it if you are very low on memory.
+                   If none of the other sound options are supported by your
+                   hardware and you have not a SOUNDDRV.LW2 for your hard-
+                   ware either, you must also choose this option.
+
+              Covox (8-bit DAC)
+
+                   This option will play the music using a parallel port
+                   DAC output device (see Appendix D for how to build one
+                   yourself). You should also select Port Address and Play
+                   Frequency to suit your hardware, and possibly also the
+                   Timer Handling setting.
+
+                   Playing sound thru a parallel port DAC device uses quite
+                   a lot of CPU power, and it needs 128 kilobytes of memory
+                   to store the digitized instrument and effects samples.
+                   If you have a slow machine and especially if you use a
+                   memory manager like QEMM, you should first try with a
+                   very low Play Frequency, and only if it works reliably
+                   select a higher playing rate. Note that using a joystick
+                   as a control device might cause some distortion to the
+                   parallel port DAC sound output.
+
+              Sound Blaster
+
+                   LineWars II will automatically detect whether you have
+                   an older Sound Blaster (which has only a mono DAC) or
+                   a newer Sound Blaster Pro. If you have a Pro version,
+                   LineWars II can play music in "Enhanced Stereo". The
+                   word "enhanced" means that unlike traditional MOD-player
+                   type programs that support Sound Blaster Pro and play
+                   each of the four channels with only either the left or
+                   the right channel, LineWars II plays all the four music
+                   channels with both the stereo channels. This makes the
+                   music much more enjoyable when using headphones.
+
+                   Since LineWars II plays only MOD-type music using the
+                   digitized sound, it does not utilize the FM chips on a
+                   Sound Blaster. The driver needs 128 kilobytes of memory
+                   to store the digitized instrument and effects samples.
+
+                   Make sure the base Port Address is correct, and select
+                   the highest Play Frequency that your machine can support
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  15
+
+                                                    CHAPTER 3 / CONFIGURATION
+          ___________________________________________________________________
+
+
+                   to get the best possible sound. Note that the Sound
+                   Blaster must use DMA channel 1 for LineWars II to be able
+                   to use it.
+
+              Gravis UltraSound
+
+                   LineWars II will load all instrument and sound effects
+                   samples to the memory of your Gravis Ultrasound, and thus
+                   the driver uses very little main memory. Your UltraSound
+                   card needs only have 256 kilobytes of DRAM memory. The
+                   samples are only 8-bit, so the UltraSound card is not
+                   unfortunately used quite up to it's full potential.
+                   However, since the sound playing is handled totally by
+                   hardware, this sound driver will have almost no effect
+                   on the game speed.
+
+                   Make certain the Port Address is correct. LineWars II
+                   tries to detect the port address based on the ULTRASND
+                   environment variable, but if it fails you need to set
+                   the address yourself.
+
+                   If you have the optional GRAVIS3D.LW2 file, you can
+                   make LineWars II play some of the sound effects using
+                   Focal Point 3D sound. This gives an enhanced sense of
+                   direction to the sounds especially with headphones.
+
+                   Note that you can also use the Sound Blaster sound driver
+                   of LineWars II with your Gravis Ultrasound, but only if
+                   you have loaded SBOS with the -x2 parameter.
+
+              Roland LAPC-I
+
+                   LineWars II will load new patches to your Roland LAPC-I,
+                   MT-32 or compatible synth module when starting. This is
+                   why the game will load a bit slowly when using this
+                   sound device. However, this driver has almost no effect
+                   on the actual game speed.
+
+                   You must have a Roland MPU-401 or compatible Midi
+                   Processing Unit on port address 330h for this driver to
+                   work (the LAPC-I card includes this unit).
+
+              Roland SCC-1
+
+                   You can use this sound driver also if you have a Roland
+                   MPU-401 Midi Processing Unit and any General Midi -
+                   compatible synth module. However, the sound effects that
+                   LineWars II uses are specific to Roland GS standard and
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  16
+
+                                                    CHAPTER 3 / CONFIGURATION
+          ___________________________________________________________________
+
+
+                   thus may not sound correct on other GM synths. The music
+                   will play correctly, though.
+
+                   Make sure you select the correct Port Address, too.
+
+              SOUNDDRV.LW2
+
+                   If none of the standard LineWars II sound drivers suit
+                   your hardware, you may want to use a separate add-on
+                   sound driver. This driver needs to be renamed to
+                   'SOUNDDRV.LW2' and it needs to be in the current
+                   directory (the directory where you are when you start
+                   LW2.EXE) for LineWars II to be able to use it. At the
+                   time of this writing there is available a driver for
+                   PC internal speaker, named SPEAKER.LW2.
+
+              Port Address
+
+                   Many of the sound output devices may exist in a variety
+                   of I/O port addresses. You can tell LineWars II on which
+                   port address your device is with this configuration
+                   setting. You should have selected SysInfo before changing
+                   the port address, to let LineWars II check the available
+                   port addresses that you may select.
+
+              Play Frequency
+
+                   If you play music thru a parallel port DAC or thru a
+                   Sound Blaster, you may select the sound mixing speed
+                   with this setting. Lower rates will take less CPU time
+                   but will generally sound not as good as the higher
+                   rates.
+
+              Timer / Stereo / 3D
+
+                   If you have selected Covox (parallel port DAC) output
+                   device, you may select if you want the timer interrupt
+                   replaced or chained to. Normally you should select the
+                   'Replace' option. Only if some TSR programs fails to
+                   run correctly, you should select the 'Chain' option.
+                   No matter which one you select the DOS clock will be
+                   kept on time.
+
+                   If you have selected Sound Blaster output device and you
+                   have a Sound Blaster Pro, you may select whether you wish
+                   to use Enhanced or Standard stereo mode. Enhanced stereo
+                   takes slightly more CPU time, but it will sound nicer
+                   when using headphones.
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  17
+
+                                                    CHAPTER 3 / CONFIGURATION
+          ___________________________________________________________________
+
+
+                   If you have select Gravis Ultrasound output device, you
+                   can toggle between using Focal Point 3D effect (requires
+                   a GRAVIS3D.LW2 file) and standard sound effects.
+
+              Music Volume
+              SoundFX Volume
+
+                   You can select the sound output volumes separately for
+                   music and sound effects. The volume may range from OFF
+                   to 120 %. Note that values over 100 % will overdrive
+                   some of the sound devices, which may cause distortion
+                   to the sound.
+
+
+          Comms
+
+              In the Communications submenu you can select the device you
+              want to use in the two-player or multi-player missions. You
+              may freely skip this submenu if you plan to only play the
+              single-player missions.
+
+              To play LineWars II in Duel Mode or Wing Mode requires a COM
+              port communications device. To play the Group War or Star Wars
+              missions, you must use either a Shared File communications
+              device.
+
+              No Comms Device
+
+                   If you select this option, you can only play LineWars II
+                   in single-player mode, or you must give all of the COM
+                   parameters on command line if you want to use the two-
+                   player missions.
+
+              COM Port 1
+              COM Port 2
+              COM Port 3
+              COM Port 4
+
+                   You should select one of these COM ports if you wish to
+                   use the two-player missions (Duel Mode and Wing Mode)
+                   in LineWars II. Select the port your modem or null-cable
+                   is connected to.
+
+
+
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  18
+
+                                                    CHAPTER 3 / CONFIGURATION
+          ___________________________________________________________________
+
+
+                   LineWars II uses the standard base port addresses and
+                   IRQ lines for the COM ports. The standard values are:
+
+                              ÚÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄ¿
+                              ³ Port ³ Base ³ IRQ ³
+                              ÃÄÄÄÄÄÄÅÄÄÄÄÄÄÅÄÄÄÄÄ´
+                              ³ COM1 ³ 3F8h ³  4  ³
+                              ³ COM2 ³ 2F8h ³  3  ³
+                              ³ COM3 ³ 3E8h ³  4  ³
+                              ³ COM4 ³ 2E8h ³  3  ³
+                              ÀÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÙ
+
+                   If your COM port uses a non-standard base port address
+                   or IRQ line, you will have to give the correct base port
+                   and IRQ line on a command line while starting LineWars II.
+                   (See the section on command line parameters for more info
+                   about this).
+
+                   After you have selected the correct COM port you should
+                   select the line speed, handshaking and FIFO options for
+                   the port.
+
+              Shared File
+
+                   If you plan to play LineWars II in multi-player mode and
+                   you have a network system that supports file sharing, you
+                   can use this communications device.
+
+                   You must also select the directory ("Network Dir") where
+                   LineWars II will create the node files that are used for
+                   communication between the nodes. This directory must be
+                   physically the same location for all the nodes in one
+                   game. The recommended location is a RAMdrive on a network
+                   server. If your network does not have a dedicated server,
+                   you might try using the disk of the slowest computer
+                   (if accessing a local disk is faster than accessing a
+                   remote disk) or the faster computer (if accessing a
+                   remote disk is faster).
+
+                   If you experience problems with this communications
+                   device, first make sure that SHARE.EXE is loaded,
+                   especially on the server machine. See your DOS manual
+                   or online documentation on more info about loading
+                   SHARE.EXE.
+
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  19
+
+                                                    CHAPTER 3 / CONFIGURATION
+          ___________________________________________________________________
+
+
+              Line Speed
+
+                   You can select the connection line speed to suit your
+                   modem between 1200 and 115200 bps. Note that the slowest
+                   recommended line speed is 9600 bps. Slower lines will
+                   work, but the movement of your opponent's ship will be
+                   somewhat jerky.
+
+                   If you have a direct cable to another computer, you can
+                   select the highest rate of 115200 bps. LineWars II has
+                   a very fast COM port routine which will most likely be
+                   quite reliable at this speed even on slower machines.
+
+                   You can also select "Use Current", which instructs
+                   LineWars II not to change the current line speed of the
+                   COM port. This is most usefull when you start LineWars II
+                   under a comms program after you have dialed your friend.
+
+              Handshaking
+
+                   LineWars II can use CTS/RTS hardware handshaking to
+                   prevent data overrun errors on slower modems. If you
+                   use a direct cable connection, you do not need to turn
+                   the handshaking on. If you have enabled the handshaking,
+                   your modem must be able to receive data (CTS signal must
+                   be high) when you start LineWars II.
+
+              FIFO Options
+
+                   If your COM port has NS16550A or IBM Type 3 UART, you
+                   can enable the FIFO queue to prevent data loss. This
+                   is especially effective if you use a joystick.
+
+                   You can select the FIFO queue length to be either
+                   2, 8, 14 or 16 bytes, or you can disable the queue.
+                   You have to test which queue length produces the
+                   most reliable connection.
+
+              Network Dir
+
+                   If you use the Shared File communications device, you
+                   must give the location of the common directory where
+                   the node files will be created.
+
+
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  20
+
+                                                    CHAPTER 3 / CONFIGURATION
+          ___________________________________________________________________
+
+
+          Gaming
+
+              In the Gaming submenu you can select the default mission (the
+              cursor will be positioned on this mission when you start LW2
+              without parameters), the virtual speed of the game, and your
+              call sign (for two-player and multi-player missions).
+
+              Default Game
+
+                   Demonstration
+
+                   If you select this as the default option, you will see
+                   the demo game when you press Enter in the LW2 main menu
+                   without making a selection. You may join the battle in
+                   the demonstration by first pressing the F3 key.
+
+                   Asteroid Storm
+                   The First Blood
+                   Princess Escort
+                   Pirate Ambush
+                   Disable a Base
+                   Defend the Base
+                   The Convoy
+                   Freedom Fight
+                   Final Battle
+
+                   These are the single-player missions. Each mission has a
+                   separate high score, and you may play the missions in
+                   whichever order you wish.
+
+                   Duel Mode (COM)
+                   Wing Mode (COM)
+
+                   These are the two-player missions. You must use a COM
+                   port with these missions.
+
+                   Group War (NET)
+                   Star Wars (NET)
+
+                   These are the multi-player missions. You must the Shared
+                   File communications device with these missions.
+
+
+
+
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  21
+
+                                                    CHAPTER 3 / CONFIGURATION
+          ___________________________________________________________________
+
+
+              Game Speed
+
+                   With the Game Speed setting you can select the virtual
+                   speed of the game to suit your reflexes and skills. The
+                   speed can be set to be between 50 % and 233 % of the
+                   default speed. The speed of the CPU or the framerate
+                   does not affect the speed and movements of the ships,
+                   it just affects how smoothly the ships move. If you select
+                   a high Game Speed setting on a slow computer, the game has
+                   to move the ships a long distance between each frame,
+                   which will cause jerky movements. A low Game Speed on a
+                   fast machine will make the ships move very slowly and
+                   smoothly. If your machine is too slow for a certain game
+                   speed setting, you will see the FPS indicator flashing a
+                   'SLOW' text from time to time.
+
+              Call Sign
+
+                   You can type your call sign, up to 16 characters, which
+                   will be used to identify your ships in the two-player
+                   and multi-player missions.
+
+
+          Exit
+
+              Selecting Exit will save the current configuration settings
+              into LW2U.DAT and exit from the configuration program. You can
+              also perform Exit at any time by pressing Esc. Note that there
+              is no way to quit without saving the configuration.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  22
+
+                                              CHAPTER 4 / PLAYING LINEWARS II
+          ___________________________________________________________________
+
+
+
+          CHAPTER 4 / PLAYING LINEWARS II
+
+
+          After you have configured LineWars II for your hardware, you are
+          ready to start playing the game. This chapter describes your
+          options for starting the game, the layout of the cockpit of your
+          Cobra spaceship, the keys and controls in the game, and finally
+          the goal and story of the first missions.
+
+
+          Starting Without Parameters
+
+              If you start LineWars II without giving any command line
+              parameters, you will see the main menu. The main menu screen
+              looks somewhat like this:
+
+          ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+          ³ LineWars II      Copyright 1994 Safari Software & Patrick Aalto ³
+          ³                  Version 1.02        Made in Finland 06.03.1994 ³
+          ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+          Ú DISTRIBUTED BY ¿ÚÄ SELECT MISSION TO PLAY ÄÄ¿ÚÄÄÄ THE AUTHOR ÄÄÄ¿
+          ³ Safari Software³³ Configure LineWars II     ³³ Patrick Aalto    ³
+          ³ 10406 Holbrook ³³ View Demonstration        ³³ Hiekkapohjan     ³
+          ³ Drive, Potomac ³³ "Asteroid Storm"     (1)  ³³ koulu,           ³
+          ³ MD 20854       ³³ "The First Blood"    (2)  ³³ 40270 PALOKKA    ³
+          ³ U.S.A.         ³³ "Princess Escort"    (3)  ³³ FINLAND          ³
+          ³ 301-738-2349   ³³ "The Pirate Ambush"  (4)  ³³ E-mail: ap@jyu.fi³
+          ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ³ "Disable the Base"   (5)  ³ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+          ÚÄ UNREGISTERED Ä¿³ "Defend the Base"    (6)  ³ÚÄ SPECIAL THANKS Ä¿
+          ³ Please register³³ "Destroy the Convoy" (7)  ³³ Borland Inc, Ralf³
+          ³ your copy of   ³³ "Fight for Freedom"  (8)  ³³ Brown, Mark Cox, ³
+          ³ LineWars II !! ³³ "The Final Battle"   (9)  ³³ R.Ferraro, Themie³
+          ³ Finns may regis³³ Duel Mode (modem game)    ³³ Gouthas,Marko Hap³
+          ³ ter via author,³³ Wing Mode (modem game)    ³³ ponen, Kim Heino,³
+          ³ others please  ³³ Group War (network game)  ³³ S3 Incorporated, ³
+          ³ contact Safari.³³ Star Wars (network game)  ³³ Tim Sweeney, U4ia³
+          ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+          ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+          ³ Please see the documentation file "LW2.DOC" for more details.   ³
+          ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+              The main menu screen displays the version number of your copy
+              of Linewars II, the copyright information and the date when
+              LineWars II was last compiled (in DD.MM.YYYY format). On both
+              sides of the mission menu are some possibly usefull info,
+              like contact addresses for Safari Software and me.
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  23
+
+                                              CHAPTER 4 / PLAYING LINEWARS II
+          ___________________________________________________________________
+
+
+              The menu bar will be positioned on whichever mission you have
+              chosen as the default mission in LineWars II Configuration.
+
+              To choose the mission you wish to play (or to configure your
+              copy of Linewars II) you can move the menu bar with up and down
+              arrow keys, and select the mission with pressing Enter. If you
+              wish to quit LineWars II at this point, you can press ESC.
+
+              If you have your mouse driver loaded, you can also select the
+              mission by moving the mouse pointer (and thus the menu bar)
+              on top of the mission you wish to play and clicking the left
+              mouse button. Clicking the right mouse button will quit LW2.
+
+              After you have chosen your mission, LineWars II loads the
+              driver overlays and other data from LW2U.DAT and then begins
+              to run the intro.
+
+              When you start LineWars II without any command line parameters,
+              all the configuration options you have selected are in effect.
+
+
+          Command Line Parameters
+
+              It is possible to override some of the configuration settings
+              you have given in LineWars II Configuration by giving the new
+              setting on the command line. If you give any parameters on the
+              command line, the main menu is not displayed and LineWars II
+              goes directly into the intro screen. There are five distinct
+              groups of command line parameters that LineWars II recognizes.
+              You can:
+
+                   1) Start the LineWars II Configuration program,
+
+                   2) Select the mission you wish to play,
+
+                   3) Select the graphics mode you wish to use,
+
+                   4) Select the control device you wish to use, and
+
+                   5) Select the COM port options for two-player missions.
+
+              The table on the following page summarizes the command line
+              parameters and displays the shortest abbreviations that are
+              recognized. Note that you cannot setup the sound options or
+              multi-player options on the command line. Use the LineWars II
+              configuration to setup these.
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  24
+
+                                              CHAPTER 4 / PLAYING LINEWARS II
+          ___________________________________________________________________
+
+              ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+              ³ Parameter    ³ Abbreviation ³ Meaning                       ³
+              ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+              ³ CFG          ³ CF           ³ Linewars II Configuration     ³
+              ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+              ³ DEMO         ³ DE           ³ Play the Demonstration game   ³
+              ³ GAME n       ³ G n          ³ Play the Mission number n,    ³
+              ³              ³              ³ where n is 1, 2, ... , 9      ³
+              ³ DUEL         ³ DU           ³ Play the Duel Mode mission    ³
+              ³ WING         ³ WI           ³ Play the Wing Mode mission    ³
+              ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+              ³ MCGA         ³ MC           ³ Use MCGA graphics mode        ³
+              ³ VGA          ³ VG           ³ Use VGA graphics mode         ³
+              ³ VESA         ³ VE           ³ Use VESA graphics mode        ³
+              ³ S3           ³ S3           ³ Use S3 graphics mode          ³
+              ³ ATI          ³ AT           ³ Use ATI graphics mode         ³
+              ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+              ³ KEYBOARD     ³ K            ³ Use keyboard for steering     ³
+              ³ JOYSTICK     ³ J            ³ Use joystick for steering     ³
+              ³ MOUSE        ³ MO           ³ Use mouse for steering        ³
+              ³ FCS          ³ F            ³ Use ThrustMaster FCS controls ³
+              ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+              ³ PORT n       ³ P n          ³ Use COM port number n, where  ³
+              ³              ³              ³ n is 1, 2, 3 or 4             ³
+              ³ PORTX b,i    ³ PX b,i       ³ Use a non-standard COM port,  ³
+              ³              ³              ³ where b is the base address   ³
+              ³              ³              ³ (in HEX) and i is the IRQ     ³
+              ³              ³              ³ line, as in PORTX 3E8,5       ³
+              ³ BAUD n       ³ B n          ³ COM port bps rate, where n    ³
+              ³              ³              ³ is 1200, 2400, ... , 115200   ³
+              ³ CTS          ³ CT           ³ Use CTS/RTS handshaking       ³
+              ³              ³              ³                               ³              
+              ³ NOCTS        ³ N            ³ Disable CTS/RTS handshaking   ³              
+              ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+              You may give the parameters in either upper or lower case, and
+              multiple parameters may be in any order.
+
+              The command line parameters are most usefull when you start
+              LineWars II under a comms program. You can configure LineWars
+              II as an add-on transfer protocol to your comms program, and
+              then create a batch file that tells the current COM port number
+              and BPS rate to LineWars II on the command line. When the comms
+              program runs the batch file, LineWars II will load and use the
+              correct COM port settings.
+
+              Other use for the command line parameters is to automatically
+              skip the main menu. If you give the graphics mode on the
+              command line, LineWars II works just like if you had given the
+              mode in LineWars II Configuration, but skips the menu.
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  25
+
+                                              CHAPTER 4 / PLAYING LINEWARS II
+          ___________________________________________________________________
+
+
+          The Intro
+
+              When you have selected the mission you wish to play (either
+              from the main menu or from the command line), LineWars II
+              begins to run the intro. The intro screen displays a looping
+              'planet flyby' animation and a scrolling intro text for the
+              mission you are about to start.
+
+              You can skip the intro by pressing Enter, and you can quit
+              LineWars II at this point by pressing ESC. If you are using
+              a joustick or mouse, you can also skip the intro using the
+              fire button or the left mouse button.
+
+              Note however that it is not possible to skip the intro when
+              using a two-player mission, because in these missions
+              LineWars II tries to establish connection to the other
+              computer during the intro. The game will start immediately
+              after a connection is made.
+
+              The 'planet flyby' animation displays our solar system as
+              it would be seen from a comet or a probe flying in a highly
+              elliptical orbit. The camera of the probe is constantly
+              pointed towards Jupiter. Note that even though the orbits
+              of the planets are relatively correct, the sizes of the
+              planets and sun are greatly exaggerated.
+
+              It is a good idea to read the scrolling text thru at least
+              once, to get an idea of what the mission is all about.
+
+
+          The Cockpit
+
+              When the mission you have chosen begins, you will be sitting at
+              the controls of your spaceship.
+
+              The cockpit consists of several distinct areas. On the top is
+              the logo text. The biggest area in the middle is the Main
+              Viewer Screen, which is like a window to space. On the left
+              and right borders of the Main Viewer are Ship Systems Status
+              indicators. The wide area below the Main Viewer and below the
+              registration text is for messages received from other friendly
+              ships. On the bottom left corner is the Ship Speed Indicator,
+              beside which is the Info Screen, which can show various
+              information, selected with the F1 key. On the bottom right
+              side is the Radar Screen, which includes Ship Class Counters.
+              On the bottom middle is the Shield and Armour Status Indicator,
+              and on top of it you can see which ship you are currently
+              controlling.
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  26
+
+                                              CHAPTER 4 / PLAYING LINEWARS II
+          ___________________________________________________________________
+
+
+              The Cockpit looks somewhat like this:
+
+          ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+          ³L i n e W a r s   I I   b y   P a t r i c k   A a l t o   1 9 9 4³
+          ³    ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿    ³
+          ³    ³                                                       ³    ³
+          ³    ³                                                       ³    ³
+          ³    ³                                                       ³    ³
+          ³    ³                                                       ³    ³
+          ³    ³                                                       ³    ³
+          ³    ³                           ³                           ³    ³
+          ³    ³                        ÄÄ   ÄÄ                        ³    ³
+          ³    ³                           ³                           ³    ³
+          ³    ³                                                       ³    ³
+          ³Lasr³                                                       ³Radr³
+          ³Misl³                                                       ³Comm³
+          ³Shld³                                                       ³Hull³
+          ³Thrs³                                                       ³Ctrl³
+          ÃÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄ´
+          ³View³          R e g i s t e r e d   V e r s i o n          ³Misl³
+          ³Fore³                                                       ³3   ³
+          ÃÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄ´
+          ³ Messages from other Cobras are shown here.                      ³
+          ÃÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄ´
+          ³ÛÛÛÛ³ Info Screen, which  ³CONTROLLING³Long Range 3D Scanner³    ³
+          ³ÛÛÛÛ³ can be selected with³  COBRA 1  ³   ______    Friend  ÃÄÄÄÄ´
+          ³ÛÛÛÛ³ F1 key to display   ÃÄÄÄÄÄÄÄÄÄÄÄ´  /      \   2       ³    ³
+          ³ÛÛÛÛ³ score page, keyboard³  Shield & ³ ³ Radar  ³  Foe     ÃÄÄÄÄ´
+          ³ÛÛÛÛ³ help, radar help, or³  Armour   ³ ³ Screen ³  2       ³Time³
+          ³KM/H³ memory status page. ³  Status   ³  \______/   Other   ÃÄÄÄÄ´
+          ³3250³                     ³ Indicator ³             10      ³FPS ³
+          ÀÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÙ
+
+              Main Viewer Screen
+
+                   The Main Viewer Screen displays a 3D representation of
+                   space either in front of your ship or behind your ship.
+                   The F2 key toggles between Fore View and Aft View. You
+                   can see which view you are currently using from the
+                   ship system status indicator on the left border, beside
+                   the big 'Registered Version' or 'Unregistered Shareware
+                   Version' text. The status indicator shows either 'Fore'
+                   or 'Rear'.
+
+                   On the fore view you have crosshairs which you can use to
+                   aim your lasers and target your missiles. Your ship is
+                   equipped with a Target Identification Computer, which
+                   can display the distance to the object, the speed of the
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  27
+
+                                              CHAPTER 4 / PLAYING LINEWARS II
+          ___________________________________________________________________
+
+
+                   object, the general class of the object and whether it
+                   is 'Friend', 'Foe' or 'Other'. This data will be shown
+                   if you have an object targeted on your crosshairs and it
+                   is near enough. The data might display the CallSign of
+                   the ship captain if you play a two-player or multi-player
+                   mission.
+
+              Info Screen
+
+                   The Info Screen has four pages which you can select with
+                   the F1 key. The first page, which is displayed when you
+                   start LineWars II, tells a short description of the
+                   mission (in single-player missions), and your scores.
+                   In two-player and multi-player missions this screen also
+                   has a chat window, where the text you type and the texts
+                   other players have typed will be shown. Thus you may chat
+                   in the middle of the game.
+
+                   The second page displays help for some keys that can be
+                   used in the game.
+
+                   The third page displays a quick reference for how to
+                   interpret the 3D radar screen.
+
+                   The fourth page displays the memory status. It shows how
+                   much memory LineWars II uses for code, data and stack
+                   (this info is mostly for my debugging purposes), how much
+                   memory the overlay drivers use, how much additional data
+                   memory is used, and how much memory is still free.
+
+              Radar Screen
+
+                   This circular display, divided into two sections, show
+                   how much you have to turn to bring a target into your
+                   crosshairs. Radar contacts are displayed as dots. A dot
+                   in the outermost ring represents a ship behind you. If
+                   a dot is in the middle of the inner circle, the ship is
+                   directly in front of you.
+
+                   The color of each dot indicates what it is: red is for
+                   an enemy ship, blue for a friendly ship, and gray for
+                   other objects (like asteroids). The shade of the dot
+                   indicates it's range: the brighter the dot, the closer
+                   to you it is. If a ship has just shot you, it is shown
+                   in bright yellow.
+
+                   In the radar screen are also counters for friendly, enemy
+                   and other ships. They show how many ships of each type are
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  28
+
+                                              CHAPTER 4 / PLAYING LINEWARS II
+          ___________________________________________________________________
+
+
+                   in your vicinity. If the number of friendly ships gets to
+                   zero, you have lost the battle, and if the number of enemy
+                   ships gets to zero, you have obviously won.
+
+              Shield and Armour Status Indicator
+
+                   This indicator displays the status of your fore and aft
+                   deflector shields (which protect your ship from lasers)
+                   and the armour around your ship (which protect you in
+                   collisions and missile hits, and also from lasers if
+                   your shields are exhausted). The shield indicators have
+                   the words 'Fro' and 'Aft' beside them. Green color means
+                   healthy shields and armour, red color means exhausted
+                   shields or damaged armour.
+
+                   Your shields recharge when not under fire, but if your
+                   armour gets damaged it doesn't regenerate. If the Shield
+                   Generator of your ship is damaged, your shields can only
+                   charge up to 25 % of their maximum value.
+
+                   If your shields and armour are very low, your ship systems
+                   may get damaged under enemy fire.
+
+              Ship Systems Status
+
+                   The Ship System Status indicators are the eight warning
+                   lights on the left and right border of your Main Viewer
+                   Screen. From top to bottom and left to right, these show
+                   the status of your Lasers, Missile Launcher, Shield
+                   Generator, Thrusters, Radar System, Communications
+                   System, Ship's Hull and Steering Controls. If any of
+                   these systems is damaged, the corresponding warning
+                   light will show a yellow text on a red background.
+
+                   If your lasers are damaged, they fire only occasionally.
+                   If your missile launching system is damaged, you cannot
+                   launch missiles. If the shield generator is damaged, your
+                   shield will only charge to upo to 25 % of their maximum
+                   value. If your thrusters are damaged, the maximum speed
+                   of your ship will be 500 km/h. If your radar is damaged,
+                   no radar contacts will be shown, but the radar can still
+                   detect the number of ships in your vicinity. If your
+                   communications system is damaged, you cannot receive
+                   messages. If the hull is damaged, the status of your
+                   ship is critical, since the next hit that reaches to the
+                   hull will rupture it and destroy your ship. Lastly, if
+                   the steering controls are damaged, your ship will jerk
+                   slightly from side to side.
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  29
+
+                                              CHAPTER 4 / PLAYING LINEWARS II
+          ___________________________________________________________________
+
+
+              Other Indicators
+
+                   Besides the aforementioned groups, there are five more
+                   indicators. On the bottom left side is the speed
+                   indicator. It shows the current speed of your ship in
+                   kilometres per hour.
+
+                   On the right side, below the Main Viewer screen is the
+                   missile counter. It shows how many missiles your ship
+                   has left.
+
+                   On the bottom right corner is the Frames Per Second
+                   counter. It gets updated every second, and it counts how
+                   many frames was drawn during the previous second. If
+                   your computer is too slow for the game (in the current
+                   configuration), the indicator will flash a 'SLOW' text.
+                   You should not play the game if this happens a lot, since
+                   it means that LineWars II has to skip more than five
+                   frames per every frame it draws to stay in real time, so
+                   the movement of the ships will be very jerky.
+
+                   Above the FPS indicator is the clock. It shows the
+                   current DOS time in HHMM format.
+
+                   Above the Shield and Armour Indicator is an indicator
+                   that shows which ship you are currently controlling.
+                   You can teleport to another ship at any time during the
+                   game with the F3 key. When you teleport, the ship you
+                   were controlling will be controlled by the computer, and
+                   you will control the ship you just teleported into.
+
+
+          Controlling Your Ships
+
+              LineWars II is unique in that instead of controlling just one
+              ship, as in most other space arcade games, you can control a
+              whole fleet of friendly ships (in most of the missions). This
+              is accomplished with a feature called 'teleporting'. Since
+              you obviously can only control one ship at a time with your
+              joystick, mouse or keyboard, you need to be able to quickly
+              select a ship that you wish to control in any particular time.
+
+              To 'teleport' from ship to ship, you use the F3 key (or if
+              you have a ThrustMaster FCS, the lowest button). When you
+              press the key, you are instantly teleported to another ship,
+              which you can now control, and the ship you just left is
+              given over to the computer.
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  30
+
+                                              CHAPTER 4 / PLAYING LINEWARS II
+          ___________________________________________________________________
+
+
+              The biggest difference between controlling a ship yourself and
+              letting the computer to control the ship, is that the computer
+              cannot launch missiles. Since neither the enemy computer-
+              controlled ships, nor the friendly computer-controlled ships
+              can launch missiles, you have a clear advantage. To make most
+              of this advantage, it is often wise to teleport quickly from
+              ship to ship and launch all three missiles of the ship to
+              different targets.
+
+              The basic steering controls which you can use are as follows:
+                   - Dive
+                   - Climb
+                   - Turn left
+                   - Turn right
+                   - Rotate counterclockwise
+                   - Rotate clockwise
+                   - Increase speed
+                   - Decrease speed
+              The way these controls are activated depends on the steering
+              device you have selected. Look at the 'Control' section in the
+              'Configuration' chapter for detailed info.
+
+              You have two weapons systems on your ship, lasers and missiles.
+              Lasers are most effective against capital ships and asteroids,
+              and since they constantly recharge, you have unlimited
+              ammunition for them. Against fighters the missiles are more
+              effective, however, since the fighters have good deflector
+              shielding but only a light armour. All the ships can carry a
+              maximum of three missiles only.
+
+              You can launch a missile, if you have any left, when the
+              Target Identification Computer data is displayed on your
+              crosshairs, for the target you wish to launch the missile to.
+
+              The lasers are always sent directly ahead from your ship,
+              and they will hit the nearest target ahead of you. Since the
+              deflector shielding of many of the ships reaches a bit
+              beyond the physical size of the ship, sometimes the laser
+              blast will hit the ship even if it is not aimed quite directly
+              towards the ship. It can take quite a few laser hits before
+              the target is destroyed, since the deflector shielding of the
+              target constantly recharges when the ship is not under fire.
+
+
+          The Demonstration
+
+              The first 'mission' you can choose is the demonstration game.
+              In this mission you don't need to do anything, you can just
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  31
+
+                                              CHAPTER 4 / PLAYING LINEWARS II
+          ___________________________________________________________________
+
+
+              watch the computer play against itself. You can study this
+              mission to see how the computer plays. Since even the ship you
+              are looking from is controlled by the computer, you can easily
+              see what sort of tactics the computer uses.
+
+              If you get bored to watch the enemy ships beat your friendly
+              ships (although it is not at all certain this will always
+              happen), you can 'teleport' into one of your friendly ships
+              and control it. Since there are no scoring in this mission,
+              you can practice the game leisurely using this mission.
+
+              If you win (all the enemy ships are destroyed) or if you lose
+              (all your ships are destroyed), the demonstration will restart.
+              Note that if you wish to continue controlling a ship, you must
+              'teleport' again after the restart.
+
+
+          Single Play Missions
+
+              When the single play mission you have selected begins, it will
+              start with the easiest difficulty level. This means that with
+              a bit of practice you should not have a lot of trouble
+              winning the game. ("The Final Battle" may seem a bit hard at
+              first, though...)
+
+              In all the single play missions your job is to destroy all the
+              enemy ships before either all of your ships (in some of the
+              missions), or a certain ship you must protect (in other
+              missions) gets destroyed.
+
+              Your score will increase per every destroyed ship, either by
+              you or by your computer co-pilots. The score indicator will
+              show your current score, the best score your have got within
+              this run, and the best score you have ever had on this mission.
+
+              If you win the game, your mission will restart, but this time
+              it will be a bit more difficult. Usually this means that there
+              are more enemy ships that you must destroy. On some missions
+              also the number of friendly ships will increase when the
+              difficulty level increases.
+
+              If you lose the game, your current score will get to zero and
+              the game will restart from the easiest difficulty level. If
+              you get thru all the difficulty levels of a mission, you will
+              see a lead-in text to the next mission.
+
+              If you get enough of the game, press ESC and the game will
+              exit to the main menu (if you started without command line
+              parameters).
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  32
+
+                                              CHAPTER 4 / PLAYING LINEWARS II
+          ___________________________________________________________________
+
+
+          Duel Mode
+
+              To play the duel mode you need to have a modem or a direct
+              serial cable connecting two computers. Both players need to
+              have a copy of LineWars II on their machines. Before you
+              start the duel mode, first use 'LineWars II Configuration'
+              to setup the correct COM port, communications speed, hand-
+              shaking method, FIFO options, and preferably also CallSign.
+
+              If you use a modem, before you start LineWars II you need
+              to call your friend using a communications program. When
+              you have connected, exit (or jump to DOS shell from) the
+              communications program, and start LineWars II. Select the
+              Duel Mode from the main menu, and look at the intro until
+              LineWars II has made a connection with the copy running
+              at the other machine.
+
+              When the connection is made, the game will begin. You have
+              two ships that you can control, and so does your opponent.
+              You must shoot the ships of the opponent to win the game.
+              No missiles are available in this mission.
+
+              The score page displays the victories and losses of both
+              you and your opponent. Naturally you should try to get as
+              many victories and as few losses as possible.
+
+              You can also chat while you are playing. The character keys
+              you press will be sent to your opponent, and also displayed
+              on your screen. Note that the keyboard layout is US, and it
+              cannot be changed with language-specific keyboard drivers
+              like KEYBUK, KEYBSU etc.
+
+              The game will end if either of the players presses ESC, or
+              if the connection is lost.
+
+
+          Wing Mode
+
+              The Wing Mode is similar to the Duel Mode, but instead of
+              fighting against your friend, you will fight with him/her
+              against two computer-controlled enemy ships.
+
+              The score page shows the victories/losses ratio of all the
+              four ships.
+
+              If either you or your wingman gets destroyed, the game will
+              restart.
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  33
+
+                                              CHAPTER 4 / PLAYING LINEWARS II
+          ___________________________________________________________________
+
+
+          Group War
+
+              The Group War mission requires that you use a 'Shared File'
+              communications device and you use a network. Before you can
+              start the mission, you need to configure LineWars II to use
+              this communications device. Look at the detailed info in the
+              relevant sections in the 'Configuration' chapter.
+
+              When you start the mission, the game will start immediately,
+              without any intro. You will have two ships to control, and so
+              do all of the other players. One by one the other players (up
+              to seven) can pop into the game.
+
+              You need to destroy as many enemy ships as possible to get the
+              best score. You can of course try to create alliances, but the
+              computer-controlled ships will still attack any ships they can.
+
+              You can also chat while you are playing, but note that the
+              messages you receive may seem garbled if more than one person
+              transmits at the same time.
+
+
+          Star Wars
+
+              This mission is similar to the Group War mission, but instead
+              of 'all-against-all' battle, all of the human players are on
+              the same side, fighting against computer-controlled enemy
+              ships.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  34
+
+                                      APPENDIX A / LINEWARS II ERROR MESSAGES
+          ___________________________________________________________________
+
+
+
+          APPENDIX A / LINEWARS II ERROR MESSAGES
+
+
+          There are several error messages LineWars II may give in case it
+          encounters a problem. Some of these messages may be given by
+          LineWars II kernel code, others may be given by an overlay code
+          (graphics and sound drivers are overlays, for example). The most
+          common error messages are explained here in alphabetical order.
+
+
+          ATIDRV ERROR: 800x600 mode with 256 colors not available !
+
+              LineWars II could not initiate the accelerated 800x600
+              ATI graphics mode. Either you don't have enough display
+              memory (a full megabyte is needed), or the BIOS of your
+              display card is not compatible with a real ATI card.
+
+
+          ATIDRV ERROR: ATI driver requires a 386 or better CPU !
+
+              You are attempting to run LineWars II in ATI mode on a
+              computer that does not have a 386 or i486 processor.
+
+
+          ATIDRV ERROR: ATI Mach8 or Mach32 accelerator not found !
+
+              You are attempting to run LineWars II in ATI accelerated
+              graphics mode, but you don't have an ATI Graphics Ultra,
+              ATI Graphics Ultra+ or ATI Graphics Ultra Pro display
+              card.
+
+
+          BLASTDRV ERROR: Base address differs from BLASTER=Axxx !
+
+              You have given a Sound Blaster base port address which
+              differs from that in the 'BLASTER=' environment variable.
+              BLASTDRV cannot determine which one is correct and cannot
+              continue. Either correct the port address in LineWars II
+              Configuration, or fix the 'BLASTER=' environment variable.
+
+
+          BLASTDRV ERROR: Not enough memory for DMA buffers !
+
+              This message may be given by the Sound Blaster driver,
+              if there is not enough free memory to allocate a DMA
+              transfer buffer. Try to free more memory, or lower the
+              output frequency.
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  35
+
+                                      APPENDIX A / LINEWARS II ERROR MESSAGES
+          ___________________________________________________________________
+
+
+          BLASTDRV ERROR: SoundBlaster did not reset !
+
+              This message may be given by the Sound Blaster driver,
+              if the Sound Blaster card does not respond to a reset
+              command.  This is most likely due to an invalid port
+              address.  This may also happen if some badly written
+              program has left your Sound Blaster into a mixed-up state.
+
+
+          BLASTDRV ERROR: Unsupported DMA channel in BLASTER=Dx !
+
+              Sound Blaster driver supports only DMA channel 1, and the
+              'BLASTER=' environment variable has a different setting.
+              If you want to use LineWars II with Sound Blaster sound,
+              you must configure your Sound Blaster for DMA channel 1.
+
+
+          DUELDRV ERROR: CTS/RTS handshake enabled, but CTS signal is low !
+
+              You have enabled CTS/RTS handshake in LineWars II
+              Configuration or from the command line, and the
+              ClearToSend (CTS) signal was low when you started
+              LineWars II in Duel Mode. LineWars II needs to be
+              able to send data immediately when it starts, thus
+              the CTS signal must be high (active).
+
+
+          DUELDRV ERROR: No COM port communications device selected !
+
+              You are attempting to run LineWars II in a two-player mode,
+              but you have not selected a COM port. Run the configuration
+              and select the required Comms settings.
+
+
+          Error loading graphics driver code!
+
+              LineWars II kernel could not load the graphics driver
+              code from 'LW2.EXE'. This may be due to a corrupt
+              LW2.EXE, you may have specified a graphics mode that
+              this version of LW2 does not recognize, you may have
+              selected to load GRAPHDRV.LW", but there is no such file,
+              or there may not be enough memory to load the driver.
+
+
+          Error loading mission data!
+
+              LineWars II kernel could not load the mission data
+              you requested. This may be due to a corrupt LW2.EXE,
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  36
+
+                                      APPENDIX A / LINEWARS II ERROR MESSAGES
+          ___________________________________________________________________
+
+
+              or you may have specified a mission that this version
+              of LineWars II does not include, or there may not be
+              enough memory to load the driver. Try to free more
+              memory before starting LineWars II, and make sure you
+              have selected a correct mission.
+
+
+          Error loading song or instrument data!
+
+              LineWars II kernel could not load song data, instrument
+              samples or Roland LAPC-1 timbres from LW2.EXE. This may
+              be due to a corrupt LW2.EXE, or there may not be enough
+              memory to load the data. Try to free more memory before
+              starting LineWars II.
+
+
+          Error loading sound driver code!
+
+              LineWars II kernel could not load the sound driver
+              code from 'LW2.EXE'. This may be due to a corrupt
+              LW2.EXE, or you may have specified a sound driver
+              that this version of LW2 does not recognize, or there
+              may not be enough memory to load the driver. Try to
+              free more memory before starting LineWars II, and
+              make sure you have selected the correct sound
+              driver in LineWars II Configuration.
+
+
+          Error loading the CFG overlay!
+
+              LineWars II kernel could not load the LineWars II
+              Configuration overlay module. This may be due to a
+              corrupt LW2.EXE or you may have insufficient free
+              memory. Try freeing more memory before starting LW2.
+
+
+          GroupWar ERROR: No network communications device selected!
+
+              You are attempting to run the Group War mission, but you have
+              not select a network communications device. Run the LineWars
+              II Configuration and select the required Comms settings.
+
+
+
+
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  37
+
+                                      APPENDIX A / LINEWARS II ERROR MESSAGES
+          ___________________________________________________________________
+
+
+
+          GroupWar ERROR ? creating file NODE?.LW2 !
+
+              The Shared File network driver of LineWars II could not
+              create a node file for your node on the shared directory.
+              Make sure you have write access to the directory, that
+              SHARE.EXE is loaded, and that there are no old nodefiles
+              left over from some earlier game in the directory.
+
+
+          LAPCDRV ERROR: MPU-401 interface did not reset !
+
+              This message may be given by the Roland LAPC-I driver,
+              if the Roland LAPC-I card does not respond to a reset
+              command. This is most likely due to a badly written
+              program having left the MPU interface into a mixed-up
+              state. Sometimes the problem may go away if you try
+              to restart LineWars II a few times.
+
+
+          LineWars II cannot run on 8088/8086 processors!
+
+              You are attempting to run LineWars II on a computer
+              that has only 8088 or 8086 processor. You need to have
+              at least an 80186 processor to run LineWars II.
+
+
+          MCGADRV ERROR: Not enough memory for display buffer !
+
+              The MCGA driver of LineWars II needs 56 kilobytes of
+              memory for a viewscreen buffer. This amount of memory
+              was not available. You should try to free more memory
+              before starting LineWars II in MCGA mode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  38
+
+                                      APPENDIX A / LINEWARS II ERROR MESSAGES
+          ___________________________________________________________________
+
+
+
+          S3DRV ERROR: Only 512 kilobytes of display memory !
+
+              The S3 driver of LineWars II determined that your S3 card
+              has only 512 kilobytes of RAM. The S3 driver requires at
+              least one megabyte of display RAM.
+
+
+          S3DRV ERROR: S3 driver requires i386 or better CPU !
+
+              You are attempting to run LineWars II in S3 mode on a
+              computer that does not have a 386 or i486 processor.
+
+
+          S3DRV ERROR: VESA Enhanced 800x600 mode with 256 colors not
+                       available !
+
+              The S3 driver of LineWars determined that VESA mode 203h
+              was not available. Your S3 graphics card may have incompatible
+              BIOS, or you may not have an S3 accelerated graphics card.
+
+
+          SCCDRV ERROR: MPU-401 interface did not reset !
+
+              This message may be given by the Roland SCC-1 driver,
+              if the Roland SCC-1 card does not respond to a reset
+              command. You may have given a wrong MPU base port
+              address in LineWars II Configuration, or a badly
+              written program may have left the MPU interface into
+              a mixed-up state. Sometimes the problem may go away
+              if you try to restart LineWars II a few times.
+
+
+          Sorry, but LineWars II requires DOS 3.0 or better!
+
+              You must have at least DOS version 3.0 if you want to play
+              LineWars II.
+
+
+
+
+
+
+
+
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  39
+
+                                      APPENDIX A / LINEWARS II ERROR MESSAGES
+          ___________________________________________________________________
+
+
+          StarWars ERROR: No network communications device selected!
+
+              You are attempting to run the Star Wars mission, but you have
+              not select a network communications device. Run the LineWars
+              II Configuration and select the required Comms settings.
+
+
+
+          StarWars ERROR ? creating file NODE?.LW2 !
+
+              The Shared File network driver of LineWars II could not
+              create a node file for your node on the shared directory.
+              Make sure you have write access to the directory, that
+              SHARE.EXE is loaded, and that there are no old nodefiles
+              left over from some earlier game in the directory.
+
+
+          ULTRADRV ERROR: Error loading FP3D file "GRAVIS3D.LW2" !
+
+              You have configured LineWars II to use Focal Point 3D
+              sound with your Gravis UltraSound card, but LineWars II
+              could not find the GRAVIS3D.LW2 file on your current
+              directory, or there was not enough memory to load the
+              file. Check that the file exists, and try to free more
+              memory.
+
+
+          ULTRADRV ERROR: Gravis Ultrasound not found !
+
+              The Gravis Ultrasound driver could not find a Gravis
+              Ultrasound card at the given port address. Make sure
+              you have given the correct port address in LineWars II
+              Configuration.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  40
+
+                                      APPENDIX A / LINEWARS II ERROR MESSAGES
+          ___________________________________________________________________
+
+
+          VESADRV ERROR: Not a enough memory for display buffer !
+
+              The VESA driver of LineWars II needs 256 kilobytes of
+              memory for a viewscreen buffer. This amount of memory
+              was not available. You should try to free more memory
+              before starting LineWars II in VESA mode.
+
+
+          VESADRV ERROR: Sorry, but mode features unsupported parameters !
+
+              Your SVGA card has some attributes in 640x480x256 mode
+              that the VESA driver of LineWars II does not support.
+              The VESA driver requires this mode to have 640 bytes
+              per scanline and a granularity of 64K. If you can
+              provide me (Patrick Aalto) with information about these
+              parameters in your SVGA card, I may be able to fix
+              the VESA driver to support your SVGA card.
+
+
+          VESADRV ERROR: VESA 640x480 mode with 256 colors not available !
+
+              The VESA driver determined that VESA mode 101h was not
+              available. There may be several reasons for this error
+              message: Your SVGA card does not have VESA BIOS extensions,
+              you have not loaded a VESA TSR program, or your SVGA card
+              may have only 256 kilobytes of display memory. If your
+              SVGA card does not have the VESA extensions in BIOS, you
+              need to get a separate VESA TSR program and load it
+              before you can use LineWars II in VESA mode.
+
+
+          VESADRV ERROR: VESA driver requires i386 or better CPU !
+
+              You are attempting to run LineWars II in VESA mode on a
+              computer that does not have a 386 or i486 processor.
+
+
+          VGADRV ERROR: Not a VGA graphics adapter !
+
+              You are attempting to run LineWars II in VGA mode with
+              a display card that is not VGA compatible.
+
+
+          WINGDRV ERROR: CTS/RTS handshake enabled, but CTS signal is low !
+
+              You have enabled CTS/RTS handshake in LineWars II
+              Configuration or from the command line, and the
+              ClearToSend (CTS) signal was low when you started
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  41
+
+                                      APPENDIX A / LINEWARS II ERROR MESSAGES
+          ___________________________________________________________________
+
+
+              LineWars II in Wing Mode. LineWars II needs to be
+              able to send data immediately when it starts, thus
+              the CTS signal must be high (active).
+
+
+          WINGDRV ERROR: No COM port communications device selected !
+
+              You are attempting to run LineWars II in a two-player mode,
+              but you have not selected a COM port. Run the configuration
+              and select the required Comms settings.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  42
+
+                                        APPENDIX B / LINEWARS II MEMORY USAGE
+          ___________________________________________________________________
+
+
+
+          APPENDIX B / LINEWARS II MEMORY USAGE
+
+
+          LineWars II is designed to use as little memory as possible.
+          However, the memory requirements vary greatly depending on
+          graphics and sound options, and also depending on many other
+          configuration options. The following table may be used as a
+          guideline to determine how much free memory LineWars II will
+          need in the main configurations.
+
+              ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄ¿
+              ³ MEMORY USAGE ³ MCGA  ³  VGA  ³ VESA  ³ S3/ATI³
+              ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄ´
+              ³ No Sound     ³ 131 K ³  76 K ³ 338 K ³  76 K ³
+              ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄ´
+              ³ Covox        ³ 293 K ³ 238 K ³ 500 K ³ 238 K ³
+              ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄ´
+              ³ SoundBlaster ³ 322 K ³ 266 K ³ 528 K ³ 266 K ³
+              ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄ´
+              ³ UltraSound   ³ 162 K ³ 107 K ³ 369 K ³ 107 K ³
+              ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄ´
+              ³ Roland       ³ 165 K ³ 110 K ³ 372 K ³ 110 K ³
+              ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÙ
+
+
+          Special memory requirements of some of the drivers are
+          described below.
+
+            - MCGA graphics driver requires 56 kilobytes of memory
+              for triple-buffering.
+
+            - VESA graphics driver requires 256 kilobytes of memory
+              for triple-buffering.
+
+            - Covox sound driver requires 128 kilobytes of memory
+              for digitized instrument and sound effects samples.
+
+            - SoundBlaster sound driver requires 128 kilobytes of
+              memory for digitized instrument and sound effects
+              samples, plus a few kilobytes (depending on playing
+              rate) for a DMA transfer buffer.
+
+            - Gravis UltraSound needs temporarily an additional 64K block
+              while loading the sample data. This memory will be freed
+              after the samples are loaded to GUS RAM. This block is NOT
+              included in the table above.
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  43
+
+                                           APPENDIX C / TECHNICAL INFORMATION
+          ___________________________________________________________________
+
+
+
+          APPENDIX C / TECHNICAL INFORMATION
+
+
+          This appendix describes some of the technical aspects behind
+          LineWars II.
+
+
+          Graphics
+
+              LineWars II uses polygon-based 3D graphics. The basic
+              algorithms are pretty old, I have not changed them much
+              since the original LineWars (which was made in 1989).
+              However, I added flat shading to the algorithms, since
+              there is always a sun in the game universe. The shading
+              value is based on the angle between a polygon surface
+              normal vector and a vector from the object to the sun.
+
+              The Gouraud-shaded planet routine uses an algorithm that
+              I first thought of in 1991, but at that time I could not
+              make it fast enough. In December 1992 I finally was able
+              to improve it enough so it runs in real-time. The algorithm
+              uses a 3D version of the classic Bresenham circle algorithm
+              and linear interpolation to calculate the color of the
+              pixels. Using a lot of precalculation I was able to have
+              the algorithm require only one addition per pixel, a few
+              multiplications per scanline, and one square root per the
+              whole planet.
+
+              The palette I use is a very simple one-color scale, which
+              makes shading and anti-aliasing very easy. I could not have
+              anti-aliasing and Gouraud shading for the planets at the same
+              time using a more colorfull palette, since anti-aliasing
+              requires a 'full' palette of all colors between any two basic
+              colors, and my planet routine requires 128 shades of a basic
+              color.
+
+              The MCGA and VESA graphics modes use a 'dirty pixel' approach,
+              which means that I have two standard memory buffers, one which
+              is used to draw the ships, and other which contains the ships
+              of the previous frame. The sizes of these buffers are 256x110
+              (28160 bytes) and 512x256 (128KB), respectively. I only update
+              those parts of the video RAM that have changed since the last
+              frame. The MCGA mode waits for vertical retrace (even though
+              it would not have to, but it would be silly to update the
+              screen up to 150 times per second), but the VESA mode does
+              not. On Pentium machine with a local bus video card the VESA
+              mode might therefore run at more than 100 frames per second.
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  44
+
+                                           APPENDIX C / TECHNICAL INFORMATION
+          ___________________________________________________________________
+
+
+              In the MCGA graphics mode the vertical polygon boundaries
+              are anti-aliased, using a very simple technique. Since the
+              X-coordinate must be between 0 and 255, I can use high byte
+              of a word register for the integer part and low byte for the
+              fractional part of the coordinate, per every scanline of the
+              polygon. The fractional part directly gives the amount of
+              polygon color (versus the current background color) to use
+              on this polygon border pixel.
+
+              The VGA graphics mode uses a tweaked split-screen mode. The
+              screen resolution is 320x480, and the upper portion of the
+              screen is double-buffered within the VGA memory. The same
+              anti-aliasing technique is used in VGA mode as in MCGA mode.
+              Since the vertical resolution is much better than in MCGA
+              mode, using only horizontal anti-aliasing produces pretty
+              good results.
+
+              The S3 and ATI graphics modes use the accelerator functions
+              to draw everything else except the Gouraud planet. The planet
+              is drawn by directly poking the pixels to the display RAM,
+              which is somewhat slow but the only available technique. Both
+              modes use a 1024x1024 physical screen even though the display
+              is only 800x600. The reamaining area is used to double-buffer
+              the graphics. In S3 mode I use split screen (just like in the
+              VGA mode) so I don't have to physically copy the hidden buffer
+              to the visible area, as I do in the ATI mode.
+
+
+          Sound
+
+              The music LineWars II plays was originally composed by U4Ia
+              as MOD files for the Amiga. I have converted them to a sort
+              of 4-track MIDI file format. All of the songs use the same
+              instrument sample library, which takes 64 kilobytes. On MIDI
+              equipment this library is not loaded since it corresponds to
+              the sounds in the synth, and on Gravis Ultrasound this is
+              loaded into it's RAM. The samples are 8-bit, and they were
+              sampled from a Roland LAPC-I synth at 10480 Hz frequency.
+
+              In addition to the music samples I use another 64K library
+              of sound effects samples. There is also a third library for
+              Focal Point 3D sounds, which contain two 6-track samples,
+              for the Gravis UltraSound. These 3D samples are a laser blast
+              (sampled from a Roland SCC-1 at 30kHz frequency) and an
+              explosion sound (also from an SCC-1, sampled at about 8kHz).
+
+              The music routine first converts from the MIDI format back
+              to a MOD format, if the music is played thru a non-MIDI
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  45
+
+                                           APPENDIX C / TECHNICAL INFORMATION
+          ___________________________________________________________________
+
+
+              device. The Covox driver uses the timer interrupt to
+              mix one byte at a time, but the SoundBlaster driver uses
+              DMA to output a full pre-mixed block at a time. The Covox
+              and SB drivers use 6 channels, four for music and two for
+              sound effects. On a Gravis Ultrasound I use four music
+              channels, four simple sound effects channels (for sounds
+              that originate within the player's ship), and 12 channels
+              for the 3D sounds. The MIDI driver uses five music channels
+              and two sound effects channels.
+
+
+          COM Port Routine
+
+              In Duel Mode and Wing Mode LineWars II uses a COM port for
+              the communications. The routine tries to send data at 768
+              bytes per second, regardless of the line speed. This means
+              that the line speed should be at least 7680 bps for all the
+              data to get thru in time. If the BPS rate is less than this,
+              some frames need to be skipped, which may cause jerky
+              movement of the ships. The full data for one frame takes
+              30 bytes, so the data is sent at a speed of about 25 frames
+              per second.
+
+              Since the real thruput is only 7680 bps, even slow machines
+              can cope with a line speed of 115200 bps quite easily, and
+              this is the recommended speed on direct null-modem cables.
+
+
+          Network Routine
+
+              In Group War or Star Wars missions LineWars II can use a
+              shared file for communications. When using a shared file,
+              LineWars II writes the data about the current positions of
+              the local player ships to a file that corresponds to this
+              node once per every frame, and it then reads all the other
+              node files to get the data for the other players. To cope
+              with the possibly different speeds of the machines, the
+              blocks are numbered and LineWars II keeps a 16-slot FIFO
+              queue for incoming data.
+
+
+
+
+
+
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  46
+
+                                           APPENDIX C / TECHNICAL INFORMATION
+          ___________________________________________________________________
+
+
+          Ship Artificial Intelligence
+
+              The computer-controlled ships use a very simple state machine
+              to control their movements. I have however tried to make their
+              movement algorithms as 'real-like' as possible. The ships
+              constantly check their distance to other objects in front of
+              them (but not behind them!) to see if they should try to
+              avoid any obstacles. They try to slowly go around any obstacle
+              they see, but while they are avoiding one obstacle they often
+              fail to notice others. I felt that this caused them to move
+              very human-like, when concentrating on something you often
+              fail to notice something else.
+
+              The ships will attempt to shoot at the enemy ship that is
+              nearest the 'optimal' distance of around 5000 metres, and
+              in front of them. If the ship gets too near it's target,
+              it will accelerate away from the target and start to rotate
+              at the same time. If it finds a better target then, it will
+              attack this new target.
+
+              The enemy ships do not know which ship is controlled by you
+              and which by your wingmen, so they treat every ship the same
+              way.
+
+
+          Overlay Decompressor
+
+              The overlays (drivers, mission datas etc) are all compressed,
+              and the internal decompressor of LineWars II unpacks them as
+              they are loaded. This is why the .DAT takes only a bit over
+              200 kilobytes of disk space, even though it contains about
+              500 kilobytes of uncompressed data, in more than 20 separate
+              files.
+
+              The decompressor routine is based on the source code of the
+              LHA packer by Haruyasu Yoshizaki. It was pretty heavily
+              modified to allow the unpacking directly into a memory block
+              and to get rid of the unnecessary directory info in a
+              standard .LZH file.
+
+
+
+
+
+
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  47
+
+                                    APPENDIX D / BUILDING A PARALLEL PORT DAC
+          ___________________________________________________________________
+
+
+
+          APPENDIX D / BUILDING A PARALLEL PORT DAC
+
+
+          This is the schematics I used to build mine. This is from the
+          HARDWARE.DOC file included with ModPlay 2.10 by Mark Cox.
+          There exists many different versions of this schematics, but I
+          have found this one to be the most reliable and best sounding.
+
+          You need one plug for your amp, one for your parallel port and
+          9 pieces of 20k and 9 pieces of 10K resistors.
+          Use 1% resistors if possible Ä and 20k sound much better than 22k.
+
+
+                Printer Port:
+
+                signal   pin        20k   20k
+                D0       2      >ÄÄÄ°°°ÄÂÄ°°°ÄÄ0v
+                                    20k ° 10k
+                D1       3      >ÄÄÄ°°°Ä´
+                                    20k ° 10k
+                D2       4      >ÄÄÄ°°°Ä´
+                                    20k ° 10k
+                D3       5      >ÄÄÄ°°°Ä´
+                                    20k ° 10k
+                D4       6      >ÄÄÄ°°°Ä´
+                                    20k ° 10k
+                D5       7      >ÄÄÄ°°°Ä´
+                                    20k ° 10k
+                D6       8      >ÄÄÄ°°°Ä´
+                                    20k ° 10k
+                D7       9      >ÄÄÄ°°°Ä´
+                                    20k ° 10k  100nF
+                                        ÃÄÄÄÄÄÄ´ÛÄÄÄÄ> TO AMPLIFIER
+                                        ° 10k
+                GND      20     >ÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄ>
+                                        0v
+
+
+          Thanks to Harry Stox for the above circuit.  Make sure all the
+          0v lines are connected together.  The 100nF capacitor may not
+          be needed, try removing it if this circuit sounds poor.
+
+
+
+
+
+
+
+
+          ___________________________________________________________________
+          Copyright 1994, Patrick Aalto             LineWars II Manual  /  48
+

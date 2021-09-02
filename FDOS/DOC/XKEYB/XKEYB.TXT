@@ -1,0 +1,1041 @@
+XKEYB - version 1.15.
+
+Keyboard driver for DOS. (AT machines)
+
+XKEYB is Free Software. It is the FreeDOS' replacement for KEYB.COM/KEYB.EXE.
+It is released under the GNU GENERAL PUBLIC LICENSE, see the file
+COPYING.TXT for the full text. 
+
+For more information about FreeDOS, go to the web site
+<http://www.freedos.org>.
+
+XKEYB requires an AT-class keyboard, and at least a 286 CPU.
+
+------------------------------------------------------------
+
+1. Contents
+===========
+
+Contents                                         1
+What XKeyb is                                    2
+How XKeyb is used                                3
+The structure of the configuration file          4
+Improving Storage utilization with XKEYBRES      5
+PI - the Program Interface of XKeyb.             6
+Using PI with the unit XKeyb_PI                  7
+Using the macro recorder KeyMan                  8
+Using the extended scancode keys                 9
+Version differences                             10
+About the layout packs upgrades                 11
+Conditions of use                               12
+XKeyb files                                     13
+
+
+
+2. What XKeyb is
+================
+
+As the name suggests, XKeyb is a keyboard driver with a certain resemblance
+to the well-known KEYB.COM.
+
+As with KEYB, XKeyb is also a keyboard driver for DOS-based computers, which is
+installed as a memory-resident program and can be configured for different
+countries using parameters. 
+
+However XKeyb allows many more configuration options than Keyb. Thus, you can
+configure XKeyb not only for different countries, but also for your own
+personal preferences.
+
+On the one hand XKeyb permits the free allocation of all keys on all levels
+(normally with SHIFT, CTRL, ALT, and CTRL-ALT), while on the other hand it
+offers the flexibility to define character strings to individual keys on
+certain levels.
+
+Furthermore for each key it can be determined separately whether it is
+influenced by CAPS LOCK, NUM LOCK or SCROLL LOCK, and if the SHIFT, CTRL, and
+ALT keys determine what values are issued.
+
+The programmer is provided with a PI (Program Interface) to XKeyb. It allows
+access to many of the XKeyb functions.
+
+Appart from XKEYB, you may also use MKEYB, that you will also find within
+the FreeDOS main site, in the same place where you downloaded xkeyb. MKeyb
+is a minimalistic KEYB implementation for FreeDOS.
+
+There are some differences between mkeyb and xkeyb, namely:
+- The extended user-defined Xfunctions and XStrings support is not present
+in mkeyb
+- xkeyb is configurable through .KEY files, whereas mkeyb has the information
+hardcoded, and needs recompilation to change it. This way, there are separate
+MKEYBSP, MKEYBGR, MKEYBNL, etc.
+- both support COMBIs, and COMBI can be enabled/disabled, in xkeyb through
+configuration, and in mkeyb upon recompilation
+- mkeyb is much smaller in size, and therefore, it is ideal for those systems
+in which resident size and executable size are critical
+
+
+3. How XKeyb is used 
+====================
+
+The general use of XKeyb is identical to that of KEYB.COM. The program is
+installed by using the command:
+
+XKEYB <Configuration File> 
+
+Standard configuration files are contained within MS-DOS for all countries,
+which are also used by KEYB.COM. The names of these files consists of the
+well-known "Country Code" and the extension KEY. Thus to install XKeyb for a
+German keyboard you would use the command:
+
+XKEYB GR or XKEYB GR.KEY. 
+
+In addition to the standard definitions XKeyb includes the file GR2.KEY. This
+file contains a definition for a German keyboard with geringfugigen and
+anderungen. Additionally the function of the CAPS LOCK key of SHIFT LOCK
+is geandert in a genuine Caps LOCK, which applies exclusively to the
+character keys.
+
+These standard key assignment definitions are used to serve as a basis for
+non-standard adjustments. All manipulations of the key assignment made with
+XKeyb become additional definition files, which use the extension KEY. The
+use of other extensions must be explicitly indicated in the call to XKeyb.
+
+These definition files are text files using a similar structure to that of
+Windows INI files. The exact structure is described in the next section. 
+
+If the key allocation needs to be modified after XKeyb has been installed,
+then this is easily done by using a renewed call to XKeyb with another
+definition file specified (the resident copy of XKeyb is re-used).
+
+One further note on Extension Strings ("XStrings"):
+
+Under normal conditions XKeyb reserves only the minimum required amount of
+workspace for XStrings that is required for essential operations (rounded up
+to a full paragraph). If additional XStrings are to be created, then the /Xnn
+switch should be used to explicitly set the amount of storage space to be
+reserved for XStrings (where nn is the memory-size indicated in bytes).
+
+e.g. To install XKeyb with 480 bytes workstation for XStrings and with German
+     key assignment, use this command:
+
+XKEYB GR /X480 
+      or 
+XKEYB /X480 GR 
+
+Four more switches are available when XKeyb is installed:
+
+/U   (Uninstall), removes the resident copy from XKeyb from memory (if 
+      installed)
+/Q   (Quiet), suppresses the output of LIST paragraph in configuration
+      files (see the next section).
+/?   Fast help: shows how to use XKEYB
+
+
+
+4. The structure of a configuration file 
+========================================
+
+A configuration file for XKeyb is divided into several paragraphs, each of
+which contain a section of the entire keyboard definition. Thus the paragraph
+KEYS defines the actual key allocation, (i.e. which characters and if necessary
+which XStrings are situated on which key). Extension Strings are defined in
+the XSTRINGS paragraph. The SHIFT paragraph defines which keys functions are
+assigned to using SHIFT, CTRL and ALT. The COMBI paragraph is used to define
+combination characters (e.g. ^ + a = â). COMMENT and LIST paragraphs may be
+placed within other paragraphs wherever needed, and the paragraphs can appear
+in any sequence.
+
+Any line starting with ; is considered a comment, and thus ignored, regardless of
+the section where it may appear.
+
+The file GR2.KEY is a practical example for the structure of a definition file.
+
+The following is a detailed description of the individual paragraphs: 
+
+
+[ KEYS ]
+
+This paragraph contains one key definition per line. The line begins with
+the Scancode of the key, immediately followed by one or more of N, C or S
+This is use to indicate if the key should be influenced by NUM-, CAPS-, or
+SCROLL-LOCK.
+
+The scancode can be optionally preceded by the E or e character, meaning that
+it corresponds to an extended scancode key, preceded by the E0 scancode. Check
+the appropriate section of this manual to know more about these keys.
+
+The rest of the line is made up of a list of 5 key levels, which define the
+character to be output when the key is pressed by itself, or with SHIFT,
+CTRL, ALT and ALT Gr (in that order). These values should be separated by
+spaces. The values can be either the actual characters, or their ASCII codes
+preceded by a "#" character. An example line from GR2.KEY follows:
+
+ 72N #0 8 #26 #0 E
+
+Characters with ASCII values less than 36 are always indicated using the "#"
+character.
+
+Instead of a character, a decimal number followed by an exclamation mark can
+be used to assign an extension string or function to the key. The numbers 1-200
+are available for XStrings, while the values greater than 200 are reserved for
+special functions, as listed in the table below:
+
+Value          Meaning
+-------  --------------------------------------------------------------------
+201-235  Reserved for user defined XFunctions
+         (see the PI section for more information)
+236-245  Reserved for COMBI-subsystem
+246      Reserved
+247      OS/2 2.0: DOS box close. (ALT-F4)
+248      Reserved
+249      Break interrupt
+250      Disables XKEYB
+251      Suspends the PC (requires APM-BIOS 1.1 or later). Caches are flushed
+252      Turns the PC off (requires APM-BIOS 1.1 or later). Caches are flushed
+253      System cold reset. Caches are flushed
+254      Print Screen (hardcopy)
+255      System warm reset. Caches are flushed before it
+
+
+Finally, one can specify that certain level on certain Scancode initialises a
+COMBI section (as for example, ` or ^). This is specified by an exclamation
+mark followed by C and the number of the row that describes the COMBI
+behaviour.
+
+For example,
+40 !C2 #0 #0 #0 #0
+indicates that pressing key whose scancode is 40 will start the COMBI sequence
+described on the second row of the COMBI section.
+
+[ SHIFTS ]
+
+This paragraph is used to define the shift and lock keys. This is just a list
+of the key scancodes, spearated by spaces, in the following order:
+
+SHIFT1 SHIFT2 CTRL ALT SCROLL NUM CAPS INSERT 
+
+
+[ XSTRINGS ]
+
+This paragraph is used to define extension strings. The format is:
+
+<Number> <String> 
+
+Note that a space must be placed between the Number and the String. All
+characters (including spaces) after the first space are interpreted as
+part of the Extension String.
+
+The Extension String is assigned to a key in the [ KEYS ] paragraph.
+
+Valid numbers for XStrings are in the range 1-200. An example follows:
+
+[XSTRINGS]
+1 Dat is 'ne Schdring
+2 DIR *.ABC | SORT | MORE\n
+17 Mit freundlichen Grussen
+123 \[DEL]\[CD]\[AF10]
+
+As you can see inthe above example, various special characters can be used in
+XStrings, preceded by a "\" character. The available special characters are as
+follows:
+
+Special              Value Produced
+-------  --------------------------------------
+\\       \
+\Axxx    Character with the ASCII value xxx
+\Sxxx    Key with the Scancode xxx
+\n       Carriage Return (equivalent to \A013)
+\[HOME]  HOME key
+\[END]   END key
+\[PU]    PAGE UP key
+\[PD]    PAGE DOWN key
+\[CL]    CURSOR LEFT key
+\[CR]    CURSOR RIGHT key
+\[CU]    CURSOR UP key
+\[CD]    CURSOR DOWN key
+\[DEL]   DEL key
+\[INS]   INS key
+\[Fx]    Function key #x 
+\[SFx]   SHIFT + Function key #x
+\[CFx]   CTRL + Function key #x
+\[AFx]   ALT + Function key #x
+
+The HOME, END, PU, PD, CL and CR keys can be prededed with the leter "C"
+This corresponds to a press of the respective key while holding the CTRL key.
+
+
+[ COMBI ]
+
+This paragraph is used to define combination characters.
+The first character of each line is the "combination character", and is followed
+by several pairs of characters. When XKeyb detects the "combination character"
+along with the first character of a character pair, it will output the second
+character of the pair.
+
+Example: 
+
+' a  e‚ i¡ o¢ u£ #32'
+
+the line above defines the following combination keys:
+
+'+a= 
+'+e=‚
+'+i=¡
+'+o=¢
+'+u=£
+'+<SPACE>='
+
+Non-printable characters are indicated by their ASCII value as the first
+character of a character pair.
+
+The exclamation mark has a special function: It clears the existing definition
+for a group of combination characters:
+
+^! aâ 
+
+This line clears all existing combination characters beginning with ^ and then
+defines the combination ^+a=â.
+
+
+[ CONTINUE ]
+
+This paragraph contains only one line. It contains the name of another
+configuration file. If XKeyb finds this paragraph, the processing of the
+current configuration file is terminated, and the indicated configuration file
+is processed. This allows a concatenation of configuration files.
+
+
+[ COMMENT ]
+
+These paragraphs are ignored by XKeyb, and are used to insert comments.
+
+
+[ LIST ]
+
+XKeyb outputs the contents of these paragraphs to the screen, unless output
+is supressed by the /Q command-line switch.
+
+
+
+5. Improving Storage utilization with XKEYBRES
+==============================================
+When installed under normal conditions the XKeyb program occupies less memory
+than the original MS-DOS keyboard driver. However because of the relatively
+large amount of memory necessary to load a configuration file, XKeyb must
+allocate far more memory than its DOS counterpart, which can make it difficult
+to load XKeyb into upper memory.
+
+To avoid this problem the XKEYRES program was developed. It contains all of the
+components of the keyboard driver which remain resident, but only a minimum
+of initialisation routines. This program is substantially smaller than XKEYB
+and can be installed in a memory block as small as 10KB. The disadvantage of
+loading XKEYBRES is that it doesn't load a keyboard definition (i.e. all keys
+are undefined and produce no characters).  To prevent the keyboard from being
+blocked, the driver remains deactivated (in the same way as pressing
+ALT-CTRL-F1 will deactivate XKeyb).
+
+After XKEYBRES has been installed a keyboard definition can be loaded using
+the command:
+
+XKEYB <definition file>
+
+This will also automatically switch the keyboard driver into active mode.
+
+Two additional things should be considered before using XKEYBRES:
+
+1. The driver is installed as a memory resident program even if a keyboard
+   driver is already installed.
+2. The size of the additional storage area for extension strings cannot be
+   defined for XKEYBRES (the /Xnn switch for XKeyb). XKEYBRES always reserves
+   923 bytes for extension character strings.
+
+An example of using XKEYBRES as the keyboard driver could look like this in
+AUTOEXEC.BAT:
+
+@Echo off
+...
+LH XKEYBRES
+XKEYB GR /Q
+...
+
+
+
+6. PI - the Program Interface of XKeyb. 
+========================================
+
+The Program Interface is an interface for other programs, allowing all of the
+XKeyb functions to be accessed. Apart from the functions relating to key 
+assignment, it also provides functions for extended keyboard inquiry and the
+definition of Hotkeys.
+
+The PI is accessed using the multiplexer INTERRUPT (INT 2Fh). The AH register
+must contain the value ADh, and the AL register must have the number of the
+required function.
+
+The functions of the PI and their applications in detail: 
+
+
+Installation CHECK (80h)
+This function allows the program to determine if XKeyb is resident in memory.
+
+Input:  AX=AD80h 
+
+Output: AL=00h -> No keyboard driver installed. 
+        AL=FFh, BX=584Bh -> XKeyb installed, CX=version number 
+        BX<>584Bh -> Other keyboard driver (probably KEYB.COM) 
+
+
+Set keyboard mapping (82h)
+This function switches between XKeyb and the BIOS keyboard driver.
+(CTRL-ALT-F1 / F2)
+
+Input:  AX=AD82h
+        BL=00h -> BIOS keyboard driver
+        BL=FFh -> XKeyb
+
+Output: CF=1 -> Error 
+        CF=0 -> OK 
+                  
+The 80h and 82h functions are also available with KEYB.COM, but the following
+functions only apply to XKeyb (starting from version 1.20).
+
+
+Set key translation (90h)
+This function sets the output(s) of an individual key (the same as a line in
+the [ KEYS ] paragraph of the definition file).
+
+Input:  DI=key number (Scancode of the key) 
+        BL=Normal allocation 
+        CH=value with SHIFT 
+        CL=value with CTRL 
+        DH=value with ALT 
+        DL=value with ALTGr / CTRL+ALT 
+        BH=key status 
+
+Output: AX=0 -> OK 
+        AX=4 -> Bad key number 
+
+Note: The allocations are either ASCII values, those the key is to be assigned
+      directly, or the numbers of XStrings/XFunctions.
+
+The meaning of the key status bits: 
+Bit    Meaning (if bit is set to 1)
+---  ------------------------------------------------------------
+ 0   key with SCROLL LOCK
+ 1   key with NUM LOCK
+ 2   key with CAPS LOCK 
+ 3   key is on level 4 (AltGr/CTRL-ALT), and mapped to an XString
+ 4   XString/XFunction on level 3 (ALT)
+ 5   XStrinc/XFunction on level 2 (CTRL)
+ 6   XString/XFunction on level 1 (SHIFT)
+ 7   XString/XFunction on level 0 (without everything)
+
+
+Get key translation (91h)
+The query function for function 90h. 
+
+Input:  AX=AD91h 
+        DI=key number (Scancode) 
+
+Output: AX=0 -> OK. BX, CX, DX contain the allocations. 
+        AX=4 -> Bad key number. 
+
+
+Wait for key hit (94h)
+As the name implies, this function waits until a key is depressed. The
+contents of the key buffers are ignored.
+
+Input:  AX=AD94h 
+
+Output: AH=Virtual Scancode 
+        BH=Real Scancode 
+        AL=ASCII value 
+        BL=Key status 
+        DH=Key Level (0-4) 
+
+Note: The presence of two Scancodes may appear somewhat confusing. The reason
+      is that some keys produce a different Scancode when used with certain
+      shift keys (the virtual Scancode). This is the case with the function
+      keys (F1-F10) and some of the cursor keys. With the alphanumeric keys
+      both Scancodes are the same.
+      BL contains the keyboard status from 0:417h and indicates the status of
+      the shift keys. DH indicates the key level, from which the ASCII value
+      originates.
+
+
+Put key into buffer (95h)
+This function stores a virtual 'key' in the keyboard buffer.
+
+Input:  AX=AD95h 
+        BH=Scancode (virtual) 
+        BL=ASCII value 
+
+Output: AX=0 -> OK 
+        AX=5 -> Buffer full 
+
+
+Set XString (96h)
+with set XString is geandert an extension stringer or again created.
+
+Input:  AX=AD96h 
+        BL=XString number (1-200) 
+        ES:DI=Pointer to the string 
+
+Output: AX=0 -> OK 
+        AX=1 -> Bad XString number 
+        AX=2 -> XString memory full 
+
+Note: The first byte of the string must contain the string length (Pascal
+      string). Special characters (such as \n or \S072) are NOT interpreted.
+      If the XString is to contain keys which do not produce ASCII values
+      (like cursor and function keys), then these are indicated by a zero
+      byte followed by the virtual Scancode of the key in the string. The
+      allocation of the XString:
+
+      'ABC\[F11]DEF\n'
+
+      is thus achieved by the string:
+
+      'ABC'#0#87'DEF'#13.
+
+
+GET XString (97h)
+The query function for function 96h.
+
+Input:  AX=AD97h 
+        BL=XString number 
+        ES:DI=Address of Buffer for string 
+
+Output: AX=0 -> OK. String is stored at ES:DI. 
+        AX=1 -> Bad XString number. 
+        AX=3 -> XString is not defined. 
+
+
+Set XFunction (98h)
+This function equivalent to function 96h, except that it defines XFunctions
+rather than XStrings.
+
+As with XStrings, XFunctions are assigned to keys, and are assigned to
+numbers (XFunctions are reserved the numbers 201 to 240).
+
+If a key is pressed which has an XFunction associated with it, one of 3
+things will happen:
+1. The function is output immediately
+2. The functionis output using INT16 (keyboard BIOS).
+3. If the function is not output-driven a flag is set, which indicates
+   that the function was activated.
+
+Input:  AX=AD98h 
+        BL=XFunction number (0=function code look up) 
+        BH=Call  Convention: 0=Output using INT16 
+                             1=Output immediately 
+                             2=Flag set 
+        ES:DI=Address of routine / flag 
+
+Output: AX=0 -> OK. BL = function code. 
+        AX=1 -> Bad XFunction number 
+        AX=6 -> No function codes free 
+        AX=7 -> Invalid call convention 
+
+Note: The indicated routine must be FAR. It receives as a parameter a Word,
+      which caontains Scancode of the key in its upper byte and
+      and the keyboard status in its lower byte. This allows the routine to
+      determine its caller, if it is called from several different keys.
+
+      If BH contains the value 2, then the Word is stored with to activate
+      the function with ES:DI. Everything
+      else is then thing of the appropriate program. If the indicated routine
+      is output-driven immediately (BH=1), is not with the Ausfuhrung the
+      hardware INTERRUPTS yet again de-energised (the INTERRUPT CONTROLLER
+      has still no EoI received). Therefore the call convention 0 should be
+      preferred if moglich. Protecting the Ausfuhrung of the routine is all
+      ublichen INTERRUPTS certified. Within the routine it is to be made
+      certain that before an access to the own data segment the DS register
+      must be set accordingly. Furthermore it recommends to switch if
+      necessary to its own stack. Registers DS and BP are to contain the same
+      values during the jerk branch, as with the entrance. 
+
+
+Clear XFunction (99h)
+Clears an XFunction definition.
+
+Input:  BL=Number of the XFunction (201-240) 
+Output: AX=0 -> OK 
+        AX=1 -> Invalid XFunction number 
+        AX=8 -> Indicated XFunction is not occupied 
+
+
+Set translation table address (9Ah)
+Sets the address of the keyboard Translation Table.
+
+Input:  ES:DI=Address of the new table 
+
+Output: AX=0 -> OK 
+
+Note: This function allows the administration of several key assignments,
+      by switching the Translation Table. Each table consists of 100
+      entries, each of which consist of 5 levels of the allocations for and
+      the status byte as the last byte of the entry. If a new table is
+      selected with this function which is not initialized the keyboard will
+      produce random characters.
+
+
+Get translation table address (9Bh)
+Determines the address of the current Translation Table.
+
+Input: AX=AD9Bh 
+
+Output: ES:DI=Address of the Translation Table. 
+
+
+Get last XString (9Ch)
+Determines the number of the last defined XString.
+
+Input: AX=AD9Ch 
+
+Output: BL=Number of the last XString 
+
+
+GET combination table address (9Dh)
+Returns the address of the combination characters table.
+
+The table has the following structure: 
+
+1st entry
+    first character of the combination (e.g. ')
+    number of following combinations (e.g. 2)
+        1st combination second character of the combination (e.g. a)
+            resulting character (e.g. ...)
+        2nd combination second character of the combination (e.g. i)
+            resulting character (e.g. )
+2nd entry
+...
+
+A zero byte follows the last entry in the table.
+
+The table can be a maximum of 192 bytes long, including the zero byte. 
+
+Input:  AX=AD9Dh 
+
+Output: ES:DI=Address of table. 
+
+
+Get shift table address (9Eh)
+Determines the address of the list with the Scancodes of the shift keys:
+
+SHIFT1 SHIFT2 CTRL ALT SCROLL NUM CAPS INSERT 
+
+Input: AX=AD9E 
+
+Output: ES:DI=Address of table. 
+
+
+
+7. Using PI with the unit XKeyb_PI
+==================================
+
+XKeyb_PI is a Turbo Pascal unit which allows easy access to the functions
+of the Program Interface:
+
+Function TestInstalled : Word;
+
+Procedure XKeybOn(B : Boolean);
+
+Procedure SetKey(KeyNum,Normal,Shift,Control,Alt,AltGr,Status);
+
+Procedure GetKey(Num:Byte;Var Norm,Shift,Ctrl,Alt,AltGr,Status);
+
+Procedure WaitForKey(Var VScan,RScan,Ascii,KeyStat,Ebene:Byte);
+
+Procedure PutKey(Ascii,Scan : Byte);
+
+Procedure SetXStr(Num : Byte; XStr : String);
+
+Procedure GetXStr(Num : Byte; Var XStr : String);
+
+Procedure SetXFunc(Var Num:Byte; CallConv:Byte; Adresse:Pointer);
+
+Procedure ClearXFunc(Num : Byte);
+
+Procedure SetTable(P : Pointer);
+
+Function TableAdr : Pointer;
+
+Function LastXStr : Byte;
+
+Function CombiTabAdr : Pointer;
+
+Function ShiftTabAdr : Pointer;
+
+After reading the previous section the function of these routines should be
+reasonably clear. If not, the file XKeyb_PI.PAS contains further information.
+
+At least one of the routines calling these functions must contain the variable
+FEHLER to receive the error status:
+
+0 = OK, otherwise error code (see XKeyb_PI.PAS and the PI section for more
+                              details)
+
+In addition to these functions (which directly correspond to the functions
+of the Program Interface), two additional functions are provided: Enter and
+Leave. Both are to be used only within an XFunction routine. 
+
+Enter saves the DS, SS and SP registers, loads DS with the address of the
+Turbo Pascal data segment, and adjusts SS:SP to the Turbo Pascal stack.
+
+Leave sets SS:SP and DS to their old values. 
+
+An XFunction routine could then resemble the following: 
+
+Type   KeyTyp = Record
+                Stat,Scan : Byte;
+                End;
+{$F+}  { Routine must be FAR! }
+Procedure MyHotkey(Key : Keytyp);
+Begin
+   Enter;
+   DoIt(Key);
+   Leave;
+End;
+{$F-}
+
+When using Enter and Leave the routine may use any global, however NO local
+variables. However this applies only to the XFunction routine. All of these
+called routines must define any variables they produce and use.
+
+
+
+8. Using the macro recorder KeyMan
+==================================
+
+Another program included with XKeyb is KEYMAN.EXE. KeyMan is a simple macro
+recorder which is installed as a memory resident program that allows simple
+(re)definition of keys.
+
+KeyMan can only be loaded if XKeyb already is already resident in memory. It
+is activated by a Hotkey (F11 by default). After activation KeyMan will pop up
+a window on the display. Now you can either press a key to which you want to
+assign a new macro, or press the Hotkey again to redefine it.
+
+If you pressed a key which already had a macro assigned to it, the current
+macro will be printed in the window. This macro can be edited by using the
+BACKSPACE key to erase the displayed keystrokes (to include a BACKSPACE
+keystroke as part of the macro, press ALT and "8" on the numeric keypad).
+After pressing the Hotkey again the macro will be allocated and the window
+wil disappear.
+
+Note: If the key you pressed did NOT already have a macro assigned to it,
+      that key will be defaulted as the first keystroke of the macro
+      (i.e. if you pressed CTRL-D, the macro will initially consist of the
+      keystroke "CTRL-D").
+
+If the new macro consisted of more than one character, an XString will be
+automatically created and assigned to the key (if enough XString space was
+allocated via the /Xnn switch when XKeyb was installed).
+
+If you pressed the Hotkey after the activation of KeyMan, KeyMan will ask you
+to press the new Hotkey. After pressing a key the window will disappear and
+the key pressed will become the new Hotkey.
+
+If you want to save an interactively created key allocation, then you can do
+this by using the command
+
+LISTXDEF >xyz.KEY
+
+
+9. Using the extended scancode keys
+====================================
+
+On newer AT keyboards, some of the keys produce an additional extended E0
+scancode, that preceeds the proper scancode of the key. These keys were
+originally the new gray keys duplicating the functionality of the numeric pad
+of the XT keyboards.
+
+However, with time some other keys were added, being all of them preceeded by
+the E0 scancode, as for example the Windows keys, and the newest multimedia keys.
+
+XKEYB supports these keys, as explained in section 4. The following is a brief
+guide of some of the most popular key bindings. The following are hexadecimal codes
+of the scancode that appears after the E0 extended scancode.
+
+Please, do remember that the number in [KEYS] section must be specified in
+decimal.
+
+                Extended scancode
+Key             Hex      Dec
+---------------------------------
+KeyPad Enter    1C       28
+Right Ctrl      1D       29
+Keypad /        35       53
+Right Alt       38       56
+Gray Home       47       71
+Gray Up Arrow   48       72
+Gray Page Up    49       73
+Gray Left Arrow 4B       75
+Gray Right Arrow 4D      77
+Gray End        4F       79
+Gray Down Arrow 50       80
+Gray PageDown   51       81
+Gray Insert     52       82
+Gray Delete     53       83
+-------------------
+Left Windows    5B       91
+Right Windows   5C       92
+Context Menu    5D       93
+-------------------
+Power           5E       94
+Sleep           5F       95
+Wake            63       99
+-------------------
+Next track      19       25
+Previous track  10       16
+Stop            24       36
+Play/Pause      22       34
+Mute            20       32
+Volume Up       30       48
+Volume Down     2E       46
+Media Select    6D      109
+-------------------
+E-Mail          6C      108
+Calculator      21       33
+My computer     6B      107
+WWW Search      65      101
+WWW Home        32       50
+WWW Back        6A      106
+WWW Forward     69      105
+WWW Stop        68      104
+WWW Refresh     67      103
+WWW Favourites  66      102
+
+
+10. Version differences 
+=======================
+
+Version 1.1: 
+
+- Erganzt around Programming Interface. 
+
+- New macro recorder KeyMan. 
+
+Version 1.2: 
+
+- Implementation of combination characters.
+
+- Elimination of errors with call of the INT15h (interface for additional
+  keyboard drivers)
+
+Version 1.22: 
+
+- Function of Control+Break geandert in call of INT 1Bh and production of ^C. 
+
+- Error correction: The combinations of keys ALT+1 to ALT+0 and ALT+ '
+  produce the correct virtual Scancodes starting from 1.22.
+
+Version 1.24: 
+
+- Special function 247: Call of INT 19h.
+  under DOS: Computer reboots (does not function on all systems)
+  under OS/2 2.0: DOS box close.
+- Elimination of errors: With the XStrings defined in the file GR2.KEY the
+  keys F11 and F12 supply the correct virtual Scancodes.
+- Documentation included as WinWord file. 
+
+Version 1.3: 
+
+- Errors with switching on BIOS keyboard driver recovered. 
+- Problem with non functioning backslash in the MS-DOS wordprocessor fixed
+- On computers with AMI BIOS memory test is ??? performed on warm start
+- Errors during automatic large adjustment of the storage area for XStrings
+  fixed
+- Extended keyboard status becomes, up to which bit unterstutzt for the right
+  CTRL key.
+
+Version 1.5: 
+
+- Improved ability to load the driver into UMBs by using XKEYBRES. 
+
+Version 1.5e: (English language copy of v1.5 for FreeDos)
+
+- All messages and documentation translated to English
+- Winword 2.0 documentation removed (this is Freedos after all!)
+- XKEYB_PI.PAS, LISTXDEF.PAS and KEYMAN.PAS available in the source package
+
+
+Version 1.6:  (English version only)
+
+- xKEYB looks now for .KEY files through path
+- DVORAK, RU layout added, IT corrected
+
+Version 1.7:
+
+- LED support completely removed (seems to give better results)
+- Improved search of .KEY files (also in current dir)
+- Added help (/?), changed the startup description lines
+- XKEYBRES now included inside XKEYB.PAS (using defines)
+- Reported values of BX/CX with int2Fh, AX=AD80h are switched
+  (to improve MS KEYB compatibility)
+- There is now a makefile to build the sources
+- Most of the messages are now displayed in English
+- Added br850.key (for Brazil, codepage 850)
+
+Version 1.8:
+
+- It now supports up to 127 scancodes
+- Fixed the problem with the two keys reporting scancode 53. The .KEY
+  files have been patched to support this
+- The Extended (E0h) keys no longer behave as those of the numpad
+  with respect to NumLock and SHIFT
+- Comments on the source file translated into English
+- SCANKBD is not more command-line friendly, and the RTE200 is
+  patched within the makefile
+- Contributed: PC860 (Standard, 860 codepage)
+- Modified: BR850, PC850, SP, LA
+- Removed: PC8, RU, ECMA
+
+
+Version 1.9:
+
+- Fixed the bug with Alt+9 key combination
+- Added comments with ; inside the code
+- Control is passed to the next handler of the 2Fh chain for ALL the
+  non-supported functions, namely 83..8F, 92, 93, 9D..FF
+- All layouts now support [INS 0] (scancode 82)
+- Modified: PC860, BE
+- Added: RU, HU, US-LV, PL, TR
+
+
+Version 1.10:
+
+- Support for E0-extended keys added (fixed the Ctrl+Alt+Del bug),
+  so that support for win-keys and multimedia keys is added
+- Environment block is freed before going resident
+- Before reboot the PC, NWCACHE and SmartDrv caches are flushed
+  (thanks to code borrowed from FreeKEYB, thanks to Matthias Paul)
+
+
+Version 1.11:
+- Added XFunctions to perform a cold reboot, turn off and suspend
+- Improved the COMBI section, whose starting is marked by certain scancode
+  level, instead of ASCII recognition. (user defined XFunctions are now
+  200..235
+- True support of extended E0 keys
+- Switch /E, which ignores the E0 prefix and reassigns extended keys to their
+  non-extended counterpart (not to be used with the multimedia, etc keys!)
+
+
+Version 1.12:
+- Corrected scancodes sent by Control+CursorKeys/Ins/del (thanks to Axel Frinke)
+- Corrected scancodes sent by AltGr+number
+- Corrected scancodes sent by COMBIs
+- Fixed problem with character code 224 (E0h)
+- Fixed potential problem to activate XKEYBRES when no file has been loaded
+  with Ctrl+Alt+F2
+- AT/286 machine is tested BEFORE installing anything
+- All the .KEYs now have the "disable" feature (Ctrl+Alt+F1) by default
+- Modified layouts: BR850; Added layouts: BR275, ECMA23 (probably buggy)
+
+
+Version 1.13:
+- In case of Error, DOSExitCode is set to an error code
+- New layout: PC437.KEY
+- PC437.KEY is ALWAYS read before any other, so KEY files just need to have
+the differences
+- Corrected: if Ctrl+^vInsDel is not assigned anything, then it behaves
+like BIOS (does NOTHING)
+- Fixed possibly weird behaviour of Alt+ keys affected by NumLock different
+from keypad
+- Completely new debugged header for int9handler (includes input buffer
+checking and timeout)
+  Also the proto-int15h has been almost completely rewritten                     Fixes a potential bug with GetKey and XFunctions
+  Finally, has a workaround for the byte at offset 03 when using APL software
+(note however that changes in that byte would produce no effects)
+- StoreKey now forks into EfStoreKey, the procedure that really gets key
+into buffer; StoreKey simply parses any possible ASCII,Scancode to its
+corresponding action.
+- Xfunction 249: Break interrupt (for ctrl+break)
+- Changes of virtual ScanCode moved into StoreKey
+- API function 94h: AH=BH=ScanCode, no longer separation between real and
+virtual scancode
+- Removed /E option to map E0-extended into non-extended (for commandline
+compatibility reasons)
+- When overloading install, if config file is not found, action is aborted
+- E0-prefix is now tracked through BIOS variable 0040h:0096h (KeysDown2)
+- Alt+NumberPad and Pause behave now the same as BIOS Keyb
+- F11 and F12 scancodes are now patched
+- New policy for testing keyStatus bits: now better behaviour with pressing
+multiple shifting keys
+- PrtScrt recovered in the KEY files
+- Added:  JP106 (Japanese, Takeshi Hamasaki)
+  Reworked: PC850 and BR275 (Henrique Peron),
+            FR (Patrice LEMONNIER)
+  Patched:  all, so that there's response to PrtScr
+
+
+Version 1.14:
+- New unified scancode translation procedure. Fixes several bugs:
+      - Ctrl+INS, Ctrl+DEL (and Ctrl+other cursors)
+      - Shift+F4 and Shift+F5
+- Minor fix in Alt+Numberpad codes
+- Minor optimization: with XString no need to store $FF as ASCII
+- Patch for ASCII character F0h
+- Better organization of the package
+- Includes the "Reduced Layout Packs v.1.0 by Henrique Peron
+
+
+Version 1.15:
+- Fixed appropriate translated scancodes for F11 and F12
+- Contains reduced layout pack ver. 1.15
+- LAST VERSION by Aitor Santamaria_Merino
+
+
+11. About the layout packs upgrades
+===================================
+
+From version 1.14 onwards, the KEY file set has an independent entity,
+on the form of the Layout Packs. Xkeyb versions will always be packed
+with the latest version of the Reduced Layout Packs available. Please,
+read the accompaining Layout Packs documentation for more information
+on this.
+
+
+
+12. Use conditions
+==================
+
+Xkeyb is placed under the 'GNU general public license'.See the file
+'copying.txt' for more information.
+
+(C) Dietmar Hohmann, mailto:d.hoehmann@gmx.net 
+(C) Versions 1.51-1.15:
+    Aitor Santamar¡a Merino
+    (aitor.sm@wanadoo.es)
+
+
+
+             
+13. XKeyb Files
+===============
+
+(NOTE: Reduced Layout Packs files are NOT included)
+
+BIN\
+   XKEYB.EXE       Main executable
+   XKEYBRES.EXE    Main executable (for reduced size)
+   KEYB.BAT        KEYB to XKEYB redirector
+   KEYMAN.EXE      KeyMan macro recorder
+   LISTXDEF.EXE    List X definitions
+   SCANKBD.EXE     Keyboard layout scanner
+   PC437.KEY       Base layout files
+
+SOURCE\            (see \XKEYB\NOTES.TXT)
+
+HELP\              Ussage files for the executables
+   LISTXDEF
+   XKEYB
+   XKEYBRES
+   KEYMAN
+
+DOC\
+   XKEYB.TXT       This file
+   HISTORY.TXT     History for xkeyb
+   COPYING.TXT     License file: GNU-GPL 2.0

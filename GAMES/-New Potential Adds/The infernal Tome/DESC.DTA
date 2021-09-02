@@ -1,0 +1,73 @@
+00These bones are useless.
+01The lamp is too hot to touch
+02The chandelier is out of reach
+05The barrel is empty
+06The fountain is dried-up
+07The cage is too high to reach.
+08The barrel is empty.
+09The statue is too heavy to move
+10The banner is Tenis' coat-of-arms
+11The magic wall does not respond
+39The wooden beam is out of reach.
+45The pit looks bottomless
+60The wall does not move.
+62 That's an image of the ShadowKing
+64The torch is too hot to touch.
+77The headcracker looks used.
+78These chains are very rusty.
+79 That's an altar to B'Nah
+80The bench looks very worn.
+81The wall fountain is dried-up.
+82The stain-glass window does not break.
+87The window cannot be opened.
+89The window cannot be opened.
+81,This web is too strong to cut,These lead downstairs
+82,0rusty armor,These stairs lead up
+83,This column is too strong to break,0the bookshelf
+84,0drawers,We can't budge the locked grate.
+85,The coat of arms can'be be moved,The grate is open
+86,The tree is to tough to cut,The bush is too tough to cut
+87,This ladder leads down,We can't see through the window
+88,This rose bush is too tough to cut,1The party is healed
+89,The gravestone is unreadable,These stairs lead up
+90,The gravestone is unreadable,The grate is open
+91,This ladder leads up,We can't budge this locked grate
+92,Who is the lovely girl?,This is a statue of a halfling
+93,It's the Eye of B'nah!,I wonder whose head this is
+94,These rotted spears are useless, The table is too heavy to budge
+95,It's the coffin of Hamas,The grate door is open
+96,0the pots,1The party is healed by the food
+97,This ladder leads down,The door is too heavy to budge
+98,0the desk,These are too heavy to open
+99,1You find an old parchment,There's nothing left to eat
+100,These are too heavy to move,These doors are open
+101,1Order the Gems,0the crypt
+102,1Order the Gems,0the bones
+103,Order the Gems,1The wall seems loose
+104,The ladder leads up,0the bones
+105,The column doesn't budge,The wall is crumbled
+106,The column doesn't budge,The door doesn't move
+107,The statue doesn't move,1You read the tablet
+108,The statue doesn't move,The door doesn't budge
+109,0the shrine,The window doesn't budge
+110,the column doesn't budge,the doors are open
+111,0the shelves,0the shelves
+112,the column doesn't budge,the statue doesn't budge
+113,0the throne,1You read the tablet
+114,0the desk,0the table
+115, ,
+116,the column doesn't budge,1the wall does't move
+117,the throne is too heavy,1the wall doesn't move
+118,the ladder goes down,0the crypt
+119,1the ankh heals,1the wall doesn't move
+120,1the timepiece is huge,1the wall doesn't move
+121,the ladder goes up,1the wall
+122,1the Draden coffin,1the wall
+123,1the Draden altar,1the wall
+124,the ladder goes down,1the wall
+125,the statue doesn't move,1the grotto
+126,0the Draden altar,1the rock
+127,0the tree,the plant is healthy
+128,1the plant,1the plant
+129,the plant is healthy,0the arch
+

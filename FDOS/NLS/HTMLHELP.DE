@@ -1,0 +1,98 @@
+#### This file is part of the FreeDOS HTML Help Viewer
+#### and is licensed under its terms. 
+#### Translated by Fritz.Mueller www.bootablecd.de
+
+# Program Usage Screen Strings
+1.0:FreeDOS HTML Hilfe Betrachter
+1.1:Grundlegende Optionen
+1.2:Zeige Hilfe zu diesem Thema
+1.3:Zeigt diese Hilfsnachricht an
+1.4:Erzwinge Monochrome Anzeige
+1.5:Benutze schînes Farbschema
+1.6:BenuÅtzt ASCII anstelle von erweiterten ZeichensÑtzen
+1.7:Sage HELP, da· der Codepage nnn ist; besser als anzeigen lassen
+1.8:Erweiterte Optionen
+1.9:Hebt den Hilfepfad auf
+1.10:wenn keine Datei angegeben wird, wird index.htm unterstellt
+1.11:LÑdt eine andere Datei als index.htm, die im Bereich des Hilfepfads liegt
+1.12:Wenn der Benutzer F1 drueckt oder auf "Hilfe Åber Hilfe" klickt
+1.13:wird die Hilfe diese Datei laden. Standard ist help.htm
+1.14:Umgebungsvariablen
+1.15:Verzeichnis, das Ihre Hilfedateien enthÑlt
+1.16:Setzen Sie hier /M, /A, F1, F2 um sie zum Standard zu machen
+
+#Error Message Strings
+2.0:Konnte keinen Speicher zuweisen
+2.1:Ungueltiges Argument
+2.2:Bitte wÑhlen Sie nur ein Thema
+2.3:Kann /f und /m nicht gleichzeitig verwenden
+2.4:Tippen Sie "HELP /?" zur Benutzung.
+2.5:Kein exakter Treffer zum Thema gefunden
+2.6:Konnte das Thema nicht finden
+2.7:Interner Fehler: Fehler beim Grî·e verÑndern
+2.8:Konnte die komprimierte Datei nicht lesen
+2.9:Konnte nicht îffnen
+2.10:Zip-Datei ist leer oder korrupt
+2.11:Konnte diese Datei nicht finden. Lade die erste html-Datei in der Zip-Datei
+2.12:Konnte die html-Datei in der Zip-Datei nicht finden
+2.13:Bitte geben Sie eine gÅltige Codepage ein
+2.14:Der angegebene Codepage wird nicht unterstuetzt
+2.15:Folgende Codepages werden unterstuetzt
+
+#Menu Strings
+#### HTML Help will truncate strings 3.0 and 3.1
+#### if they exceed 14 characters.
+3.0:Ende
+3.1:Hilfe Åber die Hilfe
+#### HTML Help will truncate strings 3.2-3.5
+#### if they exceed 10 characters.
+3.2:Zurueck
+3.3:VorwÑrts
+3.4:Inhalte
+3.5:Suche
+
+#Button Label Strings
+#### HTML Help will truncate strings 4.0-4.2
+#### if they exceed 8 characters.
+4.0:OK
+4.1:Abbrechen
+4.2:Hilfe
+
+#Status Bar Strings
+5.0:Suche nach dem Thema...
+5.1:Komplettsuche in Arbeit...
+5.2:(DRöCKEN SIE ESC UM ABZUBRECHEN)...
+
+#Search Box Strings
+#### HTML Help will truncate strings:
+####    6.0      if it exceeds 35 characters;
+####    6.1      if it exceeds 20 characters;
+####    6.2-6.5  if they exceed 28 characters;
+####    6.6-6.13 if they exceed 35 characters.
+6.0:Suchhilfe
+6.1:zu findender Text:
+6.2:Gro·- /Kleinschreibung
+6.3:nur ganzes Wort
+6.4:Volltextsuche
+6.5:auf dieser Seite
+#Help on Search:
+6.6:Was es macht
+#Lines 6.7-6.9 describe "Search":
+6.7:Volltextsuche:
+6.8:Schaut alle Dateien durch
+6.9:auf der Inhaltsverzeichnisseite aufgelistet.
+#Line 6.10 can be used if you need more room.
+6.11:auf dieser Seite:
+6.12:Sucht im offenen Dokument
+6.13:nur.
+
+#Search Results Strings
+7.0:Suchergebnisse
+7.1:Searched all files listed on contents page
+# The following line, 7.2, is used as "Searched [FILENAME]"
+7.2:Gesucht
+# The following line, 7.3, is used as "for: [TEXT]"
+7.3:fuer
+7.4:,Sorry, aber ich kann die Suchergebnisse nicht suchen.
+7.5:VOM BENUTZER ABGEBROCHEN (ESC gedrÅckt)
+7.6:Keine Ergebnisse gefunden

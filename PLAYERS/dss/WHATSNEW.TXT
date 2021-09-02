@@ -1,0 +1,8 @@
+Changes since previous version:
+
+    MPEG2.5 8kHz decoding fixed!
+    Correct ID3v2 TAG skipping.
+    New description xlat routine(Thanks to Vadim Ochkin).
+    Support textmode palette changes.
+    Line oscilloscope.
+    Mono files can be played as stereo to allow some sound processing.

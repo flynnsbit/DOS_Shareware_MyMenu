@@ -1,0 +1,10 @@
+Game: The Terminator: SkyNET
+Year: 1996
+Composed by: Andy Warr
+MIDI versions: GM
+Platform: DOS
+
+Additional info: I have no idea what tracks 17 - 22 are.
+
+
+https://www.karlsitretro.com/game_midi

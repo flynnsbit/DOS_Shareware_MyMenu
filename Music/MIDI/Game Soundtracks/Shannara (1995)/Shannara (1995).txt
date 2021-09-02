@@ -1,0 +1,9 @@
+Game: Shannara
+Year: 1995
+Composed by: David Govett, Joe McDermott, George Alistair Sanger, K. Weston Phelan
+MIDI versions: GM
+Platform: DOS
+
+Additional info: It was converted from XMI files. Since the file 0004 was two seconds long with no music at all, I have removed it.
+
+https://www.karlsitretro.com/game_midi

@@ -1,0 +1,29 @@
+Move
+----
+Copyright (c) Joe Cosentino 1997-2003.
+Copyright (c) Imre Leber 2003
+
+Overview
+--------
+  A clone of the Move command that comes with DR/MS/PC-DOS.  
+
+Source code
+-----------
+  The source code is available under the terms of the GNU General Public
+  License (see copying.txt).  If you want to use it in your programs, the
+  program you are writing must be released under the GNU GPL as well.  No
+  royalties are expected, although donations are always accepted :-).
+
+  The source is compiled with Borland Turbo C 2.01, or later or OpenWatcom 1.3.
+  If you want to compile the sources with other compilers, you may have to tweak
+  a couple of files to get it to work.
+
+  Portions of the source code are written and copyright by Rene Ableidinger,
+  most is written by Joe Cosentino, latest changes ar by Imre Leber.
+
+Warranties
+----------
+  This program comes as-is and without warranty of any kind.  The author of
+  this software assumes no responsibility pertaining to the use or misuse of
+  this software.  By using this software, the operator is understood to be
+  agreeing to the terms of the above mentioned license (GNU GPL).

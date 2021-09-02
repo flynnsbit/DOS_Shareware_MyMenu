@@ -1,0 +1,97 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ================================================
+                  QUEST FOR GLORY III - WAGES OF WAR
+                                                        
+
+                            THE SOUNDTRACK
+                     (See below for song titles.)
+                Music Composed & Performed by Rudy Helm
+           Additional music by Mark Seibert & Aubrey Hodges
+           ================================================
+                 Copyright (c)1992 Sierra On-Line, Inc.  
+           ================================================
+
+                          GENERAL MIDI VERSION
+                       (Roland Sound Canvas Mix)
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- General MIDI playback device
+   (Roland Sound Canvas recommended)
+
+
+This Standard MIDI File was recorded directly from Sierra's "Quest For
+Glory 3" adventure game using Sierra's GM driver.  It was originally
+sequenced and arranged for optimal playback through Roland Sound Canvas
+sound cards and modules.
+
+Recorded/edited/compiled/arranged for General MIDI by Quest Studios.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+       =================================================================
+                      TRACK SHEET  (General MIDI VERSION)
+
+                      QUEST FOR GLORY 3 - THE WAGES OF WAR
+        =================================================================
+
+   SONG TITLE                                      START MEASURE/TIME *
+   -------------------------------------------------------------------------
+   1. Sierra Fanfare/Opening                              2  00:00:02
+   2. Credits                                            29  00:11:07
+   3. Create Character                                  149  00:05:55
+   4. Introduction                                      171  00:06:48
+   5. Tarna                                             333  00:13:16
+   6. Welcome Inn                                       357  00:14:14
+   7. Apothecary                                        428  00:17:04
+   8. Rakeesh & Kreesha                                 512  00:20:26
+   9. Bazar/Junk Dealers                                561  00:22:24
+  10. The Thief (Hall Of Judgement)                     641  00:25:36
+  11. Eastern Fricana (Savanna)                         727  00:29:02
+  12. Resting In The Savanna                            779  00:31:07
+  13. Meerbat Alcove                                    849  00:32:43
+  14. Quest To The Simbani Village                      855  00:34:09
+  15. Simbani Village                                   892  00:35:38
+  16. Laibon                                            952  00:38:02
+  17. Ulhura's Hut                                      998  00:39:52
+  18. Hero's Hut                                       1043  00:41:40
+  19. Erana's Pool                                     1117  00:44:38
+  20. Awari (Game Theme)                               1186  00:47:24
+  21. Eastern Fricana (Jungle)                         1240  00:49:33
+  22. Caged Leopardman                                 1325  00:52:57
+  23. The Chase                                        1378  00:55:04
+  24. The Battle - Part One                            1411  00:56:24
+  25. The Battle - Part Two                            1434  00:57:19
+  26. Initiation Ritual                                1465  00:58:33
+  27. The Large Tree                                   1495  00:59:45
+  28. Garden At The Top Of The Tree                    1560  01:02:21
+  29. Waffle Walker                                    1621  01:04:48
+  30. Leopardman Village                               1670  01:06:45
+  31. Eastern Fricana (Lost City)                      1836  01:13:24
+  32. Leopardman Change Ritual                         1892  01:15:38
+  33. The Drum                                         1905  01:16:09
+  34. Peace Conference                                 1928  01:17:04
+  35. Monkey Village                                   1949  01:17:55
+  36. Lost City                                        2004  01:20:07
+  37. Frik And Frac (Guard Chamber)                    2031  01:21:12
+  38. Reeshaka Dar Kreesha                             2094  01:23:43
+  39. Joining The Battle                               2110  01:24:21
+  40. The Mirror Room                                  2161  01:26:24
+  41. Demon Wizard (World Gate)                        2192  01:27:38
+  42. End Game                                         2286  01:31:24
+  43. Closing Credits                                  2336  01:33:24
+  --------------------------------------------------------------------------
+                                                TOTAL TIME:  01:39:14
+
+
+      * Note:  Start Times are approximate.
+

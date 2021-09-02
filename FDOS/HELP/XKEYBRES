@@ -1,0 +1,29 @@
+NAME
+
+   XKEYBRES - Extended Keyboard driver for MS-DOS
+
+SYNOPSIS
+
+   [LOADHI] XKEYBRES
+
+
+RELATED COMMANDS
+
+   XKEYB        Standard version of XKEYB 
+   KEYMAN       Interactive macro recorder
+   LISTXDEF     Lists current definition file to STDOUT
+
+NOTES
+   
+   This version of XKEYB is more suitable for loading into upper memory
+   than XKEYB.EXE, due to its smaller size. This smaller size has been
+   achieved by removing most of the initialisation routines, so once it
+   is installed you need to use XKEYB to load a configuration file and
+   activate the driver. 
+
+   Please see the manual XKEYB.TXT for further information.
+
+AUTHOR
+
+   Program:             Dietmar Hohmann, d.hoehmann@gmx.net
+   This documentation:  Ben Berry, za2bb@hotmail.com    

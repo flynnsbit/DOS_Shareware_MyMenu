@@ -1,0 +1,247 @@
+### This file is part of FDAPM, a tool for APM power management and
+### energy saving. (c) by Eric Auer <mceric@users.sf.net> 2003-2009.
+
+FDAPM is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published
+by the Free Software Foundation; either version 2 of the License,
+or (at your option) any later version.
+
+### FDAPM is distributed in the hope that it will be useful, but
+### WITHOUT ANY WARRANTY; without even the implied warranty of
+### MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+### GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with FDAPM; if not, write to the Free Software Foundation,
+Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+(or try http://www.gnu.org/licenses/ at http://www.gnu.org).
+
+
+This is the command line option list ...
+
+>>> >>> >>> Run FDAPM with the HELP option to get a less   <<< <<< <<<
+>>> >>> >>> technical and more human readable help screen! <<< <<< <<<
+
+
+APMOFF ->   call connectAPM, then int 15.5306, then disableAPM.
+            Also configure POWER, IF already TSR, to savingstrat 0
+            (using the int 2f POWER API).
+            MS POWER syntax compatibility alias: "OFF".
+
+APMBIOS ->  call connectAPM, then enableAPM. Configure POWER, IF
+            already TSR, appropriately (using the int 2f API).
+            MS POWER syntax compatibility alias: "STD".
+
+APMDOS ->   between the hookhandler call and the going TSR code,
+            insert configuration through POWER API on int 2f.
+            Should also configure savingstrat (whether to use HLT,
+            whether to use APM CPU IDLE)...
+            This should give you maximum energy savings. It is the
+            only mode that causes FDAPM to stay resident in RAM.
+
+            MS POWER syntax compatibility aliases: Default "ADV",
+            "ADV:MIN", "ADV:REG" and "ADV:MAX", with the special
+            property that only "ADV:MAX" (and "APMDOS") enables
+            the int 28 idling hook... MS never hooks int 28, and
+            Novell performance degrades when FDAPM hooks int 28.
+            Norton Utilities TS (Text Search) is also slow with
+            APMDOS or ADV:MAX but works fine with ADV:REG mode.
+
+
+INFO ->     call statusDisplay (combining with other options
+            might be allowed in the future), shows APM BIOS data.
+            Displays things like battery fill percentage.
+
+STATS ->    (optional) get statistics through POWER API and show
+            them (see APMStatBuf and IdleStatBuf data area!)...
+            Displays things like CPU busy time percentage, if
+            resident FDAPM or POWER is loaded in memory.
+
+(none) ->   If no options are given, default is to show both the
+            INFO and the STATS output (if shell loaded, otherwise,
+            when loaded through INSTALL, default is to do APMDOS).
+
+           
+HELP ->     shows an human readable help screen
+
+
+STANDBY ->  call shutDownHandler with AX=3: Put the system in an
+            energy-saving standby mode. Only possible with APM BIOS.
+            Tells caches to flush before going to standby.
+
+SUSPEND ->  call shutDownHandler with AX=4: Put the system in an
+            energy-saving suspend mode after spinning down disks.
+            Requires an APM BIOS to be present. Tells caches to
+            flush before suspending.
+
+PURESUSP -> (new 9/2004) as suspend but without the explicit spin
+            down. Useful if you have a BIOS with suspend to disk, to
+            avoid spinning the disks right before suspend needs them.
+
+POWEROFF -> call shutDownHandler with AX=5: Try to tell the computer
+            to turn itself off. Only works if you have an APM BIOS
+            and an ATX or newer power supply. FDAPM reverts to using
+            SUSPEND instead if POWEROFF fails. Tells caches to flush
+            before powering down and tells disks to spin down.
+
+PUREOFF ->  (new 9/2004) as poweroff but without the explicit spin
+            down. Useful if your BIOS would otherwise wake up the
+            disk right before cutting off power (ouch).
+
+FLUSH ->    just flushes the disk caches (new 9/2004).
+
+
+HOTBOOT ->  call shutDownHandler with AX=0: Just load the operating
+            system again. Will fail very often because drivers will
+            usually fail to shut down properly. Before attempting
+            the reboot, FDAPM tells caches to flush (write back
+            data to disk) themselves and waits for a moment.
+
+WARMBOOT -> call shutDownHandler with AX=1: Reboot by running the
+            BIOS bootstrap code again. Usually safe but can crash if
+            you use incompatible protected mode software, like some
+            versions of EMM386. Flushes caches before rebooting.
+
+COLDBOOT -> call shutDownHandler with AX=2: Reboot (after flushing
+            caches) by telling the 8042 keyboard controller to pulse
+            the hardware reset circuits. Very similar to a real cold
+            reboot - only in rare cases, pressing the reset button or
+            power-cycling the computer will give you a "colder" reset.
+
+
+VGAON ->    enable EGA/VGA video: just pressing a key after using the
+            VGAOFF function will NOT enable video again, this is not
+            a screen saver. It is only a way to turn video on and off
+            without any kind of system monitoring or automatic wakeup.
+
+VGAOFF ->   disable EGA/VGA video: this should stop the CRTC and stop
+            basically all signals, especially refresh. Screens with
+            DPMS support will react by entering stand by mode, while
+            other screens will just lose sync (not very good for them,
+            so do not stay in this mode for longer time in that case).
+
+
+SPINDOWN -> Spin down IDE disks on the first 2 IDE controllers (first
+            four disks) by using direct hardware access. Use at your
+            own risk. The disks will spin up again when you use them
+            again. The disks have builtin "intelligence" for that. To
+            save energy automatically, you can often use a BIOS setup
+            option which tells the disk at boot time that it can spin
+            down itself (it has a builtin timer!) whenever it has not
+            been accessed for a while. There are free DOS tools to
+            select another timeout later (250 preconfigured delays).
+
+SPINUP ->   While not being really useful, you can use this command to
+            tell your disks to wake up again at once.
+
+
+ACPIOFF ->  (new 2/2005) As POWEROFF but explicitly uses ACPI instead
+            of APM. Note that the classic functions will use ACPI, too,
+            if no APM BIOS support is present (new 2/2005, too). The
+            system is placed into S5 soft-off after flushing caches and
+            spinning down disks. Useful to compare APM / ACPI handling.
+            New 1/2007 is support for systems with dual ACPI PM I/O
+            port banks and BIOS/ACPI data at e000:???? in memory.
+
+SPEEDn ->   (new 2/2005) Read ACPI tables and set system speed to n *
+            12.5% of maximum speed. Use SPEED9 to show current setting.
+            SPEED9 is the recommended way to test if your system does
+            use ACPI in a FDAPM compatible way. If your DOS is crashed
+            by FDAPM SPEED9, you should make sure that int 15.87 works.
+
+            Things which can block int 15.87 are the FD EMM386 default
+            NOCHECK setting, the JEMM386 explicit NOCHECK setting, and
+            some versions of HIMEM - unless "repaired" by loading any
+            version of EMM386 afterwards :-). If you use FD EMM386 or
+            JEMM386 (www.japheth.de), try the MEMCHECK option.
+
+SPEED0 ->   Speed 0 will put the system into S1 standby (press the ATX
+            power or sleep button to continue) CPU-wise. None of the
+            other devices will sleep. Use my PCISLEEP tool if you want
+            to do experiments with PCI Power Management. Please report
+            if SPEEDn does not work. Include PCISLEEP L output if you
+            can. Another open source tool for CPU throttling / duty
+            cycle setup is THROTTLE by Jeff Leyda: Needs no ACPI BIOS,
+            uses PCI scan instead. -> www.oldskool.org/pc/throttle/
+
+ZAPSTATS -> (new 2/2005) Reset the statistics which are displayed by
+            STATS, has no effect on MS POWER and older FDAPM versions.
+
+
+All harddisk sleep/standby/off related options automatically add a
+delay to give the harddisk time to change state. All of those and all
+reboot related options tell caches to write back dirty buffers to
+disk before the real action begins.
+
+
+MS POWER compatibility: You can use FDAPM and POWER to configure each
+other, but FDAPM uses the 3 ADV:xxx levels in different way. I hear
+that MS POWER hardly saves any energy in ADV:REG and ADV:MIN mode,
+and I can tell you that FDAPM looks for even more signs of idleness
+than POWER does when you use FDAPM ADV:MAX (APMDOS) mode. Older
+FDAPM versions (before 11/2003) did not support the "percentage of
+idle CPU time" feature. Newer versions calculate the percentage as
+"time that FDAPM is in APMDOS mode versus part of that time where
+FDAPM invokes HLT (putting the CPU in low power mode)".
+
+More POWER compatibility: Running FDAPM without command line options
+will trigger "INFO" and "STATS" if COMSPEC is set, but will load in
+APMDOS mode if COMSPEC is not set (useful for INSTALL=FDAPM... lines
+in config.sys). Introduced 27 Nov 2003. Older FDAPM versions just
+display the help screen if no command line options are given.
+
+
+... and this is the TODO LIST ...
+
+
+handlers.asm some POWER API "set" functions are only dummies, you
+             may want to change that.
+             Hooked interrupts are roughly complete, the main work
+             should be done in "working" and "idling".
+
+UNIDLECHECK  if you want to define this (activate it at compile
+             time), you must fill in: 1. i08: timer tick handler,
+             count down and call idling if zero reached.
+             2. working: count up general busy-ness count which
+             i08 counts down - the rest is there since Nov 2003.
+             (in handlers.asm and hooktsr.asm)...
+
+UNLOAD       add a way to remove FDAPM from memory (no need to be
+             compatible to MS POWER - you cannot remove that one).
+
+
+... last but not least, this is the KNOWN COMPATIBILITY RISK LIST ...
+
+
+APM BIOSes   Some APM BIOSes have bugs like spinning up the disks
+             at the moment when they cut power or not being able
+             to enter sleep / standby mode properly. Hints for
+             workarounds are always welcome. For now, use PUREOFF
+             instead of POWEROFF to avoid the problem.
+
+Connect bug  If your software fails to DISconnect from the protected
+             mode APM BIOS interface, weird things can happen when
+             FDAPM connects the interface in real / v86 mode later.
+
+QEMM         Some EMM386 drivers like some QEMM versions do not allow
+             DOS to halt the CPU. In that case, APMDOS mode has little
+             or no energy saving effect.
+
+EMM386       Some EMM386 drivers only allow int 15.87 access to normal
+             memory. The ACPI tables, however, are not "normal" - for
+             some computers, they are at the end of the 4 GB address
+             space (some EMM386 always allow access there, as VGA RAM
+             framebuffers etc are in that area, too), but for other
+             computers, the tables are at the end of your real RAM,
+             yet (of course) excluded from use for EMS / XMS / other.
+
+HIMEM        Some versions of HIMEM have broken int 15.87 wrappers to
+             manage A20 state during access to RAM outside the first
+             1 MB. If FDAPM ACPI functions fail, add EMM386 (which
+             will override the HIMEM int 15 handler) or use another
+             version of HIMEM or try without HIMEM loaded at all.
+
+SSHDOS       The DOS SSH client (compiled with DJGPP) never seems to
+             be idle enough for APMDOS. Let me know your ideas about
+             saving energy while SSHDOS is running... Thanks.
+

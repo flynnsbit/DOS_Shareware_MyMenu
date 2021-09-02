@@ -1,0 +1,24 @@
+Building Energy (drozerix_-_building_energy.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=185456
+Renamed to "BLDENERG.XM" because of DOS 8-character limit
+
+Summary
+
+    drozerix_-_building_energy.xm is a XM format module. 
+    Uploaded to modarchive.org on Tue 11th Jun 2019
+
+Info Info
+
+    Mod Archive ID: 185456
+    MD5: d575069a9ec5b90c0c6675f357087a07
+    Format: XM
+    Channels: 24
+    Genre: n/a
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     Drozerix (https://modarchive.org/member.php?84702)

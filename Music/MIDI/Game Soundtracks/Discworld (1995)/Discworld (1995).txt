@@ -1,0 +1,9 @@
+Game: Discworld
+Year: 1995
+Composed by: Mark Bandola, Rob Lord
+MIDI versions: GM
+Platform: DOS
+
+Additional info: There are many duplicates in the original game rip, so I removed them all. Some tracks are unnamed. 
+
+https://www.karlsitretro.com/game_midi

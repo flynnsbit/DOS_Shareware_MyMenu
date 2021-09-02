@@ -1,0 +1,91 @@
+Attention Shareware Libraries, Retail Outlets and BBS Sysops.
+================================================================
+Anyone wishing to Distribute 'WRATH OF EARTH' from Transend
+must read this file to understand your rights
+================================================================
+
+    WRATH OF EARTH (c) TRANSEND SERVICES LTD. 
+
+
+LICENSING AGREEMENT:
+
+This LICENSE.DOC file describes the only terms and conditions
+under which we, Transend Services, Moorview Business Park, Leeds
+Road, Thackley, Bradford, BD10 8JH. Tel 01274 622228, permit
+distribution of this program.
+
+This software is copyright 1994 by Transend Ltd. All rights
+reserved except those specifically granted by this agreement of
+individual license agreements between Transend Services and its
+licensees.
+
+No rights other than those described below are granted or implied
+and Transend Services reserves the right to revoke or change
+these rights without prior notice. If you are unsure about your
+rights to distribute this product it is your responsibility to
+clarify those rights by contacting Transend Services on the above
+address and phone number.
+
+This product is a free demo and shareware vendors and users are
+granted a limited license to distribute this software,  subject
+to the following requirements:
+
+"Program" refers to the various files that accompany this file
+as supplied by Transend Services or its authorized agents or
+licensees.
+
+ 1.  You may copy and distribute this program as a single entity
+     but, without a written license agreement signed by an
+     authorized Director or agent of Transend Services you may
+     not distribute this program as part of any of the
+     following:
+                a Magazine Cover Disk or similar promotion,
+                a CD-ROM,
+                a product sold in a retail environment,
+             or in combination with any other products or
+                services of any kind.
+
+ 2. You may not charge more than five pounds sterling or the
+    equivalent in any other currency for this program.
+
+ 3. You leave ALL files intact.  You may not modify, delete, or
+    rename them, without prior consent from Transend Services.
+
+ 4. You clearly mark your diskette and the front and back of any
+    packaging with the word "Demo" or "Shareware" and explain the
+    concept of demo's and shareware, using words such as "try-before
+    -you-buy" software and you make these things indisputably clear.
+
+ 5. You clearly show the name "Transend" on the front in
+    any catalogue descriptions and outside-box packaging
+    associated with our shareware.
+
+ 6. Transend Services reserves the right to revoke, modify or
+    terminate this license at any time. Upon notification of
+    termination of this license, you are entitled to distribute
+    the product until the EARLIER of 30 days after notice of
+    termination or the completion of distribution of the copies
+    you have in stock.
+
+ 7. Your rights in this license do not include any rights to
+    sublicense this program or otherwise allow any copying or
+    distribution by any third party without the express written
+    consent of Transend Services Ltd.
+
+ 8. You will hold Transend Services Ltd, it's authors,
+    partners, agents, and employees harmless
+    from loss, expense or damage caused by direct or indirect
+    use or misuse of this program or your act of copying and
+    distributing the program in any way.
+
+THE PROGRAM IS SUPPLIED "AS IS". NO WARRANTIES OF ANY KIND
+EXPRESSED OR IMPLIED ARE MADE AS TO IT OR ANY MEDIUM IT MAY BE ON.
+WE WILL PROVIDE NO REMEDY FOR INDIRECT, CONSEQUENTIAL,
+PUNITIVE OR INCIDENTAL DAMAGES ARISING FROM IT, INCLUDING SUCH
+FROM NEGLIGENCE, STRICT LIABILITY, OR BREACH OF WARRANTY OR
+CONTRACT, EVEN AFTER NOTICE OF THE POSSIBILITY OF SUCH DAMAGES.
+
+If you are unclear as to any of the above points then DO NOT
+distribute any copies of the this program until you have
+contacted a Director of Transend Services Ltd on the above
+Address or Telephone No.

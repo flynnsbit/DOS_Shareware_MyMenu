@@ -1,0 +1,24 @@
+Your Darkest Smile (darksmile.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=177735
+Renamed as "DRKSMILE.XM" because of DOS 8-character limit
+
+Summary
+
+    darksmile.xm is a XM format module. 
+    Uploaded ot modarchive.org on Sun 25th Oct 2015
+
+Info Info
+
+    Mod Archive ID: 177735
+    MD5: e031829ff46fbfc9cc826b51f47e83e0
+    Format: XM
+    Channels: 16
+    Genre: Disco
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     JAM (https://modarchive.org/member.php?81691)

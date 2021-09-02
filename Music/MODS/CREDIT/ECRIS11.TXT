@@ -1,0 +1,24 @@
+Earth Crisis 2011 (earthcrisis11.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=170449
+Renamed to "ECRIS11.XM" because of DOS 8-character limit
+
+Summary
+
+    earthcrisis11.xm is a XM format module. 
+    Uploaded to modarchive.org on Fri 18th Mar 2011
+
+Info Info
+
+    Mod Archive ID: 170449
+    MD5: 5934187e5e3d680723f4350335fb6b30
+    Format: XM
+    Channels: 16
+    Genre: Electronic - Other
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     JAM (https://modarchive.org/member.php?81691)

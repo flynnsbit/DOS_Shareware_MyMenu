@@ -1,0 +1,9 @@
+Game: The Settlers II
+Year: 1996
+Composed by: Haiko Ruttmann
+MIDI versions: GM
+Platform: DOS
+
+Additional info: Last track is a medley from The Settlers.
+
+https://www.karlsitretro.com/game_midi

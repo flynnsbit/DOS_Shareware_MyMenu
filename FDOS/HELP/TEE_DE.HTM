@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+  <title>tee</title>
+</head>
+<body>
+  <h1>tee</h1>
+  <p>Eine Kopie der Eingabe (STDIN) in eine oder mehrere Dateien speichern und sie auf dem Bildschirm ausgeben.</p>
+
+  <h2>Aufruf:</h2>
+  <p>tee [Optionen] [d:][Pfad]Datei [[d:][Pfad]Datei2] ...</p>
+
+  <h2>Optionen:</h2>
+  <p><em>/A</em> &nbsp; An Datei(en) anh&auml;ngen: Die Eingabe an die Ausgabe-Datei(en) h&auml;ngen anstatt sie zu &uuml;berschreiben.</p>
+  <p><em>/I</em> &nbsp; Unterbrechungen ignorieren: Unterbrechungsversuche eines Benutzers ignorieren.</p>
+  <p><em>[d:][Pfad]Datei [[d:][Pfad]Datei2] ...</em> &nbsp; Die Ausgabe-Datei(en)</p>
+
+  <h2>Beispiele:</h2>
+  <p><em>echo "Hello, World!" | tee hello.txt</em><br>"Hello, World!" auf dem Bildschirm anzeigen und in hello.txt speichern.</p>
+  <p><em>tee log.txt weiterer_log.txt &lt; input.txt</em><br>Den Inhalt von input.txt anzeigen und ihn in log.txt und weiterer_log.txt speichern.</p>
+  <p><em>catdoc brief.doc | tee /I brief.txt | wc</em><br>Den durch catdoc verarbeiteten Inhalt von brief.doc in brief.txt speichern und an wc weitergeben, um die W&ouml;rter zu z&auml;hlen.<br>Keine Unterbrechungen durch einen Benutzers erlauben.</p>
+
+  <hr>
+  <p>Diese Datei ist Teil der FreeDOS HTML Hilfe und unterliegt <a href="../index.htm#copying">den Bestimmungen der GNU FDL</a>.</p>
+</body>
+</html>

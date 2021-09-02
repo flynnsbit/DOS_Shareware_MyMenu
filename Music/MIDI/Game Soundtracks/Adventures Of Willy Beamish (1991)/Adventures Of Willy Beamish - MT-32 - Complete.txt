@@ -1,0 +1,170 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ===============================================
+                   THE ADVENTURES OF WILLY BEAMISH
+                                                        
+
+                       THE COMPLETE SOUNDTRACK
+                     (See below for song titles.)
+         Jan Paul Moorehead, Don Latarski and Christopher Stevens 
+           =============================================
+                   Copyright (c)1991 Dynamix, Inc.  
+           =============================================
+
+                         ROLAND MT-32 VERSION
+
+            ** NOT FOR GENERAL MIDI/ROLAND SOUND CANVAS/YAMAHA XG **
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format
+- System Exclusive patch bank utility (i.e. MidiEx, Cakewalk)
+- Roland MT-32, MT-100, CM-32L, CM-64, or LAPC-1
+- MPU-401 compatible MIDI interface
+  (Not required for LAPC-1 users.)
+
+This Standard MIDI File was recorded directly from Dynamix's "The Adventures of Willy Beamish" adventure game using Dynamix's MT-32 support. Therefore, in order to obtain the proper sounds during playback, you must first transmit the WILLY.SYX SysEx patch bank to the MT-32.  Failure to do this will result in improper playback of the song file.  Use an utility such as MidiEx/WSysEx, Quick Send, Cakewalk, etc. to transmit the SysEx bank. See below for song titles.
+
+NOTE: This file is designed ONLY for the Roland MT-32 Sound Module (and its' variants such as the other MT modules, the LAPC-1 [MT-32 on a card], and the CM line which contain a genuine MT-32 mode) and is NOT compatible with devices which can "emulate" the MT-32, such as the Roland Sound Canvas line, Creative sound cards, or any purely GM/GS/XG compatible devices.  
+
+Recorded/edited/arranged/compiled for the Roland MT-32 in Standard MIDI File format by Alistair Gillett.
+Address questions or comments to:
+
+  Alistair Gillett
+  agillett@ihug.com.au 
+  Sierra Music Central 
+  http://smc.sq7.org
+
+  and/or:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+       =================================================================
+                      TRACK SHEET (Roland MT-32 Version)
+
+                       THE ADVENTURES OF WILLY BEAMISH
+                
+                (Themes roughly in order as heard in the game.)
+       =================================================================
+
+   SONG TITLE                              START MEASURE/TIME (H/M/S) *
+   -------------------------------------------------------------------------
+      INTRODUCTION/DAY 1  
+   1. Dynamix Theme (Opening Theme)                       2  00:00:02
+   2. Introduction/Opening Scenes (Detention)            55  00:02:09
+   3. The Nurse                                         133  00:05:16
+   4. The Doctor Is 'In'! (Willy Dies #1)               164  00:06:31            
+   5. Principal Frick                                   195  00:07:45
+   6. Military School (Willy Dies #2)                   246  00:09:48
+   7. Coach Beltz (School Hallway)                      277  00:11:02
+   8. School's Out!                                     315  00:12:33
+   9. Willy's House Theme #1                            353  00:14:00
+  10. Duffy Digs Up The Garden                          403  00:16:00
+  11. Duffy Runs Away (Willy Dies #3)                   441  00:17:31
+  12. Walking Duffy (Kibbles And Grits)                 482  00:19:10
+  13. The Dinner                                        508  00:20:12
+      a. Gordon's Fired                                 519  00:20:38
+      b. News Bulletin                                  568  00:22:36
+      c. Slam Dunk Cola Commercial                      580  00:23:05
+  14. Meanwhile- Introduction To Leona Humpford         626  00:24:55
+      And Louis Stoole
+  15. Willy's Backyard (Mowing The Lawn)                673  00:26:48
+  16. Upstairs Hallway Theme #1                         713  00:28:24
+  17. The Train Room (Willy's Attic)                    770  00:30:41
+  18. Nintari Monster Squad                             818  00:32:36
+  19. Bedtime                                           843  00:33:36
+
+      DAY 2
+  20. Later- Time To Wake Up/Vacation!                  858  00:34:12
+  21. Willy's House Theme #2                            912  00:36:22
+  22. The Breakfast                                     963  00:38:24
+      a. Gordon Rings Leona (The Job)                   973  00:38:48
+      b. Frog Jump Contest Commercial                  1013  00:40:24
+      c. Tootsweet Commercial                          1056  00:42:07
+  23. Washing The Grange Rover                         1095  00:43:41
+  24. Upstairs Hallway Theme #2                        1118  00:44:36
+  25. Gordon And The Train Wreck                       1176  00:46:55
+  26. Carbuncle Map Theme                              1200  00:47:53
+  27. The Tree Fort                                    1247  00:49:46
+  28. Horny And Gigi                                   1287  00:51:22
+  29. Slice Of Life Pizzeria                           1318  00:52:36
+  30. Slice Of Life Toilets                            1361  00:54:19
+  31. Spider!                                          1408  00:56:12
+  32. Gettin' Even With Spider                         1451  00:57:55
+  33. Sloeffer Park (Frog Jump Practice)               1487  00:59:22
+  34. Horny's Big Jump                                 1533  01:01:12
+  35. East Frumpton Map Theme #1                       1544  01:01:38
+  36. The Cop (Jail) (Willy Dies #4)                   1580  01:03:05
+  37. Macaroni And Cheese, "Alicia-Style"              1606  01:04:07
+  38. Babysitter Attack (Willy Dies #5)                1628  01:05:00
+  39. The Babysitter From Hell                         1636  01:05:19
+  40. All A Nightmare? (Willy Wakes Up)                1668  01:06:36
+
+      DAY 3
+  41. Willy's House Theme #3                           1693  01:07:36
+  42. Gordon and Leona (Job Interview)                 1759  01:10:14
+  43. Upstairs Hallway Theme #3                        1786  01:11:19
+  44. Meanwhile- Tiffany Weighs Herself                1850  01:13:53
+  45. East Frumpton Map Theme #2                       1872  01:14:46
+  46. 'Tiff' The Punk                                  1903  01:16:00
+  47. Asian Tourists (Ferry Ride)                      1918  01:16:36
+  48. West Frumpton Map Theme                          1967  01:18:34
+  49. Tootsweet Building (Entry Blanks)                2009  01:20:14
+  50. Local 409 (Plumbers' Union)                      2049  01:21:50
+  51. Inside The Union Meeting                         2093  01:23:36
+  52. Outside Golden Bowl Tavern                       2125  01:24:53
+  53. Gang Fight (Willy Dies #6)                       2153  01:26:00
+  54. Cripes! (The Gang)/Escaping The Gang             2175  01:26:53
+  55. Ninjas/Cripes Battle                             2250  01:29:53
+      Ninja Tea Party (Willy Returns Home)             
+ 
+      DAY 4/END GAME
+  56. Willy's House Theme #4                           2317  01:32:34
+  57. Meanwhile- Leona's Scheme                        2376  01:34:55
+  58. Upstairs Hallway Theme #4                        2417  01:36:34
+  59. Lather Interviews Gordon                         2472  01:38:46
+  60. East Frumpton Map Theme #3                       2508  01:40:12
+  61. Lather Interviews Hans, Turbofrog's Owner        2542  01:41:34
+      (Ferry Ride)
+  62. Louis' Office (Louis Returns!)                   2578  01:43:00
+  63. Tootsweet 59th Annual Frog Jump Contest          2637  01:45:22
+  64. Busted For Cheating/Lost Frog Jump               2674  01:46:50
+      (Poor Willy- Willy Dies #7)
+  65. The Frog Jump Race! (Race Over- Frog Catch)      2728  01:49:00
+  66. Chasing Horny (Tootsweet Building)               2786  01:51:19
+  67. Barney Firth, Security Guard                     2838  01:53:24
+  68. Hypnotising The Guard **                         2888  01:55:24
+  69. Willy Escapes! (Interview With Lather)           2930  01:57:05
+  70. Humpford Mansion                                 2962  01:58:22
+  71. News Bulletin- Gordon Resigns                    3010  02:00:17
+  72. Chef Childish (Freeing The Frogs)                3020  02:00:41
+  73. Leona And Louis Attack                           3084  02:03:14
+      (Horny And Turbofrog- Willy's Rescue)
+  74. Meanwhile- Stanley Picks Up Gordon               3142  02:05:34
+  75. Telephone Booth (Outside Local 409)              3169  02:06:38
+  76. Inside Golden Bowl Tavern                        3228  02:09:00
+  77. Burt Wins The Lottery (Willy's Ticket)           3271  02:10:43
+  78. Plumbers' Strike                                 3307  02:12:10
+  79. Humpford Sludgeworks (The Chase)                 3363  02:14:24
+  80. Stanley! (Stanley Becomes Tootsweet)             3402  02:15:58
+  81. Sludgeworks' Tram Tunnel System                  3462  02:18:22
+  82. Wrong Way, Go Back (Vents)                       3508  02:20:12
+  83. "Horny, I Don't Think We're In Frumpton Any More"3520  02:20:41
+      (Willy Dies #8)
+  84.  "Pastrami Quest (Incompatible Matrix)"          3538  02:21:24
+      (Willy Dies #9)          
+  85.  Bad Ending- The Sludging                        3564  02:22:26
+      (Humpford World- Willy Dies #10)
+  86.  Gordon In Trouble! (Leona And Louis Defeated)   3642  02:25:34
+  87.  Willy The Winner (Closing Scenes)               3682  02:27:10
+  --------------------------------------------------------------------------
+                                           TOTAL TIME:       02:28:48
+
+
+      *  Note:  Start Times are approximate.
+      ** Extra selections in this track from the SEGA CD version

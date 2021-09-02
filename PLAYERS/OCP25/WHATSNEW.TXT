@@ -1,0 +1,95 @@
+hey windows programmers: i desperately need information about how to
+access the Win32 API via INT 0x2F - as then, i'd be able to write a
+DirectSound player device (as the DSound API is accessible from DOS) :)
+
+Changes to OpenCP since version 2.0n:
+
+OpenCP 2.5.0
+  - major raise in the version number... hey, when EMagic can do this
+    with Logic Audio, why shouldn't I? ;)
+  - InterWave: * added correct panning for InterWave Step C or higher
+               * fixed timing a bit
+               * effects can now be turned off ;)
+  - fileselector: choosing devices and soundcard inputs now works again ...
+                  ... files submitted via the command line automatically
+                  get played now again ...
+                  ... and also, console output is no more written onto
+                  the interface screen
+                  (honestly, was I DRUNK when implementing that playlist
+                   shit? ;)
+  - included new ESS688 player device by Oleg Prokhorov (thanks!)
+  - added "palette" setting to IW.INI to let you design your own ugly
+    color scheme (tho, this is just a simple remapping, you can't change
+    every single color)
+  - bpm display is now finally DECIMAL :)
+  - XM: notes with instrument number set some rows before will now
+        play correctly
+  - Mixer: nasty volume calculation bug causing hard-left panned samples
+           to be phase-inverted removed (char? short? long? oh come on,
+           what's the fuckin' difference? :)
+  - IT: Pattern loader fixed (did crash/suck on some ITs)
+
+
+
+OpenCP 2.0q_pre
+  - fileselector: maybe there are no more LFN lookup bugs when using
+                  DOS 6.x or certain 4DOS versions (feedback req'd!!!)
+  - SID: now reads SMS $xx20 song info as song title when the file is
+         in RAW format. Also characterizes SIDPlay infofiles as such
+         in fileselector
+  - new archive formats: LHA and ACE (thanks to tmbinc for this)
+  - IT: doesn't confuse Kxx and Lxx effects anymore (oopsie :)
+  - XM: made vibrato effect (4xx) somewhat weaker (never believed that
+        they were to strong - until i found it out myself with my own
+        MC6 entry :)
+  - new WöRFEL MODE ][ (finally 320x200 ;)
+  - included tool "WÅrfel Animator Professional" by Felix Domke (tmbinc)
+    to generate your OWN WÅrfel Mode Animations
+  - IT: portamentos "fixed" again (wonder which modules it NOW plays wrong)
+  - fileselector: now shows some infos on various internal data files
+  - restructured file selector a bit. the results:
+    * .M3U AND .PLS PLAY LIST SUPPORT! YEAH! you can now simply select
+      any .m3u or .pls play list from the file selector and all files
+      it containeth will be loadeth! ;)
+      (Beware, if your playlists contain long file names, they will of
+       course only be loaded when you're running win95, i didn't include
+       a "guess-the-right-filename" routine ;)
+    * also reads MikIT .PLT play lists (thanks to Lemm for this)
+    * In fileselector, you can now save a WinAmp-compatible .PLS play
+      list with Alt-P
+    * As a little side effect the actual playing module is now continued
+      while eg. un-zipping the next (decreasing the pause between two
+      modules a bit, but i may remove this again, as it MAY cause problems
+      in win95 background between two modules. well, as always, i need
+      feedback ;)
+  - LAST "eval" release before the REAL one - Houston, the Eagle is just
+    about, uhm, like, landing ;))
+
+
+
+OpenCP 2.0p_31337:
+  - increased the Quality Mixer's speed AND sound quality - now does
+    jeff93.it fine on my P133 and those volume problems finally belong
+    to the past
+  - MP3: changed win95 bg playing scheme a bit - should now produce less
+         (or maybe no?) clicks on some machines when running in foreground
+  - MOD: the player now (hopefully) plays exactly like PT1.1B does -
+         so DON'T blame me if OpenCP now plays your FT2-made MODs wrong.
+         (if anyone could tell me how to recognize MODs saved by FT2,
+          just contact me)
+  - Therefore, new filetype added: MODf for FastTracker-made MODs
+  - MOD: modt and m15t file types work again
+  - XM: "set finetune" (E5x) command implemented (was ignored before)
+  - CDA: re-enabled (was a typo in one of the sources, sorry ;)
+  - new module type: MXM (from pascal's Tiny GUS Player) (EXPERIMENTAL!)
+    * this format is size optimized, so don't expect any module or instrument
+      names therein, it's just pure music ;)
+    * in some converted .XMs, the loops seem incorrect, but i don't know
+      if it's the fault of opencp or xm2mxm.exe
+  - SID: RAW sidfile support, now supports raw C64 data files which follow
+         the inofficial SMS ("Scene Music Standard") way of putting two
+         JMPs to the Init and Play routine in front of the file
+  - hopefully vastly increased stability when using wave table cards. At
+    least with my IW, OpenCP, uhm, almost never crashes anymore :) (feedback
+    on this required!!!)
+

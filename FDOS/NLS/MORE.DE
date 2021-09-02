@@ -1,0 +1,17 @@
+0.0:Den Inhalt einer Textdatei seitenweise anzeigen
+0.1:Aufruf
+0.2:Kommando
+0.3:Datei
+0.4:Verfgbare Tasten
+0.5:Nn
+0.6:N„chste Datei
+0.7:Qq
+0.8:Programm beenden
+0.9:Leertaste
+0.10:N„chste Seite
+1.0:Unbekannte Option
+1.1:Datei nicht vorhanden
+1.2:Kann Datei nicht ”ffnen
+1.3: Ungltige Tabulatoren-Option. Erwartet: /Tn (n: Zahl von 1 bis 9, Std: 4)
+2.0:Weiter
+2.1:<STDIN>

@@ -1,0 +1,57 @@
+Problems? Mail: ftp@scene.org
+ ___               __                  __                    ____  Scene.org!
+/  //_____    _ __/ //_____.  _____ __/ //_____.     _____ _\\_ /___ ___
+\__      /_ _____.  _/     |_\\_   \_   _/     |   _\\_   \_ _/    // _//_____
+ _/     / _/     |  \      |   /    /   \      |  /   /    / \     \_ \_     /
+ \______\ \      |___\_____|  /     \ ___\_____| /        /___\_____/  /    /
+- ---_ ____\_____|-diP-_ _____\______\-bM--------\________\-----_ __________\-
+
+           ftp.scene.org - 'elektronik free art' since 11 March 1996
+
+
+MIRRORS:  ftp.jp.scene.org      (ftp.dti.ad.jp)         in /pub/scene
+          ftp.us.scene.org      (darkscape.net)         in /pub
+          ftp.us2.scene.org     (zexxx.genotrance.com)  in /scene
+          ftp.se.scene.org      (ftp.sunet.se)          in /pub/demos/scene.org
+          ftp.pl.scene.org      (sunsite.icm.edu.pl)    in /pub/demos
+          ftp.no.scene.org      (ftp.gathering.org)     in /scene.org
+          ftp.hu.scene.org      (ftp.harmless.hu)       in /mirrors/scene.org
+
+          http.se.scene.org     (ftp.sunet.se)          in /pub/demos/scene.org
+          http.pl.scene.org     (sunsite.icm.edu.pl)    in /pub/demos
+          www.inercia.org       (inercia.dcc.online.pt) in /scene.org
+
+MAIN SPONSOR:
+          Hogeschool Rotterdam  (www.hro.nl)
+
+CORPORATE SPONSORS:
+          Gaffer Software       (www.gaffer.org)
+          Firelight Multimedia  (www.fmod.org)
+          DemoGL                (www.demogl.com)
+          Nixxes Software       (www.nixxes.com)
+          Twilight3D            (www.twilight3d.com)
+
+
+          How can you help?
+
+          * You can help by donating money to scene.org. All money will go
+            into upgrading the archive, and will allow us to improve our
+            services to you and the rest of the scene.
+
+          * We are also looking for corporate sponsors. The return on a
+            sponsorship involves advertising the company on the archive. This
+            is an ideal method for a company to reach a global potential
+            customer base of young, talented and motivated people in the
+            computer and design business.
+
+          * Thirdly, we are looking for mirrors for our archive. Mirrors help
+            us with lowering the demand on our main server and improve the
+            availability of the archive around the world.
+
+            For more info mail to staff@scene.org. If you feel like to donate
+            money, look at the instructions at http://www.scene.org/bank.html
+
+            With regards,
+            Jeffry Sleddens (Redhound)
+            <redhound@scene.org>
+

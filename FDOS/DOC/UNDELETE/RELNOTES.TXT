@@ -1,0 +1,67 @@
+This project was started in 2001. No changelog for initial changes...
+This is both a changelog and a place to put notes about undelete.
+
+Compilation: Turbo C with the included .tc and makefile (adjust the
+             paths as needed). Turbo C 2.01 should be available for
+             free in the "software museum" area of Borland online.
+
+
+
+Feb 20 2008: Initial support for FAT32 (no drive access flags and
+             locking yet, so Windows and certain DOS versions will
+             probably refuse to let undelete access raw sectors)
+             Using "in place" undelete on FAT32 causes wrong FS INFO
+             sector disk space info. Correct with DOSFSCK if needed.
+
+Jan 06 2004: Added a bit of documentation...
+
+Nov 14 2003: Contributed MS-style interface, with /ALL and /LIST options.
+             Rebuilds the FAT chain directly after prompting for recovery
+             by directory/filename etc. (so it can undelete "in place"
+             instead of only storing data from deleted files on another
+             drive). Breaks the ability to compile in Linux gcc, sorry!!
+             This version comes with a makefile instead of a TC .prj :-)
+
+Oct 20 2002: Added "extract" mode and made autodetection of the size
+             the default for all modes. Fixed a bug that would cause
+             failure to read partitions of size 16..32 MB. New help
+             screen, GNU GPL License disclaimer spread over all files.
+             Howto is part of the package but already deprecated with
+             respect to size autodetection :-(. More verbose error
+             messages. Help screen made with help of Emanuele Cipolla.
+             Full GPL disclaimers on request of JHall of the FreeDOS
+             project ( http://www.freedos.org/ ). Special undelete
+             release for my birthday today ;-). Both DOS and Linux
+             binaries (Linux version reads test.img, wants a dummy
+             prefix "x:" for target files) and .obj included. Compile
+             the Linux version with: gcc -Wall *.c -s -o undelete.elf
+
+Nov 07 2002: Added better LFN display and removed the need to have NASM
+             for the "DOS disks > 32 MB" driver part. All C now. Also
+             allows drivespec in dirsave dir selection now, which is
+             IGNORED. This is only there to ease the use of UNDELETE in
+             combination with the new cool %_CWD% feature of FreeCOM 0.83
+             beta 50.
+             Added some batch files that use the new FreeCOM to mirror
+             the normal mirror stuff and optionally the whole directory
+             data dump. Added a nifty COUNT tool for counting in batch
+             files (by me) and the public domain (?) GLOBAL recursion
+             helper tool.
+             Use NASM -fobj bigdisk.asm -o bigdisk.obj to create the
+             bigdisk.obj used in this version.
+
+
+
+If you find any errors or if you want to improve FAT32 support or
+add other fancy features, please contact me: eric@coli.uni-sb.de
+
+Fancy features can include: Relative directory names for dirsave
+and wildcard search for follow and extract. Please do not break
+old functions by adding new features.
+
+Cheers from Eric Auer, author and maintainer of this UNDELETE tool.
+
+PS: Remember that UNDELETE does not come with any warranty at all!
+Read the GNU GPL License for more explanations. In short, you get
+this UNDELETE for free, but undeleting is a messy thing to do and
+if something goes wrong and breaks all your files do not blame me.

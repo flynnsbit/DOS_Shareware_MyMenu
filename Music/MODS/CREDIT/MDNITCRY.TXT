@@ -1,0 +1,24 @@
+The Midnight Cry (fb-midnightcry.it)
+https://modarchive.org/index.php?request=view_by_moduleid&query=41550
+Renamed to "MDNITCRY.IT" because of DOS 8-character limit
+
+Summary
+
+    fb-midnightcry.it is a IT format module.
+    Uploaded to modarchive.org Wed 3rd Apr 2002
+
+Info Info
+
+    Mod Archive ID: 41550
+    MD5: 68b26f2c4682cd1c99154c74c300e508
+    Format: IT
+    Channels: 34
+    Genre: Pop - Synth
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     christofori (https://modarchive.org/member.php?69248)

@@ -1,0 +1,344 @@
+
+
+
+
+      ****  ******  ******  ******    *****    *****  **  ** 
+       **   **        **    **   **  **   **  **      ** **  
+       **   *****     **    ******   *******  **      *****  
+   **  **   **        **    **       **   **  **      **  ** 
+    ****    ******    **    **       **   **   *****  **   **
+
+                       CHRISTMAS SPECIAL!
+
+                     (C) 1993  Adam Pedersen
+                 Published by Software Creations
+
+
+You are the daring adventurer Santa, in search of Christmas gifts! 
+With your trusty jetpack strapped to your back, enter and explore
+levels full of treasures and peril.  Your quest is to take all of
+the gifts in each level without getting killed.  When you collect
+all the gifts from a level, the portal to the next level will open. 
+Collect treasure on the way to earn extra lives.
+
+                         ***************
+                         * THE JETPACK *
+                         ***************
+
+
+The jetpack model L1069-E is specially designed for human flight
+with great power, but unfortunately it consumes a large quantity of
+fuel.  You must find fuel for your jetpack before you can fly
+around the dungeons.  Press down while flying to maintain constant
+altitude.  Some levels contain no fuel, so you must rely on ladders
+and be careful not to encounter any monsters on the ground.
+
+There is also a Phase Shifter built in to your jetpack which
+tunnels through bricks.  Some bricks are denser than others and
+require more time to break through.  Grey stone is solid and cannot
+be phased.  There are also other items that can be affected by the
+Phase Shifter.  You'll have to experiment to discover what they
+are.
+
+                          ************
+                          * FEATURES *
+                          ************
+
+There are teleporters that transport you around the level, and
+barriers that block your progress.  These barriers are deactivated
+by pressing buttons of the same color.  Activate buttons and
+teleporters by pressing down while touching them.  Monsters can
+turn the barriers on and off by moving over colored floor switches. 
+There are moving platforms and ladders that can help or hinder you. 
+Icy bricks make it hard to walk, and some bricks are covered with
+sludge, slowing your progress.  Monster Stunners, Shields, and fuel
+appear randomly for a quick player to retrieve.  The Stunners make
+the monsters harmless and paralyze them momentarily.  Shields
+protect you from monsters, spikes, and all other hazards.
+
+
+---------------------------- Page 2 ----------------------------
+
+                        ****************
+                        * GAME OPTIONS *
+                        ****************
+
+At any point in the game, you may press [J] to adjust the
+joysticks, or press [PAUSE] to pause the game.
+
+*************
+* MAIN MENU *
+*************
+     [S]  Start the action!
+     [E]  Enter the Level Editor
+     [Q]  Quit the game
+
+     [I]  Graphical Information on the game
+     [D]  Watch a demo of the game
+     [H]  View the top 15 High Scores for both standard and
+          homemade levels
+     [B]  Info on the Software Creations BBS
+
+     [O]  Ordering Information (see page 6)
+
+     [F1] Graphical Information on the game
+     [F2] Adjust the number of players from 1 to 8
+     [F3] Change the starting level or select random levels.
+     [F4] Select which levels to play: the standard levels, your
+          own homemade levels, or continue a saved game.
+     [F5] Enable or disable joysticks.  Normally 'AUTO' should
+          work, but on some computers joysticks are detected
+          incorrectly.  If movement is erratic select 'FORCE ON' to
+          use only port 1, or 'DISABLED' to just use keyboard
+          control. 
+
+*****************
+* WHILE PLAYING *   
+*****************
+     Speed can be adjusted from 0 (SLOW) to 9 (FAST)
+          [+] Faster
+          [-] Slower
+     [SPACE] Toggle status bar
+     [F1]  Quick help on controls
+     [F10] Pause/Boss key
+     [ESC] Kill this Santa
+     [Q]   Quit the game
+
+     ************
+     * CONTROLS *
+     ************
+     JOYSTICKS
+          Jetpack: [button A]
+          Phase Shifter: [button B]
+
+     KEYBOARD
+          Movement- [ARROWS]
+          Jetpack-  [ALT]/[keypad 0]/[INSERT]
+          Phase Shifter- [CTRL]/[ENTER]/[DELETE]
+
+---------------------------- Page 3 ----------------------------
+
+         ******  *****   ******  ******   ****   ***** 
+         **      **  **    **      **    **  **  **  **
+         *****   **  **    **      **    **  **  ***** 
+         **      **  **    **      **    **  **  ** ** 
+         ******  *****   ******    **     ****   **  **
+
+
+Jetpack contains a full-featured level editor so you can create and
+share thousands of customized levels.  In the original Jetpack, you
+can play these levels in a full game from the main menu, just press
+F4 and select 'customized'.  You can find lots of homemade levels
+to add to your collection on national Bulletin Board Systems, and
+the Software Creations BBS.  You can test levels in the editor with
+F2. 
+
+************
+* CONTROLS *
+************
+     JOYSTICKS
+          Draw- [button A]
+          Select Tiles- [button B]
+
+     KEYBOARD
+          Movement- [ARROWS]
+          Draw- [ALT]/[SPACE]
+          Select Tiles- [CTRL]/[ENTER]
+
+     OTHER KEYBOARD CONTROLS
+          [F1] Help Information
+          [F2] Play test this level
+          [TAB] FILE OPTIONS
+               [ENTER] View level
+               [L] Load level
+               [S] Save level
+               [D] Delete level
+          [Q]  Quit the editor
+
+          [DELETE] Erase tile
+          [INSERT] Pick up tile
+          [R]  Scatter random tiles
+
+          [C]  Clear level
+          [B]  Block on/off
+               [P] Paste
+               [F] Fill
+
+          [S]  Set starting position
+          [D]  Set door
+          [1] to [8] PLACE ENEMIES
+               [1]  Bad Guy
+               [2]  Steel Ball
+               [3]  Spring
+               [4]  Missile
+               [5]  Spikes
+               [6]  Flitzer
+               [7]  Bat
+               [8]  Homer
+
+---------------------------- Page 4 ----------------------------
+
+
+The level editor is one of the most exciting features in Jetpack. 
+With it you can create thousands of your own levels to play and
+share with friends.  Press [ENTER] for a layout of all 120 tiles
+available for level construction.  Use the arrow keys to choose a
+tile and then place it in the desired location with [SPACE].  The
+joystick can also be used.  A quick way to pick a tile is to move
+the cursor on to one that is already on the level screen and press
+[INSERT] to pick it up.  A shortcut key for putting down background
+tiles (erasing) is [DELETE].  This key is also used to erase
+monsters and other objects.
+
+If you're having trouble getting started on a level, press [R] to
+randomly scatter your selected tile.  This will give you a
+foundation around which to create a level.  The Block function also
+helps in level construction.  Block works like the Block option in
+most word processors.  Press [B] to mark the starting point of the
+block, then move and press [B] again to mark the endpoint.  The
+rectagonal area you have just selected is now saved in memory.  You
+can press [P] to paste it down with the top-left at your current
+cursor location.  Press [F] to fill the entire blocked area with
+your selected tile.  Press [C] to clear the entire level.
+
+There are eight types of monsters that you can use to make your
+levels more challenging.  You can place up to 20 monsters in each
+level, by pressing [1] to [8] for the monster type.  The monsters
+are listed at the bottom of this page.
+
+Before testing your level, you must set the starting location with
+[S] and the location of the door with [D].  Test your level by
+pressing [F2].
+
+For the File Options menu, press [TAB].  From here you can choose
+to [S]ave your level, [L]oad a level, [D]elete a level from disk,
+or view a level with [ENTER].  Press [ESCAPE] to return to the
+editor.
+
+** NOTE **
+In this Christmas Jetpack Special, you have complete access to all
+of the editor functions, but you can only save one level.  For
+information on how to create and collect thousands of homemade
+levels, see 'Ordering Information.'
+
+If you need help recalling these commands, press [F1] for help.
+
+
+                        ****************
+                        * THE MONSTERS *
+                        ****************
+
+     Trackbot       This guy will track you down
+     Steel Ball     Rolls around crushing everything in its path
+     Spring         Bounces up and down
+     Missile        The fastest enemy, flies in a set pattern
+     Spikes         Bounces in a diagonal path of destruction
+     Flitzer        Flitzes around randomly
+     Batbot         Uses radar to hunt you down
+     Homer          Travels through bricks straight toward you
+
+
+---------------------------- Page 5 ----------------------------
+
+                           ***********
+                           * SCORING *
+                           ***********
+
+     SPECIAL ITEMS
+          Tank of Fuel                  10 Points
+          Double Tank of Fuel           20 Points
+          Stunner                       25 Points
+          Shield                        25 Points
+
+     TREASURES
+          Christmas Gift                5 Points
+          Gold Coin                     10 Points
+          Pile o' Gold                  25 Points
+          Golden Vase                   50 Points
+          Extra Santa                   100 Points
+
+     Extra lives are also awarded every 1,000 points.
+
+
+
+COPYRIGHT & PROPRIETARY RIGHTS
+
+This program is a product of Adam Pedersen.  It is protected by
+United States copyright laws and international treaty provisions. 
+You may NOT modify or create derivative works based on this program
+or any of the information that is contained within it.  You may NOT
+sell, lease, rent or perform any modifications that might otherwise
+convert the original contents, performance or concept that was
+intended by the copyright holder of this software package.
+
+
+DISCLAIMER
+
+The author and publisher of this program make no warranty of any
+kind either expressed or implied.  In particular we make no
+warranty as to correctness or fitness for a particular purpose.
+
+In no event shall the author or publisher be liable for any errors
+contained herein or for incidental or consequential damages in
+connection with the furnishing, performance, or use of this product
+or documentation.
+
+This document contains proprietary information which is protected
+by copyright.  No part of this document may be photocopied,
+reproduced, or translated without the prior written consent of the
+owner.
+
+The information in this document is subject to change without
+notice.
+
+---------------------------- Page 6 ----------------------------
+
+                    ************************
+                    * ORDERING INFORMATION *
+                    ************************
+
+
+Order the original Jetpack today for 100 challenging levels!  In
+Jetpack you can start at more advanced levels, or select random
+play for both standard and customized levels.  You can even save
+your game and come back later to continue on your current level.
+
+Don't forget, you'll also receive the complete full-featured level
+editor.  With it you can create and collect thousands of homemade
+levels to play and share with your friends!  Hundreds of levels
+created by other avid Jetpack fans are available on many national
+Bulletin Board Systems and the Software Creations BBS.
+
+Get 100 levels and the complete level editor for only
+$20.00 + 2$ S&H.  Checks, Money orders, Visa and MasterCard are
+welcome.
+
+
+                       Software Creations
+                          26 Harris St.
+                       Clinton, MA  01510
+
+
+                    Orders: (508) 368-8654  
+                       Fax: (508) 365-7214
+
+                       BBS: (508) 368-7036
+
+You can even order Jetpack ONLINE!  Just type "OPEN 5" at the Main
+Menu of the Software Creations BBS.
+
+     If you are a hardcore Jetpack fan, or just need some help with
+any (or all!) of the 100 Jetpack levels, ask Software Creations
+about the Jetpack Hint Book!  It comes printed with an index of
+levels, pictures of all 100 levels, and a humorous level solution
+for each level, all for only $10!  It will also reveal the ULTRA-
+SECRET cheat keys for Unlimited Lives, and 2000 Shield
+Invincibility!  These keys were used by the programmer for
+debugging and they remain hidden in the program!
+
+By the way, there's a secret cheat key in Christmas Jetpack that
+will help you through those tricky levels.  In any level, hold down
+the [BACKSPACE] key, and ['] (apostrophe).  This will skip to the
+next level.  Use it wisely, because this magic combination can only
+be used twice in a game for each player!
+

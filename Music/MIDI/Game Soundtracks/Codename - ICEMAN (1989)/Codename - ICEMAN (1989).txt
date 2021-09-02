@@ -1,0 +1,9 @@
+Game: Codename: ICEMAN
+Year: 1989
+Composed by: Mark Seibert
+MIDI versions: GM, MT-32
+Platform: DOS
+
+Additional info: Two files in the root are complete soundtracks. I've also included some single tracks.
+
+https://www.karlsitretro.com/game_midi

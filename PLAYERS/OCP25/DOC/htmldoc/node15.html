@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Instruments</TITLE>
+<META NAME="description" CONTENT="Instruments">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="next" HREF="node16.html">
+<LINK REL="previous" HREF="node14.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node16.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html281"
+ HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html279"
+ HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html273"
+ HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html282"
+ HREF="node16.html">Pattern view</A>
+<B> Up:</B> <A NAME="tex2html280"
+ HREF="node13.html">Text mode functions</A>
+<B> Previous:</B> <A NAME="tex2html274"
+ HREF="node14.html">Channels</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00532000000000000000">
+Instruments</A>
+</H2>
+If the current file is of module file type (or midi) the used instruments /
+samples are shown with the instruments function. The instruments are shown
+with <TT>&lt;i&gt;</TT>. Just like channels instruments come in two formats, short and long.
+
+<P>
+In the short view only the intrument names are shown giving you space for
+two instruments per row in 80 column mode (4 instruments are shown in 132
+column mode). An instrument / sample that is currently played is shown in
+bright cyan. If the sample is played ont the currently selected channel it is
+shown in bright green. All inactive intruments are drawn dark grey. If a sample
+has been played once a rectangular dot is placed left to the intrument number.
+
+<P>
+When the intruments are switched to long mode various information is displayed.
+From left to right this is as follows:
+<UL>
+<LI>a number from 00h to FFh giving the instrument number
+<LI>instrument name
+<LI>sample number (when using multiple samples per instrument)
+<LI>sample name (only in 132 column mode)
+<LI>length of the sample in bytes
+<LI>length of the loop in bytes
+<LI>bits per sample
+<LI>the base note. For modules the default is C-4
+<LI>finetune value
+<LI>standard volume at which the sample is played
+<LI>standard pan position
+<LI>various flags (volume, pan envelopes etc. )
+<LI>fadeout value (only in 132 column mode)
+</UL>
+<P>
+Often a file includes more instruments than can be shown on the screen. Use
+<TT>&lt;Pgup&gt;</TT>,<TT>&lt;Pgdown&gt;</TT> to scroll through the instruments. If the
+instrument function is active <TT>&lt;CTRL&gt;</TT>+{<TT>&lt;Pgup&gt;</TT>, <TT>&lt;Pgdown&gt;</TT>} will
+scroll for a complete page. When inactive you can scroll single lines by
+using <TT>&lt;CTRL&gt;</TT>+{<TT>&lt;Pgup&gt;</TT>,<TT>&lt;Pgdown&gt;</TT>}. This is very useful if you
+habe enabled more than one textmode function.
+
+<P>
+The instrument flags (the rectangular dots left to the instrument number) are
+cleared with <TT>&lt;ALT&gt;</TT>+<TT>&lt;i&gt;</TT>. By pressing <TT>&lt;tab&gt;</TT> you can toggle
+between the color mode and pure grey.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html281"
+ HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html279"
+ HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html273"
+ HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html282"
+ HREF="node16.html">Pattern view</A>
+<B> Up:</B> <A NAME="tex2html280"
+ HREF="node13.html">Text mode functions</A>
+<B> Previous:</B> <A NAME="tex2html274"
+ HREF="node14.html">Channels</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

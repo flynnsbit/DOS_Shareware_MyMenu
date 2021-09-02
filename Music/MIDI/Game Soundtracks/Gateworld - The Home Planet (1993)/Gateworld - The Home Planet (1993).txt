@@ -1,0 +1,9 @@
+Game: Gateworld: The Home Planet
+Year: 1993
+Composed by: Prosonus
+MIDI versions: GM
+Platform: DOS
+
+Additional info: I have deleted lots of duplicates.
+
+https://www.karlsitretro.com/game_midi

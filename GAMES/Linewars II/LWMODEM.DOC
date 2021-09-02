@@ -1,0 +1,210 @@
+=LWMODEM.DOC==========================================================
+
+           LWMODEM:  A modem setup program for Line Wars II
+
+     LWMODEM (C) Copyright 1994 by Ammon R. Campbell.    Licensed 
+     to Safari Software, a division of Epic MegaGames, Inc.   All 
+     rights reserved except as stated in the accompanying license 
+     agreement.  
+
+Refer to the "LW2.DOC" file for general information about Line Wars II 
+
+======================================================================
+
+
+1.0  INTRODUCTION
+
+LWMODEM is designed to automate the process of configuring and 
+starting a two-player game of Line Wars II over a modem connection.
+
+Before attempting to run Line Wars II in two-player mode, make sure
+it works on your computer in single-player mode.  Once you are sure
+that Line Wars II works in single-player mode, you can prepare for
+a two player game by typing the command "LWMODEM" at the DOS prompt.
+
+
+2.0  CONFIGURATION SCREEN
+
+When LWMODEM is first started, it displays the modem configuration
+screen.  The modem configuration screen allows you to change all
+of the settings that will allow your modem to work with Line Wars
+II in two-player mode.  The configuration fields include the
+following:
+
+"Modem initialization command"
+   This field contains the command that must be sent to your
+   modem to properly initialize it.  The default command works
+   for many Hayes-compatible modems, but some modems require
+   special commands to work properly with Line Wars II.  For
+   example, the US Robotics Sportster 14.4 needs to have the
+   characters "&B1" added to the end of the default command
+   in order for it to work with Line Wars II.  If you experience
+   repeated problems in getting Line Wars II to establish a
+   connection between your modem and the other player's modem,
+   refer to your modem reference manual for any additional
+   commands that may be necessary for your modem.
+
+"Modem auto-answer command"
+   This field contains the command that must be sent to your
+   modem to place it into auto-answer mode.  The default command
+   works for most Hayes-compatible modems.  If you experience
+   difficulties in getting your modem to answer calls from
+   the other player's modem, you may wish to try using the
+   manual-answer mode instead.
+
+"Modem manual-answer command"
+   This field contains the command that must be sent to your
+   modem to tell it to pick up the phone line immediately.  The
+   default works for many Hayes-compatible modems.
+
+"Modem connect response string"
+   This field must contain the message that your modem
+   sends back to the computer to indicate that a successful
+   connection has been established with another modem.  The
+   default of "CONNECT" works for most Hayes-compatible modems.
+
+"Connection timeout"
+   This field contains the number of seconds that your modem
+   will wait to establish a connection with another modem
+   after initiating a session on the "Session Options" screen
+   (this is explained in more detail later).
+
+"COM channel"
+   Use this field to select which serial communications port
+   (COM port) your modem is connected to.
+
+"COM speed"
+   This field contains a number indicating the speed at which
+   data is transferred between your computer and your modem.
+   This is commonly set to the same speed (baud rate) at which
+   your modem communicates with the other player's modem, but
+   may be faster if desired.
+
+"Hardware Handshaking"
+   Use this field to select whether the computer will use 
+   hardware handshaking when communicating to the modem.  
+   Set this to "OFF" to disable hardware handshaking, or set 
+   to "Use CTS/RTS" to enable hardware handshaking.  If you 
+   are using a modem that is slower than 9600 baud or are 
+   connecting to another modem that is slower than 9600 
+   baud, we recommend that hardware handshaking be enabled.  
+   Hardware handshaking is not supported by some modems and 
+   serial cabling, so you may need to experiment to 
+   determine what is the best setting for your particular 
+   situation.  
+
+"Mission"
+   Use this field to select which two-player mission you wish
+   to play.  In the shareware edition of Line Wars II, the
+   only available choice is "Duel mode", in which you command
+   a squad of Cobra fighters that is pitted in battle against
+   another squad of Cobras commanded by the other player.
+   In the registered edition of Line Wars II, another choice
+   "Wing Mode" is added, in which you and the other player
+   are teammates pitted in battle against another squad of
+   enemy ships.
+
+"Telephone number"
+   Select this field to go to the Telephone Directory screen.
+   The telephone number that is hilighted in the telephone
+   directory screen will show up in this field on the
+   configuration screen, and is the number that will be
+   dialed by your modem if you select the "Initiate a call to
+   another computer" option on the Session Options screen.
+
+"START A LINE WARS II MODEM SESSION"
+   Select this field when all other fields have been configured
+   as desired and you are ready to being playing a two-player
+   game of Line Wars II using your modem.
+
+To move the cursor, use the cursor keys or the tab key.  To
+select a field for editing, move the cursor to that field and
+press the ENTER key.
+
+To exit from LWMODEM, press the ESC key at the configuration
+screen.  Upon exiting, any changes that you made to the
+configuration will be saved to the "LWMODEM.CFG" file.
+
+
+3.0  TELEPHONE DIRECTORY SCREEN
+
+The telephone directory screen maintains the names and 
+telephone numbers of up to eight people with whom you play 
+two-player games of Line Wars II using the modem.
+
+The lefthand column displays the names and the righthand
+column displays the telephone numbers.  To begin editing a
+field, move the cursor to the desired field using the cursor
+keys or the tab key and then press ENTER.  When you are
+done editing a field, press ENTER again.
+
+To select the telephone number that will be dialed when
+you start a Line Wars II modem session, move the cursor
+to the desired name or telephone number and press the F10
+key.  After F10 is pressed, you will be returned to the
+configuration screen with the selected telephone number
+displayed in the "Telephone number" field.
+
+
+4.0  SESSION OPTIONS SCREEN
+
+The session options screen is displayed after selecting "START
+A LINE WARS II MODEM SESSION" from the configuration screen.
+Session Options allows you to perform any of the following
+actions by moving the cursor to the desired option and pressing
+the ENTER key.
+
+"Initiate a call to another computer"
+   Select this option if you want your modem to call the other
+   player's modem.  Once this option has been selected, your
+   modem will immediately dial the telephone number that was
+   selected on the configuration screen and wait for the modem
+   at that number to answer.
+
+"Wait for a call from another computer (auto-answer)"
+   Select this option if your modem has auto-answer capability
+   and you want your modem to answer when the other player's
+   modem calls your modem.  Once this option has been selected,
+   the modem will wait until it either receives a call or the
+   time specified by the "Connection timeout" field on the
+   configuration screen has elapsed.
+
+"Answer a call from another computer (manual-answer)"
+   Select this option if your modem does not have auto-answer
+   capability.  When this option is selected, it immediately
+   picks up the phone line, so wait until the phone rings
+   before selecting this option.
+
+"Return to configuration screen"
+   Select this option to cancel the Line Wars II modem session
+   and go back to the modem configuration screen.
+
+
+5.0  AFTER THE MODEM CONNECTS
+
+After your modem reports that a connection has been established 
+(whether your modem made the call or answered the call), LWMODEM 
+will start the Line Wars II program (LW2.COM) in two-player mode.
+
+At this point you should see the message "waiting for handshake"
+below the spaceship's viewscreen.  This message should appear
+briefly and then disappear after your copy of Line Wars II
+begins to receive communications from the other player's copy
+of Line Wars II.  If "waiting for handshake" does not disappear,
+it indicates that there is some problem with the connection
+between the two machines.  It may be a problem of mismatched
+baud rates, error correction protocols, compression protocols,
+etc, which vary from modem to modem.  Refer to your modem
+reference manual if "waiting for handshake" problems persist.
+
+If everything has worked up to this point, the two-player game will 
+begin.  Piloting the ship in a two-player game is the same as in a 
+single-player game, as are most other aspects of the game.  For more 
+details on how to play Line Wars II, refer to the "LW2.DOC" file.  
+
+
+             NOW GO BLAST SOME COBRAS WITH YOUR BEST
+             FRIEND, YOUR MODEM, AND LINE WARS II !!
+
+
+=end=of=document======================================================

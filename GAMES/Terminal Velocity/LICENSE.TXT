@@ -1,0 +1,176 @@
+"Terminal Velocity"
+Copyright 1995 Terminal Velocity, Inc.  All rights reserved.
+3D Realms Entertainment, P.O. Box 496419
+Garland, TX 75049, TEL: 972-271-1765 ("3D Realms")
+
+Hereafter, "Terminal Velocity" is referred as "Game".
+
+BY COPYING, USING OR DISTRIBUTING THIS SHAREWARE GAME, YOU
+INDICATE YOUR AGREEMENT TO THE TERMS OF THIS vendor.doc.
+
+=====================
+KEY POINTS
+=====================
+
+[*] AFTER MAY 1, 1996, YOU MAY ONLY SELL AND DISTRIBUTE THE GAME IN A
+    COMMERCIAL LOCATION AFTER OBTAINING WRITTEN PERMISSION FROM 3D REALMS.
+    3D Realms reserves its right to withhold permission.
+
+[*] Everyone can -- and is encouraged! -- to copy, upload and generally pass
+    around this Game without charging for it.
+
+[*] If you want to distribute the Game as provided in this vendor.doc, either
+    by catalog, advertisement, BBS, on-line service, or direct mail, no
+    written permission is needed.  3D Realms highly recommends that
+    distribution be made from an original copy from 3D Realms or from one of
+    its authorized sources, such as our web site (http://www.3drealms.com)
+    to prevent the sale of older versions.
+
+[*] All advertising of the Program must include "Apogee" in the description.
+
+[*] The Game is marked "Shareware" and contains "episode one".  No right is
+    given by this vendor.doc to copy, use or distribute any other version,
+    including any version that is registered, or not marked shareware, or that
+    contains any episode other than #1.
+
+======================
+LICENSE
+======================
+
+[1] DEFINITIONS:  The "Trademarks" consists of the "3D Realms" logo, "Apogee",
+    the Apogee "comet logo", and all trademarks associated with the Game and
+    the copyright owner of the Game.
+
+[2] OWNERSHIP: Except to the extent expressly licensed, 3D Realms owns and
+    reserves the exclusive right to distribute the Game, and to use the
+    Trademarks in connection with it.  Its content, layout and format are the
+    property of 3D Realms to the extent permitted by law.
+
+[3] GRANT AND CONDITIONS:  3D Realms grants a non-exclusive license to
+    distribute the Game on IBM compatible media under the Trademarks subject
+    to the following conditions:
+
+ [A] CONDITIONS FOR ALL DISTRIBUTION
+
+  [1] All of the Game's files, including this one, as released by 3D Realms
+      must be included without modification.  The following files must always
+      be included to constitute a legal version for shareware distribution:
+
+      þ aria     com         4,704 06-30-95   1:20p
+      þ commit   exe        25,702 06-30-95   1:20p
+      þ game     exe       620,459 06-30-95   1:20p
+      þ gf166    com         5,608 06-30-95   1:20p
+      þ gf1digi  adv         5,248 06-30-95   1:20p
+      þ gf1midi  adv        10,816 06-30-95   1:20p
+      þ nosound  com         3,280 06-30-95   1:20p
+      þ pas16    com         5,440 06-30-95   1:20p
+      þ paudio   com         5,376 06-30-95   1:20p
+      þ sb16     com         4,909 06-30-95   1:20p
+      þ sbclone  com         4,576 06-30-95   1:20p
+      þ sblaster com         4,560 06-30-95   1:20p
+      þ sbpro    com         4,704 06-30-95   1:20p
+      þ setd     des           170 06-30-95   1:20p
+      þ setd     exe        47,156 06-30-95   1:20p
+      þ setd     snd        47,616 06-30-95   1:20p
+      þ setup    exe        57,928 06-30-95   1:20p
+      þ share    pod     5,432,430 06-30-95   1:20p
+      þ startup  pod     3,390,588 06-30-95   1:20p
+      þ tri1     wav        15,849 06-30-95   1:20p
+      þ tri10    wav        15,959 06-30-95   1:20p
+      þ tri2     wav        13,024 06-30-95   1:20p
+      þ tri3     wav        15,636 06-30-95   1:20p
+      þ tri4     wav        25,005 06-30-95   1:20p
+      þ tri5     wav        14,829 06-30-95   1:20p
+      þ tri6     wav        17,828 06-30-95   1:20p
+      þ tri7     wav        28,974 06-30-95   1:20p
+      þ tri8     wav        21,269 06-30-95   1:20p
+      þ tri9     wav        24,137 06-30-95   1:20p
+      þ tv       exe        29,238 06-30-95   1:20p
+      þ tvhelp   exe        34,663 06-30-95   1:20p
+      þ ultramid exe        38,844 06-30-95   1:20p
+      þ ultramid ini         6,309 06-30-95   1:20p
+
+  [2] No copyright or trademark information may be removed.
+
+  [3] You must not [a] distribute any version of the Game with unauthorized
+      changes, such as additional or different levels, or changed characters
+      or mazes; or [b] characterize such versions as an "add-on" or "extension"
+      of any 3D Realms product; or [c] distribute any unauthorized third party
+      utility designed to alter any this 3D Realms shareware game.
+
+ [B] ADDITIONAL CONDITIONS IF YOU CHARGE:  If your distribution involves a disk
+     or other physical medium, you must also:
+
+  [1] Clearly market the Game as shareware, which requires (among other things)
+      using "try before you buy" or similar words on packaging.
+
+  [2] Include the "3D Realms" logo (we encourage use of the 4 color version)
+      on the front cover of the package.
+
+  [3] Include the your name, address and phone number on the packaging and in
+      any added documentation.  This can be imprinted on the package or may be
+      in the form of a label affixed to the box, carton or folder.
+
+  [4] Any description of the Game included in a re-sellers catalog, sales
+      brochure, on special packaging or handouts, must include "A 3D Realms
+      Game", "Released by 3D Realms" or "Published by 3D Realms" if the word
+      count of the description is more than 14 words in length.
+
+  [5] Must sell only the most current version of the Game.  (Contact 3D Realms
+      at 972-278-5655 (tech support) for version info.
+
+  [6] Although Apogee discourages the practice, you may add an installation
+      routine if it does not interfere with the proper operation or
+      installation of the Game.
+
+  [7] Game updates, recommended descriptions and "screen shots" will be
+      provided upon request, and are available in the re-seller / dealer
+      conference of 3D Realms' Home BBS.
+
+ [C] ADDITIONAL CONDITIONS FOR BUNDLES, CD-ROMS, AND RACKS: If uou wish to
+     commercially distribute the Game in a retail location or as part of a
+     hardware or software bundle, or on CD-ROM, you MUST get PRIOR signed
+     written permission from 3D Realms, which is in 3D Realms' discretion and
+     may be subject to royalty or other conditions.
+
+[4] TERM:  Unless terminated for cause, your grants under this VENDOR.DOC
+    terminate 30 days after you receive written notice, or such longer period
+    as the notice may provide.  Following such termination, you may distribute
+    the Game only until the earlier of 60 days after the termination date in
+    the notice, or distribution of the copies you have in stock.  Sections [2],
+    [5], and [6] survive termination.
+
+[5] LIMITED WARRANTY AND LIMITATION OF REMEDIES: If 3D Realms provides a
+    physically defective copy of the Game, 3D Realms will replace it upon
+    submission of the defective one.  Aside from this, THE GAME IS PROVIDED
+    "AS-IS", AND NO WARRANTIES OF ANY KIND (INCLUDING IMPLIED WARRANTIES OF
+    MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE), EXPRESS OR IMPLIED,
+    ARE MADE AS TO IT OR ANY MEDIUM IT MAY BE ON.  OUR ENTIRE LIABILITY AND
+    YOUR EXCLUSIVE REMEDY IS SUCH REPLACEMENT, AND UNDER NO CIRCUMSTANCES WILL
+    WE PROVIDE ANY OTHER REMEDY FOR DIRECT, INDIRECT, SPECIAL, CONSEQUENTIAL,
+    PUNITIVE, INCIDENTAL OR OTHER DAMAGES ARISING FROM IT, INCLUDING SUCH FROM
+    NEGLIGENCE, STRICT LIABILITY, OR BREACH OF WARRANTY OR CONTRACT, EVEN AFTER
+    NOTICE OF THE POSSIBILITY OF SUCH DAMAGES.
+
+[6] MISCELLANY
+
+ [A] Since 3D Realms would be irreparably damaged if Section [3], [4] or [6][D]
+     were not specifically enforced, we will be entitled without bond, other
+     security or proof of damages, to appropriate equitable remedies with
+     respect to breaches of such sections, in addition to such other remedies
+     as we may have.
+
+ [B] You will hold us, our partners, affiliates, contractors, employees and
+     agents harmless from damage, loss and expense arising directly or
+     indirectly from your acts and omissions in copying and distributing the
+     Game, including from any installation routine that you may add.
+
+ [C] With respect to every matter arising under this, you consent to the
+     exclusive jurisdiction and venue of the state and federal courts sitting
+     in Dallas, Texas, and to service by certified mail, return receipt
+     requested, or as otherwise permitted by law.
+
+ [D] You will not modify, reverse compile, disassemble, or reverse engineer the
+     Game, or use or disclose any confidential information that it contains.
+
+[V.07.20.98]

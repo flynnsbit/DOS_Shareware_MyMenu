@@ -1,0 +1,24 @@
+Ambient Starfield (ambient_starfield.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=174160
+Renamed to "AMSTRFLD.XM" because of DOS 8-character limit
+
+Summary
+
+    ambient_starfield.xm is a XM format module. 
+    Uploaded to modarchive.org on Mon 22nd Jul 2013
+
+Info Info
+
+    Mod Archive ID: 174160
+    MD5: 6aed4f531c9a4e37355f84bebfdd008f
+    Format: XM
+    Channels: 8
+    Genre: Electronic - Ambient
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     Drozerix (https://modarchive.org/member.php?84702)

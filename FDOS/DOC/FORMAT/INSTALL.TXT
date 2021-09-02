@@ -1,0 +1,37 @@
+INSTALL
+
+To compile the source code you need (version 0.91 or newer):
+
+1.  Borland Turbo C 2.01 or Turbo C++ 3.0 or compatible.
+    (FORMAT 0.90 and older versions may need Turbo C++ 3.0 ...)
+2.  The included source code and header files (*.c and *.h)
+    (FORMAT 0.89 / older may also need extra files from fdisk to compile)
+    ... and the makefiles / config files for your compiler (see below).
+3.  A PC running some form of DOS.  (Probably greater than MS-DOS 4.0.)
+4.  Any reasonable 'make' utility (Borland includes one)
+
+
+Compilation instructions:
+
+
+1.  Go into the 'source' directory
+
+
+For Turbo C++ 3:
+2.  Edit the 'format.mak' makefile to make sure CC and CFLAGS match
+      your C compiler.
+3.  Type:
+       make -fformat.mak
+
+
+For Turbo C 2.01:
+2.  Edit the 'turboc.cfg' file to point to your Turbo C directories,
+    with an '-lincludedirectory' and an '-Llibrarydirectory' line.
+3.  Type (uses the 'makefile' file - edit that if you need other flags):
+       make
+
+
+4.  You will have the executable in the source directory. Move it to
+    a directory of your choice (preferably in your path).
+    Delete *.obj and *.map after compilation if you want.
+

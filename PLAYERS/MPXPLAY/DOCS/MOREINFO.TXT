@@ -1,0 +1,260 @@
+MPXPLAY Audio Player v1.53 by PDSoft
+
+If You find a bug, first read the 'known bugs' section below, 
+if the bug isn't there, please write it to me with these informations:
+-your hardware (CPU,RAM,Soundcard)
+-your operating system (DOS,Win95/98)
+-your command line options (i.e. mpxplay.exe -bp -cf playlist.m3u)
+-description (what did you do, and what did the program do, when you found it)
+ (i.e. keyboard operations)
+
+I never can test the program totally. Sometimes a modification causes a new bug.
+If a function doesn't work properly (but it worked in the previous version(s)),
+please write it to me...
+
+Known bugs and limits:
+- see FAQ.TXT for extender (DOS32A,DOS4G,PMODEW) bugs & limits
+- multichannel playing (ie:5.1) is supported at AAC,AC3,DTS only (downmixed to stereo) (others decode mono/stereo only)
+- AAC :
+ - time-length,bitrate,seeking-bar and some time-pos related functions (crossfade,soundlimit) 
+   are not correct at RAW and ADTS fileformats (but good at ADIF)
+   (the program doesn't (cannot) calculate correctly the time-length of the file)
+ - slow seeking in some cases (1st far forward jump)(slower at RAW and ADIF)
+- MPC : 
+ - only Streamversion 7.0 and 7.1 are implemented/supported
+ - seeking problems(?)(sometimes the seeking can fail, and the playing stops or skips to the next song)
+- CDW : 
+ - doesn't work on every CD-ROMs (only on those, which can ripp (grab) audio tracks)
+ - the door open/close also doesn't work on every drives
+ - maybe doesn't work under WIN95/98 (hardware dependant?)(it works with my DVD players (TEAC,Toshiba))
+ - problems with mixed mode CDs (data+audio)
+- mixer:
+ - soundlimit (-sl) doesn't work with -bp at the begin of files (only at the end of files)
+- tone control (bass,treble): 
+ - software based works on MP3/MP2/MPC files only (tone control doesn't work at other filetypes)
+ - hardware based works on some SB16 and AWE64 cards only
+- soundcard routines:
+ - if you play 48khz files with original SB16 card (which cannot play 48k) use '-of 44100' option
+ - maybe the soundcard IRQ works below 8 only (3-7) (set the IRQ to 5, then it will work)
+ - Win9x : only SB16, SBpro and GUS work in background (because they use IRQ)(other cards work in active window only)
+- crossfade: 
+ - doesn't work between files with different freqency (i.e.: 22khz->44khz)
+ - doesn't work at CUE (indexed files) and demo-mode (hi-scan)
+ - doesn't work at fullbuffer (-bl) or at large prebuffer (-bbn 500), at auto-pause (-pap/ctrl-p) and pause-next (ctrl-s) functions
+ - increased volume + limiter = non-linear fade-out and fade-in
+- Win9x:
+ - lfn getcwd function (int21h,ax=7147) doesn't work properly -> causes bugs in directory browser (it's good with DOSLFN)
+ - possible dir-scan problems on substed drives (directory browser and -ds)
+- CUE: 
+ - songpos restore doesn't work properly in some cases (if freq of song is out of 32k-48k range)
+ - doesn't work properly with -bl (it always loads the whole file)
+- reload playlist (ctrl-r) after directory change (program doesn't save the path of playlist)
+- possible bugs at random mode (random + skip-back + crossfade : skips 2 songs back)
+- possible timing problems using -bn8 (mouse,joy,?)
+- seeking is not exact on some VBR filetypes (MP3,OGG) and may be buggy on older APE files (v<=3.92)
+- FILE: Mpxplay cannot play very short files in some cases (shorter than 0.5 sec)
+- the spectrum analiser works properly on 44khz/stereo files only
+- CMOS startup: only the song (playlist entry) number and the file position (%) are saved/restored
+- -io + -pss (or CMOS startup) + -ipl/-idl together don't work properly
+- -io doesn't work at -is
+
+- MP2 : program doesn't support MPEG 2.0 and 2.5 (16,22,24,8,11,12khz) in Audio MPEG Layer II
+- the SBpro compatible cards: 
+   - sound with 8 bits & 22khz only (bad quality)
+   - use more CPU (freq conversion 44->22khz)
+- maximum number of playlist entries is (configurable by MaxFilenames in mpxplay.ini):
+  in normal mode: 1999 (left side,directory browser), 9999 (right side,playlist)
+  in doombox mode: 9999 (left side/playlist), 1999 (right side/doombox queue)
+  (max. playlist size: 64*9999 = 640 kbyte)
+- mpxplay.ini : max filesize=256kbytes; max number of lines=768; 
+  max chars per line=352 (this may cause bugs (at sublist save/restore))
+- CMOS can store only 8 (0-7) playlist numbers (at [fastlists] + -pslf)
+  and 16383 playlist entries (songs), so it will not work properly if you increase
+  the MaxFilenames in mpxplay.ini
+
+-------------------------------------------------------------------------------
+Other informations:
+
+-PLAYLIST usage:
+ -you can create a playlist:
+  - under DOS with the  DIR /B/ON *.MP3 > PLAYLIST.M3U  command
+  - with Mpxplay: MPXPLAY.EXE d:\*.*\*.* -@s playlist.m3u
+              or: MPXPLAY.EXE -ds c -@s playlist.m3u
+              or: MPXPLAY.EXE -ds c -@s playlist.m3u *.mp3
+
+ -EXTENDED PLAYLIST (faster file info loading -> program starts playing faster):
+
+  -create: MPXPLAY.EXE -@sx EXTLIST.MXU PLAYLIST.M3U
+       or: MPXPLAY.EXE -@sx EXTLIST.MXU d:\*.*\*.*
+
+  -use (load): MPXPLAY.EXE EXTLIST.MXU
+           or: MPXPLAY.EXE -ig EXTLIST.MXU d:\*.*\*.*
+           or: MPXPLAY.EXE -ig EXTLIST.MXU  (without input file(s) -> for faster directory browsing)
+
+  - You can use sub-list(s) in extended playlist on this way:
+    (you have to write these lines manually into the mxu list)
+    ('°' '±' '²'chars are ascii 176,177,178)
+   -M3U sub-list:
+     D:\AUDIOMP3\PLAYLIST.M3U°±[sub-list]²00000000
+   -MXU sub-list:
+     D:\AUDIOMP3\PLAYLIST.MXU°±[sub-list]²00000000
+
+-ID3-TAG write/update in AAC/AC3/APE/MPC (APEv2-tag) and MP3/MP2 (ID3v1.1):
+  
+ -you can use -iw with -it options (-ita,-itt, etc.) (see readme.txt)
+
+ -or you can use a -il listfile on this way:
+
+  make a text file in this form (write artist:title after every filenames)(don't write spaces in the filenames):
+
+  filenam1.MP3 artist1:title1
+  filenam2.MP3 artist2:title2
+  filenam3.MP3 artist3:title3
+
+  Name it to !FILES and run my program with these options:
+
+  MPXPLAY.EXE -iw -il !FILES playlist.m3u
+  or
+  MPXPLAY.EXE -iw -il !FILES *.*
+
+  and the program will write this ID3 info(s) into the audio files.
+
+  (the listfile (!FILES) is same like an m3u file, but with artist & title)
+
+ examples:
+ mpxplay.exe -iw -il !FILES -itl "80's collection" -itc "encoded by myself" playlist.m3u   (you can use -il and -it options together)
+ mpxplay.exe -iw -ita "Name of the artist" -ity "2004" *.mp3              (modify/write artist and year tags in all MP3 files)
+ mpxplay.exe -iw -itl "New album name" -itc "" track04.ape track11.ape   (modify the album and clear the comment in the track04.ape and track11.ape files)
+
+
+-FRAMES: Mpxplay handles the files in frames. 1 frame is usually 4608 pcm bytes (1152*channels*2)
+	 (1 sec = ca. 38 frames)(depends on the freq of file too)
+
+-CD-WAV (CDW) : the cd-wav function is not a simple audio CD player, this is
+ a real time Digital Audio Copy (it reads the cda sectors and writes them to
+ the sound card), because of this you can use crossfade, speed control,
+ auto volume correction and surround on audio CDs! (recommended to use -bp)
+
+-USING MPXPLAY 
+ - WITHOUT HARDDISK: I haven't tested it, try -db option
+ - WITHOUT VGA CARD: I also haven't tested it, try -f0 option
+
+-LESS CPU USAGE: the program uses less cpu time without spectrum analiser,
+ volume correction, surround, soundlimit and volume meter.
+ Use this for slow CPUs: mpxplay.exe -sl 0 -ddma -f0 -v -bl -bn8 playlist.m3u
+ OR: mpxplay.exe -sl 0 -ddma -bl -bn8 playlist.m3u
+  and set in mpxplay.ini: Displaymode=76 or Displaymode=92 and Desktopmode=1018
+
+-SOUNDLIMIT: cuts (don't write to the output) the signal below
+ "soundlimit" it doesn't play (only decode) while, and it finishes the play
+ (exit or step to next song in playlist) in last 400 frame when volume is
+ bellow or equal to soundlimit.
+ Set it to 50 for disco, 10 for classical music, 1 to cut at 'digital noise'
+ and 0 to disable soundlimit checking.
+
+-VERBOSE: in verbose mode (-v) you get more informations (header info:layer,bitrate,etc.,
+ ,ID3tag info:artist,title,year,...)(use it for -f0,-ff or -fl)
+
+-TEST MODE: in test mode (-t) the program writes the output nowhere (null output)
+ and you can test the speed of your computer and my program.
+ You get the the results at the end of running.
+ Index value must be above 100% to play properly audio (MP3) files.
+
+-DISPLAYMODE configuration in mpxplay.ini:
+ (default: 126 = 64+32+16+8+4+2; -fl: 2; -fl -v: 6=2+4; -fe -fs : 14=8+4+2)
+(bit)(add the number to Displaymode variable)
+       0 no display
+ 0.   +1 only frame counter is displayed (use it with -f0 (0) & -v (+4) only)
+ 1.   +2 timepos is displayed
+ 2.   +4 id3info & header are displayed (-v)
+ 3.   +8 use fullscreen
+ 4.  +16 use half screen editor (else fullscreen)
+ 5.  +32 spectrum analiser enabled
+ 6.  +64 use (change display to) 50 lines mode (else use the initial (DOS) resolution)
+
+-DESKTOPMODE configuration (default: 1019 = 1+2+8+16+32+64+128+256+512):
+ 0.     +1  show song position line (....)
+ 1.     +2  show playlist position line (....)
+ 2.     +4  reserved (not used)
+ 3.     +8  show playlist editor elevator ()
+ 4.    +16  vertical editor sides (else horizontal)
+ 5.    +32  show filename with fullpath at the top of the editor
+ 6.    +64  show fulltime (in bottom right corner)
+ 7.   +128  show songtimes in editor
+ 8.   +256  show songnumbers in editor
+ 9.   +512  show drive letters in editor
+
+10.  +1024  always show filenames in editor (filename artist:title)
+11.  +2048  follow browser (via mouse) in editor
+12.  +4096  shift playlist entry up or down by mouse (drag & move) (otherwise scroll editorside)
+13.  +8192  allways follow song-skip with the cursor/editorhighline (else follows only if it stands on the current/played song)
+14. +16384  disable "move side with editorhighline" function (set old editorhighline/side moving method)
+
+-LOADID3TAG configuration (default: 7 = 1+2+4)
+0. +1: use mxu/extm3u/id3list
+1. +2: load tags from audio files
+2. +4: create artist:title from (long)filename if no other id3info (enabled by default)(detected filename format is: "TRACKNUM. Artist - Title.xxx" or "Artist - Title.xxx")
+3. +8: prefer list-tags (got from extm3u,mxu,id3list) (else prefer audiofile-tags)
+
+-available CPNAMEs (codepages) for -8cp option:
+ ISO-8859-1 (normal US ASCII), ISO-8859-2 (the default)
+ ISO-8859-3,ISO-8859-4 ,ISO-8859-5 ,ISO-8859-6 ,ISO-8859-7, ISO-8859-8,
+ ISO-8859-9,ISO-8859-10,ISO-8859-13,ISO-8859-14,ISO-8859-15,ISO-8859-16,
+ CP424,CP437,CP737,CP775,CP850,CP852,CP855,CP856,CP857,CP858,CP860,CP861,
+ CP862,CP863,CP864,CP865,CP866,CP869,CP874,CP1006,CP1250,CP1251,CP1252,
+ CP1253,CP1254,CP1255,CP1256,CP1257,CP1258
+
+-------------------------------------------------------------------------------
+
+Speed test results:
+
+(index: mpxplay.exe -t -ff -sl 0 -db file.mp3 ; CPU: mpxplay.exe -fl -bl -bn8 file.mp3)
+
+ On Intel Celeron 300A (4.5*66.6) with PC100 SDRAM and ASUS BX mainboard (program is optimized to this machine)
+
+  MPXPLAY 1.47.6:   MP3: index:2650%  CPU:4%  (128kbit,MsStereo)
+                    MP2: index:3358%  CPU:3%  (256kbit,Stereo)
+                    MPC: index:2738%  CPU:4%  (154kbit,MsStereo)(-radio quality)
+                    OGG: index:2317%  CPU:5%  (130kbit,c-Stereo)(Vorbis 1.0 encoded file)
+                    AC3: index:1719%  CPU:7%  (192kbit,Stereo)
+
+Speed comparison of different computers with different versions of Mpxplay
+(index values of MP3 speed tests)
+
+    CPU: 486DX2 AMDDX4 AMD5x86 Pentium PPRO  PII
+    Mhz:   66    100     133     100   200   300
+
+ver 1.47                                     2650
+ver 1.46                                     2620
+ver 1.45                                     2589
+ver 1.44                                     2635
+ver 1.43                               1750  2620
+ver 1.42               175.8   423.3   1639  2502
+ver 1.41               174.4   411.8   1619  2489
+ver 1.40  93.3  134.1  173.7   418.3   1636  2485
+ver 1.39  89.9  125.0  163.4   383.4   1504  2298
+ver 1.38  89.1  123.7    -     376.7   1499  2284
+ver 1.37  84.3  117.9    -       -     1410  2166
+ver 1.36  84.3  117.3  162.0   339.8   1401  2156
+ver 1.35  85.6  119.9  156.9   342.2   1369  2074
+ver 1.34  84.0    -    155.0   326.3   1283  2033
+ver 1.33  84.5  118.4  155.2   327.3   1275  2024
+ver 1.32  84.7  118.8  154.8   329.3   1279  2024
+ver 1.31        119.0  152.6   329.5   1365  2104
+ver 1.30        118.3  152.7   326.2   1275  2009
+ver 1.29        117.1  151.7   302.6   1106  1729
+ver 1.28        115.7    -       -     1170  1786
+ver 1.27          -      -       -      -    asm bug
+ver 1.26        111.1  142.5   277.5   1000  1530
+ver 1.25        110.7  142.7   280.4   1049  1617
+ver 1.24        108.8  141.0   277.5   1037  1588
+ver 1.21               138.8   269.8   1010  1542
+ver 1.20               137.0   263.8    980  1477
+ver 1.10               137.7   265.6    968  1458
+ver 1.00               137.7   263.9    973  1462
+ver 0.07               139.0   275.5   1002  1531
+ver 0.06               139.2   276.0   1003  1530
+ver 0.05               134.3   247.9    823  1154
+ver 0.04               134.3   246.7    823  1158
+ver 0.03               134.3   247.4    828  1173
+original:                                     819

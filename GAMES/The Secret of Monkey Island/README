@@ -1,0 +1,122 @@
+The Secret of Monkey Island (tm) README file.
+
+Lucasfilm Games (tm) in association with 3M (tm) and Game Player's 
+(tm) Guide presents The Secret of Monkey Island Caribbean Summer 
+contest.  To enter, play this interactive sample from the game and 
+answer the questions at the end of the demo. 
+
+Please read the entire file before playing. 
+ 
+If you have any questions about this demo disk or the contest, call 
+Lucasfilm Games between the hours of 8:30 a.m. and 4:30 p.m. Pacific 
+Time at (415) 662-1902.
+
+THE SECRET OF MONKEY ISLAND CONTEST
+
+Enter The Secret of Monkey Island contest and you could be the 
+Grand Prize winner of a Caribbean Cruise. Or win one of hundreds of 
+other great prizes like Adlib (tm) sound cards, The Secret of Monkey 
+Island T-shirts or posters.  Just correctly answer the questions at the 
+end of the demo and you could be on your way.
+
+Entries must be received by May 31, 1991 in order to be eligible to 
+win.  See Official Contest Rules at the end of this file for more 
+information.
+
+HOW TO ENTER THE SECRET OF MONKEY ISLAND CONTEST
+
+Take a look at the questions that appear at the end of the demo.  If 
+you don't know the answers, take another walk through the demo 
+and make a note of them.  Then, on a piece of paper, write the 
+answers to the questions along with your name and date of birth, 
+your address, city, state, zip, and phone number.  Mail your answers 
+to:
+
+The Secret of Monkey Island Contest
+P.O. Box 10228
+San Rafael, CA 94912
+
+HARD DRIVE INSTRUCTIONS:
+
+To install The Secret of Monkey Island on a hard disk: 
+
+Make a directory called MIDEMO and copy the disk into that 
+directory.  At the hard disk prompt (usually "c>"), do the following:
+
+1.   Type     mkdir \midemo    and press ENTER.
+2.   Type     cd \midemo       and press ENTER.
+3.   Type     copy a:*.*       and press ENTER to copy the files onto 
+                               your hard disk.
+
+To start the game from your hard disk, use these commands: 
+
+1.   Type     c:               and press ENTER.
+2.   Type     cd \midemo       and press ENTER.
+3.   Type     midemo           and press ENTER to start the game.
+
+FLOPPY DISK DRIVE INSTRUCTIONS:
+
+To play The Secret of Monkey Island from a floppy disk drive, insert 
+the diskette into the drive and switch to that drive; at the MS-DOS 
+prompt (usually "a:"), enter     MIDEMO     to start.
+
+PLAYER CONTROLS:
+
+To move Guybrush Threepwood (your character), simply point your 
+cursor (with the mouse or keypad) at the place in the animation window 
+where you want him to go, and click (or press ENTER).  If you point 
+to an open door and click, Guybrush will walk through it.  
+To examine or "use" an object, select the verb then point to the 
+object and click.  
+
+To exit the demo and return to DOS, press Control-C.
+
+OFFICIAL CONTEST RULES
+
+No Purchase Necessary.  Limit one entry per person.  All entries must 
+be mailed to Monkey Island Contest, P.O. Box 10228, San Rafael, CA 
+94912 and must be received no later than May 31, 1991.  Entrant 
+assumes all risk of lost, stolen, or misdirected mail. Winners will be 
+determined by random drawing from all correct entries received.  
+Prizes to be awarded:  One Grand Prize: One seven day Carnival 
+Caribbean cruise for two (approximate retail value $3000). One 
+hundred second prizes: Adlib(r) Music Card (approximate retail value 
+$179.95).  Two hundred third prizes:  One The Secret of Monkey 
+Island T-shirt (approximate retail value $14.95).  Five hundred 
+fourth prizes: A six month subscription to Game Players' Magazine 
+(approximate retail value $23.70).  Winners will be notified by mail.  
+By entry and acceptance of their prizes, winners consent to the use of 
+their names, photographs, or other likenesses for the purpose of 
+advertising or promotion on behalf of Lucasfilm Games (LFL) without 
+further compensation.  Chances of winning depend on number of 
+correct entries actually received.  Limit one prize per household.  No 
+substitutions of prizes is permitted.  All prizes will be awarded.  A 
+list of winners will be available after June 30, 1991 by sending a 
+self-addressed, stamped envelope to Monkey Island Winners, P.O. 
+Box 10228, San Rafael, CA 94912.  LFL will arrange air and sea 
+transportation for the Grand Prize winner and his or her guest.  All 
+other expenses are responsibility of contest winners.  Grand Prize 
+excursion dates will be determined by Lucasfilm Games.  A Grand 
+Prize winner under 18 years of age must be accompanied by a 
+parent or guardian.  Contest not open to employees of Lucasfilm Ltd., 
+their affiliates, agencies, or their immediate families.  This contest is 
+void in Canada and elsewhere where prohibited by law.  This contest 
+is subject to all federal, state, and local taxes and regulations.  Taxes 
+and fees are sole responsibility of winner.
+
+THE SECRET OF MONKEY ISLAND README
+
+If you are unfamiliar with README files, try the following:
+
+When you entered     TYPE README     at the DOS prompt, chances are 
+several screens of text scrolled by very fast and you ended up here.  
+
+You can pause the README file at any point by holding down the 
+CTRL key pressing the "s" key once.  Hold down the CTRL key and 
+and press the "q" key once to restart the scrolling text.
+
+If you have any problems, please call us at (415) 662-1902.  Our 
+hours of operation are 8:30 a.m. to 4:30 p.m.  Pacific Time.
+
+We hope you enjoy playing The Secret of Monkey Island Demo.
+

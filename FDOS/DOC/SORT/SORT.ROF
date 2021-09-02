@@ -1,0 +1,80 @@
+.TH SORT 1
+.SH NAME
+sort \- ASCII sort files
+.SH SYNOPSIS
+.B sort
+[ sort_options ] [file]
+.br
+.SH DESCRIPTION
+.I  Sort
+is used to sort the input file.  
+Lines of input are taken from the file named on the
+.I sort
+command or if no file is given, input is taken from standard input.
+.SH OPTIONS
+The following command line options are supported.
+The options are not case sensitive, so /r is equivalent to /R.
+.TP 12
+.B \/r
+Sort in reverse order.
+.br
+.TP
+.B \/h
+Display a brief help message.
+.br
+.LP
+The notation
+.BI \/+num
+causes the sort key to begin in column
+.B num.
+The first column is colum 1.
+.LP
+.SH EXAMPLES
+Sort the contents of 
+.I file1
+using the entire line as the sort key. 
+.LP
+.RS
+.BI "Example% sort file1
+.RE
+.LP
+or
+.LP
+.RS
+.BI "Example% sort <file1
+.RE
+.LP
+Sort file1 in reverse order (Z-A) based on the key starting in column
+21.
+.LP
+.RS
+.BI "Example% sort /R /+21 <file1
+.RE
+.LP
+Sort c:\\tmp\\foobar.dat using the key in column 5 and put the output on
+a file called 
+.B data.out
+residing on the 
+.B B:
+floppy drive.
+.LP
+.RS
+.B "Example% sort /+5 c:\etmp\efoobar.dat >b:data.out
+.RE
+.LP
+.SH BUGS
+This version of 
+.B sort
+only uses conventional ram and  does not do an out-of-memory sort, so
+it is limited to what can fit in available memory.  The maximum
+record length is 1000 characters and the maximum number of records
+that can be sorted is 10,000.
+This does not mean that you will be able to sort 10,000 records of 
+1000 characters each, since you would run out of memory before you
+read all of the data in.
+.SH COPYRIGHT
+Copyright 1995 Jim Lynch
+.br
+K4GVO@america.net
+
+

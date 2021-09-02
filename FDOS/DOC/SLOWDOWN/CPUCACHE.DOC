@@ -1,0 +1,515 @@
+
+
+
+
+                                   CPUCACHE 1.00
+
+                                 TABLE OF CONTENTS
+
+
+     WHAT IS CPUCACHE? . . . . . . . . . . . . . . . . . . . . . . . . .    2
+
+     HOW TO USE CPUCACHE . . . . . . . . . . . . . . . . . . . . . . . .    4
+
+     A WORD FROM THE SPONSOR . . . . . . . . . . . . . . . . . . . . . .    6
+
+     OTHER PROGRAMS  . . . . . . . . . . . . . . . . . . . . . . . . . .    7
+
+     WARRANTY  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    8
+
+     REVISION HISTORY  . . . . . . . . . . . . . . . . . . . . . . . . .    9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       CPUCACHE 1.00            Page 1 of 9
+
+
+
+     WHAT IS CPUCACHE?
+     อออออออออออออออออ
+
+     CPUCACHE is a very simple DOS program that lets you easily control
+     (ENABLE, DISABLE, or simply show the Status of) your CPU's Cache.  What
+     the heck is a CPU Cache, and why would anybody want to control it?  I'm
+     glad you asked.
+
+     All modern computers have a CPU Cache (all computers with at least an
+     80486 CPU, which includes all Pentium-class computers).  The CPU Cache
+     is a chunk of memory that is "special" in two ways: it is extremely fast
+     (faster than "regular" memory), and it is "close" to the CPU ("closer"
+     than regular memory).  In fact, the Cache is the main thing that makes
+     modern computers so much faster than older computers.
+
+     Whenever a program requests that the CPU do something, the CPU will
+     store the instructions in the Cache.  Programs, by nature, tend to do
+     the exact same things over and over and over again.  So, if a program
+     asks the CPU to do the same thing it did just a little while ago (which
+     is pretty likely), it's possible that the instructions for what to do
+     will still be in the Cache.  If so, the CPU will retrieve the
+     instructions from the Cache instead of retrieving them from regular
+     memory (which is much slower than the Cache), or from the hard drive
+     (which is even slower than memory).  As CPU's have progressed, the
+     Caches have gotten larger and faster, and do a better job of "guessing"
+     what instructions the CPU may need in the near future.  This is the main
+     reason that modern CPU's are so much faster than the older CPU's.  In
+     fact, from what I can tell with my experimentation, the efficiency and
+     effectiveness of the Cache seems to have FAR more effect on the "speed"
+     of the computer than the MHz of the CPU.
+
+     It turns out that all CPU's with a Cache have also provided a standard,
+     relatively easy way to DISABLE (turn off) the Cache.  When the Cache is
+     DISABLEd, the computer will run MUCH slower than it normally does
+     (usually, it will run somewhere between 5% and 20% of the "normal"
+     speed).  Exactly how much the computer slows down when you DISABLE the
+     Cache varies significantly from computer to computer, and is just about
+     impossible to accurately predict.  For now, let's just say that
+     Disabling the Cache Slows the computer Down A LOT.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       CPUCACHE 1.00            Page 2 of 9
+
+
+
+     By default, most computers boot up (turn on) with the Cache ENABLEd, so
+     that the computer runs as fast as it can.  The only reason you really
+     should have for wanting to DISABLE the Cache is if you want the computer
+     to run slower (much slower) than normal.
+
+     There are two reasons you may want the computer to run more slowly than
+     it normally does.  The first reason is if you are trying to run an old
+     program, designed for an old computer, and it doesn't work correctly on
+     a new, fast computer.  The old program could either "blow up" on a fast
+     computer, or could run in such a way that it is impossible to use.
+
+     The second reason you may want the computer to run slowly is as a
+     troubleshooting tool.  Sometimes, when you're trying to troubleshoot
+     another program, the error or status messages flash by so fast on the
+     screen that you can't figure out what's going on.  With the computer
+     running slowly, you may be able to see what the messages say before they
+     have a chance to disappear off the screen again.
+
+
+     All that being said, I don't recommend that you use CPUCACHE to Slow
+     Down your computer.  I have another program, called SLOWDOWN, which is
+     what you should use instead.  SLOWDOWN is MUCH more sophisticated and
+     MUCH more comprehensive than CPUCACHE.  SLOWDOWN gives you almost
+     complete control over how exactly fast your computer runs.  The ability
+     to Control (ENABLE and DISABLE) the CPU Cache is built into both
+     SLOWDOWN and CPUCACHE, but SLOWDOWN Controls the Cache automatically
+     based on how fast you want the computer to run.  The main reason for
+     making CPUCACHE is so that you can experiment with the CPU Cache to see
+     exactly what it is and how it affects your computer.  You can use
+     CPUCACHE to Slow Down the computer if you want, but SLOWDOWN will
+     typically do a much better job for you.
+
+     In fact, if you've managed to get a copy of CPUCACHE and didn't get a
+     copy of SLOWDOWN at the same time, then something's wrong (they are
+     supposed to be distributed together).  If you didn't get a copy of
+     SLOWDOWN, go to my web site and download the latest version.  The URL of
+     my web site is detailed in the "WARRANTY" section below (page 8).
+
+
+     In general, programs do not care whether the Cache is ENABLEd or not, so
+     Disabling the Cache should not cause any compatibility problems.  The
+     only program I've run across so far that has a compatibility issue with
+     a DISABLEd Cache is Microsoft Windows.  If you DISABLE the Cache before
+     starting Windows, Windows crashes.  In addition, Windows will not let a
+     DOS Program (like CPUCACHE), running in a DOS Box underneath Windows,
+     control the Cache.  Windows doesn't crash or anything, but it won't let
+     the status of the Cache be changed from a DOS Box.  Therefore,
+     underneath Windows, CPUCACHE doesn't work correctly (it just displays an
+     error message).
+
+
+
+
+                       CPUCACHE 1.00            Page 3 of 9
+
+
+
+     HOW TO USE CPUCACHE
+     อออออออออออออออออออ
+
+     CPUCACHE is a pretty simple program.  It only lets you do a few
+     different things to the CPU Cache: ENABLE, DISABLE, TOGGLE, or show the
+     current Status of the Cache.  You tell CPUCACHE exactly which of these
+     things you want it to do with command-line Options.  There are actually
+     several different ways to tell CPUCACHE to do the same thing, though.
+     For example, to have CPUCACHE attempt to DISABLE (turn Off) the CPU
+     Cache, you could do any one of the following:
+
+       CPUCACHE D
+       CPUCACHE Disable
+       CPUCACHE No
+       CPUCACHE N
+       CPUCACHE Off
+       CPUCACHE False
+       CPUCACHE -
+
+     The shorter Options (like "D" or "-") are faster and easier to type, but
+     the longer ones (like "Disable") are more descriptive and are easier to
+     understand as you're reading them.  You can use whichever one you want.
+
+     The Options are not case sensitive ("CPUCACHE D" is the same as
+     "CPUCACHE d", etc.).  Also, if you enter more than one Option, CPUCACHE
+     will ignore all of them except the first one.  For example:
+
+       CPUCACHE Disable Enable
+
+     will simply attempt to DISABLE the Cache, just like you had never even
+     entered the "Enable".  A simple "CPUCACHE" (with no Options at all) will
+     just show the current Status of the Cache, without trying to change
+     anything:
+
+       CPUCACHE
+
+     A CPUCACHE line with an invalid Option (anything that's not in the list
+     of valid Options) will just display a help screen.  Any of the following
+     examples (or anything like them) will display a help screen:
+
+       CPUCACHE ?
+       CPUCACHE Help
+       CPUCACHE What???
+
+
+
+
+
+
+
+
+
+
+                       CPUCACHE 1.00            Page 4 of 9
+
+
+
+     Here are the different command-line Options, and what they do:
+
+     * D  Disable  Off  No  N  False  -
+
+       This will attempt to DISABLE (turn Off) the CPU Cache.  If it is
+       successful, your computer will be running much slower than it normally
+       does.
+
+
+     * E  Enable  On  Yes  Y  True  +
+
+       This will attempt to ENABLE (turn On) the CPU Cache.  If it is
+       successful, your computer will be running at its "normal" (fast)
+       speed.
+
+
+     * T  Toggle  Change
+
+       This will attempt to TOGGLE the status of the CPU Cache.  That is, if
+       the Cache was ENABLEd (turned On), CPUCACHE will attempt to DISABLE it
+       (turn it Off).  If the Cache was DISABLEd (Off), CPUCACHE will attempt
+       to ENABLE it (turn it On).
+
+
+     After CPUCACHE runs, it will display a message on the screen indicating
+     what it did.  In addition, CPUCACHE returns ErrorLevels to indicate what
+     happened:
+
+       ษออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออออออออป
+       บ ERRORLEVEL บ                   MEANING                           บ
+       ฬออออออออออออฮอออออออออออออออออออออออออออออออออออออออออออออออออออออน
+       บ     0      บ CPU Cache is currently Enabled (turned On)          บ
+       บ     1      บ CPU Cache is currently Disabled (turned Off)        บ
+       บ     2      บ Error - CPU doesn't have a controllable Cache       บ
+       ศออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+     If you don't understand what ErrorLevels are or what they are for, I
+     suggest you do a little bit of reading in your favorite DOS book.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       CPUCACHE 1.00            Page 5 of 9
+
+
+
+     A WORD FROM THE SPONSOR
+     อออออออออออออออออออออออ
+
+     CPUCACHE is a free program.  If you like it and use it, do something
+     nice for someone else in return.  I will accept niceties to myself in
+     the form of $.
+
+     You can freely copy and distribute CPUCACHE.COM, as long as it is
+     distributed along with this CPUCACHE.DOC, and neither file has been
+     modified in any way.  You cannot charge anyone in any way for CPUCACHE,
+     except to recover your actual costs for disks and shipping (you cannot
+     charge for "handling").  You do need my permission to distribute
+     CPUCACHE as a "companion" to some other program.
+
+     You can also freely download the source code for CPUCACHE.  It is
+     available from my web site:
+
+       http://members.aol.com/bretjohn
+
+     I haven't included the source code here, to keep the size of the
+     download small, and because most people don't care about source code,
+     anyway.  But it's available if you want it.
+
+
+     As stated above, the main reason I wrote CPUCACHE was to be a
+     "companion" to my SLOWDOWN program.  CPUCACHE will let you experiment
+     with the CPU Cache, so you can see exactly what it does (and what it
+     doesn't) do.  I believe including CPUCACHE will allow you to use the
+     "main" program (SLOWDOWN) much more effectively.  You can use CPUCACHE,
+     if you want, to Slow Down your computer.  I don't recommend it, however.
+     You will generally be much better off using SLOWDOWN instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       CPUCACHE 1.00            Page 6 of 9
+
+
+
+     OTHER PROGRAMS
+     ออออออออออออออ
+
+     If you find CPUCACHE useful, I have written some other programs you may
+     find even more useful.
+
+       CLOCK
+          Shows a clock on your screen all the time.  Also has two alarms
+          that beep at you when it's time for an appointment.
+
+       JOYKEYS
+          Lets you use your joystick with ANY program.
+
+       MOUSKEYS
+          Lets you use your mouse with ANY program.
+
+       PRTSCR
+          Sends all of your PrintScreens to a file instead of a printer.  A
+          good way to transfer data between two programs, even if they won't
+          normally "talk" to each other.
+
+       PRTSCRFF
+          Modifies your PrintScreen so that each new PrintScreen gets put on
+          a new sheet of paper (especially useful if you have a Laser
+          printer).
+
+       SCANCODE
+          Type keystrokes automatically in the middle of other programs.
+          Helpful in getting past the "starting screens" of most programs, or
+          to create macros.  Can also be used to remap the keyboard.
+
+       SDWRGMPD
+          DOS driver for a Microsoft SideWinder digital GamePad.
+
+       SERIAL
+          Shows the status of your serial (COM) ports on screen.  Shows the
+          bit rate, parity, status of the leads (DTR, DSR, etc.).  An
+          excellent way to troubleshoot modem problems.
+
+       SLOWDOWN
+          Slows down a fast computer so you can run older programs that
+          require a PC/XT or PC/AT.
+
+
+
+
+
+
+
+
+
+
+
+                       CPUCACHE 1.00            Page 7 of 9
+
+
+
+     WARRANTY
+     ออออออออ
+
+     There is no warranty of any kind, either expressed or implied, supplied
+     with CPUCACHE.  CPUCACHE is a very simple DOS program, and should not
+     cause you any problems.
+
+     If you find any "bugs" in this program, or see something that you wish
+     were different, please let me know.
+
+
+     HAVE FUN!
+
+       Bret Johnson
+       6775 South Logan Street
+       Littleton, CO  80122-1249
+       (303) 795-5084
+
+       bretjohn@juno.com  or
+       bretjohn@aol.com
+
+
+     I intend to always keep the latest versions of all of my programs on my
+     own web site.  The URL is:
+
+       http://members.aol.com/bretjohn
+
+     Keep looking there for updates to my programs.  It is the first place I
+     will put new or updated programs.  It is the only place I will put beta
+     versions of new releases.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       CPUCACHE 1.00            Page 8 of 9
+
+
+
+     REVISION HISTORY
+     ออออออออออออออออ
+     2002/03/06  v1.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       CPUCACHE 1.00            Page 9 of 9
+

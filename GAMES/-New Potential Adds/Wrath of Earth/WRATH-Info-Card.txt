@@ -1,0 +1,100 @@
+==============================================================================
+DOS Games Archive Game Info Card                                     Version 3
+==============================================================================
+* General Information *
+
+Game title              : Wrath of Earth
+Alternate title(s)      : None
+Developer               : Transend Services
+Publisher               : CDV Software
+Country of origin       : UK
+Distribution model      : Shareware
+
+* Release Information *
+
+Release type            : Shareware (partial game)
+Exclusive level(s)      : No
+Version                 : 1.0
+Release date            : Jan 1995
+Language(s)             : English
+License/Permissions     : "This product is a free demo and shareware vendors
+                           and users are granted a limited license to
+                           distribute this software"
+License file            : LICENSE.TXT
+
+* Distribution Information *
+
+Distribution type       : Digital download, Physical media (Floppy disk)
+File names & sizes      : wrath01.exe (1 234 769 bytes)
+                          wrath02.exe (1 214 510 bytes)
+Installer provided      : Yes
+Original location       : Unknown
+Retrieved from          : http://www.cdv.de/dwn_game.htm
+                          (Wayback Machine snapshot from 31 Oct 1996)
+
+Additional files        : None
+
+Maintainer              : MrFlibble <mrflibble86@gmail.com>
+==============================================================================
+* Note for DOSBox users *
+
+This software is fully installed and configured to run in the DOSBox emulator.
+You can simply drag and drop the file WRATH.BAT over the DOSBox icon to start
+playing. Experienced DOSBox users may choose other methods of startup.
+
+The software was configured and tested to work with the official DOSBox build
+v0.74-3 available from www.dosbox.com. It may or may not work with any other
+third-party DOSBox distributions that are available.
+
+For playing instructions and other information, please refer to the electronic
+manual (MANUAL.EXE) found in the WRATH directory.
+
+
+!!! IMPORTANT !!!
+
+Wrath of Earth will only work in DOSBox if EMS memory is turned off.
+
+This distribution of the shareware version will automatically disable EMS and
+turn it back on upon exit from the game, but only if you run it via the
+provided WRATH.BAT file.
+
+You can also manually disable EMS emulation in DOSBox:
+
+Open your DOSBox configuration file (by default it is dosbox-0.74-3.conf) in a
+text editor of your choice and find the following line:
+
+ems=true
+
+Change this to:
+
+ems=false
+
+Save and close dosbox-0.74-3.conf.
+==============================================================================
+* Disclaimer *
+
+THE GAME DATA IN THIS ARCHIVE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING AND NOT LIMITED TO ANY IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+All game content is copyright to their respective owners.
+
+No files from the original software package provided by the developer and/or
+publisher were modified except for the configuration files needed to set up
+sound devices and input methods.
+
+This software was tested to work with the current official DOSBox build
+(v0.74-3) and was scanned by an antivirus/anti-malware tool.
+
+You use this software at your own risk. DOS Games Archive is not liable for
+any unwanted consequences that may arise from your using this software.
+==============================================================================
+* Download and online play *
+
+This game is available from DOS Games Archive at:
+https://www.dosgamesarchive.com/download/wrath-of-earth/
+
+It can be played online at:
+https://www.dosgamesarchive.com/play/wrath-of-earth/
+
+--- END OF FILE (2020/06/21) ---

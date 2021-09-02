@@ -1,0 +1,84 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+         ====================================================
+                          CODE-NAME: ICEMAN
+                                                        
+
+                           THE SOUNDTRACK
+                     (See below for song titles.)
+                           By Mark Seibert
+         ====================================================
+             Copyright (c)1990 Sierra Entertainment, Inc.  
+         ====================================================
+
+                     ROLAND GENERAL MIDI VERSION
+
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded System Exclusive data
+- General MIDI Sound Device  (Roland SC-55 recommended)
+
+
+This Standard MIDI File was recorded directly from Sierra's "Code-Name: 
+Iceman" adventure game using Sierra's MT-32 driver.  It has been converted
+for playback on General MIDI sound cards and modules.  Roland GM (SC-55)
+is highly recommended for optimal playback.
+
+    EDITING NOTE:
+    The preceding measure of each individual song file contains reset
+    controller and SysEx data.  If you wish to extract individual song
+    files from this soundtrack, be sure to include each song's preceding
+    measure in order to ensure proper playback.
+
+Recorded/edited/compiled/arranged for General MIDI format by Quest Studios.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+       =================================================================
+                            TRACK SHEET  (GM VERSION)
+                          
+                               CODE-NAME: ICEMAN
+       =================================================================
+
+   SONG TITLE                                      START MEASURE/TIME *
+
+   1. Main Title Theme                                    2  00:00:02
+   2. On The Beach Of Tihiti                             46  00:01:48
+   3. ChiChi Bar Theme 1                                 68  00:02:40
+   4. ChiChi Bar Theme 2                                120  00:04:45
+   5. ChiChi Bar Theme 3                                169  00:06:43
+   6. ChiChi Bar Theme 4 (Dancing With Stacy)           218  00:08:40
+   7. Stacy's Hut                                       250  00:09:57
+   8. The Morning After                                 319  00:12:43
+   9. Undercover Agent                                  362  00:14:26
+  10. Mission Failed!                                   374  00:14:55
+  11. Flight To Washington				382  00:15:14
+  12. Washington                                        419  00:16:43
+  13. The Pentagon                                      448  00:17:52
+  14. The Briefing					480  00:19:09
+  15. Pearl Harbor                                      512  00:20:26
+  16. U.S.S. Backhawk                                   536  00:21:24
+  17. Russion Submarine Destroyed (Iceman Theme)        562  00:22:26
+  18. Swimming In Open Sea                              618  00:24:40
+  19. Underwater Sabatage                               667  00:26:38
+  20. Tunisia Compound                                  704  00:28:07
+  21. Freeing The Ambassador                            774  00:30:55
+  22. Rescue By Stacy                                   799  00:31:55
+  23. The Chase                                         837  00:33:26
+  24. The Debriefing                                    875  00:34:57
+  25. Anchor's Aweigh                                   906  00:36:12
+  26. Closing Themes                                    915  00:36:33
+  --------------------------------------------------------------------------
+                                                TOTAL TIME:  00:38:50
+
+
+      * Note:  Start Times are approximate.
+

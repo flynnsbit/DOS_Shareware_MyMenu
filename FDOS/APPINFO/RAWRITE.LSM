@@ -1,0 +1,14 @@
+Begin3
+Title:          rawrite
+Version:        1.3
+Entered-date:   2008-06-19
+Description:    Write disk file to raw floppy diskette
+Keywords:       floppy, write, rawrite
+Author:         Mark Becker (mbeck _AT_ ai.mit.edu)
+Maintained-by:  Guy Helmer (ghelmer _AT_ dsuvax.dsu.edu)
+Primary-site:   http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/disk/rawrite/
+Alternate-site: http://www.fdos.org/ripcord/rawrite/
+Original-site:  http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/disk/rawrite/
+Platforms:      DOS, FreeDOS
+Copying-policy: Source code available (open)
+End

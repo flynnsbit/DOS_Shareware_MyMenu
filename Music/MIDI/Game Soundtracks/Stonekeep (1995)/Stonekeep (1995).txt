@@ -1,0 +1,9 @@
+Game: Stonekeep
+Year: 1995
+Composed by: Brian Luzietti
+MIDI versions: GM, GS, AWE, FM
+Platform: DOS
+
+Additional info: There are four versions of each track, GM, GS, AWE and FM. They are, however, so similar and spread so erratically, that I can't tell which one is which. If someone can sort it out, it would help a lot.
+
+https://www.karlsitretro.com/game_midi

@@ -1,0 +1,9 @@
+BUGS.TXT
+
+Bugs:
+
+1.  Will destroy any data at the end of the disk when the mirror image is
+    written.  (Probably only occurs on floppy disks at this time.)
+
+
+

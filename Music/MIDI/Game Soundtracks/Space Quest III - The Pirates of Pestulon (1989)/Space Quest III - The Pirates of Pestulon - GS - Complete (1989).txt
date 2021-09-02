@@ -1,0 +1,81 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+       ========================================================
+               SPACE QUEST III: THE PIRATES OF PESTULON
+                                                        
+
+                            THE SOUNDTRACK
+                     (See below for song titles.)
+             Music Composed & Performed by Bob Seibenberg
+       "Space Quest Theme" written by Scott Murphy & Mark Crowe
+       ========================================================
+                 Copyright (c)1989 Sierra On-Line, Inc.  
+       ========================================================
+
+                          ROLAND GS VERSION
+
+           ** NOT FOR GENERAL MIDI ** NOT FOR YAMAHA XG **
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- Roland Sound Canvas GS MIDI device
+   (Minimum 354 tones required.)
+
+
+This Standard MIDI File was recorded directly from Sierra's "Space Quest 3"
+adventure game using Sierra's MT-32 driver.  It has been converted
+and arranged for playback on 100% Roland GS compatible devices.  GS cards and
+modules must contain both the MT-32 and CM-32P variation tone sets.  THIS
+FILE IS NOT DESIGNED FOR GENERAL MIDI OR YAMAHA XG PLAYBACK.
+
+EDITOR'S NOTE:
+When played through a Roland Sound Canvas GS card or module, playback will
+closely match the Roland MT-32 Sound Module version in many instances!  Most
+of the primary instruments used by Bob Seibenberg to sequence this soundtrack
+were those found in the default timbre map of the MT-32.  Therefore, the MT-32
+Variation Tone Bank of the Sound Canvas is utilized consistantly throughout
+this conversion.
+
+Recorded/converted/edited/compiled/arranged for Roland GS by Tom Lewandowski.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+       =================================================================
+                           TRACK SHEET  (GS VERSION)
+
+                   SPACE QUEST III:  THE PIRATES OF PESTULON
+       =================================================================
+
+   SONG TITLE                                      START MEASURE/TIME *
+   -------------------------------------------------------------------------
+   1. Introduction                                        2     00:02
+   2. Opening Sequence                                   49     01:36
+   3. Robot Garbage Freighter                            82     02:42
+   4. The Rat Cave                                      151     05:00
+   5. Navigation Screen/Arnoid's Pursuit                172     05:42
+   6. Arnoid On Phleebhut                               218     07:14
+   7. Fester's World 'O Wonders                         231     07:40
+   8. Monolith Burger                                   260     08:38
+   9. Astro Chicken                                     287     09:32
+  10. Planet Ortega                                     310     10:18
+  11. Roger Dies (Theme 1)                              369     12:16
+  12. Roger Dies (Theme 2)                              374     12:26
+  13. ScumSoft Entrance                                 382     12:42
+  14. ScumSoft Corridors                                407     13:32
+  15. The Black Hole                                    446     14:50
+  16. Two Guys On Earth                                 522     17:22
+  17. Closing Medley                                    573     19:04
+  --------------------------------------------------------------------------
+                                                TOTAL TIME:     21:50
+
+
+      * Note:  Start Times are approximate.
+

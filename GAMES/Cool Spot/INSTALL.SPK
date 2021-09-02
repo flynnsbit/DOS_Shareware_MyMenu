@@ -1,0 +1,24 @@
+@echo off
+
+if "%1" == "" goto error
+
+cls
+echo Installing Cool Spot to %1
+echo.
+
+md %1
+copy *.??? %1  >NUL
+cd %1
+
+echo ...Mission Accomplished
+goto end
+
+:error
+cls
+echo To Install CoolSpot use..  "INSTALL <drv>:\<path>"
+echo.
+echo  eg.   install c:\spot
+echo.
+
+:end
+

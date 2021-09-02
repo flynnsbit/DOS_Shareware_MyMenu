@@ -1,0 +1,25 @@
+Cure4Sorrow (cure4sorrow.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=179408
+Renamed to "CUR4SORO.XM" because of DOS 8-character limit
+
+Summary
+
+    cure4sorrow.xm is a XM format module. 
+    Uploaded to modarchive.org on Thu 8th Dec 2016
+
+Info Info
+
+    Mod Archive ID: 179408
+    MD5: bf2d9a4e568d1e665f28ca5b4f59f9ce
+    Format: XM
+    Channels: 10
+    Genre: Electronic (general)
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     JAM (https://modarchive.org/member.php?81691)
+

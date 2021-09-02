@@ -1,0 +1,51 @@
+                         
+                         -------------------------
+                         Automatic Boot Disk Maker
+                         -------------------------
+
+A BOOT DISK is a floppy disk which has been specially formatted with DOS system 
+files.  When you start your computer with a boot disk in Drive A: your normal 
+system configuration will be bypassed, and your computer will boot without 
+loading any other programs into memory.  
+
+If you are having problems running Virtual Pool due to a lack of memory or for 
+other reasons, you may use this program to automatically create a Boot Disk.  
+When the boot disk has been created, you will need to exit this program and 
+restart your computer with the boot disk in drive A:
+
+Once you have restarted your computer you will either need to manually load 
+your DOS mouse driver, or , better yet, set up your mouse from within the game 
+by selecting "DEVICE SETUP" from the Main Pool Menu, and then picking the 
+proper SERIAL PORT (usually 1 or 2) from the available choices.  
+
+For further information on setting up your mouse, select "Mouse Notes" from 
+the Pool Startup Menu.
+
+
+Press Escape to continue...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<End_Of_File>

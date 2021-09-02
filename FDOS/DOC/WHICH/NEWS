@@ -1,0 +1,132 @@
+2002-03-20:
+	- which 2.1 released
+		-- Version 2.1 adds DOS switchar support and fixes two bugs I
+		   discovered while testing the new feature. The first bug was
+		   a problem that caused an executable to be listed twice if
+		   which were executed in a dir that was also listed in the
+		   PATH. Weird. I thought I nailed that one already, but I
+		   guess I missed it. The second bug was rather serious in that
+		   a control loop caused which to completely skip checking the
+		   last directory in the path. Oy! Both those bugs are fixed,
+		   so which should FINALLY work as advertised.
+2000-09-06:
+	- which 2.0 released
+		-- This release offers a couple of new features. The first
+		   new option is support for the PATHEXT environment variable,
+		   which holds the list of program extensions for which to
+		   search. For more information on how to use the PATHEXT
+		   environment variable, consult the help file. The other new
+		   feature is proper codepage support. which now displays time,
+		   date and file-size information using the formats and
+		   separators defined in the codepage information. Finally,
+		   I fixed a bug that caused which to display a file twice if
+		   the -a or -ad option was selected and the current working
+		   directory also happened to be listed in the PATH. Note: if
+		   you're compiling which yourself, you'll need to compile the
+		   Country unit, country.pas, and make it available to your
+		   compiler before you'll successfully compile which.pas.
+1999-08-29:
+	- which 1.0 released
+		-- This release features new option switches 'ad' and 'd'.
+		   The new switches deal with displaying of file size and
+		   date details. Supporting detail display is the use of
+		   the environment variable 'WHICHDETAILS', which causes
+		   the program to default to displaying details. When
+		   WHICHDETAILS is used, the 'ad' and 'd' switches toggle
+		   off detail display. Since the application has been
+		   stable since last November and the latest changes were
+		   so small, I decided to jump to v1.0. Most people
+		   should be a bit more trusting of the program now.
+1998-11-12:
+	- which 0.06 released
+		-- This release addresses a serious problem with the Borland
+		   Turbo Pascal compiler's delay loop calibration that causes
+		   programs compiled with the Crt unit to exit with a runtime
+		   error 200 on machines with Pentium Pro 200 MHz processors
+		   and higher. This fix effectively only affects the binary
+		   itself; WHICH.PAS remains completely unchanged except for
+		   the version information. (For more information on the
+		   runtime bug and how to fix it, see the various Borland-
+	`	   related newsgroups. A drop-in replacement for the Borland
+		   Pascal 7.01 or Turbo Pascal 7.01 Crt unit can be found at
+		   ftp.turbopower.com/pub/misc/crtfixes, which is where I got
+		   my compiler fix from.)
+1998-11-07:
+	- which 0.05 released
+		-- Fixed bug that caused which to append a trailing backslash
+		   to the current working directory under root. This behaviour
+		   caused which to be unable to find files in the current
+		   directory when in root and the directory was not listed in
+		   the PATH environment variable. OOPS! Sorry, folks. Should
+		   be fine now.
+1998-08-24:
+	- which 0.04 released
+		-- which 0.03 incorrectly reported version as 0.02  *fixed*
+		-- man page incorrectly dated 14 Aug 1998 internally  *fixed*
+		-- some subtle formatting changes to the code itself; end-user
+		   functionality is unchanged, but coder gets points for style
+		   (e.g., dir2search procedure was modifying var endOfPath
+		   although it was not declared as a variable parameter of
+		   the procedure)  *fixed*
+		-- changed all instances of '+' operator in code to concat
+		   function due to its better performance (highly optimized
+		   assembler)
+		-- found a problem with the way relative paths were dealt with
+		   (e.g., which ..\..\bin\turbo); specifying a drive and/or
+		   path to search should now be working correctly  *fixed*
+1998-08-20:
+	- which 0.03 released
+		-- fixed wildcard support. 'which comm*' finds all files
+		   beginning with "comm" that end with executable extensions.
+		   Specifying 'which comm*.*' finds ALL files beginning with
+		   "comm". Both '*' and '?' wildcards supported. For an
+		   insanely fast dump of all files in your PATH, try this:
+			which -a *.* >>which.out
+		   I think the wildcard support is really nice now...
+		-- some small corrections to the man page
+1998-08-14:
+	- which 0.02 (no changes to executable)
+		-- renamed HISTORY.TXT to NEWS to conform with FreeDOS
+		   coding guidelines
+		-- Changes to WHICH.HLP (help file):
+			--- BUGS: Wildcards are only partially handled. This
+			    should either be fixed or support should be
+                            completely removed. Different implementations of
+                            which that I've used are inconsistent in this
+			    regard, so I'm not sure what I'll do. Any 
+			    preferences one way or the other? For details, see
+			    the man page.
+			--- Oops. Deleted the Pascal comment markers from the
+			    help file.
+			--- Deleted the TODO section (regarding implementation
+			    of filename validity checking). I've decided not
+			    to implement this as success/failure exit status
+			    values are not affected either way. IOW, you're
+			    responsible for your own typing. ;-)
+			--- Added AUTHOR section.
+			--- Made a small correction to option references in
+			    the DESCRIPTION section.
+		-- Changes to WHICH.PAS (source code):
+			--- Synchronized man page section with help file.
+1998-08-12:
+	- which 0.02 released
+		-- added /? (help), /v (version), and /a (all) options for
+                   better compatibility with other FreeDOS commands (common
+                   look and feel); UNIX-like options left as is for the geeks
+                   in the crowd
+		-- changed display of executables in current directory;
+		   now shows .\<filename> instead of just <filename>
+                -- updated WHICH.HLP file to reflect new options
+                -- moved contact information from help info to version info
+                   for less clutter
+                -- help info is somewhat more terse now, but should still be
+                   helpful ;-)
+                -- added HISTORY.TXT to package so everybody knows what
+                   changes I've made and can follow the development cycle
+1998-08-08:
+	- which 0.01a released
+		-- recompiled WHICH.EXE with default TP7 compiler switches
+		   so that executable runs a bit faster and no longer
+		   requires 286-or-higher CPU's and FPU
+1998-08-08:
+	- which 0.01 released

@@ -1,0 +1,1898 @@
+SJGPlay for DOS               Version: 1.29            (C)1996 Steve J. Gray
+===============               Dec 5, 1996              =====================
+
+Welcome to SJGPLAY: The Audio CD Player with Lyrics... and more!
+
+SJGPLAY is FREEWARE, which means:
+
+    You may use it without payment of any kind. However, I retain full 
+    copyrights to the program. You may not modify, sell, or use it for 
+    commercial purposes. You may include it in FREEWARE/SHAREWARE 
+    compilations provided all files and documentation (SAMPLES.ZIP may be
+    removed if there are concerns about copyrighted lyrics) are included
+    and un-modified (I'd appreciate being informed if you plan to include
+    SJGPLAY on a CD-ROM. I'd accept a free copy of any CD containing
+    SJGPLAY too... Hey, it's worth a try :-)
+
+That said... If you use this program I'd like to hear your comments or 
+suggestions (tell me your most and least favorite features). I can be reached 
+via e-mail at: sgray@acs.ryerson.ca
+
+NOTE!: As of version 1.26 file naming conventions have changed! Lyric files 
+~~~~~~ now have the format "CDxxxxxx.Tnn" (so that they will be sorted 
+       correctly in the "ALL" Catalog). 
+       
+       To fix YOUR data files go into the data files directory and use the 
+       DOS rename command, like this: REN CD??????.0* CD??????.T*
+
+  The SAMPLES.ZIP file (if included in the archive) contains data files for most 
+of my personal CD collection as well as over 100 songs. (Note: Maintenance 
+releases may not include the SAMPLES.ZIP file). I hope you find some you can
+use... It may save you some typing and let you see the lyrics features in 
+action. You have two options: 
+
+ 1. Unzip SAMPLES.ZIP, then use the catalog feature to see which CD's are 
+    included in the sample data. Feel free to delete the CD's you don't need.
+
+ 2. Use the EXTRACT FROM ZIP feature when you put a new CD in the drive. If
+    it's included in the SAMPLES.ZIP file the info for it will be extracted.
+    
+ If you find we have some CD's in common how 'bout typing and sync'ing the 
+missing lyrics from the sample CD's. If you e-mail them to me or send them to 
+me on disk I can include them in future releases. 
+
+    My snail-mail address is:  Steve Gray
+                               10 Crestview Ave.,
+                               Brampton, Ontario
+                               Canada  L6W-2R6
+
+    My e-mail address is.....: sgray@acs.ryerson.ca
+    My World Wide Web page is: http://www.acs.ryerson.ca/~sgray
+
+
+  ALSO, new in Version 1.28, is the file EXTRAS.ZIP. This file contains a
+sample message file, some new fonts (for both SJGPlay and your VGA card), a
+font exporter program, and documentation for those who want to try the new 
+font and message features. 
+
+
+DISCLAIMER
+==========
+
+  Since I wrote SJGPLAY for my own pleasure, and I'm not asking for any
+money, please don't expect support of any kind. I will try to fix any bugs
+that pop up, but since I don't own every combination of CD-ROM drive and
+computer I may not be able to do anything if it doesn't work properly on
+your system.
+
+  If you want to report a bug please try to include the following information
+when you e-mail me:
+
+  * SJGPLAY version AND date (very important!)
+  * CD-ROM drive and interface (SoundBlaster, SCSI, EIDE, proprietary, etc)
+  * DOS and MSCDEX version
+  * CPU type or any other hardware you think might be causing problems
+
+  SJGPLAY works on my system and on several systems at work. All CD-ROM
+manipulation is handled by the (registered shareware) "Audio CD Toolkit"
+library by DSE SOFTWARE PUBLISHING and uses MSCDEX to interface to the 
+CD-ROM unit.
+
+  SJGPLAY is provided as is. The author shall not be liable for any damages
+resulting in use or misuse of this program including... Hey, I'm no lawyer,
+you know the routine...
+
+
+INTRODUCTION
+============
+
+  You've probably heard this before but... I've tried several other CD audio
+player programs and none of them had all the features I wanted. I tried both
+DOS and WINDOWS programs but wasn't impressed. I figured I could do better,
+but until ACDKIT from DSE came along I couldn't do anything about it.
+
+  I've tried to make SJGPLAY as easy to use as possible, yet also have all
+the features and capabilities found in other CD Players, and more! SJGPlay is
+designed to be uncluttered and clean. You can even remove most of the display
+information if you want to. You only see what you want to see and the
+controls are intuitive (usually the first letter of the function). There is
+a built-in help screen available any time if you need it, but once you're 
+comfortable with the controls you shouldn't need it again. I believe in 
+functionality not window-dressing...
+
+  I've always favoured DOS more than WINDOWS. I think everybody should be
+able to use my program, and DOS is the common denominator (for now...). Even 
+older PC's should be able to run SJGPLAY without any problems. SJGPLAY will 
+also run (as a DOS application) under WINDOWS (and runs even better under 
+Win95...once you disable the default player). See your Windows manual for 
+information on how to install DOS applications on your desktop (I like to run 
+SJGPLAY in a window).
+
+ ------------------------------------------------------------------------
+ NOTE: A Windows version is now in development (Win 3.1 and Win 95/NT).
+       Check my web page for details!
+ ------------------------------------------------------------------------
+
+FEATURES
+========
+
+  SJGPlay has most, if not all, of the features you will ever need in a CD
+audio player plus a few you'd never expect to find... I've tried to 
+incorporate all the features I could think of, while keeping in mind the 
+limitations of DOS text-mode. I'm open to suggestions if you can think of 
+anything that could be added (see: Ideas for future versions). I've tried to 
+make it easy to use, so almost no documentation is required (but here it is 
+anyway :-). Hope you like it!
+
+* Track controls
+    - Play, Pause/Continue, Stop
+    - Next/Previous Track (skip)
+    - Play specified track (you must enter a two-digit track number)
+    - Fastforward/Reverse search (plus 2 times and one-minute search)
+    - Re-Start track
+    - Jump to near end of track
+
+* Repeat Modes
+    - Repeat Track
+    - Repeat CD
+    - Repeat CD's in all Drive Units
+    - Single play tracks (stop after each track)
+    - A/B segment repeat
+
+* Intro Mode
+    - Play first few seconds (adjustable) of each track
+
+* Time Display
+    - Elapsed/Remaining track time
+    - Elapsed/Remaining CD time
+    - Track/Remaining frame# (used for lyric synchronization)
+
+* CD Cataloging
+    - CD Name and Artist
+    - Track names
+    - Automatic recognition of CD
+    - Catalog Files by: CD's, Lyrics, Albums or All files
+          * Delete, Edit, Sort, Print
+
+* Programming (playlist)
+    - Up to 99 steps
+    - Playlist saved with each individual CD
+    - Insert/Delete steps
+    - Clear All/Use All tracks
+    - Edit playlist WHILE CD is being played
+    - Shuffle (jumble) tracks
+    - Select only tracks with lyrics
+    - Program pauses
+    - Fit to tape length (insert pauses at the appropriate spots)
+    - Toggle programmed or standard play (track order)
+
+* Lyrics
+    - Built-in text editor for lyric entry (autosave)
+          * Memorize/Recall/Paste/Restore/Erase Line
+          * Insert/Delete/Split Line
+          * Define/Copy Block
+          * Track control during editing (pause/reverse/fastforward/re-play)
+    - Easy synchronization process
+    - Fine-tune synchronization
+    - Synchronized playback of lyrics
+          * Paged style
+          * Karaoke-style (with next-line display)
+    - Lyric "traffic light" (prepares you for the next line)
+    - Lyrics stay sync'd during fastforward, reverse or pause
+    - Import (extract)/Export lyrics from/to "Album files"
+    - Rename lyric files (if an external editor was used)
+
+* Display
+    - CD and Track Title
+    - Status (playing/paused/open etc)
+    - Large track number and time indicator
+    - Total CD time, Drive unit, Volume
+    - Intro, Program Mode, Step#, Repeat mode
+    - Track percentage and total time
+    - Track progress bar and frame-blip (those green divider lines...)
+    - Time of day clock
+    - Full-screen mode
+    - 25/43/50 line video modes
+
+* Large "Display Mode" Window
+    - Track list or Playlist
+    - CD Information
+    - Paged and Karaoke style Lyrics
+    - Large display of track name or CD title
+    - Catalog: CD, Lyric, Album, All files
+    - Configuration and Program Info
+    - Simulated Frequency Analyzer, Scope, VU Meter (requires SoundBlaster)
+
+* Printing
+    - Print CD Info, CD's, Lyrics, or Album Catalog
+
+* Device Control
+    - Supports multiple CD-ROM drive units 
+          * on startup, auto selects first playing cd in multi-drive systems
+    - Supports NEC 4x4 MultiCD changer (maybe the 7 one too?)
+    - Reset drive
+    - Volume control via SoundBlaster (CD input or master) plus Mute
+    - Volume Fading up/down
+    - SoundBlaster Pro/16 Mixer (Treble/Bass control on SB16 only)
+    - Eject/Close CD tray
+
+* Mouse control of most functions
+    - Three Button-bars for easy mouse control (click the "|" symbol)
+          * Play functions, Program functions, Display-mode
+    - Right and Middle mouse button support
+
+* Programmable Joystick Control
+    - Supports 4-button Joystick or Two 2-button joysticks
+    - Configure any combination of the 4 buttons
+
+* Miscellaneous Stuff
+    - Countdown timer or clock timer
+          * Display a message, Play a track, Switch display modes
+    - Display mode Timer
+          * Rotates between selected display modes
+    - Elapsed Timer
+    - Frame accuracy display
+    - Extract/Add CD info to/from ZIP file
+    - Ability to load alternate message file
+    - Ability to load alternate big-character font
+    - Font editor
+    - Unit Scan Display (for systems with more than one CD unit)
+    - Calculator and Calendar
+    - Screen blanker
+
+* Configuration
+    - Initial display mode and full-screen mode
+    - Auto edit new CD info
+    - Auto play (Normal or Jumbled)
+    - Stop or Eject on program exit
+    - Alternate video mode (43/50 lines)
+    - Fastforward,Reverse and Intro time
+    - Volume control device
+    - Initial repeat mode
+    - Karaoke colour
+    - Configuration is stored as a text file
+    - Environment variable "SJGPLAY" to define data-file and config-file
+      location (run SJGPLAY.EXE from anywhere if in PATH)
+
+* Command-line mode
+    - Select a secondary config file
+    - Check for presence of disc
+    - Control playback of CD's through batch files
+          * Play, Stop, Eject, Next/Previous track, Single play
+          * Wait for track end, play random track
+    - Volume control
+    - Select drive unit (multi-cd systems) or scan all units
+    - Displays CD information:
+          * Track List, CD title, track title, elapsed time
+    - Conditional control of command-line arguments
+
+* Help
+    - Built-in Help and Utility Screens
+    - Full control while help displayed
+    - Intuitive controls
+
+* And the best feature...
+    - It's free! No more guilty conscience for not sending in that
+      shareware registration :-)
+
+
+RUNNING THE PROGRAM
+===================
+
+  The only file that is REQUIRED is SJGPLAY.EXE. If no configuration file
+is found, built-in defaults will be used. The program will search the current
+directory when looking for the configuration file (SJGPLAY.CFG) and all data
+files UNLESS a path is set via the SJGPLAY environment variable (see below) 
+or in a secondary config file as specified by "CONFIG:" on the command line.
+
+  If you want to run SJGPlay from anywhere regardless of the current
+directory you should place SJGPLAY.EXE somewhere in your DOS path or add the
+SJGPlay directory to your path, for example: 
+  
+        PATH C:\DOS;C:\UTILS\SJGPLAY
+        
+        Then, to allow SJGPlay to find the CD and Lyrics files you 
+        must add the following line to your AUTOEXEC.BAT file:
+
+        SET SJGPLAY={path}
+
+        where {path} is the complete path to your files.
+        For example: SET SJGPLAY=C:\UTILS\SJGPLAY
+
+
+  If you don't use the above method then you will need to change into the
+proper directory first by using the CD (change directory) command. For
+example: CD \UTILS\SJGPLAY
+
+  To start the program simply type: SJGPLAY
+
+  If you want to specify a secondary configuration, conditionally run the
+program, or control CD's via batch files see the section titled "Command-line 
+arguments"
+
+  When the program first runs the program will look for the files SJGPLAY.MSG
+and SJGPLAY.FNT. If they exist they will automatically be loaded. These files
+provide alternate messages and fonts that can be used to modify the look of
+SJGPlay or translate the messages to another language. If you uncompress the
+EXTRAS.ZIP file and DO NOT want the included example MSG and FNT files to be
+loaded you must either move, rename or delete the files from the directory.
+
+DATA FILES
+==========
+
+  All data files are strictly text-based. Filenames are constructed using a
+number based on the total number of FRAMES on a CD. A frame is 1/75th of a
+second in length. Most CD's should have a unique number of frames which will
+allow the program to automatically use the correct data files. We'll call
+this number {idnum} from now on. The largest this number can be is about
+351,000 (78 minutes * 60 seconds/min * 75 frames/sec).
+
+  The CD Title and Track titles are stored as plain text in a file with the
+format: CD{idnum}.CD (example: CD123456.CD).
+
+  Lyrics and synchronization data are stored as plain text in a file with the
+format: CD{idnum}.T{tracknum}, where {tracknum} is a two-digit number
+corresponding to the specific track (example: CD123456.T01).
+
+  Album files, which contain lyrics for an entire album in one file, are 
+stored as plain text in a file with the format: CD{idnum}.ALB
+
+Why text files?
+---------------
+
+  Every time I tried a new CD player program I had to re-enter each CD since
+they all seemed to have their own format for storing their database info.
+I wanted my program to be able to read standard text files so that data can
+easily be shared with other programs. Textfiles are universal so CD info and
+lyrics can easily be sent electronically and people can share their stuff.
+There are sites on the internet that contain lyrics files, so you might be
+able to download (ftp) them instead of re-typing them. Try these sites:
+
+        ftp.informatik.tu-muenchen.de
+        ftp.sunet.es/pub/music/lyrics
+        http://archive.uwp.edu/pub/music/lyrics
+        http://muic.wit.com/uwp/music/artists
+        http://www.yahoo.com/Entertainment/Music/Lyrics
+
+  I'm hoping people will start to distribute synchronized lyrics. They don't
+add too much to the size of the file and the files are still readable for
+those who don't have a CD-ROM player (or this program...). 
+
+  The only drawbacks to text files are that they take up a lot of harddrive
+space (especially drives with large cluster sizes) and they tend to clutter
+up the directory (If this is a problem I may consider changing this). 
+
+  If/when you've typed in the lyrics for a complete album you can replace all 
+the individual lyrics files with one big "Album" file (see the utilities 
+section). This should clear up some of the clutter and reduce the space
+requirements on your hard drive.
+
+
+SCREEN LAYOUT
+=============
+
+The screen is divided into three sections...
+
+The top section:
+
+   At the very top left is a red square to quit the program using the mouse.
+Also on the left is the CD title and Track title. On the right is the current
+time-of-day and status. The status displays whether the CD is paused or
+playing or if the CD tray is open. It will also indicate when you are in
+SYNCHRO mode, FINETUNE mode, or which line you are editing in EDIT mode.
+When full-screen mode is enabled the time-of-day will be replaced by a
+"H=Help" message. 
+
+  The top and middle sections are divided by a green line with a travelling 
+"frame-blip" which zips across the line when the CD is being played. If you 
+have a mouse you can click on the "|" symbol or press the "|" key to toggle 
+between different mouse "Button-bars" or a VU Meter (requires soundblaster).
+
+The middle section:
+
+  This is where all the action is. It is used to display or edit various
+information as selected by the current mode. The current display mode name is
+displayed in the bottom section (if enabled) at the very bottom right of the
+screen.
+
+The bottom section:
+
+  Displays all the track, time, and mode information. Dividing the middle and
+bottom sections is the green time-bar indicator which shows elapsed track
+progress. Below is the track number and time indicator using large digits. To
+the left of the time display is the time mode indicator, indicating elapsed
+or remaining time for either the track or entire CD. If program mode is
+enabled the step# will be displayed to the left of the track number. On the
+right side of this section is the total CD time, current drive unit, elapsed
+track percentage, repeat mode and the current display mode. Also there is a
+small white square to enable full-screen mode with the mouse.
+
+  When full-screen mode is enabled the bottom section is not displayed.
+
+
+KEYBOARD CONTROLS
+=================
+
+  Selecting Display Modes:
+  ------------------------
+    F1 to F12 .....Select specific Mode (see display modes)
+    TAB or M ......Go to the next mode (F1 to F8 only)
+    SHIFT-TAB .....Go to the previous mode
+    COMMA .........Go to the next display mode in Display Timer list
+    H .............Display Help screen
+    F .............Toggle Full-screen mode
+    V .............Toggle alternate Video mode (VGA cards only)
+
+  Selecting Other Modes:
+  ----------------------
+    I .............Toggle Intro mode
+    T .............Cycle time display:
+                     * Elapsed, Remaining, Elapsed CD, Remaining CD, Frame#
+    E .............Edit information (depends on current mode)
+    ? .............Print information (depends on current mode)
+    DEL ...........Delete information (depends on current mode)
+    INS ...........Toggles various options depending on mode
+    | .............Toggle mouse Button-bars and VU Meter
+
+  Playing Tracks:
+  ---------------
+    P or ENTER ....Play current track
+    0 to 9 ........Play specified track number. Must be two digits!
+    + / - .........Next/Previous Track
+    S or PERIOD ...Stop track (if stopped, jumps to start of playlist)
+    SPACE .........Pause/Resume playback
+
+  Track Shuttle: (except when in edit, program, or configuration mode
+  --------------  where they control normal cursor movement or scrolling)
+    LEFT/RIGHT ....Reverse/Fastforward
+    UP/DOWN .......Reverse/Fastforward times 2
+    PAGEUP/DOWN ...Reverse/Fastforward one minute
+    HOME ..........Re-start track
+    END ...........Jump to near end of track
+
+  Special Track Shuttle:  (all modes)
+  ----------------------
+    ALT-LEFT ......Reverse
+    ALT-RIGHT .....Fastforward
+    ALT-UP.........Pause/Resume playback
+    ALT-DOWN.......Re-start track
+
+  Repeat Modes:
+  -------------
+    R .............Cycle Repeat mode (or cancel A/B repeat)
+                     * One ......Repeat selected track
+                     * Single ...Stop after end of track (P to play next)
+                     * All ......Repeat entire CD
+                     * Drives ...Repeat all CD's in all CD-ROM drives
+    A or B ........Set A or B repeat points
+
+  Programming:
+  ------------
+    G .............Toggle program mode
+    CURSOR KEYS ...Move the marker
+    DEL ...........Delete step under marker
+    BACKSPACE .....Delete step to left of marker
+    0 to 9 ........Insert specified track number. Must be two digits!
+    J .............Jumble Tracks (random shuffle)
+    C .............Clear ALL tracks (if clear, reset to all tracks)
+    L .............Load playlist as saved with CD info file
+    W .............Write (save) playlist to CD info file
+
+  Utilities:
+  ----------
+    U .............Display Utility Help screen
+    
+    ! .............Renames files with specified {name} to the proper {idnum}
+    @ .............Renames files with {idnum} of 000000 to the proper {idnum}
+    # .............Extract Lyrics for current track from an "Album" file
+    $ .............Makes an "Album" file with track info and lyrics
+    % .............Programs playlist for tape dub (insert pauses)
+    ^ .............Programs playlist with only tracks with lyrics
+    & .............Imports lyrics for current track from specified file
+    * .............Exports lyrics for current track to specified file
+    ( .............Extract info files for current CD from ZIP file
+    ) .............Add info files for current CD to ZIP file
+    D .............Set Display-mode Timer
+    O .............Display Elapsed Timer screen
+    Y .............Set/Clear Elapsed Timer
+    Z .............Set Event/Countdown Timer
+    ALT-B .........Screen Blanker
+    ALT-C .........Calculator
+    ALT-D .........Calendar
+    ALT-E .........Font Editor
+    ALT-F .........Load alternate big-character font file "sjgplay.fnt"
+    ALT-M .........Load alternate message file "sjgplay.msg"
+
+
+  Device and Misc Controls:
+  -------------------------
+    X .............Open (eject caddy)/Close CD tray
+    [ and ] .......Adjust volume
+    ALT-[ and ]....Auto-fade Volume down/up
+    = .............Mute/Restore Volume
+    ALT-S .........SoundBlaser Mixer
+    < and > .......Select CD-ROM drive unit
+    ALT-{n}........Select drive unit, where {n} is the unit number (1 to 9)
+    0 then ALT-{n}.Select tray of NEC CD Changer (If current drive unit)
+    ~ .............Reset CD-ROM and MSCDEX driver
+    ` .............Unit Scan (display discs in all drive units)
+    Q and ALT-X ...Quit program (Q requires confirmation, ALT-X is immediate)
+
+
+MOUSE CONTROL
+=============
+
+  You can use the mouse to control most functions. The RIGHT mouse button
+works just like the TAB or M keys to cycle to the next display mode or if on
+the third line cycles the button bars. The MIDDLE mouse button (if you have 
+one) operates like the SHIFT-TAB key to cycle to the previous display mode.
+
+  The operation of the LEFT mouse button changes depending on the position of 
+the pointer and which display mode is selected. For easier mouse control 
+activate the mouse "Button-bars" by clicking one of the "|" symbols on the 
+third line. Each time you click it will cycle to the next "bar" (there are 
+three plus a VU Meter).
+
+  Note: The mouse is inactive when you are in EDIT MODE!
+
+Top Section:
+
+    Where clicked           Key(s) Function
+    -------------           ------ --------
+    Red square              Q      Quit program (with confirm)
+    Word "DISC"             X      Eject Disc or close tray
+    CD Title                E      Edit CD Title
+    Word "TRACK"            +      Next Track
+    Track Title             E      Edit Track Title
+    Time or Word "H=Help"   Z/H    Set Event or Help
+    Status                  P/S    Play or Stop
+    Green divider - line    SPACE  Pause or Continue playback
+    Green divider - ends    NONE   Previous/Next Display mode (all modes)
+    "|"                     |      Cycles between Button-bars, blip, VU Meter
+    Button-bar              MANY   As indicated on bar
+
+Middle Section:
+    
+    Mode    Where clicked      Key(s)  Function
+    ----    -------------      ------  --------
+    F1      Track Box          P       Play Track
+            Up/Down Arrow      CURSOR  Move marker (program mode)
+    F2      Number/Time        P       Play Track (program mode = add track)
+            Track Title        E       Edit track title
+            Up/Down Arrow      NONE    Scroll track list
+    F3/F4   Anywhere           F4/F3   Toggle between Karaoke/Paged lyrics
+    F5/F6   Anywhere           F6/F5   Toggle between Track/Disc title
+    F7/F8   Anywhere           F8/F7   Toggle between Frequency Bars/Scope
+    F9      Config Line        CURSOR  Select Line
+            "<" or ">"         CURSOR  Change Setting
+            Yellow "W"         W       Write Config
+    F10     Anywhere           F1      Jump to Playlist
+    F11     Number/Filename    INS     Sort Catalog
+            Title              \       Cycle Catalog type
+            Up/Down Arrow      CURSOR  Scroll list
+    F12     Anywhere           F1      Jump to Playlist
+    
+
+Bottom Section:
+
+    Where clicked          Key(s) Function
+    -------------          ------ --------
+    Middle of green Bar    NONE   Track shuttle (jump to absolute position)
+    Ends of green Bar      -/+    Previous/Next track
+    Word "Track"           G      Toggle playlist
+    Red Track Number       -/+    "-" on 1st digit, "+" on 2nd digit
+    Time-mode indicator    T      Toggle time display
+    Below time indicator   I      Toggle intro
+    Big Track Time         A/B/R  Repeat: "A" on min, "B" on sec,"R" on colon
+    The white square       F      Full-screen mode
+    The "*"                V      Toggle alternate video mode
+    Word "Volume"          =      Mute
+    Volume number          [/]    Adjust Volume: "[" on 1st, "]" on 2nd digit
+    Repeat()               R      Cycle repeat
+    H=Help                 H      Help
+    M=Mode()               TAB/M  Next display mode (modes 1 to 8)
+    Elsewhere on last line F      Toggle full screen (when off)
+    Bottom right corner    F      Toggle full screen
+
+
+JOYSTICK CONTROL
+================
+
+  The 4 joystick buttons (One 4-button or Two 2-button joysticks) may be 
+configured to control the program by simulating key presses. With 4 buttons
+there are 15 combinations, each combination generating a character. Each
+button represents a value (A=1, B=2, C=4, D=8). By adding the value of each
+button you get a number from 1 to 15 corresponding to the position in the
+control string (Does this seem like binary to anyone? You're right it is!).
+
+  Control String: ABCDEFGHIJKLMNO
+  --------------  |||||||||||||||
+  Button A...(1)- x x x x x x x x   ('x' indicates the button is down)
+  Button B...(2)-  xx  xx  xx  xx
+  Button C...(4)-    xxxx    xxxx
+  Button D...(8)-        xxxxxxxx
+
+  Example: to make the program stop playback when both button A and B are 
+  ~~~~~~~~ pressed together... A=1, B=2. 1+2=3. Therefore, in the control
+           string at position 3 put an "S" ("S"=Stop).
+
+  Note: The program responds when all buttons are RELEASED. 
+  ~~~~~ For multiple button presses:
+           > Press and hold one button 
+           > Press the other button(s) 
+             (You don't need to hold each button, it will be remembered)
+           > Release the first button.
+
+  Note2: This might seem weird but I figured it could be used as a
+  ~~~~~~ kind of "remote control". If you could find a wireless joystick
+         it would be even better... Alternately, you could wire up a custom
+         "remote" using buttons and diodes... Please e-mail me if you do!
+
+  Note3: The default keys are set up for my Gravis GamePad. The buttons are
+  ~~~~~~ configured like this: Red=1, Yellow=2, Blue=4, Green=8.
+
+         Red=Play(P), Green=Mode(M), Red+Green=Toggle Full(F),
+         Blue=Next track(+), Yellow=Prev track(-), Blue+Yellow=Stop(S),
+         All 4 buttons=Toggle Video(V), Any other combination=Pause(space)
+
+  Tip:   If you want to toggle between specific display modes without having
+  ~~~~   to TAB (or M) through the 8 regular modes, use "," instead of "M"
+         in the control string, then put your favorite modes into the 
+         Display Timer list and enter 99999 as the delay time.
+
+
+PROGRAM CONFIGURATION
+=====================
+
+  Press F9 to display the configuration screen. Use CURSOR UP/DOWN/HOME/END 
+to select an option, then use LEFT or RIGHT to change the setting.
+
+  To save the current settings press the W key. Settings are saved in the
+directory specified in the SJGPLAY environment variable or to the current
+directory if that is not set. The configuration file is a plain text file and 
+contains lines in the form "xxxx = nn", where "xxxx" is the name of the 
+configuration setting (as displayed under the NAME column) and "nn" is a 
+value for that setting (0 being NO, and 1 being YES). Valid values are 
+displayed under the RANGE column.
+  
+    NAME  DEF  DESCRIPTION
+    ----- ---  -----------
+    MODE    1  Sets the initial startup display mode (see display modes)
+    FULL    0  Enables fullscreen mode on startup
+    PRG     1  Automatically use programmed playlist if saved with CD
+    EDIT    0  Auto-edit new CD info when new (unknown) CD is inserted
+    PLAY    0  Action when new CD when inserted (0=None, 1=Play, 2=Jumble)
+    EXIT    0  CD action on Exit (0=None, 1=Stop or 2=Eject)
+    VIDEO   0  Alternate video lines (0=none, 1=43, 2=50)
+    INTRO  15  Sets the intro time (in seconds)
+    FFREW   5  Sets the fastforward/Reverse time (in seconds)
+    VDEV    0  Specifies how the Volume is controlled (CD or SoundBlaster)
+    REPT    0  Sets the initial repeat mode (0=No,1=One,2=STP,3=All)
+    KBACK   0  Karaoke Background colour (0=Black)
+    KTEXT   7  Karaoke Text colour (7=White)
+
+    JOY     -  Joystick control string for Button presses.
+               (15 characters. Position is important)
+
+         (DEF = Built-in default)
+
+  The following are recognized if specified in the config file. They are
+NOT settable via the config screen and may be removed if the config settings
+are saved:
+
+    PATH=  Sets the data and config file path
+    TXTED= Defines an external text editor for catalog mode (default="EDIT")
+
+
+DISPLAY MODES
+=============
+
+  Rather than cluttering up the display with too much information, the
+program lets you choose what you want to see. This is the display mode, and
+it occupies the entire middle of the screen, or all but the top three lines
+when in full-screen mode.
+
+  Each mode gives you specific information as follows:
+
+    KEY  MODE     DESCRIPTION
+    ---  ----     -----------
+    F1   Playlst  List of tracks to play (Playlist) (.=has lyrics)
+    F2   CD Info  Track number,PrgFlag, Times, Flag and Titles (*=has lyrics)
+    F3   Lyrics   Paged-style lyrics synchronized to playback
+    F4   Karaoke  Karaoke-style lyrics synchronized to playback
+    F5   Track    Track Title in large letters
+    F6   CDTitle  CD Title in large letters
+    F7   FreqBrs  Frequency Bars (simulated spectrum analyzer)
+    F8   Scope    Waveform scope
+    F9   Config   Configuration Screen
+    F10  About    Program info, including version number
+    F11  Catalog  Catalog for CD's, Lyrics, Albums or All
+    F12  Utils    Utilities Help Screen
+
+
+F1 - Playlist:
+
+  Track numbers displayed in the order they will be played. Normally all
+tracks on the CD will be shown in numerical order from 1 to the total number
+of tracks on the CD. Track numbers are displayed inside a box. The currently
+selected or playing track will be displayed in red, all others will be blue. 
+Tracks with lyrics have a "." displayed after the track number.
+
+  When program mode is enabled, only those tracks that are programmed will
+appear. A small yellow "marker" (or cursor) appears which can be moved about
+for program editing (adding or deleting tracks).
+
+F2 - CD Info:
+
+  All tracks on the CD are listed in track-order. The track number, PRG flag,
+time, lyric flag and title are shown. Titles may be edited and saved so that 
+next time the CD is inserted they will automatically appear. The track time
+displayed will change depending on the currently selected "time mode". This
+can be elapsed track or CD time, remaining track or CD time, or a frame
+number.
+
+  The PRG flag indicates if the track is included in the programmed playlist.
+If a "+" is displayed the track is included once. If a "*" is displayed the
+track is included 2 or more times. The prg flag will only be displayed when 
+program mode is enabled.
+
+  The lyric flag indicates if there are lyrics available for the track.
+Tracks shown with "*" have lyrics available. Tracks shown with a "-" do not.
+
+  The currently playing track is highlighted. If there are more tracks on the
+CD than can fit on the screen the list will shift up or down so that the
+currently playing track is as close to the middle as possible.
+
+F3 - Lyrics
+
+  Lyrics will be displayed in a paged format, synchronized to playback. Each
+line will be highlighted as it is sung. Just before the line is sung a small
+"traffic light" indicator will light red, yellow, then green indicating the
+time remaining until the line is sung:
+
+  Red square     - More than 1 second
+  Yellow square  - Less than 1 second..... Get ready!
+  Green triangle - Less than 1/4 second... Sing it! (if you want to...)
+
+  If no lyrics have been entered the message "Lyrics not available" will be
+displayed followed by the required filename.
+
+F4 - Karaoke
+
+  Lyrics will be displayed in Karaoke format, synchronized to playback. Each
+line will be displayed in very large letters as it is sung. The next line
+to be sung will be displayed in small letters just below, with the same
+"traffic light" indicator as above. If no lyrics have been entered, "Lyrics 
+not available" will be displayed.
+
+  The lyrics are displayed in a large proportionally-spaced font. The number 
+of lines available depends on the screen mode and whether full-screen is 
+enabled. Four lines are available in 25-line mode with full-screen on. If
+full-screen mode is off one less line will be visible (keep this in mind 
+when typing lyrics).
+
+F5 - Track
+
+  Displays the current Track Title in large letters.
+
+F6 - CDTitle
+
+  Displays the current CD Title in large letters.
+
+F7 - Frequency Bars
+
+  Displays a simulated "spectrum analyzer" of the SoundBlaster input.
+
+F8 - Scope
+
+  Displays a waveform of the SoundBlaster input.
+
+F9 - Configuration Screen
+
+  Displays a configuration screen where startup options and program options
+can be set. Options such as intro time and fast-forward time take effect
+immediately when changed.
+
+F10 - About Screen
+
+  Displays freeware message, program version number, and author info.
+
+F11 - CD Catalog
+
+  Loads and displays a catalog of CD's, lyrics, Albums or All files. You can 
+delete or edit entries or sort the list by number, time (frames) or title.
+
+F12 - Utility Help Screen
+
+  Displays descriptions of available utilities. It also displays the CD Frame
+Accuracy. This number is a reflection of CPU type, CPU speed, CD-ROM response 
+time, cd-rom driver efficiency etc. The lower the number the better your 
+system. This is important for lyric timing and playback. If, for example, the
+number is 10 then lyric timing will be accurate to 10/75th's of a second.
+
+
+ABOUT CD-ROM DRIVES
+===================
+
+  Not all CD-ROM drives are equal. In order to get the most accurate lyrics
+playback SJGPlay constantly polls the CD-ROM drive. The response time of the
+drive is the MAJOR factor determining the overall feel of the program. If 
+your drive is slow, mouse clicks might be ignored, the frequency bars will be
+slow, etc. The response time of the CD-ROM drive has nothing to do with its
+speed (ie: SINGLE, DOUBLE, QUAD etc), it's more a reflection of how efficient 
+its internal firmware responds to requests from the computer. All CD-ROMS
+spin at "single" speed while playing audio CD's.
+
+  As a basis for comparison, here are the response times of some drives I 
+have tested:
+
+   TIME  DRIVE              SPEED  INTERFACE  COMMENT
+   ====  =====              =====  =========  =======
+   0-1   PANASONIC CR-562B  2x     AT-BUS     Lightning fast
+   1-2   TOSHIBA XM-3301B   1x     SCSI       Good
+   1-2   TOSHIBA XM-3501B   4x     SCSI-2     Good
+   3-4   NEC 4x4 CHANGER    4x     IDE/ATAPI  Average
+   7-8   PHILIPS PCA42CR    4x     IDE/ATAPI  Slow
+ * 36-37 PINNACLE RCD-5040  4x/2x  SCSI-2     Dreadfully slow *
+         (* CD-ROM Recorders are notorious for being poor readers)
+
+
+PLAYING CD'S
+============
+
+  There are two playback modes; standard or programmed. Standard mode
+consists of all tracks in numerical order. Programmed mode is a list of
+tracks in any order. In programmed mode you can select only those tracks that
+you want or even repeat tracks. You can have up to 99 programmed "steps". 
+When program mode is enabled the step number will be displayed at the bottom 
+left of the screen beside the track number. In either case (standard or 
+programmed) the order of the tracks will be referred to as the "playlist".
+
+  At the top right of the screen is the status indicator. It will indicate
+the status of the CD and drive. If no CD is inserted it will say "open". If
+a CD is inserted but not playing it will say "stopped".
+
+  Use the "P" key or ENTER to play the currently selected track. If the CD is
+not playing, pressing "+" or "-" will select a track. When the CD is playing
+the status indicator will say "playing". To pause playback press SPACE. The
+status indicator will flash "paused". To resume playback press SPACE again.
+To stop playback press the "S" or "." keys. If you press "S" or "." when the
+CD is already stopped it will reset to the beginning of the playlist 
+(ie: press "SS" to go to step 1).
+
+  The "+" and "-" keys will jump to the next or previous track. If you are at
+the beginning or end of the playlist it will wrap around. To jump to a
+specific track enter a two-digit track number (this only works if program
+mode is NOT enabled!). When you enter the first digit it will be displayed
+followed by a "?" flashing at the bottom left of the screen reminding you
+that another digit is needed. If you enter an invalid first digit or track
+number it will not be accepted and the flashing message will be cleared. To
+clear an incorrect first digit press the BACKSPACE key.
+
+  To control playback of an individual track (shuttle) use the CURSOR KEYS. 
+The cursor LEFT key or ALT-LEFT key will reverse (rewind). The cursor RIGHT 
+key or ALT-RIGHT key will fastforward. The cursor UP and DOWN keys will 
+reverse or fast forward by twice the time of the LEFT and RIGHT cursor keys. 
+The fastforward and reverse times can be adjusted in the configuration screen.
+The HOME key will re-start playback from the beginning of the CURRENT track.
+The END key will jump to a point near the end of the current track.
+
+Note: When in edit, program, config or catalog mode the normal cursor keys
+~~~~~ control the cursor or scroll the catalog. In these modes use the ALT
+      cursor keys to control track shuttle.
+
+Repeat Modes:
+-------------
+
+  The "R" key cycles between the following REPEAT modes:
+
+    OFF - No repetition. Displayed as (---)
+    ONE - Repeats the currently selected track. 
+    STP - Single Track Play. Stops playback after each track ends.
+          You must press P to play the next track.
+    ALL - Repeats the entire CD
+    DRV - Repeats all CD's in all available Drive units
+
+  The DRV repeat mode is only available if you have more than one CD-ROM
+drive (or a CD changer configured with separate drive letters). This allows 
+you to have continuous music playback. When one CD is finished the CD in the 
+next drive will play and so on. When the last CD has played it will repeat 
+back to the first drive. If a drive has no CD inserted, DRV mode will be
+cancelled.
+
+  Pressing "A" or "B" selects segment repeat mode, which repeats the selected
+section of the CD. Press "A" at the start of the segment. The repeat
+indicator will show (A- ). Press "B" at the end of the segment. The repeat
+indicator will show (A-B) and the segment will repeat over and over. While
+the segment is repeating you may press "B" to reduce the segment time even 
+further. To cancel A-B repeat mode press "R".
+
+
+Intro Mode:
+-----------
+
+  Pressing "I" will enable INTRO mode. The word "INTRO" will flash just to
+the left of the time indicator. This will play the beginning of each track 
+then jump to the next track. When intro mode is enabled repeat mode is set to 
+"ALL". If intro mode is enabled after playback has passed the intro period, 
+it will jump to the next track immediately. Pressing "I" again disables intro 
+mode. The intro time is adjustable via the configuration screen.
+
+
+CHANGING THE DISPLAY
+====================
+
+  Use the "TAB" or "M" keys to switch to the next display mode. Use SHIFT-TAB
+to switch to the previous display mode. The (SHIFT)TAB/M keys will only
+switch from F1 to F8 modes. To jump to a specific display mode press the 
+desired FUNCTION KEY (F1 to F12).
+
+  Use the "F" key to toggle full-screen mode. When full-screen mode is on,
+the bottom section is removed and the selected display mode is extended to
+the bottom of the screen.
+
+  If you have a VGA display you may use the "V" key to toggle the video mode
+between 25 lines or 43/50 lines as set in the configuration.
+
+  Press the "H" key to display a help screen with a summary of the most
+common control keys. Also displayed on the help screen is the {idnum} for the
+current CD. Press "H" again to return to the previous display mode or choose
+a specific mode by pressing the proper function key.
+
+  Press the "T" key to change the time display. The time display can show
+elapsed or remaining time for either the current track or the entire CD. It
+can also display the track FRAME number. The track frame number is used to
+synchronize the lyrics to playback. A frame is one seventy-fifth of a second,
+which gives very precise control over lyric timing. Depending on the speed
+of your computer and how your CD-ROM is connected (SCSI, IDE, parallel port
+etc) this number may change smoothly or jump many numbers at a time (on MY
+computer the last digit is just a blur :-) ) Press "U" to display the utility
+help screen to see a display of the frame accuracy for your system.
+
+  Note: Since only the last 5 digits of the track frame number are displayed,
+  ~~~~~ after 22:16 the frame number will appear to reset to zero.
+
+  Note2: Times are read directly from the disc and may not match those
+  ~~~~~~ printed on the CD and/or jewel case.
+
+  Most key commands will operate the same regardless of the DISPLAY mode.
+For example, you can press "+" to jump to the next track even when help is
+being displayed. 
+  
+  When in EDIT mode the opposite is true. Obviously, typing a letter will
+insert it into the edit field, therefore you can't change modes or tracks, or
+change the time display while in edit mode. When in edit mode the only
+control of the CD you have is via the ALT plus CURSOR keys to control 
+playback of the CURRENT track. To exit EDIT mode press ENTER (if a single 
+field) or ESC (with multiple fields). The mouse is inactive during edit mode!
+
+  The other exceptions are the NORMAL cursor control keys. The cursor keys 
+usually control track shuttle except in the following cases:
+ 
+ Program mode........they move the yellow marker
+ Configuration mode..they move the cursor and change option settings
+ Catalog Mode........they scroll the catalog
+ 
+  When in these modes you can use the ALT-CURSOR keys for shuttle control just
+like in edit mode.
+
+
+FREQUENCY BARS, SCOPE, VU METER
+===============================
+
+  These functions (F7,F8, "|") require a fast computer with a SoundBlaster
+or compatible card. The sound output from your CD-ROM drive must be connected 
+to either the internal CD-line connector or to the line input of the 
+SoundBlaster card and you must use the software that came with the sound card
+to set the recording source to the corresponding input. The "BLASTER"
+environment variable must be set correctly in your AUTOEXEC.BAT for these
+modes to work! See your SoundBlaster manual for instructions. For best results
+make sure the input volume is set as high as possible. 
+
+F7 - Frequency Bars
+
+  This displays a SIMULATED spectrum analyzer. In a REAL spectrum analyzer
+the bars correspond to specific frequencies; low frequencies on the left and
+higher frequencies to the right. The louder the frequency the higher the bar.
+Eventually I'd like to have a real spectrum analyzer but for now it's just
+simulated... Now the bars are more like "waveform delta" bars. At least it's
+interesting to watch (hopefully). The following keys adjust the bars:
+
+  { and } ....Set sampling size. "{"=faster/lower, "}"=slower/higher.
+              (Set this according to the speed of your computer)
+  ; and ' ....Shift bars left/right. There are 127 bars but only a few are
+              visible depending on the bar width.
+  : and " ....Set bar width. ":"=Smaller, """=Bigger.
+  INS ........Toggle display of the above settings.
+
+F8 - Scope
+
+  This displays the waveform of the sound input much like an oscilloscope. On
+a really fast computer you may need to adjust the delay between samples. On a
+slow computer you may only see what appears to be random dots. When no sound
+is input you should see a straight line all the way across the middle of the
+screen. The following keys adjust the scope:
+
+  { and } ....Adjust the sampling delay.
+  : ..........Reset the sampling delay to zero (fastest display).
+  " ..........Toggle slow-motion.
+  INS ........Toggle the display of the delay setting.
+
+  Note: Sometimes these modes don't work (at least for me) while running 
+  ~~~~~ under Windows or even AFTER running windows. You may need to turn the
+        computer off and back on again to reset the SoundBlaster card.
+
+"|" - VU Meter
+
+ The VU meter is available by using the "|" key or mouse to cycle the frame
+blip (3rd line of the screen) to mouse button-bars, and then to the VU meter.
+
+
+DEVICE CONTROL AND EXITING
+==========================
+
+  If you have more than one CD-ROM drive unit attached to your computer you
+may select which one you control by pressing the "<" and ">" keys to select
+the previous or next drive. To select a specific unit press ALT plus the unit
+number (ie: ALT-1 or ALT-2 etc, to the maximum number of units). 
+
+  Note: On startup the program will automatically select the first CD unit 
+  ~~~~~ that is currently playing. If no CD's are playing then the first 
+        CD unit will be selected.
+
+  To display a listing of which discs are in each drive use the "`" key.
+This will scan all connected drives and display the drive letter, IDNUM, and
+Disc Title for each unit.
+
+  Switching to another unit switches control completely to the new unit. If 
+the previous unit was playing it will continue to play, however, any and 
+all control of that unit is lost (track order, repeat etc). Switching from 
+one unit to another may cause the new unit to jump to another track if 
+"use programmed playlist if available" is enabled and the currently playing 
+track is not in the playlist (this can also occur if SJGPlay is exited then 
+re-started while the CD is still playing). If "auto play" is enabled the CD 
+will start to play automatically when the unit is switched. A list of 
+available drive units is displayed on the help screen.
+
+  If you have an NEC MultiSpin CD Changer configured as a single drive letter 
+you can select the tray by pressing 0 first, then ALT plus the tray number. 
+For example: 0, ALT-2  to select tray 2. 
+
+  Note: The MCDTRAY program shipped with the NEC changer must be in your
+  ~~~~~ path for tray selection to work!
+  
+        Since the drive is assigned a single letter, it is treated as one 
+        drive. The "DRV" Repeat Mode does NOT work as expected (it does NOT 
+        switch trays)! If you can spare the extra letters you should
+        configure the unit as multiple drives.
+
+  To completely reset the current CD-ROM drive press the "~" key. This will
+stop playback and re-read the CD.
+
+  To control the volume use the "[" and "]" keys to decrease or increase the
+level from 0 to 99. To activate an automatic fade press ALT-[ or ] once. The
+ALT-[ will memorize the current volume level then slowly fade the volume to
+zero. Pressing ALT-] will slowly restore the volume to the previous level. Use
+the "=" key to mute the volume. Pressing "=" again will restore volume to the
+previous level. Use the configuration screen to select which DEVICE is
+controlled by the volume keys. You can select the volume via the SoundBlaster
+(or compatible) card's CD input level or master output level.
+
+  To activate the SoundBlaser Pro/16 Mixer press ALT-S. Use the UP/DOWN keys
+to select the Level control to change then LEFT/RIGHT to adjust it. The Treble
+and Bass controls only work if you have a SB16.
+
+  To eject the CD press "X". If your CD-ROM is a tray-type (as opposed to
+the caddy-type), pressing "X" again will close the tray door. If "auto play"
+is enabled the CD will start to play automatically when it is inserted.
+
+  To exit the program press the "Q" key or ALT-X. If you use "Q" you will be
+asked to confirm by pressing "Y" for yes or "N" for no. If you press ALT-X the
+program will exit without confirmation. When the program exits the CD may stop
+or may be ejected depending on the settings in the configuration screen.
+
+
+PRINTING INFORMATION
+====================
+
+  Pressing the "?" key prints information for the specific mode as follows:
+
+    MODE           PRINT WHAT?
+    ----           -----------
+    F1/F2 Tracks   CD Info (track titles and times).
+    F3/F4 Lyrics   Lyrics for CURRENT track.
+    F11   Catalog  Currently displayed catalog (CD's/Lyrics/Albums/All) 
+                   printed in the currently sorted order.
+    All Others     None
+
+  You will be asked to confirm printing by pressing "Y" or "N". Make sure
+your printer is ready before pressing "Y"!
+
+
+DELETING INFORMATION
+====================
+
+  Pressing the DEL key deletes information for the specific mode as follows:
+
+    MODE           DELETE WHAT?
+    ----           ------------
+    F1    Tracks   Programmed step at marker
+    F2    CDInfo   CD Info files and ALL lyric files for CURRENT CD
+    F3/F4 Lyrics   File for current lyrics
+    F11   Catalog  CDs...: All files for selected CD 
+                   Lyrics: Selected lyric file
+                   Albums: Selected album file
+    All Others     None
+
+
+EDITING INFORMATION
+===================
+
+  Pressing "E" lets you edit information for the specific mode as follows:
+
+    MODE         EDIT WHAT?                          SEE ALSO (section)
+    ----         ----------                          ------------------
+    F1  Tracks   None (Enables programmed playlist)  Programming
+    F2  CDInfo   CD Title and ALL Track Names        Editing Keys
+    F3  Lyrics   Lyrics                              Entering lyrics
+    F4  Karaoke  Synchronization or Finetuning       Synchronizing lyrics
+    F5  Track    Current track name                  Editing Keys
+    F6  Title    CD Title                            Editing Keys
+    F9  Config   None (use "W" to save settings)     Configuration
+    F11 Catalog  Selected file (Shell to DOS EDIT)   [MS-DOS Manual for EDIT]
+    All Others   None
+
+
+EDITING KEYS
+============
+
+  When you press "E" (while in modes F2, F3, F5 or F6) you enter EDIT mode
+where you may enter information into a field or fields. The background
+under the edit field will turn blue, and the following keys will be active:
+
+    LEFT/RIGHT ......Move cursor Left/Right
+    TAB .............Move cursor Right 8 characters
+    DEL .............Delete character at cursor
+    BACKSPACE .......Delete character to left of cursor
+                     (if at the FIRST character it erases the ENTIRE field)
+    INSERT ..........Toggle insert mode (Thick cursor=Insert, Thin=typeover)
+    ESC .............Save and Exit edit mode
+    ENTER ...........Save and Exit (single field), or
+                     Go to next field (in a group of fields)
+    UP/DOWN .........Select field to edit in a group of fields
+    HOME/END ........Move to First/Last field in a group of fields
+    PAGE UP/DOWN ....Page Up/Down in a group of fields
+
+    CTRL-ENTER ......Split line at cursor (in a group of fields), or
+                     Erase to end of line (single field)
+    CTRL-LEFT .......Move to start of line
+    CTRL-RIGHT.......Move to end of line
+    CTRL-PAGEUP .....Memorize contents of entire field
+    CTRL-PAGEDOWN ...Recall memorized field
+    CTRL-HOME .......Erase entire field
+    CTRL-END ........Restore original field contents
+    CTRL-V ..........Insert memorized field at current cursor position
+
+    ALT-U/L .........Convert entire field to Uppercase/Lowercase
+    ALT-I/D .........Insert/Delete field (lower fields move up or down)
+    ALT-T/B .........Mark Top/Bottom of block
+    ALT-C ...........Copy marked block
+
+Special Track control keys while in edit mode:
+
+  These keys allow you to control playback of the current track, since the
+normal cursor keys control cursor movement. These are handy when entering
+lyrics so you don't need to keep re-playing the track over and over...
+(These keys also work outside of edit mode).
+
+    ALT-UP ..........Pause/Resume playback
+    ALT-DOWN ........Re-start track
+    ALT-LEFT/RIGHT...Reverse/Fastforward search
+
+
+ENTERING LYRICS
+===============
+
+  You may enter lyrics using the built-in editor. This is a simple line-based
+editor with NO text wrapping ability. See the "Editing Keys" section for a
+detailed explanation of individual keys. This section covers the general
+process of entering lyrics. If you have used an external editor to type the
+lyrics see the "Utilities" section.
+
+  Press the Lyrics key (F3) then press "E". This will edit lyrics for the
+CURRENTLY SELECTED track.
+
+  Editing the lyrics does NOT stop playback, however you may use the
+"ALT-CURSOR" keys to control playback while editing. The ALT-UP key is 
+particularly handy as it allows you to listen to a line then pause playback 
+while you type it in. When you're ready for the next line press ALT-UP 
+again. If you miss a line or need to re-play a line you can use ALT-LEFT to 
+reverse a bit then ALT-RIGHT to catch up (or just let it play).
+
+  Most songs have a chorus which is repeated one or more times during the
+song. You can copy these lines using the BLOCK keys. Move to the first line 
+of the chorus and press ALT-T to mark the top, then move to the last line and 
+press ALT-B to mark the bottom of the block. The block will be highlighted in 
+red. You can then move to the line where the chorus is repeated then press 
+ALT-C to copy the marked lines. Lines remain marked so you can copy them as 
+many times as are needed.
+
+  If a certain line or phrase is repeated often, use CTRL-PGUP to memorize
+that line then use CTRL-PGDN to recall it (entire line) or CTRL-V to insert
+it into the current line (at the cursor position). 
+
+  Feel free to leave some lines blank for clarity. Blank lines will not be
+displayed in Karaoke mode. If you DO want to display a blank line, put a 
+period (".") as the only character on the line.
+
+  After you have typed in a rough version of the lyrics you might want to
+use ALT-DOWN to re-start playback from the beginning while following along
+with the lyrics using the cursor DOWN key. This will also let you get a
+"feel" for the timing which will come in handy when you synchronize the 
+lyrics later on (see next section).
+
+  Try to enter all the lyrics for a song BEFORE you synchronize them. When
+you insert lines (ALT-I) or copy lines (ALT-C) no synchronization data will
+be available for those lines. This will cause lyric playback to stop, and you
+will have to re-sync the entire track. Lines without sync information will
+have a "." displayed at the beginning of the line. If you are editing a track
+that has been synchronized, a green triangle will point to the currently 
+playing line (the pointer changes ONLY when you move the cursor UP or DOWN!).
+
+  To exit Lyrics entry press the ESC key. Lyrics will automatically be saved
+with the appropriate filename (CD{idnum}.{tracknum} format).
+
+  And one last thing: Don't trust the lyrics that may be included with the
+CD... They're rarely correct or complete!
+
+
+SYNCHRONIZING LYRICS
+====================
+
+  Select Karaoke mode (F4) then press "E" (edit). Playback will be stopped. 
+You will be presented with a summary of keys that control synchronization.
+
+  Select "I" for an Initial synchronization, or "F" to finetune the
+synchronization. If you don't want to synchronize press the ESC key.
+
+  You must have already entered some lyrics before you can synchronize them
+and you must already have synchronized the lyrics before you can finetune
+them (duh)! The initial synchronization process plays the track from start
+to end and you do the entire track in a linear manner. Finetuning will loop
+playback of the selected line so you can adjust when it starts. The current
+line is indicated by a triangular yellow marker.
+
+  Note: When you press "I" or "F" playback will begin, so be ready!
+
+  Initial Synchronization Keys:
+  -----------------------------
+
+    SPACE ........Press SPACE at the moment the line is sung
+    BACKSPACE ....Re-try the previous line. Playback will return to the
+                  line before the previous line to give you a chance to
+                  get ready for the line again
+    ESC ..........Abort without saving
+
+    Note: The timing information will automatically be saved when the last
+    ~~~~~ line has been synchronized.
+
+  Finetuning Keys:
+  ----------------
+
+    UP/DOWN ......Select line to adjust
+    PAGE UP/DOWN .Select Previous or Next Page
+    LEFT .........Start line earlier (5/75ths of a second)
+    CTRL-LEFT ....Start line earlier (half a second)
+    RIGHT ........Start line later   (5/75ths of a second)
+    CTRL-RIGHT ...Start line later   (half a second)
+    + or - .......Increase/Decrease loop time (20/75ths of a second)
+    * ............Set loop to repeat to the start of the next line
+    / ............Reset loop time (half the fastforward/reverse time)
+    END ..........Exit and Save
+    ESC ..........Abort without saving
+
+  TIP: for blank lines, if possible, try to start them just AFTER the
+  ~~~~ previous line ends so that the line can remain on the screen when in
+       Karaoke mode. If there is a long delay before the next line is sung
+       wait on the blank line until just a few seconds before it starts.
+        
+
+PROGRAMMING
+===========
+
+  Press the Playlist key (F1). To toggle program mode press "G". Use the
+CURSOR keys to move the yellow marker above the track numbers. The name of
+the track under the marker will be displayed at the bottom of the display
+window. You can press DEL or BACKSPACE to delete steps from the playlist. To
+add a track, enter a two-digit number such as "03" or "14". The track will be
+INSERTED at the marker position. Only valid track numbers and "00" will be
+accepted. Entering "00" will insert a pause in the playlist (you must press 
+"P" to continue playback).
+
+  IMPORTANT NOTE!:  When program mode is ENABLED, entering a two-digit track
+  ~~~~~~~~~~~~~~~~  number inserts it into the program playlist regardless of
+                    the display mode! It does NOT play the track.
+
+  You can clear all tracks by pressing "C". Pressing it again will select all
+tracks in track-number order. Shuffle (jumble) tracks with the "J" key.
+The "^" (shift 6) key will program only those tracks that have lyrics.
+
+  If you want to dub the CD to tape use the "%" (shift 5) key. You will be 
+asked for the length (in minutes) of ONE side of the tape. Pauses will be
+inserted at the correct location(s) so that songs are not cut off and you 
+have time to flip the tape over or change tapes. You must press P to start
+playback after the CD pauses.
+
+  The currently playing track will be highlighted in red. If you delete a
+track that is playing, the next track (if any) will be played. To save
+programmed tracks press the "W" key. The program will be saved in the same
+file that is used for CD information ("CD{idnum}.CD") so that each CD can
+have it's own favourite track programming. If you want to re-load the program 
+saved in this file press "L". If you don't want programmed tracks for the
+current CD press "C" to clear the program then "W" to write it to the file.
+
+  When "use programmed playlist if available" is enabled the programmed
+tracks will automatically be loaded and enabled when the CD is next inserted.
+
+
+CATALOG (database)
+=======
+
+  There are four different catalogs modes:
+
+    CD's   (.CD ) -- Displays CD titles
+    Lyrics (.T??) -- Displays individual Lyric files
+    Albums (.ALB) -- Displays Album files containing lyrics for an entire CD
+    All    (.*  ) -- Displays All files*
+
+      * Note: The program currently ignores .BMP files, which are Album Cover
+              bitmaps for use with SJGPlay for Windows (in development).
+  
+  Press F11 for the catalog. This will read each CD{idnum} file and extract
+the appropriate title from the first line, then display a list on the screen. 
+To cycle between CDs, Lyrics, Album, or All files press the "\" key. Use the 
+CURSOR keys (UP/DOWN/PgUp/PgDn/HOME/END) to scroll through the list. A yellow 
+triangle marker at the top of the list shows the currently selected line. 
+Press the INS key to sort the catalog by number (disk order), ID (time), or 
+title. The yellow marker will point to the sorted column.
+
+  When displaying the ALL catalog, album titles will be displayed as normal
+and song titles will be displayed with "__" preceeding them. When you sort by 
+filename this will let you see the CD title followed by the corresponding 
+lyrics files for that CD.
+
+  To delete the currently selected file press the DEL key. To edit the file 
+press the "E" key. This will shell to the DOS EDIT command (see your DOS 
+manual. Press ALT-F then X to return to SJGPlay). 
+
+  Notes: The EDIT command must be in your path for the "E" command to work.
+  ~~~~~~ When in the DOS editor all CD control is lost. Be careful when
+         editing lyrics with synchronization numbers!
+
+         The program can not store both lyrics and catalog entries at the 
+         same time. Switching to either lyric mode will require the catalog 
+         to be re-loaded and vice-versa.
+  
+  Press "W" to write the current catalog (in the current order) to a text 
+file called CATALOG.TXT. This could be used for importing to a word processor 
+or just for a quick reference when not running SJGPlay.
+
+
+UTILITIES
+=========
+
+  Pressing the "U" or F12 keys will display the Utilities Help screen plus a
+CD Frame Accuracy number (in 1/75th's of a second). All utilities work at any 
+time, not just when the utility screen is displayed. The utility screen is 
+just a reference to help you remember the key commands.
+
+  Key Description
+  --- -----------
+  !   Rename data files with specified {name} to the proper {idnum}
+  @   Rename data files with an {idnum} of 000000 to the proper {idnum}
+  #   Extract Lyrics for current track from 'Album' file
+  $   Export lyrics to 'Album' file
+  %   Program Playlist for Cassette Tape Dub
+  ^   Program Playlist with only those tracks that have lyrics
+  &   Import lyrics for current track from specified file
+  *   Export Lyrics for current track to specified file
+  D   Set Display Timer
+  O   Display Elapsed Timer screen
+  Y   Set/Clear Elapsed Timer
+  Z   Set Event/Countdown Timer
+
+
+Renaming Lyrics:
+
+  The following functions are useful when you have used a text editor to edit
+lyrics or have obtained a text file containing lyrics from another source.
+There are FTP/WWW sites containing song lyrics. Some files may contain lyrics 
+for many songs all in a single file (referred to as an "Album" file).
+
+  The "!" and "@" keys will rename all files to the proper format. If you're
+not running the program and don't know the {idnum} of a specific CD, you can
+substitute "CD000000" or a {name} of your own choosing while creating the
+files. When the CD is inserted and the proper {idnum} is known they can be
+renamed. Only the first part of the filename will be renamed! Files must
+still end in the proper format (.CD for information files or .T01, .T02 etc
+for lyric files) The "@" key will prompt you for the {name} of the files.
+
+  So, for example, if you typed out the lyrics for tracks one and two from
+the CD "Ace of Base - The Sign" and called them "thesign.t01" and
+"thesign.t02" you would press "@" then enter "thesign" when prompted for the
+{name}. This would then rename the files to "CD206107.T01" and "CD206107.T02"
+since the {idnum} for that CD is 206107. The {idnum} for the current CD is
+displayed on the help screen if you want to know what it is. You can also
+type: SJGPLAY INFO on the command line.
+
+Album Files: (Extracting/Exporting)
+
+  The "#" key will extract lyrics from an "Album" file containing many songs.
+Each song in the file must begin with the text "@SONG:" followed by the song
+name. The program will extract all lines after that line, up until another
+"@SONG" line is reached (or if all lines are filled).
+
+  You will be prompted to enter the complete path of the "Album" file and the
+name of the song to extract. The name of the song must exactly BEGIN with
+what is entered, however it is not case-sensitive. If you enter an incomplete
+song name, the first song matching that will be extracted. For example, if
+you enter "do i" as the song name, it would extract "Do I Love You" or
+"Do I Care", whichever came first in the "Album" file.
+
+  If the Song is not found, a list of song names will be displayed. This
+information is held temporarily as lyrics and will disappear if the display
+mode or track is changed.
+
+Make an Album file:
+
+  The "$" key will create an Album file for the current CD. You will be asked
+for an optional comment and if you'd like to delete the individual lyric
+files. Only answer YES if you've entered all the lyrics and syncronized them
+and you're happy with them. Once an album file is created the program will
+automatically extract individual lyrics from the album file when needed, so
+individual lyric files are not strictly nessessary (although once they are
+deleted you won't be able to list the song names in the lyric catalog). Album
+files take up less hard drive space than individual lyric files.
+
+  Important: The make album function REQUIRES individual lyric files. Don't 
+  ~~~~~~~~~~ try to make another album file once you've deleted the 
+             individual files... You will loose all the lyrics! (You WILL be 
+             warned!) To re-create individual lyric files, press F3 then edit 
+             EACH track (IE: E, ESC, +, E, ESC, + etc...). 
+
+Importing (copy):
+
+  The "&" key will copy a lyric file into the data directory with the proper
+filename. If the file is not in the current directory you must enter the 
+complete path along with the filename. It will be copied to the data 
+directory with the proper CD{idnum}.{tracknum} filename.
+
+Exporting (save as):
+
+  The "*" key will save the current lyrics to a file with a name of your
+choice. You will be prompted to enter the filename. This is useful for songs
+that appear on more than one CD in your collection. Just give the file the
+appropriate file name (in the format CD{idnum}.{tracknum}) for the other CD.
+Or, you can give it any name (be sure to end the name with the proper track
+number ie: T02) then when you insert the other CD, go to the proper track and
+use the "@" key to rename it.
+
+ZIP file Extract/Add:
+
+  The "(" and ")" keys extract or add the info files for the current CD to or
+from the SAMPLES.ZIP file. You can use these functions to:
+
+  1. Pull the info from the supplied SAMPLES.ZIP file without having to
+     extract all the files from *MY* CD collection.
+  2. Share data files with friends by ZIPPING the data from your CD
+     collection then sending them the SAMPLES.ZIP file rather than all the
+     individual files.
+
+  You will be asked to confirm that you want to continue. The SAMPLES.ZIP
+  file and all info files MUST be in the current directory! The SJGPLAY 
+  environment variable is ignored.
+  
+  Note: For these functions to work you must have PKUNZIP.EXE and PKZIP.EXE 
+  ~~~~~ in your DOS path.
+
+
+TIMER FUNCTIONS
+===============
+
+Event Timer:
+  
+  Press "Z" to set the Event. There are two modes: 
+  
+    1. Time of day - Enter the time in the form "HH:MM:SS" (eg: 12:00:00).
+    2. Countdown   - Enter the number of seconds in the form "-SS" (eg: -30).
+  
+  When the time of day reaches the specified time or the countdown reaches
+zero the event is performed. You can set any or all of the following:
+
+    Message........Display message in big letters (leave blank to skip)
+    Track Control..Track#=Play track, 0=No change, -1=Stop
+    Display Mode...Set display mode (0=No change)
+
+The time must be specified to the exact second. If a message is entered it
+will be displayed for either 5 seconds (for time-of day) or 1 second (for 
+countdown). The event time is cleared after each event.
+
+Elapsed Timer:
+
+  Press "O" to display the Elapsed Timer screen. This screen shows elapsed
+time in minutes and seconds. To start the timer press "Y". To clear the timer
+press "Y" a second time.
+
+Display Mode Timer:
+
+  Press "D" to set the Display Mode Timer. After a specified time interval 
+the display mode will rotate to the next mode in the mode list. Each display 
+mode is a single digit or character. Do not enter spaces in the mode list.
+
+  Modes 1 to 9 correspond to function keys F1 to F9. Mode "A", "B" and "C" 
+correspond to F10, F11 and F12 respectively. So, for example, entering
+"1257" as the mode list would rotate between Playlist, CD Info, Title, and
+Frequency bars.
+
+  To cancel Display Mode rotation enter "0" as the time interval or select a
+display mode via one of the function keys.
+
+
+OTHER FUNCTIONS
+===============
+
+  To load an alternate message file press ALT-M. You will be asked to confirm 
+by pressing Y or N. If you press "Y" the file SJGPLAY.MSG will be loaded. If 
+you press "N" the default messages will be restored. The message file could 
+be used to translate the display to a different language, or just to change 
+the wording of some of the text (not all at this point). E-Mail me if you are 
+interested in translating the messages to another language.
+
+  To activate the font editor press ALT-E. Follow the onscreen instructions. 
+The cursor keys and function keys work differently, however all other keys 
+still control the program. With the mouse, clicking inside the current
+character moves the block pointer and clicking in the ASCII table sets the 
+block (same as PgUp). Use the TAB or M keys to exit (Make sure you save 
+the font before exiting!). Note: The font editor can not create a new font
+from scratch or add characters to an existing font. See the EXTRAS.DOC file
+for more information.
+
+  To load an alternate big-character font press ALT-F. You will be asked to
+confirm by pressing Y or N. If you press "Y" the file SJGPLAY.FNT will be 
+loaded. If you press "N" the default font will be restored.
+
+  To activate the calculator press ALT-C. All keys are ignored except the
+numbers, operations keys (+-*/=), and backspace. To exit press ESC.
+
+  To see the calendar press ALT-D. The cursor keys control the month and
+year. HOME takes you to the current month. All other keys work as normal.
+
+ To set the screen blanker press ALT-B. Each press will add 2 minutes to the
+blank time (maximum 30). If no keys are pressed after the specified time the
+screen will blank and the track number and elapsed time will appear randomly
+across the screen. When the screen is blanked pressing any key (including the
+shift or control keys) will restore the display (the key you pressed is
+ignored by the rest of the program so you won't activate some unknown
+function by mistake).
+
+  To deactivate screen blanking press ALT-B until it shows a blank time of 0.
+
+
+ERROR CONDITIONS
+================
+
+  If an error occurs in the program (if you enter an illegal character in a
+filename, or the printer is off, for example) the program will print an error
+message and, depending on the type of error, give you the opportunity to
+either: Retry, Cancel, or Abort the program. Choose "Retry" if the problem is 
+something you can fix (ie: turning the printer online or feeding paper).
+Choose "Cancel" if it's something you can't fix (ie: don't have a printer)
+and the program will cancel the operation. Choose "Abort" if "Retry"
+keeps giving you the same error and "Cancel" won't work either (probably my
+programming error...).
+
+
+COMMAND-LINE ARGUMENTS
+======================
+
+  SJGPlay can be controlled through command-line arguments. These may be used
+to modify how the program is run or can be used to control CD functions from
+the command line (or via a batch file) without actually interacting with the
+program. Program-mode options must appear on the command line by themselves.
+Control-mode options may be listed with spaces separating each one, and will 
+be executed in the order they appear.
+
+  Program-mode arguments:
+  ~~~~~~~~~~~~~~~~~~~~~~~
+    CHECK..........Checks if a CD is in the drive. If there is no CD in the
+                   drive the program will exit. If there is a CD in the drive
+                   the program will run normally. This can be used in your
+                   AUTOEXEC.BAT file so that you can play CD's when the
+                   computer boots up.
+
+    CONFIG:file....Specifies a secondary configuration file. Settings in
+                   this file override those set in the default config file
+                   (which is read first). You can use a text editor to create 
+                   the file (or edit the default configuration) to include 
+                   only those setting you want to change. The file may also 
+                   include a "PATH=" statement to change the data path from 
+                   the default set via the SJGPLAY environment variable.
+  
+  Control-mode arguments:
+  ~~~~~~~~~~~~~~~~~~~~~~~
+    NOTE: The following arguments can be shortened to the first 4 characters.
+          Where you see 'nn' substitute a number as indicated.
+          
+    Device control:
+
+    UNIT:nn ...Select drive unit# nn (1=first drive, 2=second drive etc)
+    EJECT .....Eject any type of CD
+    NODATA ....Eject CD-ROM's only
+    NOAUDIO ...Eject Audio CD's only
+    VOLUME:nn .Set Volume to nn (0 to 99)
+
+    Playback:  (to play a random track set nn to -1!)
+
+    PLAY:nn ...Play track nn (plays current track if nn not specified)
+    SINGLE:nn .Single-play track nn (stops at end of track)
+    NEXT ......Play next track
+    PREVIOUS ..Play previous track
+    STOP ......Stop CD playback
+    WAIT ......Waits for CD to stop, track to end, or keypress
+
+    Information:
+
+    INFO.......Display CD info including track titles and time, total time
+    TRACK......Display track name and number
+    TNUMBER....Display track number only
+    ELAPSED....Display track elapsed time
+    TITLE......Display CD title
+    
+    Conditionals:
+
+    The following arguments can be used to stop command line parsing if the
+    specified condition is false, or continue if the condition is true:
+
+    IFSTOPPED..If the CD is stopped then continue parsing CMDLIST
+    IFPLAYING..If the CD is playing then continue parsing CMDLIST
+    IFAUDIO ...If the CD is an Audio CD (more than 1 track) then continue
+    IFCD.......If a CD is inserted then continue parsing CMDLIST,
+               If not, then exit with ERRORLEVEL=1 (useful in batch files)
+
+       (if the condition is false then the remaining arguments on the
+        command-line are ignored)
+ 
+    Special command:
+
+    NOEXIT.....Stops the program from exiting after processing CMDLIST
+               (ie: continue on to standard user-interface. Any commands
+               after NOEXIT will be ignored)
+
+  When in command-line mode, commands are executed in order, and control is
+  returned to the DOS prompt (or calling program) unless NOEXIT is specified.
+
+    Also, holding either of the SHIFT keys during command-line processing 
+  will simulate the NOEXIT command. This could be used in the AUTOEXEC.BAT to 
+  jump right into the program when the SHIFT key is held down during booting.
+
+  Some examples:
+
+  SJGPLAY CHECK ....................Run the program if a CD is in the drive
+  SJGPLAY INFO .....................Display name, track titles of current CD
+  SJGPLAY IFAUDIO PLAY:1 ...........If an audio disc is inserted then play
+                                    track 1 (put this in your AUTOEXEC!)
+  SJGPLAY IFSTOPPED PLAY:5 .........Play track 5 if the CD is NOT playing
+  SJGPLAY UNIT:1 STOP UNIT:2 PLAY ..Stop CD in unit 1 then start playing the
+                                    current track of unit 2
+  SJGPLAY NOAUDIO ..................Eject the CD if it is an audio CD.
+                                    (maybe your system gets confused if an
+                                     audio disc is inserted?)
+  SJGPLAY CONFIG:C:\MYCONFIG.CFG ...Specify a secondary config file called
+                                    "myconfig.cfg" located in the root
+                                    directory of drive C:
+  SJGPLAY VOLU:99 PLAY:-1 NOEX .....Set full volume, play a random track,
+                                    then go to user interface
+  SJGPLAY WAIT EJECT ...............Wait for track to finish, then eject CD
+
+The following batch file demonstrates how to test for the presence of a CD 
+then repeatedly play random tracks:
+
+  @ECHO OFF
+  SJGPLAY IFCD
+  IF ERRORLEVEL==1 goto NOCD
+  
+  :LOOP
+  CLS
+  ECHO RANDOM TRACK PLAY (Press CTRL-BREAK to abort!)
+  ECHO                   (Press SPACE for next track)
+  SJGPLAY TITLE SINGLE:-1 WAIT
+  GOTO LOOP
+  
+  :NOCD
+  ECHO Please put a CD in the drive!
+
+
+REVISION HISTORY
+================
+
+ 1.29 - 961205 (Dec 5/96)
+        Added ALT-X for quick exit.
+        Now auto-loads SJGPLAY.MSG and SJGPLAY.FNT if in default directory.
+        Extended font to full ascii range (external fonts only).
+        Input routine now supports extended ascii characters.
+        Added support for fonts up to 16 lines tall (limited functionality).
+        Modified font format. Updated extras (font exporter and sample fonts).
+        Fixed font editor re-draw.
+        Added check for lyrics inside Album files (for album flag).
+        Added SoundBlaster Pro/16 Mixer (not working 100% yet...).
+
+ 1.28 - 961113 (Nov 13/96)  [Initial release Aug 1/96]
+        Added Font Editor (ALT-E)
+        Changed "_" to ALT-M, "K" to ALT-F.
+        Fixed "B" repeat if no "A" point set.
+        Fixed error when button-bar changed with non-"FKey" mode on screen.
+        Added filter for lyric timing data (for future word sync'd lyrics).
+        Moved VU Meter to be on Button-Bar line ("|").
+        Added Calculator (ALT-C), Calendar (ALT-D), Screen Blanker (ALT-B).
+        Updated utility help screen
+        Added "wait" and random track (-1) to command-line.
+        Changed "W" to also create a catalog text file when in catalog mode.
+        Changed mute from 50% (half-mute?) to 0% (the real thing!:-)
+        Added check to ignore ".BMP" files in "All" Catalog
+          (for those with Album Cover bitmaps for the Windows version).
+        Added Volume Fade (ALT-[ and ]).
+
+ 1.27 - 960724 (Jul 24/96)
+        Fixed Make Album (broke due to format change... ooops).
+        Fixed DRV repeat (broke with initial repeat change).
+        Fixed PGUP crashing program during first minute of track 1.
+        Fixed bug with some drives returning bad status value, causing crash.
+        Fixed Auto-play random always starting with track 1.
+        Changed command line "unit" numbering to start at unit 1.
+        Moved Prg "Step x; Track title" line to allow track name to display.
+        Added ALT plus number to select specific CD unit.
+        Added CD Tray Select (to support my nice new NEC 4x4 changer! :-).
+        Added startup check to select first playing CD in multi-drive system.
+        Added Unit Scan Display ("`").
+        Added "TXTED" to config (in config file only, not in config screen).
+        Added line split to editor (CTRL-ENTER).
+        Added load "sjgplay.msg" message file ("_").
+        Added load "sjgplay.fnt" big-character font ("K")
+        Added Quit-Box to top left of screen.
+        Added Close-Box to bottom section (full-screen mode).
+        Added check for SHIFT key to work like NOEXIT.
+        Added command-line "SCAN" command to do a unit scan.
+        Fixed those silly CURSOR keys...
+ 
+ 1.26 - 960520 (May 20/96)
+        Fixed Playlist play track via mouse not working when repeat enabled.
+        Fixed error on 99th step of playlist.
+        Fixed Scope round-off error for smoother waves.
+        Reduced Mouse blinking.
+        Removed ESC to exit program.
+        Added command-line "VOLUME" and "NOEXIT" commands.
+        Added middle mouse-button support (previous mode).
+        Added VU Meter to Scope/FreqBars modes ("\" to toggle).
+        Added joystick control.
+        Added 1 second delay between checks for disc insertion.
+        Added END key to jump to last line in editor.
+        Added Autoplay Jumbled to Config.
+        Added CD Frame Accuracy display to Util Help Screen.
+        Added "," to jump to next mode in Display timer list.
+        Added time indicator when mouse on progress bar.
+        Added "ESC=Exit" message when in EDIT mode.
+        Added ZIP Add/Extract to utilities.
+        Added programmed track indicators ("+","*") to F2 mode.
+        Added "All" catalog and changed Lyric filenames to "*.Tnn".
+        Added Elapsed Timer and Countdown to Utilities.
+        Added playback pointer to editor.
+        Changed "J" to only jumble programmed tracks.
+        Changed right mouse to toggle button bars if cursor on third line.
+        Changed "plus-minus" to "|" on third line.
+        Changed CTRL and ALT cursor (CTRL left/right=start/end of line).
+        Swapped Disc, Drive and Track text in bottom section.
+        Swapped Display modes F7 with F11, and F8 with F12.
+        Changed [shift]TAB/M to include modes 7 and 8.
+        Changed initial repeat to activate with new disc insertion.
+        Changed Scope delay to be calculated based on computer speed.
+ 
+ 1.25 - 950915 (Sept 15/95)
+        Changed large font to proportional spacing (more text on each line). 
+        Slight text changes. Added command-line "ifaudio" command.
+        Fixed Extract for album files with sync info.
+        Fixed Make Album causing "lyrics not available".
+        Changed order of Button-bars. Added "|" to toggle Button-bars.
+        Added Karaoke background and text colours to config.
+        Displays lyrics with a single "." as blank lines in Karaoke mode.
+ 
+ 1.20 - 950730 (July 30/95)
+        Added Frequency Bars (F11), Scope (F12), Display Timer ("D").
+        Added "Drv" Repeat mode to link drives. Added Mouse Button-bars.
+        Added mouse control for "Yes/No" responses.
+        Replaced Catalog sorting routine with quicksort (much faster!).
+        Faster Help and Configuration screen drawing.
+        Fixed updating of Drive Unit Letter when no disc inserted.
+        Fixed command-line "ifcd" and "unit" operation.
+        Fixed mouse clicking (leaving the wrong color behind) and mouse 
+          disappearing when over areas that changed. 
+        Changed action of left mouse click on certain display modes.
+        Removed command-line "monitor" command.         
+        Added direct support for album files.
+ 
+ 1.10 - 950701 (July 1/95)
+        Fixed updating of track titles.
+        If using SoundBlaster, volume level defaults to current volume 
+          setting (rather than 99%).
+        Added mouse control. Added SHIFT-TAB to go to previous mode.
+        Added Remaining frame time mode.
+ 
+ 1.05 - 950625 (Jun 25/95)
+        Small speed improvements and code re-organization.
+ 
+ 1.04 - 950622 (Jun 22/95)
+        Added initial repeat mode to config. Added Reset CD-ROM ("~").
+        Added reset playlist ("S" when CD stopped). Added Import Lyric("&"). 
+        Changed disc-change and volume routines. Improved error trapping.
+ 
+ 1.03 - 950609 (Jun 9/95)
+        Fixed Extract. Changed time display while in edit mode to update
+        only once per second to speed up editing. Added save lyric message.
+        Fixed playback stopping. Fixed command line "single" option. 
+        Allow track jumping even if Repeat set to "one".
+        Added printing of CDInfo, Lyrics and Catalog.
+ 
+ 1.01 - 950525 (May 25/95)
+        Fixed large "[" and "y" characters, A/B repeat lyric scrolling.
+        Fixed DEL key to delete program step (deleted twice).
+        Fixed bug that caused repeat modes to fail with programmed tracks.
+        Fixed INTRO when REPEAT enabled.
+ 
+ 1.00 - 950521 (May 5/95) 
+        Initial Public Release.
+
+
+KNOWN BUGS AND MISSING FEATURES
+===============================
+
+  I've tried to test the program as thoroughly as possible, however bugs can
+still occur. As stated at the beginning, I can't test every possible
+combination of equipment, so your milage may vary... Anyway, here are a few
+of the bugs I haven't been able to squash (yet!):
+
+    - Command-line option "NODATA" to eject cd-roms not working - all cd's
+      appear to be audio to the DSE library's "IsData%" function.
+    - the cursor sometimes jumps one character to the right when editing.
+
+
+IDEAS FOR FUTURE VERSIONS
+=========================
+
+  Since I've started work on a Windows version I'm no longer concentrating on
+the DOS version. That doesn't mean I'm abandoning it, however I can't say
+if/when I will be doing any more major development on SJGPlay for DOS....
+
+In any case...
+
+  The next MAJOR release should support Word-by-Word lyrics playback similar 
+to what you would see with an actual KARAOKE CD...
+
+  Some of the other things I'm considering for future versions of the program
+(in no particular order):
+
+    - ability to include comments with each CD or Lyric file
+    - more cataloging information like music category (rock, pop, etc)
+    - programming across multiple drive units.
+    - searching (find song titles or lyrics)
+
+  If you want to see any of these added, have ideas of your own, or have a
+comment, send me a message via e-mail. I can't promise you I'll add them but 
+I will consider all reasonable requests.
+
+  If you have assembly source code for a REAL spectrum analyzer which you'd 
+like to donate (that could be integrated into Microsoft's Basic PDS 7.1),
+please e-mail me.
+
+  Thank-you for trying SJGPlay!
+
+END.
+

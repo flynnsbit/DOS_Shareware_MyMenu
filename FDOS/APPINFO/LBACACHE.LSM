@@ -1,0 +1,15 @@
+Begin3
+Title:          LBACACHE
+Version:        2008apr07
+Entered-date:   2008-07-23
+Description:    Disk cache, caches reads for max 8 CHS / LBA hard disks and floppies, XMS, 386 or better - tickle comes with lbacache!
+Keywords:       cache, smartdrv, nwcache
+Author:         Eric Auer <eric -at- coli.uni-sb.de>
+Maintained-by:  Eric Auer <eric -at- coli.uni-sb.de>
+Primary-site:          http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/lbacache.html
+Alternate-site: http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/lbacache/
+Platforms:      DOS 386+ (nasm assembler), FreeDOS
+Copying-policy: GNU General Public License, Version 2
+Defunct-Original-Site: http://www.coli.uni-saarland.de/~eric/stuff/soft/
+Defunct-Primary-Site:  http://www.coli.uni-saarland.de/~eric/stuff/soft/
+End

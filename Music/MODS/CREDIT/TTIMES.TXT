@@ -1,0 +1,24 @@
+Tough Times (k_jose_-_tough_times.s3m)
+https://modarchive.org/index.php?request=view_by_moduleid&query=191015
+Renamed to TTIMES.S3M because of the DOS 8-character limit.
+
+Summary
+
+    k_jose_-_tough_times.s3m is a S3M format module. 
+    Uploaded to modarchive.org on Wed 6th Jan 2021.
+
+Info Info
+
+    Mod Archive ID: 191015
+    MD5: 9deccefcd2c2f2c23ca34a5bd0778f46
+    Format: S3M
+    Channels: 25
+    Genre: n/a
+
+License License
+
+    Licensed under the CC0 license
+
+artists Registered Artist(s):
+
+     K. Jose (https://modarchive.org/member.php?86612)

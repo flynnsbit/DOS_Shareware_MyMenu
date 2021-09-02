@@ -1,0 +1,137 @@
+
+                   --------------------------------------
+        	   A Glossary of Virtual Pool Terminology
+		   --------------------------------------                        
+
+  8-ball       --  A pool game where the object is to pocket all of the striped
+                   or solid balls, then the 8-ball.
+
+  9-ball       --  A pool game where the object is to sink the 9-ball.
+
+  Amplify      --  Mouse movements are exaggerated when amplify is on.  Toggle 
+                   amplify with the SHIFT key.
+
+  Ball-in-hand --  The player who has ball-in-hand can place the ball anywhere 
+                   on the table, or (depending on the game and situation) 
+                   anywhere behind the head string.
+
+  Bank         --  Playing a ball off of one or more rails into a pocket.
+
+  Call         --  Specifying the ball and pocket for a shot attempt.
+
+  Carom shot   --  Playing the cue ball or another object ball off an object 
+                   ball to knock another object ball into a pocket.
+
+
+  Combination  --  Playing a shot that hits multiple object balls in series 
+                   with the last object ball hit being pocketed.
+
+  Cue Ball     --  The white ball that you hit with the cue stick into other 
+                   balls.
+
+  Cue Stick    --  The stick you use to hit the cue ball.
+
+  Cue Tip      --  The end of the cue stick that makes contact with the cue 
+                   ball.
+	       
+  Cut          --  Barely hitting the edge of an object ball to cause it to 
+                   roll in a perpendicular direction from the line of the hit.
+                   Also known as Slice.
+
+  Diamonds     --  Markers on the table.  The markers and the pockets divide 
+                   the long side of the table into eight equal parts.  The 
+                   markers divide the short side of the table into four equal 
+                   parts.
+
+  Draw Shot    --  To hit the cue ball below center.  (See English)
+
+  End Rail     --  The rails at either end of the table.
+
+  English      --  Hitting the cue ball off center to put a spin on the cue ball.
+
+  Fine Tune    --  Mouse movements are less sensitive when Fine Tune is on so 
+                   that mouse movements make small changes.  Toggle Fine Tune 
+                   with the Ctrl key.
+
+  Follow       --  To hit the cue ball above center.  (See English)
+
+  Foot         --  The end of the table where the balls are racked for the 
+                   break.
+
+  Foot Spot    --  The center of the foot end of the table.  It is marked by 
+		   the second diamond at the foot end.  The balls are racked 
+		   and spotted here.
+
+  Foul         --  An infraction of the rules of play as defined in either the 
+                   general or the specific game rules.  Penalty depends on game.
+
+  Frozen       --  For a ball to be touching the rail or another ball.
+
+  Head         --  The end of the table where the cue ball is for the break.
+
+  Head String  --  The line between the two center diamonds at the head of the 
+                   table.  You must break from behind this line.
+
+  Head Spot    --  The center of the head string.
+
+  House Rules  --  Many pool halls and bars have their own specific set of rules 
+                   for a game.  For instance, many places don't allow masse 
+                   shots for fear of damage to the tables' felt.  Other house 
+                   rules might cover banking the 8-ball, etc.  Wherever you are 
+                   playing, be sure to note any house rules.
+
+  Inning       -- One person's turn at the table.  Ends at end of game, missed 
+		  shot, or foul.
+
+  Kiss Shot    -- Hitting two frozen object balls at an angle so that an 
+                  object ball is pocketed along the line perpendicular to the 
+                  frozen object balls.
+
+
+  Masse Shot   -- A shot in which extreme English is applied to the cue ball 
+		  by means of elevating the butt of the cue.  
+
+  Miscall      -- Making a shot other than the one called.
+
+  Object Ball  -- The ball to be hit first by the cue ball.  
+
+  Pocket       -- To legally sink a ball into a pocket.
+
+  Position     -- To sink a ball and in such a way as to leave the cue ball 
+		  in position for the next shot.
+
+  Race         -- To play a match where the winner is the first to win a 
+		  specified number of games.  
+
+  Rack         -- To set up the balls at the beginning of the game.
+
+  Rails        -- The edges of the playing surface off of the which the balls 
+		  bounce.
+
+  Rotation     -- A pool game where you have to sink the balls in numerical 
+		  order.  Each ball is worth its number of points.
+
+  Run          -- To make several consecutive balls.
+
+  Run Out      -- To make all of the balls on the table without giving your 
+		  opponent a chance to shoot.
+
+  Scratch      -- Pocketing the cue ball.
+
+  Side Rail    -- The rails on the sides of the table.
+
+  Slop         -- A ball that is pocketed by luck.
+
+  Spot         -- To place a ball at the foot spot usually as the result of a
+		  penalty.
+     
+  Straight Pool-- A game where the balls are worth one point each and can 
+                  be pocketed in any order.  Game is played to a preset 
+                  number of points.
+
+  Tracking     -- Feature of Virtual Pool that shows you the exact path of 
+                  every ball on the table, based on the current force setting.
+
+
+
+

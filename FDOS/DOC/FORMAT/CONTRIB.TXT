@@ -1,0 +1,35 @@
+CONTRIB.TXT
+
+Contributers:
+
+Jan Verhoeven       Supplied the equations for converting the logical 
+                    sectors to physical cylinders, heads, and sectors.
+
+John Price          Supplied the algorithms for correctly computing the
+                    number of sectors per FAT.
+
+James Clark         Sent me information regarding IOCTL call 0x21440d,
+                    functions 0x47 and 0x67.  These functions allow the
+                    access flag to be set to force a DOS kernel to
+                    allow interrupt 0x25/0x26 access to an unformatted
+                    logical drive.
+
+Tom Ehlert          Interrupt 0x25/0x26 code, portability enhancements,
+                    improved error detection and trapping.
+
+Bart Oldeman        Modified the FreeDOS kernel to support IOCTL call
+                    0x21440d, function 0x67.
+
+Jim Hall            Support for getopt, format.c cleanup, new makefile.
+
+Bart Oldeman        Assisted with the addition of FAT32 support.  See
+                    the news.txt file, under version 0.90, for a full
+                    description.
+
+Eric Auer           Many changes, bug fixes and improvements for
+                    versions 0.90b ... 0.91u in 2003, 2004 and 2005.
+
+Additional tests    2003/2004: Bernd Blaauw, Wilhelm Spiegl, Geraldo
+                    Netto, David Flechl, Johnson Lam, Tyler H. D.,
+                    Matthew Gruett and many others before. Using DOS
+                    BOOTFIX, CHKDSK, DOSFSCK, DOSEmu and other tools.

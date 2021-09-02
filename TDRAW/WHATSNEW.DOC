@@ -1,0 +1,216 @@
+TheDraw 4.63
+============
+Maintenance release.  A glitch which came and went... came back.  Blinking
+colors in Ansi files would not be properly output if 1) they were the first
+colors used and 2) not on the first line.  Special thanks to William Zakreski
+for reporting this.  TDFonts would exit with the cursor turned off in some
+situations; this should be fixed now.  Thanks to Brian Morin for writing in.
+
+Avatar, PCBoard, and Wildcat formats can now optionally reset the display
+color to light gray on the end of files.  The reset is enabled by default,
+and corresponds to how Ansi files are handled.  To turn off the color reset,
+choose Setup from the Options pulldown menu, go to page 2, and change the
+"Reset colors..." toggle.  Thank Alan Shoemaker for recommending this one.
+
+TheDraw now handles @CLS@ Wildcat/PCBoard commands properly.  In an attempt
+to filter the @CLS@ command TheDraw adds itself, all were removed.  Lastly,
+Wildcat/PCBoard slowdown codes are usable now.
+
+  Remember, do not assume someone else will report a bug you find!
+  Please write TheSoft or call G.A.D.M. at (510) 581-3019 if you ever
+  find something wrong.  Thanks!
+
+
+TheDraw 4.62
+============
+Maintenance release.  Bugs with PCBoard/Wildcat files related to background
+colors, scrolling (ie: color wrap-around), and output slow down fixed.  Also
+repaired minor glitch in ALT-A screen when Numlock was turned on - the arrow
+keys would only increment colors.  Ansi files now include a special sequence
+which turns on line wrap-around on terminal programs.  This should help with
+headaches related to the display of characters in the 80th column.
+
+Wildcat/PCBoard Sysops:  Because no cursor control is available in these
+formats, display output cannot be accurately controlled.  TheDraw assumes
+line wrap-around is turned on (the standard Ansi configuration).  If a caller
+happens to have line wrap-around turned off, placing characters in column
+80 will corrupt the following lines.  There are two solutions:  either do
+not place characters in column 80, or display a short Ansi file when your
+user first logs turning on line wrapping.  All TheDraw v4.62 Ansi files now
+include the appropriate Ansi sequence (ie: save a blank screen).
+
+  Special thanks to Luke Rice for reporting how typing an 'A' in the
+    color setup (ALT-A) screen might cause a crash.
+
+
+TheDraw 4.61
+============
+A few minor problems have turned up, which are taken care of in this
+maintenance release.  A bug in PRINTDOC prevented two sided printing,
+THEGRAB did not properly handle some interrupts, the Setup utility had a
+couple of hiccups, and TheDraw glitched the foreground color in creating
+Ansi files with a space in the upper-left corner.  Special thanks to:
+
+  Anthony Haxton for reporting the Setup utility would sometimes not
+    recognize the registered version of TheDraw.
+  Paul Hirsch for pointing out in the defaults configuration area of the
+    Setup utility one prompt worked backwards (ie: type Yes, and get No).
+
+
+TheDraw 4.60
+============
+The following new features were added for version 4.60:
+
+ o    The Quick Palette.   This allows you to choose any color and extended
+      character symbol quickly an easily.  It is available when the pulldown
+      menus are displayed (press ESC or the right mouse button).  Choosing a
+      symbol from the Quick Palette selects the associated function key set.
+
+ o    Manual character painting.  You can "pick-up" any symbol, and draw
+      by using SHIFT-Arrow keys.  To pick-up a character, press the ALT-/ key
+      combination.  Any symbol selected via the Quick Palette becomes the
+      current picked character.
+
+ o    A memory resident screen capture utility is now included, called THEGRAB.
+      TheGrab can capture any text mode screen and create TheDraw format files,
+      Dos COM files, Ansi files, or Ascii files directly.  It is small, needing
+      only 12k of memory.
+
+ o    A new 80 character by 100 line edit buffer option (static screens only).
+      Ever have the need to create an extremely long scrolling color Ansi file?
+      Now you can do it entirely within TheDraw!  The fact the screen -will-
+      scroll is incompatible with animated images.
+
+ o    MULTI-COLOR FONTS!  The previous release could only use single color
+      fonts when entering.  This version permits you to use and create font
+      symbols drawn with multiple colors.  In fact, you could create a "font"
+      of small block graphics if desired now.  Color fonts show a "C" postfix
+      in the Fonts pulldown menu.
+
+ o    Animation Fade Out.   Ever wish you have an image appear, and then
+      disappear using the same effect?  Previously is was an awkward thing
+      to do, forcing you to use sprite mode, solid spaces, a little futzing.
+      This option works identically to a Fill, but in addition prompts for
+      an animation scanner type.  Neat stuff!
+
+ o    Animation auto-repeat display.  Typing "A" from the ALT-Q Redraw prompt
+      will make TheDraw redraw an animation sequence over and over until
+      you hit a key.  Useful if your animation has a difficult to find hiccup.
+
+ o    Ability to view TheDraw format files.  You see what would be present
+      if you loaded the TD file.
+
+ o    Library files.  Do you maintain both TD and Ansi files for all your
+      screen images?  Now you can put all the TD files into one place, and
+      attach a descriptive comment also.  The library directory shows the
+      description, screen dimensions, and whether the entry is static,
+      animated, or a block save.
+
+ o    TheDraw format file compression.  TD files are now compressed when
+      saved to greatly reduce disk space requirements.  This applies to
+      Library file entries also.
+
+ o    C code file format revised to be compatible with more compilers.
+
+ o    Three new file formats for BBS system operators:  Avatar, PCBoard and
+      Wildcat BBS compatible formats can now be loaded/saved with TheDraw.
+      Avatar files can be animated.  PCBoard/Wildcat "@-code" files are
+      limited to static only screens currently.
+
+ o    To go along with the PCBoard and Wildcat formats, a quick reference
+      table of all @-codes is provided.  From normal (non-animated) mode,
+      type ALT-Q (note that in animation mode, ALT-Q works as always).
+
+ o    A screen auto-compress option was added to the Setup screen.  Do you
+      block marking screens to avoid unused lines being output on the bottom
+      of the display?  TheDraw can now optionally remove those unused lines in
+      Ansi, Ascii, Avatar, PCBoard, Wildcat static formats automatically.
+
+ o    PRINTDOC now supports HP laserjet printers.
+
+ o    TheDraw checks for the presence of Quarterdeck's Desqview (tm) operating
+      environment.  If found, screen initialization is skipped to avoid making
+      Desqview always switch on EGA/VGA screen modes.
+
+ o    For registered users, the SHADING.TD screen is now built right in!
+      Type ALT-A twice, or select from the pulldown menu.   This shows all
+      available color shading combinations possible using dither characters
+      from function key set 6.
+
+
+ Plus several other minor enhancements throughout the program!
+
+
+ Bug Fixes
+ =========
+
+ - Text centering in Animation mode could possibly lockup TheDraw if blank
+   lines were present.  This has been fixed.
+
+ - Viewing object files no longer corrupts screen data.
+
+ - Column Insert/Delete should no longer insert extraneous characters, if
+   the numeric keypad arrows are used.
+
+ - Loading an Ansi file into a 23 line buffer might have resulted in the
+   bottom line being lost.  This no longer occurs.
+
+ - Problems with Ansi Include Files not being copied properly was fixed.
+
+ - Ansi Loader much less likely to spuriously turn on animation mode when
+   it is not called for.
+
+ - Improved handling of "color bleeding" which occurs when scrolling Ansi
+   files write characters to the lower-right corner of the screen.
+
+ - Fixed problem with loading block files from the command line.  Occasionally
+   random garbage would appear surrounding the wanted data.
+
+ - A number of minor fixes and cosmetic improvements to TDFonts.   A rare bug
+   with creating the "~" symbol has been fixed.  It could partly damage the
+   symbol data.
+
+ - QuickBasic calls to functions UNCRUNCH, ASCIIDISPLAY, and NORMALDISPLAY
+   could leave parameters on the stack.  Recompile your code with the new
+   functions included here.
+
+ - Block COM files might have received invalid screen offsets if the
+   worksheet was scrolled at all.
+
+ - Global Screen Move now works properly when scrolled down into a large
+   worksheet.
+
+ - When saving an animated Ansi file, the cursor is no longer forced to the
+   left most column.  The last character output in the Animation sequence is
+   where the cursor will be left.
+
+ - You could "click" on status line options, even the status line was not
+   there (ie: full screen mode).  Now you can't.
+
+ - SETUP utility keyboard configuration now ignores Shift key codes, this
+   to handle some keyboards which send such codes before cursor control keys.
+
+Plus several other minor fixes.
+
+
+Special Thanks to:
+  Toby Vander Steen for finding animation text centering bug.
+  Gary Yuen for object file viewing and column insert/delete glitches.
+  Michael Arnett for pointing out the animation include files were
+    less than perfect.
+  Brad Crouch for finding a circumstance in which COM files would not
+    be saved properly.
+  B.J. Freeman for indicating the Setup utility keyboard config bug.
+  Dafyd V. Smith for the 23 line buffer loading problem, and suggesting
+    animation auto-repeating!
+  David P. Hummel and Dafyd V. Smith for suggesting the animation fade out!
+  Abram Miller for suggesting the modified dos prompt when doing a dos shell!
+  Carter Downer for suggesting the Quick Palette feature, screen autocompress,
+    and BBS file formats!
+  The many users who all requested the screen capture utility!
+
+Please do not assume someone else will write about a bug you find.
+Write a letter and be immortalized in the doc's of TheDraw!
+
+In any case, Enjoy!
+

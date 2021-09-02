@@ -1,0 +1,9 @@
+Game: Gabriel Knight
+Year: 1993
+Composed by: Robert Holmes
+MIDI versions: GM, MT-32, XG
+Platform: DOS
+
+Additional info: Single MIDI file in the root is apparently complete soundtrack made for General MIDI. I've also included some files made for MT-32 and XG, those are, however, incomplete.
+
+https://www.karlsitretro.com/game_midi

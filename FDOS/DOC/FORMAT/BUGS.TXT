@@ -1,0 +1,42 @@
+Known bugs and problems (in 0.91k / known by Brian or Eric):
+*** = bug which is definitely still an issue in 0.91t...
+Please test and tell if the non-*** problems are REALLY fixed now!
+
+
+
+*** There should be error handling that allows you to retry when format or
+    disk read / write errors happen (beyond the default "try N times").
+    Partially fixed in 0.91n by allowing noncritical disk I/O to fail.
+
+*** Could use separate error messages for CD-ROM, remote, SUBST...
+
+
+    Will, under some circumstances, fail to format due to dma overruns.
+    Fixed in 0.91?
+
+    The FAT32 format may not be compatible with MS's operating systems.
+    Fixed in 0.91i? When running FORMAT itself under MS operating systems,
+    things are more complicated. Should be fixed in 0.91q (not o), though.
+
+    Floppy format to smaller sizes than the drive default sometimes fails.
+    (seems to work much better in 0.91c??) 720k are most tricky here.
+    Formats with more than standard TRACKS only work on "generous" drives!
+    However, both 1440k and 1680k work fine in 1440k drives :-).
+    Even 720k support to work now in 0.91o, finally, but you have to use
+    real DD diskettes for that. USB floppy ONLY supports exact 1440k size.
+
+    Format after FDISK screwed up (uformat mode active here)...
+    Fixed in 0.91d? 
+    Looks as if sometimes the kernel (int 21.440d.?860) returns 0 cluster
+    size while other BPB values are all okay, e.g. on some SCSI systems!?
+    Possible background: FreeDOS kernel 2035 and older use wrong subunit
+    number for user block device drivers for IOCTL. Fixed in 2035-devel.
+
+
+
+Please use the www.FreeDOS.org Bugzilla bug tracking system to find
+other known bugs and to report new bugs! Please report suggestions to
+the maintainer (see the LSM file) and the contributor (if you know that
+the bug is related to something contributed by a certain person). See
+the news.txt file and the sources for a list of changes and contributions.
+

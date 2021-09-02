@@ -1,0 +1,19 @@
+Known Bugs In Tree
+------------------
+None.
+
+Known Issues
+------------
+Cats message support not supported with all compilers,
+  specifically it will not compile with Dave Dunfield's Micro-C/PC,
+  and with HiTech's Pacific C 7.5
+It does not indicate if initial directory (on valid drive) does not exist.
+When compiled with Pacific C may incorrectly report invalid drive,
+this is a bug in findfirst.h and not in tree (released version compiled 
+with Borland C/C++ 3.1 so does not have this problem).
+
+Bug Reports
+-----------
+Please report any bugs to Jeremy Davis <jeremyd@computer.org>,
+or submit bug using the bugtrack at http://www.freedos.org/bugtrack/
+or email the FreeDOS Mailing list at fd-dev@topica.com.

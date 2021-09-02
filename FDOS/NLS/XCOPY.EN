@@ -1,0 +1,82 @@
+# English language file for (R)XCOPY 1.2, use as source for your translations
+
+# prompts and error messages
+1.1:Invalid number of parameters
+1.2:Invalid date
+1.3:Invalid switch
+1.4:Source path too long
+1.5:Invalid source drive specification
+1.6:Source path not found
+1.7:Source path too long
+1.8:Destination path too long
+1.9:Invalid destination drive specification
+1.10:Does
+1.11:specify a file name
+1.12:or directory name on the target
+1.13:File
+1.14:Directory
+1.15:Destination path too long
+1.16:Cannot perform a cyclic copy
+1.17:Press enter to continue...
+1.18:File not found
+
+# the help message
+2.1:Copies files and directory trees.
+2.2:XCOPY source [destination] [/switches]
+2.3:  source       Specifies the directory and/or name of file(s) to copy.
+2.4:  destination  Specifies the location and/or name of new file(s).
+2.5:  /A           Copies only files with the archive attribute set and doesn't
+2.6:               change the attribute.
+2.7:  /C           Continues copying even if errors occur.
+2.8:  /D[:M/D/Y]   Copies only files which have been changed on or after the
+2.9:               specified date. When no date is specified, only files which are
+2.10:               newer than existing destination files will be copied.
+2.11:  /E           Copies any subdirectories, even if empty.
+2.12:  /F           Display full source and destination name.
+2.13:  /H           Copies hidden and system files as well as unprotected files.
+2.14:  /I           If destination does not exist and copying more than one file,
+2.15:               assume destination is a directory.
+2.16:  /L           List files without copying them. (simulates copying)
+2.17:  /M           Copies only files with the archive attribute set and turns off
+2.18:               the archive attribute of the source files after copying them.
+2.19:  /N           Suppresses prompting to confirm you want to overwrite an
+2.20:               existing destination file and skips these files.
+2.21:  /P           Prompts for confirmation before creating each destination file.
+2.22:  /Q           Quiet mode, don't show copied filenames.
+2.23:  /R           Overwrite read-only files as well as unprotected files.
+2.24:  /S           Copies directories and subdirectories except empty ones.
+2.25:  /T           Creates directory tree without copying files. Empty directories
+2.26:               will not be copied. To copy them add switch /E.
+2.27:  /V           Verifies each new file.
+2.28:  /W           Waits for a keypress before beginning.
+2.29:  /Y           Suppresses prompting to confirm you want to overwrite an
+2.30:               existing destination file and overwrites these files.
+2.31:  /-Y          Causes prompting to confirm you want to overwrite an existing
+2.32:               destination file.
+2.33:The switch /Y or /N may be preset in the COPYCMD environment variable.
+2.34:This may be overridden with /-Y on the command line.
+2.35:press enter for more
+
+# more messages
+1.19:file(s) copied
+1.20:Unable to create directory
+1.21:File cannot be copied onto itself
+1.22:Read access denied
+1.23:Insufficient disk space in destination path
+1.24:Write access denied
+1.25:Insufficient disk space in destination path
+1.26:Copying
+
+# the following three are used in shared.inc:
+25.0:Cannot open source file
+25.1:Cannot create destination
+25.2:Write error on destination
+
+# more confirmation messages, must start upper case,
+# 3.2 to 3.5 must all start different:
+3.1:Overwrite
+3.2:Yes
+3.3:No
+3.4:Overwrite all
+3.5:Skip all
+

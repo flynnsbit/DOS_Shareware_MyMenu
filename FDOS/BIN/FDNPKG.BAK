@@ -1,0 +1,119 @@
+##############################################################################
+#                                                                            #
+# This is the configuration file of FDNPKG.                                  #
+#                                                                            #
+# It is located in %DOSDIR%\BIN\FDNPKG.CFG by default, but you are           #
+# encouraged to copy it to another location, and point the FDNPKG.CFG        #
+# environment variable to it.                                                #
+#   eg. SET FDNPKG.CFG=C:\MYDIR\FDNPKG.CFG                                   #
+#                                                                            #
+# Otherwise you will loose your custom settings (if any) when FDNPKG will be #
+# updated to a newer version.                                                #
+#                                                                            #
+##############################################################################
+
+
+
+##############################################################################
+# The maximum time FDNPKG can keep its internal package database cache.
+# The value must be provided in seconds, in a range of 0..1209600.
+# Default: 7200
+#
+maxcachetime 7200
+
+
+##############################################################################
+# Whether or not to install sources (when available) along with binaries.
+# This can be overriden via command line at any time.
+# Possible values:
+#  0 - don't install sources by default
+#  1 - install sources by default
+#
+installsources 0
+
+
+##############################################################################
+# Whether or not to install "link" files. Some packages need to be callable
+# from within the %PATH%. Such packages come with a 'link' file that is
+# supposed to be placed in a directory soemwhere in the %PATH% (see the 'dir
+# link' directive later in this configuration file for setting the exact
+# location).
+# If you already use some kind of similar mechanism and you do not wish to
+# duplicate it, then you can set tell FDNPKG to skip links installation.
+# Possible values:
+#  0 - installs links for packages that have them
+#  1 - skip link files
+#
+skiplinks 0
+
+
+##############################################################################
+# If your network environment requires to use a proxy, you can define it here,
+# as well as the port to use.
+# Note: the proxy will be used only for HTTP repositories.
+# Example: http_proxy proxy.example.com
+#          http_proxyport 8080
+#
+#http_proxy 10.2.3.4
+#http_proxyport 8080
+
+
+##############################################################################
+# Below you can edit/add custom path to store different kinds of applications
+# in different places on your disk. Use only absolute paths here! Note, that
+# you can use environment variables, if you need to.
+#
+# directory for development tools (mostly compilers)
+dir devel c:\devel
+
+# directory for drivers
+dir drivers %DOSDIR%\drivers
+
+# where games should get installed
+dir games c:\games
+
+# this folder contains sources to program that comes with their source files
+dir source %DOSDIR%\source
+
+# user programs... (only those that are not incorporated in FreeDOS of course).
+dir progs c:\
+
+# links to apps that are supposed to be executable from %PATH%
+# IMPORTANT: this directory should be included in your %PATH%
+dir links %DOSDIR%\links
+
+##############################################################################
+# Below are listed all online repositories used by FDNPKG. The syntax is:
+# REPO repository_path
+#
+# FDNPKG supports both online (http or gopher) repositories, as well as on
+# disk repos.
+# When using ondisk repositories, you have to use the full path (eg. D:\REPO)
+#
+
+# BASE repository - all MSDOS replacements
+REPO http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.1/repos/base
+
+# File archivers
+REPO http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.1/repos/archivers
+
+# Devel stuff - mostly compilers
+REPO http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.1/repos/devel
+
+# Various utils
+REPO http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.1/repos/util
+
+# Networking-related utilities
+REPO http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.1/repos/net
+
+# Emulators
+REPO http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.1/repos/emulators
+
+# Games
+REPO http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.1/repos/games
+
+# Sound
+REPO http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.1/repos/sound
+
+# Editors
+REPO http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.1/repos/edit

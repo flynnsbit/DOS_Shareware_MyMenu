@@ -1,0 +1,34 @@
+NAME
+
+   XKEYB - Extended Keyboard driver for MS-DOS
+
+SYNOPSIS
+
+   XKEYB <Configuration File> [/Xnn] [/Q] [/U]
+
+OPTIONS
+
+   <Configuration File> Country specific configuration file, such as
+                GR.KEY or US.KEY. A path can be included, and the
+                .KEY extension may be omitted.
+   /Xnn         Allocate nn bytes of memory for Extension Strings (macros).
+   /Q           Suppress the output of LIST paragraphs from the configuration
+                file.
+   /U           Remove the resident copy of XKEYB from memory (if installed).
+
+RELATED COMMANDS
+
+   XKEYBRES     Alternative version of XKEYB with smaller resident size 
+                (source only, in source package)
+   KEYMAN       Interactive macro recorder
+   LISTXDEF     Lists current definition file to STDOUT
+
+NOTES
+   
+   Please refer to the manual XKEYB.TXT for more detailed information.
+
+AUTHOR
+
+   Program:             Dietmar Hohmann, d.hoehmann@gmx.net (up to 1.5)
+   Maintainer:          Aitor Santamaría Merino (1.51 - 1.8), (aitor.sm@wanadoo.es)
+   This documentation:  Ben Berry, za2bb@hotmail.com    

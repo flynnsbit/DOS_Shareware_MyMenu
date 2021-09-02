@@ -1,0 +1,245 @@
+
+Fire and Ice Help
+-----------------
+                             Important
+                             ---------	
+
+This document should be read if you have any problems with Fire and Ice.
+
+This game cannot run under Windows(tm) due to that way in which Windows(tm)
+alters certain hardware timings. These make scrolling the screen smoothly
+impossible, so you must exit Windows and play the game from your normal
+DOS prompt. The same may be true of some other multi-tasking environments,
+but this has not been tested. If in doubt, run from real DOS, not DOS in
+a window.
+
+Assuming you have installed your files in a simple games directory,
+type the following:-
+
+CD C:\GAMES\FIRE&ICE <ENTER>
+FIRE <ENTER>
+
+Command line options can also be appended, more information follows.
+
+Hardware Options
+----------------
+
+After starting the game you will be presented with a series of option
+menus. In all cases press the number key corresponding to the option
+you require. If an option is not currently available to you it will be
+blacked out and you will be unable to select it.
+
+Control Method
+
+The options available are Keyboard or Analogue Joystick. It is not
+possible to control Cool Coyote using a Mouse.
+
+As it is not always possible to tell if a joystick is attached to
+your PC the Joystick Option is always available even if you may not
+have a Joystick. Do not select this option unless a Joystick is
+attached to your PC and in Joystick Port 1 (if you have more than
+one Joystick port). If you do select Joystick by mistake or subsequently
+change your mind you will be able to reselect Keyboard later in the game.
+The same applies to changing from Keyboard back to Joystick.
+
+The default key options are:-
+
+Q=Jump Up  A=Crouch/Fall faster  O=Left/Veer  P=Right/Veer  <Space Bar>=Fire
+
+A combination of Up and Left/Right will give diagonal jumps.
+
+See the manual for a fuller explanation of the control method.
+
+
+Video Selection
+---------------
+Options available here are VGA (16 Colour Mode) and EGA. If you do not
+have a VGA Card the VGA option will be unavailable to you.
+
+
+Sound Selection
+---------------
+The game supports the Roland(tm) LAPC-1, SoundBlaster(tm), Adlib (tm)
+and the Internal Speaker (Beeper). Any other sound card which claims to
+be either SoundBlaster(tm) or Adlib(tm) compatible should also be fully
+supported. A further option of No Sound at all is also available.
+
+If you have a SoundBlaster(tm) card it will be the second available
+option. If you do not have a SoundBlaster(tm) card the second option
+will be Adlib(tm)
+
+When using the SoundBlaster(tm) option the game will attempt to search
+for the correct PORT address, DMA Channel and IRQ for your card. 
+Occasionally it is possible for hardware conflicts to cause the machine
+to lock up during the search process. If you have had any problems in the
+past you will have taken note of your PORT, DMA and IRQ and will be able
+to supply them to the game. See Command Line Options.
+
+Speed Selection
+
+The game has been designed with both fast and slower PCs in mind and has
+two sets of game data. Players with modest 8086-80286 PCs should select
+one of the options 1,2 or 3 and players with faster 80836 and above PCs
+should select one of the options 4,5 or 6. You will be prompted with the
+most appropriate speed for your machine.
+
+If you have a fairly slow machine some of the higher speed settings may be
+unavailable, although you should always be able to select at least one
+setting above the optimum for your machine, to allow for inaccuracies in
+the power reading test. Normal options are 2 and 5, but if you want a
+bit of a speed advantage or are an experienced player you could select
+one of the other options.
+
+Command Line Options
+====================
+
+These are entered after the word 'FIRE' (or FIRE.EXE) and remove the need
+for selecting options via the option boxes, as described above. If any 
+form of valid command line option is selected then none of the above 
+option boxes will be displayed. Any selections you make will be used and
+any others will have defaults, of which more follows.
+
+Only the first two letters of each option are significant and can be in
+upper or lower case.
+
+/VGA     Select VGA graphics.
+
+/EGA     Select EGA graphics.
+
+/JOY     Select Joystick, you will be prompted to calibrate it later.
+
+/KEY     Select Keyboard, initially set to default keys.
+
+/ROLAND  Select Roland(tm) Board.
+
+/ADLIB   Select Adlib(tm) Board.
+
+/BLASTER Select SoundBlaster(tm).
+
+/BEEPER  Select Beeper.
+
+/NOSOUND Do not select any sound at all.
+
+/SPEED=  Select a game speed. Values are 1,2,3,4,5 and 6. If you select a
+         high speed on a slow PC you will not get a faster game, but a slower
+         one, as options 4,5 and 6 use a different set of data for faster PCs.
+
+	 The default is 5, so if you have a slow PC you MUST select a different
+         speed if you use any of these command line options.
+
+/PORT=   Select a port address for your SoundBlaster Card if selected and
+         present. Acceptable values are 210,220,230,240,250,260 and 270.
+         The Default is normally 220.
+         The SoundBlaster Pro(2) can usually only accept values of 220 or 240.
+
+/DMA=    The DMA Channel for your SoundBlaster. Acceptable values are 0,1 or 3.
+         Do NOT select 2, this is used by your Hard Disc.
+         The Default is normally 1.
+         Normal SoundBlasters (NOT Pro) can usually only accept a value of 1.
+
+/IRQ=    The IRQ for your SoundBlaster. Acceptable values for a Normal Blaster
+         are 2,3,5 or 7. The Default is usually 7.
+         Acceptable values for a SoundBlaster Pro(2) are 2,5,7 or 10. Again,
+         the Default is usually 7.
+  
+
+If this is the first game you have tried with a SoundBlaster and you are having
+a hardware conflict and you don't know what your settings are, then you must
+experiment with the valid values for your card until you find a combination
+of DMA, PORT and IRQ that works. See your SoundCard manual for more information.
+
+If you DO select any of PORT, DMA or IRQ you MUST supply a port address for
+the program to take notice of your DMA and IRQ selections. However you do
+not have to supply DMA and IRQ settings if you only want to select the PORT.
+They will defaut to 1 and 7 respectively.
+
+ie. PORT+DMA+IRQ=allowed, DMA+IRQ (no PORT)=ignored, PORT=allowed.
+
+Although you are allowed to select VGA, ROLAND, ADLIB, SOUNDBLASTER and 
+JOYSTICK even though you may not have them, doing so will probably cause
+your machine to lock up if the hardware really is not present, especially
+in the case of the sound cards. The command line options are for speed and
+convenience and are intended to be used in a batch file therefore to avoid
+problems problems, do not select options that would normally be unavailable
+from the option boxes.
+
+
+Default Values for any selections not made are as follows:
+
+Control method will be keyboard.
+Video option will attempt to select VGA if available.
+Sound option will attempt to select Roland, SoundBlaster, Adlib in order if
+present. If none are available it will default to Beeper.
+Speed option will always default to 5. If you have a slower PC and are using
+command line options you MUST select either 1,2 or 3. 2 is normal speed for
+8086-80286 PCs.
+
+Some Examples:
+
+Fire /Blast /PORT=220 /DMA=1 /Joy /ega /Speed=2
+FIRE /Rol /VGA /Key
+Fire /Adlib /Joy /VGA /SPEED=6
+fire /key
+
+
+The Game Panel
+--------------
+
+  ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄ¿
+  ³  SCORE   ³ @ @ ³ \|/ ³    PICTURE     ³  WEAPONS  ³ /\__ ³
+  ³       0  ³  @  ³ /|\ ³                ³OOO *******³ \/ # ³
+  ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÙ
+       1        2     3          4              5        6 
+
+1. Current Score
+2. The number of lives remaining, including your current one. A large heart
+is equivalent to 5 lives.
+3. Day and Night guage. See Manual for more information.
+4. Picture of Cool Coyote.
+5. Weaponry and Snow Bombs available.
+6. Key pieces currently held.
+
+
+Changing play options
+---------------------
+
+Pressing F1 at most times will bring up a selection menu.
+This will allow you to select: sound and music on/off, recalibrate your
+joystick, redefine the keys, play some of the game tunes on the
+jukebox, select the size (or complete absence) of the small maps,
+and whether to train on one of the first four worlds (out of seven)
+or play the game from the beginning. Control of the menu is by the
+cursor keys. Selections are made by pressing <Space> or <Enter>.
+
+Selecting <--<< from a sub menu will take you back to the main menu.
+Selecting EXIT from the main menu will take you back to the game.
+Pressing <ESC> at any time will take you back to the game.
+
+
+Also, you may also save and restore your settings to/from disc.
+This includes your music/sound selection, joystick calibration data,
+small maps selection, keyboard definitions and the current high scores.
+
+If you do not save any of your settings, the high scores are saved out
+to disc automatically on quitting the game, but nothing else is.
+ 
+The last two tunes on the jukebox are not available until you have
+completed the game, when this information will be saved out, so they will
+continue to be available on the jukebox from then on. It is possible to
+complete the game without visiting every land or secret location, so
+you'll want to go back and find the ones you missed, won't you?
+
+
+Music and Sound Effects On/Off
+------------------------------
+Pressing F2 at most times will toggle the music on/off and pressing
+F3 will likewise toggle sound effects on/off.
+
+Pause and Quit to DOS
+---------------------
+
+Pressing <ESC> once will pause the game, pressing it a second time
+will abort a game to the titles page. Pressing any other key (or fire
+on the joystick, if selected) will continue the game.
+
+------------------------end of file-------------------------------

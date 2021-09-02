@@ -1,0 +1,125 @@
+                              ORDER FORM
+
+
+
+Check which items you wish to purchase:
+
+    [] Noncommercial license for the use of ARC.
+
+    [] Commercial license for the use of ARC on ___ computers (see
+       attached price schedule and terms).
+
+    [] Program disk and documentation (only on orders of $50 or more,
+       not counting maintenance contracts).
+
+    [] ____ additional program disks at $10 per disk.
+
+    [] ____ additional manuals at $20 per manual
+
+    [] ____ additional program sets (disk, manual, and binder) at $40
+       per program set.
+
+    [] One year maintenance agreement at $50 per year.
+
+    [] Payment of $_____ is enclosed (check or money order).
+
+    [] Please charge $_____ to my [] Visa or [] MasterCard:
+
+       Card number: _______________________________
+
+       Expiration date: ___________________________
+
+       Signature: _________________________________
+
+    _______________________________________________
+    Name
+
+    _______________________________________________
+
+
+    _______________________________________________
+    Address
+
+    ______________________   ________  ____________
+    City                     State     Zip
+
+
+Send this completed form to:
+
+                  System Enhancement Associates, Inc.
+                     21 New Street, Wayne NJ 07470
+
+For program disk orders outside the U.S., please add an additional $5,
+and enclose an international money order payable in U.S. currency.
+
+For commercial site license orders, please enclose a signed copy of
+the site license agreement.
+
+
+
+
+
+
+                       SITE LICENSE APPLICATION
+
+
+The use of ARC at multiple sites in a commercial environment or
+government organization is granted under the following terms:
+
+1.    Payment of the license fee must be made to System Enhancement
+      Associates, Inc..  The fee is based on the number of computers
+      which will be used to run ARC, as follows:
+
+            1          machine      $50
+            2  to   9  machines     $35 per machine
+           10  to  24  machines     $25 per machine
+           25  to  49  machines     $20 per machine
+           over    50  machines     $15 per machine
+
+           over 99 machines at one location   $1500.00 fee
+
+2.    You may make copies of the program and documentation, in their
+      original, unmodified form, without restriction.  You may
+      distribute these copies to all licensed machines within your
+      organization.
+
+3.    You may make copies of the program documentation, in both its
+      printed form and machine readable form, as needed for licensed
+      machines.
+
+4.    You may use all future versions of ARC under this license.
+
+              ___5.    You may NOT modify the program or charge a fee for copying or
+      distributing the program or its documentation.
+
+6.    It is your responsibility to make the necessary copies and to
+      deliver them to the computers which they will be used on.
+      Additional ARC program disks and manuals can be obtained
+      directly from System Enhancement Associates.
+
+                                 ________7.    We are not responsible for ANYTHING that may happen or not
+      happen if you use ARC.  You're on your own.
+
+      WARRANTY OF TITLE.8.    WARRANTY OF TITLE. SEA owns all right, title and interest in the
+      copyright to the Licensed Program and has the right and authority
+      to grant the rights given in this License.
+
+      LIMITED LIABILITY.9.    LIMITED LIABILITY.  SEA's total, cumulative liability in the
+      event of the breach of any warranty under this Agreement,
+      including the warranty of title, shall not in any event exceed
+      the total license fees paid to SEA hereunder.  In no event shall
+      SEA be liable for any incidental or consequential damages.
+
+I agree to abide by the terms and conditions of this license.
+
+________________________                __________________________
+Signature                               Name (Please print or type)
+
+_______________                         __________________________
+Date                                    Title
+
+                                        __________________________
+                                        Company
+
+
+

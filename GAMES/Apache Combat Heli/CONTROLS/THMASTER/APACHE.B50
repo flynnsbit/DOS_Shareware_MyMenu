@@ -1,0 +1,122 @@
+REM ษอออออออออออออออออออออออออออออออออออออออป
+REM บ                                       บ
+REM บ APACHE LONGBOW by Digital Integration บ
+REM บ                                       บ
+REM ศอออออออออออออออออออออออออออออออออออออออผ
+REM
+REM ษอออออออออออออออออออออออออออออออออออออออป
+REM บ                                       บ
+REM บ WCS Mark II base switch settings:-    บ
+REM บ                                       บ
+REM บ Black hat switch = DIGITAL            บ
+REM บ Red switch       = ANALOG             บ
+REM บ                                       บ
+REM ศอออออออออออออออออออออออออออออออออออออออผ
+REM
+    MDEF APACHE
+REM
+    RATE 100
+REM
+    USE WCS
+REM
+REM ษอออออออออออออออป
+REM บ FLCS SETTINGS บ
+REM ศอออออออออออออออผ
+REM
+REM FIRST TRIGGER CLICK
+REM
+REM BTN TG1
+REM
+REM SECOND TRIGGER CLICK
+REM
+    BTN TG2 FireWeapon
+REM
+REM S1 (INDEX FINGER)
+REM
+    BTN S1 LockUnlockTarget
+REM
+REM S2 (THUMB)
+REM
+    BTN S2 /U UnarmWeapon
+           /M ArmAndSelectWeapon
+           /D ArmAndSelectWeapon
+REM
+REM S3 (PINKY)
+REM
+    BTN S3 /H RotateExternalView
+REM
+REM S4 (PADDLE SWITCH)
+REM
+    BTN S4 ReleaseChaffAndFlare
+REM
+REM H1 (LARGE HAT AT TOP OF FLCS)
+REM
+    BTN H1U GunnerFrontView
+    BTN H1D PilotFrontView
+    BTN H1L LookLeft
+    BTN H1R LookRight
+    BTN H1M
+REM
+REM H2 (SMALL HAT BELOW BUTTON S2)
+REM
+    BTN H2U /U PauseResume
+            /M ApacheExternalView
+            /D ApacheExternalView
+    BTN H2D /U JoystickRecalibrate
+            /M TargetLockView
+            /D TargetLockView
+    BTN H2L WeaponView
+    BTN H2R WeaponTargetView
+    BTN H2M
+REM
+REM H3 (SECOND LARGER HAT BELOW H1)
+REM
+    BTN H3U /U SelectTimeCompression
+            /M NextWaypoint
+            /D NextWaypoint
+    BTN H3D /U CancelTimeCompression
+            /M PrevWaypoint
+            /D PrevWaypoint
+    BTN H3L /U ECMOnOff
+            /M TailRotorLeft
+            /D TailRotorLeft
+    BTN H3R /U AutoChaffFlareOnOff
+            /M TailRotorRight
+            /D TailRotorRight
+    BTN H3M
+REM
+REM H4 (HAT ON LEFT SIDE OF FLCS)
+REM
+    BTN H4U /U IHADSSContrastAdjust
+            /M RemoteView
+            /D RemoteView
+    BTN H4D SpectatorView
+    BTN H4L PNVSOnOff
+    BTN H4R TransmitReconData
+    BTN H4M
+REM
+REM ษออออออออออออออป
+REM บ WCS SETTINGS บ
+REM ศออออออออออออออผ
+REM
+    BTN T1 /U TADSRadarSelect
+           /M ReleaseChaffAndFlare
+           /D TacticalDisplayRange
+    BTN T2 /U HelmetView
+           /M HydraPodsDown
+           /D NextLeftMFD
+    BTN T3 /U TADSView
+           /M HydraPodsUp
+           /D NextRightMFD
+    BTN T4 /U RaiseMagnification
+           /M NextTarget
+           /D RadarMode
+    BTN T5 /U LowerMagnification
+           /M PrevTarget
+           /D RadarRange
+    BTN T6 /U Brakes
+           /M LockUnlockTarget
+           /D HoldResumeRadarUpdate
+    BTN T7 REM *** MODAL ***
+    BTN T8 REM *** MODAL ***
+

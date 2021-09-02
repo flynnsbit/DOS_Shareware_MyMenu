@@ -1,0 +1,137 @@
+MSG 1.0
+
+# number of actual messages
+MSGS 100
+
+# internal game messages
+0    0:  "Joystick Off"			
+1    0:  "Joystick On"
+2    0:  "Mouse Off"
+3    0:  "Mouse On"
+4    0:  "Weapon Super Charge"
+5    0:  "Shield Super Charge"
+6    0:  "You Need The Red Key"
+7    0:  "You Need The Yellow Key"
+8    0:  "You Need The Blue Key"
+9    0:  "Goggles Off"
+10   0:  "Goggles On"
+11   0:  "No Battery Power"
+12   0:  "Headlight Off"
+13   0:  "Headlight On"
+14   0:  "Head Wave On"
+15   0:  "Head Wave Off"
+16   0:  "Not Found"
+17   0:  "Show All Floors"
+18   0:  "Show Current Floor"
+19   0:  "Gas Mask Off"
+20   0:  "Gas Mask On"
+21   0:  "Ice Cleats Off"
+22   0:  "Ice Cleats On"
+
+	# weapon pickup messages
+
+100  8:  "Blaster Rifle"
+101  8:  "15 Energy Units"
+102  8:  "3 Thermal Detonators"
+103  8:  "Auto Gun"
+104  8:  "30 Power Cells"
+105  8:  "Mortar Gun"
+106  8:  "3 Mortar Shells"
+107  8:  "Fusion Cutter"
+108  8:  "100 Power Cells"
+109  8:  "1 Claymore Mine"
+100  8:  "Concussion Rifle"
+111  8:  "100 Power Units"
+112  8:  "Assault Cannon"
+113  8:  "30 Plasma Cartridges"
+114  8:  "20 Shield Units"
+	
+	# Ammo pickup messages
+	
+200  8:  "15 Energy Units"
+201  8:  "10 Power Cells"
+202  8:  "10 Plasma Cartridges"
+203  8:  "1 Thermal Detonator"
+204  8:  "5 Thermal Detonators"
+205  8:  "1 Mortar Shell"
+206  8:  "5 Mortar Shells"
+207  8:  "1 Claymore Mine"
+208  8:  "5 Claymore Mines"
+209  8:  "1 Missile"
+200  8:  "5 Missiles"
+211  8:  "1 Battery Cell"
+
+	# Power-Up Pickup Messages */
+
+300  1:  "Red Key"
+301  1:  "Yellow Key"
+302  1:  "Blue Key"
+303  1:  "Infared Goggles"
+304  1:  "Ice Cleats"
+305  1:  "Gas Mask"
+306  1:  "Invincible!"
+307  1:  "Weapon Supercharge!"
+308  1:  "Revive!"
+310  1:  "Extra Life!"
+311  1:  "Medkit"
+312  1:  "Your Gear"
+	
+	
+	# "Mission Completion item Message */"
+400  1:  "Death Star Plans"
+401  1:  "Phrik Metal"
+402  1:  "Nava Card"
+405  1:  "Dark Trooper Weapon"
+406  1:  "Data Tape"
+
+
+#------ Mission Completion Trigger Messages -----
+#         Please put a comment for each trigger message to
+#       indicate where it is used. -- WW
+#         Don't forget to add one to the "MSG xx" line at
+#       the top when you add a new message. - WW
+
+# Gromas and Robotics reactor core
+450  1:  "Seqencer Charge Planted."			
+451  1:  "Tracking Device Placed."
+
+# Secret Base
+460  1:  "Ship will arrive in 10 seconds."	
+461  1:  "Mission complete."
+462  1:  "Press <ESC> key to end mission."
+
+501  1:  "Code Key 1"			
+502  1:  "Code Key 2"
+503  1:  "Code Key 3"
+504  1:  "Code Key 4"
+505  1:  "Code Key 5"
+506  1:  "Code Key 6"
+507  1:  "Code Key 7"
+508  1:  "Code Key 8"
+509  1:  "Code Key 9"
+
+
+	# map messages
+
+600  1:  "Floor S9"
+601  1:  "Floor S8"
+602  1:  "Floor S7"
+603  1:  "Floor S6"
+604  1:  "Floor S5"
+605  1:  "Floor S4"
+606  1:  "Floor S3"
+607  1:  "Floor S2"
+608  1:  "Floor S1"
+609  1:  "Floor 0"
+610  1:  "Floor 1"
+611  1:  "Floor 2"
+612  1:  "Floor 3"
+613  1:  "Floor 4"
+614  1:  "Floor 5"
+615  1:  "Floor 6"
+616  1:  "Floor 7"
+617  1:  "Floor 8"
+618  1:  "Floor 9"
+
+END
+

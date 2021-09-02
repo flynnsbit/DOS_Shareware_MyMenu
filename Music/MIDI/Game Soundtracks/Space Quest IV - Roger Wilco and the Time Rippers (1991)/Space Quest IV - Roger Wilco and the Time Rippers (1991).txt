@@ -1,0 +1,10 @@
+Game: Space Quest IV: Roger Wilco and the Time Rippers
+Year: 1991
+Composed by: Ken Allen, Robert Atesalp, Mark Seibert
+MIDI versions: GM, MT-32
+Platform: DOS
+
+Additional info: Single file in the folder root is a complete soundtrack for General MIDI devices. In the MT-32 folder is MT-32 soundtrack.
+
+
+https://www.karlsitretro.com/game_midi

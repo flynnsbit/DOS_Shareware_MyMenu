@@ -1,0 +1,74 @@
+0.31    first public version (04-06-96)
+        - did (by accident) only run if started under Windows'95 !
+0.32    hectic update (04-08-96)
+        - fixed MPU401 and SoundBlaster-MIDI output
+        - kicked pmode
+0.33    updated version (04-22-96)
+        + added some functions like "Panic!" and "switch all devices"
+          (by request of Holger Vocke)
+        + added auto-load-SBK function (-a)
+        - fixed display-timing-problems when running on fast machines
+          (thanx to Andre Deyk and his Pentium 166MHz)
+        - changed keys for some commands
+        - fixed MUS-loader
+        - some more little fixes and speedups...
+0.34    sbk update I (04-25-96)
+        - fixed SBK-loader; it now REALLY loads into bank 1 (or any other)
+          (thanx for pointing out that one go out to Jordan van Bergen)
+        - fixed looping; sbk/s will only be loaded in first walkthrough
+0.35    midi update (04-27-96)
+        - fixed MIDI-loader; format-level 0 and some meta-events in all types
+0.40    mps birthday (05-11-96)
+        + added the brand new "Music Playback Settings"-loader
+          (no interactive setup yet... use ur text-editor)
+        + added effects function for the EMU8000 (-f)
+        - fixed MIDI-reset; ResetAllControllers on all channels
+          (thanx for pointing out that one go out to Magnus Stenman)
+        - fixed SBK-loader; it now frees the RAM-banks properly
+0.41    sbk update II (05-12-96)
+        - finally fixed this fxxxing SBK-loader; now RAM-drums on channel 10
+          are played (got ADIP 2.52 which fixed that bug ! NOT MY FAULT ;) )
+0.50    hot release (about 33øC in my room now)(06-10-96)
+        + added controller/program overview and changed the help-gfx a bit
+        - won't say "finally" anymore ;), but fixed SBK-loader again; now
+          SBKs can be loaded into ANY user bank number (in 0.41 only
+          bank 0 and 1 worked) ... kind of 101% fix ;)
+        - the AWE needs change bank before change program - some MIDs
+          like e.g. LASTRAV*.MID have it the other way around.
+          WORKAROUND: MiDPLAY repeats the program change after the bank change
+        - fixed some graphix - nothing serious
+0.51    config birthday (07-17-96)
+        + added configuration profile (MP.INI)
+        + added basic preset settings (Themes,etc..)
+        - fixed MPU code; it now works on weak emulations like the PAS16
+          (thanx for joining the bug-bounty and finding that one go to
+          Christian Klar)
+        - the ADIP has a small bug which causes it to refuse working with an
+          EMU on addresses other than 620h - fixed it by doing some additional
+          inits (thanx for having the AWE on 640h go out to Lukas Grunwald)
+0.60    long awaited release (09-27-96) (did not have too much time left)
+        + added VESA 1.x (bank-switching) and 2.0 (linear-buffer) graphix support
+        + added SoundFont 2 support (got ADIP 3.01; the documentation is ok,
+          but WHO IS RESPONSIBLE FOR SUCH A CRAPPY SF2-SUPPORT ?!)
+        + added some config settings (see MP.INI)
+        + added german documentation (english will allways be more up to date)
+        + added a shell-box ('s'); now possible because I found out how to get
+          the ADIP running in a timer INT ... TOOK A LOT OF TIME ! fxck CL !!
+        + added a reset to startup ('r')
+	- fixed timer handling; it now resets DOS-clock to hardware-clock when
+	  finished playing
+0.61    bugfix release (10.12.96) (again, no time left)
+        + added autoload GM for SF2 (see MP.INI)
+        - fixed stack-handling; it shouldn't lock anymore when leaving
+          (it never did on my machines !)
+0.62    xmas release (12.19.96) (need a time-tunnel)
+        + added transparent panels
+        + added karaoke-display (by request of Dewey King)
+        + added little animations
+        + split MiDPLAY into mp.exe and mp.pak; yes its that new wad-format ;)
+        + little speedup for the graphix - did some additional optimizations
+        - fixed VESA-modes (800x600 on many cards)
+        - fixed behaviour of prev- and next-song (cursor up and down)
+        - fixed Timer-INT; the floppy now gets back to its old speed ;)
+          (thanx for pointing out that one go to Blade)
+        - fixed some of the old bugs left from the early days of MiDPLAY

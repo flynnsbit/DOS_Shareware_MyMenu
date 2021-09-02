@@ -1,0 +1,9 @@
+Game: Space Quest III: The Pirates of Pestulon
+Year: 1989
+Composed by: Bob Siebenberg
+MIDI versions: GS, MT-32, GM
+Platform: DOS
+
+Additional info: Single file in the folder root is a complete soundtrack for Roland GS. In the MT-32 folder is MT-32 soundtrack. I've also included some single tracks for General MIDI. But GS plays fine practically everywhere.
+
+https://www.karlsitretro.com/game_midi

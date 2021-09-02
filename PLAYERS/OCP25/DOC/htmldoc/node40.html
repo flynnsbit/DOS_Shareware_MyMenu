@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Gravis Ultrasound</TITLE>
+<META NAME="description" CONTENT="Gravis Ultrasound">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="next" HREF="node41.html">
+<LINK REL="previous" HREF="node39.html">
+<LINK REL="up" HREF="node36.html">
+<LINK REL="next" HREF="node41.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html552"
+ HREF="node41.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html550"
+ HREF="node36.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html544"
+ HREF="node39.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html553"
+ HREF="node41.html">Diskwriter</A>
+<B> Up:</B> <A NAME="tex2html551"
+ HREF="node36.html">device configuration</A>
+<B> Previous:</B> <A NAME="tex2html545"
+ HREF="node39.html">Windows Sound System</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00664000000000000000">
+Gravis Ultrasound</A>
+</H2>
+The Gravis Ultrasound series divides into two subseries. The old standard
+includes the Gravis Ultrasound (with daughterboard), Gravis Ultrasound Max
+and Gravix Ultrasound ACE which use the old GF1 chip for hardware mixing. The
+new Gravix Ultrasound PnP use the AMD Interwave chip for hardware playback.
+<PRE>
+[devwGUS]
+  link=devwgus
+  gusFastUpload=on
+  gusGUSTimer=on
+</PRE><DL COMPACT><DT>gusFastUpload
+<DD>use a non-standard feature to upload the sample data to
+the fast ram. If you experience problems with corrupted playback, or if your
+system locks when loading a file disable this option.
+<DT>gusGUSTimer
+<DD>use the internal GUS timer for looping and synchronization.
+This enables more precise playback, but may cause problems.</DL>
+<P>
+If you own two GUS cards of the old series you can use a special feature of
+<FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP using both sound cards to enable quadruple or 3D playback.<A NAME="tex2html49"
+ HREF="#foot839"><SUP>6.16</SUP></A>
+<PRE>
+[devwDGUS]
+  link=devwdgus
+;  port2=250
+; subtype=
+</PRE><DL COMPACT><DT>port2
+<DD>the base port of the secondary GUS, if it was not autodetected.
+<DT>subtype
+<DD>you can specify how <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP will use the second GUS:
+  <DL COMPACT>
+<DT>0
+<DD>the second GUS will play the rear stereo channels. This is true
+quadrophony. Of course you have to have a second stereo and a second pair
+  of boxes.
+  <DT>1
+<DD>this will enable 3D playback. The additional boxes have to placed
+  exactly behind the audioence, on on the floor and the other at the ceiling.
+  </DL></DL><FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP will still use the panning information provided by the music files and
+place the channels randomly in the remaining dimensions. If you have access
+to a second GUS be sure to check this feature one day, as the sound experience
+is really amazing.
+
+<P>
+For users of the new GUS PnP with the Interwave chip the following section
+is relevant.<A NAME="tex2html50"
+ HREF="#foot846"><SUP>6.17</SUP></A>
+<PRE>
+[devwIW]
+  link=devwiw
+  iwIWTimer=off     
+  iwEffects=on       
+  iwForceEffects=off
+</PRE><DL COMPACT><DT>iwIWTimer
+<DD>use the internal sound card timer for synchronization. When
+using <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP under DOS there is no need to use this feature. However if you want
+to use the player under Window95 you should enable this to prevent timer
+inconsenties from windows.
+<DT>iwEffects
+<DD>enable the onboard effects (reverb). This feature uses 64KB of
+the soundcard memory and 4 channels. So the maximum amount of channels is
+reduced to 28. If the music uses more channels <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP will turn off the effect
+to use the last channels or memory.
+<DT>iwForceEffects
+<DD>if you enable this option the effects will always be
+present, thus overriding the above option.</DL>
+<P>
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot839">... playback.</A><A NAME="foot839"
+ HREF="node40.html#tex2html49"><SUP>6.16</SUP></A>
+<DD>This
+is a real 3D playback and has nothing in common with those fakes like QSound etc.
+
+<DT><A NAME="foot846">... relevant.</A><A NAME="foot846"
+ HREF="node40.html#tex2html50"><SUP>6.17</SUP></A>
+<DD>The driver should work with other sound cards using
+the interwave chip aswell. However we have not encountered such card by now.
+
+</DL><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html552"
+ HREF="node41.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html550"
+ HREF="node36.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html544"
+ HREF="node39.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html553"
+ HREF="node41.html">Diskwriter</A>
+<B> Up:</B> <A NAME="tex2html551"
+ HREF="node36.html">device configuration</A>
+<B> Previous:</B> <A NAME="tex2html545"
+ HREF="node39.html">Windows Sound System</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

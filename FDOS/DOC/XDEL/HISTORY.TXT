@@ -1,0 +1,70 @@
+
+Manual for Free-XDEL
+
+Elaborated by Alain Mouette 26/May/2002 (alainm at bonseletrons.com.br)
+
+------------------
+New in version 2.06 (14 nov 2005)
+- small bug in kitten would crash if language file is not found
+- compilation on OpenWatcom 1.3
+
+------------------
+New in version 2.05 (03 sep 2005)
+- added kittenization (by Blair Campbell)
+
+------------------
+New in Version 2.04 (24 Jun 2005)
+- Eliminated extra blank line when nothing was printed.
+
+------------------
+New in Version 2.02 (15 Nov 2002)
+- Code cleaded and optimized with help from Arkady V.Belousov <ark@mos.ru>
+- Better MAKEALL.BAT, with a few bugfixes
+
+------------------
+XDEL was introduced by DR-DOS and a long time later M$ introduced deltree.
+ This implementation of XDEL is intended to be 100% compatible with
+ DR-DOS version. If you find anything different, consider it a bug
+ and send me a notofication, please.
+
+XDEL can be used in place of deltree, but in fact it has more options, including:
+- default is not to delete Read/Only files,
+- option to include _or_not_ subdirectories
+- option to wipe all files before deleting.
+- options to ask or not for confirmation, individualy or globaly
+
+example:
+    XDEL  /RY  *.*
+will remove all files, including R/O and it will NOT ask for confirmation :)
+
+It has one major difference:
+    XDEL /SRDN DIR\*.*
+will delete all files and subdirectories just as
+    DELTREE /Y DIR\*.*
+but the directory DIR\  will NOT be removed (This is the DR-DOS standard)
+
+------------------
+Usage
+XDEL [/options] [@][d:][path]filename[.ext]... [/options]
+
+  @             the following filename is the name of a file list
+  d:            drive which xdel is to search
+  path          directory where search is to begin
+  filename.ext  file to be deleted (wildcards allowed)
+  /D            remove empty subdirectories
+  /N or /Y      delete specified files with no warning (CAREFUL!)
+  /O            overwrite before deleting - file contents PERMANENTLY LOST
+  /P            prompt before deleting each file
+  /R            delete read-only files
+  /S            delete files in subdirectories
+  /H or /?      this help message
+
+Multiple files may be specified on the command line.
+
+------------------
+On Exit it sets Error Level:
+    1 = syntax error
+    2 = could not delete (for any reason, including operator cancel)
+    3 = out of memory
+
+

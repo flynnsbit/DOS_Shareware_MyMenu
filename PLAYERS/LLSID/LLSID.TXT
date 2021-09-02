@@ -1,0 +1,28 @@
++----------------------------------------------------------------------------+
+ LLSID -          the SID-Player for your OPL3                    - by Da!NyL
++----------------------------------------------------------------------------+
+
+LLSID is a simple little SID player, which uses the OPL3-chipset of the ISA-
+Soundblaster cards and clones.
+
+Note that development on LLSID has officially stopped and LLSID2 is scrapped.
+LLSID doesn't behave under NT-Systems: your sids might play too slow.
+
+Usage:
+  LLSID has a simple file-selector. Use Up/Down & Enter to Play.
+  You can of course still use the commandline-system.
+
+ The keys:
+  Use the keys '+' and '-' to change the sub-tunes.
+  Use the keys '/' and '*' to change the playspeed. (from 1x to 10x)
+  and finally use Escape to quit the player ;)
+
+Greetings fly out to Malfunction, subz3ro, encore,
+                 to all who used LLSID,
+                 and to all OPL3/SID/YM2149/(insert fave chip:) fans
+
+The Source of the SID>OPL3 "Mapper" is included as "SID_OPL.ZIP"
+
+LLSID12F: bugfix: cpucore
+
+<Da!NyL> signing off... 15.02.2007

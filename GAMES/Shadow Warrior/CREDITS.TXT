@@ -1,0 +1,126 @@
+[TEAM SHADOW WARRIOR -- CREDITS]
+
+Game Design:      3D Realms, Frank Maddin, Jim Norwood
+
+Project Leader:   George Broussard
+
+Game Programming: Frank Maddin, Jim Norwood
+
+"Build" 3D Engine
+& Tools:          Ken Silverman
+
+Map Designers:    Primary:   Stephen Cole, Keith Schuler
+                  Secondary: George Broussard, Jim Norwood, Randy
+                             Pitchford, Eric Reuter
+
+Artists:          Stephen Hornback, Brian Martel, Jim Norwood, Michael Wallin
+
+Music & Sound
+Effects:          Lee Jackson
+
+Voice Talent:     John Galt as "Lo Wang"
+                  Lani Minella and Rose Schuler as "Anime Girls"
+
+Print Manual:     George Broussard, Joe Siegler
+
+Install,
+Technical Help:   Joe Siegler
+
+Special Thanks:   Chuck Jones & Doug Wood for supplemental art.
+
+[Shadow Warrior Level Design Credits]
+
+1. Seppuku Station
+   Finished/Modified by Stephen Cole
+   Started by Randy Pitchford
+
+2. Zilla Construction 
+   By Stephen Cole
+
+3. Master Leep's Temple
+   By Keith Schuler
+
+4. Dark Woods of the Serpent
+   Finished/Modified by Keith Schuler
+   Started by Randy Pitchford
+
+5. Rising Son
+   By Keith Schuler
+
+6. Killing Fields
+   By Stephen Cole
+
+7. Hara-Kiri Harbor
+   By Stephen Cole
+
+8. Zilla's Villa
+   By Stephen Cole
+
+9. Monastery
+   By Stephen Cole
+
+10. Raider of the Lost Wang
+    By Stephen Cole
+
+11. Sumo Sky Palace
+    Finished/Modified by George Broussard
+    Started by Randy Pitchford
+
+12. Bath House
+    By Keith Schuler
+
+13. Unfriendly Skies
+    Finished/Modified by Keith Schuler
+    Started by Jim Norwood
+
+14. Crude Oil
+    Finished/Modified by Stephen Cole
+    Started by Eric Reuter
+
+15. Coolie Mines
+    Finished/Modified by Keith Schuler
+    Started by Eric Reuter
+
+16. Subpen 7
+    Finished/Modified by Stephen Cole
+    Started by Eric Reuter
+
+17. The Great Escape
+    Finished/Modified by Keith Schuler
+    Started by Eric Reuter
+
+18. Floating Fortress
+    Finished/Modified by Keith Schuler
+    Started by Jim Norwood
+
+19. Water Torture
+    By Keith Schuler
+
+20. Stone Rain
+    Finished/Modified by Keith Schuler
+    Started by Jim Norwood
+
+21. Shanghai Shipwreck
+    Finished/Modified by George Broussard
+    Started by Randy Pitchford
+
+22. Auto Maul
+    By Keith Schuler
+
+23. Heavy Metal [DM]
+    By Stephen Cole
+
+24. Ripper Valley [DM]
+    By Keith Schuler
+
+25. House of Wang [DM]
+    By Keith Schuler
+
+26. Lo Wang Rally [DM]
+    By Stephen Cole
+
+27. Ruins of the Ronin [CTF]
+    By Stephen Cole
+
+28. Killing Fields [CTF]
+    By Stephen Cole

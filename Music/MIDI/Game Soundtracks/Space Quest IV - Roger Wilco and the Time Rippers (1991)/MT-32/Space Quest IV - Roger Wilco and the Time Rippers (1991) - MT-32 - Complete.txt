@@ -1,0 +1,103 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ===============================================
+           SPACE QUEST 4: ROGER WILCO AND THE TIME RIPPERS
+                                                        
+
+                       THE COMPLETE SOUNDTRACK
+                     (See below for song titles.)
+                       Ken Allen & Mark Seibert
+           =============================================
+               Copyright (c)1991 Sierra On-Line, Inc.  
+           =============================================
+
+                         Roland MT-32 VERSION
+                  
+		      ** NOT FOR GENERAL MIDI **
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- Roland MT-32/CM-32/CM-64/MT-100/LAPC-I MIDI device
+
+
+This Standard MIDI File was recorded directly from Sierra's "Space
+Quest 4" adventure game.  It has been recorded using Sierra's
+MT-32 driver. It contains numerous System Exclusive instructions for reverb and data which will write new sounds to your MT-32.  Note that MIDI files containing embedded SysEx data are not compatible with all MIDI file playback programs.
+
+		THIS FILE IS NOT DESIGNED FOR GENERAL MIDI PLAYBACK!
+
+Recorded/edited/compiled/arranged for the MT-32 by Ari Stone.
+Address questions or comments to:
+
+  Ari Stone
+  ari_stone@hotmail.com
+
+or:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+      ===================================================================
+                               TRACK SHEET
+
+               SPACE QUEST 4: ROGER WILCO AND THE TIME RIPPERS
+      ===================================================================
+      SONG TITLE                                   START MEASURE/TIME *
+      -------------------------------------------------------------------
+   1. Opening Theme                                      4   00:00:02
+   2. Introduction                                      59   00:02:19
+   3. Xenon - Space Quest XII                          225   00:08:58
+   4. The Zombie                                       260   00:10:23    
+   5. Professor Lloyd                                  278   00:11:06
+   6. The Sewer                                        352   00:14:03
+   7  Sewer Blob                                       398   00:15:55
+   8. Patrol Ship                                      423   00:16:53
+   9. The Stowaway                                     442   00:17:38
+  10. Vohaul's Fortress                                466   00:18:37
+  11. Copy Protection Theme                            515   00:20:34
+  12. Time Travel (Fail)                               546   00:21:49
+  13. Time Travel (Success)                            553   00:22:06
+  14. Estros - Space Quest X                           562   00:22:27
+  15. Terrordactyl Ride	                               584   00:23:20
+  16. Terrordactyl's Nest                              603   00:24:05
+  17. Latex Babes Of Estros                            632   00:25:15
+  18. Sub Ride                                         666   00:26:36
+  19. Estros Fortress (Zondra & Thoreen)               707   00:28:15
+  20. The Sea Slug                                     758   00:30:17
+  21. Our Hero                                         783   00:31:18
+  22. Let's Shop!                                      829   00:33:08
+  23. Meanwhile, Back In Space Quest XII               841   00:33:38
+  24. Galaxy Galleria Mall                             873   00:34:53
+  25. Big & Tall                                       930   00:37:11
+  26. Monolith Burger                                  974   00:38:55
+  27. Flippin' Burgers                                1001   00:40:02
+  28. Sacks                                           1061   00:42:25
+  29. Software Store                                  1094   00:43:44
+  30. Bukazoid Bill's Arcade                          1123   00:44:53
+  31. Mrs. Astro Chicken                              1147   00:45:51
+  32. Radio Shock (Hz. So Good)                       1161   00:46:26
+  33. Skate-O-Rama                                    1179   00:47:08
+  34. Kerona - Space Quest I                          1213   00:48:29
+  35. Keronian Bar                                    1220   00:48:47
+  36. Monochrome Bikers                               1281   00:51:13
+  37. Return To Vohaul's Fortress - Space Quest XII   1309   00:52:20
+  38. Format Countdown                                1382   00:55:15
+  39. The Fight                                       1455   00:58:10
+  40. Closing Themes                                  1497   00:59:52
+
+
+      -------------------------------------------------------------------
+                                             TOTAL TIME:     01:05:06
+
+      
+     
+
+        July 2003
+
+

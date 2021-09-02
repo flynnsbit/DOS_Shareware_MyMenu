@@ -1,0 +1,106 @@
+FDXMS.SYS documentation.
+
+FDXMS.SYS and FDXXMS.SYS is FreeDOS' replacement for HIMEM.SYS. It's
+released under the GNU GENERAL PUBLIC LICENSE, see the file
+LICENSE.TXT for the full text. 
+
+For more information about FreeDOS, go to the web site, 
+<http://www.freedos.org>.
+
+
+FDXMS.SYS and FDXXMS.SYS require at least a 386 CPU.
+
+FDXMS.SYS supports up to 64MB of XMS memory. FDXXMS.SYS supports up to
+4GB of XMS memory. 
+
+FDXMST.SYS and FDXXMST.SYS is FDXMS.SYS and FDXXMS.SYS with TRACE_CODE
+enabled, which can be useful for debugging (mainly FDXMS).
+
+
+Supported arguments:
+
+	NUMHANDLES=<number>
+		Sets the number of XMS handles. Default is 32. Minimum
+		is two (not much use of XMS without any handles!) and
+		maximum is currently 1024. Each handle takes 5 bytes
+		(FDXMS.SYS) or 9 bytes (FDXXMS.SYS).
+
+	BIOS
+		Makes FDXMS to always call the BIOS through INT15
+		instead of using its own protected mode switching.
+
+	PS
+		Changes to the particular A20 handling necessary on
+		PS/2 machines.
+
+	GEODE
+		Removes delays while changing the A20 line. Reported
+		to help FDXMS to work on National Semiconductor's
+		Geode GX1 processor.
+
+	DELAY=<number>
+		Number of calls to the delay routine after changing
+		the A20 line. If you receive the error message "Unable
+		to switch A20 address line", try setting it to a big
+		value (say 4000) and see if it helps. Then fine tune
+		it as you want as low a value as possible for
+		speed. Default is 1. Maximum is 65535 and 0 maps to
+		65536.
+	
+	INT15=<number>
+		Amount of extended memory in kiB to leave to be
+		allocated through INT15 AH=88 hooking. Remember to
+		include 64 kiB reserved for HMA. Minimum is
+		64 (64 kiB). Maximum is the smaller value of 0xfbbf
+		kiB (~66 MB) and the size of the extended memory block
+		that starts a 0x110000 minus 1.
+		
+
+Supported arguments only in FDXMST.SYS and FDXXMST.SYS:
+
+	TRACE=<number>
+		Sets the trace bitmask. A set bit indicates a trace
+		printout should be shown for that function. Default is
+		0.
+
+		The bit for each function is:
+			get_version (0x0)		= 0x000001
+			request_hma (0x1)		= 0x000002
+			release_hma (0x2)		= 0x000004
+			global_enable_a20 (0x3)		= 0x000008
+			global_disable_a20 (0x4)	= 0x000010
+			local_enable_a20 (0x5)		= 0x000020
+			local_disable_a20 (0x6)		= 0x000040
+			query_a20 (0x7)			= 0x000080
+			query_free_xms (0x8)		= 0x000100
+			alloc_xms (0x9)			= 0x000200
+			free_xms (0xa)			= 0x000400
+			move_xms (0xb)			= 0x000800
+			lock_xms (0xc)			= 0x001000
+			unlock_xms (0xd)		= 0x002000
+			get_handle_info (0xe)		= 0x004000
+			realloc_xms (0xf)		= 0x008000
+			request_umb (0x10)		= 0x010000
+			release_umb (0x11)		= 0x020000
+			realloc_umb (0x12)		= 0x040000
+			query_any_free_xms (0x88)	= 0x080000
+			alloc_any_xms (0x89)		= 0x100000
+			get_extended_handle_info (0x8e)	= 0x200000
+			realloc_any_xms (0x8f)		= 0x400000
+
+	TRACE
+		Equivalent to TRACE=0xffffffff.
+
+
+
+<number> is positive decimal number or, if it starts with '0x', a
+hexadecimal number.
+
+
+Comments can be sent to Martin Str”mberg, <ams@ludd.ltu.se>. Please
+start the subject line with "FDXMS".
+
+Bug reports should be filed in the bug reporting tool on the FreeDOS
+site, <http://www.freedos.org>. Remember to include which one of
+FDXMS.SYS or FDXXMS.SYS you are using and the version number in your
+bug report. Thank you for testing.

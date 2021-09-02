@@ -1,0 +1,9 @@
+Game: Team F1
+Year: 1996
+Composed by: Dag Winderlich
+MIDI versions: GM, FM
+Platform: DOS
+
+Additional info: I haven't renamed the files or sorted them out.
+
+https://www.karlsitretro.com/game_midi

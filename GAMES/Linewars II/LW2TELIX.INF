@@ -1,0 +1,10 @@
+lw2 port %2 baud %1 duel
+rem   This is an example batch file for using LineWars II as an add-on
+rem   file transfer protocol with Telix communications software.
+rem   Rename this file to lw2telix.bat and setup Telix so that you
+rem   have an add-on protocol that runs this batch file. Then you
+rem   can start LineWars II under Telix simply by starting a download
+rem   using this new "file transfer protocol".
+rem   Note that lw2.com and lw2u.dat must be in the current directory
+rem   when this batch file is called.
+rem   More info about command line parameters can be found in LW2.DOC.

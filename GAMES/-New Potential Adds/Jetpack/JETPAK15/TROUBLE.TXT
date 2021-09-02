@@ -1,0 +1,59 @@
+                            *******************
+                            * TROUBLESHOOTING *
+                            *******************
+PROBLEM:
+     Not Enough Memory
+SOLUTION:
+     Try removing TSR's (such as mouse drivers) from your config.sys and
+     autoexec.bat files.
+     If you have DOS version 5 or above, include the line:
+
+          dos=high
+
+     in your config.sys file after "himem.sys" or another memory manager has
+     been loaded.
+     As a last resort, try disabling Sound Blaster support so the digitized
+     samples will not be loaded (see command-line sound overrides).
+
+PROBLEM:
+     Movement is erratic, or there is no movement
+SOLUTION:
+     Press [J] to adjust your joystick(s).
+     Most systems should work with joysticks set to 'AUTO' in the main menu. 
+     If movement is still erratic, try either setting joysticks to 'FORCE 1'
+     which will scan only port 1, or disabling joysticks.
+
+PROBLEM:
+     Sound isn't working correctly, or the game locks up
+SOLUTION:
+     Use the command-line sound card override.
+     Load Jetpack with one of the command-line options:
+
+          Jetpack /S0    -    No Sound
+          Jetpack /S1    -    PC Speaker
+          Jetpack /S2    -    Adlib (or compatible)
+          Jetpack /S3    -    Sound Blaster (or compatible)
+
+SOUND BLASTER HELP
+------------------
+If your Sound Blaster or compatible card is not working in Jetpack, try
+setting the environmental variable BLASTER by typing:
+
+     SET BLASTER=Axxx Ix Dx
+
+     Axxx represents the address of the SoundBlaster/SB Pro.  For the SB,
+it's either A210,A220,A230,A240,A250 or A260.  For the SB Pro, it's either
+A220 or A240.  The default is A220.
+     Ix represents the IRQ number used by the SB/SB Pro.  For the SB, it's
+either I2, I5, or I7.  The default is I7.
+     Dx represents the DMA channel used by the SB/SB Pro.  Acceptable values
+are D0, D1, or D3.  The default is D1.
+
+If the game continually locks up and you have a Sound Blaster, as a last
+resort try disabling the digitized Sound Blaster samples by using the Adlib
+command-line override (Jetpack /S2).
+
+Jetpack should have come without the configuration file "JETPACK.CFG"  If you
+can't solve the problems you are having, try erasing this file.  Jetpack will
+create a new config file based on your system.
+

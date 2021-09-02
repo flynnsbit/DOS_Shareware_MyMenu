@@ -1,0 +1,276 @@
+                          TIE FIGHTER DEMONSTRATION
+
+                                 READ.ME FILE
+
+
+CONTENTS:
+
+    I) System and Memory Requirements
+
+   II) FlightStick Pro and Thrustmaster Flight Control System
+
+  III) SoundBlaster Issues
+
+   IV) ProAudio Spectrum 16
+
+    V) Installing on Removable Hard Drives (Bernoulli, Syquest, etc.)
+
+
+
+I) SYSTEM AND MEMORY REQUIREMENTS
+
+
+SYSTEM:
+
+  To run the TIE Fighter Demo, your IBM PC or compatible must have
+  a 386 or 486 microprocessor.  Machines with 8086 and 80286
+  microprocessors are NOT supported.
+
+
+EMS MEMORY:
+  
+  On IBM PC's there are three basic kinds of memory, Main memory, Extended
+  (XMS) memory, and Expanded (EMS) memory.
+  If you have DOS 5.0 (or higher) you can use the DOS command "mem" to see
+  how much of each of these three types of memory you have available.
+  In addition, the Install program included with the TIE Fighter demo will
+  tell you how much Main memory, and how much EMS memory you have available.
+
+  TIE Fighter CAN use Main Memory and Expanded (EMS) memory, but it CANNOT
+  use Extended (XMS) memory.
+
+  If you have Extended (XMS) memory available, but no Expanded (EMS) memory
+  available, you may wish to convert some (or all) of your Extended (XMS)
+  memory into Expanded (EMS) memory.  If you have a 386 or 486 CPU, you
+  can use the DOS 5.0 device driver EMM386 to accomplish this.  If you do
+  not have DOS 5.0, or you prefer, you may use a third party device driver
+  such as 386MAX or QEMM386, to obtain Expanded (EMS) memory.  Consult the
+  documentation for DOS 5.0 or for your third party software for more info-
+  rmation on how to set up your system to make EMS memory available.
+
+  NOTE: Some older software or hardware may have a version of Expanded
+  Memory which is incompatible with TIE Fighter.  The TIE Fighter Install
+  program will warn you if this is the case.
+
+LOW MEMORY:
+
+  Under certain low memory conditions, TIE Fighter may disable features
+  such as digitized sound effects, or even all sound and music.  The
+  various low memory conditions and the related consequences are
+  summarized below.
+
+  NO EMS MEMORY, OR EMS MEMORY <= 64K:
+    Main Memory > 602,000 bytes.  Digitized speech and sound effects are
+    disabled always.
+
+    Main Memory < 602,000 bytes and > 571,000 bytes.  All sound and music
+    disabled.
+
+    Main Memory < 571,000 bytes.  Program will not run.
+
+  EMS MEMORY >= 80K and < 256K:
+    Main Memory > 543,000 bytes.  Digitized speech and sound effects are
+    disabled always.
+
+    Main Memory < 543,000 bytes and > 512,000 bytes.  All sound and music
+    disabled.
+
+    Main Memory < 512,000 bytes.  Program will not run.
+
+  EMS MEMORY >= 256K:
+    Main Memory > 563,000 bytes.  All features enabled.
+
+    Main Memory < 563,000 bytes and > 543,000 bytes. Digitized speech and
+    sound effects are disabled always.  Music is disabled during flight.
+
+    Main Memory < 543,000 bytes and > 512,000 bytes.  All sound and music
+    disabled.
+
+    Main Memory < 512,000 bytes.  Program will not run.
+
+EMS MEMORY REQUIREMENTS DURING FLIGHT:
+
+  During flight, EMS memory is used to store music, digitized sound
+  effects and speech, and the various cockpit interiors.
+
+  The music requires 384K of EMS memory.
+
+  The digitized sound effects and speech require 320K of EMS memory.
+
+  The cockpit interiors can use as much as 192K of EMS memory.  If EMS
+  memory is not available, the cockpit interiors are loaded from disk as
+  needed.
+
+  The program attempts to load the music first, then the digitized sound
+  and speech, and lastly the cockpit interiors.
+
+  The program does not attempt to load music if the MUSIC OFF option has
+  been selected.
+
+  The program does not attempt to load digitized sound and speech if BOTH
+  the Digital Sound Off and Speech Off options have been selected.
+
+  To hear both music and digitized sound and speech, you must have 704K
+  of EMS memory available.
+
+  NOTE: The program will not use more than 896K of EMS memory.
+
+
+II) FLIGHTSTICK PRO AND THRUSTMASTER FLIGHT CONTROL SYSTEM
+
+Some newer joysticks have extra buttons on them which allow more functions
+to be performed without using the keyboard.  TIE Fighter's use of these
+extra buttons is summarized below.
+
+FlightStick PRO:
+  The gray button on the top of the stick is equivalent to the "r" key.
+  That is, it will select the nearest enemy starfighter as your current
+  target.
+
+  The lower gray button is equivalent to the "." key. That is, it turns
+  the cockpit instrument panel either ON or OFF.
+
+  The "hat" or "cooly" on the top of the stick has the following functions:
+
+    Pressing FORWARD on the "hat" (labeled "D") is equivalent to the "w"
+    key. That is, it cycles through your weapons systems, selecting Lasers,
+    Ion Cannons, Torpedoes, and Missiles, as available.
+
+    Pressing BACKWARD on the "hat" (labeled "U") is equivalent to the "s"
+    key. That is, it cycles through the three possible Shield System
+    settings, Full Shields Forward, Full Shields Aft, and Shields Even.
+
+    Pressing to the RIGHT on the "hat" (labeled "R") is equivalent to the
+    Shift-F10 or "'" (apostrophe) key. That is, it transfers partial
+    energy from the Laser/Ion Cannon system(s) to the Shields system.
+
+    Pressing to the LEFT on the "hat" (labeled "L") is equivalent 
+    to pressing the trigger and the top button at the same time.
+    The result is to fire your weapons and to either target
+    any enemy in your sights or activate your "Roll" thrusters.
+
+ThrustMaster Flight Control System:
+
+  The second thumb button is equivalent to the "r" key. That is, it will
+  select the nearest enemy starfighter as your current target.
+
+  The bottom "pinky" button is equivalent to the "." key. That is, it
+  turns the cockpit instrument panel either ON or OFF.
+
+  The "hat" or "cooly" on the top of the stick does not perform any
+  useful function.
+
+Two Joysticks or other sticks with extra buttons:
+
+  Joystick 2, button 1, is equivalent to the "r" key.
+  Joystick 2, button 2, is equivalent to the "." key.
+  All buttons simultaneously is equivalent to the "w" key.
+  Both buttons on stick1, and stick2,button1 is equivalent to the "s" key.
+  Both buttons on stick1, and stick2,button2 is equivalent to the Shift-F10
+  key or the "'" (apostrophe) key.
+
+
+III) SOUNDBLASTER ISSUES
+
+There are several hardware compatibility issues related to SoundBlaster
+sound cards.  These are summarized below.
+
+  NO SOUND
+    Your card may be configured to use an I/O port other than the default
+    of 220.  Use the INSTALL program to select a different I/O port.
+
+  DELAY WHEN FIRING WEAPONS.
+    If you experience a brief but noticeable delay whenever you fire your
+    weapons, then you should select the "Digital Sound Off" option in the
+    Inflight Options screen (press ESC during flight).  This delay is due
+    to the chip on your sound card, which is not as fast as more modern
+    boards.  If you notice this delay at other times during flight (when
+    a TIE fighter comes close by, or when another pilot speaks) then you
+    may want to select the "Digital Speech Off" option.
+
+  DMA CONFLICTS.
+    While playing TIE Fighter, it is possible to trigger a digitized sound
+    effect or speech and then immediately thereafter to cause an access to
+    your hard drive.  If your sound board and your hard drive controller
+    are both configured to use the same DMA channel (usually channel 1),
+    then this may cause your system to lock up, or to freeze for a period
+    of time.
+
+  TESTING FOR A DMA CONFLICT.
+    On some systems a DMA conflict may occur during the opening sequence
+    or at the registration desk.  If your system locks up at any of these
+    points, try disabling digitized speech and sound (see OPTION 2, below).
+    If your system no longer locks up, then you have a DMA conflict.
+    If your system still locks up after you have disabled digitized sound
+    and speech, call LucasArts Product Support for assistance.
+    If your system does not lock up at any of these points, but does lock
+    up occasionally during flight, we suggest you perform the following
+    test:  Enter a mission in which you have a wingman, and there are enemy
+    fighters present (for example, Y-Wing Historical Mission #2).  Press
+    the "r" key to target an enemy fighter.  Press Shift-A to order your
+    wingman to attack (this will trigger a digitized speech).  While
+    your wingman is talking, press the "c" key to turn your camera on (this
+    will cause your disk drive to be accessed).  If your system locks up or
+    behaves strangely, then you have a DMA conflict.
+
+  WHAT TO DO IF YOU HAVE A DMA CONFLICT.
+    If you have a DMA conflict, you have three choices.  First, you could
+    disable digitized sound and speech in TIE Fighter, thereby avoiding the
+    problem.  Second, you could re-configure your sound board to use a
+    different DMA channel.  Third, you could re-configure your hard disk
+    drive controller to use a different DMA channel.  Most people prefer
+    the second option, but all three are discussed below.
+
+    OPTION 1, DISABLE DIGITIZED SOUND AND SPEECH.
+      Run the TIE Fighter Install program (to do this change to the
+      directory where you installed TIE Fighter (usually C:\TIEDEMO) and
+      enter INSTALL).
+      Select "Set Sound Board Configuration" from the MAIN MENU.
+      Select "AdLib and Compatibles" (or "Roland" or "GMIDI" if appropriate)
+      from the menu.
+      Select "Exit" from the MAIN MENU.
+      No digitized speech or sound will be triggered.
+
+    OPTION 2, RE-CONFIGURE YOUR SOUND BOARD.
+      If you have a SoundBlaster, you cannot change the DMA channel.  Try
+      Option 3 or Option 1.
+      If you have a SoundBlaster PRO, you can try either changing the DMA
+      channel jumpers, or enabling DMA sharing.  See the SoundBlaster PRO
+      documentation for details.
+      If you have a ProAudio Spectrum 16, you can change the DMA channel
+      by running the ProAudio Spectrum Install program.
+      If you have some other SoundBlaster compatible board check the
+      documentation that came with your board.
+
+    OPTION 3, RE-CONFIGURE YOUR HARD DISK DRIVE CONTROLLER.
+      This is a pretty risky thing to do to your system, just so you can
+      hear digitized speech in a game.  If you really want to try, however,
+      consult the documentation for your hard drive controller.
+
+
+IV) PROAUDIO SPECTRUM 16
+
+Please note that when you use this sound card with TIE Fighter, you must
+have installed the ProAudio Spectrum software that came with the card.
+
+
+
+V) INSTALLING ON REMOVABLE HARD DRIVES (BERNOULLI, SYQUEST, ETC.)
+
+TIE Fighter's Install program will not allow you to select a removable
+disk drive for installation.  If you want to install on a removable drive,
+such as a Syquest cartridge, or a Bernoulli drive, you must specify the
+removable drive you want to install TIE Fighter on when you start the
+install program.
+
+You can do this by using the following command:
+
+A:INSTALL ON DRIVE D
+
+where, A: is replaced by the drive letter of the floppy drive you are
+installing from, and D is replaced by the drive letter of the removable
+drive you want to install TIE Fighter on.
+
+
+
+

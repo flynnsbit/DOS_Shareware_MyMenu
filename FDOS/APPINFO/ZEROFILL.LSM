@@ -1,0 +1,14 @@
+Begin3
+Title:          zerofill
+Version:        1.04
+Entered-date:   2016-10-02
+Description:    Fills empty space on a drive with zeros. It helps virtual machine, and disk compression softwares to compact the volume.
+Keywords:       dos
+Author:         Javier Gutierrez Chamorro (Guti)
+Maintained-by:  -
+Primary-site:   -
+Alternate-site: -
+Original-site:  http://nikkhokkho.sourceforge.net/static.php?page=ZEROFILL
+Platforms:      DOS
+Copying-policy: GNU Lesser General Public License
+End

@@ -1,0 +1,14 @@
+Begin3
+Title:          GNU chcp
+Version:        1.0
+Entered-date:   2013-06-04
+Description:    LOADFONT (GNUCHCP) changes the EGA/VGA bitmap font on screen in text mode.
+Keywords:       loadfont gnuchcp bitmap font ega vga screen
+Author:         Kurt Zammit
+Maintained-by:  Kurt Zammit
+Primary-site:   http://zammitsoft.freeservers.com
+Alternate-site: http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/system/
+Original-site:  http://zammitsoft.freeservers.com
+Platforms:      DOS
+Copying-policy: GNU General Public License, Version 2
+End

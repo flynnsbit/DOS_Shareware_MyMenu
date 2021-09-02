@@ -1,0 +1,49 @@
+
+
+Notes for the DOS Abuse version :
+
+
+To get the most current version of this file point to
+  http://www.crack.com 
+
+  You must have a mouse driver loaded to play Abuse.  This will be the
+one that came with your mouse or c:\dos\mouse.sys
+
+  You must have a VESA driver loaded in order to play hi-res.  Most
+new cards have drivers built-in, but older card folks will need to use
+one supplied by their card dealer, or get univbe or univesa from any
+simtel mirror ftp site such as wuarchive.wustl.edu.
+ 
+  It is recommend that you beat Abuse at 320x200 before playing
+hi-res, because you can see more than you are supposed to.  This is
+basically cheating and unless you are not a gamer, you may spoil some
+of the puzzles.  All the levels were designed with the 320x200 player
+in mind and hi-rez was added to assist level designers, not level
+players.
+
+  That said, you can get a list of video modes that your video card
+supports by typing : "abuse -size ?"  If you already know this
+information, you can type : "abuse -size 640 480" for example.
+
+  When abuse first starts up it will automatically run setup.exe to
+configure your sound card.  You may run setup.exe at any time and
+reconfigure your card.  If you try to detect a sound card when you
+don't have one or you try to detect a card multiple times it will lock
+up and you must reboot.  If setup somehow detects the wrong card, try
+to detect again and alternate detection mechanisms will be used.  It's
+important that the IRQ and base port address are correct or there's
+an off chance you'll damage your hard drive.
+
+  If your sound card does not work properly on the test, check to
+see that all nessasary drivers for your card are loaded and configured
+correctly.  For example ProAudio Spectrum's require a driver to be
+loaded in your config.sys.
+
+  If you have over 4MB it, it is recommend you run smartdrv.
+
+  Note : version 0.32 & 0.33 have a problem with saving levels, to
+fix until 0.34 delete the line (setq keep_back T) from
+lisp/startup.lsp.
+
+
+                    JC

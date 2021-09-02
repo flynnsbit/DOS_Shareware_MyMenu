@@ -1,0 +1,1570 @@
+
+   The programs  contained in this archive  and described further down
+   in this text were all written from scratch by JÅrgen Hoffmann using
+   BORLAND C++  Version 3.1  during the first weeks  of the year 2010.
+   They are  licensed under the EUPL V.1.1  and offered  to the public
+   free of charge. The english text of this european public licence is
+   included in this archive.  Other, equally valid versions,  together
+   with some useful  explanations for non-lawers  are available in all
+   official languages of the european union and can be downloaded from
+   here: http://ec.europa.eu/idabc/eupl.
+
+   As the programs are free, the author doesn't accept any responsibi-
+   lity beyond what can reasonably  be expected from any other kind of
+   gift as well.  Even though  the programs were  thoroughly tested it
+   cannot be excluded, that undiscoverd errors still arise. Should you
+   find such a one,  feel free to inform the author about it using the
+   e-mail address shown at the end of this document.
+
+
+
+
+ASKECHO     (ASK and ECHO) 
+
+   is a program that simply writes its arguments to stdout. As such it
+   resembles the built-in command ECHO.  If one or more of these argu-
+   ments begin with a special lead-in character ('+' by default)  then
+   this argument will not be written to stdout, rather it will be sent
+   to stderr as a user prompt and the user's response will replace the
+   respective argument in the original text.
+
+The correct syntax is:
+
+   askecho [/N] [/S<char>] [/Q<char>] [ text ... ] +<prompt> [ text ... ]
+
+     with  /N: no implicit spaces
+	   /S: use <char> instead of '+' to mark <prompt>
+	   /Q: use <char> as quoting char, a word following
+	       the quoting character will be enclosed in
+	       double quotes "..."
+
+   The behaviour of the program can be modified by three different com-
+   mand line switches. By default, the arguments are separated  by one
+   space when send to stdout.  By setting the /N switch ASKECHO can be
+   told to append them without any space inbetween. By means of the /S
+   switch  it is possible  to re-define  the lead-in character to some
+   other value if the default "+"  is in conflict with some other part
+   of the text.  The /Q switch allows to define a character which,  as
+   an argument  of its own,  causes the next  following argument to be
+   enclosed in double quotes. Regular double quotes denote a series of
+   words as a single one and are automatically removed. Therefore they
+   must be expressed in some other way, should they appear literally.
+
+example:   ASKECHO /Qq The answer is q "+Your response please: "
+
+   Will first prompt the user  with the text: "Your response please: "
+   As soon as the response is completed by hitting the  <RETURN>  key,
+   the text >> The answer is " ... " <<  will be written to stdout and
+   ' ... ' will be replaced by the user's answer.  This is most useful
+   if stdout is re-directed into a file, like this:
+
+           ASKECHO /N "set RESPONSE=" "+Driver name? " > setvar.bat
+           call setvar
+
+   This sequence of commands would ask the user to enter a driver name
+   and then store the answer in the environment variable RESPONSE.
+
+
+
+
+TIMESTMP     (TIMESTaMP)
+
+   is a program that simply writes its arguments to stdout. As such it
+   resembles the built-in command ECHO.  If one or more of these argu-
+   ments begin with a special lead-in character ('+' by default)  then
+   this argument will not be copied  but interpreted in a special way.
+
+   Users who are familiar with UNIX, might recognize that this program
+   is inspired by, but by far not identical with, the UNIX "date" com-
+   mand.  The primary motivation to write  this program  was to insert
+   freely configurable timestamps into logfiles. It turned out however,
+   that it can be used in many situations which the standard ECHO can't
+   handle.
+
+The correct syntax is:
+
+   timestmp [/N] [/O] [/S<char>] [ text ... ] +<time-def> [ text ... ]
+
+     with  /N: no implicit spaces
+	   /O: open end (don't append a newline)
+	   /S: use <char> instead of '+' to mark <time-def>
+     and <time-def>
+	 year:     'J','j':  '2000' .. '2999'
+	 year:     'Y': '00' .. '99'   --    'y': '0' .. '99'
+	 month:    'M': '01' .. '12'   --    'm': '1' .. '12'
+	 day:      'D': '01' .. '31'   --    'd': '1' .. '31'
+	 hour:     'H': '00' .. '23'   --    'h': '0' .. '23'
+	 minute:   'I': '00' .. '59'   --    'i': '0' .. '59'
+	 second:   'S': '00' .. '59'   --    's': '0' .. '59'
+	 1/100:    'U': '00' .. '99'   --    'u': '0' .. '99'
+
+	 'q': a single quote (')  --  'Q': a double quote (")
+	 'N': name of the month   --  needs set TIMESTMP_M=...
+	 'n': name of day of week --  needs set TIMESTMP_W=...
+	      e.g. set TIMESTMP_W=:Sun:Mon:Tue:Wed:Thu:Fri:Sat
+
+   Each occurrence of one of the characters: "JjYyMmDdHhIiSsUuQqNn" in 
+   an argument starting with the lead-in character will be replaced by
+   a number which is related to  the current system date or time.  Any
+   other characters will  by copied unchanged.  The precize mapping of
+   characters to data items  can be seen  in the above table.  In many
+   cases  an upper case letter  means that  the number  will always be
+   displayed with two digits,  while the corresponding lower case will
+   result in a one or two digit number, depending on the value.
+
+   One exception to this rule is the "J" which alway displays the year
+   with four digits disregarding its case.  Another  exception  is the
+   "q" which,  as lower case is replaced  by an apostrophe,  while the
+   upper case "Q" is turned into a double quote.
+
+   A special case is the letter "N".  As upper case  it is replaced by
+   the name of the current month (January, ...) while as lower case it
+   will be transformed into the name of the day of week (Sunday, ...).
+   These names however,  unlike numbers, depend very much on the local
+   language and culture.  Therefore TIMESTMP allows (and requires) you
+   to define, how they should be displayed. This is achieved by two en-
+   vironment variables: TIMESTMP_M defines an array of names of months
+   (January .. December) while TIMESTMP_W does the same for the day of
+   the week  (Sunday .. Saturday).  The correct  syntax for  these two
+   variables is:
+
+     set TIMESTMP_x=<lim><name1><lim><name2><lim> ... <lim><lastname>
+
+   Where "x" stands for "M" or "W" and <lim> is the limiting character.
+   The colon  ":"  is a good choice for this,  but any other character
+   which doesn't appear within the names can be used as well. This way
+   it is not only possible to use any language  (as far as the charac-
+   ter set supports it) but also to freely define the style (full name,
+   abbreviated to three or two characters, upper, lower, mixed case).
+
+example: set TIMESTMP_W=:Sun:Mon:Tue:Wed:Thu:Fri:Sat
+         TIMESTMP Today is +n +d.m.y it is +H:I
+
+   will result in somthing like:     Today is Tue 3.5.2009 it is 19:07
+
+   If the  "N"  or  "n"  characters are not used, then the environment
+   variables don't need to be set. If they are used without prior set-
+   ting of the variables,  then roman numbers ("I".."VII".."XII") will
+   be shown instead by default.
+
+   Apart from its arguments  TIMESTMP can take three different command
+   line switches,  which modify its behaviour.  By default,  the argu-
+   ments are separated  by one space  when send to stdout.  By setting
+   the /N switch TIMESTMP can be told to append them without any space
+   inbetween. The /O switch causes TIMESTMP not to append a newline to
+   the end  of its output.  This is most useful  when re-directing the
+   output into a file,  as another command can append more text to the
+   same line.  By means of the  /S switch it is possible  to re-define
+   the lead-in character to some other value  if the default "+" is in
+   conflict with some other part of the text.
+
+
+
+
+RPN     (Reverse Polish Notation) 
+
+   is a program to carry out numeric calculations.  Although it can be
+   used interactively  on the command line,  its primary purpose is to
+   add numeric capabilities, such as loop counters to batch procedures.
+
+The correct syntax is:
+
+   rpn [ options ] <expression>
+
+   valid options are:
+     /S[var]  make set command for environment variable [var]
+     /E[var]  store [var] in environment (default: RPN_RESULT)
+     /F<str>  output format, <str> must be valid "C" format
+	      in batch files use "%%" for "%" like /F%%4ld
+     /D<chr>  tolerate <chr> as decimal separator
+     /I<chr>  ignore <chr> inside numbers
+     /A[O|X]  alphanumeric argument like e.g. file0033.dat
+     /R?[num] return code 1 if result compared to [num] is
+       ?:   + greater      += greater or equal    = equal
+	    - less than    -= less    or equal    # not equal
+	      e.g. /R+5   if [num] is not given, 0 is assumed
+
+   expression is in reverse polish notation (RPN) e.g. 12 3 + 5 *
+   numbers can be 23 +5 -97 (dec)  0377 (oct)  or  0XF9 (hex)
+   operators are  + add   - sub   * mul   / div    \ mod   ^ xor
+                  & and   ! or    { shl   } shr   ++ inc
+                  : dup   $ swap  ~ neg   _ inv   -- dec
+
+   Expressions must be given in reverse polish notation which might be
+   known from  the formerly  famous HP-calculators  or from  the FORTH
+   programming language. Numbers can be expressed in decimal, octal or
+   hexadecimal  notation  and several  operations  can be performed on
+   them, according to the table above.
+
+   The internal stack can hold a maximum of eight values. They are put
+   onto the stack in the order they appear in the expression from left
+   to right.  Certain operators   '++' (increment),  '--' (decrement),
+   '~' (change sign) and '_' (negate bitwise) just modify the value on
+   top of the stack. Others '+' (add), '-' (subtract), '*' (multiply),
+   '/' (integer divide), '\' (division remainder/modulo), '&' (bitwise
+   and), '!' (bitwise or), '^' (bitwise exclusive or), '{' (shift left
+   by n places)  and '}' (shift right by n places) modify the next-to-
+   top value  on the stack  by the value  on top of the stack,  remove
+   both values from it  and replace them by the result,  in such a way
+   that there will be  one value less on the stack  when the operation
+   completed. The operator '$' (swap) simply exchanges the next-to-top
+   value with the topmost one while the operator ':' (dup) will dupli-
+   cate  the value on top of the stack  by pushing a second copy of it
+   onto  the stack,  resulting in  a stack  that holds  one more value
+   afterwards. The '^' operator is only available since version 1.2.
+
+   By default the result,  which is simply  the number that happens to
+   be on top of the stack when the expression is completely evaluated,
+   is immediately written to stdout  but it can also be stored into an
+   environment variable  by two different methods.  In addition  it is
+   possible  to test the  result against a  given value  and perform a
+   branch according to the outcome of this test.
+                                                                     
+   Various command line switches can modify the behaviour of RPN.  The
+   /E[var] defines a variable  into which RPN should store the result.
+   As this requires the modification of the environment of RPNs parent
+   process,  this may not be possible in all environments,  especially
+   not in ones  that only emulate (MS-)DOS.  Therefore the alternative
+   switch /S[var] exists. It generates a proper set command and writes
+   it to stdout.  Re-directing  this output  into a (secondary)  batch
+   file  and then calling  that batch file from the primary one,  will
+   yield the same result as writing directly into the variable, though
+   it is  certainly  less elegant,  but it uses  only fully documented
+   features  and should work  in every environment.  Since version 1.2
+   the argument to the  /E and /S  switches  defining the name  of the
+   variable is optional.  If omitted, the default name "RPN_RESULT" is
+   assumed.
+
+   In order to understand the meaning of the /D<chr> and /I<chr> swit-
+   ches, one must know that RPN regards any character, that is neither
+   an operator nor part of a number,  as whitespace.  As a consequence
+   of that, an expression like  10.908.070,65  would be four different
+   numbers for RPN. The "/I." switch declares the dot as integral part
+   of the number, which RPN should sipmly ignore,  while a "/D," tells
+   it to regard the digits after the comma as legal part of the number,
+   though RPN would simply ignore this fractional part,  as it stricly
+   calculates with 32 bit integers.  Unfortunately  the way to express
+   this number  is not uniform  all over the world.  In some countries
+   the same number would be written as 10,908,070.65 or sometimes even
+   as  10'908'070.65.  Therefore the  two switches  allow to  tell RPN
+   which convention applies.
+
+   The /F<str> switch allows to define the output format of the result.
+   By default RPN will just output a simple decimal value. If <str> is
+   just a text,  not containing any '%' sign,  e.g. "/FThe result is "
+   then RPN will  silently append a '%ld'  to it  and return something
+   like "The result is 1234".  If <str> contains a '%' sign,  then RPN
+   expects this to be a valid "C"-format string, assumes that the user
+   knows what he/she is doing and neither performs any more checks nor
+   modifies it in any way, but simply uses it to output the number.
+
+   An additional inconvenience results from the fact that inside batch
+   files, the DOS-shell command.com,  interpretes the '%' sign as hint
+   to expand an environment variable.  Therefore,  when used in such a
+   context, any '%' sign that should be taken literally must be dupli-
+   cated like e.g. /F0X%%08lX.  This example would cause RPN to format
+   the result as eight-digit hexadecimal number with a '0X' prefix. As
+   the "C" format conventions already require a literal '%' sign to be
+   expressed as '%%', it would take even four of them,  when used in a
+   batch file, like e.g. /F%%ld%%%%.
+
+   The /A switch, which is only available since version 1.2,  provides
+   for a special treatment of alphanumeric strings like "file0005.txt".
+   By default RPN will simply ignore the characters  and only evaluate
+   the numeric part (here as octal number due to the leading '0').  If
+   the  /A switch is set,  the number is alway interpreted  as decimal
+   unless  explicitly defined  as octal  by the  /AO sub-switch  or as
+   hexadecimal by /AX.  In addition,  if no explicit format is defined
+   by the /F switch, a format string will be generated which preserves
+   the string but replaces the numeric part by the calculation result.
+   The command "RPN /A file0005.txt ++" will yield "file0006.txt".  As
+   any numerical calculation can be performed on the numeric part more
+   sophisticated operations  like e.g.  "RPN /A mytext87.doc ++ 100 \"
+   are possible.  The "100 \"  which force the number to be modulo 100
+   would cause a roll-over from 99 to 00 ensuring  that the total size
+   of the filename never exceeds eight characters.
+
+   Certain linitations apply to the use of the /A switch.  If set,  at
+   most one such alphanumeric string  will be evaluated in the descri-
+   bed way (more of them wouldn't be useful anyway). The first charac-
+   ter of a string must be a letter. If the number is defined as hexa-
+   decimal (by the /AX sub-switch) the first digit of the numeric part
+   must be in the range  '0'..'9'  to be properly  recognized.  If the
+   string  contains more than  one numeric part  only the first one is
+   evaluated  the remaining one(s)  will be treated  as ordinary text.
+   Strings are not necessarily limited to filenames but the alphabetic
+   part(s) may may not exceed 24 characters. Numbers are always inter-
+   pretd as unsigned  therefore special care  must be taken when a re-
+   sult could end below zero  as this would roll-over  to a very large
+   number. Masking the result like e.g. "0x1fff &" could be helpful in
+   such a case.
+
+   The /R?[num] switch controls the result codes which RPN will return
+   to DOS.  By default it will return 0 if all went well  and 2 on any
+   error  e.g. division by zero.  In addition  it will write  an error
+   message to stderr.  If the /R switch is set,  then RPN will perform
+   some test on the result (the value that happens to be on the top of
+   the stack  when the  expression is  evaluated completely).  If that
+   test evaluates as true than RPN will return a result code of 1 back
+   to DOS and a 0 otherwise.  In a batch file this result  code can be
+   used to cause a branch by an  "IF ERRORLEVEL 1 GOTO..." instruction
+   if the condition is met. The kind of test which is actually perfor-
+   med is determined by the one or two characters imediately following
+   the /R according to the table above.  If [num] is given, the result
+   is compared with that number otherwise it compared with zero.
+
+example: Try the following batch file under true (MS-)DOS:
+
+         SET COUNT=0
+         :LOOP
+         ECHO %COUNT%
+         RPN /ECOUNT /R-10 %COUNT% ++
+         IF ERRORLEVEL 1 GOTO LOOP
+
+         If the /E switch doesn't work, try this version instead:
+
+         ECHO SET COUNT=0             > \temp\setvar.bat
+         :LOOP
+         IF EXIST \temp\setvar.bat CALL \temp\setvar.bat
+         ECHO %COUNT%
+         RPN /SCOUNT /R-10 %COUNT% ++ > \temp\setvar.bat
+         IF ERRORLEVEL 1 GOTO LOOP
+
+   Version history:  Version 1.1 added the ability to resolve environ-
+   ment variables by rpn directly.  Most versions of command.com  (the
+   default command processor) evaluate environment variables only when
+   used inside batch procedures.  As RPN now evaluates these variables
+   itself, expressions like "RPN %num% ++" can now also be used on the
+   command line directly.  At least one blank must be found before the
+   leading and after the trailing "%" sign  to allow RPN  to recognize
+   such a variable.
+
+   Version 1.2 added the /A switch, the '^' operator and allowed argu-
+   ments to the /E and /S switches to be optional.
+
+
+
+
+PIPESET     (PIPE via stdin and SET environment variable)
+
+   is a program which,  as its name  already suggests,  can be used to
+   set environment variables.  Unlike its built-in  cousin SET it does
+   not take its data from the command line rather it reads from stdin.
+
+The correct syntax is:
+
+   <program> | pipeset [ options ] <target1> [ target2 ... ]
+    or:        pipeset [ options ] <target1> [ target2 ... ] < <file>
+
+   valid options are:
+     /S      safe mode  (also useful for testing)
+     /L<num> skip <num> lines /L$ skip all but last
+     /M<num> skip <num> matches /M$ last match
+     /F<fld> define fixed fields e.g. /F3.5.2 or /F-3.5.2
+     /C<str> define set of separator  characters
+     /W<str> define set of whitespace characters
+	     A-Z range   \XX hex   ^<str> complement
+
+   where target is  [variablename][=[<*>pattern]]
+        and <*> is  = equal      { not  ( begining  ? containing
+                    # not equal  } not  ) ending    ! not containing
+
+   In its most basic form,  PIPESET simply reads one line of input and
+   stores it in an environment variable whichs name is given as an ar-
+   gument.  It is however also possible to give more than one name. In
+   this case  the input line will be broken into pieces  and each such
+   piece will be stored in a variable of its own. Should there be more
+   pieces than names,  then the last variable  will take all remaining
+   ones.  If there are less, then some variables will be left unassig-
+   ned.  Users who are familiar with the UNIX operating system may re-
+   cognize a certain similarity to the 'read' command of that system.
+
+   The way how the data is broken into pieces  is widely configurable.
+   Furthermore  it can be specified,  that a line has to fullfill cer-
+   tain criteria to be considered for storing.
+
+   The first such criterion is the /L<num> command line switch. It de-
+   fines a number of lines that will simply be skipped before anything
+   else is done.  In the special case of  /L$  every line but the last
+   one will be skipped, in other words only the last line will be pro-
+   cessed.
+
+   In addition it is possible to require certain fields of the data to
+   fullfill certain criteria. If they are not met, then the whole line
+   is discarted and the next one is checked until a line is found that
+   is acceptable  or the end of data is reached.  If no line meets the
+   criteria, nothing ist stored.
+
+   The general form is PIPESET target1 target2 ... targetN  where tar-
+   getX in its simplest form is just a name of an environment variable
+   which should take the content of the respective field of the  input
+   line. If this name is followed by an equal sign, another qualifying
+   character and a textpattern,  than the respective field has to meet
+   a criterion  which is  defined by  the qualifying character and the
+   textpattern.
+
+   These criteria  can be:  field has to be equal "="  to the pattern,
+   not equal "#" to the pattern, has to begin "(" or end ")" with pat-
+   tern, must not begin "{" or end "}",  has to contain "?" pattern or
+   must not  contain "!" it.  More than one field  may be qualified by
+   such a criterion  in which case  all of them  must meet in order to
+   accept  the data.  If a target begins  with an equal sign,  then no
+   name is  assigned  to the  respective  field meaning  that its data
+   should not  be stored  but the criterion  must be met anyway.  If a
+   target consists of only an equal sign,  the respective field is to-
+   tally ignored.
+
+   By default  PIPESET will search the input,  line by line,  until it
+   finds the first line that meets the search criteria. It then stores
+   the data into the targets und terminates.  The /M<num> command line
+   switch causes PIPESET to search for more lines that meet the crite-
+   ria.  More precisely,  it causes PIPESET  to ignore the first <num>
+   matches and look for the <num>+1st line that meets the criteria. If
+   only <num> (or even less) lines match, then PIPESET will return no-
+   thing.  The special case /M$ causes PIPESET to scan the whole input
+   and to only consider the last matching line.  If no matching crite-
+   ria are assigned  to any of  the targets,  then /M operates exactly
+   like /L (just a little bit slower).
+
+   The way how a line of input is split into fields is configurable as
+   well. By default it is split into "words", series of non-blank cha-
+   racters that are separated from each other by series of white-space
+   characters, where the blank and any charcter whichs ASCII value  is
+   below 0X20 are considered as white-space.
+
+   This default can be overriden by the /W<str> switch, where <str> is
+   a characterstring  which defines the set of characters  that should
+   be regarded as white-space. Note however, that character values be-
+   low 0X20  are always part  of the set  of white-space  or separator
+   characters,  no matter what command line switch  has been set.  The
+   characters can also be expressed as hexadecimal values  in the form
+   \XX. Furthermore whole ranges of characters can be given as X-x. If
+   the '-' is at the beginning or the end of <str> or if the ASCII va-
+   lue of 'X' is not lower than that of 'x',  then the '-' is taken as
+   literal minus sign.  A '^' at the beginning of <str>  denotes <str>
+   as characters NOT belonging to the set, while all the others impli-
+   citly make up the set of white-space or separator characters.
+
+   An alternative splitting strategy  can be specified  by the /C<str>
+   switch.  Here <str> defines the set of separator characters.  Typi-
+   cally it consists of a single character  but more are possible.  It
+   is used to read data in the CSV-format (character separated value),
+   where each line defines a record in which the individual data items
+   are separated from each other by a dedicated character, often a co-
+   lon ':', a semicolon ';' or a <TAB>.  Unlike the /W switch,  the /C
+   regards every occurence  of a character from the set of  separators
+   as the begining of a new field. So a data string of abc:::def would
+   be seen as two data fields if defined as /W:  but as four fields if
+   defined as /C:
+
+   A third  splitting strategy  devides the input line  into fields of 
+   fixed widths. It is defined by the /F[-]x:y:z:... switch. It assig-
+   nes the first x characters to the first target,  the next y ones to
+   the second one,  the following z  to the third one  and the rest to
+   the last defined target.  Therefore it is not useful to define more
+   numbers than targets,  even though  it does no harm.  The splitting
+   takes place from left to right  unless a '-' sign is placed between
+   the /F  and the first width.  In this case  it is carried out  from
+   right to left. This means the last z characters are assigned to the
+   last target, the next-to-last y characters to the next-to-last tar-
+   get and so on while the first target takes the remaining rest.
+
+   By default  PIPESET will write  its target variables  directly into
+   the environment of the parent process.  As this may not be possible
+   in all environments,  especially not in those  that only emulate an
+   (MS-)DOS system the /S switch provides an alternative method. If it
+   is set then PIPESET generates SET commands which can be re-directed
+   into an auxiliary batch file,  which can then be called by the pri-
+   mary one to carry out the actual setting of the variables.  As this
+   method  does not make use of  any undocumented features,  it should
+   work under any flavor of a DOS system. If not re-directed to a file
+   the  /S  switch can furthermore serve as testing aid,  as it shows,
+   what it would do if it did something.
+
+examples:  cd  | pipeset /S current_path
+
+   simply writes the output of the 'cd' command, the current path into
+   a variable of name current_path. The /S switch is just set for cla-
+   rity,  to let the result be displayed  on the screen.  Generally it
+   would be omitted.
+
+           ver | pipeset /S syst=(MS vers
+
+   Scans the output of the command 'ver' for a line in which the first
+   field begins  with the letters 'MS'.  If such a line is found, this
+   first field will be stored into the variable 'syst' and the rest of
+   the line into the variable 'vers'.
+
+           pipeset /S /C=, ==country country codepage driver < \config.sys
+
+   Reads the file \config.sys  breaks each line into pieces  delimited
+   by the  characters  '=' or ','  and searches  for a line  where the
+   first field  equals the string 'country'.  If such a line  is found
+   this first field  is discarted  and fields two,  three and four are
+   stored into the variables 'country', 'codepage' and 'driver'.
+
+           dir /S \ | pipeset /S /M$ files ==file(s) = 
+
+   Scans the output of the command "dir /S \"  for the last one of all
+   lines in which the second word equals "file(s)", discarting any re-
+   maining words  and storing the content  of the first word  into the
+   environment variable "files".  This happens to be  the total number
+   of files  on the  respective drive.  Please note,  that the precise
+   wording and spelling of the search pattern  may have to be adjusted
+   according to the DOS version in use.
+
+   Version history: The command line switch /M and the search criteria
+   '{' and '}' were only introduced in version 1.1 of PIPESET and were
+   not available in prior versions.
+
+
+
+
+TEE     (TEE-junction for data streams)
+
+   is a program that simply copies its stdin to stderr, which is under
+   DOS allways assigned to the terminal.  If,  and only if,  stdout is
+   not also assigned to the terminal, then it will write a second copy
+   to stdout.  This way it is possible  to route the output of another
+   progam into a file  and display it on the screen  at the same time.
+   Note furthermore, that this program is similar but not identical to
+   its counterpart known from UNIX.
+
+example:   dir | tee > dir.lst
+
+   Shows  the directory listing  on the screen  and writes it into the
+   file dir.lst at the same time.
+
+
+
+
+TR     (TRanslate characters)
+
+   is a program which allows to replace certain characters in an input
+   by a replacement.  This replacement can be  another character  or a
+   sequence of characters.  Furthermore it is possible  to remove cer-
+   tain characters from the input stream.
+
+The correct syntax is:
+
+   tr [ options ] [ <string1> [ <string2> [ <str3> <str4> ... ] ] ]
+
+   valid options are:
+     /C  (complement) all characters NOT in <string1>
+     /D  (delete)     remove all characters in <string1>
+     /S  (squeeze)    remove consecutive duplicate characters
+     /M  (multibyte)  replace all characters in <string1> by the
+		      corresponding <string2>, <str3>, <str4> ...
+     /Pn (predefined) use internally defined <string1> and <string2>
+		      n = 1: CP437     --> ISO8859-1 (characters only)
+		      n = 2: CP437     --> ISO8859-1 (subst. non-mapping)
+		      n = 3: CP437     --> ISO8859-1 (subst. graphics)
+		      n = 4: ISO8859-1 --> CP437     (characters only)
+		      n = 5: ISO8859-1 --> CP437     (subst. non-mapping)
+		      n = 6: CP437     --> UTF-8     (characters only)
+
+   Usually TR is used as part of a pipe. In its standard form it takes
+   two string arguments. The first argument, <string1> defines the set
+   of characters  that are to be modified,  while the second argument,
+   <string2> defines the characters by which the corresponding charac-
+   ters from <string1>  are to be replaced.   This implies,  that both
+   strings must have the same size.  Should  <string2>  be longer than
+   <string1> then the excessive characters just have no effect. Should
+   it be shorter, it will be silently extended by duplicating the last
+   character as many times as needed to fill the difference.
+
+   Characters can optionally be expressed as hexadecimal values in the
+   form \XX  and X-x defines  a whole range of characters.  If the '-'
+   sign  is the first or last character of a string  or if 'X' doesn't
+   have a lower ASCII value than 'x', then the '-' is taken as literal
+   minus sign.
+
+   Several command line switches can modify TR's behaviour.  If the /C
+   switch is set, then the effective <string1> is made up of all those
+   characters  that are NOT part of the first string argument.  The /D
+   switch  causes TR to remove all characters found in <string1>  from
+   the input stream.  In this case <string2> doesn't need to be speci-
+   fied.  If the /M switch is set,  then each character from the input
+   stream found in <string1> will be replaced by a sequence of charac-
+   ters in such a way that the first one will be replaced by the whole
+   <string2>,  the second one by <str3>  and so on.  If there are less
+   strings than there are characters in <string1> then the last one is
+   again  repeated  as many times  as needed  to fill  the difference.
+   Using the /M switch  the total length of all strings plus twice the
+   number of these strings (to account for internal book-keeping data)
+   may not be greater than 255.  The /S switch causes all but one of a
+   series of consecutively identical characters to be removed from the
+   output stream, hence after a possible conversion (but before expan-
+   sion into a sequence of characters).
+
+   If the /Pn switch is set, which is only available since version 1.1,
+   then no <string> at all is required,  since TR uses some internally
+   pre-defined strings  to perform certain frequently needed character
+   conversions. The index <n> (1..6) defines  which type of conversion
+   is carried out.   /P1 to /P3 convert texts  encoded as codepage 437
+   which is often used by classical DOS systems  into ISO8859-1 repre-
+   sentation used by many (older) windows systems. /P4 and /P5 perform
+   the opposite conversion and /P6 does some (limited) conversion from
+   code page 437 to UTF-8. Of course only those characters can be map-
+   ped  from one representation  to another  that are defined  in both
+   character sets  (in the case  of UTF-8  the limiting factor  is the
+   size of  the internal table).  Therefore /P1, /P4 and /P6  only map
+   the characters with codes in the range 80..AF(hex) of code page 437
+   (plus a few more)  leaving all other characters unchanged.  /P2 and
+   /P5 in addition replace not mappable characters by a distinct place-
+   holder. Files holding only textual data in (western) european langu-
+   ages will most likely be converted satisfacturally. /P3 attempts to
+   map also line graphic characters from code page 437 to the surroga-
+   tes '-+|' which can sometimes be useful,  e.g. for table borders or
+   the like.
+
+examples:  echo abcDEFghi   | tr A-Z a-z
+
+   Replaces all upper case characters by their lower case counterparts
+
+	   echo a.Ñ.o.î.u.Å | tr /M ÑîÅ\0A\0D ae oe ue "<LF>" "<CR>"
+
+   Substitutes  the german lower case umlauts by  a character sequence
+   and the ASCII codes 0x0D and 0x0A by a visible indicator.
+
+	   tr /P1 < text.dos > text.win
+
+   Converts the file "text.dos" encoded in code page 437 into the file
+   "text.win" encoded as ISO8859-1 leaving unmappable charactrs unchan-
+   ged.
+
+   Version history: The /Pn command line switch was introduced only in
+   version 1.1 and not available in prior versions.
+
+
+SELECT     (SELECT an item from a menu)
+
+   is a program  which presents the user a menu  from which he/she can
+   pick an item. The result of this choice is stored in an environment
+   variable from where it can be further used or processed in any way.
+   The content of this menu  can either be defined by  a file of arbi-
+   trary items  or it can be  a directory  in which case  it serves to
+   pick a file- or directory name or to traverse the directory tree.
+
+The correct syntax is:
+
+select [ options ] [path\][dir mask]
+
+ valid options are:
+   /A[attr]    D:directories F:(ordinary) files
+               A:archive H:hidden R:read-only S:system
+   /F          get menu content from file
+   /I[lbl]     menu included (left justified <lbl>) in batch file ("%0") 
+   /O[B,L,P,R] output: /OB base name /OL long form /OP full path /OR rel.path
+   /C[V,S,K]   change dirs /CV virtual root /CK keep on exit /CS "." selects
+   /D          append "\" to directory names
+   /T<sec>     define time-out in seconds
+   /S[var]     make set command for environment variable <var>
+   /E[var]     store <var> directly in environment (tricky !!!)
+   /H /?       print this helptext
+
+   By default SELECT presents  the directory defined by the (optional)
+   path argument  and the directory mask  in much the same way  as the
+   built-in DIR command would do it. One line of this listing is high-
+   lighted in reverse video  but this mark can be moved up and down by
+   the  <cursor-up>/<cursor-down>,  the <page-up>/<page-down>  and the
+   <home> keys. By hitting the <RETURN> key, the currently highlighted
+   item is selected and the program will terminate with the result set
+   into a variable.  By hitting the <ESC> key, the program can be left
+   without making a choice.
+
+   Several command line switches  can modify  the program's behaviour.
+   The /F switch causes the  path/dir-mask argument  to be interpreted
+   as a file name (it must not contain any wildcard characters in this
+   case).  The content of this  file makes up the menu, line by  line.
+   Certain keywords, all of them beginning with a dot give the respec-
+   tive line a special meaning. ".TITLE" declares the rest of the line
+   as a headline  which is displayed as the second line of the screen.
+   ".DEFAULT" defines a default  which is taken if the user leaves the
+   menu without making a choice by hitting the <ESC> key or if a time-
+   out defined by /T<sec> runs out. This default should be in the same
+   form as the ordinary menu items but it need not be identical to any
+   of them. ".HEAD" and ".FOOT"  allow to re-define the content of the
+   top-most and the lowest line  of the screen  in the same way as the
+   environment variables  SELECT_TOP and SELECT_BOT  described further
+   down  but without consuming precious environment space.
+
+   The keyword ".HIDE" must be followed by a number in the range 1..40
+   and causes  the leading <n> characters of each menu item  not to be
+   displayed though they exists. This may seem confusing and to under-
+   stand its purpose one must know that by default only the first word
+   of each menu item  is returned as result.  (The switch "/OL" may be
+   used to override this default).  The idea behind this behaviour  is
+   that the first word of a menu line  defines the actual return value
+   while the remaining rest may be explanatory text.  Sometimes it may
+   be desirable  to hide the return values from the user  and show him
+   only the text. This can be achieved by the ".HIDE <n>" keyword. All
+   these keywords are only recognized at the beginning of the file and
+   only if they are left justified (beginning in column 1).
+
+   The /I switch is similar to the /F one  but it expects the menu en-
+   teries to be part of a batch file, preferably the one that also in-
+   cludes the SELECT statment itself.  Users who are familiar with the
+   UNIX/LINUX system  may feel reminded of so-called "here-documents".
+   Within this batch file  lines intended as data for the SELECT stat-
+   ment  must begin with a special label  which must be left justified
+   (begin in column 1).  The name of that label must be given as argu-
+   ment to the /I switch.  Any text (up to 15 characters)  can be used
+   as label,  but to prevent  the batch processor  of COMMAND.COM from
+   misinterpreting  menu entries  as DOS commands,  it is advisable to
+   choose labels starting with the characters "rem;" (in either case).
+   All menu entries  for a given SELECT statment  must be placed  in a
+   block of contiguous lines  all of them prefixed with the same label
+   but more than one such block  (each of them  using distinct labels)
+   can be  placed in  the same batch file  allowing for more  than one
+   menu in one batch procedure. Special dot-keywords, if used, must be
+   placed at the beginning of a block  and must immediately follow the
+   label  (without any blank).  Of course  the name  of the batch file
+   must also be given to SELECT  but in many DOS-versions  the name of
+   the current batch  file can  be expressed  as "%0".  If this is not
+   possible a fully qualified name must be given.  If no label is spe-
+   cified with the /I switch ";rem;" is assumed by default.
+
+   By the /A switch,  which will usually be followed by one or more of
+   the sub-switches  A,D,F,H,R or S  the directory display can be fur-
+   ther specified.  The 'D' sub-switch causes  only directories  to be
+   shown, while 'F' shows only (ordinary) files. Specifying both toge-
+   ther like this "/ADF" causes  directories and files to be shown but
+   this is the default anyway. The 'S' and 'H' allow to include hidden
+   and  system  files in  the display,  while 'A'  and 'R' have little
+   effect and are only included for compatibility with DIR.
+
+   The "/C" modifies the  treatment of directories.  By default,  they
+   are treated  like files which means,  that hitting the <RETURN> key
+   simply selects that item and returns the directory name. If "/C" is
+   set,  then hitting the <RETURN> key does not return the directory's
+   name, but rather causes SELECT to change into that directory.  Note
+   that it is not possible  to get a directory name  as result in this
+   case.  To overcome this limitation  the optional sub-switch 'S' can
+   be used.  It causes an additional entry "." to be displayed in each
+   directory.  Hitting the <RETURN> key while this entry (which tradi-
+   tionally denotes the current directory) is highlighted doesn't cau-
+   a change to that directory (which would be pointless anyway) rather
+   it causes the name of the current directory to be returned. (Please
+   note that this behaviour differs from the one of version 1.5)
+
+   The optional  sub-switch 'K'(keep)  causes SELECT  to remain in the
+   currently selected directory  upon program termination.  By default
+   it will always return to the directory  that was current at program
+   start.  The also optional sub-switch 'V'  defines something  like a
+   'virtual root'.  This is either  the path argument or,  if none was
+   specified,  the directory  that was current  at program start.  The
+   effect ot this sub-switch is that the user  can freely  change into
+   sub-directories of this virtual root but not into its parent direc-
+   tories.  All the sub-switches  may be  combined like  "/CKSV"  even
+   though combining 'K' and 'S' may not be very useful.
+
+   The "/O" further specifies the output of SELECT. By default it will
+   return the (short) name of the selected directory item or the first
+   word of the respective  line in file mode.  The "/OB" switch causes
+   the output to be restricted  to the base name  that is the part be-
+   fore the  dot of the (short) name.  In file mode  it also truncates
+   the result to the first part should the first word on the line hap-
+   pen to contain a dot.  The "/OL" switch causes the longname  of the
+   file to be returned,  if it is available  e.g. under  WINDOWS95  or
+   DOSLFN, while in file mode it causes the whole line to be returned.
+
+   The /OP switch returns the full path, consisting of drive, path the
+   base name and the type extension. The /OR switch causes the relati-
+   ve path, relative to the starting directory, to be returned, if the
+   current directory when terminating SELECT is still the same one  or
+   below  that starting directory.  Otherwise it will return  the full
+   path, just as if /OP had been specified. Note that the starting di-
+   rectory is the one  that was specified as path argument,  it is not
+   necessarily identical to one that was current at program start.  If
+   "/CV"  is specified too,  then it is identical  to the virtual root
+   and "/OR"  will return the path relative  to this virtual root.  In
+   file mode "/OP" and "/OR" have no special effect.  Please note that
+   the sub-switches of  /O  ("B","L","P","R")  are mutually exclusive.
+   The switch /D causes the program to append a "\" to directory names
+   on output.   WARNING: The combination of /OB and /D may lead to un-
+   expected results  when selecting a directory which has itself a dot
+   in it's name (this is however a very rare combination).
+
+   By default SELECT will  output the text "SET SELECT=...." to stdout
+   where the dots "...." are replaced by the result. Re-directing this
+   into a file, e.g. \tmp\setvar.bat and then calling that file,  will
+   cause the environment variable SELECT  to be filled with the selec-
+   ted item.  The /S switch allows to assign a different name  to that
+   variable  while the /E switch causes the variable  to be stored di-
+   rectly  into the  environment of  the parent process.  This is more
+   elegant  but doesn't work in all systems,  especially not  in those
+   ones that just emulate (MS-)DOS.  Optionally the /E switch can also
+   be used to define a different variable name at the same time.
+
+   If all went well and the user made a choice then SELECT will return
+   an error code of 0.  In the case of  a severe error,  e.g. file not
+   found  it will return 2.  If the user left SELECT  without making a
+   choice by hitting the <ESC> key  or if the time-out  defined by the
+   /T<sec> switch ran out, then the code 1 will be returned, unless if
+   in filemode a .DEFAULT  has been defined in the menu file.  In this
+   case the default will be returned with an error code of 0,  just as
+   if the user had chosen that alterntive. If the user made no choice,
+   in whatever way,  then SELECT  doesn't touch  the result  variable,
+   (which is SELECT by default  but can be given any name by the /S or
+   /E switches).  So preseting this variable with some value  prior to
+   invoking SELECT  is a method to establish a default becomimg effec-
+   tive  if no choice was made  which can be applied in directory mode
+   as well as in file mode.
+
+   The top most line  of the screen  gives some information  about the
+   kind of selection  that can be made while the line on the bottom of
+   the screen gives short usage hints by default.  This default can be
+   overriden by two environment variables. The variable SELECT_TOP can
+   be used  to define  a new text  for the top most header line  while
+   SELECT_BOT re-defines the footer line.
+
+example: select /C *.*
+
+   Presents the listing  of the current directory,  allowing to freely
+   change into any other directories ("/C" but not 'V') and returns to
+   the directory that was current at program start  (as 'K' is not set
+   either). As result writes the text "SET SELECT=<file>" to stdout.
+
+example: batch file with included menu items
+
+          @echo off
+
+          rem;1.title first menu
+          rem;1.hide 6
+          rem;1    1 item one
+          rem;1    2 item two
+          rem;1    3 item three
+
+          rem;2.title second menu
+          rem;2  BLUE   COLOR
+          rem;2  GREEN  COLOR
+          rem;2  RED    COLOR
+          rem;2  YELLOW COLOR
+
+          select /irem;1 /eone %0
+          select /irem;2 /etwo %0
+          set
+
+   This batch procedure  which may not be really useful  for every-day
+   life demonstrates the use of integrated menus  within a batch file.
+   It presents  the user  two menus, one after  the other,  stores the
+   user's choices into the environment variables  "ONE" and "TWO"  and
+   eventually displays the entire environment. Used this way SELECT is
+   actually just a fancy replacement  for the CHOICE command.  Whether
+   one prefers to include the menu data  into the batch file or rather
+   prefers to strictly separate (menu-)data  from (batch-)code  may be
+   a matter of personal taste and also depend on the application.  The
+   program itself allows for both methods.
+
+   Version history: The /OP command line switch was introduced only in
+   version 1.2 and not available in prior versions.
+
+   Version 1.3  introduced the /OR command line switch,  which was not
+   available in prior versions and included a minor bug fix.
+
+   Version 1.4  was just a bug fix.
+
+   Version 1.5  added the possibility  to complement the path argument
+   by a drive specification  and introduced the "/CS" sub-switch which
+   was not available in prior versions.
+
+   Version 1.6 modified the operation of the "/CS" sub-switch.  The /D
+   was introduced only in this version and not available in prior ver-
+   sions.
+
+   Version 1.7  introduced the .HEAD, .FOOT and .HIDE keywords in menu
+   data and the /I switch which were not available in prior versions.
+
+
+FAM     (Find And Modify) 
+
+   is a program  that reads text from its stdin channel, line by line,
+   and splits each line into several (up to ten) fields,  according to
+   certain rules. Eventually the individual fields are recompiled (af-
+   ter a possible modification) into a new line and written to stdout.
+   So far the default behaviour of the program,  which can be modified
+   in various ways.
+
+The correct syntax is:
+
+ <program> | fam [ options ] [ format ] [ > newfile ]
+ or          fam [ options ] [ format ] [ > newfile ] < <oldfile>
+
+ options are:
+     /F<fld>       define fixed fields e.g. /F3.5.2 or /F-3.5.2
+     /C<str>       define set of separator  characters
+     /W<str>       define set of whitespace characters
+		   A-Z range   \XX hex   ^<str> complement
+     /R<m><str>    replace field <m> (0..9,#,*) by string <str> (or /S)
+     /X<m><c1><c2> exchange in field <m> character <c1> by <c2>
+     /P            print non-matching lines unchanged
+     /L<?><num>    only if line #   <?>: = equal  # not equal
+     /N<?><num>    only if # fields <?>: - less   + greater <num>
+     /M<n><c><str> only lines where field <n> matches <str> according to <c>
+	       <n> 0..9 field n     # last field  * any field
+	       <c> = is equal       { not- ( begining with  ? containing
+		   # is not equal   } not- ) ending with    ! not containing
+ format can be any text including the following special codes
+		   \Fn field n      \Tn trim n    \N # of fields
+		   \F# last field   \Pn pad to n  \L line #
+		   \F* input line   \Q quote (")  \Xxx hex code
+		   \Sn separator n  \\ backslash  \B conditional break
+
+   The possibly simplest way to modify the default behaviour is to set
+   the /R<m><str> command line switch.  It causes the content of field
+   <m> (m=0..9)  to be replaced  by the string <str> before the fields
+   are recompiled to form the output line.  More than one such switch,
+   each for a different field, may be specified.  If the symbol '#' is
+   specified as field number, than the last field will be changed,  no
+   matter  what happens to be the number  of fields in that line.  The
+   symbol '*' has a special meaning which is explained further down in
+   conjunction with pattern matching. The /S (substitute) command line
+   switch takes the same arguments as /R and serves a similar purpose,
+   but is also explained further down in conjunction with pattern mat-
+   ching.
+
+   The /X<m><c1><c2> switch exchanges all occurences of character <c1>
+   in field <m>  by character <c2>.  The field indicator  <m> can take
+   the same values as with /R  and more than one /X switch  can be as-
+   signed to the same field to exchange  several characters at a time.
+   The characters <c1> and <c2> may be either expressed as plain char-
+   acters or in the form \XX with 'XX' being two hexadecimal digits.
+   
+   Another important possibility  is to modify the way,  how a line is
+   split into pieces (fields). By default, it is split into "words" in
+   a rather intuitive way, where a word simply is a sequence of conse-
+   cutive non-blank characters  separated from each other by sequences
+   of so called white-space characters.  By default,  the space itself
+   as well as all control characters  (with ASCII values below 32) are
+   considered as white-space, including carriage-return, line-feed and
+   the tabulator.  At most ten such fields  (numbered from 0 to 9) are
+   generated. Should a line consist of more than ten "words", then all
+   remaining words will be stored in the last field (number 9). Should
+   a line consist of less then ten "words",  then the remaining fields
+   will be empty and the internal field counter will reflect the actu-
+   al number.
+
+   By means of the /W<str> command line switch  one can re-define this
+   set of white-space characters  to whatever is appropriate to do the
+   job. However the control characters are always considered as white-
+   space, no matter what is specified by /W<str>.
+
+   By the /C<str> switch a different kind of rule can be specified. In
+   this case, all members of the string <str> are considered as separa-
+   tors separating the individual fields. This rule which is typically
+   used to read so-called CSV-files  (character separated values) dif-
+   fers from the above one  in that each occurence  of a charcter from
+   the set of separators defines a new field.  A line like "ABC:::DEF"
+   with colon being part of the set of separators, would result in two
+   filds ("ABC" and DEF") when split into "words". If the the CSV-rule
+   is in force, then it will be read as four fields  ("ABC", two empty
+   fields and "DEF").  Again, the control characters  are alway consi-
+   dered as separators and at most ten fields are generated.
+
+   A third type of rule can be specified by the /F[-]<x>.<y>.<z>......
+   command line switch. It simply cuts the line into fields of a fixed
+   size as defined by <x>, <y>, <z> and possibly more numbers, up to a
+   maximum of nine,  resulting in nine fields  of the specified  width
+   plus a tenth one to take the rest. If the optional "-" is specified
+   then the fields are counted  from right to left  in such a way that
+   the last number specifies the width of the last field, the next-to-
+   last number the width of the next-to-last field and so forth. Field
+   number zero takes the remainig rest at the beginning of the line in
+   that case.
+
+   Another important way to modify FAM's operation is to re-define the
+   output format.  By default each separator and each field  (possibly
+   after replacing it by some different text) is output in exactly the
+   the same order as they appeared in the input line. This output for-
+   mat can be overridden by any arbitrary text, optionally enclosed in
+   double quotes,  especially  if the exact preservation  of spaces is
+   important.  This text  will simply  be output  for each line  read,
+   which may not yet be what the user actually wants, but by inserting
+   certain special codes,  all of them beginning with a backslash "\",
+   this text  can be become a versatile tool  to customize  the output
+   in many different ways.
+
+   A \Fn (n=0..9)  will insert the content of field n  into the output
+   string at the indicated position.  A \F# will do the same  with the
+   last field. In both cases the insertion is carried out after a pos-
+   sible replacement and a \F* represents the complete original (unmo-
+   dified) input line. A \Tn (n=0..9,#) is similar to \F as it inserts
+   the content of a field into the output string. However this content
+   will be trimmed (leading and trailing spaces will be removed) prior
+   to actually outputting it.  Note that trimming a field doesn't make
+   much sense if the default splitting rule ("split into words") is in
+   effect,  as the words will not have  any leading or trailing spaces
+   anyway. But if an alternative splitting rule is chosen, then \T may
+   become useful.
+
+   A  \Sn (n=0..9)  copies the original  separator n  into the  output
+   string and a \S# does the same with the last separator, this is the
+   one,  that separates the last field  from the next to last one.  If
+   the input  is split  into "words",  then the first separator  (\S0)
+   contains the whitespace that was found before the first word,  also
+   known as left margin. If the CSV-rule is applied then \S0 is always
+   empty and all other separators are one character long. If the fixed
+   widths rule is in force, than all separators are empty.
+   
+   A \Xhh with "hh" being two hexadecimal digits, will insert an arbi-
+   trary byte into the output stream, a \Q a double quote (") and a \\
+   writes the backslash itself.  A \N will write the number  of fields
+   and a \L the current input line number into the output stream. This
+   may be most useful  for debugging purposes,  when trying to  under-
+   stand FAM's operation.  A \Pn (n=2..19)  pads spaces  to the output
+   line assembled so far, until its length is a multiple of <n>.
+
+   The \B (conditional break) code  is possibly the most difficult one
+   to understand.  It doesn't output anything at all, but just sets an
+   internal flag. If this flag is set, then, whenever a field (\Fn) is
+   output, it is checked, whether this happens to be the last field in
+   this (input) line.  If so, the rest of the output format is discar-
+   ted. The purpose of this code is to allow to suppress the output of
+   fixed text parts  which make no sense  if the preceeding fields are
+   empty. As the format string is evaluated from left to right and the
+   field checking only takes place after the \B code was found,  it is
+   possible to control  which part of the output line should be condi-
+   tionally suppressed.
+
+   If no output format is defined, then the following default is used:
+   "\B\S0\F0\S1\F1\S2\F2\S3\F3\S4\F4\S5\F5\S6\F6\S7\F7\S8\F8\S9\F9"
+
+   Everything explained so far, applies indiscriminately  to each line
+   of the input text, but this can also be modified in such a way that
+   only distinct lines are affected. The /L?<num> switch where '?' can
+   be one of the  following characters:  '+', '-', '=' or '#',  causes
+   FAM to operate only  on lines with line numbers greater than,  less
+   than, equal to or not equal to <num>.  Likewise the /N?<num> switch
+   lets FAM only treat lines where the number of fields, formed accor-
+   ding to one of the above mentioned rules,  is greater,  less, equal
+   or not equal to <num>.  Other lines are simply discarted,  at least
+   by default.
+
+   The most powerful tool to select distinct lines from the input text
+   is the /M<n><c><str> switch. Here <n> refers to a field in much the
+   same way as with the /R switch, meaning that '0..9' refers to field
+   number n,  '#' to the last field  and the special symbol '*'  means
+   any field. The second character <c> specifies a match criterion. It
+   can be one of the following symbols:  '=', '#', '(', ')', '{', '}',
+   '?' or '!' and means, that the match criterion is fullfilled if the
+   respective field is equal ('='), not equal ('#'), begins with ('('),
+   ends with (')'), does not begin with ('{'), does not end with ('}'),
+   contains ('?') or doesn't contain ('!') the string <str>.
+
+   The any field criterion('*') is fullfilled if at least one field in
+   the line fullfills it,  no matter which one.  This can be confusing
+   when used  with negative criteria:  not equal('#'),  does not begin
+   with('{'),  does not end with('}')  or doesn't contain('!'),  as it
+   does _NOT_ mean, that none of the fields may contain, begin, end or
+   be equal to <str>. If the replacement switch is used with the aste-
+   risk like /R*<str>,  then the field matched  by a corresponding /M*
+   switch  will be replaced by <str>,  no matter  which one it is.  If
+   more than one field matches,  they will all be replaced.  Without a
+   corresponding /M* switch a /R* switch has no effect.
+
+   The substitute switch (/S)  acts very similar to /R with one excep-
+   tion:  If it applies to a field  to which a positive  partial match
+   (contains ('?'), begins with ('(') or ends with (')')) condition is
+   assigned, then only the matching part of that field is replaced in-
+   stead of the entire field. In all other cases and all other aspects
+   it behaves exactly like /R. To better understand the subtle differ-
+   ences between /R and /S it might be helpful to look at this example
+
+       echo path=C:\;C:\DOS;C:\UTILS; | fam /C=; /M*(C: /S*D:
+       yields the following result: path=D:\;D:\DOS;D:\UTILS; 
+
+       echo path=C:\;C:\DOS;C:\UTILS; | fam /C=; /M*(C: /R*D:
+       doing the same with /R gives: path=D:;D:;D:;  instead.
+
+   It is possible to define more than one /M switch.  In this case the
+   following rules apply: Match criteria referring to different fields
+   are AND connected  while criteria referring to the same one  are OR
+   connected.  Thus  "/M1=rst /M3(abc /M3)xyz"  would find  every line
+   where field  number 1 is equal to "rst"  AND  field number 3 either
+   begins with "abc" OR ends in "xyz".
+
+   If a selection criterion (/L, /N or /M) is in force, then lines not
+   matching that criterion are simply discarted,  at least by default.
+   The /P switch  can cause FAM to print  these non-matching  lines as
+   well.  They are simply copied from the input without any change. If
+   no selection criterion is specified then /P has no effect.
+
+   Notes:  If more then one switch  is specified  on the command line,
+   the different switches  should be seperated  from each other  by at
+   least one blank. FAM cannot process lines which are longer than 255
+   characters.  Longer lines  are silently truncated  to the allowable
+   length and a warning message  informs about the truncation.  If FAM
+   encounters a line that is even longer than 760 characters, then the
+   operation will be aborted to prevent buffer corruption due to over-
+   flow.
+
+examples: fam /L-21 \L \F* < inputfile
+
+   Prints the first twenty  lines of "inputfile",  prepending the line
+   number to each of them.
+
+          fam /F-5 /R1***** < inputfile
+          fam /F-5 /R#***** < inputfile
+
+   Both versions  replace  the last  five characters  of each  line of
+   "inputfile"  by five asterisks.  They differ in the way,  how lines
+   which are shorter than five characters, are treated.
+
+          fam /M*=the /R**** /P < dosutils.txt
+
+   Replaces each occurence of the word "the" in this text by three as-
+   terisks.  This may not be terribly useful,  but it is an example of
+   the versatility of this program. Note that the first astrisk in the
+   /R switch refers to  the corresponding /M switch,  while the remai-
+   ning three ones are the actual replacement text.
+
+          echo price, excluding tax 12.345,95 | fam /X#., /X#,.
+
+   Changes the decimal  comma and dot notation  from german convention
+   to the one used in the united states,  but only in the last column,
+   leaving other commas intact  ==>  price, excluding tax 12,345.95
+
+          fam /C=,\\ /M*=c: /M*=C: /R*D: /P < \config.sys"
+
+   Automatically  replaces all  references to drive  "C:"  in the file
+   "config.sys"  by references to drive "D:".  Note that the backslash
+   in the switch "/C=,\\", defining a CSV-rule with the characters '=',
+   ',' and '\' as separators,  has to be duplicated in order to be re-
+   cognized as literal backslash. Using the /S switch, the same result
+   could have been achieved by the following command:
+
+          fam /C=, /M*(C: /M*(c: /S*D: /P < \config.sys
+
+   Version history:  The command line switches /S and /X,  the special
+   format codes \T and \P  as well as  the search criteria '{' and '}'
+   were only introduced  in version 1.1 of FAM  and were not available
+   in prior versions.
+
+   Version 1.2  is a pure bug-fix release to provide for a more robust
+   behaviour when encountering oversized input lines.
+
+   Version 1.3 was again a pure bug-fix release to correct an error in
+   the processing of /Mx=yyy and /Mx#yyy switches which returned false
+   matches if the field was shorter then the comparison string.
+
+
+
+
+PRINTF     (PRINT Formatted)
+
+   does essentially the same as the built-in echo command.  However it
+   allows to format the text in various ways and brings the flexibili-
+   ty of the standard "C" libraray function to the command line.
+
+The correct syntax is:
+
+ printf [ <format> [ <arg1> <arg2> ... <argn> ] ]  [ <  <file> ]
+
+   Arguments can be given on the command line and/or they can come via
+   the stdin channel,  but command line arguments are evaluated first.
+   The first argument  (whether given on the commnd line or via stdin)
+   is the so-called format string  which has a special role  as it de-
+   termins  how many more arguments are expected  and how they are in-
+   terpreted. Any argument  that contains at least one blank character
+   must be enclosed  in double quotes  ("...")  to be recognized  as a
+   single argument,  otherwise the quotes are optional.  Arguments can
+   also be environment  variables like e.g. %num%.  When used from the
+   command line,  such a reference must be an argument of its own,  in
+   other words,  the '%' signs must be the first and last character of
+   the respective argument.  In a batchfile this is not absolutely ne-
+   cessary.  However, due to the interpretation of the '%' sign as va-
+   riable indicator, literal '%' signs must be duplicated in this case.
+   This applies especially to the the format string.
+
+   The interpretation  of the  format string  follows essentially  the
+   rules known from the "C" programming language but with some except-
+   ions caused by the diffenrent context.  The format  specifiers '%p'
+   and '%n' known from BORLAND-C to  denote near and far pointers make
+   no sense on the command line  and are not supported.  The option to
+   specify the width of an argument by another argument,  specified by
+   '*' isn't supported either.  Floating point formats '%e','%f','%g',
+   '%E' and '%G'  are only supported  by some versions of printf.  For
+   each format specifyer "%..."  one additional argument is expected.
+
+   If printf  encounters  one of the  '%d','%i','%o','%u','%x' or '%X'
+   specifiers in its format string,  it tries to interpret the corres-
+   ponding argument as integer number,  which in-turn can be expressed
+   in various ways, e.g. as "123", as "0173" or as "0X7B".  If the ar-
+   gument cannot be interpreted as a valid integer,  "0"  is  silently
+   assumed. The output format need not have the same number base (dec,
+   oct or hex) as the argument,  so printf can be used to perform num-
+   ber conversions.
+
+   If printf  encounters  one of the '%e','%f','%g','%E' or '%G'speci-
+   fiers in the format string, it tries to interpret the corresponding
+   argument as a decimal number, integer or real, which in-turn can be
+   written in various formats.
+
+   A '%s' specifier just expects any kind of (printable) string as ar-
+   gument. If the first character of the argument for a '%c' specifier
+   is a digit ('0'..'9')  then this argument is read as integer number
+   and the character corresponding to the respective ASCII code (modu-
+   lo 256) is printed.  Otherwise the argument is regarded as a string
+   of which  only the first  character will be printed.  The data size
+   specifiers 'h','l','L','F' and 'N' are tolerated but have no effect.
+
+   In the format string (and only there) most of the usual escape cha-
+   racter sequences are recognized. Only "\'" is not supported,  it is
+   not  necessary  -  just use a literal  aposthrophe instead  and the
+   quote character  '\"'  cannot be used,  as it is interpreted by the
+   shell to denote strings - use \q instead.  The additional code '\e'
+   issues an ASCII escape character (value 27)  and the codes '\l' and
+   '\m' have a special meaning which is described further down.
+
+   Printf can operate in two different modes.  By default, it just in-
+   terprets the format string  and expects  for each  format specifyer
+   ('%...') a corresponding additional argument.  If there are no more
+   arguments,  but stdin is assigned to something other  than the key-
+   board,  then more arguments are read from there.  Otherwise missing
+   arguments  are replaced  by the string "(NULL)".  If there are more
+   arguments than format specifyers,  the excessive arguments are just
+   ignored.
+
+   Printf behaves differently  if the format string  contains the code
+   '\l' (for: loop). In this case, if the interpretation of the format
+   string,  which is carried out strictly from left to right,  reaches
+   the code '\m' (for: more) or the end of the format string  (if '\m'
+   is not specified)  then printf starts over at the character follow-
+   ing the '\l' code until the list of arguments is exhausted. At that
+   point  the part following the '\m' code  will be interpreted.  This
+   part  should not contain any more  format specifyers,  but constant
+   text is allowed.  If '\m' is not specified  then printf will simply
+   termiate. At most one '\l' and one '\m' should appear in the format
+   string and '\m' (if present) should be placed to the right of '\l'.
+    
+examples: printf "%s %d %02X %d %02X\n" abc 123 123 0x7b 0X7B
+
+   This will print the string "abc", followed by four times the number
+   123 represented in various formats.
+
+          echo abc def ... xyz | printf "result=\q\l%s,\m\q\n"
+
+   The  built-in  command echo  is used  to produce  a stream  of four
+   strings which is fed into a pipe.  Printf itself has a single argu-
+   ment, the format string. As it expects more arguments, it continues
+   to read from stdin. First it will print 'result="', followed by the
+   first string 'abc' and a comma.  When reaching the '\m' it will re-
+   turn to the character following the '\l', that is the '%'.  As soon
+   as the last string 'xyz' is printed,  it will continue  at the cha-
+   racter following the '\m'  thereby skipping the last trailing comma
+   and print a trailing quote, followed by a newline.  The result will
+   look like this: result="abc,def,...,xyz"<new line>
+
+   Printf  comes in  two flawors:  printf.com  is the compact  version
+   which doesn't support floting point formats while printf.exe allows
+   to use the full range of formats, including '%e','%f','%g','%E' and
+   '%G' but at the expense of being more than twice as large.  This is
+   the only difference  and both versions are generated  from the same
+   source code by means of conditional compilation.
+
+
+
+
+FNTOOL     (File Name TOOL)
+
+   is an LFN-aware (long file name aware) utility to process DOS file-
+   names in various ways.  It extends the capabilities of other utili-
+   ties like e.g. dirname or basename by far.
+
+The correct syntax is:
+
+ fntool [ options ] <filename>
+
+ options are:
+     /A       convert to absolute filename
+     /AL      convert to canonical long  name (reqires LFN support)
+     /AS      convert to canonical short name (reqires LFN support)
+     /D[P]    return  drive component   (/DP: without trailing ':')
+     /P[P]    return  path  component   (/PP: without trailing '\')
+     /B       return  basename component
+     /F       return  filename components (same as /B and /T)
+     /T[P]    return  type (extension)  (/TP: without leading  '.')
+     /X<ext>  replace type (extension) by <ext>
+     /U       make result upper case
+     /L       make result lower case
+     /S[var]  make set command for environment variable [var]
+     /E[var]  store [var] in environment (default: FNTOOL_RESULT)
+     /H /?    write this help text
+
+   The filename which is passed as command line argument  is processed
+   in three steps.  First it is converted  into an  absolute filename.
+   Next that filename is split into  its four components: drive, path,
+   basename and filetype (filename extension) and then recombined into
+   the resulting string  according to the option-switches given on the
+   command line. Eventually that result string can be converted to all
+   upper or all lower case and output either to stdout  or stored into
+   an  environment variable.  Each of these steps  is optional.  If no
+   switch  is specified at all,  the filename given  is just echoed to
+   stdout without any modification.
+
+   The operation of FNTOOL is largely controlled by command line opti-
+   ons (aka "switches").  If one of the  "/A", "/AL" or "/AS"  options
+   are set  the filename given as argument  will be converted  into an
+   absolute path  before performing any further processing on it.  The
+   /A option essentially just causes  the current working directory of
+   the specified drive (or the default drive if none was given)  to be
+   prepended to the filename.  The /AL (long) and /AS (short)  options
+   use LFN functions  to generate a canonical filename  in either long
+   or short (8.3) format.  Therefore /AL and /AS  can only be used  if
+   long filename (LFN) support is available  and they require the file
+   to actually exist, while /A processes nearly everything that "looks
+   like" a filename.  If neither /A nor /AL nor /AS are set, the given
+   filename is passed unmodified to the following processing steps.
+
+   If any of the /B /D /F /P /T or /X options are set  the filename is
+   split into its four components: the drive, the directory path,  the
+   basic file name  and the file type extension.  If the filename  had
+   not previously been converted into an absolute filename some of the
+   components may be empty.  Subsequently the components are reassemb-
+   led  to form the result string according to  the actual options se-
+   lected. The /D options causes the drive to be included into the re-
+   sult.  If the "P" subswitch (pure) is set (like /DP)  then only the
+   drive letter itself (not the trailing colon ':') is included in the
+   result.  The /P option includes  the directory path.  Again the /PP
+   sub-option causes the trailing backslash '\' to be omitted,  the /B
+   includes the basename (the filename without type extension)  and /T
+   includes the file type  (aka extension).  With "P" sub-switch (like
+   /TP) the leading dot is omitted.  The /F option  is just a conveni-
+   ence it is equivalent to specifying /B and /T together.  The option
+   /X<ext> causes the actual extension to be exchanged with the string
+   <ext> to give the file a different type.
+
+   The  /U and /L options cause  the result string  to be converted to
+   all upper or all lower case.  By default the result is then sent to
+   stdout  which in-turn is the screen by default.  The option /E[var]
+   causes the result  to be stored  in the environment variable "var".
+   As this requires  some not (officially)  specified  modification of
+   the process'  environment,  it may not be possible  in all systems.
+   Therefore  the alternative  option /S[var]  allows to output  a SET
+   command which can be re-directed into a (secondary) batch file  and
+   then called from the primary one  to produce the same result.  This
+   option can also be useful for debugging. If the optional "[var]" is
+   not specified, the default name "FNTOOL_RESULT" is assumed instead.
+
+examples: fntool /b /u ..\subdir\myfile.txt 
+
+   Returns the basename component of the filename given  in upper case
+   that is: MYFLIE
+
+          fntool /ecwdlong /al . 
+    
+   Stores the current  working directory,  the complete path expressed
+   in long file name form into the environment variable CWDLONG
+
+
+
+
+INLINE      (INLINE data in batch files)
+
+   This utility  reads lines  beginning with a  distinct label  from a
+   file (typically the same batch file it is invoked from)  and writes
+   them to stdout.  This way programs  expecting more than one line of
+   keyboard input  via their stdin channel  can be called  from within
+   batch procedures.  User who are familiar  with UNIX shell scripting
+   might recognize the similarity with so called 'here documents' ser-
+   ving the same purpose even though they are implemented differently.
+
+The correct syntax is:
+
+ inline [ options ] <filename> | <program>
+
+ valid options are:
+     /I<lbl> label to search for (default: ";rem;")
+     /X      expand "\code" and "%env%"
+     /H /?   write this help text
+
+   This program scans the file specified by <filename> for lines star-
+   ting with a distinct character sequence. As the intended use of the
+   program is  to extract lines from the currently executed batch file
+   that <filename>  can often be expressed as a simple "%0".  Matching
+   lines  are stripped  from their identifying character sequence  and
+   then output to stdout from where they are typically piped into ano-
+   ther program.  This way programs which expect more than one line of
+   keyboard input via stdin can be executed from within a batch file.
+
+   This  character  sequence  which is  specified  by the command line
+   switch "/I<lbl>" can be any string it is however recommended to use
+   a string  that is interpreted as the beginning of a comment to pre-
+   vent the shell (COMMAND.COM)  from mis-understanding the respective
+   lines as commands,  so "rem" or ";rem;"  are good choices  for that
+   purpose.  All such lines  must be placed  in a contiguous block  of
+   lines within the batch file  but more than one such block  (each of
+   them identified by a different label)  can be used within one batch
+   procedure. In such a case strings like ";rem;1", ";rem;2", ...  are
+   good choices for labels.  If no "/I<lbl>" switch  is specified then
+   ";rem;" is assumed as default label.
+
+   If the  "/X" switch  (expand)  is specified,  then certain  special
+   codes ("\..") and references to environment variables ("%...%") are
+   expanded  before the lines  are sent  to stdout  otherwise they are
+   just passed unchanged.  Most of  these special codes  have the same
+   meaning as in the programming language "C"  just "\e" (escape char)
+   and "q" (double quote '"') are specific to INLINE.
+
+example: the following batch file
+
+     @echo off
+     rem d 0400:0,100
+     rem q
+     inline /irem %0 | debug
+
+   will scan the currently executed batch file (hence the file itself)
+   for lines starting with "rem",  remove these three characters  from
+   the lines found and send the rest  to the program "debug" as input.
+   This way "debug" is invoked and caused to dump 100(hex) bytes star-
+   ting at address 0400:0000(hex) and then quit.
+
+
+
+
+DUMPENV     (DUMP the ENVironment)
+
+   is a tiny utility  which simply writes  the current environment  to
+   stdout in much the same way as the built-in command SET (without ar-
+   guments) would do it.  However it gives more details and also shows
+   the environment of the parent process.  As such it is  not terribly
+   useful for everyday life,  but it can be handy  in debugging if one
+   of the other programs, that attempt to store data directly into the
+   environment doesn't work as expected.
+
+
+
+
+GENERR / CGENERR     (GENerate an ERRor)
+
+   Are two little  utilities  which take  one numeric argument  in the
+   range of 0 .. 255. They terminate immediately returning this number
+   as error code.  Their only purpose is to test the "IF ERRORLEVEL n"
+   command of batchfiles.  CGENERR was written in "C"  and is a little
+   bit more verbose while GENERR is a pure assembler program.
+
+example: generr 3
+
+
+
+
+INVOKE     (INVOKE a program)
+
+   Is a program that takes the name of another program  as first argu-
+   ment and possibly  (up to 19)  more arguments.  It then spawns that
+   program as a child process, passing to it all additional arguments.
+   Upon termination  of the child process  it displays  the error code
+   returned by that program.  As many flavors of (MS-)DOS do not allow
+   to directly show the value of the returned error code,  this may be
+   a useful aid in testing and verifying these error codes.
+
+The correct syntax is:
+
+  invoke [ options ] <program> [ arguments for program ]
+
+  valid options are:
+     /D       discard stderr
+     /P       propagate result
+     /Q       quiet operation
+     /R       re-direct stderr into stdout
+     /H /?    print this helptext
+
+   INVOKE itself returns zero as error code  unless called with the /P
+   switch.  In this case  it propagates the error code returned by its
+   child back to its own parent.
+
+   The /Q switch suppresses  the display  of the error (return)  code,
+   which may be useful in conjunction with the /D and /R switches.
+
+   Unlike UNIX, (MS-)DOS does not allow to re-direct stderr,  at least
+   not out of the box.  The /R switch re-directs the stderr channel of
+   the invoked child program to stdout.  By itself  this does not lead
+   to any visible effect.  If however stdout  is in-turn  re-directed,
+   e.g. to a file, then both,  stderr and stdout will go to that file.
+   The /D switch just discards the child's stderr channel (actually it
+   just re-directs it to NUL).
+
+   Note that INVOKE adds another level  to the parent-child-grandchild
+   process chain. Therefore programs which try to set environment var-
+   iables may not work as expected.
+
+example: invoke select *.*
+
+   Version history:  The command line switches  /D,  /R  and  /Q, were 
+   only introduced in version 1.1 and not available in prior versions.
+   
+
+
+
+SCRDUMP   (SCReen DUMP)
+
+   This program writes  a portion of the screen to stdout if stdout is
+   re-directed to a file (or another program). It's main purpose is to
+   serve as logging feature in batch files like e.g. AUTOEXEC.BAT. The
+   output of programs like network drivers that might otherwise simply
+   scroll off the screen can be captured and written to a log file for
+   later inspection.
+
+The correct syntax is:
+
+ usage: scrdump                           -  invisibly mark screen line
+    or: scrdump [ options ] > <filename>  -  dump screen between marked
+					     line and cursor line to file
+  valid options are:
+     /H /?    print this helptext
+     /A       (all) dump whole screen
+     /C       compensate for prompt
+     /B<text> print <text> before begin of screen output
+     /E<text> print <text> after  end   of screen output
+
+   The program operates in one of two modes,  depending on the way how
+   it is invoked. If invoked without stdout being re-directed  (no ">"
+   or ">>" or "|") then it simply writes an invisible mark to the cur-
+   rent line on the screen.  If invoked  WITH  re-direction  in effect
+   (scrdump > file) it will search the mark and write the screen lines
+   between (but not including) the marked line and the line the cursor
+   is on when the program starts to stdout  which in-turn will go to a
+   file.  If the mark cannot be found,  either because it was scrolled
+   off the screen or because no mark was written before,  the top line
+   of the screen will be taken instead.
+
+   The operation of the program  can be further modified  by some com-
+   mand line switches. The swithes /B (begin) and/or /E (end) write an
+   extra line of text before or after the screen content.  If the out-
+   put of several programs is appended to the same logging file,  this
+   feature can be used  to separate individual sections.  If <text> is
+   only one character long and is not alphanumeric like "/B="  then it
+   is  automatically expanded  to a string of  60 repetitions  of that
+   character.  This way a horizontal ruler can be written very easily.
+   Other text  is just  written literally.  If the text  contains  any
+   blanks  then the entire switch must be enclosed  in quotation marks
+   like this: "/B--- packed driver ---".
+
+   Even though the program is most useful  in batch files  it can also
+   be used directly from the command line.  In this case however there
+   is a slight inconvenience  as in interactive mode the command shell
+   writes  a prompt to the screen  and echoes the command entered  via
+   the keyboard.  The command line switch  /C compensates  for this in
+   order to prevent this prompt from being written to the output. When
+   used in batch files it is not required.  If the command line switch
+   /A is set, then all 25 lines (of a standard 25*80 character screen)
+   are written to the file, regardless of marks or the cursor position.
+
+example: scrdump
+         ne1000 0x60 5 0x300
+         scrdump > net\ne1000.log
+
+   This sequence  which could be  part of an  AUTOEXEC.BAT  file would
+   write a mark to the screen, then load the packet driver and eventu-
+   ally write the messages from the driver to the file net\ne1000.log.
+   Only the messages from the driver  will be written to the file  any
+   other text that happens to be on the screen is ignored and it makes
+   no difference  whether the driver itself  writes it's messages  via
+   stdout, stderr or directly to the screen.
+
+
+
+   JÅrgen Hoffmann   (2010)   j_hoff@hrz1.hrz.tu-darmstadt.de
+                                                                   
+

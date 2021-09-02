@@ -1,0 +1,71 @@
+
+		Explosiv Screen Saver (Shareware) Readme
+
+
+Explosiv is distributed as shareware and is not free.  This means that
+you may freely distribute Axel to others provided you do not charge for the
+software, that you distribute the package unaltered and that you clearly
+state that Axel is shareware.  You may use this software for a limited
+period not to exceed 30 days after which timer you must register the
+program.  Also, you must purchase a separate licence for each terminal or
+workstation on which you wish to use this software. 
+
+Explosiv is a screen saver for both DOS and Windows.  The distribution
+files that should be included are:
+
+
+	explosiv.com		- Explosiv for DOS files
+	explosiv.exe
+	explosiv.ovl
+	logo.gif
+
+	wim.exe			- Explosiv for Windows files
+	wim.dll
+	wx.exe
+	wxl.dll
+
+	explosiv.doc		- Explosiv documentation
+
+	order.frm		- Product information and order form
+	products    
+	readme      
+
+	install.exe		- Installation files
+	wxinst.exe
+	wxinst.inf
+
+
+If you are installing from 360K disks then all files should be on disk 1
+except explosiv.* files.
+
+It is strongly recommended that Explosiv be installed onto a hard disk.
+To install the program you should have at least 1 MB of file space
+available.
+
+If, after the trial period, you decide that you wish to continue using
+Explosiv it is strongly recommended that you register the program.  Besides
+being illegal to use this software after the trial period, there are many
+advantages to registration.  You will receive:
+
+
+	- the latest version of the program
+
+	- eight additional displays
+
+	- a 16 page printed manual
+
+	- Image Maker support for 256 color GIF images
+
+	- Create Explosiv for Windows displays from BMP images
+
+	- create screen savers from text messages
+
+	- notification of future updates
+
+	- special upgrade offers
+
+	- technical support
+
+
+Please see the file "order.frm" for details.  See "products" for
+information about other products offered by H&G Software.

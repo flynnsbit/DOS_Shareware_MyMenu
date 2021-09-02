@@ -1,0 +1,206 @@
+Odi's LFN Tools
+Version History
+===============
+1.79:   fixed: LREN does not rename the disk label any longer
+        fixed: Code page 866 (Ukraininan and Byelorussian)
+
+1.78:   added: write gathering to cache
+	fixed: LCOPY failed on big files (>512MB)
+
+1.77.2: added: code page 852 (Latin-2)
+
+1.77.1: fixed: activated code page 866
+
+1.77:   added: support for Code pages 437, 866 (Cyrillic)
+        Unicode support rewritten
+
+1.76:	fixed: CD-ROM file system are not required to be in sync any longer
+	fixed: LCOPY damaged target drive when copying recursively (/s)
+               and target folders existed. Copied files were not visible.
+	LCHK: extended reporting on CD-ROM physical file systems
+
+1.75:   LDEL: /F switch wipes all
+	LDEL: removes empty directories automatically
+	LCOPY: /E skips empty directories
+	fixed: LDEL: You must specify a filename now.
+
+1.74:	fixed: proper Joliet detection (underscore problem)
+
+1.73:	fixed: LMD: was broken in 1.72
+	fixed: LCOPY creating directories broken in 1.72
+
+1.72:	fixed: LREN: Didn't generate a new alias
+	fixed: ensure filenames can't have trailing dots
+	source: made vmemory.h optional
+
+1.71:	fixed: LCOPY: when copying from CD generate a new alias by default
+     	       but user can override with /K switch
+
+1.70:   fixed: removed checking for broken cluster chains again. Was crap.
+        fixed: lcopy works now without backslash in source
+	fixed: checking long filename CRC
+	fixed: LCOPY: we keep 8.3-aliases if possible
+	added: LDEL: /S switch
+
+1.62:   (never released)
+	added checking for broken cluster chains 
+ 
+1.61:   fixed: unicode codepage for accented i
+	german translation in LCOPY
+
+1.60:   major fixes!
+        LDIR *.wav /s returned 'file not found' if no such file in the base directory
+	LDIR c:\a*  returned current directory instead of root
+	full disks were destroyed
+	using virtual memory for cache now
+	error in CD cache probably noticed by nobody
+	small error in writeback cache could lead to inaccurate data
+
+1.55:   fixed: LDIR: minor bug
+	added: explicit error message for non-direct-i/o drives
+
+1.54:   fixed: LCOPY: minor bug
+
+1.53:	fixed: LCOPY/LMD: .. entry in root directory was wrong
+	fixed: FAT32 FSInfo record was not updated correctly
+	fixed: LREN: Filename is restored when operation fails
+	added: LCOPY: ask user if file shall be overwritten, /R /Y switches
+	added: country specific date format in LDIR
+	added: security check if filesystem was detected correctly
+
+1.52:	fixed: CD-ROM format recognition
+	fixed: LDIR: trailing \ not needed anymore to distinguish a directory from a file
+ 	fixed: LDIR: missing \ in header
+	fixed: LDIR: /P lost some lines occasionaly
+	fixed: LDIR: /S showed also hidden directories
+	fixed: LDIR: directories starting with . did not appear when using /S
+
+1.51:	fixed: CD-ROM not correctly detected when El Torito bootable
+	added security check for synchronized Joliet/ISO9660
+
+1.50:	fixed: LCOPY: lost clusters when target file was r/o
+	fixed: LCHK:  version number scrolls off screen
+	fixed: compatible with Windows Millenium Edition
+
+1.49:	fixed: too long names were displayed on unicode Joliet CDs
+
+1.48:	fixed: recognition of Joliet CD-ROMs with %/E esc. sequence
+
+1.47:	fixed: Read error when copying empty file from CD-ROM
+	LDIR:  /P switch
+	minor translation issues
+
+1.46:	fixed: Parameter spacing
+	German translation
+	published on PC-WELT (Germany) magazine CD-ROM
+
+1.45:	fixed: You can change case of filename with LREN, now (lren "abc" "Abc")
+
+1.44:	fixed: Alias generation failed on short names without extension containing blanks
+	fixed: Small bugs in LDIR parameter handling
+	added: Ovarall statistics in LDIR /s
+
+1.43:	fixed: memory leak
+
+1.42:	fixed: end of directory was detected wrong on some CDs
+
+1.41:   Full CD-ROM support including Multisession, CD-Extra, Mixed-Mode-CD
+	CD-ROM: You can select an older session now with /Tn
+	CD-ROM: You can choose between ISO-9660 and Joliet file system with /I
+	CD-ROM: Support for relative paths added. (what a mess!)
+
+1.4:    Basic CD-ROM support (only first Track) in LDIR, LCOPY, LCD and LCHK
+	CD-ROM: no relative paths supported yet
+
+1.36:	LCOPY: new switches /B and /D, suppress copying of source dir
+	LREN:  Forbid use of wildcards explicitly
+
+1.35:	LCOPY: works at lightning speed now!
+	fixed: sometimes directories were not appended correctly
+	fixed: some special characters were not translated correctly in alias names
+	LCOPY: destination can be omitted, directory attributes are copied too
+	fixed: LDEL was expecting short names
+
+1.34:	(never available to the public)
+	fixed: better DOS version checking
+	LCOPY: built in cancel
+
+1.33:	fixed: IBM PC-DOS supported now
+
+1.32:	added a larger buffer to LCOPY
+	fixed: caught all memory exceptions
+	fixed: found some memory leaks
+	fixed: cache is flushed on error exit
+	released on simtel.net
+
+1.31:	fixed: FAT12: severe bug fixed
+	fixed: LCOPY: Full disks are treated correctly now
+	fixed: LDEL A:* without backslash working now
+
+1.3:	built in read/write cache
+	fixed: occasionally a directory was not appended
+	fixed: existing names caused generation of alias names (LCOPY)
+	fixed: LDEL on a directory
+
+1.21:	fixed: copying between different cluster sizes
+	fixed: MSCDEX is not required anymore
+
+1.2:	fixed: FAT32: severe bug fixed
+	fixed: LMD: .. entry on FAT32 directories is now correct
+
+1.1:	played around with CD-ROM access. Finally undid most of the changes...
+
+1.0:	First Internet release
+
+g11:	built-in CD-ROM checking
+	fixed: next available cluster was converted to word size instead of dword
+	started LMD
+	started LRD
+	LCOPY: added recursion (/S)
+
+g10:	fixed: bug with FAT12 which turned out even worse in 1.3
+	built-in small cache for extendFile
+	Locking: level 0 locks only
+
+g9:	started LCOPY
+	fixed: bug in freeClusterChain: FSInfo on FAT32
+	fixed: severe bug in extendFile: clusterNo ist now dword 
+	fixed: severe bug in extendFile: EOF is now FAT dependent
+	fixed: endless loop in FindMask
+	fixed: bug in insertDirentry
+
+g8:	added alias generation
+	fixed codepages
+	added recycling of unused directory entries
+
+g7:	added Unicode codepage 00 und 25 support
+	fixed: LDIR: ldir file.ext
+	fixed: bug in insertDirentry
+	fixed: severe bug in freeClusterChain
+	fixed: LDEL: ldel *
+
+g6:	tested reading on FAT32 (found a system to test on)
+	improved detection of file system
+	fixed: bug on FAT32
+
+g5:	FAT32 support: long cluster number in directory entry
+
+g4:	made the whole thing independent of FAT type
+	supported FAT32 everywhere
+
+g3:	started LDEL
+	numbered error messages
+	fixed: memory leak
+
+g2:	fixed: severe bug in name extraction
+	improved detection of file system
+	simplified search algorithm
+	Unicode support
+
+g1:	direct disk access: managed memory problems
+	support for FAT32 reading (experimental)
+	independece of FAT type
+	solved stack issues
+	removed many of those severe bugs
+
+0.0:	birth, idea, first experiments, research, DOS book, WWW, debug.exe

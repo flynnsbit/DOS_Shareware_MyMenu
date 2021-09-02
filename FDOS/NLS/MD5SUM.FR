@@ -1,0 +1,42 @@
+# MD5SUM french translations
+# Translated by Mateusz Viste
+# Anonymous update
+# Codepage: CP 850
+
+# Help message
+
+0.0:Usage: MD5SUM [/TBV] [/C [fichier]] | [fichier...]
+0.1:G‚nŠre ou v‚rifie la somme de contr“le MD5
+0.2:  /C  v‚rifie la somme de contr“le MD5 (paramŠtre par d‚faut)
+0.3:  /[-]V        active ou d‚sactive le mode verbeux (d‚sactiv‚ par d‚faut)
+0.4:  /[-]L        active ou d‚sactive LFN (activ‚ par d‚faut si support pr‚sent)
+0.5:  /[-]R[num]   active ou d‚sactive la r‚cursivit‚ (d‚sactiv‚ par d‚faut)
+0.6:               num compris entre 1 et 9, limite la r‚cursivit‚ (par d‚faut=4)
+0.7:  /[-]S        identique … /[-]R=]
+0.8:  /T           lecture des fichiers en mode texte
+0.9:  /B           lecture des fichiers en mode binaire (par d‚faut; annule /T)
+0.10:  /M[:|=]mode  s‚lectionne l'algorithme (SHA ou MD5)
+0.11:L'entr‚e pour /C devrait ˆtre la liste des condens‚s et noms de fichiers
+0.12:Ceci est affich‚ sur stdout par ce programme quand il g‚nŠre des condens‚s
+0.13:L'argument pour /M devrait ˆtre un mode de condens‚, qui pourraŒt ˆtre 
+0.14:SHA, CRC32, SHA256, or MD5, en fonction de la compilation de MD5SUM.
+
+# Various other messages
+
+1.0:Option invalide pour
+1.1:Le fichier n'existe pas
+1.2:erreur de lecture sur stdin
+1.3:erreur de lecture
+1.4:ligne non reconnue
+1.5:impossible d'ouvrir
+1.6:CHEC
+1.7:La v‚rification MD5 a ‚chou‚ pour
+1.8:sur
+1.9:fichier(s) ont ‚chou‚ … la v‚rification
+1.10:pas de fichiers v‚rifi‚s
+1.11:Le fichier est un r‚pertoire
+1.12:Attention: Support LFN absent
+1.13:Option argument manquant
+1.14:Mode de somme de contr“le invalide
+1.15:Le r‚pertoire n'existe pas
+1.16:chec de l'obtention du r‚pertoire actuel

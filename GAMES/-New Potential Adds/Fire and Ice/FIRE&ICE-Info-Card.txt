@@ -1,0 +1,87 @@
+==============================================================================
+DOS Games Archive Game Info Card                                     Version 3
+==============================================================================
+* General Information *
+
+Game title              : Fire and Ice
+Alternate title(s)      : Fire and Ice: The Daring Adventures of Cool Coyote
+Developer               : Graftgold
+Publisher               : Streetwise Interactive
+Country of origin       : UK
+Distribution model      : Shareware
+
+* Release Information *
+
+Release type            : Shareware (partial game)
+Exclusive level(s)      : No
+Version                 : 1.0
+Release date            : May 1995
+Language                : English
+License file(s)         : LICENSE.DOC
+License/Permissions     : 
+
+"Streetwise Interactive allows and encourages all bulletin board systems and
+"on-line services to distribute this game by modem as long as no files are
+"altered or removed."
+
+* Distribution Information *
+
+Distribution type       : Digital download, Physical media
+Installer provided      : No
+Original location       : Unknown
+Retrieved from          : PC Spiel magazine coverdisk (Jan 1996)
+                          https://archive.org/details/PCS0196
+
+Additional files        : None
+
+Maintainer              : MrFlibble <mrflibble86@gmail.com>
+==============================================================================
+* Note for DOSBox users *
+
+This software is fully installed and configured to run in the DOSBox emulator.
+You can simply drag and drop the file FIREICE.BAT over the DOSBox icon to
+start playing. Experienced DOSBox users may choose other methods of startup.
+
+The software was configured and tested to work with the official DOSBox build
+v0.74-3 available from www.dosbox.com. It may or may not work with any other
+third-party DOSBox distributions that are available.
+
+For playing instructions and other information, please refer to the
+INSTRUCT.DOC file found in the FIRE&ICE directory.
+==============================================================================
+* Game controls *
+
+Jump    : Q
+Crouch  : A
+Left    : O
+Right   : P
+Fire    : Space bar
+Menu    : F1
+==============================================================================
+* Disclaimer *
+
+THE GAME DATA IN THIS ARCHIVE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING AND NOT LIMITED TO ANY IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+All game content is copyright to their respective owners.
+
+No files from the original software package provided by the developer and/or
+publisher were modified except for the configuration files needed to set up
+sound devices and input methods.
+
+This software was tested to work with the current official DOSBox build
+(v0.74-3) and was scanned by an antivirus/anti-malware tool.
+
+You use this software at your own risk. DOS Games Archive is not liable for
+any unwanted consequences that may arise from your using this software.
+==============================================================================
+* Download and online play *
+
+This game is available from DOS Games Archive at:
+https://www.dosgamesarchive.com/download/fire-and-ice/
+
+It can be played online at:
+https://www.dosgamesarchive.com/play/fire-and-ice/
+
+--- END OF FILE (2021/01/03) ---

@@ -1,0 +1,193 @@
+This documentation describes the CD-ROM cache CDRcache,
+written and conceived by Eric Auer <eric (at) coli.uni-sb.de>.
+
+Welcome to Erics GPLed* CDRcache CD-ROM cache! You need some XMS,
+at least a 386 CPU and a CD-ROM controlled by a .sys driver.
+
+See the footnote on the GPL. It is GPL version 2, by the way.
+In short: This is FREE software, intended to be useful, but
+WITHOUT ANY GUARANTEE. And it comes with the (nasm) source code.
+Please read COPYING.TXT which should also be in this directory,
+which contains the full license agreement.
+
+
+*** Limitations ***
+
+
+* Read cache only *
+
+When you start writing to your CD-R, CDRcache will go to sleep
+and stop caching data until the next disk change, to make 100%
+sure that CD-R contents and cache contents stay consistent.
+You can also issue sleep / wakeup commands manually.
+
+
+* Disclaimer/Warning *
+
+
+Next, the usual WARNING: This is a disk driver and nobody has
+yet proven that it is bug-free. A bug can cause your system
+to crash or that reading files on CD-ROM results in reading
+nonsense data. So do not blame me if you copied the data, threw
+away the CD-ROM and then find out that the copying has failed.
+However, I release this software because it DOES work for me.
+It is just that I cannot promise anything to you!
+
+
+*** How to use the cache: ***
+
+
+* Usage as a driver (.sys device) *
+
+
+You can load the cache in (fd-) config.sys using one of:
+DEVICE=CDRCACHE.SYS [arguments]
+DEVICEHIGH=CDRCACHE.SYS [arguments]
+Please tell me if DEVICEHIGH does not work for you (I would
+not know why, therefore I ask for bug reports if this happens).
+Your DOS must tell CDRcache how much RAM it may use (DOS 5+).
+
+
+* Controlling the already loaded driver *
+
+
+If your cache device is called for example CDRCACH$, you can
+write data to that device to force a cache flush or to have
+some status information like cache statistics shown on screen.
+Currently recognized command letters are:
+
+F - Flush cache    C - Clear statistics    S - show Statistics
+I - show technical Information and statistics (new 5/2004)
+Q - Quiet mode      N - normal verbosity   V - verbose/trace mode
+0 - stop caching    1 - continue caching
+? - show help text
+
+All other input to the user interface is ignored.
+
+The new "tech info" display shows the same information as the
+"statistics" display of older CDRcaches before 5/2004. The
+normal statistics display has been beautified in newer versions
+and has been reduced to show only "easy to understand" values.
+
+Reading from the device currently causes statistics display
+and returns an error if you try to do it more than once every
+2 seconds (this is to throttle software that keeps reading).
+It is planned that you can read statistics this way, but for
+now, statistics are directly written to screen only.
+
+Have some examples... Flush cache: echo F > cdrcach$
+Show statistics, then clear statistics and flush cache:
+echo SCF > cdrcach$
+Only show statistics: echo S > cdrcach$
+
+
+* Details on the driver command line syntax *
+
+
+The argument syntax of the cache itself is currently as follows:
+To load:     CDRCACHE  device name size
+
+  device The name of the CD-ROM driver device that will be cached.
+
+  name   The name of the CD-ROM driver device that CDRcache will
+         mimick. You then tell your SHSUCDX or MSCDEX or similar
+         that your CD-ROM driver would be called like that. All
+         cached requests will be handled by CDRcache, all others
+         will be passed on to the real CD-ROM driver device.
+
+  size   Specifies the XMS cache size in kilobytes, range is
+         128 to 65280. Values below 100 are interpreted as size
+         in units of 1/4 MBytes for backwards compatibility with
+         CDRcache versions before 5/2004. Values are rounded up
+         to multiples of 1/4 MByte.
+
+If you do not give acceptable values for those options, an
+help screen will be displayed. Note that if you set name to
+for example "CDRCACHE" (not recommended) you might not be able
+to access files with names that start with CDRCACHE, as devices
+are opened before files when in doubt.
+
+
+* Common usage example *
+
+
+In config.sys:
+DEVICE=c:\somedir\CDROM.SYS /D:CDROM01 ...
+DEVICEHIGH=c:\somedir\CDRcache.SYS CDROM01 CDRCACH$ 10
+  (adjust to the name and syntax of your cdrom.sys driver)
+
+In autoexec.bat:
+c:\somedir\SHSUCDX.EXE /D:CDRCACH$,N
+  (if you use MSCDEX instead, syntax will be similar)
+  (note that you should NOT use CDROM01 for anything else after
+  you have connected it to CDRCACH$, would give strange results)
+
+
+
+*** Technical stuff (do not read this if you do not want to!): ***
+
+
+
+* General background information *
+
+
+As CDRcache (2003) is based on LBAcache, please read the LBAcache
+documentation for some additional technical/programming details.
+
+
+* Multi sector read speed up *
+
+
+Reads will be split up: A sector found in the cache will be read
+directly, while disk reads are collected and done in larger chunks
+if possible (since 1/2002). This will hopefully speed up reading,
+but the other drivers have to use multi sector reads to be able to
+take advantage of this feature.
+
+
+* BINSEL cleverness *
+
+
+The behaviour of the cache is to a very big extend controlled
+by selecting one of the binsel.* as source of the binsel.asm,
+but only binsel.asm (binsel.ni2) is maintained now. Maybe you
+have to adjust the others to work with the current version.
+
+The current version of binsel.asm uses a table with 8 bytes of DOS
+memory per main entry, which can hold up to 16 sub entries. The
+current setting is 8 sub entries per main entry - thus you need
+1k of DOS memory for 2M of XMS memory (1k sectors). 
+
+
+* Memory consumption details and loading methods *
+
+
+Normally, memory usage is limited to 38k (5.5k for the driver and
+up to 32k for managing up to almost 64 MB of XMS. You can use
+either DEVICE or DEVICEHIGH to load the driver, so either low DOS
+memory or high UMB memory can be used. For each 256k of XMS that
+you allocate, 128 bytes of DOS RAM are allocated (currently).
+
+If not enough XMS is free, CDRcache will not load. If not enough
+DOS RAM is free, CDRcache will do an "emergency shrink" and try
+to load with reduced capabilities. It will show "..." while
+shrinking (XMS usage is not shrunk).
+
+DEVLOAD or similar command line device loaders will only work
+if DOS 5+ compatible memory size info is provided to CDRcache
+and if CDRcache is inserted into the device chain properly
+before SHSUCDX or MSCDEX (...) connects to CDRcache.
+
+
+*** Footnote ***
+
+
+* free as beer and speech and has to stay like that. Feel free to
+improve this, but please tell me about your new versions... And do
+not forget to mention me in the credits, or you will get bad karma!
+The working of the GPL allows you to use my code in your project
+ONLY IF your project will be open source, too. You may charge money
+for your product, but you cannot disallow users to give the source
+code of it to others, once they got it. This will help to create an
+evergrowing source of open code for all open minded programmers :-).
+

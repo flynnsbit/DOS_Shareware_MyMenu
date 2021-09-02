@@ -1,0 +1,9 @@
+Game: Dune
+Year: 1992
+Composed by: Stéphane Picq
+MIDI versions: GM, GS, MT-32
+Platform: DOS
+
+Additional info: Original MT-32 version is in the root. GS version was rearanged by Stp (C. Lialiambis). GM version was rearanged by Obrigado, which also contains one track rearanged by Stéphane Picq.
+
+https://www.karlsitretro.com/game_midi

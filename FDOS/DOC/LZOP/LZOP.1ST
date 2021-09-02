@@ -1,0 +1,58 @@
+============================================================================
+lzop -- a real-time compressor
+============================================================================
+
+Author  : Markus Franz Xaver Johannes Oberhumer
+          <markus.oberhumer@jk.uni-linz.ac.at>
+          http://wildsau.idv.uni-linz.ac.at/mfx/lzop.html
+Version : 0.96
+Date    : 13-Mar-1998
+
+
+Introduction
+------------
+Welcome to the sixth public release of the lzop compressor.
+
+lzop is a compressor similar to gzip. Its main advantages over gzip
+are much higher compression and decompression speed at the cost
+of compression ratio.
+
+lzop was designed with the following goals in mind:
+  1) speed (both compression and decompression)
+  2) reasonable drop-in compatibility to gzip
+  3) portability
+
+
+Short documentation
+-------------------
+For detailed usage information please take a look at doc/lzop.txt.
+
+See the file NEWS for a list of major changes in the current release.
+
+See the file INSTALL for compilation and installation instructions.
+
+
+General functionality and behaviour has been modelled very closely
+after gzip. The main differences between lzop and gzip are:
+
+- Files compressed by lzop will have the suffix `.lzo'
+
+- lzop does not delete the input file(s) by default.
+  You have to use the option `-U' if you want this behaviour.
+
+
+Directory overview:
+-------------------
+acconfig      Autoconf configuration files (UNIX specific)
+b             various support files for DOS, Windows 95/NT, OS/2, ...
+doc           documentation in various formats
+src           source code
+
+
+Have fun,
+Markus
+
+
+P.S. since I've finally managed to write some useable documentation
+     you will see version 1 soon :-)
+

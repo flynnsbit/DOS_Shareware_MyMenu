@@ -1,0 +1,61 @@
+
+
+
+
+
+
+
+
+
+
+                                        ARC
+
+                               File Archive Utility
+                                   Version 6.02
+
+
+             Copyright 1985-89 by System Enhancement Associates, Inc.
+                                ALL RIGHTS RESERVED
+
+
+      ARC is used to create and maintain file archives.  An archive is a
+      group of files collected together into one file in such a way that the
+      individual files may be recovered intact.  ARC automatically
+      compresses the files being archived so that the resulting archive
+      takes up a minimum amount of space.
+
+      When ARC is used to add a file to an archive it analyzes the file to
+      determine which of three storage methods will result in the greatest
+      savings.  Since one of the three methods involves no compression at
+      all, the resulting archive entry will never be larger than the
+      original file.
+
+      ARC provides a full range of functions for archive creation and
+      maintenance.  ARC also provides password encryption to protect your
+      data from unauthorized use.
+
+      While the exact degree of compression achieved will vary depending on
+      the contents of any given file, typical compression rates are as
+      follows:
+
+          Programs (.EXE and .COM) files     20% to 30%
+          ASCII text and documents           50% to 60%
+          Spreadsheets                       50% to 90%
+
+      ARC calculates a cyclical redundancy check (CRC) on every file it puts
+      in an archive and recalculates it whenever a file is extracted.  This
+      helps to ensure data integrity when archives are transmitted over
+      telephone lines.
+
+      A program disk with printed documentation is available for $50 from:
+
+                        System Enhancement Associates, Inc.
+                           21 New Street, Wayne NJ 07470
+
+      or by phone at (201) 473-5153 (Visa and MasterCard accepted).  If ARC
+      is obtained by other means, then it may not be used in a commercial
+      environment or a governmental organization without payment of a $35
+      license fee.  Site licenses and commercial distribution licenses are
+      available.  Full program sources are available.
+
+

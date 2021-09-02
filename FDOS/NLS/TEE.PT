@@ -1,0 +1,12 @@
+# TEE Kitten file for (brazilian) portuguese
+0.0:Salva uma c¢pia da entrada num arquivo e exibe o seu conte£do.
+0.1:Uso
+0.3:Arquivos(s)
+0.4:Append to given FILE(s)
+0.5:Ignorar interrup‡äes geradas pelo usu rio
+0.6:Mostar esta mensagem de ajuda
+1.0:Op‡Æo desconhecida
+1.1:Erro ao alocar espa‡o para o descritor de arquivo(s)
+1.2:Erro ao abrir o arquivo de sa¡da
+1.3:Erro ao escrever no arquivo
+1.4:Erro ao fechar o arquivo

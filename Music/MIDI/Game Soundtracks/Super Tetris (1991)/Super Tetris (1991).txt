@@ -1,0 +1,7 @@
+Game: Super Tetris
+Year: 1991
+Composed by: Ed Bogas, Paul Mogg
+MIDI versions: MT-32, Adlib, Tandy
+Platform: DOS
+
+https://www.karlsitretro.com/game_midi

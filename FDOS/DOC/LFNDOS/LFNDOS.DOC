@@ -1,0 +1,252 @@
+LFNDOS: DOS LFN driver (c) 1998, 1999 Chris Jones
+
+This file contains the following sections
+ - What is LFNDOS?
+ - System requirements
+ - Using LFNDOS
+ - Changes
+ - Notes
+ - Contact info
+ - Technical info
+ - Legal stuff
+
+What is LFNDOS?
+---------------
+LFNDOS provides the Windows95 Long Filename (LFN) API to DOS programs.
+Under Windows95, a DOS program can use long filenames by calling a set
+of interrupt functions, which Windows provides. For example, COMMAND.COM
+will allow long filenames when run as a DOS Prompt from Windows, but not
+if you restart in MS-DOS mode. Other programs such as EDIT.COM and all DJGPP
+programs use long filenames if available.
+
+LFNDOS provides the long filename service under DOS, allowing you to use
+long filenames with these programs. It uses the same format for storing the
+names on disk as Windows95 does, so you can view and use long filenames under
+both systems interchangeably.
+
+You don't even need Windows95 to use LFNDOS: you can use it, for example, to
+view the filenames on a disk from a friend who uses Windows95, instead of just
+getting the short ALONGF~1.DOC type names.
+
+
+System Requirements
+-------------------
+The only requirement is MS-DOS 3.30 or higher.
+LFNDOS runs as a memory-resident program, and while resident requires
+about 60k of conventional memory.
+
+LFNDOS currently runs well on FAT-12 and FAT-16 disk drives. (These are the
+standard formats used for floppy and hard disks under 2 Gb).
+It has also been used on FAT-32 drives with varying degrees of success. As I
+only have a 600 Mb FAT-32 partition to test it on, it should be treated with
+caution on a larger drive. It may work perfectly, but I haven't had the
+opportunity to test it. Feedback appreciated.
+
+Also, LFNDOS will NOT work on any drive which doesn't permit direct disk
+access, such as CD-ROM drives and most network connections. With these
+drives the Get Volume Information function will return that LFN is not
+supported. There is a slight bug here, in that some programs just check
+for LFN support on drive C:, and then assume it's the same for all other
+drives, when this is not actually the case. DOS 7 COMMAND.COM works fine,
+though.
+I am working on CD-ROM support though, maybe in the next release... If you
+know how to match the short to long names on a CD, let me know!
+
+
+Using LFNDOS
+------------
+To use LFNDOS, simply type LFNDOS at the DOS prompt. To remove from memory
+later, type EXIT.
+You can load LFNDOS into upper memory if you have 45k of it free - type
+LH LFNDOS  to run. If you get the message 'Abnormal program termination' then
+there's not enough upper memory, so just type LFNDOS instead.
+
+WARNING: Although LFNDOS is completely safe when reading the disk (eg. when
+searching for files or opening existing files), be aware that it does use
+direct disk access when writing the filenames out to disk. Therefore, before
+creating any files under it for the first time you should, like with any other
+direct disk access program, back up the contents of the disk you run it on.
+(hint: try it on a floppy first).
+
+
+Changes
+-------
+New in v1.06:
+ * returns long name in Get Current Directory
+ * now allows more characters in created short names, like !, @, " and so on,
+   which would have caused a ~1 truncation before (Plus! -> PLUS!, not PLUS~1)
+ * fixed bug where the first dot was used to create the short extension - now
+   the last dot is used (e.t.c.exe -> etc~1.exe, not e~1.tce as before)
+ * fixed bug in FAT32 with large drives where garbage was displayed
+ * fixed bug where the whole directory was deleted if you tried to delete a
+   file which had the same name as its container directory
+New in v1.05:
+ * now supports multiple search handles open at once, removes "FindFirst used
+   nested" error message
+ * corrected byte ordering of filetime structures
+ * fixed nasty bug when the filename was in 9.1 format (eg. CHARACTER.H)
+New in v1.04c:
+ * fixed bug on some FAT32 drives causing no files to be displayed
+New in v1.04:
+ * delete with wildcards now supported
+ * fixed advanced wildcard search bug (eg. *AND* now works properly)
+New in v1.03:
+ * added Make Directory support
+ * better FAT32 support (no more "directory-too-long" errors)
+ * fixed bug which wouldn't create files in the root directory
+ * added forward slash conversion, now works with more DJGPP apps
+New in v1.02a:
+ * added FAT32 support
+ * fixed bug which was causing extra directory entries to be created
+
+
+Notes
+-----
+SUPPORTED API FUNCTIONS
+For those of you who are more technically minded, LFNDOS provides the
+following functions (limitations are in brackets):
+INT 21/AX=7139   Create directory
+INT 21/AX=713A   Remove directory
+INT 21/AX=713B   Change directory
+INT 21/AX=7141   Delete file
+INT 21/AX=7143   Extended get/set attributes  (subset only)
+INT 21/AX=7147   Get current directory
+INT 21/AX=714E   Find first file
+INT 21/AX=714F   Find next file
+INT 21/AX=7156   Rename file                  (to same directory only)
+INT 21/AX=7160   Truename
+INT 21/AX=716C   Create or open file
+INT 21/AX=71A0   Get volume information
+INT 21/AX=71A1   FindClose
+INT 21/AX=71A7   FILETIME to DOS date/time    (subset only)
+INT 21/AX=71A8   Generate short name          (subset only)
+Another limitation is that you can only have ten open searches (AX=714E) at
+one time. If a program tries to open too many simultaneous searches, LFNDOS
+will print an error message.
+The following functions are currently NOT implemented - calling them will
+cause an error:
+INT 21/AX=710D   Reset drive
+INT 21/AX=71A6   Get file information
+INT 21/AX=71A9   Server create/open file
+
+WINDOWS
+LFNDOS can be loaded before loading Windows 3.x, and will provide LFN
+functions to any programs which support them.
+You should remove LFNDOS before loading Windows 95/98. You can re-load it
+when you quit Windows.
+
+INFORMATION - HOW LFNDOS WORKS
+All that LFNDOS does is translate a long filename into its short equivalent
+and then pass the short name on to DOS. So, for example, on an 'open file'
+command, LFNDOS will search for a file with the given long name, find the
+short-name alias and then call the DOS open file function using the alias.
+For this reason LFNDOS is completely compatible with DOS, since it always
+passes on requests to DOS instead of handling them itsself.
+Using another example, remove directory, LFNDOS simply removes the long
+filename entries from the hard disk and then tells DOS to remove the
+directory with the short-name equivalent. So in this way, LFNDOS never has
+to cope with marking clusters in the FAT and such like, which keeps it
+reliable and simple (would you like it poking around your FAT all the time?).
+
+BUGS / PROBLEMS
+At present, LFNDOS does not do extensive error-checking, and this can
+occasionally lead to data loss. For example, if you use LFN-rename to rename
+a file to an invalid name, such as "ren myfile.bat \noexist\notallowed.txt"
+the old entry will be removed but the new entry will never appear. In this
+case, running SCANDISK will show up 'lost clusters'. If you save these as
+a file, you have your data back (but with the new filename FILE0000.CHK!).
+
+If you have the new PKZIP/PKUNZIP 2.50 for DOS, you may get messages
+from PKUNZIP when used with the -d option, saying "Warning! Cannot create
+file". This problem only occurs with zip files created with other archivers
+such as WinZip. Zip files created with PKZIP will extract fine with PKUNZIP -d
+under LFNDOS. (This is due to the way other archivers store sub-directories).
+The solution is to manually create the sub-directories which are required,
+and then run PKUNZIP -d.
+
+The MS-DOS 7 commands MOVE and DELTREE do not function correctly under LFNDOS.
+You should not use these commands, as they may cause data loss.
+The XCOPY command does not recognise long filenames when run under LFNDOS. If
+you want LFN support, use the normal COPY instead.
+
+Also, do not create excessively long filenames. Using filenames longer than
+about 90 characters may cause LFNDOS to crash. This is a bug which I'm
+working on, but for now, don't get carried away! (WARNING: Using too many
+characters may also screw up your disk).
+
+If, when creating a new filename, the directory overflows LFNDOS will NOT
+allocate a new sector for it. You will get the message 'cannot create
+directory entry'. The solution for this is to create, in plain DOS, a few
+files, say A.TXT, B.TXT, C.TXT and D.TXT in the directory all together and
+then delete them all, which will have caused DOS to allocate a new sector.
+
+INTERNATIONAL USERS, please note that LFNDOS will incorrectly display any
+characters with an ASCII value above 128, such as accented characters used in
+foreign languages. This is due to Windows using a different character set to
+DOS, and storing the long filename entries in the Windows unicode character
+set. Thanks to Artur Yelchishchev for pointing this out.
+
+LFNDOS does not currently include a cache. This means that it can be very
+slow compared to normal DOS. I am investigating ways to implement a cache.
+
+Comments
+--------
+send them to me at  dosuser@hotmail.com
+visit the website:  http://members.xoom.com/dosuser
+
+Technical info & Background
+---------------------------
+Normal DOS file entries are stored on the disk in 32-byte blocks. These
+have the structure:
+Filename          [11 bytes]
+Attributes        [1 byte]
+reserved          [2 bytes]
+Creation time     [1 integer] - only set under Windows 9x
+Creation date     [1 integer] --Ù
+Last access date  [1 integer] - only set under DOS 7.0 or higher
+Cluster high word [1 integer] - high word of cluster number for FAT-32 only
+Modification time [1 integer]
+Modification date [1 integer]
+Starting cluster  [1 integer]
+File size         [1 long]
+
+Various long filename systems had been tried out. The simplest involved using
+a file to store all the filenames, like 4DOS's DESCRIPT.ION, which consists
+of a list of short/long name pairs. The problem with this was that it didn't
+allow the use of the descriptions to open, read or move files - they were
+just a viewable extra.
+Then Microsoft came up with the idea of using directory entries to store
+filenames. Microsoft LFNs are stored as directory entries leading up to
+the actual file directory entry. They have this format:
+Name index       [1 byte]
+Long name, pt.1  [5 integers]
+Attributes       [1 byte]
+reserved         [1 byte]
+Checksum         [1 byte]
+Long name, pt.2  [6 integers]
+Starting cluster [1 integer]
+Long name, pt.3  [2 integers]
+Note that long filenames are stored in UNICODE - that is, 2 bytes (1 integer)
+for each character. The attribute and starting cluster bytes are present
+in order to make sure that the entry is not mistaken for a normal DOS
+directory entry. (The attributes are set to Read-Only, Hidden, System and
+Volume Label, an otherwise impossible combination).
+The checksum is there incase the long name gets seperated from the short
+name, for example if you copy the file using an earlier version of DOS.
+
+The interesting thing about storing names as directory entries is that
+on FAT filesystems the number of entries in the root directory is limited,
+usually to around 500. This means that by creating only 3 or 4 files each
+with very long names in the root of a disk you can fill up the whole root
+directory and will get 'cannot create directory entry' errors if you try
+creating a new file. (Each LFN entry only holds 13 characters; so a 200-
+character filename will take up 16 entries!)
+
+
+Legal Stuff
+-----------
+THERE IS ABSOLUTELY NO WARRANTY ON THE INCLUDED SOFTWARE, EVEN THE IMPLIED
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR A PARTICULAR PURPOSE. THE AUTHOR
+IS NOT RESPONSIBLE FOR ANYTHING THAT HAPPENS TO YOUR COMPUTER DUE TO THE
+USE OR MISUSE OF THE SOFTWARE.
+

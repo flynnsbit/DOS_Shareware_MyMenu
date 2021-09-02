@@ -1,0 +1,703 @@
+-----------------------------------------------------------------
+               *RADIX (REMIX v2.0): BEYOND THE VOID*
+                  By: Neural Storm Entertainment 
+                   Published By: Epic MegaGames
+
+                "Official" post-release FAQ, v5.0
+                   Written by: Greg MacMartin
+                             May 1996                            
+-----------------------------------------------------------------
+
+=================================================================
+<TABLE OF CONTENTS>
+================================================================= 
+
+I.  Introduction
+
+  1. Preliminary Info.
+         [1-1] A note from the author
+
+II. General Game Information
+
+  2. What is "RADIX: BEYOND THE VOID"?
+         [2-1] So, what is it?
+         [2-2] What is "shareware"?
+         [2-3] What is the difference between the shareware and the
+               registered versions?
+
+  3. What makes RADIX different than any other "3D shooter"? 
+         [3-1] How does RADIX compare to DESCENT?
+         [3-2] DUKE NUKEM 3D? QUAKE???
+
+  4. What kind of features does the RADIX engine have?
+         [4-1] Sloped ceilings and floors.
+         [4-2] Non-orthogonal walls.
+         [4-3] Dynamic light shading and effects. 
+         [4-4] Moving Surfaces.
+         [4-5] Analog movement.
+         [4-6] Complex event system.
+         [4-7] Digital music system.
+
+  5. What system is needed to run RADIX?    
+         [5-1] REQUIRED hardware.
+         [5-2] What sound cards are supported?
+         [5-3] What input devices are supported?
+         [5-4] How does Radix run under Windows 95?
+
+III. Gameplay strategies, hints and cheats
+
+  6. Help me!  Please!!??
+         [6-1] For those who constantly crash into walls...
+         [6-2] For those who die all the time...
+         [6-3] How do I get to the secret hangar bay in 1-2? (Radix 1.1)
+         [6-4] How do I get into the security bunker in 1-6 and complete
+               the secondary objective?
+         [6-5] How do I find the fourth secret area in level 1-1?
+
+  7. How do I cheat in RADIX?
+         [7-1] What cheat codes are there?
+         [7-2] What command line parameters are there?
+
+  8. Did you know... (various features and neat things that you
+     might not have found yet)
+         [8-1] Game features.
+         [8-2] Power-ups and other things.
+         [8-3] Can I make my own Radix levels?
+
+IV. Ordering Info
+  9. Where can I get RADIX: BEYOND THE VOID?
+         [9-1] How do I order RADIX?
+         [9-2] How do I get a copy of the shareware release?
+
+V. Final Thoughts
+  10. Game version history.
+  11. Revision history.
+  
+=================================================================
+I. <INTRODUCTION>
+=================================================================
+
+-----------------------------------------------------------------
+1. Preliminary Info.
+-----------------------------------------------------------------
+
+    [1-1] A note from the author
+     Well, its a full year since the release of Radix 1.0.  Although
+the game has sold VERY poorly, some of the developers (namely,
+Dan Dufeu and I) refused to sit back and let Radix become
+super-vaporware. Yes, as tough as it is to believe, due to severely
+busted gameplay (namely, forced forward movement) and a non-existant
+marketing strategy the game has made nothing for anyone involved in
+its creation.  However, we believe that there is FINALLY a good game
+to be found here in REMIX.  It's 3D.  Its definitely full of action.
+But wait!! It is NOT a walk-around! That in itself should at least
+pique your interest....
+     No, Radix REMIX has not been upgraded with Quake technology.  And
+no, it has not been given an SVGA upgrade.  And no, it has not been
+rewritten as a native Win95 application.  However, the GAMEPLAY has
+been given a large upgrade.  Levels have been fixed and replaced.  A
+whole bunch of new art has been added to increase the fun factor of
+playing the game.  Basically changes have been made to make the
+game a great one to boot up and release all that built up aggression.
+Isn't that what action games are for?   
+     If you like 3D action, then I urge you to give the shareware
+version of Radix REMIX 2.0 a whirl. If you have any questions regarding
+this game or this FAQ, please dont hesitate to ask them. My E-mail
+address is:
+
+cl662@freenet.carleton.ca
+
+=================================================================
+II.<GENERAL GAME INFORMATION>
+=================================================================
+
+-----------------------------------------------------------------
+2. What is "RADIX: BEYOND THE VOID"?
+-----------------------------------------------------------------
+
+[2-1] So, what is it?
+     "Radix: Beyond The Void" is a 3-D perspective action game.  The
+player is the pilot of an experimental fighter, the Radix-class
+inter-dimensional star fighter, in the year 2148.  The player has
+complete control of the plane's movements, including speed, and
+lateral / horizontal movement.  The ship is heavily armed and has the
+capability to incorporate new technologies into it's systems if they
+are found.  Many aliens, alien craft, missiles, mines and environmental
+hazards try to hinder your completion of mission objectives.  
+
+     Why would one want to put themselves through something like
+that? Well...
+
+     In the 22nd century, after centuries of global strife and tyranny, the
+people of Earth united to form a sovereign world government. The United
+Earth Space Alliance (UESA) launched a dynamic plan to expand the reaches
+of the human race beyond that of our solar system. In the year 2147, this
+effort resulted in the launching of the first of two colony ships. These
+massive vessels were destined to colonize a huge asteroid, designated
+Theta-2, on the outskirts of our solar system. After five months of space
+travel, the first ship safely arrived at Theta-2 and initiated the colony.
+Soon after, the second of the two ships departed from earth with 10,000
+colonists to bring the Theta-2 base into full operation. Once the colony
+was fully established, mankind would finally have the opportunity to leave
+the confines of the solar system.
+
+     It happened on October 24, 2148; While the second vessel approached the
+colony, something unnatural occurred. A dark shape began to form out of
+nothing, blacking out the starscape and eating away at the very fabric
+of reality. The commander of the colony vessel "Salvation" had barely
+managed to dispatch an emergency message to Earth confirming that there were
+multitudes of alien ships emerging from this "Void."  Just after the
+transmission, the largest of the alien ships tore the Salvation apart with
+an immensely powerful particle beam.
+
+     The gigantic alien craft dragged both portions of the Salvation into
+a huge hangar bay, sealing the fates of the 10,000 human beings aboard.
+
+     According to the information received from the destruct beacon
+(the "black box") there were 45 alien vessels in the vicinity of Theta-2.
+The largest ship, which captured the Salvation, moved to orbit the asteroid.
+The remaining ships started converting the Theta-2 base into a base of
+their own.
+
+     Immediately after the incident, UESA went on level one alert status and
+began assembling a fleet to eliminate the alien force. UESA's ships reached
+the Theta-2 asteroid and began an intense battle with the alien fleet. UESA's
+3 battlecruisers, 10 frigates and 15 destroyers fought well, but their
+weaponry was no match against the massive alien dreadnought. The mission was
+a devastating failure. The Alliance realized that a large frontal assault
+was not the way to defeat the invaders. It was decided that a small, heavily
+armed, fast attack ship might be able to make it past the ships in orbit and
+reclaim the Theta-2 base.
+
+     Back on Earth, scientists combined their knowledge and pooled their
+ideas, and concluded that the black space, dubbed "The Void," was some
+sort of inter-dimensional portal; a tear in the structure of our universe.
+Using the current knowledge of multi-dimensional physics, they were able to
+develop a device that would allow a small spacecraft, preferably a fighter
+of some sort, to enter The Void and possibly leap into a different universe.
+
+     Three months after the invasion of Theta-2, the Radix class
+inter-dimensional starfighter was built.  Due to the enormous amount of
+resources required to build this powerful fighter, only one was built.
+Although the Radix class had just barely begun the experimental stage of
+it's development, there was no time left. The Radix-class fighter was
+loaded onto the Defiance, a battlecruiser, and Operation Vengeance
+commenced. The Defiance had to leave, and the Radix, the last desperate
+hope for humanity, was going with it.
+
+
+[2-2] What is "Shareware"?
+     Shareware is a popular method of distributing software in
+which the possible buyer gets to "try it" before buying it. 
+It the case of games, the first episode, usually out of three is
+the one that is freely distributed for people to try.  This game
+is no exception.  RADIX: BEYOND THE VOID is a shareware game
+separated into 3 episodes, the first of which can be
+distributed freely.  This free version is called the "demo" or
+"shareware" version.
+
+
+[2-3] What is the difference between the shareware and the
+      registered versions?
+     The primary difference between the two versions is that the
+shareware version only has the first episode in it.  The shareware
+version also lacks a large portion of the alien enemies in the game.
+It is also missing four main weapon systems.  Basically, the
+shareware version is only a sampling of the game.  If you want to
+play the entire game, you must purchase the full, "registered"
+version of Radix.
+     
+
+-----------------------------------------------------------------
+3. What makes RADIX different than any other "3D shooter"? 
+-----------------------------------------------------------------
+
+[3-1] How does RADIX compare to DESCENT?
+
+     RADIX IS NOT A DESCENT KILLER.  Nor is it intended to be.  The
+gameplay is remarkably different, even if at first glance Radix
+seems to be some kind of Descent clone.
+     Radix, first of all, does not have that much exploration.  The
+game focuses more on your getting to your objectives and surviving,
+and much less of exploring mazes.  There are some exceptions,
+like secondary objectives.  While sometimes out in the open and
+obvious, secondary objectives in Radix tend to be hidden.  Even the
+exploration that there is much more simple than Descent's
+because in Radix you cannot go straight up or straight down.
+Basically, the designers of Radix did this purposely to give the game
+a DIFFERENT and somewhat easier feel than Descent.  Also, it is much
+harder to get "lost" in the Radix levels.
+     The second main difference between Radix and Descent is the
+combat.  In Descent, a popular way to destroy enemies is to fire at
+them, then backup, then move forward and fire again until they are
+dead.  Now, you could use that same method to fight in Radix, but
+you will find that is not very effective in this game just because
+of the sheer number of enemies you face at once.  The most effective
+way to kill enemies in this game is to "circle strafe" around enemies
+while continously firing.  Or, if you are using weapons with "seeking"
+abilities, fly around in a room firing and avoiding enemy fire.
+Basically, combat in Radix tends to be more frantic and intense than
+in Descent, with explosions going off all around the player all the
+time.
+
+
+[3-2] DUKE NUKEM 3D? QUAKE??? 
+     Well, those two games are walk-arounds.  And they both DO have
+superior game engines (especially Quake).  However, I think that
+Radix is unique enough and has enough GAMEPLAY differences that
+people could still play Radix and enjoy a "different" gaming
+experience.   One difference between Radix and Duke is that in
+Duke the designers attempted to model REALITY to some degree.
+With Radix, we had no intention of ever doing that.  The Radix
+environment is pure imaginative, fantasy stuff.  Oh, and one last
+thing....There are *NO* keycards in Radix!!
+     To be fair and truthful, the only games that could really be called
+similar to Radix are Descent and its sequals.
+    
+
+-----------------------------------------------------------------
+4. What kind of features does the RADIX engine have?
+-----------------------------------------------------------------
+
+
+[4-1] Sloped ceilings and floors.
+     Although the Radix engine is one that is similar to Doom in
+many ways, a major difference is that Radix has sloped floors and
+ceilings.  This allows for vastly different level design than Doom
+and many other 3D games that do not have slopes.  With slopes more
+realistic locales can be made.  Radix has some neat architecture as
+well, such as huge curved support pylons and arches.
+
+
+[4-2] Non-orthogonal walls.
+     This feature is fast becoming the standard among 3-D games,
+although there are still some that aren't implementing it.  
+Basically, this means that the walls can be at any angle to 
+one-another.  For instance, in some 3-D games the walls are 
+at 90 degrees to one another, so that every locale was rectangular 
+in shape (Rise of the Triad).  Radix never had this problem.
+Areas can be created that look much more real than before and
+increase the feeling of realism and immersion into the gaming world.
+
+
+[4-3] Dynamic light shading and effects.
+     Radix has 120 some-odd different shades of lighting built
+into it's engine. This allows for a more realistic depiction of    
+light in the game.  There are also flickering, pulsating and
+moving lights similar to those in Hexen.
+
+
+[4-4] Moving Surfaces.
+     In Radix entire surfaces can move up or down.  This allows
+for some neat effects like water and lava lowering and uncovering
+architecture underneath.
+
+
+[4-5] Analog Movement.
+     Analog movement is a kind of movement that automatically
+adjusts for the speed of the CPU, which means that the player
+will move at the same RATE on a 386-33 as on a 486-DX2 66. 
+Obviously, the FRAME rate would be significantly slower, but
+the rate that one MOVES is not effected.
+
+
+[4-6] Complex events and event system.
+     Radix employs a very complex event system that allows for
+the activation of many events at once.  Events could be things
+such as lighting effects, moving surfaces, teleportation, super
+speed boosters, sucking fans, scrolling bitmapped surfaces,
+among others.  For example, triggers could deactivate one event 
+and activate two others simultaneously.  
+
+
+[4-7] Digital music and sound system.
+     Radix uses a digital sound system that allows digital sound
+effects and music.  Games like Jazz Jackrabbit and One Must Fall
+2097 have similar sound systems.
+
+
+-----------------------------------------------------------------
+5. What system is needed to run RADIX?    
+-----------------------------------------------------------------
+
+
+[5-1] REQUIRED hardware.
+     RADIX: BEYOND THE VOID has been developed to be played well on   
+a 486-66 with 8 megs ram, standard VGA.  The game will run with
+4 megs of ram, but it wont run well. It is highly recommended that
+you have a pentium processor for playing REMIX 2.0.  The improvements
+made for that version could bog down a low-end 486 considerably.
+
+
+[5-2] What sound cards are supported?
+     RADIX has native support for the following: 
+     1) The Sound Blaster family (SB/SBPRO/SB16 and compatibles)
+     2) Gravis Ultra Sound
+
+   NOTE: There is no support for the original Adlib sound
+         card, as RADIX uses pure digital music and sound                   
+         effects which are not possible to reproduce on the 
+         FM synthesis based Adlib card.
+
+
+[5-3] What input devices are supported?
+     Radix can be played with the keyboard, mouse and joystick.
+If you have a joystick with a throttle control, Radix should
+support it as well.  Although support for such devices as the
+Microsoft Sidewinder and the Logitech Extreme series of joysticks
+was asked for, we were unable to get support for those in
+there. :(  However, future versions may very well have support for
+those.  It all depends on how well REMIX is received by the
+gaming community.
+
+
+[5-4] How does Radix run under Windows 95?
+     Although Radix is a native DOS application, it runs very well
+under Win95.  The only problem that anyone has had running the
+game under Win95 is that the music might occasionally "skip".
+This is a memory shortage problem.  To fix this problem, get more
+RAM or run the game in MS-DOS mode.
+ 
+
+=================================================================
+III <GAMEPLAY STRATEGIES, HINTS AND CHEATS>
+=================================================================
+
+-----------------------------------------------------------------
+6. Help me!  Please!!??
+-----------------------------------------------------------------
+
+[6-1] For those who constantly crash into walls...
+     SLOW DOWN!  The main reason that many beginners tend to fly
+around, smacking into walls and becoming disoriented is because of
+speed.  In Radix you are able to fly at VERY fast speeds.  If you
+don't believe me you should try punching your afterburners when you
+have acquired the maneuvering jets!  This great speed can be
+used to great advantage in combat but for regular flying around it
+can be very disorienting, especially when you are flying in levels
+you have never been to before.
+     Disorientation can also be remedied by using the automap.  By
+hitting TAB, you can bring up a map that overlays itself over the
+play screen.  This should make it easier to find exits and doors that
+you might not have noticed before.
+     If all else fails...think of Radix as DOOM in the sky.  Grab
+your mouse, crank the sensitivity and picture yourself playing DOOM
+except you are always flying.  I have personally found
+this control method to be about 50% more accurate and simply better
+than the joystick or the keyboard.  This control method is
+especially good in dogfights.
+     One more note:  Doors in Radix work very differently than other
+3D games.  In other games, you have to open doors by shooting the
+door or by hitting a key. In Radix you fly nearby the door and
+it will open by itself.  If you see a door and crash into it then
+you know that it must be opened by other means, such as by destroying
+a computer console nearby.
+
+
+[6-2] For those who die all the time...
+     Lower your skill level.  This is the most obvious solution to
+that problem.  The lowest skill level in Radix should be easy enough
+for most players to play through the game without much trouble.
+Another way to avoid death is to cheat.  Look below for some
+interesting cheat codes that should make the game MUCH easier to
+play.
+
+
+[6-3] How do I get to the secret hangar bay in 1-2? (Radix 1.1)
+     In order to complete the secondary objective for this mission,
+you must find a secret alien hangar bay and destroy all stationary
+Skyfire Assault Fighters.  This can be done by following these steps:
+
+1. Complete the Primary Objective
+2. Find the Cruncher Room.  (The room with all those pile-drivers)
+3. Destroy the computer console in that area.
+4. Go back to the huge outdoor area near the beginning of the level
+   with the huge energy core.
+5. You will notice that a small portion of the force field
+   surrounding the core is now turned off.  You can now fly onto
+   the core pad...
+
+[6-4] How do I get into the security bunker in 1-6 and complete
+      the secondary objective?
+
+1.  There is a secret room at the bottom of the long, deep shaft
+    in one of the beginning rooms.  You must find this secret and
+    fly around it.
+2.  Once you have done that, you must then proceed to the area where
+    the right wall opens to reveal MANY Skyfires and Bio-Mines.  Go
+    through the red phantom wall and into the "doughnut" secret area.
+    If you completed step 1, there should be a passage leading from
+    this area.
+3.  This passage appears to be a dead end, but it is not.  There is
+    ANOTHER phantom wall about half way along the left wall.  In there
+    you will find a small computer terminal.  Destroy it.
+4.  Now one door of the security bunker is open.  You may fly in and
+    complete your secondary.  The consoles you destroy in the bunker
+    will also deactivate the force field protecting a bunch of pow-ups
+    elsewhere in the level.
+
+
+[6-5] How do I find the fourth secret area in level 1-1?
+    There was a bug involving this, but there are now 4 secrets
+    in level 1-1. (fixed for Remix 2.0)
+
+-----------------------------------------------------------------
+7. How do I cheat in RADIX?
+-----------------------------------------------------------------
+
+
+    [7-1] What cheat codes are there?
+     Here are all of the cheat codes in Radix.  Type them in while
+playing the game.  You may pause the game while you type in codes.
+
+* indicates that the cheat code is only available in Radix version
+1.1 and 2.0.
+
+^ indicates cheat is only relevant for versions 1.0 and 1.1.
+
+
+  NSOPTA          Full armor, shields, energy, weapons, plasma bombs and
+                  ammo.
+
+  NSBAGWAN        Toggle Ultra-Shields.  Will remain on until end of
+                  level.
+
+* NSE             Full energy.     
+
+  NSBJIPP         Toggle maneuevering jets.
+
+  NSOPTL          Surface illumination.
+
+* NSBLASTER       Toggle rapid shield regeneration.
+
+* NSHORSLEY       Toggle rapid energy regeneration.
+
+* NSDIEBESTERDS   Makes all weapons fire at a MUCH faster rate.
+
+  NSOPTS          Does absolutely nothing.
+
+* NSFRICOFF       Toggles air friction.  Pretty neat.
+
+* NSDEATH         A hidden skill level that makes all enemies go
+                  nuts.  If you finish the game with Death mode on,
+                  it will be marked on the Top Ten pilot screen.
+
+*^ NSHALT          Press MIN THROTTLE to Hover!
+                  
+  NSOPTD          Enter the realm of debugging.  Real fun.
+
+  NSWARP [ep] [lvl]  Warp to any level in the game, EXCEPT the
+                     secret level.  Map 9 (secret) in each episode
+                     can be reached by command line, however.
+
+  NSOPTM          Makes the automap show all of the level.
+
+
+
+
+[7-2] What command line parameters are there?
+     Here are all the command line parameters for Radix:
+
+* indicates that the parameter is only in Radix version 1.1 and 2.0
+
+
+  -debug             Play the game in debug mode.
+
+  -nosound           Force Radix to disable sound when the game loads.
+
+  -file (filename)   Used to load an external resource file.
+
+  -warp (ep,lvl)     Go directly to the specified level.
+
+  -skill (#)         Sets the skill level to play (0-3). Used in
+                     conjunction with -warp.
+
+  -record (filename) Record a demo into the specified file.
+
+  -play (filename)   Play a recorded demo.
+
+  -boom (# players)  Initiate a network game from DOS.
+                     The parameters below are to be used in conjunction
+                     with -boom.
+
+* -cheater           Gives the player who uses this parameter the very
+                     fast weaponry that is normally gotten by using
+                     the cheat code NSDIEBESTERDS.
+
+  -dogfight          Set the net game to dogfight.
+  -cooperative       Set the net game to cooperative.
+  -capture           Set the net game to capture the flag.
+  -noenemies         Set the net game to no enemies.
+  -respawn           Set the net game to respawning powerups.
+  -name (plyr name)  Used to give yourself a name for net play.
+
+
+-----------------------------------------------------------------
+8. Did you know... (various features and neat things that you
+   might not have found yet)
+-----------------------------------------------------------------
+
+
+[8-1] Game features.
+
+IN-GAME MISSION BRIEFING SCREEN.(F11)  This is a useful screen that
+shows the primary and secondary objectives for the current mission.
+
+AUTO-LEVELING.(F8)  This is a feature that some find useful to keep
+themselves orientated.  It will automatically level the player out
+so that the craft is flying straight.  It can also be annoying to
+some players.  Experiment with this.
+
+CHASE PLANE VIEW.(F2)  A neat feature that allows you to see the Radix
+craft from behind.  Its a little hard to play this way, but it does
+look neat.  This key also toggles the cockpit instrument panels.
+
+AUTO-DETAIL.(F6)  This feature will automatically adjust detail levels
+to keep the frame rate high.
+
+MOUSE/JOYSTICK SENSITIVITY.  In Radix 1.1 and 2.0 you may adjust the
+sensitivity of these input devices in the In-Game menu (ESC).
+
+
+
+[8-2] Power-ups and other things.
+
+A.L.D.S. (Automated Laser Defense System).  This is a powerup that
+is found only in the registered version of the game.  There is
+no cheat code for it, so you'll have to find it.  It will
+automatically shoot out blue laser bolts at any enemies nearby.
+
+PLASMA BOMBS.  These are powerful weapons that are found even in
+the shareware version.  The little icon at the top right side of
+the screen keeps track of how many you have.  The default key for
+this is the spacebar.  Once activated, a plasma bomb will cause
+heavy damage to ALL visible enemies.
+
+TWO NEW EXPLOSIVE PROJECTILE CANNON LEVELS:  For Radix 2.0, 2 new
+levels of the EPC weapon (#2) were added.  Collect more EPC powerups to
+gain access to them. Once you have them, press "2" repeatedly to
+change the level of your EPC's.  NOTE: The "Advanced EPC's are only
+available in episodes 2 and 3.
+
+
+[8-3] Can I make my own Radix levels?
+
+Yes!  You can.  After ordering the registered version, you can
+download RadCad, the official Radix editor from this web site:
+
+http://www.sonetis.com/~nstorm
+
+The editor also comes with documentation in the form of the RadCad FAQ
+(which is included with the zip file but is also separately available
+from the same site).
+
+You cannot play user-created levels with the shareware version.
+
+
+=================================================================
+IV <ORDERING INFO / RELEASE DATES>
+=================================================================
+
+-----------------------------------------------------------------
+9. Where can I get RADIX: BEYOND THE VOID?
+-----------------------------------------------------------------
+
+
+[9-1] How do I order RADIX?
+     There are 3 ways to purchase Radix:
+
+
+1.    Call 1-800-972-7434 and you can use your MasterCard or Visa
+2.    Fill out the order.doc file and fax or E-mail it to Epic.
+      Fax: (301) 299-3841
+      E-mail: orders@epicgames.com 
+3.    You can also use snail mail by sending a check or money order 
+      to the following address:
+
+      Epic MegaGames
+      10406 Holbrook Drive
+      Potomac. MD 20854
+
+
+[9-2] How do I get a copy of the shareware release?
+
+     Internet users:
+
+ftp://ftp.uwp.edu/pub/games/epic
+ftp://ftp.execpc.com/pub/epic
+
+You can also download Radix from the Epic MegaGames Web site:
+www.epicgames.com
+
+Also check out the Neural Storm Web site:
+www.iosphere.net/~nstorm
+
+And a couple of cool people have made Radix "Homepages":
+
+Jim Lowell's
+www.winternet.com/~jlowell/radix
+
+"Xenomorph's"
+www.geocities.com/SiliconValley/6066
+
+     For those without internet access you can call the EXECPC
+BBS at (414) 789-4362 (type FFE at the main menu) and download
+Radix from there.
+
+
+=================================================================
+V. <Final Thoughts>
+=================================================================
+
+   10. Game version history.
+
+    RADIX: BEYOND THE VOID 1.0 : This was released November 8th 1995.
+    It had very few if any technical bugs, but had some gameplay and
+    control problems.
+
+    RADIX: BEYOND THE VOID 1.1 : Released January 4th 1995.  A new version
+    of the shareware version was released as well as a patch that will
+    update version 1.0 to 1.1.  Control was fixed, levels were altered,
+    inertia was added and more.  It is a big improvement over 1.0.
+
+    RADIX "REMIX": BEYOND THE VOID 2.0: Released November 1996.  Basically
+    a super enhanced version 1.1 with new levels, weapons and
+    Descent-like controls.  A game that should have NO major gameplay
+    problems.
+
+11. Revision history.
+
+     Version 1.0  (November 1994) Very old, useless information.
+     Version 2.0  (Early 1995) Discussion of engine features, slopes
+                  Also very old and not very relevant to the
+                  current Radix.
+     Version 2.1  Bug fixes, etc.
+     Version 3.0  (Late 1995) A true pre-release FAQ that is mostly
+                  correct.
+     Version 3.1  Bug fixes, etc.
+     Version 3.2  (October 1995) More of the game's features were
+                  added.  The last pre-release FAQ.
+     Version 4.0  (January 1996) First post-release FAQ.  Completely
+                  rewritten.  Very concise and shorter than the
+                  unnecessarily lengthy pre-release versions.
+                  This version was included with Radix 1.1
+     Version 4.1  (May 1996) Bug fixes.  Accidently omitted cheat code
+                  NSOPTM added.  Radix version history added. Gameplay
+                  questions answered.          
+     Version 5.0  (November 1996) A full year after the initial release
+                  of Radix, this version reflects the new version of the
+                  game, Radix REMIX v2.0.
+                     
+=================================================================
+<COPYRIGHT NOTICE>
+=================================================================
+
+Do what you will with this.
+
+*****************************************************************
+*********** Greg MacMartin                           ************
+*********** Email address: cl662@freenet.carleton.ca ************
+*****************************************************************
+
+
+

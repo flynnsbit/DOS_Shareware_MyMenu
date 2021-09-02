@@ -1,0 +1,14 @@
+Begin3
+Title:          SHSUFDRV
+Version:        1.02
+Entered-date:   2005-12-22
+Description:    SHSUFDRV is a driver for floppy and hard disk images. SHSURDRV copies the image to RAM and/or creates RAM drives.
+Keywords:       driver, floppy, images, hard disk, ram drive
+Author:         Jason Hood
+Maintained-by:  Jason Hood <jadoxa -AT- yahoo.com.au> (looking for a new maintainer)
+Primary-site:   http://www.geocities.com/jadoxa/shsufdrv/index.html (newest version)
+Alternate-site: http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/disk/shsufdrv/
+Original-site:  http://www.geocities.com/jadoxa/shsufdrv/index.html
+Platforms:      DOS, FreeDOS
+Copying-policy: Freeware / source code available
+End

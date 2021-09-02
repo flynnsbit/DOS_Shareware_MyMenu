@@ -1,0 +1,77 @@
+                              
+                              ----------------
+                              Interplay Online
+                              ----------------
+  
+
+  Interplay BBS:
+  --------------
+  Interplay operates a Multi-Line BBS running WildCat! Software for Customer
+  Support, Questions, and game fixes.  The number is 714-252-2822.  Modem
+  settings are 300-28.8k, V.32, V.42, 8-N-1.  This is a FREE service.
+
+  Once logged onto our BBS, join the Virtual Pool Conference, (conference 7).
+  To do this from the MAIN MENU, first type "M" to switch to the MESSAGE MENU, 
+  then type "J" for "JOIN," then enter "7" to join Conference 7.  Once you
+  have switched to the Virtual Pool Conference you can (R)ead Messages
+  left by others, (E)nter New Messages to our resident Virtual Pool Expert,
+  and even download additional trick shots, (if you have the CD-ROM version
+  of Virtual Pool).
+
+  To Download Files, join Conference 7 as described above, type "F" for the
+  FILES MENU, and then enter "L" to LIST the available files in this area.
+
+     IMPORTANT NOTE:
+
+        Different File Areas are availible depending on which Conference
+        you are currently in.  If you're looking for Virtual Pool files, be
+        sure to (J)oin Conference 7 BEFORE you enter the (F)ile Area.
+
+
+
+  You can also reach Interplay via the following Online Services:
+  
+  America Online:
+  --------------
+  From AOL you can e-mail Interplay Customer Support at IPTECH.  To reach
+  our customer board in the Industry Connection, press CTRL-K for "Go to 
+  Keyword."  Then type INTERPLAY in the keyword window.  In addition to
+  reading and leaving messages, you can download fixes and demos from the
+  "Software Libraries."
+
+
+  CompuServe:
+  -----------
+  On CompuServe we are located in the Game Publishers B Forum.  Just
+  type GO GAMEPUB and any ! prompt.  Then select section 4 for Interplay
+  Productions.  You can leave technical support questions there.  You can 
+  also download fixes and demos from Library 4 in the GAMEPUB.  The best 
+  place for game play hints is in the GAMERS forum, (type GO GAMERS).  
+  
+  If you are not already a CompuServe member, you can call CompuServe toll-
+  free at 1-800-524-3388 and ask Representative #354 for a free introductory 
+  membership and a $15 usage credit.
+
+
+  GEnie:
+  ------
+  We are located in the Games RoundTable hosted by Scorpia.  To get there,
+  type M805;1 at any ? prompt.  Then select "Category 13" for Interplay 
+  Productions.  Demos and patches are available in the Libraries.
+
+
+  Prodigy (r) Interactive Personal Service:
+  -----------------------------------------
+  You may send e-mail directly to us from Prodigy at ID PLAY99B.
+
+
+  Internet:
+  ---------
+  You can reach Interplay Technical Support over the Internet by addressing
+  e-mail to:   support@interplay.com
+
+  Many Interplay demos and patches are also available at Internet FTP sites.  
+  
+
+
+<End_Of_File>

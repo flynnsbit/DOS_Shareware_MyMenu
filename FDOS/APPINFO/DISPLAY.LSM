@@ -1,0 +1,14 @@
+Begin3
+Title:          DISPLAY
+Version:        0.13b
+Entered-date:   2013-12-14
+Description:    FreeDOS driver for codepage management (screen or printer)
+Keywords:       display, ega, vga, nls, cpi, cpx
+Author:         Aitor Santamaria Merino
+Maintained-by:  Aitor Santamaria Merino
+Primary-site:   http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/display/
+Alternate-site: http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/chcp/
+Original-site:  www.freedos.org
+Platforms:      DOS, FreeDOS
+Copying-policy: GNU General Public License, Version 2
+End

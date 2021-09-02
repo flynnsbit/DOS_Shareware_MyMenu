@@ -1,0 +1,99 @@
+
+                            Ultimate Print Spooler
+
+
+
+        I know you have probably seen MANY print spoolers in the public domain
+before. But try mine for a while. I have used many before, but still feel my
+version is about the fastest and most flexible. (Slightly prejudiced!) I
+released it to the public domain a while back, but have made some changes and
+want to release the newest version again. I have found it to work much better
+with some of the existing applications and have improved the interface. The
+documentation is a little cryptic! Programmers don't usually like to write
+documentation very well anyways!
+
+The program consists of 2 parts:
+
+        SPOOL.DEV:      Device driver to be installed.
+
+        BUFFERP.COM:    Print spooler command control.
+
+
+Configuring spooler:
+
+Install the folowing line you CONFIG.SYS file on the boot
+        disk:
+                device=spool.dev [/option1] [/option2]
+
+        Where option may be the following:
+                Option 1:  "/1" -"/64" Decimal digit(s) indicating
+                           (k)size of memory to reserve for print
+                           buffer.
+
+                Option 2:  "/L(1,2,3)" or "/C(1,2)". Specifies which
+                           port is buffered, and becomes STANDARD
+                           PRN output. Only one may be specified.
+                           Option "L(1,2,3)" indicates LPT1,LPT2 or
+                           LPT3 respectively. Option "/C(1,2)" indicates
+                           Com1 or Com2 port.
+
+        Thus if the following line is installed:
+
+                        device = spool.dev /l2 /60
+
+        It means spool the PRN output to LPT2, reserve a 60K buffer.
+
+        Options are not case sensitive! Options may be installed in
+        any order. Any other characters are ignored. Default setup
+        is:
+                LPT1  and 1K buffer
+
+
+
+Buffer control:
+
+        Operating the buffer control program, "BUFFERP" is fairly
+simple. Just execute it at DOS prompt. It will bring up a simple
+menu. Only one command is executed at a time. Pretty self-explanatory.
+
+Improvements:
+
+I would like to add a couple of more features:
+
+        1. Keystroke control for some buffer functions (such as
+           print pausing or buffer clear). However the problem
+           is that it may interfere with other resident programs!
+           So I have avoided doing that. Will probably look into
+           the problem more in the next release.
+
+        2. Extended printer format support. Add online format control
+           to elimnate all the other various little printer utils
+           out there that set up printer configs (such as compressed
+           print,etc). That problem would require more user customizing
+           and lots more code! Maybe will do in future release.
+
+        3. Execution of buffer commands on same command line when
+           running the bufferp program. Would make life easier, when
+           user is already familiar with commands. I myself prefer
+           most commands to be as short as possible,avoiding menus!
+           This will be implemented in next release.
+           
+
+Since I have also graciously released source code for this program you
+might want to add these features yourself! And perhaps return the new
+code to the public domain. If so, PLEASE credit where its due! Also
+please release source code, in the true spirit of the public domain!
+
+If you have comments about the program, feel free to contact me at the
+following location:
+
+                Craig Derouen
+
+                Heathkit FIDO BBS
+                 206-941 6943
+                Federal Way,Wa
+
+
+ Please share the program with others. Upload it to your favorate bbs!
+
+

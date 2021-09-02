@@ -1,0 +1,10 @@
+Mirror is licensed under terms of the 
+GNU GENERAL PUBLIC LICENSE,
+Version 2, June 1991
+
+See COPYING in the installed directory or refer
+to the GPLv2 diskset (GPLv2.ZIP contains the GPL license text).
+
+LICENSE.TXT should contain the GPL V2 license text unmodified
+if this zip file is distributed separately from the FreeDOS
+distribution it is included with.

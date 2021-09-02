@@ -1,0 +1,486 @@
+Notes (by Eric Auer Jul+Aug/2004) on the caches which you can find on:
+http://www.bookcase.com/library/software/msdos.util.disk.html
+Please send feedback to eric*coli.uni-sb.de (replace * by @).
+
+------------
+
+Those caches might be useful if your PC is too old for modern
+32bit caches (DR-DOS NWCACHE, MS SMARTDrive, and of course LBAcache).
+Some caches have very special features: COMBI provides both a RAMDISK
+and a CACHE, using a shared memory pool. 35SEC optimizes floppy access
+by maintaining a disk image in RAM. I_CACHE can cache CD-ROM and CCACHE
+includes a reentrant SCSI driver, allowing concurrent access. You should
+assume that read-ahead / track buffers help a lot for floppy but that
+the effect for harddisks is small - unless you have an old harddisk with
+"real" CHS geometry and slow rotation speed. Some caches are free, others
+are shareware. Some caches support delayed / staged / pooled writes in
+various styles: The delay is often recommended to be 1 or 5 seconds, the
+upper bound being up to 13 seconds and in once case even 1 hour. The
+written data is first held in RAM and than, often combined into whole-
+track writes, sent to disk at a later moment, when the system is idle.
+NWCACHE supports read-ahead and configurable delayed write, while
+SMARTDRV only allows little configuration of delayed write and
+LBAcache does not offer delayed write at all yet (but has read-ahead, in
+the optional TICKLE module). Older SMARTDRV cached BIOS disk services,
+newer versions cache both BIOS and DOS disk services, allowing them to
+cache non-BIOS FAT disks (e.g. ZIP) and giving them good hints about
+data type (FAT/directory versus data sectors). The caches described
+below are often from the pre-DOS 5 era, so instead of UMB or HMA, some
+of them use shadow RAM and "high memory".
+
+
+If the initial summary is too short, see the verbose / raw notes below!
+
+
+#COMBI - up to 14 MB XMS, provides cache and *ramdisk*, free clusters on
+the ramdisk are used to hold cache data. Dynamically creates appropriate
+errors if you try to read free clusters or both disk and cache run full.
+Can shrink itself automatically when more XMS is needed. You can FREEZE
+useful data into the cache. DELAYED WRITES supported, default delay is
+1 second (older versions: 1/4 second). *Background Write* sends the write
+command to disk and then returns to the caller: The disk can fetch the
+data from a local buffer, new access is, if needed, delayed until the
+buffer is free again (the modern free DOS UDMA.SYS driver has this, too).
+No FLOPPY cache. Price: 30 USD (version 1.13, 1993)
+
+*QUICKCACHE II 4.20 - includes archiving / *sort* (with disk swap, can do
+case insensitive and 7 bit sort and use modified collate order) / system
+info / memory test / file finder software and verbose manuals. Up to 1.6
+MB EMS or XMS, designed as a turbo version of DOS BUFFERS (using hash
+tables to find sectors). Exotic memory allocation (high/shadow/BIOS/...)
+possible. Can do track READ-AHEAD and track WRITE COMBINING (writes are
+delayed until you start accessing another track), optionally also cylinder
+write combining ("this track, all heads"). DELAYED WRITES supported (max.
+age of pending writes recommended 1..5 seconds, up to 1 hour possible).
+You can FREEZE (lock) metadata and files into the cache. Extensive API
+hooks int 13 functions 20-38 hex. Supports 8086/286/386/VM86-386+ CPU.
+Up to 2 physical harddisks, default "weight" of sectors max 30, at least
+10 for metadata, depending on LRU measurement. Can poll PC XT (<= 360k)
+floppy if you have no CHANGE LINE. Adds int 21.0c and ctrl-c/ctrl-break
+to the usual (program exit, int 21.0d...) delayed write *boundaries*.
+Price: 25 USD (version 4.20, 1990)
+
+*HYPERDISK 4.77 (http://www.hyperware.com) - includes PC XT RAM refresh
+optimizer, keyboard typematic rate set / bigger buffer tool, screen
+saver / boss key and text mode accel driver. Includes documentation of
+the API. Up to 32 (63?) MB EMS/XMS. Supports shadow / high RAM. Can resize.
+Win3.x aware. HOTKEYs supported. Can do DELAYED WRITES. Quite configurable.
+Can check floppy at intervals if you have no CHANGE LINE. Long multi-sector
+access can be ignored by cache (useful if far below 1 MB cache allocated).
+Staged write delay default 1 second. Age limit for buffers possible.
+For use with DR DOS EMM386 and Lotus 123r3, you have to *Lock the used XMS*
+to avoid deadlock / swapping to disk. HOTKEYs supported. Delayed write
+problems (EMS/XMS/disk) lead to trash/retry now/retry later prompt, which
+defaults to retry later if user fails to answer. Works with BIOS extenders
+like OnTrack / SpeedStor. All modern CHS geometries *and* "64 head 4096
+cylinder" API of SpeedStor/DiskManager/AMIBIOS/OPTiBIOS supported. Can
+work with floppy disk drives which have CHANGE LINE (checksums FAT). Tries
+to predict "trashing/overcommitment" situations and temporarily disables
+cache fills e.g. if you copy huge files. Up to 10 floppy and 10 harddisk
+drives cacheable. Price: 20 USD (version 4.77, 1998).
+
+*EMMCACHE 1.10 - a simple EMS cache, supports up to 128 CHS harddisks
+(functions 0..3,8), max size 32 MB. Small but effective (according to
+Barry Simon's test). No FLOPPY support. Price: FREE (version 1.10, 1987).
+
+*CACHE2 - extremely simple cache, only single sector access cached, only
+uses DOS RAM for buffers, small, only one harddisk, no FLOPPY.
+Price: FREE (version 2, 1986).
+
+-DCACHE - open source, limited to physical harddisks below 256 MB size,
+similar to EMMCACHE, max size 8 MB, open source, no FLOPPY.
+Price: FREE (1988).
+
+-PC-KWIK 3.19 - not very well documented, version with DELAYED WRITES has
+much higher price. Can use EMS, XMS or raw/DOS RAM. Price: 20-80 USD (1988).
+
+*ADCACHE 1.22 - supports DELAYED WRITES (max 60 seconds, recommended 0.2
+seconds delay), supports READ-AHEAD (1/4 track recommended), no FLOPPY
+cache, max size 32 MB EMS. Do not use with EMM386s which can swap to
+disk (obvious). Max 2 physical harddisks caches, small.
+Price: 15 USD (version 1.22, 1990).
+
+#35SEC 1.20 - special floppy only cache, with HOTKEYs. Copies a floppy
+contents in whole tracks (faster) to/from RAM, so you could say it has
+READ-AHEAD and WRITE COMBINING. Works in the background, but not Win3.x
+compatible (opening/closing *DOS boxes* and using 386 enhanced mode can
+use (disk) swapping which interferes with the cache).
+Price: 10 USD (version 1.20, 1995).
+
+#I_CACHE 1.21 - can cache CD-ROM and harddisks. VDS/VDMA support. Not
+compatible with Win3.x 32 bit file access. Use with InDOSPolling=1 for
+Win3.2 386 enhanced mode. Max 16 MB XMS. Can work with floppy with no
+CHANGE LINE, by checking for *serno changes* or, if none present,
+assuming a disk change if the floppy is *idle* for more than 2.5 seconds.
+Uses LRU queue against trashing. Supports WRITE COMBINING to write as
+much as possible of a track at a time. HOTKEYs (?) and popups possible.
+Price: 25 USD (version 1.21, 1996).
+
+#CCACHE - includes special *reentrant SCSI driver* which allowes concurrent
+queued access for all ASPI drives with FAT12/FAT16 partitions. Can use EMS
+(4.0: no page frame needed) or XMS or raw int 15 memory. Up to 64 MB.
+Supports DELAYED WRITES. Dirty buffer age (up to 13 seconds) is processed.
+Has FREEZE support, just *enable freeze mode, access the data in question,
+return to normal mode*. Configurable READ-AHEAD. Floppy media check slow
+on Novell (and DR?) DOS. Not DesqView compatible! Delayed writes not QEMM
+7.3 stealth mode compatible! Not compatible to Win3.x 32 bit file access,
+but compatible to 32 bit disk access. Not compatible to vfat Win3.x driver.
+Use for Win3.x 386 enhanced mode: VirtualHDIrq=false OverlappedIO=true
+ReflectDOSInt2a=true and for delayed writes: INT28Critical=true. Maximum
+delay for writes is 30 seconds. Delay *boundaries*: Program exit, return
+to prompt, int 21.0d, int 21.68, even int 21.6c "commit" flag for single
+file open processed. Price: 30 USD (1996).
+
+------------
+
+Summary (# = has unique features, + = includes bonus programs, $ = raw
+int 15 memory supported as well), excluding DCACHE/PC-KWIK (because they
+seem to be not really useful...). Note that 35SEC is ONLY for floppy.
+Unique: COMBI includes RAMDISK, ICACHE can cache CD-ROM (PS: CDRCACHE
+is a free CD-ROM ONLY cache for 386+/XMS), CCACHE has reentrant ASPI
+driver. SMARTDRV supports CD-ROM, too. Some caches can use hardware EMS
+and run on all 8086/8088 or newer CPUs (EMM386 can only run on 386 or
+newer, but there is a slow EMM286 XMS to EMS converter somewhere...).
+
+Name	Delayed	Write	Read-	Hot- Freeze Floppy/need	Cost max. RAM
+	Write	Combine	Ahead	key	    no changel. USD  MBy/type(s)
+CACHE2	 -	-	-	-    -	    -/-		0    0.5 DOS(!)
+EMMCACHE -	-	-	-    -	    -/-		0    32  EMS
+ADCACHE	 yes	-	yes	-    -	    -/-		15   32  EMS
+QUICKCA+ yes	yes	yes	-    yes    yes/yes	25   1.6 EMS/XMS
+Combi can run on a 286 CPU:
+COMBI#   yes	???	???	-    -	    -/-		30   14  XMS
+All caches below this line need a 386 or newer CPU:
+HYPERDS+ yes	???	yes	yes  -	    yes/yes	20   63? EMS/XMS
+CCACHE#  yes	???	yes	-    yes    yes/???	30   64  EMS/XMS$
+I_CACHE# yes	yes	yes	yes  -	    yes/yes	25   16  XMS
+35SEC#	 yes	yes	yes	yes  -	    yes/???	10   1.5 ???
+Some more modern caches:
+SMARTDR# yes	???	???	-    -	    yes/???	???  32? EMS/XMS?
+NWCACHE	 yes	yes	yes	-    -	    yes/yes	???  8?  EMS/XMS$
+LBACACHE -	...	yes	-    ...    yes/...	0    32  XMS
+
+SMARTDRV and NWCACHE are part of MS and Novell/Caldera/DR DOS respectively.
+A 286+ version of CCACHE is available as separate download somewhere.
+
+Freeze feature in LBAcache is only partially implemented (no user
+interface - I think a CCACHE style interface would be nice, please let
+me know your opinion! eric * coli.uni-sb.de). Write combine and "need
+no floppy change line" can be implemented if there is serious interest.
+LBAcache can cache CHS and LBA harddisks (max 2 TB size!). SMARTDRV can
+cache - in newer versions - all FAT disks of all sizes at DOS driver level
+but also has some support for BIOS disk access caching (afaik). More or
+less all other abovementioned caches do only BIOS disk access caching.
+As best free general purpose caches, I recommend EMMCACHE and LBAcache.
+Best shareware caches seem to be COMBI, HYPERDISK, I_CACHE, CCACHE.
+
+------------
+
+
+Detailled notes follow:
+
+
+------------
+
+COMBI cache: 8k+1block low 16by/block hma, 1/8-14mb xms, 0.5-4k block size
+both ramdisk and cache 8 harddisks delayed writes shareware russia 30 usd
+... bigger blocks mean bigger granularity but longer writes ... not only
+1sec delayed write but also background write avail - ask disk to write at
+once, but already return to caller ... 1991-1993 version 1.13 Vadim V.
+Vlasov ... DOS 3.30-6.00 ... intercepts XMS alloc/realloc for autoshrink ...
+test and stats program with sources included ... djgpp-ld loves reading
+uninitialized sectors ... qemm/win386 conflict in hma and alloc ... ramdisk
+returns sector not found if reading sector which is free according to fat
+... write error dynamically created if ramdisk and cache are both full ...
+freezable to keep valuable data cached ... VERIFY performance improved in
+1.10 ... write delay was 5 ticks, now is 18 ticks ... flushes on
+ctrl-alt-del ... no floppy/386/ems ... size does not really change speed ...
+not ptsdos compatible ...
+
+------------
+
+QUICKCACHE II 4.20: Includes QBACK archiving, QSORT sort, QMAP system
+info (for support requests... phone support is 15 USD / 15 min but after
+registering for 25 USD you get 15 min without extra charge...), QMEMTST
+RAM tester, QLOC file finder, 6400 lines manuals, verbose bug/fix log.
+
+This 1988-1990 cache is for DOS 2-4, so it can manually allocate HMA/UMB
+or use the "brand new" 386MAX (emm386). EMS or XMS can be used for the
+cache, and the "write combining" or "read ahead" buffers can be put into
+a mapped EMS page. You have to install from floppy and the installer
+personalizes things, benchmarks the optimal buffer sizes, etc. (it assumes
+that your CHS geometry is real hardware geometry: recommended buffer size
+is 1 or at least 0.55 tracks). Delayed writes are possible, default delay
+is 1 second. If one delayed sector write happens, the whole track or
+cylinder ("all heads for this track") can be collected and flushed at the
+same time. For "CP/M software compatibility", BIOS memory size (40[13])
+allocation is used in parallel (!) to DOS memory allocation of the same
+area. QCACHE is more made for free raw high memory than for actual UMBs,
+but can of course use low RAM, too. The cache has 8086 / 286 (using keyb.
+reset to leave protected mode after XMS copy) / 386 / 386 VM86 modes.
+It is suggested to allocate 1/3 of the cache as "locked" pool, and there
+is a tool which can force the cache to keep dir/fat data in that pool.
+
+Otherwise, you can use weighting: default is dir/fat being 10x "heavier"
+than normal data, maximum weight 30, frequent use increases weight.
+The API of this cache (sample Pascal program included) is located at int
+13 functions 0x21-0x30 (0x20-0x38!?). Flushing happens at program exit,
+return to prompt. hotkey, no real disk change detection seems to happen.
+
+Default settings: 90 sectors (20-3200, max 1.6 MB, 18 by/sec tables),
+no flush interval (max 1 hour, for buffered write, 1-5 secs recommended),
+no read ahead, flush at least 3200 dirty sectors for each flush event,
+buffered read and write. Int 21.0c (flush+read stdin) is treated as
+error/disk change sign, as is ctrl-c/break. Buffered read is read-ahead
+(or "around") inside current track. Buffered write is limted to one track,
+so it is generally safe. You can lock both "all metadata for X:" and
+single files into the "lock pool" (min 40 sectors normal cache must stay
+free). Stats show histogram of sector usage frequency. Cache translates
+drive letters into "cache 1 or 2 whole int 13 harddisks", and caches
+floppy as well. Hash table reduces search time to "check 3 sectors",
+much faster than BUFFERS of DOS. "Sophisticated [LRU measurement]". Has
+on the fly reconfig. Speed: 14x floppy, 4x harddisk (55 msec access)
+claimed. For PC-/MS-DOS 2/3/4. Supports polling (for PC/XT floppy w/o
+change line). Now supports 32mb+ drives. Only supports 512 byte/phys sector.
+QSORT allows case-insensitive and 7bit sort and collating sequence changes,
+max record length is 254 char (truncates longer) and max input size is 50%
+of free disk space... uses n-way merge after 128 slot quicksort presorts.
+QMAP works like better MEM versions, and QMEMTST crashes (if UMB/HMA used?).
+
+------------
+
+HyperDisk (www.hyperware.com has version 4.77 in 2003), a share disk
+cache, sample options for XMS w/o hotkey: C:4096 CW:0 XIH K:- OR- ...
+http://www.hyperware.com/xdos.html / http://www.hyperware.com/products.htm
+and mainly http://www.hyperware.com/speedkit.html ... EXE and SYS version,
+uses 0-45k DOS RAM, delayed writing for 386+ computers (checks for C-A-D),
+can load into "shadow RAM" or "high memory", Windows compatible, resizeable.
+Extra tools: refresh optimizer (2-10% faster PC XT RAM), keyboard typematic
+rate setup, sticky shift keys, bigger keyboard buffer size, BIOS text mode
+accel with "screen saver" and "boss key". Docs include API information.
+
+Cache has max 64k used buffers, max 64k modified buffers, and the 8 flags
+"staged floppy/harddisk * write/writeverify" (= 4), 2*"reserved", 2*enable.
+The cache can monitor a bit on an I/O port (for UPS power fail signalling).
+There are hotkeys to enable/disable caching for harddisk/floppy and for
+staged writing... and of course a "write dirty buffers back to disk" key.
+Floppy changes can be made beeping and update can happen all N timer ticks.
+Even "write because system is idle" can beep.
+Cache size cannot become bigger than initial size without re-loading TSR,
+but can be changed in that range "to and fro" from the prompt while loaded.
+NeAT 286/386 chipset "hardware UMBs" / shadow RAM are supported.
+Can even avoid those for transfer buffers and only load the rest into UMBs.
+Caching is int 13h based and you can override geometry.
+
+Staged write delay defaults to 1 second, minimum 0.5 seconds.
+Floppy is checked to be still the same every 3 (configurable) seconds.
+One buffer is 1 track in size, or less.
+Default "write if idle" is "write LRU-wise oldest data until max 75% buffers
+are dirty" (configurable percentage).
+Read-ahead is on by default.
+You can make access bigger than N sectors bypass the cache (useful if cache
+is only 32-384k), but default is cache all access.
+You can give an upper age limit for buffers, but this is off by default.
+Has "QEMM virtual interrupt stealthing" and uses XMS (locked or not locked).
+Locking can be needed to avoid DRDOS EMM386 / Lotus123r3 memory movement or
+even swapping to disk of XMS areas.
+XMS transfer can be done real mode, protected mode, or both.
+DMA boundary crossing check can be disabled.
+
+Drives of <= 360k size sometimes have no disk change detection.
+Hotkey can be trapped via int 15h (scancode check) or int 9h (keyb IRQ).
+Default is to "update modified buffers" if int 21.0d disk reset is called.
+Can use XMS and int 15h extended memory. (XMS called expanded memory here?).
+If delayed write encounters an error, it beeps 3x and displays - if in text
+mode - a message skip/retry/abort (if no answer: retry after 4sec).
+Use abort only for floppy - it discards dirty data - skip means retry later.
+Error can be EMS error, int 15h extended memory error or drive error.
+Using FASTOPEN is not recommended (unreliable, bad performance, confuses (?)
+caches...).
+
+You can force write back of dirty buffer to happen on every program load.
+OnTrack and SpeedStor compatible. Okay to load before Stacker, Doublespace,
+Drivespace, SuperStor. Up to 10 harddisks + 10 floppies, only 512 bytes per
+sector, 8 .. 63 sectors per track, harddisks with max 256 heads / 1024 cyl
+or alternatively 64 head / 4096 cyl (SpeedStor, DiskManager, AMI/OPTI BIOS).
+Floppy can have 8/9/15 sectors per track 5.25" or 9/18 sectors/track 3.5".
+
+Media changes for floppy are detected by FAT checksumming if no change line.
+History: "Belady replacement algorithm 1967 ... baseline to compare to ...
+"The Greatest Forward Distance" ... theoretical algorithm only because it
+has to predict future events ...". Other: LeastFreq.Used, LeastRecentlyUsed.
+LRU is 8% worse but less CPU-intensive. Usual associativity is 1/2/4 way.
+Cache "trashing" (access many sectors *once*) / "overcommitment" is detected
+by HyperDisk with help of "a proprietary combination of linear and random
+access predictors to identify the onset of the condition" in their modified
+LRU algorithm. Maximum cache size is 63 MB. Version 4.77: 20 USD, Nov 1998.
+Version 4.21 was of 1991.
+
+------------
+
+cache2: 24-124, default 64, sectors. only single sector access cached, DOS,
+  Quick and Dirty Software Inc., Steven Holzer, PCmag 8/1985-1986. FREE. 1k.
+
+emmcache: EMC110, Expanded Memory Disk Cache 1.10, EMS, max 32 MB, BIOS,
+  default 512*16k, max 3k+(128by/16k) RAM, write-through, sectors organized
+  in groups, disks 0x80-0xff, CHS, uses int 13.8 to get geometry and as
+  install check, functions 1/2/3 hooked, others purge cache before chaining.
+  can wrap tracks, as can DOS 3.3, double element size as in 1.00 to save
+  DOS RAM. Freeware. Cleveland State Univ, Ohio, Frank Lozier 1986-1987. 3k.
+
+dcache: PC Mag 7 17 open source. low or EMS. one harddisk. CHS. functions
+  1/2/3 hooked, others purge cache before chaining. Cached if read size max
+  1 page (16k), if write crosses page boundary, purge cache. Binary 2k.
+  cyl*max_head max 64k (adc missing). If write hit, do some updating.
+  linear/sec_per_track max 64k (limited conversion: max 2 GB) Lookup:
+  a = (linear&~7)|(linear>>16), if table[(a>>2)&mask] == a, found.
+  table has only words, element size 4k, init refuses using > 256 MB disk.
+  Cache size must be 16k * power of 2, max 8 MB. Takes 1.2k of RAM.
+  Unloadable. Freeware. Ziff Communications Co. Douglas Boling 1988.
+
+pckwk319: All writes copy to cache. Reads of all sizes are cached.
+  All writes happen at once. Detects floppy change but not for DISKCOPY.
+  binary 20k. 20/50, with delayed writes 80 USD. Multisoft. 1988.
+
+quickcache: 340k installed size. Includes backup, sort, sysinfo, findfile,
+  memtest (all fast). DOCS ONLY AVAILABLE AFTER INSTALL. Glassel. 1990.
+  *** SEE ABOVE *** Shareware 25 USD.
+
+adcache: awesome disk cache 1.22 delayed write 0.0-60.0 sec, e.g. 0.2 sec.
+  Not recommended with EMS emulators, certainly not with DISK SWAPPING ones.
+  All cached drives must have same sec/track. Only for harddisks.
+  Read-ahead default 1/4 track, N sectors, max 1 track. Size max 32 MB EMS,
+  default 0.5 MB. Can use 32bit memcopy or 16bit copy. Cache index can be
+  in EMS. Index is 1-2k/MB. Caches at most drives 0x80 and 0x81.
+  Binary is 8k (gzipped: 5k). Shareware 15 USD. David Rifkind. 1990
+
+combi: *** SEE ABOVE *** binary 8k sys, shareware, 1993.
+
+35sec: 35 seconds package 1.20 ... 3k RAM, 4k binary. Not for Win32, not
+  for DOS apps in Win, because no VMM (swap) access possible during IRQ.
+  Win refuses to lock XMS, so better use w/o Win. 386+ for easier Asm.
+  Very special floppy cache. Copies whole floppy to RAM in background,
+  syncs changes back to floppy in background. Uses whole-track reads.
+  Hotkey: copy whole floppy to/from buffer, if "from" possible to copy
+  only changes. Only FAT. Only 10% CPU in background. Shareware 10 USD.
+  Pavel Machek, Praha, CZ. 1995.
+
+i_cache: 1.21 quite big (228k zip contents, sys 33k, exe 48k, vdma 2k...)
+  Local buffer size /t:sectors, power of 2 in 4..64 range, best 16, worst 4,
+  default 8/16/32 depending on longest track. Some A20 handling, although no
+  disk buffers in HMA expected. Can be a device based CD-ROM cache between
+  real device and MSCDEX! Can merge SEVERAL CD-ROM to 1 cached multi-unit.
+  Load either as CD-ROM or as harddisk cache. Load *after* CD/ASPI drivers.
+  Load main driver *after* IC_LOW driver. Uses XMS. For (E)IDE/MO/... disk.
+  IC_LOW is track buffer in low RAM (2-32k). VDMA checks for VDMA/VDS.
+  Supports delayed writes. Ctrl-Alt-Del hooked. Not compatible with Win32
+  32BitFileAccess. Written in MASM 6.10 ... 386+ DOS 4+, min 1 MB ext. mem.
+  Use with VERIFY OFF and buffers=10, stacks=9,256 ... for *** system.ini
+  [386Enh] InDosPolling=1 ***. No locking used for XMS. 0.1-16 MB XMS.
+  Do *not* use with vfat/vcache drivers -> just disable 32BitFileAccess.
+  Resizeable. Floppy with change line or with /L+ override. Max 20 CD-ROM.
+  Max 26 drives cached. Initially 48k RAM, max 54k with 32k track buffer and
+  16 MB cache. LRU queue against trashing. Delayed write-cache normally off
+  for removable disks. Writes are 1 track at a time, sorting the queue to
+  achieve that. Keyboard/Mouse/... activity reduces write priority.
+  Optionally blocks keyboard during delayed write or even all disk access.
+  CD-ROM/DA/XA/I, photo-CD, HighSierra/ISO9660, optionally with CD-Player
+  TSR, only HSG addressing / cooked (2k/sector) reads cached, interleave ok.
+  Text and 16 color graphics mode popup abilities, e.g. for access errors.
+  Extra MO/CD support limited to 0.5/1/2k sector size. Shrinks during Win.
+  Staged disk write can sound an "update bell" every 15 (5-100) ticks,
+  configurable. If on, also beeps for media change. If change-line req'ment
+  is off, all non-access of > 2.5 sec is treated as floppy change if there
+  is no serno, otherwise changes are detected by disk serno changes.
+  Shareware 25 USD. Miles Pawski 1994-1996.
+
+hyperdisk spkt: 46k, whole ZIP contains 666k, shareware. 1995
+  *** SEE ABOVE (notes from mail to Johnson 12/2003) ***
+
+ccache: 18k floppy binary, 76k main binary. 3600 lines of documents.
+  includes CCDISK reentrant SCSI driver (28k) for non-int13 (ASPI only)
+  disks, if used with CONCACHE even with async i/o. Allocates ca. 500
+  bytes stack and 1 sector buffer per concurrency / drive. Phys block
+  size 0.5k only, logical (-> BIOS param block) 0.5/1/2k supported.
+  Detects DOS partition types 1/4/5/6 (CHS FAT12/FAT16). No removable
+  media, no IOCTL. Just drive letters and sector I/O.
+  CONCACHE can use UMB, XMS 2, EMS 4 (no page frame) or raw int 15 RAM.
+  Resizable in EMS/XMS mode. Min 128k, multiple of 64k, max 64 MB.
+  Delayed writes can be done concurrently with other DOS programs or
+  access. Or use normal delayed writes or write through. Caches by
+  drive letter. Each "arena" uses 1..64 * 16 bits bitmap, N*16kb arena.
+  Buffer size 1-N sectors, usually 1. Uses int 15.90/91 and usually does
+  not share it. Usually traps IRQ itself to avoid BIOS handling. Buffers
+  can be allocated outside UMB if needed. Default buffer size 8k, more
+  improves performance (allows longer accesses). Hashtable size user
+  defineable. Stack-per-disk size defineable. Aging before writing wet /
+  dirty buffers is 1-254 ticks. Uses int 21.440d/get device params.
+  Freeze modes: Keep/no-new, and lock-what-gets-added-during-timespan.
+  Configurable readahead. With FAQ text, about concurrency and about
+  LRU being weak for cyclic access. Floppies tool routes floppy access
+  to int 40, to keep int 13 concurrent accesses lower (only func. 0-4).
+  Written in BC++ 4.0, MKS toolkit 4.1b, using Periscope (debugger) 5.40.
+  TSR size usually 25-30k. Media check quirk makes floppy access slow in
+  Novell DOS. Desqview crashes. Do not delay writes if using QEMM 7.3
+  stealth mode. Floppy thing can hang Win. No full EMS 4.0 during Win.
+  32bit Win32 file access is incompatible, but Win32 disk access is okay.
+  Cache suggests wimping out if vfat.386 found in config. Novell Server
+  program miscounts int 2a, possibly hanging. Try, for Win3.x:
+  VirtualHDIrq=false OverlappedIO=true ReflectDOSInt2A=true (or
+  alternatively INT28Critical=true - otherwise delayed writes impossible!)
+  Everything is written after at most 30 seconds. Int 21.0d triggers all
+  pending writes to be done at once, as well as int 21.68 commiting does.
+  The int 21.6c open/commit flag is handled, writes passed on at once,
+  but only for that file. Shareware 30 USD. horio shoichi, 1996.
+
+------------
+
+cacheart: Living with DOS: disk caches (Barry Simon, Capital PC Monitor 1987)
+  Compares Emmcache, Lightning, Polyboost, Quickcache, Speedcache, PC-Kwik,
+  Vcache. None of them delays writes, so they are safe... DOS itself can
+  keep dirty buffers, though. All but Emmcache zap write if data unchanged.
+  Max 16 MB XMS, 8 MB EMS... old RAM 200ns, newer 70-100ns...
+  Lightning, PC-Kwik and Vcache have track readahead. Pro: can be faster
+  unless fragmented. Con: bad if it hits bad sectors or clobbers cache.
+  Polyboost, PC-Kwik, Vcache support XMS, take care of VDISK compatibility.
+  Speedcache, Quickcache are devices, other are programs.
+  BUFFERS=15-20 recommended (default 1-3), search is slow if too much.
+  Reads of above 1 sector size do not use BUFFERS(!?).
+  Lightning: DOS or EMS. Emmcache: EMS. Speedcache: DOS, EMS or hard EMS.
+  Others: DOS, EMS or XMS. ??PC-Kwik /d- helps a lot on 286??
+  Polyboost caches only 1 harddisk per instance.
+  Polyboost and Vcache also include TTY screen speedup -> set prices shown.
+  Set also means extra floppy cache, taking extra memory.
+  Typically 5k main cache programs, but some quite expensive.
+  Emmcache: Free. Lightning: 50-90 USD. Polyboost: 80 USD. Quickcache: 50 USD
+  Quickcache: 50 USD. Speedcache: 70 USD. Super PC-Kwik: 40/50/80 USD.
+  (low RAM / normal / pro versions) Vcache: 50 USD.
+
+  EMMCACHE:    3k + 16k/MB EMS , max 4 MB
+  Lightning:  13k + 23k/MB EMS, max 1.5 MB. (2k+"25k/MB" DOS)
+  Polyboost:   2k + 28k/MB EMS-or-XMS, max 2.2 MB.
+  PC-Kwik:    13k +  0k/MB if EMS, max 1 MB. (25k + 14k/MB XMS)
+  VCache:      4k + 18k/MB EMS-or-XMS, max 15 MB. (4k + "20k/MB" DOS)
+  Speedcache:  (7k + "32k/MB" DOS)
+  Quickcache:  (9k + "32k/MB" DOS)
+
+  Speed test on 286 with hardware EMS (buffers 90 usually almost as 20):
+  Sort 140k database:    BUFFERS=3/20/90 19 seconds, caches 10-12 seconds
+  Spellcheck 40k:        BUFFERS: 38-43 sec, caches 32-38 sec.
+  Convert 500k database: BUFFERS: 1550/784/814 sec, caches: below 621 sec:
+    Emmc./Light./Poly. 735 Vc. 650, Quic. 704 sec Speedc. 1065
+    PC-Kwik 735/571 sec. (EMS/low RAM)
+  MASM/link/... 100k:    BUFFERS: 80-86 sec, caches: 73-75 (Poly: 77) sec.
+  Write same at random:  BUFFERS: 18-20 sec, cheat: 2-5 sec. other: 12-13.
+    (all except Emmcache/Speedcache zap duplicate writes)
+  Write random:          BUFFERS: 18-20 sec, cached 11-13, RAMDISK and
+    PC-Kwik only 5 sec! Where 2 times given for PC-Kwik: EMS/conv. RAM used.
+  Copy to floppy:        BUFFERS: 30-45 sec. caches: 27-31, PC-Kwik 41 sec.
+  Floppy to floppy copy: BUFFERS: 64-70 sec (90 buffers: even 77 sec) ...
+    cached: 61-64 sec, PC-Kwik 69 sec.
+  Norton disk test HDD:  BUFFERS: 500-604 (535) sec. RAMDISK: 20 sec. Q. 453
+    Emmc. 465. Light. 671 Poly. 476 Vc. 585 PC-Kwik 490/371, Speedc. 451
+  Norton disk test 1.2M: BUFFERS/Emmc./Poly./Speedc./Quickc.: 415-419 sec
+    Light. 67 sec, Vcache/PC-Kwik 61 sec.
+  Norton disk test 360k: BUFFERS/...: 89-91 sec, others 36-37 sec.
+

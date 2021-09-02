@@ -1,0 +1,10 @@
+Game: The 7th Guest
+Year: 1993
+Composed by: George Alistair Sanger
+MIDI versions: GM
+Platform: DOS
+
+Additional info: The tracks are named quite terribly in the game, agu16, agu32, etc. and I couldn't figure out how to name it properly, so I named it "Track #".
+
+
+https://www.karlsitretro.com/game_midi

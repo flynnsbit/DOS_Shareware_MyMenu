@@ -1,0 +1,396 @@
+
+
+
+LESSKEY(1)               USER COMMANDS                 LESSKEY(1)
+
+
+
+NAME
+     lesskey - specify key bindings for less
+
+SYNOPSIS
+     lesskey [-o output] [input]
+     lesskey -V
+
+DESCRIPTION
+     _L_e_s_s_k_e_y is used to specify a set of key bindings to be  used
+     by  _l_e_s_s.  The input file is a text file which describes the
+     key bindings, If the input file is "-",  standard  input  is
+     read.   If  no  input  file  is specified, $HOME/.lesskey is
+     read.  The output file is a binary file  which  is  used  by
+     _l_e_s_s.  If  no output file is specified, $HOME/.less is writ-
+     ten.  If  the  output  file  already  exists,  _l_e_s_s_k_e_y  will
+     overwrite it.
+
+     The -V flag causes _l_e_s_s_k_e_y to print its version  number  and
+     immediately  exit.  If  -V is present, other flags and argu-
+     ments are ignored.
+
+     The input file consists of one or more _s_e_c_t_i_o_n_s.  Each  sec-
+     tion starts with a line that identifies the type of section.
+     Possible sections are:
+
+     #command
+          Defines new command keys.
+
+     #line-edit
+          Defines new line-editing keys.
+
+     #env Defines environment variables.
+
+     Blank lines and lines which start with a pound sign (#)  are
+     ignored, except for the special section header lines.
+
+
+COMMAND SECTION
+     The command section begins with the line
+
+     #command
+
+     If the command section is the first  section  in  the  file,
+     this  line  may be omitted.  The command section consists of
+     lines of the form:
+
+          _s_t_r_i_n_g <whitespace> _a_c_t_i_o_n [extra-string] <newline>
+
+     Whitespace is any sequence of  one  or  more  spaces  and/or
+     tabs.   The  _s_t_r_i_n_g  is  the command key(s) which invoke the
+     action.  The _s_t_r_i_n_g may  be  a  single  command  key,  or  a
+     sequence  of  up  to 15 keys.  The _a_c_t_i_o_n is the name of the
+
+
+
+                                                                1
+
+
+
+
+
+
+LESSKEY(1)               USER COMMANDS                 LESSKEY(1)
+
+
+
+     less action, from the list below.   The  characters  in  the
+     _s_t_r_i_n_g  may  appear  literally, or be prefixed by a caret to
+     indicate a control key.  A  backslash  followed  by  one  to
+     three octal digits may be used to specify a character by its
+     octal value.  A backslash followed by b, e, n, r or t speci-
+     fies  BACKSPACE,  ESCAPE,  NEWLINE,  RETURN  or TAB, respec-
+     tively.  A backslash followed by any other  character  indi-
+     cates  that  character is to be taken literally.  Characters
+     which must be preceded by backslash  include  caret,  space,
+     tab and the backslash itself.
+
+     An action may be followed by an "extra" string.  When such a
+     command  is  entered  while running _l_e_s_s, the action is per-
+     formed, and then the extra string is parsed, just as  if  it
+     were  typed  in to _l_e_s_s. This feature can be used in certain
+     cases to extend the functionality of a command.   For  exam-
+     ple, see the "{" and ":t" commands in the example below.
+
+
+EXAMPLE
+     The following input file describes the set of  default  com-
+     mand keys used by less:
+
+          #command
+          \r        forw-line
+          \n        forw-line
+          e         forw-line
+          j         forw-line
+          ^E        forw-line
+          ^N        forw-line
+          k         back-line
+          y         back-line
+          ^Y        back-line
+          ^K        back-line
+          ^P        back-line
+          J         forw-line-force
+          K         back-line-force
+          Y         back-line-force
+          d         forw-scroll
+          ^D        forw-scroll
+          u         back-scroll
+          ^U        back-scroll
+          \40       forw-screen
+          f         forw-screen
+          ^F        forw-screen
+          ^V        forw-screen
+          b         back-screen
+          ^B        back-screen
+          \ev       back-screen
+          z         forw-window
+          w         back-window
+          F         forw-forever
+
+
+
+                                                                2
+
+
+
+
+
+
+LESSKEY(1)               USER COMMANDS                 LESSKEY(1)
+
+
+
+          R         repaint-flush
+          r         repaint
+          ^R        repaint
+          ^L        repaint
+          g         goto-line
+          <         goto-line
+          \e<       goto-line
+          p         percent
+          %         percent
+          {         forw-bracket {}
+          }         back-bracket {}
+          (         forw-bracket ()
+          )         back-bracket ()
+          [         forw-bracket []
+          ]         back-bracket []
+          \e^F      forw-bracket
+          \e^B      back-bracket
+          G         goto-end
+          \e>       goto-end
+          >         goto-end
+          =         status
+          ^G        status
+          :f        status
+          /         forw-search
+          ?         back-search
+          \e/       forw-search *
+          \e?       back-search *
+          n         repeat-search
+          \en       repeat-search-all
+          N         reverse-search
+          \eN       reverse-search-all
+          \u        undo-hilite
+          m         set-mark
+          '         goto-mark
+          ^X^X      goto-mark
+          E         examine
+          :e        examine
+          ^X^V      examine
+          :n        next-file
+          :p        prev-file
+          :x        index-file
+          -         toggle-option
+          :t        toggle-option t
+          s         toggle-option o
+          _         display-option
+          |         pipe
+          v         visual
+          !         shell
+          +         firstcmd
+          H         help
+          h         help
+          V         version
+
+
+
+                                                                3
+
+
+
+
+
+
+LESSKEY(1)               USER COMMANDS                 LESSKEY(1)
+
+
+
+          q         quit
+          :q        quit
+          :Q        quit
+          ZZ        quit
+
+
+PRECEDENCE
+     Commands specified  by  _l_e_s_s_k_e_y  take  precedence  over  the
+     default  commands.  A default command key may be disabled by
+     including it in the input file with  the  action  "invalid".
+     Alternatively,  a  key may be defined to do nothing by using
+     the action "noaction".  "noaction" is similar to  "invalid",
+     but  _l_e_s_s  will give an error beep for an "invalid" command,
+     but not for a "noaction" command.  In addition, ALL  default
+     commands  may be disabled by adding this control line to the
+     input file:
+
+     #stop
+
+     This will cause all default commands  to  be  ignored.   The
+     #stop  line  should  be the last line in that section of the
+     file.
+
+     Be aware that #stop can be dangerous. Since all default com-
+     mands  are  disabled,  you  must provide sufficient commands
+     before the #stop line to enable all necessary actions.   For
+     example,  failure  to  provide  a "quit" command can lead to
+     frustration.
+
+
+LINE EDITING SECTION
+     The line-editing section begins with the line:
+
+     #line-edit
+
+     This section specifies new key bindings for the line editing
+     commands,  in  a  manner similar to the way key bindings for
+     ordinary commands are specified  in  the  #command  section.
+     The  line-editing  section  consists  of  a list of keys and
+     actions, one per line as in the example below.
+
+
+EXAMPLE
+     The following input file describes the set of default  line-
+     editing keys used by less:
+
+          #line-edit
+          \t        forw-complete
+          \17       back-complete
+          \e\t      back-complete
+          \14       expand
+          ^V        literal
+
+
+
+                                                                4
+
+
+
+
+
+
+LESSKEY(1)               USER COMMANDS                 LESSKEY(1)
+
+
+
+          ^A        literal
+          \el       right
+          \eh       left
+          \eb       word-left
+          \ew       word-right
+          \ei       insert
+          \ex       delete
+          \e\b      word-backspace
+          \e0       home
+          \e$       end
+          \ek       up
+          \ej       down
+
+
+
+LESS ENVIRONMENT VARIABLES
+     The environment variable section begins with the line
+
+     #env
+
+     Following this  line  is  a  list  of  environment  variable
+     assignments.   Each line consists of an environment variable
+     name, an equals sign (=) and the value to be assigned to the
+     environment  variable.   White  space  before  and after the
+     equals sign is ignored.  Variables assigned in this way  are
+     visible only to _l_e_s_s. If a variable is specified in the sys-
+     tem environment and also in a lesskey file, the value in the
+     lesskey  file  takes  precedence.  Although the lesskey file
+     can be used to override variables set  in  the  environment,
+     the  main purpose of assigning variables in the lesskey file
+     is simply to have all _l_e_s_s configuration information  stored
+     in one file.
+
+
+EXAMPLE
+     The following input file sets the -i flag whenever  _l_e_s_s  is
+     run, and specifies the character set to be "latin1":
+
+          #env
+          LESS = -i
+          LESSCHARSET = latin1
+
+
+
+SEE ALSO
+     less(1)
+
+
+WARNINGS
+     It is not possible to specify special keys, such as uparrow,
+     in  a  keyboard-independent manner.  The only way to specify
+     such  keys  is  to  specify  the  escape  sequence  which  a
+
+
+
+                                                                5
+
+
+
+
+
+
+LESSKEY(1)               USER COMMANDS                 LESSKEY(1)
+
+
+
+     particular keyboard sends when such a keys is pressed.
+
+
+COPYRIGHT
+     Copyright (c) 1984,1985,1989,1994,1995  Mark Nudelman
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                6
+
+
+

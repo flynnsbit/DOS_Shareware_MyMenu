@@ -1,0 +1,399 @@
+$Version: NONE $
+$Revision: 1.5 $
+
+
+
+
+
+
+                          M i D P L A Y       V 0.62
+
+
+
+
+
+
+
+
+                   CopyLeft 1996 SounDWorX. A few rights reserved.
+
+
+                             Programm und Grafik:
+                             --------------------
+
+                                 Till T”nshoff
+
+
+
+Features:
+---------
+
+- Untersttzt SoundBlaster AWE, Roland MPU401 und SoundBlaster MIDI-
+  Schnittstelle
+- Untersttzt alle MIDI-Datei-Formate
+- Untersttzt MUS-Dateien
+- Untersttzt KAR-Dateien (Karaoke-Text wird angezeigt !)
+- Untersttzt ALLE SoundBlaster AWE SoundFont-Dateien (SBK oder SF2)
+- Hilfe [F-1]
+- VESA (1.x oder 2.0) SVGA-Aufl”sung (640x480x256,800x600x256,1024x768x256)
+- X-mode VGA-Aufl”sung (360x400x256)
+- Automatische Erkennung von Ausgabe-Ger„ten und I/O-ports
+- Automatisches laden von SBK-Dateien (nur fr AWE)
+- Sendet ALLE MIDI-Daten -> Untersttzt XG-MIDI etc...
+- Special effects (nur fr AWE)
+- Music Playback Settings loader -> siehe SAMPLE.MPS fr Details (nur fr AWE)
+- Untersttzt channel mapping -> Synthie, AWE und Waveblaster zusammen !
+- Konfigurations Profil -> siehe MP.INI fr Details
+
+
+Anforderungen:
+--------------
+
+        - mindestens 486er Prozessor
+        - VGA Graphik Karte
+        - mehr als 2MB freien Speicher
+	- mehr als 2MB freien Platten-Platz
+        - eine SoundBlaster AWE und/oder
+          eine SoundBlaster-kompatible MIDI-Schnittstelle und/oder
+          eine Roland MPU401-kompatible MIDI-Schnittstelle (oder Software-
+          Emulator)
+        - laeuft unter DOS >= 5.0, OS/2 >= 2.x und Windows'95 (nicht NT)
+
+
+
+Einfhrung:
+-----------
+
+Warum noch einen Midi-Player ?
+
+MiDPLAY wurde von mir geschrieben, weil ich einen hbschen bunten Player
+haben wollte der meine SoundBlaster AWE voll untersttzt...
+Ich fands grausam SBKs mit diesem Windows'95 Control Panel zu laden und dann
+den MIDI-file mit dem Mediaplayer abzuspielen. So viel Stress nur um nen Song
+zu h”ren. Als n„chsten Grund fr die Geburt von MiDPLAY gabs da noch den
+Wunsch nach nem Programm das das Abspielen via MIDI-interface untersttzt
+(so kann ich beides gleichzeitig nutzen, meine AWE und meinen Synthie).
+
+Technische Informationen
+
+MiDPLAY ist fast komplett in C (Watcom) geschrieben. Ausserdem nutzt MiDPLAY
+das ADIP 3.01 (der AWE-spezifische Hardware Zugriff) von Creative Labs
+(frei von deren FTP-Server zu saugen) und die JPEG-Library 6.0 der Independent
+JPEG Group (auch frei im Netz zu kriegen).
+Und die ADIP-Lib ist auch der Teil von MiDPLAY der die meissten Probleme
+hervorbringt...
+Fr die Graphik hab ich Photoshop, Deluxe Paint, Truespace und einige selbst-
+gebastelte Tools benutzt.
+
+Ein paar Erkl„rungen... (nur fr Einsteiger !)
+
+MIDI    - Ein Standart in der Musik-Industrie der es m”glich macht,
+          (elektronische) Instrumente von verschiedenen Herstellern unter-
+          einander zu verbinden.
+          MIDI ist nicht nur das Kabel sondern ausserdem eine Sammlung von
+          Kommandos.
+          Es gibt ein Kommando zum starten einer Note (NOTE ON), eins zum
+          „ndern der Tonh”he (PITCH) und viele mehr...
+          MIDI-Dateien sind Songs die direkt auf jedem MIDI-Instrument
+          abgespielt werden k”nnen. (Mit nem Abspielprogramm oder nem
+          Sequencer).
+GM      - General Midi - Ein Standart der die Instrumente beschreibt.
+GS      - General Standard - Ein weiterer Standart der Instrumente und Sound-
+          Effekte beschreibt.
+XG      - eXtendet General Midi - Und noch ein Standart der die Steuerung
+          von Instrumenten und Sound-Effekten festlegt.
+          Yamaha hat eine Aufrstung fr den SB-Waveblaster-Expansion-Port
+          rausgebracht das diesem Standart folgt.
+EMU8000 - Der Chip auf der SoundBlaster AWE Karte der den sch”nen Sound
+          erzeugt wenn man Musik abspielt (keine WAV-Samples sondern MIDI-
+          Songs).
+          An diesen Chip ist ein 1 MB ROM (Festspeicher) angeschlossen
+          der die Preset (GM) Instrumente enth„lt.
+SBK     - SoundFont 1 Dateien sind Instrument-Sound-Sammlungen speziell fr
+          den EMU8000.
+SF2     - SoundFont 2 Dateien sind Instrument-Sound-Sammlungen speziell fr
+          den EMU8000. SF2 ist ein neuer Standart von EMU Systems.
+
+
+Abspielen von Musik-Dateien:
+----------------------------
+
+        Eine Datei abspielen:
+        Beispiel:       MP IPANEMA.MID
+
+        Mehrere Dateien abspielen mittels Wildcards (so heissen die Zeichen * und ?):
+        Beispiel:       MP HERBER?.MID
+                        MP S*.M*
+
+        Eine Datei abspielen wobei vorher eine SoundBank in Userbank 1
+        geladen wird:
+        Beispiel:        MP LYNNPNO.SBK AWETELLT.MID
+
+        Eine Datei abspielen wobei vorher automatisch eine SoundBank
+        geladen wird (in Bank 1):
+        Beispiel:        MP AWERELEN.MID -A
+
+        Eine Datei abspielen wobei vorher eine SoundBank geladen wird
+        (in Bank 20):
+        Beispiel:        MP SYNTHGS.SBK FOO.MID -A20
+
+        Mehrere Dateien abspielen mittels einer Listen-Datei:
+        Beispiel:        MP @COOLMIDS.LST
+        Die Datei COOLMIDS.LST k”nnte so aussehen:
+                        F:\MUS\PETBERT.MUS
+                        G:\SOUNDCD\SOUND\MID\YOMON.MID
+                        F:\MID\MARYJANE.MPS
+                        G:\SOUNDCD\SOUND\MID\SHAMEN.MPS
+
+
+Erweiterte Kommandozeilen Optionen:
+-----------------------------------
+
+        -L              wiederhole Spielliste (loop)
+        Beispiel:       MP HOGAN.MID -L
+
+        -A(:NUMMER)     l„dt eine SoundBank automatisch in eine Bank
+        Beispiel:       MP TZONE.MID -A:20
+        ACHTUNG:        Es wird empfohlen das Synthesizer SoundBaenke wie
+                        SYNTHGM.SBK in Bank 0 geladen werden !
+
+        -F:EFFEKT       Chorus- und Reverb-Einstellungen
+
+           EFFECTS:     REVERB                CHORUS
+           ------------------------------------------------
+                        Room1                 Chorus1
+                        Room2                 Chorus2
+                        Room3                 Chorus3
+                        Hall1                 Chorus4
+                        Hall2                 FeedbackDelay
+                        Plate                 Flanger
+                        Delay                 ShortDelay
+                        PanningDelay          ShortDelayFB
+           ------------------------------------------------
+
+        Beispiel:       MP DAS_BOOT.MID -F:HALL1,FLANGER
+
+
+Kontroll-Tasten w„hrend der Wiedergabe:
+---------------------------------------
+
+        ESC                     Ende
+        F1                      Hilfe
+        F2                      Karaoke Panel
+        Bild Runter             Wechsle das Ausgabe-Ger„t auf allen Kan„len
+        1 bis 0 und A bis F     Wechsle das Ausgabe-Ger„t auf Kanal 1
+                                bist 16
+        Shift &   "      "      Schalte Kanal 1 bis 16 auf stumm
+        Leertaste               Pause [Hit again to continue playing]
+        Cursor Rechts           Spule vorw„rts
+        Cursor Links            Spule zurck
+        Cursor Runter           N„chster song
+        Cursor Hoch             Vorheriger song
+        P                       Panic!
+        L                       Wiederhole die Songs (Loop-Mode On/Off)
+
+
+Fehlermeldungen und ihre Grnde:
+---------------------------------
+
+        - "file not found"
+          Du hast einen Fehler bei der Eingabe des Song-Datei-Namens gemacht !
+
+        - "file corrupted"
+          Die Datei wurde besch„digt - berprfe deine Festplatte !
+
+        - "can't open Datei"
+          Die Datei ist gegen zugriff geschtzt - l„uft eventuell ein anderes
+	  Programm das diese Datei nutzt ?
+
+        - "filetype not supported"
+          MiDPLAY kann mit dieser Datei nichts anfangen !
+
+        - "not enough memory"
+          Du brauchst mehr Speicher !
+
+        - "no MIDI-OUT-DEVICE present"
+          MiDPLAY hat kein einziges Augabeger„t gefunden !
+
+        - "can't initialize sound-device"
+          Das Ausgabeger„t funktioniert nicht wie erwartet - wurde es richtig
+          installiert ?
+
+        - "failed to init graphix"
+          Ein Problem tauchte bei der Initialisierung des VGA codes -
+          nutzt du eine standard VGA Karte ?
+
+        - "no VESA graphics BIOS/driver found"
+          Hab keine VESA kompatible svga-Karte gefunden - installiere deinen
+          VESA-Treiber (die Diskette die bei der Grafikkarte dabei war) !
+
+        - "not enough memory on soundcard"
+          Der SoundFont ist zu groá !
+
+        - "failed to process MPS-file"
+          Das ist wahrscheinlich keine "Music Playback Settings" Datei !
+
+        - "failed to process parameters"
+          Du hast nen Syntax-Fehler bei einem der Kommando-Parameter gemacht -
+	  (Kommandozeile und/oder MPS-Datei) !
+
+        - "internal error"
+          Ooopsi !
+          -> Bitte benachrichtige den Autor !
+
+
+Fehlersuche:
+------------
+
+      * MiDPLAY findet kein Ausgabe-Ger„t:
+        Die Soundkarte muss unbedingt korrekt installiert worden sein !!!
+        Falls ein SoundBlaster-kompatibles-midi-Interface genutzt werden soll
+        sollte der BLASTER-string eingestellt sein.
+
+      * Das Bild ist zerschossen oder der Monitor synchronisiert nicht (bleibt
+        dunkel)
+        X-Mode
+        Du nutzt wahrscheinlich ein LCD-Display das keine X-Mode-VGA-Grafik
+        untersttzt. Versuchs mal mit einem VESA-Modus (z.B. 640x480)
+        VESA
+        Deine SVGA-Karte order dein Monitor sind nicht korrekt installiert.
+        šberprfe die Bildwiederholfrequenzen fr die VESA-Modi (101h,...)
+        mit der SVGA-Karten Installations-Software.
+
+      * Songs h”ren sich merkwrdig an oder nutzen die falschen Instrumente:
+        AWE
+        Geh”rt eventuell ein SoundFont zu dem Song den du abspielen wolltest ?
+        Versuch den SoundFont und den Song manuell zu laden.
+        Wenn du einen SoundFont 2 (.SF2) nicht in Bank 0 laden willst,
+        muát du zus„tzlich die GM Instrumenten-Presets (SYNTHGM.SF2) in Bank 0
+        laden.
+        Alle
+        Dieser Song passt zu keinem MIDI-Standard. Er kann mit deinen MIDI-
+        Ger„ten nicht 100%ig abgespielt werden.
+        Falls du es mit einem anderen Player versucht hast und du sicher bist
+        das nur MiDPLAY versagt, schick mir den Song bitte zu !!!
+
+
+
+
+Bekannte Fehler:
+----------------
+
+- verschwendet Speicher als ob es eine Windows-Anwendung w„re ;) - MIR EGAL !!!
+
+
+Zukunft:
+--------
+
+Scopes          - I would really like to have scopes in my player...  we'll see
+Cakewalk Dateien  - playing .WRK-Dateien under DOS would be another nice feature
+                  is there any info on these Dateien out there ????
+Mixer           - many users asked for a build-in awe-mixer -> there will
+                  be one in 0.8 or 0.9
+Filemanager     - many users asked for a build-in Datei-manager -> there will
+                  be one in 0.7 or 0.8
+
+
+Updates kriegen:
+----------------
+
+Die neueste Version wird immer in meiner WWW-Seite (siehe unten) zu finden
+sein.
+FIDO-Benutzer koennen die neueste Version bei 2:2437/301 (Digital Nightmare)
+requesten.
+
+Ausserdem kannst du eine E-Mail schreiben (Addresse drunter):
+SUBJECT-FIELD:	mp by email
+MESSAGE-BODY:	your@email.address
+Dann kriegste die neueste Version vom MiDPLAY sobald sie draussen ist.
+Die wird dann in einem uu-kodierten ZIP-Archiv verschickt.
+(ein riesen Paket, ca 2MB !)
+
+
+Den Autor erreichen:
+--------------------
+
+WWW:            http://www.rz.uni-hildesheim.de/~ttoe0057
+
+E-Mail:         ttoe0057@rz.uni-hildesheim.de (NeXTmail wellcome !)
+
+Fido:           2:2437/301.0 (Till Toenshoff)
+
+Schnecken-Post: Till T”nshoff
+                Augustastrasse 22
+                31141 Hildesheim
+                GERMANY
+
+
+Bevor du dem Autor schreibst:
+-----------------------------
+
+LIES DIESE ANLEITUNG !!! (Fehlersuche, usw...)
+
+
+Erkl„rung:
+----------
+
+In no event the author will be liable for any damages, including any
+lost profits, lost savings or other incidental or consequential damages
+arising out of your use or inability to use the program, or for any claim
+by any other party.
+
+This version of MiDPLAY is free, it may not be sold or bundled without written
+permission of the author. Also, it may not be used in a commercial way without
+permission.
+
+It is not allowed distribute MiDPLAY on any Freeware-/Public Domain/Shareware
+Compilation (CDROM,etc..) unless you send at least 1 sample of that CD to the
+authors adress !
+
+(deutsche Kurzbersetzung: MiDPLAY ist frei erh„ltlich, mach mich nich
+fr deinen Crash verantwortlich. Falls du ne Freeware CD machst wo MiDPLAY
+drauf kommt, schick mir eine davon)
+
+Wenn du meinen Player brauchbar findest, PLeAzE SpReAD iT !
+
+Wenn du Shareware-Autor bist, schick mir eine registrierte Version deines
+Programms.
+
+Fr Anregungen zu Features die noch fehlen bin ich jederzeit offen...
+
+Ich suche ein paar GM-Midi- und SBK/SF2-Midi-Files die ich mit meinem Player
+bundlen kann. Wenn du solche Sachen produzierst, und es dir nix ausmacht
+wenn DEINE Songs mit MiDPLAY gebundled werden
+-> schick sie mir bitte. (! NIX KOMMERZIELLES !)
+
+
+Credits:
+--------
+Die interne JPEG Dekompression und Quantisierung basiert auf der Arbeit der
+"Independent JPEG Group".
+
+Die Steuerung der SoundBlaster AWE 32 basiert auf dem "AWE Developers
+Information Pack" von Creative Labs.
+
+
+Respekt:
+--------
+
+Keith Ohlfs/NeXT, Rob Hubbard, Bart Crane/Media Vision, Steven Jobs,
+Kai Krause, Chris Roberts, all GNU-people
+
+
+Gruesse:
+--------
+
+Excessive Tools, Cubic Team, DLUSiON, Brian/Legend Design
+
+
+DANKE:
+------
+
+MoM fuer die ANSI-Kunst !
+Tom, Jense, Holgi und Blade fuers testen
+Speedy fuer die MPU401 infos
+Lukas fuers spreaden
+
+
+bis bald,
+Till T”nshoff

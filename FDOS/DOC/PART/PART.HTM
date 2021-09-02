@@ -1,0 +1,786 @@
+<HTML>
+<HEAD>
+   <TITLE>Partition Manager Help</TITLE>
+</HEAD>
+<BODY>
+
+<PRE>
+Partition Manager Help (v2.37.10)
+
+   What is <A HREF="#part">partition table</A>, <A HREF="#mbr">MBR</A>, <A HREF="#ipl">IPL</A>?
+
+   <A HREF="#save">Saving and Restoring MBR</A>
+   <A HREF="#create">Creating a new partition</A>
+   <A HREF="#format">Formatting partition</A>, <A HREF="#systems">supported file systems</A>
+   <A HREF="#os_inst">Things that you should do before installing a new OS</A>
+
+   <A HREF="#compact">Compact Boot Manager</A>
+   <A HREF="#advanced">Advanced Boot Manager</A>
+   <A HREF="#virus">Virus detection</A> and <A HREF="#hints">hints</A>
+   <A HREF="#setup_adv_example">Running DOS from the second hard drive</A>
+
+   <A HREF="#cmd_line">Command line options</A>
+
+   <A HREF="#moreinfo">Links to additional help</A>
+
+   <A HREF="#copyright">Program distribution and Copyrights</A>
+
+<HR>
+
+<A NAME="part">What is partition table?
+
+     Partition table is located in the first sector of every hard disk.
+  It has information about sizes and locations of partitions on the disk.
+  What is partition? It is a piece of disk space marked to belong to some
+  operating system. For example, your C: drive resides in the partition
+  of type <A HREF="#0x0600">BIGDOS</A>.
+
+     Most disks have one partition, but some people want to have more
+  than one operating system on their computers and therefore, have to
+  divide their disks into different partitions. That's why partition table
+  also keeps an indicator of the currently 'Active' partition - the one 
+  from  which the computer boots.
+<A NAME="mbr"></A><A NAME="ipl"></A>   
+     When you turn on your computer BIOS loads into memory the first
+  sector from hard disk, called MBR (Master Boot Record). In addition to
+  partition table, this sector contains an IPL (Initial Program Loader) -
+  a piece of code that searches partition table for an 'Active' record
+  and loads in memory boot sector of the corresponding operating system.
+   
+      Standard IPL would simply load a boot sector without any messages
+   or questions. And this is good if you have only one operating system,
+   but when you have more then one, you need something more sophisticated.
+   For example, IPL that comes with this program can ask user at 
+   <A HREF="#ipl_mesg">boot time</A> which operating system he want to boot and
+   will remember the selection, so that the next time it boots from the
+   same OS.
+
+      Partition table is limited to maximum 4 entries. This program gives
+   you an option to have up to 31 bootable partitions if you install
+   <A HREF="#setup_adv">Advanced Boot Manager.</A>
+
+   <A HREF="#moreinfo">Links to additional information and help</A>
+
+<HR>
+
+<A NAME="save"></A><A NAME="restore"></A>Saving and Restoring MBR
+
+      Saving you MBR is the first thing you have to do before playing
+  with this program. 
+  
+      First of all create a bootable floppy disk and copy this program
+   to floppy. Than save your MBR to a file. You can do it
+   by using S command in interactive mode or by running program from 
+   the command line:
+   
+           part -s a:\saved.mbr
+    
+   If something goes wrong, you can always restore the original MBR by
+   running the command:
+         
+           part -l a:\saved.mbr
+   
+      If you are using the same floppy with more than one computer be
+   careful not to put MBR from one hard disk to another. It will do no
+   harm, but you may have a few minutes of panic thinking that you have
+   lost all your files, before you figure out what happend. So, make
+   sure that you give distinctive names to the files with saved MBRs.
+   
+      But even if you do load the wrong table it will most likely
+   become <A HREF="#conflict">RED</A>, because partition settings will conflict
+   with the current hard disk geometry.
+      
+<HR>
+
+<A NAME="active"></A>Selecting active partition
+
+      To make partition active you can press SPACE in the interactive
+   mode or from the command line:
+   
+            part -p        print partition table
+            part -a n      where n is a partition number
+      
+      If you have installed an IPL then you can press SPACE on the
+   active partition to make it inactive and when you reboot computer
+   it will try to boot from the second hard disk, or from a floppy.
+
+<HR>
+
+<A NAME="advanced"></A>Advanced Boot Manager
+
+       With Advanced Boot Manager you can have up to 31 bootable
+   partitions. It keeps its own partition table in the separate space
+   on the disk.
+
+       When you boot the computer the first part of Advanced Boot Manager,
+  which is located inside MBR tries to read the second part from the disk
+  and checks its integrity. In case if it was corrupted it promts the user
+  to boot from A: or hard disk.
+
+       After that Advanced Boot Manager <A HREF="#virus">checks for viruses</A>, and then 
+  compares records in MBR with its own partition table. If there were any
+  changes, the Advanced Boot Manager copies modified records to its own
+  partition table and advises the user to run part.exe to review them.
+  Also see <A HREF="#os_inst">notes</A> on installing a new OS.
+
+       Then Advanced Boot Manager gives you a menu where you can select
+  from which partition you want to boot. After you make a choice it copies
+  the record of the selected partition to MBR table and hides the rest of
+  the space on the disk. 
+  
+  Advanced Boot Manager keys:
+
+  ENTER - boot from the highlighted partition (you can also press 1-9)
+  ESC   - boot from the highlighted partition, but don't remember this
+          choice for the next time.
+  A     - boot from A and put the highlighted partition in MBR
+  H     - boot from A but hide all partitions on the hard disk,
+          except the first piece of the unused space which is larger
+          than 63 sectors. (Good when you install a new OS).
+  TAB	- boot from the next hard drive.
+
+  ALT-ENTER - Same as ENTER, but do not put keys into keyboard buffer
+          if there are any keys specified in the boot menu.
+
+<A NAME="setup_adv"></A>Editing Advanced Boot Manager Menu
+
+  For each item in the menu you can specify:   (see <A HREF="#setup_adv_example">example</A>)
+  
+  - Device from which you want to boot (Dev)
+
+       C - current disk (on which this menu resides)
+       D - next hard disk
+       A - first floppy disk
+  
+  - Which partition should be made active on this hard disk (0 - for none)
+  
+  - Row in which this partition should be placed in the MBR. (see <A HREF="#setup_adv_example">example</A>)
+
+  - Which partitions show together with the bootable partition.  
+    The choices are: Last, Previous, Next, and Last3 partitions,
+    including the one from which you boot.
+
+  - Whether this menu choice should be password protected (PP)
+
+  - The name that you want to see in the menu
+  
+  - Keystrokes that should be placed in keyboard buffer before booting
+    this OS. (for exaple, simulating F4 before booting Windows 95 will
+    make Windows 95 booting the previous version of MS-DOS)
+
+    
+<A NAME="setup_adv_opt"></A>  If you press Alt-O you can change boot manager's options:
+ 
+       - Boot menu title
+       - Enable check for <A HREF="#virus">boot viruses</A>
+       - Clear screen before drawing the menu
+       - Timeout (0 forces boot manager to stop and wait for user's input)
+       - Default partition (overrides remembered "last selected")
+       - Optional password for Advanced Boot Manager 
+       - Ignore unused partitions, when evaluating "Prev", "Next", "Last"
+
+      When password is set it protects booting from floppy (via keys A, H)
+ and from the second hard disk via TAB. However, you can make a menu line 
+ which will boot from the floppy or the next hard disk, without asking the
+ password (simply do not enable "PP" - password protected - flag).
+
+<HR>
+
+<A NAME="setup_adv_example"></A>Example of Advanced Boot Manager setup
+
+ Suppose that you have two hard disks on the system:
+
+      Your new 4.3Gb hard disk                And old 340Mb hard disk
+
+      1  AdvBootManager    30k                1  DOS FAT-16     340Mb
+      2  Windows FAT-32  2600M
+      3  Windows NT NTFS  400M
+      4  Linux            400M
+      5  Linux swap        30M
+      6  DOS Extended     800M
+ 
+ Then Advanced Boot Manager Menu could look like this:
+ 
+      #  Dev  Partitions  Name                    Keys
+      
+      1   C   2/*  Last   Windows 95                N
+      2   C   2/*  Last   Windows 95 / Prompt       Y  <-  "F8 6 Enter"
+      3   C   3/2  Last   Windows NT                N
+      4   C   4/3  Next   Linux                     N
+      5   C   4/3  Last3  Linux (sees extended)     N
+      6   D   6/*  ----   Old MS-DOS (sees ext)     N
+      7   D   0    ----   Old MS-DOS (sees nothing) N
+    
+    Note: in order to get DOS running from the second hard drive you have
+ to do the following steps:
+       
+   - Install Compact or Advanced Boot Manager on the second hard drive
+   - Go to setup screen for FAT-16 partition and set drive number to 129
+   - Make sure you don't have any unhidden primary FAT-16/12 partitions
+     on the first hard drive when you boot from the second.
+
+    Also note that Windows NT and Linux will be placed in rows 2 and 3
+ in the partition table, respectively, while we don't care where will
+ end up Windows 95.
+    For Windows NT it is important always to be in the same row, because
+ it's boot.ini file has syntax like this:
+ 
+ multi(0)disk(0)rdisk(0)partition(2)\WINNT="Windows NT" /basevideo /sos
+
+ And it would not be able to find its kernel if we move it to a different
+ row in the partition table.
+
+<HR>
+<A NAME="setup_adv_example2"></A>Another example - preparing for installation of Windows 98 (or another OS)
+   
+   - Create a bootable floppy and copy Partition Manager to it
+   - Create and then format partition
+   - Edit boot menu
+
+           Your partitions
+
+      1  AdvBootManager    30k
+      2  Windows FAT-32  1600M     <-- This is Windows 95 partition
+      3  Windows FAT-32  1200M     <-- This one was just created and
+      4  DOS Extended     800M       \ formated for Windows 98
+ 
+      Advanced Boot Manager Menu
+ 
+      #  Dev  Partitions  Name                    Keys
+      
+      1   C   2/*  Last   Windows 95                N
+      2   C   2/*  Last   Windows 95 / Prompt       Y  <-  "F8 6 Enter"
+      3   C   3/*  Last   Windows 98                N
+
+   - Save this data to hard disk and to a file on the floppy
+   - Reboot computer
+   - In the boot manager menu select "Windows 98" and press A
+     to boot from a "Windows 98 Setup" floppy 
+   - After installation of Windows 98 run Partition Manager to
+     review any changes in MBR and <A HREF="#os_inst">reinstall</A> boot manager if 
+     nesessary.
+
+<HR>
+
+<A NAME="compact"></A><A NAME="setup_ipl"></A>Compact Boot Manager
+    
+       Compact Boot Manager fits in 446 bytes and doesn't need any space
+   on the disk beyond MBR. It is simply an <A HREF="#ipl">IPL</A>.
+
+   When you install it you have 4 options: 
+   
+       - Enable check for <A HREF="#virus">boot viruses</A>
+       - Prompt's time-out
+       - Default partition (overrides remembered "last selected")
+       - Default place to boot from if none of the partitions are active.
+         The choices are A: and the next hard drive.
+
+   Hint: if you set default partition to A then computer will always
+         boot from A:, if to Tab - from the next hard disk, and when
+         set to Space - then it will stop and wait for your choice.
+
+<HR>
+
+<A NAME="ipl_mesg"></A>Understanding messages of Compact Boot Manager
+
+       Message                         Description
+
+                          Press ESC to skip prompt and boot OS
+                          Press SPACE to stop and wait for selection
+"Booting from: HD1/1..."  Press 1-4 to boot from corresponding partition
+"Booting from: HD1/_"     Press A to boot from a floppy or TAB to boot 
+                          from the next hard drive. Any other key will
+                          resume booting, and will remain in the buffer.
+                          For instance F4, F5, F8, ... (see <A HREF="#hints">hints</A>)
+
+"Writing changes..."      IPL is saving your selection into MBR.
+
+"Error!"                  Error reading disk or empty partition selected.
+
+"Virus !!!"               IPL found that one of interrupt vectors doesn't
+                          point to ROM BIOS memory (see <A HREF="#virus">virus protection</A>).
+                          You can press ENTER to resume booting, but it
+                          would be better to shut down the computer and
+                          run antivirus program, after booting from a
+                          clean floppy disk.
+
+<HR>
+
+<A NAME="virus"></A>Virus protection
+
+      IPL that comes with this program can detect viruses even before
+   operating system gets into memory. This is important, because some
+   <A HREF="#mbr">MBR</A> viruses cannot be detected by antivirus programs that are
+   loaded after operating system.
+
+      Virus detection is implemented by checking 29 interrupt vectors
+   from int 0h to int 1Ch. They must point to addresses C000:0000h or 
+   higher, where ROM BIOS resides. These interrupts control all vital
+   functions of the system, such as Timer, Video, Keyboard, and Disk.
+   
+      If any of the interrupts have been changed it is very likely that a
+   virus invaded the system. In this case the IPL stops and warns user.
+   You have a choice to continue booting with virus in memory or rebooting
+   the system and run antivirus. See <A HREF="#ipl_mesg">IPL messages</A> section.
+
+      However, on some systems this method of checking for virusus will
+   produce false alarms. In this case you can disable virus detection.
+<A NAME="hints"></A>
+       Another way of protection from viruses is to avoid accidental boots
+   from the floppy drive. With this program you can do that, while still
+   being able to boot from floppy, when you need it.  To do that:
+
+     1. Install either Advanced or Compact Boot Manager that comes with
+        this program.
+
+     2. Change boot sequence to C:,A: in the BIOS setup 
+    
+     3. When you need to boot from A: at the <A HREF="#ipl_mesg">boot time</A> press A.
+
+     This trick will not only save you from viruses, but will also speed
+  up your work. It is especially impressive if you have QEMM 8.xx together
+  with MS-DOS or Windows 95. 
+
+     Set "BootFloppy:N" option in QEMM's quick boot and add "SWITCHES=/F"
+  to your CONFIG.SYS file.
+
+     Next time, when you reboot QEMM's Quick Boot will skip BIOS memory
+  test and take you straight to the Compact Boot Manager's prompt where
+  you will be more comfortable with pressing F4, F5, or F8 ...
+
+<HR>
+
+<A NAME="create"></A>Creating a new partition
+
+      To create a new partition find unused record in the partition
+   table and press INS, then select desired File System type.
+   
+      After you do that Partition Manager will automatically put values
+   for cylinders, heads, and sectors. 
+   
+      In most cases you don't need to modify those values. But if you 
+   have in mind your own partitioning scheme you can change them. When
+   you do that, do start and end partitions on the cylinder (or head)
+   boundaries. It is not required, but highly recommended. For example,
+   if your hard  disk has 16 heads and 63 sectors per head, you should
+   start partition on head 0, sector 1 and end on head 15, sector 63.
+   
+<A NAME="0xFF00"></A>
+      If you need to install several operating systems such as MS-DOS,
+   Windows 95, or Windows NT, and you want to avoid their interference
+   with each other you may want to hide existing partitions, while
+   installing operating system into a new one, and unhide them later. 
+
+      While you are entering numbers partition may turn red. Don't
+   worry about it until you finish.
+<A NAME="conflict"></A>
+      The red color of the partition means that the settings appear
+   to be invalid or conflicting with the current disk geometry.
+   
+      To help you figure out what's wrong I had defined four error codes.
+   They are shown in red color on the right when you move cursor on the
+   invalid partition.
+      
+   mbr: partition overlaps MBR in the first sector of the disk or
+        extended dos partition.
+        
+   range: partition have values for cylinder, head, or sector (CHS)
+        outside of the range of disk or extended dos partition boundaries
+        or it ends before it begins. Move cursor on the CHS fields to see
+        the hint with allowed values.
+
+   overlapped: two partition are overlapping each other.
+   
+   inconsistent: this message means that CHS values do not correspond
+        to starting sector and partition size, which are also stored
+        in the partition table. Usually this happens if partition table
+        was damaged or BIOS disk geometry translation has changed since
+        partition table was last modified. This error will also appear
+        if you have value 0 for sector (sector must be at least 1).
+        
+      If the red color appears as soon as you started it may be because
+   you have changed disk controller or BIOS settings or MBR was corrupted.
+   If this is the case don't change any values unless you are absolutly
+   sure what you are doing.
+      Hint for the professionals: no matter how BIOS represents disk 
+   geometry the relative number of sectors and partition sizes hold. 
+   To fix the problem of inconsistency you have to switch to the LBA mode
+   by pressing F4, note the size of the partition, change it and then
+   change it back to the correct size. This will force the program to
+   recalculate the values in CHS according to the current disk geometry.
+      However, keep in mind two things: As far as I can tell DOS uses
+   CHS values to boot and doesn't use starting sector/number of sectors
+   fields. Instead, it uses field "sectors prior partition" and
+   "big total number of sectors" from its boot record.
+
+      If you had used OnTrack DDO or Ez-Drive you should know that they
+   skew disk: OnTrack by 63 sectors and Ez-Drive by 1 sector. Therefore
+   you have to reflect this change in DOS boot records.
+
+<HR>
+
+<A NAME="format"></A>Formatting partition
+      
+      You can format partitions or just check disk surface for bad sectors
+   without destroying the data. 
+   
+      To verify any partition press V in interactive mode or run:
+      
+             part -v n
+
+      To format partition press F in interactive mode or run:
+      
+             part -f n options ...
+      
+      Format options depend on <A HREF="#systems">file system</A> that you are formatting.
+   
+Important notes on formatting DOS partitions
+
+      First of all DOS cannot see newly created partition, untill you
+   reboot computer, because it scans partition table only once.
+      So if you created and/or formatted a new partition you have to
+   reboot before you can use it.
+   
+      If the partition already mounted (you can see it as a DOS drive)
+   and you formatted partition with different parameters you also have
+   to reboot computer, because DOS keeps in memory old numbers, and will
+   most certainly mess up the disk if you will try to write to it
+   without rebooting.
+
+      The other problem is disk caches. Partition Manager flushes them
+   using SmartDrive v 4.00+ API. Most of the new cache programs, such as
+   PC-Cache 8.0, NCACHE2, SpeedDrive support it. But if you have any
+   other cache you should disable it before formatting DOS partitions
+   or reboot computer after formatting.
+
+      The difference in behaviour of part.exe and format.com is that
+   part formats partitions by number in partition table and format by
+   letter in DOS device list. Therefore before rebooting you shouldn't
+   use programs that accesses partitions via DOS, but you can use 
+   programs that writes to partitions bypassing DOS. For example zpart,
+   which compresses and decompresses entire partitions to and from files.
+
+      Limitation: currently this program cannot format logical DOS drives
+   from the command line - you have to go to the interactive mode.
+
+<HR>
+
+<A NAME="os_inst"></A>Important issues on installation of a new OS
+
+      Windows 95 and some other operating systems upon installation
+   replace your current <A HREF="#ipl">IPL</A> with their own code. If you have 
+   Compact or Advanced boot managers installed on your hard drive you
+   would not see them at the next boot.
+
+      I have worked on this issue. It should not lead to the loss of
+   data, at least with Windows 95. In the worst case you just would have
+   to run part.exe and reinstall boot manager. But to ensure that nothing
+   will be lost do the following steps before installing new OS:
+   
+      - Create a bootable floppy and copy Partition Manager on it.
+      - Run Partition Manager and create partition for the new OS.
+      - If possible format it using Partition Manager.
+      - In Advanced Boot Manager edit boot menu (see <A HREF="#setup_adv_example2">example</A>)
+      - Save Partition Manager's data to the floppy.
+      - Reboot computer and install a new OS
+   
+      If MBR will be modified by OS installer review the changes and
+   reinstall boot manager. (Press F2 in order to save MBR and install 
+   Advanced Boot Manager executable code to disk).
+   
+<HR>
+
+<A NAME="systems"></A>Supported file systems
+
+      <A HREF="#0x0000">Unused partition</A>
+      <A HREF="#0x0100">Classical MS-DOS file systems</A>
+      <A HREF="#0x0B00">Windows 95 FAT-32 file system</A>
+      <A HREF="#0x0500">Extended DOS partition</A>
+      <A HREF="#make_primary">Making logical drives bootable</A>
+
+<HR>
+<A NAME="0x0000"></A>Unused partition
+
+      This simply indicates that entry in partition table is available.
+   It doesn't tell anything about free space on disk. You have to figure
+   out that yourself.
+
+      However if you specify starting and ending locations of partition
+   with type "Unused" Partition Manager will let you format and verify
+   the disk space.
+   
+      Format takes two options: "/destructive" or "/clean". First one
+   performes low level disk format, second one fills disk space with
+   zeros.
+
+<HR>
+<A NAME="setup_fat"></A><A NAME="0x0100"></A><A NAME="0x0400"></A><A NAME="0x0600"><A NAME="0x1100"></A><A NAME="0x1400"></A><A NAME="0x1600"></A>Classical MS-DOS file systems
+
+	0x01, "DOS FAT-12"
+	0x04, "DOS FAT-16 (under 32M)"
+	0x06, "BIGDOS FAT-16 (over 32M)"
+
+   All file systems have the same structure:
+      
+   	[Boot Sector]
+   	[First copy of FAT]
+   	[Second copy of FAT]
+   	[Root Directory]
+   	[Cluster 2]
+   	[Cluster 3]
+   	[Cluster 4]
+   	...
+
+      Boot sector, FATs, Root Directory, and clusters have fixed sizes,
+   which you  can set only when you are formatting the disk.
+      Space for all subdirectories and files is allocated by clusters.
+   If cluster size is 8 sectors = 4,096 bytes, when you create file with
+   size of 1 byte it will get entire 4,096 bytes cluster.
+      There is an entry in FAT (File Allocation Table) for each cluster,
+   which tells if cluster is free, allocated, or damaged. Therefore size
+   of the FAT determines maximum number of clusters.
+
+      FAT-12 file system is limited to 4084 clusters. It is used on the 
+  floppy disks, but you can also use it on a small hard disk partition. 
+   
+      FAT-16 was used on early hard disks. Original version could have
+   up to 65,000 clusters on partitions up to 32M.
+   
+      BIGDOS FAT-16 which was released with DOS 3.31 doesn't have 32M 
+   limitation and can be as large as 2G. For backward compartibility
+   all DOS versions later than 3.31 will accept both FAT-12 and FAT-16
+   file systems in the BIGDOS partition.
+
+      This program includes format utility which formats all three file
+   system types. It has the following options:
+
+      part -f n [/quick | /destructive] [/l:volume_label]
+                [/c:sect_per_cluster] [/x:max_num_sect | /x:disk]
+
+      If you specify "quick" option, the program will assume that your
+   hard disk doesn't have any bad sectors. You can verify disk once, and
+   if it doesn't have bad sectors you can then use quick format.
+ 
+      If you don't specify cluster size it will be selected automatically
+   depending on partition size from 4 sectors and up. Here is the table
+   for BIGDOS FAT-16 file system:
+
+                Cluster size         Maximum partition size
+
+   	   1 sector        512 bytes           32M
+       *   2 sectors     1,024 bytes           64M        recommended
+       *   4 sectors     2,048 bytes          128M       cluster sizes
+       *   8 sectors     4,096 bytes          256M        are marked 
+       *  16 sectors     8,192 bytes          512M         with '*'
+       *  32 sectors    16,384 bytes            1G
+       *  64 sectors    32,768 bytes            2G
+   	 128 sectors    65,536 bytes            4G
+
+      Although you can format disk with all those cluster sizes it's not
+   recomended to use very small or very large values. Many programs have
+   weird bugs with that. For example, SCANDISK will freeze if cluster
+   size is 128, while Norton Disk Doctor seems to work without problems.
+
+      By specifying max_num_sect parameter you can reserve space in FAT
+   for the future expansion of the partition. If you type "/x:disk"
+   (exactly as it is written) format will make FATs large enough so that
+   you can expand you partition to entire disk.
+   
+      You can make FAT partition smaller (shrink them). To do that run
+   some disk defragmentation utility (like DEFRAG.EXE). Then go to setup
+   screen inside part.exe. One of the lines will show the minimum 
+   partition size, based on the last cluster occupied by data. The value
+   should be equal to sum of the file and directory sizes on your disk.
+   If it is greater it means, that some hidden files were not moved by
+   the defragmentation utility. You have to find those files (for example 
+   Norton Speed Disk will show their names), remove system and hidden 
+   attributes and run disk defragmenter again. But be careful with moving
+   them, because some programs may use absolute file locations for their
+   illigal installation checks.
+
+<HR>
+<A NAME="setup_fat32"></A><A NAME="0x0B00"></A><A NAME="0x1B00"></A>Windows 95 FAT-32 file systems
+
+	0x0B, "Windows 95 FAT-32"
+
+      This file system was designed to support disks larger than 2G, which
+   was the limit for FAT-16 file system. FAT-32 partition can be as large 
+   as 2T (2,048G). 
+
+   It has the following structure:
+      
+   	[Boot Record (3 sectors)]
+   	[Backup Copy of Boot Record]
+   	[First copy of FAT]
+   	[Second copy of FAT]
+   	[Cluster 2]
+   	[Cluster 3]
+   	[Cluster 4]
+   	...
+
+      Root directory on FAT-32 treated as an ordinary directory, and can
+   be located anywhere on the disk and doesn't have predefined fixed size
+   (unlike FAT-16).
+
+      Options for formatting FAT-32 file system are similar to FAT-16
+   options: 
+
+      part -f n [/quick | /destructive] [/l:volume_label]
+                [/c:sect_per_cluster] [/x:max_num_sect | /x:disk]
+
+      Strategy for resizing FAT-32 partition is also similar to one for
+   FAT-16:
+   
+      - Run defragmenter utility on the FAT-32 partition
+      - Change partition size in the partition table
+      - Enter setup screen and make same changes there
+        (make sure they are valid - otherwise they will turn red)
+      - Reboot computer and run scandisk to check that everything
+        is ok and also to reset amount of free space.
+
+<HR>
+
+<A NAME="0x0500"></A><A NAME="0x1500"></A><A NAME="extended"></A>Extended DOS partition
+
+      Partiton table has space for only four records. To have more than
+   four partitions DOS uses Extended DOS partition scheme. This scheme
+   allows you to have as much as 23 DOS volumes on one physical drive.
+   Unfortunately, native DOS's program FDISK imposes another limitation
+   that you cannot have more than one primary (bootable) MS-DOS partition
+   on the hard disk. The truth is you CAN have more than one. The problem
+   is that MS-DOS's FDISK refuses to create second one for you.
+   
+      If you run FDISK it will create one primary partition and then will
+   mark the rest of the space as an Extended partition. The first sector
+   of the Extended partition is called EMBR (Extended MBR). It has the
+   same structure as MBR. Inside of each Extended partition you can have
+   one FAT (or NTFS) partition, called logical drive, and another Extended
+   partition. For some unknown reason relative sectors of inner extended
+   partitions are calculated from the beginning of the outermost partition,
+   while relative sectors of FAT partitions are from the beginning of the
+   enclosing extended partition.
+
+   Here is an example:
+
+      HD  520 Mb
+      ---------------------------------------------------
+      Primary FAT-16  120Mb                                [ C: 120Mb ]
+      Extended DOS    300Mb -----------------------------
+                            FAT-16  100Mb                  [ D: 100Mb ]
+                            ExtDOS  200Mb ---------------
+                                          FAT-16  200Mb    [ E: 200Mb ]
+                                          ---------------
+                            -----------------------------
+      Linux           100Mb                                [ /  100Mb ]
+      ---------------------------------------------------
+
+      Note that the order of partitions on the disk also matters. FAT
+   partition must go first. And the extended partition must follow.
+   
+      Hint: in the Partition Manager you can use PgUp and PgDn to jump
+   between EMBR levels.
+
+      You cannot boot from extended partition, nor from any logical drive
+   inside of it. If you try it, the system would simply hang, because its
+   boot record unlike other file systems doesn't have any loader code. It
+   has only zeros. You can install a "non bootable" dummy boot record,
+   which instead of crashing will display a message:
+  
+      Extended DOS partition is not bootable.
+      Press any key to reboot...
+   
+<A NAME="make_primary"></A>Making logical drives bootable
+
+      As I mentioned before, you cannot boot from Extended partition or
+   from any logical drive contained in it. But what if you need?  The
+   solution is simple. All you have to do is to move the record that
+   describs logical drive from the EMBR to the primary MBR, and adjust
+   size of the Extended partition.  Then you have to set the correct
+   number of "sectors prior to partition" in the DOS boot sector,
+   whose value is used to load system files. And finally you have to
+   run sys.com to install system files on disk.
+
+      Lets see what we can do with <A HREF="#extended">our example</A>.
+
+   Variant 1.
+  
+      Notice that size of the extended partition was changed and second
+   extended partition is gone.
+
+      HD  520 Mb
+      ---------------------------------------------------
+      Primary FAT-16  120Mb                                [ C: 120Mb ]
+      Extended DOS    100Mb -----------------------------
+                            FAT-16  100Mb                  [ D: 100Mb ]
+                            -----------------------------
+      Primary FAT-16  200Mb                                [ E: 200Mb ]
+      Linux           100Mb                                [ /  100Mb ]
+      ---------------------------------------------------
+      
+
+   Variant 2.
+
+      Here we just moved both records from extended partition to the MBR.
+
+      HD  520 Mb
+      ---------------------------------------------------
+      Primary FAT-16  120Mb                                [ C: 120Mb ]
+      Primary FAT-16  100Mb                                [ D: 100Mb ]
+      Extended DOS    200Mb -----------------------------
+                            FAT-16  200Mb                  [ E: 200Mb ]
+                            -----------------------------
+      Linux           100Mb                                [ /  100Mb ]
+      ---------------------------------------------------
+      
+
+   Variant 3.
+  
+      HD  520 Mb
+      ---------------------------------------------------
+      Primary FAT-16  120Mb                                [ C: 120Mb ]
+      Primary FAT-16  100Mb                                [ D: 100Mb ]
+      Primary FAT-16  200Mb                                [ E: 200Mb ]
+      Linux           100Mb                                [ /  100Mb ]
+      ---------------------------------------------------
+ 
+<HR>
+
+<A NAME="cmd_line"></A>Command line options
+
+Usage: part [-q] [-d disk] [-command ...]
+
+ part          - Interactive mode
+ part -i       - Print IDE disk info
+ part -p       - Print partition table
+ part -p -r    - Print info recursively
+ part -a n     - Activate n-th partition
+ part -v n     - Verify n-th partition
+ part -f n ... - Format n-th partition
+ part -s file  - Save MBR to file
+ part -l file  - Load MBR from file
+ part -c file  - Compare MBR with file
+ part -Reboot  - Reboot computer
+
+ The program returns exit code 0 if there was no errors and/or
+ compared objects had no differences (1 is returned otherwise).
+
+<HR>
+<A NAME="moreinfo"></A>
+Additional information and help resources
+
+   <A HREF="http://www.ranish.com/part/">Partition Manager Home Page</A>
+
+   <A HREF="http://www.ranish.com/part/primer.htm">Partitioning Primer</A>
+   <A HREF="http://www.ranish.com/part/faq.htm">Partition Manager FAQs</A>
+   <A HREF="http://groups.yahoo.com/group/partman-discussion">Partition Manager mailing list</A>
+
+
+<A NAME="copyright"></A>Program Distribution and Copyrights
+
+   This program is a FreeWare. You can freely distibute it.
+   Source codes are available for download from my home page.
+
+Mikhail Ranish
+</PRE>
+</BODY>
+</HTML>

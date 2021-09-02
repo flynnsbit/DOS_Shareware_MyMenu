@@ -1,0 +1,200 @@
+# Italian Version (CP850) by Roberto Mariottini
+#
+# fatal errors
+0.0:Memoria esaurita. Necessari ulteriori %ld byte.\n
+0.1:MEMORIA DI SISTEMA CORROTTA! (fallita int 21.5803)\n
+0.2:UMB Corrotti: La catena non raggiunge la sommit… della memoria bassa a %dk. Ultimo=0x%x.\n
+0.3:La catena MCB Š corrotta (Z MCB dopo l'ultimo M MCB non trovato, ma %c al seg 0x%x).\n
+0.4:Usare /? per la guida\n
+0.5:opzione sconosciuta: %s\n%s
+# FIXME: to be translated
+0.6:The /NOSUMMARY option was specified, but no other output-producing options\nwere specified, so no output is being produced.\n%s
+# FIXME: to be translated
+0.7:Fatal error: failed to free HMA, error code %02Xh\n
+# FIXME: to be translated
+0.8:unknown option (expected a '/'): %s\n%s
+# FIXME: to be translated
+0.9:Expected a value after /%s, not another switch\n%s
+# FIXME: to be translated
+0.10:Internal error: option '%s' has '%s' as a prefix\nplus another equal-length prefix
+# FIXME: to be translated
+0.11:Internal error: option '%s' was an exact match for two\ndifferent switches\n
+# FIXME: to be translated
+0.12:Error: option '%s' is ambiguous - it is a partial match for two\nor more different options\n%s
+# FIXME: to be translated
+0.13:Expected a value after /%s\n%s
+# FIXME: to be translated
+0.14:Invalid option '%s': you must specify at least one letter of the\noption name
+# misc messages
+1.0:Un sistema operativo sconosciuto
+1.1:%s byte\n
+1.2:(%s byte)\n
+1.3: (%7s byte)\n
+# FIXME: to be translated
+1.4:Warning: device appears to be owned by multiple memory blocks (%s\nand %s)\n
+# FIXME: to be translated
+1.5:(no drv)
+# FIXME: to be translated
+1.6:No %s Memory is free\n
+# FIXME: to be translated
+1.7:%s is not currently in memory.\n
+# FIXME: to be translated
+1.8:%s is using the following memory:\n
+# FIXME: to be translated
+1.9:%s Memory is not accessible\n
+# memory types
+2.0:Tipo Memoria       Totale     Usata      Libera\n
+#   ----------------  --------   --------   --------
+2.1:Convenzionale
+2.2:Superiore (UMB)
+2.3:Riservata
+2.4:Estesa (XMS)
+2.5:Memoria totale
+2.6:Totale sotto 1 MB
+2.7:Totale Espansa (EMS)
+2.8:Espansa Libera (EMS)
+2.9:Dimensione massima di un programma
+2.10:Dimensione massima di un blocco di memoria superiore (UMB)
+2.11:%s Š residente nell'area di memoria alta (HMA).\n
+# FIXME: to be translated
+2.12:Available space in High Memory Area
+# FIXME: to be translated
+2.13:HMA is available via the XMS driver\n
+# FIXME: to be translated
+2.14:HMA is not available via the XMS driver: not implemented by the driver\n
+# FIXME: to be translated
+2.15:HMA is not available via the XMS driver: a VDISK device is present\n
+# FIXME: to be translated
+2.16:HMA is not available via the XMS driver: HMA does not exist\n
+# FIXME: to be translated
+2.17:HMA is not available via the XMS driver: HMA already in use\n
+# FIXME: to be translated
+2.18:HMA is not available via the XMS driver: HMAMIN is larger than HMA\n
+# FIXME: to be translated
+2.19:HMA is available via the XMS driver, minimum TSR size (HMAMIN): %u bytes\n
+# FIXME: to be translated
+2.20:HMA is not available via the XMS driver: unknown error %02Xh\n
+# FIXME: to be translated
+2.21:HMA is not available as no XMS driver is loaded\n
+# FIXME: to be translated
+2.22:Memory accessible using Int 15h
+# FIXME: to be translated
+2.23:Memory is not accessible using Int 15h (code %02xh)\n
+# block types
+3.0:
+3.1:libero
+3.2:sistema (codice)
+3.3:sistema (dati)
+3.4:programma
+3.5:ambiente
+3.6:area dati
+3.7:riservato
+# FIXME: to be translated
+3.8:interrupt vector table
+# FIXME: to be translated
+3.9:BIOS data area
+# FIXME: to be translated
+3.10:system data
+3.11:driver di dispositivo
+# FIXME: to be translated
+3.12:data area
+3.13:IFS
+# FIXME: to be translated
+3.14:(error)
+# classify msgs
+4.0:\nModuli che usano memoria sotto 1 MB:\n\n
+4.1:  Nome          Totale          Convenzionale      Superiore (UMB)\n
+#     --------  ----------------   ----------------   ----------------
+4.2:SISTEMA
+4.3:Libero
+4.4:\n Segm.        Totale           Nome          Tipo\n
+#     -------  ----------------  ------------  -------------
+4.5:\n  Indirizzo    Attr.    Nome     Programma\n
+#      -----------  ------ ----------  ----------
+4.6:\n Seg.         Totale\n
+#     -------  ----------------
+#            ----------------
+4.7:Totale:
+# FIXME: to be translated
+4.8:system device driver\n
+# FIXME: to be translated
+4.9:installed DEVICE=%s\n
+# FIXME: to be translated
+4.10:%s Memory Detail:\n
+# FIXME: to be translated
+4.11:Free %s Memory:\n
+# FIXME: to be translated
+4.12: (%u in this block)
+# EMS stuff
+5.0:ERRORE INTERNO EMS.\n
+5.1:Driver EMS non installato nel sistema.\n
+5.2:Driver EMS versione
+5.3:EMS page frame
+5.4:Memoria EMS totale
+5.5:Memoria EMS libera
+5.6:Handle totali
+5.7:Handle liberi
+5.8:\n  Handle  Pagine    Dim.       Nome\n
+#      -------- ------  --------   ----------
+# XMS stuff
+6.0:Driver XMS non installato nel sistema.\n
+6.1:\nTest della memoria XMS ...\n
+6.2:ERRORE INTERNO EMS.\n
+6.3:INT 2F AX=4309 supportato\n
+6.4:XMS versione
+6.5:Driver XMS versione
+6.6:Stato HMA
+6.7:presente
+6.8:assente
+6.9:Stato linea A20
+6.10:abilitata
+6.11:disabilitata
+6.12:Memoria XMS libera
+6.13:XMS contingua libera
+6.14:Handle liberi
+6.15:Blocco   Handle     Dim.     Lock\n
+#    ------- --------  --------  -------
+6.16:\nMemoria superiore libera
+6.17:Max blocco libero (UMB)
+6.18:\nMemoria superiore (UMB) non disponibile\n
+# help message
+7.0:FreeDOS MEM versione %s
+7.1:Visualizza l'ammontare di memoria usata e libera nel sistema.
+# FIXME: to be translated
+7.2:Syntassi: MEM [zero or more of the options shown below]
+7.3:/E          Riporta le informazioni sulla memoria Espansa (EMS)
+7.4:/FULL       Lista completa dei blocchi di memoria
+7.5:/C          Classifica i moduli che usano memoria sotto 1 MB
+7.6:/DEVICE     Lista dei driver di dispositivo attualmente in memoria
+7.7:/U          Lista dei programmi nella memoria convenzionale e superiore
+7.8:/X          Riporta le informazioni sulla memoria Estesa (XMS)
+7.9:/P          Effettua una pausa dopo ogni schermata di informazioni
+7.10:/?          Visualizza questo messaggio
+# FIXME: to be translated
+7.11:/DEBUG      Show programs and devices in conventional and upper memory
+# FIXME: to be translated
+7.12:/M <name> | /MODULE <name>\n            Show memory used by the given program or driver
+# FIXME: to be translated
+7.13:/FREE       Show free conventional and upper memory blocks
+# FIXME: to be translated
+7.14:/ALL        Show all details of high memory area (HMA)
+# FIXME: to be translated
+7.15:/NOSUMMARY  Do not show the summary normally displayed when no other\n            options are specified
+# FIXME: to be translated
+7.16:/SUMMARY    Negates the /NOSUMMARY option
+# FIXME: to be translated
+7.17:/%-10s No help is available for this option\n
+# FIXME: to be translated
+7.18:/OLD        Compatability with FreeDOS MEM 1.7 beta
+# FIXME: to be translated
+7.19:/D          Same as /DEBUG by default, same as /DEVICE if /OLD used
+# FIXME: to be translated
+7.20:/F          Same as /FREE by default, same as /FULL if /OLD used
+8.0:\nPremere <Invio> per continuare o <Esc> per uscire . . .
+# Memory type names
+# FIXME: to be translated
+9.0:Conventional
+# FIXME: to be translated
+9.1:Upper
+# FIXME: to be translated
+9.2:(error)

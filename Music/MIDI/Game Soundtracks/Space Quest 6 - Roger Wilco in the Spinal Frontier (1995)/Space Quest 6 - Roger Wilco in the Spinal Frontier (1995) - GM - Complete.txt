@@ -1,0 +1,97 @@
+                          SIERRA ON-LINE, INC.
+             3-D Animated Adventure Game Soundtrack Series
+           =================================================
+           SPACE QUEST 6: ROGER WILCO IN THE SPINAL FRONTIER
+                                                        
+
+                            THE SOUNDTRACK
+                     (See below for song titles.)
+                    Neil Grandstaff and Dan Kehler
+           =================================================
+                  Copyright (c)1995 Sierra On-Line, Inc.  
+           =================================================
+
+                         GENERAL MIDI VERSION
+              (Designed for Roland Sound Canvas SC-55 GM)
+
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- General MIDI sound card or module  (Roland Sound Canvas SC-55 recommended)
+
+
+This Standard MIDI File was recorded directly from Sierra's "Space Quest 6"
+adventure game.  (The soundtrack includes some selections as heard in the
+"Space Quest 6" demo.)  It has been recorded using Sierra's General MIDI
+sound driver and is therefore optimized for Roland Sound Canvas SC-55 based
+MIDI cards and modules.  
+
+Recorded/edited/compiled/arranged for General MIDI by Tom Lewandowski.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+   =========================================================================
+                                  TRACK SHEET
+
+               SPACE QUEST 6: ROGER WILCO IN THE SPINAL FRONTIER
+   =========================================================================
+
+   SONG TITLE                                      START MEASURE/TIME *
+   -------------------------------------------------------------------------
+   1. Introduction                                        2  00:00:02
+   2. Polysorbate LX                                     48  00:01:52
+   3. Orion's Belt Bar (Part 1)                          87  00:03:26
+   4. Orion's Belt Bar (Part 2)                         135  00:05:21
+   5. Orion's Belt Bar (Part 3)                         191  00:07:36
+   6. The Arcade                                        234  00:09:19
+   7. Stooge Fighter III                                256  00:10:12
+   8. Fester Blatz                                      340  00:13:33
+   9. Dew Drop Inn                                      389  00:15:31
+  10. Kidnapped                                         439  00:17:31
+  11. Roger Cuts A Rug                                  488  00:19:28
+  12. The Burlesque Moddie                              497  00:19:50
+  13. Corpsman Stellar Santiago                         522  00:20:50
+  14. Sickbay                                           569  00:22:43
+  15. Roger's Quarters                                  602  00:24:02
+  16. Roger's Quarters (Demo)                           674  00:26:55
+  17. Dr. Beleauxs' Lab (Part 1)                        692  00:27:38
+  18. Elevator Ride                                     723  00:28:52
+  19. Sharpei's Quarters                                784  00:31:19
+      a. Sharpei                                        784  00:31:19
+      b. The Gas                                        821  00:32:48
+      c. Stellar's Funeral                              846  00:33:48
+  20. Whistling Roger                                   910  00:36:21
+  21. 8-Rear (Part 1)                                   924  00:36:55
+  22. 8-Rear (Part 2)                                   968  00:38:40
+  23. Shuttle Bay Entrance                             1025  00:40:57
+  24. Jail                                             1074  00:42:55
+  25. Spiked Doughnut                                  1120  00:44:45
+  26. Shuttle Bay (Demo)                               1129  00:45:07
+  27. Space                                            1176  00:47:00
+  28. Waiting For Help                                 1226  00:49:00
+  29. Dr. Beleauxs' Lab (Part 2)                       1255  00:50:09
+  30. Return To Delta Burksilon                        1299  00:51:55
+  31. The Information Superhighway                     1302  00:52:02
+  32. The Information Superhighway Office              1355  00:54:09
+  33. Inside Stellar Santiago                          1372  00:54:50
+  34. The Stomach                                      1412  00:56:26
+  35. The Duodenum                                     1469  00:58:43
+  36. Closing Scenes                                   1529  01:01:07
+      a. The Brain                                     1529  01:01:07
+      b. Sharpei                                       1555  01:02:09
+      c. Leaving Stellar                               1582  01:03:14
+  37. Mission Complete                                 1612  01:04:26           
+  --------------------------------------------------------------------------
+                                                TOTAL TIME:  01:05:07
+
+
+      * Note:  Start Times are approximate.
+

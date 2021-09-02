@@ -1,0 +1,93 @@
+Signs of non-idleness (MS POWER):
+- int 10.func > 3
+- int 13
+- int 14.func != 3
+- int 17.func != 2
+- int 6c.??? (?)
+- int 16.0/1/10/11
+- IRQs (already handled by BIOS)
+Signs of idleness:
+- int 2a.84 network keyboard waiting (MS POWER)
+- int 28 dos idle (addition Eric) (any int 21 but 0..c ok in handler)
+Signs of non-idleness (Eric):
+- int 21.4b end idle (not needed probably)
+- int 2f.ae end idle
+
+What to do if idle (MS auto-selects both/one only):
+- sti hlt
+- int 15.5305 set cpu idle
+What to do if non-idle:
+- int 15.5306 set cpu busy (probably only for "disable APM" usage!)
+
+Flush caches before triggering:
+- int 15.5307.bx=1.cx=3 turn off system (needs APM 1.1+)
+- int 15.5307.bx=1.cx=2 suspend system
+- int 15.5307.bx=1.cx=1 system stand-by
+- cold reboot (ffff:0000 or out 64,fe)
+- warm reboot (set 40:72 to 1234, ffff:0000)
+- hot reboot (int 19)
+
+Init sequence:
+- int 15.5300.bx=0 install check -> version ah.al
+- int 15.5301.bx=0 real mode connect: NC is okay, AH=2 is already conn.
+- int 15.530f.bx=1.cx=1 engage power management (like func 8, but
+  cooperative: BIOS APM keeps working in parallel)
+- int 15.5308.bx=1(for apm 1.0, use -1).cx=0/1 disable/enable APM
+- int 15.530e.bx=00 enable APM version CX, e.g. like AX of func 0
+- int 15.530d.bx=1.cx=1 enable CPU management
+
+Other vendor specific things:
+(int 15.5380.bh=d.cl=divider(1/2/4/8).bl=mode??? set speed APM SL Enh.)
+(int 15.5380.bh=c get cpu speed divider CL, mode BL APM SL Enhanced)
+(int 15.da01.cl=... AMI PCI BIOS speed get/set: 0/1 set lo/hi, 2 get)
+(int 15.da92 get cpu type BL.AH.AL / fsb speed CX in bcd)
+(int 16.f0xx compaq 386 set cpu speed: 0..2 - get is int 16.f1 -> al)
+((int 1f.fb.bl=... get/set Chips and Tech SuperState BIOS CPU speed))
+
+Battery status reading:
+int 15.530a.bx=1 get AC/batt status BH (0 off 1 online 2 ups -1 unk),
+  BL=battery status (0 hi, 1 lo, 2 crit, 3 charging -1 unknown),
+  CH=battery flag (...), CL=battery percentage (binary, -1=unknown)
+  DX=remaining (msb=min/not-sec, other bits=value, -1=unknown)
+  CH/DX apm 1.1 only.
+
+Cache flushing (from APMlib by Aitor Santamaria-Merino):
+CDBlitz: int 2f.1500.ch=90.bx=1234 -> if returned cx=1234,
+  int 2f.1500.ch=96.bx=1234 - status: carry
+PC-Cache: int 16.ffa5.cx=1111 -> if returned cx=0, int 16.ffa5.cx=-1
+Quick Cache: int 13.27.bx=0 -> if returned ax=0, bx!=0, int 13.0021 (?)
+  - status: ax != 0 if error
+Super PC-Kwik (PC-Tools, QCache): int 21.2b.cx=4358 -> if returns al=0,
+  int 13.00a1 (?).si=4358 - status: carry
+MS SMARTDRV EXE: int 2f.4a10.bx=0.cx=ebab -> if returned ax=babe,
+  int 2f.4a10.bx=1 - NOTE: 2f.4a01.bx=1 was wrong! Corrected 9/2009
+MS SMARTDRV SYS: open/reset "smartaar" file. if it works,
+  int 21.4403.bx=filehandle.cx=0.ds:dx=buffer with byte 2 in it
+  - status carry
+generic: int 21.0d, then int 13.0000.dl=80 - status carry
+
+POWER.EXE API:
+int 2f.5400 install check - return version ah.al bx=504d
+int 2f.5401.bh=0/1 get/set status BL: 2lsb are 0 off 2 std 3 adv - re-
+  turn status ax: 0 ok 2 already connected 3 not connected 87 inv. arg.
+int 2f.5402.bh=0/xx get to BL / set to BH idle detection strategy
+int 2f.5403.bx=0/xxxx get to BX / set setting: 1..5=min 6=reg 7..8=max
+int 2f.5481.bx=0/1 get idleness/APM stats.cx=buffer len.ds:si=buffer
+  contents idleness: dd cpu_on_time (in ticks), dd cpu_idle_time (...),
+    dd idle call count, dd int 2f i. c. count, dd int 28 i. c. count
+    dd int 16 idle call count, dd int 2a idle call count
+  contents APM: dd count of resumes since last apm enable
+int 2f.5482.bx=0/xxxx get to BX / set to xxxx APM polling frequency
+int 2f.5481.bx=-1 reset idleness/APM statistics
+  (FDAPM 2/2005 and newer, NOT part of the official POWER.EXE API!)
+
+For the archives - license disclaimer of versions before Nov 26 2003:
+; A tool for APM power management in FreeDOS.
+; Copyright Eric Auer 2003. Please do not spread - just send
+; me (NASM) CODE to complete the project! When done, you will
+; be credited and the project will be released under GPL 2.
+; Please read apmnotes.txt for an outline of the workings.
+
+ACPI information:
+Read acpitool.asm source or check the ACPI specs at www.acpi.info ;-).
+

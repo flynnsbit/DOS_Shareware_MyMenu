@@ -1,0 +1,83 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+         ====================================================
+                         LEISURE SUIT LARRY 1
+         LEISURE SUIT LARRY IN THE LAND OF THE LOUNGE LIZARDS
+                                                        
+
+                            THE SOUNDTRACK
+                     (See below for song titles.)
+                             Chris Brayman
+                       "Larry Theme" by Al Lowe
+         ====================================================
+              Copyright (c)1987, 1991 Sierra On-Line, Inc.  
+         ====================================================
+
+                         GENERAL MIDI VERSION
+                          (Sound Canvas Mix)
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded System Exclusive data
+- General MIDI sound device  (Roland Sound Canvas Recommended)
+
+
+
+This Standard MIDI File was recorded directly from Sierra's "Leisure Suit
+Larry 1" VGA adventure game using Sierra's MT-32 driver and has been
+converted for General MIDI playback.  A Roland Sound Canvas sound card or
+module is highly recommended for optimal playback.
+
+Recorded/converted/edited/compiled/arranged for General MIDI
+by Tom Lewandowski.  Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+       =================================================================
+                      TRACK SHEET  (GENERAL MIDI VERSION)
+
+                               LEISURE SUIT LARRY
+                       IN THE LAND OF THE LOUNGE LIZARDS
+       =================================================================
+
+   SONG TITLE                                      START MEASURE/TIME *
+   -------------------------------------------------------------------------
+   1. Introduction                                        2  00:00:02
+   2. The Doggie                                         33  00:01:16
+   3. Lefty's                                            37  00:01:26
+   4. Fatal Flush                                       125  00:04:57
+   5. The Pimp                                          131  00:05:12
+      a. Soap Opera                                     131  00:05:12
+      b. Motel Commercial                               160  00:06:21
+      c. Musical Comedy                                 185  00:07:21
+      d. Documentary                                    200  00:07:57
+      e. Children's Show                                234  00:08:55
+      f. Cable Sports Network                           239  00:09:31
+      g. Master Piece Theatre                           258  00:10:16
+   6. Adult Television                                  277  00:11:02
+   7. The Hooker                                        337  00:13:26
+   8. Taxi Ride                                         359  00:14:19
+   9. Quiki-Mart                                        416  00:16:36
+  10. The Drunk                                         455  00:18:09
+  11. The Casino                                        464  00:18:31
+  12. Casino Showroom                                   553  00:22:04
+  13. The Disco                                         593  00:23:40
+  14. Disco Larry                                       676  00:27:00
+  15. Alley Incident                                    699  00:27:55
+  16. Quiki-Wed Wedding Chapel                          721  00:28:48
+  17. Honeymoon Suite                                   779  00:31:07
+  18. All Tied Up!                                      838  00:33:28
+  19. Faith                                             854  00:34:07
+  20. Eve                                               929  00:37:07
+  --------------------------------------------------------------------------
+                                                TOTAL TIME:  00:45:48
+
+
+      * Note:  Start Times are approximate.
+

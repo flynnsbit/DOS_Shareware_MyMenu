@@ -1,0 +1,43 @@
+
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+         ====================================================
+                    THE ADVENTURES OF WILLY BEAMISH          
+                                                             
+                            "INTRODUCTION"                 
+                                  by                         
+                  Don Latarski and Christopher Stevens       
+         ====================================================
+                     Copyright (c)1991 Dynamix, Inc.         
+         ====================================================
+
+                G E N E R A L   M I D I   V E R S I O N
+
+
+System Requirements:
+
+- MIDI File player
+- General MIDI Sound Device  (Wave Table sound card recommended.)
+
+
+This Standard MIDI File (WB1GM.MID) was recorded directly from Dynamix's
+"The Adventures of Willy Beamish" adventure game.  It has been converted
+from the Roland MT-32 version for playback on General MIDI sound cards.
+
+Converted for General MIDI in Standard MIDI File format by Tom Lewandowski.
+Address E-Mail questions or comments to:
+
+      tom+di@netnet.net
+
+
+      Visit us on the Internet!
+
+      QUEST STUDIOS
+      http://bayland.net/~tom+di/sierra.html
+
+      THE ROLAND MT-32 SOUND MODULE RESOURCE CENTER
+      http://bayland.net/~tom+di/quest/roland.html
+
+
+
+

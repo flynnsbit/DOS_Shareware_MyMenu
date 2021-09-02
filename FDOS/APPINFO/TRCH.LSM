@@ -1,0 +1,14 @@
+Begin3
+Title:          trch
+Version:        3.1f
+Entered-date:   2011-08-10
+Description:    Translates characters. This used to be the UNIX2DOS program, but translating characters can do more for you. [Similar to, but not the same as, UNIX "tr".] (includes Cats GNU LGPL)
+Keywords:       trch, unix2dos, tr
+Author:         Jim Hall
+Maintained-by:  Alexis Malozemoff
+Primary-site:   http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/user/trch/
+Original-site:  http://www.freedos.org/jhall/
+Platforms:      DOS (Borland C), FreeDOS
+Copying-policy: GNU General Public License, Version 2
+Defunct-Alternate-Site: http://www.cs.mcgill.ca/~amaloz/FreeDOS/TRCH/
+End

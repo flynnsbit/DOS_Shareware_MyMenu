@@ -1,0 +1,24 @@
+Dream Candy (drozerix_-_dream_candy.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=178565
+Renamed to "DRMCANDY.XM" because of DOS 8-character limit
+
+Summary
+
+    drozerix_-_dream_candy.xm is a XM format module. 
+    Uploaded to modarchive.org on Wed 1st Jun 2016
+
+Info Info
+
+    Mod Archive ID: 178565
+    MD5: 8576c1526e7af534e09e01766f038aff
+    Format: XM
+    Channels: 24
+    Genre: Chiptune
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     Drozerix (https://modarchive.org/member.php?84702)

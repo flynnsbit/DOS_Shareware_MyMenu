@@ -1,0 +1,50 @@
+
+What's new in Duke Nukem 3D v1.3D?
+==================================
+* Why version 1.3D and not 1.2?  There was a minor leak of version 1.2, so
+  we bumped the version number.  V1.2 is NOT official and if you have it,
+  delete it, it's illegal, and get v1.3D.
+* The major addition to v1.3D is that the full version of the game is done as
+  well.
+* X,Y axis sensitivity controls for mouse (in SETUP)
+* TEN (Total Entertainment Network) support from SETUP.  NOTE: Go to
+  http://www.ten.net for more details on when Duke Nukem 3D will be there.
+* New load screen art.
+* Ability to record demos from the OPTIONS menu (single or multiplay game)
+  NOTE:  In multiplay, the "master" has to select DEMO ON.
+* Some new voice sayings.
+* F5 - Change Music.  Shift-F5 to select song.
+* Multiplay changes:
+  - Respawning items markers.  These markers default to ON and can be turned
+    on or off.  They mark where items will respawn once gotten.  If the
+    Nuke symbol marker is red, an item is 15-30 seconds away, Yellow means
+    7-15 seconds and Green means 0-7 seconds (Stick around!).  Experienced
+    players might want to play with or without these, but they do add a new
+    element of gameplay and help out new players by showing them where the
+    items are.
+  - Inclusion of DukeMatch-NOSPAWN Mode.  In this mode, nothing respawns
+    except the inventory items.  No more running for the next health atom
+    as they will be gone once grabbed.  Also, no more hoarding rocket ammo
+    and the like.  The resources are scarce and this mode is a more true
+    test of skill, as once you get down to a pistol, things get hairy.
+  - Co-Op works like NOSPAWN mode.  The weapons stay around, so 8 players
+    can all get the Rocket launcher and not have to wait for something.  The
+    Co-Op rules work just like NOSPAWN mode where only the inventory items
+    respawn.  Also, you get to keep what you have collected from level to
+    level.
+  - More DukeMatch screams and yells.  The more severe the damage, the more
+    extreme the sound.
+  - Messages in modem mode work now.  They do not overlap each other anymore.
+  - You can type messages with the game paused.  D'oh!  We forgot about that!
+  - Mouse turning speed made more like v1.0 where quick 180 flicks are
+    easy to do.  Another goof on our part.
+  - Better start points on E1L1.  No more unfair roof starts.
+* Inventory items like Steroids and HoloDuke now deplete is you are looking
+  into a monitor.
+* Should sound a little better.  We changed the sound mixing and you should
+  get less "crackle" and "pops" from your speakers.
+* Smoke trails for rockets.
+* Probably some more little things we forgot about.
+
+George Broussard
+President, 3D Realms

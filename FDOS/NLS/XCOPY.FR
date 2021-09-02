@@ -1,0 +1,82 @@
+# French language file for (R)XCOPY 1.2.
+
+# prompts and error messages
+1.1:Nombre de paramŠtres invalide
+1.2:Date invalide
+1.3:Commutateur invalide
+1.4:Chemin vers la source trop long
+1.5:Sp‚cification du lecteur source invalide
+1.6:Le chemin vers la source n'a pas ‚t‚ trouv‚
+1.7:Chemin vers la source trop long
+1.8:Chemin vers la destination trop long
+1.9:Sp‚cification du lecteur de destination invalide
+1.10:Fait
+1.11:sp‚cifiez un nom de fichier
+1.12:ou un nom de dossier sur la cible
+1.13:Fichier
+1.14:R‚pertoire
+1.15:Chemin vers la destination trop long
+1.16:Impossible d'effectuer une copie cyclique
+1.17:Appuyez sur Entr‚e pour continuer...
+1.18:Fichier non trouv‚
+
+# the help message
+2.1:Copie des fichiers et des arborescences de r‚pertoires.
+2.2:XCOPY source [destination] [/commutateurs]
+2.3:  source       Sp‚cifie le nom du r‚pertoire et/ou des fichiers … copier.
+2.4:  destination  Sp‚cifie la localisation et/ou le nom des nouveaux fichiers.
+2.5:  /A           Copie seulement les fichiers avec l'attribut archive activ‚
+2.6:               et ne modifie pas l'attribut.
+2.7:  /C           Continue la copie mˆme si des erreurs surviennent.
+2.8:  /D[:M/D/Y]   Copie seulement les fichiers qui ont ‚t‚ modifi‚s … la date
+2.9:               pr‚cis‚e ou aprŠs. Quand aucune date n'est pr‚cis‚e seuls
+2.10:               les fichiers plus r‚cents seront copi‚s.
+2.11:  /E           Copies tous les sous r‚pertoires, mˆme s'ils sont vides.
+2.12:  /F           Afficher le nom complet de source et de destination.
+2.13:  /H           Copie les fichiers systŠme et cach‚s et ceux non prot‚g‚s.
+2.14:  /I           Si la destination n'existe pas et la copie concerne plus
+2.15:               d'un fichier, considŠre que la destination est un dossier.
+2.16:  /L           Lister les fichiers sans les copier. (simule la copie)
+2.17:  /M           Copie seulement les fichiers avec l'attribut archive activ‚
+2.18:               et d‚sactive l'attribut du fichier source aprŠs la copie.
+2.19:  /N           Supprime la question demandant de confirmer l'‚crasement
+2.20:               d'un fichier de destination existant et passe ces fichiers.
+2.21:  /P           Demande confirmation avant de cr‚er chaque fichier.
+2.22:  /Q           Mode silencieux, n'affiche pas les noms des fichiers copi‚s
+2.23:  /R           crase les fichiers en lecture seule et ceux non prot‚g‚s.
+2.24:  /S           Copie les dossiers et sous-dossiers sauf les vides.
+2.25:  /T           Cr‚e l'arborescence du r‚pertoire sans copier les fichiers.
+2.26:               Pour copier les dossiers vides, ajoutez le commutateur /E.
+2.27:  /V           V‚rifie chaque nouveau fichier.
+2.28:  /W           Attend l'appui sur une touche avant de d‚marrer.
+2.29:  /Y           Supprime la question demandant si vous voulez ‚craser un
+2.30:               fichier de destination existant et ‚crase ces fichiers.
+2.31:  /-Y          Affiche la question demandant si vous voulez ‚craser un
+2.32:               fichier de destination existant.
+2.33:L'option /Y ou /N peut ˆtre d‚finie dans le variable COPYCMD.
+2.34:Cela  peut ˆtre outrepass‚ avec /-Y sur la ligne de commande.
+2.35:appuyez sur entr‚e pou plus
+
+# more messages
+1.19:fichier(s) copi‚(s)
+1.20:Impossible de cr‚er un r‚pertoire
+1.21:Le fichier ne peut ˆtre copi‚ sur lui-mˆme
+1.22:L'accŠs en lecture refus‚
+1.23:Espace disque insuffisant sur le chemin de destination
+1.24:L'accŠs en ‚criture a ‚t‚ refus‚
+1.25:Espace disque insuffisant sur le chemin de destination
+1.26:Copie en cours
+
+# the following three are used in shared.inc:
+25.0:Impossible d'ouvrir le fichier source
+25.1:Impossible de cr‚er la destination
+25.2:Erreur d'‚criture sur la destination
+
+# more confirmation messages, must start upper case,
+# 3.2 to 3.5 must all start different:
+3.1:craser
+3.2:Oui
+3.3:Non
+3.4:Tout ‚craser
+3.5:Sauter tout
+

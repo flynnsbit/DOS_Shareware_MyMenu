@@ -1,0 +1,134 @@
+Alien Rampage!
+
+System Requirements
+-------------------
+IBM PC and Compatibles
+486 DX/66 processor or better
+VGA Compatible Display or better
+8MB RAM minimum, 16MB recommended
+CD-ROM drive Required 
+MS-DOS 5.0 or better or Windows 95 (does NOT run under Windows NT)
+Hard Drive (11MB for Shareware, 15MB for registered.)
+
+
+========================================================================
+Here are the files needed for the shareware release of Alien Rampage:
+
+README.TXT
+TECHINFO.TXT
+SLICNSE.TXT
+ORDER.TXT
+RAMPAGE.EXE
+RAMPAGE.GOO
+MAPS.CMP
+ACTORS.TNK
+DEMO11.DAT
+DEMO12.DAT
+DEMO13.DAT
+INFO.GLU
+BOW_ANM.ICC
+WINA_ANM.ICC
+TITL_ANM.ICC
+FILE_ID.DIZ
+FAQ.TXT
+
+
+Running Alien Rampage
+---------------------
+DOS:  To launch Alien Rampage from the DOS Prompt, go to the directory
+where you installed Rampage and simply type:
+
+RAMPAGE
+
+then press <ENTER>.
+
+
+Windows 3+:  Exit Windows completely - don't run it in a Window or from
+the Windows MS-DOS prompt, then follow the DOS instructions above.
+
+
+Windows 95:  To launch Alien Rampage, double-click on the file RAMPAGE.EXE
+from Windows Explorer. Depending on your system configuration, this may be
+all you need to do to start Rampaging!
+
+However, certain systems may experience difficulties running Alien Rampage
+this way. In this case, you can either reboot in MS-DOS mode, or make the
+following short-cut:
+
+1.  Using Explorer, right-click and drag the file RAMPAGE.EXE, from the
+    game directory, to your desktop. Choose to Create a Shortcut from the
+    pop-up menu. You will see an MS-DOS Icon titled "Shortcut to Rampage"
+    appear on the desktop.
+2.  Right click on the new icon, and from the pop-up menu, choose
+    "Properties".  Choose the "Program" tab at the top.
+3.  Click on the "Advanced..." button near the bottom.  The "Advanced
+    Program Settings" window will appear.
+4.  Select the "MS-DOS mode" check box. You can leave the "Warn" box on
+    or off. You should also be able to use the current configuration.
+5.  Click on "OK" and you are finished!
+6.  Double-click the desktop icon to start Rampaging!
+
+
+Audio Setup
+-----------
+The first time you run Alien Rampage, you will see the following menu:
+
+     KEYBOARD
+     GAMEPAD
+     JOYSTICK
+     SOUND
+     FINISHED
+
+You MUST go into the SOUND menu to set-up your sound card! Select the
+type of sound card you have, then press "N" to the question "Modify these
+values?" and the sound card should be initialized.
+
+If initialization fails, you either have a different type of sound card,
+or will have to modify the values detected for the sound card. To find
+the values you need, look in your AUTOEXEC.BAT file for a line like this:
+
+SET BLASTER=A220 I5 D1 H5 P330 T6
+
+The "A220" is the address, "I5" is the IRQ, "D1" is the DMA channel,
+"H5" is the high DMA channel, "P330" is the port and "T6" is type of
+Sound Blaster card you are emulating.
+
+(NOTE: You may not have an "H", "P" or "T" variable in your blaster line.)
+
+
+8 meg systems and SMRTDRV
+-------------------------
+It is very unlikely, but still possible that 8 meg systems could
+experience sporadic memory problems. If this seems to happen to you,
+check your SMARTDRV setting in your AUTOEXEC.BAT and/or CONFIG.SYS
+files and make sure it is not over 1024 (1 meg) in size.
+
+
+Technical Support
+-----------------
+If you are having trouble installing or running Alien Rampage you can get
+technical support by sending e-mailing to support@softdisk.com.  You can
+also refer to our web page, www.alienrampage.com, or call 1-318-221-8311.
+
+When sending support e-mail, cut and paste the following into your e-mail
+message and fill in the blanks:
+
+Date:  
+Name:  
+Phone number:  
+E-mail address:
+Game Title: Alien Rampage 
+Version #:  v1.13
+Operating system (i.e., DOS 6.0 or Windows 95):
+Computer type:  
+BIOS date:
+BIOS version:
+Processor type:  
+Processor speed:
+Amount of RAM:
+Video Card:
+Sound Card:
+The problem you encountered:
+
+How to reproduce the problem:
+

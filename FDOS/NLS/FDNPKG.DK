@@ -1,0 +1,147 @@
+#
+# FDNPKG language file
+#
+# Language..: Danish
+# Codepage..: 850 (858)
+# Translator: Henrik Schick-Hansen
+#
+
+
+
+#### Help ####
+
+1.0: Netvërks pakke administrator til FreeDOS.
+1.1:Anvendelse: FDNPKG handling [parametre]
+1.2:Hvor handling kan vëre en af fõlgende:
+1.3: search [streng]  - Sõg net opbevaringssted for pakke med indhold 'streng'
+1.4: vsearch [streng] - Svarer til 'search', men viser ogsÜ kilden pÜ stedet
+1.5: install pk       - InstallÇr pakken 'pk' (eller lokal zip fil)
+1.6: remove pk        - Slet pakken 'pk'
+1.7: dumpcfg          - Udskriv opsëtning indlëst fra opsëtningsfil
+1.8: license          - Udskriv licensen for dette program
+1.9:FDNPKG er bundet op mod nedenstÜende WatTCP version:
+1.10: install-nosrc pk - InstallÇr pakken 'pk' (el lokal zip fil) u/kildetekster
+1.11: install-wsrc pk  - InstallÇr pakken 'pk' (el lokal zip fil) m/kildetekster
+1.12: showinstalled [str] - Vis liste over installerede pakker med indhold 'str'
+1.13: checkupdates     - KontrollÇr og vis tilgëngelige pakke opdateringer
+1.14: update pk        - OpdatÇr pakken 'pk' til en nyere udgave
+1.15: update [pk]      - OpdatÇr pakken 'pk' (alle hvis argumentet er udeladt)
+1.16: listlocal [str]  - Vis fortegnelse over lokale pakker med indhold 'str'
+1.17:FDNPKG er bundet op mod nedenstÜende Watt-32 version:
+1.18: listfiles pk     - Vis fortegnelse over filer tilhõrende pakken 'pk'
+
+
+### General stuff ####
+
+2.0:%TEMP% ikke sat! TEMP skal pege pÜ et bibliotek der ikke er skrivebeskyttet.
+2.1:Eksempel: SET TEMP=C:\TEMP
+2.2:%DOSDIR% ikke sat! DOSDIR skal pege pÜ FreeDOS hoved biblioteket.
+2.3:Eksempel: SET DOSDIR=C:\FDOS
+2.4:Ugyldigt antal argumenter. Kõr fdnpkg uden argumenter for hjëlp.
+2.5:Intet opbevaringssted angivet. Mindst Çt er pÜkrëvet.
+2.6:Opsëtningsfilen skal indeholde mindst en sëtning i stil med:
+2.7:REPO www.freedos.org/repo
+2.8:Fortegnelsen over opsatte fdnpkg opbevaringssteder lyder som fõlger:
+2.9:Opfrisker %s...
+2.10:Overfõrsel fra opbevaringsstedet mislykkedes!
+2.11:Fejl indtraf under indlësning af opbevaringssted fra tmp filen...
+2.12:Advarsel: %TZ% ikke sat! tidstemplet kan vëre unõjagtigt pÜ inst. filer
+2.13:Pakke register indlëst fra lokalt mellemlager.
+2.14:Hukommelse opbrugt! (%s)
+2.15:Fejl: TCP/IP initialisering mislykkedes!
+2.16:Indlëser %s...
+2.17:ADVARSEL: Virtuel hukommelse er for lav. FDNPKG kan opfõre sig upÜlideligt.
+2.18:FEJL: Kan ikke skrive i '%s' biblioteket. KontrollÇr variablen %%TEMP%%.
+
+
+#### Installing package ####
+
+3.0:Pakken %s er installeret allerede! Fjern denne forud for opgradering.
+3.1:Ingen pakke '%s' fundet hos direkte tilkoblede opbevaringssteder.
+3.2:Pakken '%s' er ikke tilgëngelig fra noget opbevaringssted.
+3.3:%s er tilgëngelig fra flere opbevaringssteder. Vëlg en kilde:
+3.4:Valgmuligheder:
+3.5:Ugyldigt valg!
+3.6:Overfõrer pakke %s...
+3.7:Fejl under overfõrsel af pakken. Afbrudt.
+3.8:Fejl: Ugyldigt zip arkiv! Pakken blev ikke installeret.
+3.9:Fejl: Pakken indeholder en fil som findes lokalt allerede:
+3.10:Fejl: Kan ikke oprette %s!
+3.11:Pakke %s installeret.
+3.12:Fejl: Pakken indeholder ikke filen %s! Er ikke en gyldig FreeDOS pakke.
+3.13:Fejl: Overfõrt pakke har forkert CRC kontrolsum. Installation afbrudt.
+3.14:Fejl: èbning af den overfõrte pakke mislykkedes. Installation afbrudt.
+3.15:Fejl: Hukommelse opbrugt under beregning af pakkens CRC kontrolsum!
+3.16:Pakke %s installeret (m/kildetekster, sÜfremt de er vedlagt).
+3.17:Pakke %s installeret (u/kildetekster).
+3.18:Pakke %s er installeret allerede! Benyt 'update' handlingen i stedet.
+3.19:Pakke %s installeret: %d filer udpakket, %d fejl.
+3.20:Fejl: Pakken indeholder en krypteret fil:
+3.21:Fejl: èbning af forbindelsesfilen '%s' med lëseadgang mislykkedes.
+3.22:Fejl: èbning af forbindelsesfilen '%s' med skriveadgang mislykkedes.
+
+
+#### Removing package ####
+4.0:Pakken %s er ikke installeret, og kan derfor ikke slettes.
+4.1:Fejl ved Übning af lst filen!
+4.2:Dirlist grënse er nÜet. Bibliotek %s kan ikke slettes!
+4.3:Hukommelse opbrugt! Kan ikke gemme biblioteket %s!
+4.4:sletter %s
+4.5:Pakken %s er slettet.
+
+
+#### Searching package ####
+5.0:Ingen pakke passer med sõgningen.
+5.1:Hukommelse opbrugt under behandling af pakkebeskrivelser!
+
+
+#### Package database handling ####
+6.0:Fejl: Ugyldig indeks fil (dÜrlig toptekst)! Opbevaringssted oversprunget.
+6.1:Fejl: Ugyldig indeks fil! Opbevaringssted oversprunget.
+6.2:Fejl: Hukommelse opbrugt under indlësning af pakkeregister!
+6.3:Fejl: Kan ikke Übne datafilen i '%s'.
+6.4:Advarsel: Kan ikke Übne register mellemlagerfilen i %s!
+
+
+#### Loading configuration ####
+7.0:Fejl: opbevaringsstedet '%s' er oplistet to gange!
+7.1:Fejl: Kan ikke Übne opsëtningsfilen '%s'!
+7.2:Advarsel: vërdilõst udtryk i linje #%d
+7.3:Advarsel: Opsëtningsfilen har udtryk med overlõb i linje #%d
+7.4:Advarsel: tomt udtryk i linje #%d
+7.5:Advarsel: efterstillede blanktegn efter vërdien i linje #%d
+7.6:Opgav et opbevaringssted: for mange indstillet (maks=%d)
+7.8:Advarsel: Ukendt udtryk '%s' i linje #%d
+7.9:Advarsel: Opsëtningsfilen har talvërdi med overlõb i linje #%d
+7.10:Advarsel: Ignorerer ulovlig '%s' vërdi i linje #%d
+7.11:Advarsel: Ugyldigt 'DIR' direktiv fundet i linje #%d
+7.12:Fejl: Biblioteksstien er for lang i linje #%d
+7.13:Fejl: Reference til ikke eksisterende miljõ variabel '%s' i linje #%d
+7.14:Fejl: opbevaringsstedet '%s' er oplistet to gange!
+7.15:Fejl: tilpasset bib '%s' er ikke en gyldig og fuldstëndig sti!
+7.16:Fejl: tilpasset bib '%s' er et reserveret navn!
+
+
+#### Unziping package ####
+8.0:Hukommelse opbrugt!
+8.1:ukendt zip signatur: 0x%08x
+8.2:Fejl: Pakkeindhold komprimeret med en ikke understõttet metode (%d):
+8.3:Fejl under udpakning af '%s' til '%s'!
+
+
+#### Handling the local list of installed packages ####
+9.0:Fejl: Kan ikke fÜ adgang til %s biblioteket.
+9.1:Fejl: Lokal pakke %s ikke fundet.
+
+
+#### Package updates ####
+10.0:%s (lokal version: %s)
+10.1:version %s ved %s
+10.2:Ingen opdatering fundet for pakken '%s'.
+10.3:En opdatering af '%s' er fundet. Opdatering i gang...
+10.4:%d pakke(r) kontrolleret, %d ajourfõrt, %d mislykkedes.
+10.5:%d pakke opdatering(er) fundet.
+
+
+#### Downloading ####
+11.0:Overfõrer %s... %ld bytes

@@ -1,0 +1,34 @@
+
+ Support of long filenames (LFN)
+
+ 1. Installing LFN for DOS
+ 
+ Filenames exceeding the old DOS 8.3 format are not supported by native
+ DOS versions. To add support for LFN additional software is required,
+ the best is DOSLFN, which may be downloaded from
+   
+     http://adoxa.cjb.net                                           or
+     http://www.tu-chemnitz.de/~heha/hs_freeware/doslfn.zip.
+
+ As default, LFN will be enabled for FAT file systems only, if you want
+ to have LFN for CDROMs, you must add switch "-c+" when installing DOSLFN.
+
+ For DOSEMU, there is an option to enable LFN as well, but is most likely
+ works for DOSEMU versions >= 1.3 only (now seems to be default for version 
+ 1.3.3). Activating LFN for CDROMs may be a bit tricky in DOSEMU, but
+ should work for versions > 1.3.3 without external software (DOSLFN).
+
+
+ 2. Disabling LFN in HDPMI
+ 
+ Some old DOS versions may cause problems if no LFN driver is installed but
+ a program tries to use LFN functions. That's because the DOS call returns
+ with Carry flag cleared, indicating the function call was successful, but
+ in fact it failed. For such constellations HDPMI can be told to disable
+ its LFN support and return an error to the program instead. There is a
+ good chance that the program will then fall back to use the non-LFN DOS
+ file functions. Disabling LFN in HDPMI is done by setting environment
+ variable HDPMI=128.
+ 
+ Japheth
+ 

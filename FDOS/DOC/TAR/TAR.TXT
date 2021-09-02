@@ -1,0 +1,852 @@
+'tar' - is an acronym for 'tape archiver'
+
+It is a tool to save files to archive media and restore them back
+again. Despite of its name, the program handles many media types,
+be it a floppy disk or regular file.
+
+The program was initially written for UNIX operating system, but
+since many other OS support its format, tar became a useful tool
+for information exchange between different platforms.
+
+This document describes yet another implementation of the program,
+which could be noted for portability between MS-DOS and UNIX
+clones, portability both in data format and source text level.
+
+
+	System requirements
+
+Program will execute
+ - on any IBM PC compatible computer running MS-DOS 3.0 or
+   compatible OS;
+ - any generic UNIX clone.
+
+Before running the program you will probably have to compile it,
+especially if you are a UNIX user. To do that you should have:
+ - any C compiler compatible with K&R or ANSI standard - for
+   UNIX version;
+ - Turbo C v2.0 under MS-DOS 3.30 - for DOS version.
+
+Declaring such a wide portability shall probably have some
+restrictions, but, alas, I do not know about them.
+
+The size of free memory required for program depends of the action
+selected. As a rule, about 100K bytes is enough to read/write
+archives without compression. If you are going to use compression
+options, the program can take all the megabytes available.
+
+Anyway, the program will be able to process archive in a regular
+file (see below). It also supports floppy diskettes and streamer
+tape devices of several types under MS-DOS. Media types available
+under UNIX is determined by device drivers available in the
+system.
+
+
+	Running the program
+
+The program can be run simply from command line. You have to type
+to the system prompt a line with the following syntax:
+
+	Tar <options> <file> ...
+
+where options define both action to perform and some additional
+options. You have to specify at least one option to define
+action, and command line must contain only one action option.
+
+Options could written in two forms.
+First one is traditional for UNIX: each option is represented by
+single character, character may be merged in groups, preceded by
+minus (-) sign.
+Second form became popular in recent times: each option is
+represented by word, word options are preceded by plus or double
+minus sign to distinguish them from group of character options.
+
+Command line parameter (save first) without first plus or minus
+sign denotes end of option and start of file specification list.
+File specifications may be omitted for reading archive
+(extraction files or printing archive contents) in this case the
+program will process all the files in archive; other options makes
+the list obligatory.
+
+For compatibility with old implementations of tar first command
+line parameter (if it is not an word option) is always treated as
+group of single-character options.
+
+Some options require subsequent parameters such as numerical value
+or a file name, in the latter case parameters must follow the
+option or option group separated by spaces. Parameters following
+the group of character options must be specified exactly in the
+same order as the options they follow - be careful.
+
+The following is a list of options along with their descriptions
+(unlike most other implementations this program is case
+insensitive, i.e., makes no difference between upper and lowercase
+letters). Options are mentioned with both single-character and
+word form (if any). Word options are distinguished by first eight
+character, they also may be shortened down to minimum number of
+characters needed to distinguish them; if the beginning of word
+option matches two (or more) options the program will choose one
+of them according to its own tastes.
+
+-a, +append - add (store) files to archive, the option is fully
+	analogous to traditional 'r' option, and was added to user
+	convenience.
+	You have to specify the list of files to be stored.
+	Note, that normally files are appended to the end of
+	archive, so the archive can contain several files with the
+	same name; by default, the program will extract the latest
+	version. Such a behavior may be changed by 'c', 'd' and
+	'w' options.
+
+-x, +extract - extract files from archive; program extracts
+	specified files, if no file name is given, the whole
+	archive will be extracted. If the directory name appears
+	in command line, the program extracts all of the files and
+	subdirectories in a given directory.
+
+-t, +list - type archive directory. The files to be processed are
+	defined as for the 'x' command.
+	The program outputs list of file names, unless 'v'
+	modifier is given. With 'v' option each file name is
+	preceded by its UNIX access rights mask, numeric user and
+	group identifiers and file length in bytes. Usage with 'e'
+	or 'z' option forces printing both compressed and original
+	file lengths.
+
+-d, +delete - the specified files will be deleted from archive;
+	this option is for file archives only.
+
+-r - read files from disk to archive; the option is an alias for
+	'a', it is preserved for the compatibility reasons.
+
+-c, +create - the 'a' option implies that archive media contains
+	an existing tar archive, or archive file already exists.
+	The 'c' option creates a new archive or overwrites old one
+	(if any). This option also implies 'a' so you do not need
+	to specify it.
+
+-y, +move - delete files and directories after storing them into
+	archive. This option implies 'a'.
+
+-u, +update - update archive. Normally program stores all of the
+	files specified. Given option causes tar to store files
+	only if they are not present in archive or if the files
+	were modified.
+	This option implies 'a'.
+
+-i, +inhibit - ignore read errors. This option may help (but may
+	not) to restore damaged archive.
+
+-v, +verbose - normally program works silently; this option forces
+	printing of a log with most operations or produces a lot
+	of additional information with 't' option.
+
+-w, +interactive - the program will ask for your confirmation
+	before processing each file.
+
+-e, +zip-files - apply a 'deflate' compression to archive files.
+	Single-character form allows to specify compression level
+	by the single digit immediately after 'e' letter; legal
+	values are from 1 to 9 (e.g. e9 - the more compression
+	level, the better compression ratio will be - default is
+	6); note, that this rule does not follow regular command
+	line syntax.
+	Keep in mind that you won't be able to restore the
+	compressed file by standard 'tar' program.
+	Portable tar version 3.15 or below uses another kind of
+	data compression. Current version allows restoring of old
+	archives, but the archives created by current version of
+	the program with -e option would not be restored by
+	previous versions.
+
+-z - compress files in archive with traditional UNIX algorithm.
+	It is compatible with most Unix systems, so you can
+	extract files with 'uncompress' or even 'tar' program
+	alone, but this algorithm has comparatively low
+	compression ratio. You may specify 'bits' factor typing it
+	immediately after z letter (e.g. z12); note, that this
+	rule does not follow regular command line syntax.
+	See 'compress' program manual to understand 'bits' factor
+	meaning.
+
+-, (comma), +compress - this option is similar to 'z', but the
+	whole archive will be (de)compressed rather than
+	individual files.
+
+-. (dot), +zip-archive - this option is similar to ',' (comma) and
+	allows to read and create deflated archive in regular zip
+	or GNU zip format. It's possible to specify compression
+	level for created archive by the single digit immediately
+	after dot sign; legal values are form 1 to 9 (the more
+	compression level, the better compression ratio will be).
+
+-s, +strict - program will not process '?' and '*' wildcards in
+	archive file names.
+
+-m, +modification-time - sets modification time of files to
+	current time. By default the program sets date and time of
+	modification for extracted files exactly as they have
+	before they have been placed into archive.
+
+-o - option meaning depends on the host operating system, namely
+     under UNIX it means -
+	omit files owner. By default program tries to restore
+	original files owner and group. The option forces tar to
+	set the user who invokes tar as files owner, which is
+	especially useful when files are marked with zero owner,
+	i.e. 'root'.
+     under DOS respectively -
+	prevent files overwriting. There exists a chance that two
+	or more UNIX files will have same DOS names, so they
+	couldn't co-exist onto DOS disk. If the 'o' option given,
+	the program will rename extracted file if there is a file
+	on the disk with the same name. This option can also
+	affect multivolume processing. Namely, if two different
+	UNIX files have same DOS names and second file is
+	fragmented between volumes then extents of the second file
+	will be appended to first one. Alas, I see no solution for
+	this problem.
+
+-l - option meaning depends on the host operating system, namely
+     under UNIX (equivalent is +link-warnings) it means -
+	print list of files being archived, which have other links
+	besides those placed in archive.
+     under DOS (equivalent is +link-copy) respectively -
+	make copies of linked files to simulate UNIX links
+	(otherwise the program will extract first copy only and
+	print warning messages on the others).
+
+-p, +permissions - save in archive directories info (e.g. owner
+	and permissions) as well as files.
+
+-n, +nonest - no directory nesting. The program will not recurs
+	into subdirectories.
+
+-/ for UNIX or -\ for DOS - omit left <back>slash in file names.
+
+-: (colon) - omit MS-DOS drive name from file name.
+
+-j, +comment - you will be prompted to add file comment while
+	storing; this comment will be shown by 't' option. Note,
+	that used implementation of this option is incompatible
+	with P1003 standard, so I had to choose between either
+	standard or backward compatibility. In any case you'd
+	better avoid this option.
+
+-f, +file - this option requires an argument - a name of archive
+	file or special file.
+	By default, program tries to get a file name from 'TAPE'
+	environment variable. If no archive name is given, tar
+	tries to handle floppy disk under MS-DOS or to use
+	/dev/mt0 under UNIX.
+	File names are also used to support hardware devices, i.e.
+	floppy disks and streamers. See section 'Special files'
+	below.
+	You also can store default file name (without 'f' option
+	itself) into 'TAPE' environment variable - this is
+	especially useful with streamer devices.
+	The name consisting of single minus sign stands for
+	standard input/output. This is UNIX convention and it is
+	better to avoid this possibility under MS-DOS.
+
+-k - this option requires an argument, storage media capacity.
+	Capacity units may be specified by letter after numerical
+	value: 'k' - kilobytes (default) or 'm' - megabytes
+	(currently useless).
+	Although the program tries to adjust appropriate diskette
+	type for a given hardware, you often will not be able to
+	read or write floppies without defining its type.
+	This option is not applicable in UNIX version.
+
+-b, +block-size - this option requires an argument, so called
+	'blocking factor'. Block size units may be specified by
+	letter after numerical value: 'b' - 512-bytes blocks
+	(default) or 'k' - kilobytes. This program allows blocking
+	factor in the range of 1 to 32 (512 bytes to 16K
+	respectively). The sense of the option is rather tricky.
+	Big blocking factor allows to save much space on some tape
+	devices, but if you are going to transfer data between
+	different computers I strongly recommend not to use
+	blocking factor more than 16. Note, that original tar does
+	not allow values more than 20.
+	In general this option does not influence the resulting
+	archive with floppy devices or regular files, but
+	appropriate value can dramatically increase tar speed.
+	Except floppies this program adjust the most appropriate
+	blocking factor, so you do not need to use this option,
+	but it is also possible that you will not be able to
+	restore files without setting properly the value for a
+	given archive.
+	Optimum blocking factor for floppies is multiple of
+	number of sectors per track. Unfortunately some BIOSes
+	requires small bloksizes, so you should try optimum value
+	with your system.
+
+[0-9] single digit stands for the number of storage device;
+	e.g. 1 means MS-DOS drive B: or second streamer tape.
+
+-@ - this option requires an argument - a name of file, containing
+	the continuation of a command line. This option allows tar
+	to read a list of file specification from a separate file.
+	As above, a file name consisting of single minus means
+	standard input. The size of input defined by this option
+	must not exceed 32760 bytes.
+
+-#, +exclude - this option requires an argument - specification of
+	files which must not be processed (excluded from the
+	operation). Specification may be simple file name or it
+	can contain * and ? wildcards (unless 's' option given).
+	Keep in mind that these wildcards will be processed in
+	UNIX style.
+	This option may occur up to 16 times in a command line,
+	each occurrence introduce another specification (count
+	carefully!)
+
++gnu or +gzip - this option causes tar to create deflated archive
+	in gzip format (rather than regular zip) with -. (dot)
+	option. This option itself does not imply compression, so
+	you must specify dot explicitly if needed.
+
+
+     Special files
+
+Special files (also called 'device drivers') are widely used in
+UNIX to interact with hardware devices. There are no useful
+special files under MS-DOS (oh, of course you can create an
+archive at 'nul', it will go to the neverland), but DOS version
+supports its own internal special file names.
+
+Common notices:
+1. If you want to process a disk file which name coincides with
+   tar special file simply supply dot in a file name.
+2. If the computer has two storage devices of same kind, the
+   actual device used by program is determined by both special
+   file name and single-digit option (see above).
+   Regardless of native enumeration tar devices always counted
+   from zero (0 means floppy drive A: or first QIC-02 streamer
+   etc.)
+
+Tar special files are divided into three groups.
+
+The following file names designate floppy devices:
+   fd048ss8, fd048ds8, fd135ds9, fd048ss9, fd048ds9, fd135ds18,
+   fd096ds9, fd096ds15, rainbow
+Such a "file name" consists of the following components:
+ - device type, e.g 'fd';
+ - floppy radial density, e.g. 048, 096 or 135 tracks per inch;
+   first two relate to 5.25" floppies, the last is for 3.5" disks;
+ - number of working surfaces: ss means 'single side' while
+   ds - 'double side';
+ - the last value is a number of sectors per track.
+Note, that usually you do not need to use this mechanism, it could
+be better to set 'k' option instead.
+
+The last name, "rainbow", is for disks in DEC Rainbow format; it
+has no equivalent options. For better hardware compatibility it is
+recommended to format such disks on the PC they will be read or
+written. There exists a couple of PC programs, which allow such
+formatting.
+
+The second group of special file names refers to QIC-02 streamer
+tape devices. Be aware that you have QIC-02 device, since the
+program does not support for example floppytape devices.
+
+Since streamers have no standard software interface like BIOS it's
+necessary to mention device hardware configuration in a command
+line (or 'TAPE' environment variable).
+So, streamer 'file name' have a complex syntax, it includes
+ - device name itself, followed by
+ - separator - colon or semicolon - and
+ - parameter list.
+
+The parameter list consists of parameter groups separated by
+commas, semicolons or dots (there is no difference).
+
+Each parameter group (save 'norewind' or 'add' parameters - see
+below) in turn consists of keyword followed by assignment (:=) and
+some value.
+
+The program recognizes three device names:
+	Archive, Everex and Wangtek
+Each name means device clone name and corresponds to plenty of
+device brands. Most of existing QIC-02 streamers belongs to one of
+the above three types.	The names of the clones are borrowed from
+the trademarks of their respective manufacturers but keep in mind
+that there is no strict rule (e.g. Archive corporation produced
+streamers that fits to Everex clone). Usually you have test you
+streamer with different device names to select appropriate one.
+
+Parameter list may include the following options (most of them
+concerns to hardware, so consult you streamer documentation):
+base:=<sexadecimal value> - IO base address,
+     this is the only obligatory parameter;
+dma:=<octal digit> - DMA channel number;
+     there is a rumor about devices without DMA, but I have not
+     seen one, so usually you have to use this option;
+irq:=<decimal number from 0 to 15> - interrupt request number;
+     as a rule you do not need to use this option, but it may or
+     may not solve hardware problems, such as
+     - another device uses same interrupt request number,
+     - your system BIOS has no default handler for hardware
+       interrupts;
+qic:=<QIC standard number> - defines tape format/capacity,
+     valid QIC numbers are 11, 24, 120, 150, 300, 600, 2100
+     and 2200;
+     first four formats may also be specified by corresponding
+     number of tracks as
+tracks:=<decimal number>
+     Note, that most streamer devices can not support all this
+     formats; since the program can not detect formats supported
+     you should yourself care of proper tape format. Fortunately
+     most streamers detect format of existing data or set its
+     default format for writing, so as a rule you do not need in
+     this option at all.
+norewind - this option is supplied to maintain several archives
+     on a single tape. (Note that QIC-02 standard does not allow
+     to add files into existing tar archives. This program
+     includes an option to do that, but it is possible that
+     hardware disables it. You do allowed to handle several
+     archives on a tape, but keep in mind that it is not allowed
+     by some UNIX systems).
+skip:=<decimal number>
+     skip given number of file marks before processing archive.
+     This is yet another option to keep several archives on tape.
+     (This option must be - and will be - implemented as a command
+     line switch rather than device parameter.)
+add - position tape at end of recorded data before processing
+     archive. This is yet another option to keep several archives
+     on tape. This options use command marked as 'optional' by
+     QIC-02 standard, so it may not work with your device - in
+     such case use 'skip' or 'norewind' instead.
+     (This option must be - and will be - implemented as a command
+     line switch rather than device parameter.)
+
+Unlike device name, parameters may be shortened, it is possible to
+mention as many (few) letters from keyword as you like or omit any
+part - ':' or '=' - of the assignment sign or both of them (see
+example below).
+
+The only blocking factor allowed by all QIC-02 devices is 1 - and
+it is default value for streamer tape in this program. Unlike many
+other implementations which fragments large logical block into
+small physical pieces, you are allowed to change the physical
+block size, but I have no idea about results.
+
+Third group of special files include three names: ASPI, ASPIMGR$
+and ASPITape. All these names are aliases for ASPI-driven SCSI
+tape drives (streamers). To use this feature you must have
+previously installed ASPI driver in your system.
+
+ASPI is an acronym for Advanced SCSI Programming Interface.
+ASPI specifications are property of Adaptec Inc., and ASPI itself
+is current de-facto standard to control SCSI devices under DOS.
+All ASPI drivers I've ever seen are copyrighted commercial
+products, so ASPI driver may not be supplied with this program.
+
+Like QIC-02 devices, special file name may include parameter list
+with syntax described above, but all the parameters are optional.
+By default the program asks ASPI manager for a tape device (tape
+device with given sequential number if specified by single-digit
+command line option). If you specify single-digit command line
+option you may not use anything from adapter-target-LUN triple
+and vice versa.
+
+Parameter list may include the following options:
+adapter:=<digit> - host adapter number (0, 1 etc.);
+target:=<octal digit> - target number (see SCSI specifications
+	and/or hardware manual for more info);
+lun:=<octal digit> - logical unit number (see SCSI specifications
+	and/or hardware manual for more info);
+density:=<value> - SCSI density code, may be specified as decimal
+	or hexadecimal value (using C or Assembly language
+	notation); legal values are from 0 to 255,
+	SCSI standard definitions are summarized in the following
+	table:
+
+	0x0  default for device
+	0xE  reserved for ECMA
+
+	Value Tracks Density(bpi) Code Type Reference	  Note
+	0x1	9	800	  NRZI	R   X3.22-1983	  2
+	0x2	9      1600	  PE	R   X3.39-1986	  2
+	0x3	9      6250	  GCR	R   X3.54-1986	  2
+	0x4    4/9     8000	  GCR	C   QIC-11	  1,4
+	0x5    4/9     8000	  GCR	C   X3.136-1986   1
+	0x6	9      3200	  PE	R   X3.157-1987   2
+	0x7	4      6400	  IMFM	C   X3.116-1986   1
+	0x8	4      8000	  GCR	CS  X3.158-1986   1
+	0x9    18     37871	  GCR	C   X3B5/87-099   2
+	0xA    22      6667	  MFM	C   X3B5/86-199   1
+	0xB	4      1600	  PE	C   X3.56-1986	  1
+	0xC    24     12690	  GCR	C   HI-TC1	  1,4
+	0xD    24     25380	  GCR	C   HI-TC2	  1,4
+	0xF    15     10000	  GCR	C   QIC-120	  1,4
+	0x10   18     10000	  GCR	C   QIC-150	  1,4
+	0x11   26     16000	  GCR	C   QIC-320(525?) 1,4
+	0x12   30     51667	  RLL	C   QIC-1350	  1,4
+	0x13	1     61000	  DDS	CS  X3B5/88-185A  3
+	0x14	1     43245	  RLL	CS  X3.202-1991   3
+	0x15	1     45434	  RLL	CS  ECMA TC17	  3
+	0x16   48     10000	  MFM	C   X3.193-1990   1
+	0x17   48     42500	  MFM	C   X3B5/91-174   1
+
+	where Code means:
+	NRZI Non Return to Zero, change on ones
+	GCR  Group Code Recording
+	PE   Phase Encoded
+	IMFM Inverted Modified Frequency Modulation
+	MFM  Modified Frequency Modulation
+	DDS  Dat Data Storage
+	RLL  Run Length Encoding
+
+	where Type means:
+	R    Reel-to-Reel
+	C    Cartridge
+	CS   cassette
+
+	where Notes means:
+	1    Serial Recorded
+	2    Parallel Recorded
+	3    Helical Scan
+	4    Not ANSI standard, rather industry standard.
+
+code:=<value> - alias for "density";
+qic:=<number> - functional equivalent to density code, allows to
+	specify tape format accordingly to QIC number; valid
+	numbers are 11, 120, 150, 320, 525 and 1350;
+skip:=<decimal number> - skip given number of tape markers, see
+	QIC-02 devices for details;
+norewind - see QIC-02 devices for details;
+erase - erase the whole tape before processing;
+fluent - do not reset device: some hardware and/or ASPI drivers
+	can't handle software reset properly, in such a case
+        try this option.
+
+Hint:	try to specify as few parameters as possible.
+	Aspitape in most cases will work without any parameter.
+
+GENERIC WARNING: I made all possible efforts to provide robust
+hardware interface, but I have no means to make it 100% reliable.
+So BEFORE storying any useful information, please check that data
+written by this program can be read afterwards.
+
+
+     Environment variables
+
+Program encounters the following environment variables:
+
+TAPE -	if set, contains a default archive file name (an argument
+	for -f option) and is especially useful for streamer names
+	with complicated syntax;
+TARCMD - is intended to provide default settings, namely, if the
+	string pointed to by this variable begins with
+	- slash under UNIX
+	- backslash or letter, colon and backslash under DOS
+	it is considered the name of file, containing default
+	command line for the program; in other case it is treated
+	as the command line itself.
+	It would be a good idea always precede command line
+	options by minus to avoid ambiguity (e.g. 'c:\file' is
+	valid command-line option under DOS).
+	Note, there is no way to annul these default options.
+TZ -	if set, contains timezone settings; if this variable do
+	not set or set improperly files will be placed in archive
+	with wrong timestamps, nevertheless, you will not see
+	anything bad until you read files on another computer or
+	OS. TZ variable built accordingly rules described in
+	relevant documentation but displacement from GMT would be
+	enough (four digits for hours and minutes preceded by
+	sign, e.g. Moscow timezone setting TZ=MSK-3MSD is
+	equivalent to TZ=-0300 during winter).
+
+
+     Examples
+
+List file names in archive anyfile.tar:
+	Tar tf anyfile.tar
+
+Print verbosely directory of 1.2M floppy in drive B:
+	Tar tv1k 1200
+
+Store all files from given list to tape, as dense as possible:
+	Tar cvbf.9 32 /dev/tape +g -@ listfile.s
+
+Extract all files from streamer cartridge (in DOS), hardware
+chosen as IO base address 300h, DMA channel 1 and QIC-24 tape
+format:
+	Tar -xvf archive:b300,dma:=1,t:9
+
+
+     Compiling the program
+
+Before doing this, you need to have a properly installed C
+compiler.
+
+Place program sources into separate directory, then
+ - type !compile at the DOS prompt to build DOS version.
+ - issue make command to build UNIX version.
+
+Note: if you work under ISC UNIX or another System V, you should
+      try 'make -f makefile.ix' command to decrease size of the
+      executable file.
+
+
+      Diagnostics
+
+Can only handle XX bits. Continue?
+	Not enough RAM to perform un/compression with desired
+	bits factor (either default or specified). You will be
+	prompted to continue with maximum possible bits factor.
+
+Diskette capacity XXXK assigned
+	Since you have not specified diskette capacity, the
+	program informs you about its choice.
+
+Extract anyway?
+	Archive file can not be uncompressed due to some reason
+	and you are prompted to extract its compressed image.
+
+File compressed with XX bits, can only handle XX bits.
+	Archive file can not be uncompressed for the current bits
+	factor is less than the factor during compression.
+
+File is not in compressed format
+	Although archive has '.Z' suffix, its structure does not
+	match compressed one. Thus, the file can not be
+	uncompressed and you will be prompted to extract it as is.
+
+No memory for encoding. Continue?
+	Files can not be packed due to lack of free memory. You
+	are prompted to store them unpacked.
+
+Tar: XXX blocks skipped to find header
+	Archive corrupted, skipped blocks possibly contains lost
+	information.
+
+Tar: '...' checksum error
+	Checksum algorithm fails while unpacking the file.
+	The data is probably corrupt.
+
+Tar: '...' decode error
+	Internal compressor error.
+
+Tar: '...' decreased size
+	File decreased size while the program stored it.
+
+Tar: '...' exceeds limit in size
+	Input for '@' option exceeds 32760 bytes in size.
+
+Tar: '...' name too long
+	The name of file in archive must not exceed 100
+	characters.
+
+Tar: '...' seek error
+	Error processing file.
+
+Tar: 'm' and 'u' options ambiguous
+	Do you really want both this options?
+
+Tar: archive unchanged
+	There was no job for 'u' or 'd' options.
+
+Tar: bad blocksize (max is 32)
+	The program allows block factor in the range of 1 to 32.
+
+Tar: bad directory structure
+	Archive is corrupted (file header error).
+
+Tar: bad option '?'
+	Invalid character in option string.
+
+Tar: base address must be specified
+	Error in streamer parameters (DOS only).
+
+Tar: blocksize = XX
+	Since you have not specified block factor, the program
+	informs you about its choice.
+
+Tar: blocksize multiply defined
+	You have specified block factor more than once.
+
+Tar: can't access '...'
+	Error processing file.
+
+Tar: can't create '...'
+	Error processing file, probably the file system at your
+	computer is full.
+
+Tar: can't create directory '...'
+	Error processing file, probably the file system at your
+	computer is full.
+
+Tar: can't create scratch file
+	Error processing file, probably the file system at your
+	computer is full.
+
+Tar: can't delete '...'
+	Error processing file.
+
+Tar: can't delete scratch file
+	Error processing file, this usually does not mean tar lost
+	some data, but it indicates some filesystem problem.
+
+Tar: can't find '...'
+	No file matches given wildcard specification (DOS only).
+
+Tar: can't handle '...'
+	Error processing file.
+
+Tar: can't link '...' - data stay in '...'
+	The program can not restore links properly (UNIX only).
+
+Tar: can't link '...'
+	The program can not restore links properly (UNIX only).
+
+Tar: can't open '...'
+	Probably the file given does not exist or access denied.
+
+Tar: can't open directory '...'
+	Error processing directory, probably access denied.
+
+Tar: can't open file '...'
+	Probably the file given does not exist or access denied.
+
+Tar: can't process '...'
+	Error processing file.
+
+Tar: can't read '...'
+	Error processing file.
+
+Tar: can't remove '...'
+	The directory mentioned can not be deleted.
+
+Tar: can't rename '...' to '...'
+	Error performing 'd' option, archive stayed unchanged.
+
+Tar: can't update stdout
+	You may not apply given option to standard output.
+
+Tar: delete option is for file archives only
+
+Tar: device parameter error
+	Error in streamer parameters (DOS only).
+
+Tar: directory checksum error
+	Archive is corrupted (file header error).
+
+Tar: diskette error: ...
+	Probably the diskette is corrupted.
+
+Tar: drive not present
+	You have specified diskette drive which does not exist
+	(DOS only).
+
+Tar: error extracting '...'
+	Error processing file. Possible reason: there is no space
+	left on the hard disk.
+
+Tar: error processing '...'
+	Error processing file.
+
+Tar: error reading '...'
+	Error processing file.
+
+Tar: error shrinking memory block
+	Internal runtime error.
+
+Tar: fault run mkdir!
+	The 'mkdir' command was not found in /bin, /usr/bin and
+	/etc directories (UNIX only).
+
+Tar: fault run rmdir!
+	The 'rmdir' command was not found in /bin, /usr/bin and
+	/etc directories (UNIX only).
+
+Tar: incompatible options
+
+Tar: input must be free
+	It is not allowed to use standard input with 'f' option
+	and any of 'w' or 'j' options.
+
+Tar: insert NEXT diskette and press ENTER when ready...
+	You are prompted to continue multivolume archive
+	processing.
+
+Tar: invalid base address
+	Error in streamer parameters (DOS only).
+
+Tar: invalid bits factor
+	The bits factor must be in range of 12 to 16.
+
+Tar: invalid character after 'X'
+	Error in streamer parameters (DOS only).
+
+Tar: invalid diskette size
+	Allowed arguments for 'k' option are: 160, 180, 320, 360,
+	720, 1200, 1440, 2880 (DOS only).
+
+Tar: invalid DMA channel number
+Tar: invalid IRQ number
+Tar: invalid number of tracks
+Tar: invalid QIC number
+	Error in streamer parameters (DOS only).
+
+Tar: missed XX link(s) to '...'
+	The file has multiple links and given number of them were
+	not stored in the archive; you will not see this message
+	unless 'l' option is given (UNIX only).
+
+Tar: no files specified
+
+Tar: no memory to unpack.
+	You will be prompted to extract packed image.
+
+Tar: not enough memory to uncompress
+	You will be prompted to extract compressed file.
+
+Tar: not enough memory
+
+Tar: nothing to do
+	You have to specify either 'a', 'x', 't' or 'd' option.
+
+Tar: out of memory; link(s) lost
+	Not enough memory to keep list of links, links will be
+	stored in archive as a separate files (UNIX only).
+
+Tar: tape blocksize error
+	Error processing archive.
+
+Tar: tape close error
+	Error processing archive.
+
+Tar: tape device multiply defined
+	You have specified ambiguous options.
+
+Tar: tape read error
+	Error processing archive.
+
+Tar: tape seek fault
+	Error processing archive.
+
+Tar: tape write error
+	Error processing archive. Possible reason: there is no
+	space for archive file on hard disk.
+
+Tar: unknown parameter '...'
+	Error in streamer parameters (DOS only).
+
+Tar: unsupported hardware configuration
+	That is (DOS only).
+
+Tar: warning: bad sector XXX, skipped
+	The sector has physical defects, tar has skipped it.
+	Note: you will not be able to read such a diskette on
+	another computer (DOS only).
+
+Tar: warning: can't open terminal device, may be problems
+	Standard input is used for 'f' or '@' option and the
+	program can not open terminal device
+	(/dev/tty - UNIX only).
+
+Tar: warning: renamed to '...'
+	UNIX file name was changed according to DOS rules.
+

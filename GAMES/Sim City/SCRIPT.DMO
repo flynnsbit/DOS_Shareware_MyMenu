@@ -1,0 +1,67 @@
+eventrestart 60
+wait 10
+goto 1 1
+load sanfran.psn
+scroll 30 10
+wait 5
+window 25 @ 9 10 17 70
+DESIGN AND BUILD THE CITY OF YOUR DREAMS
+Enter SimCity and take charge of an evolving, growing 
+city. Become both mayor and city planner of a dynamic 
+real-time simulation. Build stores, houses and factories. 
+Hire police and fire departments. Build a football 
+stadium. You have the power to manage every aspect of 
+your city. So create an urban utopia.
+]
+scroll 20 10
+map
+wait 10
+scroll -10 10
+WAIT 15
+load disast.dty
+wait 2
+scroll 20 10
+window 15 @ 9 10 15 68
+OR TURN CITY LIFE INTO A NIGHTMARE
+Raise taxes, bulldoze entire neighborhoods. Manipulate 
+property values. Turn the roads into a maze. Cause 
+tornadoes, earthquakes, floods, fires and disasters at 
+your whim. 
+]
+wait 20
+load small.dty
+goto 0 0
+scroll 10 10
+wait 10
+load small1.dty
+wait 10
+load small2.dty
+window 15 @ 9 10 19 69
+SIMCITY TAKES ON A LIFE OF ITS OWN
+Build roads- cars appear. Lay track- trains go. Build an 
+airport- planes fly. Factories cause pollution. 
+Neighborhoods go condo. Areas deteriorate into slums.
+Your city is populated by Sims- simulated humans. Like 
+humans, they let City Hall know if they are unhappy. If 
+they get too indignant, they move away. Tax revenues 
+plummet. And you could be left broke, mayor of a ghost 
+town.
+]
+wait 20
+window 15 @ 9 10 21 69
+SIMCITY GIVES YOU THE KEY TO CITY.  THE REST IS UP TO YOU
+Thanks for playing SimCity The Demo.  To purchase SimCity
+see your IBM software dealer.  For more information
+contact:
+  Maxis Software
+  953 Mountain View Drive #113
+  Lafayette, CA 94549
+
+  Tel: (415) 376-6434
+  FAX: (415) 376-1823
+]
+scroll 3  0
+wait 10
+map
+scroll -3 -1
+wait 10

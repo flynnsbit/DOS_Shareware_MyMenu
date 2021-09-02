@@ -1,0 +1,611 @@
+=============================================================================
+                            Seek and Destroy v1.0
+                              Shareware Version
+
+               copyright (c) 1996 Safari Software and Vision
+=============================================================================
+
+THE MISSION
+
+For the last 10 years, ever since the end of the nuclear third world war of
+1998, the world has been a peaceful place. No other wars have started and
+people seem to live in relative harmony. The generals who took part in the
+last war reason that, as they said all along, the proliferation of nuclear
+arms has maintained this decade of peace.
+
+Recently, North American Defense Intelligence has been following the actions
+of a group of individuals based in South America. These individuals appear
+to be amassing a collection of armaments from all over the world that could
+threaten our now peaceful existence. As one of the few surviving Vehicular
+Combat Troopers of the North American Armed Forces, you have been assigned
+to halt any further advancement of this potential threat and eliminate their
+current arsenal.
+
+Your first mission takes you into the deserts of Africa. Good luck...
+
+
+HARDWARE REQUIREMENTS
+
+   Minimum                         Recommended                  
+   -------                         -----------
+  A 486 or faster processor        486/66 or faster CPU for smooth play
+  4 Megabytes of RAM               8 Megabytes of RAM
+  VGA graphics                     Mouse or joystick
+
+
+   Also Supports
+   -------------
+- Sound Blaster, Sound Blaster Pro, Sound Blaster 16, Gravis Ultrasound,
+  and 100% compatible music cards.
+- Joystick or Mouse
+
+
+INSTALLING THE GAME
+
+To install Seek and Destroy from floppy disk, insert the disk one into the
+CD-ROM drive and do the following:
+
+1. At the DOS prompt, change to your floppy drive (for example, A: ).
+2. Type INSTALL to bring up the Installation Menu.
+3. Follow the instructions in the menu to install Seek and Destroy.
+
+
+SETTING UP THE GAME
+
+After installing Seek and Destroy, you must run the setup program to
+configure your sound card. (You can also run the setup at a later time
+by typing SETUP [ENTER] at the DOS prompt of your Seek and Destroy directory.)
+When you run setup, a list of options will appear. You can move through the
+available options with the arrow keys. To select an option, move to it with
+the arrow keys and press ENTER. Pressing ESC will take you back one step or,
+if you are at the main menu, quit the setup program.
+
+SETUP OPTIONS
+
+Change Sound Setup:
+
+Lets you select your sound card, DMA channel, PORT, IRQ and sound quality.
+
+RUNNING THE GAME
+
+To run Seek and Destroy, type SEEK.EXE [ENTER] at the DOS prompt. The game
+then displays the Title Screen, credits and high-scores before entering a
+demo mode where you can watch a short period of prerecorded play. At any
+time during these screens you can press a key or mouse button to go to the
+main menu.
+
+BASIC OBJECTIVES
+
+In Seek and Destroy, you have to complete all mission phases in order to
+overcome the enemy and complete the game. During play, you collect ammo for
+your vehicles and medals to spend on new weapons while chalking up points to
+reflect your superior combat skills.
+
+MAIN MENU
+
+The main menu presents you with the options listed below. To use this, or any
+other Seek and Destroy menu, use the arrow keys to move through the available
+option buttons. Press ENTER or SPACE to activate whichever option you choose.
+You can also position the mouse pointer over an option button and press the
+left mouse button to activate it. With slider options you can use the mouse
+pointer to click and drag the slider knob, or you can press the left/right
+arrow keys to adjust it.
+
+New Game - Start a new game from scratch.
+Resume - Resume a game you are currently playing.
+Options - Set game options, e.g. detail level and sound volume.
+Credits - Display the names of the people who wrote the game.
+High Scores - Show the list of best players.
+Load - Load a game you have previously saved.
+Save - Save the current game.
+Ordering Info - Show Safari Software's information.
+Exit - Quit Seek and Destroy
+
+New Game:
+When you select NEW GAME, the Mission Title Screen will appear. Press a
+key/mouse button to skip the picture or wait five seconds and it will
+disappear automatically. This screen is displayed only once for each new
+mission you encounter. Seek and Destroy features five four-phase missions
+for a total of twenty levels - 2 missions in the shareware for atotal of 8
+levels.
+
+Objectives:
+After the Mission Title Screen, you will see the Objectives Screen. Here
+you get your objectives for the current phase and any other information
+about certain enemies you can expect to encounter. You can click PLAY to
+continue to play the game, EXIT to go back to the main menu, or LOAD or SAVE
+to load or save a game. You can also click on SHOP to buy weapons for your
+vehicle.
+
+Equipping and Selecting Your Vehicle:
+Next comes the Vehicle Select and Equip Screen. Here you select a vehicle to
+use for the current phase and load it up with the weapons you have bought so
+far. If you have just begun, you will have a chaingun and rockets on your
+chopper and a chaingun and shells on your tank. Tthe same method is used to
+equip both your chopper and your tank, so for simplicity only the chopper
+equipping will be described.
+
+You will see on your screen six banks of weapons labeled WEAPON BAY 1 to
+WEAPON BAY 6. Each bay features a list of available weapons. Weapons that
+you already own are shown in light colors, while those weapons you have not
+yet purchased are darkened and unselectable. At first, only the chain gun
+and rockets will be usable, but as you progress through the game you will be
+able to buy more weapons. Indicators next to the weapon names tell you the
+current level of each weapon. For instance, if your rockets have two yellow
+indicators beside them, then you know you have level-two rockets.
+
+To load a bay with a particular weapon, simply select the weapon name in the
+appropriate weapon bay. You can have multiple bays loaded with the same
+weapon, it is up to you how many you load. At first, Bay 1 will be loaded
+with a chaingun and Bays 2-6 with rockets.
+
+The Specials Bank is located beneath the six standard weapon bays. This bank
+contains your chopper's built-in special weapons. You get three special
+weapons per vehicle (mega missile, bomb, and super napalm for the chopper, and
+power shell, flame thrower and ground to air for the tank). You do not need to
+buy special weapons, but they can not be upgraded and you can have only one
+of them loaded at a time.
+
+When you load different bays with the same weapon, during play you will have
+only one bay of that weapon, but X times more ammo (X being the number of
+bays you loaded with the weapon). This will alter how you select weapons via
+the number keys while playing. A number key is assigned to each different
+weapon being used. Whenever a bay containing a new loaded weapon is found, it
+is assigned the next available number on the keyboard. Say, for example, your
+bays were loaded as follows:
+
+Bay 1  Always chain gun        Bay 2  Rockets
+Bay 3  Air-to-Ground           Bay 4  Rockets
+Bay 5  Air-to-Air              Bay 6  Air-to-Ground
+Bay 7  Mega Missile
+
+Going through the bays in order we see that Key 1 will be assigned to the
+chain gun. Bay 2 is a new weapon so it gets the next key (2). Likewise with
+Bay 3, it gets key 3. Bay 4, on the other hand, contains a weapon that
+already has a key assigned to it (which means Bay 2 will have twice as many
+rockets in it). So Key 4 is assigned to the next new weapon, which is the
+air-to-air in Bay 5. Bay 6 contains another air-to-ground which already has
+Key 3 assigned to it, so Key 5 is assigned to Bay 7. The final key
+distribution ends up as follows:
+
+1  Chain gun            2  Rockets
+3  Air-to-Ground        4  Air-to-Air
+5  Mega Missile
+
+
+Obviously, if you select your weapon during gameplay by cycling through them
+(see Changing Weapons), the next different weapon is selected when you press
+the key/button. You can also modify your vehicle's characteristics. Next to
+the Specials Bank are sliders for fuel, armor and speed. Adjusting either
+fuel or armor will change the speed of your vehicle. By default your
+vehicle's characteristics are evenly balanced. Some tweaking will allow you
+to get the best benefit for your personal style of play.
+
+One thing you should not do is crank the fuel and armor way up. If you do,
+your vehicle will move so slow that it may take you a few millennia to
+complete your mission.
+
+Note the three colors on each slider. The red area indicates a value is
+getting too low. If you adjust your sliders so your speed is in the red,
+your craft may be frustratingly slow. On the other hand, if it goes to the
+green, it may be too fast to handle. Consider starting off with the default
+settings and slowly tweaking the settings as you play to find a mix that
+works for you.
+
+Clicking the OK button in the bottom-right corner of the Vehicle Select and
+Equip Screen will start the next phase using the vehicle you are currently
+equipping. The EXIT button brings you back to the Objectives Screen. The TANK
+button switches to the tank so you can equip this vehicle instead.
+
+NOTE: For some phases, you will be required to use the tank. In these cases,
+only the OK and EXIT buttons will appear on the Equip Screen, and, obviously,
+the tank will be the displayed vehicle.
+
+Options:
+The detail levels each have three values: low, med. and high.
+
+Explosion Detail - How much debris and metal flies off things when they are
+  destroyed.
+
+Terrain Detail - The amount of trees and ground detail present on a level.
+
+Overlay Detail -
+Low: Text/numbers on screen are solid; no rain or snow on levels that have
+  them; shadows are solid.
+Med: As above, with the addition of rain and snow.
+High: Real shadows, masked text/numbers, snow/rain.
+
+Difficulty - Difficulty ranges from enemy weapons doing little damage and
+not being very aggressive up to lethal weapons, rapid fire rates, etc. On
+the med. level, you have to land on medals to pick them up. On the high
+difficulty level, you also have to land to pick up fuel and armor. In
+addition, you will crash if you land on the ground while moving too fast.
+
+Sound Volume - Adjust the slider to change the volume.
+Controller - Select keys, mouse or joystick. Depending on what controller
+you select, other option buttons will appear allowing you to configure the
+controller.
+
+Keys-Define: Allows you to define what keys invoke certain actions. Clicking
+on DEFINE brings up another window where you can assign a new key to an
+action. Clicking EXIT or pressing escape returns you to the Options Screen.
+
+Joystick-Buttons: Allows you to define what buttons on your joystick invoke
+certain actions (see Setup Options above for a description).
+
+Joystick-Calibrate: Allows you to calibrate your joystick for optimum
+performance. If you have changed to joystick control when you exit or
+save you are automatically asked to calibrate your joystick.
+
+Mouse-Sensitivity: Allows you adjust the mouse sensitivity.
+
+Load and Save:
+These screens are very similar. Simply select a space where you want to load
+or save a game from the displayed list of file names. If loading, the file
+you click loads and the game continues (nothing will happen if no file
+exists). If saving, clicking on a file name allows you to enter or change
+the name of the file. Pressing ENTER saves the game; pressing ESC aborts the
+save and returns to the main menu.
+
+Demo Mode:
+If the main menu remains inactive for around 15 seconds the game
+automatically goes into demo mode. You can exit this mode by pressing a key
+or mouse button while the demo is playing.
+
+
+PLAYING THE GAME
+
+Starting:
+You start your mission at your base on a starting pad which is usually a
+safe way off from the sight of your objective. You cannot damage your base
+buildings. You can refuel at your base simply by landing on or driving over
+your starting pad.
+
+Flying:
+Near the bottom left of the display you will see a square with a green cursor
+(dot) in the middle. Moving the cursor forward or back moves your vehicle
+forward or back. Moving the cursor left or right rotates your vehicle. The
+further to the sides or ends you move the cursor the faster your vehicle
+will move/rotate. The world that you fly around in the game is a wrap around
+map, so you can keep flying in one direction and eventually end up back where
+you started.
+
+Landing (Chopper only):
+You cannot land on objects like buildings and trees. If you are descending
+and you fly over something you cannot land on, your chopper will automatically
+start ascending. If you are hovering over an object you cannot land on, you
+will not be allowed to start descending. On the HARD difficulty level, if you
+are moving or rotating too fast when you hit the ground, you will crash. You
+can safely move/rotate a little, but not much!
+
+Strafing (Chopper only):
+Strafing involves moving your chopper left or right through the air without
+rotating. To strafe, hold down the appropriate key or button while moving
+left or right. This maneuver is incredibly useful if an enemy missile is
+headed straight at your cockpit. When strafing you cannot move forward or
+back.
+
+Changing weapons:
+To select a weapon you can either cycle to the next weapon bay by pressing
+the appropriate key or button, or you can select a specific bay by pressing
+the assigned number key. (See Equipping Your Vehicle)
+
+Shooting (The best part):
+Simply press fire! All weapons are auto firing if you hold down the fire
+button/key. While shooting, you will get overkill bonuses when you shoot a
+number of buildings in quick succession. You will get bonus points at the end
+of each phase for the overkills you manage to chalk up.
+
+Bonuses:
+As you shoot buildings, certain bonuses appear. To collect these, simply
+fly/run over them.
+
+Fuel - Gives you about half a tank of fuel.
+Shield - Repairs some of the damage your vehicle has taken.
+Ammo - Most bonuses will be in the form of ammunition to restock your
+vehicle's weapons. Depending on what type of ammo you find, you may get
+anything from two units to 150 for each bonus you pick up. (The chain gun has
+unlimited ammo and the air strike weapon cannot be reloaded during game play.)
+Medals - At the conclusion of a phase, medals you have found may be may be
+used to purchase new weapons for your vehicles. Each new weapon or weapon
+level has a cost in medals that you must pay at the shop in order to get that
+weapon/level.
+
+Picking up People:
+At times, you will need to rescue people to complete your mission, or pick
+them up as a secondary objective. In most cases, your landing spot will be
+indicated by a "STOP HERE" label over a pickup zone. When landing spots are
+not marked, you will be instructed in your briefing where to land to pick
+the people up.
+
+Once you have picked people up, you must carry them all in your chopper until
+you complete your mission. As you pick up POWs or allies, an indicator will
+appear letting you know how many people you have in your vehicle. Be aware
+that if you die, all people you are carrying are lost. If rescuing them was
+your objective and there are now no people left to rescue, you will fail to
+complete your objective and the phase will automatically end.
+
+
+THE GAME OVERLAY
+
+Several indicators display vital information on the screen during game play.
+
+Score (Top left of the screen):
+This indicator displays your current game score. Achieving an exceptional
+score will earn you a spot on the high-score table.
+
+Fuel (Top right):
+Your vehicle can only move as long as you have fuel. Once you run out of
+fuel, your mission fails. You can obtain fuel by collecting fuel bonuses
+from destroyed buildings and from landing on or stopping over your mission
+start pad. If your fuel gets too low, the fuel indicator will start flashing
+and a pulsing alarm will sound.
+
+Lives (To the left of Fuel):
+The helmet icon has a number next to it indicating how many lives you have
+left, not counting the current one. You receive a bonus life every 15,000
+points. You can have a maximum of nine lives at any one time.
+
+Armor (Bottom left):
+The amount of damage your vehicle can take before exploding is displayed in
+the armor bar at the bottom left of the screen. If this indicator reaches
+zero, you lose a life and continue the phase from your base with your next
+life. As your armor gets low, sound effects will warn you. The armor
+indicator will begin to flash when your vehicle is in imminent danger of
+exploding.
+
+POW Count (Next to Armor):
+Indicates how many people you currently have in your vehicle.
+
+Cursor (Right of POW Count):
+Displays your current direction, rotation and speed. See Flying for a
+description.
+
+Radar (Big circle at the bottom):
+One of your most important displays, this indicator is a large circle in
+which colored dots indicate most of the objects present on the level. Your
+vehicle always remains in the middle of the radar and the other objects on
+the map rotate and move around relative to this center dot. The radar is
+color coded as follows:
+
+	Brown:	Buildings up for destruction.
+	Black: 	Your position (in the middle of the radar) and your base
+		buildings.
+	Red: 	Most enemies are displayed in red. Your radar may not
+		detect some smaller enemies, like troops.
+	Orange:	Airborne enemy craft.
+	White:	Objectives. When you start a phase, objectives are
+		displayed in their regular colors until you discover them.
+		Once discovered, objectives turn white.
+
+At the beginning of each phase your radar displays most of the available map,
+but auto zoom can enhance the view. (See AUTO ZOOM)
+
+Weapon (Bottom right):
+Displays your current weapon and ammunition remaining.
+
+TARGETING
+
+Some weapons have locking ability. This means that you do not have to aim
+precisely at the target before firing. Most targeting systems work only
+within a 45-degree arc, so you still have get the target in front of your
+vehicle. The tank's special air-to-air weapon is an exception (see GOING
+SHOPPING for a description).
+
+AUTO ZOOM
+With auto zoom off, you can see almost all of the level on the radar
+display. When it is on, the radar zooms into a relatively small area of the
+map allowing you to see the positioning of enemies and buildings more
+accurately.
+
+DEATH
+When your armor level reaches zero or you run out of fuel, your vehicle will
+explode. If you have lives remaining you will restart back at your base and
+continue the phase.
+
+PAUSING A GAME
+While playing, you can press `P' to pause your game and the screen will dim
+slightly. Pressing `P' again continues.
+
+IN GAME MENU
+While playing, you can press the ESC key to go to an in-game menu with the
+following options:
+
+Mission Objectives - Allows you to view your mission briefing again.
+Options - Goes to the Options Screen.
+Help - Shows the default key mapping for controlling your vehicle and
+  other standard keys.
+Return to Game - Returns to playing the game.
+Exit Game - Ends current game and returns to the main menu.
+
+
+COMPLETING A PHASE
+A voice message and a flashing message on the display will inform you that
+you have completed a phase. You then have to make your way back to your base
+and stop on the starting pad. The screen then dims and your destruction stats
+are displayed.
+
+GOING SHOPPING
+From the Objectives Screen you can choose to go into the shop. Here you can
+buy new weapons or upgrade your existing ones by spending the medals you
+have collected on previously completed phases. The main part of the shop is
+comprised of lists of weapons. For the chopper, you can see there are six
+weapons, each with three levels of power. An indicator along the bottom of
+the screen displays the number of medals you have in your possession. The
+indicator displays a large medal for every 10 medals you have and a smaller
+one for single medals. You can also tell the exact number you have by the
+number to the left of the medals. The boxed area at the top of the shop
+screen shows you the following:
+
+-  The medal cost to buy the selected weapon level
+-  A description of the currently selected weapon level
+-  A PURCHASE button to buy an upgrade
+-  A TANK button to go to the shop for the tank
+-  And the DONE button for when you are all finished
+
+Some of the weapon levels on the Shop Screen will be darkened. These weapon
+levels cannot be selected because they are below the one you currently have.
+For instance, if you already have three levels of rockets, then the first two
+rocket icons will be darkened leaving only the last one to select.
+
+Checking Out a Weapon Level:
+If you select a particular weapon's icon, the description area at the top of
+the screen will provide information about the weapon. If you select a weapon
+that you do not have enough medals to purchase, the PURCHASE button darkens
+and becomes unselectable. Time to deal more carnage.
+
+The Cost of a Weapon Level:
+The cost of a particular weapon level depends on what your current level in
+that weapon is. You receive half the cost of your current weapon level back
+as a sort of trade-in and this is subtracted from the cost of the new weapon
+level. For instance, say you currently have level-two rockets and you want to
+purchase level-three. Your level-two cost you four medals, so you will get
+half of that (two) back. The cost of level-three is normally six medals, but
+with your trade-in it becomes four.
+
+Since you can spend fewer total medals by purchasing a higher weapon level
+directly rather than trading up for it, you can maximize your purchase value
+by saving up medals for high weapon levels. Of course, you may need an
+intermediate level just to keep yourself alive.
+
+BUYING A WEAPON
+If you have enough medals to buy the selected weapon, you can click on
+purchase and that level of weapon will be added to your arsenal. The
+appropriate number of medals will be deducted from your supply. Once you
+have bought a weapon it will become unselectable.
+
+Powering Up Your Other Vehicle:
+To power up your other vehicle, just click on the TANK or CHOPPER button at
+the top of the screen and you will go to the shop for that vehicle.
+
+Finished:
+When you have finished spending all your hard-earned medals, click DONE to
+go back to the Objectives screen.
+
+WHAT ARE ALL THESE WEAPONS?
+
+Chain gun:
+This is the wimpiest of all weapons. But when ammo is low it could save your
+life, as you are always equipped with it and it never runs out of bullets.
+-  Level 1 Single stream low impact gun.
+-  Level 2 Dual stream of bullets
+-  Level 3 Dual stream swinging arc of bullets
+
+Rockets (Chopper only):
+Rapid fire weapons that deal respectable damage. Good for taking out buildings
+as you run through an enemy base.
+-  Level 1 Dual rockets.
+-  Level 2 Triple fire that spreads out slightly.
+-  Level 3 Four rockets let loose, two from either side of your chopper.
+
+Air-to-Ground (Chopper only):
+The most lethal of ballistic weapons on your chopper. They are fast, and the
+second- and third-level versions have locking ability.
+-  Level 1 Non-locking rocket.
+-  Level 2 A single rocket fires from your chopper at a locked on target.
+-  Level 3 These locking missiles take off in pairs. Takes out an enemy twice
+	as fast.
+
+Air-to-Air (Chopper only):
+The Chopper's Air-to-Air missiles operate like the Air-to-Ground but they are
+only effective against airborne targets.
+
+Napalm (Chopper only):
+Napalm is a good area affect weapon, but the range is limited.
+-  Level 1 A single stream of flame fires from the front of your chopper.
+-  Level 2 As above but a triple stream.
+-  Level 3 A multi-stream, star-shaped napalm bomb.
+
+Air Strike:
+You can call on your buddies to give you a hand. Allows you to take out an area
+without having to hang around and get shot.
+-  Level 1 Low impact air strike. More useful on damaged buildings or troops.
+-  Level 2 Slightly more impact, this air strike will take out most buildings.
+-  Level 3 Nighty night bad guys.
+
+Shells (Tank only):
+The tank's primary weapon. Not much can withstand a blast from a tank shell.
+-  Level 1 Single shell.
+-  Level 2 A superior reloading mechanism allows this tank to fire faster.
+-  Level 3 Utilizing the tank's other barrels, this version fires dual shells.
+
+Flame Thrower (Tank only):
+Fires a long stream of napalm from your tank.
+-  Level 1 Single stream
+-  Level 2 A stream of napalm with a longer range.
+-  Level 3 Dual-stream, long-range napalm using two of your tank's barrels.
+
+Special Weapons:
+
+Mega Missile (Chopper only)
+A super-fast, super-tough missile. Has no locking ability, but who needs it
+when it goes this fast!
+
+Super Napalm (Chopper only)
+A long stream of napalm emerges from the front of your chopper and spreads
+out, annihilating everything in a 45-degree arc in front of you.
+
+Bomb (Chopper only)
+Lobs a death-dealing bomb from the front of your chopper.
+
+Mine (Tank only)
+A timed mine is dropped from your tank. Just drop and get outta' there!
+
+Power Shell (Tank only)
+An almost indestructible tank shell. Power shells will penetrate objects
+and continue through the other side to take out more victims.
+
+Ground to Air (Tank only)
+Has locking ability of a full 360 degrees unlike other locking weapons.
+
+
+HINTS
+Here are a few hints in case you are having a little trouble.
+1. If using the chopper, use your strafe ability.
+2. Use your radar! It can indicate openings for you to exploit.
+3. Destroy the enemy radars and towers found throughout the game as soon
+   as possible. Enemy missiles rely on them to target you.
+4. Don't waste possible fuel or ammo powerups, when you do not need them.
+   Leave some buildings intact, so you can blow them up and refuel/reload
+   when you really need to.
+5. Do not take on a lot of choppers at once-they can be very deadly. Try
+   picking them off one at a time.
+6. If you have completed a phase but there are still buildings and enemies
+   to destroy, try taking them out. You may find some valuable medals and of
+   course you will chalk up more points.
+7. Area-affect weapons like bombs, napalm, etc. are good for getting
+   overkills because they destroy lots of things at once.
+
+CHEATS
+-  Immediately after pressing NEW GAME or RESUME hold down Left-Shift,
+Left-Ctrl and Left-Alt. You will see a simple list that allows you to
+select a specific mission to play.
+-  In the Objectives Screen, type the word GIMME. Four new gadgets will
+appear, allowing you to select a specific phase to play.
+-  While in the shop, type CAPO. All future purchases until you leave
+the shop (or go to the shop for the other vehicle) are now free.
+-  While playing a phase you can hold down certain keys to activate
+certain cheat codes. To activate an in-game cheat, hold down each of the
+appropriate keys below. A short message will appear on screen when the cheat
+is activated. If you want to turn the cheat off, hold down the same keys but
+also press the TAB key.
+
+Name    Code    Description
+----    ----    -----------
+AMO     R       Gives you lots of ammo!
+MEGA    PO      Gives your current vehicle the best of all the weapons
+                currently equipped.
+LIFE    PT      Gives you loads of hit points immediately and for
+                future phases.
+
+Codes   Description
+-----   -----------
+P       Permanent, lasts until you run seek again
+T       Toggle. Hold down the keys again, and at the same time hold down
+        TAB, to turn the cheat off
+R       Repeat. You can repeatedly keep doing this.
+O       Once. Can only be done once and not toggled.
+
+=============================================================================
+                       Enjoy Playing Seek and Destroy!
+=============================================================================

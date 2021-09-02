@@ -1,0 +1,92 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+         ====================================================
+                          CODE-NAME: ICEMAN
+                                                        
+
+                           THE SOUNDTRACK
+                     (See below for song titles.)
+                           By Mark Seibert
+         ====================================================
+             Copyright (c)1990 Sierra Entertainment, Inc.  
+         ====================================================
+
+                        ROLAND MT-32 VERSION
+
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded System Exclusive data
+- Roland MT-32, LAPC-I, CM-32L, CM-64, & 100% compatibles
+
+
+ NOTICE:   This MIDI file is NOT designed for playback on General MIDI
+           sound cards.  It contains a large amount of System Exclusive
+           data which can be read only by the Roland MT-32 and 100%
+           compatibles.
+
+This Standard MIDI File was recorded directly from Sierra's "Code-Name: 
+Iceman" adventure game using Sierra's MT-32 driver.  The MIDI file contains
+embedded SysEx data which will write new sounds to your MT-32 and control
+various reverb changes.  The SysEx patch timbres are embedded in the first
+two measures of this file.  Therefore, normal playback begins with the third
+measure.  A stand-alone SysEx patch bank has also been included should your
+MIDI playback software not recognize embedded SysEx data.
+
+    EDITING NOTE:
+    The preceding measure of each individual song file contains reset
+    controller and SysEx data.  If you wish to extract individual song
+    files from this soundtrack, be sure to include each song's preceding
+    measure in order to ensure proper playback.
+
+Recorded/edited/compiled/arranged for Standard MIDI format by Quest Studios.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+       =================================================================
+                          TRACK SHEET  (MT-32 VERSION)
+                          
+                               CODE-NAME: ICEMAN
+       =================================================================
+
+   SONG TITLE                                      START MEASURE/TIME *
+
+   1. Main Title Theme                                    3  00:00:04
+   2. On The Beach Of Tihiti                             47  00:01:50
+   3. ChiChi Bar Theme 1                                 69  00:02:43
+   4. ChiChi Bar Theme 2                                121  00:04:48
+   5. ChiChi Bar Theme 3                                170  00:06:45
+   6. ChiChi Bar Theme 4 (Dancing With Stacy)           219  00:08:43
+   7. Stacy's Hut                                       251  00:10:00
+   8. The Morning After                                 320  00:12:45
+   9. Undercover Agent                                  363  00:14:28
+  10. Mission Failed!                                   375  00:14:57
+  11. Flight To Washington                              383  00:15:16
+  12. Washington Airport                                420  00:16:45
+  13. The Pentagon                                      449  00:17:55
+  14. Mission Briefing                                  481  00:19:12
+  15. Pearl Harbor                                      513  00:20:28
+  16. U.S.S. Backhawk                                   537  00:21:26
+  17. Russion Submarine Destroyed (Iceman Theme)        563  00:22:28
+  18. Swimming In Open Sea                              619  00:24:43
+  19. Underwater Sabatage                               668  00:26:40
+  20. Tunisia Compound                                  705  00:28:09
+  21. Freeing The Ambassador                            775  00:30:57
+  22. Rescue By Stacy                                   800  00:31:57
+  23. The Chase                                         838  00:33:28
+  24. The Debriefing                                    876  00:35:00
+  25. Anchor's Aweigh                                   907  00:36:14
+  26. Closing Themes                                    916  00:36:36
+  --------------------------------------------------------------------------
+                                                TOTAL TIME:  00:38:55
+
+
+      * Note:  Start Times are approximate.
+

@@ -1,0 +1,9 @@
+Game: Quest for Glory II: Trial by Fire
+Year: 1990
+Composed by: Christopher Braymen, Mark Seibert
+MIDI versions: GM, GS, MT-32
+Platform: DOS
+
+Additional info: Single files in the folder root are complete soundtracks made for MT-32 and GS. GS version is converted from MT-32 version. I've also included some single tracks for General MIDI.
+
+https://www.karlsitretro.com/game_midi

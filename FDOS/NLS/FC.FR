@@ -1,0 +1,45 @@
+# Language: French (CP850)
+# Translated by Mateusz Viste
+#
+#### Help        ####
+1.0:Compare deux fichiers ou selections de fichiers et affiche les diff‚rences entre eux
+1.1:FC [options] [lecteur1:][chemin1]fichier1 [lecteur2][chemin2]fichier2 [options2]
+1.2: /A    Affiche seulement la premiŠre et derniŠre ligne pour chaque set of differences
+1.3: /B    Performe une comparaison binaire
+1.4: /C    Ne diff‚rencie pas lettres majuscules et minuscules.
+1.5: /L    Compare les fichiers en tant que textes ASCII
+1.6: /Mn   Set the maximum differences in binary comparison to n bytes
+1.7:       (defaut = %d, 0 = illimit‚, /M = /M0)
+1.8: /N    Affiche les num‚ro de ligne sur une comparaison de texte
+1.9: /S    Etand le scan jusqu'aux fichiers des sous-r‚pertoires
+1.10: /T    Ne transforme pas les tabulations en espaces
+1.11: /W    R‚duit les espaces blancs (tabs et espaces) pour une comparaison textuelle
+1.12: /X    N'affiche pas les lignes contextuelles lors d'une comparaison de texte
+1.13: /LBn  RŠgle le nombre maximum de lignes cons‚cutives diff‚rentes … n
+1.14: /nnn  RŠgle le nombre minimum de lignes cons‚cutives identiques … nnn
+1.15:       pour la resynchronisation de la comparaison
+1.16: /R    Affiche un bref raport final (toujours actif si /S utilis‚)
+1.17: /Q    N'affiche pas la liste des diff‚rences
+1.18: /U    Affiche les nom de fichier n'ayant pas de correspondant
+#### Messages    ####
+2.0:Option invalide: %s
+2.1:Trop de sp‚cification de fichiers
+2.2:Nom de fichier invalide
+2.3:Pas de fichier sp‚cifi‚
+2.4:Attention: les fichiers sont de tailles diff‚rentes
+2.5:Comparaison arret‚e aprŠs %d ‚l‚ments manquants
+2.6:Pas de diff‚rences
+2.7:Attention: comparaison arrˆt‚e aprŠs %d lignes
+2.8:M‚moire insuffisante
+2.9:Erreur lors de l'ouverture du fichier %s
+2.10:Comparaison de %s et %s
+2.11:Fichier ou r‚pertoire non-existant
+2.12:Resync impossible: les fichiers sont trops diff‚rents
+2.13:Les fichiers sont de tailles diff‚rentes
+2.14:Les fichiers sont diff‚rents
+2.15:Le fichier %s n'a pas de correspondant (%s)
+#### Report text ####
+3.0:%d fichiers compar‚s
+3.1: dans %d r‚pertoires.
+3.2:%d fichiers identiques, %d fichiers diff‚rents
+3.3:%d fichiers sans correspondents

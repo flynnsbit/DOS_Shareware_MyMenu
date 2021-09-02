@@ -1,0 +1,14 @@
+Begin3
+Title:          GNU grep
+Version:        2.0
+Entered-date:   2013-02-01
+Description:    grep searches files (or standard input) for lines that match a given pattern. The pattern may be a regular expression or a literal string.
+Keywords:       grep,pattern
+Author:
+Maintained-by:  -
+Primary-site:   http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/grep.html
+Alternate-site: -
+Original-site:  -
+Platforms:      DOS
+Copying-policy: GNU General Public License, Version 2
+End

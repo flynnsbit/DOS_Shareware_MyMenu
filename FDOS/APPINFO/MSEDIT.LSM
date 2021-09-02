@@ -1,0 +1,13 @@
+Begin3
+Title:          MSEDIT
+Version:        0.11
+Entered-date:   22-09-2012
+Description:    Mateusz' Saucy Editor
+Keywords:       text editor
+Author:         Mateusz Viste
+Maintained-by:
+Primary-site:   http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/msedit.html
+Alternate-site
+Platforms:      DOS
+Copying-policy: GNU General Public License, Version 2
+End

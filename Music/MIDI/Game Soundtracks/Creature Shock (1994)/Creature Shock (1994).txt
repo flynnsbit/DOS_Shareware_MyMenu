@@ -1,0 +1,9 @@
+Game: Creature Shock
+Year: 1994
+Composed by: Justin Scharvona, Martin Gwynn Jones
+MIDI versions: GM, GUS
+Platform: DOS
+
+Additional info: In the "Original Game Rip" folder are .pat files for use with Gravis Ultrasound.
+
+https://www.karlsitretro.com/game_midi

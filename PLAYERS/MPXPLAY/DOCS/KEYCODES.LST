@@ -1,0 +1,435 @@
+Keyboard Codes (taken from an old ASM Norton guide)
+
+    This tables lists all the keyboard codes that are returned by calls to
+    INT 16 functions 0 through 2 (the second and third columns) and 10h
+    through 12h (the last column).
+
+			     83/84-Key[1]  101/102-Key[2]  101/102-Key
+                               Standard       Standard       Extended
+     Keystroke                 Function     Function[3]    Function[4]
+     Esc                        01/1B           same           same
+     1                          02/31           same           same
+     2                          03/32           same           same
+     3                          04/33           same           same
+     4                          05/34           same           same
+     5                          06/35           same           same
+     6                          07/36           same           same
+     7                          08/37           same           same
+     8                          09/38           same           same
+     9                          0A/39           same           same
+     0                          0B/30           same           same
+     -                          0C/2D           same           same
+     =                          0D/3D           same           same
+     Backspace                  0E/08           same           same
+     Tab                        0F/09           same           same
+     q                          10/71           same           same
+     w                          11/77           same           same
+     e                          12/65           same           same
+     r                          13/72           same           same
+     t                          14/74           same           same
+     y                          15/79           same           same
+     u                          16/75           same           same
+     i                          17/69           same           same
+     o                          18/6F           same           same
+     p                          19/70           same           same
+     [                          1A/5B           same           same
+     ]                          1B/5D           same           same
+     Enter                      1C/0D           same           same
+     Ctrl                         **             **             **
+     a                          1E/61           same           same
+     s                          1F/73           same           same
+     d                          20/64           same           same
+     f                          21/66           same           same
+     g                          22/67           same           same
+     h                          23/68           same           same
+     j                          24/6A           same           same
+     k                          25/6B           same           same
+     l                          26/6C           same           same
+     ;                          27/3B           same           same
+     '                          28/27           same           same
+     `                          29/60           same           same
+     Shift                        **             **             **
+     \                          2B/5C           same           same
+     z                          2C/7A           same           same
+     x                          2D/78           same           same
+     c                          2E/63           same           same
+     v                          2F/76           same           same
+     b                          30/62           same           same
+     n                          31/6E           same           same
+     m                          32/6D           same           same
+     ,                          33/2C           same           same
+     .                          34/2E           same           same
+     /                          35/2F           same           same
+     Gray *                     37/2A           same           same
+     Alt                          **             **             **
+     Space                      39/20           same           same
+     Caps Lock                    **             **             **
+     F1                         3B/00           same           same
+     F2                         3C/00           same           same
+     F3                         3D/00           same           same
+     F4                         3E/00           same           same
+     F5                         3F/00           same           same
+     F6                         40/00           same           same
+     F7                         41/00           same           same
+     F8                         42/00           same           same
+     F9                         43/00           same           same
+     F10                        44/00           same           same
+     F11                        no key           --           85/00
+     F12                        no key           --           86/00
+     Num Lock                     **             **             **
+     Scroll Lock                  **             **             **
+     White Home                 47/00           same           same
+     White Up Arrow             48/00           same           same
+     White PgUp                 49/00           same           same
+     Gray -                     4A/2D           same           same
+     White Left Arrow           4B/00           same           same
+     Center Key                   --             --           4C/00
+     White Right Arrow          4D/00           same           same
+     Gray +                     4E/2B           same           same
+     White End                  4F/00           same           same
+     White Down Arrow           50/00           same           same
+     White PgDn                 51/00           same           same
+     White Ins                  52/00           same           same
+     White Del                  53/00           same           same
+     SysReq                     no key           **             **
+     Key 45 [5]                 no key         56/5C           same (doesn't work at me)
+     Enter (number keypad)      no key         1C/0D          E0/0D
+     Gray /                     no key         35/2F          E0/2F
+     PrtSc                      no key           **             **
+     Pause                      no key           **             **
+     Gray Home                  no key         47/00          47/E0
+     Gray Up Arrow              no key         48/00          48/E0
+     Gray Page Up               no key         49/00          49/E0
+     Gray Left Arrow            no key         4B/00          4B/E0
+     Gray Right Arrow           no key         4D/00          4D/E0
+     Gray End                   no key         4F/00          4F/E0
+     Gray Down Arrow            no key         50/00          50/E0
+     Gray Page Down             no key         51/00          51/E0
+     Gray Insert                no key         52/00          52/E0
+     Gray Delete                no key         53/00          53/E0
+
+     Shift Esc                  01/1B           same           same
+     !                          02/21           same           same
+     @                          03/40           same           same
+     #                          04/23           same           same
+     $                          05/24           same           same
+     %                          06/25           same           same
+     ^                          07/5E          same           same
+     &                          08/26           same           same
+     * (white)                  09/2A           same           same
+     (                          0A/28           same           same
+     )                          0B/29           same           same
+     _                          0C/5F           same           same
+     + (white)                  0D/2B           same           same
+     Shift Backspace            0E/08           same           same
+     Shift Tab (Backtab)        0F/00           same           same
+     Q                          10/51           same           same
+     W                          11/57           same           same
+     E                          12/45           same           same
+     R                          13/52           same           same
+     T                          14/54           same           same
+     Y                          15/59           same           same
+     U                          16/55           same           same
+     I                          17/49           same           same
+     O                          18/4F           same           same
+     P                          19/50           same           same
+     {                          1A/7B           same           same
+     }                          1B/7D           same           same
+     Shift Enter                1C/0D           same           same
+     Shift Ctrl                   **             **             **
+     A                          1E/41           same           same
+     S                          1F/53           same           same
+     D                          20/44           same           same
+     F                          21/46           same           same
+     G                          22/47           same           same
+     H                          23/48           same           same
+     J                          24/4A           same           same
+     K                          25/4B           same           same
+     L                          26/4C           same           same
+     :                          27/3A           same           same
+     "                          28/22           same           same
+     ~                          29/7E           same           same
+     |                          2B/7C           same           same
+     Z                          2C/5A           same           same
+     X                          2D/58           same           same
+     C                          2E/43           same           same
+     V                          2F/56           same           same
+     B                          30/42           same           same
+     N                          31/4E           same           same
+     M                          32/4D           same           same
+     <                          33/3C           same           same
+     >                          34/3E           same           same
+     ?                          35/3F           same           same
+
+     Shift Gray *                 **             **           37/2A
+     Shift Alt                    **             **             **
+     Shift Space                39/20           same           same
+     Shift Caps Lock              **             **             **
+     Shift F1                   54/00           same           same
+     Shift F2                   55/00           same           same
+     Shift F3                   56/00           same           same
+     Shift F4                   57/00           same           same
+     Shift F5                   58/00           same           same
+     Shift F6                   59/00           same           same
+     Shift F7                   5A/00           same           same
+     Shift F8                   5B/00           same           same
+     Shift F9                   5C/00           same           same
+     Shift F10                  5D/00           same           same
+     Shift F11                  no key           --           87/00
+     Shift F12                  no key           --           88/00
+     Shift Num Lock               **             **             **
+     Shift Scroll Lock            **             **             **
+     Shift 7 (number pad)       47/37           same           same
+     Shift 8 (number pad)       48/38           same           same
+     Shift 9 (number pad)       49/39           same           same
+     Shift Gray -               4A/2D           same           same
+     Shift 4 (number pad)       4B/34           same           same
+     Shift 5 (number pad)       4C/35           same           same
+     Shift 6 (number pad)       4D/36           same           same
+     Shift Gray +               4E/2B           same           same
+     Shift 1 (number pad)       4F/31           same           same
+     Shift 2 (number pad)       50/32           same           same
+     Shift 3 (number pad)       51/33           same           same
+     Shift 0 (number pad)       52/30           same           same
+     Shift . (number pad)       53/2E           same           same
+     Shift SysReq               no key           **             **
+     Shift Key 45 [5]           no key         56/7C           same
+     Shift Enter (number pad)   no key         1C/0D          E0/0D
+     Shift Gray /               no key         35/2F          E0/2F
+     Shift PrtSc                no key           **             **
+     Shift Pause                no key           **             **
+     Shift Gray Home            no key         47/00          47/E0
+     Shift Gray Up Arrow        no key         48/00          48/E0
+     Shift Gray Page Up         no key         49/00          49/E0
+     Shift Gray Left Arrow      no key         4B/00          4B/E0
+     Shift Gray Right Arrow     no key         4D/00          4D/E0
+     Shift Gray End             no key         4F/00          4F/E0
+     Shift Gray Down Arrow      no key         50/00          50/E0
+     Shift Gray Page Down       no key         51/00          51/E0
+     Shift Gray Insert          no key         52/00          52/E0
+     Shift Gray Delete          no key         53/00          53/E0
+
+     Ctrl Esc                   01/1B           same           same
+     Ctrl 1                       --             --             --
+     Ctrl 2 (NUL)               03/00           same           same
+     Ctrl 3                       --             --             --
+     Ctrl 4                       --             --             --
+     Ctrl 5                       --             --             --
+     Ctrl 6 (RS)                07/1E           same           same
+     Ctrl 7                       --             --             --
+     Ctrl 8                       --             --             --
+     Ctrl 9                       --             --             --
+     Ctrl 0                       --             --             --
+     Ctrl -                     0C/1F           same           same
+     Ctrl =                       --             --             --
+     Ctrl Backspace (DEL)       0E/7F           same           same
+     Ctrl Tab                     --             --           94/00
+     Ctrl q (DC1)               10/11           same           same
+     Ctrl w (ETB)               11/17           same           same
+     Ctrl e (ENQ)               12/05           same           same
+     Ctrl r (DC2)               13/12           same           same
+     Ctrl t (DC4)               14/14           same           same
+     Ctrl y (EM)                15/19           same           same
+     Ctrl u (NAK)               16/15           same           same
+     Ctrl i (HT)                17/09           same           same
+     Ctrl o (SI)                18/0F           same           same
+     Ctrl p (DEL)               19/10           same           same
+     Ctrl [ (ESC)               1A/1B           same           same
+     Ctrl ] (GS)                1B/1D           same           same
+     Ctrl Enter (LF)            1C/0A           same           same
+     Ctrl a (SOH)               1E/01           same           same
+     Ctrl s (DC3)               1F/13           same           same
+     Ctrl d (EOT)               20/04           same           same
+     Ctrl f (ACK)               21/06           same           same
+     Ctrl g (BEL)               22/07           same           same
+     Ctrl h (Backspace)         23/08           same           same
+     Ctrl j (LF)                24/0A           same           same
+     Ctrl k (VT)                25/0B           same           same
+     Ctrl l (FF)                26/0C           same           same
+     Ctrl ;                       --             --             --
+     Ctrl '                       --             --             --
+     Ctrl `                       --             --             --
+     Ctrl Shift                   **             **             **
+     Ctrl \ (FS)                2B/1C           same           same
+     Ctrl z (SUB)               2C/1A           same           same
+     Ctrl x (CAN)               2D/18           same           same
+     Ctrl c (ETX)               2E/03           same           same
+     Ctrl v (SYN)               2F/16           same           same
+     Ctrl b (STX)               30/02           same           same
+     Ctrl n (SO)                31/0E           same           same
+     Ctrl m (CR)                32/0D           same           same
+     Ctrl ,                       --             --             --
+     Ctrl .                       --             --             --
+     Ctrl /                       --             --             --
+     Ctrl Gray *                  --             --           96/00
+     Ctrl Alt                     **             **             **
+     Ctrl Space                 39/20           same           same
+     Ctrl Caps Lock               --             --             --
+     Ctrl F1                    5E/00           same           same
+     Ctrl F2                    5F/00           same           same
+     Ctrl F3                    60/00           same           same
+     Ctrl F4                    61/00           same           same
+     Ctrl F5                    62/00           same           same
+     Ctrl F6                    63/00           same           same
+     Ctrl F7                    64/00           same           same
+     Ctrl F8                    65/00           same           same
+     Ctrl F9                    66/00           same           same
+     Ctrl F10                   67/00           same           same
+     Ctrl F11                   no key           --           89/00
+     Ctrl F12                   no key           --           8A/00
+     Ctrl Num Lock                --             --             --
+     Ctrl Scroll Lock             --             --             --
+     Ctrl White Home            77/00           same           same
+     Ctrl White Up Arrow          --             --           8D/00
+     Ctrl White PgUp            84/00           same           same
+     Ctrl Gray -                  --             --           8E/00
+     Ctrl White Left Arrow      73/00           same           same
+     Ctrl 5 (number pad)          --             --           8F/00
+     Ctrl White Right Arrow     74/00           same           same
+     Ctrl Gray +                  --             --           90/00
+     Ctrl White End             75/00          75/00           same
+     Ctrl White Down Arrow        --             --           91/00
+     Ctrl White PgDn            76/00           same           same
+     Ctrl White Ins               --             --           92/00
+     Ctrl White Del               --             --           93/00
+     Ctrl SysReq                no key           **             **
+     Ctrl Key 45 [5]            no key           --             --
+     Ctrl Enter (number pad)    no key         1C/0A          E0/0A
+     Ctrl / (number pad)        no key           --           95/00
+     Ctrl PrtSc                 no key         72/00           same
+     Ctrl Break                 no key         00/00           same
+     Ctrl Gray Home             no key         77/00          77/E0
+     Ctrl Gray Up Arrow         no key           --           8D/E0
+     Ctrl Gray Page Up          no key         84/00          84/E0
+     Ctrl Gray Left Arrow       no key         73/00          73/E0
+     Ctrl Gray Right Arrow      no key         74/00          74/E0
+     Ctrl Gray End              no key         75/00          75/E0
+     Ctrl Gray Down Arrow       no key           --           91/E0
+     Ctrl Gray Page Down        no key         76/00          76/E0
+     Ctrl Gray Insert           no key           --           92/E0
+     Ctrl Gray Delete           no key           --           93/E0
+
+     Alt Esc                      --             --           01/00
+     Alt 1                      78/00           same           same
+     Alt 2                      79/00           same           same
+     Alt 3                      7A/00           same           same
+     Alt 4                      7B/00           same           same
+     Alt 5                      7C/00           same           same
+     Alt 6                      7D/00           same           same
+     Alt 7                      7E/00           same           same
+     Alt 8                      7F/00           same           same
+     Alt 9                      80/00           same           same
+     Alt 0                      81/00           same           same
+     Alt -                      82/00           same           same
+     Alt =                      83/00           same           same
+     Alt Backspace                --             --           0E/00
+     Alt Tab                      --             --           A5/00
+     Alt q                      10/00           same           same
+     Alt w                      11/00           same           same
+     Alt e                      12/00           same           same
+     Alt r                      13/00           same           same
+     Alt t                      14/00           same           same
+     Alt y                      15/00           same           same
+     Alt u                      16/00           same           same
+     Alt i                      17/00           same           same
+     Alt o                      18/00           same           same
+     Alt p                      19/00           same           same
+     Alt [                        --             --           1A/00
+     Alt ]                        --             --           1B/00
+     Alt Enter                    --             --           1C/00
+     Alt Ctrl                     **             **             **
+     Alt a                      1E/00           same           same
+     Alt s                      1F/00           same           same
+     Alt d                      20/00           same           same
+     Alt f                      21/00           same           same
+     Alt g                      22/00           same           same
+     Alt h                      23/00           same           same
+     Alt j                      24/00           same           same
+     Alt k                      25/00           same           same
+     Alt l                      26/00           same           same
+     Alt ;                        --             --           27/00
+     Alt '                        --             --           28/00
+     Alt `                        --             --           29/00
+     Alt Shift                    **             **             **
+     Alt \                        --             --           2B/00
+     Alt z                      2C/00           same           same
+     Alt x                      2D/00           same           same
+     Alt c                      2E/00           same           same
+     Alt v                      2F/00           same           same
+     Alt b                      30/00           same           same
+     Alt n                      31/00           same           same
+     Alt m                      32/00           same           same
+     Alt ,                        --             --           33/00
+     Alt .                        --             --           34/00
+     Alt /                        --             --           35/00
+     Alt Gray *                   --             --           37/00 (maybe it's 37F0)
+     Alt Space                  39/20           same           same
+     Alt Caps Lock                **             **             **
+     Alt F1                     68/00           same           same
+     Alt F2                     69/00           same           same
+     Alt F3                     6A/00           same           same
+     Alt F4                     6B/00           same           same
+     Alt F5                     6C/00           same           same
+     Alt F6                     6D/00           same           same
+     Alt F7                     6E/00           same           same
+     Alt F8                     6F/00           same           same
+     Alt F9                     70/00           same           same
+     Alt F10                    71/00           same           same
+     Alt F11                    no key           --           8B/00
+     Alt F12                    no key           --           8C/00
+     Alt Num Lock                 **             **             **
+     Alt Scroll Lock              **             **             **
+     Alt Gray -                   --             --           4A/00
+     Alt Gray +                   --             --           4E/00
+     Alt 7 (number pad)           #              #              #
+     Alt 8 (number pad)           #              #              #
+     Alt 9 (number pad)           #              #              #
+     Alt 4 (number pad)           #              #              #
+     Alt 5 (number pad)           #              #              #
+     Alt 6 (number pad)           #              #              #
+     Alt 1 (number pad)           #              #              #
+     Alt 2 (number pad)           #              #              #
+     Alt 3 (number pad)           #              #              #
+     Alt Del                      --             --             --
+     Alt SysReq                 no key           **             **
+     Alt Key 45 [5]             no key           --             --
+     Alt Enter (number pad)     no key           --           A6/00
+     Alt / (number pad)           --             --           A4/00
+     Alt PrtSc                  no key           **             **
+     Alt Pause                  no key           **             **
+     Alt Gray Home              no key           --           97/00
+     Alt Gray Up Arrow          no key           --           98/00
+     Alt Gray Page Up           no key           --           99/00
+     Alt Gray Left Arrow        no key           --           9B/00
+     Alt Gray Right Arrow       no key           --           9D/00
+     Alt Gray End               no key           --           9F/00
+     Alt Gray Down Arrow        no key           --           A0/00
+     Alt Gray Page Down         no key           --           A1/00
+     Alt Gray Insert            no key           --           A2/00
+     Alt Gray Delete            no key           --           A3/00
+
+Footnotes
+
+	[1]   The 83-key and 84-key keyboards are the original PC keyboard
+	      and the original-layout AT keyboard, respectively.
+
+	[2]   The 101/102-key keyboard is the current IBM standard
+	      ("Enhanced") keyboard.
+
+	[3]   "Standard Function" refers to Interrupt 16h Services 0, 1,
+	      and 2.
+
+	[4]   "Extended Function" refers to Interrupt 16h Services 10h,
+	      11h, and 12h.
+
+	[5]   In the United States, the 101/102-key keyboard is shipped
+	      with 101 keys. Overseas versions have an additional key
+	      sandwiched between the left Shift key and the Z key. This
+	      additional key is identified by IBM (and in this table) as
+	      "Key 45."
+
+	[**]  Keys and key combinations marked ** are used by the ROM BIOS
+	      but do not put values into the keyboard buffer.
+
+	[--]  Keys and key combinations marked -- are ignored by the ROM
+	      BIOS.

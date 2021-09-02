@@ -1,0 +1,13 @@
+Begin3
+Title:          Start
+Version:        1.0
+Entered-date:   2001-04-23
+Description:    Starts a FreeDOS program.
+Keywords:       start, launch
+Author:         Joe Cosentino <hardmarine _at_ comcast.net>
+Maintained-by:  Joe Cosentino <hardmarine _at_ comcast.net>
+Primary-site:   http://www.geocities.com/xsaintx69/freedos/
+Alternate-site: http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.0/pkgs
+Platforms:      DOS, FreeDOS
+Copying-policy: Express Software Public License, Version 1
+End

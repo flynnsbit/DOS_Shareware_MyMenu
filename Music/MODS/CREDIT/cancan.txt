@@ -1,0 +1,23 @@
+Can Can (cancan.mod)
+https://modarchive.org/index.php?request=view_by_moduleid&query=35056
+
+Summary
+
+    cancan.mod is a MOD format module. 
+    Uploaded to modarchive.org on Mon 18th Jul 2005
+
+Info Info
+
+    Mod Archive ID: 35056
+    MD5: a7990cc1be7124a6f385fd861c36b989
+    Format: MOD
+    Channels: 4
+    Genre: Ballad
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     SoDa7 (https://modarchive.org/member.php?69482)

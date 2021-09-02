@@ -1,0 +1,127 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ================================================
+               LEISURE SUIT LARRY 3:  PASSIONATE PATTI
+                IN PURSUIT OF THE PULSATING PECTORALS
+                                                        
+
+                       THE COMPLETE SOUNDTRACK
+                     (See below for song titles.)
+                               Mike Dana
+                       "Larry Theme" by Al Lowe
+           ================================================
+                 Copyright (c)1989 Sierra On-Line, Inc.  
+           ================================================
+
+                        ROLAND MT-32 VERSION
+
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- Roland MT-32, LAPC-I, CM-32L, CM-64
+- 100% MPU-401 Compatible MIDI Interface
+
+
+ WARNING:  This MIDI file is NOT designed for playback on General MIDI
+           sound cards.  It contains a large amount of System Exclusive
+           data which can be read only by the Roland MT-32, MT-100,
+           CM-32L, CM-64, and LAPC-I.  This SysEx data may cause
+           irreversible damage to other MIDI devices and should not
+           be used on them.  See your sound card manufacturer owner's
+           manual for more information.
+
+
+This Standard MIDI File was recorded directly from Sierra's "Leisure Suit
+Larry 3" adventure game using Sierra's MT-32 driver.  It is designed ONLY
+for the MIDI devices noted above and is not compatible with devices which
+can "emulate" the MT-32.  The MIDI file contains embedded SysEx data
+which will write new sounds to your MT-32.
+
+If your playback software is incapable of transmitting the embedded SysEx
+patch bank, or if you encounter a problem during the transmission of the
+patch bank, use a seperate SysEx dump utility to transmit the included
+"LSL3.SYX" patch bank prior to MIDI playback.
+
+     NOTE:  The SysEx patch bank is embedded in
+            the first three measures of this file.
+            Therefore, normal playback begins with
+            the fourth measure.
+
+
+Recorded/edited/compiled/arranged for Standard MIDI by Tom Lewandowski.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+       =================================================================
+                          TRACK SHEET  (MT-32 VERSION)
+
+                    LEISURE SUIT LARRY 3: PASSIONATE PATTI
+                    -IN PURSUIT OF THE PULSATING PECTORALS
+       =================================================================
+
+   SONG TITLE                                      START MEASURE/TIME *
+   -------------------------------------------------------------------------
+   1. Sierra Fanfare                                      4  00:00:07
+   2. Introduction ("For Your Thighs Only")               9  00:00:19
+   3. Right Answer, Wrong Answer                         49  00:01:55
+   4. Nontoonyt Island Song                              53  00:02:04
+   5. Girl In The Binoculars                            113  00:04:28
+   6. Natives, Inc.                                     146  00:05:48
+   7. Nontoonyt Resort                                  176  00:07:00
+   8. Tawnee At The Beach                               237  00:09:26
+   9. The Comedy Hut (Paul Paul)                        290  00:11:33
+  10. The Burly Stage Manager                           337  00:13:26
+  11. Casino Showroom                                   347  00:13:50
+  12. Cherri And Larry's Casino Show                    382  00:15:14
+  13. Cherri Tart                                       425  00:16:57
+  14. Casino Lounge - Part 1                            507  00:20:14
+  15. Fat City                                          562  00:22:26
+  16. The Increadible Dork                              594  00:23:43
+  17. Bambi                                             639  00:25:31
+  18. Bambi's Video Workout                             675  00:26:57
+  19. You Score!                                        708  00:28:16
+  20. Larry Scores!                                     711  00:28:24
+  21. Crab Dance                                        732  00:29:14
+  22. Dewey, Cheatem, And Howe                          767  00:30:38
+  23. Patti's Theme                                     818  00:32:40
+  24. Patti's Theme II                                  868  00:34:40
+  25. Casino Lounge - Part 2                            934  00:37:19
+  26. Love Theme From Leisure Suit Larry 3              986  00:39:24
+  27. Patti's Quest                                    1227  00:49:02
+  28. The Burlesque Review                             1278  00:51:04
+  29. Chip 'N' Dale's                                  1317  00:52:38
+  30. Dale Carlsonian                                  1351  00:54:00
+  31. The Bamboo Jungle                                1415  00:56:33
+  32. The Bamboo Jungle - Part 2                       1468  00:58:40
+  33. The Bamboo Jungle - Part 3                       1516  01:00:36
+  34. The Bamboo Jungle - Part 4 (Death March)         1544  01:01:43
+  35. In Pursuit Of The Pulsating Pectorals            1569  01:02:43                                  
+  36. The Cliff Climb                                  1651  01:06:00
+  37. Patti, Just Say No!  (Marijuana Cliff)           1661  01:06:24
+  38. Rope Climbing For Beginners                      1690  01:07:33
+  39. Dance Of The Feral Pig                           1718  01:08:40
+  40. The River Log Ride                               1766  01:10:36
+  41. Nontoonyt Tribe Of Amazonian Women               1837  01:13:26
+      Lesbian Cannibal Natives                         ----  --------
+  42. The Reunion                                      1899  01:15:55
+  43. Falling Through The Nexus                        1940  01:17:33
+  44. SierraLand                                       1948  01:17:52
+  45. Police Quest Set                                 1975  01:18:57
+  46. Space Quest Set                                  1988  01:19:28
+  47. King's Quest Set                                 2030  01:21:09
+  48. The End                                          2045  01:21:45
+  49. Closing Theme                                    2051  01:22:00
+  --------------------------------------------------------------------------
+                                                TOTAL TIME:  01:23:48
+
+
+      * Note:  Start Times are approximate.
+

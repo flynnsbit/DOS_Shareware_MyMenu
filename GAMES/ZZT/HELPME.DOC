@@ -1,0 +1,185 @@
+==============================================================================
+ZZT  version 3.1                      *           Troubleshooting & Hints
+==============================================================================
+
+DESCRIPTION.
+============
+
+     ZZT is a new action/adventure game based on object-oriented programming.
+To complete Town of ZZT,  you must master 43 game boards filled with creatures
+and ingenious puzzles.  The game is very challenging and requires a good amount
+of brain power as well as fast reflexes.
+
+     ZZT includes a game editor so you can create your own game worlds using
+a set of ready made objects.  You can also write small programs to control
+objects using the built in ZZT-OOP programming language.
+
+SPECIFICATIONS:
+===============
+
+     ZZT requires a PC compatible computer with at least 512k RAM and any
+graphics adapter with a color or monochrome screen.  Keyboard,  Joystick and
+Mouse operation are fully supported.
+
+HINTS:
+======
+
+ - When you discover a new object,  try touching it.  Nearly everything has
+   some sort of purpose (but watch out for red herrings!)
+
+ - Remember that you can often exit the room you are in by moving off
+   the screen.
+
+ - Save the game often.  Then if you get killed you can just restore
+   the game and continue on without penalty.
+
+ - Don't feel overwhelmed.  You can expect to play ZZT a total of about
+   20 hours before you finish the game.  It is well worth the effort and
+   you can always take your journey one step at a time.
+
+REGISTRATION:
+=============
+
+     Run PRINTME to print the Epic MegaGames on your printer,  and run
+CATALOG to see our latest catalog of games!
+
+=============================================================================
+                                Town of ZZT Hints
+                   by David Fernau  (The Official ZZT Advisor)
+=============================================================================
+
+     INTRODUCTION.
+
+          Before we get into the serious stuff,  let me tell you a little
+     story.  I've been into computers for the last 10-15 years and have
+     seen my share of PD or Shareware games.  Until I ran across ZZT on
+     Delphi, I had never been so taken with a game.  Even KROZ,  which is a
+     fine game, got boring after a while.
+
+          So what made me go nuts over ZZT?  First,  it is a very well-
+     written game.  Second,  Town of ZZT had me sitting up nights trying to
+     figure out the puzzles,  where other games are more of a "shoot
+     everything that moves" type.  Third, very few games allow you to
+     create your own puzzles;  even fewer give you a chance to have your
+     creations published.
+
+          Anyway, I registered for ZZT almost immediately.  On the comment
+     card that Tim sends out with the registered copy of the program,  I
+     wrote him a note asking if he had ever thought of a complete hint file
+     for ZZT.  The rest is history.  By the way, Tim...  Can I be listed as
+     "staff" now?  [Sure thing,  Dave.  You are now the Official ZZT
+     Advisor.  -TIM]
+
+     GENERAL HINTS.
+
+          ZZT has a great save-game feature...  Use it often.  That way, if
+     you die or get stuck, you can go back to your last saved game instead
+     of starting over.
+
+          Try anything!  In finishing Town of ZZT,  I did some things that
+     I didn't expect to have to do.  Sometimes the strange thing is the
+     right thing.  The worst that can happen is death,  and...  You did
+     save your game,  didn't you?
+
+          Save torches and ammo as much as possible...  You never know when
+     you'll need them.
+
+          If you're really stuck,  quit for a while.  No sense getting more
+     and more frustrated.  Two puzzles in Town (The Rube Board and The
+     Throne Room) took me almost a week to solve...  A week EACH, that is!
+
+     SPECIFIC ROOM HINTS.
+
+          Note:  Not all rooms have identifiable names.  I have made every
+     attempt to identify the rooms clearly.
+
+          Opening Room:  Choose a path, any path. One way of dying is as
+                         good as another.
+
+                Armory:  Why bother the Vendor when the key to the stock
+                         room is right here?  There are even two ways to
+                         get it.
+
+                  Bank:  The combination is hidden somewhere in the game.
+                         A friend in a bad spot can help you find it.
+
+        Path to Castle:  Better go around the back way to get the key.
+                         Just don't get shot.
+
+        Outside Castle:  Can't kill the troll,  may as well bribe him.
+
+         Inside Castle:  Grab those torches,  the labyrinth is dark!
+
+             Labyrinth:  Yellow gets Blue, Blue gets White, White gets
+                         Purple. Too bad it isn't really that easy.
+
+     Room of Annoyance:  There are two ways in;  use them both. And don't
+                         bump your nose too many times.
+
+         Dragon's Lair:  Feel free to re-arrange the yellow bombs.
+
+           Throne Room:  You'll need all 3 keys. You have to block a door
+                         open to get the sceptre.
+
+       The Three Lakes:  Put your running shoes on!
+
+        The Rube Board:  MOST of the hints in the board are correct...
+                         Which ones are wrong?
+
+              Bug Maze:  Walk softly and carry a big can of bug spray.
+
+        Outside Prison:  The guard will let you in, just ask! When you get
+                         out, right first!
+
+         Inside Prison:  Move quick... you only have a short time! Don't
+                         forget the key!  And convicts sometimes have
+                         interesting stories to tell.
+
+     "Here It Is" Room:  Better save first, this one is deadly.  Try moving
+                         the bombs.
+
+       Sliding Puzzle:   Don't block off something you might need later.
+                         You'll need to use the small passage on the right
+                         side,  too.
+
+           Think Fast:   Better shoot fast,  too!
+
+         Path by Cave:   Nothing much exciting here.
+
+           The Forest:   Use the Energizers wisely.
+
+          More Forest:   Be glad there's a shortcut on the way out.
+
+       House of Blues:   Sing the Blues Man a song. Watch the notes!
+
+            The Mixer:   The surgeon general has determined that entering
+                         The Mixer while the lions are alive is definitely
+                         hazardous to your health.
+
+        Inside Palace:   Go right first.
+
+            Last Room:   (Dark room in the palace)  Don't go rushing in...
+                         Get the boulders out of the way first.
+     OTHER HINTS.
+
+          If you're really stuck,  you can write to Tim or you can contact
+     me for better hints. I can be found on Odyssey as Whytetygr,  on
+     Prodigy as HHSC43A, or you can write me at:
+
+                    David Fernau
+                    P.O. Box 18251
+                    San Jose, CA  95158
+                    ATTN: ZZT Hints!
+
+     [TIM'S NOTE:  Thanks for the hint file,  Dave.]
+
+
+                                                   _______
+   ZZT Version 3.1 -- Copyright 1991          ____|__     |               (R)
+                                           --|       |    |-------------------
+            Epic MegaGames                   |   ____|__  |  Association of
+         10406 Holbrook Drive                |  |       |_|  Shareware
+          Potomac, MD 20854                  |__|   o   |    Professionals
+                                           -----|   |   |---------------------
+       Created by Tim Sweeney                   |___|___|    MEMBER
+

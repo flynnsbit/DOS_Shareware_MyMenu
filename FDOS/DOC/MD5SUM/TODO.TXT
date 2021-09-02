@@ -1,0 +1,3 @@
+3.0:
+Add support for other digest algorithms
+Other suggestions

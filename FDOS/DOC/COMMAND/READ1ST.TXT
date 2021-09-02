@@ -1,0 +1,4 @@
+In order to use hyperlinks between both documents,
+rename the extensions into .html, e.g.:
+ren freecom.htm FreeCOM.html
+ren cmd.htm cmd.html

@@ -1,0 +1,67 @@
+Phoenix Configuration File, Format 0.03A
+
+
+[Title]
+DESCENT from Interplay Productions
+
+[Notes]
+Copyright (c) 1994 Parallax Software Corporation
+
+[Base]
+Button1, Primary    {6}  ~Concussion missiles
+Button1, Secondary  {NONE}
+Button2, Primary    {7}  ~Homing missiles
+Button2, Secondary  {NONE}
+Button3, Primary    {8}  ~Proximity bombs
+Button3, Secondary  {NONE}
+Button4, Primary    {9}  ~Smart missile
+Button4, Secondary  {NONE}
+Button5, Primary    {0}  ~Mega missile
+Button5, Secondary  {NONE}
+Button6, Primary    {NONE}
+Button6, Secondary  {NONE}
+Button7, Primary    {NONE}
+Button7, Secondary  {NONE}
+Button8, Primary    {NONE}
+Button8, Secondary  {NONE}
+
+[Throttle/Rudder]
+Button1, Primary    {F}  ~Fire flare
+Button1, Secondary  {NONE}
+Button2, Primary    {HOME}  ~Bank left
+Button2, Secondary  {NONE}
+Button3, Primary    {PGUP}  ~Bank right
+Button3, Secondary  {NONE}
+Button4, Primary    {NONE}
+Button4, Secondary  {NONE}
+Button5, Primary    {END}  ~Slide left
+Button5, Secondary  {NONE}
+Button6, Primary    {-NUM}  ~Slide up
+Button6, Secondary  {NONE}
+Button7, Primary    {+NUM}  ~Slide down
+Button7, Secondary  {NONE}
+Button8, Primary    {PGDN}  ~Slide right
+Button8, Secondary  {NONE}
+Throttle  ANALOG_MODE
+Throttle, Absolute  {NONE}  {NONE}  {NONE}  {NONE}  {NONE}  {NONE}  {NONE}  {NONE}  {NONE}  {NONE}
+Throttle, Incremental  {NONE}  {NONE}  {NONE}  {NONE}  1
+Rudder  KEYSTROKE_MODE ~Slide left/right
+Rudder, Keystrokes  {END}  {NONE}  {PGDN}  25
+
+[Stick]
+Button1, Primary    {NONE}  JB1  ~Fire Primary
+Button1, Secondary  {NONE}
+Button2, Primary    {NONE}  JB2  ~Fire Secondary
+Button2, Secondary  {NONE}
+Button3, Primary    {1}  ~Laser
+Button3, Secondary  {NONE}
+Button4, Primary    {2}  ~Vulcan Cannon
+Button4, Secondary  {NONE}
+Button5, Primary    {3}  ~Spreadfire Cannon
+Button5, Secondary  {NONE}
+Button6, Primary    {4}  ~Plasma Cannon
+Button6, Secondary  {NONE}
+Button7, Primary    {5}  ~Fusion Cannon
+Button7, Secondary  {NONE}
+Button8, Primary    {R}  ~Rear View
+Button8, Secondary  {NONE}

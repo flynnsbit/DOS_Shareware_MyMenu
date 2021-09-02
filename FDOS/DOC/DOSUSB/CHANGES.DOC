@@ -1,0 +1,324 @@
+Change History for USBDOS.ZIP
+=============================
+
+2010-01-30
+==========
+
+  USBUHCI & USBUHCIL
+  ------------------
+    * Changed Version Number to 0.14.
+    * Removed new memory allocation strategy for TSR.  It was still having
+        problems with multiple host controllers and certain combinations
+        of DOS versions and memory managers that could not be resolved.
+    * Fixed bug in original memory allocation strategy for TSR that did
+        not close file handles on program termination.
+    * Various minor code adjustments.
+
+  USBINTRO.DOC
+  ------------
+    * Changes pertinent to USBUHCI.COM & USBUHCIL.COM.
+
+
+2010-01-27
+==========
+
+  USBUHCI & USBUHCIL
+  ------------------
+    * Changed Version Number to 0.13.
+    * Fixed memory allocation strategy for TSR so that it works better
+        with certain DOS versions & memory managers.
+
+  USBINTRO.DOC
+  ------------
+    * Changes pertinent to USBUHCI.COM & USBUHCIL.COM.
+
+
+2010-01-25
+==========
+
+  USBUHCI & USBUHCIL
+  ------------------
+    * Changed Version Number to 0.12.
+    * Fixed FindRegIntf & FindUnRegIntf requests to work properly across
+        multiple hosts.  Unfortunately, fixing it to work across multiple
+        hosts has broken it for a single host (when issuing for a single host,
+        the original I14RSearchIndex value is changed when it should not be).
+        A future version of the API will fix this problem by adding
+        InterHostFindRegIntf and InterHostFindUnRegIntf requests.
+    * Adjusted error codes for FindReg/UnRegIntf API Requests to match
+        documentation.
+    * Adjusted code to allow devices which have a configuration value of
+        zero to not be rejected.  Such devices are patently illegal according
+        to the USB specifications, but some of them are known to exist.
+        A future version of the API will include a special flag indicating
+        the existence of such a Device.
+    * Fixed the return value in CX (number of bytes sent during the data
+        stage) at the end of a Control Request.  It would previously return
+        an incorrect value if the last packet was short.
+    * Switched from using the standard DOS TSR multiplex interrupt (INT 2Fh)
+        to AMIS (Alternative Multiplex Interrupt Specification), which uses
+        INT 2Dh.
+    * Switched to a new method of installing automatically into Upper Memory,
+        which in certain cases reduces the number of unusable "memory holes"
+        left after a TSR is installed.  The technique and sample code were
+        provided courtesy of Christian Masloch.
+    * Created a special signature to allow call-back writing from future
+        versions of the support programs (USBSUPT1, HIDSUPT1, etc.) to work
+        properly.
+    * Added the dollar sign ("$") as an allowable prefix to indicate a
+        hexidecimal number for command-line input options.  Previously,
+        only the "0x" prefix (C syntax) and/or the "h" suffix (ASM syntax)
+        were allowed.
+    * Various minor code optimizations and adjustments.
+
+  USBINTRO.DOC
+  ------------
+    * Changes pertinent to USBUHCI.COM & USBUHCIL.COM.
+
+
+2009-09-23
+==========
+
+  USBUHCI & USBUHCIL
+  ------------------
+    * Changed Version Number to 0.11.
+    * Adjusted error codes for several API Requests to match documentation.
+
+  USBDRIVE
+  --------
+    * Changed Version Number to 0.18.
+    * Continued attempting to fix problems with SanDisk (and other)
+        drives that retrun bogus "Media Not Present" errors.
+
+  USBINTRO.DOC
+  ------------
+    * Changes pertinent to USBUHCI.COM, USBUHCIL.COM, & USBDRIVE.COM.
+
+
+2009-09-13
+==========
+
+  USBUHCI & USBUHCIL
+  ------------------
+    * Changed Version Number to 0.10.
+    * Added slashes to the beginnings of Options in the help screen.
+    * Adjusted error codes for StartOneTimeInt API Request.
+    * Adjusted error codes for CloseHandle API Request.
+    * Fixed FindRegIntf/FindUnRegIntf API Requests to return CX=DX=-1
+        if Interface is not found.
+    * Minor code clean-ups and rearrangements.
+
+  USBDRIVE
+  --------
+    * Changed Version Number to 0.17.
+    * Fixed problems with SanDisk drives that have the U3 software removed.
+
+  USBINTRO.DOC
+  ------------
+    * Changes pertinent to USBUHCI.COM, USBUHCIL.COM, & USBDRIVE.COM.
+
+
+2009-09-08
+==========
+
+  USBDRIVE
+  --------
+    * Changed Version Number to 0.16.
+    * Fixed problems with SanDisk drives that have the U3 software removed.
+    * Added "Partitions" as an Alias to "Drives" in the command-line Options.
+    * Minor code clean-ups and rearrangements.
+
+  USBINTRO.DOC
+  ------------
+    * Changes pertinent to USBDRIVE.COM.
+
+
+2009-08-20
+==========
+
+  USBDRIVE
+  --------
+    * Changed Version Number to 0.15.
+    * Increased size of DPB structure, to ensure compatibility with
+      FAT32 drives in EDR-DOS.
+
+  USBINTRO.DOC
+  ------------
+    * Changes pertinent to USBDRIVE.COM.
+
+
+2009-08-16
+==========
+
+  USBMOUSE
+  --------
+    * Changed Version Number to 0.10.
+    * Added support for mice that report their Wheel as a Z-Axis.
+
+  USBINTRO.DOC
+  ------------
+    * Changes pertinent to USBMOUSE.COM.
+
+
+2009-08-10
+==========
+
+  USBDRIVE
+  --------
+    * Changed Version Number to 0.14.
+    * Added slashes to the beginnings of Options in the help screen.
+    * Added support for drives that return incorrect error codes for the
+      "Get Max LUN" function.
+
+  USBINTRO.DOC
+  ------------
+    * Changes pertinent to USBDRIVE.COM.
+
+
+2009-08-08
+==========
+
+  USBJSTIK
+  --------
+    * Changed Version Number to 0.11.
+    * Increased size of buffer used to store Descriptors.
+    * Added support for joysticks that transfer up to 32 bytes of
+      data to the PC to describe the current joystick status.
+      Previous versions only supported up to 8 bytes.
+    * Added the HID Usage "Dial" as a valid axis type.
+
+  USBMOUSE
+  --------
+    * Changed Version Number to 0.09.
+    * Fixed problem that caused crashes in FreeDOS related to INT 70h.
+    * Increased size of buffer used to store Descriptors.
+    * Added slashes to the beginnings of Options in the help screen.
+    * Added support for Mice that don't declare themselves as a
+      boot mouse in the Interface Descriptor.
+
+  USBKEYB
+  -------
+    * Changed Version Number to 0.09.
+    * Fixed problem that caused crashes in FreeDOS related to INT 70h.
+    * Increased size of buffer used to store Descriptors.
+    * Added slashes to the beginnings of Options in the help screen.
+    * Added support for Keyboards that don't declare themselves as a
+      boot keyboard in the Interface Descriptor.
+    * Added support for keyboards that support up to 14 simultaneous
+      keypresses (previous versions only supported up to 6 simultaneous
+      keypresses).
+
+  HIDSUPT1
+  --------
+    * Changed Version Number to 0.06.
+    * Corrected faulty deciphering of HID report descriptors.
+    * Added additional button descriptions.
+
+  VENDORID.USB
+  ------------
+    * Added more Vendor IDs.
+
+  USBINTRO.DOC
+  ------------
+    * Changes pertinent to USBJSTIK.COM, USBMOUSE.COM, USBKEYB.COM,
+      & HIDSUPT1.COM.
+
+
+2009-08-01
+==========
+
+  USBUHCI & USBUHCIL
+  ------------------
+    * Changed Version Number to 0.09.
+    * Fixed problem related to command-line options that allowed an
+      optional number to be entered after them (the Decriptor,
+      TransferDescriptor, and ProgramDebug options).
+
+  USBINTRO.DOC
+  ------------
+    * Changes pertinent to USBUHCI.COM & USBUHCIL.COM.
+    * Fixed incorrect information related to the Report option
+      in USBUHCI{L}.
+
+
+2009-07-24
+==========
+
+  USBDRIVE
+  --------
+    * Changed Version Number to 0.13.
+    * Improved FAT32 support, especially in FreeDOS.
+    * Change default maXimum number of of sectors per transfer (X:#)
+      option from 4 to 1.  Note that this makes disk transfers slower by
+      default than they used to be!
+
+  VENDORID.USB
+  ------------
+    * Added several new Vendor IDs.
+
+  THRUST.COM
+  ----------
+    * Changed Version Number to 1.16.
+    * Fixed issue where THRUST was unable to detect faulty buttons
+      in BIOS emulation mode.
+
+  USBINTRO.DOC
+  ------------
+    * Changes pertinent to USBDRIVE.COM & THRUST.COM.
+
+
+2009-07-10
+==========
+
+  USBDRIVE
+  --------
+    * Changed Version Number to 0.12.
+    * Increased size of buffer used to store USB device & configuration
+      decriptors.  It was too small for certain kinds of devices, such
+      as the Majic Jack which combines audio & mass storage interfaces
+      in the same device (audio devices are EXTREMELY verbose and
+      inefficient in their use of decriptors).
+    * Added support for Multi Boot Records (Master Boot Records that are
+      both a Volume Boot Record and Partition Boot Record at the same time).
+    * In the D (DriveStatus) option, Floppies & SuperFloppies are now
+      described as such, instead of showing the internally stored partition
+      which corresponded to an invalid Xenix partition.
+    * Added the Sector Number to the header of the Sector Buffer Contents
+      display in the F (buFfers) option.
+
+  USBJSTIK
+  --------
+    * Changed Version Number to 0.10.
+    * Fixed bug related to obtaining joystick button status using the BIOS.
+
+  USBINTRO.DOC
+  ------------
+    * Changes pertinent to USBDRIVE.COM & USBJSTIK.COM.
+    * Added additional comments regarding USBUHCI{L}, IRQ #12, and
+      USB mice.
+
+
+2009-07-09
+==========
+
+  USBJSTIK.COM
+  ------------
+    * Changed Version Number to 0.09.
+    * Added support for additional josytick/gameport types (those
+      that do not follow the recommendations in the USB Human
+      Interface Device specification).
+    * Fixed the JoystickTest option to require an index number.
+    * Fixed Center & Percent options to allow hexadecimal numbers instead
+      of just decimal numbers.
+
+  USBINTRO.DOC
+  ------------
+    * Changes pertinent to USBJSTIK.COM.
+    * Added discussion of IRQ #12 issues related to USBUHCI{L} and
+      USB mice.
+
+
+2009-06-30
+==========
+
+  Initial Release.

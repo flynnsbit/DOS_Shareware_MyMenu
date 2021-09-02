@@ -1,0 +1,136 @@
+  noW implemented: floppy cache
+                   int 0x13 LBA extensions support
+                   command line arguments
+                   all in one binary (TSR, unTSR, info, flush)
+
+  not planned:     useability with EMS and 8086 (see caches.txt for
+                   more information about alternative classic caches)
+                   DOS block device rather than int 0x13 based cache,
+                   write cache (may be offered as a separate tool).
+
+  further notes:   CD-ROM cache is NOT part of LBAcache, BUT available
+                   as SEPARATE tool (CDRcache). Read-ahead is implemented
+                   in TICKLE (load it after LBAcache with floppy cache
+                   enabled!) but harddisk read-ahead does not seem to
+                   make a real difference on modern harddisks. Anyway,
+                   you can optionally enable that when loading TICKLE.
+
+  History of LBAcache:
+
+  12.-13.10.2001 first working version (fixed 1024 sec buffer).
+      14.10.2001 added more verbosity, statistics, round-robin search.
+  18.-20.11.2001 wrote a LBA (and CHS) big version (needs more DOS RAM).
+                 Default are now 2024 sectors.
+      22.11.2001 Alternative "no search" dumb but fast logic for binsel.
+      23.11.2001 added ability to run CHS only to the LBA version,
+                 so the CHS version is discontinued. Now sys -and- com!
+     -25.11.2001 lots of bugfixes and improvements, command line parsing.
+
+      11.01.2002 added the floppy cache function: enable with FLOP ;-).
+                 Also added the F (flush) option to the uncache tool.
+                 Hope disk change detect and chs<->lba still work...
+      22.01.2002 multi sector read collection in read.asm, various patches
+                 for testing in Bochs (define to ign. missing change line,
+                 hack to avoid A20 crash in XMS / Bochs BIOS int 15.87).
+      25.01.2002 new option STAK to activate a 500 byte local stack
+                 because FreeDOS has a -tiny- 192 byte kernel stack (!).
+                 [Note 2008: kernel.asm blk_stk_top is for 192 WORDs...]
+                 PLUS new options INFO SYNC STOP to access the uncache
+                 functions (NO separate UNCACHE binary any more).
+      28.08.2002 small cleanup and beautifying of the INFO function,
+                 removed beep when detecting floppy disk change.
+      10.11.2002 Added parsing for two digit size, modified binsel to
+                 use less DOS RAM, added support for 8 harddisks and
+                 better drive detection. Tuned some text strings :-).
+  13.-15.11.2002 Made LBAcache fast again with memoization in binsel2,
+                 up to 25MB XMS now, detection of lack of DOS RAM,
+                 fixed MCB resizing in uncache.asm (LBAcache STOP)
+                 and improved the help- and info-screens a lot.
+
+  29.-...03.2003 made floppy geometry auto-adjust on disk change,
+  ...-01.04.2003 floppies of all sizes up to 1.44 MB should work now.
+      23.04.2003 fixed an important BUG that would cause LBAcache to
+                 use the geometry of B: or ???: for ANY floppy...!
+      26.06.2003 now using int 1e[4] as sectors/track value (floppy)
+                 because (Free)DOS sets this depending on boot sector
+                 contents (int 13.8.CL only tells hardware geometry).
+      26.06.2003 made TICKLE part of the package.
+      31.07.2003 improved help messages, changed the makefile to select  
+                 less kludges and less verbosity in the default compile.
+                 Added CHS harddisk support to TICKLE (experimental).
+  24.-25.08.2003 made startup and info mode messages very human readable 
+                 in setup / uncache, fixed "buf [0]0" in cmdline / binsel.
+      27.08.2003 introducing a native .com version (old .com was .sys with
+                 a 272 byte loader prepended), smaller TSR and binaries.
+                 Added LBA harddisk support to TICKLE (experimental).
+      22.10.2003 Cleaned up slight device handling bugs in cache and
+                 tools, improved .sys parser, added "bin freezing" and
+		 tickle 8k+ buffer install check.
+
+      14.04.2004 Improved floppy size change tracking again: 13.18 bugfix,
+                 Oversized floppy formats ok now? Element size now 8k in
+                 default compile (instead of 4k before). Removed EECHO,
+                 SYSEECHO (available as FreeDOS config.sys command EECHO
+                 now) and BOOTRAND from the package. Start message fixes.
+      15.04.2004 Added floppy panic protection to dispatcher rwmaybe part.
+      16.04.2004 Update geometry if floppy panic protection triggered.
+      01.05.2004 New STAT display (INFO minus the technical stuff).
+                 DROPPED THE SYS VERSION! You can use INSTALL=LBACACHE.COM
+                 if you want to load LBAcache early during boot. HELP
+                 screen cleaned up. BUF now also accepts kbyte values.
+                 Many cleanups, .com made some things simpler / different.
+      09.05.2004 Included some TICKLE harddisk read-ahead improvements in
+                 the LBACACHE package in the TICKLEHD.COM file. Normal
+                 TICKLE.COM without harddisk read-ahead abilities still
+                 included as well. Fixed detection / support for 1.68 MB
+                 floppy geometry! Nicer STAT / INFO drive list display,
+                 also suppresses leading 0s now, but not for hex values.
+      09.06.2004 Faster processing of cache misses by restricting search
+                 range (cache is kind of 16 way associative now instead of
+                 fully associative). Better TICKLE(HD) initialization.
+      17.06.2004 Fixed a stupid bug in binsel2.asm which would make the
+                 N way assoc mode try to use N (usually 8k each) elements
+                 more than available. Better xmscopy checks now do range
+                 checking, to help debugging such problems in the future.
+      15.07.2004 Fixed a bug in "block NDD int 13.ee/13.ef access" (added
+                 01.05.) accidentally blocked other functions as well, in
+                 particular int 13.41/13.48 (check for LBA, get LBA info)
+                 which are used by tools like Partition Magic.
+                 New command line options: Alloc on write "TUNW" (was on
+                 all the time in older versions) and full associativity
+                 "TUNA" (i.e. revert to pre 9.6. behaviour). Changed
+                 files: cmdline.asm, dispatch.asm, write.asm, binsel2.asm
+      24.07.2004 Added support for "allocate stack in low DOS RAM", TUNS
+                 flag. This is needed because a SCSI BIOS seems to be
+                 unhappy (timeout, DMA problem?) with stacks being in
+                 UMBs, even for functions like int 13.08 (geometry info).
+      31.08.2004 Added the improved (14aug2004) TICKLE to the LBAcache
+                 "distro": The new version no longer needs a separate
+                 TICKLEHD.COM file. New syntax allows /? /CHS /LBA.
+                 TICKLE now avoids "tickling" virtual MEMDISK drives.
+                 Size in RAM is 9.8-10.5k, depending on whether you have
+                 harddisk read-ahead on or not (9k of that are buffers).
+                 Fixed the tickle install check (was unused anyway: is
+                 now used to avoid loading 2 TICKLES after 1 LBAcache).
+      01.09.2004 added (not documented on help screen) the COOL, HEAT and
+                 TEMP options to initiate freeze/melt phases. Will be
+                 documented better when it turns out to be useful.
+      22.09.2004 improved write error messages, changed from full flush
+                 to one drive flush on write errors. ZIP now includes
+                 my (19 Aug 2004) cachenotes.txt classic cache overview.
+      09.06.2005 XMS handle is now locked to protect it from the chaotic
+                 effects of being swapped out to a (possibly cached) disk.
+                 TODO: work with disks without change line, recover from
+                 diskette geometry confusion on next disk change.
+      19.06.2005 XMS locking now has fewer screen messages, just works.
+      31.08.2006 replaced all "retf +2" by code which uses IRET and
+                 writes the carry flag on stack: LBACACHE / TICKLE now
+                 always preserve the STI/CLI state of the caller, which
+                 fixes a TICKLE hang with EMM386 during FDAPM FLUSH.
+      18.01.2008 allow caching of "floppy A:" if A: is no real floppy,
+                 even if it has no disk change check. Example: A BIOS
+                 can boot USB flash memory sticks as CHS N*255*63 "A:".
+                 Disable most disk change tests if A: is in DOSEMU :-)
+		 Init text A:+ if > 2 heads, A:v / B:v in DOSEMU now.
+      07.04.2008 alloc more stack space, 384 instead of 300/320 bytes, to
+                 match the stack size available for FreeDOS block devices.

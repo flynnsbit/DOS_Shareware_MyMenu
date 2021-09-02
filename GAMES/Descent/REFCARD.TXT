@@ -1,0 +1,132 @@
+                       ษอออออออออออออออออออออออป
+                       บ    REFERENCE CARD     บ
+                       บ      for DESCENT      บ
+                       บ       SHAREWARE       บ
+                       ศอออออออออออออออออออออออผ
+
+GAME OPTIONS KEYS
+-----------------
+
+ESCAPE          Main menu/Abort game
+
+F1              Help screen
+F2              Options
+F3              Cockpit on/off
+F4              calibrate joystick
+
+F5              Demo recording on/off
+F6		Toggle teammate IDs (team mode only)
+F7              Kill list display (multiplayer only)
+F8              Send typed message (multiplayer only)
+F9-F12          Taunt macros (multiplayer only)
+
+SHIFT-F9        Define F9-F12 taunt macros (multiplayer only) 
+  thru
+SHIFT-F12
+
+PAUSE           Pause game
++/-             change window size
+print scrn      save screen shot 
+
+SHIFT-ESC       Quick exit
+
+
+DEFAULT CONTROLS
+----------------
+The following assignments may all be modified in the
+Options/Controls/Customize menus
+
+
+JOYSTICK:  
+
+
+                   dive
+
+                    /\
+                    |        Button 1: fire primary
+                    |        Button 2: fire secondary
+
+                ----------
+               |          |
+               |          |
+               |    --    |
+ turn left <-- |   |XX|   | --> turn right   
+               |    --    |
+               |          |
+               |          |
+                ----------
+
+                    |
+                    |
+                    \/
+
+                   climb
+
+
+KEYBOARD FLIGHT:
+
+
+ARROW KEYS      ship rotations
+
+A               forward
+Z               reverse
+
+Q or PAD 7      bank left
+E or PAD 9      bank right
+
+LEFT ALT        slide on
+PAD 1           slide left
+PAD 3           slide right
+PAD -           slide up
+PAD +           slide down
+
+S               cruise faster
+X               cruise slower
+C               cruise off
+
+R               rear view
+TAB             automap
+
+
+WEAPONS:
+
+CTRL            fire primary
+SPACEBAR        fire secondary
+B               drop Proximity Bomb (if available)
+
+
+   WEAPON SELECTION:
+
+   1 = Lasers              6 = Concussion Missile
+   2 = Vulcan Cannon       7 = Homing Missile
+   3 = Spreadfire Cannon   8 = Proximity Bomb
+   4 = Plasma Cannon       9 = Smart Missile
+   5 = Fusion Cannon       0 = Mega Missile
+
+
+
+DEMO PLAYBACK CONTROLS
+----------------------
+
+UP ARROW        play
+DOWN ARROW      stop
+RIGHT ARROW     single frame forward
+LEFT ARROW      single frame reverse
+
+SHIFT-RIGHT     fast forward
+SHIFT-LEFT      fast reverse
+
+CTRL-RIGHT      go to end
+CTRL-LEFT       go to start
+
+
+AUTOMAP
+-------
+
+Your ship's Automap will show areas of the mine you have seen.
+Arrow keys will rotate the view left/right and up/down.  Hitting +/-
+will zoom in/out.  Holding down 'S' will allow you to slide the
+point of view around.
+
+
+

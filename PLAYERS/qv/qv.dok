@@ -1,0 +1,1025 @@
+QuickView Pro Ver. 2.61 - Multimedia Viewer unter DOS
+
+
+QuickView ist Shareware. Das heisst, dass Sie es fÅr hîchstens drei Wochen
+testen kînnen. Danach mÅssen Sie sich registrieren lassen, d.h. fÅr das
+Programm zahlen oder aufhîren, es zu nutzen. Sehen Sie bitte in
+REGISTER.DOK fÅr Details.
+
+
+Merkmale von QuickView
+======================
+
+QuickView zeigt gegenwÑrtig die folgenden Dateiformate:
+
+Videoformate
+------------
+
+- .AVI, .DIV
+- .MOV, .QT
+- .MP4
+
+  UnterstÅtzte Video Codecs fÅr AVI, DIV, MOV, QT und MP4:
+    8BPS  QuickTime Planar RGB (Grayscale, 8, 24, 32 bit)
+    AASC  Autodesk Animator-Codec
+	AP41  Angel Potion 4 definitive version 1
+	ASV1  ASUS Codec V1
+	ASV2  ASUS Codec V2
+    AVDJ  Motion JPEG
+    AVRN  Motion JPEG
+    BLZ0  Warcraft3 movie
+    CDVC  DV Codec
+    CJPG  Motion JPEG
+    CRAM  MS Video 1 (8, 16 bit)
+    cvid  Cinepak (8, 24 bit)
+    CJPG
+    CLJR
+    COL1
+    cyuv  Creative Video Blaster
+    DIB   4, 8, 16, 24, 32 bit
+    div3  DivX ;-) Low Motion
+    div4  DivX ;-) Fast Motion
+    divx  DivX 4
+    dmb1  Rainbow Runner
+    dx50  DivX 5
+    DXGM
+    DVC   DV Codec
+    DVCP  DV Codec
+    DVCS  DV Codec
+    DVSD  DV Codec
+    FMP4  FFmpeg MPEG-4 Codec
+    H263  H.263
+    H264  H.264
+    HFYU  Huffman Lossless Codec YUV and RGB formats
+    I420
+    I263  Intel H.263
+    IV31  Indeo(tm) 3
+    IV32  Indeo(tm) 3
+    IV50  Indeo(tm) 5
+    IYUV
+    jpeg  Motion JPEG
+    KMVC  Karl Morton's Video Codec
+    M263  Microsoft H.263
+    MJPA  QuickTime Motion JPEG A
+    MJPG  Motion JPEG
+    MP42  Microsoft MPEG-4 Version 2
+    MP43  Microsoft MPEG-4 Version 3
+    MP4V  MPEG-4 Video
+    MPG4  Microsoft MPEG-4 Version 1
+    msvc  MS Video 1 (8, 16 bit)
+    QPEG  QPEG V1.0 und 1.1
+    raw   QuickTime None (4, 8, 24, 32 bit)
+    rle   QuickTime Animation (1, 4, 8, 16, 24 bit)
+    RLE8  MS RLE
+    RT21  Indeo(tm) 2
+    rpza  QuickTime Video (HiColor Playback only)
+    smc   QuickTime Graphics
+    SVQ1  Sorenson v1
+    TSCC  TechSmith Camtasia Screen Capture-Codec
+    ULTI  Ultimotion (OS/2 AVIs)
+    UYVY
+    V422
+    VCR1  ATI VCR1 Codec
+    VIDM
+	VIXL  Miro VideoXL
+    VYUY
+    WHAM  MS Video 1 (8, 16 bit)
+    WMV1  Windows Media Video V7
+    WMV2  Windows Media Video V8
+    WMV3  VC-1 Main Profile
+    WRLE  QuickTime BMP (4, 8, 24 bit)
+    WVC1  VC-1 Advanced Profile
+    X263  Xirlink H.263 Video Codec
+    XVID
+    Y41P
+    YV12
+    YUV2  QuickTime Component
+    YUY2
+    YVU9
+    ZMBV  DosBox Capture Codec
+
+
+  UnterstÅtzte Audio Codecs fÅr .AVI und .DIV:
+    A-law
+    AAC
+    Audio MPEG incl. MP3
+    Creative Labs ADPCM
+    DivX Audio
+    GSM 6.10
+    IMA ADPCM
+    MS ADPCM
+    PCM
+    u-law
+
+  UnterstÅtzte Audio Codecs fÅr .MOV und .QT:
+    A-law
+    AAC
+    IMA ADPCM
+    GSM 6.10
+    MP3
+    raw
+    twos
+    u-law
+
+- .DL: Versionen 1,2 und teilweise 3
+
+- .CEL (Original Animator CEL Files),
+  .FLC,
+  .FLI
+
+- .GIF Animationen
+
+- .MPG, .M1V, .MPE, .MPV und .DAT: MPEG 1 Video Dateien
+    DAT Dateien sind Dateien einer VideoCD, die normalerweise
+    AVSEQ01.DAT usw. genannt sind.
+
+- VideoCDs und CD-i (teilweise) sind Åber das -VCD Kommando abspielbar.
+
+
+Bildformate
+-----------
+
+- .BMP: unkomprimiert: 1, 4, 8, 16 und 24 Farbbits
+        RLE komprimiert: 4 und 8 Farbbits
+        einschlie·lich OS/2 Bitmaps
+        sowie alle verwandten Formate:
+        .RLE, .DIB, .BGA, .VGA, .RLE, .RL4, .RL8
+
+- .GIF: 1-8 Farbbits
+        GIF 87a und GIF 89a Extentions
+
+- .JPG, Baseline und Progressive JPEG, mit Graustufen, YCrCb oder RGB
+  .JIF, Farbraum
+  .JPE:
+
+- .PCX: 1-4, 8 und 24 Farbbits
+
+- .TGA: unkomprimiert: 8, 15, 16 und 24 Farbbits, schwarz/weiss Bilder
+        RLE komprimiert: 8, 15, 16 und 24 Farbbits, schwarz/weiss Bilder
+
+
+Soundformate
+------------
+
+- .MP1, MPEG 1.0/2.0/2.5, Layer 1,2 und 3
+  .MP2,
+  .MP3:
+
+- .VOC
+
+- .WAV: UnterstÅtzte Audio Codecs sind:
+		A-law
+		Audio MPEG incl. MP3
+		Creative Labs ADPCM
+		DivX Audio
+		GSM 6.10
+		IMA ADPCM
+		MS ADPCM
+		PCM
+		u-law
+
+- .OGG: Ogg Vorbis Audio
+
+
+Systemvoraussetzungen
+=====================
+
+QuickView Pro ist ein 32 bit Protected Mode Programm und erfordert daher
+einen IBM PC kompatiblen Computer mit mindestens einem 80386 Prozessor und
+VGA Karte. Es lÑuft unter DOS 3.0 oder hîher bzw. in einer DOS Shell unter
+Windows 95/98/ME oder OS/2. Die DOS UnterstÅtzung ab Windows XP hingegen
+ist nur beschrÑnkt, so dass QuickView nur mit EinschrÑnkungen lÑuft. Die
+meisten ISA Soundkarten sowie einige PCI-Soundkarten werden unterstÅtzt.
+Sie sollten darauf achten, dass die Grafikkarte oder ein installierter
+Treiber VESA 2.0 unterstÅtzt, da dies einen hohen Einfluss auf die Video
+Abspiel-Performance hat. Videos werden bildschirmfÅllend skaliert, entweder
+per Software oder per Hardware, wenn sich einer der unterstÅtzten
+Grafikchips im System befindet. Dies sind die meisten Grafikchips der
+folgenden Firmen:: 3Dfx Interactive, Inc., ATI (3D Rage, Rage 128, Radeon),
+Matrox, Neomagic Corporation, nVidia Corporation (TNT, GeForce), S3 Inc.,
+Trident Microsystems. Eine komplette Liste finden Sie online auf der
+QuickView Homepage.
+
+
+Installation
+============
+
+Kopieren Sie einfach alle Dateien, die zu QuickView gehîren in ein Ver-
+zeichnis. Das war's! QuickView wird den Rechner, Speicher und die Grafik-
+karte automatisch erkennen. Zum Deinstallieren lîschen Sie einfach alle 
+zugehîrigen Dateien.
+FÅr Sound-UnterstÅtzung mit einer Sound Blaster oder kompatiblen Karte muss
+die Umgebungsvariable BLASTER gesetzt sein, die die Portadresse, den IRQ
+und den DMA-Kanal enthÑlt. FÅr die Gravis UltraSound muss die ULTRASND
+Variable gesetzt sein. Eine Windows Sound System Karte wird automatisch
+erkannt. Zur Nutzung von Treibern fÅr PCI Soundkarten lesen Sie unter
+http://www.multimediaware.com/qv/snddrv/
+
+
+Kommandozeilen-Aufruf
+=====================
+
+Der Aufruf von QuickView ist wie folgt:
+QV [Optionen] [Dateiname]
+
+Dateiname kann eine Datei sein, die QuickView anzeigt oder ein Name, der
+die Wildcards * und ? enthÑlt.
+
+Beispiel: QV -A -Q2 VIDEO.AVI
+
+Optionen
+--------
+
+Eine Option kann mit einem "-" oder einem "/" beginnen. Im folgenden ist
+"-" gewÑhlt. Alle Parameter kînnen gro· oder klein geschrieben werden.
+
+ -M  WÑhle 25 Zeilen-MenÅ. QuickView nutzt fÅr das MenÅ den 50 Zeilenmodus
+     als Standard. Der Parameter -M startet das Programm im 25 Zeilenmodus.
+
+ -V  Nutze VESA nicht. QuickView erkennt viele Grafikkarten automatisch und
+     benutzt standardmÑ·ig VESA. Mit -V wird das VESA Interface nicht
+     benutzt, falls vorhanden. Wenn Sie HiColor oder TrueColor Modi nutzen
+     mîchten, muss das VESA Interface genutzt werden. Wenn die Grafikkarte
+     VESA nicht unterstÅtzt, kann man ein VESA TSR nutzen, wie zum Beispiel
+     Scitech Display Doctor (siehe unten).
+
+ -B  Keine Video Chipset Detektion. Dies unterbindet auch das Erkennen von
+     Videochips, die Hardware Acceleration unterstÅtzen.
+
+ -Rx WÑhle Bildschirmauflîsung:
+     x=1: 320x200
+     x=2: 640x480
+     x=3: 800x600
+     x=4: 1024x768
+     Ist ein Modus nicht mîglich, wird automatische Auflîsung genutzt.
+     Standard: automatisch.
+
+ -Wa,b,c,d,e Setze Soundkarten-Parameter
+     a: Kartentyp:
+        a=0: Keine Soundkarte
+        a=1: Sound Blaster oder Kompatible und ESS
+        a=2: Gravis UltraSound Classic oder Max
+        a=3: Windows Sound System
+        a=4: Erzwinge Sound Blaster Pro Nutzung
+        a=5: Erzwinge Sound Blaster 2.0 Nutzung
+             (Sie kînnen auch nur -W4 und -W5 angeben. Die anderen Parame-
+              ter werden dann von der BLASTER Umgebungsvariable Åbernommen)
+        a=6: PC Lautsprecher. Beachten Sie, dass dies nur eine schlechte
+             QualitÑt ergibt und es nicht unter Windows funktioniert.
+     b: Port Adresse, hexadezimal
+     c: IRQ
+     d: DMA (fÅr den Sound Blaster 16 oder hîher: niedriger DMA Kanal)
+     e: Hoher DMA Kanal (nur fÅr den Sound Blaster 16 oder hîher)
+     Beispiel: "-W1,220,5,1" fÅr Sound Blaster, Port 220h, IRQ 5, DMA 1
+     Um keine Soundkarte zu wÑhlen, nutzen Sie -W0
+     Nutzen Sie den -W Parameter nur wenn es wirklich notwendig ist,
+     z.B. wenn das Programm abstÅrzt, wÑhrend es versucht, eine Soundkarte
+     zu finden. Beachten Sie, dass das System bei falsch angegebenen
+     Parametern abstÅrzen kann.
+
+ -WE$filename: Nutze einen externen Soundtreiber, z.B.: -WE$D:\QV\VIA.SDR
+
+ -Ox Setze LautstÑrke (x zwischen 0 und 15)
+
+ -@x Playlist Datei, wobei x ein Dateiname ist. Beispiel: qv -@playlist.txt
+     MP3 Playlists (M3U Dateien) kînnen ebenso abgearbeitet werden:
+     qv -@playlist.m3u
+
+     Eine Playlist Datei ist eine einfache Textdatei, die Dateinamen mit
+     Parametern enthÑlt, die QuickView nacheinander abspielen soll. Die
+     Bedeutung der Parameter fÅr jede Datei in der Playlist Datei ist die
+     gleiche wie unter Kommandozeilen-Aufruf beschrieben. Die Playlist
+     Datei muss eine einfache Textdatei sein, die mit einem beliebigen
+     Editor geschrieben werden kann. Es darf aber z.B. keine Word Datei
+     sein, da sie Formatierungen enthÑlt. Die Kommandozeilenparameter, die
+     QuickView beim Start Åbergeben werden sind fÅr die gesamte Playlist
+     Datei gÅltig. Beispiel: qv -R2 -@listfile.txt wird die 640x480 Auf-
+     lîsung fÅr alle Bilder und Videos der Playlist Datei verwenden.
+     Parameter in einer Zeile der Playlist Datei sind lokal und nur fÅr
+     eine Datei gÅltig. Sie kînnen eine Schleife erstellen, indem Sie den
+     folgenden Befehl in eine separate Zeile schreiben:
+     :l
+     Dies steht fÅr Label und definiert die Position, zu der QuickView
+     zurÅckkehren soll, wenn es eine Zeile findet mit:
+     :g
+     Dies steht fÅr Goto Label.
+     Hier ist ein Beispiel einer Playlist Datei:
+
+     -R2 -T100 picture.jpg
+     :l
+     -N -K0 video1.mpg
+     -N -K0 video2.mpg
+     :g
+
+     Dies wird das Bild picture.jpg mit der Auflîsung 640x480 fÅr eine
+     Sekunde anzeigen. Dann werden video1.mpg und video2.mpg ohne
+     Skalierung in einer Schleife angezeigt, wÑhrend picture.jpg noch
+     immer im Hintergrund sichtbar ist, sofern es nicht durch ein Video
+     Åberschrieben wurde.
+     Beachten Sie: Eine Schleife kann nur durch ALT+X verlassen werden.
+
+     Die nicht registrierte Version erlaubt das Abspielen von maximal 10
+     Dateien mittels Playlist Datei.
+
+ -A  Kein Ton bei Videos.
+
+ -P  Lade und dekomprimiere den AVI Ton im voraus. Dies ergibt eine bessere
+     Performance auf langsameren Systemen insbesondere, wenn der Ton 
+     komprimiert ist. NatÅrlich mÅssen Sie dann etwas warten, bis das Video 
+     abspielt. Preload Sound kann natÅrlich nur funktionieren, wenn Sie 
+     genÅgend Speicher haben. Sie kînnen daher nicht den Ton eines ganzen 
+     Films im voraus laden, da dies Speicher im Gigabyte Bereich erfordert. 
+     In diesem Fall wird gar kein Ton abgespielt.
+
+ -D  Lasse bei AVIs und MPEGs keine Frames aus, wenn der Rechner nicht
+     schnell genug ist. Mit dieser Option wird der Ton automatisch
+     abgeschaltet.
+
+ -4  Nutze den 320x240 Modus nicht. StandardmÑ·ig nutzt QuickView den
+     320x240 Modus in allen Farbtiefen, wenn das Video oder Bild grî·er als
+     320x200 ist. Der 320x240 Video Modus mit 256 Farben ist bei jeder
+     VGA Karte verfÅgbar, HiColor und TrueColor jedoch nur, wenn sie vom
+     VESA BIOS unterstÅtzt werden. 320x240 ist kein Standard VGA Modus und 
+     kînnte daher Probleme verursachen. Schalten Sie die 320x240 
+     UnterstÅtzung in diesem Fall.
+
+ -Qx Video QualitÑt
+     x=0: TrueColor
+     x=1: HiColor
+     x=2: 256 Farben
+     x=3: Graustufen
+     Details siehe Video Optionen unten. Der Standard ist HiColor, sofern
+     es nicht in der Konfigurationsdatei geÑndert wurde. Beachten Sie,
+     dass nicht alle Video Codecs TrueColor oder HiColor QualitÑt besitzen.
+
+ -Kx Art der Videoskalierung:
+     x=0: Keine Skalierung
+     x=1: 2x Skalierung
+     x=2: Vollbild Skalierung per Software
+     x=3: High Quality Skalierung fÅr DivX und H.264 Codecs sowie MPEG-1 
+          Videos, sonst Vollbild Skalierung per Software.
+     x=4: Vollbild Skalierung per Hardware. Dies ist nur fÅr bestimmte
+          Grafikchips unterstÅtzt. Wenn die Skalierung via Hardware fÅr
+          Ihre Hardware nicht unterstÅtzt wird, wird automatisch die
+          Software Skalierung gewÑhlt.
+     Standard: Vollbild Skalierung per Hardware, sofern verfÅgbar,
+               sonst Vollbild Skalierung per Software. Beachten Sie, dass
+               die Vollbild Skalierung per Software eine hohe CPU Leistung
+               erfordert. Wenn das Video ruckhaft abgespielt wird, wÑhlen
+               Sie keine Skalierung mit -K0.
+
+ -UAx WÑhle die Tonsprur eines AVI Videos. x=0 ist der Standard-Stream.
+
+ -UB Spreche den Videospeicher via Banks an anstatt via Linear Frame
+     Buffer. Nutzen Sie diese Option, wenn QuickView wÑhrend des Abspielens
+     von Videos oder beim Anzeigen von Bildern abstÅrzen sollte. Einige
+     VESA BIOSe (z.B. das von bestimmten SiS Chips) sind fehlerhaft.
+
+ -UCx WÑhle Zeichensatz fÅr Subtitel: x=0: Western, x=1: Eastern,
+      x=2: Cyrillic (Win-1251), x=3: Cyrillic (KOI-8R)
+
+ -UD Programmiere MTRR Register nicht
+
+ -UF Zeige Bilder nicht im Vollbildmodus.
+
+ -UG Nutze eine unterschiedliche Programmierung der LautstÑrke von Sound 
+     Blaster kompatiblen Soundchips
+
+ -UH Nutze das hlt Kommando nicht, wenn das System im Leerlauf ist. Das
+     hlt Kommando hilft Strom zu sparen (wichtig bei Notebooks) und die
+     CPU Temperatur niedrig zu halten.
+
+ -UI öberprÅfe vor dem Abspielen von AVI Videos nicht, ob der Ton recht-
+     zeitig dekodiert werden wird, sondern nehme an, dass es keinen Buffer
+     Underrun geben wird.
+
+ -UJ Nutze den Index zur Synchronisation von AVI Video und Audio wÑhrend 
+     des Abspielens.
+
+ -UK Nutze anstatt der direkten Tastaturabfrage das BIOS. So kînnen
+     z.B. Infrarot Fernbedienungen genutzt werden.
+
+ -UM Liste nur unterstÅtzte Dateien im MenÅ.
+
+ -UO Nutze bei externen Soundtreibern die Ausgabe Åber Lautsprecher anstatt
+     Lineout
+
+ -UPx Sound-Parameter (nicht von allen Soundchips unterstÅtzt):
+      -UPB8  Erzwinge 8 bit Ton
+      -UPB16 Erzwinge 16 bit Ton
+      -UPC1  Erzwinge mono Ton
+      -UPC2  Erzwinge stereo Ton
+      -UPH   Erzwinge halbe Samplefrequenz
+      -UPFx  Erzwinge Samplefrequenz x Hertz, z.B.: -UPF22050
+
+ -UR Behalte das SeitenverhÑltnis beim Anzeigen von Bildern und Videos im
+     Vollbildmodus bei.
+
+ -US Synchronisiere das Abspielen von Videos nicht mit dem StrahlenrÅck-
+     lauf des Monitors. Wenn Sie diese Option wÑhlen, kînnten Sie
+     Artefakte beim Abspielen bekommen. Jedoch benîtigt die Synchronisation
+     Zeit. Wenn Sie Frame Drops bekommen, sollten Sie versuchen, das
+     Synchronisieren abzuschalten.
+
+ -SUBx  WÑhle Subtitel Datei fÅr AVI Videos.
+        Beispiel: -SUBd:\videos\film.sub
+        UnterstÅtzt werden die Formate: SRT (SubRip), SSA (Sub Station
+        Alpha), SUB (MicroDVD), SUB (SubViewer), TXT (TMPlayer)
+
+ -VCDx  Starte VideoCD Wiedergabe. x ist die Track Nummer. Wenn Sie keine
+        Track Nummer angeben, wird Track 2 angenommen fÅr VideoCD und Track
+        1 fÅr CD-i.
+
+ -VCDSx Wie -VCDx, nur wird hierbei das zweite CD Laufwerk genutzt.
+
+ -MMX   Nutze MMX Erweiterungen nicht fÅr die Video Wiedergabe.
+
+ -RND   Shuffle Play. Spiele die Dateien, die mit Wildcard angegeben wurden
+        in zufÑlliger Reihenfolge (max. 10 in der nichtregistrierten
+        Version). Beispiel: QV -RND *.MP3
+
+ -LOW   WÑhle eine niedrigere QualitÑt fÅr langsame Computer. équivalent zu
+        -UPB8 -UPC1 -UPH -US -K0
+        DarÅber hinaus wird die Anzahl der Farben auf HiColor limitiert.
+
+ Die folgenden Parameter sind nur in der registrierten Vollversionen 
+ verfÅgbar, also nicht in der Shareware Version oder der registrierten 
+ Light Version:
+
+ -C  Schalte nicht in den Textmodus nach dem Anzeigen von Dateien.
+
+ -N  Setze Videomodus nicht. Dies kann zusammen mit -C, -J, -X und -Y
+     benutzt werden, um z.B. Grafik um ein Video herum zu zeigen. Es
+     sollte darauf geachtet werden, dass die Farbtiefe des gesetzten
+     Videomodus beim Starten identisch mit der ist, die QuickView nutzen
+     wÅrde, um das Video oder die Grafik anzuzeigen.
+
+ -Fx Starte AVI/MPEG an Frame x bzw. MP3 zum Zeitpunkt x (1/16 Sekunden).
+	 Beispiel: -F137
+
+ -Gx Beende AVI/MPEG an Frame x bzw. MP3 zum Zeitpunkt x (1/16 Sekunden).
+
+ -FPx éhnlich wie die -Fx Option, jedoch ist x eine Angabe in Prozent
+	  bezogen auf die GesamtlÑnge.
+
+ -Lx Wiederhole Video bzw. MP3 x mal, 0 bedeutet bis Tastendruck, Standard
+     fÅr AVI/MOV/MP4/MPEG/MP3 ist 1, Standard fÅr CEL/FLI/FLC/DL ist 0,
+     Standard fÅr GIF ist die im GIF angegebene Anzahl.
+
+ -Sx Setze AVI, CEL, DL, FLC, FLC und MPEG Abspielgeschwindigkeit. x ist
+     die Zeit zwischen zwei Frames in Mikrosekunden, Beispiel: -s100000
+     ergibt 10 Frames pro Sekunde. Mit dieser Option wird der Ton der
+     Videos automatisch abgeschaltet.
+
+ -Tx Warte x Hundertstel Sekunden nach dem Abspielen, 0 bedeutet warte auf
+     Tastendruck.
+
+ -Jx,y Grî·e des Fensters eines Videos oder Bildes, x ist die horizontale
+     Grî·e und y die vertikale Grî·e. Sie kînnen diese Option auch nutzen,
+     um ein falsch kodiertes SeitenverhÑltnis zu korrigieren, z.B. 4:3 
+     anstatt 16:9. Beispiel: -J300,200
+
+ -Xx Positioniere das Video oder Bild an der horizontalen Position x (muss
+     ein Vielfaches von 4 sein).
+
+ -Yx Positioniere das Video oder Bild an der vertikalen Position x.
+
+ -Zx Maus und Tastatur Wiedergabeeigenschaften. Jedes Bit von x steuert
+     ein Maus- bzw. Tastaturereignis:
+     bit 0: Mausbewegung stoppt Wiedergabe
+     bit 1: DrÅcken der linken Maustaste stoppt Wiedergabe
+     bit 2: DrÅcken der rechten Maustaste stoppt Wiedergabe
+     bit 3: DrÅcken der mittleren Maustaste stoppt Wiedergabe (wird nicht
+            von allen Maustreibern unterstÅtzt)
+     bit 4: DrÅcken irgendeiner Taste der Tastatur stoppt Wiedergabe
+     bit 5: Ignoriere Tastatureingaben wÑhrend der Wiedergabe (nicht ausge-
+            wertet, wenn bit 4 gesetzt ist)
+     bit 6: FÅhre keinen Tastatur-Lesezugriff wÑhrend der Wiedergabe durch
+     Beispiel: Stoppe Video wenn die Maus bewegt wird oder die linke Maus-
+     taste gedrÅckt wird, ist -Z3.
+
+ -CAx,y Adresse einer Callback-Routine. Die Callback Routine wird
+        periodisch wÑhrend des Abspielens aufgerufen, so dass Programmierer
+        QuickView als externes Programm aufrufen kînnen und die volle
+        Kontrolle Åber die Steuerung wÑhrend des Abspielens bekommen.
+        x=R: Real Mode Adresse, dann y in der Form segment:offset
+        y=P: Protected Mode Adresse, dann y als lineare Adresse
+        Weitere Details auf Anfrage.
+
+
+
+Das MenÅ
+========
+
+QuickView zeigt immer alle Dateien im aktuellen Verzeichnis, sowie alle
+Unterverzeichnisnamen. Mit den Pfeiltasten kann man den Balken verschieben.
+Strg+Rechts bzw Links lÑsst den Balken zur nÑchsten bzw. vorherigen unter-
+stÅtzten Datei springen.
+
+Durch DrÅcken eines Zeichens springt der Balken zur ersten Datei, die
+mit diesem Zeichen anfÑngt. Benutzen Sie Kleinbuchstaben fÅr Dateien und
+Gro·buchstaben fÅr Verzeichnisse. Eine Maus wird nicht unterstÅtzt.
+
+Um eine Datei zu sehen oder das Verzeichnis zu wechseln, drÅcken Sie Enter.
+Wenn Sie dies mit einer Datei machen, die QuickView nicht unterstÅtzt,
+passiert nichts. Wenn Sie Dateien markiert haben, zeigt QuickView diese
+ohne zwischendurch zum MenÅ zu wechseln. DrÅcken Sie Enter oder Tab wenn
+Sie die nÑchste Datei sehen mîchten und Backspace fÅr die vorherige. Esc
+unterbricht diesen Vorgang und QuickView kehrt zum MenÅ zurÅck.
+
+Weitere Tasten im MenÅ:
+
+ ALT+D: Laufwerk wechseln. Ein Fenster erscheint, das nach dem Laufwerk
+        fragt. QuickView wechselt, falls mîglich, dorthin. Tritt ein
+        Fehler auf, so bleibt QuickView auf dem aktuellen Laufwerk.
+
+ F1   : Hilfe.
+
+ F2   : Informationen Åber das System.
+
+ F3 oder
+ ALT+I: Informationen zur aktuellen Datei.
+
+ F4   : Software Information.
+
+ ALT+O: éndern der Optionen von QuickView. FÅr Details siehe unten.
+
+ + -  : Erhîhen bzw. Erniedrigen der Auflîsung. "Automatic" wÑhlt
+        automatisch die niedrigste Auflîsung, mit der das Bild ganz gezeigt
+        wird, sofern mîglich.
+
+ Leertaste: Markieren/Demarkieren einer Datei.
+
+ ALT+T: Markieren aller Dateien im aktuellen Verzeichnis.
+
+ ALT+U: Demarkieren aller Dateien.
+
+ ALT+S: Shuffle Play. Alle Dateien im aktuellen Verzeichnis werden in
+        zufÑlliger Reihenfolge wiedergegeben. Wenn Sie schon Dateien
+        markiert haben, werden nur diese Dateien in zufÑlliger Reihen-
+        folge wiedergegeben.
+
+ ALT+L: Lade Subtitel Datei, die mit dem nÑchsten AVI Video abgespielt
+        wird.
+
+ ALT+M: Umschalten zwischen dem Auflisten aller Dateien und nur der 
+        unterstÅtzten Dateien.
+
+ ALT+R: Lese Verzeichnis noch einmal.
+                                     
+ Entf : Lîschen der Datei.
+
+ ALT+X: Verlassen von QuickView.
+
+
+Optionen im MenÅ
+----------------
+
+DrÅcken Sie die rot markierten Zeichen, um die entsprechende Option umzu-
+schalten. Oder nutzen Sie die hoch/runter Pfeiltasten und die Leertaste, um
+die Option umzuschalten. Wenn Sie "C" drÅcken wird eine Konfigurationsdatei
+erzeugt oder geÑndert. Sie haben die Wahl, ob Sie die Parameter der
+Kommandozeile in die Konfigurationsdatei Åbernehmen wollen, damit Sie sie
+nicht bei jedem Start angeben mÅssen. Kommandozeilenoptionen haben stets
+eine hîhere PrioritÑt als in der Konfigurationsdatei gespeicherte Optionen.
+Beachten Sie, dass eine énderung der Nutzung von VESA erst wirksam wird,
+wenn QuickView verlassen und neu gestartet wird.
+
+Include 1280x1024 mode:
+  Einige Monitore (zumeist Ñltere) unterstÅtzen die Auflîsung 1280x1024
+  nicht. Wenn Sie QuickView trotzdem anweisen, diese Auflîsung zu nutzen,
+  kînnte der Monitor beschÑdigt werden. Bitte schauen Sie im Monitorhand-
+  buch nach, ob die Auflîsung vom Monitor unterstÅtzt wird.
+
+Use 320x240 mode instead of 320x200 if appropriate:
+  Sehen Sie unter der -4 Kommandozeilenoption fÅr Details.
+
+Display images full screen:
+  Zeige Bilder im Vollbildmodus an. Beachten Sie, dass 2 Farben Bilder
+  nicht skaliert werden.
+
+Keep video/picture ratio with scaling:
+  Nutze das SeitenverhÑltnis des Videos bzw. Bildes anstatt des 4:3
+  SeitenverhÑltnisses des Monitors.
+
+
+Video Optionen
+--------------
+
+- Sound support: Soll der Ton von Videos mit abgespielt werden?
+
+- Preload Sound: Siehe Kommandozeilenoption -P
+
+- Never drop frames: Mit dem Einschalten dieser Option unterbinden Sie
+  das Auslassen von Frames wenn Ihr System nicht schnell genug ist. Diese
+  Option schaltet den Ton von Videos automatisch ab.
+
+- Loop: Nutzen Sie dies, wenn ein AVI, MOV, MP4, MPEG oder MP3 nach dem 
+  Abspielen wieder von vorne beginnen soll.
+
+- Sync with monitor: Artefakte kînnen vermieden werden, wenn die Frames
+  nur wÑhrend des VSyncs in den Bildschirmspeicher geschrieben werden.
+  Beachten Sie, dass Sie unter UmstÑnden weniger Bilder pro Sekunde
+  gezeigt bekommen kînnen, wenn diese Option eingeschaltet ist.
+
+- Video quality (diese Optionen hÑngen von dem genutzten Codec ab):
+   Grayscale (Graustufen): Dies ist normalerweise die schnellste Abspielart
+   8 color bits: 256 Farben
+   HiColor: 32768 oder 65536 Farben abhÑngig von der Grafikkarte
+   TrueColor: Ergibt die beste QualitÑt mit Åber 16 Millionen Farben
+   Bemerkung: QuickView wird maximal die Anzahl Farben nutzen, die der
+   Codec nutzt.
+
+- Video Scale: Art der Videoskalierung. Die Optionen sind:
+   no scaling: Keine Skalierung
+   2x zoom: Das Video wird doppelt so gro· abgespielt. Beachten Sie, dass
+     2x zoom eine hîhere Bildschirmauflîsung erfordern kann, so dass das
+     Video dann nicht grî·er erscheinen wird.
+   Software full screen: Das Video wird im Vollbild abgespielt mittels
+     Skalierung per Software. Dies benîtigt eine sehr hohe CPU Leistung.
+     Auf langsameren Systemen sollten Sie eine der vorherigen Optionen
+     nutzen.
+   HiQ software full screen: High Quality Skalierung fÅr DivX und MPEG-1
+     Videos, sonst Vollbild Skalierung per Software.
+   Hardware full screen: Hierbei werden die Skalier- und Farbraumkonver-
+     tierungsfÑhigkeiten des Grafikchips genutzt.
+
+
+
+Kommandos wÑhrend Dateien gezeigt werden
+========================================
+
+FÅr alle Dateitypen
+-------------------
+  Esc: Stoppe Dateibetrachtung.
+  Enter oder Tab: NÑchste Datei.
+  Backspace: Vorherige Datei.
+  + -: Erhîhe bzw. erniedrige die LautstÑrke.
+  ALT+X: Verlasse QuickView sofort.
+
+FÅr Bilder
+----------
+  Pfeiltasten: Scrolle das Bild, wenn es grî·er ist als die
+               Bildschirmauflîsung.
+  Strg+Pfeiltasten: Scrolle schnell.
+  Pos1, Ende: Scrolle zum linken bzw. rechten Rand.
+  PGup, PGdown: Scrolle zum oberen bzw. unteren Rand.
+  + - : Erhîhen bzw. Erniedrigen der Auflîsung
+
+FÅr alle Video Dateien (AVI, CEL, DL, FLI, FLC, Anim. GIFs, MOV, MP4, MPEG)
+---------------------------------------------------------------------------
+  Leertaste: Pause, Leertaste nochmal: nÑchstes Frame, jede andere Taste:
+             weiter.
+  T: Anzeige der Spielzeit.
+  S: Speichere einen Screenshot des aktuellen Frames in das QV.EXE
+     Verzeichnis
+  Wenn die Hardware Beschleunigung aktiv ist und sofern vom Grafikchip
+  unterstÅtzt:
+  B: Erhîhe Helligkeit
+  b: Erniedrige Helligkeit
+  C: Erhîhe Kontrast
+  c: Erniedrige Kontrast
+
+FÅr die Video Dateien AVI, CEL, DL, FLI und FLC
+-----------------------------------------------
+  Pfeiltaste auf, ab: Spiele das Video schneller bzw. langsamer. Beachten
+  Sie, dass der Ton abgeschaltet sein muss, um bei AVI die Abspielge-
+  schwindigkeit zu Ñndern. Dies kann entweder mit der Kommandozeilenoption
+  -A oder im OptionsmenÅ geschehen.
+
+FÅr AVI, MPEG und MP3
+---------------------
+  linke bzw. rechte Pfeiltaste: Vorspulen, bzw. ZurÅckspulen.
+  Strg+Pfeiltaste: schnelles Vor- bzw. ZurÅckspulen.
+  Tasten 0, 1, .., 9: Gehe zu 0%, 10%, ..., 90% der GesamtlÑnge.
+  Ctrl+F1, CTRL+F2, ..., Ctrl+F12: Setze Bookmark. Die Bookmark Datei
+  QV.BKM wird daraufhin geschrieben bzw. aktualisiert.
+  F1, F2, ..., F12: Gehe zur Bookmark.
+
+FÅr alle Audiodateien und Videodateien mit Ton
+----------------------------------------------
+  L: Wechsele zwischen stereo, linkem und rechtem Tonkanal
+
+
+FÅr AVI mit Subtiteln
+---------------------
+  G: Schalte zwischen Text mit schwarzem und transparentem Hintergrund
+
+
+Fragen und Antworten
+====================
+
+-F: Beim Abspielen von Videos sehe ich nur einen schwarzen oder
+    verstÅmmelten Schirm.
+ A: Eventuell funktioniert die Hardware Beschleunigung noch nicht fÅr Ihre
+    Grafikkarte. Nutzen Sie die Software Skalierung statt dessen und
+    informieren Sie den Autor.
+
+-F: Tonprobleme:
+    Der Ton funktioniert nicht.
+    Die Soundkarte wird nicht erkannt.
+    Videos stoppen nach dem ersten Frame.
+    Teile des Tons werden immer wiederholt.
+    Die TonqualitÑt ist schlecht.
+ A: Stellen Sie sicher, dass Ihre BLASTER Umgebungsvariable richtig gesetzt
+    ist. In der AUTOEXEC.BAT muss sich eine Zeile folgenden Typs befinden:
+      SET BLASTER=Axxx Ix Dx Hx Pxxx Tx
+    mit
+    A: Sound Blaster Basis I/O-Port,
+    I: IRQ,
+    D: Niedriger DMA Kanal,
+    H: Hoher DMA Kanal (nur fÅr SB16 oder hîher benîtigt),
+    P: MIDI Port, (wird nicht ausgewertet)
+    T: Kartentyp (wird nicht ausgewertet)
+
+    öbliche Werte sind: A220, I5 oder I7, D1, H5.
+    Wenn I5 nicht funktionieren sollte, probieren Sie es mit I7 und
+    umgekehrt.
+
+    FÅr den Original Sound Blaster gibt es das Programm "DIAGNOSE.EXE",
+    das die Soundkarte mit den Werten in der BLASTER Variable programmiert.
+    Benutzen Sie es mit "DIAGNOSE /S" in der "AUTOEXEC.BAT".
+
+    Unter http://www.multimediaware.de/qv/sbdetect.zip gibt es ein
+    Programm, das die Sound Blaster Parameter low level detektiert.
+
+    FÅr die Gravis UltraSound muss die Umgebungsvariable "ULTRASND" gesetzt
+    sein.
+
+    Sollte Ihre Soundkarte nicht richtig erkannt werden, besteht die
+    Mîglichkeit, Åber den -W Parameter die Soundkartenparameter direkt
+    anzugeben.
+
+    Wenn die System Information (F2 im MenÅ) sagt, dass eine Soundkarte
+    gefunden wurde, Sie aber dennoch keinen Ton hîren ÅberprÅfen Sie die
+    LautstÑrke. Sie kînnen sie mittels der + Taste wÑhrend des Abspielens
+    erhîhen.
+
+    Wenn Sie nur bei Videos keinen Ton bekommen, MP3, WAV und VOC Dateien
+    aber funktionieren sollten Sie prÅfen, ob Sie "Never drop frames"
+    gewÑhlt haben. Dies schaltet den Ton automatisch ab. Wenn Sie nur bei
+    einigen AVI, MOV oder MP4 Videos keinen Ton hîren kann dies an einen 
+    nicht unterstÅtzten Audio Codec liegen. PrÅfen Sie mit File Info (F3),
+    welchen Audio Codec das Video nutzt. Wenn Sie die Meldung "unsupported"
+    oder "unknown" erhalten wird dieser Audio Codec derzeit nicht
+    unterstÅtzt. Andere mîgliche GrÅnde sind unzureichender Speicher oder
+    eine abgeschnittene Datei.
+
+    Wenn Ihr Soundchip nicht Sound Blaster kompatibel gemacht werden
+    kann, kînnen Sie auch externe Soundtreiber nutzen. Den aktuellen
+    Status der unterstÅtzten Treiber sehen Sie unter
+    http://www.multimediaware.de/qv/snddrv/
+
+    Einige Soundkarten wie die ESS1868F funktionieren nicht in einer DOS
+    Session unter Windows, sondern nur unter reinem DOS.
+
+-F: Das Video wird ruckhaft abgespielt.
+    Der Ton wird mit Unterbrechungen abgespielt.
+    Video und Ton sind beim Abspielen von AVI Dateien nicht synchron.
+ A: Sofern das Video selber nicht mit einer geringen Framerate aufgenommen
+    wurde bedeutet dies dass Ihr System zu langsam ist. QuickView zeigt
+    nicht alle Frames des Videos, damit der Ton ohne Unterbrechungen
+    abgespielt werden kann. Aber auch dies ist nicht immer mîglich, wenn
+    Ihr System viel zu langsam ist.
+
+    Um das Abspielen von Videos auf langsamen Rechnern zu verbessern
+    sollten Sie den -LOW Parameter nutzen. Damit wird eine niedrigere
+    TonqualitÑt gewÑhlt (-UPB8 -UPC1 -UPH), das Skalieren abgeschaltet
+    (-K0), die Synchronisation mit dem StrahlenrÅcklauf abgeschaltet (-US)
+    und die Farben auf HiColor limitiert. Sollte das nicht ausreichend
+    sein, kînnen Sie auch auf 256 Farben bzw. Graustufen ausweichen mittels
+    des -Q Parameters. Weiterhin sollten Sie eine Video Datei auf 
+    Festplatte kopieren, anstatt sie direkt von CD abzuspielen.
+
+    Gibt es beim Abspielen von einigen AVI Filmen Probleme versuchen Sie
+    die -UI Option.
+
+    Sind Video und Ton beim Abspielen von AVI Videos asynchron versuchen
+    Sie die -UJ Option.
+
+-F: Warum ist die BildqualitÑt bei einigen Videos so schlecht?
+ A: Dies kînnte sein, weil Sie entweder keine TrueColor Karte oder keinen
+    VESA-Treiber in Ihrem System haben. Im zweiten Fall sollten Sie ein
+    VESA TSR fÅr Ihre Grafikkarte nutzen oder Scitech Display Doctor, das
+    von vielen FTP-Servern, Mailboxen, vom SharewarehÑndler oder auf meiner
+    WWW-Seite erhÑltlich ist. Der VESA Treiber muss mindestens dem
+    VESA-Standard 1.2 entsprechen. Versionen vor 1.2 des VESA Standards
+    definierten keine TrueColor und HiColor Modi.
+
+-F: Ich bekomme die Nachricht "Your system doesn't have enough memory to
+    show the file" bei einigen Dateien. Was kann ich tun?
+ A: WÑhlen Sie eine niedrigere Anzahl von Farben, z.B. HiColor statt
+    TrueColor.
+
+-F: Ich kann AVIs nicht spulen.
+ A: Entweder das AVI hat keinen oder einen falschen Index. Oder es ist
+    nicht genug Speicher vorhanden.
+
+-F: Der Text-Bildschirm ist unlesbar nachdem Hardware Skalierung genutzt
+    wurde.
+ A: Das Skalieren funktioniert nicht korrekt mit Ihrer Grafikkarte.
+    WÑhlen Sie eine andere Skalierung als den Hardware Vollbildmodus.
+
+-F: Ich bekomme merkwÅrdige Zeilen im Grafikmodus mit meiner ATI Mach
+    Grafikkarte unter Windows 95/98.
+ A: Nutzen Sie M64VBE mit dem Parameter S.
+
+-F: Beim Starten des Programms bekomme ich einen schwarzen oder einen
+    entstellten Bildschirm.
+ A: Versuchen Sie es mit der -B Option.
+
+-F: Ich habe keine Soundkarte und mîchte den Ton Åber PC Lautsprecher
+    hîren.
+ A: Nutzen Sie den -W6 Parameter.
+
+-F: Mir gefÑllt der 25 Zeilen Modus bei MenÅs mehr. Wie kann ich diesen
+    Modus dauerhaft einstellen?
+ A: DrÅcken Sie im MenÅ ALT+O. Dann kînnen Sie mit der Taste "5" diesen
+    Modus selektieren, und schlie·lich mit "C" eine Konfigurationsdatei
+    schreiben.
+
+-F: Was muss ich tun, damit QuickView unter Windows NT oder XP lÑuft?
+ A: QuickView lÑuft nur mit EinschrÑnkungen unter Windows NT oder XP.
+    ôffnen Sie einen DOS Vollbild Schirm. Einige Videotreiber haben Fehler
+    bei der VESA UnterstÅtzung. Wenn Sie nur PixelmÅll sehen oder einen
+    schwarzen Bildschirm (weil der Monitor nicht mehr synchronisiert) dann
+    nutzen Sie eine feste funktionierende Bildschirmauflîsung, entweder
+    durch Nutzen des -Rx Parameters oder im MenÅ durch DrÅcken der "+"
+    Taste. Beispiel: QV -R2 wird die 640x480 Bildschirmauflîsung nutzen,
+    die mit den meisten Grafikchips funktioniert. Der Ton jedoch ist immer
+    noch ein Problem unter Windows XP and NT. Sie kînnen VDMSound, einen
+    Soundkartenemulator fÅr MS Windows NT/2000 DOS boxes versuchen.
+
+-F: Was muss ich tun, damit QuickView unter OS/2 lÑuft?
+ A: Sie mÅssen die folgenden Definitionen fÅr die DOS Session machen:
+    INT_DURING_IO: ON
+    IDLE_SENSIVITY: 100
+    HW_TIMER: ON
+    VIDEO_RETRACE_EMULATION: OFF
+    AUDIO_ADAPTER_SHARING: REQUIRED
+    DPMI_DAS_API: ENABLED
+    Vergewissern Sie sich, dass die BLASTER bzw. ULTRASND Umgebungs-
+    variable richtig gesetzt ist. Die OS/2 Soundtreiber scheinen einen
+    Fehler bei der Behandlung von DMA Transfers in einer DOS Session zu
+    haben, der manchmal einen Lockup des Systems bei der Soundausgabe
+    bewirkt. Sie sollten in diesem Fall versuchen, ein Update Ihres Sound-
+    kartentreibers zu bekommen. Wenn das Problem dann immer noch besteht,
+    stellen Sie entweder den Ton ab, oder lassen das Programm unter reinem
+    DOS laufen. Manche OS/2 Soundtreiber unterstÅtzen die 16 bit Sound-
+    wiedergabe nicht fehlerfrei. Wenn Sie nur merkwÅrdige GerÑusche
+    hîren, versuchen Sie die Sound Blaster Pro KompatibilitÑt mittels
+    des Parameters -w4 zu nutzen.
+
+-F: Wie binde ich QuickView's AVI,MOV,MPEG Video und Audio UnterstÅtzung in
+    Arachne (DOS WWW Browser) ein?
+ A: Unter http://www.multimediaware.de/qv/qv.apm ist APM Paket von
+    QuickView zusammengestellt, das die Einbindung in Arachne selbstÑndig
+    vornimmt.
+
+-F: Was ist ein Codec?
+ A: Video und Audio Sequenzen werden komprimiert und dekomprimiert von
+    Routinen, die Codecs genannt werden (kurz fÅr Compressor/Decompressor).
+    Ein Codec ist verantwortlich fÅr das Komprimieren von Video oder Audio
+    Daten in ein Format, das fÅr die Verbreitung geeignet ist. Wenn Sie
+    eine komprimierte Video oder Audio Sequenz abspielen, fÅhren die in
+    QuickView integrierten Codecs die Umkehrung aus. Komprimierte Daten
+    werden in Bilder bzw. Ton konvertiert, die auf Ihrem System wieder-
+    gegeben werden kînnen.
+
+-F: Ich habe Probleme beim Abspielen von VideoCD und CD-i
+ A: Nicht alle CD Laufwerke erlauben das Raw Lesen von CDs, das fÅr das
+    Abspielen von VideoCD und CD-notwendig ist. Dies trifft insbesondere
+    unter Windows zu. Um VideoCD und CD-i unter Windows abzuspielen, kînnen
+    Sie diese als normale Dateien abspielen, die normalerweise AVSEQ01.DAT,
+    AVSEQ02.DAT usw. genannt werden.
+
+    Hingegen unterstÅtzen die meisten DOS CD Treiber das Lesen der Dateien
+    unter DOS nicht. Das Verzeichnis kann angezeigt werden, die Dateien
+    selber aber kînnen nicht gelesen werden. Nutzen Sie das -VCD Kommando
+    zum Abspielen von VideoCD und CD-i unter DOS.
+
+    Einige CD Laufwerke schalten den Motor zu schnell nach dem Lesen
+    eines Datenpakets ab. Wenn dann neue Daten gelesen werden sollen,
+    brauchen die Laufwerke mehrere Sekunden, bis sie wieder Daten liefern.
+    Dies fÅhrt zu Pausen in der Wiedergabe. Wenn Ihr CD Treiber es erlaubt,
+    die Spin Down Zeit (also die Zeit, nach der der Motor nach dem Lesen
+    abgeschaltet wird) zu erhîhen, sollten Sie dies probieren.
+
+Weitere Fragen und Antworten finden Sie auf
+http://www.multimediaware.com/qv/qvfaqd.html
+
+
+Wie man eine aktuelle Version von QuickView bekommt
+===================================================
+
+Der Dateiname des Paketes ist immer qvproxxx.zip, wobei xxx die Versions-
+nummer ist. Beachten Sie, dass einige Mailboxen einen anderen Archivierer
+als ZIP nutzen.
+
+- Internet WWW:
+  Die QuickView Pro Homepage: http://www.multimediaware.de/qv/
+
+- Internet FTP:
+  Offizielle FTP Distribution Site: ftp://ftp.multimediaware.de/qv
+
+- Sie bekommen die aktuelle Version, wenn Sie sich registrieren lassen.
+
+
+Den Autor kontaktieren
+======================
+
+Bitte senden Sie mir alle Fehlerberichte und VerbesserungsvorschlÑge. Bitte
+schicken Sie bei Problemen eine mîglichst genaue Beschreibung des Problems
+zusammen mit einer Liste der benutzten Hardware, sowie die Versionsnummer
+der genutzten QuickView Version. Nutzen Sie hierzu das Kontaktformular
+http://www.multimediaware.com/qv/kontakt
+
+Kontaktieren Sie mich, wenn Sie an der Wiedergabe von Videos bei Ihrer
+Applikation interessiert sind. Es gibt externe AVI, MOV, MP4, MPEG oder 
+FLI/FLC Player und Libraries fÅr zahlreiche Programmiersprachen.
+
+
+Dieses Programm ist Shareware. Sie kînnen die unregistrierte Version fÅr
+hîchstens drei Wochen testen, aber danach mÅssen Sie sich registrieren
+lassen. Es ist erwÅnscht, dass Sie die Sharewareversion weitergeben oder
+in eine Mailbox uploaden. Dabei lassen Sie aber bitte das Archiv unver-
+Ñndert mit allen zugehîrigen Dateien.
+
+Achtung: Eine Registrierung ist erforderlich fÅr jegliche kommerzielle
+Nutzung.
+
+
+
+Rechtliches:
+============
+
+Copyright 1994-2016 Wolfgang Hesseler. Dieses Programm ist urheberrechtlich
+geschÅtzt. Alle Rechte vorbehalten.
+
+Ich gebe keine Garantie irgendwelcher Art, weder ausdrÅcklich, noch still-
+schweigend. Insbesondere garantiere ich nicht die Eignung des Programms fÅr
+einen bestimmten Anwendungsfall oder eine bestimmte Hardwarekonfiguration.
+Weiterhin bin ich unter keinen UmstÑnden fÅr SchÑden irgendwelcher Art
+haftbar, einschlie·lich Verlust von GeschÑftsgewinnen, Datenverlusten und
+anderen zufÑlligen oder FolgeschÑden, die sich aus der Nutzung oder
+UnfÑhigkeit zur Nutzung des Programms ergeben. Die Person, die die Software
+nutzt, trÑgt alle Risiken, was QualitÑt und Leistung der Software angeht.
+Durch den Besitz und die Nutzung von QuickView erklÑrt der Anwender
+vorbehaltlos sein EinverstÑndnis mit o.g. Lizenzbestimmungen und dem
+Garantie- und Haftungsausschluss.
+
+This Agreement is governed by the laws of Germany, the State of California
+and the United States, including patent and copyright laws.
+
+Sollten Teile dieser Bedingungen gegen geltendes Recht versto·en, werden
+nicht automatisch alle ungÅltig, sondern nur jene, die dagegen versto·en.
+
+Lizenzbestimmungen fÅr SharewarehÑndler:
+SharewarehÑndeler dÅrfen dieses Programmpaket vertreiben, solange keine
+Datei verÑndert oder weglassen wird.
+
+The information about some codecs is from XAnim. Thanks to Mark Podlipec.
+Thanks to Edd SonicSound for providing sound processing algorithms.
+Cinepak is a trademark of Radius.
+Indeo and the Indeo Logo are trademarks of Intel Corporation in the USA and
+other countries.
+QPEG is a registered trademark of Q-Team Dr. Knabe GmbH, www.q-team.de
+This product uses Ultimotion(tm) IBM video technology. Copyright
+International Business Machines Corporation 1994, All rights reserved.
+The GSM 6.10 support is based on code from the Communications and Operating
+Systems Research Group at the Technische Universitaet Berlin; Copyright
+1992, 1993, 1994 by Jutta Degener and Carsten Bormann.
+The MPEG Audio Code is based in part on MPG123; Copyright (c) 1995-98 by
+Michael Hipp, all rights reserved.
+The Graphics Interchange Format(c) is the Copyright property of CompuServe
+Incorporated. GIF(sm) is a Service Mark property of CompuServe Incorporated.
+TARGA is a registered trademark of Truevision, Inc.
+This software is based in part on the work of the Independent JPEG Group.
+This product includes software developed by DivX DivXNetworks, Inc.
+DivX is a trademark of DivXNetworks, Inc, www.divx.com
+This product uses parts of FFmpeg, Copyright (c) Fabrice Bellard.
+FFmpeg is available under the terms of the GNU Lesser General Public
+License. Source code of FFmpeg can be downloaded from http://ffmpeg.org
+or is available upon request. The FFmpeg files were used without
+modification in this product.
+QuickTime is a trademark of Apple Computer, Inc.
+Windows is a trademark of Microsoft Corporation.
+Sound Blaster is a registered trademark and Blaster is a trademark of
+Creative Technology Ltd.
+All other product names mentioned in this software are trademarks or
+registered trademarks of their respective owners.
+The video overlay code is based in part on the WarpOverlay! Project
+Copyright (C) 2002-2005  Valery Gaynullin.  All Rights Reserved.
+The Ogg Vorbis code is Copyright (c) 2002, Xiph.org Foundation. This
+software is provided by the copyright holders and contributors "as is"
+and any express or implied warranties, including, but not limited to, the
+implied warranties of merchantability and fitness for a particular purpose
+are disclaimed. In no event shall the foundation or contributors be liable
+for any direct, indirect, incidental, special, exemplary, or consequential
+damages (including, but not limited to, procurement of substitute goods or
+services; loss of use, data, or profits; or business interruption) however
+caused and on any theory of liability, whether in contract, strict
+liability, or tort (including negligence or otherwise) arising in any way
+out of the use of this software, even if advised of the possibility of such
+damage.
+This product uses DOS/32 Advanced DOS Extender technology.

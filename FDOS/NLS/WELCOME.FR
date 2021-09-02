@@ -1,0 +1,3 @@
+AUTO_DONE=Installation des fichiers de d‚marrage /fCyan %1 /a7 et /fCyan %2 /a7 termin‚e
+AUTO_HELP=Tapez /fWhite %1 /fGray pour obtenir du support concernant les commandes et la navigation.
+AUTO_WELCOME="Bienvenue au systŠme d'exploitation" /fGreen %1 /fCyan %2 /fGray ( /s- /fYellow "%3" /fGray )

@@ -1,0 +1,23 @@
+Space Dimension (sp-dim.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=57892
+
+Summary
+
+    sp-dim.xm is a XM format module.
+    Uploaded to modarchive.org on Sun 29th May 2005
+
+Info Info
+
+    Mod Archive ID: 57892
+    MD5: b197b3a567a15c244ddf5330d9707634
+    Format: XM
+    Channels: 12
+    Genre: Trance - Dream
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     JAM (https://modarchive.org/member.php?81691)

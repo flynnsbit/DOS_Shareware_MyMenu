@@ -1,0 +1,23 @@
+PacManOnWax (pacmawax.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=174607
+
+Summary
+
+    pacmawax.xm is a XM format module.
+    Uploaded to modarchive.org Mon 13th Jan 2014
+
+Info Info
+
+    Mod Archive ID: 174607
+    MD5: 61a5b58ade6f1c626c7b436894758d2f
+    Format: XM
+    Channels: 8
+    Genre: Chiptune
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     JAM (https://modarchive.org/member.php?81691)

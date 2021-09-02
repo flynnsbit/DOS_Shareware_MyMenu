@@ -1,0 +1,114 @@
+Help for the FreeDOS FORMAT command:
+
+
+Simplified syntax (only common standard options):
+
+FORMAT drive: [/V[:label]] [/Q] [/U] [/F:size] [/S] [/D]
+FORMAT drive: [/V[:label]] [/Q] [/U] [/T:tracks /N:sectors] [/S] [/D]
+FORMAT drive: [/V[:label]] [/Q] [/U] [/4] [/S] [/D]
+ 
+ /V:label   Specifies a volume label for the disk, stores date and time of it.
+ /S         Calls SYS to make the disk bootable and to add system files.
+ /D         Be very verbose and show debugging output. For bug reports.
+ /Q         Quick formats the disk. If not combined with /U, can be UNFORMATed
+            and bad cluster list is preserved (not preserved in /Q /U mode).
+ /U         Unconditionally formats the disk. Lowlevel format if floppy disk.
+ /F:size    Specifies the size of the floppy disk to format. Normal sizes are:
+            360, 720, 1200, 1440, or 2880 (unit: kiloBytes). /F:0 shows a list.
+ /4         Formats a 360k floppy disk in a 1.2 MB floppy drive. As 1.2 MB
+            uses narrower tracks, format can be too weak for 360k drives.
+ /T:tracks  Specifies the number of tracks on a floppy disk.
+ /N:sectors Specifies the number of sectors on a floppy disk.
+
+
+Full syntax (including new features and backwards compatibility options):
+
+Harddisk drives:
+  FORMAT drive: [/V[:label]] [/Q] [/U] [/Z:seriously]    [/S] [/A] [/D] [/Y]
+New features, all drives:
+  FORMAT drive: [/Z:mirror | /Z:unformat]                          [/D] [/Y]
+Floppy disk drives:
+  FORMAT drive: [/V[:label]] [/Q] [/U] [/F:size]         [/B | /S] [/D] [/Y]
+  FORMAT drive: [/V[:label]] [/Q] [/U] [/T:cyls /N:sect] [/B | /S] [/D] [/Y]
+  FORMAT drive: [/V[:label]] [/Q] [/U] [/1] [/4]         [/B | /S] [/D] [/Y]
+Old DOS 1.x floppy disks:
+  FORMAT drive: /8           [/Q] [/U] [/1] [/4]         [/B | /S] [/D] [/Y]
+
+ /V:label   Specifies a volume label for the disk.
+ /Q         Quick formats the disk.  The disk can be UNFORMATed and the
+            bad cluster list is preserved (not preserved in /Q /U mode).
+            *** This is the default if an existing filesystem is found.
+ /U         Unconditionally formats the disk.  The disk cannot be UNFORMATted.
+            Causes lowlevel format for floppy and surface scan, overwriting
+            all data with "empty" sectors, for harddisk. Can take a long time.
+            *** This is the default if an unformatted floppy is detected.
+ /Q /U      Quick formats the disk but does NOT preserve unformat data and
+            does NOT wipe or scan the surface. Just deletes everything FAST.
+            *** This is the default if an unformatted harddisk is detected.
+ /F:size    Specifies the size of the floppy disk to format. Normal sizes are:
+              160, 180, 320, 360, 720, 1200, 1440, or 2880. To format to 720k
+            in a drive which can do 1440k or more, you must use 720k DD media.
+
+ /B         Kept for compatibility, formerly reserved space for the boot files.
+ /S         Copies the operating system files to make the disk bootable.
+            Needs SYS. The displayed size info describes the pre-SYS state!
+
+ /T:cyls    Specifies the number of tracks on a floppy disk.
+ /N:sect    Specifies the number of sectors on a floppy disk.
+ /1         Formats a single side of a floppy disk.
+ /4         Formats a 360K floppy disk in a 1.2 MB floppy drive. As 1.2 MB
+            uses narrower tracks, format can be too weak for 360k drives.
+ /8         Formats a 5.25" disk with 8 sectors per track.
+
+ /D         Be very verbose and show debugging output. For bug reports.
+            This even changes the returned error levels to be more "verbose".
+ /Y         Do not prompt for a new floppy, just format at once. Similar to
+            /AUTOTEST and /BACKUP switches in other FORMAT implementations.
+ /A         Force metadata (reserved/boot sectors and FAT32s together) to be a
+            multiple of 4k in size. The NTFS converter of WinXP wants that.
+
+ /Z:seriously Do not prompt for confirmation when formatting harddisks.
+              Similar to the /AUTOTEST switch in other FORMAT implementations.
+ /Z:mirror  Just save the "mirror" data for a later UNFORMAT. This will over-
+            write the very end of the disk with a copy of one FAT, root
+            directory and main boot sector. If this space is in use, MIRROR
+            will fail (new feature 0.91r). To force, you MIGHT use SafeFormat
+            plus UnFormat instead - SafeFormat is allowed to overwrite data.
+            It is not possible to save mirror data to another location.
+ /Z:unformat  This will "restore" saved "mirror" data (copy it back, over-
+              writing your FATs etc. with the backup). Do ONLY use this if you
+              have just accidentally formatted a disk. In all other situations,
+              UNFORMAT can seriously trash the disk contents.
+
+Other FORMAT implementations use /Z to express "/Z:seriously" semantics
+(e.g. DR DOS FORMAT), and still others have a /Z:n switch to let the user
+select a cluster size manually (FreeDOS FORMAT does not allow that).
+
+Default mode is /Q, or if there is no existing filesystem found, /Q /U for
+harddisks and /U (lowlevel format) for floppy. To select default mode, just
+give neither /Q nor /U options: "FORMAT A: /V:default". For harddisks,
+/U mode forces a full surface scan (you can abort the scan by pressing
+ESC but you have to wait until it takes effect! FORMAT will decide itself
+how much further it will scan before reacting to the ESC - at least 34 MB
+are scanned and ESC is checked for after each full percent of the disk).
+This makes FreeDOS FORMAT very FAST for harddisk formatting unless you do
+FORMAT /U. FASTEST mode is FORMAT /Q /U because it skips unformat backups.
+
+If you only want to create mirror data without formatting the disk, use
+FreeDOS MIRROR or the /Z:mirror flag. Read the warning for /Z:mirror above!
+
+Errorlevels: 0 okay, 1 bad sectors detected (only if /y or /d), 2 help
+screen shown or syntax error, 3 user abort, 4 format error, 5 user did
+not confirm. Errorlevels 1 and 2 are extensions beyond MS FORMAT style.
+If you use the /D flag, errorlevels will be different. They will be
+specific to the particular FORMAT version. In 0.91t, for example:
+0 okay, 1 bad sectors detected, 2 help displayed or syntax error,
+10..13 userint error (not confirmed / syntax error)
+20..22 createfs error (filesystem creation),
+25..29 drive I/O error,
+30..31 recordbc error (existing filesystem analysis),
+35..36 uformat error (unconditional format),
+38..39 savefs error (SafeFormat / Mirror)
+40..52 floppy error, 55..59 hdisk error,
+60..62 main error: unsuitable drive type, e.g. CD-ROM,
+128..255 critical error (userint: (DOS or BIOS error code) | 128)

@@ -1,0 +1,9 @@
+Game: Adventures Of Willy Beamish
+Year: 1991
+Composed by: Don Latarski, Christopher Stevens
+MIDI versions: GM, MT-32, XG, SB AWE
+Platform: DOS
+
+Additional info: The single MIDI file in the root is a complete soundtrack. There are also original files from the game in the Original folder and some GM and XG variations.
+
+https://www.karlsitretro.com/game_midi

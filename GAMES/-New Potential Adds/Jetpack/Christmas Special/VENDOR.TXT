@@ -1,0 +1,207 @@
+ ---------------------------------------------------------------------------
+                           VENDOR   INFORMATION
+ ---------------------------------------------------------------------------
+                         CHRISTMAS JETPACK SPECIAL
+              A product by Adam Pedersen & Software Creations
+
+This file provides information for Shareware Distributors, Disk Vendors, BBS
+SYSOPs and Computer Clubs who wish to distribute this software package.
+
+-----------------------------------------------------------------------------
+                           Product Descriptions
+-----------------------------------------------------------------------------
+
+SHORT DESCRIPTION:
+                      ** JETPACK CHRISTMAS SPECIAL! **  FREE! <ASP>
+                      Your Christmas gift from Software Creations!
+
+MEDIUM DESCRIPTION:
+                      ** JETPACK CHRISTMAS SPECIAL! **  FREE! <ASP>
+                      Direct from Software Creations.  Santa's got
+                      a jetpack and more levels to conquer! Explore
+                      NEW levels of treacherous dungeons, with new
+                      graphics & sounds.  Create your own Christmas
+                      levels with the built-in level editor!  Up to
+                      8 players on joysticks or keyboard. Fast full
+                      screen arcade action with digitized Sound
+                      Blaster support and stunning VGA graphics!
+
+LONG DESCRIPTION:
+                ** JETPACK CHRISTMAS SPECIAL! **  FREE! <ASP>
+
+     Santa's got a jetpack and more levels to conquer in this free gift
+from Software Creations!  Explore NEW levels of treacherous dungeons,
+with new graphics & sounds.  Create your own Christmas levels with the
+built-in level editor!  Up to 8 players on joysticks or keyboard. Fast
+full screen arcade action with digitized Sound Blaster support and stunning
+256 color VGA graphics!
+
+
+         SYSTEM REQUIREMENTS:
+
+         Computer Type:
+         A 8088 (XT) 286 (AT), 386, or 486 processor.
+
+         Memory:
+         512K free conventional memory.
+
+         Graphics Mode:
+         VGA graphics required (supported on VGA, MCGA, & SVGA cards).
+
+----------------------------------------------------------------------------
+                           Distribution Requirements
+----------------------------------------------------------------------------
+
+BBS SysOps:  This program may be freely distributed over BBS systems as long
+as there are no files added to or removed from the original compressed file
+package.  Any and all file modifications are strictly prohibited.  Sysops
+wishing to additionally become BBS Distribution Sites should send a message 
+to Dan Linton on the Software Creations BBS at 1-508-368-7036.
+
+Vendors, BBS Sysops, Distributors, Computer Clubs and User Groups wishing to
+add the software product to their library may do so in accordance with the
+Distribution Restrictions listed below.
+
+
+Limited distribution License: -------------- As the exclusive copyright holder
+for this software, Software Creations authorizes distribution only in 
+accordance with the following restrictions.
+
+        - Vendors choosing to distribute this software MUST CONTACT
+          Software Creations. You may do this by sending a copy of 
+          your catalog along with the registration form at the end
+          of this file.
+
+        - This software product is NOT available for distribution 
+          through retail stores or catalogs which sell mostly 
+          non-shareware, commercial software without prior written
+          premission from Software Creations.
+
+        - Vendors that have purchased REGISTERED versions of the
+          software will be the first to receive:
+
+			- UPDATES
+			- NEW PRODUCT RELEASES
+			- PRESS RELEASES
+
+        - This sotware product is defined as containing all the 
+          material listed in the "PACKING.LST" file on this disk.
+          If any files listed in the "PACKING.LST" file are 
+          missing, then this product is not complete and distribution
+          is forbidden. Please contact us to obtain a complete product
+          suitable for distribution.
+
+        - This software product - including all related program files
+          and documentation files - CANNOT be modified in any way and
+          must be distributed as a complete product, without exception.
+
+        - Small additions to the product, such as the introductory or 
+          installation batch files used by many shareware disk vendors,
+          are acceptable, provided they do not interfere with any
+          installation routine which may have been included by the author.
+
+        - No price or other compensation may be charged for this software 
+          product. A distribution fee of no more than US $5.00 may be 
+          charged to cover production and handling costs.
+
+        - The publisher's name, Software Creations, must appear in all ads
+          and promotions including the name of the software product.
+
+
+
+ DISK SETS and CD-ROMs: 
+------------------------
+
+       - This software product CANNOT be sold as part of some other
+         inclusive product.  Nor can it be included in any commercial
+         software packaging offer, without a written agreement from
+         Software Creations.
+
+       - Vendors who wish to distribute this software as part of a
+         collection MUST OBTAIN PERMISSION FROM Software Creations
+         PRIOR TO BEGINNING SUCH A DISTRIBUTION. 
+
+       - This software product cannot be "rented" or "leased" to 
+         others.
+
+       - You may not list any of our products in advertisements, 
+         catalogs, or other literature which describes our products 
+         as "FREE SOFTWARE".  Shareware is "Try-Before-You-Buy" 
+         software, it is not free.  You may not list any of our 
+         products in advertisements, catalogs, or other literature 
+         which describes our products as "PUBLIC DOMAIN SOFTWARE". 
+         This is copyrighted material.  It is not, and never has 
+         been, in the public domain.
+
+       - Licensee shall not use, copy, rent, lease, sell, modify, 
+         recompile, disassemble, otherwise reverse engineer, or
+         transfer the licensed program except as provided in this
+         agreement.  Any such unauthorized use shall result in
+         immediate and automatic termination of this license in 
+         addition to other remedies available to Software Creations
+         at law.
+
+       - All rights not expressly granted here in are reserved to
+         Software Creations.
+
+
+     ----------------------------------------------------------------
+                       VENDOR REGISTRATION FORM
+     ----------------------------------------------------------------
+
+                   MAIL OR FAX REGISTRATION FORM TO:
+
+                         Software Creations
+                        Attention: Dan Linton
+                            26 Harris St.
+                         Clinton, MA. 01510
+
+           PHONE: (508) 368-8654           FAX: (508) 365-7214
+
+
+COMPANY NAME_____________________________________________________
+
+CONTACT__________________________________________________________
+
+TITLE____________________________________________________________
+
+MAILING ADDRESS__________________________________________________
+
+SHIPPING ADDRESS_________________________________________________
+
+CITY, STATE & ZIP________________________________________________
+
+COUNTRY__________________________________________________________
+
+VOICE PHONE  Daytime(____)____________ Evening(____)_____________
+
+FAX   (____)_________________      BBS Phone  (____)______________
+
+
+NAME OF CATALOG/BBS/PUBLICATION___________________________________
+
+HOW OFTEN DO YOUR PROMOTIONS GO OUT?______________________________
+
+HOW OFTEN IS YOUR CATALOG/BBS/PUBLICATION 
+UPDATED WITH NEW OFFERS?__________________________________________
+
+WHAT IS THE APPROXIMATE NUMBER OF PEOPLE THAT RECEIVE
+EACH PROMOTION? (# CATALOGS, # DOWNLOADS, ETC.)___________________
+__________________________________________________________________
+
+SHIPMENT DATE OF MOST RECENT PUBLICATION__________________________
+
+IS YOUR CATALOG/BBS/PUBLICATION ASP APPROVED?_____________________
+
+DO YOU AGREE TO ADHERE TO OUR DISTRIBUTION REQUIREMENTS?
+ ___Yes     ___NO
+
+NOTE: PLEASE SEND A COPY OF YOUR CATALOG, ADS, OR ANY PRODUCT
+REVIEWS YOU WRITE ABOUT OUR PRODUCTS TO THE ADDRESS ABOVE. THANKS!
+
+
+
+SIGNATURE_________________________________________________________
+
+
+DATE__________________

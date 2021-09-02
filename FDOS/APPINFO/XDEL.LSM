@@ -1,0 +1,12 @@
+Begin3
+Title:          xDel
+Version:        2.06
+Entered-date:   2002-05-22
+Description:    Extended file delete, DR-DOS like
+Keywords:       xdel, del, deltree, delete
+Author:         Alain Mouette <alainm at bonseletrons.com.br>
+Maintained-by:  Alain Mouette <alainm at bonseletrons.com.br>
+Primary-site:   http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/xdel.html
+Platforms:      DOS
+Copying-policy: GNU General Public License, Version 2
+End

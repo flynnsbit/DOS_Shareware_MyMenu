@@ -1,0 +1,8 @@
+Game: BloodNet
+Year: 1993
+Composed by: Michael Bross
+MIDI versions: GM
+Platform: DOS
+
+
+https://www.karlsitretro.com/game_midi

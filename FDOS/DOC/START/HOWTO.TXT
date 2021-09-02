@@ -1,0 +1,31 @@
+How to add a file extension to START.DAT
+----------------------------------------
+
+Here's a really simple way to do this...and for the benefit of the slower
+people I'm going to outline it step by step.  REMEMBER:  Keep the text you
+type at the very left of the screen.
+
+1. Open START.DAT with your favorite editor.
+
+2. In brackets, type the file's extension.
+     e.g. If you want to associate FOO.BAR, you're going to type [BAR]
+
+3. Hit ENTER.
+
+4. Type Program=(Whatever program you want to open all the .BAR files with)
+     e.g. If I want to open all the BAR files with EDIT.COM, I'd type
+          Program=Edit
+
+5. Hit ENTER.
+
+6. -OPTIONAL-  If you want to add a description, you can.  Just type
+   Description=(Your description).  Therefore, if I am going to describe
+   the .BAR extension, I'd type:
+      Description=It's an imaginary file.  It doesn't exist.
+
+Finished demonstration
+----------------------
+
+[BAR]
+Program=Edit
+Description=It's an imaginary file.  It doesn't exist.

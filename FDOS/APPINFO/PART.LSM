@@ -1,0 +1,15 @@
+Begin3
+Title:          Ranish Partition Manager
+Version:        2.37
+Entered-date:   2009-02-22
+Description:    Partition Manager can: Save and restore MBR; Create and delete partitions; View hard disks' IDE information; Format and resize FAT-16 and FAT-32 file systems; Comes with Advanced Boot Managers.
+Keywords:       disk, partition, manager, ranish, fdisk, format
+Author:         Mikhail Ranish ranish -at- intercom.com
+Maintained-by:  Mikhail Ranish ranish -at- intercom.com
+Original-site:  http://www.ranish.com/part/
+Primary-site:         http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/part.html
+Platforms:      DOS, FreeDOS
+Copying-policy: Public Domain
+Defunct-Primary-Site: http://ev1.ranish.com/~mranish/part/
+Defunct-Alternate-Site: http://www.users.intercom.com/~ranish/part/
+End

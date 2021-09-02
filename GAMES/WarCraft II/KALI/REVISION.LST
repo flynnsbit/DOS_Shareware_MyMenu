@@ -1,0 +1,219 @@
+REVISION HISTORY
+----------------
+
+Kali 1.2 (revision f)
+
+1. Lower bandwidth requirement since PC's don't have to send and reply to
+   dozens of pings per second.
+
+2. Since the server manages the player list, the VSN will no longer get
+   split.  If you see someone, everyone should see them.  The kali/s list 
+   will be the same for everyone (same numbers, same order).
+
+3. Support for nameservers.  Put nameserver = <mynameserver> in wattcp.cfg
+   and you will be able to type "kali kali.net" to connect to a server.
+
+4. Support for server list in kali.cfg.  Put @testcentral = 128.192.20.100
+   in kali.cfg and then just type "kali @testcentral" to connect.
+
+5. Smaller EXE.
+
+6. Support for player info from server.  "Kali /w KingThug" will report
+   information on the player KingThug.  Kchat support for this feature by
+   typing "/whois kingthug".  Put the following in kali.cfg:
+
+   email =
+   realname =
+   other =
+
+   This stuff will showup in the whois info.
+
+7. Reserved nicknames for registered users on server!  Be the first to
+   reserve your nickname by connecting right away!  Non-registered user will
+   not be able to reserve a nickname.  Noone can use your nickname if you
+   are registerd.
+
+8. kchat will auto-detect kali and use the kali nickname. There is a new
+   kchat to test also.
+
+9. kali /a will query all of the servers in the kali.cfg file which are
+   setup with the @server=address system.
+
+
+Kali 1.1 (revision f)
+
+1. Serial numbers have changed.  If you are registered, you
+   will get a new serial number soon.  Please don't ask for 
+   this new serial number until Kali Central has been converted 
+   to 1.1.
+
+ 
+Kali 1.1
+
+1. First non-beta version.  It works.  If you have trouble,
+   chances are it's not Kali's fault ;-)
+
+2. Removed the NOWELCOME option.  Kali now acts differently
+   when used with a server.  If you attempt to attach to a 
+   node other than the server, that node will report the
+   address of the server and Kali will try to attach there
+   instead.  When used without the server, it will work like 
+   it used to (connect to the VSN by typing the ip# of any 
+   node).  This new system is faster and more reliable than 
+   the old system.
+
+3. Added option to set the number of attempts when trying
+   to find the other nodes.  Kali will report that it has 
+   found the host and that it is now looking for other nodes.
+   Setting "helloattempts = 1" will cause Kali to act like
+   version 1.0.9h (where it doesn't wait for all nodes to
+   report).  Setting "helloattempts = 10" will cause Kali to
+   behave like versions prior to 1.09h.  It will wait for 10
+   seconds for other nodes to report (if all report in less
+   than 10 seconds it won't wait).
+
+4. Pressing a key will no longer automatically cause Kali to
+   stop searching for nodes.  You must now press alt-x to abort
+   the search.
+
+5. Kali /s now reports the average ping time to each node.
+
+6. Kali Chat 1.8 can now use a configuration file.  Edit
+   kchat.cfg to set your defaults.  New options include macros
+   and the ability to change some of the default switches.
+
+7. Kali is no longer picky about extra spaces in the kali.cfg
+   file.  Is used to concider the extra spaces as part of the
+   serial number or key (registered users).
+
+8. Kali.exe, kali.cfg, wattcp.cfg, and kali.motd can all be placed
+   in a directory in your path and Kali will find all the related
+   files properly.
+
+9. Compression temporarily removed.  Further tests indicate that 
+   the overall compression wasn't worth the time spent compressing 
+   the data.  It might go back in as an option later...maybe :)
+
+10. Fixed a bug that would have caused problems with two people 
+    playing in the same game while using the same SLiRP host.
+
+11. Reduced the EXE file size down to 82K.
+
+12. Added "flash".  The ability to send a signal to another user
+    who might be in the middle of a game to get their attention.
+    Since this could be very annoying, there is also a NOFLASH
+    option for kali.cfg which causes your node to ignore these
+    signals.  The flashed computer will emit a sound from the PC
+    speaker upon getting the flash signal.
+
+13. An unsuccessful bootp attempt will no longer kill the packet
+    driver (causing that 0xAA error).
+
+14. Hopefully fixed the memory error in Kali Chat (1.8).
+
+
+Kali 1.0.9 (revision h)...
+
+1. Changed function of ppp = 1 option for wattcp.cfg.  If you
+   had trouble with it before, try it again now.  When using
+   this option, Kali won't try the resolve ethernet addresses.
+
+2. Added NOWELCOME option to kali.cfg.  Put the word NOWELCOME
+   on a blank line in kali.cfg and Kali will stop answering
+   Hello packets.  As a result, you will not be able to host
+   a VSN, but your PC won't slow down when new people join the
+   VSN (the welcome packet is quite large).  It is recommended
+   that you do NOT use the ALERT option (kali.cfg) with this
+   option.  If you do, you will here about 10 beeps each time
+   someone tried to join the VSN (and your PC will slow down
+   anyway).
+
+3. etherppp users who were having trouble locking up before 
+   should find this version much more stable.  Silly etherppp
+   doesn't clear the direction flag before doing a string
+   move when sending Kali packets.  As a result, it was writing
+   backwards at times.  To help this problem, Kali now clears
+   the CPU direction flag before all calls (or returns) to
+   the ppp.exe driver.  It helps a lot.
+
+
+Kali 1.0.9 (revision e)...
+
+1. Arp requests for ethernet users were being delayed.  Fixed.
+
+
+Kali 1.0.9 (revision d)...
+
+1. Added a new option for wattcp.cfg.  Add "ppp = 1" if you are
+   using the etherppp driver.
+
+2. Removed usetimerirq option.
+
+3. Various little changes that are *supposed* to help etherppp
+   users.   Let me know.
+
+
+Kali 1.0.9...
+
+Fixed serious bug in 1.0.8 that prevented unregistered users from
+playing each other.
+
+Kali 1.0.8...
+
+1. Kali /s shows which players are registered and how long they
+   have been connected to your PC (not how long they have been
+   running Kali overall).
+2. Two new options for wattcp.cfg:
+   a. sendretries = X   --the default for X is 5.  Try lowering 
+			  this number and see if it plays faster.
+   b. usetimerirq = 1	--if this key word exists, Kali will use
+			  a slightly slower method of scanning
+			  incoming packets.  Might help some PCs
+			  that lockup.
+3. New feature called MOTD (Message of the day).  Edit the file
+   called kali.mtd.  This message is only used if you host the VSN
+   (by just typing Kali).  When connecting to another host, you will
+   see their MOTD.
+4. MAXNODES has been removed.
+
+
+Kali 1.0.7...
+
+More bug fixes...added the ability to see what programs the other
+players are running when you connect.  Removed support for a few
+undocumented features...
+
+
+Kali 1.0.6...
+
+Fixes a bug in the compression routine used by 1.0.5.  This caused
+some packet corruption that was rare, but did cause problems like
+ships being left behind when people quit Descent. 
+
+Adds a new option for kali.cfg called MAXNODES.  Don't use this
+unless you understand it.  MAXNODES will allow a person who just
+types "kali" to limit the number of people in his VSN.  Anyone
+connecting to his node or to nodes that are connected to him will
+have this same limit (until they quit and join a different host). 
+An entry like: MAXNODES = 4 will allow only 4 people in this VSN. 
+The default value for MAXNODES is 100.  You cannot use a value
+higher than this in 1.06.  The purpose of this option is to limit
+the number of players who can join a VSN at any given time.  Some
+modem users have requested this option to prevent too many people
+from joining their game.  I think it's silly myself.  Oh well.
+
+Adds another option to kali.cfg called ALERT.  By putting the
+keyword ALERT on a line in your kali.cfg file, you will hear
+connections being attempted by other machines.  This might help
+when trying to debug problems.
+
+
+Kali 1.0.5...
+
+New features include support for shell accounts using a pseudo SLIP
+driver called SLiRP.  Note: you must use version 0.9k...just
+released a few days ago.  Older versions will not redirect UDP
+ports properly.  Also, this version adds packet compression.  The
+average packet is now 50% smaller than in previous versions.  This
+should allow more players in games like Descent when played over
+modems.

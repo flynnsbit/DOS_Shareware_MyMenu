@@ -1,0 +1,9 @@
+Game: Duke Nukem 3D Atomic Edition
+Year: 1996
+Composed by: Lee Jackson, Robert Prince
+MIDI versions: GM
+Platform: DOS
+
+Additional info: Contains the original three episodes, plus Atomic Edition episode.
+
+https://www.karlsitretro.com/game_midi

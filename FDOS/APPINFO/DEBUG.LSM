@@ -1,0 +1,16 @@
+Begin3
+Title:          DEBUG
+Version:        1.25
+Entered-date:   2013-06-13
+Description:    A program testing and editing tool
+Keywords:       debug, debugger, DPMI debugger, 32bit debugger, kernel debugger
+Author:         Paul Vojta <vojta@math.berkeley.edu>
+Maintained-by:  Japheth <mail -at- japheth.de>
+Primary-site:         http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/debug.html
+Alternate-site: http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/debug/
+Original-site:  http://math.berkeley.edu/~vojta/
+Platforms:      DOS (assemble with NASM), FreeDOS
+Copying-policy: MIT License
+Wiki-site:      http://wiki.freedos.org/wiki/index.php/Debug
+Defunct-Primary-Site: http://www.japheth.de/Download/
+End

@@ -1,0 +1,14 @@
+Begin3
+Title:           bmp2png
+Version:         1.62
+Entered-date:    2013-08-17
+Description:     command-line tool that converts BMP images to PNG (and vice versa)
+Keywords:        bmp,png
+Author:          MIYASAKA Masaru
+Maintained-by:   -
+Primary-site:    -
+Alternate-site:  -
+Platforms:       DOS
+Copying-policy:  Freeware (with sources)
+Defunct-Original-Site: http://hp.vector.co.jp/authors/VA010446/b2p-home/
+End

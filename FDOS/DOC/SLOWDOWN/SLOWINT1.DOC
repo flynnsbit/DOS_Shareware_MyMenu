@@ -1,0 +1,857 @@
+
+
+
+
+                                   SLOWINT1 1.00
+
+                                 TABLE OF CONTENTS
+
+
+     WHAT IS SLOWINT1? . . . . . . . . . . . . . . . . . . . . . . . . .    2
+
+     HOW TO USE SLOWINT1 . . . . . . . . . . . . . . . . . . . . . . . .    5
+
+     THE IBM INTERRUPT SHARING PROTOCOL  . . . . . . . . . . . . . . . .    9
+
+     A WORD FROM THE SPONSOR . . . . . . . . . . . . . . . . . . . . . .   12
+
+     OTHER PROGRAMS  . . . . . . . . . . . . . . . . . . . . . . . . . .   13
+
+     WARRANTY  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   14
+
+     REVISION HISTORY  . . . . . . . . . . . . . . . . . . . . . . . . .   15
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       SLOWINT1 1.00            Page 1 of 15
+
+
+
+     WHAT IS SLOWINT1?
+     อออออออออออออออออ
+
+     SLOWINT1 is a DOS TSR (Terminate-but-Stay Resident) program that will
+     Slow your computer Down.  The method it uses to Slow the computer Down
+     is quite unique, and requires some explanation.
+
+     You may also be wondering why the heck anyone would ever want to make
+     their computer run slower than it already does.  Read on, and I'll try
+     to explain it all to you.  Let's start by briefly discussing why you may
+     want to Slow your computer Down.
+
+     There are two main reasons you may want the computer to run more slowly
+     than it normally does.  The first reason is if you are trying to run an
+     old program, designed for an old computer, and it doesn't work correctly
+     on a new, fast computer.  The old program could either "blow up" on a
+     fast computer, or could run in such a way that it is impossible to use.
+
+     The second reason you may want the computer to run slowly is as a
+     troubleshooting tool.  Sometimes, when you're trying to troubleshoot
+     another program, the error or status messages flash by so fast on the
+     screen that you can't figure out what's going on.  With the computer
+     running slowly, you may be able to see what the messages say before they
+     have a chance to disappear off the screen again.
+
+
+     Now that we've talked about why you may want to use SLOWINT1, let's talk
+     about how it works.  All CPU's have a special "mode" they can operate
+     in, called "Trace Mode" or "Debug Mode" or "Single-Step Mode".  The main
+     purpose for this special Mode is so that you can run a particular
+     program "underneath" another special program called a Debugger.  The
+     Debugger lets you Single-Step through the other program as it is
+     running, temporarily stopping in between each CPU instruction.  This
+     lets you see exactly what the program is doing, step by step, in
+     minuscule detail.  That way, you can figure out exactly where problems
+     (bugs) are happening so that you can fix (debug) them.  Programmers use
+     Debuggers all the time.
+
+     While the main reason for Trace Mode is to Debug programs, it turns out
+     that you can use Trace Mode to do other things also.  SLOWINT1 is able
+     to use Trace Mode to make the computer run MUCH more slowly than it
+     normally does.  When the CPU is in Trace Mode, the CPU runs a special
+     "program" in between each "regular" CPU instruction.  The Special
+     "program" associated with Trace Mode is called Interrupt 1 (hence the
+     name SLOWINT1).
+
+
+
+
+
+
+
+
+                       SLOWINT1 1.00            Page 2 of 15
+
+
+
+     When SLOWINT1 is installed into memory and ENABLEd, it will put the CPU
+     into Trace Mode, and run a special "slowdown program" for Interrupt 1. 
+     Because the special "program" is performed between each CPU instruction,
+     in effect, each "regular" CPU instruction is turned into several CPU
+     instructions.  The extra Trace Mode CPU instructions really don't do
+     anything useful (they just slow things down).
+
+
+     There are a couple of things you need to know about using SLOWINT1,
+     though.  First of all, SLOWINT1 will slow down the computer A LOT.  The
+     computer will usually run at less than 2% of normal speed.  There are
+     not too many circumstances where you will actually want your computer to
+     run that slowly, but there are some.
+
+     The other thing you need to know about Trace Mode is that it is
+     EXTREMELY INcompatible with certain computers and programs.  It has so
+     many compatibility issues, in fact, that you need to be VERY careful
+     about using it (and may not even want to use it at all).  If that didn't
+     scare you off already, please keep reading.  SLOWINT1 does have a
+     legitimate purpose, though you may have a hard time figuring out what
+     possible use such a "bad" program could have.  Let's talk specifically
+     about the compatibility problems you can have.
+
+
+     The first major compatibility problem with SLOWINT1 is your computers
+     clock.  While in Trace Mode, your computers clock may lose time.  I
+     don't understand how or why it does this (it shouldn't), but sometimes
+     it happens anyway.  So, if you use SLOWINT1, and you want your computers
+     Date and Time to be correct, you may constantly need to be setting the
+     correct Date and Time.  Someday, I may figure out why this is happening
+     and fix it.  Until then, you may need to keep updating your clock.
+
+     The second major compatibility issue with SLOWINT1 is Microsoft Windows. 
+     Simply put, Windows HATES Trace Mode.  If you are running in a DOS Box
+     underneath Windows, and try to run SLOWINT1, Windows will instantly
+     crash.  Sometimes it will crash the entire Windows Operating
+     Environment, and sometimes it will just crash the DOS Box you were
+     trying to turn on Trace Mode from.  Bottom line is that you can't use
+     SLOWINT1 underneath Windows.  SLOWINT1 does not check to see if Windows
+     is loaded or not when you run it, and therefore probably will crash the
+     computer if you try to use SLOWINT1 and Windows at the same time.
+
+
+
+
+
+
+
+
+
+
+
+
+                       SLOWINT1 1.00            Page 3 of 15
+
+
+
+     On one particular computer I've tested, Windows is EXTREMELY
+     incompatible with Trace Mode.  Trace mode doesn't even need to be turned
+     on when Windows is running for the computer to crash.  All you need to
+     do is put the CPU into Trace Mode before Windows starts (even if just
+     momentarily), and Windows instantly crashes.  The specific computer that
+     crashes on me is a Dell Laptop.  I have a Dell Desktop that was made
+     about the same time as the Dell Laptop, and it works fine, so it's not a
+     problem with all Dells.  The Dell Laptop is the only Laptop I've tested
+     it on, so it's possible (though EXTREMELY unlikely) that the problem
+     occurs on all (or at least many) Laptops.  It's also possible that my
+     particular Dell Laptop is the only one with a problem (though I doubt
+     that, also).  I just don't know.
+
+     In summary, don't try to run SLOWINT1 around Microsoft Windows unless
+     you are REALLY sure you know what you're doing, and you have a very
+     good, specific reason to do it.
+
+
+     Now that I've got you all worked up about those potential problems, let
+     me tell you what SLOWINT1 is for.  As stated, about the only useful
+     thing SLOWINT1 really does is Slow Down your computer.  I don't
+     recommend that you use SLOWINT1 to Slow Down your computer, however.  I
+     have another program, called SLOWDOWN, which is what you should use
+     instead.  SLOWDOWN is MUCH more sophisticated and MUCH more
+     comprehensive than SLOWINT1.  SLOWDOWN gives you almost complete control
+     over how exactly fast your computer runs.  The ability to put the CPU
+     into Trace Mode is built into both SLOWDOWN and SLOWINT1.  SLOWDOWN
+     switches the CPU in and out of Trace Mode automatically, when it is
+     appropriate, based on exactly how fast you want the computer to run.
+
+     The main reason for making a separate SLOWINT1 program is so that you
+     can experiment with Trace Mode (independently from SLOWDOWN) to see
+     exactly what Trace Mode is and how it affects your computer.  You can
+     use SLOWINT1 to Slow Down the computer if you really want to, but
+     SLOWDOWN will typically do a MUCH better job for you.  The reason that
+     SLOWINT1 even exists is so that you can "isolate" and experiment with
+     Trace Mode to see exactly if and when you may want SLOWDOWN to use it.
+
+     In fact, if you've managed to get a copy of SLOWINT1 and didn't get a
+     copy of SLOWDOWN at the same time, then something is wrong (they are
+     supposed to be distributed together).  If you don't have a copy of
+     SLOWDOWN, go to my web site and download the latest version.  The URL of
+     my web site is detailed in the "WARRANTY" section below (page 14).
+
+
+
+
+
+
+
+
+
+
+                       SLOWINT1 1.00            Page 4 of 15
+
+
+
+     HOW TO USE SLOWINT1
+     อออออออออออออออออออ
+
+     SLOWINT1 is relatively small, simple TSR (Terminate-but-Stay-Resident)
+     program.  When it is installed in memory, it uses less than 1K (1000
+     bytes) of memory.  That's not very much memory, so you can leave
+     SLOWINT1 in memory all of the time and just ENABLE it (turn it On) or
+     DISABLE it (turn it Off) at the appropriate times.  You can also
+     UNINSTALL it from memory completely if you want.  UNINSTALLing it will
+     free up a small amount of memory for your other programs to use.
+
+     You tell SLOWINT1 exactly what you want it to do with command-line
+     Options.  Each command-line Option has several different "formats" it
+     can be in.  For example, to ENABLE SLOWINT1 (to have your computer start
+     running Slowly), you could do any of these things:
+
+       SLOWINT1 E
+       SLOWINT1 Enable
+       SLOWINT1 On
+
+     The shorter Options (like "E") are faster and easier to type, but the
+     longer ones (like "Enable") are more descriptive and are easier to
+     understand as you're reading them.  You can use whichever one you want.
+
+     The Options are not case sensitive ("SLOWINT1 E" is the same as
+     "SLOWINT1 e", etc.).  The Options can be entered in any order.  If you
+     enter two different Options that conflict with each other, the last one
+     entered will take precedence.  For example:
+
+       SLOWINT1 Disable Enable
+
+     will simply attempt to ENABLE Trace Mode, just like you had never even
+     entered the "Disable".  Here are the different command-line Options and
+     what they do:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       SLOWINT1 1.00            Page 5 of 15
+
+
+
+     * E  Enable  On
+
+       This ENABLEs Trace Mode (which will cause the computer to start
+       running Slowly).  This is also the Default setting, which means that
+       if you simply enter a "SLOWINT1" line (with no Options at all),
+       SLOWINT1 will act as if you entered "SLOWINT1 Enable".  That is,
+       SLOWINT1 will install itself into memory as a TSR and start Slowing
+       the computer Down.  If you want to install SLOWINT1 into memory
+       without Slowing the computer Down right away, you will need to use the
+       DISABLE Option (directly below).
+
+
+     * D  Disable Off
+
+       This DISABLEs Trace Mode (which will cause the computer to start
+       running at regular speed again).  If you simply want to install
+       SLOWINT1 into memory, but do not want it to Slow Down the computer,
+       you MUST use the DISABLE Option when you install it.  For example, you
+       could put a line similar to the following in your AUTOEXEC.BAT file:
+
+         SLOWINT1 Disable
+
+       This will install SLOWINT1 into memory, but it will immediately be
+       DISABLEd.  Later on, when you actually want SLOWINT1 to do something,
+       you can use the ENABLE Option (directly above) to turn it on.
+
+
+     * U  Uninstall  Out  Remove
+
+       This will UNINSTALL (or at least attempt to UNINSTALL) SLOWINT1 from
+       memory.  Effectively, you can do the same thing (have the computer run
+       at normal speed again) with the DISABLE Option (directly above).  If
+       SLOWINT1 is successfully UNINSTALLed from memory, it will free up a
+       small amount of memory for other programs to use.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       SLOWINT1 1.00            Page 6 of 15
+
+
+
+     * V  Verbose  Talk
+
+     * Q  Quiet  ShutUp
+
+       There are two different Options described here (VERBOSE and QUIET). 
+       They are actually complements (opposites) of each other, but I am
+       going to discuss them at the same time.  By default, when you do
+       anything with SLOWINT1 from the command-line, SLOWINT1 is VERBOSE. 
+       That is, it will display on the screen the Status of what it is doing
+       (for instance, telling you whether it is ENABLEd or not).  You may not
+       want SLOWINT1 to keep cluttering up your screen with stuff like this
+       that you don't care to see.  If so, you can tell SLOWINT1 to be QUIET. 
+       For example:
+
+         SLOWINT1 Quiet Enable
+
+       will ENABLE SLOWINT1 (turn it On), but it won't actually tell you that
+       your computer is running Slowly (not that you couldn't figure that out
+       pretty quickly all by yourself anyway).
+
+       Note that SLOWINT1 will always display error messages on the screen,
+       even if the QUIET Option is set.  The QUIET Option only prevents
+       configuration information from being displayed, not error information.
+
+
+     * H  Help  ?
+
+       This will display a HELP screen detailing the various command-line
+       Options you can use with SLOWINT1.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       SLOWINT1 1.00            Page 7 of 15
+
+
+
+     SLOWINT1 will never install itself into memory more than once.  So, if
+     SLOWINT1 has already been installed into memory, running it again with
+     different Options will simply update (change the settings of) the
+     SLOWINT1 that is already in memory.
+
+
+     In addition to displaying error and status messages on the screen,
+     SLOWINT1 also returns ErrorLevels to indicate what happened:
+
+       ษออออออออออออหอออออออออออออออออออออออออออออออออออออออออออออออออออออป
+       บ ERRORLEVEL บ                   MEANING                           บ
+       ฬออออออออออออฮอออออออออออออออออออออออออออออออออออออออออออออออออออออน
+       บ     0      บ Nothing wrong - everything worked OK                บ
+       บ     1      บ Couldn't understand one of the command-line Options บ
+       บ     2      บ Memory problem with the computer                    บ
+       บ     3      บ Tried to Uninstall it when it wasn't installed yet  บ
+       บ     4      บ Found a different version of SLOWINT1 in memory     บ
+       ศออออออออออออสอออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+     If you don't understand what ErrorLevels are or what they are for, I
+     suggest you do a little bit of reading in your favorite DOS book.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       SLOWINT1 1.00            Page 8 of 15
+
+
+
+     THE IBM INTERRUPT SHARING PROTOCOL
+     ออออออออออออออออออออออออออออออออออ
+
+     SLOWINT1 implements something called the "IBM Interrupt Sharing
+     Protocol".  The details of the Protocol are pretty technical, and I
+     won't go into them here.  I'm going to try to discuss, at a high level,
+     the advantages (and disadvantages) of the Protocol, however.  As a user
+     of SLOWINT1, there are some things you should know that are discussed
+     here.  I'm also trying to promote the Protocol to other programmers, so
+     you'll see a little bit of that bias in here, also.  Please bear with
+     me.
+
+     Most people who use DOS very much at all install several TSR's into
+     memory at the same time (TSR's like DOSKEY, MSCDEX, and, of course,
+     SLOWINT1).  There are also times when, for various reasons, you may want
+     to (or need to) "Disable" a particular TSR.  You may either need to
+     Disable it temporarily (and will later want to "Enable" it again), or
+     you may want to Disable it permanently (and would prefer to "Uninstall"
+     it from memory completely).  Unfortunately, many TSR's don't have
+     "Enable" or "Disable" Options, and many also do not have "Uninstall"
+     Options.
+
+     Even if they do have an "Uninstall" Option, though, it is still possible
+     that they cannot be Uninstalled from memory.  It is usually not possible
+     to Uninstall a particular TSR unless it was the last TSR installed into
+     memory (or at least very close to the last).  You must usually Uninstall
+     TSR's in the reverse order they were installed (sometimes called FILO --
+     First In, Last Out).
+
+     For example, let's say you have 6 different TSR's in memory, all doing
+     different things.  You need to "Disable" TSR #4, but it doesn't have a
+     "Disable" Option.  It does have an "Uninstall" Option, but it can't be
+     Uninstalled because TSR's 5 & 6 are "in the way".  In order to Uninstall
+     TSR #4, you must first Uninstall TSR #6 (if you can), then Uninstall TSR
+     #5 (if you can), then Uninstall TSR #4 (we're assuming here that you
+     can), then re-install TSR #5 (if you can), then re-install TSR #6 (if
+     you can).  Or, you can edit your AUTOEXEC.BAT file, REMark out the line
+     that installs TSR #4, reboot the computer, do the thing you need to do
+     without TSR #4, then edit AUTOEXEC.BAT again, un-REMark back in the line
+     that installs TSR #4, and reboot again.  Talk about a PAIN!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       SLOWINT1 1.00            Page 9 of 15
+
+
+
+     Many years ago, IBM came up with a Protocol that solves this problem
+     (and it is the only Protocol I've ever seen that even attempts to solve
+     this problem).  IBM calls it the "Interrupt Sharing Protocol".  It is a
+     Protocol that allows any TSR to remove itself from memory at any time,
+     no matter how many programs were installed after it was.  I think it is
+     a very good idea.  Unfortunately, in order for it to work properly, all
+     programs need to use it (not just some programs, and not just TSR's). 
+     For some reason, IBM didn't promote the Protocol very much, so not very
+     many programmers even know about it, and, as a result, very few programs
+     use it.  I consider myself fairly savvy about DOS (I have been writing
+     TSR's for over a decade), and I first stumbled across this Protocol only
+     a couple of years ago.
+
+     The way "normal" (non-Protocol-using) programs work, you can't "see
+     past" the last program installed into memory to be able to modify or
+     remove any previously-installed programs.  This Protocol allows you to
+     "see through" the later programs to find the early programs, so that
+     they can be modified or removed.  If the TSR you're trying to Uninstall
+     uses the Protocol, and all of the programs installed AFTER the one
+     you're trying to Uninstall also use the Protocol, you can Uninstall the
+     TSR with no problem.  It doesn't matter if the TSR's installed BEFORE it
+     use the Protocol or not, all that matters is the programs installed
+     AFTER it.
+
+
+     There is one drawback to the Interrupt Sharing Protocol, however.  When
+     you Uninstall a particular TSR, if it is not the last program in memory,
+     it will leave a "hole" in your memory (where the TSR used to be).  If
+     you later decide to re-install the same TSR, it is VERY unlikely that it
+     will get installed into the same "hole" it was in before.  In fact, it
+     is VERY unlikely that you will be able to use that memory hole again for
+     any program -- it will probably be lost (wasted) until you reboot the
+     computer again.  If there is even a remote chance that you will want to
+     use the TSR again (before you reboot the computer), you should simply
+     Disable the TSR instead of Uninstalling it from memory completely.  Not
+     all TSR's have Disable/Enable Options, but any TSR sophisticated enough
+     to use the Interrupt Sharing Protocol probably does.
+
+     If the Protocol is used properly, it allows much greater flexibility in
+     when and where and how you use TSR's.  If not used properly, however, it
+     can actually end up being less efficient than if you just use TSR's that
+     don't implement the Protocol (at least in terms of memory use).  Again,
+     if there is even a remote chance that you will want to use the TSR
+     again, you should not Uninstall it -- you should simply Disable it. 
+     Only if you are certain that you will not need the TSR again (at least
+     until you reboot the computer) should you attempt to Uninstall it.
+
+
+
+
+
+
+
+                      SLOWINT1 1.00            Page 10 of 15
+
+
+
+     I will eventually be updating all of my programs to include the Protocol
+     at some time in the future.  If you want more information about the
+     Protocol, go to my Home Page:
+
+       http://members.aol.com/bretjohn
+
+     I have information there that will allow you to download the Protocol
+     details.  You can also look at the source code for SLOWINT1, which is
+     available from my Home Page.  It contains a working implementation of
+     the Protocol, as well as some other stuff you might be interested in.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWINT1 1.00            Page 11 of 15
+
+
+
+     A WORD FROM THE SPONSOR
+     อออออออออออออออออออออออ
+
+     SLOWINT1 is a free program.  If you like it and use it, do something
+     nice for someone else in return.  I will accept niceties to myself in
+     the form of $.
+
+     You can freely copy and distribute SLOWINT1.COM, as long as it is
+     distributed along with this SLOWINT1.DOC, and neither file has been
+     modified in any way.  You cannot charge anyone in any way for SLOWINT1,
+     except to recover your actual costs for disks and shipping (you cannot
+     charge for "handling").  You do need my permission to distribute
+     SLOWINT1 as a "companion" to some other program.
+
+     You can also freely download the source code for SLOWINT1.  It is
+     available from my web site:
+
+       http://members.aol.com/bretjohn
+
+     I haven't included the source code here, to keep the size of the
+     download small, and because most people don't care about source code,
+     anyway.  But it's available if you want it.
+
+
+     As stated above, the main reason I wrote SLOWINT1 was to be a
+     "companion" to my SLOWDOWN program.  SLOWINT1 will let you experiment
+     with Trace Mode, so you can see exactly what it does (and what it
+     doesn't) do.  I believe including SLOWINT1 will allow you to use the
+     "main" program (SLOWDOWN) much more effectively.  You can use SLOWINT1,
+     if you want, to Slow Down your computer.  I don't recommend it, however. 
+     You will generally be much better off using SLOWDOWN instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWINT1 1.00            Page 12 of 15
+
+
+
+     OTHER PROGRAMS
+     ออออออออออออออ
+
+     If you find SLOWINT1 useful, I have written some other programs you may
+     find even more useful.
+
+       CLOCK
+          Shows a clock on your screen all the time.  Also has two alarms
+          that beep at you when it's time for an appointment.
+
+       JOYKEYS
+          Lets you use your joystick with ANY program.
+
+       MOUSKEYS
+          Lets you use your mouse with ANY program.
+
+       PRTSCR
+          Sends all of your PrintScreens to a file instead of a printer.  A
+          good way to transfer data between two programs, even if they won't
+          normally "talk" to each other.
+
+       PRTSCRFF
+          Modifies your PrintScreen so that each new PrintScreen gets put on
+          a new sheet of paper (especially useful if you have a Laser
+          printer).
+
+       SCANCODE
+          Type keystrokes automatically in the middle of other programs. 
+          Helpful in getting past the "starting screens" of most programs, or
+          to create macros.  Can also be used to remap the keyboard.
+
+       SDWRGMPD
+          DOS driver for a Microsoft SideWinder digital GamePad.
+
+       SERIAL
+          Shows the status of your serial (COM) ports on screen.  Shows the
+          bit rate, parity, status of the leads (DTR, DSR, etc.).  An
+          excellent way to troubleshoot modem problems.
+
+       SLOWDOWN
+          Slows down a fast computer so you can run older programs that
+          require a PC/XT or PC/AT.
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWINT1 1.00            Page 13 of 15
+
+
+
+     WARRANTY
+     ออออออออ
+
+     There is no warranty of any kind, either expressed or implied, supplied
+     with SLOWINT1.
+
+     Although SLOWINT1 is small and simple, it is extremely powerful.  As
+     mentioned above in the documentation, SLOWINT1 has some known
+     compatibility problems.  It does not do anything that should cause any
+     catastrophic failures, but you should still be very careful about how
+     and why you use it.  Please read the documentation!
+
+     If you find any "bugs" in this program, or see something that you wish
+     were different, please let me know.
+
+
+     HAVE FUN!                                                                
+
+       Bret Johnson
+       6775 South Logan Street
+       Littleton, CO  80122-1249
+       (303) 795-5084
+
+       bretjohn@juno.com  or
+       bretjohn@aol.com
+
+
+     I intend to always keep the latest versions of all of my programs on my
+     own web site.  The URL is:
+
+       http://members.aol.com/bretjohn
+
+     Keep looking there for updates to my programs.  It is the first place I
+     will put new or updated programs.  It is the only place I will put beta
+     versions of new releases.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWINT1 1.00            Page 14 of 15
+
+
+
+     REVISION HISTORY
+     ออออออออออออออออ
+     2002/03/06  v1.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      SLOWINT1 1.00            Page 15 of 15
+

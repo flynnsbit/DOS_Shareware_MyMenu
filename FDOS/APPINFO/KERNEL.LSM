@@ -1,0 +1,16 @@
+Begin3
+Title:          The FreeDOS Kernel
+Version:        2042
+Entered-date:   2016-05-16
+Description:    The FreeDOS Kernel (supports FAT12/FAT16/FAT32)
+Keywords:       kernel, FreeDOS, DOS, MSDOS
+Author:         (developers: can be reached on the freedos-kernel mailing list)
+Maintained-by:  freedos-kernel@lists.sourceforge.net
+Primary-site:          http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/kernel.html
+Alternate-site: http://www.fdos.org/kernel/
+Alternate-site: https://svn.code.sf.net/p/freedos/svn/
+Platforms:      DOS, FreeDOS, DOSEMU (OpenWatcom C or Turbo C, NASM, UPX)
+Copying-policy: GNU General Public License, Version 2
+Defunct-Original-Site: http://www.gcfl.net/pub/FreeDOS/kernel
+Defunct-Primary-Site:  http://freedos.sourceforge.net/kernel/
+End

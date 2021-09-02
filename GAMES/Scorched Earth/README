@@ -1,0 +1,157 @@
+README file for SCORCH v1.5
+
+Updated 3 JUNE 95
+
+This file contains trivia, last minute instructions, and changes to SCORCH,
+in no particular order.
+
+What's New in Version 1.5?
+==========================
+
+   This version is designed to solidify the features integrated so far,
+   and is consists mostly of bug fixes and small improvements.
+
+	- Support for most 256 color video modes
+	- Scanned Mountain Ranges!!
+	- New sky: Cavern... actually this will be a landscape in the
+	  next version of Scorch
+	- New sky: Pitch black... test your skills at night!
+	- Team support: three kinds, to please all people!
+	- Real timer delays - great for people with 486's and up.
+	- New weapon: lasers.
+	- New shield: SuperMag - tough as a heavy shield, pushes missiles
+	  like a deflector, and bounces away any that get through all that
+	  like a force shield.  Yikes!
+	- Better keyboard support in simultaneous mode - multiple players
+	  on the keyboard no longer conflict with each other.
+	- Joystick support has been modified to support Gravis Gamepads.
+	- Somewhat improved computer algorithms
+	- Foreign character support
+
+Distribution List:
+==================
+The full distribution of Scorched Earth consists of the following files:
+
+	Filename           Size     Description
+	-------------   -------     --------------------------------------
+	FIX     .BAT         83     Utility to remove bad .cfg files
+	FILE_ID .DIZ        321     Brief description of Scorch
+	ORDER   .FRM       1859     Order form for Scorched Earth Password
+	README  .          6226     This file
+	SCORCH  .DOC     129790     Scorched Earth Documentation
+	SCORCH  .EXE     415456     Scorched Earth, The Game
+	SCORCH  .ICO        766     Scorched Earth Icon for MS Windows
+	SCORCH  .PIF        545     PIF file for Microsoft Windows
+	TALK1   .CFG       1287     Comment File used for Talking Tanks
+	TALK2   .CFG       1272     Another Comment File for Talking Tanks
+				      
+	Mountain Ranges    Size
+	---------------  ------
+	ICE001  .MTN      45972
+	ICE002  .MTN      54281
+	ICE003  .MTN     139961
+	ROCK001 .MTN      63114
+	ROCK002 .MTN      73730
+	ROCK003 .MTN     136992
+	ROCK004 .MTN      69068
+	ROCK005 .MTN      41767
+	ROCK006 .MTN      33738
+	SNOW001 .MTN      67134
+
+Printing the Documentation:
+===========================
+Make sure your printer is on, online, and has paper.  SCORCH.DOC takes
+57 pages.  Then type COPY SCORCH.DOC PRN.  Then hit Enter, of course.
+Or use any program that will print files, such as your favorite word
+processor.
+
+VGA note:
+=========
+Scorched Earth (SCORCH) is a VGA only game. It will not run on any other
+type of system.
+
+Fixing Problems:
+================
+If you have a problem with SCORCH when changing settings, you can just
+delete the SCORCH.CFG file and run SCORCH.  It will return to the default
+settings.  Or, just run FIX.BAT, and it will get rid of the bad SCORCH.CFG
+file.
+
+Useless Statistics:
+===================
+For those who are interested, Scorched Earth 1.5 was written using
+Borland C++ 4.0 and Turbo Assembler 3.0.  There are approximately 122
+C/C++ files and 3 assembly files, totalling over 785K of source code.
+Scanned mountain ranges were processed with Adobe Photoshop.
+
+Acknowledgments:
+================
+There are far too many people who have contributed to the success of
+Scorch to mention here.  Thanks to all who have sent letters pointing
+out bugs and offering suggestions.   Keep 'em coming!
+
+Special thanks goes to the Scorch 1.50 Beta Testers... great job guys!!
+Any bugs that remain are surely the author's fault.
+
+Deluxe Registration!!
+=====================
+Due to popular demain, "Deluxe Registration" is once again available!
+Deluxe Registration includes the most recent copy of Scorch on disk and
+a complete bound copy of the enhanced manual.  The enhanced manual
+contains the same text as the file "scorch.doc", but is illustrated with
+tables, icons from the game, and keys for all the options.  Deluxe
+Registration costs $30 instead of $20.  Deluxe Registration is available
+in the U.S. only, due to shipping expenses and difficulties.
+
+Hang On A Minute... Why Does Scorch 1.5 Cost More?
+==================================================
+Simply put, I was unable to make enough profit at $10 a copy to pay for
+new compilers, graphics libraries, and tools to keep up with the
+next release.  Hopefully the price will stabilize at $20 for a long time.
+
+Upgrades
+========
+If you have registered an earlier version of Scorch, you can get a
+free upgrade by sending a self-addressed, stamped disk mailer, and
+a blank, formatted disk.  Mailers which are not stamped cannot be
+returned.  Please give us enough information to find you in the 
+customer database, or we cannot honor this free upgrade.  Alternately,
+you can upgrade to a 1.5 basic registration for $10 - this covers the
+disk and postage from our side.
+
+Site Licenses
+=============
+Site licenses are available at MASSIVE discounts... contact Scorch HQ
+with your specific requests.
+
+Scorch Fans Outside the U.S.:
+=============================
+To register Scorch, all you need to do is figure out some way to get
+$20 to me.  Try going to your local bank and asking for a "U.S. Dollar
+World Money Order".  I hope to make international editions of Scorch
+as time permits.
+
+Other problems/suggestions:
+===========================
+If you have any ideas or bug reports, please contact the author as
+indicated below.  Please do not call.  All comments are welcome, whether
+or not you are a registered user.
+
+Wendell Hicken
+P.O. Box 1215
+Whittier, CA 90609-1215
+
+70671,606 on CompuServe
+whicken@parasoft.com on internet
+
+Scorched Earth also has a home page on the World Wide Web:
+
+	http://tower.itis.com/scorch
+
+============================================================================
+Most of all, Don't forget that Scorched Earth is Shareware.  The game is
+good, if somewhat addictive.  The price is reasonable.  So why not support 
+the game, its further development, and the whole shareware concept by sending
+in your $20.
+
+As they say on T.V. "Thank you for your support."

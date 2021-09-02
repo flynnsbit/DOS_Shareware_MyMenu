@@ -1,0 +1,140 @@
+
+                    VC  Version 4.99.08 alpha
+            Copyright (C) 1991-2000 Vsevolod V. Volkov
+
+
+This is a TEST  version of the Commander which is preliminary in
+design.  You should not use it for normal work. Any features may
+be  changed between now and the final release. Please report any
+bugs that you find to me.
+
+The Volkov Commander is a DOS  program, but it supports a lot of
+features in Windows 95 and OS/2.
+
+
+New features in this version:
+-----------------------------
+
+1. Descriptions.
+   VC supports description files like DESCRIPT.ION or FILES.BBS.
+   It shows them and optionaly can copy.
+
+2. Archives.
+   You  can  enter in archives  like in subdirectory, then view,
+   edit  compressed  files, copy them to any directory (extract)
+   or copy uncompressed files to archive.  You can define almost
+   any  archive  utility to work with Commander. Long file names
+   are supported for archives.
+
+3. SVGA video modes.
+   The Commander can work in any text mode with resolution 80x25
+   characters  or  higher.  Use  Ctrl-F9  to  switch  text modes
+   supported by VBE or use any external utility.
+
+4. EMS, XMS and disk swapping.
+   The  Commander  optionally  can  use  EMS, XMS memory or disk
+   space  for  reducing  resident  part  of  VC  when  executing
+   programs. Run VC /? to view switches.
+
+5. Reversed sort order.
+   You can sort files in ascending or descending modes.
+
+6. New filters.
+   You can define Your own set of filters.
+
+7. Treeinfo.
+   VC doesn't support TREEINFO.NCD  now, but supports new format
+   of TREEINFO.VCD  that can be stored in the root of disk or in
+   home  directory  of VC.  VC updates these files when creates,
+   removes or renames directories.
+
+8. Attributes of directories.
+   You can change attributes of directories in Tree panel.
+
+9. New  macros  for inactive panel in VC.MNU and *.EXT files: %,
+   %.%, %%, %:, %\, %@.  New  macros  for  short names !~, !~.!,
+   !~\, !~@, %~, %~.%, %~\, %~@.  Macros  for  entering  strings
+   ![text], !0,..., !9.
+
+10.Internal viewer and 'Find File' function supports translation
+   tables   with   single-byte  and  double-byte  character  set
+   (Unicode).  You can find these tables in files with extension
+   TBL.  Copy tables in directory of VC and use F8 to select one
+   of them in internal viewer
+
+11.Quick View  function  can display contents of files including
+   files  from archives, information about directories, archives
+   and directories in archives
+
+12.VC.COM  and VC.OVL can be compressed. VC.COM can be converted
+   to VC.EXE and VC.OVL can be appended to it:
+
+         COM2EXE VC.COM VC.EXE
+         PKLITE VC.EXE
+         COPY VC.OVL VCOVL.EXE
+         PKLITE VCOVL.EXE
+         COPY VC.EXE + VCOVL.EXE
+
+13.A lot of other new features.
+
+
+VC and Windows 95:
+------------------
+
+1. Long file names.
+   VC fully supports long file names.
+
+2. Date and time of directories.
+   You can change date and time of directories in Tree panel.
+
+3. FAT-32 support.
+   Sizes  of  partitions  greater  than  2  Gbytes are displayed
+   correctly
+
+
+VC and OS/2:
+------------
+
+1. Extended attributes.
+   VC  can  optionally show extended attribute .LONGNAME as file
+   name  when  option 'Long names' is on. Also it can remove all
+   extended attributes and optionally copy them.
+
+2. Date and time of directories.
+   You can change date and time of directories in Tree panel.
+
+3. Screen saver is not activated in windowed sessions.
+
+----------------------------------------------------------------
+
+This version of VC does not contain some functions:
+
+- Internal editor
+- Editing of user menu, extension files and dirinfo
+- Memory information
+- Screen saver menu
+
+----------------------------------------------------------------
+
+Known problems
+
+- Long names under OS/2 are not supported.
+- Long names under Windows NT are not supported.
+- VC  is switched to full screen mode when function 'Video mode'
+  is invoked under Windows 95.
+- Big  delay occures when function 'Video mode' is invoked under
+  Linux's dosemu.
+- Extended video modes don't work correctly under Windows NT.
+
+----------------------------------------------------------------
+
+Vsevolod V. Volkov                                 Kiev, Ukraine
+
+Homepage: http://come.to/volkov
+E-mail:   vc@vvv.kiev.ua
+Fidonet:  2:463/62.16
+Phone:    380-44-4842542                  Monday through Friday,
+                               7pm-10pm Kiev time (+2 hours GMT)
+
+
+                          06-June-2000

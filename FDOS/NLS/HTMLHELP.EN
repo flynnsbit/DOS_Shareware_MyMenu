@@ -1,0 +1,97 @@
+#### This file is part of the FreeDOS HTML Help Viewer
+#### and is licensed under its terms.
+
+# Program Usage Screen Strings
+1.0:FreeDOS HTML Help Viewer
+1.1:Basic Options
+1.2:Show help on this topic
+1.3:Displays this help message
+1.4:Force monochrome display
+1.5:Use fancy colour scheme
+1.6:Uses ASCII instead of extended characters
+1.7:Tell HELP the codepage is nnn, rather than let detect
+1.8:Advanced Options
+1.9:Overrides the help path
+1.10:if no file is specified, index.htm is assumed
+1.11:Loads a file other than index.htm relative to the help path
+1.12:When the user presses F1 or clicks on "help on help"
+1.13:help will load this file. Default is help.htm
+1.14:Environment Variables
+1.15:Directory that contains your help files
+1.16:Put /M, /A, F1, F2 here to make them default
+
+#Error Message Strings
+2.0:Could not allocate memory
+2.1:Invalid Argument
+2.2:Please specify only one topic
+2.3:Cannot use /f with /m
+2.4:Type "HELP /?" for usage.
+2.5:No exact match for topic found
+2.6:Could not find topic
+2.7:Internal Error: Resize Fail
+2.8:Could not read the compressed file
+2.9:Couldn't Open
+2.10:Zip file empty or corrupt
+2.11:Could not find this file. Loading first html file in zipfile
+2.12:Could not find html file in zip file
+2.13:Please specify a valid codepage
+2.14:Specified codepage not supported
+2.15:Supported codepages are
+
+#Menu Strings
+#### HTML Help will truncate strings 3.0 and 3.1
+#### if they exceed 14 characters.
+3.0:Exit
+3.1:Help on Help
+#### HTML Help will truncate strings 3.2-3.5
+#### if they exceed 10 characters.
+3.2:Back
+3.3:Forward
+3.4:Contents
+3.5:Search
+
+#Button Label Strings
+#### HTML Help will truncate strings 4.0-4.2
+#### if they exceed 8 characters.
+4.0:OK
+4.1:Cancel
+4.2:Help
+
+#Status Bar Strings
+5.0:Looking for topic...
+5.1:Full search in progress...
+5.2:(PRESS ESC TO ABORT)...
+
+#Search Box Strings
+#### HTML Help will truncate strings:
+####    6.0      if it exceeds 35 characters;
+####    6.1      if it exceeds 20 characters;
+####    6.2-6.5  if they exceed 28 characters;
+####    6.6-6.13 if they exceed 35 characters.
+6.0:Search Help
+6.1:Text to Find:
+6.2:case sensitive
+6.3:whole word only
+6.4:full search
+6.5:on this page
+#Help on Search:
+6.6:What it Does
+#Lines 6.7-6.9 describe "Search":
+6.7:full search:
+6.8:Looks through all files
+6.9:listed on the contents page.
+#Line 6.10 can be used if you need more room.
+6.11:on this page:
+6.12:Looks in the open document
+6.13:only.
+
+#Search Results Strings
+7.0:Search Results
+7.1:Searched all files listed on contents page
+# The following line, 7.2, is used as "Searched [FILENAME]"
+7.2:Searched
+# The following line, 7.3, is used as "for: [TEXT]"
+7.3:for
+7.4:,Sorry, can't search the search results.
+7.5:USER ABORTED (pressed escape)
+7.6:No results found

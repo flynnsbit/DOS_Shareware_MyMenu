@@ -1,0 +1,113 @@
+LOCALIZE is released under the GPL2 license. If you are using
+FreeDOS, you already have a copy of the license text in copying.txt
+or similar. If not, read the "GNU Public License" (version 2 or newer)
+at http://www.gnu.org/ ... LOCALIZE written by Eric Auer in 2003.
+
+GPL2 license means that LOCALIZE must stay open source and that the
+sources can be used in other open source projects and only there.
+It also means that LOCALIZE and the source code of it can be freely
+copied by everybody and that I promise nothing about it. It will
+probably do what I explain below, but if it sets your computer on
+fire, that is your problem (very unlikely to happen, though ;-)).
+
+The used KITTEN toolkit was started by Tom Ehlert (LOCALIZE uses a
+special version by Eric Auer, as FIND does) as a smaller clone of
+the CATS localization and i18n / NLS toolkit by Jim Hall.
+
+
+*** Introduction and basic functionality ***
+
+
+LOCALIZE is a small helper to let you localize your batch scripts.
+Syntax is like that: LOCALIZE x.y [optional text] [@@@ default text]
+This will display text number x.y from a localize.* file. IF no
+such file could be found or text number x.y was not part of the
+first found localize.* file that matches NLSPATH and LANG settings,
+THEN the DEFAULT TEXT, if any, will be displayed. Finally, the
+OPTIONAL TEXT is shown, if any - useful for displaying variable
+values or text that does not need translation.
+
+NLSPATH lists one or several (separated by ;) directories where
+localize.* files can be found, and LANG selects the language.
+Example NLSPATH=c:\foo and LANG=de will instruct localize to read
+the messages from c:\foo\localize.de - if the file is not found,
+errorlevel 1 will be returned, else errorlevel 0. Errorlevel 2
+means syntax error (first argument could not be parsed as x.y
+number, localize has shown help screen).
+
+
+*** Example batch script ***
+
+
+LOCALIZE 1.1 %LANG% @@@ Your current language setting is:
+if [%errorlevel%]==[0] goto langokay
+echo   Check your NLSPATH... There is no localize.%LANG% for
+echo   your language in the NLSPATH directories %NLSPATH%.
+:langokay
+echo.
+LOCALIZE 1.2 @@@ Welcome at the SOMETHING batch script
+echo.
+LOCALIZE 1.3 @@@ Your menu options are:
+LOCALIZE 1.4 (1) @@@ SOMETHING NICE
+LOCALIZE 1.5 (2) @@@ SOMETHING ELSE
+choice /c:12
+...
+
+
+I hope you get the idea. The nice thing is that you can create
+many localize.xyz files for every language code xyz, for example
+localize.de, localize.es, and so on! If no translation is found,
+the above example would display:
+
+Your current language setting is: %LANG%
+Check your NLSPATH... There is no localize.%LANG% for
+your language in the NLSPATH directories %NLSPATH%.
+
+Welcome at the SOMETHING batch script
+
+Your menu options are:
+SOMETHING NICE (1)
+SOMETHING ELSE (2)
+[12]?
+
+... of course, not %LANG% or %NLSPATH% but the values of the
+variables LANG and NLSPATH would be shown on the screen.
+
+
+*** German localization for the above example ***
+
+
+First, you would provide a localize.de file like that one:
+
+1.1:Deine aktuelle Spracheinstellung ist:
+1.2:Willkommen bei IRGENDEINEM Batch Skript
+1.3:Deine Auswahl ist:
+1.4:Irgendwas NETTES
+1.5:Irgendwas ANDERES
+99.0:Zeigt einen lokalisierten Text an (aus localize.*)
+99.1:Zeigt Text nummer x.y (und dann das [etc.])\r\nbzw. ersatzweise den Text nach @@@ (und dann das [etc.])
+99.2:Errorlevel: 0 wenn okay, 1 wenn kein localize.* gefunden\r\noder kein Text x.y darin.
+
+The 99... lines are the localize help screen. If you remove them or your
+NLSPATH or LANG setting does not point to a localize.* file at all, then
+only a minimalistic help screen can be displayed by "localize /?" instead
+of the default longer localize.* help screen.
+
+Maximum localize.* file size is a compile time option and currently set
+to 8k, maximum number of lines (messages) for a single file is currently
+128. Both values are set in the "kitten.c" file (catcontents and
+catpoints array size). Maximum line size is 8k (getlbuf array size).
+
+With LANG=de and NLSPATH pointing to the directory where
+localize.de can be found, the example batch script would
+display this:
+
+Deine aktuelle Spracheinstellung ist: de
+
+Willkommen bei IRGENDEINEM Batch Skript
+
+Deine Auswahl ist:
+Irgendwas NETTES (1)
+Irgendwas ANDERES (2)
+[12]?
+

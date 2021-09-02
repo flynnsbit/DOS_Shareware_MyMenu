@@ -1,0 +1,24 @@
+Bubble Machine (drozerix_-_bubble_machine.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=176020
+Renamed to "BUBLMACH.XM" because of DOS 8-character limit
+
+Summary
+
+    drozerix_-_bubble_machine.xm is a XM format module. 
+    Uploaded to modarchive.org on Thu 18th Sep 2014
+
+Info Info
+
+    Mod Archive ID: 176020
+    MD5: 67c4fb649eeefc1053f38f75536725d9
+    Format: XM
+    Channels: 10
+    Genre: Chiptune
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     Drozerix (https://modarchive.org/member.php?84702)

@@ -1,0 +1,9 @@
+Game: Space Quest V: The Next Mutation
+Year: 1993
+Composed by: Timothy Steven Clarke, Christopher Stevens
+MIDI versions: GM
+Platform: DOS
+
+Additional info: Single file in the folder root is a complete General MIDI soundtrack.
+
+https://www.karlsitretro.com/game_midi

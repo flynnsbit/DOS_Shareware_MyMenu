@@ -1,0 +1,9 @@
+Game: Space Quest 6: Roger Wilco in the Spinal Frontier
+Year: 1995
+Composed by: Dan Kehler
+MIDI versions: GM
+Platform: DOS
+
+Additional info: Single file in the folder root is a complete General MIDI soundtrack.
+
+https://www.karlsitretro.com/game_midi

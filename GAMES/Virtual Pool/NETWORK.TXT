@@ -1,0 +1,102 @@
+
+                   ------------------------------------------
+                   Playing Virtual Pool via Network or Modem
+                   ------------------------------------------
+
+  Virtual Pool can be played against another person over a Local Area 
+  Network (LAN), a Telephone Modem, or a Null Modem (RS-232).  The connection 
+  type is chosen from the DEVICE SETUP menu from within the game.  
+  
+  The connection procedure for each of these options is described below.
+
+
+
+  Local Area Network Connection:
+  ------------------------------
+  The network connection requires an IPX driver to be installed on each 
+  system before Virtual Pool is started.  If your system does not currently 
+  have an IPX driver installed, look for a file named IPX.COM in the software 
+  supplied with your network card.  Install the IPX driver by typing IPX in 
+  the directory containing the IPX.COM file.
+ 
+  Sender:
+
+  1) Select Game and Scoring options from the Game Setup menu
+  2) Select "Network or Modem Player" from the Opponent Section Game Setup 
+     menu and click on OK.
+  3) Choose "Transmit" from the Network menu that just popped up
+  4) Upon connection the balls will rack and it will be your turn
+  5) If you want to load a saved game you can do it now
+  6) Enter your name by selecting Change Player Name in the Game Options menu
+  7) Play pool!
+
+  Receiver:
+  
+  1) Select "Network or Modem Player" from the Opponent Section Game Setup 
+     menu and click on OK.
+  2) Choose "Receive" from the Network menu that just popped up.
+  3) Upon connection the balls will rack and it will be your opponent's turn.
+ 
+
+  Telephone Modem Connection:
+  ---------------------------
+
+  The Telephone Modem connection is done over telephone lines between two 
+  computers with Hayes-compatable modems.  Configure the modem port 
+  selection on the DEVICE SETUP menu to the COM port that your modem is 
+  installed on.
+
+
+  Sender:
+  1) Select Game and Scoring options from the Game Setup menu
+  2) Select "Network or Modem Player" from the Opponent Section Game Setup 
+     menu and click on OK
+  3) Choose Transmit from the Network menu that just popped up
+  4) Enter the phone number you want to call in the Dial menu that just 
+     popped up.
+  5) If you want to load a saved game you can do it now
+  6) Enter your name by selecting Change Player Name in the Game 
+     Options menu.
+  7) Play pool!
+
+  Receiver:
+  1) Select "Network or Modem Player" from the Opponent Section Game Setup. 
+     menu and click on OK.
+  2) Choose Receive from the Network menu that just popped up.
+  3) Upon connection the balls will rack and it will be your opponent's turn.
+
+
+ 
+
+
+  Null Modem Connection:
+  ---------------------
+
+  Note:  Playing Virtual Pool with a Null Modem has not be fully tested
+  as of the release of this demo, so you may experience problems maintaining
+  a connection while in this mode.
+
+
+  A Null Modem Connection is a RS-232 cable connected between the serial
+  ports of two computers.   The COM Port Setting in the DEVICE SETUP Menu 
+  must be set to port your cable is actually plugged into.
+ 
+  Sender:
+  1) Select Game and Scoring options from the Game Setup menu
+  2) Select "Network or Modem Player" from the Opponent Section Game Setup 
+     menu and click on OK
+  3) Choose Transmit from the menu that just popped up
+  4) Upon connection the balls will rack and it will be your turn
+  5) If you want to load a saved game you can do it now
+  6) Enter your name by selecting Change Player Name in the Game Options menu
+  7) Play pool!
+
+  Receiver:
+  1) Select "Network or Modem Player" from the Opponent Section Game Setup menu and click on OK
+  2) Choose Receive from the menu that just popped up
+  3) Upon connection the balls will rack and it will be your opponent's turn
+
+
+
+<End_Of_File>
+

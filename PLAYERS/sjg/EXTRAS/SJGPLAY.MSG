@@ -1,0 +1,108 @@
+No CD-ROM driver!
+Hi there!
+* Track(   % of   :  )
+Disc(  :  ) * Drive( )
+Volume(  ) Repeat(   )
+H=Help M=Mode(       )
+Track
+---OneSTPAllDrvA-?A-B
+[--0---]Stopped [--2---]Playing [--4---]Paused  [--6---][--7---][--8---]Open    .
+Elapsed RemainElapsed Remain  Track Remain
+Track   Track      CD     CD Frame# Frame#
+Help   PlayLstCD InfoLyrics KaraokeTrack  CDTitleFreqBrsScope  Config About  CatalogUtilHlpTimer
+     Intro
+       Prg
+ -+³PlayL³CDInf³Lyrcs³Karao³Track³CDTtl³FrqBr³Scope³Confg³About³Catlg³Utils
+ -+³0123456789³[<-³<<<³<<³þ³ð³>³>>³>>>³->]³+-³INTRO³AB³REPT³TIME³EJECT³-VOL+
+ -+|0123456789|@71|@73|@75S| |P@77|@81|@79|+-|IIIII|AB|RRRR|TTTT|XXXXX|[===]
+ -+³0123456789JC³DEL³PRG³LOAD³SAVE³PRINT³EDIT³FULL³HELP³VID³-VOL+³-DRV+³QUIT
+ -+|0123456789JC|@83|GGG|LLLL|WWWW|?????|EEEE|FFFF|HHHH|VVV|[===]|<~~~>|QQQQ
+Quit?
+Set Event
+Display a message, play track, change mode at specific time, or when Count=0.
+For countdown enter seconds as negative (ie: -30).
+Enter event Time(HH:MM:SS) or Countdown(-SS):
+Message?
+Play track# (-1=Stop, 0=No change):
+Display mode.........(0=No change):
+Display Timer
+Changes Display Mode after specified elapsed time.
+Elapsed time (Seconds, 0=Disable):
+Modes List:
+CD Frame Responce:
+$Time...:#
+  Track:
+  Display Mode:
+$Message:#
+Timer:
+Countdown:
+H=HELP
+Name CD:
+If you used a text editor to type out the lyrics or tracklist and you don't
+know the {IDNUM} for the CD, this will rename those files as CD{idnum}.*
+Files must be in the form: {NAME}.CD or {NAME}.Tnn
+(where nn is the track number, ie: 01, 02 etc)
+Enter {NAME} for THIS CD:
+Extract:
+This will extract lyrics for the CURRENTLY SELECTED track from an album file
+Enter filename to extract from:
+Song name:
+Not found! Lyrics Available for extraction:
+Alert!
+You are already using an album file for this CD. You MUST have the individual
+lyric files or you will loose information in the current album file!
+Continue?
+Make Album:
+This will make an album file for the CURRENT CD.
+Comment:
+Done!...
+Do you want to erase the individual lyric files?
+Import Lyrics:
+This will import the specified lyric file to the CURRENT track format.
+Enter name for file:
+Save Lyrics:
+This will save (copy) the lyrics for the CURRENT track.
+Enter name for file:
+Delete Lyric:
+@TRACK:$
+@ID   :$
+@CD   :$
+#Are you sure you want to @delete# the lyrics for this track?
+Delete CD:
+#Are you sure you want to @delete# ALL files for this CD?
+#(@INCLUDING# any lyrics files)
+Zip
+#Are you sure you want to @
+# the files for THIS CD?
+Add
+Extract
+pkzip
+pkunzip
+Tape Dub:
+This inserts appropriate PAUSES in the PLAYLIST so tracks fit to each side.
+Enter tape length for ONE side (minutes):
+To add/insert at marker enter a 2-digit track number...
+Step
+(PAUSE)
+Loading...
+Sorting...
+Print
+#Are you sure you want to print the
+Printing...
+Lyrics not available
+Save?
+No CD in the drive! Please enter a filename (or press ESC to abort)
+Filename:
+Saving...
+Line:
+Checking if any units are playing...
+ESC=Exit
+edit
+sjgplay.cfg
+Select Tray
+Unit Scan
+Load Messages?
+Load Font?
+Save Catalog?
+Main    Line    CD      Wave    MIDI    Treble *Bass   *
+

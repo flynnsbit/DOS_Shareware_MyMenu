@@ -1,0 +1,39 @@
+
+                            -----------
+                            Video Setup
+                            -----------
+
+  When you start Virtual Pool for the first time, the game will be in low
+  resolution to insure its compatibility with all VGA video cards.  To
+  switch to high resolution mode, bring up the Main Menu by pressing the 
+  Escape key or by clicking the right mouse button.  From this menu, select
+  the option VIDEO SETUP.  A window will open, displaying the installed
+  video drivers.  Select the proper driver for your video card from the list.
+  These drivers are based on the type of chip used in various video cards.   
+  There are currently many different manufacturers of video cards, 
+  and each manufacturer may use different chips in different models, or
+  in different versions of the same card.  To determine the chip set of your 
+  particular video card, refer to your video card documentation, inspect the 
+  actual video card for the chip type, or contact the manufacturer.    
+
+  If you make a mistake and select the wrong card, don't worry.  The program 
+  should display an error message and allow you to return to the standard, 
+  low resolution mode.  If your computer should hang, simply reboot, and
+  when re-starting the game, press ESCape when given the option to bypass
+  the currently selected Video Driver.  The game will then start in low-res
+  mode, and you can try another video selection.
+
+  Virtual Pool uses specific Video Drivers to insure the fastest possible
+  game play.  As these drivers are constantly being written and updated,  
+  there may not yet be one available for your particular Video Card.  In  
+  this case you may try the "Universal" driver by selecting the 640x480
+  VESA 1.2 BIOS EXTENSION.  Note that the successful use of this driver
+  is dependent on several factors and may not be compatible with your
+  particular system or configuration.
+
+  If none of the included drivers work for your video card, don't worry.  
+  Virtual Pool plays perfectly accurate in normal resolution mode.
+
+
+
+<End_Of_File>

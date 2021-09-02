@@ -1,0 +1,435 @@
+I. Introduction
+
+Welcome to Command and Conquer. In this demo you will be playing the side of
+the Global Defense Initiative (GDI): the strike force of the United Nations,
+the "good" guys. Your opponents are the forces of the Brotherhood of Nod, a
+ruthless terrorist organization bent on world domination.
+
+II. Title Screen Menu
+
+This is where you begin the game. You are given a few options here.
+
+     Start New Game: Choose this option to start a new game. You will
+                     receive instructions on your mission objective and
+                     then enter the battle.
+
+     Load Mission:   If you have previously saved a mission, you may reload
+                     it with this option.
+
+     Order Info:     This option will give you information on how to order
+                     the full version of Command and Conquer.
+
+     Replay Intro:   If you wish to review the introduction sequence, choose
+                     this option.
+
+     Exit game:      Choose this option to exit the game and return to your 
+                     operating system.
+
+Please note that multi-player (modem and network) functionality is only
+available in the full version of Command and Conquer.
+
+
+III. The Playing Field
+
+Your screen is broken up into 3 sections. The first and largest section is
+the map. This is where all of the action in the game takes place. To scroll
+around the map, simply move the cursor to the map edge (notice it changes to
+a fat white arrow). If you reach the edge of the world, the arrow will be
+covered by the 'universal no' symbol. The second section is the Sidebar. 
+This is where your Radar and building options are located (more on these 
+below.) The third section is the strip of tabs at the top of the screen. 
+There are three tabs:
+
+     Options:       Clicking this tab pauses the game and takes you to the
+                    options window.
+
+     Credits:       This tab shows the current amount of Tiberium credits
+                    available to you. Tiberium is gathered by Harvesters and
+                    processed in a refinery. If you lose your harvester or
+                    refinery, you no longer have a source of income, and 
+                    your career in GDI will be short.
+
+     Sidebar:       Clicking this tab will hide the sidebar and give you a
+                    larger view of the map.
+
+
+IV. How to Play
+
+Once you have received your instructions, you will find yourself on the 
+field of battle, looking at your troops. Most actions in Command and Conquer 
+are controlled by moving the mouse and using the left mouse button. Each 
+action has its own cursor. The default cursor is a white pointer arrow, the 
+same one that is used to select menu options.
+
+    Selecting Units
+
+    To do anything with a unit, you must first select it. To do so,
+    place your pointer over the unit. Notice that the cursor changes to a
+    white box. Left click the unit - it now has a white box around it. You
+    can also select more than one unit at a time by holding down the left
+    mouse button and dragging the cursor to include all the units you wish.
+    Doing so will draw a white box around the units; all units within the
+    box will be selected, and any command you give will affect them all.
+
+    Moving Units
+
+    To move a unit, move your mouse to the desired location. Notice the
+    cursor changes to a green circle with white arrows. Left click the 
+    mouse to move your selected unit(s) to that location. If you choose 
+    a location that is unreachable, the movement cursor will be covered 
+    by the "universal no" sign.
+
+    Attacking
+
+    To attack an enemy unit, move your cursor over it - notice that the
+    cursor changes to a white circle with red arrows. Left click the enemy,
+    and your selected unit(s) will attack.
+
+    Deploying the MCV
+
+    The Mobile Construction Vehicle is a special unit that unfolds to 
+    become your construction yard. To deploy the MCV, select it. If the 
+    MCV is in a good location and is not being attacked at the time, the 
+    cursor will change to a green dot with outward pointing arrows. Left 
+    click it again, and it will deploy. Since all buildings must be built 
+    next to an existing structure, make sure you have plenty of open space 
+    before deploying your MCV. Otherwise, you may not have enough room to 
+    build the rest of your base.
+
+    Transporting Infantry
+
+    Infantry (including Commandos) can be transported on transport 
+    helicopters and APC vehicles. To load a passenger into a transport, 
+    select the infantry soldier and then move the mouse over the 
+    transport. When the downward pointing green arrows show up, click the 
+    mouse. The infantry soldier will walk into the transport. Move the 
+    transport normally. When ready to unload, double click on the 
+    transport in the same manner as used when deploying the MCV. All 
+    passengers will then unload.
+    
+
+V. The Sidebar
+
+Once you have deployed your MCV, The sidebar becomes active. The sidebar
+consists of four sections: the building strips, the radar screen, the power
+output strip and the buttons.
+
+   Building Structures
+
+   The left building strip allows you to build structures. To build what 
+   you want, click the icon for the structure. The icon will become gray, 
+   and begin counting down the construction time. Right clicking the icon 
+   during the building time will pause the construction; a second right 
+   click will cancel it. When finished, you will hear the "construction 
+   complete" message, and the word 'ready' will appear at the bottom of 
+   the icon. Left click the icon again, and move your cursor to the map. 
+   You will see a white grid in the shape of your chosen structure. To 
+   place the structure on the map, left click. You cannot build another 
+   structure until you have placed the one that is ready. If any part of 
+   the grid turns red, the location you have chosen is unsuitable. You 
+   may right click to cancel placement and return to the 'ready' stage.
+
+   Structure Tips
+   
+   - Everything you build requires credits. You get credits from harvesting
+     Tiberium. It is a good idea to scout out the Tiberium fields at first
+     opportunity.
+
+   - The first building you are allowed to build is a Power Plant. Notice
+     that when you do, the Power Output Strip turns green. Also note the
+     blue line on the Strip. The green is the power you have (this will 
+     turn yellow or red depending on the placement of the blue line) and 
+     the blue line is how much power your buildings require. Remember that 
+     when your power level is yellow, some structures cease to function, 
+     and build times are increased.
+
+   - To create units, you must build the correct structure (factory): 
+     Infantry require a barracks, vehicles require a weapons factory. 
+     Building two barracks will decrease the build time for infantry; 
+     this applies to any factory building.
+
+   - There are pre-requisites for some structures and units. For example,
+     you cannot build a refinery without first building a power plant, and
+     you cannot build an APC without first building a barracks and a 
+     weapons factory.
+
+   - When you build a Communications Center, the radar screen becomes
+     available to you (it appears where the GDI logo is on the sidebar) if
+     you have sufficient power. The radar shows everything on the map that
+     you have explored (unexplored portions of the map are black). You can
+     change the magnification of the radar by clicking the MAP button under
+     the screen. You can also click the screen to move to different parts 
+     of the map, and can click on the radar screen to move units.
+
+   - If one of your structures becomes damaged, you can repair it by 
+     clicking on the REPAIR button, located under the radar screen. Doing 
+     so changes your cursor to a wrench. Any structure you click on with the 
+     wrench icon will begin repairing itself (draining credits as it does). 
+     The cursor will remain a wrench until you either click the repair 
+     button again or right-click the mouse.
+
+   - If you wish to get rid of a structure, or you desperately need cash, 
+     you can sell it by clicking the SELL button under the radar screen. 
+     Doing so changes the cursor to a dollar sign. Clicking on a structure 
+     with the sell cursor will dismantle it with two effects. First, you 
+     will be refunded half the building price of the structure. Second, 
+     you will see the personnel of the structure abandon it; these usually 
+     consist of minigun troops or civilians. Be careful not to sell your 
+     construction yard unless absolutely necessary! If you do, you will 
+     not be able to build any more structures.
+
+   - If you have more than one of a factory (whether by building it or
+     capturing one from your enemy) you can select a primary unit-building
+     location. This means that units which are common to both structures 
+     will appear at the primary location when built. For example: If you 
+     have two Barracks or a Barracks and a Hand of Nod, minigunners will 
+     appear at the primary location. If you have a Barracks and a Hand of 
+     Nod, a grenadier will only appear at the barracks, and a flamethrower 
+     will only appear at the Hand of Nod, since the units are not common 
+     to both structures.
+
+   Building Units
+
+   When you complete construction on a unit-capable structure, the units
+   available to build will appear on the right strip. Building units is
+   similar to building structures: click the icon and the countdown begins.
+   Once the unit is ready, it will walk/roll out of the structure that
+   created it (the Barracks or Factory).
+
+   Unit Tips
+
+   - You can check on a unit's health by selecting it. If the colored 
+     bar is green, the unit is healthy. This will change to yellow and 
+     red as the unit takes damage. While there is no way to heal infantry, 
+     later missions will allow you to build a repair bay, which will repair 
+     any vehicle (which costs credits). To repair a vehicle, select it, 
+     then place your cursor over the repair bay. Notice the cursor changes 
+     to the 'enter' cursor (three downward-pointing green arrows). Left 
+     click, and the unit will make its way to the repair bay. Once the 
+     unit is fully repaired, you will need to move it off the bay to make 
+     way for the next unit.
+
+   - Remember! Tiberium is poisonous to infantry! Moving a trooper through 
+     a Tiberium field will eventually kill him. 
+
+   - The Engineers are special units. Though they do not have any offensive
+     or defensive capabilities, they are able to capture an enemy building
+     and place it in your control. To do this, select your engineer, then
+     move the cursor over an enemy structure (notice the 'enter' cursor) 
+     then left click. The engineer will make his way to the structure, 
+     and if successful, the structure will change color and be in your 
+     control. Once captured, the enemy structure is yours to use, including 
+     selling it, or producing units. Note that this will allow you to build 
+     units and structures not normally allowed to you. Some structures 
+     (such as SAM sites, Turrets and Obelisks) cannot be captured.
+
+   - The Orca is an air unit you will receive in the second demo mission. 
+     The Orca is selected and targeted just like any other unit. However, 
+     you cannot select an Orca once it is airborne. For this reason, you 
+     may wish to keep the Orcas on a group hot-key (see the README file for 
+     keyboard shortcuts and hot-keys). You can get Orcas to return to their 
+     pads by selecting them, placing the cursor over the pad (notice the 
+     'enter' cursor) and left clicking. Orcas are immune to weapons other 
+     than missiles (such as SAM sites or Bazooka troops).
+
+
+
+VI. The Options Menu
+
+The Options menu is accessed either by clicking the options tab in the 
+upper left corner, by hitting the space bar, or by hitting the Escape 
+key. You have several options:
+
+    Load Mission:   The same as the main menu option - loads a previously
+                    saved game.
+
+    Save Mission:   Save your mission in progress. You may name the saved
+                    game anything you like, and the only limit on the 
+                    number of savegames is your available hard drive space.
+
+    Delete Mission: Allows you to delete a savegame from your hard drive.
+                    Useful to conserve space.
+
+    Abort Mission:  Choosing this option allows you to exit the mission to
+                    the main menu, or restart the current mission.
+
+    Resume:         Takes you back to the action.
+
+    Restate:        Gives you a text summary of the mission objectives. 
+                    Also gives you the option of reviewing the video 
+                    briefing.
+
+    Game Controls:  This option brings up a new menu to adjust the settings
+                    of the game:
+
+        Game Speed:      Adjusts the overall speed of the game.
+        
+        Scroll Rate:     Adjusts the scroll rate of the map.
+
+        Visual Controls: Allows you to adjust the brightness, color, 
+                         contrast and tint of the game.
+
+        Sound Controls:  From this menu you can adjust the volume of the
+                         music and sound effects, change the music track,
+                         listen to a music track, or set the music tracks 
+                         to shuffle during the game. The demo contains 
+                         two of the music tracks from the many available 
+                         in the full version of Command and Conquer. To 
+                         listen to a track, click the desired track, then 
+                         click the play button.
+
+
+
+VII. List of Available Structures in the Demo (note that not all structures
+     are available in all three missions)
+
+
+GDI (you can build these)
+
+    Construction Yard
+        The construction yard is formed from a deployed MCV. It is the
+        foundation of a base and allows the construction of other 
+        buildings.
+
+    Power Plant
+        Provides power for the buildings in your base. The power output
+        declines when this structure is damaged.
+
+    Barracks
+        This building allows the training of infantry units.
+
+    Guard Tower
+        Provides base defense with a high-powered machine gun.
+
+    Refinery
+        Processes Tiberium into credits. A refinery comes with one 
+        Harvester, and will store 1000 credits.
+
+    Silo
+        This building stores 1500 credits of Tiberium.
+
+    Communications Center
+        Allows the use of the radar screen, as long as there is sufficient
+        power.
+
+    Weapons Factory
+        Produces light and heavy vehicles.
+
+    Helipad
+        Allows the production of the Orca VTOL craft. Each pad comes with
+        one Orca.
+
+    Repair Facility
+       Repairs damaged vehicles. If the bay is damaged, repair time is
+       increased.
+
+    Barrier Defenses
+       Includes sandbags (which provide some cover and block unit 
+       movement) and Chain-link fences (which will stop light vehicles).
+
+
+
+NOD (You can build these if you capture the NOD construction yard)
+
+    Hand of Nod
+        Allows you to train infantry (equivalent of barracks).
+
+    Turret
+        A non-mobile defense against vehicles.
+
+    SAM Site
+        Non-mobile, fires surface-to-air missiles at enemy aircraft.
+
+    Airstrip
+        Allows the purchase of heavy and light vehicles (equivalent of
+        weapons factory).
+
+
+
+VIII. List of Available Units in the Demo (note that all structures are not
+      available in all three missions)
+
+
+GDI (You can build these)
+
+    Minigun Infantry
+        The standard for GDI and NOD forces.
+
+    Grenade Infantry
+        These troops can throw their grenades over barriers and up hills to
+        great effect. May catch friendly units with area effect (shrapnel).
+
+    Bazooka Infantry
+        These troops use portable rocket launchers for great effect on 
+        armor units, air units, and structures.
+
+    Engineers
+        These troops carry no weapons, but have the ability to capture 
+        enemy buildings.
+
+    Humm-Vee
+        A quick vehicle armed with a chaingun.
+
+    APC
+        This vehicle can carry up to 5 infantry units. To load an APC,
+        select your infantry unit, then place the cursor over the APC
+        (notice the 'enter' cursor) and left click. Only one unit can 
+        load at a time.
+
+    Medium Tank
+        The staple of the GDI armor arsenal.
+
+    MCV
+        The unit which deploys into a Construction yard. You will not be
+        able to build these in the demo, so guard it well.
+
+    Harvester
+        This vehicle gathers Tiberium and returns it to the refinery for
+        processing. You get one free with each refinery you build, but you
+        may build them separately.
+
+    Orca
+        An attack aircraft which fires a limited supply of rockets (the orca
+        must return to the helipad to reload). You get one free with each
+        helipad you build, but you may build them separately if you have a 
+        helipad available.
+
+    Ground Support Aircraft (A-10)
+        You cannot actually build these, but if you eliminate all SAM sites
+        on the map, you will gain airstrike capability. This allows you to
+        call an A-10 loaded with napalm to fry the enemy troops.
+
+
+
+NOD (you can build these if you capture NOD's Hand of Nod and Airstrip)
+
+
+    Flamethrower Infantry
+        A nasty trooper carrying a flame pack. May catch friendly troops
+        with spray, and explode when killed.
+
+    Recon Bike
+        A very quick unit armed with rockets.
+
+    Nod Buggy
+        A quick unit with a mounted machine gun.
+
+    Light Tank
+        The staple of the NOD armory. Not as effective as the GDI tanks, but
+        cheaper and faster.
+
+    Mobile Artillery
+        Devastating to units and structures at long range, but weak and
+        ineffective close up.
+
+    Flame Tank
+        The ultimate anti-personnel weapon, this tank sprays twin flames at
+        it's victims. Explodes when destroyed.
+
+
+IX. Final Notes
+
+For more information about units and structures (both in this demo and in 
+the full game) including building prerequisites, please see the FAQ file. 
+For more general information including keyboard shortcuts and hot-keys,
+troubleshooting and installation information, please see the README file.

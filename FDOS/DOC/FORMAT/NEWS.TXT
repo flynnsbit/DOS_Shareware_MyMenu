@@ -1,0 +1,534 @@
+NEWS.TXT
+
+Version History:
+
+Version 0.91v (14 Jan 2006)
+              Changes by Eric Auer fixing bugs found by Alain Mouette:
+              - fixed prf.c, which had no %h... short int modifier support
+              - do not attempt to let DOS read the BPB (int 21.32) of a
+                disk which has a readable but nonsensical boot sector
+              - avoid truename subst/join check on possibly lowlevel-
+                unformatted a:/b: (seems to be no problem on harddisks)
+              - return errorlevel 1 if bad clusters found during format,
+                but only if /d or /y or /z:seriously option active
+              - fixed off by one diskette bad sector map recording bug
+              - allow disk change right before start of lowlevel format
+              - nicer Ask_User_To_Insert_Disk in redirected-output case
+              - small floppy changes, new notes about gap length / 2M
+              - more frequent progress info update in harddisk wipe (/u)
+
+Version 0.91u (27 Apr 2005 / 25 May 2005)
+              Changes by Eric Auer ("charset research" by Wilhelm Spiegl)
+              - volume label prompt and volume label command line option
+                now accept the same chars as MS FORMAT would, where older
+                FreeDOS FORMATs accepted the whole ASCII ' '-'Z' range.
+                Accepted: A-Z 0-9 space ! # $ % ' - @, plus new _ { } ~
+                and chars 128-255. Rejected: control chars, char 127
+                and now also " & ( ) * + , . / : ; < = > ? [ \ ] ^ ` |
+                but do not even TRY to use " < > | on the command line...
+              - use intdos for country / date / time if not Turbo C
+              - makefile format.mak and peekb macros for Watcom C
+              - some changes in longhelp help message
+              - extra FAT32 xBPB checks in createfs
+              - be less picky about access flags: now formats DW ramdisk
+              - FAT write progress percentage display and div by 0 fixed
+
+Version 0.91t (25 Feb 2005)
+              Changes by Eric Auer:
+              - FORMAT is now compiled with smaller prf.c printf
+              - reduced debugging messages and avoiding duplicate "100%".
+              - improved detection for WinNT/2000/XP/... DOS box
+              - added detection for remote drives, SUBST, JOIN, ASSIGN.
+              - "other" floppy drive types are now treated as 1440k ones,
+                useful for USB floppy drives (which only support 1440k!).
+              - removed conio usage from uformat, results in smaller exe.
+              - improved style of calling SYS in FORMAT /S.
+              - improved prompt-for-label handling.
+
+Version 0.91s (24 Aug 2004)
+              Changes by Eric Auer (tests by Daniele Giacomini)
+              - fixed DDPT handling for 5.25in drives (was broken since
+                0.91q). However, the 18 sector/track overformats for
+                5.25in (1440k, 1494k) are still unlikely to work. The
+                360->400k/720->800k/1440->1680k overformats work better.
+              - lowlevel floppy format now stores track description in a
+                buffer which is N sectors away from a DMA boundary, even
+                though only N * 4 bytes are used. Some BIOSes implement
+                wrong checks for DMA overruns and refused to format with
+                the old version (idea found in an old usenet posting by
+                Mark Zbikowski :-)).
+              - the int 13 calls in floppy.c (and one in driveio.c) now
+                check AH only if the carry (there: error) flag is set.
+              - the DDPT contents are backed up between calls, so you can
+                now redirect logs to B: in "format A:" and vice versa. In
+                older versions, format used some aspects of B: for the
+                lowlevel format of A: in such cases and failed.
+              - cleaner DDPT and drive setup code, shorter DDPT logging.
+
+Version 0.91r (18 Jul 2004)
+              Changes by Eric Auer:
+              - unless you use the /D option, we now use boring MS compat
+                errorlevels: 0 ok, 3 user abort, 4 fatal, 5 not confirmed
+                (WITH /D option: see help.txt for new errorlevels...!)
+              - attempt to lock non-existing drives is recognized as such
+                (in FAT16 DOS, attempt to get parameters of non-existing
+                drive, *after* format confirmation, is recognized... This
+                is a kludge as FreeDOS 2035 int 21.36/21.1c return wrong
+                errors for unformatted *existing* drives. Happy fixing!?)
+              - now unlocking drives in case of an abort (not for ^C yet)
+              - prompts for label if no /V:... given, unless /Y used
+              - Mirror aborts if it would overwrite used data, SafeFormat
+                gives a warning if mirror data damaged unformateable data
+              - shortended debug messages even more (e.g. in createfs)
+
+Version 0.91q (11 Jul 2004)
+              Changes by Eric Auer (tests by Geraldo Netto, Brazil):
+              - confirmation YES/NO prompt cleaned up, now waits for the
+                next (usually ENTER) keypress after the word YES is typed
+              - Win9x style drive locking now follows MSDN guidelines, so
+                1. normal FORMAT A: works in DOS box and  2. FAT32 system
+                corruption danger between FORMAT and reboot is reduced.
+                Two nested level 0 locks now, inner lock with perms=4.
+              - Do not insist on exact floppy geometry setup if Win9x
+                (Default DDPT 63 sec/track there, int 13.18 troubles!?)
+              - shortened some debug messages - reduced binary size a bit
+              - do not call Force_Drive_Recheck or Check_For_Format while
+                inner lock is on: avoids Win9x sharing violation error
+              - todo.txt: new items "unlock on abort" and "ask for label"
+                (So without /v:somelabel there is no label, and if FORMAT
+                aborted with an error, you must close the Win9x DOS box!)
+
+Version 0.91p (6 Jul 2004)
+              Changes by Eric Auer:
+              - "Format complete" now is "... complete" with "..." being
+                a string describing the completed action (e.g. "Mirror")
+              - FAT32 mirror/safeformat now saves ALL reserved (boot...)
+                sectors and at least 16k of the beginning of the data
+                area, min(1_cluster,32_sectors) -> 512+ dir entries saved
+              - cleaned up some duplicate messages and code
+                (createfs, bcread, hdisk, main, recordbc, savefs changed)
+              - OEM ID changed to FRDOS4.1 (better WinXX compatibility)
+                Thanks to John Elliot for pointing out that problem.
+              - forced use of filesystem info and backup boot sectors,
+                else WinXX seems to assume "root dir at cluster ZERO"!?!?
+                (Overrides default BPB suggestions, MS kernel issue...)
+
+Version 0.91o (3 Feb 2004)
+              Changes by Eric Auer:
+              - progress indicator for scanning of existing FAT and for
+                mirroring now uses percentage display (less output)
+              - added another check for Win9x: Root directory chain starts
+                at cluster 2 if Win9x suggests cluster 0 (nothing).
+                I really hope that this finally allows FORMAT to create
+                working FAT32 filesystems *even* under Win9x kernels...
+              - no longer trying to find existing FAT32 format on floppy
+              - faster mirror function: now using multi sector I/O useful
+                for both floppy (slow seek) and FAT32 (huge partititons)
+              - the "allow ESC at last moment if /D mode and floppy" is now
+                suppressed by /Y (more consistent, /Y is "no prompts" mode)
+
+Version 0.91n (30 Jan 2004)
+              Changes by Eric Auer:
+              - avoiding int 13.17 disk type setting for 1.44M drives
+                (FreeDOS kernel simply tries 13.18 first and if it fails
+                with error != 0x0c or 0x80, it tries 13.17) now...
+              - fixed(?) stupid bug which allowed Win98se kernel to suggest
+                FAT32 info sector position equal to boot sector position
+                (at each bootup, Win9x/ME reads the whole FAT to RAM and
+                writes the stats to the info sector) and trip over itself
+              - added /Z:longhelp option for full multipage help screen.
+              - "deverbosed" some format /d error messages in 2nd release
+                (in floppy lowlevel format, boot sector test read, savefs).
+
+Version 0.91m (22 Jan 2004)
+              Changes by Eric Auer:
+              - added /A flag for cluster alignment (make each FAT 4*n
+                sectors big / reserved area 8*n sectors big), for WinXP
+                NTFS conversion (NTFS clusters start at sector 0 and are
+                preferrably 8 sectors each in WinXP: Win2000, or WinXP-if-
+                sizes-are-unaligned can only handle 1 sector / cluster!
+              - 0.91MEGA looks better than 0.91LAME :-)
+
+Version 0.91l (20 Jan 2004)
+              Changes by Eric Auer:
+              - added builtin /Z:MIRROR and /Z:UNFORMAT for all FAT types
+              - added /Z:SERIOUSLY flag for non-interactive harddisk format
+              - optimized some messages in normal and /D verbose mode
+              - FORMAT is now able to request Win9x drive LOCKs itself
+
+Version 0.91k (19 Jan 2004)
+              Changes by Eric Auer:
+              - added "preserve bad cluster list" code with fast block I/O
+                with usage statistics display to know how much is gone ;-)
+              - new NLS / country support in huge number display
+              - fixed file systems statistics display for FAT32
+              - fixed boot message code for FAT32
+              - improved floppy handling and Force_Drive_Recheck usage
+              - fixed surface scan (bailed out on I/O error in 0.91j)
+              - added "UNFORMAT" support for FAT32, if anybody cares...
+              - allowing FAT32 > 16 MB and 64k cluster size again (WinXP)
+              - faster FAT creation thanks to fast block I/O
+              - some code cleanups (signed<->unsigned conversion) and fast
+                but x86-only "byte array <-> word/dword conversion".
+              - moved "unformat" / mirror data 1 sector towards the start
+              - now detects existing FAT32 formats properly
+              - documented the /Y flag and added a special harddisk /Y...
+
+Version 0.91j (13 Dec 2003)
+              Changes by Eric Auer:
+              - disabled free_count in FS info sector BACKUP copy
+              - using 0xf..ff as EndOfChain, not 0xf...f8 (more MS style)
+              - bad clusters are now marked even for FAT32
+                (only if you used surface scan to find them: FORMAT /U)
+              - Fixed "sector buffer clear" failure when alternative
+                buffers are used (if main buffers cross a DMA boundary)
+
+Version 0.91i (12 Dec 2003)
+              Changes by Eric Auer:
+              - drive_specs array only used for initial floppy format
+                selection now. All other places use parameter_block.bpb!
+              - improved total / available space calculations,
+              - more verbose error messages if broken metadata sector found.
+              - some mixed bugs and inconsistencies fixed.
+              - fixed floppy root directory size rounding.
+              - fixed FAT32 root directory allocation-and-BPB bugs.
+              - force display to reach 100% (surface scan / lowlevel format).
+              - data area wipe / surface scan are now OFF by default for
+                harddisks. FORMAT /U forces scan / wipe (ESC skips "part").
+
+Version 0.91g / 0.91h (11 Dec 2003)
+              Changes by Eric Auer:
+              - cleaned up code to use only BPB and to only use 1 copy of
+                the BPB in general. Use only BPB in floppy format list, too.
+              - fixed total/free space calculations...
+              - FAT12 / FAT16 / FAT32 should now work, but beware: The FAT32
+                surface scan (wipes the data area, too) can take ages. Added
+                a check for ESC key to skip parts of the surface scan.
+              - 0.91h fixes some variable size and printf format string bugs
+                and similar problems. Should work much better now.
+
+Version 0.91e / 0.91f (12 Nov 2003)
+              Changes by Eric Auer:
+              - various cleanups, sanity checks, kludges.
+              - trying to use only BPB, not DPB.
+              - 0.91f just has more "no DPB please" kludges.
+
+Version 0.91d (7 Nov 2003)
+              Changes by Eric Auer:
+              - fixed important harddisk unconditional format bugs (surface
+                scan did not initialize buffers and sizes right in uformat)
+                which had caused "zillions" of sectors to be marked as bad.
+              - made the help message a bit more "legacy free" - the options
+                for DOS 1.x compatibility (formats < 360k, /8, /1, /B) should
+                only be mentioned in the help file (!?), not the /? output.
+              - made the debug output during harddisk format shorter.
+              - fixed UNFORMAT / mirror information writing and added debug
+                output to it (forgot 1 root dir sector...)
+              - UNFORMAT information (savebs) now allows 1..2 FATs and 1..??
+                reserved (boot) sectors in FAT12 and FAT16.
+
+Version 0.91c (7 Nov 2003)
+              Changes by Eric Auer:
+              - FAT12 bad cluster list / FAT12 writing important bugs fixed
+              - statistics display after format bad cluster treatment fixed
+              - confirmation prompts now use STDERR, not STDOUT (with write,
+                not fprintf, because of big FILE stream function overhead!)
+              - fixed fat size table for non-standard floppy formats
+              - looking at fdformat.pas (FDFORMAT/88 1.8) by Ch. Hochstaetter
+                gave me the clue about non-standard sectors-per-track gap3-
+                for-format DDPT values :-). 10 and 21 sec/track fixed now!?
+              - fixed the "size mode 5 needed for 720k in 1440k drive" case
+                which I had forgotten (i13.17). Thanks to FDFORMAT/88 again!
+                Strange enough, RBIL uses other size mode numbers!??
+              - other smaller fixes
+
+Version 0.91b (27 May 2003)
+              Changes by Eric Auer:
+              - now setting file system creation date and time in the label
+              - improved DDPT handling for different sizes of floppy format
+              - you can now format several floppy disks in one go (unless /y)
+              - the YES confirmation for harddisks is now compulsory
+              - improved error messages (YES vs. Y / write error detection)
+              - fixed off-by-1 error (formatted 1 floppy track too many)
+              - now checking (possible?) 0 sectors per cluster error condition
+
+Version 0.91 (based on 0.90c-f 22-27 May 2003 and 0.90b 25 Mar 2003)
+              Changes by Eric Auer:
+              - many bug fixes - for example avoiding most DMA overruns...
+              - new /D (debug / verbose mode) flag
+              - FORMAT 0.91 uses BIOS to access floppy boot sector
+              - requiring a full-word YES confirmation for harddisk format
+              - disk i/o error messages are very readable in 0.91 :-)
+              - trying hard to set floppy geometry / DDPT before format
+              ...
+
+Version 0.90
+              Changes by Bart Oldeman:
+                1.  Repaired the makefile
+                2.  Removed the complete_fat32_ext_bpb()
+                3.  Set first field of parameter block for int 0x21/0x440d
+                4.  Converted fsinfor 512 byte struct to static in order
+                    to save stack space.
+                5.  Initialized the fsinfo with actual total free
+                    number of clusters and cluster to start looking instead
+                    of setting to 0xffffffff.
+                6.  Improved FAT12 detection (number of clusters < 4085)
+                7.  Minor cleanups.
+              Changes by Brian Reifsnyder:
+                1.  Minor code clean-up.
+                2.  Fixed a bug that resulted in an error when using the /t
+                    and /n switches.
+                3.  Added code to retry int 0x25/0x26 drive access 3 times.
+                4.  Changed error message that results from an invalid
+                    argument parameter that was entered.
+                5.  The program now verifies that it can execute the sys
+                    command before attempting execution.  If the sys command
+                    is not located, an error message is displayed and format
+                    continues without writing the system files.
+                6.  Improved the critical error handler code such that more
+                    accurate error messages are displayed.
+                7.  On returns of ax=0x0408, bit 7 is now set in the drive
+                    number as per a note in RBIL, int 0x25/0x26.
+                8.  The serial number applied to the disk is now based upon
+                    the date and time.
+
+Version 0.90  Divided the source code up into smaller files.
+DEV
+              Modified the code that creates the filesystem in order to
+              support FAT32.
+
+              Fixed a bug that resulted in an error when using the /f:<size>
+              switch.  
+
+              Finished adding FAT32 support.  FAT32 support is considered
+              to be alpha until it is mentioned otherwise in this file.
+
+Version 0.85  Removed all of the old command line support.
+
+              Modified getopt.c so that it will support the use of the
+              drive letter at any location in the command line.
+
+              Added bad sector scanning and recording for floppy disks.
+
+              Added bad sector scanning and recording for FAT12/FAT16 hard
+              disk partitions.
+
+              Started adding support for FAT32.  FAT32 support is nowhere
+              near usable or testable, at this time.
+
+Version 0.81  Jim Hall disabled the old command line support and added
+              getopt via the getopt.c and getopt.h files (old format.c
+              kept in format.bak in 0.81 for reference). Also added a
+              format.mak makefile (and format.prj for Borland C IDEs).
+              Finally, Jim Hall updated several files in the doc directory.
+
+              This version was not released and was used as a base for
+              version 0.85.
+
+Version 0.8   Version 0.8 Pre 2 DEV, after testing.
+ 
+Version 0.8   Removed pdiskio.c and replaced it with interrupt 0x25/0x26
+Pre 2 DEV     code in order to access the hard disks through the DOS kernel.
+
+              Contains Patches and fixes, from Tom Ehlert, that improve
+              portability.
+
+              Contains interrupt 0x25/0x26 code written by Tom Ehlert.
+
+              Thanks to James Clark, author of DiskMan, for sending me
+              information on enabling interrupt 0x25/0x26 access on an
+              unformatted logical drive.
+
+              Any hard disk formatting is temporarily forced to the options
+              of "/u /q".  This is done to insure proper formatting of the
+              hard drive.  Since bad sector detection has yet to be added,
+              any hard disk formats should be set to these options anyhow.
+	     
+Version 0.7   Fixed bug that caused the FAT tables to be off by 1 sector,
+	      under certain circumstances.
+
+	      Fixed the problem that caused the summary messages to have
+	      ascii characters, at the end of the numbers, when the format
+	      was finished.
+
+Version 0.6   Added an updated pdiskio.c library.
+Pre 3 DEV
+	      Converted format.cpp to format.c.
+
+Version 0.6   Fixed a bug in the BPB created for hard disks.
+Pre 2
+	      Added a /y switch to the command line to prevent format
+	      from asking for a confirmation to format the disk.
+
+	      Added autodetect capability for 2.88MB floppy drives.
+     
+	      Added interleave handling code for non-standard floppy formats.
+
+	      Added sector skew calculation code for non-standard floppy formats.
+
+	      Minor bug fixes.
+
+	      Added BPB information for non-standard floppy formats.
+
+	      Added safe formatting capability.  The mirror image created is
+	      not compatible with MS's UNFORMAT command.  The mirror image is
+	      only compatible with the FreeDOS UNFORMAT command.
+
+	      Added the capability to unconditionally format hard disks.  This code
+	      is rather slow, in this version, and needs optimized.
+
+	      Added error handling code.
+
+	      Fixed a bug that allowed you to enter invalid drive letters.
+
+Version 0.6   Major re-write to enable the program to format all types of floppy
+Pre 1         disks.
+
+	      Added a module from the development version of Free FDISK 0.98 in
+	      order to easily add direct disk access and the possibility of
+	      future LBA support.
+ 
+	      Compressed the executable with APACK, by Joergen Ibsen.
+
+Version 0.5   Added code to specify exact number of sectors per FAT and 
+	      number of root directory entries for the following floppy
+	      drives:  1.44MB 3.5", 1.2MB 5.25", 720K 3.5", & 360K 5.25"
+	      (The only drive that is known to be successfully formatted is
+	      1.44MB 3.5".)
+ 
+	      Added information to the help screen.             
+
+	      The help screen can be displayed by either typing "FORMAT" or
+	      "FORMAT /?"
+
+	      Adjusted equation for computing the total logical partition 
+	      size which fixed a bug causing an unconditional format to 
+	      format into the next partition.
+
+	      Added code to optimize the formatting process and unconditionally 
+	      format a track at a time.
+
+	      Now marks bad sectors in the FAT table for FAT12 partitions.
+
+	      Increase speed of unconditionally formatting a hard disk by
+	      writing a track at a time instead of a sector at a time.
+
+	      Fixed a bug that prevented accurate boot sectors from being
+	      written in FAT12 partitions on hard disks.
+
+	      Changed the location of the bad sector map initialization code to 
+	      prevent errors reading the disk when formatting with both /u and
+	      /q.
+
+	      Added code to terminate formatting if a bad sector is encountered
+	      in boot sector, FAT tables, or root directory.
+ 
+	      Discovered that the program would write to bad sectors and not
+	      save their locations in the bad sector map.  Added code to verify
+	      that the sectors are good to rectify this problem.  If the sectors
+	      fail verification then it is marked in the bad sector map to be
+	      later recorded in the FAT tables.
+
+	      Fixed a bug that where the program did not always pass a null 
+	      terminated string to the "sys" command when writing system files
+	      while formatting a disk.
+
+Version 0.4   Now supports up to 8 physical drives.
+
+	      Added error trapping to avoid trying to save the file system of 
+	      an unformatted drive.
+
+	      Added the "/s" switch to make the disk bootable.  (Presently
+	      only works under MS-DOS.)
+
+	      Added code to force the volume label to all capital letters.
+
+	      Fixed a volume label creation bug where the volume label is not
+	      correctly added to the boot sector.
+
+	      Fixed the bug that prevented a mirror image being created on 
+	      sectors that had a numbers exceeding 1677216.
+
+	      Fixed a bug that caused the wrong number of sectors to be entered
+	      in the boot sector and processed elsewhere in the program.
+
+	      Now marks bad sectors in the FAT table for FAT16 partitions
+	      when unconditionally formatting a hard disk.
+
+Version 0.3   Added code to save the file system into a "mirror" at the end
+	      of the disk.  This "mirror" image is compatible with the 
+	      unformat command I have written.
+
+	      Moved the logical drive location adjustment code to a 
+	      centralized location under the Convert_Logical_To_Physical()
+	      function.  This should make the program easier to modify in the
+	      future because the now the programmer only has to refer to the
+	      sector number on the logical drive.  The programmer will not
+	      have to adjust for the beginning of a hard drive partition 
+	      when entering what sector to access.
+
+Version 0.2   Added /v switch to create a volume label on a newly formatted
+	      disk.
+
+	      Modified the command line parsing code to eliminate the need 
+	      for the string.h library.
+
+	      Changed the error-level codes to match those in my IBM DOS 5.0
+	      User's Guide and Reference.
+
+	      Corrected the code for processing the /q /u switches so that the
+	      program formats as per my DOS manual.
+
+	      Added more code to process the various switches that can be
+	      entered.
+
+	      Adjusted sectors per cluster conversion table.
+
+	      Added functionality to support up to 4 hard drives with a 
+	      maximum of 26 partitions per hard drive.  The program will now
+	      resolve the drive letter into a physical location to format on
+	      a hard disk.
+
+Version 0.1   Replaced the sloppy code in the Convert_Logical_To_Physical
+	      function with equations.  Thanks go to Jan Verhoeven for 
+	      supplying the equations.
+
+	      Too many code changes to list here.
+
+	      Added a quick formatting routine, format drive: /q now will quick
+	      format a drive.
+
+	      Added more values to the boot sector that were missing in version
+	      0.01.  
+	    
+	      To unconditionally format a drive, format drive: /u must be 
+	      entered.  Unconditionally formatting a drive does not yet
+	      mark bad sectors or clusters in the FAT tables.
+
+	      The program will format 1.44 MB 3.5" floppy disks or the first 
+	      partition of the first hard drive.  The program considers any
+	      drive letter starting with c: to be the first partition on the
+	      first hard disk.  This will be corrected in a future release.
+
+Version 0.01  Formats 3.5" 1.44MB floppy disks.
+
+	      Uses BIOS interrupts to allow it to work under FreeDOS.
+
+	      Has not been tested with other size floppy disks.
+
+	      The "This disk is not bootable" code was taken from the boot
+	      sector of a floppy disk formatted with the "mkfs -t msdos"
+	      command on a Linux PC.
+ 
+	      Most of the "infrastructure" is in place to enable this program
+	      to format disks without using DOS interrupts.
+
+	      Has sections of debugging code.
+
+	      Only formats the 1st partition on the 2nd hard disk.  (It is
+	      harder to debug a program when you are always formatting 
+	      your C: drive.  :-)  )
+  
+	      Has sections of "rough" code that need to be modified.
+	      (i.e.  if statements that are always true)
+

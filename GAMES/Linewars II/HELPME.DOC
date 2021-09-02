@@ -1,0 +1,193 @@
+=============================================================================
+  Safari Software                            Created by Patrick Aalto
+  10406 Holbrook Drive                       Music by U4ia (Jim Young)
+  Potomac, MD 20854, U.S.A.                  Story by wReam (Raymond Bingham)
+=============================================================================
+
+                            ** LINEWARS II **
+
+ABOUT THE GAME:
+
+LineWars II is a 3D space arcade game featuring high-res 256-color graphics,
+realistic lightsource shading, music, and sound effects.  Linewars II
+consists of a demo,  nine single-play missions,  two two-player (modem play)
+game options,  and two multi-player (local area network) game options.
+
+Requirements:
+     þ IBM AT-Compatible computer (386 or 486 highly recommended)
+     þ MCGA, VGA, VESA, S3 or Mach32 Graphics card
+     þ 128K - 640K of total RAM (depending on graphics mode and music)
+     þ About 600 kilobytes of disk space (either floppy disk or hard disk)
+
+Also supports:
+     þ Joystick
+     þ Mouse
+     þ ThrustMaster FCS (Flight Control System)
+     þ VESA-compatible SuperVGA (requires a 386 or better CPU)
+     þ S3 Accelerated SuperVGA (requires a 386 or better CPU)
+     þ ATI Mach8 or Mach32 Accelerated SuperVGA (on a 386 or better CPU)
+     þ Internal Speaker
+     þ Covox or other parallel port DAC sound device
+     þ Sound Blaster (with stereo sound on Sound Blaster Pro)
+     þ Gravis UltraSound (with optional Focal Point 3D sound)
+     þ Roland LAPC-I (or MT-32 or compatible)
+     þ Roland SCC-1 (or other General Midi synth)
+     þ COM ports (supports also NS16550A and IBM Type 3 UARTs)
+     þ Any file sharing network protocol
+
+
+   HOW TO START
+   ============
+
+Before playing,  you need to configure the game for your hardware.  You can
+do this either by typing "LW2 CFG" or by typing just "LW2" and selecting the
+first menu option "Configure LineWars II". Go thru the menu choices and
+select the hardware you have. Remember to press F1 for help any time you
+are in doubt!
+
+Note:   YOU DO NOT NEED TO CONFIGURE EVERYTHING AT ONCE.  Also, if you play
+        the game without configuring,  it should work fine,  but you'll
+        miss the music,  sound effects,  and high-resolution graphics.
+
+Once you've configured the game,  you'll be able to start playing.  Type
+"LW2" and select the mission you wish to play.  If the game does not start
+properly,  you probably have given an incorrect piece of information in the
+configuration,  so run the configuration again to remedy this.
+
+   Modem Play
+   ==========
+To play a two-player game of Line Wars II over a modem, type "LWMODEM"
+and enter the settings for your modem and the telephone number of the
+person with whom you will be playing.  The defaults will work for
+most Hayes-compatible modems.  For more details about playing the
+modem missions, refer to the "LWMODEM.DOC" file.
+
+
+   CONTROLS
+   ========
+
+This is a list of the default keys used to control LineWars II. You can
+change the laser and missile keys on the configuration screen. If you do
+this,  you can see what your new choices are by pressing F1 in the game
+to view the key help page. You can also use mouse or joystick for the ship
+controls.
+
+ Key           Purpose
+ -----------   ----------------------------------------------
+ Up Arrow......Dive
+ Down Arrow....Rise
+ Left Arrow....Turn LEFT
+ Right Arrow...Turn RIGHT
+ Ins...........Rotate counterclockwise
+ Del...........Rotate clockwise
+ Alt...........Fire lasers
+ Ctrl..........Launch a missile (when a target in crosshairs)
+ F1............Select help or info page
+ F2............Look forward / aft
+ F3............Teleport into another ship
+ F4............Recenter (calibrate) joystick or mouse
+ Escape........Quit the game
+
+
+   THE STORY
+   =========
+
+Recently receiving your Fighter Pilots License, you are assigned to guard
+a remote outpost in the obscure Deneb star system.  The more seasoned pilots,
+you would normally have as comrades, have been assigned to locate the rebel
+pirate base, rumoured to be hidden near a neighbouring star system.
+
+Since no pirate activity has been detected in your assigned system for many
+years, StarBase Captain Wanobi has decided to keep only you and the 110-year
+old cyborg, Sir Dak Wyntol, who was a fighter in the historical battle at
+Aldebaran, to protect the StarBase.
+
+You are virtually alone on the StarBase when SpaceWatch sensors detect an
+asteroid storm coming straight towards the StarBase! You must launch
+immediately to protect the base from being hit by asteroids.
+
+As you are boarding your ship, Captain Wanobi says, "I will recommend your
+promotion and transfer to the Princess Royal Guard, if you can save our base."
+The promise seems incredible since the Royal Guard is the most highly covetted
+post that a fighter pilot can possibly imagine!
+
+You board your ship and launch to destroy the asteroids. You are determined
+to save the base, even though the mission seems quite impossible.  Soon after
+your launch Sir Dak Wyntol will launch to help you, though nobody expects him
+to be of any help.
+
+Continued on Mission 1: "The Asteroid Storm"...
+
+
+   FILES IN THE LINEWARS II PACKAGE
+   ================================
+
+LW2.COM         LineWars II launcher program.
+
+LWMODEM.EXE     Modem setup program for playing Line Wars II in
+                two-player modem mode.
+
+GRAVIS3D.LW2    Focal Point 3D sound file to enable LineWars II to
+                play 3D-soundeffects on a Gravis UltraSound card.
+
+HELPME.DOC      This quick-help file that you are currently reading.
+
+HELPME.EXE      Program to display HELPME.DOC in a user-friendly
+                manner.
+
+LW2.DOC         Very detailed documentation about LineWars II.
+
+LW2U.DAT        Main program code.
+
+SPEAKER.LW2     Add-on sound driver for your PC internal speaker. If
+                you do not have any sound cards but wish to hear the
+                music and soundeffects, rename this file to SOUNDDRV.LW2
+                (give a command "REN SPEAKER.LW2 SOUNDDRV.LW2" in DOS)
+                and select SOUNDDRV.LW2 in LineWars II Configuration.
+
+UNIVBE41.ZIP    Universal VESA TSR version 4.1. If your Super-VGA
+                card does not have a VESA bios, using the program
+                in this package will most likely make your SVGA
+                card able to run LineWars II in VESA mode. See the
+                documentation in the package for details.
+
+
+   CREDITS
+   =======
+
+Programming............Patrick Aalto
+Music..................U4ia (Jim Young)
+Story..................wReam (Raymond Bingham)
+Title Screen...........Robert Allen
+Modem setup program....Ammon Campbell
+
+
+   MEMBER, ASP
+   ===========
+
+This program is produced by a member of the Association of Shareware
+Professionals (ASP).  ASP wants to make sure that the shareware principal
+works for you.  If you are unable to resolve a shareware-related problem
+with an ASP member by contacting the member directly,  ASP may be able to
+help.  The ASP Ombudsman can help you resolve a dispute with an ASP member,
+but does not provide technical support for members' products.  Please write
+to the ASP Ombudsman at 545 Grover Road,  Muskogeon, MI 49442-9427 or send
+a Compuserve message via CompuServe Mail to ASP Ombudsman 70007,3536.
+
+
+   CALL SAFARI'S HOME BBS
+   ======================
+
+   Exec-PC
+   Phone: (414)789-4360
+
+
+   With over 280 phone lines, you'll never get a busy signal at Exec-PC!
+   Free access on first call.
+
+
+=============================================================================
+
+Thank you for playing!  The crew at Safari Software and Patrick Aalto both
+hope you enjoy LineWars II.
+

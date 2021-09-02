@@ -1,0 +1,9 @@
+Game: The Ancient Art of War in the Skies
+Year: 1990
+Composed by: Jeff Briggs, Roland Rizzo
+MIDI versions: FM, GM
+Platform: DOS
+
+Additional info: GM version is converted from FM (I assume).
+
+https://www.karlsitretro.com/game_midi

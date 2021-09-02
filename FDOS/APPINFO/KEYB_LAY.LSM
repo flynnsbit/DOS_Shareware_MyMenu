@@ -1,0 +1,15 @@
+Begin3
+Title:          KEYB layouts
+Version:        3.1
+Entered-date:   2013-12-14
+Description:    Keyboard layouts for KEYB
+Keywords:       keyb,layouts
+Author:         Henrique Peron (hperon@terra.com.br)
+Maintained-by:
+Primary-site:   http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/keyb_lay.html
+Alternate-site:
+Original-site:
+Platforms:      DOS
+Copying-policy: GNU General Public License, Version 2
+Wiki-site:      http://wiki.freedos.org/wiki/index.php/Keyb
+End

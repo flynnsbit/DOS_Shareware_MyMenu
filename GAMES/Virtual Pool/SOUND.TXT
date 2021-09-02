@@ -1,0 +1,32 @@
+
+                           ----------------------
+                           Sound and Music Setup:
+                           ----------------------
+  
+  Virtual Pool Supports Adlib, Sound Blaster and 100% compatibles and Pro
+  Audio Spectrum Sound Cards.  When Virtual Pool is first started, the default
+  setting is no sound.  To change this setting, open the Main Menu and select
+  Sound Setup.  The Sound Card Menu will then open.  From this menu, specify  
+  which sound card is installed in your system and then select OK.  Now go
+  back to the Main Pool Menu and select "Preferences."  From the preference
+  menu you can turn on or off the sound effects and music as you wish.
+
+  Depending on the type of Sound Card installed on your system, entering
+  the wrong sound card in the Sound Card Menu may lock your system.  If
+  this happens, switch to the directory containing Virtual Pool and 
+  delete the configuration file, POOL.CFG by typing:
+
+        CD \VPOOL      <enter>   (your directory may be different)
+        DEL POOL.CFG   <enter>
+  
+  
+  Then run Virtual Pool again and redo your sound card settings from within 
+  the game.
+
+
+
+
+
+
+
+<End_Of_File>

@@ -1,0 +1,36 @@
+REDUCED LAYOUT PACK - HISTORY
+=============================
+
+
+Version 1.0 - 24/Oct/2002
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+The russian keyboard layout does not have its primary latin
+layout developed, due to the fact that no documentation was
+available.
+
+
+Version 1.01 - 15/Nov/2002
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+The british layout has been found to be based on the british
+identifier 166, thanks to Axel Frinke. Therefore, the new
+name of the british KEY file (UK.KEY) is UK166.KEY.
+
+Also, the respective layout related to identifier 168 has
+been added: UK168.KEY.
+
+
+Version 1.10 - 06/Jan/2003
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+Major rework. All keyboards that didn't previously present
+the Euro sign now do so, when used with the proper codepage.
+(Several keyboards are cp437-oriented, so they still won't
+echo the Euro sign.)
+
+Several keyboards have been renamed, while many others have
+been created. Please refer to LAYOUTS.TXT file.
+
+Version 1.15 - 03/Mai/2003
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+Dropped several following keyboard layouts.
+Please reer to LAYOUTS.TXT file.
+Spanish keyboard layout reworked (<AltGr> + <Ñ> = "~" )

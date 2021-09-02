@@ -1,0 +1,14 @@
+Begin3
+Title:          stamp
+Version:        2.0
+Entered-date:   1998-09-30
+Description:    Set, view, and filter the time stamps of files
+Keywords:       freedos
+Author:         ark _at_ mos.ru
+Maintained-by:  ark _at_ mos.ru
+Primary-site:         http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/stamp.html
+Alternate-site: http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.0/pkgs
+Platforms:      DOS, FreeDOS
+Copying-policy: GNU General Public License, Version 2
+Defunct-Primary-Site: ftp://ftp.inf.fh-rhein-sieg.de/pub/freedos/local
+End

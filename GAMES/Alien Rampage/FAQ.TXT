@@ -1,0 +1,152 @@
+ALIEN RAMPAGE FAQ SHEET
+
+The FAQ sheet has the following sections
+
+1: SYSTEM REQUIREMENTS
+2: WIN95 TROUBLE SHOOTING
+3: DOS   TROUBLE SHOOTING
+4: GAME  PUZZLES 
+
+
+-----------------------------------------------------------
+System Requirements                     
+-----------------------------------------------------------
+
+-> 486 DX2 66mhz or better (recomend Pentium 75 or above)
+-> 6.5 Megs of free memory
+-> 15 Megs free hard drive space
+-> VGA graphics card
+-> MS-DOS 5.0 or higher                                                  
+
+OPTIONAL 
+-> Joystick or game pad                              
+-> Soundcard (including SoundBlaster and compatibles)                          
+
+-----------------------------------------------------------
+- WINDOWS 95
+-----------------------------------------------------------
+Question: Can I run Alien Rampage on a Win95 system?
+
+On most systems, you can run Alien Rampage directly under the control 
+of Win95; however, Alien Rampage is a DOS game, and for the best
+performance, you should run it while in its native DOS mode.
+To accomplish this in Win95, you could:
+
+a) Choose "Shutdown" and "Restart" in MS-DOS mode
+b) Press F8 while booting and choose "Command prompt only"
+c) Create an Icon in Win95 to accomplish this task automatically
+-----------------------------------------------------------
+Question: How do I create a Win95 Shortcut icon for Alien Rampage?
+
+Step 1:
+   a) Double click the Explorer icon.
+   b) Select the directory where Alien Rampage is located.
+   c) Move the pointer over "Rampage.exe" and then while holding down the
+      left mouse button, drag the selected file to the desktop or anywhere
+      else you wish to create an icon.
+   d) Release the mouse button and the Rampage icon should appear.
+
+step 2:
+This step may be omitted, but, if you experience problems executing
+Alien Rampage under Win95 or want better performance, you should do
+the following:
+   a) Move the pointer over the newly-created Shortcut icon for Alien Rampage.
+   b) Click the right mouse button.
+   c) Select the "Properties" menu item.
+   d) Select the  "Program" tab located near the top of the window.
+   e) Select the "Advanced" gadget located near the bottom.
+   f) Check the box with the following line "MS-DOS Mode".
+
+-----------------------------------------------------------
+ DOS
+-----------------------------------------------------------
+Question: What if I get an "out of memory" error when running the game?
+
+You need 6.5MB free memory to run the game.  This requires that you have
+at least 8 megabytes RAM.  If this error occurs, you will need to free up
+memory used by other programs currently running. Most likely, smartdrv.exe or
+a similar disk caching program is consuming megabytes.  Reducing the
+memory consumed by the disk caching program or eliminating the caching
+program all together will solve the memory problem in most cases.
+
+To free memory used by smartdrv.exe you must edit your autoexec.bat file
+and include a parameter similar the following:
+
+                                smartdrv 512
+
+Reboot your computer and run the game.
+
+----------------------------------------------------------
+Problem: I hear no sounds during the game
+Problem: After configuring Alien Rampage sound, I get an invalid or
+         conflicting IRQ.
+
+In most cases, sound related problems will cause only your sound card not to
+play during the game. In addition, it is likely you have received an error
+such as "invalid or conflicting IRQ" during configuration.  However, in a few
+instances, a system crash is possible.
+
+What do you do if this occurs?
+
+Step 1:
+   a)  Select "CONFIG" in the main menu option
+   b)  Select "SOUND"
+   c)  Choose your sound card.  Most likely, it will be Sound Blaster.
+   d)  It will ask you if you wish to use the current settings.  The current
+       settings are derived from your Blaster environment variables in the
+       autoexec.bat file.  In most cases, you will select "yes".  However, if
+       the current settings do not work, experiment with different IRQ
+       settings.  If your initial IRQ setting was 7, try 5.
+
+----------------------------------------------------------    
+Problem: My game crashes when starting.
+
+Probably there is a problem with sound initialization.  Make sure you have
+at least 6.5 megs of free RAM.  If so, delete Rampage.cfg, run the game, and
+then reconfigure your sound card.  If the problem persists, experiement with
+different IRQ settings.
+
+----------------------------------------------------------
+Question: My game runs slow.  What can I do?
+
+  a) Reduce detail level to medium or low.
+  b) Reduce the number of sound channels.
+  c) Use smartdrv or a similar disk caching program.
+
+----------------------------------------------------------
+GAME PUZZLES 
+----------------------------------------------------------
+Question: In the first level, I find myself stuck in a prison cell and can't
+escape.  What should I do?
+
+Kneel and shoot the flashing force field generator. The newly-freed Moorg
+will then expedite your escape.
+----------------------------------------------------------
+
+Question: Who are the Moorgs?
+
+They are natives of this world, and will help you if you help them.
+They will toss you a few coins or help you defeat certain puzzles when
+you free them from Scavengers.
+----------------------------------------------------------
+
+Question: In the first level, I reach a dead end.  A Moorg appears to follow
+me.  Why?
+
+   a) Lead the Moorg to the nearby lift.
+   b) Ride it to the first stop.
+   c) Lead the Moorg to the right until he bends over.
+   d) Hop on his back and you will gain access to the area above.
+----------------------------------------------------------
+
+Problem: Load game appears not to work.
+
+You must first save a game to utilize this option.  You will be given an
+opportunity to save a game once you have completed a level.
+----------------------------------------------------------
+
+Problem: My game isn't saved when I kneel by a Mark Post.
+
+Mark Posts temporarily mark your position during a level.  If you die,
+you will be resurrected near the last Mark Post that you knelt by.
+

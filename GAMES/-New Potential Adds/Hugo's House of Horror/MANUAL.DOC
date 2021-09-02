@@ -1,0 +1,303 @@
+
+
+
+
+
+
+
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+°°°°°°°°°°°°°°°°°°°°°°°°°°                           °°°°°°°°°°°°°°°°°°°°°°°°°°
+²²²²²²²²²²²²²²²²²²²²²²²²²²  HUGO'S HOUSE OF HORRORS  ²²²²²²²²²²²²²²²²²²²²²²²²²²
+°°°°°°°°°°°°°°°°°°°°°°°°°°                           °°°°°°°°°°°°°°°°°°°°°°°°°°
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+
+
+	  Copyright 1990, 1991, David P. Gray, Gray Design Associates
+
+			      All Rights Reserved
+
+
+		Member, Association of Shareware Professionals
+
+
+
+
+
+
+²²²²²²²²²²²²²²²²²²²²²²²²²²²²²  C O N T E N T S  ²²²²²²²²²²²²²²²²²²²²²²²²²²²²²²²
+
+
+		1.      Specification
+		2.      System Requirements
+		3.      Files Distributed
+		4.      Revision History
+		5.      Other Versions
+
+		6.      USER GUIDE
+			6.1     Start-up Procedure
+			6.2     How to Play
+			6.3     Function Keys
+			6.4     Record and Playback
+
+		7.      Program Self-Check
+		8.      Comments to the Author
+		9.      Association of Shareware Professionals
+
+
+
+
+
+²²²²²²²²²²²²²²²²²²²²²²²²²²²²²  1.  SPECIFICATION  ²²²²²²²²²²²²²²²²²²²²²²²²²²²²²
+
+HUGO'S HOUSE OF HORRORS is an exciting and challenging adventure game. Take
+your hero through a superbly animated adventure, solving puzzles, finding
+hidden objects and outwitting the maniac hosts of the haunted house during
+his quest to rescue Penelope.  Just look at what's in store; a vicious dog,
+a mad professor, hidden passageways, vampire bats, and much much more, all
+in gloriously colorful 3D EGA graphics and accompanied by a healthy dose of
+humor.
+
+HUGO'S HOUSE OF HORRORS received Shareware Magazine's highest award
+(October 1990 edition).
+
+For registering this game you will receive:
+
+    FREE Hugo's House of Horrors, hint booklet
+    FREE Hugo's House of Horrors, registered version with self-running feature
+    FREE Unregistered Hugo II, Whodunit? (3-D adventure game) not including
+	 the hint booklet
+
+You can register by sending $20.00 plus $4.00 S&H to David P. Gray, Gray Design
+Associates P.O. Box 333, Northboro, MA 01532, USA.  Please see README.DOC for
+more information.
+
+
+
+
+
+²²²²²²²²²²²²²²²²²²²²²²²²²²  2.  SYSTEM REQUIREMENTS  ²²²²²²²²²²²²²²²²²²²²²²²²²²
+
+HUGO requires an IBM compatible computer with EGA graphics, at least 360Kb of
+ram and 850Kb of disk space.
+
+
+
+
+
+²²²²²²²²²²²²²²²²²²²²²²²²²²²  3.  FILES DISTRIBUTED  ²²²²²²²²²²²²²²²²²²²²²²²²²²²
+
+	MANUAL.DOC              :       This file
+	README.DOC              :       Important Information
+	HHH.EXE                 :       HUGO'S HOUSE OF HORRORS program
+	PLAYBACK.DAT            :       Automatic playback file for entire
+					game (registered version only)
+	VARIOUS                 :       Various data files for the game
+
+
+
+
+
+²²²²²²²²²²²²²²²²²²²²²²²²²²²  4.  REVISION HISTORY  ²²²²²²²²²²²²²²²²²²²²²²²²²²²²
+
+	1.0     Jan 01 1990     :       Baseline version
+	1.1     Jan 03 1990     :       Fixed register incompatibility with
+					VGA cards which caused freeze on
+					first screen
+	1.2     Jan 14 1990     :       Fixed ASP compliance "bug"
+	1.3     Apr 27 1990     :       Added corruption self-check
+	1.4     Sep 01 1990     :       Fixed case sensitivity on QUIT or EXIT
+	1.5     Feb 10 1991     :       Curtailed butler's perambulation
+	1.6     May 14 1991     :       Added 1-800 telephone number
+
+
+
+
+
+²²²²²²²²²²²²²²²²²²²²²²²²²²²²²  5.  OTHER VERSIONS  ²²²²²²²²²²²²²²²²²²²²²²²²²²²²
+
+HUGO II, WHODUNIT? ... It's adventure time again as HUGO and Penelope get
+swept up in another superbly animated 3-D EGA extravaganza!  This time a
+mystery is afoot with a couple of fiendish twists and a large helping of
+humor along the way.  HUGO II, WHODUNIT? follows the same look and feel of
+HUGO'S HOUSE OF HORRORS but with many more screens and characters.
+
+If you enjoyed the HUGO'S HOUSE OF HORRORS, then HUGO II is a real treat in
+store for you!
+
+
+
+
+
+²²²²²²²²²²²²²²²²²²²²²²²²²  6.  U S E R   G U I D E  ²²²²²²²²²²²²²²²²²²²²²²²²²²²
+
+
+
+
+
+±±±±±±±±±±±±±±±±±±±±±±±±±  6.1  START-UP PROCEDURE  ±±±±±±±±±±±±±±±±±±±±±±±±±±±
+
+Start HUGO'S HOUSE OF HORRORS by typing HHH.
+
+The registered version allows you to add one or more switches as follows:
+		HHH -s          Disables the sound
+		HHH -r          Runs the program in RECORD mode
+		HHH -p          Runs the program in PLAYBACK mode
+
+To finish the game early, type either QUIT or EXIT at the prompt.
+
+
+
+
+
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±  6.2  HOW TO PLAY  ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+
+To move HUGO, use either your arrow keys or the numeric keypad.  (Remember to
+turn the Num-Lock off).  If using the keypad, diagonal movement is possible.
+
+Use simple English to instruct HUGO to perform an action.  For example "look
+around" or "look at door" to look at things.  To pick something up try "pick
+up the gold" or "get gold" or "take gold".  Many synonyms are allowed but if
+HUGO doesn't seem to understand, try re-phrasing your command.
+
+Certain actions carry a bonus score when carried out, as does picking up
+useful objects.  When you have successfully completed the game, your score
+should match the maximum score shown on the status line at the top of the
+screen.
+
+If you have trouble solving some of the puzzles in this game, there is a
+free hint booklet available.  This contains a range of hints, from cryptic
+to obvious, for each room.  To obtain your hint booklet, simply follow the
+directions in the readme file to register this program.
+
+Registered users also receive a self-running version of the game (see section
+on record and playback).
+
+
+
+
+
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±  6.3  FUNCTION KEYS  ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+
+F1  ..........  Press once for a reminder of the other function keys.
+		Press twice for help.
+
+
+F2  ..........  TURNS SOUND ON OR OFF.  Note that sound does not play
+		continuously.  The status of this button is shown in the
+		status line at the top of the screen.
+
+
+F3  ..........  REPEATS LAST COMMAND.  This key is useful to allow you to
+		repeat a command or edit the last command.
+
+
+F4  ..........  SAVES A GAME. If you have to leave the game early but wish to
+		save your current position, use this feature by pressing F4.
+
+		You will see a text box appear with eight rows of dotted lines
+		and an arrow pointing to the first.  These are empty "slots"
+		which allow you to save up to eight versions of the game.
+		Press return and the arrow will flash by the first slot,
+		prompting you to enter a short description of your current
+		game, e.g. "In the Kitchen", press return to save the game and
+		then either continue or leave the game by typing QUIT or EXIT.
+
+		When you return to run the game again, use the F5 button to
+		restore it.  You may re-use any slot and either retain the
+		same description or type another.
+
+
+F5  ..........  RESTORE A PREVIOUSLY SAVED GAME.  Select a "slot" as described
+		in function F4.  Note you may not select an empty slot !  Hit
+		return to restore the game.
+
+
+F6  ..........  INVENTORY.  Pressing F6 puts up a text box to show you what
+		objects you are currently carrying.
+
+
+F9  ..........  BOSS BUTTON.  So-named because it instantly removes all traces
+		of the game from the screen and places you in a normal DOS
+		environment from which you can perform your regular work-like
+		commands.  Note, however, that the game is still lurking unseen
+		in the background and the amount of memory available to you is
+		reduced by about 280Kb.  Resume your game at the next opportune
+		moment by typing EXIT.
+
+
+
+
+
+±±±±±±±±±±±±±±±±±±±±±±±±±  6.4  RECORD AND PLAYBACK  ±±±±±±±±±±±±±±±±±±±±±±±±±±
+
+The registered version of the game includes record and playback modes.  This
+effectively allows you to construct a self-running version of the game and a
+sample playback file is included which runs right through the game from start
+to finish, achieving the maximum score possible.
+
+To run this playback file, make sure the supplied PLAYBACK.DAT file is in the
+same directory as your registered version of the game and type: HHH -p
+
+This self-running game might be suitable for, say, a child who is too young
+to play the game but can watch the game like a story.  To disable the sound
+during the playback, type: HHH -p -s
+
+To record your own game, start the program by typing: HHH -r   Note that this
+will create a file PLAYBACK.DAT which will overwrite any previous file of
+that name, including the one supplied.  If you wish to save a previous
+PLAYBACK.DAT, copy it to another directory or rename it.
+
+Some points to watch when recording are:
+þ  When a text box appears on the screen, it will stay up for a period of time
+   which depends on how much text there is to read.  When the time is up, the
+   program beeps to let you know you can continue.  This is because during
+   playback, there should be no manual intervention.
+þ  Don't try to use the Save and Restore features, this would require manual
+   intervention during playback.
+þ  The same goes for the BOSS button.
+þ  You may use the F1, F2, F3, F6 buttons during recording.
+
+
+
+
+
+²²²²²²²²²²²²²²²²²²²²²²²²²²  7.  PROGRAM SELF-CHECK  ²²²²²²²²²²²²²²²²²²²²²²²²²²²
+
+HUGO'S HOUSE OF HORRORS provides a measure of protection for itself against
+accidental corruption during downloads from bulletin boards.  A self-check is
+performed when the program starts up and will notify the user upon failure.
+Note that the program must be run from the directory where it resides or the
+self-check will fail.
+
+
+
+
+
+²²²²²²²²²²²²²²²²²²²²²²²²  8.  COMMENTS TO THE AUTHOR  ²²²²²²²²²²²²²²²²²²²²²²²²²
+
+Any feedback would be greatly appreciated.  Please direct any comments to
+the author personally via mail to David P. Gray, Gray Design Associates,
+P.O. Box 333, Northboro, MA 01532, USA.
+
+
+
+
+
+²²²²²²²²²²²²²²²²  9.  ASSOCIATION OF SHAREWARE PROFESSIONALS  ²²²²²²²²²²²²²²²²²
+
+This software is produced by David P. Gray who is a member of the Association
+of Shareware Professionals (ASP).  ASP wants to make sure that the shareware
+principle works for you.  If you are unable to resolve a shareware-related
+problem with an ASP member by contacting the member directly, ASP may be able
+to help.
+
+The ASP Ombudsman can help you resolve a dispute or problem with an ASP member,
+but does not provide technical support for members' products.  Please write to
+the ASP Ombudsman at 545 Grover Road, Muskegon, MI 49442, USA or send a
+CompuServe message via Easyplex to ASP Ombudsman 70007,3536.
+
+
+
+
+
+²²²²²²²²²²²²²²²²²²²²²²²²²²²²  END OF MANUAL.DOC  ²²²²²²²²²²²²²²²²²²²²²²²²²²²²²²

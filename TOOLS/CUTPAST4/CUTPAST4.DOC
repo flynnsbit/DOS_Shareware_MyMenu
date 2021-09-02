@@ -1,0 +1,119 @@
+ 
+                                Cut/Paste 4.0
+
+      The CutPaste utility is a resident (install at bootup) utility.  It is
+      quite small, using less than 6K of memory.  With cut/paste anything
+      which appears on the screen may be "cut" out and saved for later
+      pasting into an application.  
+
+      Installation (execute CUTPAST4):
+      --------------------------------
+      CutPaste is installed by executing the CUTPAST4.COM file from either
+      the command line or the AUTOEXEC.BAT file.
+
+      Operation (Alt-F9, edit, END, move, END, Ctrl-F9):
+      --------------------------------------------------
+      Once installed, CutPaste may be brought up at any time by entering
+      Alt-F9.  
+
+      Use the arrow keys to move the cursor to any place on the screen.
+      The screen may be edited using the keys detailed below.
+
+      Place the cursor at one corner of the area to be cut out and depress
+      the END key.  Notice that the character underneath the cursor turns to
+      inverse video.  Now move the cursor to the opposite corner of the area
+      to be cut out.  As the cursor is moved the entire area will appear in
+      inverse video.
+
+      Depress the END key one more time and the screen returns to normal.
+      You are now "out" of CutPaste.  
+
+      To paste the cut area into the application, enter Ctrl-F9.
+
+      The text in the box cut previously will be "typed" into the application,
+      as if reentered from the keyboard, starting at the upper left hand 
+      corner and proceeding to the lower right hand corner.  If you wish to
+      exit CutPaste without cutting anything, reenter the Alt-F9 key.
+
+      CutPaste will add block move capabilities to any word processor (or
+      other program) which using BIOS interrupt 16 for keyboard input (that's
+      just about everyting except XYWRITE).  CutPaste has been tested with
+      many other installables, notably SideKick and the MicroSoft and Mouse
+      Systems mouse drivers.  (CutPaste works GREAT with a mouse.)
+
+      CutPaste only works in alphanumeric mode.
+
+      Below is a layout of the keys to which CutPaste assigns editing
+      meaning.  Any key which CutPaste does not understand, it merely
+      displays as ASCII.  Depressing Alt-F9 enters and exits CutPaste.
+
+         ------------------------------------------------------------
+         |             |              |              |              |
+         |             |  HOME        |  UP ARROW    |   PG UP      |
+         |             |move to top of|  move cursor |delete current|
+         | RETURN      |screen        |      up      |    line      |
+         |go to the    ---------------|--------------|--------------|
+         |first char   |              |              |              |
+         |of the next  |  LEFT ARROW  |              | RIGHT ARROW  |
+         |line         | move cursor  |              | move cursor  |
+         |             |    left      |              |    right     |
+         |-------------|--------------|--------------|--------------|
+         |             |              |              |              |
+         |             |    END       |  DOWN ARROW  |   PG DOWN    |
+         |             | mark area to | move cursor  |insert a blank|
+         |             |    cut       |    down      |line at cursor|
+         |----------------------------|-----------------------------|
+         |                            |                             |
+         |          INSERT            |           DELETE            |
+         |   insert a blank character |   delete current character  |
+         |                            |                             |
+         -----------------------------|------------------------------
+                              N U M B E R P A D
+
+
+
+         other keys:
+
+         ---------------              ------------------
+         |             |              |                |
+         |   ESC       |              | <-- (backspace)|
+         |delete from  |              | delete char    |
+         |cursor right |              |  to left       |
+         ---------------              ------------------
+
+
+
+         ---------------              ------------------
+         |             |              |                |
+         |^RIGHT-ARROW |              | ^LEFT-ARROW    |
+         |move to next |              |move to next    |
+         | spc/nonspc  |              | spc/nonspc     |
+         | to the right|              | to the left    |
+         ---------------              ------------------
+
+      History of changes:
+      -------------------
+      See the accompanying ASM source file for this information.
+
+
+      Distribution guidelines:
+      ------------------------
+      Please include the source within any ARC or LBR collection that
+      includes the executable and documentation.
+
+      CutPaste is being offered into the public domain.  No remuneration is
+      asked for; however, if any improvements are made please forward them 
+      to the address below.  If any of your variants of CUTPASTE are
+      "published" to BBS' or Compuserve, please give name your programs
+      something other than CUTPASTE.
+      
+      Further, we ask that our names not be removed from the source listings
+      or from the .DOC files.  Thank you.
+
+      Larry Weiss
+      Gerry Boyd
+      PO Box 831420
+      Richardson, TX 75083-1420
+      214-238-9545
+     
+     

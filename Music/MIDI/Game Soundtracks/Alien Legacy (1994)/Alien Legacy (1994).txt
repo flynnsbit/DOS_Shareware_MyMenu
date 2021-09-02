@@ -1,0 +1,10 @@
+Game: Alien Legacy
+Year: 1994
+Composed by: Biard MacGuineas, Steve A. Baker
+MIDI versions: GM
+Platform: DOS
+
+Additional info: There's a lot of sound effects and single sound tracks. I've kept everything in the original order.
+
+
+https://www.karlsitretro.com/game_midi

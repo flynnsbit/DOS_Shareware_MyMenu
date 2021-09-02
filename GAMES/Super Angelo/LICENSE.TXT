@@ -1,0 +1,106 @@
+SUPER ANGELO
+
+WIERING SOFTWARE LICENSE AGREEMENT
+
+
+IMPORTANT - READ CAREFULLY: This license agreement
+("AGREEMENT") is an agreement between you (either as an
+individual or a single entity) and Wiering Software
+("WIERING SOFTWARE") for the software product identified
+above, including any associated media and accompanying
+on-line or printed documentation and also any future
+versions, patches or updates ("SOFTWARE PRODUCT").
+
+By installing, copying, accessing or otherwise using this
+software, you agree to be bound by the terms of this
+AGREEMENT.
+
+
+SOFTWARE PRODUCT LICENSE
+
+The SOFTWARE PRODUCT is owned by WIERING SOFTWARE and is
+protected by copyright laws and international copyright
+treaties. The software is licensed, not sold.
+
+The SOFTWARE PRODUCT is distributed as SHAREWARE. A free
+limited unregistered version ("SHAREWARE VERSION") is
+available for evaluation. You can register the SOFTWARE
+PRODUCT and obtain a private registration code, which
+will allow you to use the full version of the SOFTWARE
+PRODUCT ("REGISTERED VERSION").
+
+
+LICENSE FOR THE UNREGISTERED SHAREWARE VERSION
+
+This LICENSE grants you the following rights and
+limitations, regarding the SHAREWARE VERSION:
+
+  - You may install and use the SHAREWARE VERSION for an
+    unlimited time.
+
+  - You may copy and distribute the SHAREWARE VERSION of
+    the SOFTWARE PRODUCT, but only in its original form
+    (as found on the WIERING SOFTWARE web site) and
+    without any modifications.
+
+  - Distributors may sell the SHAREWARE VERSION for a
+    reasonable fee for media and handling, but must
+    indicate clearly that the software is "shareware".
+
+  - Magazines are authorized to publish the SHAREWARE
+    VERSION on any cover disk, CD-ROM or other media
+    without prior permission from WIERING SOFTWARE (please
+    do send a notification).
+
+  - You may not reverse engineer, decompile, disassemble
+    or make changes to the SOFTWARE PRODUCT in any way.
+
+  - To register this SOFTWARE PRODUCT, you may only use
+    your personal registration code, provided by WIERING
+    SOFTWARE or another authorized party. You may not
+    attempt to 'discover' your code or write software to
+    do so. You may not use a code that belongs to someone
+    else.
+
+
+LICENSE FOR THE REGISTERED VERSION
+
+This LICENSE grants you the following rights and
+limitations, regarding the REGISTERED VERSION:
+
+  - You may install and use the REGISTERED VERSION on your
+    own computer. If you own several computers, you may
+    install the REGISTERED VERSION on those as well, but
+    only use it on one computer at a time.
+
+  - You may make a copy of the REGISTERED VERSION as a
+    backup.
+
+  - You may not make copies of the REGISTERED VERSION for
+    others.
+
+  - You may not make your registration code available to
+    others.
+
+  - You may not reverse engineer, decompile, disassemble
+    or make changes to the SOFTWARE PRODUCT in any way.
+
+
+DISCLAIMER
+
+THE SOFTWARE PRODUCT IS PROVIDED "AS IS" WITHOUT WARRANTY
+OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT
+NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS
+TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH
+YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE
+COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+IN NO EVENT WILL WIERING SOFTWARE BE LIABLE TO YOU FOR
+DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR
+CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE, MISUSE OR
+INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO
+LOSS OF DATA OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES
+OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER
+PROGRAMS), EVEN IF WIERING SOFTWARE HAS BEEN ADVISED OF
+THE POSSIBILITY OF SUCH DAMAGES.

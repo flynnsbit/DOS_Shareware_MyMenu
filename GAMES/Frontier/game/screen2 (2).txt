@@ -1,0 +1,19 @@
+
+     This program is shareware. If you continue to play 30 days after
+            first using it, you must register by sending five
+                        pounds to the following address:
+
+                        Frontier Developments Ltd
+                               Saxon Farm
+                           Longmeadow    Lode
+                           Cambridge  CB5 9HA
+
+               www.frontier.co.uk      www.eliteclub.co.uk
+
+   Please note that this game has been hex-edited to remove the Gametek
+       logo, as the game is no longer licenced to that publisher.
+
+  It is not an updated version of the game and as such may have issues with
+     some modern PCs. Refer to readme.txt for help if you have problems
+       getting the game running. Also note that this game must be run
+             in pure DOS mode, it will not work under Windows.

@@ -1,0 +1,206 @@
+
+  A. Win32 Apps Compatibility List
+
+  This is a list of Win32 (console) apps successfully tested to run with HX
+
+  Binary         Version Comment
+  -------------------------------------------------
+  7z.exe         4       7-Zip packer/unpacker
+  Arj32.exe      3.10    file compressor
+  Asw.exe        2.9.5   AS (Free Pascal)
+  Aspectrum.exe  0.1.8   Another Spectrum emulator (uses Allegro 4.1) [1][3]
+  Atari800.exe   2.0.2   Atari 800 emulator
+  Bcc32.exe      4.0     Borland C++ compiler
+                 5.5.1   C++ compiler of C++ Builder Command Line Tools (free)
+  Blobwars.exe   1.02    SDL game by Parallel Realities [1][3]
+  Bochs.exe      2.2.6   PC emulator [1][3][8]
+                 2.3
+  Boyca.exe      0.28    BoyCott Advance/SDL, a GameBoy Advance emulator [3]
+  Brc32.exe      5.02    Borland resource compiler 
+                 5.40
+  Bzip2.exe      1.0.1   pack utility from MSYS 1.0.10 [1]
+  CabArc.exe     1.00    MS cabinet file create/view/extract utility
+                 5.1.2600
+  Cl.exe         8.00    MS VC 1.0, 16-bit C compiler
+                 8.00c   MS VC 1.5, 16-bit C compiler
+                 8.00.3190a MS VC 1.5, 32-bit C compiler
+                 9.10    MS VC 2.0 
+                 10.20   MS VC 4.2
+                 11.00   MS VC 5
+                 12.00   MS VC 6
+                 13.00   MS Visual Studio.NET 2002
+                 13.10   MS Visual C++ Toolkit 2003 [1]
+  Cvtres.exe     5.0     MS linker help tool
+                 7.00
+  Dao.exe        4.0B    Golden Hawk CD Disc At Once write tool [5]
+  Dcc32.exe      15.0    Borland Delphi 7 compiler
+  Dosbox.exe     0.65    PC emulator with focus on old DOS games [1][3][6]
+                 0.70
+                 0.72
+                 0.73
+  Dmc.exe        8.4     Digital Mars C++ compiler
+  Dumpbin.exe    5.12    MS tool to display PE binaries
+                 7.00
+  Dumplx.exe     2.1     LE/LX file dumper
+  Dumppe.exe     2.1     PE file dumper
+  Extract.exe    1.00    cabinet file extract utility
+                 5.1.2600
+  Fbc.exe        0.13    FreeBasic compiler [1]
+                 0.16b
+  Fpc.exe        1.0.10  Free Pascal compiler [1][9]
+                 2.0.4
+  Fte.exe        0.49    Editor
+  Ftp.exe        1.3.2   FTP client from MSYS 1.0.10 [1][3][4]
+  Gzip.exe       1.2.4   pack utility from MSYS 1.0.10 [1]
+  H2inc.exe      7.0     MS tool
+  Heretic 2              game by Raven Software [1][3][7]
+  Hexitw.exe     1.57    HexIt (Win32)
+  HTWin32.exe    2.0.8   HT, binary file analyzer/viewer
+  Ilink32.exe    5.0     linker of Borland's C++ Builder Command Line Tools
+  Java.exe       5.0     Sun's Java VM. Console applications only [1]
+  Javac.exe      5.0     Sun's Java compiler [1]
+  K.exe          0.30    Kinesics text editor
+  Kzip.exe       ?.?     PKZIP clone by Ken Silverman
+  Ldw.exe        2.9.5   LD, Free Pascal
+  Lib.exe        3.4     MS OMF 16-bit librarian
+  Lib.exe        5.12    MS COFF 32-bit librarian
+                 7.00
+                 9.00
+  Link.exe       5.60    MS 16-bit OMF linker
+  Link.exe       5.12    MS 32-bit COFF linker [2]
+                 6.00
+                 7.00
+                 7.10
+                 8.00
+                 9.00
+  Lynx.exe       2.8.2   text-mode Web browser [3][4]
+                 2.8.7   
+  Lzasm.exe      0.47    Assembler
+  MakeCab.exe    5.1.26  creates .CAB archives [3]
+  Mc.exe         4.1.36  Midnight Commander
+  MinGW          3.2.3   GNU GCC C++ compiler, G77 Fortran compiler,
+                 3.3.1   G++ C++ compiler [1]
+                 3.4.2
+  MinGW          2.13.90 AS assembler, LD linker
+                 2.15.94
+                 2.16.91
+  Ml.exe         6.14    MS Masm, assembler
+                 6.15
+                 7.00
+                 8.00
+                 9.00
+  Ml64.exe       8.00    MS Masm, x64 assembler
+  MPlayer.exe    4.1.2   video player [1][3][6][8],
+                 4.2.0   needs cmdline options "-ao win32 -vo gl".
+                         (http://oss.netfarm.it/mplayer-win32.php)
+  Nasmw.exe      0.98.38 Netwide Assembler
+  Nmake.exe      1.62    MS Make tool
+                 6.00
+                 7.00
+  Open Watcom    1.2-1.7 all binaries in directory BINNT except WD.exe
+  Pkzipc.exe     4.0     zip packer/unpacker
+  Pngout.exe     ?.?     PNG file size optimizer by Ken Silverman
+  PellesC        2.90    Pelles C compiler (POCC.EXE), linker (POLINK.EXE),
+                 4.50    librarian (POLIB.EXE), resource compiler (PORC.EXE).
+                 5.00
+  PoAsm          1.00.35 Pelles assembler
+                 5.00
+  Psftp.exe      0.58    SFTP client [4]
+  Pvw32con.exe   1.14    PictView 32, image converter
+  Qemu.exe       0.71    PC emulator by Fabrice Bellard [1][3][8]
+                 0.82
+                 0.90
+                 0.91
+  Quake 2                game by Id Software [3]
+  Rar.exe        3.0
+                 3.3
+  Rc.exe         5.0     MS resource compiler
+                 5.1
+  Rebase.exe             MS tool
+  Tar.exe        1.12    GNU tar
+                 1.13.19 GNU tar from MSYS 1.0.10 [1]
+  Tasm32.exe     5.0     Borland's TASM
+  Tdump.exe      5.0     Borland tool
+  Telnet.exe     1.3.2   Telnet client from MSYS 1.0.10 [1][3][4]
+  Tlib.exe       4.5     Borland tool
+  Tlink32.exe    2.0     Borland linker
+  Unrar.exe      3.2
+  Untgz32.exe    0.95
+  Unzip.exe      5.4     Info-ZIP
+                 5.52
+                 6.0
+  Upx.exe        2.0     packer for executables
+  Vim.exe        5.8.9   editor from MSYS 1.0.10 [1]
+  Vp.exe         2.1.279 Virtual Pascal IDE, except debugger
+  Vpc.exe        2.1.279 Virtual Pascal command line compiler
+  Wget.exe       1.11.4  GNU WGet [3][4]
+  Ws.exe         1.22    Wordster. WordStar-like editor by P. Houle
+  Xc.exe         2.51    XDS Modula-2 compiler
+  Xcopy32.exe            Windows 98 file copy program [1]
+                         (use 'pestub Xcopy32.mod' to create it)
+  Xlink.exe      2.6     XDS linker
+  Zip.exe        2.31    Info-ZIP
+
+  [1]: requires LFN support to be installed. View Unsupp\LFN.txt for
+       more details about how to activate this support for plain DOS.
+
+  [2]: these apps may require a lot of file handles, which is a scarce
+       resource in native DOS (set by entry FILES= in CONFIG.SYS, max.
+       value is 255). In case an app exceeds this limitation, you may
+       get strange error messages, so to avoid problems I would suggest
+       to set at least FILES=80.
+
+  [3]: needs HX GUI.
+
+  [4]: requires a packet driver to be installed.
+
+  [5]: needs a DOS ASPI driver and WNASPI32.DLL from Windows 9x.
+       View Doc\DKRNL32.TXT for details about HX's ASPI support.
+
+  [6]: requires OPENGL32.DLL (+GLU32.DLL) from Windows 9x.
+
+  [7]: environment variable DPMILDR=16 must be set.
+
+  [8]: to start the binary it might be needed to enter
+       "dpmild32 -g <binary_name>".
+
+  [9]: environment variables HDPMI=32, DPMILDR=8 must be set (see B).
+
+  Furthermore, some of the programs in this list may need MS C runtime dlls 
+  (MSVCRT.DLL, MSVCRx0.DLL, CRTDLL.DLL).
+
+
+  B. Nested Execution of Win32 Apps in DOS
+
+   Nested execution of Win32 apps with HX may require some additional
+  configuration steps. This is because very often the apps cannot share
+  an address space due to missing relocation information in the binaries,
+  which are needed to load them at any address. The HX tools provide the
+  ability for multiple address spaces, but this feature has to be made
+  deliberately active by setting both of these environment variables:
+
+    SET HDPMI=32
+    SET DPMILDR=8
+
+  The first setting will instruct HX's DPMI host HDPMI to supply each client
+  with its own address space, the second instructs HX's PE loader DPMILD32
+  to not try to load more than one application in the current client.
+
+
+  If multiple address spaces are not supported by the DPMI host, but a
+  version of the calling app is available *with* relocation info, one can
+  possibly rebase this first app by utility REBASE.EXE (Win32 SDK). Thus
+  the standard image base address 400000h remains free for the called app.
+
+  Please note that it is sometimes not obvious that a nested execution
+  takes place. MS LIB.EXE (COFF), for example, uses LINK.EXE for the
+  real work. The same is true for EDITBIN and DUMPBIN. As well, MS LINK
+  (COFF) will launch an instance of itself (!) if an export file has to
+  be build.
+
+  DosEmu regretably doesn't support multiple address spaces. Setting
+  DPMILDR=8 will be useless in this environment.
+
+
+  Japheth
+

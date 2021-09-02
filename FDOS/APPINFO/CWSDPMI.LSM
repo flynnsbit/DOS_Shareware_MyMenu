@@ -1,0 +1,14 @@
+Begin3
+Title:           CWSDPMI
+Version:         7
+Entered-date:    2013-07-13
+Description:     32-bit DPMI DOS extender designed for DJGPP.
+Keywords:        extender, DPMI, DJGPP
+Author:          Charles W Sandmann (sandmann@clio.rice.edu)
+Maintained-by:   -
+Primary-site:    -
+Alternate-site:  -
+Platforms:       DOS, FreeDOS
+Copying-policy:  GNU General Public License, Version 2
+Defunct-Original-Site: http://clio.rice.edu/cwsdpmi/
+End

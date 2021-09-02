@@ -1,0 +1,64 @@
+# SFX.LST: MENU SCREENS.
+# Z Sound Priority Reference:
+# --------------------------
+
+#                              mono/  loop
+# num     name       priority stereo  count   freq.   volume
+
+
+
+#1        cancell.raw      255    M       0   11025     30
+#2        cancelr.raw      255    M       0   11025     30
+3       connectl.raw      255    M       0   11025     30
+4       connectr.raw      255    M       0   11025     30
+#5        cursorl.raw      255    M       0   11025     30
+#6        cursorr.raw      255    M       0   11025     30
+7         discol.raw      255    M       0   11025     40
+8         discor.raw      255    M       0   11025     40
+#9          doitl.raw      255    M       0   11025     65
+#10         doitr.raw      255    M       0   11025     65
+#11       mensell.raw      255    M       0   11025     30
+#12       menselr.raw      255    M       0   11025     30
+13       mulcanl.raw      255    M       0   11025     60
+14       mulcanr.raw      255    M       0   11025     60
+#15       selectl.raw      255    M       0   11025     30
+#16       selectr.raw      255    M       0   11025     30
+#17        sparcl.raw      255    M      -1   11025     30
+#18        sparcr.raw      255    M      -1   11025     30
+19       sparc2l.raw      255    M      -1   11025     95
+20       sparc2r.raw      255    M      -1   11025     40
+21        beep1l.raw      255    M       0   11025     20
+22        beep1r.raw      255    M       0   11025     20
+#23        beep2l.raw      255    M       0   11025     30
+#24        beep2r.raw      255    M       0   11025     30
+25        beep3l.raw      255    M       0   11025     30
+26        beep3r.raw      255    M       0   11025     30
+27        beep4l.raw      255    M       0   11025     30
+28        beep4r.raw      255    M       0   11025     30
+29        beep5l.raw      255    M       0   11025     22
+30        beep5r.raw      255    M       0   11025     22
+31        beep6l.raw      255    M       0   11025     15
+32        beep6r.raw      255    M       0   11025     15
+33        beep7l.raw      255    M       0   11025     35
+34        beep7r.raw      255    M       0   11025     35
+35      rssblipl.raw      255    M       0   11025     40                      
+36      rssblipr.raw      255    M       0   11025     40
+#37       beep08l.raw      255    M       0   11025     30
+#38       beep08r.raw      255    M       0   11025     30
+#39       beep09l.raw      255    M       0   11025     30
+#40       beep09r.raw      255    M       0   11025     30
+#41       beep10l.raw      255    M       0   11025     30
+#42       beep10r.raw      255    M       0   11025     30
+43          rob74.raw     255     M       0   11025     79
+44          rob75.raw     255     M       0   11025     79
+53        click1l.raw     255     M       0   11025     75
+54        click1r.raw     255     M       0   11025     75
+55        click5l.raw     255     M       0   11025     40
+56        click5r.raw     255     M       0   11025     40
+57        switchl.raw     255     M       0   11025     30
+58        switchr.raw     255     M       0   11025     30
+59        click6l.raw     255     M       0   11025     25
+60        click6r.raw     255     M       0   11025     25
+
+
+

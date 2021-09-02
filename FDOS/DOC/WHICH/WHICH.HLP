@@ -1,0 +1,149 @@
+NAME
+  which -- display full pathname for executable command
+
+SYNOPSIS
+  which [options] [command ...]
+
+DESCRIPTION
+  DOS uses the PATH environment variable to determine which directories
+  to search when attempting to execute a program. For each command
+  specified, which searches directories defined in PATH and prints the
+  name of the first executable file that matches command. When /a or -a
+  is specified on the command line, which returns all executables
+  found in PATH that match the command name. If the option is /ad or
+  /d, which prints 'detail' information, i.e., date and file size.
+
+  When used with the 'WHICHDETAILS' environment variable, the details
+  options (/ad and /d) act as a toggle, disabling detailed output for
+  that execution. To cause which to print details by default, simply
+  'SET WHICHDETAILS=<value>', where <value> is anything you like. I
+  use '1', as it is a single byte and saves valuable environment space.
+  Feel free to use whatever you like, though; the only thing that's
+  needed to make WHICHDETAILS work is for it to show up in the
+  environment.
+
+  Typically, one would not specify the file extension of a command to
+  search for; doing so limits the search to that specific file name.
+  In such a limited search, it's possible that which would return the
+  name of an executable that is farther down the PATH than the actual
+  file that is being executed. For example, if you have TEST.COM,
+  TEST.EXE, and TEST.BAT all residing in the current directory, specifying
+  TEST.BAT on the command line would cause which to report that TEST.BAT
+  is being executed when, in fact, TEST.COM is the program being run. A
+  better way is to simply search for TEST unless you really need to
+  find an executable with a specific extension.
+ 
+  In keeping with the execution order used by DOS, which displays COM
+  files first, followed by EXE files, and then BAT files (for searches
+  that do not have the extension specified). which searches the current
+  directory before searching the directories defined in PATH. To take
+  into consideration that which may be used on operating systems other
+  than DOS -- or with command processors other than COMMAND.COM -- which
+  checks for a list of program extensions in the PATHEXT environment
+  variable. To use the PATHEXT environment variable, set the variable with
+  the extentions you intend to use, each extension separated by a semi-
+  colon. E.g.:
+
+  SET PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH
+
+  If PATHEXT is not specified in the environment, which defaults to the
+  DOS-standard extensions of .COM, .EXE and .BAT. If PATHEXT is specified
+  in the environment, which searches in the order the extensions are
+  listed. If you're going to use this variable, be sure you understand
+  the execution order of the command processor you are using. The example
+  given above is taken from my own NT system -- with standard command
+  processor and VB Script, Java Script and Windows Scripting Host
+  installed. Your mileage may vary, so understand your command processor's
+  execution order before adding PATHEXT to the environment.
+
+OPTIONS
+  which accepts the following options:
+
+  /? *
+  --help
+               Displays a short summary of how to use the program. When
+               this switch is in the first position on the command line,
+               which ignores all other command-line entries and displays
+               help information
+
+  /v *
+  --version
+               Displays version and licensing information. When this
+               switch is in the first position on the command line, which
+               ignores all other command-line entries and displays
+               version information
+
+  /a *
+  -a
+               Displays all executable files matching command that are
+               found in PATH, rather than just the first match. This
+               option cannot be used with other options
+
+  /ad *
+  -ad
+               Displays all executable files matching command that are
+               found in PATH, rather than just the first match. Includes
+               file size and date information for the executable. This
+               option cannot be used with other options
+
+  /d *
+  -d
+               Displays first executable file matching command that is
+               found in PATH. Includes file size and date information for
+               the executable. This option cannot be used with other
+               options
+
+  NOTE: which checks for the switchar defined in DOS. If you have set a
+        different switchar than the standard "/" character, which will
+        honour your preferred setting.
+
+ENVIRONMENT VARIABLES
+  which uses the following environment variables:
+
+  PATH          The list of directories to search for command
+  PATHEXT       The list of program extensions to check (optional)
+  WHICHDETAILS  Sets default behaviour to display file details (optional)
+
+DIAGNOSTICS
+  Possible exit values are:
+
+  0    Success:
+           -- An executable file matching command was found
+           -- Help or version information was displayed
+  1    Failure due to the following:
+           -- A matching executable file could not be found
+           -- Invalid command-line option
+
+NOTE
+  This command has no way of knowing about COMMAND.COM internal commands
+  and, therefore, is unable to help you resolve such conflicts. Under
+  DOS, COMMAND.COM executes internal commands before searching PATH to
+  find the executable being called.
+
+  If which is searching for multiple files and is able to locate one or
+  more files, the exit value will be 0 even if other commands are not
+  found. Only the first position on the command line is tested for
+  options; all other entries will be treated as filenames.
+
+LIMITATIONS
+  Technically not a bug (rather, a limitation of a 16-bit, real-mode DOS
+  app), but which will not work correctly on partitions larger than 2 GB.
+  So, if you want to use which on non-DOS systems, make sure you're looking
+  for 8.3 filenames on a < 2GB partition with a PATH that doesn't contain
+  any spaces or other funky characters. In other words, it's a DOS app. If
+  you try to use which on, say, Windows Me with a 20-gig partition, you're
+  outta luck.
+
+AUTHOR
+  Trane Francks <trane@gol.com>
+
+  I prefer being contacted via e-mail; however, you can snail-mail me at:
+
+    Trane Francks
+    Sento Hills Tsurukawa #305
+    1856-4 Kanai-cho, Machida City
+    Tokyo 195-0071
+    JAPAN
+
+
+DOS Extensions		20 March 2002

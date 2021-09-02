@@ -1,0 +1,32 @@
+        EGA TREK
+COMMAND QUICK REFERENCE
+
+A#        Acknowledge Message #               ÚÄF1ÄÄÄÄÄÄÂÄF2ÄÄÄÄÄÄ¿ 
+C)hart    Chart of known galaxy               ³         ³         ³
+D)ock     Dock with a StarBase                ³  Help   ³ Lasers  ³
+E)nergy   Energy transfer                     ³         ³         ³
+F)ix      control Fixing of systems           ³         ³         ³
+L)asers   fire Lasers                         ÃÄF3ÄÄÄÄÄÄÅÄF4ÄÄÄÄÄÄ´
+M)ove     Move to quad/sector                 ³         ³         ³
+O)rbit    standard Orbit around planet        ³  Fire   ³  Move   ³
+Q)uit     Quit                                ³ Torpedo ³  Ship   ³
+R)epair   state of Repair report              ³         ³         ³
+S)elf     Self destruct                       ÃÄF5ÄÄÄÄÄÄÅÄF6ÄÄÄÄÄÄ´
+T)orps    fire photon Torpedos                ³         ³         ³
+W)arp     set Warp speed                      ³   Max   ³   Fix   ³
+HAIL      Hail a StarBase                     ³  Energy ³ Systems ³
+INFO      Info on enemy in current quadrant   ³         ³         ³
+LAND      Land on and explore a planet        ÃÄF7ÄÄÄÄÄÄÅÄF8ÄÄÄÄÄÄ´
+MAX       divert Maximum energy to shields    ³         ³         ³
+MSGS      review old Messages                 ³   Xfer  ³  Repair ³
+RAY       use death Ray weapon                ³  Energy ³  Status ³
+SAVE      Save game to disk                   ³         ³         ³
+SHUP      Shields Up (use up arrow)           ÃÄF9ÄÄÄÄÄÄÅÄF10ÄÄÄÄÄ´
+SHDN      Shields Down (use down arrow)       ³         ³         ³
+SND       toggle Sound on/off                 ³   Set   ³  Dock   ³
+USE       Use a miscellaneous item            ³  Speed  ³         ³
+Shift-F1  Boss mode                           ³         ³         ³
+                                              ÀÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÙ
+                                              
+
+Version 3.0 

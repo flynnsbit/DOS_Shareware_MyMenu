@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Channels</TITLE>
+<META NAME="description" CONTENT="Channels">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="next" HREF="node15.html">
+<LINK REL="previous" HREF="node13.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node15.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html271"
+ HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html269"
+ HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html263"
+ HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html272"
+ HREF="node15.html">Instruments</A>
+<B> Up:</B> <A NAME="tex2html270"
+ HREF="node13.html">Text mode functions</A>
+<B> Previous:</B> <A NAME="tex2html264"
+ HREF="node13.html">Text mode functions</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00531000000000000000">
+Channels</A>
+</H2>
+The channel function is invoked with <TT>&lt;c&gt;</TT>. The channels appear in two
+different modes. By default the short mode is enabled. To channels are shown
+in one row. A grey number shows the channel number. Left to it a white number
+shows the currently played instrument / sample on this channel followed by
+the note. If the note starts to play it is shown in cyan for a short while.
+The third number shows the current volume at which the intrument / sample is
+played. Behind the volume the current effect is shown.<A NAME="tex2html25"
+ HREF="#foot1047"><SUP>5.8</SUP></A>
+At the rightmost of each entry the current real (physical) volume splitted
+among left and right output channel is displayed in a bar graph.
+
+<P>
+The currently selected channel is indicated by a small white &gt; to the left
+side of the channel number. When a channel is muted with <TT>&lt;s&gt;</TT> or <TT>&lt;q&gt;</TT>
+it is shown in dark grey. However <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP continues to play this channel, so that
+the music sounds correctly when turning on this channel again.
+
+<P>
+When pressing <TT>&lt;c&gt;</TT> twice the channel function switches to the long format.
+Each channel now uses a single row as more information is beeing displayed.
+From left to right this is as follows: channel number, instrument /
+sample name, current note, instrument / sample volume, 
+pan position, current, volume.
+<A NAME="tex2html26"
+ HREF="#foot1048"><SUP>5.9</SUP></A>
+
+<P>
+If the textmode is changed to 132 column mode the channel function can be
+displayed in short form at the upper right corner of the free space as shwown
+in figure <A HREF="node13.html#textmodescreen">4.2</A>.
+
+<P>
+If there are more channels than space inside the screen area <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP will scroll
+automatically through the channel list when you use the cursor keys. This is
+indicated by white <IMG
+ WIDTH="13" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$\uparrow$">
+and 
+<!-- MATH: $\downarrow$ -->
+<IMG
+ WIDTH="13" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\downarrow$">
+characters.
+
+<P>
+<FONT SIZE="-1">The channel function has no title string which could indicate if it
+is active or inactive. So you might have to press <TT>&lt;c&gt;</TT> one time more often
+if the channel function was previously inactive.</FONT>
+
+<P>
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot1047">... shown.</A><A NAME="foot1047"
+ HREF="node14.html#tex2html25"><SUP>5.8</SUP></A>
+<DD>All these
+informations are only shown when a module or similar type of file is played.
+The nature of file like <TT>.wav</TT> or <TT>.mp3</TT> permits those displays.
+
+<DT><A NAME="foot1048">... volume.</A><A NAME="foot1048"
+ HREF="node14.html#tex2html26"><SUP>5.9</SUP></A>
+<DD>This layout is only valid for module type files. Other file types
+like <TT>.sid</TT> habe a different layout, but basically showing the same
+information. Plain sample files <TT>.wav</TT> or <TT>.mp3</TT> can ofcourse
+not provide information like sample names or notes.
+
+</DL><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html271"
+ HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html269"
+ HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html263"
+ HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html272"
+ HREF="node15.html">Instruments</A>
+<B> Up:</B> <A NAME="tex2html270"
+ HREF="node13.html">Text mode functions</A>
+<B> Previous:</B> <A NAME="tex2html264"
+ HREF="node13.html">Text mode functions</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

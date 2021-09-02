@@ -1,0 +1,14 @@
+Begin3
+Title:          MKEYB
+Version:        0.40
+Entered-date:   2004-03-17
+Description:    Very small Keyboarddriver, 500-700 Bytes resident
+Keywords:       freedos keyboard
+Author:         Tom Ehlert, Email found at website
+Maintained-by:  Tom Ehlert
+Primary-site:   www.drivesnapshot.de/freedos/mkeyb.htm
+Alternate-site: -
+Original-site:  www.drivesnapshot.de/freedos/mkeyb.zip
+Platforms:      DOS
+Copying-policy: GNU General Public License, with exceptions
+End

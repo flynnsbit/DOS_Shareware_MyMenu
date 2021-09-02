@@ -1,0 +1,879 @@
+1.53 2005.12.27.
+-new:
+ -fileformat: ASF (WMA/WMV), AVI, and WV (WavPack) is linked into exe (no DLL required)
+ -decoder: WMA
+ -soundcards:
+  - SB Live 24, Audigy LS (CA0106)
+  - Intel ICH series (ICH 0-7; NForce 1-3) (not tested on Nforce)
+ -options:
+  -@sc LIST: save playlist in CUE format
+  -oni     : create output filename from the id3-info (at -o)(nn. artist - title.wav)(works only if LFN is supported (with DOSLFN or under Win9x))
+  -8b      : do codepage back conversion (only) (at saving tags)(if tag-list is made under DOS)
+  -csa NUM : select audio stream (in ASF,AVI,MP4, if it contains more than one audio stream)
+  -vos NAME: select video output (driver) (built-in: VESA)
+  -volm    : list available video modes (for the selected video driver)
+  -vom HEX : set video mode manually (from the list by -volm)
+  -vox NUM : set horizontal resolution (def:1024) (ie:640,800,1024,1280,1600)
+  -voy NUM : set vertical resolution (ie:400,480,600,768,1024,1200)
+  -vob NUM : set output bits / color depth (def:32) (if the videoout driver supports it) (16:hicolor; 24,32:truecolor)
+ -keys:
+  - 'g' (KeySwitchGFX) : switch between text and vga (video) mode
+  - KeyEditMoveFile : move file on disc
+ -DesktopMode: +8192 : cursor (editorhighline) follows song-skip only if it stands on the current (played) file
+ -LoadID3tag: +4: create id3info from (long)filename (enabled by default)(detected filename format is: "NN. Artist - Title.xxx" -> "Artist":"Title")
+
+-modifications:
+ -new demuxer/decoder handling (ie: playing MP3 from MP4; AAC,AC3,DTS,MP3,PCM,WMA from ASF,AVI,WAV)
+ -new AC3 decoder with liba52 (more than 2 times faster, uses Dolby Surround I downmix)
+ -added more codepages to -8cp option (see moreinfo.txt)
+ -APEtag: it writes v2 (instead of v1)(it can update v1, but it doesn't convert v1 to v2)
+ -MP2/MP3: checks/reads APEtag too (not only ID3v1/v2)
+ -new editorhighline positioning (move side with editorhighline at top and bottom)(added flag to Desktopmode to set old method)
+ -id3-search in playlist editor: it begins the search from the cursor (editorhighline), not from the top of list
+ -ctrl-gray-left/right are mapped to KeyPRewind/KeyPForward (1% seek instead of 200 frames)
+ -removed AAC file autodetection (at non-AAC file extensions)(because sometimes it can crash the program)
+ -plugin structures/definitions (old DLLs will not work!)
+ -used OpenWatcom 1.3 compiler (v11c still works, maybe later will not)
+
+-bugfixes:
+ -better header check (file/stream autodetection) for AAC,AC3,APE,MP2/3,DTS (at bad or non-audio files)
+ -crossfade between mono/stereo files can work
+ -CMOS: save at every newfile (not only in every 2. sec); corrected filenum & percent (at eof)
+ -CUE loading/handling (in playlist and on display)
+ -DTS decoder (crash at seek)
+ -SB Live (5.1) mixer init + added stereo sound for the rear channels (not tested)
+ -SB Audigy 2 Value handling
+ -VIA8233 (and above) soundcard volume (-scv) (not tested)
+ -pcm (wav) playing after buffer underrun (missed sample-block align)
+ -stop audio at exit (before saving mpxplay.ini)
+ -LCD type 1,2 timing/portdelay
+ -drive/subdir scan (run after reached filenames limit)
+ -visualpi module loading (if there is an obsolete/wrong visualpi DLL in the directory)
+ -Desktopmode: 'horizontal mode' (+16) 'and shift/move entry with mouse' (+4096)
+ - -@i option
+ -playlist reloading (CTRL-R and J keys) failed in some cases (dir change,multiply input files,-db2)
+ -sublist browsing (doesn't skip editorhighline to current song)
+ -SerialEnable=1 (mpxplay.ini)
+
+1.52 2005.07.05.
+-modifications:
+ -sct option:
+  -doesn't detect diskwriter DLLs automatically (only at selected module:-sct FAAC)(use -dlls option to list all DLL modules)
+  -exits with ESC key after successful detection
+-bugfixes:
+ -FLAC: decoding/seeking bugs; 24-bit audio (maybe 8-bit is bad yet); putting back auto UTF-8 decoding for tags
+ -FTPSRV: memory alloc/free
+
+1.51 2005.05.23.
+-new audio decoder/fileformat: FLAC (FLAC,FLA,FLC)
+-new playlist: CUE (with FILE,PERFORMER,TITLE,INDEX commands)
+-extended EMU10Kx (Audigy) soundcard handling (detects/supports more cards exactly)
+-added 24-bit playback to Audigy 2 & 4 cards (use: -ob 24)(doesn't work at Audigy 2 Value)
+-added MaxFilenames variable to mpxplay.ini (to increase playlist memory)
+-modified id3-search (alt-letter): it searches in all metadatas and filenames (with ':' separator it searches in artist:title)
+-used HQmode=1 by default in mpxplay.ini (mixer always works in HQ mode)
+-faster hq freq conversion (speed control) + more exact target freq
+-bugfixes: -pslf + StartupEnabled=7; 8-bit input (wav) + -hq, irq handling; FPL;
+-docs: separated soundcard (SNDCARDS.TXT) and LCD (LCD_DISP.TXT) infos, text files moved into a DOCS subdir
+-extender: the DOS/32 is the primary extender (removed warning messages, compressed exe)
+
+1.50 2005.04.13.
+-new decoders/fileformats:
+ -AAC/M4A (MPEG4 Advanced Audio Coding)(in RAW,ADIF,ADTS fileformats and in MP4 container)
+ -APE (Monkey's Audio)
+ -DTS (Digital Theatre Systems)(limited support)
+ -MPC streamversion 7.1 (+ sound quality bugfix (?), better seeking)
+-new playlists:
+ -FPL (Foobar2000) playlist handling (reading)
+ -M3U8 (UTF-8 encoded M3U) playlist handling (reading)
+-new (PCI) soundcard handlers:
+ -SBA: EMU10Kx (SB Live, Audigy 1,2)
+ -CMI: C-Media 8338/8738
+ -VIA: VT686/8233/8235
+-options:
+ new: 
+  -ita,-itt,-itl,-ity,-itc,-itg,-itn : id3-tag setting(s) via command line options (use them with -iw)
+  -8f  : convert chars in filenames too (use it with -8)
+  -8ua : auto UTF8 and UTF16 decoding (where required)(ID3v2,Ogg,APEv2,FPL)(enabled by default, you can disable it in mpxplay.ini (Conv852437))
+  -pcp NUM : play NUM% from the file (PlayCountPercent)
+  -xte HH:MM:SS (program exit time)
+  -xtl HH:MM:SS (program run-time length)
+  -xts HH:MM:SS (program play start time)
+  -obf : write 32-bit float wav files (instead of integer pcm)
+  -obs : bitstream mode output (currently for file-out (-o) and AAC,AC3,DTS,MP2,MP3,MP4 inputs)(to cut audio files without re-encoding)
+ at DLL handling (alternative Mpxplay version):
+  -dlls : list DLLs in Mpxplay's dir
+  -vps NAME : visual plugin selected name
+  -vpt SECS : visual plugin start time (def.: 0, no start)
+ modified: -iw (removed listfile argument, use "-iw -il listfile" from now)
+           -psc -> -pcs; -pfc -> -pcf; -ptc -> -pct;
+           -pst,-pct: HH:MM:SS.NN (hours:minutes:seconds.hundredths)
+-keys: new : KeyLCDpage0,1,2,3 ; KeySpeedSeekFrwd ('\'); KeyPlayMuteSw (ctrl-m);
+             KeyEditCpyEntry (shift-F5), KeyEditCopyFile;
+             KeySkipAlbL1Back,KeySkipAlbL1Frwd,KeySkipAlbL2Back,KeySkipAlbL2Frwd
+  modified : KeyLCDpage to KeyLCDpageNext
+-added [keygroups] section to mpxplay.ini (more key-functions with one button)
+-added APEv1-tag writing (and reading) for AAC,AC3,APE,DTS,MPC files (read/update of APEv2)
+-added +8 flag to StartupEnabled : restore directory and song-pos in non-playlist mode (using directory browser) OR reloads last playlist
+-added sublist-restoring to Startup (restore last list and song position in sublist(s))
+-added dir-scan support to sublists (m3u file may contain filemask (file*.m??), works like a sublist)
+-added codepage-conversion-back to playlist-save (DOSchars to WINchars conversion)(at -8)
+-added LCD-item: P_FILETYPE
+-added full LFN API handling (faster directory access and file open, lfn is supported in command line arguments (search mask or single file), wav-out creates lfn.wav from input file)
+-new and modified COM and LPT port controls in [serialport] (COMC,UIR,LPTC,NECIR,VT100,SERMOUS,(FTPSRV,TELSRV)) (see control\serial.c in source)
+-increased playlist and id3 memory (50% more)
+-modified soft-volume (',' & '.' keys) from linear (-6/+6) to logarithmic (-0.5dB/+0.5dB) above 100%
+-mouse and joy settings moved to separated parts in mpxplay.ini ([mouse],[joystick])
+-changed compiler (from the original 'Watcom C' to 'Watcom C 11.0c' from http://openwatcom.org)
+-bugfixes: tag read/write (APEv2,ID3v1); seeking; -bl; LCD; UIR; DMA; -pst,-ptc, songnum, id3-search, text-display handling,
+           pcm bit conversions (24<->32,float->32), PrebufferType, double-click at MouseFuncBtn1 config,
+           -o + -cf, crash at large freq diffs (between in/out), limiter
+
+1.48 2003.08.18.
+-command line options:
+ -new: -ihl : load infos (id3,time) of highlighted file only (at cursor move)
+       -iod : set descending order (use it with -io)
+       -io type 9 : order by path of file(s) (some other io numbers has changed!)
+ -modified: -sva (removed volume argument)
+-LCD: 
+ - modified/optimized type 1 (new lpt-pin config; faster writing/displaying)
+ - new type 2 : HD44780 4-bit mode (on LPT) (not tested)
+ - new type 3 : Noritake VFD display (series 800) (on LPT) (not tested)
+ - reordered LCDtypes (see moreinfo.txt or display\lcd.c)
+ - bugfixes : scrolling, P_FILENAME item
+ - new items: SYSDATE (yyyy-mm-dd), CURRLISTP, ALLSONGTIME, EDITORHLINEn (n:-,P1,P2,P3,M1)
+-bugfixes/optimizations/modifications:
+ -subband-synthesis optimization (faster MP3/MP2/MPC decoding (5-10%)(?))
+ -ctrl-'/' & '*' works in directories too (search (skip to) paralell list/dir)
+ - -if : search in filename if there's no id3tag + faster (?)
+ -corrected/modified -inl,-idl (skip; -idl + -il -> sometimes program crash)
+ -random mode with sort, with juebox, with crossfade (skip back is still bad)
+ -fulltime calculating
+ -F5/Ins + sort
+ -system with 1 drive ("playlist is empty" error)
+ -some reordered key functions (corrected display refresh)
+
+1.47.9 2003.05.26.
+-new keys : alt-gray-'/',alt-gray-'*' : load previous/next fastlist
+-new options:
+ -if KEYWORD : tag-filter (keep files which have KEYWORD (substring) in their id3tag(s), delete the others)
+ -@i : load list from the stdin (m3u style)
+ -pslf [NUM] (PlayStartList) : use/load NUM. fastlist (0-15) (NUM. list in [fastlist] config)
+ (without NUM, it loads/restores the last list/song position from [startup])
+-added multiply input file handling (ie: mpxplay.exe file1 file2 file3 ('file' may be a single file, playlist or dir-scan))
+-LCD: 
+ - added VT100 serial output (type 9)
+ - modifications in type 1,2,5,6,8 (wait,irq)
+ - added CURRLIST item (shows input file/playlist)
+-modifications:
+ -modified loudness logic
+ -modified (corrected?) startup logic
+ -modified ctrl-r (refresh side) logic (skip to first song only in pause mode)
+-bugfixes/optimizations:
+ -sublist(s) in MXU
+ -some lcd-item related bugfixes (refresh,scroll)
+ -mp3 bitstream error detection (at begin of files)
+
+1.47.8 2003.04.19.
+-added fastlist function (load playlist/file(s) with one key)(see mpxplay.ini)
+-added PLS playlist file handling
+-added LCD-type 8 (EDE702 serial LCD interface support)
+-bugfixes/modifications:
+ -saving of current song's infos in memory
+ -time/buffer position at huge files
+
+1.47.7 2003.03.20.
+-added software tone control to MP3/MP2/MPC (bass,treble)(if hardware tone not found)
+-new key: '|' : loudness (turn on/off bass&treble)
+-modifications:
+ -"SoundLimiter" has changed to "MixerControl" in mpxplay.ini
+ -id3tag/file-info related modifications (checking/loading/displaying)(-in/LoadID3tag)
+ -sort by artist/title (if one of them is missing: sort by the other one (both: sort by filename))
+ -au_mixer modifications (HQ-limiter works on crossfade,surround and (soft) tone-control too (LQ:on volume only))
+ -minor joy modifications (see mpxplay.ini)
+ -16 bit (integer) output has changed to 'float' at MP3/MP2/MPC files (slower, but required to tone/hq-limiter)
+-bugfixes:
+ -playlist load/save (path bugs)
+ -random mode (cntrl-enter)
+ -serial/UIR handling (irq)
+ -WSS: ULTRA16 env. variable loading; SB16: removed hidma value limit; GUS with -bp
+
+1.47.6 2003.01.22.
+-modifications:
+ -added jitter correction to CDW reading (CDWcontrol=1 in mpxplay.ini)
+ -added SortOrder (in mpxplay.ini) to sort function (you can set your own ABC)
+ -prebuffer (-bp) optimizations (rewind in buffer, memory pre-allocation)
+ -CTRL F2-F4 (added 2.,3.,(4.) order keys); added -io4 option
+-bugfixes:
+ -auto loadlist (file-info loading)
+ -div0/pagefault handling; some asm bugs at DOS/BIOS/mouse callings
+
+1.47.5 2002.12.31.
+-bugfixes/optimizations:
+ -sort (freezing; newfilenum clear)
+ -startup (restore list/song position) at -ds option
+ -CMOS startup or -pss with -io
+ -auto-loadlist in jukebox mode (-dd)
+ -EXTM3U loading (possible id3-memory overflow)
+ -MP2/MP3 header check (possible 'stack overflow'/crash)
+ -AC3 optimizations (10-15% faster)
+ -minor spectrum analiser optimization/correction
+
+1.47.4 2002.12.06.
+-new options:
+ -io2,-io3 : secondary, third order keys
+-new key:
+ - CTRL-'g' : select/skip LCD page
+-modifications:
+ -added LCD (virtual) page handling (see mpxplay.ini & moreinfo.txt)
+ -new mouse handling (less CPU usage, mouse-wheel support (http:\\cutemouse.sourceforge.net))
+ -new order/sort function (faster, sorting to more keys)
+-bugfixes:
+ -total time calculating after dir change; -ipl with -io
+
+1.47.3 2002.11.14.
+-new options:
+ -pst : play-start-time (in a song)(like -psf) in HH:MM:SS or MM:SS or SSS format
+ -ptc : play-time-count (in a song)(like -pfc) in HH:MM:SS or MM:SS or SSS format
+ -db2 : directory browser on both sides (on left and right sides too)
+ -xas : enable atx/apm shutdown
+-new keys: 
+ - F2 : save playlist (into mpxplay.m3u)
+ - alt-',' & alt-'.' : soundcard (hardware) volume up/down
+ - KeyEditCpySngEhl (no assigned key): copy song (entry) and move it to editorhighline position and skip editorhighline
+-modifications/optimizations:
+ -major playlist-handling structure/variable modifications (in source)
+ -track number reading/handling (from ID3TAG)(it's displayed on LCD only, it isn't on screen)
+ -new and corrected LCD-items
+ -faster #EXTM3U loading/file checking (if all entries have #EXTINF: line)
+ -new/faster spectrum analiser for OGG files
+ -reduced functionality (partially removed support) of old MXU files (v1.42 made this mxu format)
+-bugfixes:
+ -a lot of playlist related bugfixes (playlist loading from subdir (subdir\list.m3u),dir/drivescan (*.*\*.*) with -dd option)
+ -(cross)fade-out in jukebox mode at last song
+
+1.47.2 2002.10.01.
+-new options: 
+ -8u : use UTF-8 text decoding (in tag-infos)
+ -8cp: select target codepage for UTF-8 decoding (ISO-8859-1 and ISO-8859-2 only)
+ -8uv: validate (use only) WinChars at UTF-8 decoding (above ascii 128)
+-bugfixes/modifications/optimizations:
+ -CTRL-'l' -> CTRL-'r': refresh directory browser or reload playlist
+ -cmos startup save/load (save in every 2. second (instead of 20 times/sec))
+ -OGG : speed improvement (c-Stereo and beta4(3,2,1) files: 5-10%); seeking to bof bugfix
+ -file buffering (mpxinbuf_fread) bugfix (program crash at OGG file seeking)
+ -CTRL-BREAK key deleted the file from the (hard)disk (!)
+ -directory browser with 1 drive; MP3 files with WAV header;
+ -dma-monitor; dma-stop/restart
+
+1.47 2002.09.06.
+-new LCD configuration and LCD hardware types (see mpxplay.ini and moreinfo.txt)
+-new options:-of,-oc,-ob : set output freq,channels,bits (usually for wav output)
+-new key function:KeyShutDownExit (no assigned key)
+-modified/new seek functions (rewind/fforward): 
+ - speed of 1x,4x seek configurable with SeekFrames in mpxplay.ini
+ - KeyDRewind/KeyDForward modified to KeyQRewind/KeyQForward in mpxplay.ini
+ - new: - KeyPRewind/KeyPForward : seek -1% / +1% of song (or min. 4x speed)
+        - KeyCRewind/KeyCForward : continuous 1x seeking
+-modifications/optimizations:
+ - au_mixer and au_cards optimizations
+ - mp3 : - added 69 new id3v1 genres
+         - id3v2 header support (uncompressed artist,title,album,etc. infos only)
+         - better frame-len calculation at 32/48khz files and at Xing and id3v2 headers
+         - better bitstream (frame-header) error handling (less clicks,less freezing(?))
+ - ogg : - updated decoder (a quality bugfix, 25-55% faster, less memory)
+         - -cl option works (1.4x faster decoding)
+ - mpc : support of APE tags (reading of APETAGEX)
+ - extended -ebs/EditSideBordr (you can use more/less width on playlist editor sides)
+-bugfixes:
+ - directory browsing on network (Novell) drives
+ - serial port handling (mode=0)
+ - display/desktop bugfixes
+ - CPU-usage calculation at interrupt decoder (-bp,-bl)
+ - -f0 option; F5,ctrl-ENTER,ctrl-L keys
+
+1.46 2002.02.24.
+-implemented Dolby AC3 decoder (AC3 (stream) file handling)
+-updated Vorbis decoder (RC3) (no quality change)
+-modified (new) serial port (and UIR) handling/configuration (see mpxplay.ini)
+-modified (extended) playlist-editor search (see end of readme.txt)
+-new/modified software-mixer functions/structure (not finished fully)
+ -multibits (8-32) & multichannel input (wav files) and output (wav files/future cards)
+ -new hq-mixer mode (high precision floating point based calculations (selectable))
+-new options:-idl : load infos (header,id3) of displayed files only (controlled by playlist editor)
+             -@sw : save playlist in EXTM3U format (like Winamp)
+             -bn8 : disable use of int08 (minor speed up for slow cpus)
+-modified option : -ini -> -inl            
+-new keys: - '<','>' : volume balance
+           - CTRL-F1,F2,F3,F4 : order playlist (immediately) by filename,artist,title or time
+           - j : switch between juke-box (doombox) and normal mode
+-key changes:
+ -bass and treble moved to ':','"' and '{','}' keys
+ -'h' switches off/on the hq-mixer too
+ -'space' (re)mapped to play/pause function
+-removed key: CTRL-'R'
+-mpxplay.ini modifications (separated parts)
+-minor bufixes/optimizations: 
+ - sound bugs at mp3 seeking (but because of this the seeking may be slower on low-end CPUs)
+ - mp3 decoder (scalefacs & pretab, III_antialias, i-stereo, getbits, l3_deq)
+ - mp2 decoder optimizations (1-2% speed up)
+ - mpc buffer clear (hybridout)
+ - crossfade (pcm_crossfader, crossfade-part step, crossfade at 48khz files (wav -> mp3,ac3))
+ - dma get_bufpos (maybe it helps at some cards)
+ - doombox & filesearch (ie: -dd *.mp3)
+ - newfunc optimization/clear, minor direct-display speed up
+ - and a lot of other
+
+1.45.2 2001.10.28.
+-bugfixes/corrections:dma autodetect,irq autodetect,LCD-displaying
+
+1.45 2001.10.23.
+-new keys: o : open/close CD door (tray)
+           d : hi-lite scan (demo mode) start/stop
+           ALT-(gray)PgUp/ALT-(gray)PgDn: move cursor one album up/down (like '/' & '*')
+           CTRL-'S': pause playing at (before) next song
+-removed keys: 'd','D','F2' : TAB enables the directory browser (if -db)
+-new options: -pfc NUM : PlayFrameCount (play only NUM frames from the song)
+              -pef NUM : PlayEndFrame (PlayFrameCount=PlayEndFrame-PlayStartFrame)
+              -phs hi-lite scan (play only 10 secs from every songs (1m00s-1m10s))
+-modifications in audio lib:
+ -GUS soundcard support (through GF1 chip)
+ -modified WSS routines (it has to work on more soundcards or with less problems)
+ -redesigned soundcard handling (mainly inside), 
+ -modified -scs 'numbers' to 'names' (1->S16,2->ESS,3->WSS,4->GUS,5->SBP,6->MID)
+  (modified SoundcardType to SoundcardName in mpxplay.ini)
+ -souncard IRQ autodetect bugfix (SB pro)
+ -removed MIDAS from the exe (it's still in source)(I hope nobody will need it)
+-minor StartupEnabled=7 (CMOS) function modification (playstartframe->playstartpercent)
+-some minor bugfixes (random play;key mapping;cdw;crossfade;-bp with -ipl;
+                      dma buffer clear at -bl;-xs)
+
+1.44 2001.08.28.
+-new key/function: file delete from disk (and from playlist) 
+ (currently disabled, you can enable it in the mpxplay.ini (KeyEditDelFile))
+-implemented MPEGPlus decoder (support for MPC files)
+-updated OGG decoder (RC2)
+-bugfixes:
+ - -cl,-cm
+ - local id3list (-il)
+ - crossfade clear ('C')
+ - buffer clear(s)
+
+1.43 2001.05.03.
+-major desktop changes
+-Ogg Vorbis (OGG) file support
+-serial port control
+-new keys: A : spectrum analiser on/off
+           S : stop playing (and jump to the first song)
+           CTRL-gray / :  jump to the previous paralell playlist
+           CTRL-gray * :  jump to the next paralell playlist
+           CTRL-L  : reload playlist or rescan directories/drives (ie: at disk change)
+           CTRL-DEL: clear playlist
+           CTRL-PgUp/PgDn: move up or down in subdirectories/sublists (like NC)
+           ALT-UP & ALT-DOWN : resize playlist-editor/song-browser
+-new option: -io : order playlist by title/artist/album/year/comment/genre/time/size/filename
+-removed options : -@x (use -@)
+                   -ef (use Desktopmode variable)
+-configuration variables (in mpxplay.ini)
+ -new: PlayListSave, ID3ordertype, SkipMP3bugs, MixerSet, WinChars/DosChars, 
+       Displaymode, Desktopmode, Editorbegin, ShutDownATX, UseLFN
+ -removed: EditFiledType
+ -modified: LCDlptport -> LCDport
+
+-modifications/new functions:
+ -playlist:
+  -multi level playlist support (virtual directory system)(playlist in playlist)
+  -new MXU style (but old style is still supported)
+  -support for #EXTINF lines in M3U (#EXTINF:timesec,artist - title)(Winamp uses this)
+  -added 40 new genres (music styles)
+  -code page conversion (-8)(WinChars & DosChars in mpxplay.ini)
+  -M3U, MXU detection at command line (-@, -@x not needed for playlists)
+  -F5 adds (scans) drive and subdirectory too (if you press F5 on a drive or subdir)
+ -MP3 decoder:
+  -quality (some floating point pre-calculations, asm optimizations)
+  -always sounds in HQ mode (-hq option has no effect on mp3 files)
+  -speed (?) (5-7% faster on PII)(maybe it's less on 486 and P-I)
+  -VBR (Xing header) support
+  -fixed an intensity-stereo bug (more testing needed)
+ -mixer settings (MixerSet in mpxplay.ini):
+   +1:floating point precision in software-mixer (vol,sur,spd)
+   +2:sound limiter (for classical music & autovolume)
+ -added spectrum analiser for PCM (wav,cdw,ogg) files
+ -support for 2 joystick
+ -save (at start) & restore (at exit) video memory in fullscreen mode
+ -modified CTRL-ENTER (nextsong) function & displaying
+
+-bugfixes:
+ -WAV: 8bit mono files, wav header read/write, wav output freq/channel, crashing problems, wave-data-len use
+ -CDW: 2 (or more) drives support (paralell), CDW in MXU list, incorrect read length (missing last frame)
+ -crossfade: bad crossfade (fade-out) at last song; pause during crossfade; crossfade on bad mp3s
+ -freeze on MPEG2 (LSF) Layer II files
+ -bad random order (-prn) in playlist which contains bad (non-audio) filenames
+ -doombox mode & -ini
+ -skip at -ipl (unchecked song select)
+ -error handling (floating point error, division by 0, exception error)
+ -low level SBpro driver (IRQ handling)
+ -some 'division by zero' bugs
+
+1.42 2000.02.06.
+-new option(s): -ipl : load file infos under play (start playing, after load infos)
+                -ds  : multiple drive scan (-ds cde -> scans c: d: e: drives)
+                -pap : auto pause before every song
+                -xs : load song (playlist), jump to dos shell automatically
+                -xr : use TSR mode (on cdw files only)
+                -prn2: randomize playlist at start
+                -pre1: repeat one (current) song only
+                -scs : sound card select ((try to) use selected card only)
+-removed option : -cr (use -cm)
+-modified key function: ctrl-v : reset vol,sur,trb,bas,spd values to 100%
+added:
+ -M3U support in directory browser (playlist editor)
+ -more configuration options (variables) in MPXPLAY.INI
+ -SBpro support (low level driver instead of MIDAS)
+ -ESS 1868,1869,1878,1879,1887,1888 chipset support (?)
+ -LCD support (read moreinfo.txt)
+ -extended mouse functions, remappable mouse buttons (see end of readme.txt)
+ -joystick support with remappable functions (check mpxplay.ini)
+bugfixes & modifications:
+ -modified autovolume function (normalizer)
+ -modified jukebox (doombox) functionality (you can edit the queue (right side) too)
+ -interpolated freq converter (speed control) -> better sound quality (large CPU)
+ -sound card volume (mixer) setting (-scv) for ESS (?) and WSS cards
+ -random function
+ -CDW track select
+ -some WAV bugs (not the all)
+ -smoother starting (in the middle of mp3 files (-psf or StartupEnabled))
+ -random mode + crossfade
+ -rewind: prebuffer, crossfade
+ -soundcard, dma, MIDAS buffer clear
+ - -@x, -@s, -iw
+ - -pss, -psf & -psp with Startupenabled
+ -alltime calculating
+ -step forward/back with mouse buttons
+ -some display bugs (dos shell, playlist editor)
+ -handled CTRL-BREAK (disabled)
+ -handled crashes (exception errors -> 'normal' close)
+
+1.41 1999.09.20. final release 2. (some bugfixes)
+-new options: -@d : doombox mode playlist (load playlist to the left side)
+              -dd : doombox mode directory browser
+              -sp : modify playing speed
+              -sct: sound card test (1:SB16,2:ESS,3:WSS,15:MIDAS)
+              -scv: sound card volume (master & voice)(1-100(%))
+              -sctr:sound card treble (1-199%)
+              -scbs:sound card bass
+              -x  : program name for DOS shell (i.e. -x nc.exe)
+-modified options: -pl  -> -sl  sound limit (playlimit)
+                   -pv  -> -sv  set voulme
+                   -pva -> -sva set auto volume
+                   -psr -> -sr  surround
+                   -ms  -> -scm configure and save MIDAS to mpxmidas.ini file
+-removed options: -m, -mm, -ml, -mdi, -sb16
+-key remappings: - CTRL-left : fast rewind  (old:SHIFT-left)
+                 - CTLR-right: fast forward (old:SHIFT-right)
+-new keys and functions : - '<' and '>' : set bass   (works on old SB16 and
+                          - ':' and '"' : set treble  AWE 32/64 cards only)
+                          - '[' and ']' : speed (freqency) control
+                          - white '-'   : step back like a CD player
+-removed keys and functions : - 'A' : analiser change
+                              - 'F9': load fullscreen desktop (at -f0 -ff -fl)
+                              - keypad 'ENTER' as pause
+                              - keypad DEL as exit
+-CD-WAV support (.cdw)(real time digital audio copy to the sound card or into file)
+ -use -bp for playing, use -bbn 40 for CROSSFADE (increase preload buffer)
+-config file (mpxplay.ini): 
+ -keyboard (re)mapping
+ -startup (start playing at the last played song and frame position)
+-sound card access modifications:
+ -ESS sound card support (SET BLASTER=A220 I5 D1 H5)
+ -autodetect for PORT,IRQ and DMA numbers (if the program doesn't find config variable)
+ -sound card init bugfixes
+ -Midas can play different frequency (with speed control = a little bit bad quality)
+-random queue (store the last 32 song number and step back on them)
+-bugfixes & modifications: 
+ -mp3 decoder quality
+ -gapless playing between pcm files (.wav & .cdw)
+ -interrupt decoding (-bp -bl) works under win95/98 too (only in active window)
+ -playlimit & crossfadelimit at -f0 and -ff
+ -PlayStartSong with RandomPlay
+ -buffer clear
+ -some display bugs
+-added KEYCODES.LST (for the keyboard remapping)
+-added ORDER.FRM    (for Mpxplay registration)
+-moved SPEEDS into MOREINFO.TXT
+
+1.40 1999.07.21.
+-new options: -bn  : no prebuffer
+              -bp  : realtime prebuffer with interrupt decoding (buffering 'on the fly')
+              -bni : disable interrupt decoding (for -bl only)
+              -bbn : prebuffer blocks (one block is 32768 bytes)
+              -cfp FRAMENUM : crossfade point (start crossfade after FRAMENUM frames)
+              -cfl LIMIT    : crossfade limit (start crossfade when volnum below limit)
+-new keys   :      'M' : mute sound (1/8 volume) while push it
+              CTRL-'D' : open a dos-shell (only at prebuffer (-bl or -bp) !!!)
+              CTRL-F5  :
+              CTRL-INS : add all filenames to other side
+-removed keys: CTRL-'+', CTRL-'-'
+-when the crossfade is enabled (-cf option or 'c'-key), the program 
+   always do crossfade between songs
+-modified crossfade function (real fade-out and fade-in)
+-implemented MPEG 2.5 support
+-implemented low level WSS (Windows Sound System) sound card access (SET ULTRA16=)
+-you can give an output filename for -o
+-shared file handling under W95/98 (playing under download or encode)
+-mute under forward/rewind
+-crossfade between mpeg and wav files
+-mp3 decoder:
+ -speed up: 8-18% (128-320kbit)
+ -minor sound quality bugfixes
+ -crashing bugfixes
+ -speed up hq mode
+-modified myextgetch() function, check out the end of FAQ.TXT (!)
+-bugfixes:
+ -pause mode
+ -modified header check
+ -modified file handling (less chance to crash)
+ -random play
+ -crossfade
+ -output wav file header (-o)
+ -crashing at exit (under w95/98) (?)
+ -and some other minor bugs
+
+1.39 1999.04.16.
+-new options: -psf NUM : start song at NUM. frame (PlayStartFrame)
+              -psp NUM : start song at NUM-16%    (PlayStartPercent)
+              -pss NUM : start play at NUM. song  (PlayStartSong)
+              -psc NUM : exit after NUM song      (PlaySongCount)
+              -il [listname] : local  id3info list (loading at every dir change)
+              -ig [listname] : global id3info list (loading at start)(create: -is -ist 192)
+              -@x [listname] : extended playlist (use same list like to -ig)
+-changed options: -prn : random play (old -r)                  (PlayRaNd)
+                  -pre : replay (play again) playlist (old -a) (PlayREplay)
+                  -ddma: double DMA memory (old -5)
+-keys (re)mappings: 'r' - repeat (replay) playlist
+                    'n' - random play
+                    'f' - fade out/in at crossfade
+   ALT- 'A'-'Z','0'-'9' - search artist (or filename) in playlist (not finalized)
+-new -ist types (use them for -ig): 
+     +64 : filenames with full path
+    +128 : append file (header&size) information in hex format
+    +256 : '°' (176) separator behind filenames (recommended for long filenames)
+-program give back the position of the song (percent+16=16%-115%) at exit
+-random function change (mix playlist -> random selected next song)
+-playlist editor highline folows mouse position (when it's in browser)
+- -pss 1 : start playing in current dir (when playlist was not loaded)
+           (else program starts in pause mode)
+-added LICENSE POLICY to the MOREINFO.TXT
+-bugfixes
+ -crash at DEVICE (CD-ROM) NOT READY
+ -mp3 crossfade
+ -search in root dir (older versions didn't load filenames from root at *.*\*.*)
+
+1.38 1999.03.14.
+-keyboard remapping:'c'-crossfade (old 'f')
+                    'h'-hq mode (old 'c')
+-option change: -co -> -hq
+-program can play 8 bit (unsigned) wav files too
+-hq mode in mp3 (instead of correction)
+-speed up decoder (5%) and analiser
+-bugfixes
+ - playlist repeat (-a)
+ - mpeg header check
+ - -db command line bugfix
+
+1.37 1999.01.22.
+-new keys: '.' on keypad (when numlock on) : EXIT (instead of del)
+         : SHIFT-LEFT and RIGHT arrow : faster rewind and forward (200 frames)
+-speed up (25%) for one (left) channel decoding at mp3 stereo files (-cl)
+-spped up mp2 (4%)
+-extended playlist and id3info memory area (playlist entry : 7000,
+ playlist and id3info memory size : 220-220kbyte (dinamic fields))
+-bugfixes:
+ - seeking on VBR (variable bitrate) files 
+ - playlist save (-@s) in root directory
+ - -is & -iw din't work correctly
+ - program crashed above 5-600 playlist entry
+ - mp3 decoder (sound) bugfix
+ - 50->25 lines mode change faster
+ - -v works with -f0 too
+
+1.36 1999.01.07.
+-key (re)mappings:
+ -gray-'/' and gray-'*':step back/forward one subdirectory in playlist
+ -gray-ENTER:if NUMLOCK OFF:starts the highlighted song in playlist,else PAUSE playing
+ -white-DEL:if FULLSCREEN mode:DELETE from playlist,else EXIT from program
+-new options:-in  : don't load id3tag from mpeg files
+             -ini : don't preload file informations (load them when starts playing)
+             -mdi : MIDAS disable interpolation (less cpu usage,bad quality)
+-crossfade for MP2 files (MP2->MP3 and MP3->MP2 too)
+-white ctrl-PGUP/PGDN:step back/forward one subdirectory (album) in playlist
+-speed up (mp2:4%,mp3:2%)
+-some editor functionality changes
+-bugfixes:
+ -conventional memory problem at SB16 play (couldn't allocate dma memory)
+ -dma repeating at SB16 play (when the input file reading stopped (read bug))
+
+1.35 1998.12.30.
+-new options:-cft :crossfade type (0.bit:fade out,1.bit:fade in,2.bit:cf at playlimit)
+             -pp  :pause between songs
+-new keys: gray-'*' : pause
+           white-HOME: volume up
+           white-END : volume down
+- '-enf' option changed to '-ef' (editor filenames disabled by default)
+-bugfixes:
+ -found a minor mp3 sound quality bug!
+ - -o didn't work
+-document update & correction
+-released MPXPLAYS.EXE : only with SB16 access (smaller,faster a little bit)
+
+1.34 1998.12.21.
+-new keys:'e': filenames/no filenames in editor (-enf)
+          'x': swap channels
+          'r': randomize playlist (actual editorside)
+          ctrl-'r': (re)order playlist by path\filename   
+-new options:'-ebs': active editor border size (13-67)(def.:67)
+-bugfixes:
+ - -mm didn't work
+ - editor bugfixes
+
+1.33 1998.12.02.
+-LONG FILENAME support under w95/98
+-new option: -enf : no filenames in editor
+-new soundcard autodetection:if SB16 not found MIDAS starts with autodetection
+-new option: -sb16 :use SB16 sound card detection only (do not start MIDAS)
+-bugfixes:
+ -crossfade bugfixes
+ - -o with -db bugfix
+
+1.32 1998.11.17.
+-CROSSFADE (not finished!): -cf option or 'f'-key (between the songs)
+ - CTRL-'-' or CTRL-'+' : instant crossfade
+ - -cfl option : crossfade length (default:200 frames)
+-DIRECTORY access changes:
+ -directory browser is always enabled now (-db disables it)
+ -you can use directory browser and directory search (*.*) together
+ - -d and -ds options removed: use *.* or d:\*.*\*.* formats
+-PREBUFFER: -bl option : loads the whole song into memory before plays it
+-new default screen mode: -f (full screen,50 lines,with analiser)
+-new option: -fl : only one line output (this was the old default screen mode)
+-some playlist editor changes
+-bugfixes: -m -db -> crashed the program
+
+1.31 1998.09.29.
+-new key: CTRL-ENTER : select next song (what starts when the actual ends)
+-extended playlist number selection: just type a number on keypad (with numlock on)
+-new id3 list types (-is -ist NUM) (read readme.txt for details)
+-double read 'bug': if a song is already loaded into memory (it is on 
+ the other editor side), the program doesn't read once more the file infos
+ from disk, it only copies the existent ones from memory (from the other
+ editor side) (for example: when the playlist and the actual directory
+ contains the same filenames)
+-display bugfixes: 
+ -MsStereo/JointStr change at playing
+ -large (long) bitrate number at -db
+-command line bugfixes:
+ -playlist on other drive
+-some editor bugfixes
+-rewind bugfix (rewind across the files -> sometimes bad positioning)
+-new version of MIDAS (i don't know, what's the difference)
+
+1.30 1998.08.30.
+-volume correction ( ','-up and '.'-down( '<' and '>'))
+-automatic volume correction -pva or 'v'-key, 
+- ctrl-v : set volume to 100% (reset it)
+-fake surround: with ; and ' key or -psr SURNUM option 
+ (default surnum is 100 :no surround)
+-program sorts the filenames in subdirectory reading (alphabetic order)
+-you can use -il and -is at same time (selection from a large id3listfile)
+-design change of saveid3list file (-is)
+-speed up on intel processors (15%) (???) (tested on a PPRO 200 only)
+-gray / for exit (request)
+-bugfixes:
+ -command line option bugfixes
+ -random play bugfix
+
+1.29 1998.08.06.
+-mp2 joint stereo works
+-speed up mp3 (low bitrates:1%, high bitrates:3%)
+-minor bugfixes:
+ -directory reading (in root directory)
+ -playlist editor (sometimes halted the program,some display bugs)
+ -id3 tag writing (couldn't update)
+ -some display bugs (bad screen scroll up)
+ -some command line option bugs
+
+1.28 1998.07.27.
+-drive change in editor (not finalized)
+-better direcory read
+-speed up (1%)
+-corrected intel 'bug'
+-fixed bug: program couldn't read root directory and novell directories
+            (novell directory browsing is not perfect yet)
+
+1.27 1998.07.12.
+-new playlist editor functions: 
+ F5 or Ins : add file to the other side's playlist
+ F8 or Del : delete file from playlist (you can delete from dirlist too)
+ CTRL-UP or DOWN arrow : shift highlighted song up or down in playlist
+ ALT-LEFT and RIGHT arrow : change size of editorsides
+ TAB: change editorside
+-new option: -@s PLAYLIST : save playlist from editor to PLAYLIST file
+                            on exit (you can use it with -ds option too)
+-old key function CTRL-left arrow (step to begining of song) removed
+ (you can use Backspace for this)
+-MPEG 2.0 & joint-stereo was removed from MP2 (they doesn't work at all)
+ (later will be corrected maybe)
+-bugfixes
+-mp3 speed up (1.5%) (index number in 1.26's readme.txt was bad)
+
+1.26 1998.06.25.
+-new option -f0: no screen output under play
+-changed old -f0 to -ff: only frames and filename are displayed
+-new keys :F2(or d): changes from playlist use (-@) to directory browse (-db)
+           F9      : sets the program to full screen mode
+           CTRL-F9 (-fe): hides analiser & browser -> sets editor to full screen
+           SHIFT-F9: equal to ALT-F9 + CTRL-F9
+                  a: alternative analiser (this is a test yet)
+-mp3 speed up (2%)
+- -8 need a <language type> (default 1:hungarian, 2:greek)
+-MIDAS can play 22050hz files too (software conversion)
+-corrected browser at directory browser function (only files displayed)
+-corrected bug: program halted in directory browser pressed left arrow
+-other bugfixes
+
+1.25 1998.06.15.
+-starting program without options: means: -f -db (program starts in full
+ screen and directory browser)
+-directory browse read all suported filenames from directories 
+ (*.mp?,*.wav) or give another mask (*.*)
+-better directory browser (not perfect yet)
+-better wav playing (tested: 16 bit,22 & 44khz,stereo and mono)
+-speed up mp2 with 4% (mp3:1%)
+-extended 852->437 conversion (for greek language)
+-corrected -fs option 
+-bugfixes
+
+1.24 1998.06.05.
+-option -db : directory browser (like in cubic player) (not perfect yet)
+-new MP3 decoding process:
+ - 8% faster (256 kbits or less) 
+ - program supports the MPEG 2.0 too (16,22,24 khz sample frequency) 
+         (on SB16 only (without -m))
+ - i think so program's sound quality is better now (a little bit)
+-new pause function : able to move during pause (skip or forward & rewind)
+-added style info to id3infos (disco,house,etc.)
+-bugfixes:-scrolling up at bottom of screen in verbose mode
+          -CORRECT is displayed in 25 lines mode in editor area
+          -seting back the 50 lines mode on exit (if that was at start)
+          -actual filename has been cleared from display after ALT-F9
+          -program needs smaller memory (500k) for SB16 play
+
+1.21 1998.05.27.
+-function ALT-F9 : 25/50 lines mode
+-option -fs : program doesn't change the display to double lines mode 
+ (leaves in 25 lines mode or leaves in any screen mode what you set)
+-option -f0 : reduced screen output (faster decoding (1%))
+-new keyboard read (for special keys)
+-little speed up (1%)
+-bug fixed:program didn't want to rewind across the songs
+-bug fixed:random play was not really random (bad randomize call)
+
+1.20  1998.05.18.
+-global changes of the command line options !!!!!!! Read readme.txt!
+-program plays the wav files too (only the 44.1khz,16bit,stereo is perfect)
+-write id3tags to mp3 files (-iw)
+-you can give a mask for directory search (-ds *.wav)(default: *.mp?)
+-you can save the midas manual settings to a file (-ms) and you can
+ load it from command line (-ml)
+-downmix function (-cm) (stereo to mono)
+-time mode:elapsed,remaining,allelapsed,allremainig function (t key)
+-program can handle any screen resolution (character)(i used it in 100x80)
+ (but maybe the mouse driver can't)
+-little change of desktop design
+-corrected bug: program reset the display to the initial screen lines
+-corrected other bugs too (made some new one)
+
+1.10  1998.04.15.
+-program shows the times for every song
+-program write normal WAV header to output file (-o) and the output
+ filename will be the input filename with .wav extension (you can't change it)
+ (track01.mp3 -> track01.wav)
+-program check the number of screen lines
+-program searches for filenames in id3list (at -i) and shows correct info
+ for filenames
+-program sorts filenames by name (at reading from directories (-d))
+-search subdirectories for MP2,MP3 (-d -7)
+-implemented MIDAS Sound System (supports more sound cards) (-m)
+-configure manually MIDAS (-4)
+-convert id3info characters from 852 code page to 437 code page (-8)
+ (for hungarian language)
+-double dma option -m changed to -5 (not the latest change)
+-bug fixed:mouse interrupt call was not correct
+-bug fixed:program halted on mono MP2 files
+-bug fixed:program halted on non-audiompeg files (I hope it's correct now)
+-bug fixed:rewind bug in first song
+-corrected some other bugs too
+
+1.00b 1998.03.31.
+-bug not fixed: program sets the screen to 50 lines mode in fullscreen
+-playlist editor (it is not a real editor yet, only selector)
+ (keys:up & down narrow,pgup,pgdown,end=ctrl-pgdown,home=ctrl-pgup)
+-program linked with PMODE/W  -> DOS4GW.EXE removed (not needed)
+-double sb dma (-m) ( 32k->64k )
+-read id3 tag infos from a listfile (-i)
+ format in lines: filename   artist:title
+-write id3 tag infos from mpeg files to a listfile (-3) 
+ (filename,artist & title only)
+-little input buffer (8k),it isn't a real prebuffer, it only saves 
+ the health of CD & HD
+-bug fixed:there was some sound bugs in rewind and forward 
+           in layer III and at bitrate<192
+-bug fixed:dma stops after a short time on read errors (not perfect yet)
+ (when the CD-ROM can't read the disk and it stops for some seconds)
+-bug fixed:program won't exit from a playlist what filled
+           with non-openable files only
+-bug fixed:different mouse drivers -> different button effects
+     (I hope it's correct now, but i tested only two mouse driver)
+-bug fixed:playlimit was not correct
+-bug fixed:program halted on a bad command line option
+
+0.07a 1998.03.20.
+-fast play browser (max. 70 songs)
+-mouse position displaying (MOUSEPOS)
+-new CPU usage (actual instead average)
+-more perfect rewind
+-spectrum analiser speed up
+-you can use -t with -f and -v
+
+0.06a 1998.03.09.
+-redesigned info display (ID3 Tag & mpeg info)
+-mouse supporting (in fullscreen)
+-high sounds correction (-c or c key under play) 
+-spectrum analiser (in fullscreen) (it isn't really good)
+-full screen mode (-f)
+-able to play again a single song too (not only a playlist)
+-bug fixed:random play is really random
+-bug fixed:filename is not displayed in any color (I hope)
+-bug fixed:verbose mode more perfect (probably on bottom of screen)
+-bug fixed:the program doesn't halt (stop) in rewind (I hope)
+-speed up (4%)(display)
+
+0.05a 1998.02.28.
+-fast play (1-9 keys)
+-playlist counter
+-speed up (3%)(loc_volnum & SB out) & smaller code (with 13-14 kbytes)
+-bug fixed:able to step back after a non-exsistent file
+ (rewind is not perfect yet)
+-randomized playlist (-r) (it isn't really random)
+-play again playlist (-a)
+
+0.04a 1998.02.24.
+-playlist loaded into memory -> skiping back in playlist is available
+-you can go foward and rewind throught the songs. ( <- and -> ) 
+-CTRL <- key: skip to the begin of the song
+-added playlimit variable. (Don't play while and finish the play 
+ when volume<=playlimit (less or equal))
+-bugfixes
+
+0.03a 1998.02.16.
+-first public release.

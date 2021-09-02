@@ -1,0 +1,24 @@
+Digital Rendezvous (drozerix_-_digital_rendezvous.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=180821
+Renamed to "RNDEZVOU.XM" because of DOS 8-character limit
+
+Summary
+
+    drozerix_-_digital_rendezvous.xm is a XM format module.
+    Uploaded to modarchive.org on Sun 3rd Sep 2017
+
+Info Info
+
+    Mod Archive ID: 180821
+    MD5: 6e8306d6c451188265880279c170bdb9
+    Format: XM
+    Channels: 20
+    Genre: Chiptune
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     Drozerix (https://modarchive.org/member.php?84702)

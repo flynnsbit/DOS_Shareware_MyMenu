@@ -1,0 +1,14 @@
+# TEE (traduko por Esperanto)
+0.0:Enmetu enketon en dosieron kaj ankaux eldonas ekranen.
+0.1:Uzado
+0.3:DOSIERO
+0.4:Aldonu al nomata DOSIERO
+0.5:Neatendu interrompojn
+0.6:Eldonu cxi tiun mesagxon
+1.0:Nekonatan elekton
+1.1:Eraras akiri iom por dosiero(j)
+1.2:Eraras malfermi dosieron registrontan
+1.3:Eraras registri dosieron
+1.4:Eraras fermi dosieron
+# It seems that the message below has been removed in TEE v2.0.3:
+#1.5:Eas krei dosieron

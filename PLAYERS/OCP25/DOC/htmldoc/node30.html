@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Configuration</TITLE>
+<META NAME="description" CONTENT="Configuration">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="next" HREF="node46.html">
+<LINK REL="previous" HREF="node10.html">
+<LINK REL="up" HREF="opencp.html">
+<LINK REL="next" HREF="node31.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html430"
+ HREF="node31.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html428"
+ HREF="opencp.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html422"
+ HREF="node29.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html431"
+ HREF="node31.html">general</A>
+<B> Up:</B> <A NAME="tex2html429"
+ HREF="opencp.html">OPENCP 2.5</A>
+<B> Previous:</B> <A NAME="tex2html423"
+ HREF="node29.html">MIDI files</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00600000000000000000">&#160;</A>
+<A NAME="cp.ini">&#160;</A>
+<BR>
+Configuration
+</H1>
+<FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP can be widely configured using the <TT>cp.ini</TT> file, which should
+reside in the home directory of the player itself. This file is processed at
+every startup and informs the player about various modules / plugins and their
+respective configuration. For average users the default configuration should
+be sufficient. However if you want to change certain aspects of the player
+permanently you have to modify this file. You can use every ascii editor to
+edit the ini file.
+
+<P>
+The <TT>cp.ini</TT> consists of many sections. Each section starts with a section
+identifier tag
+in square brackets []. Examples of sections are <TT>[general]</TT> or
+<TT>[sound]</TT>. The sections id tag should be followed by a newline. After
+a section has been declared with the id tag the options describing the sections
+follow. Each options takes a single line ans consists of a keyword followed
+by a ''='' and the parameters. Example: <TT>mixrate=44100</TT>.
+
+<P>
+All options following a section id are options for that section. If a new
+section starts with a id tag all forthcoming options are assigned to the new
+section. All options for a section have to be grouped together. Multiple
+declarations of sections are not valid.
+<BLOCKQUOTE>
+<PRE>
+[general]
+  link=dos4gfix
+[defaultconfig]
+  link=mchasm
+[general]
+  dos4gfix=off
+</PRE></BLOCKQUOTE>the above example has to be written as:
+<BLOCKQUOTE>
+<PRE>
+[general]
+  link=dos4gfix
+  dos4gfix=off
+[defaultconfig]
+  link=mchasm
+</PRE></BLOCKQUOTE><FONT SIZE="-1">Not that in the above example the option <EM>link</EM> has not been
+overridden by the <EM>defaultconfig</EM> section. Both sections now can access
+an options named <EM>link</EM>, but both options are totally independant of
+each other.</FONT>
+
+<P>
+Comments can be placed anywhere in the configuration file and are marked by
+a <TT>;</TT>. The rest of the line starting from the <TT>;</TT> is considered
+as a comment and not processed.
+
+<P>
+Normally the definition for an option ends with the end of the line. If many
+parameters are needed to specify an option they may exceed the default line
+width of 80 characters. Although this is no problem for <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP it is not nice
+looking. You can extend a line logically by using the unix like <EM>backquote</EM>
+at the end of a line to begin a newline without interupting the current option
+definition.
+<PRE>
+[example]
+  option1=parameter1 parameter2
+  option2=parameter1 \
+          parameter2
+</PRE>Both options contain exactly the same parameters.
+
+<P>
+When modifying the configuration you should always start with the default
+configuration file and configure it to your needs. Building a bug free config
+file from scratch is difficult.<A NAME="tex2html34"
+ HREF="#foot1055"><SUP>6.1</SUP></A>
+
+<P>
+We will now have a look at the individual sections and their options.
+
+<P>
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot1055">... difficult.</A><A NAME="foot1055"
+ HREF="node30.html#tex2html34"><SUP>6.1</SUP></A>
+<DD>And remember to make backups before
+changing vital parts of the <TT>cp.ini</TT>
+
+</DL>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html432"
+ HREF="node31.html">general</A>
+<LI><A NAME="tex2html433"
+ HREF="node32.html">defaultconfig</A>
+<LI><A NAME="tex2html434"
+ HREF="node33.html">sound</A>
+<LI><A NAME="tex2html435"
+ HREF="node34.html">screen</A>
+<LI><A NAME="tex2html436"
+ HREF="node35.html">fileselector</A>
+<LI><A NAME="tex2html437"
+ HREF="node36.html">device configuration</A>
+<UL>
+<LI><A NAME="tex2html438"
+ HREF="node37.html">Sound Blaster</A>
+<LI><A NAME="tex2html439"
+ HREF="node38.html">Terratec EWS</A>
+<LI><A NAME="tex2html440"
+ HREF="node39.html">Windows Sound System</A>
+<LI><A NAME="tex2html441"
+ HREF="node40.html">Gravis Ultrasound</A>
+<LI><A NAME="tex2html442"
+ HREF="node41.html">Diskwriter</A>
+<LI><A NAME="tex2html443"
+ HREF="node42.html">MPx writer</A>
+<LI><A NAME="tex2html444"
+ HREF="node43.html">software mixers</A>
+</UL>
+<LI><A NAME="tex2html445"
+ HREF="node44.html">archivers</A>
+<LI><A NAME="tex2html446"
+ HREF="node45.html">filetypes</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html430"
+ HREF="node31.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html428"
+ HREF="opencp.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html422"
+ HREF="node29.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html431"
+ HREF="node31.html">general</A>
+<B> Up:</B> <A NAME="tex2html429"
+ HREF="opencp.html">OPENCP 2.5</A>
+<B> Previous:</B> <A NAME="tex2html423"
+ HREF="node29.html">MIDI files</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

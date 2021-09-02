@@ -1,0 +1,24 @@
+Evolution -loop- by Patri (evolutionloop.it)
+https://modarchive.org/index.php?request=view_by_moduleid&query=161402
+Renamed to "EVOLLOPP.IT" because of DOS 8-character limit
+
+Summary
+
+    evolutionloop.it is a IT format module.
+    Uploaded to modarchive.org on Tue 8th Apr 2008
+
+Info Info
+
+    Mod Archive ID: 161402
+    MD5: 56660d217a1e9868cf896aeea125c7e6
+    Format: IT
+    Channels: 32
+    Genre: Alternative
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     elPatrixF (https://modarchive.org/member.php?81506)

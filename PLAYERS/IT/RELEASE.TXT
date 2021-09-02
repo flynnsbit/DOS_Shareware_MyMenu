@@ -1,0 +1,4 @@
+IT214B Release
+
+Notes - Fixed help display in pattern editor.
+      - Fixed envelope timing bug.

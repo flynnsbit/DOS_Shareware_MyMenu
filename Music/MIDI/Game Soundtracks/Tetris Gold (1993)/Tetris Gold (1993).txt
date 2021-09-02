@@ -1,0 +1,8 @@
+Game: Tetris Gold
+Year: 1993
+Composed by: Paul Mogg
+MIDI versions: GM
+Platform: DOS
+
+
+https://www.karlsitretro.com/game_midi

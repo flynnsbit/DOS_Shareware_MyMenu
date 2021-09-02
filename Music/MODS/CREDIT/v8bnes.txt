@@ -1,0 +1,23 @@
+V8bNES (v8bnes.it)
+https://modarchive.org/index.php?request=view_by_moduleid&query=59061
+
+Summary
+
+    v8bnes.it is a IT format module.
+    Uploaded to modarchive.org on Sun 6th Mar 2005
+
+Info Info
+
+    Mod Archive ID: 59061
+    MD5: 5d08d27d05aeefebfdff6f9c751dea03
+    Format: IT
+    Channels: 5
+    Genre: Chiptune
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     SoDa7 (https://modarchive.org/member.php?69482)

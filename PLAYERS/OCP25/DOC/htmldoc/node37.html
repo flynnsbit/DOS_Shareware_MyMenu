@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Sound Blaster</TITLE>
+<META NAME="description" CONTENT="Sound Blaster">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="next" HREF="node38.html">
+<LINK REL="previous" HREF="node36.html">
+<LINK REL="up" HREF="node36.html">
+<LINK REL="next" HREF="node38.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html522"
+ HREF="node38.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html520"
+ HREF="node36.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html514"
+ HREF="node36.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html523"
+ HREF="node38.html">Terratec EWS</A>
+<B> Up:</B> <A NAME="tex2html521"
+ HREF="node36.html">device configuration</A>
+<B> Previous:</B> <A NAME="tex2html515"
+ HREF="node36.html">device configuration</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00661000000000000000">
+Sound Blaster</A>
+</H2>
+Most compatibles should work with the following sections and options aswell.
+Be sure to include a mixing device aswell if you want to play module file types.
+<PRE>
+[devpSB]
+  link=devpsb
+  sbrevstereo=off
+; subtype= 1:sb 1.x, 2:sb 2.x, 3:sb pro, 4:sb16
+[devsSB]
+  link=devssb
+  sbrevstereo=off
+</PRE><DL COMPACT><DT>sbrevstereo
+<DD>some revisions of the Sound Blaster Pro (and clones) have
+a bug, when playing stereo. The right and left channel are played on the
+appropriate other channel. To get the right order enable this option.
+<DT>subtype
+<DD>if your card is not properly detected (this can happen when
+clones are not 100% compatible) you can set the type of card with this option <BR>
+  <TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">normal mono SoundBlaster 22Khz 8bit</TD>
+</TR>
+<TR><TD ALIGN="LEFT">2</TD>
+<TD ALIGN="LEFT">SoundBlaster mono 44Khz 8bit</TD>
+</TR>
+<TR><TD ALIGN="LEFT">3</TD>
+<TD ALIGN="LEFT">SoundBlasterPro either mono 44Khz 8bit</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">or stereo 22KHz 8bit</TD>
+</TR>
+<TR><TD ALIGN="LEFT">4</TD>
+<TD ALIGN="LEFT">SoundBlaster16 stereo 44KHz 16bit</TD>
+</TR>
+</TABLE></DL>
+<P>
+<BR><HR>
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

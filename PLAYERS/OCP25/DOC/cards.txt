@@ -1,0 +1,50 @@
+
+
+Wavetable devices:
+
+  driver  subtype  card
+  ------------------------------------------------------------------
+  devwgus    0     Gravis Ultrasound Classic / MAX / ACE
+  devwiw     0     AMD InterWave (GUS PnP, Dynasonix Pro, Compaq 9xxx)
+  devwsb32   0     Creative Labs Soundblaster 32 / AWE32 / AWE64
+  devwdgus   0     Double GUS
+  devwmix    0     16-bit software mixer (uses player device for output)
+             1     32-bit Quality mixer  (             "               )
+  devwnone   0     Super Hich Quality Quiet Wavetable Device
+
+
+Player devices:
+
+  driver  subtype  card
+  ------------------------------------------------------------------
+  devpsb     1     SoundBlaster 1.x
+             2     SoundBlaster 2.x
+             3     SoundBlaster Pro
+             4     SoundBlaster 16 / 32 / AWE32 / AWE64
+  devpgus    0     Gravis Ultrasound Classic
+  devpwss    0     Windows Sound System (CS4231, AD1848 or compatible)
+             1     Gravis Ultrasound w/ Daughterboard
+             2     Gravis Ultrasound MAX / PnP or AMD Interwave
+  devpews    0     Terratec AudioSystem EWS64XL
+  devppas    0     Pro Audio Spectrum
+  devpess    0     ESS AudioDrive 688 / 1688
+  devpdisk   0     .WAV writer (writes .ITs mono)
+  devpmpx    0     .MPx writer (writes MPEG I Layer 1 and 2 files)
+  devpnone   0     32bit hyper-eleet null device output
+
+
+
+Sampler devices:
+
+  driver  subtype  card
+  ------------------------------------------------------------------
+  devssb     1     SoundBlaster 1.x
+             2     SoundBlaster 2.x
+             3     SoundBlaster Pro
+             4     SoundBlaster 16 / 32 / AWE32 / AWE64
+  devsgus    0     Gravis Ultrasound Classic / ACE / MAX (NO InterWave!)
+  devswss    0     Windows Sound System (CS4231, AD1848 or compatible)
+             1     Gravis Ultrasound w/ Daughterboard
+             2     Gravis Ultrasound MAX / PnP or AMD Interwave
+  devsnone   0     Extreme Silence Recording Device
+

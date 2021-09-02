@@ -1,0 +1,9 @@
+Game: Little Big Adventure (Europe) / Relentless: Twinsen's Adventure
+Year: 1994
+Composed by: Philippe Vachey
+MIDI versions: GM
+Platform: DOS
+
+Additional info: Couple of track are twice in the game, so I removed the duplicates.
+
+https://www.karlsitretro.com/game_midi

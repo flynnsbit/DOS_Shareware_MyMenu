@@ -1,0 +1,8 @@
+F1:	Format 1.44 M
+	format a:/u
+F2:	Format 800 K
+	format a:/u/t:80/n:10
+F3:	Format 720 K
+	format a:/u/t:80/n:9
+F10:	Main Menu
+	vc.mnu

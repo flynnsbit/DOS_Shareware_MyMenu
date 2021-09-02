@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+  <title>tee</title>
+</head>
+<body>
+  <h1>tee</h1>
+  <p>Save a copy of the input (STDIN) to one or more files and print it.</p>
+
+  <h2>Usage:</h2>
+  <p>tee [options] [d:][path]file [[d:][path]file2] ...</p>
+
+  <h2>Options:</h2>
+  <p><em>/A</em> &nbsp; Append to given file(s): Append to the output file(s) instead of overwriting.</p>
+  <p><em>/I</em> &nbsp; Ignore interruptions: ignores interruption attempts by a user.</p>
+  <p><em>[d:][path]file [[d:][path]file2] ...</em> &nbsp; Specifies the output file(s).</p>
+
+  <h2>Examples:</h2>
+  <p><em>echo "Hello, World!" | tee hello.txt</em><br>Display "Hello, World!" on the screen and save it to hello.txt.</p>
+  <p><em>tee log.txt another_log.txt &lt; input.txt</em><br>Display the contents of input.txt and save them to log.txt and another_log.txt.</p>
+  <p><em>catdoc letter.doc | tee /I letter.txt | wc</em><br>Save the contents of letter.doc as processed by catdoc to letter.txt and pass them to wc to count the words.<br>Don't allow interruptions by a user.</p>
+
+  <hr>
+  <p>This file forms part of The FreeDOS HTML Help Documentation, and is covered under <a href="../index.htm#copying">the terms of the GNU FDL</a>.</p>
+</body>
+</html>

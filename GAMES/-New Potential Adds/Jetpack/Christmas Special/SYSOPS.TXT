@@ -1,0 +1,41 @@
+==============================================================================
+                              ATTENTION SYSOPS
+==============================================================================
+
+      SYSOPS - Read VENDOR.TXT for complete descriptions for your BBS.
+
+    If you are interested in getting quality Shareware for your BBS system,
+then become part of the Shareware Distribution Network at Software Creations.
+Thousands of Sysops have joined Software Creations and more are joining every
+day in setting up file sections on their BBS systems for our Shareware.  We
+make all these files FREE downloads, with unlimited time to download on the
+Software Creations BBS.
+
+    Once you have a Software Creations file section set up on your BBS, and
+have our Shareware in it, just call the HOME BOARD and fill out the script in
+door 4 with all the information about your BBS.  Just type OPEN 4 at the main
+menu.  If you are already a Shareware release point for one of our other HOME
+BOARD companies then just leave me a message to get you added to our list.
+
+    We will carry your name and numbers in our bulletin, letting people know
+where they can get our products in your area.  We also hope that getting high
+quality software directly from the source brings more callers to your BBS, and
+more paying members.
+
+    If downloading is too much of a problem, whole shareware file sections can
+be ordered on Software Creations for only the cost of duplication and mailing.
+
+    I wish you luck with your BBS, and hope our shareware brings you lots of 
+quality BBS members.
+
+  =========================================================================
+                          Software Creations BBS
+               ==============================================
+                     1200/2400 V.42 MNP - (508) 365-2359
+                2400-16.8k HST USR Robotics - (508) 368-4137
+               2400-14.4k V.32/V.32bis Hayes - (508) 368-7036
+  =========================================================================
+
+						Dan Linton - Sysop
+						Software Creations BBS
+						" Home of the Authors "

@@ -1,0 +1,98 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ===============================================
+           SPACE QUEST 4: ROGER WILCO AND THE TIME RIPPERS
+                                                        
+
+                       THE COMPLETE SOUNDTRACK
+                     (See below for song titles.)
+                       Ken Allen & Mark Seibert
+           =============================================
+               Copyright (c)1993 Sierra On-Line, Inc.  
+           =============================================
+
+                         GENERAL MIDI VERSION
+                  (Designed for Roland Sound Canvas)
+
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- General MIDI sound card or module  (Roland SC or Yamaha XG recommended)
+
+
+This Standard MIDI File was recorded directly from Sierra's "Space
+Quest 4" CD-ROM adventure game.  It has been recorded using Sierra's
+General MIDI sound driver and is therefore optimized for Roland Sound
+Canvas based MIDI cards and modules.  Satisfactory results can also be
+obtained on Yamaha XG devices.  See below for song titles.
+
+Recorded/edited/compiled/arranged for General MIDI by Tom Lewandowski.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+      ===================================================================
+                               TRACK SHEET
+
+               SPACE QUEST 4: ROGER WILCO AND THE TIME RIPPERS
+      ===================================================================
+      SONG TITLE                                   START MEASURE/TIME *
+      -------------------------------------------------------------------
+   1. Opening Theme                                      2   00:00:02
+   2. Introduction                                      40   00:01:33
+   3. Xenon - Space Quest XII                          135   00:05:21
+       a. Mutated Freak                                176   00:07:00
+       b. Droid-O-Death                                182   00:07:14
+       c. Death Scene                                  191   00:07:36
+   4. Professor Lloyd                                  195   00:07:45
+   5. The Sewer                                        263   00:10:28
+   6  Sewer Blob                                       294   00:11:43
+   7. Patrol Ship                                      309   00:12:19
+   8. The Stowaway                                     331   00:13:12
+   9. Vohaul's Fortress                                346   00:13:48
+  10. Time Pod                                         376   00:15:00
+  11. The Large Bird Caper - Space Quest X             392   00:15:38
+  12. Latex Babes Of Estros                            436   00:17:24
+  13. Sub Ride                                         463   00:18:28
+  14. Estros Fortress (Zondra & Thoreen)               502   00:20:02
+  15. The Sea Slug                                     570   00:22:45
+  16. Our Hero                                         591   00:23:36
+  17. Let's Shop!                                      620   00:24:45
+  18. Meanwhile, Back In Space Quest XII               638   00:25:38
+  19. Big & Tall                                       671   00:26:48
+  20. Monolith Burger                                  713   00:28:28
+  21. Flippin' Burgers (The Job)                       751   00:30:00
+  22. Sacks (Socks)                                    779   00:31:07
+  23. Software Store                                   815   00:32:33
+  24. Skate-O-Rama (Version 1)                         845   00:33:45
+  25. Bukazoid Bill's Arcade                           880   00:35:09
+  26. Radio Shock (Hz. So Good)                        901   00:36:00
+  27. Kerona - Space Quest I                           924   00:36:55
+  28. Keronian Bar                                     941   00:37:36
+  29. Monochrome Bikers                                983   00:39:16
+  30. Return To Vohaul's Fortress - Space Quest XII   1016   00:40:36
+  31. Format Countdown                                1084   00:43:19
+  32. The Fight                                       1122   00:44:50
+  33. Closing Themes                                  1163   00:46:28
+
+      ADDENDUM:
+  34. Copy Protection Theme **                        1271   00:50:48
+  35. Skate-O-Rama (Version 2)                        1288   00:51:28
+  36. Astro Chicken                                   1324   00:52:55
+
+      -------------------------------------------------------------------
+                                             TOTAL TIME:     00:53:48
+
+      * Start times are approximate.
+     ** Recorded from the diskette version.
+
+        October 1998
+
+

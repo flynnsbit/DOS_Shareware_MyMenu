@@ -1,0 +1,82 @@
+# English language file for (R)XCOPY 1.2, use as source for your translations
+
+# prompts and error messages
+1.1:Geáersiz parametre sayçsç
+1.2:Geáersiz tarih
+1.3:Geáersiz seáenek
+1.4:Kaynak yolu áok uzun
+1.5:Geáersiz kaynak sÅrÅcÅ belirtimi
+1.6:Kaynak yolu bulunamadç
+1.7:Kaynak yolu áok uzun
+1.8:Hedef yolu áok uzun
+1.9:Geáersiz hedef sÅrÅcÅ belirtimi
+1.10:Yapar
+1.11:bir dosya ismi belirtir
+1.12:ya da hedefte bir klasîr ismi belirtir
+1.13:Dosya
+1.14:Klasîr
+1.15:Hedef yolu áok uzun
+1.16:Dairesel kopyalama yapçlamaz
+1.17:Devam etmek iáin enter'a basçn...
+1.18:Dosya bulunamadç
+
+# the help message
+2.1:Dosya ve dizin aßaálarçnç kopyalar.
+2.2:XCOPY kaynak [hedef] [/seáenekler]
+2.3:  kaynak       Kopyalanacak dosya ya da dizin isimlerini belirtir.
+2.4:  hedef        Yeni dosyalarçn adlarçnç ya da yerlerini belirtir.
+2.5:  /A           Sadece arüiv îznitelißi ayarlanmçü dosyalarç kopyalar ve bu
+2.6:               îznitelißi deßiütirmez.
+2.7:  /C           Hata meydana gelse bile kopyalamaya devam eder.
+2.8:  /D[:M/D/Y]   Sadece belirtilen tarih veya daha sonra deßiütirilen
+2.9:               dosyalarç kopyalar. Tarih belirtilmedißinde sadece hedefte
+2.10:               mevcut olan dosyalardan yenileri kopyalançr.
+2.11:  /E           Boü olsalar da alt dizinleri kopyalar.
+2.12:  /F           Tam kaynak ve hedef isimlerini gîrÅntÅler.
+2.13:  /H           Korunmamçü saklç ve sistem dosyalarç kopyalar.
+2.14:  /I           Eßer hedef mevcut deßilse ve birden fazla dosya
+2.15:               kopyalançyorsa hedefin dizin oldußunu varsayar.
+2.16:  /L           Dosyalarç kopyalamadan listele. (kopyalama benzetimi yapar)
+2.17:  /M           Sadece arüiv îznitelißi ayarlanmçü dosyalarç kopyalar ve
+2.18:               sonra kaynak dosyalarda bu îznitelißi devre dçüç bçrakçr.
+2.19:  /N           Mevcut hedef dosyalarçnçn Åzerine yazma teyitini devre
+2.20:               dçüç bçrakçr ve bu dosyalarç atlar.
+2.21:  /P           Her hedef dosyasçnç oluüturmadan înce teyit ister.
+2.22:  /Q           Sessiz kip, kopyalanan dosya isimlerini gîsterme.
+2.23:  /R           Sadece okunur dosyalarçn korunmamçü olanlarçnçn Åzerine yaz.
+2.24:  /S           Boü olanlarçn dçüçnda dizinleri ve alt dizinleri kopyalar.
+2.25:  /T           Dosyalarç kopyalamadan dizin aßacçnç oluüturur. Boü
+2.26:               dizinler kopyalanmaz. Kopyalamak iáin /E seáeneßini ekleyin
+2.27:  /V           Her yeni dosyayç kontrol eder.
+2.28:  /W           Baülamadan evvel bir tuüa basçlmasçnç bekler.
+2.29:  /Y           Mevcut bir hedef dosyasçnçn Åzerine yazçlmasçnçn teyidini
+2.30:               devre dçüç bçrakçr ve bu dosyalarçn Åzerine yazar.
+2.31:  /-Y          Mevcut bir hedef dosyasçnçn Åzerine yazçlmasçnçn teyidinin
+2.32:               istenmesini saßlar.
+2.33:/Y veya /N seáenekleri COPYCMD ortam deßiükeninde înayarlanabilir.
+2.34:Bu, komut satçrçnda /-Y ile geáersiz kçlçnabilir.
+2.35:daha fazlasç iáin enter'a basçn
+
+# more messages
+1.19:dosya kopyalandç
+1.20:Dizin oluüturulamadç
+1.21:Dosya kendi Åzerine kopyalanamaz
+1.22:Okuma izni reddedildi
+1.23:Hedef yolda yetersiz disk alanç
+1.24:Yazma izni reddedildi
+1.25:Hedef yolda yetersiz disk alanç
+1.26:Kopyalama
+
+# the following three are used in shared.inc:
+25.0:Kaynak dosya aáçlamaz
+25.1:Hedef oluüturulamaz
+25.2:Hedefte yazma hatasç
+
+# more confirmation messages, must start upper case,
+# 3.2 to 3.5 must all start different:
+3.1:özerine yaz
+3.2:Evet
+3.3:Hayçr
+3.4:TÅmÅnÅn Åzerine yaz
+3.5:Geá tÅmÅnÅ
+

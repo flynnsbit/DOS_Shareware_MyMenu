@@ -1,0 +1,9 @@
+Game: Magic Carpet
+Year: 1994
+Composed by: Russell Shaw
+MIDI versions: GM, FM, MT-32
+Platform: DOS
+
+Additional info: There are three versions, GM, FM and MT-32. I'm not sure why, but there are more FM and MT tracks. MT version is also missing menu track.
+
+https://www.karlsitretro.com/game_midi

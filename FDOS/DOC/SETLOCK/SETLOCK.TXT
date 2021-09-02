@@ -1,0 +1,10 @@
+
+SetLock Version 1.0
+
+Utility to set and reset the lock keys on AT style keyboards.
+
+Usage: SETLOCK CL=[ON/OFF] NL=[ON/OFF] SL=[ON/OFF]
+
+Type SetLock without params to get help screen
+
+

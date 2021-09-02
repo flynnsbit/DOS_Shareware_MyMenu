@@ -1,0 +1,37 @@
+REM          ษออออออออออออออออออออออออออออออออออป
+REM          บ      WCS II file (v5.0) for      บ
+REM          บ Descent by Interplay Productions บ
+REM          บ      and Parallax Software       บ
+REM          ศออออออออออออออออออออออออออออออออออผ
+REM   Written & tested by Adam Pletcher, Parallax Software
+
+REM ษออออออออออออออออออออออออป NOTE> Make sure Descent is configured for
+REM บ Black Switch = Digital บ	 JOYSTICK, and the THROTTLE entry is setup 
+REM บ Red Switch   = Analog  บ   for Y2 AXIS.  See README.TXT for details.
+REM ศออออออออออออออออออออออออผ       -- ----
+
+REM ษอออออออออออออออออป
+REM บ WCS II Commands บ
+REM ศอออออออออออออออออผ
+GAME 0 20    REM analog throttle          
+BTN 4 KP7    REM roll left
+BTN 5 KP9    REM roll right
+BTN 6 /N R   REM reverse view
+BTN 1 /N F9  REM send taunt macro #1 (netplay)
+BTN 2 /N F10 REM send taunt macro #2 (netplay)
+BTN 3 /N F11 REM send taunt macro #3 (netplay)
+
+REM ษออออออออออออออป
+REM บ FCS Commands บ
+REM ศออออออออออออออผ
+REM FCS stuff 
+BTN TG ENT       REM fire primary
+BTN UB SPC       REM fire secondary
+REM BTN MB /N F7 REM kill list (netplay)
+BTN MB F         REM fire flare
+BTN LB B         REM drop proximity bomb
+BTN HL KP1       REM slide left
+BTN HR KP3       REM slide right
+BTN HU KP-       REM slide up
+BTN HD KP+       REM slide down
+

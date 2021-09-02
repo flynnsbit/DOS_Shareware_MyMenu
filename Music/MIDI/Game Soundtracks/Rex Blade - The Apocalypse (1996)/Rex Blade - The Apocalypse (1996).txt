@@ -1,0 +1,9 @@
+Game: Rex Blade: The Apocalypse
+Year: 1996
+Composed by: Dean Hudson
+MIDI versions: GM
+Platform: DOS
+
+Additional info: For some reason, there are MIDI files in two formats, MID and XMI. Converted XMI files are exactly the same as MID files. However, there are more XMI files than MID files, so I converted the missing ones and included them here.
+
+https://www.karlsitretro.com/game_midi

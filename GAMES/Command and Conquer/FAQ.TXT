@@ -1,0 +1,1256 @@
+
+                           Westwood Studios Official
+               Command & Conquer Frequently Asked Questions List
+                        Last Update: November 7th, 1995
+
+                                  Version 2.2
+
+
+About this document....
+
+I have made a vain attempt to answer every question anyone could ever 
+ask regarding our newest real-time strategy game, COMMAND & CONQUER:
+TIBERIAN DAWN.  If you see something that needs to be added, please email 
+me here at Westwood with your question and I'll consider its inclusion 
+into the next FAQ sheet.
+
+This FAQ sheet will no longer be available by writing mail to my internet
+address.   You may obtain new versions of the C&C FAQ through the Westwood
+Studios web site (www.westwood.com) or through our ftp site
+(ftp.westwood.com).
+
+All information contained herein is copyright 1995 by Westwood Studios. You 
+are allowed to distribute it freely, but not to make changes.    
+
+(virtualted@westwood.com)
+
+
+--- PART 1 : GENERAL INFORMATION -------------------------------------------
+
+1.1    What is Command & Conquer?
+1.2    System Requirements.
+1.3    Is this Dune III?
+1.4    When is the game going to be released in North America?  Elsewhere? 
+1.5    Are there screenshots or maybe a Demo available to download?    
+1.6    Can I play Command & Conquer against a friend? 
+1.7    Will Command & Conquer support MY sound card?
+
+
+
+--- PART 2 : GENERAL QUESTIONS ABOUT GAME PLAY -----------------------------
+
+2.1  How many units are in the game?
+2.2  Are the air units similar to the ones in DUNE II?  Can I control them? 
+2.3  How many missions are there in Command & Conquer?
+2.4  Am I limited in how many units I can create? 
+2.5  Can I create teams of units?   Is it easy to do? 
+2.6  Do I need to buy two copies for multiplayer games?
+2.7  How is the computer A.I. in comparison to other real-time games? 
+2.8  Is it possible to team up with or against friends on a network?
+
+
+
+--- PART 3 : PLAYING THE GAME ----------------------------------------------
+
+3.1  Special keyboard shortcuts - not in the manual. 
+3.2  Miscellaneous Hints/Tactics.
+3.3  Any cheat codes?
+3.4  Charts for obtaining units.
+3.5  Charts for obtaining structures.
+3.6  Description of Multi-player crates.  
+
+
+
+--- PART 4 : PLAYING THE GAME WITH KALI ------------------------------------
+
+4.1  What is KALI?
+4.2  How do I get the KALI software?
+4.3  How to set up KALI to run COMMAND & CONQUER.  
+
+
+
+--- PART 5 : MODEM/NETWORK HELP --------------------------------------------
+
+5.1  Sample Modem INIT strings you can use.  
+5.2  How to increase modem performance.
+5.3  Network notes to remember.
+
+
+
+--- PART 6 : TROUBLESHOOTING -----------------------------------------------
+
+6.1  What to do when the game doesn't want to work.
+6.2  How to get Command & Conquer installed under Windows 95.
+6.3  How to get Command & Conquer running with Windows 95 and 8 megabytes. 
+6.4  Improving video playback performance under Windows 95.
+6.5  How to fix modem problems under Windows 95.
+6.6  Mouse is not identified, or does not behave correctly.
+6.7  Divide Overflow error upon installation.
+6.8  Command & Conquer Patch file (1.18p).
+
+
+
+--- PART 7 : GETTING HELP --------------------------------------------------
+
+7.1  How to Order Command & Conquer.
+7.2  Contacting Westwood Studios directly. 
+7.3  Our internet www and ftp sites.
+
+
+
+--- PART 8 : IN THE FUTURE -------------------------------------------------
+
+8.1  When is Command & Conquer II going to be released? 
+8.2  Where can I get extra missions for Command & Conquer?
+
+
+
+
+**************************************************************************** 
+GENERAL INFORMATION ******************************************************** 
+****************************************************************************
+
+
+---------------------------------------------------------------------------- 
+1.1 WHAT IS COMMAND & CONQUER?
+----------------------------------------------------------------------------
+
+   Command & Conquer is a real-time strategy-combat game developed by 
+   Westwood Studios, the creators of DUNE II.  
+
+
+   The Press Release :
+
+       WESTWOOD STUDIOS INTRODUCES : COMMAND & CONQUER
+
+       Imagine a brutal, devastating conflict of global proportions. 
+       Now imagine it all fitting on two CDs.
+
+       Introducing COMMAND & CONQUER, from the creators of DUNE II.
+       A frighteningly realistic glimpse into the near future, when the 
+       planet is divided between two forces battling for world domination.
+
+       Players can fight for a peacekeeping alliance called the
+       Global Defense Initiative.   Or their mortal enemy, a terrorist 
+       organization called the Brotherhood of Nod.   Either way, they'll 
+       have their strategies tested in a real-time world, complete with 
+       over 60 minutes of intense full-motion video and 3-D rendered 
+       graphics that are as visceral as they are visual.   Which of 
+       course, is unfortunate for those with weaker stomachs.
+
+       COMMAND & CONQUER's real-time combat system is designed to be 
+       deep and meaningful, yet accessible.   Those familiar with 
+       Westwood's earlier award winning strategy game DUNE II will 
+       remember the ease of use in a fast-paced race of destruction and 
+       mayhem.   However, we've made a few modifications you might want 
+       to look into...
+
+       Build and better your bases, unite or divide your forces, develop 
+       and utilize guerrilla tactics and a wealth of potent electronic 
+       hardware, and make sure that "Reduce the Opposition to pulp" is at 
+       the top of your list of things to do today.
+
+       As one person put it... 
+
+            "The attention to detail is exemplary - it's like having a 
+            fully-functioning miniature world-gone-mad crawling with 
+            armies of intelligent beings, all secured in a big glass box, 
+            and all at your disposal."
+
+
+
+---------------------------------------------------------------------------- 
+1.2 SYSTEM REQUIREMENTS
+----------------------------------------------------------------------------
+
+     Command & Conquer (2 CD-ROMs) requires at least the following system 
+     configuration :
+
+          CPU:     486/66 or higher.
+          RAM:     8MB total, 6MB free XMS or EMS, 560KB conventional RAM.
+                   HD space: 30MB.
+           CD:     2xCD-ROM drive.
+        SOUND:     Sound Blaster, Sound Blaster Pro, Sound Blaster 16, 
+                   Sound Blaster AWE32 and 100% Sound Blaster compatibles, 
+                   Gravis UltraSound, Gravis UltraSound MAX, Ensonic 
+                   Soundscape, Roland RAP-10, ESS Audiodrive, Microsoft 
+                   Sound System, Gold Sound Standard, Pro Audio Spectrum.
+      DISPLAY:     MCGA graphics (256 color, 320x200 pixel resolution).
+        MOUSE:     Microsoft Mouse or 100% compatible.
+          DOS:     5.0 or higher.
+      WINDOWS:     3.1 or higher.
+
+
+      For multi-player:
+
+       SERIAL:      2 players over minimum 9,600 bps modem, 14,400 bps
+                    modem or higher recommended.  2 players over null 
+                    modem connection.
+      NETWORK:      2-4 players over IPX compliant network.
+
+
+      Command & Conquer will stream and mix all music directly from the CD 
+      with sound effects in the game.  Any Soundblaster compatible card 
+      capable of playing digital audio will be supported.   Audio quality 
+      for both 8 bit and 16 bit cards is nothing less than superb.
+
+
+
+---------------------------------------------------------------------------- 
+1.3 Is this DUNE III?
+----------------------------------------------------------------------------
+
+     Command & Conquer is not DUNE III.   The only item borrowed from our 
+     earlier real-time strategy game is the cool interface, and even that 
+     has been updated.   The game engine has been totally rewritten to 
+     support more units and an enhanced artificial intelligence.
+
+
+
+---------------------------------------------------------------------------- 
+1.4 When will Command & Conquer be released? 
+----------------------------------------------------------------------------
+
+     Command & Conquer is available world wide NOW.    Check with 
+     A local software store for a release date if you don't see it, since
+     there have been many reports of stores running out of stock.
+
+     We appreciate everyone's patience while we finished work on C&C. 
+     Thanks again for your support.   
+
+
+
+---------------------------------------------------------------------------- 
+1.5 Is there a demo or screenshots available? 
+----------------------------------------------------------------------------
+
+     You can download .AVI movies, screenshots, and music clips from either 
+     our ftp site at ftp.westwood.com or our web site at www.westwood.com.
+
+
+
+---------------------------------------------------------------------------- 
+1.6 Can I play Command & Conquer against a friend? 
+----------------------------------------------------------------------------
+
+     Yes.   C&C will support Network, Null Modem and Modem play.   Network 
+     mode allows four players to go head-to-head.   A computer opponent can 
+     also be added to increase any game by one more player.   
+
+     Each player must have one of the Command & Conquer CD-ROM's in their 
+     system before play can begin.
+
+
+
+---------------------------------------------------------------------------- 
+1.7 How about my GUS/ProAudio Spectrum/Whizbang 3000 sound card?  Support? 
+----------------------------------------------------------------------------
+
+     We will not support any card in direct or "native" mode.   Our new 
+     sound drivers enable us to play and mix music and voices directly 
+     from the CD-ROM.   Instead of hearing a computer generated version 
+     of a guitar or drums, you'll be hearing the real thing right off 
+     the CD.   Command & Conquer is one of the first Westwood products 
+     to support DDA (Direct Digital Audio).     
+
+     If your card is capable of playing digital sounds (and most 
+     cards are), you should have no problem with sound support.
+
+
+
+**************************************************************************** 
+GAME PLAY SPECIFIC QUESTIONS *********************************************** 
+****************************************************************************
+
+
+---------------------------------------------------------------------------- 
+2.1 How many units are in the game?
+----------------------------------------------------------------------------
+
+     Lots.  There are close to 50 different units and structures in the 
+     game.   Each side has different units, different strengths, etc..   
+     We have played here at Westwood quite often to ensure that the game 
+     is perfectly balanced.   
+
+
+
+---------------------------------------------------------------------------- 
+2.2 Are there air units which I can control? 
+----------------------------------------------------------------------------
+
+     Yes.   As stated before, this is not DUNE II.   A10's, Transport 
+     helicopters, planes, and other attack craft will be able take orders 
+     to land, take off, pick up troops, bomb,  etc..   In Command & 
+     Conquer, you have real-time control of almost all units.
+
+
+
+---------------------------------------------------------------------------- 
+2.3 How many missions are in C&C?
+----------------------------------------------------------------------------
+
+     In total, there are around 50 missions.   However, the missions 
+     differ depending on which route you take in the game.   Finishing the
+     game playing both GDI and NOD doesn't mean that playing the game again 
+     will be the same.
+
+     Roughly, it will take you about 15 successful missions to complete 
+     the game using each side.   
+
+     There are also specially designed multiplayer missions which are 
+     configurable in a variety of ways.   You can play against any 
+     combination of computer/player opponents (up to four players) 
+     simultaneously.   One person cannot play by themselves in multiplayer 
+     missions.
+
+
+
+---------------------------------------------------------------------------- 
+2.4 Am I limited in how many units I can create? 
+----------------------------------------------------------------------------
+
+     No.   When programming DUNE II, we had to stick to limited memory 
+     requirements.   Now, your only limit is the amount of money you 
+     have to buy reinforcements, (and how long you can keep your troops 
+     alive.)
+
+
+
+---------------------------------------------------------------------------- 
+2.5 Team Mode (?)
+----------------------------------------------------------------------------
+
+     Yes, teaming units will be enabled in Command & Conquer through a very 
+     simple procedure.   Click on a portion of the screen, hold down your 
+     mouse button and draw a box around the units you wish to team up, then 
+     let the button go.   It's that easy.   And, you can select a whole 
+     screen of your units to create a team if you wish.   There really 
+     isn't any limit.
+
+
+
+---------------------------------------------------------------------------- 
+2.6 Do I need to buy two copies of the game to play on two computers? 
+----------------------------------------------------------------------------
+
+     We have designed the game so that you won't need to buy two separate 
+     copies of the game in order to play with a friend.  You can give away 
+     one of your CDs so that you can both play over the modem. In order to 
+     play the normal game, you'll need both CDs.
+
+     The reason we're doing it this way is so that you can enjoy the 
+     multiplayer aspect of C&C more easily.  Although we could have 
+     designed it so that two copies of the game must be purchased in 
+     order to use multiplayer, we are hoping that if we treat our fans 
+     right, then they will in turn treat us right.
+
+
+
+---------------------------------------------------------------------------- 
+2.7 How is the computer artificial intelligence compared to other games?   
+----------------------------------------------------------------------------
+
+     Since Command & Conquer was written from scratch, we were able to 
+     implement a completely new artificial intelligence.  Instead, expect 
+     a new adversary which will attack, retreat, regroup, attack again, 
+     and probe your base for weaknesses.  Helicopters will invade, and 
+     troops will pour through your walls all too often. 
+
+     This game will not be easy.
+
+
+
+---------------------------------------------------------------------------- 
+2.8 Team Mode (Alliance) option.
+----------------------------------------------------------------------------
+
+     Because so many of you asked for it, we decided to make it so that 
+     you can team up with (or against) your friends in multiplayer mode. 
+     Teams can be of one to three players, and of any type (GDI or NOD).   
+
+     You will not be able to control your team members' units, but you will 
+     have access to his refinery, helicopter pads, and other resources. 
+     Most importantly, your units will not attack one another when they 
+     come into direct contact.
+
+
+
+**************************************************************************** 
+PLAYING THE GAME *********************************************************** 
+****************************************************************************
+
+---------------------------------------------------------------------------- 
+3.1 Special Keyboard Shortcuts
+----------------------------------------------------------------------------
+
+
+     C&C has a range of keyboard shortcuts and extra features which are 
+     keyboard driven. These are intended for the advanced player and are 
+     not essential to normal gameplay. They are, however, very cool:
+
+     Unit Control:
+
+        G        : Guard Area
+                   Select a group of units and then hit G to put them into 
+                   Guard Area mode. In this mode, units will patrol and 
+                   open fire on any enemy units that come within range.
+
+        X        : Scatter Units
+                   This causes a selected group of units to scatter 
+                   (for example, to make themselves into more difficult 
+                   targets).
+
+        S        : Stop Unit
+                   Causes a unit to stop in its tracks.
+
+
+     Keyboard Shortcuts:
+
+        F7-F10   : Map Bookmark System
+                   Use CTRL+F7-F10 to place a bookmark, then use 
+                   F7-F10 to jump to that spot.
+
+        <CTRL>-# : Team Creation
+                   Use CTRL and a number key (0-9) to mark a group 
+                   of selected units as a team.
+
+        0-9      : Team Selection
+                   Selects a pre-marked team (see Team Creation) as the 
+                   current active group.
+
+        TAB      : Open/Close Sidebar
+
+        H        : Automatically selects and centers the view around your
+                   construction yard.
+
+        N        : Your next unit on the playing field is selected and the 
+                   view is centered about it.
+
+        R        : Allows resigning in single player mode as well as
+                   multiplayer.
+
+        <HOME>   : Centers the view around the currently selected object.
+
+        <ALT>-#  : If the <ALT> key is held while pressing a team number,
+                   the specified team will be selected and the view 
+                   centered over the team members. This is identical to 
+                   pressing the team number and then pressing <HOME>.
+
+
+     Multiplayer Options:
+
+        A        : Alliance
+                   Select an enemy unit and hit A. This causes your units 
+                   to treat all the units of the allied side as friendly, 
+                   as such you will not be able to target them. Note that 
+                   this is not a reciprocal arrangement and your new ally 
+                   must explicitly do the same thing to your units. This 
+                   is a toggle and hitting A for a second time will cause 
+                   you to declare war on your old ally.
+
+        R        : Resign from Multiplayer Game
+                   If all hope is lost you can resign, or surrender, by 
+                   hitting the R key. This causes all your units to explode 
+                   in a spectacular manner, thus depriving your enemy of 
+                   absolute victory! It should be noted that anyone using 
+                   this option in other than hopeless situations will be 
+                   considered a wimp by their opponents and will be 
+                   endlessly taunted in subsequent games. Probably.
+
+
+      Cursor Modifiers:
+
+        CTRL     : Force Attack
+                   Holding down the CTRL key forces your cursor into
+                   the target cursor. This allows you to target your own 
+                   units, amongst other things.
+
+        ALT      : Force Move
+                   Forces your units to move when they would normally
+                   just stand and fight. This is useful with tanks against 
+                   enemy infantry, for example. Try it and see.
+
+        CTRL+ALT : Guard Area or Unit
+                   Select a group of units and then CTRL+ALT click on a 
+                   building, this forces your units to patrol the area 
+                   around the building looking for the enemy. They will 
+                   engage the enemy if found. If you CTRL+ALT click on 
+                   another one of your units (for example, the harvester) 
+                   your selected units will guard that unit as it moves 
+                   around the map.  This also applies to enemy units, 
+                   which is perhaps not so useful.
+
+
+
+---------------------------------------------------------------------------- 
+3.2 Quick Tips/Tactics.
+----------------------------------------------------------------------------
+
+    a) Using Chem Troopers.
+
+          Chem troopers are only available in multi-player mode.  Chem
+          troopers do one and a half times the damage of flamethrower
+          infantry units, and can walk through tiberium without taking
+          damage.
+
+
+    b) Building a Nuclear weapon in NOD single player missions.
+
+          To allow your Temple of NOD to launch nuclear missiles in the
+          final battle, you will need to retrieve the crates on levels
+          6, 8, and 12.   If you do not find the crates before finishing
+          the mission, the nuclear missile will not be available.  You
+          may have to sell or destroy enemy buildings to get a few of
+          the crates.
+
+
+    c) Selling buildings.
+
+          Selling a building will get you 50% of the purchase price.  Do
+          not sell your construction yard!
+
+
+    d) Capturing enemy buildings.
+
+          By capturing an enemy building, you not only have the option
+          of selling it for money, but you can build units and structures
+          that you wouldn't normally be able to do with your own
+          facilities.
+
+
+
+---------------------------------------------------------------------------- 
+3.3 Cheat codes
+----------------------------------------------------------------------------
+
+    There are absolutely no cheat codes for Command & Conquer.   This 
+    means that...
+
+    1)   There are no cheat codes.
+    2)   No cheat codes were included.
+    3)   We didn't want to include any cheat codes.
+
+    No amount of begging will result in something that doesn't exist.
+
+    Also, a warning to those who would plunder our code in an attempt to 
+    cheat in multiplayer mode.   Any attempt to change the software through 
+    devious means will result in an out-of-sync error every time you try
+    to connect to someone else.   We have conducted several tests to 
+    confirm this.
+
+
+----------------------------------------------------------------------------
+3.4 Chart for creation of units.
+----------------------------------------------------------------------------
+
+    Here's a chart for the creation of units in Command & Conquer.
+    The number in parenthesis next to the unit number is the tech level
+    required in multiplayer mode.
+
+
+  ------------------------------------------------------------------------
+  | GDI UNIT         | TECH LVL |              PREREQUISITE              |
+  -------------------+----------+-----------------------------------------
+  | Minigun Infantry |        1 | Barracks                               |
+  | Grenade Infantry |        1 | Barracks                               |
+  | Rocket Infantry  |        2 | Barracks                               |
+  | Engineer         |        3 | Barracks                               |
+  | Commando*        |        7 | Barracks, Advanced Comm Center         |
+  | Humm Vee         |        2 | Weapons Factory                        |
+  | APC              |        4 | Barracks, Weapons Factory              |
+  | Medium Tank      |        3 | Weapons Factory                        |
+  | MRLS             |        7 | Weapons Factory, Adv. Comm Center      |
+  | Mammoth Tank     |        5 | Weapons Factory, Repair Bay            |
+  | Chinook*         |        6 | Weapons Factory, Helipad               |
+  | Orca             |        6 | Weapons Factory, Helipad               |
+  | MCV              |        7 | Weapons Factory, Adv. Comm Center      |
+  | Harvester        |        2 | Weapons Factory, Refinery              |
+  | Ion Cannon       |        7 | Adv. Comm Center                       |
+  ------------------------------------------------------------------------
+
+
+  For NOD units...
+
+  ------------------------------------------------------------------------
+  | NOD UNIT         | TECH LVL |              PREREQUISITE              |
+  -------------------+----------+-----------------------------------------
+  | Minigun Infantry |        1 | Hand of Nod                            |
+  | Rocket Infantry  |        2 | Hand of Nod                            |
+  | Flamethrower Inf |        1 | Hand of Nod                            |
+  | Engineer         |        3 | Hand of Nod                            |
+  | Chem Warrior*    |        7 | Hand of Nod, Temple of Nod             |
+  | Commando*        |        7 | Hand of Nod, Temple of Nod             |
+  | Nod Buggy        |        2 | Airfield                               |
+  | Recon Bike       |        2 | Airfield                               |
+  | Light Tank       |        3 | Airfield                               |
+  | Artillery        |        6 | Airfield                               |
+  | Flame Tank       |        4 | Communications Center, Airfield        |
+  | Stealth Tank     |        5 | Communications Center, Airfield        |
+  | Chinook*         |        6 | Helipad, Airfield                      |
+  | Apache*          |        6 | Helipad, Airfield                      |
+  | MCV              |        7 | Weapons Factory, Temple of Nod         |
+  | Harvester        |        2 | Weapons Factory, Refinery              |
+  | Nuclear Strike   |        7 | Temple of Nod                          |
+  ------------------------------------------------------------------------
+
+  * Available in multi-player missions only.   May be available in single
+    player missions as unit given to you at start of mission or as a
+    mission objective for capture.
+
+
+
+----------------------------------------------------------------------------
+3.5 Chart for creation of structures.
+----------------------------------------------------------------------------
+ 
+    This chart details what the requirements are to build structures in
+    C&C.   Note that in single player missions, you may not have access
+    to advanced buildings until later in the game.
+
+
+  ------------------------------------------------------------------------
+  | GDI STRUCTURE    | TECH LVL |              PREREQUISITE              |
+  -------------------+----------+-----------------------------------------
+  | Const. Yard      |        1 | None (all buildings require this)      |
+  | Power Plant      |        1 | Construction Yard                      |
+  | Barracks         |        1 | Power Plant                            |
+  | Refinery         |        1 | Power Plant                            |
+  | Tiberium Silo    |        1 | Refinery                               |
+  | Guard Tower      |        2 | Barracks                               |
+  | Adv. Guard Twr   |        4 | Communications Center                  |
+  | Weapons Factory  |        2 | Power Plant                            |
+  | Repair Pad       |        5 | Power Plant                            |
+  | Comm Center      |        2 | Refinery                               |
+  | Adv. Pwr Plant   |        5 | Power Plant                            |
+  | Adv. Comm Cntr   |        7 | Communications Center                  |
+  | Helipad          |        6 | Barracks                               |
+  | Sandbags         |        1 | Construction Yard                      |
+  | Chainlink Fence  |        1 | Construction Yard                      |
+  | Concrete Wall    |        1 | Construction Yard                      |
+  ------------------------------------------------------------------------ 
+
+  For NOD structures..
+
+  ------------------------------------------------------------------------
+  | NOD STRUCTURE    | TECH LVL |              PREREQUISITE              |
+  -------------------+----------+-----------------------------------------
+  | Const. Yard      |        1 | None (all buildings require this)      |
+  | Power Plant      |        1 | Construction Yard                      |
+  | Hand of NOD      |        1 | Power Plant                            |
+  | Refinery         |        1 | Power Plant                            |
+  | Tiberium Silo    |        1 | Refinery                               |
+  | Turret           |        2 | Hand of Nod                            |
+  | SAM Site         |        6 | Hand of Nod                            |
+  | Airfield         |        2 | Refinery                               |
+  | Repair Pad       |        5 | Power Plant                            |
+  | Comm Center      |        2 | Refinery                               |
+  | Adv. Pwr Plant   |        5 | Power Plant                            |
+  | Temple of NOD    |        7 | Communications Center                  |
+  | Helipad          |        6 | Hand of Nod                            |
+  | Obelisk of Light |        4 | Communications Center                  |
+  | Chainlink Fence  |        1 | Construction Yard                      |
+  | Concrete Wall    |        1 | Construction Yard                      |
+  | Sandbags         |        1 | Construction Yard                      |
+  ------------------------------------------------------------------------
+
+
+
+----------------------------------------------------------------------------
+3.6 Description of crate contents in Multi-player mode. 
+----------------------------------------------------------------------------
+
+    Here is a brief explanation of the contents of crates in multi-
+    player mode.
+
+
+      MONEY          Random.  Can be in any amount up to $2,000.
+
+      NUKE MISSILE   Equivalent of nuclear strike using Temple
+                     of NOD. One shot only.
+
+
+      REVEAL MAP     Uncovers the entire map for the player.  This
+                     applies to the radar screen, as well as the
+                     onscreen map.
+
+
+      STEALTH        Will stealth any unit that discovers this
+                     crate, as well as all units and structures
+                     within a 50 foot radius.
+
+
+      EXTRA UNITS    Random.  Can be any GDI or NOD unit.
+
+
+      HEAL ALL       Heals all of your units and structures to 100%
+                     health.
+
+
+      ION CANNON     Equivalent of ion cannon using the Advanced
+                     Communication Facility. One shot only.
+
+
+      NUKE STRIKE    Directs a Nuke Strike against the location of
+                     the crate retrieved.   Very bad.
+
+
+      BOMB           Explodes on contact.   Very bad.
+
+
+      HIDE MAP       Hides the entire map, except for your units.
+
+
+      VISCEROID      Releases a Tiberium-spawned Visceroid into the
+                     playing field.   Attacks randomly.
+
+
+   If your base is completely gone, there's a chance you can make a
+   quick comeback!   You must have at least $2,400 and no structures
+   of any kind left on the map.   There is an excellent chance that
+   the next crate you find will contain an MCV.
+
+
+
+****************************************************************************
+PLAYING THE GAME WITH KALI *************************************************
+****************************************************************************
+
+
+----------------------------------------------------------------------------
+4.1 What is Kali?
+----------------------------------------------------------------------------
+
+    Kali is a program written by Jay Cotton which allows you to play
+    network games using the IPX protocol over an Internet SLIP or PPP
+    connection.  We have been playing C&C over KALI for a few months now,
+    and it seems to work quite well.
+
+    However, remember that we cannot provide technical support for KALI
+    in any way.   If the words "IP Address", "ping", "slip/ppp" and
+    "IPX" are unknown to you, this entire concept may be a little over your
+    head.
+
+    Again, neither Westwood Studios nor Virgin Interactive
+    Entertainment can offer support for those of you wishing to
+    experiment with the KALI software.
+
+                                                                     
+
+----------------------------------------------------------------------------
+4.2 How do I get the KALI shareware package?
+----------------------------------------------------------------------------
+
+    You can download the newest KALI software and other files you need at:
+
+    ftp://ftp.axxis.com/pub/kali
+
+    While you're there, download PPP.ZIP and PING.ZIP if they're available.
+    These programs are what you will need to dial into your Internet
+    service provider and establish a PPP connection.    There are SLIP
+    and network card drivers available as well.
+
+    Remember, this program is shareware.   If you find it useful, we
+    suggest you support Jay Cotton in his future programming endeavors
+    by registering your copy.   
+
+
+
+----------------------------------------------------------------------------
+4.3 How to set up KALI with C&C
+----------------------------------------------------------------------------
+
+    First, I'm not going to go through the entire process of explaining
+    how to set up KALI to dial and connect to your internet service
+    provider.   There are examples that will show you how to do this
+    in the KALI files.
+
+    1.   Get the KALI software from the ftp site mentioned above.  You will
+    also need PPP.ZIP.
+
+    2.   Configure the PPP driver software to connect to your provider.
+    There are excellent examples on how to do this included within the
+    PPP.ZIP file.
+
+    3.   After connecting to your ISP, set up and use KALI to connect
+    to Kali Central (204.96.20.10).     This is where you'll meet others
+    to play Command & Conquer.   After connecting you should see a list
+    of other people connected, and the games that they're currently playing.
+
+    Now here's the tricky part...
+
+    PPP and KALI take up a lot of low memory.   The trick will be to load
+    your MOUSE, CD-ROM drivers, PPP, and KALI, and still have enough memory
+    left to run Command & Conquer.   If you're not using Windows 95, this
+    should be a piece of cake.   If you ARE running Windows 95, I would
+    suggest a boot disk with something similar to the following :
+
+    CONFIG.SYS :
+
+         DOS=HIGH,UMB
+         DEVICE=C:\DOS\HIMEM.SYS
+         DEVICE=C:\WINDOWS\EMM386.EXE NOEMS
+         DEVICE=A:\MOUSE.SYS
+         DEVICE=A:\SBCD.SYS /D:MSCD001 /P:220 /E   (may be different for you)
+
+    
+    AUTOEXEC.BAT :
+
+         MSCDEX.EXE /D:MSCD001 /V /M:15    (may be different for you)
+    
+    
+    You can copy your drivers to your boot disk, or load them off your
+    hard drive, it really doesn't matter.   However, if you are using
+    Drivespace, you will have to disable it by hitting F8 when your
+    computer boots up, then select "Step by Step confirmation" and skip
+    any drivespace or Windows drivers your system tries to load.   If you
+    try to load drivespace, you probably won't have enough memory left
+    over to run Command & Conquer.  Make sure that C&C isn't stored on
+    the compressed drive, or you won't have access to it!
+
+    Command & Conquer can work in as little as 425K of free lower memory.
+    You can probably load your PPP driver low, and your KALI driver high,
+    and have enough depending on what the size of your drivers is.
+
+    After you have loaded your CD-ROM and mouse drivers, loaded PPP.EXE and
+    KALI, run Command & Conquer and select the Multiplayer (Network)
+    game option from the main menu.   You should see others playing C&C, or
+    you can start a game of your own and wait for others to join you.  If
+    KALI Central, or wherever you decide to log in to is very busy, it's
+    probably best if you set up your own virtual network with the other
+    players.   Use KCHAT, the Kali chat program to arrange this.
+
+    If anyone has information they would like to add to this section,
+    please feel free to email it to me.
+
+
+
+
+****************************************************************************
+MODEM/NETWORK HELP *********************************************************
+****************************************************************************
+
+
+----------------------------------------------------------------------------
+5.1 Modem Initialization Strings
+----------------------------------------------------------------------------
+
+    As detailed in the manual, we seem to get best modem
+    performance with modem data-compression and error-correction
+    turned off. You can do this by going to the serial game
+    settings dialog and entering the appropriate init. string
+    for your modem. This should be entered on the host (dialing)
+    machine, the guest (receiver) should use ATZ. If you use these
+    init. strings the modem speed may have to be set to the exact
+    speed of your modem, for example 14,400 bps or 28800 bps. Here
+    are example init. strings for some popular modems:
+
+    Modem                                        Init. String
+                                         
+    US ROBOTICS SPORTSTER 9600/14400/28800 . . . AT&M0&K0
+    DIGICOM SCOUT 288VFCi  . . . . . . . . . . . AT\N1
+    BEST DATA SMART ONE 14400  . . . . . . . . . AT\N1
+    HAYES ACCURA 28800 . . . . . . . . . . . . . AT&Q0
+    SUPRA 14400  . . . . . . . . . . . . . . . . AT\N1
+    PRACTICAL 14400  . . . . . . . . . . . . . . AT&Q0
+    ZOOM 28800 . . . . . . . . . . . . . . . . . AT&Q0
+
+
+    If you have had success in using a modem that is not on this
+    list, please send us the init. string you're using, and we'll
+    add it to this list!
+
+
+
+----------------------------------------------------------------------------
+5.2 How to increase modem multi-player performance.
+----------------------------------------------------------------------------
+  
+    With music playing during a modem game, there is a possibility
+    of pausing or very slow game play. For optimum performance, 
+    music volume under the options menu should be set to zero 
+    (far left), this is the default setting. The game speed should
+    be satisfactory with sound effects on and music turned down.
+
+    If you have a 486 system with an external modem you might
+    experience pausing or very slow game play. This is due to
+    the 8250 UART chip which is in most 486 class machines, this
+    chip causes the CPU to work harder in null modem and modem
+    games. There are several work-arounds: 
+         
+         1. Turn off both music and sound effects in the setup program 
+         prior to playing the game. This will improve performance at
+         the expense of losing all game sounds. 
+         
+         2. Install an internal modem. These modems have their own
+         UART chips which are designed for higher performance.
+ 
+         3. Install a high performance serial card in your system.
+         If you are using a 14400/28800 bps external modem with 
+         your 486 class system you should seriously consider installing
+         a high performance serial card. These cards usually have a 
+         16550A type UART chip which outperforms the 8250 UART in all 
+         serial communications applications by buffering data more
+         efficiently. 
+
+
+
+----------------------------------------------------------------------------
+5.3 Network notes to remember.
+---------------------------------------------------------------------------*
+
+    For multiplayer network games we strongly caution you to use a
+    homogeneous network environment - that is, to use the same type 
+    of IPX compliant network drivers (e.g., IPX, IPXODI etc.) on each
+    system. We have found incompatibilities between drivers from
+    different manufacturers so you should bear this in mind if you
+    are having network game troubles.
+
+    C&C should work with any IPX compliant network but we have found
+    problems running with Microsoft MSIPX.COM. We strongly recommend
+    that you avoid MSIPX and use either IPX.COM from Novell, or use
+    IPXODI drivers compatible with your card. If in doubt you should
+    ask your network administrator to upgrade your system.
+
+                      
+
+
+****************************************************************************
+TROUBLESHOOTING ************************************************************
+****************************************************************************
+
+
+----------------------------------------------------------------------------
+6.1 What to do when the game doesn't want to run...
+----------------------------------------------------------------------------
+
+    Command & Conquer has been tested on hundreds of computers.   If
+    you're having a problem, it probably has something to do with the way
+    your system is set up.
+
+    Steps you should take :
+
+         1.   Read the README file located on the CD-ROM.   It contains
+              valuable information about certain sound cards, Windows,
+              etc..
+
+         2.   Read the troubleshooting section of this document!  If it
+              seems to be a common problem that people are having, chances
+              are you will find it answered below.
+
+         3.   Check our web site or your favorite online service for
+              the newest version of this document.   You may also want to
+              check the message areas to see if anyone else has had
+              trouble similar to yours, and has already found a solution. 
+
+         4.   Write or call us!   You can reach Virgin Interactive
+              Entertainment customer support by dialing 1-714-833-1999.
+              Be sure to have your computer up and running, and get
+              ready to spill your guts about the type of system you're
+              running C&C on.  This includes listings of your AUTOEXEC.BAT
+              and CONFIG.SYS files.   You can write to us via email at the
+              services mentioned later in this document.   Be sure to
+              send all the same information mentioned above in your mail.
+
+
+    
+----------------------------------------------------------------------------
+6.2 How to get Command & Conquer working under Windows 95.
+----------------------------------------------------------------------------
+
+     To install under Windows 95, follow these four easy steps:
+
+         1)  Click START/RUN, type D:\SETUP.EXE (where D is your CD-ROM
+             drive); type ENTER.
+         2)  Follow instructions in setup program as normal.
+         3)  When installation is finished, restart Windows 95 to
+             initialize the C&C icons.
+         4)  Start C&C using START/PROGRAMS/WESTWOOD/C&C.
+
+
+
+----------------------------------------------------------------------------
+6.3 Running C&C with Windows 95 and 8 megabytes of memory.
+----------------------------------------------------------------------------
+
+     If you only have 8 megabytes in your machine, you may need to make
+     some modifications to allow C&C to run on the desktop.   Below is
+     a step-by-step instruction manual for beginners to make the
+     necessary changes...
+
+         a)  Start Explorer and go to the directory where you installed C&C.
+         b)  Find the C&C.EXE file, and right click it.
+         e)  Chose PROPERTIES from the menu.
+         f)  Click on the MEMORY tab.
+         g)  Look for the section that says EXPANDED (EMS) MEMORY.
+             It should have 'Auto' in the window. Click the arrow next
+             to the 'Auto' and scroll down until you see NONE.  Click this.
+         h)  Look for the section that says MSDOS PROTECTED MODE (DPMI)
+             MEMORY.  It should have 'Auto' in the window.  Click the
+             arrow next to the 'Auto' . Scroll down until you see 16384. Click
+             this.
+         i)  Hit APPLY, then OK.
+         j)  Start the game through the Taskbar normally.
+
+
+
+----------------------------------------------------------------------------
+6.4 Improving video playback performance under Windows 95.
+----------------------------------------------------------------------------
+        
+     The performance of C&C in a Windows 95 DOS box is slightly
+     slower than in a real DOS environment. You can improve movie
+     playback performance by following these step-by-step instructions.
+
+          a)  Go to the START/SETTINGS/CONTROL PANEL menu.   
+          b)  Double-click on the SYSTEM icon.
+          c)  Click the PERFORMANCE tab, then click the FILE SYSTEM
+              button.
+          d)  Click the CD-ROM tab.
+          e)  You will see a slider labeled SUPPLEMENTAL CACHE SIZE.
+              Slide the slider all the way to the right.  Remember
+              however that increasing your cache size reduces the
+              memory available to the rest of the system while in
+              Windows.
+          f)  Next, look for a window labeled OPTIMIZE ACCESS
+              PATTERN FOR: In the window, choose the one that best
+              describes your CD drive (single, double, triple, quad
+              and higher speed drive.)
+          g)  Click the APPLY button. You will get a window asking
+              you to restart your machine. Do so.
+          h)  Once you have restarted, run the game normally. This should
+              also increase the performance of any other CD title you have.
+
+
+
+----------------------------------------------------------------------------
+6.5  How to fix modem problems under Windows 95.
+----------------------------------------------------------------------------
+
+     If you find that you have trouble connecting during modem play, or
+     get sync errors when you connect, there are a few things you can do
+     to solve this problem:
+
+     a)  Check to see that the port setting in Windows 95 is correct
+         for your modem. Windows defaults to 9600 baud.  You will want
+         to change the default baud rate to 57600.   To do this:
+
+         1)  Click on START/SETTINGS/CONTROL PANEL.
+         2)  Double click the SYSTEM icon, click the DEVICE
+             MANAGER tab.
+         3)  Click the plus sign next to the PORTS listing.
+             Double-click on the right COMM port for your modem.
+         4)  Click the PORT SETTINGS tab. The window at the top (BITS
+             PER SECOND) is the baud rate for the port. Set this
+             for 57600 baud.
+         5)  Click OK twice to close both windows. You may have to
+             restart Windows.
+
+     b)  Make sure the error correction and compression on your modem
+     is turned OFF. Check the README file that came with Command and
+     Conquer or this document for a list of Modem initialization strings
+     that will accomplish this (copy the initialization string for your
+     modem in the README file to the init string box in the modem setup
+     screen.)  If your modem is not listed in the README, you will need
+     to check your modem manual or call the manufacturer for your modem
+     to see how to do this.
+
+     c)  If you simply cannot get Command and Conquer to connect
+     correctly in Windows 95, reboot to DOS mode and re-run the game. Be
+     sure that your sound card and CD-ROM drivers are loading in DOS.
+
+
+
+----------------------------------------------------------------------------
+6.6 My mouse isn't detected, or doesn't work correctly.
+----------------------------------------------------------------------------
+
+    If you encounter any problems with the mouse, such as erratic
+    movement, etc., the first thing you should do is update your mouse
+    driver.   Problems with the mouse, although rare, are almost always
+    caused by older mouse drivers.  Contact your computer manufacturer
+    or local software retailer for information on obtaining the latest
+    mouse drivers for your computer.
+
+    Many players have discovered that only the install program is
+    incompatible with their mouse driver.   Install C&C without loading your
+    mouse driver, then exit and load your mouse normally before playing the
+    game. 
+
+
+
+----------------------------------------------------------------------------
+6.7 Divide Overflow upon installation of Command & Conquer.
+----------------------------------------------------------------------------
+
+    If you get a Divide Overflow error when running the INSTALL or SETUP
+    programs on the CD-ROM, you have two methods of correcting this
+    problem:
+
+
+         1.   You can update your mouse driver.   The C&C installation
+              software is not compatible with older mouse drivers.
+              Contact your mouse manufacturer for information on obtaining
+              the new driver for your mouse.
+
+         2.   Unload the mouse driver when installing C&C.   A mouse is
+              not required for installation.   When you are finished,
+              load the mouse driver normally and run the game as the
+              instruction manual indicates.
+
+
+
+----------------------------------------------------------------------------
+6.8 Command & Conquer Patch file (1.18p)
+----------------------------------------------------------------------------
+
+    Westwood Studios has issued a patch to upgrade your 1.07 version of
+    Command & Conquer to 1.18p.   You can download this patch through
+    the Westwood Studios web site, or the ftp site.
+
+
+    The 1.18p patch addresses the following problems :
+
+
+         1. Windows Modem Play.
+
+                Improves modem play under Windows 95 for some people.
+                It is still highly recommended that you turn error
+                correction/data compression off.  Check your modem
+                manual for more information about this.
+
+
+         2. USR 14,400/28,800 UART SPEED.
+
+                Addresses USR Robotics modem connect problems at
+                14,400 or 28,800 baud.
+
+
+         3. Diamond Viper Palette/Color Problem.
+
+                Addresses a special problem detected in DIAMOND
+                VIPER video card.   Colors may appear irregular
+                if you're using this card.
+
+
+         4. Movies do not play when CD is swapped.
+
+                Addresses the fact that briefings and cutscenes
+                do not appear if you choose NOD when
+                playing from disk 1, or any time that you swap
+                disks.
+
+         5. Fixes silo money refund problem.
+
+                Addresses the problem with too much money being
+                refunded from selling a silo.
+
+         6. Cost of turrets increased.
+
+                Addresses the cost of turrets so that they will
+                cost 600 credits.
+
+         7. Nuclear missile crates collection bug.
+
+                Collecting all the special nuclear weapon crates 
+                in certain Nod scenarios will now always give the
+                Nod player a nuclear weapon option. The Nod player
+                must build the Temple of Nod in the final mission
+                to activate this option.
+
+
+    Some of you have reported other errors not listed in this FAQ
+    sheet.  If you're having trouble, please let us know!   We will
+    need the following information : 
+
+         a) Machine Configuration (RAM, Processor, Video card, etc.)
+         b) Operating System (Windows, DOS, Windows 95, etc..)
+         c) AUTOEXEC.BAT and CONFIG.SYS files in text format.
+         d) Modem type, and speed (if applicable).
+
+    Be as thorough as possible in your message, then email to
+    mail@westwood.com.
+
+    
+
+
+****************************************************************************
+GETTING HELP / ORDERING INFORMATION ****************************************
+****************************************************************************
+
+
+---------------------------------------------------------------------------- 
+7.1 What is the purchase price/How can I order C&C? 
+----------------------------------------------------------------------------
+
+    As of September 17th, the Virgin Interactive Entertainment order line
+    will ship C&C out for $59.95 plus $4.00 postage and handling.
+
+    In the United States, call..................1-800-874-4607.
+
+    Everywhere else.............................1-619-490-9070.  
+
+
+
+---------------------------------------------------------------------------- 
+7.2 How to contact Westwood Studios
+----------------------------------------------------------------------------
+
+    You can email Westwood Studios at :
+
+    westwoods@aol.com 
+
+    Mail to my account (virtualted@westwood.com) has been incredible
+    since the release of Command & Conquer. Our technical support staff 
+    at America Online can get back to you much more quickly than I can.
+
+    Westwood has online support available through America Online
+    Compuserve, GEnie, PRODIGY, and the Westwood BBS.   After
+    connecting to these services, simply do a search for "WESTWOOD" or
+    "WESTWOOD SUPPORT" and you'll find our section.   Check your
+    manual for exact instructions.
+
+    
+           
+--------------------------------------------------------------------------* 
+7.3 Westwood FTP / WWW site.
+--------------------------------------------------------------------------*
+
+    You can get to our web site at :  http://www.westwood.com
+
+    Or our FTP site at             :  http://ftp.westwood.com
+
+
+
+
+****************************************************************************
+IN THE FUTURE **************************************************************
+****************************************************************************
+
+
+----------------------------------------------------------------------------  
+8.1  When will "Command & Conquer II: Tiberian Sun" be released?
+----------------------------------------------------------------------------
+
+     "Coming Soon."   We expect to release it late in the second half
+     of 1996.   As soon as details are available about the game, we will
+     let everyone know through the Westwood Studios WEB site.   Tiberian
+     Sun is an entirely new game, not a data disk for C&C: Tiberian Dawn.
+
+
+
+----------------------------------------------------------------------------
+8.2  Where can I get extra missions for Command & Conquer?
+----------------------------------------------------------------------------
+
+     We have not yet decided how we will make new missions available, but
+     we do plan to release extra missions at a later date.   We'll let
+     everyone know as soon as a decision is made on how to implement this.
+
+                      
+----------------------------------------------------------------------------
+
+END OF DOCUMENT 11/07/95
+
+-VT
+
+

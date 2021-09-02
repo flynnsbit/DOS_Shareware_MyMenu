@@ -1,0 +1,44 @@
+Development history of FDXMS286:
+
+What's up with the version numbers? Wait and see. Or guess.
+
+Version 0.03.Temperaments - 2005-05-28 - Martin Str”mberg
+
+- Severe error when moving more than 0x2000 bytes of data to/from XMS
+  corrected.
+- Thank you to Eric Auer for testing.
+
+
+Version 0.02.Semplice - 2005-05-05 - Martin Str”mberg
+
+- print_string.inc was missing from the source.
+- INT15 parameter added.
+- Only warn that A20 can't be disabled instead of refusing to load.
+- Changed VDISK detection to preserve A20 state.
+- VDISK detection in check_vdisk corrected by Lixing Yuan.
+- Unecessary pushf/popfs removed from int2f_handler.
+- Modify int15_handler to not clobber return flags when function 0x87
+  is forwarded to previous int15 handler.
+- Added proper handling of input and output status device commands
+  according to information from Bob Smith.
+- Squeezed away some bytes by setting up the handle table completely at
+  initialisation time.
+- Size optimisations.
+- Major redesign of the dispatching of XMS calls and return from them
+  resulting in size reduction. 
+
+
+Version 0.01.Espansiva - 2002-03-29 - Martin Str”mberg
+
+- Perhaps other changes that have been forgotten (sorry!).
+- Albert and Aitor tested many many versions to get FDXMS286 working
+	on 286 PS machines.
+- Merged in some changes from FDXMS 0.9.Sand.
+- Removed INT15 AX=0xe820 and INT15 AX=0xe801 calls for detecting XMS
+	memory size. FDXMS286 only uses INT15 AH=0x88 to find memory.
+- Removed all XXMS handling.
+- Removed BIOS argument handling.
+- Removed FDXMS protected mode switching so FDXMS286 always uses the
+	BIOS for XMS moves.
+- Took FDXMS 0.8.Grains and converted all 386 code to 286 code.
+

@@ -1,0 +1,23 @@
+neurosys (bitshift.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=166135
+
+Summary
+
+    bitshift.xm is a XM format module. 
+    Uploaded to modarchive.org on Fri 20th Mar 2009
+
+Info Info
+
+    Mod Archive ID: 166135
+    MD5: 1a5bd88eade288b88b8eb37652941687
+    Format: XM
+    Channels: 4
+    Genre: n/a
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     neurosys (https://modarchive.org/member.php?82257)

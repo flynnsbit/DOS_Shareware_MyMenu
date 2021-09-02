@@ -1,0 +1,10 @@
+05455664045504005450000
+EOF
+
+New line for each obj page.
+0 none                         5 slide
+1 weak jump                    6 big slide
+2 jump                         7 stop no bounce
+3 big jump                     8 stop & bounce
+4 subtle slide
+

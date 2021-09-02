@@ -1,0 +1,1 @@
+Refer to readme.txt for tips on freeing base memory.

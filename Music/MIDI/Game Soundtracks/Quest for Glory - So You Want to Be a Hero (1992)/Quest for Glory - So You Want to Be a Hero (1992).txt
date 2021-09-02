@@ -1,0 +1,9 @@
+Game: Quest for Glory: So You Want to Be a Hero / Hero's Quest: So You Want to Be a Hero
+Year: 1989, 1992, 1994
+Composed by: Mark Seibert
+MIDI versions: GM
+Platform: DOS
+
+Additional info: Single file in the folder root is a complete soundtrack.
+
+https://www.karlsitretro.com/game_midi

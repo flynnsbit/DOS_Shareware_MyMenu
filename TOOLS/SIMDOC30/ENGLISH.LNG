@@ -1,0 +1,153 @@
+;SIMPLY DOCS Version 3
+
+;This file is required to compile your documents. Do NOT delete!!!
+
+;This file contains all text used in the Simply Docs viewer.
+;It may be translated into any language as long as the
+;following rules are followed.
+
+;It is VERY IMPORTANT that you do not change the order or the
+;number of lines.  Also the text must have the same meaning as
+;the original or the program will be unusable by anyone but yourself.
+
+;After translating the text it is important that you check all
+;menus and input boxes for proper fit.  The menu and input box sizes
+;are not adjusted for the length of text.  However, the cursor will
+;be positioned correctly for input prompts.
+
+;In this file any line that is blank or starts with a semi-colon
+;is considered a comment and is ignored.
+
+
+;---- Main menu text ----
+; The program automatically adds numbers to the following text.
+
+View Document
+Print Document
+Install as Popup (TSR)
+Remove Popup (TSR)
+Exit Document
+
+;  This message is used in several places...
+Enter Selection:
+
+;---- Jump to Page ----
+Enter Page Number:
+
+
+;---- Search Function ----
+Text to Search For:
+;  The next line is displayed during a search.  The number of
+;  the page being searched is displayed in place of &&
+Searching...   Page: &&
+Search found no match.  Press Return.
+SPACE BAR to Continue Search.   Any other key to quit.
+
+
+;---- Bookmarks ----
+Enter a name for bookmark:
+Select Bookmark to Use
+Select Bookmark to Replace
+
+
+;---- Print Options ----
+Print Document
+Device or File Name:
+;  The next option has a choice of 2 letters.  The valid
+;  letters must be listed on the line following the option text.  The
+;  first letter is used as the default and represents the IBM char set.
+IBM Char Set or ASCII? (I/A)
+IA
+Left Margin:
+First Page:
+Last Page:
+
+;  The following option has 3 valid choices listed on the line following
+;  the text.  Note that the order must remain the same:"All, Odd, Even"
+Print A)ll, O)dd or E)ven Pages? (A/O/E)
+AOE
+
+;  The next message is displayed during printing and displays
+;  the number of the current page in place of the double && characters.
+Printing page &&.  Press ESC to Cancel.
+Press a key to start printing, ESC to Cancel.
+
+Error writing to output device.  Press RETURN to Retry.  ESC to Cancel.
+Unable to open document.  File may have been modified.
+
+
+;---- Viewing Messages ----
+;  Different messages are used when different options are enabled.
+;  You can use any text here but at least include "F1-Help" so the
+;  user can get a complete list of available keys.
+
+;  Printing enabled / installed as TSR
+F1-Help  F2-Print  F3-Search  F4-Page#  F5/6-Bookmarks  F10-Exit TSR  ESC-Exit
+
+;  Printing enabled / not installed as TSR
+F1-Help  F2-Print  F3-Search  F4-Page#  F5/6-Bookmarks                ESC-Exit
+
+;  Printing disabled / installed as TSR
+F1-Help            F3-Search  F4-Page#  F5/6-Bookmarks  F10-Exit TSR  ESC-Exit
+
+;  Printing disabled / not installed as TSR
+F1-Help            F3-Search  F4-Page#  F5/6-Bookmarks                ESC-Exit
+
+
+;---- TSR Related Messages ----
+TSR Hot Keys
+Unable to remove TSR.  Reboot Now.
+TSR Removed.  Press Return to Exit.
+Invalid hot key
+TSR viewer uninstalled
+Unable to de-install TSR viewer
+TSR viewer not installed
+TSR Installed. Swapping disabled.
+TSR Installed. EMS swapping enabled.
+TSR Installed. Disk swapping enabled.
+
+;  The && in the next message is replaced with the
+;  name of the keys a user must press to activate the TSR.
+Press <&&> to view document.
+
+;---- Help Text ----
+;Please try to include all keys listed here
+;NOTE: The size of the help window is fixed.
+
+        <Up> - Up one line              <F1> - This screen
+      <Down> - Down one line            <F2> - Print (if enabled)
+      <PgUp> - Up one page              <F3> - Search forward
+      <PgDn> - Down one page      <Shift+F3> - Search backward
+      <Home> - Start of document        <F4> - Jump to Page #
+       <End> - End of Document          <F5> - Set a bookmark
+     <Right> - Scroll right             <F6> - Use a bookmark
+      <Left> - Scroll left              <F7> - Index (if defined)
+       <Tab> - Fast scroll right        <F9> - Toggle 25, 43/50 lines
+ <Shift+Tab> - Fast scroll left   <Shift+F9> - Toggle half screen mode
+ <Ctrl+Left> - Max left                  <F> - Foreground color
+<Ctrl+Right> - Max right                 <B> - Background color
+ <Backspace> - Return from jump          <+> - Auto scroll forward
+       <F10> - Exit TSR                  <-> - Auto scroll backward
+       <Esc> - Exit document           <1-9> - Set Auto scroll speed
+
+;End of help text
+
+Press a key to continue....
+
+;--- Viewing Message for Small Viewer
+Up Dn PgUp PgDn Home End   F2-Print  F3-Search  F4-Page#  F/B-Colors   ESC-Exit
+
+;--- Password text
+Enter Password:
+Invalid password.  Press RETURN to try again or ESC to Quit.
+
+;--- Pasting Message
+Enter Number of Lines to Paste:
+
+;--- Page Number at Top of Screen
+;    The current page replaces && and the total number of pages is
+;    added to the end of this message:  "Page 12 of" TotalPages
+Page && of
+
+;End of viewer text messages
+

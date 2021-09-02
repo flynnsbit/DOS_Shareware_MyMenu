@@ -1,0 +1,24 @@
+Mecanum Overdrive (drozerix_-_mecanum_overdrive.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=175349
+Renamed to "MECANUM.XM" because of DOS 8-character limit
+
+Summary
+
+    drozerix_-_mecanum_overdrive.xm is a XM format module.
+    Uploaded to modarchive.org on Sun 8th Jun 2014
+
+Info Info
+
+    Mod Archive ID: 175349
+    MD5: 75cbab7639c5138d8ed7884250154174
+    Format: XM
+    Channels: 4
+    Genre: Video Game
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     Drozerix (https://modarchive.org/member.php?84702)

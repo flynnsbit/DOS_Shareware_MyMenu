@@ -1,0 +1,215 @@
+
+	          JOIN THE ABUSE GAME DEVELOPER PROGRAM
+  AND MAKE MONEY CREATING EXCITING NEW WORLDS WITH THE ABUSE ENGINE!
+
+Crack dot Com's Abuse Game Developer Program has made it a piece of cake
+to earn money doing game design using the Abuse engine.  If you enjoy
+making interesting levels or new games using the Abuse engine, send them
+to us by November 1, 1995 so that they can be considered for the
+Thanksgiving Abuse Data Pack.  If the submission is approved, we will
+send you profits from the sales based on the quality of your work!  If
+you have missed this deadline, give us a call at 512 306 1835 or e-mail
+gamedev@crack.com.  We may release more than one data pack!
+
+Guidelines for submission:
+
+First off, do not call our 1 800 number about this.  They won't have a
+clue about this.
+
+Make sure that your level or game is playable fresh out of the archive
+you sent it in, or we'll get the nasty first impression that you don't
+care about appearances.  How large or complete does it have to be?  Use
+the Abuse levels as a guideline.  Try to fill roughly the same area (or
+more) and get a similar amount (or more) of gameplay in there.  If
+you're doing game design on a Pzillion with 64Mb RAM, watch yourself, or
+your level may not turn out well-suited to mortal machines.  The levels
+should also be decorated nicely with lighting and textures applied.
+
+If your level is of an inadequate size, duration, or needs any other
+form of polish, we will help you with suggestions.  Just make a
+submission as specified below and we'll send you back design comments.
+
+If you're using zip file(s), make sure that you zip starting in the
+abuse directory and recursively get the entire directory hierarchy.
+When it is ready for us to check out, you can send your data as follows:
+
+  By FTP / E-mail (preferred) :
+
+    1. Put your data in a .zip, .tar.gz or .tar.Z archive.
+    2. FTP to crack.com and store in /pub/incoming
+    or 
+    2. Uuencode the archive & E-mail it to us at gamedev@crack.com.
+
+    3. E-mail another letter with your name, phone number, e-mail address,
+	   where you want checks delivered, who you want them made out to,
+	   your social security number, and a short description of your
+	   submitted data to gamedev@crack.com.
+
+  By US Mail :
+
+    1. Put your data in a .zip or .tgz archive and get it on a 3.5" floppy,
+       zip disk (using MSDOS or ext2 filesystem), or CDROM with iso-9660
+	   filesystem.
+    2. Mail it to: Crack dot Com, c/o: Game Dev., PO Box 163025, 
+           Austin, TX 78716-3025
+	3. Include a letter with your name, phone number, where you want
+	   checks delivered, who you want them made out to, your social
+	   security number, and a short description of your submitted data
+	   to gamedev@crack.com.
+
+Now to get some ugly legal stuff out of the way:
+
+Any original artwork, sound effects, or LISP code that you do FROM
+SCRATCH, you maintain the complete copyright to.  However, levels
+(contained in our .spe file format) contain specific data that we
+maintain the copyright on, even if you think you're doing them from
+scratch.  We reserve the right to control distribution of level data as
+well as any artwork, sound, and LISP code from our shareware or
+registered versions of the game.  Our guidelines on how level data may
+be distributed:
+
+  1. You may distribute level data if you do not collect
+     any compensation for it.  For instance, you can upload it to an
+	 ftp site or BBS or online service public download area, as long
+	 as you aren't receiving compensation for it.
+  2. You may submit it to us so that we may consider distributing it
+     for you.  We will pay you profits directly based on the quality
+	 of the work you submit.  We will have an answer for you within
+	 five business days of the submission date.
+  3. If we turn down your data for distribution, you may then either
+     seek a third party distributor, if you wish to seek compensation
+     for the data, or you may of course choose to release it for free.
+
+The exception to the above three rules:
+
+     You may not publicly distribute any modified or original levels
+     from the REGISTERED VERSION.  You may not distribute any modified
+     or original artwork, sound, or LISP code from the REGISTERED
+     VERSION.  This includes everything in the REGISTER subdirectory
+     and levels 5 through 18 under the LEVELS subdirectory.  You may
+     submit modified versions of the above to us to consider
+     publishing.  However, you may not have it published through a
+     third party if we refuse.
+
+That's the end of the evil ugly legal stuff.
+
+Questions?
+
+If you have questions about anything in this file or how the
+distribution program works, you may also call us at 512 306 1835 or
+e-mail gamedev@crack.com.
+
+Good luck, and we look forward to working with you!
+
+-Dave Taylor
+ Partner
+ Crack dot Com
+
+
+
+
+
+More detailed info on how to sumbit your data
+--------------------------------------------------------------
+
+  If your level(s) do not contain any new artwork, sound effects, or
+lisp code, you can just use pkzip to package them into one file and
+compress them.  Then uploaded to crack.com.  Be sure to include the
+above information to expedite our processing of your level and so we
+know how to get in touch with you.
+
+  To compress, first go to the directory where your files are, then :
+  **NOTE : replace joesmith with your name **
+
+  DOS users :
+    pkzip joesmith.zip level*.spe
+
+  UNIX user :
+    tar cvf - level*.spe | gzip -9 -c > joesmith.tgz
+
+  Upload to
+     ftp://crack.com/pub/incoming
+
+  Or mail on a 1.44 disk to :
+     Crack dot Com, c/o: Game Dev., PO Box 163025, 
+      	     Austin, TX 78716-3025
+
+  
+
+  Complex levels :
+
+  If you've made your own artwork and/or characters, you need to create
+a package that we can easily install and play.  To do this you should
+make your own LISP startup file which loads your artwork from a
+seperate directory and then calls the original abuse.lsp startup file.
+Read the file addon/example/example.lsp on how to do this.  Look at
+the example game "pong" in addon/pong/pong.lsp to see how to add on
+whole new games.
+
+
+
+Jonathan's Rules of Thumb for Level Design
+------------------------------------------
+
+1. Fill in the level nicely.  Take your time and pick out
+   textures that fit/look well together.  Use lighting to
+   enhance these.  Don't just hit 't' for flood fill, and
+   don't just use the default light setting.  You must combine
+   lighting, textures, and ambient sounds to create
+   the atmosphere needed to keep the player immersed.
+  
+2. Avoid sharp edges in textures and lighting.  Do not
+   use half-lights in the middle of a room.
+
+3. Avoid using teleporters unless you have to.
+   The player can easily get lost with doors and teleporters
+   jumping all over the place.
+
+4. Keep rooms seperated.  Don't let the player see another
+   part of the level he/she cannot get to yet.  If enough
+   space is not given between areas the play will feel like
+   a mouse in a maze, and not immersed in the game.
+
+5. Let the player kill everything.  People want to kill.
+   Avoid puzzles where the only solution is to run away.
+
+6. Pace the action.  Don't keep the player running forever.
+   Give them resting points.  On the other hand don't let them
+   run down long hallways with nothing to do.  
+
+7. Surpise the player.  They dig that.
+  
+8. Don't make it too easy, nor too hard.  The level should
+   be barely passable by experts on extreme and passable by
+   good players on hard.  If a player makes it through the 
+   whole level the first time, then it is too easy.
+
+9. Don't be repetitive.  Each problem the player encounters
+   should be different.
+
+10. Lead the player, but don't let them know you are leading
+   them.  Make the level mostly-linear so the player does 
+   not have much chance of getting lost (and frustrated),
+   but use tricks to make it seem less linear, like 
+   back-tracking over the same area with different puzzles
+   appearing the second time.
+
+11. Avoid using a lot of ladders.  They are slow and drag down 
+   the action.
+
+12. When using doors, do not let the new area the door takes 
+   you to loop back. When you go through a door, you are going 
+   into a new area, and it disorienting when you come across the 
+   door you just went through.
+
+13. Stock the player with ammo according to the task.  Don't
+   be to stingy, and don't give them so much the level becomes
+   too easy.
+
+14. Avoid over-using the ANT_CRACK.  Sure it's easy to put one down
+   and have tons of aliens pour out of a wall, but if used too often
+   it loses it's excitement. 
+
+15. Avoid jumping puzzles.  Jumping from one platform to another 
+    platform gets old real fast.
+

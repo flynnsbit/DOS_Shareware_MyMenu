@@ -1,0 +1,94 @@
+FC v. 3.03 (c) 2004 Maurizio Spagni
+
+FC compares two files or sets of files, in text or binary mode, and
+displays the differences between them.
+
+FC implements Paul Heckel's algorithm from the Communications of the
+Association for Computing Machinery, April 1978, p264 - p268,
+"A Technique for Isolating Differences Between Files".
+
+This algorithm has the advantage over more commonly used compare algorithms
+that it is fast and can detect differences of an arbitrary number of lines.
+For most applications the algorithm isolates differences similar to those
+isolated by the longest common subsequence.
+
+The syntax is as follows:
+
+FC [switches] [drive1:][path1]filename1 [drive2][path2]filename2 [switches]
+
+ /A    Display only first and last lines for each set of differences
+ /B    Perform a binary comparison
+ /C    Disregard the case of letters
+ /L    Compare files as ASCII text
+ /LBn  Set the maximum number of consecutive different ASCII lines to n
+ /Mn   Set the maximum differences in binary comparison to n bytes
+ /N    Display the line numbers on a text comparison
+ /Q    Don't show the list of differences
+ /R    Show a brief final report (always active when using /S)
+ /S    Extend the scan to the files in subdirectories
+ /T    Do not expand tabs to spaces
+ /U    Show the filenames of the files without a correspondent
+ /W    Pack white space (tabs and spaces) for text comparison
+ /X    Do not show context lines in text comparison
+ /nnn  Set the minimum number of consecutive matching lines to nnn
+       for comparison resynchronization
+
+The program is LFN aware and use them automatically if the operating system
+supports the long file names.
+
+FC defaults to binary mode for files .EXE, .COM, .SYS, .OBJ, .BIN, .DLL
+and .LIB.
+
+In binary mode FC shows the offset in the file of the differing bytes, their
+value in hexadecimal and, if they are ASCII printable chars, their ASCII char.
+
+By default the binary compare stops after 20 differences but that value can
+be modified through the /M switch. /M0 means "unlimited differences".
+/M is interpreted as /M0.
+
+A design limitation of this program is that, in the text mode file
+comparison, only the first 32765 lines are compared; the remaining lines are
+ignored. The line length is virtually unlimited.
+
+FC supports wildcards in the file specifications. Some words on this:
+- specifying a directory is the same as specifying all the files in that
+  directory (i.e. "*.*").
+  Example: "FC C:\ A:" is the same as "FC C:\*.* A:*.*"
+- if no filename2 is entered then "." (the current directory) is assumed.
+  Example: "FC C:\FOO.TXT" is the same as "FC C:\FOO.TXT .\*.*"
+- if filename1 has wildcards but filename2 hasn't, then all the files
+  matching filename1 are compared with the same file filename2.
+  Example: "FC FOO.BK? FOO.TXT"
+	   All the files FOO.BK? are compared with FOO.TXT
+- if filename1 has wildcards and filename2 is a path followed by "*.*" then
+  all the files matching filename1 are compared with the files with the same
+  name but in the path specified by filename2 (if that file exists, of course).
+  Example: "FC *.* A:*.*" or, in short, "FC . A:"
+	   All the files in the current directory are compared with
+	   their copy on A:
+- if filename1 has wildcards and filename2 too then all the files in the path
+  of filename1 and matching filename1 are compared with the relevant file
+  matching filename2 in the path specified by filename2 (if that file exists,
+  of course).
+  Example: "FC *.TXT OLDS\*.BAK"
+	   All the files in the current directory are compared with their
+	   backup copy renamed .BAK in the subdirectory OLDS.
+It's more easily done than said.
+If what you really want is to compare each file in a directory with all the
+files in another you can always use the form:
+FC *.* MYDIR\????????.???
+
+The /S option iterates the same pattern of search in the subdirectories with
+the same name in both path.
+  Example: "FC /S C:*.TXT D:*.BAK"
+	   Assuming for example the existence of the subdirectories C:BOOK
+	   and D:BOOK, this command compares all the *.TXT files with their
+	   backup copies *.BAK in the current directories and also all the
+	   BOOK\*.TXT files with their backup copies BOOK\*.BAK.
+
+The exit codes for ERRORLEVEL are as follows:
+	0	All the files match
+	1	At least a pair of files differs
+	2	Invalid parameter on the command line
+	3	File not found
+	4	Error opening file(s)

@@ -1,0 +1,67 @@
+﻿FoxType is an advanced text viewer for DOS.
+
+Main features are:
+
+ * UTF-8 support
+ * Word-wrapping
+ * VESA 1280x1024 support
+ * Ability to takes screenshots in BMP format
+
+With FoxType you can view any UTF-8 text file. UTF-8 uses the Unicode table of characters, which is why it is the best way to guarantee that the characters in the text will not be misrepresented. Now, using UTF-8 files and FoxType, you can use several languages in the same text file!
+
+Here is the first article of the Universal Declaration of Human Rights in some of the languages supported by FoxType:
+
+Akuapem Twi:
+Wɔɑwo ɑdesɑmmɑ nyinɑɑ sɛ nnipɑ ɑ wɔwɔ ɑhofɑdi. Wɔn nyinɑɑ wɔ nidi ne kyɛfɑ koro. Wɔwɔ ɑdwene ne ɑhonim, nɑ ɛsɛ sɛ wobu wɔn ho wɔn ho sɛ ɑnuɑnom.
+
+Armenian / Հայերեն:
+Բոլոր մարդիկ ծնվում են ազատ ու հավասար իրենց արժանապատվությամբ ու իրավունքներով։ Նրանք ունեն բանականություն ու խիղճ – միմյանց պետք է եղբայրաբար վերաբերվեն։
+
+English:
+All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood.
+
+Estonian / Eesti:
+Kõik inimesed sünnivad vabadena ja võrdsetena oma väärikuselt ja õigustelt. Neile on antud mõistus ja südametunnistus ja nende suhtumist üksteisesse peab kandma vendluse vaim.
+
+French / Français:
+Tous les êtres humains naissent libres et égaux en dignité et en droits. Ils sont doués de raison et de conscience et doivent agir les uns envers les autres dans un esprit de fraternité.
+
+Georgian / ქართული:
+ყველა ადამიანი იბადება თავისუფალი და თანასწორი დავისი ღირსებითა და უფლებებით. მათ მინიჭებული აქვთ გონება და სინდისი და ერთმანეთის მიმართ უნდა იქცეოდნენ ძმობის სულისკვეთებით.
+
+Greek / Ελληνικά:
+Όλοι οι άνθρωποι γεννιούνται ελεύθερποι και ίσοι στην αξιοπρέπεια και τα δικαιώματα. Είναι προικισμένοι με λογική και συνείδηση, και οφείλουν να συμπεριφέρονται μεταξύ τους με πνεύμα αδελφοσύνης.
+
+Irish Gaelic / Teanga Gaelige:
+Saoláitear na daoine uile saor agus coṁionann ina ndínit agus ina gcearta. Tá bauiḋ an réasúin agus an ċoinsiasa acu agus dlíd iad féin d'iompar de ṁeon ḃrṫreaċais i leiṫ a ċéile.
+
+Latvian / Latviešu:
+Visi cilvēki piedzimst brīvi um vienlīdzīgi savā pašcieņā un tiesībās. Viņi ir apveltīti ar saprātu un sirdsapziņu, un viņiem jāizturas citam pret citu brālības garā.
+
+Lithuanian / Lietuvių:
+Visi žmonės gimsta laisvi ir lygūs savo orumu ir teisėmis. Jiems suteiktas protas ir sąžinė ir jie turi elgtis vienas kito atžvilgiu kaip broliai.
+
+Maltese / Malti:
+Il-bnedmin kollha jitwieldu ħielsa u ugwali fid-dignjità u d-drittjiet. Huma mogħnija bir-raġuni u bil-kuxjenza u għandhom iġibu ruħhom ma’ xulxin bi spirtu ta’ aħwa.
+
+Polish / Polski:
+Wszyscy ludzie rodzą się wolni i równi pod względem swej godności i swych praw. Są oni obdarzeni rozumem i sumieniem i powinni postępować wobec innych w duchu braterstwa.
+
+Portuguese / Português:
+Todos os seres humanos nascem livres e iguais em dignidade e em direitos. Dotados de razão e de consciência, devem agir uns para com os outros em espírito de fraternidade.
+
+Romanian / Română:
+Toate ființele umane se nasc libere și egale în demnitate și în drepturi. Ele înzestrațe cu rațiune și conștiință și trebuie să se comporte unii față de altele în spiritul fraternității.
+
+Russian / Русский:
+Все люди рождаются свободными и равными в своем достоинстве и правах. Они наделены разумом и совестью и должны поступать в отношении друг друга в духе братства.
+
+Turkish / Türkçe:
+Bütün insanlar hür, haysiyet ve haklar bakımından eşit doğarlar. Akıl ve vicdana sahiptirler ve birbirlerine karşı kardeşlik zihniyeti ile hareket etmelidirler.
+
+Vietnamese / Tiếng Việt:
+Tất cả mọi người sinh ra đều được tự do và bình đẳng về nhân phẩm và quyền. Mọi con người đều được tạo hoá ban cho lý trí và lương tâm và cần phải đối xử với nhau trong tình bằng hữu.
+
+FoxType is also able to display other kinds of glyphs such as mathematical, dingbats, box drawings, musical and much more!
+
+...We hope you will enjoy it! ;-)

@@ -1,0 +1,24 @@
+S.S. Modula Two (ssmodula2.it)
+https://modarchive.org/index.php?request=view_by_moduleid&query=58860
+Renamed to "SSMDULA2.IT" because of DOS 8-character limit
+
+Summary
+
+    ssmodula2.it is a IT format module.
+    Uploaded to modarchive.org on Fri 8th Mar 2002
+
+Info Info
+
+    Mod Archive ID: 58860
+    MD5: ecdeca881c363617e1717504530dbb86
+    Format: IT
+    Channels: 44
+    Genre: Pop - Synth
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     christofori (https://modarchive.org/member.php?69248)

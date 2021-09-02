@@ -1,0 +1,65 @@
+Future Plans
+
+TO-DO         Add international language support (e.g. with KITTEN library).
+
+TO-DO         Debug FAT32 support. Debug all mirror / unformat data writes.
+              FAT32 mirror data partially done in 0.91k - depends on your
+              UNFORMAT whether more mirroring is required. To make things
+              easier, 0.91l now contains a builtin UNFORMAT. Improved FAT32
+              MIRROR and Win9x compatibility in 0.91p and 0.91q (again).
+
+TO-DO         Fix any other bugs (see bugs.txt).
+
+TO-DO         Clean up the source code, for example: Remove duplicate
+              duplicate sanity checks. Maybe add checks for division by 0:
+              0 sec/fat, 0 sec/clust, 0 sec/disk, too few sec/disk...
+
+
+TO-DO (half)  Release filesystem locks (Win9x) when FORMAT has to give up
+              before completing the format process. Otherwise, the system
+              could be left in a "dangling" state, esp. for 0.91q / newer.
+              (half-done: ctrl-c handler missing, otherwise done, 0.91r)
+
+TO-DO (half)  Modify safe formatting such that it avoids overwriting data. 
+              (e.g. create a mirror.fil before deleting the file system...)
+              (for now, 0.91r+: mirroring just fails if it would o/w data.)
+
+
+TO-DO (maybe) Support sector sizes other than 512 bytes (64, 128, 256...).
+
+TO-DO (maybe) SET 40:[9x] values to use all drives on all (even XT) BIOSes?
+              Optimize non-standard floppy format settings? (...)
+
+TO-DO (maybe) Use bigger and aligned buffers for harddisk surface scan.
+              Is a WRITE ONLY scan enough (HARDDISK has to detect errors)?
+
+TO-DO (maybe) When system files are written, the summary must subtract the
+              amount of space they take up from the total disk space.
+              (We just call the SYS tool to write the system files...)
+
+
+      (done!) If the user did not give a /v:label option, then FORMAT is
+              expected to ask for a label interactively (unless /y given).
+              FORMAT now simply uses NO label / timestamp if no /v:... used!
+              (added 0.91r)
+
+      (done?) Use IOCTLs (int 21.4409, 21.440f, 21.440d.0860, 21.440d.0840)
+              for drive type and DPB/BPB stuff? (done where useful < 0.91j)
+              Notice that IOCTLs for drives with DEVICE= drivers do not work
+              right for FreeDOS older than http://fdos.org/kernel/ 2035-dev!
+
+      (done?) Have the program check to see if there is already an existing
+              format (and what type of format) before the media is
+              formatted. (Partially(?) implemented in FORMAT < 0.91j)
+
+      (done?) Add the capability to utilize the non-standard floppy format
+              features. (Add the appropriate switches to the command line.)
+              (Partially implemented in 0.91c: 800k and 1680k work...)
+              Note that USB floppy drives do NOT support non-standard sizes.
+
+      (done?) QuickFormat and SafeFormat should preserve the list of bad
+              clusters if one is found. Alternatively, one could always do
+              full format if bad clusters are detected. Added in 0.91k.
+
+      (done!) ASCII_CD_... now prints long numbers (like 1,234.5) in NLS /
+              country aware style (0.91k).

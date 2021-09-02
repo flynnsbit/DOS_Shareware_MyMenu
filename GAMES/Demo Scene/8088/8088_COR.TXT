@@ -1,0 +1,133 @@
+8088 Corruption, Final release, 20040926
+Winner of the Pilgrimage 2004 Wild Compo
+
+Technology by Trixter / Hornet
+2nd Generation encoder by gODjR / iq2000
+Sound Blaster support routines by Stefan Goehler
+
+---Background---
+
+This started as a bit of a joke around the office (yes, sceners grow up and 
+have to lead "normal" lives) about doing st00pid things with old technology,
+like, "Oh yeah?  Well, I can calculate fractals on an abacus!" or "Oh yeah?
+Well, I can surf the web on my Game Boy!"  Stupid shit like that.  And one
+person said, "Oh yeah?  Well, I can display video on my XT!".  And later
+that day I kept thinking about it and came up with a way to do it.
+
+Months later of tinkering on a Model 5150 (4.77MHz 8088 with CGA), I had
+something working, and casually mentioning the project to gODjR/iq2000
+sparked his interest and he began work on a MUCH vastly improved transcoder
+for video to our system.  A few days before Pilgrimage 2004, he delivered it,
+and I encoded the sample video I had prepared into raw data, RAR`d it up and
+transferred it to the 5150, and then packed the whole thing up (monitor and
+all) and took it on the plane with me.  Once there, I ran into massive hard
+drive corruption problems and lost half the video data and 75% of the audio
+data -- but, even with a broken production, we won 1st place ;-)
+
+This final version differs from the party version in the following ways:
+
+- Full 30fps instead of the reduced fps demonstrated at Pilgrimage
+- Vastly improved buffering system for less pauses on slow disks/controllers
+- NON-corrupted video and audio data :-)
+
+---Running The Production---
+
+This was specifically engineered to run on an original IBM Model 5150, which
+is the legacy of the modern Wintel platform.  As such, all it requires (of
+*any* PC, really) is a 10MB hard drive, a Sound Blaster Pro or 2.0, and a CGA
+card and monitor.  I could have taken advantage of better hardware, but would
+that be as impressive?  Of course not.  So, this thing should run on any
+IBM PC or clone/compatible in existence.  (The only exception is an IBM PCjr,
+because it was extremely rare you could hook up a hard drive to one, and also
+because the PCjr lacked proper DMA so I/O could effectively lock the machine.)
+In fact, you will probably have a harder time finding a Sound Blaster 2.0
+or Pro and getting it to work in an 8088 than you will finding a machine that
+won't run this production!
+
+8088 Corruption was demonstrated on a real 5150 (a clone should work fine)
+running MS-DOS 6.22 with BUFFERS=20 in config.sys and... that's it.  No disk
+cache or anything else.  (In fact, an 8088 is so slow that a disk cache
+actually *slowed down* sequential reads!  Seriously!  So don't load one.)
+The BLASTER environment variable must be set properly or else the program 
+won't work at all since the sound hardware drives the entire playback 
+system (this sounds dumb but actually solves a shitload of problems, 
+so don't knock it unless you understand it).
+
+Tips on getting it running (well) on an old 8088/8086:
+
+- Run on a real CGA card.  SIMCGA and other "CGA emulation" programs for
+  Hercules cards will not work.
+- Defragment the hard drive, preferably with a decent program like FastTrax.
+- Use a DECENT MFM controller like one from Western Digital.  They are much
+  faster than typical MFM controllers, and may be able to transfer data in
+  two revolutions of the platter, or even one.  Hard drive speed is the
+  ONLY reason this production will rebuffer from time to time, so get a 
+  decent controller!  (Or you can "cheat" and put in an 8-bit ISA IDE
+  controller.)
+- If you own Spinrite or Norton Utilities' Calibrate, run them on the drive
+  before you run this production.  Not only will they find bad spots on the
+  drive if any exist (preventing you from blaming me for crashes), but they
+  will also optionally change the interleaving factor of sectors on the disk
+  so that your controller will be able to work optimally.  Do this *after*
+  you upgrade controllers.  (BTW, the last version of Spinrite to work on
+  8088 machines is 5.0.)
+- Set your Sound Blaster hardware (and BLASTER environment variable) properly.
+  An 8088/8086 uses different IRQ and DMA for things; for example, IRQ 5
+  is typically the hard drive IRQ so don't just leave things at defaults.
+  For the demo machine (and the machine I'm currently typing this on), I 
+  have a Sound Blaster Pro working perfectly at DMA 1, IRQ 2, port 220h.
+  Run the Creative Labs diag/sample programs to verify the sound card is
+  working before you run this production.
+- Only a Sound Blaster 2.0 or Pro will work.  Older cards like the 1.0 and
+  1.5 don't support auto-init DMA, and later cards like the Sound Blaster 16
+  and AWE32 require a 16-bit ISA bus slot.
+- The more free RAM, the less this will rebuffer if the hard drive can't
+  keep up.  DOS 3.3 with a CONFIG.SYS of only BUFFERS=20 and an AUTOEXEC.BAT
+  with only a BLASTER= line will probably give you the most RAM free on a 
+  640K machine.  Rebuffering is bad, m'kay?
+
+Tips on getting it running on a modern machine:
+
+- On my Windows XP SP2 1.8GHz Athlon with Turtle Beach Santa Cruz, it somehow
+  works perfectly -- I guess the latest Turtle Beach Santa Cruz drivers make
+  an attempt at emulating a Sound Blaster.  Surprised the hell out of me!
+- On DOSBOX (dosbox.sourceforge.net), it runs just fine although DOSBOX's
+  emulation of certain CGA modes isn't perfect; getting all 16 colors may not
+  work (they may "blink") and the height of the image may be distorted.
+  Try the latest CVS build of DOSBOX, and optionally answering both "yes" 
+  and "no" to the "real CGA?" question you're asked on startup.  Also try
+  forcing "mode=" to "cga" in the dosbox.conf file.
+
+I haven't tried anything else... YMMV.
+
+---How It Works---
+
+Since gODjR and I want to flesh out the system to handle all sorts of stuff
+(see below), no in-depth details this time, sorry.  But here's a few things 
+to chew on for the coders out there:
+
+- The entire system was engineered starting with the hardware limits of an
+  8088 machine and CGA, and working backward (as opposed to traditional
+  methods where you start with the 24-bit color image and work forwards)
+- The only way to get more than 4 colors out of CGA without using composite 
+  color mode is in text mode.
+- 80x25 text mode produces "snow" if you write directly to screen memory, so 
+  you can't use that.
+- Sound Blaster 2.0 and Pro (and higher) support auto-init DMA.
+
+That should be enough to get the gist of it.  Really, it's not rocket science.
+In fact, the playback system is ludicrously simple -- it's the TRANSCODER
+that is very complex ;-)
+
+---Future Plans---
+
+As previously mentioned, gODjR and I have several ideas on turning this 
+"technology" from a trick into a full-fledged system that produces even better
+results.  Some of the things planned:
+
+- More than 16 colors out of CGA (we have several schemes working)
+- Compression (both audio and video)
+- CGA hardware tweaking for finer control of transcoded results
+
+Once we're happy with this, full source code will be released along with tools
+that will let you make your own video with this thing.  Until then...

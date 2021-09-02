@@ -1,0 +1,42 @@
+
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+         ====================================================
+                    THE ADVENTURES OF WILLY BEAMISH          
+                                                             
+
+                            "SCHOOL'S OUT!"
+                                  by                         
+                  Don Latarski and Christopher Stevens       
+         ====================================================
+                     Copyright (c)1991 Dynamix, Inc.         
+         ====================================================
+
+                         --  MT-32 VERSION  --
+
+
+
+System Requirements:
+
+- MIDI File player capable of reading Type 1 Standard MIDI file format and
+   embedded System Exclusive data
+- Roland MT-32, CM-32L, CM-64, or LAPC-1
+- MPU-401 compatible MIDI interface
+   (Not required for LAPC-1 users.)
+
+
+This Standard MIDI File was recorded directly from Dynamix's "The Adventures
+of Willy Beamish" adventure game.  It contains embedded SysEx data which will
+write new sounds to your MT-32.
+
+Converted to Standard MIDI File format by Tom Lewandowski.
+Address E-Mail questions or comments to:
+
+      Tom Lewandowski
+      tom@queststudios.com
+
+
+      QUEST STUDIOS/THE SIERRA SOUNDTRACK SERIES
+      www.QuestStudios.com
+
+

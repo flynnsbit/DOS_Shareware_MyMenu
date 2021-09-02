@@ -1,0 +1,13 @@
+2.0:Parƒmetro inv lido\r\n
+0.0:    SORT [/R] [/+num] [/A] [/?] [file]\r\n
+0.1:    /R    Ordem reversa\r\n
+0.2:    /A    Usa ASCII ao inv‚s do COUNTRY na ordem de ordena‡Æo\r\n
+0.3:    /+num Inicia ordena‡Æo com a coluna num‚rica num\r\n
+0.4:    /?    Ajuda\r\n
+# 0.2:    /N    Habilita suporte NLS\r\n - removed 7/2004
+2.1:Error ao ler a tabela NLS\r\n
+2.2:Usando ordena‡Æo ASCII (versÆo antiga do DOS).\r\n
+2.3:SORT: NÆo pode abrir arquivo
+2.4: para ler\r\n
+2.5:SORT: mem¢ria insuficiente\r\n
+2.6:SORT: n£mero de linhas excede o m ximo suportado\r\n

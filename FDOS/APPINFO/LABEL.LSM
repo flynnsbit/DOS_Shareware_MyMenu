@@ -1,0 +1,15 @@
+Begin3
+Title:    LABEL
+Version:1.4b.ea
+Entered-date:   2008-12-12
+Description:Sets or changes the disk volume label
+Keywords:label, disk volume
+Author:Joe Cosentino <onehardmarine -at- attbi.com>
+Maintained-by:-
+Primary-site:http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/label/
+Alternate-site:http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/label/
+Original-site:http://www.geocities.com/xsaintx69/freedos/
+Platforms:DOS, FreeDOS
+Copying-policy: GNU General Public License, Version 2
+Wiki-site:      http://wiki.freedos.org/wiki/index.php/Label
+End

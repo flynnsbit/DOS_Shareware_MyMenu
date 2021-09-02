@@ -1,0 +1,20 @@
+HELP.TXT
+
+Help:
+
+This program records file location information for possible recovery via
+UNFORMAT.
+
+Syntax:
+
+MIRROR [drive:]
+MIRROR [/PARTN]
+
+  /PARTN    Stores a backup of the partition tables in a PARTNSAV.FIL on the
+              floppy disk in the A: drive.  The partition tables can be 
+              recovered with UNFORMAT version 0.8.
+
+
+
+
+

@@ -1,0 +1,8 @@
+
+Building FoxCalc requires the FreeBASIC compiler.
+Then, it's as simple as that:
+
+ fbc foxcalc.bas
+
+If you have the 'make' tool, then you might also want to compile it with:
+ make

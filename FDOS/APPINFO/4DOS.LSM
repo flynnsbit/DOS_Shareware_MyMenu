@@ -1,0 +1,14 @@
+Begin3
+Title:          4DOS
+Version:        8.00
+Entered-date:   2008-11-07
+Description:    4DOS replaces the default command interpreter that are supplied with your operating system.  (4DOS replaces COMMAND.COM for DOS)
+Keywords:       command.com, shell, interactive
+Author:         JP Software
+Maintained-by:  K. Meinhard <K_Meinhard@gmx.de>
+Primary-site:   http://www.4dos.info
+Alternate-site: http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/user/4dos/
+Original-site:  http://www.jpsoft.com/download.htm
+Platforms:      DOS
+Copying-policy: Modified W3C License
+End

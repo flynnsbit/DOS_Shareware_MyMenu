@@ -1,0 +1,4637 @@
+
+
+
+
+
+
+
+
+
+
+
+
+                   ARC
+
+                      File Archive Utility
+                          Version 6.02
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        Copyright 1985-89
+                               by
+               System Enhancement Associates, Inc.
+                       ALL RIGHTS RESERVED
+
+
+
+
+
+     This document describes version 6.02 of the ARC file
+     utility, which was created by System Enhancement
+     Associates, Inc. in January of 1989.
+
+
+
+
+
+     "ARC" is a Trademark of System Enhancement Associates, Inc.
+     for Computer programs for use in the creation, manipulation
+     and extraction of compressed computer files.
+
+
+ LIMITED LICENSE AND WARRANTY
+
+
+IMPORTANT NOTICE:IMPORTANT NOTICE: Any use of this software for any
+period of time for any purpose whatsoever constitutes
+your unqualified acceptance of this LICENSE and
+subjects you to all of the terms and conditions set
+forth below:
+
+System Enhancement Associates, Inc. ("SEA") warrants
+to any Licensee that acquires the program from SEA or
+an authorized SEA representative ONLY that:
+
+ 1) All diskettes SEA provides constitute an accurate
+    duplication of the software and SEA will replace
+    any diskette found to be defective within 30 days
+    from date of acquisition.  SEA will not honor this
+    warranty if the diskette has been subjected to
+    physical abuse, or used in defective or non-
+    compatible equipment.
+
+ 2) SEA's software will perform substantially as
+    described in the documentation SEA regularly
+    supplies with that software, if operated as
+    prescribed in such documentation including the
+    hardware and software environment specified.
+
+ 3) If a significant defect in any program is found,
+    Licensee's only remedy shall be to receive refund
+    of the actual fee Licensee paid for such defective
+    program.  In no event will such a refund exceed
+    the fee SEA charges for such program.
+
+ 4) SEA makes no warranty or representation that the
+    software will be error free nor that its use by
+    Licensee will be uninterrupted.
+
+Except as provided above, SEA disclaims all otherExcept as provided above, SEA disclaims all other
+warranties, either express or implied, including butwarranties, either express or implied, including but
+not limited to any implied warranty of merchantabilitynot limited to any implied warranty of merchantability
+or fitness for any particular purpose.or fitness for any particular purpose.
+
+Licensee agrees to take full responsibility for theLicensee agrees to take full responsibility for the
+selection of and any use whatsoever made of theselection of and any use whatsoever made of the
+software.software.
+
+IN NO EVENT WILL SEA BE LIABLE FOR ANY DAMAGESIN NO EVENT WILL SEA BE LIABLE FOR ANY DAMAGES
+WHATSOEVER (INCLUDING WITHOUT LIMITATION DAMAGES FORWHATSOEVER (INCLUDING WITHOUT LIMITATION DAMAGES FOR
+LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSSLOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS
+OF BUSINESS INFORMATION OR THE LIKE) ARISING OUT OFOF BUSINESS INFORMATION OR THE LIKE) ARISING OUT OF
+THE USE OF, INTERRUPTION IN THE USE OF, OR INABILITYTHE USE OF, INTERRUPTION IN THE USE OF, OR INABILITY
+TO USE THIS SOFTWARE, EVEN IF SEA HAS BEEN ADVISED OFTO USE THIS SOFTWARE, EVEN IF SEA HAS BEEN ADVISED OF
+ANY POSSIBILITY OR LIKELYHOOD OF SUCH DAMAGES.ANY POSSIBILITY OR LIKELYHOOD OF SUCH DAMAGES.
+
+
+
+
+
+
+
+
+
+
+            TABLE OF CONTENTS
+
+
+     _______                                           ____     Section                                           Page
+
+     Introduction  ....................................   1
+     Using ARC  .......................................   3
+     ARC commands  ....................................   5
+         Adding files  ................................   5
+         Extracting files  ............................   8
+         Deleting files  ..............................   9
+         Listing archive entries  .....................   9
+         Running files  ...............................  12
+         Printing files  ..............................  13
+         Testing an archive  ..........................  13
+         Converting an archive  .......................  14
+     ARC options  .....................................  15
+         Directories  .................................  15
+         Level 5 compatibility  .......................  15
+         Verbose mode  ................................  16
+         Backup retention  ............................  16
+         Suppressing compression  .....................  17
+         Message suppression  .........................  18
+         Encryption/Decryption  .......................  19
+     Indirection  .....................................  21
+     RAMdisk support  .................................  22
+     Version numbers  .................................  23
+     Common questions and answers  ....................  24
+     Maintenance contracts  ...........................  26
+     Revision history  ................................  27
+         Changes in version 5  ........................  27
+         Changes in version 5.3  ......................  29
+         Changes in version 6.0  ......................  29
+     Program history and credits  .....................  31
+     Bulletin boards  .................................  33
+     Site licenses  ...................................  34
+     The SEA Utilities  ...............................  35
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          BLANK PAGE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ARC                                              Page 0
+              INTRODUCTION
+
+
+
+     ARC is the copyrighted property of System Enhancement
+     Associates, Inc.  You are granted the above LIMITED
+     LICENSE to use ARC, and to copy it and distribute it,
+     provided that the following conditions are met:
+
+     1) No fee may be charged for such copying and
+        distribution.
+
+                ____     2) ARC may only be distributed in its original,
+        unmodified state.
+
+                ___     3) ARC may not be distributed, in whole or in part, as
+        part of any commercial product or service without
+        the express written permission of System
+        Enhancement Associates, Inc.
+
+
+     Contributions for the use of this program will be
+     appreciated, and should be sent to:
+
+               System Enhancement Associates, Inc.
+                  21 New Street, Wayne NJ 07470
+
+     You may not use this product in a commercial
+     environment or a governmental organization without
+     paying a license fee of $35.  Site licenses and
+     commercial distribution licenses are available.  A
+     program disk and printed documentation are available
+     for $50.  See the order form enclosed with this manual
+     for more details.
+
+
+
+     ARC is user supported software.  This means that you
+     may copy it freely and give the copies away to anyone
+     you wish, at no cost.  They are in turn requested to
+     send in a contribution if they decide to use it.
+
+     The user supported software concept (often referred to
+        _________     as shareware) is an attempt to provide software at low
+     cost.  The cost of offering a new product by
+     conventional means is staggering, and hence dissuades
+     many independent authors and small companies from
+     developing and promoting their ideas.  User supported
+     software is an attempt to develop a new marketing
+     channel where products can be introduced at low cost.
+
+
+
+
+     ARC                                         Page 1
+If user supported software works, then everyone will
+benefit.  The user will benefit by receiving quality
+products at low cost, and by being able to "test
+drive" software thoroughly before purchasing it.  The
+author benefits by being able to enter the commercial
+software arena without first needing large sources of
+venture capital.
+
+But it can only work with your support.  We're not
+                                       ___just talking about ARC here, but about all user
+supported software.  If you obtain a user supported
+program from a friend or colleague, and are still
+using it after a couple of weeks, then it is obviously
+worth something to you, and a contribution should be
+sent.
+
+
+
+And now, back to ARC:
+
+ARC is used to create and maintain file archives.  An
+archive is a group of files collected together into
+one file in such a way that the individual files may
+be recovered intact.  ARC automatically compresses the
+files being archived so that the resulting archive
+takes up a minimum amount of space.
+
+When ARC is used to add a file to an archive it
+analyzes the file to determine which of three storage
+methods will result in the greatest savings.  These
+three methods are:
+
+1) No compression; the file is stored as is.
+
+2) Repeated-character compression; repeated sequences
+   of the same byte value are collapsed into a three-
+   byte code sequence.
+
+3) Dynamic Lempel-Ziv compression;  the file is stored
+   as a series of variable size bit codes which
+   represent character strings, and which are created
+   "on the fly".
+
+Note that since one of the three methods involves no
+compression at all, the resulting archive entry will
+never be larger than the original file.
+
+
+
+
+
+
+
+
+ARC                                              Page 2
+                USING ARC
+
+
+
+     ARC is invoked with a command of the following format:
+
+         ARC <x> <arcname> [<template> . . .]
+
+     Where:
+
+         <x> is an ARC command letter (see below), in
+         either upper or lower case.
+
+         <arcname> is the name of the archive to act on,
+         with or without an extension.  If no extension is
+         supplied, then ".ARC" is assumed.  The archive
+         name may include path and drive specifiers.
+
+         <template> is one or more file name templates.
+         The "wildcard" characters "*" and "?" may be used.
+         A file name template may include a path or drive
+         specifier, though it isn't always meaningful.
+
+
+     If ARC is invoked with no arguments (by typing "ARC",
+     and pressing "enter"), then a brief command summary is
+     displayed.
+
+
+
+     Following is a brief summary of the available ARC
+     commands:
+
+         a   = add files to archive
+         m   = move files to archive
+         u   = update files in archive
+         f   = freshen files in archive
+         d   = delete files from archive
+         x,e = extract files from archive
+         r   = run files from archive
+         p   = copy files from archive to standard output
+         l   = list files in archive
+         v   = verbose listing of files in archive
+         t   = test archive integrity
+         c   = convert entry to new storage method
+
+
+
+
+
+
+
+
+
+     ARC                                         Page 3
+Following is a brief summary of the available ARC
+options, which may alter how a command works:
+
+    m   = move files to archive
+    z   = include subdirectories in archive
+    v   = verbose mode
+    b   = retain backup copy of archive
+    s   = suppress compression (store only)
+    w   = suppress warning messages
+    n   = suppress notes and comments
+    o   = overwrite existing files when extracting
+    5   = produce only level 5 compatable archives
+    g   = encode or decode archive entry
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ARC                                              Page 4
+              ARC COMMANDS
+
+
+
+     This section describes each of the commands.  ARC will
+     accept any one command at a time.  If no commands are
+     given, then a brief command list is displayed.
+
+
+
+     ____________     ADDING FILES
+
+     Files are added to an archive using the "A" (Add), "U"
+     (Update), or "F" (Freshen) commands.
+
+     Add always adds the file.
+
+     Update differs from Add in that the file is only added
+     if it is not already in the archive, or if it is newer
+     that the corresponding entry in the archive.
+
+     Freshen is similar to Update, except that new files
+     are not added to the archive; only files already in
+     the archive are updated.
+
+
+     For example, if you wish to add a file named
+     "TEST.DAT" to an archive named "MY.ARC", you would use
+     a command of the form:
+
+         ARC a my test.dat
+
+     If you wanted to add all files with a ".C" extension,
+     and all files named "STUFF" to an archive named
+     "JUNK.ARC", you could type:
+
+         ARC a junk *.c stuff.*
+
+     If you have an archive named "TEXT.ARC", and you
+     wanted to add to it all of your files with an
+     extension of ".TXT" which have been created or changed
+     since they were last archived, then you would type:
+
+         ARC u text *.txt
+
+
+
+
+
+
+
+
+
+
+     ARC                                         Page 5
+If you have a bunch of files in your current
+directory, with backup copies being stored in an
+archive named "SAFE.ARC", then if you wanted to make
+sure that every file in the archive is the latest
+version of that file, you would type:
+
+    ARC f safe
+
+
+A word about Update and Freshen:  These are similar in
+that they look at the date and time of last change on
+the file, and only add it if the file has been changed
+since it was last archived.  They differ in that
+Update will add new files, while Freshen will not.
+
+In other words, Update looks for the files on disk,
+and adds them if they are new or have changed, while
+Freshen looks in the archive, and tries to update the
+files which are already there.
+
+
+The Add, Update, and Freshen commands may be modified
+by the "M" (Move) option.  The Move option tells ARC
+to delete the file on disk once it is safely tucked
+away in the archive.  For example, if you wanted to
+move all files in your current directory into an
+archive named "SUM.ARC", you could use a command of
+the form:
+
+    ARC am sum *.*
+
+When Move is combined with Update or Freshen, it
+deletes the files that are in the archive, even if it
+does not need to compress them again.  For example,
+suppose you extracted several files from an archive
+named "STUFF.ARC" and then made changes to a few of
+them.  Now you want to pack away the new versions of
+what you changed, and clean up the mess (that is,
+delete all the files you extracted).  You can do it
+easily by using the command:
+
+    ARC fm stuff
+
+
+If the Move option is given by itself, it acts like an
+"Add and Move".  So in our earlier example of moving
+everything in your current directory into an archive
+named "SUM.ARC", you could also use the command:
+
+    ARC m sum *.*
+
+
+
+
+ARC                                              Page 6
+     If you don't say which files to add, ARC adds
+     everything in your current directory.  So we could
+     shorten that to:
+
+         ARC m sum
+
+
+     Archive entries are always maintained in alphabetic
+     order.  Archive entries may not have duplicate names.
+     If you add a file to an archive that already contains
+     a file by that name, then the existing entry in the
+     archive is replaced.  Also, the archive itself and its
+     backup will not be added.
+
+     You may also add a file which is in a directory other
+     than your current directory.  For example, it is
+     perfectly legal to type:
+
+         ARC a junk c:\dustbin\stuff.txt
+
+     You cannot add two files with the same name.  In other
+     words, if you have a file named "C:\DUSTBIN\STUFF.TXT"
+     and another file named "C:\BUCKET\STUFF.TXT", then
+     typing:
+
+         ARC a junk c:\dustbin\*.* c:\bucket\*.*
+
+     will not work.
+
+
+     ARC does not save the path name in this case.  In
+     other words, if you specify a drive and/or path when
+     adding a file, only the actual file name is stored in
+     the archive.
+
+                  ___     However, you can store a subdirectory in an archive,
+     but you have to tell ARC that you want to do that.
+     When you add the "Z" option to an Add, Update, or
+     Freshen, ARC will store subdirectories and their
+     contents in such a way that it can later recreate
+     them.
+
+     For example, suppose you have a directory named
+     C:\WASTE that you wish to place in an archive named
+     "TRASHCAN.ARC".  You could do this with the command:
+
+         ARC az trashcan c:\waste
+
+     This would cause ARC to place the C:\WASTE directory
+     (and all of its contents, including any subdirec-
+     tories) into the TRASHCAN.ARC archive.  The directory
+
+
+
+     ARC                                         Page 7
+is stored in such a way that it can be extracted
+anywhere.  It could, for example, be extracted as
+D:\JUNKYARD\WASTE if you so desired.
+
+If you combine the "Z" and "M" options, then the
+directories are removed from your disk once they are
+safely stored in the archive.
+
+
+ARC will not add an archive to itself, nor will it add
+the temporary copy or a backup copy of the archive.
+
+
+An interesting note:  It has been brought to our
+attention that BASIC programs compress to a smaller
+                   ___size when they are not tokenized.  If you are more
+concerned with space than speed, you may wish to
+convert your BASIC programs to ASCII form before
+adding them to an archive.  Your BASIC manual should
+give instructions on how to do this.
+
+
+
+________________EXTRACTING FILES
+
+Archive entries are extracted with the "E" (Extract)
+or "X" (eXtract) commands.  For example, if you had an
+archive named "JUNK.ARC", and you wanted all files in
+it with an extension of ".TXT" or ".DOC" to be
+recreated on your disk, you could type:
+
+    ARC x junk *.txt *.doc
+
+If you wanted to extract all of the files in an
+archive named "JUNK.ARC", you could simply type:
+
+    ARC x junk
+
+Whatever method of file compression was used in
+storing the files is reversed, and uncompressed copies
+are created in the current directory.
+
+You can also specify a path name, in which case the
+decompressed copy is placed in the specified
+directory.  For example, if you had an archive named
+"JUNK.ARC", and you wanted all files in it with an
+extension of ".TXT" to be placed in the directory
+"C:\WASTE\LAND", then you could type:
+
+    ARC x junk c:\waste\land\*.txt
+
+
+
+
+ARC                                              Page 8
+     If you wanted to put the file "TRASH.TXT" on your A:
+     drive, and the file "LITTER.TXT" on your B: drive, you
+     could type:
+
+         ARC x junk a:trash.txt b:litter.txt
+
+     If you give more than one path for a file, then only
+     the first one is used.  For example, if you typed:
+
+         ARC x junk a:trash.txt b:trash.txt
+
+     then TRASH.TXT will be placed on your A: drive.
+
+
+
+     ______________     DELETING FILES
+
+     Archive entries are deleted with the "D" (Delete)
+     command.  For example, if you had an archive named
+     "JUNK.ARC", and you wished to delete all entries in it
+     with a filename extension of ".C", you could type:
+
+         ARC d junk *.c
+
+
+
+     _______________________     LISTING ARCHIVE ENTRIES
+
+     You can obtain a list of the contents of an archive by
+     using the "L" (List) command or the "V" (Verbose list)
+     command.  For example, to see what is in an archive
+     named "JUNK.ARC", you could type:
+
+         ARC l junk
+
+     If you are only interested in files with an extension
+     of ".DOC", then you could type:
+
+         ARC l junk *.doc
+
+
+     ARC prints a short listing of an archive's contents
+     like this:
+
+         Name          Length    Date
+         ============  ========  =========
+         ALPHA.TXT         6784  16 May 85
+         BRAVO.TXT         2432  16 May 85
+         COCO.TXT           256  16 May 85
+                 ====  ========
+         Total      3      9472
+
+
+
+     ARC                                         Page 9
+"Name" is simply the name of the file.
+
+"Length" is the unpacked file length.  In other words,
+it is the number of bytes of disk space which the file
+would take up if it were extracted.
+
+"Date" is the date on which the file had last been
+modified, as of the time when it was added to the
+archive.
+
+"Total" is pretty obvious, I think.
+
+
+ARC prints a verbose listing of an archive's contents
+like this:
+
+Name          Length    Stowage    SF   Size now  Date       Time    CRC
+============  ========  ========  ====  ========  =========  ======  ====
+ALPHA.TXT         6784  Crunched   35%      4413  16 May 85  11:53a  8708
+BRAVO.TXT         2432  Crunched   41%      1438  16 May 85  11:53a  5BD6
+COCO.TXT           256   Packed     5%       244  16 May 85  11:53a  3AFB
+        ====  ========            ====  ========
+Total      3      9472             27%      6095
+
+
+"Name", "Length", and "Date" are the same as for a
+short listing.
+
+"Stowage" is the compression method used.  The
+following compression methods are currently known:
+
+       --          No compression.
+
+     Packed        Runs of repeated byte values are
+                   collapsed.
+
+    Crunched       Lempel-Ziv compression technique
+                   employed.
+
+    Squeezed       Huffman encoding compression
+                   technique, as employed by an
+                   earlier version of ARC.
+
+    Deviant        A nonstandard variant of Lempel-Ziv
+                   was employed.  Files compressed
+                   with this method should be
+                   converted (with the "C" command).
+
+    Subdir         A subdirectory.  The files within
+                   the subdirectory may be viewed by
+                   using the "Z" option.
+
+
+
+ARC                                             Page 10
+     "SF" is the stowage factor.  In other words, it is the
+     percentage of the file length which was saved by
+     compression.  The total stowage factor is the stowage
+     factor for the archive as a whole, not counting
+     archive overhead.
+
+     "Size now" is the number of bytes the file is
+     occupying while in the archive.
+
+     "Time" is the time of last modification, and is
+     associated with the date of last modification.
+
+     "CRC" is the CRC check value which has been stored
+     with the file.  Another CRC value will be calculated
+     when the file is extracted or tested to ensure data
+     integrity.  There is no especially good reason for
+     displaying this value.
+
+
+     ARC follows a verbose listing with a report giving the
+     overall compression for everything in the archive and
+     for anything specific you selected, along with a
+     prediction of whether or not the files would fit on
+     your disk if you tried to extract them.
+
+     For example, if you wanted to know if all of the files
+     with an extension of ".TXT" in an archive named
+     "WASTE.ARC" would fit on your D: drive, you would give
+     the command:
+
+         ARC v waste d:*.txt
+
+     At the end of the listing ARC would give its
+     prediction of whether or not your D: drive has room
+     for those files.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     ARC                                        Page 11
+_____________RUNNING FILES
+
+Archive entries may be run without being extracted by
+use of the "R" (Run) command.  For example, if you had
+an archive named "JUNK.ARC" which contained a file
+named "LEMON.COM", which you wished to run, you could
+type:
+
+    ARC r junk lemon
+
+You can run any file from an archive which has an
+extension of ".COM", ".EXE", ".BAT", or ".BAS".  You
+do not have to specify the extension, but all matching
+files are run if you do not.  In other words, if you
+had an archive named "JUNK.ARC" which contained the
+files "LEMON.COM", "LEMON.EXE", and "LEMON.BAS", and
+you typed:
+
+    ARC r junk lemon
+
+Then all three programs will be run.  You can avoid
+this by specifying an extension in this case.
+
+You can give arguments to the program you are running
+by appending them to the command line.  For example,
+if you have an archive named "JUNK.ARC" which contains
+a program named "LEMON.COM", and you wanted to run it
+giving it the argument "JUICE", you would type:
+
+    ARC r junk lemon juice
+
+You will need a fair amount of memory to run a program
+from an archive.  It probably cannot be done with less
+than 256k.
+
+In practice, the file to be run is extracted, run, and
+then deleted.  In other words, the above example is
+equivalent to:
+
+    ARC x junk lemon.com
+    lemon juice
+    erase lemon.com
+
+If you have an archive which contains a program that
+you will be running often, then you should probably
+extract the program from the archive and use it
+normally.
+
+
+
+
+
+
+
+ARC                                             Page 12
+     ______________     PRINTING FILES
+
+     Archive entries may be examined with the "P" (Print)
+     command.  This works the same as the Extract command,
+     except that the files are not created on disk.
+     Instead, the contents of the files are written to
+     standard output.  For example, if you wanted to see
+     the contents of every ".TXT" file in an archive named
+     "JUNK.ARC", but didn't want them saved on disk, you
+     could type:
+
+         ARC p junk *.txt
+
+     If you wanted them to be printed on your printer
+     instead of on your screen, you could type:
+
+         ARC p junk *.txt >prn
+
+
+
+     __________________     TESTING AN ARCHIVE
+
+     The integrity of an archive may be tested by use of
+     the "T" (Test) command.  This checks to make sure that
+     all of the file headers are properly placed, and that
+     all of the files are in good shape.
+
+     This can be very useful for critical archives, where
+     data integrity must be assured.  When an archive is
+     tested, all of the entries in the archive are unpacked
+     (without saving them anywhere) so that a CRC check
+     value may be calculated and compared with the recorded
+     CRC value.
+
+     For example, if you just received an archive named
+     "JUNK.ARC" over a phone line, and you want to make
+     sure that you received it properly, you could type:
+
+         ARC t junk
+
+     It defeats the purpose of the T command to combine it
+     with N or W.
+
+
+
+
+
+
+
+
+
+
+
+
+     ARC                                        Page 13
+_____________________CONVERTING AN ARCHIVE
+
+The "C" (Convert) command is used to convert an
+archive entry to take advantage of newer compression
+techniques.  This is occasionally desirable when a new
+version of ARC is released.  Please refer to the
+revision history section for details on when new
+compression methods were implemented.
+
+For example, if you had an archive named "JUNK.ARC",
+and you wanted to make sure that all files with an
+extension of ".DOC" were encoded using the very latest
+methods, you could type:
+
+    ARC c junk *.doc
+
+Or if you wanted to convert every file in the archive,
+you could type:
+
+    ARC c junk
+
+
+Generally ARC will let you know if an archive ought to
+be converted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ARC                                             Page 14
+               ARC OPTIONS
+
+
+
+     This section describes the options which are available
+     to modify how ARC works.  Any of these options can be
+     combined with any of the commands, though the result
+     may not always be something you'd want to do.
+
+
+
+     ___________     DIRECTORIES
+
+     The "Z" option tells ARC that you wish to act on
+     directories as well as files.  When combined with Add,
+     Update, Freshen, or Move it tells ARC to add
+     directories to the archive.  When combined with List
+     or Verbose it tells ARC to list directory contents.
+     (The Extract command will always extract directories,
+     and does not need to be told to do so.)
+
+     A directory is treated as a unit by ARC.  This means
+     that when you add a directory to an archive you add
+     the whole thing, including all of its files and
+     subdirectories.  Likewise, when you extract a
+     directory from an archive you get all of it.
+
+     If you wish to make a change to a directory that is in
+     an archive, you should extract it, then make whatever
+     changes you want on disk, and then put the directory
+     back into the archive.
+
+
+
+     _____________________     LEVEL 5 COMPATIBILITY
+
+     The "5" (level 5 compatibility) option can be combined
+     with any comand that alters an archive.  It tells ARC
+     that the resulting archive should be fully compatible
+     with ARC version 5.  This is mostly necessary for
+     creating archives that are to be extracted on other
+     operating systems where the version of ARC available
+     for that system does not yet support the ARC version 6
+     extensions.
+
+     When given the level 5 compatibility option, ARC will
+     ensure that the resulting archive does not contain any
+     directories, comments, or any extended data fields for
+     non-MS-DOS operating systems.
+
+
+
+
+
+     ARC                                        Page 15
+____________VERBOSE MODE
+
+The "V" (Verbose) option can be used with any command,
+though it isn't always meaningful.
+
+When used with the List command it causes ARC to
+display a "verbose listing" of the archive contents.
+In fact, this is its most common use, so you can use
+the Verbose option as a command for this purpose.
+
+When used with any command that creates a new archive
+(generally during an Add or a Move), it tells ARC to
+add a note to the archive saying which version of ARC
+created the archive.  This note is then automatically
+updated every time the archive is modified, and is
+displayed during a verbose listing.
+
+Normally when ARC adds files to an archive or deletes
+files from an archive it doesn't say anything about
+the files it isn't changing.  When you use the verbose
+option ARC will report them.
+
+
+
+________________BACKUP RETENTION
+
+When ARC changes an archive (during an Add, Move,
+Update, Freshen, Delete, or Convert) it creates a new
+archive with the same name, but with an extension of
+".$$$".  For example, if you add a file to an archive
+named STUFF.ARC, then ARC will create a new archive
+named STUFF.$$$.  ARC will read from your existing
+archive and write out the new archive with any changes
+to the ".$$$" copy.
+
+Normally when ARC is finished it deletes the original
+and renames the new archive to the original name (ie.
+STUFF.ARC goes away, and STUFF.$$$ becomes the new
+STUFF.ARC).  Among other things, this means that if
+anything goes wrong and ARC is unable to finish, then
+your original archive will still be intact.
+
+
+In some circumstances you may wish to retain the
+original version of the archive as a backup copy.  You
+can do this easily by using the Backup option.  Add
+the letter "B" to your command, and ARC will rename
+your original archive to have an extension of ".BAK"
+instead of deleting it.
+
+
+
+
+
+ARC                                             Page 16
+     In other words, if you wanted to add "WASTE.TXT" to an
+     archive named "JUNK.ARC", but wanted to keep a backup
+     copy, then you would type:
+
+         ARC ab junk waste.txt
+
+     Your original archive would become "JUNK.BAK", while
+     "JUNK.ARC" would contain the new "WASTE.TXT" file.
+
+
+     If you keep a backup of an archive which already has a
+     backup, then the older backup copy is deleted.
+
+
+
+     _______________________     SUPPRESSING COMPRESSION
+
+     The "S" (Suppress compression) option can be combined
+     with any command that updates archive entries.  These
+     include Add, Move, Update, Freshen, and Convert.  The
+     effect of the S option is to prevent any compression
+     techniques from being employed.  This is intended to
+     allow you to add a few files at a time to an archive
+     quickly, and then later convert the archive to
+     compress everything at once.
+
+     For example, over the course of a day you might give
+     each of the following commands:
+
+         ARC as junk *.txt
+         ARC as junk *.mac
+         ARC as junk *.doc
+
+     At the end of the day, when you have finished adding
+     things to the archive, you could have all of the
+     archive entries compressed at once by typing:
+
+         ARC c junk
+
+     You could also decompress the archive by typing:
+
+         ARC cs junk
+
+     though I can't imagine why you'd want to.
+
+
+
+
+
+
+
+
+
+
+     ARC                                        Page 17
+___________________MESSAGE SUPPRESSION
+
+ARC prints three types of messages: warnings,
+comments, and errors.
+
+Warnings are messages about suspected error
+conditions, such as when a file to be extracted
+already exists, or when an extracted file fails the
+CRC error check.  Warnings may be suppressed by use of
+the "W" (Warn) command.  You should use this command
+sparingly.  In fact, you should probably not use this
+command at all.
+
+Comments (or notes) are informative messages, such as
+naming each file as it is added to the archive.
+Comments and notes may be suppressed by use of the "N"
+(Note) command.
+
+Errors are actual system problems, such as running out
+of disk space.  You cannot suppress errors.
+
+
+For example, suppose you extracted all files with an
+extension of ".BAS" from an archive named "JUNK.ARC"
+Then, after making some changes which you decide not
+to keep, you decide that you want to extract them all
+again, but you don't want to be asked to confirm every
+one.  In this case, you could type:
+
+    ARC xw junk *.bas
+
+Or, if you are going to add a hundred files with an
+extension of ".MSG" to an archive named "TRASH.ARC",
+and you don't want ARC to list them as it adds them,
+you could type:
+
+    ARC an trash *.msg
+
+Or, if you want to extract the entire contents of an
+archive named "JUNK.ARC", and you don't want to hear
+anything, then type:
+
+    ARC xnw junk
+
+
+A special case is provided when extracting files from
+an archive.  One of the various warnings that can
+occur is when a file being extracted already exists on
+disk.  Normally, ARC will stop and ask you if you want
+to overwrite the file.  This can be suppressed with
+the "W" command, but that will also suppress any
+
+
+
+ARC                                             Page 18
+     warnings about other things, like failed CRC checks
+     and such.
+
+                                           ____     The "O" (Overwrite) option suppresses only the warning
+     that the file already exists.  For example, in our
+     earlier case of extracting all the ".BAS" files from
+     "JUNK.ARC", a much safer way to do it is to type:
+
+         ARC xo junk *.BAS
+
+
+
+     _____________________     ENCRYPTION/DECRYPTION
+
+     Archive entries may be encrypted and decrypted by
+     using the "G" (Garble) option.  The Garble option
+     takes the remainder of the command string as the
+                                        ____     password to use, so it must be the last option.
+
+
+     For example, if you wanted to add a file named
+     "WASTE.TXT" to an archive named "JUNK.ARC", and you
+     wanted to encrypt it using the password "DEBRIS", then
+     you would type:
+
+         ARC agdebris junk waste.txt
+
+     Later on, when you want to extract it again, you would
+     type:
+
+         ARC xgdebris junk waste.txt
+
+     The password you supply is used to encrypt (or
+     decrypt) the archive entry by performing an exclusive
+     OR between each byte of the packed data and each byte
+     of the password.  The password can be any length, and
+     each of its bytes is used in rotation.  The password
+     is converted to uppercase before it is used, so it is
+     ___     not case sensitive.  Since the encryption is performed
+     on the packed data, it has no effect on stowage
+     factors.
+
+     This is not a particularly sophisticated means of
+     encryption.  Still, since it is performed on the
+     packed data, the result should be quite sufficient for
+     casual use.
+
+
+
+
+
+
+
+
+     ARC                                        Page 19
+You can, if you wish, use different passwords for
+different files in an archive, but we advise against
+it.  If you are going to encrypt an archive, we
+suggest you use the same password for every file, and
+give the password whenever you do anything at all with
+the archive.  It is possible to list the entries in an
+encrypted archive using the "L" and "V" commands
+without giving the password, but nothing else will
+work properly.
+
+
+We advise that you use this option sparingly, if at
+all.  If you should forget or mistype your password,
+it is highly unlikely that you will ever recover your
+data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ARC                                             Page 20
+               INDIRECTION
+
+
+
+     The list of filenames given to ARC may include
+     indirect references.  If a filename begins with an "at
+     sign" ("@"), it is taken to be the name of a file
+     which contains a list of file names.  The list of file
+     names may include further indirection.  For example,
+     the command:
+
+         arc a waste junk.txt @trash
+
+     would cause ARC to add JUNK.TXT plus all files listed
+     in the file TRASH to an archive named WASTE.ARC.  If
+     no file is specified, then the list is read from
+     standard input.
+
+     When the N option (suppress Notes) is used with the L
+     (List files) command, it causes a terse listing of
+     filenames only, suitable for use with pipes and
+     redirection.  This can be combined with indirection to
+     easily perform many tasks.
+
+     For example, the command:
+
+         arc ln waste | arc a trash @
+
+     would cause ARC to add files to TRASH.ARC based on the
+     names of the files stored in WASTE.ARC.
+
+     If by some chance you want to archive a file whose
+                 ____     name really does begin with an at sign, then preceed
+     the name with a forward slash ("/").  For example, to
+     add a file named "@DUST.DAT" to an archive named
+     "TRASHCAN.ARC", you would type:
+
+         arc a trashcan /@dust.dat
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     ARC                                        Page 21
+        RAMDISK SUPPORT
+
+
+
+If you have a RAMdisk, or other high-speed storage,
+then you can speed up ARC somewhat by telling it to
+put its temporary files on the RAMdisk.  You do this
+by setting the ARCTEMP environment string with the
+MS-DOS SET command.  For example, if drive B: is your
+RAMdisk, then you would type:
+
+    set ARCTEMP=B:
+
+Refer to the MS-DOS manual for more details about the
+SET command.  You need only set the ARCTEMP string
+once, and ARC will use it from then on until you
+change its value or reboot your system.
+
+
+If ARC does not find an environment string named
+ARCTEMP, then it looks for one named TEMP to use
+instead.  Several packages already use the TEMP string
+for exactly this purpose.  If you have need of an
+environment string named TEMP for something else, then
+you should be sure to define ARCTEMP.
+
+
+There are a limited number of temporary files created
+by ARC.  The Convert command uses a file named
+"$ARCTEMP.CVT" to hold each file as it is being
+converted.  The Run command also creates a temporary
+file, which has the name "$ARCTEMP", and whose
+extension matches that of the file being run.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ARC                                             Page 22
+             VERSION NUMBERS
+
+
+
+     There seems to be some confusion about our version
+     numbering scheme.  All of our version numbers are
+     given as a number with two decimal places.
+
+     The units indicate a major revision, such as adding a
+     new packing algorithm.
+
+     The first decimal place (tenths) indicates a minor
+     revision that is not essential, but which may be
+     desired.
+
+     The second decimal place (hundredths) indicates a
+     trivial revision that will probably only be desired by
+     specific individuals or by die-hard "latest version"
+     fanatics.
+
+
+
+     To sum up: If the units change, then you should get
+     the newer version as soon as you can.  If the tenths
+     change, then you may want to get the newer version,
+     but there's no hurry.  If anything else changes, then
+     you probably shouldn't bother.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     ARC                                        Page 23
+ COMMON QUESTIONS AND ANSWERS
+
+
+
+Here are some of the more common questions we've
+received about ARC, along with their answers:
+
+
+Q: Why does ARC run out of room if I make an archive
+   bigger than about 180k?
+
+A: Because you are working on a floppy disk.  ARC
+   creates a copy of your archive, incorporating any
+   new files as it goes.  When it is done, it deletes
+   the original and renames the new one.  There are a
+   number of reasons for doing it this way, one being
+   that your original archive is still intact if
+   anything happens while ARC is running.
+
+   You can save some space by using drive specifiers
+   and having the archive and the files to add on
+   separate disks, but you still won't be able to make
+   an archive larger than about 180k.  If you need to
+   make a larger archive, and if you have a fixed
+   disk, then you can create the archive on the fixed
+   disk and then copy it to the floppy.
+
+
+Q: I've seen an ARC.COM and an ARC.EXE.  Which one is
+   the right one?
+
+A: ARC.EXE.  One or more people have been running ARC
+   through a utility that converts an ".EXE" file to a
+   ".COM" file.  But this utility is designed to save
+   _____   space, not speed.  On ARC it saves about 250 bytes,
+   and makes no measurable difference in program
+   speed.  We've decided that the savings are not
+   worth the extra step in development in this case.
+
+
+Q: How can I get the latest version of ARC?
+
+A: ARC updates are distributed through normal
+   shareware channels.  We also ship a program update
+   disk on every order of $50 or more.  Also, please
+   refer to the next section for information about our
+   maintenance contracts.
+
+
+
+
+
+
+
+ARC                                             Page 24
+     Q: Can I distribute my public domain or shareware
+        program in an ARC format archive?
+
+     A: Yes, of course.
+
+
+     Q: Can I use ARC to distribute my commercial software
+        package?
+
+     A: Yes, provided that you obtain a commercial
+        distribution license from us.  Please contact us
+        for details.
+
+
+     Q: Why not allow me to select which method of
+        compression I want ARC to use?
+
+     A: It would needlessly complicate ARC, both internally
+        and in use.  The exact nature of the compression
+        methods used are complex, and quite different.  The
+        only sure way to tell which will be best in any
+        given case is to analyze the data, as ARC does.
+        The method chosen may not always be what you
+        expect.
+
+
+     Q: ARC keeps giving me an odd error message.  It says
+        "Drive not ready.  Abort, Retry, Ignore?"  What
+        does this mean?
+
+     A: Close the latches ("doors") on your floppy disk
+        drives, then press the "R" key.
+
+
+     Q: How can I tell ARC to make an archive that goes on
+        more than one floppy disk?
+
+     A: Create the archive on your fixed disk, and then use
+        the BACKUP command (or other backup utility).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     ARC                                        Page 25
+     MAINTENANCE CONTRACTS
+
+
+
+Registered users of ARC receive 30 days of telephone
+support at no extra charge.  If you wish, you can
+extend this by purchasing a maintenance contract.
+
+A maintenance contract costs $50 per year.  In
+addition to telephone support you also receive free
+updates to ARC as soon as they are available,
+discounts on other SEA software, and a free
+                ______ _____subscription to Making Waves, the SEA customer support
+newsletter.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ARC                                             Page 26
+            REVISION HISTORY
+
+
+
+     ____________________     CHANGES IN VERSION 5
+
+     The Move command used to delete the files as it went.
+     It now waits until it is finished updating the
+                                                  ___     archive, and deletes them all at once.  (You did know
+     that Move is just an Add where the file gets deleted,
+     didn't you?)  This, along with the changes made in
+     version 4.5, means that it is now much safer to
+     interrupt ARC while it is working.
+
+     The Print command no longer prints the name of each
+     file.  Instead, it prints a formfeed after each file.
+
+     The Run command now supports BASICA programs.  Also,
+     the filename extension is no longer required on the
+     Run command.
+
+     The Garble option was added.  It provides a convenient
+     means of low level data security for the casual user.
+     Use it sparingly, if at all.
+
+     ARC no longer tests for the presence of $ARCTEMP.CRN
+     before creating a new one.  If you interrupt ARC a
+     lot, you'll find this much more convenient.  If you
+     happen to have a file named $ARCTEMP.CRN which you
+     want to keep, too bad.
+
+     Improved error recovery was added when reading an
+     archive.  ARC now has a good chance of recovering the
+     data from a corrupted archive (the corrupted entry is
+     still lost, of course).
+
+     Path support has been added for all commands, though
+     it doesn't do anything on most of them.  For example,
+     there isn't much we can do with a path in the List
+     command.  But many users will be glad to know that a
+     path can be used when extracting a file, and specifies
+     where the file is to be placed.
+
+     Support for the TEMP environment string was added.  If
+     ARC doesn't find an environment string named ARCTEMP,
+     then it looks for one named TEMP to use instead.
+     Several packages already use the TEMP string for
+     exactly this purpose.
+
+
+
+
+
+
+     ARC                                        Page 27
+ARC is now using a different variation of Lempel-Ziv
+coding, courtesy of Kent Williams, who found it on
+USENET and adapted it to the IBM PC.  The new method
+differs from the old in several respects.  The most
+significant differences are:
+
+1) Where our previous implementation used a fixed code
+   size of twelve bits, the new one starts with a code
+   size of nine bits and increases it as it needs to.
+
+2) The earlier method tended to "choke" on large files
+   when its string table filled up.  The new method
+   has a rather ingenious scheme its authors call
+   ______________   adaptive reset.  When it notices that its string
+   table has filled, and its compression ratio is
+   starting to suffer, it clears the table and starts
+   defining new strings.
+
+The previous implementation of Lempel-Ziv coding is no
+longer used to pack files.  The "V" (Verbose listing)
+command distinguishes between the two by referring to
+the older method as "crunched" (with a lower-case
+"c"), and the newer method as "Crunched" (with a
+capital "C").
+
+Rick Moore discovered that ARC was occasionally adding
+an archive to itself.  This would only happen when the
+archive is in the same directory as the files being
+added, and its name comes last.  This bug has been
+fixed, though it is still possible to fool ARC into
+adding an archive to itself by getting tricky with
+path names.
+
+Dana Montgomery found the upper limit on how many
+files can be added to an archive.  There's always been
+an upper limit, but it depends on memory, and used to
+be larger than anyone could possibly want (knock on
+wood).  However, the added memory requirements as of
+version 5.0 lowered this limit into the realm of
+possibility, somewhere around 300 files.  We change
+some things around, and effectively, there is no
+longer a limit on how many files you can add at once.
+ARC will add the files in batches of as many as it can
+handle at one time.
+
+The Run command has been modified to allow passing
+command line arguments to the program being run.
+
+Indirection was added, and the List command was
+modified to give a terse listing suitable for use with
+indirection when the N option is employed.
+
+
+
+ARC                                             Page 28
+     A bug was found that would keep an archive entry from
+     being encrypted if it was stored without compression.
+     This has now been fixed.
+
+     If changes are made to a corrupted archive, the
+     corrupted entries are discarded.  This makes it
+     possible to lose data accidentally.  ARC will now only
+     make changes to a corrupted archive if the W (suppress
+     Warnings) option has been given.
+
+     Support for a nonstandard variation of Lempel-Ziv was
+     added.
+
+     Two new utilities, SCANDISK and SQDIR, were added to
+     the ARC program disk.  Full program sources for both
+     are included in UNDEL.ARC on the ARC source disk.
+
+
+
+     ______________________     CHANGES IN VERSION 5.3
+
+     A minor bug caused earlier versions of ARC to output
+     an extra carriage return on an end of line when
+     dumping text to standard output with the "P" command.
+     This has now been fixed.
+
+     Greatly enhanced error recovery has been added to deal
+     with corrupted or partially damaged archives.  The
+     corrupted data itself is still lost, of course, but
+     ARC will recover everything possible.
+
+     ARC has been fully ported to Microsoft C version 5.1.
+     This has resulted in a small speed improvement, and
+     should make it easier to port ARC to other operating
+     systems.
+
+     A new utility, MKSARC, was added to the ARC program
+     disk.  Regretfully, we cannot release the program
+     sources for MKSARC.
+
+
+
+     ______________________     CHANGES IN VERSION 6.0
+
+     Version 6.0 is a major upgrade for ARC.  It is a
+     substantial rewrite that greatly improves overall
+     performance.  ARC is now as fast as any comparable
+     program, or faster.  The changes are primarily in
+     internal organization of the code, so that versions
+     ported to other operating systems should experience a
+     substantial performance boost as well.
+
+
+
+     ARC                                        Page 29
+We've also added support for directories, allowing
+entire directory trees to be added or moved into an
+archive, and later extracted.
+
+We've also designed and implemented a method whereby
+versions of ARC ported to other operating systems can
+record system-specific information in a compatible
+manner.  This includes provisions for longer
+filenames, more date/time stamps, and even icon
+bitmaps.  Contact us for details or see the comments
+in the ARC sources if you are interested in using this
+capability in a version of ARC for a different
+operating system.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ARC                                             Page 30
+       PROGRAM HISTORY AND CREDITS
+
+
+
+     In its short life thus far, ARC has astounded us with
+     its popularity.  We first wrote it in March of 1985
+     because we wanted an archive utility that used a
+     distributive directory approach, since this has
+     certain advantages over the then popular central
+     directory approach.  We added automatic squeezing in
+     version 2 at the prompting of a friend.  In version
+     2.1 we added the code to test for the best compression
+     method.  In less than a year we found that our humble
+     little program had spread across the country, and
+     seems to have become a new institution.
+
+     We are thankful for the support and appreciation we
+     have received.  We hope that you find this program of
+     use.
+
+
+     If we have achieved greatness, it is because we have
+     stood upon the shoulders of giants.  Nothing is
+     created as a thing unto itself, and ARC is no
+     exception.  Therefore, we would like to give credit to
+     the following people, without whose efforts ARC could
+     not exist:
+
+
+     Brian W. Kernighan and P. J. Plauger, whose book
+     "Software Tools" provided many of the ideas behind the
+     distributive directory approach used by ARC.
+
+     Dick Greenlaw, who wrote the public domain SQ and USQ
+     programs, in which the Huffman squeezing algorithm was
+     first developed.
+
+     Kent Williams, who graciously allowed us to use his
+     LZWCOM and LZWUNC programs as a basis for our Lempel-
+     Ziv compression logic, and who continues to make
+     valuable contributions.
+
+     David Schwaderer, whose article in the April 1985
+     issue of PC Tech Journal provided us with the logic
+     for calculating the CRC 16 bit polynomial.
+
+     Terry A. Welch, whose article "A Technique for High
+     Performance Data Compression", IEEE Computer Vol 17 No
+     6 (June 1984) seems to have started all the research
+     on Lempel-Ziv coding.
+
+
+
+
+     ARC                                        Page 31
+Spencer W. Thomas, Jim McKie, Steve Davies, Ken
+Turkowski, James A.  Woods, and Joe Orost, who are the
+authors of the UNIX compress utility.
+
+Karl Schinke, who is the friend that suggested that we
+add compression to ARC.
+
+Alex Jacobs, who in June of 1985 sent us the very
+first shareware contribution we ever received.
+
+
+And many, many others whom we could not identify.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ARC                                             Page 32
+             BULLETIN BOARDS
+
+
+
+     ARC is distributed mainly through shareware channels.
+     Among other things, this means that ARC is available
+     from many bulletin board systems.  In fact, the system
+     operators (sysops) of many bulletin boards have taken
+     to storing almost all of their downloadable files in
+     archives to save themselves disk space and to save
+     their users time.
+
+     This also makes things more convenient for the
+     bulletin board users, since one archive may contain
+     several programs, any related data files, and the
+     documentation.  Many shareware authors have taken to
+     distributing their software in archives to help ensure
+     that the users receive everything.
+
+     Obviously, we can't do that with ARC.  As a result,
+     many of our users have ARC, but don't have the manual.
+     Most of our customer support calls come from people
+     who have never seen the manual, and in many cases
+     didn't even know that one exists!
+
+     To solve this problem we developed what is in essence
+     a self-unpacking archive.  We distribute this as
+     "ARCxxx.EXE", where "xxx" is the current version
+     number.  For example, ARC version 6.00 would be
+     distributed as "ARC600.EXE".  This program, when run,
+     unpacks itself into a copy of ARC plus its
+     documentation.
+
+     Now that we've gone to all that work, we'd really
+     appreciate it if you would use this program when you
+     distribute ARC.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     ARC                                        Page 33
+         SITE LICENSES
+
+
+
+Corporate users may wish to obtain a site license for
+the use of ARC.  Please use the order form in this
+manual to order a site license.  Site licenses are
+granted as of when we receive your payment.  License
+fees vary depending on the number of computers on
+which ARC will be used, as follows:
+
+
+             1 machine            $50
+     2  to   9 machines           $35 per machine
+    10  to  24 machines           $25 per machine
+    25  to  49 machines           $20 per machine
+    50 or more machines           $15 per machine
+
+    100 or more machines at one location    $1500
+
+
+
+Enclosed is a site license agreement, which should be
+signed and sent with your payment when ordering a
+commercial site license.
+
+
+A commercial site license does not include additional
+copies of the ARC program disk and the ARC manual.
+Instead, you make your own copies of the disk and
+manual as you need them.  If you wish, you can order
+additional program disks and manuals from us.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ARC                                             Page 34
+
+
+
+
+
+
+
+
+
+
+
+
+            The SEA Utilities
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        Copyright 1985-89
+                               by
+               System Enhancement Associates, Inc.
+                       ALL RIGHTS RESERVED
+
+
+
+
+
+
+
+
+
+
+ LIMITED LICENSE AND WARRANTY
+
+
+IMPORTANT NOTICE:IMPORTANT NOTICE: Any use of this software for any
+period of time for any purpose whatsoever constitutes
+your unqualified acceptance of this LICENSE and
+subjects you to all of the terms and conditions set
+forth below:
+
+System Enhancement Associates, Inc. ("SEA") warrants
+to any Licensee that acquires the program from SEA or
+an authorized SEA representative ONLY that:
+
+ 1) All diskettes SEA provides constitute an accurate
+    duplication of the software and SEA will replace
+    any diskette found to be defective within 30 days
+    from date of acquisition.  SEA will not honor this
+    warranty if the diskette has been subjected to
+    physical abuse, or used in defective or non-
+    compatible equipment.
+
+ 2) SEA's software will perform substantially as
+    described in the documentation SEA regularly
+    supplies with that software, if operated as
+    prescribed in such documentation including the
+    hardware and software environment specified.
+
+ 3) If a significant defect in any program is found,
+    Licensee's only remedy shall be to receive refund
+    of the actual fee Licensee paid for such defective
+    program.  In no event will such a refund exceed
+    the fee SEA charges for such program.
+
+ 4) SEA makes no warranty or representation that the
+    software will be error free nor that its use by
+    Licensee will be uninterrupted.
+
+Except as provided above, SEA disclaims all otherExcept as provided above, SEA disclaims all other
+warranties, either express or implied, including butwarranties, either express or implied, including but
+not limited to any implied warranty of merchantabilitynot limited to any implied warranty of merchantability
+or fitness for any particular purpose.or fitness for any particular purpose.
+
+Licensee agrees to take full responsibility for theLicensee agrees to take full responsibility for the
+selection of and any use whatsoever made of theselection of and any use whatsoever made of the
+software.software.
+
+IN NO EVENT WILL SEA BE LIABLE FOR ANY DAMAGESIN NO EVENT WILL SEA BE LIABLE FOR ANY DAMAGES
+WHATSOEVER (INCLUDING WITHOUT LIMITATION DAMAGES FORWHATSOEVER (INCLUDING WITHOUT LIMITATION DAMAGES FOR
+LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSSLOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS
+OF BUSINESS INFORMATION OR THE LIKE) ARISING OUT OFOF BUSINESS INFORMATION OR THE LIKE) ARISING OUT OF
+THE USE OF, INTERRUPTION IN THE USE OF, OR INABILITYTHE USE OF, INTERRUPTION IN THE USE OF, OR INABILITY
+TO USE THIS SOFTWARE, EVEN IF SEA HAS BEEN ADVISED OFTO USE THIS SOFTWARE, EVEN IF SEA HAS BEEN ADVISED OF
+ANY POSSIBILITY OR LIKELYHOOD OF SUCH DAMAGES.ANY POSSIBILITY OR LIKELYHOOD OF SUCH DAMAGES.
+
+
+
+
+
+
+
+
+
+
+            TABLE OF CONTENTS
+
+
+     _______                                           ____     Section                                           Page
+
+     Introduction  ....................................  39
+     MKSARC  ..........................................  39
+     ARCE  ............................................  40
+     ARCP  ............................................  41
+     ASCII  ...........................................  42
+     CHMOD  ...........................................  43
+     FREEDISK  ........................................  44
+     FAKEY  ...........................................  46
+         Hexadecimal BIOS keystroke codes  ............  50
+     MAKEY  ...........................................  54
+     LF  ..............................................  55
+     MOVE  ............................................  68
+     PARBOOT  .........................................  68
+     SCANDISK  ........................................  69
+     SCROLOCK  ........................................  72
+     SOFTBELL  ........................................  72
+     SQDIR  ...........................................  73
+     TASK  ............................................  74
+     TDIR  ............................................  75
+     UNDEL  ...........................................  75
+     OHMYGAWD  ........................................  77
+     WIPEFREE  ........................................  79
+     In conclusion  ...................................  80
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          BLANK PAGE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SEA Tools                                       Page 38
+              INTRODUCTION
+
+
+
+     The ARC program disk includes several other programs
+     in addition to ARC.  These are various utilities
+     created by SEA to do various things, and are included
+     on the disk as our way of thanking you for supporting
+     ARC.  The one exception is ARCE.COM, which was written
+     by Vern Buerg and Wayne Chin, and which SEA has
+     licensed to include on the ARC disk as a service to
+     our customers.
+
+     Full program sources for everything on the ARC disk
+     (with the exception of ARCE and MKSARC) are available
+     from System Enhancement Associates, Inc.
+
+     We will now describe the various programs that are
+     included on the ARC program disk.
+
+
+
+     ______     MKSARC
+
+     MKSARC is used to convert an archive into a self-
+     unpacking program.  It takes one argument, which is
+     the name of the archive to convert.  For example, if
+     you had an archive called "WASTE.ARC" and you typed:
+
+         MKSARC waste
+
+     then MKSARC would create a new file called "WASTE.EXE"
+     which would be a self-unpacking version of "WASTE.ARC"
+     (your original "WASTE.ARC" archive is left untouched).
+     This can now be unpacked simply by typing:
+
+         waste
+
+     You can also supply a second argument to specify the
+     name of the resulting program.  For example, if you
+     typed:
+
+         MKSARC waste trash
+
+     then MKSARC would create a new file called "TRASH.EXE"
+     instead of "WASTE.EXE".
+
+
+
+
+
+
+
+
+     SEA Tools                                  Page 39
+MKSARC works by adding a self-extraction header
+program (called SARC) to the beginning of the archive.
+This adds about 7800 bytes to the length of the
+archive.  SARC recognizes the same options as ARCE,
+including integrity testing and decryption, and may be
+told specific files to extract.  If a self-unpacking
+program is given the "/H" option, it will display a
+brief help screen.
+
+Before SARC begins extracting files it first performs
+an internal integrity check to ensure that the SARC
+header itself has not been damaged.  If it fails the
+integrity check, it will abort with the message:
+
+    Unpacker has been corrupted!
+
+The files contained in the  self-unpacking program may
+still be extracted with ARC.
+
+
+NOTE:NOTE: The Copyright Notice that is printed when SARC
+runs refers to the SARC self-extraction header itself,
+___not the entire self-unpacking archive.
+
+
+
+____ARCE
+
+ARCE is a program which is used to extract files from
+                     ____an archive.  It will only extract files.  It doesn't
+do anything that ARC can't do, but it is highly
+optimized for the sole purpose of archive extraction,
+so it is very small and very fast.  The ARCE program
+has been shown in benchmark tests to be the world's
+fastest archive extractor.
+
+ARCE is used in a fashion very similar to the "ARC E"
+command (hence the name).  The first argument is the
+name of the archive to extract files from, and may
+include a drive and path specifier.  Up to sixteen
+additional arguments can be supplied, which specify
+the files to extract.  The wildcard characters "*" and
+"?" are allowed, as with ARC.  If no files are named,
+then all files are extracted from the archive.  If the
+file being extracted already exists, you are asked
+whether or not you want to overwrite it.  You can use
+the "/R" option to bypass this.
+
+
+
+
+
+
+
+SEA Tools                                       Page 40
+     For example, if you had an archive named "WASTE.ARC"
+     that you wanted to extract everything from, then you
+     could type:
+
+         ARCE waste
+
+     Or if you just wanted to extract the files with a
+     filename extension of ".ASM", you could type:
+
+         ARCE waste *.asm
+
+     If you already have a few files from the archive that
+     you want replaced, then you could type:
+
+         ARCE waste *.asm /R
+
+
+     ARCE also has options for extracting to standard
+     output, for testing archive integrity, and for
+     extracting encrypted files.  The full documentation
+     for ARCE is included on the ARC program disk.
+
+     If you run ARCE with no arguments at all, it will give
+     you a brief reminder of how to use it.
+
+
+     NOTICE:     NOTICE: ARCE is the copyrighted property of Vernon D.
+             Buerg and Wayne Chin.  It is included on the
+             ARC program disk as a service to ARC users.
+
+             Vernon D. Buerg
+             456 Lakeshire Drive
+             Daly City, CA  94015
+             RBBS: (415) 994-2944
+
+
+
+     ____     ARCP
+
+     ARCP is a "protected mode" version of ARC which will
+     run under the OS|2 operating system.  It functions
+     exactly the same as ARC for MS-DOS.
+
+
+
+
+
+
+
+
+
+
+
+
+     SEA Tools                                  Page 41
+_____ASCII
+
+ASCII is a program that scans a file for strings of
+printable text.  This can be handy in several
+situations, like checking out an upload for "gotcha"
+messages, peeking at a new adventure game for hints,
+and many other practical endeavors.
+
+ASCII takes one argument, the name of the file to
+examine.
+
+How ASCII functions may be modified by using the
+following command line options:
+
+/M<min>       Minimum/M<min>       Minimum;  ASCII normally does not
+              consider text to be a "string" unless it
+              is at least four characters long.  This
+              tells ASCII to show any strings that
+              area <min> characters long or longer.
+
+/W<width>     Width/W<width>     Width;  ASCII normally formats its
+              output for an 80-column screen.  This
+              tells ASCII to format for a <width>
+              columns screen.
+
+/L<length>    Length/L<length>    Length;  ASCII normally scrolls its
+              output to the screen continuously.  This
+              tells ASCII to stop with a "more" prompt
+              every <length> lines.
+
+/F            Filter/F            Filter;  ASCII normally reads from a
+              file you specify.  This tells ASCII to
+              instead read  from "standard input".
+
+/R            Raw output/R            Raw output;  ASCII normally prints the
+              text it finds in a human-readable report
+              giving offsets into the file.  This
+              tells ASCII to skip the offsets and just
+              dump out the text.  The output is still
+              broken by an end-of-line every 80
+              columns (or whatever you specify with
+              the /W option).
+
+/X            eXtended character set/X            eXtended character set;  ASCII normally
+              displays only printable ASCII
+              characters.  This tells ASCII to also
+              show carriage returns (as a left
+              pointing arrow), linefeeds (as a down
+              pointing arrow) and horizontal tabs (as
+              a right pointing arrow).
+
+
+
+
+SEA Tools                                       Page 42
+     For example, if you wanted to see all of the printable
+     text strings in a file called TRASH.EXE, with the
+     output formatted for a 40-column screen and with a
+     pause every 24 lines, you could give the command:
+
+         ASCII trash.exe /W40 /L24
+
+
+
+     _____     CHMOD
+
+     CHMOD is used to examine and change file attributes.
+     Each attribute is represented by a single letter, as
+     follows:
+
+     ______   _______     Letter   Meaning
+
+     D        Directory     D        Directory.  This marks a subdirectory
+              containing more files.  This bit cannot be
+              changed.
+
+     R        Read only     R        Read only.  The file may be examined, but may
+              not be altered.
+
+     H        Hidden     H        Hidden.  The file will not appear in
+              directory searches.
+
+     S        System     S        System.  This acts like a combination of R
+              and H, which it usually appears with.
+
+     A        Archive     A        Archive.  This has nothing to do with the ARC
+              file archive utility.  It means that the file
+              has been changed since you last backed up
+              your disk.
+
+     If you wanted to see what attributes are presently set
+     on all ofthe files in your current directory that have
+     an extension of ".COM", you would type:
+
+         chmod *.com
+
+     The report you get back would look something like
+     this:
+
+         IBMBIO.COM          -RHS-
+         IBMDOS.COM          -RHS-
+         COMMAND.COM         -----
+
+
+
+
+
+
+
+     SEA Tools                                  Page 43
+This shows that the files IBMBIO.COM and IBMDOS.COM
+are saved with the Read only, Hidden, and System
+attributes, while the file COMMAND.COM has no file
+attributes.
+
+You can alter the file attributes by giving the
+attribute letters after the filename.  Use lowercase
+to signal that you want that attribute turned off, or
+uppercase to indicate that you want it on.  For
+example, if you wanted to alter AUTOEXEC.BAT to make
+it read only and hidden, and at the same time you want
+to turn off the archive bit, you would type:
+
+    chmod autoexec.bat RHa
+
+Any attributes you don't specify are left unchanged.
+
+
+
+________FREEDISK
+
+FREEDISK is used to graphically display how much free
+disk space you have.  It draws a bar chart on your
+screen, where each bar represents one disk.  The bars
+are scaled so that your largest disk exactly fills the
+screen.
+
+Each bar will have a lighter part on the left which
+represents disk space in use, and a darker part on the
+right which represents free disk space.  In addition,
+FREEDISK makes a brief report on available disk space.
+
+FREEDISK normally examines every disk, starting at
+drive C: (usually the first fixed disk).  You can
+change that by telling FREEDISK the letter of the
+first drive to examine.  For example, to have the
+report start with drive B: you would say:
+
+    freedisk B:
+
+FREEDISK normally examines every disk up to drive Z:
+(the highest that is easily accessible under MS-DOS).
+You can change that by giving FREEDISK both the first
+drive to examine and the last drive to examine.  For
+example, to make FREEDISK report on drives H: through
+M: you would say:
+
+    freedisk H: M:
+
+
+
+
+
+
+SEA Tools                                       Page 44
+     FREEDISK can be asked to return an error level if a
+     given amount of free disk space is available.  The
+     desired amount of space can be expressed in kilobytes,
+     megabytes, or gigabytes.  For example, to determine if
+     20 megabytes of free disk space is available, you
+     would say:
+
+         freedisk 20m
+
+     "M" stands for "megabytes".  You could also use "k"
+     for "kilobytes" or "g" for "gigabytes" (you can't ask
+     for more than about 3 gigabytes, as numbers on a PC
+     don't get any bigger).
+
+     This can be combined with a range of drives.  For
+     example, to find out if drive D: has at least 5
+     megabytes of free space, you would say:
+
+         freedisk D: D: 5m
+
+     FREEDISK would exit with error level zero if drive D:
+     has at least five megabytes of free space, or one if
+     it doesn't.
+
+
+     FREEDISK can also be asked to find the first disk with
+     at least a given amount of free space.  Just add a
+     question mark to the space.  For example, to find the
+     first disk with at least 10 megabytes free, you would
+     say:
+
+         freedisk 10m?
+
+     FREEDISK will exit with an error level equal to the
+     number of the first disk that has that much free space
+     (1 means drive A:, 2 means drive B:, and so on), or
+     zero if no drive has that much room.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     SEA Tools                                  Page 45
+_____FAKEY
+
+FAKEY is used to fake sequences of keystrokes.  It is
+especially useful in batch files, where it can be used
+to "pre-load" input for programs.  It is faking it at
+the point where BIOS is called.  It will not affect
+programs that bypass BIOS for their input.  FAKEY can
+fake keyboard input for almost any program, except for
+certain resident utilities.
+
+
+FAKEY takes one or more arguments, separated by
+spaces.  Each argument can be any one of the
+following:
+
+ 1) A text literal enclosed in quotes.  See below.
+
+ 2) A decimal number, indicating the ASCII value of a
+    character.
+
+ 3) A hexadecimal number of up to four digits,
+    preceeded by an ampersand.
+
+ 4) A mnemonic value indicating a particular
+    keystroke.
+
+None of these are case sensitive, except literal text
+in quotes.  Hex digits, mnemonics, and so forth can be
+entered in any combination of upper and lower case.
+
+
+If an argument indicates a character value, then the
+character value is filled out to include a scan code
+value.  Where more than one scan code is possible
+(such as Backspace or Ctrl H), the more "conventional"
+choice is made (ie. Backspace instead of Ctrl H, top
+row instead of number pad, etc.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SEA Tools                                       Page 46
+     A text literal is enclosed in quotes, and may contain
+     special sequences.  The special sequences currently
+     defined are:
+
+      1) An uparrow followed by a character from A to Z (in
+         this case really "at sign" to "underline"),
+         indicating the equivalent control key.
+
+      2) An exclamation mark followed by a digit or a
+         character from A to Z, indicating the equivalent
+         alter key.
+
+      3) A backslash followed by another character.
+         Defined uses are:
+
+         \R         \R   for a return or enter
+         \T         \T   for a tab
+         \B         \B   for a backspace
+         \E         \E   for an escape
+         \         \anything else, for a literal character.
+              Thus \" is a quote, \\ is a backslash, etc.
+
+
+     A mnemonic can be an uparrow, exclamation mark, or
+     backslash followed by a character, in which case it
+     means the same thing as in a text literal.  The
+     following additional mnemonics are also defined:
+
+     Standard ASCII mnemonics:
+
+         NUL SOH STX ETX EOT ENQ ACK BEL         NUL SOH STX ETX EOT ENQ ACK BEL
+         BS  HT  LF  VT  FF  CR  SO  SI         BS  HT  LF  VT  FF  CR  SO  SI
+         DLE DC1 DC2 DC3 DC4 NAK SYN ETB         DLE DC1 DC2 DC3 DC4 NAK SYN ETB
+         CAN EM  SUB ESC FS  GS  RS  US         CAN EM  SUB ESC FS  GS  RS  US
+         SP  RUB         SP  RUB
+
+     Cursor movement keypad mnemonics:
+
+         UP DOWN LEFT RITE HOME END PGUP PGDN         UP DOWN LEFT RITE HOME END PGUP PGDN
+         INS DEL PLUS DASH         INS DEL PLUS DASH
+
+     Function key mnemonics:
+
+         Fn         Fn   for normal
+         Sn         Sn   for shifted
+         Cn         Cn   for control
+         An         An   for alter
+
+         Where "n" is a number from 1 to 10.  For example,
+         A10 means Alt F10.
+
+
+
+
+     SEA Tools                                  Page 47
+Special mnemonics:
+
+    TOSS    TOSS      Causes all previous pending keystrokes
+              to be thrown away.  Does not affect the
+              sequence being defined.
+
+    WAIT <n>    WAIT <n>  Causes a pause for <n> seconds in the
+              input stream.  Keystrokes will not
+              appear to be available for the duration
+              of the wait.  The maximum wait is 255
+              seconds.  If you don't say how long to
+              wait, FAKEY will wait for one second.
+
+    BEEP    BEEP      Causes FAKEY to emit a warbling tone.
+
+    CBRK    CBRK      Causes FAKEY to simulate a "Control
+              Break".
+
+    PSCR    PSCR      Causes whatever is on the screen to be
+              printed on the printer.
+
+    BOOT    BOOT      Causes a warm system boot, as if the
+              user had typed "Ctrl-Alt-Del".
+
+    LOAD <n>    LOAD <n>  Only valid when first running FAKEY.
+              Causes FAKEY to load without displaying
+              the help screen, and also tells FAKEY to
+              reserve room for up to <n> keystrokes.
+              If <n> is not given, then FAKEY will
+              save room for up to 200 keystrokes.
+
+
+If FAKEY is run without arguments, then it displays a
+brief help screen to remind you of various special
+characters and mnemonics.  This help screen can be
+bypassed (to load FAKEY from your AUTOEXEC.BAT, for
+example) by giving FAKEY a load command, as follows:
+
+    fakey load
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SEA Tools                                       Page 48
+     The TOSS mnemonic takes effect at the point where
+     FAKEY is run.  It serves to discard faked keystrokes
+     which an earlier program didn't use.
+
+     The other special mnemonics take effect at the point
+     where they are first scanned by the operating system.
+     This is not always when you might think.  DOS (along
+     with many applications programs) scans the keyboard
+     buffer to see if anything is pending at many points,
+     so things may take effect sooner than you would
+     expect.  For example, if your batch file contained:
+
+         fakey ^C
+         myprog
+
+     then "myprog" would not be run.  DOS would check the
+     keyboard after running FAKEY and before running the
+     next program, and would see the pending control C.
+     Your batch file would stop while DOS asks:
+
+         Terminate batch file (y/n)?
+
+     You probably don't want that.  So instead, you should
+     say:
+
+         fakey wait 1 ^C
+         myprog
+
+     This would cause a one second delay before the control
+     C shows up in the keyboard buffer.
+
+     If this doesn't make sense, then don't worry too much.
+     This is all meant to address a few special cases which
+     don't normally arise.
+
+
+
+     Hexadecimal literals:
+
+     These can be used to fake any keystroke whatsoever,
+     including ones that don't actually exist (though we're
+     not sure why you'd want to do that).  Use the table
+     following to pick out the keystroke you want.  For
+     example, a shifted keypad 5 would be:
+
+         fakey &4C35
+
+     A table entry of "--" means you can't get that
+     combination out of BIOS.
+
+
+
+
+
+     SEA Tools                                  Page 49
+           BIOS keystroke codes, hexadecimal
+
+___        ______      _____       _______     _____Key        Normal      Shift       Control     Alter
+
+Esc        011B        011B        011B         --
+1!         0231 '1'    0221 '!'     --         7800
+2@         0332 '2'    0340 '@'    0300        7900
+3#         0433 '3'    0423 '#'     --         7A00
+4$         0534 '4'    0524 '$'     --         7B00
+5%         0635 '5'    0625 '%'     --         7C00
+6^         0736 '6'    075E '^'    071E        7D00
+7&         0837 '7'    0826 '&'     --         7E00
+8*         0938 '8'    092A '*'     --         7F00
+9(         0A39 '9'    0A28 '('     --         8000
+0)         0B30 '0'    0B29 ')'     --         8100
+-_         0C2D '-'    0C5F '_'    0C1F        8200
+=+         0D3D '='    0D2B '+'     --         8300
+BkSpc      0E08        0E08        0E7F         --
+tab        0F09        0F00         --          --
+q          1071 'q'    1051 'Q'    1011        1000
+w          1177 'w'    1157 'W'    1117        1100
+e          1265 'e'    1245 'E'    1205        1200
+r          1372 'r'    1352 'R'    1312        1300
+t          1474 't'    1454 'T'    1414        1400
+y          1579 'y'    1559 'Y'    1519        1500
+u          1675 'u'    1655 'U'    1615        1600
+i          1769 'i'    1749 'I'    1709        1700
+o          186F 'o'    184F 'O'    180F        1800
+p          1970 'p'    1950 'P'    1910        1900
+[{         1A5B '['    1A7B '{'    1A1B         --
+]}         1B5D ']'    1B7D '}'    1B1D         --
+enter      1C0D        1C0D        1C0A         --
+Ctrl        --          --          --          --
+a          1E61 'a'    1E41 'A'    1E01        1E00
+s          1F73 's'    1F53 'S'    1F13        1F00
+d          2064 'd'    2044 'D'    2004        2000
+f          2166 'f'    2146 'F'    2106        2100
+g          2267 'g'    2247 'G'    2207        2200
+h          2368 'h'    2348 'H'    2308        2300
+j          246A 'j'    244A 'J'    240A        2400
+k          256B 'k'    254B 'K'    250B        2500
+l          266C 'l'    264C 'L'    260C        2600
+;:         273B ';'    273A ':'     --          --
+'"         2827 '''    2822 '"'     --          --
+`~         2960 '`'    297E '~'     --          --
+l shift     --          --          --          --
+\|         2B5C '\'    2B7C '|'    2B1C         --
+z          2C7A 'z'    2C5A 'Z'    2C1A        2C00
+x          2D78 'x'    2D58 'X'    2D18        2D00
+c          2E63 'c'    2E43 'C'    2E03        2E00
+v          2F76 'v'    2F56 'V'    2F16        2F00
+
+
+
+SEA Tools                                       Page 50
+     b          3062 'b'    3042 'B'    3002        3000
+     n          316E 'n'    314E 'N'    310E        3100
+     m          326D 'm'    324D 'M'    320D        3200
+     ,<         332C ','    333C '<'     --          --
+     .>         342E '.'    343E '>'     --          --
+     /?         352F '/'    353F '?'     --          --
+     r shift     --          --          --          --
+     PrtSc      372A '*'     --         7200         --
+     Alt         --          --          --          --
+     spacebar   3920 ' '    3920 ' '    3920        3920
+     CapsLock    --          --          --          --
+     F1         3B00        5400        5E00        6800
+     F2         3C00        5500        5F00        6900
+     F3         3D00        5600        6000        6A00
+     F4         3E00        5700        6100        6B00
+     F5         3F00        5800        6200        6C00
+     F6         4000        5900        6300        6D00
+     F7         4100        5A00        6400        6E00
+     F8         4200        5B00        6500        6F00
+     F9         4300        5C00        6600        7000
+     F10        4400        5D00        6700        7100
+     NumLock     --          --          --          --
+     Scroll      --          --          --          --
+     7 Home     4700        4737 '7'    7700         --
+     8 up       4800        4838 '8'     --          --
+     9 PgUp     4900        4939 '9'    8400         --
+     grey -     4A2D '-'    4A2D '-'     --          --
+     4 left     4B00        4B34 '4'    7300         --
+     5           --         4C35 '5'     --          --
+     6 right    4D00        4D36 '6'    7400         --
+     grey +     4E2B '+'    4E2B '+'     --          --
+     1 End      4F00        4F31 '1'    7500         --
+     2 down     5000        5032 '2'     --          --
+     3 PgDn     5100        5133 '3'    7600         --
+     Ins        5200        5230 '0'     --          --
+     Del        5300        532E '.'     --          --
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     SEA Tools                                  Page 51
+Shift locks:
+
+There are four "shift locks" on the PC keyboard.
+These are Caps Lock, Num Lock, Scroll Lock, and
+Insert.  You can have FAKEY can control these as well
+by adding a plus (to turn it on) or a minus (to turn
+it off) to any of the following mnemonics:
+
+    CAP    CAP       For Caps Lock
+    NUM    NUM       For Num Lock
+    SCR    SCR       For Scroll Lock
+    INS    INS       For Insert
+
+For example, you would tell FAKEY to turn Num Lock off
+by giving the command:
+
+    fakey num-
+
+Or you could turn Caps Lock on by giving the command:
+
+    fakey cap+
+
+Many keyboards these days have status lights for Num
+Lock, Caps Lock, and Scroll Lock.  If your keyboard
+is one of them, then you might want to try:
+
+    fakey num+ cap+ scr+ wait num- wait cap- wait scr-
+
+which will give you a modest three-second light show.
+
+
+
+Programmed pauses:
+
+We've already mentioned that FAKEY can be told to wait
+for some number of seconds.  There are a couple of
+other things FAKEY can wait for as well.
+
+FAKEY can be told to wait until some specific text is
+printed on the screen.  This only applies to text that
+is printed normally -- FAKEY doesn't see what a
+program does if it writes to the screen directly.  In
+general, if you can redirect the text to a file, then
+you can also have FAKEY wait for it.
+
+
+
+
+
+
+
+
+
+
+SEA Tools                                       Page 52
+     You tell FAKEY to wait for text by enclosing the text
+     in square brackets.  For example:
+
+         fakey [What is your name?] "Kilgore Trout" CR
+
+     This would tell FAKEY to wait until some program
+     prints the message, "What is your name?", and to then
+     respond with "Kilgore Trout".
+
+
+     FAKEY can also wait for a change in "carrier detect"
+     on COM1 or COM2.  COM1 and COM2 are the two serial
+     ports on a PC, which are often used to enable a PC to
+     send and receive data via telephone lines.  "Carrier
+     detect" is a particular signal from a serial port that
+     (usually) indicates whether or not your system is
+     currently connected to another system by phone.
+     "Carrier detect" is "true" if you are connected, and
+     "false" if you are not.
+
+     The four FAKEY mnemonics for waiting on carrier detect
+     are:
+
+         CD1+         CD1+   Wait for carrier detect to be true on COM1
+         CD1-         CD1-   Wait for carrier detect to be false on COM1
+         CD2+         CD2+   Wait for carrier detect to be true on COM2
+         CD2-         CD2-   Wait for carrier detect to be false on COM2
+
+
+     For an overly technical example, a sysop of a BBS
+     could activate a thirty second watchdog in a door by
+     putting this command in the batch file:
+
+         fakey cd1- wait 30 boot
+
+     She could then disable the watchdog when exiting the
+     door by executing the command:
+
+         fakey toss
+
+     Or perhaps she'd like an alarm when the watchdog
+     begins counting down thirty seconds:
+
+         fakey cd1- beep wait 30 boot
+
+
+
+
+
+
+
+
+
+
+     SEA Tools                                  Page 53
+Typing Through:
+
+If you try to type while FAKEY is faking keystrokes,
+FAKEY will "beat you to it".  That is, the program
+will see what FAKEY is typing before it see's what you
+are typing.  However, if FAKEY is waiting for
+something you'll be able to type normally.
+
+
+
+_____MAKEY
+
+MAKEY is a companion program to FAKEY, which must be
+loaded before MAKEY is.  MAKEY defines a "one key
+macro".
+
+To define a key macro with MAKEY, hit the top row "2"
+key while holding down the "Ctrl" key.  You should
+hear three beeps, rising in tone.  You are now
+recording a macro.  Type whatever keys you want
+defined.  When you're done, hit the top row "2" key
+while holding down the "Ctrl" key again.  You should
+hear another three beeps, falling in tone this time.
+Your macro is now recorded.
+
+To use the macro, hit the grey "*" key.  Whatever keys
+you recorded will be played back every time you hit
+the grey "*" key.
+
+MAKEY normally has room to record up to 200
+keystrokes (if you run out of room MAKEY will beep at
+you).  You can change the amount of room MAKEY
+reserves by giving it a number on the command line the
+_____first time you run it.  For example, loading MAKEY
+with the command:
+
+    MAKEY 1000
+
+would cause MAKEY to reserve room for up to one
+thousand keystrokes.
+
+FAKEY must have been loaded with enough room to hold
+whatever macro MAKEY is holding.
+
+
+
+
+
+
+
+
+
+
+
+SEA Tools                                       Page 54
+     __     LF
+
+     LF is a utility designed to simplify the manipulation
+     of large numbers of files.  LF is a menu driven system
+     in which the user is presented with a menu of files in
+     her current directory.  This may be either a full menu
+     of all files, or a subset menu of selected files.
+
+     To invoke LF, type a command of the form:
+
+         LF [path][template]
+
+     The template, which is optional, is a standard MS/DOS
+     filename template, such as you would use for the COPY
+     or ERASE commands.  If you give a path name, then that
+     will be your starting directory.
+
+     For example, if you wanted to work on all files with
+     an extension of ".MAC", you would type:
+
+         LF *.MAC
+
+     Or, if you wished to work on all files whose names
+     begin with "X", you would type:
+
+         LF X*.*
+
+     Or, to work on all files in your current directory,
+     you could simply type:
+
+         LF
+
+
+     The LF file menu has the following columns:
+
+      1) The command area.  This is where you type in any
+         commands which you wish to have performed on the
+         files.  See below for more information regarding
+         command strings.  This area may also contain a
+         blue asterisk ("*"), to indicate that a command
+         was performed on this file the last time you
+         invoked any commands.
+
+      2) The filename/extension.  This is the name and
+         extension of the file covered by a given line on
+         your screen.  This is normally shown in white.
+         However, the name will turn red if the file no
+         longer exists or is marked for deletion.  Also,
+         the name will be green if LF detects that the file
+         was modified by your last command.  If the
+         filename/extension is in magenta (purple), then
+
+
+
+     SEA Tools                                  Page 55
+    the file is a subdirectory.  You may "zoom in" on
+    it with the Alter Z command, but you may not edit
+    or list it.
+
+ 3) The file size.  This is how big (in bytes) the
+    file is.
+
+ 4) The date/time area.  This is the date and time of
+    the last time the file was created or modified.
+
+One line of the files menu will be in reverse color
+(normally black on white).  This line is your current
+line, and the file it refers to is your current file.
+You may move this line using your up and down cursor
+movement keys.
+
+
+The top of the files menu contains three boxes, as
+follows:
+
+ 1) The left box is the disk status box.  This reports
+    the size of your disk, and the number of bytes
+    remaining.  The room remaining will be green if
+    you have more than half of your disk available.
+    It will turn yellow when you use up half of your
+    disk.  It will turn red when only ten percent of
+    your disk remains, and it will start to flash when
+    you are out of room.
+
+ 2) The middle box is the file status box.  This
+    reports information about the files you are
+    looking at.  The top line is always a count of how
+    many files you are looking at.
+
+    If you have marked any files for deletion, then
+    the bottom line will show the number of files to
+    be deleted.  Otherwise it will show the total
+    number of bytes in all of the files you are
+    looking at.
+
+    If you hold down your left shift key, then it will
+    show the number of bytes of disk space allocated
+    to the files you are looking at.  This takes into
+    acount "disk clusters", and may be of interest to
+    the technically inclined.
+
+ 3) The right box is the prompting/status box.  The
+    top line always shows the directory you are in and
+    the search template you are using.
+
+
+
+
+
+SEA Tools                                       Page 56
+         The second line usually shows the "volume label"
+         of the disk you are on, and the current date and
+         time.  However, it is sometimes replaced by error
+         messages, status messages, or prompts for input.
+
+     The bottom line of your screen is there to remind you
+     of which function keys do what.
+
+
+     Your function keys are used to carry out several
+     common functions, which can be summarized as follows:
+
+         F1 - Edit current file           F5 - Sort by name
+         F2 - Browse current file         F6 - Sort by type
+         F3 - Update screen               F7 - Sort by size
+         F4 - Extended functions          F8 - Sort by date
+         F9 - Do deletes/Invoke commands  F10 - Exit
+
+
+     These are explained in more detail below:
+
+     F1       Edit     F1       Edit; Your F1 key is used to invoke your
+              editor on your current file.  You may not
+              edit a subdirectory.  You may select anything
+              you wish for your editor.  See the section
+              below on setting your environment strings.
+              If you have not specified an editor, then
+              EDLIN is used.
+
+              It is assumed that you have used the PATH
+              command in MS-DOS so that your editor may be
+              invoked from any directory.
+
+     F2       Browse     F2       Browse; Your F2 key is used to invoke your
+              browse module on your current file.  You may
+              not browse a subdirectory.  As with the F1
+              key, you may choose anything you wish as your
+              browse module.  See the section below on
+              setting your environment strings.  We highly
+              recommend Vern Buerg's excellent LIST program
+              as a browse utility.  If you have not
+              specified a browser, then the MORE command is
+              used.
+
+              Again, it is assumed that your command search
+              path is such that the browse command may be
+              given from any directory.
+
+
+
+
+
+
+
+     SEA Tools                                  Page 57
+F3       UpdateF3       Update; Your F3 key is used to refresh your
+         menu.  Your list of files is read from
+         scratch, and any deleted files are forgotten.
+         Also, your menu is redrawn from scratch, so
+         this may be useful if your menu is destroyed
+         for any reason.
+
+F4       OtherF4       Other; Your F4 key is used to access a
+         secondary menu of additional functions, which
+         are described below.
+
+F5       Sort by nameF5       Sort by name; Your F5 key is used to sort
+         your menu by file names (which is the
+         default). A "shift F5" (that is, pressing F5
+         while holding down the shift key) reverses
+         the order.
+
+F6       Sort by typeF6       Sort by type; Your F6 key is used to sort
+         your menu by filename extensions, then by
+         names.  This is useful for grouping your
+         files by "type".  A "shift F6" reverses the
+         order.
+
+F7       Sort by sizeF7       Sort by size; Your F7 key is used to sort
+         your menu by reverse order of file size.
+         That is, the largest file first and the
+         smallest file last.  If any files are the
+         same size, they will be in order of
+         filename/extension.  A "shift F7" reverses
+         the order, placing the smallest file first
+         and the largest file last.
+
+F8       Sort by dateF8       Sort by date; Your F8 key is used to sort
+         your menu by reverse order of date and time
+         last modified.  That is, the newest file
+         first, and the oldest file last.  If any
+         files where last modified at the same time,
+         they will be in order of filename/extension.
+         A "shift F8" reverses the order, placing the
+         oldest file first and the newest file last.
+
+F9       InvokeF9       Invoke; Your F9 key is used to invoke any
+         pending commands or deletions.  If any
+         deletions are pending, you will be asked to
+         confirm the deletions before they take place.
+         If any commands are pending, they will be
+         invoked.  Your menu will disappear while the
+         commands are being processed so that you may
+         see what happens, and you will be asked to
+         strike a key before the menu will return.  If
+         you strike the F10 key, then LF terminates.
+
+
+
+SEA Tools                                       Page 58
+                                      ______              Deletions are performed before commands.
+
+     F10      Exit     F10      Exit; Your F10 key is used to exit from LF.
+              When you press this key, LF will clear the
+              screen, bid you adieu, and return you to
+              MS-DOS.
+
+
+     The F4 key accesses a set of secondary functions, as
+     follows:
+
+     F1       Ditto all     F1       Ditto all; This repeats the last command for
+              all of your currently selected files. See
+              "Ditto", below.
+
+     F2       Clear all     F2       Clear all; This clears all commands and all
+              pending deletions for all files.
+
+     F3       Execute     F3       Execute; This is used to execute a program.
+              When you press this key, the name of the file
+              on your current line is given as a system
+              command.  The menu disappears while your
+              command is executed.  When your command has
+              finished, you will be asked to strike any key
+              (which will be discarded) before your file
+              menu is restored.  If you press the F10 key,
+              then the menu is not redrawn, and LF
+              terminates.
+
+     F4       Other     F4       Other; This is used to exit the extended
+              functions menu without performing any
+              extended functions.
+
+     F5       Extract archive     F5       Extract archive; This is used to extract
+              files from the current file if it is an ARC
+              format archive.  You must have a copy of ARC
+              on your command path for this to work.
+
+     F6       Freshen archive     F6       Freshen archive; This is used to "freshen"
+              the current file if it is an ARC format
+              archive.  You must have a copy of ARC on your
+              command path for this to work.
+
+     F7       Freshen archive/move files     F7       Freshen archive/move files; This is used to
+              perform a "freshen and move" on the current
+              file if it is an ARC format archive.  You
+              must have a copy of ARC on your command path
+              for this to work.
+
+
+
+
+
+
+     SEA Tools                                  Page 59
+Your alter keys are used to carry out various other
+actions.  These are as follows:
+
+Alt H    Help!!Alt H    Help!!  This is probably the most helpful key
+         of all -- especially the first few times you
+         use LF.  It gives you a rundown of which keys
+         do what.
+
+Alt N    NameAlt N    Name; Changes your menu to show all files
+         which have the same name as your current
+         file.
+
+Alt E    ExtensionAlt E    Extension; Changes your menu to show all
+         files which have the same extension as your
+         current file.
+
+Alt A    AllAlt A    All; Changes your menu to show all files in
+         your current directory.
+
+Alt T    TemplateAlt T    Template; Prompts you for a new search
+         template, and updates your menu to show the
+         files specified by the new template.
+
+Alt F    FloppyAlt F    Floppy; Prompts you for a new drive letter,
+         and then moves to your current directory on
+         that drive.
+
+Alt D    DirectoryAlt D    Directory; Prompts you for a new directory
+         name, and shifts to that directory.
+
+Alt Z    ZoomAlt Z    Zoom; If your current file is a directory,
+         then this "zooms in" on it, making it your
+         current directory.
+
+Alt P    PopAlt P    Pop;  If your current directory is not the
+         root directory, then this "pops you up" one
+         level, making your old current directory your
+         new current file.
+
+
+Alt C    CommandAlt C    Command; Prompts you for a command, which is
+         passed unchanged to MS-DOS.  Your file menu
+         disappears during the command, and you are
+         asked to strike a key before the menu
+         returns.  If you strike F10, then the menu is
+         not redrawn, and LF terminates.
+
+
+
+
+
+
+
+
+SEA Tools                                       Page 60
+     Alt L    Locate file     Alt L    Locate file; Prompts you for a filename.  As
+              you type the name of the file you are looking
+              for, LF will scan through its list of files
+              looking for the first file that matches what
+              you've typed so far.  Odds are you won't have
+              to type very many letters before LF will have
+              the file you want.  As soon as LF locates
+              your file you can forget about the "locate"
+              prompt and go ahead with whatever it is you
+              wanted to do.
+
+     Alt S    Show/hide hidden files     Alt S    Show/hide hidden files;  This "toggles"
+              whether or not your file menu includes hidden
+              and system files.  Hidden files are shown in
+              blue.  System files are shown in brown.
+
+     Alt V    View archive contents     Alt V    View archive contents;  This is used to view
+              the contents of an ARC format archive.  You
+              must have both ARC (by System Enhancement
+              Associates) and LIST (by Vern Buerg) on your
+              command path for this to work.
+
+     Alt R    Read README file     Alt R    Read README file;  This is used to read a
+              file in an ARC format archive.  Type the name
+              of the file you want to read in the command
+              area before pressing Alt R.  If you do not
+              specify what file to read, then LF will try
+              to read a README file.  As with Alt V, you
+              must have both ARC and LIST on your command
+              path.
+
+
+
+     The following keys may also be used to move around
+     your menu and manipulate your files:
+
+     Cursor Up     Cursor Up     Moves the white bar up one line, making
+                   the file there your current file.
+
+     Cursor Down     Cursor Down   Moves the white bar down one line,
+                   making the file there your current file.
+
+     Cursor Left     Cursor Left   Moves the cursor one column to the left.
+
+     Cursor Right     Cursor Right  Moves the cursor one column to the
+                   right.
+
+     PgUp     PgUp          Moves up one page (screen).
+
+     PgDn     PgDn          Moves down one page.
+
+
+
+
+     SEA Tools                                  Page 61
+HomeHome          Moves the cursor to the beginning of the
+              command on your current file, if any.
+              Otherwise it moves the white bar to the
+              top of your screen, making the file
+              there your current file.  Unless the
+              white bar is already at the top of the
+              screen, in which case it moves to the
+              top of your file menu, making the first
+              file your current file.
+
+EndEnd           Moves the cursor to the end of the
+              command on your current file, if any.
+              Otherwise it moves the white bar to the
+              bottom of your screen, making the file
+              there your current file.  Unless the
+              white bar is already at the bottom of
+              the screen, in which case it moves to
+              the end of your file menu, making the
+              last file your current file.
+
+InsertInsert        Toggles "insert mode".  When you are in
+              insert mode, the cursor will be a small
+              block instead of a line, and anything
+              you type will be inserted in front of
+              anything to the right, instead of
+              overwriting it.
+
+DeleteDelete        Deletes the character under your cursor,
+              if any.  Otherwise it marks your current
+              file for deletion, and then moves the
+              white bar down one line.
+
+BackspaceBackspace     Deletes the character to the left of
+              your cursor, if any.  Otherwise it
+              toggles deletion for the current file
+              and then moves the white bar down one
+              line.
+
+Ctrl BkspcCtrl Bkspc    Toggles deletion for the current file
+              and all files which follow it.  The
+              white bar does not move.
+
+EscapeEscape        Discards the pending command for your
+              current file, if any.  Otherwise it
+              cancels deletion for the current file
+              and moves the white bar down one line.
+
+Ctrl PgDnCtrl PgDn     Shifts to the "next subdirectory".  That
+              is, the subdirectory which comes
+              immediately after the current
+              subdirectory in the parent directory.
+
+
+
+SEA Tools                                       Page 62
+     Ctrl PgUp     Ctrl PgUp     Shifts to the "previous subdirectory".
+                   That is, the subdirectory which comes
+                   immediately before the current
+                   subdirectory in the parent directory.
+
+     " (quote)                       ditto     " (quote)     Or, in this case, ditto.  When you press
+                   this key, LF repeats the last command
+                   you typed, and then moves the white bar
+                   down one line.  Most of the power of LF
+                   comes from using this.
+
+     <text>     <text>        Enters or adds to the command string for
+                   your current file (see below).
+
+
+     Command strings (in conjunction with the ditto
+     command, above) are the very heart of what makes LF
+     such a useful tool.  You can type whatever you wish
+     into the command area in front of any file.  Then,
+     when you press the F9 key, your commands are invoked.
+
+     Unless you specify otherwise, your command string will
+     have the filename/extension of its file appended to it
+     before it is invoked.  For example, if the line for a
+     file named "WHATSUP.DOC" had a command string of
+     "Ehhh", then pressing F9 would cause LF to give a
+     system command of:
+
+         Ehhh WHATSUP.DOC
+
+     You specify otherwise by embedding one or more
+     specifiers in your command string.  A specifier
+     consists of an ampersand ("&") optionally followed by
+     a letter, which may be in upper or lower case.  The
+     following specifiers are currently defined:
+
+     &N  Name     &N  Name; This is replaced by the name of the file,
+         with no extension.
+
+     &E  Extension     &E  Extension; This is replaced by the extension of
+         the file, with no name.  The dot is included.
+
+     &F  Filename     &F  Filename; This is replaced by the name of the file
+         followed by the extension, with the dot (if any)
+         in the middle.
+
+     &     &   This is the same as "&f", and is shorter to type.
+
+     &D  Directory     &D  Directory;  This is replaced by the name of the
+         current directory, without the trailing backslash.
+
+
+
+
+     SEA Tools                                  Page 63
+&P  Pathname&P  Pathname;  This is replaced by the full pathname,
+    including drive and directory, of the current
+    file.  This is equivalent to "&d\&f" (or "&d\&").
+
+&X  Exception&X  Exception; This is replaced by nothing.  It does,
+    however, count as a specifier and thus keeps the
+    filename and extension from being appended to the
+    command string.
+
+&C  Command&C  Command; This is replaced by the text of the
+    command string.  This isn't very useful in a
+    command string itself, but it can be quite handy
+    in a macro string (see below).
+
+For example, if the file "WHATSUP.DOC" had a command
+string of:
+
+    copy some&e &n\&
+
+Then pressing F9 would cause LF to give the system
+command:
+
+    copy some.DOC WHATSUP\WHATSUP.DOC
+
+
+As a somewhat more practical example, suppose that you
+wanted to sort several files.  In each case you want
+the sorted output to go in a file with the same name
+as the original, but with an extension of ".SRT".  To
+do that with LF you would place the white bar on the
+first file, and type a command string of:
+
+    sort <& >&n.SRT
+
+Then you would run the white bar down over all of the
+other files, hitting "ditto" on each one.  Then hit F9
+and go grab a cup of coffee while your system sorts
+its heart out.
+
+
+
+LF Macros:
+
+                                              ______MS-DOS environment strings are used to define macros
+in LF, telling it how to carry out commonly performed
+actions.  Please refer to the MS-DOS manual for
+complete information regarding the setting and use of
+environment strings.
+
+
+
+
+
+
+SEA Tools                                       Page 64
+     The following environment strings are used by LF:
+
+     LFEDIT     LFEDIT        This string contains the command used to
+                   edit a file when the F1 key is pressed.
+                   If this string is not set, then the
+                   command "EDLIN" is given.
+
+     LFBROWSE     LFBROWSE      This string contains the command used to
+                   examine a file when the F2 key is
+                   pressed.  If this string is not set,
+                   then the "MORE" command is used.
+
+     LFVIEW     LFVIEW        This string contains the command used to
+                   view the contents of an archive when Alt
+                   V is pressed.
+
+     LFREAD     LFREAD        This string contains the command used to
+                   read a file in an archive when Alt R is
+                   pressed.
+
+
+     If, as an example, you prefer to use an editor named
+     LEO, then before running LF you would give the MS-DOS
+     command:
+
+         set LFEDIT=LEO
+
+
+     LF also recognizes ten user-defined macro strings.
+     These are LF1 through LF10, and are inserted in the
+     command string of the current file in response to
+     pressing the corresponding Alt function key.
+
+     For example, if you gave the MS-DOS command:
+
+         set LF1=BLATZ
+
+     before running LF, then the command string for your
+     current file will become "BLATZ" any time you press
+     "Alt F1".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     SEA Tools                                  Page 65
+LF uses one other environment string, "LF=", to set
+parameters on how you would like LF to work.  The LF
+string can contain any of the following:
+
+B   BIOSB   BIOS;  LF Normally does all of its screen output
+    by writing directly to the screen buffer.  In some
+    cases that might not be a good idea.  This tells
+    LF to do all of its output by making legal BIOS
+    calls.
+
+1   One screen1   One screen;  This tells LF to use only one display
+    for all of its activities.  This is the default.
+
+2   Two screens2   Two screens;  This tells LF to use two displays.
+    This will only work if your system has both a
+                  ___    color display and a monochrome display.  LF will
+    do all of its own output on the color screen, and
+    will invoke commands on the monochrome display.
+
+H   HiddenH   Hidden;  LF does not normally show hidden or
+    system files.  This tells LF to show them.
+
+C   Confirm deletesC   Confirm deletes;  This tells LF to ask for
+    confirmation before deleting files, and is the
+    default.
+
+U   Unconfirmed deletesU   Unconfirmed deletes;  This tells LF to delete
+    files without asking for confirmation.  This is a
+    bit faster, and is not too dangerous.
+
+D   Delete at onceD   Delete at once;  This tells LF to delete a file
+    the instant you mark it by hitting the "Del" key.
+            ____           ____    This is very fast, and very dangerous.
+
+X   Cross out displayX   Cross out display; This tells LF to redraw its
+    screen immediately when it finishes executing
+    commands.  This bypasses the "hit a key to
+    continue" message.
+
+K   Keystroke to continueK   Keystroke to continue; This tells LF to do the
+    "hit a key to continue" bit after all.  This is
+    the default.
+
+Sx  Sort typeSx  Sort type; This tells LF to initially sort its
+    display in a particular way, where "x" is one of
+    the following:
+
+    N    to sort by name (default)
+    T    to sort by type (extension)
+    S    to sort by size
+    D    to sort by date
+
+
+
+SEA Tools                                       Page 66
+     Any of the above can be given in any combination of
+     upper or lower case.
+
+     For example, if you normally want LF to use two
+     displays and to sort its display by extensions, you
+     could put the following statement in your AUTOEXEC.BAT
+     file:
+
+         set LF=2st
+
+     These options can also be given on the command line by
+     preceeding them with a slash.  For example, if you
+     wanted to override what you put in the LF= string and
+     bring up LF using only one display, you would type:
+
+         LF /1
+
+
+
+     All of this can seem a bit daunting at first.  How can
+     anyone remember all those commands?  The answer is,
+     they can't.  That's why we included four screens worth
+     of help.  Just hit "Alt H" any time you need help.  It
+     won't be long before you're zipping around your disk
+     like a pro.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     SEA Tools                                  Page 67
+____MOVE
+
+Yes, we know that lots of people have written MOVE
+programs (often called MV instead of MOVE).  Ours is
+different -- it's paranoid.
+
+Almost all MOVE programs take advantage of a gimmick
+in MS-DOS, whereby one can quickly shift a file from
+one directory to another on the same disk.  The good
+ones go even further.  They detect when the move would
+be between different disks (where the MS-DOS gimmick
+won't work) and do a copy.
+
+But in certain circumstances (like on a network drive
+on our office LAN) where the MS-DOS gimmick ought to
+                               ____work, everything looks like it does work.  But it
+doesn't.
+
+So our own MOVE program gets paranoid.  It tries the
+gimmick, and then it looks at the disk to see for
+itself if the file really moved.  If the gimmick
+didn't work, then it does a copy.
+
+Using MOVE is simple.  The first argument is the name
+of the file to move, and it may contain wildcards.
+The second argument is the name of the directory to
+move the file(s) to.  If you leave off the second
+argument, then the files are moved to your current
+directory.
+
+
+
+_______PARBOOT
+
+PARBOOT is a deceptively handy little program.  It
+slightly modifies your system so that a parity check
+will cause a system reboot instead of hanging your
+system.  This can be useful for machines which must
+run unattended for long periods of time.  It should be
+invoked from the AUTOEXEC.BAT file.
+
+PARBOOT is also the world's smallest TSR utility.
+When installed, it requires zero bytes of memory.
+
+
+
+
+
+
+
+
+
+
+
+SEA Tools                                       Page 68
+     ________     SCANDISK
+
+     SCANDISK scans a disk for bad sectors.  So do lots of
+     other programs, but SCANDISK is different.
+
+     Awhile back we had a machine where the disk drive
+     would sometimes get an error.  So we took a full
+     backup and reformatted the drive.  It kept happening.
+     So we started hauling out the disk testers.  We tried
+     five separate disk test utilities, and every single
+     one of them did the same thing.  They would hit a bad
+     sector, pause on it awhile with the disk grinding
+                                                 ___     away, and then report it as good.  We could see that
+                                      ____     the sector was no good, we could hear it, but every
+     single disk tester we tried would let it go.  We got
+     so disgusted that we sat down and wrote our own.
+
+
+     When a program asks MS-DOS to read a disk sector,
+     MS-DOS asks BIOS to go read it.  If BIOS reports an
+     error, MS-DOS tries again.  In fact, MS-DOS will keep
+     trying several times before finally reporting an
+     error.
+
+     So it's possible to have a sector which is
+     questionable, but which looks good.  MS-DOS may need
+     to retry several times before it actually gets the
+     data, but this is shielded from the program that asked
+     for the sector.
+
+     That's great for most programs.  It's just the right
+                                     _____     thing to do.  But it's just the wrong thing to do when
+     you're trying to find out which sectors are starting
+     to go bad.  You don't want to know which ones have
+     already gone bad (it's too late then -- you already
+     lost the data).  You want to know which ones are still
+     readable but are starting to go sour so you can get
+     your data off while you still have a chance.
+
+     But if MS-DOS is hiding the error, how can you tell?
+
+     If MS-DOS has to reread a sector, the read is going to
+     take longer than normal.  Also, MS-DOS resets the disk
+     between retries, which takes even more time.
+
+     So SCANDISK scans the disk, reading each sector, and
+     on every read it's got a stopwatch in hand to see how
+     long MS-DOS takes to read it.  If MS-DOS reports an
+     error, then we mark it bad (so far we're just like
+     everyone else), but if MS-DOS says that the sector is
+     okay, but it took a long time to read, then we
+
+
+
+     SEA Tools                                  Page 69
+remember that it's questionable.  When the run is
+finished we tell you how many questionable sectors we
+found, and if you say so we'll mark them as bad.
+
+Not only that, but if a questionable sector is in use
+by a file we'll shift the data to someplace safe.
+
+SCANDISK takes one or two arguments.  The first
+argument is which disk to scan.  The second argument
+is how many times to scan that disk.  If you don't say
+how many times, then it scans once.  If you say zero
+times, then it scans repeatedly until told to stop.
+
+For example, if you wanted to scan your C: drive once,
+you would type:
+
+    scandisk C:
+
+If you wanted to scan your D: drive five times, you
+would type:
+
+    scandisk D: 5
+
+If you wanted to scan your B: drive continuously, you
+would type:
+
+    scandisk B: 0
+
+
+How SCANDISK works can be modified by the following
+command line options:
+
+/T<n>    Ticks/T<n>    Ticks; SCANDISK normally allows twenty clock
+         ticks to elapse during a read before it calls
+         a sector questionable.  Twenty ticks is a
+         shade over a second, so "questionable" might
+         not be a strong enough word.  This option
+         sets threshold at <n> clock ticks.  If you
+                           ___         set the threshold too low SCANDISK will
+         report many more bad clusters than you really
+         have.  Most fixed disks should be able to
+         read a cluster in five or six clock ticks,
+         and most floppies should take no more than
+         ten clock ticks.
+
+/S       Skip/S       Skip;  This tells SCANDISK to skip over
+         clusters that have already been locked out.
+         This can speed things up considerably on a
+         disk with a lot of bad clusters.
+
+
+
+
+
+SEA Tools                                       Page 70
+     /L       Large directory     /L       Large directory;  This tells SCANDISK that
+              your directory is too large to hold.
+                            ___              SCANDISK will not move data off of
+              questionable clusters if you use this option.
+              SCANDISK will tell you if you need to use
+              this option.
+
+     /A       Autopilot     /A       Autopilot;  When SCANDISK finishes its run it
+              asks for confirmation before making any
+              irreversable changes to your disk.  This
+              tells SCANDISK to go ahead and make the
+              changes without asking.
+
+     /U       Unlock     /U       Unlock;  This tells SCANDISK to recheck
+              clusters that had been locked out, and to
+              unlock any that appear okay.  Use this with
+              extreme caution (or not at all).
+
+     /B       BIOS     /B       BIOS;  This tells SCANDISK to use legal BIOS
+              calls for all of its output.  Things go
+              faster if you don't use this, but there may
+              be some situations where you need it.
+
+     For example, if you wanted SCANDISK to make three
+     passes over your C: drive, skipping bad clusters and
+     allowing up to five clock ticks on a read, you would
+     use the command:
+
+         scandisk C: 3 /S /T5
+
+
+
+     So what happened with that drive that started all
+     this?  We ran SCANDISK on it with the options:
+
+         scandisk D: 0 /ST5
+
+     and we let it run overnight.  In the morning we saw
+     that SCANDISK had not found any more bad sectors in
+     its last twenty passes, so we stopped it.  The drive
+     is still in use, and we haven't had a problem with it
+     since.
+
+
+
+
+
+
+
+
+
+
+
+
+     SEA Tools                                  Page 71
+________SCROLOCK
+
+There must be some reason why twenty million PC's have
+"Scroll Lock" keys.  All told, that adds up to quite a
+lot of keys out there that don't do anything.
+
+But until that use shows up, there's SCROLOCK.  When
+you run SCROLOCK it starts monitoring that Scroll Lock
+key, and makes it do something like what its name
+implies.  In other words, it make the screen stop
+scrolling when you hit Scroll Lock.  Hit Scroll Lock
+again and your screen will start scrolling again.
+
+      ___There are one or two programs out there that use the
+Scroll Lock key.  In particular, the PC-Write editor
+uses Scroll Lock to switch between "overwrite" and
+"pushright" modes.  So if you run SCROLOCK again it
+will deactivate itself.  Running it yet again makes it
+reactivate itself, and so on.  When you run SCROLOCK
+it returns an error level of zero if it deactivated,
+or one if it reactivated.  Thus, if for example you
+were writing a batch file where at one point you want
+SCROLOCK to be deactivated, you would say:
+
+    scrolock
+    if errorlevel 1 scrolock
+
+
+
+________SOFTBELL
+
+SOFTBELL is for those of us who don't like their
+machines making loud beeping noises.  When you run
+SOFTBELL it modifies the sound of the bell from a loud
+beep to a soft buzz.  This only affects the "control G
+bell" -- your game programs will be as noisy as ever.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SEA Tools                                       Page 72
+     _____     SQDIR
+
+     SQDIR squeezes a directory.  Why squeeze a directory?
+     Is directory juice good for anything?
+
+     The method used by the MS-DOS operating system for
+     keeping files in directories is quite adequate for
+     most normal situations.  However, things slow down a
+     ___     lot when a directory gets crowded.  If you put a few
+     hundred files in one subdirectory, opening one of them
+     becomes a slow process.
+
+     But there's a further problem.  Once a directory has
+     had several hundred files in it, the deleted entries
+     stick around.  This is good for UNDEL, but not always
+     so good for everything else because opening a file
+          _____     will still be slow even after most of the files are
+     deleted.
+
+     Enter SQDIR.  SQDIR reads in the directory and
+     rewrites it, minus the deleted files, thus speeding up
+     file access and quite possibly recovering some disk
+     space.
+
+     SQDIR takes one argument, the name of the directory to
+     squeeze.  For example, if you wanted to squeeze a
+     directory named "D:\MAIL\MESSAGES" you would type:
+
+         sqdir d:\mail\messages
+
+     SQDIR knows about one option switch, "/S", which tells
+     it to squeeze all subdirectories of the directory as
+     well.  For example, if you wanted to squeeze the
+     "D:\MAIL" directory and all directories in it, you
+     would type:
+
+         sqdir d:\mail /S
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     SEA Tools                                  Page 73
+____TASK
+
+TASK (which stands for "Timed ASK") is used to ask
+"yes or no" questions from a batch file, while placing
+a time limit on how long it will wait for an answer.
+It can also be used just as a delay timer.
+
+TASK reports the result by returning an error level of
+zero if the answer was "No", or one if the answer was
+"Yes", or two if no answer was given.
+
+For example, suppose that you wanted your AUTOEXEC.BAT
+to ask you first before it starts loading up all of
+your popup gizmos, thus giving you the option of
+booting a "clean" system.  You could do it thusly:
+
+
+    task Do you want this neat stuff?
+    if not errorlevel 1 goto vanilla
+    fakey load
+    makey
+    scrolock
+    softbell
+    parboot
+    :vanilla
+
+
+An answer of "Yes", or no answer at all in twenty
+seconds, will cause the "if" to fail, and will thus
+load up some nifty stuff.  But an answer of "No" will
+return an error level of zero, thus making the "if"
+true, and causing the batch file to skip over all
+those goodies.
+
+If you'd rather word that question differently, then
+you can do that too, like so:
+
+    task Do you want a vanilla system?
+    if not errorlevel 2 if errorlevel 1 goto vanilla
+
+
+If the first argument is a number, then TASK treats it
+as the number of seconds to wait for an answer.  For
+example, if you wanted to allow five seconds instead
+of twenty seconds, you'd say:
+
+    task 5 Do you want a vanilla system?
+
+If you set a limit of zero seconds, then there is no
+time limit and TASK will wait forever.
+
+
+
+
+SEA Tools                                       Page 74
+     If you set a time limit, but you don't ask a question,
+     then TASK becomes a delay timer.  For example, the
+     command:
+
+         task 5
+
+     just pauses for five seconds without asking anything.
+
+
+
+     ____     TDIR
+
+     TDIR is one of those programs that doesn't look like
+     much, but if you use it for a day you'll wonder how
+     you ever got along without it.  It does a short
+     directory listing sorted by filename extension.  Use
+     it the same way you'd use the MS-DOS "DIR" command.
+
+     Try it -- you'll like it.
+
+
+
+     _____     UNDEL
+
+     This is used to "undelete" a file which was
+     accidentally deleted.
+
+     ________                                ___     ________     WARNING:     WARNING: The MS-DOS operating system is not designed
+              with undeletion in mind.  Any undelete
+                      ____              process must make assumptions that might not
+              be valid in any particular situation, and
+              ____              must access your disk in ways that are
+              outside the bounds of the operating system.
+                            ______              Undeletion is always an inherently risky
+              business.
+
+     The MS-DOS operating system isn't designed to allow
+     for "undeleting" a file.  In theory, once a file is
+     deleted it is gone forever.  However, it is possible,
+     sometimes, to reconstruct where a file was located,
+     and to recreate it.  You have the best chance of
+     undeleting a file if it has been recently copied or
+                    _______     edited, and if nothing has been done to the disk since
+     the file was deleted.
+
+
+
+
+
+
+
+
+
+
+     SEA Tools                                  Page 75
+UNDEL takes one argument, which is the name of a file
+to undelete.  Any valid filename may be given.  Path
+names are allowed, wildcards are not.  For example, to
+undelete a file that used to be called JUNK.TXT, you
+would type:
+
+    undel junk.txt
+
+Pretty simple, eh?
+
+
+How UNDEL operates can be altered by use of command
+line switches.  A switch is a slash or a dash followed
+by a letter.  UNDEL recognizes the following options:
+
+/L  List deleted files/L  List deleted files.  This will produce a list of
+    all deleted files in your current directory.  Each
+    filename will begin with a question mark.  This is
+    because of how MS-DOS file deletion works.
+
+    If you give a name when you use this option, then
+    UNDEL will use it as the name of the directory to
+    search.  For example, if you give the command:
+
+         undel /L D:\TRASHCAN
+
+    then UNDEL will report all of the deleted files in
+    the D:\TRASHCAN directory.
+
+/A  Ask about clusters/A  Ask about clusters.  This causes UNDEL to show you
+    the first few bytes of each cluster as it locates
+    them, giving you the option to accept or reject
+    them.  This might be useful in reassembling a
+    badly fragmented text file.
+
+/P  Partial recovery is okay/P  Partial recovery is okay.  Normally UNDEL won't
+    undelete a file unless it thinks it has found all
+    of the deleted clusters.  This option tells UNDEL
+    to recover as much as it can find.
+
+/R  Report status of deleted file/R  Report status of deleted file.  This can be used
+    to assess the chances of recovering a file.
+
+/T  Give technical data about the disk/T  Give technical data about the disk.  UNDEL has to
+    figure out a lot of technical details about your
+    disk in order to work.  This option tells UNDEL to
+    report those details.
+
+
+
+
+
+
+
+SEA Tools                                       Page 76
+     Your best chance of recovering a file is, of course,
+     to not delete it in the first place.  But sometimes
+     accidents happen.
+
+     Your second best chance of recovering a file is to:
+
+      1) DO NOT delete, move, copy, or create ANY files on
+         the disk after the accidental deletion if at all
+         possible.
+
+      2) If you have a tape streamer or other "image"
+         backup, then take a backup before doing anything
+         else.  This will give you the ability to retry the
+         undelete endlessly.
+
+      3) If you don't have a tape streamer, take a backup
+         anyway.  It can't hurt.
+
+      4) Use UNDEL to undelete the file.
+
+      5) Examine the file.  If it isn't right, delete it
+         and try again, this time using the "/A" (ask)
+         option.
+
+      6) If UNDEL can't find all of your file, you may want
+         to try the "/P" (partial is okay) option.
+
+      7) If none of the above works, then you are out of
+         luck.  Your chances of ever recovering your data
+         are slim indeed.  But see the next utility.
+
+
+
+     ________     OHMYGAWD
+
+     So your worst nightmare has happened -- your most
+     vital document has been accidentally deleted and
+     nothing you've tried has worked.  Are you totally out
+     of luck?
+
+     Well, probably, but there's one last thing to try.
+
+     OHMYGAWD was written to handle just such a case that
+     happened to us.  We weren't really sure it would be
+     useful to anyone else -- until it happened again even
+     worse.  On the second occasion MS-DOS started giving
+     us the dreaded "Invalid drive specification" message,
+     and our most recent backup was not quite recent
+     enough.
+
+
+
+
+
+     SEA Tools                                  Page 77
+What OHMYGAWD does is very simple.  It turns all of
+the free clusters on a disk into files.  Every single
+one of them.  When it's done, there will be zero bytes
+free on the disk.  If your data still exists at all,
+it's in there somewhere!
+
+
+OHMYGAWD takes two arguments.  The first argument,
+which must be given, is the drive to do this to.  The
+second argument, which is optional, is how big each of
+the files should be.
+
+File size is expressed in "K" (which is computer
+jargon for 1,024 characters), and will be rounded up
+to the nearest whole cluster size.  If you don't
+specify a size, then OHMYGAWD will split your data
+evenly into as many files as will fit on the disk.
+
+Each of the files will be in the root directory, and
+will have a name of the form:
+
+    FILEnnnn.OMG
+
+where "nnnn" is a number.
+
+Suppose for example that your vital data is lost
+somewhere on the C: drive, and that your editor can
+handle files up to 64k in size.  You might give the
+command:
+
+    ohmygawd C: 64
+
+You will then have a whole bunch of files sitting on
+your C: drive.
+
+
+So what happened when our drive packed it in?  First
+we ran FDISK to recreate the partition.  The result
+was a mess, so we ran FORMAT on it to get it
+straightened out.  Then we ran OHMYGAWD on it and
+wound up with 147 files, each about 60k in size.  We
+spent a day sifting through them all, and finally
+recovered everything.
+
+It was something of a trip down memory lane, actually.
+We also found a whole bunch of old correspondence that
+had been deleted months earlier.
+
+We sincerely hope for your sake that you'll never need
+                                  __to run OHMYGAWD.  But if you ever do need it, you'll
+be glad you have it!
+
+
+
+SEA Tools                                       Page 78
+     ________     WIPEFREE
+
+     At first glance, WIPEFREE sounds like a very stange
+     utility.  It overwrites all of the unused clusters on
+     a disk.  Why in the world would anyone want to do
+     that?
+
+     We're sure you've seen utilities around that will
+     overwrite every byte of a file or every byte of a
+     disk.  They're supposed to be for security.  The
+     general idea is to destroy any data that was super-
+     duper ultra top secret, so nobody can ever read it.
+
+     But it isn't enough to just write over a file, and
+     writing over a whole disk might be too much!  Wiping
+     out a floppy makes sense, but what about a fixed disk?
+
+     Let's suppose you were working on a supersecret
+     letter.  When you finally get it done, you send it to
+                                                ______     your printer and wipe out the file.  Is it really
+     gone?  Well, if you've edited it more than once,
+     almost certainly your editor has had multiple copies
+     of it on disk at various times.  If you have a print
+     spooler that buffers to disk, then there's yet another
+     copy!  Even after you overwrite the file, if you ran
+     OHMYGAWD you'd probably get it back five times over!
+
+                   ______     So how do you really wipe it out?
+
+     Enter WIPEFREE.  Just delete the file, and then have
+                        ___     WIPEFREE overwrite all of the unused clusters on your
+     disk.
+
+     WIPEFREE needs at least one argument, which is the
+     disk to wipe.  For example, to overwrite all of the
+     free clusters on your D: disk, you would say:
+
+         wipefree D:
+
+     WIPEFREE can take a second argument, which is how many
+     passes to make.  For example, if you wanted WIPEFREE
+     to overwrite every free cluster on your D: disk five
+     times, you would say:
+
+         wipefree D: 5
+
+     When it's making multiple passes WIPEFREE alternates
+     between overwriting with all bits off, and overwriting
+     with all bits on.
+
+
+
+
+
+     SEA Tools                                  Page 79
+         IN CONCLUSION
+
+
+
+All of these utilities are things we've written
+because we needed them.  They're included here because
+we found them to be useful over time, and so we'd like
+to share them with you.
+
+Thank you for helping to make shareware work.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SEA Tools                                       Page 80
+

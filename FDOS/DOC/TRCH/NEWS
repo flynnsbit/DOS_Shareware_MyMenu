@@ -1,0 +1,39 @@
+This is the release history for TRCH:
+
+ver 3.1f: (3 Sep 2008)
+ - oops, the previous 3.1e and 3.1d entries had the wrong date ... fixed
+ - added French (FR) and Polish (PL) translations, thanks to Mateusz Viste
+ - Rugxulo's silly Pig-Latin translation (PIG) is in there too. :-)
+
+ver 3.1e: (2 Sep 2008)
+ - added Esperanto (EO) translation by Rugxulo
+ - compressed TRCH.EXE binary using "upx --ultra-brute --lzma --8086 trch.exe"
+ - included the Cats 3.97 (dependency) source code under SOURCE\TRCH
+
+ver 3.1d: (2 Sep 2008)
+ - updated German (DE) translation (0.0, and 1.0) by Joerg Jenderek
+ - some rearrangement of files in the zip to meet FreeDOS directory std
+
+ver 3.1c:
+ - added trch.lv, contributed by Neons.
+
+ver 3.1b:
+ - added trch.hu, contributed by Daniel Nagy.  Some minor
+   code reformatting in trch.c, added some information in usage().
+
+ver 3.1a:
+ - added a German translation, contributed by achim_sondermann
+
+ver 3.1:
+ - added a Russian translation to the TRCH program.  Thanks!
+
+ver 3:
+ - added international support using "Cats" library
+
+ver 2:
+ - re-write to be cleaner code.  Changed from UNIX2DOS to
+   TRCH, since translating characters can do more for you.
+
+ver 1:
+ - First version, released as part of the FreeDOS Utilities
+   package in 1994.  This was called UNIX2DOS.

@@ -1,0 +1,1467 @@
+ISP help file version 1.2
+
+Even if your ISP isn't listed, these sample scripts might help you
+get an idea of what to put in your own script.  If you get a script
+working that is not in this file, please send it to:
+
+jay@calc.vet.uga.edu
+
+Include your wattcp.cfg, dial.ppp, and any notes you feel are
+appropriate.  Let me know if you want your email address listed.
+
+Notes:
+
+1. In all dial.ppp scripts, replace <username> and <password> with
+your own username and password.  Also replace the my_ip number with
+*your* ip#.
+
+2. For all PPP and SLIP users, you only need your ip number and
+a netmask of 0.0.0.0 in wattcp.cfg for most providers.  PPP users
+should include the line "ppp = 1" in the wattcp.cfg file.
+
+3. If you are using PPP with a static ip number, and you have trouble
+getting the script to complete, try adding the following line to your
+config.ppp file:
+
+ppp ipcp local address <his fixed ip address>
+
+Or try removing the config.ppp file completely.
+
+
+******************************************************************
+
+Accessnv.com (PPP)
+------------------
+
+From: Sean Andrechak <sean@accessnv.com>
+
+;
+; dial.ppp
+;
+
+send "ATZ\r"
+recv 40000 "OK\r\n"
+send "atdtxxx-xxxx\r"
+recv 60000 "login:"
+send "<username>\r"
+recv 1000 "assword:"
+send "<password>\r"
+
+
+That is it.  I just had to fiddle with the numbers a bit.  It seems that
+my modem was a bit slow after the atz command, so I just increased the
+time a bit.  I was adding a *e0 for a while, to turn off error checking
+by the modem, because the read.me file said to, but switched back for
+some reason I can't remember, but it works.  Also, I made a batch file to
+give the ppp command and to dial, since I was getting tired of entering
+all the line options.  I also added that SNATCH program to it, boy does
+it help a bunch!  Thanks for that.  I've had far fewer problems
+connecting since I have been using it.
+
+
+******************************************************************
+
+bslnet.com (PPP)
+----------------
+
+From: "Ron D. Welch" <Ron.D.Welch@bsl1.bslnet.com>
+
+;
+; dial.ppp
+;
+
+send "atz\r"
+recv 3000 "OK\r\n"
+send "atdt*70,771-9341\r"
+recv 60000 "login:"
+send "ronwelch\r"
+recv 10000 "Password:"
+send "oinker\r"
+
+;
+; config.ppp
+;
+
+ppp trace 0
+ppp pap user <username> <password>
+ppp pap timeout 20
+ppp quick
+ppp lcp open
+
+
+;
+; wattcp.cfg
+;
+
+my_ip   = BOOTP
+netmask = 255.255.255.128
+nameserver = 165.247.36.10
+gateway = 165.247.36.1
+
+
+******************************************************************
+
+Clark.net (PPP)
+---------------
+
+From: spinnaker@clark.net (David Wood)
+
+;
+; WATTCP Configuration File for Kali
+;
+
+my_ip = 168.143.2.243
+netmask = 255.255.0.0
+nameserver = 168.143.0.2
+gateway=168.143.0.1
+domainslist="clark.net"
+
+;
+; dial.ppp
+;
+send "ATZ\r"             ;reset the modem
+recv 3000 "OK\r\n"       ;wait 3 seconds for OK response from modem
+send "atdt6215216\r"     ;dial your provider; the \r is for RETURN
+recv 60000 "ClarkNet Username:"      ;wait 6 seconds for login prompt
+send "<username>\r"        ;send your username and RETURN
+recv 10000 "ClarkNet Password:"   ;wait 1 second for password prompt
+send "<password>\r"        ;send your password and RETURN
+recv 10000 "Enter Number (1-8):"  ;wait for connection menu
+send "4\r"                      ;ask for a ppp connection
+recv 5000                       ;allow time to connect*******
+
+*****This was the most important and elusive statement in the dial.ppp
+file.   I saw no reference to it in the ppp help files, and I spent hours
+banging my head into the wall trying to figure out why my computer would
+not connect.  "Hunter" suggested this statement while I was begging for
+help on kchat, and it was the key I needed.
+
+******************************************************************
+
+csn.net  (SLIP)
+---------------
+
+From: "Jason C. Short" <jcs@csn.net>
+
+;
+; wattcp.cfg
+;
+
+my_ip   = 199.117.102.2
+netmask = 255.255.255.0
+gateway = 199.117.102.254
+nameserver = 199.117.27.21
+
+This works with roving (ie, my_ip changes each time I call) SLIP with
+Colorado Supernet. (Colorado, USA)
+
+Also, should you need to know, I call up with Procomm + for DOS, enter my
+name and password, then type 'slip' and write down my IP number.
+
+Then its ALT-F4, Yes to exit and No to hangup line.
+
+then I run
+     cslipper com2 vec=0x60 baud=38400
+
+******************************************************************
+
+Compuserve (PPP)
+----------------
+
+From: Lawrence Reiss <72620.1261@compuserve.com>
+
+I have gotten Kali to work on my compuserve account since my last message...
+Unfortunately, it works rather slowly with more than two players: Compuserve has
+only a 14.4 connect speed, and god only knows what kind of other delays.
+
+;
+; wattcp.cfg
+;
+
+my_ip = bootp
+netmask = 0.0.0.0
+ppp = 1
+
+;
+; dial.ppp
+;
+
+send "at&f\r"
+recv 3000 "OK\r\n"
+send "atdt9323198\r"
+recv 30000 "CONNECT 57600"
+send "\r"
+recv 6000 "Host Name:"
+send "CIS\r"
+recv 10000 "User ID:"
+send "12345,1234/go:pppconnect\r"
+recv 10000 "Password:"
+send "mypassword\r"
+
+Substitute your access number on line 3
+Substitute your Compuserve ID on the 3rd line from the bottom
+Substitute your password on the last line
+
+Run the dialer in the usual way with this script, remembering NOT to touch the
+keyboard until you get an ip address.  There will be a delay of perhaps 30
+seconds or so.
+
+Run kali in the usual way!
+
+The script works, but it lacks speed.  In those areas where compuserve has
+gone to 28.8, however, it should be ok.  Compuserve plans  to upgrade the
+whole network to that speed within a year...    Hope this helps you!
+
+Have a good day,
+Lawrence
+
+******************************************************************
+
+digest.net (shell)
+------------------
+
+From: Sean Connery <bond@access.digex.net>
+
+Here ya go....this is my deal...I use Slirp on a shell account here at
+Digex....under DOS I use the cslipper package that was on tracker...I
+will include the .slirprc (on uninx host) and the wattcp.cfg
+
+[.slirprc]
+redir udp 2213 to 205.197.245.195:2213
+baudrate 57600
+mtu 2000
+
+[wattcp.cfg]
+my_ip   = 205.197.245.195
+netmask = 255.255.255.0
+gateway = 205.197.245.195
+nameserver = 205.197.245.224
+
+NOTE: there are 5 different machines I can hit here...I have yet to
+automate things with a script...so I always have to manually change the
+last 3 digits of the local IP to correspond correctly (the .195), so I
+have to login, run a hostname, edit the .slirprc, then edit
+wattcp...sounds harder then it is....
+
+******************************************************************
+
+edupac.qc.ca
+------------
+
+From: cgmavict@edupac.qc.ca
+
+Hi, I'm using SLIP, I have no real script... I just use Telemate to connect
+then I exit the program (without hangup!).
+
+;
+;wattcp.cfg
+;
+
+my_ip=199.84.132.30
+netmask=255.255.255.0
+gateway=199.84.132.1
+nameserver=199.84.132.2
+
+Eric.
+
+******************************************************************
+
+execpc.com (PPP)
+----------------
+
+From: rromero@execpc.com
+
+;
+; WATTCP Configuration File for Kali
+;
+
+;my_ip = 204.29.203.38
+my_ip = BOOTP
+netmask = 255.255.255.0
+gateway= 204.29.203.1
+gateway= 204.29.202.1
+;nameserver = 204.29.202.1
+;domainslist="execpc.com"
+
+;
+; dial.ppp
+;
+
+send "at&f1\r"
+recv 3000 "OK\r\n"
+send "atdt7894600\r"
+recv 60000 "login:"
+send "<username>\r"
+recv 6000 "Password:"
+send "<password>\r"
+
+
+From: btelco@execpc.com
+
+Go.bat = ppp /c 2 /d script /v 1 /s 57600
+
+;
+;dial.ppp
+;
+
+send "atz\r"
+recv 3000 "\r"
+send "AT&I0\r"
+recv 2000 "OK\r\n"
+send "atdt789-4333\r"
+recv 60000 "login: "
+send "Nickname"
+
+;
+;config.ppp
+;
+
+ppp trace 0
+ppp pap user <username><password>
+ppp pap timeout 20
+ppp quick
+ppp lcp open
+
+;
+;wattcp.cfg
+;
+
+my_ip = bootp
+netmask = 255.255.255.0
+nameserver = 204.29.202.50
+gateway = 204.29.202.1
+nameserver = 204.29.203.50
+gateway = 204.29.203.1
+ppp = 1
+
+******************************************************************
+
+fig.leba.net (PPP)
+------------------
+
+From: Thad Miller <tmiller@fig.leba.net>
+
+;
+; wattcp.cfg
+;
+
+my_ip   = 204.171.58.122
+netmask = 255.255.255.0
+gateway = 204.171.58.4
+
+;
+; dial.ppp
+;
+
+send "atz\r"
+recv 3000 "OK\r\n"
+send "atdt<server phone number>\r"
+recv 60000 "login:"
+send "<username>\r"
+recv 10000 "Password:"
+send "<password>\r"
+
+******************************************************************
+
+fsu.edu? (PPP)
+--------------
+
+From: bibler@wane-leon-mail.scri.fsu.edu (Nathaniel Bibler)
+
+;
+; wattcp.cfg
+;
+
+my_ip = 144.174.96.171
+netmask = 255.255.240.0
+gateway = 144.174.96.6
+ppp = 1
+
+;
+; dial.ppp
+;
+
+send "at\r"
+recv 3000 "OK\r\n"
+send "atdt<phone number>\r"
+recv 60000 "netblazer6 login:"
+send "<ppp-login>\r"
+recv 60000 "Password:"
+send "<password>\r"
+
+******************************************************************
+
+gate.net (PPP)
+--------------
+(Cybergate, FL)
+
+From: bobby@gate.net (Bob Diaz)
+
+;
+; wattcp.cfg
+;
+
+my_ip = <variable>
+ppp = 1
+netmask = 255.255.0.0
+gateway = 199.227.28.10
+nameserver = 199.227.0.2
+domain = gate.net
+
+;
+; dial.ppp
+;
+
+send "atz\r"
+recv 5000 "OK\r\n"
+send "at&d3\r"
+recv 5000 "OK\r\n"
+send "atdt<phone>\r"
+recv 60000 "CONNECT"
+send "\r"
+recv 5000 "sername:"
+send "<username>\r"
+recv 5000 "assword:"
+send "<password>\r"
+
+
+******************************************************************
+
+goodnet.com (PPP)
+-----------------
+
+From: "Stephen L. Hales" <haless@goodnet.com>
+
+;
+; wattcp.cfg
+;
+
+my_ip = BOOTP
+netmask = 255.255.255.0
+nameserver = 205.164.206.1
+domainslist="goodnet.com"
+ppp = 1
+
+;
+; config.ppp
+;
+
+ppp trace 0
+ppp pap user USERID PASSWORD
+ppp pap timeout 20
+ppp quick
+ppp lcp open
+
+
+From: Matthew Moore <mnm@goodnet.com>
+
+;
+; dial.ppp
+;
+
+recv 1000
+send "at\r"
+recv 5000 "OK\r\n"
+send "atz\r"
+recv 5000 "OK\r\n"
+send "atdt3039501\r"
+recv 60000 "ogin:"
+send "<username>\r"
+recv 5000 "assword:"
+send "<password>\r"
+
+
+******************************************************************
+
+hevanet.com (PPP)
+-----------------
+
+From: "Grimshaw, Dave" <grimshaw@hevanet.com>
+
+        WATTCP.CFG
+my_ip = BOOTP
+netmask = 0.0.0.0
+gateway = 198.5.254.1
+nameserver = 198.5.254.1
+
+        DIAL.PPP
+send "atz\r"
+recv 3000 "OK\r\n"
+send "atdt227-0645\r"
+recv 60000 "Please login:"
+send "Username\r"
+recv 10000 "Password:"
+send "Password\r"
+recv 10000 "grimshaw>"
+send "ppp\r"
+
+
+******************************************************************
+
+iadfw.net (PPP)
+---------------
+(Internet America)
+
+From: Woody Woodward <woodward@iadfw.net>
+
+;
+; wattcp.cfg
+;
+
+my_ip   = 204.178.72.155
+nameserver = 204.178.72.1
+netmask = 0.0.0.0
+gateway = 204.178.72.1
+ppp = 1
+
+;
+; dial.ppp
+;
+
+send "atz\r"
+send "atz\r"
+recv 3000 "OK\r\n"
+send "at&f1s10=40\r"
+recv 3000 "OK\r\n"
+send "atdt969-1090\r"
+recv 60000 "login:"
+send "<userid>\r"
+recv 3000 "Password:"
+send "<password>\r"
+
+
+******************************************************************
+
+ICSI.Net (PPP)
+--------------
+(Internet Connect Services in Texas)
+
+From: Neal Symms <neal@ICSI.Net>
+
+;
+; wattcp.cfg
+;
+
+my_ip   = bootp
+netmask = 255.255.255.0
+gateway = 199.1.107.1
+nameserver = 199.1.96.100
+
+;
+; dial.ppp
+;
+
+send "at\r"
+recv 3000 "OK\r\n"
+send "atdt993-0345\r"
+recv 60000 "ogin:"
+send "<username>\r"
+recv 3000 "ssword:"
+send "<password>\r"
+
+
+******************************************************************
+
+idirect.com (PPP)
+-----------------
+
+From: defex@idirect.com (jim matheson)
+
+;
+; wattcp.cfg
+;
+my_ip = 199.45.118.32
+netmask = 0.0.0.0
+gateway = 199.166.254.9
+ppp=1
+
+[note] my_ip changed by SNATCH.EXE
+
+On idirect.com PPP can give IP#'s with varying first digits. v1.20 of snatch
+needs you to give the first 3 digits, so it won't work.
+raven@ns2.icon.net (Derek Bumpas) was kind enough to send me a new version
+(after only 1 night!)
+v 1.21(beta) which can find ANY ip# on the screen with SNATCH . <note the
+dot> it will be avaliable soon (maybe is allready).It has worked every time.
+
+;
+;Dial.ppp
+;
+send "ATZ0\r" <boca v34 modem, user setup done + saved in com program>
+recv 2000 "OK"
+send "atdt2333199\r"
+recv 50000 "login:"
+send "<MYHANDLE>\r"
+recv 12000 "Password:"
+send "<MYPASSWORD>\r"
+recv 120000 "continue"
+send "PPP\r"
+
+
+******************************************************************
+
+internexus.net (PPP)
+--------------------
+
+From: paladine@internexus.net (Jonathan Lee)
+
+;
+; wattcp.cfg
+;
+
+my_ip   = 204.213.70.70
+netmask = 255.255.255.0
+gateway = 204.213.70.1
+
+;
+; dial.ppp
+;
+
+send "atz\r"
+recv 3000 "OK\r\n"
+send "at&c1&k3s11=50\r"
+recv 3000 "OK\r\n"
+send "atdt555-5555\r"
+recv 75000 "e"
+send "\r"
+recv 5000 "e"
+send "\r"
+recv 5000 "e"
+send "\r"
+recv 5000 "name:"
+send "<username>\r"
+recv 5000 "word:"
+send "<password>\r"
+send "3\r"
+
+******************************************************************
+
+io.org (PPP)
+------------
+(Internex Online)
+
+From: rrf@io.org (Robert R. Fitzgibbons)
+
+;
+;config.ppp
+;
+
+ppp trace 0
+ppp pap user Pxxx *****          ... xxx is your login name,**** is the password
+ppp pap timeout 20
+ppp quick
+ppp lcp open
+
+;
+;Dial.ppp
+;
+
+send "at\r"
+recv 3000 "OK\r\n"
+send "atdt3631908\r"                     ... phone # for Premium accounts
+recv 60000 "login:"
+send "P***\r"                            ... *** is your login name
+recv 60000 "Password:"
+send "****\r"                            ... *** is your password
+
+
+******************************************************************
+
+megatoon.com (PPP)
+------------------
+
+From: darkmind@megatoon.com (Steve Blackburn)
+
+;
+; wattcp.cfg
+;
+
+my_ip = 198.53.28.92
+netmask = 255.255.255.0
+gateway = 198.53.28.69
+ppp = 1
+
+;
+; dial.ppp (USR 28.8 modem)
+;
+
+send "at &f1\r"
+recv 3000 "OK\r\n"
+send "atdt5273333\r"
+recv 60000 "login:"
+send "ppp<number?>\r"
+recv 60000 "Password:"
+send "<password>\r"
+
+******************************************************************
+
+mik.uky.edu (PPP)
+-----------------
+
+From: adam richard hamilton <uk05887@mik.uky.edu>
+
+;
+; wattcp.cfg
+;
+
+my_ip= BOOTP
+netmask= 255.255.255.0
+nameserver= 192.107.41.3
+gateway= 192.107.41.4
+domainslist="iglou.com"
+sendretries= 1
+
+;
+; dial.ppp
+;
+
+send "atz1\r"
+recv 3000 "OK\r\n"
+send "atdt231-3822\r"
+recv 60000 "ogin:"
+send "s-2151\r"
+recv 5000 "assword:"
+send "zsswwf\r"
+recv 6000 "ervice:
+send "PPP\r"
+
+******************************************************************
+
+minn.net (PPP)
+--------------
+
+From: KidJudas@aol.com
+
+;
+; wattcp.cfg
+;
+
+my_ip=204.000.000.000
+netmask=0.0.0.0
+nameserver=204.000.000.000
+nameserver=ns.mr.net
+gateway=204.000.000.000
+domainslist="minn.net"
+PPP=1
+
+(editor's note: weird...I think he means that the ip# changes every time)
+
+;
+; dial.ppp
+;
+
+send "at&f1\r"
+recv 3000"OK\r\n"
+send "atdt782-0202\r"
+recv 60000"NNECT"
+send "\r"
+recv 1000"gin:"
+send "<username>\r"
+recv 1000"word:"
+send "<password>\r"
+recv 1000"oice:"
+send "2\r"
+
+
+******************************************************************
+
+mnsinc.com (PPP)
+----------------
+
+From: roman@news1.mnsinc.com (Bill Roman)
+
+
+CONFIG.PPP:
+
+ppp trace 0
+ppp pap user <username> <password>
+ppp pap timeout 20
+ppp quick
+ppp lcp open
+
+WATTCP.CFG:
+my_ip   = 199....
+netmask = 255.255.255.0
+gateway = 199.....
+nameserver = 199.....
+usetimerirq = 1
+
+DIAL.PPP:
+
+send "at\r"
+recv 3000 "OK\r\n"
+send "atz\r"
+recv 3000 "OK"\r\n"
+send "atdt7035551212\r"
+recv 60000 "ID:"
+send "<userid>\r"
+recv 10000 "word:"
+send "<password>\r"
+
+
+******************************************************************
+
+nauticom.net (PPP)
+------------------
+
+;
+; wattcp.cfg
+;
+
+my_ip = 199.234.151.41
+netmask = 255.255.255.0
+gateway = 198.190.226.1
+nameserver = 198.190.226.3
+ppp = 1
+
+;
+; dial.ppp
+;
+
+send "atz\r"
+recv 2000
+send "AT&C1&K3\r"
+recv 2000
+send "atdt3914638\r"
+recv 80000 "login:"
+send "<username>\r"
+recv 30000 "Password:"
+send "<password>\r"
+
+
+******************************************************************
+
+Netcom's Netcruiser (see cruiser.faq) (PPP)
+-------------------------------------------
+
+From: clopez@ix.netcom.com (Carlos Lopez)
+
+I have a Netcruiser account through Netcom, and I have been able to use kali
+with no major problems.
+
+;
+; wattcp.cfg
+;
+
+my_ip   = <Changes every time>
+netmask = 255.255.255.0
+gateway = <Changes every time>.1
+
+;
+;dial.ppp
+;
+
+send "atz\r"
+recv 3000 "OK\r\n"
+send "atdt 708-3801\r"
+recv 60000 " login: "
+send "#<username>\r"
+send "<password>\r"
+
+Sometimes I have to enter the username and password manually, but it works...
+
+
+
+From: chrismcc@ix.netcom.com (Chris McCrory)
+
+;
+; wattcp.cfg
+;
+
+my_ip = 205.184.2.49          <--this is for my local netcruiser acct.
+gateway = 205.184.2.1            usually only the last number changes,
+netmask = 255.255.255.0          but sometimes all four change.
+;nameserver = 192.100.81.101
+
+;
+; dial.ppp
+;
+
+send "at&f&c1&d2\r"
+recv 3000 "OK\r\n"
+send "atdtW7083801\r"   <---my local netcruiser phone number
+recv 60000 "login:"
+send "#username\r"      <---notice the <#>. used on other systems???
+recv 6000"Password:"
+send "password\r"       <---no <#>.
+
+
+From: cadrake@ix.netcom.com (Chris Drake)
+
+I'm using PPP with a 28.8 modem and Netcom.
+
+;
+; dial.bat
+;
+
+ppp /c 2 /d script /s 115200
+
+
+;
+; dial.ppp
+;
+
+send "atz\r"
+recv 3000 "OK\r\n"
+send "atdt7032555951\r"
+recv 60000 "login: "
+send "#{username}\r"
+recv 6000 "Password: "
+send "{password}\r"
+
+;
+; wattcp.cfg
+;
+
+;my_ip   = 199.183.208.116
+;gateway = 199.183.208.1
+
+my_ip    = 204.32.176.146
+gateway  = 204.32.176.1
+netmask  = 255.255.255.0
+
+
+When I call the Wasington D.C. Netcom line I get either the 199 or 204
+IP address so this saves me some typing.
+
+
+
+******************************************************************
+
+orbonline.net (PPP)
+-------------------
+(OrbOnline ISP in Mississauga, Ontario, Canada.)
+
+From: "Andy Lee" <alnedey@orbonline.net>
+
+
+Users connect through dial-up PPP.
+
+I use either a Courier V.Everything or a Sportster 28.8 which are
+the modems that OrbOnline uses.
+
+By default, a member gets dynamically assigned an ip address. I have
+a static one, though. I even wrote a setup utility specific for
+OrbOnline users.
+
+
+WATTCP.CFG
+----------
+my_ip   = 199.166.206.22
+netmask = 0.0.0.0
+gateway = 199.166.206.13
+nameserver = 199.166.206.13
+
+;NOTE: ppp=1 caused my games to be heavily delayed. but i never
+;      locked up with it set. But i'll risk lockups to make
+;      the games playable. So i don't use ppp=1.
+
+
+DIAL.PPP
+--------
+send "atz\r"
+recv 5000 "OK\r\n"
+send "atdt*70,4058508\r"
+recv 60000 "login:"
+recv 500
+
+
+CONFIG.PPP
+----------
+ppp trace 0
+ppp pap user <username>
+ppp pap timeout 20
+ppp quick
+ppp lcp open
+
+;NOTE: I just put my username in and PPP.EXE will prompt
+;      me for the password. I think that's a good idea.
+
+
+******************************************************************
+
+oz.net (PPP)  ????
+------------
+
+From: "E. Winkley" <EWinkley@oz.net>
+(author ppp.faq)
+
+Provider:
+Sense Media, Seattle, WA
+206-451-9400
+
+;
+; wattcp.cfg
+;
+
+my_ip = 000.000.000.000 (Left out; not BOOTP)
+netmask = 255.0.0.0
+gateway = 000.000.000.000
+nameserver = 000.000.000.000
+ppp = 1
+
+;
+; dial.ppp
+;
+
+send "ATZ\r"
+recv 3000 "OK\r\n"
+send "atdt8123200\r"
+recv 60000 "login:"
+send "<username>\r"
+recv 10000 "Password:"
+send "<password>\r"
+
+
+******************************************************************
+
+planet.net
+----------
+
+From: bobtull@planet.net (Bob Tullman)
+
+I currently manually dial, get a PPP connection, exit my comm program and
+invole LSL.COM, SLIP_PPP.COM and PPPPKT.COM
+
+WATTCP.cfg
+----------------------------------------
+my_ip   = 204.117.99.38
+netmask = 255.255.255.255
+nameserver = 198.69.0.65
+gateway = 198.69.0.65
+ppp=1
+
+net.cfg (Used with PPPPKT loading LSL.COM and SLIP_PPP.COM)
+--------------------------------------------------------------
+Link Support
+        Max Boards      1
+        Max Stacks      3
+        MemPool         4096
+        Buffers         8 1600  ; *crucial*
+
+Link Driver SLIP_PPP
+        int     3
+        port    2F8
+ ;      node address    NNNNNNNN0000
+        baud    38400
+        mru     1500
+        accm    00000000
+        accomp  yes
+        pcomp   yes
+        open    active
+;       tcpipcomp vj
+        ipaddr  204.117.99.38
+        frame   PPP
+        Protocol IP     0800    PPP
+
+
+******************************************************************
+
+primenet.net (PPP)
+------------------
+
+From: kdevice@primenet.com (KG)
+
+;
+; wattcp.cfg
+;
+
+MY_IP= BOOTP
+GATEWAY=35.42.1.1
+NETMASK=255.255.255.0
+NAMESERVER=35.1.1.42
+PPP=1
+
+;
+; dial.ppp
+;
+
+SEND     "ATZ\R"
+RECV    6000 "OR\R\N"
+SEND   " ATDT [PHONE NUMBER OF OUR SERVER]\R"
+RECV    6000"LOGIN"
+SEND    "[USERNAME]\R"
+RECV    1000"PASSWORD"
+RECV    1000
+SEND    '[PASSWORD]\R"
+
+
+We never got it to ping the gateway.  Bootp worked fine and
+when we finally added ppp=1 we were there.  It's
+very reliable.
+
+
+From: "Kevin L. German" <klg@dana.ucc.nau.edu>
+
+Here are my settings for connecting to primenet.com with etherPPP
+
+WATTCP.CFG
+----------
+my_ip   = BOOTP
+netmask = 255.255.255.0
+gateway = 198.68.40.1
+nameserver = 198.68.32.10
+
+DIAL.PPP
+--------
+send "at\r"
+recv 3000 "OK\r\n"
+send "atdt<phone #>\r"
+recv 60000 "ogin:"
+send "<login>\r"
+recv 60000 "word:"
+send "<password>\r"
+
+
+******************************************************************
+
+prysm.com (PPP)
+---------------
+
+From: kdl1@prysm.com (Kenneth Lantrip)
+
+;
+; wattcp.cfg
+;
+
+my_ip   = 204.181.193.56*
+netmask = 255.255.255.0
+gateway = 204.181.193.2
+ppp = 1
+
+*note that my last ip number will change dynamically.
+
+;
+; dial.ppp
+;
+
+send "atdt221-2351\r"
+recv 90000 "Annex username:"
+send "kdl1\r"
+recv 2000 "Annex password:"
+send "<password>\r"
+recv 2000 "UniComp kdl1"
+send "ppp\r"
+
+******************************************************************
+
+sensemedia.net (PPP)
+--------------------
+
+From: williams@sensemedia.net (Adam Sperling)
+
+;
+; wattcp.cfg
+;
+
+my_ip   = 205.199.118.98
+netmask = 0.0.0.0
+gateway = 165.227.59.4
+nameserver = 165.227.31.2
+ppp =1
+
+;
+; dial.ppp
+;
+
+send "AT &F2\r"
+recv 3000 "OK\r\n"
+send "atdt3353300\r"
+recv 60000 "login:"
+send "<login>\r"
+recv 10000 "Password:"
+send "<password>\r"
+
+
+From: tdalton@sensemedia.net (Tola Dalton)
+
+;
+; wattcp.cfg
+;
+
+my_ip = 205.199.119.66
+netmask = 0.0.0.0
+nameserver = 165.227.31.2
+gateway = 165.227.59.4
+ppp = 1
+
+;
+; dial.ppp
+;
+
+send "AT &F2\r"
+recv 3000 "OK\r\n"
+send "atdt3353300\r"
+recv 60000 "login:"
+send "<username>\r"
+recv 10000 "Password:"
+send "<password>\r"
+
+
+******************************************************************
+
+shadow.net (PPP)
+----------------
+
+From: fredk@shadow.net (Fred Kutell)
+
+;
+; wattcp.cfg
+;
+
+my_ip = 198.79.48.97
+netmask = 255.255.255.0
+gateway = 198.79.48.3
+ppp = 1
+
+;
+; dial.ppp
+;
+
+send "atw1x4s11=35m1l3\r"
+recv 3000 "OK\r\n"
+send "atdt5990994\r"
+recv 60000 "nnex:"
+send "3\r"
+recv 60000 "name:"
+send "<username>\r"
+recv 40000 "word:"
+send "<password>\r"
+recv 30000 "PPP"
+
+******************************************************************
+
+soltec.com (PPP)
+----------------
+
+From: techmage@soltec.com (Richard Naughtin)
+
+;
+; wattcp.cfg
+;
+
+my_ip   = bootp
+netmask = 255.255.255.0
+gateway = 204.248.64.1
+
+;
+; dial.ppp
+;
+
+send "atz%c1\n6\r"
+recv 3000 "OK\r\n"
+send "atdt<phone#>\r"
+recv 35000
+send "<username>"
+recv 6000
+send "<password>"
+
+******************************************************************
+
+sover.net (PPP)
+---------------
+
+From: dond@sover.net (Don Dyer)
+
+;
+; wattcp.cfg
+;
+
+my_ip = 204.71.18.100
+netmask =255.255.255.0
+nameserver =204.71.16.10
+gateway =204.71.18.1
+ppp=1
+
+;
+; dial.ppp
+;
+
+send "AT&F1 \r"
+recv 6000 "OK\r\n"
+send "atdt254-1020\r"
+recv 60000 "login:"
+send "<username>\r"
+recv 10000 "Password:"
+send "<password>\r"
+
+******************************************************************
+
+teleport.com (PPP)
+------------------
+
+From: caustic@teleport.com (Michael)
+
+;
+; wattcp.cfg
+;
+
+my_ip   = 204.245.212.4
+netmask = 255.255.255.0
+gateway = 204.245.212.1
+
+;
+; dial.ppp
+;
+
+send "atm0\r"
+recv 6000 "OK\r\n"
+send "atdt2202276\r"
+recv 60000 " login: "
+send "<username>\r"
+recv 60000 "Password: "
+send "<password>\r"
+
+******************************************************************
+
+terraport.net (PPP)
+-------------------
+(TerraPort Online Inc., Toronta, Ontario, Canada)
+
+From: jfischer@terraport.net (Jonathan A. Fischer)
+
+;
+; wattcp.cfg
+;
+
+my_ip   = 205.189.145.237
+netmask = 255.255.255.0
+gateway = 205.189.145.9
+nameserver = 199.166.220.1
+
+;
+; dial.ppp (for a USR Sportster 28.8K)
+;
+
+send "at z\r"
+recv 3000 "OK\r\n"
+send "at &f1 L2 s11=40\r"
+recv 3000 "OK\r\n"
+send "atdt xxx-yyyy\r"
+recv 60000 "ogin:"
+send "<userid>\r"
+recv 5000 "assword:"
+send "<password>\r"
+
+******************************************************************
+
+unicomp.net (PPP)
+-----------------
+
+From: muhaideb@unicomp.net
+
+;
+;wattcp.cfg
+;
+
+my_ip=204.181.194.45
+netmast=255.255.255.0
+gateway=204.181.194.2
+nameserver=199.1.42.2
+ppp=1
+
+note that my_ip and gateway are identical with the exception of the last part,
+this gateway was not supplied from my provider...just make one up that is
+identical to your ip untill the last part <204.181.194.make_something_up_here>,
+i tried gateway settings of 204.181.194.0, 204.181.194.1, but 204.181.194.2
+seems to work the best! (in my case)
+
+;
+;Dial.ppp
+;
+
+send "ATZ\r"
+recv 7000 "OK\r\n"
+send "AT&F&C1&D2S7=60\r"
+recv 7000 "OK\r\n"
+send "atdt *70, 877-3625\r"
+recv 60000 "name:"
+send "<username>\r"
+recv 4000 "word:"
+send "<password>\r"
+recv 4000 ":"
+send "ppp\r"
+recv 4000 "!"
+send "+++"
+
+******************************************************************
+
+upstate.net (PPP)
+-----------------
+
+From: rhippler@upstate.net
+
+;
+; wattcp.cfg
+;
+
+my_ip=204.183.127.218
+netmask=255.255.255.1
+gateway=204.183.127.2
+
+;
+; dial.ppp
+;
+
+send "atdt5765326\r"
+recv 600000 "ogin:"
+send "<username>\r"
+recv 60000 "assword:"
+send "<password>\r"
+
+******************************************************************
+
+Vanderbilt's annex server (PPP)
+-------------------------------
+
+From: "Anand M. Bahl" <bahla@ctrvax.Vanderbilt.Edu>
+
+;
+;wattcp.cfg
+;
+
+my_ip = IP.add.res.s (assigned from server after above dialin)
+netmask = 255.255.0.0
+gateway = 129.59.1.1
+nameserver = 129.59.1.10
+ppp =1
+
+;
+;dial.ppp:
+;
+
+send "atdt3434460\r"
+recv 60000 "Annex username:"
+send "<username>\r"
+recv 60000 "Annex password:"
+send "<password>\r"
+recv 60000 "annex:"
+send "ppp default\r"
+
+******************************************************************
+
+whidbey.net (PPP)
+-----------------
+
+From: dabowles@whidbey.net
+
+dial.ppp
+
+send "at&f1\r"
+recv 3000 "OK\r\n"
+send "atdt6781194\r"
+recv 90000 "login:"
+send "<userName>\r"
+recv 20000 "Password:"
+send "<password>\r"
+
+wattcp.cfg
+
+my_ip   = 204.57.140.195
+netmask = 255.255.255.0
+gateway = 204.57.140.254
+nameserver = 204.57.140.1
+
+This is my stuff I use with a whidbey connections ppp account.
+
+******************************************************************

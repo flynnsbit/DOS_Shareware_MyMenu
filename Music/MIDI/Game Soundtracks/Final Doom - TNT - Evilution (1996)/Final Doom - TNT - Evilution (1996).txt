@@ -1,0 +1,9 @@
+Game: Final Doom: TNT: Evilution
+Year: 1996
+Composed by: Jonathan El-Bizri, Josh Martel, L.A. Sieben, Tom Mustaine, Robert Prince
+MIDI versions: GM
+Platform: DOS
+
+Additional info: There are some arranged tracks in the "Arranged" folder.
+
+https://www.karlsitretro.com/game_midi

@@ -1,0 +1,62 @@
+
+              FoxType v0.16 Copyright (C) Mateusz Viste "Fox" 2007
+             ------------------------------------------------------
+
+ FoxType is an open-source program similar to the DOSish 'TYPE' command. The
+ main  differences are  that FoxType  works in graphic  mode (so it does not
+ allow redirection nor piping) and it's able to display UTF-8 text files.
+ In fact, I wrote FoxType because I needed a simple DOS program, which would
+ allow me to view multilanguage text files in DOS.
+
+ FoxType is a 32 bits application, so it requires at least a 80386 processor
+ with a VGA graphic card.
+
+ The Unicode support isn't complete yet. I am still adding new characters to
+ the database, as I want to make it fully compliant with Unicode 3.0.
+ Actually, unsupported characters are displayed as red '?' marks.
+
+ USAGE: FOXTYPE file.txt [/1280]
+
+ The /1280 parameter  switches FoxType to  1280x1024 video  mode (requires a
+ VESA 1.2  compatible  graphic  card). In that  mode FoxType  supports  more
+ Unicode characters, for example some asian scripts which are too complex to
+ be displayed  at 640x480 resolution,  other glyphs are simply smoother.  If
+ you would like FoxType used that video mode by default,  you should specify
+ a DOS environment variable 'FOXTYPE = /1280'.  To do that, just type in the
+ DOS prompt 'SET FOXTYPE=/1280'.
+
+ WARNING: Before using the 1280x1024 VESA graphic mode, please check in your
+          computer's documentation if your monitor can handle it! There is a
+          risk that  such high  resolution could damage some  old-generation
+          monitors (usualy those made before 1998 are the most vulnerable).
+
+ If you  have any  comments  or suggestions, or if  you would  like I add a
+ specific character to the database in priority, feel free to mail me!
+
+ What are you getting in the package?
+
+   FOXTYPE.EXE - The main executable,
+   FOXTYPE.TXT - The file you are reading now,
+   FOXTYPE.BAS - The source file (FreeBASIC v0.17),
+   FOXTYPE.DAT - Font file (for resolution 1280x1024),
+   FOXTYPE.640 - Font file (for resolution 640x480),
+   FOXTYPE.BIN - Bitmap header used to generate screenshots,
+   FOXTYPE.BLN - Index of blank unicode characters,
+   FOXTYPE.LSM - An LSM file describing the software,
+   CHANGES.TXT - The history of FoxType,
+   LICENCE.TXT - A copy of the GNU/GPL licence,
+   DEMO.TXT    - A demo file showing FoxType's capabilities.
+
+ ---------------------------------------------------------------------------
+
+ FoxType's authors:
+
+  * Mateusz Viste 'Fox' [mateusz.viste@mail.ru]
+    The main author (programmer) of FoxType.
+
+  * Henrique Peron, Campo Grande, MS, Brazil [hperon@terra.com.br]
+    Unicode fonts designer and manager.
+
+ If you like FoxType, let us know! ;-)
+ ---------------------------------------------------------------------------
+ <End Of File>

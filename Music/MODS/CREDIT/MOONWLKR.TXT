@@ -1,0 +1,24 @@
+Moon Walker (fb-moonwalker.it)
+https://modarchive.org/index.php?request=view_by_moduleid&query=41554
+Renamed to "MOONWLKR.IT" because of DOS 8-character limit
+
+Summary
+
+    fb-moonwalker.it is a IT format module.
+    Uploaded to modarchive.org on Sun 15th Jun 2003
+
+Info Info
+
+    Mod Archive ID: 41554
+    MD5: 3c1bac2cf6cce582ab8d22531d27289b
+    Format: IT
+    Channels: 58
+    Genre: Funk
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     christofori (https://modarchive.org/member.php?69248)

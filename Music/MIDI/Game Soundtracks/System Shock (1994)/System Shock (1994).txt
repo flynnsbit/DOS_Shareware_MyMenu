@@ -1,0 +1,8 @@
+Game: System Shock
+Year: 1994
+Composed by: Greg LoPiccolo, Tim Ries
+MIDI versions: GM, FM, GUS
+Platform: DOS
+
+
+https://www.karlsitretro.com/game_midi

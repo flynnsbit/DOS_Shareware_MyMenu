@@ -1,0 +1,51 @@
+SourceLess - the source to VGA_Less
+
+Okay, my original plan was to not release this until someone found the three
+hidden parts (or were there 4? :) but anyway, I guess that I'd might as well
+release this thingy now.
+
+If you want the .RAD playback source, you'll have to get RPlay v2.x from me
+somewhere, most likely on my webpage (http://web.nmsu.edu/~jshagam for a link
+to it).
+
+Oh yeah.  Here's the important information:
+
+1. This, as usual, will *NOT* compile on its own without serious modification.
+   Anyone who gets it to compile would probably know better than to try to
+   rip it (well, seeing as how it's designed for an 8086 with CGA and an
+   AdLib soundcard I don't think there's much of a problem with VGA_less
+   clones :)  The stuff that's missing:
+
+   a. The music (mainly because it's not exactly... er... mine :)
+   b. The graphics (not like a picture of two porcupines standing on a
+      mountain are exciting enough to be ripped anyway)
+   c. The music playback routine (you'll have to get RPlay for that, and in
+      this it was slightly "customized," i.e. it's got slightly different
+      playback rates :)
+
+2. Information about this demo: It was entered into the 1996 Hornet 8086
+   compo.  It got second out of three, although I personally think that all
+   of the demos are pretty damn good.  Sorta.  The first place demo is only
+   good because it uses its own music playback routine (a slideshow is, IMO,
+   boring), and the third place demo had some pretty good code (even though
+   it could have been a lot better).  As for mine? Well, I was going more for
+   art and less for a demo of sorts.
+
+3. Ummm... er... have fun :)  Also, please report the hidden parts to Phoenix
+   (it would seem kind of lame if I did it :)
+
+So anyway, the main reason I'm releasing this now (well, as soon as I get my
+net connection back in a few days :) is because I'm going through my
+c:\tp\projects directory tree and PKZipping everything in it which I'm not
+working with anymore (having only 50 megs free on a 503 meg partition with
+about 60 megs of slack is *not* a good thing :).  Well, okay, I'll probably
+end up just compressing my billions of versions of the ending pic.  Whatever.
+
+For the official release of VGA_less and the other 8086 compo entries, check
+out http://ftp.cdrom.com/pub/demos/hornet/8086 etc. etc.
+
+l8rz
+Quantum Porcupine
+march somethingth (it's a Thursday I think), 1996
+
+(I must have been pretty tired when I first wrote this...)

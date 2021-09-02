@@ -1,0 +1,14 @@
+Begin3
+Title:          Undelete
+Version:        2008
+Entered-date:   2009-04-05
+Description:    Undelete allows to undelete erased (but recoverable) files from a FAT16/FAT32 filesystem.
+Keywords:       undelete, unerase, recovery
+Author:         Eric Auer
+Maintained-by:  Eric Auer
+Primary-site:   http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/undelete.html
+Alternate-site: -
+Platforms:      DOS, FreeDOS
+Copying-policy: GNU General Public License, Version 2
+Wiki-site:      http://wiki.freedos.org/wiki/index.php/Undelete
+End

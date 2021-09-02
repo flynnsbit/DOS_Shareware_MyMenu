@@ -1,0 +1,17 @@
+Introduction
+ZEROFILL writes zeros on the empty disk space for the selected drive. It helps virtual machine, and disk compression software to compact the allocated space in the volume, and so on reducing its disk usage.
+
+
+Usage
+ZEROFILL [drive:]
+
+
+Examples:
+ZEROFILL C:
+Will fill with zeros all available space in drive C.
+
+
+Technical details
+ZEROFILL has been specially optimized to run on pure DOS enviroments, no matter if the are on the top of physical machines, or virtual machines. It is written using Open Watcom C++ 2.0 beta, with plain C language using DOS tiny memory model in order to keep it compact.
+
+Even if FAT32 partitions are not explicitilly supported, its 64 bit arithmetic should make it support volumes of up to 256 GB in size, depending if DOS is able to properly inform about it on service 36h. If not, it will only be able to fill reported size at most.

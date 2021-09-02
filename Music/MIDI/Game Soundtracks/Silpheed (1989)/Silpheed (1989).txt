@@ -1,0 +1,8 @@
+Game: Silpheed
+Year: 1989
+Composed by: Fumihito Kasatani, Nobuyuki Aoshima, Hiromi Ohba, Hibiki Godai
+MIDI versions: AWE, GS, MT-32, XG
+Platform: DOS
+
+
+https://www.karlsitretro.com/game_midi

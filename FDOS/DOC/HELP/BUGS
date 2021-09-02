@@ -1,0 +1,192 @@
+HTML Help Viewer 5.3.3 Bugs
+===========================
+
+Please report any bugs or suggestions to:
+
+     http://www.freedos.org/bugzilla
+
+new:
+     http://sourceforge.net/tracker/?group_id=5109&atid=105109
+
+HHSTNDRD 1.0.7 Help Files Errata
+================================
+
+W. Spiegl
+---------
+a) Added "Networking FreeDOS" in english and german,
+b) Removed a lot of bugs
+c) Removed empty lines within the htm file code for
+   space reasons
+d) Added some commands (e.g. rdisk)
+e) Splitted the help into an internet version (with links
+   within a htm site) and a FreeDOS version (without links
+   within a htm site, but links from one site to the other)
+f) no background pictures on the DOS version (links removed)
+g) no external links on the DOS version,
+h) removed the LSM files on the DOS version as they are
+   impossible to update permanently
+i) Actualised the LSM files on the internet version.
+j) different things to reduce the space of the DOS version -
+   especially for use on a diskette.
+
+BUGS:
+In german translation there may be several wrong translations
+as it is not so easy to translate directly. So if you have
+problems with the german translation try to use the english
+help.
+
+
+HHSTNDRD 1.0.6 Help Files Errata
+================================
+
+W. Spiegl
+---------
+
+Added so many features that it is almost impossible to describe.
+I hope there are no more bugs.
+
+a) Added many FreeDOS commands - they should be complete now,
+b) added german language support,
+c) added the actual lsm files in the directory "appinfo",
+d) modified the paths,
+e) the html files are made in a simpler way with "<pre>....text...</pre>;
+   this allows it to modify the text with a simple text editor
+   with no knowledge about html. Nevertheless it is a valid html code.
+f) checked, if all files are W3C compatible (they should be)
+g) added a lot of internal / external links and checked if the links are okay
+   so that the help can be used together with an internet browser.
+
+
+
+
+HHSTNDRD 1.0.5 Help Files Errata
+================================
+
+Rob Platt
+---------
+
+Append now documented, many of the other files are not
+base disk packages, so will be included in a seperate
+help file set.
+
+Other errate are largely still outstanding at this time.
+
+by Eric Auer
+------------
+
+Comments / Errata for FreeDOS hhstndrd 1.0.4 of 16 May 2004
+
+HELP should show current help file name in a status bar, and
+maybe include all files for which there are "see ..." links.
+[I wonder if CPIDOS could be squeezed into fewer CPI files.]
+
+Missing man pages:
+APPEND, CAL, CMOS, DEVLOAD, DOSFSCK, (DT), (DU), FINGER,
+HEAD, INSIGHT (f10 to get menu), (LOADHI), LOCALIZE, LOCATE,
+PG, PKGINST+UNINSTAL+RM, PTCHSIZE?, RERROR, RUNTIME, STAMP,
+STRRES?, SVHEX+SVTXT (of pg), TAIL, TE, TED3, TEE, TOUCH,
+TRCH, UNZIP, VGASHOT, WHICH (internal+exe), (XMSTEST), ZIP
+
+Man pages for which I have no binaries (deprecated tools?)...:
+(BOOTFIX), GRAFTABL (we do have one, but only for CP 866),
+(KC), KEYMAN, LISTXDEF, NLSFUNC, PRINTER, SCANKBD, XKEYB,
+PRINT (we have two different files for this: PRINTQ and PRINT)
+DRIVPARM / DRIVER
+[PS: I have to update my KEYB MKEYB UNDELETE KERNEL...]
+
+Problems with index file / crosslinks (e.g.: Mark not-yet-
+implemented things in index file directly. Should also mark
+INTERNAL commands of FreeCOM as such in the index file!)...:
+MIRROR, UNFORMAT, HIMEM vs. FDXMS, CHOICE (no batch command),
+FOR (a batch command), BACKUP, RESTORE, OtherWaysToGetHelp...
+FDHELP (deprecated name of FASTHELP)
+
+Bugs in man pages:
+ATTRIB /D /@ not described
+CALLVER syntax not described right, and is no full SETVER
+  alternative. Syntax must be CALLVER x.yy command options
+CHKDSK /D value explanation missing, /R "takes long time"
+  warning missing
+COMP seems to be much simpler than the help page suggests
+CTMOUSE /Y /L background / effect not explained well
+CTTY should not be applicable to printer ports
+DEBUG how-to-end-input for E and A commands not explained,
+  M0, MC 387, MC2 not exaplained, XA / XD / XM / XS neither
+DEFRAG should recommend using the interactive interface,
+  some line wrapping problems on the man page
+DELTREE dir and DELTREE dir\ have different effects - explain
+DISKCOMP displays (modified/buggy?) md5sums, disk size limit
+  is 32 MB, not sure if /1 works here
+DISKCOPY /M /I /O /X /D /R /F /E ... not explained
+EDIT help should mention builtin help system of edit and
+  some known limitations (64k file size) and features (mouse)
+EMM386 X= I= NOEMS not well explained. Use NOEMS to get more
+  free UMBs if you need no EMS. X= can be needed e.g. for some
+  network (e.g. x=e000-e7ff), I= to force UMB over other areas
+EXE2BIN is to convert certain (explain) EXE to COM. The other
+  convert-to-fixed-load-segment-BIN mode is not implemented.
+FDAPM help could be more verbose. If APMDOS is too slow, use
+  ADV:REG. Maybe mention SPINDOWN / SPINUP? Warn about VGAOFF.
+  APMDOS (ADV:...) is TSR, saves most. FDAPM+QEMM = no saving?
+FDISK /BMBR not explained. Otherwise hard to check the help.
+  Maybe mention some recommended fdisk.ini settings?
+FORMAT /Q /U is not explained. Defaults should be clever, so
+  /Q and/or /U are not normally needed. /V:... is needed to
+  timestamp disks. Explain unformat/mirror caveats. 720k can
+  not work for 1440k media in 1440k drives. Prefer /Q /U over
+  /U for harddisks. FAT32 might be incompatible. 1680k etc.!?
+GRAPHICS actually only supports 3 printer types. Explain which
+  keywords map to which of those 3 types. Tell people that I
+  can add color{1,4,8}/thermal/graphics{,wide} if they tell me
+  about still existing hardware. Same for /LCD flag - explain
+GRAPH-PS GRAPHPIN GRAPH-HP explain /B (only for CGA), /R (PS
+  does dither in hardware, /R is random <-> ordered dither),
+  /E (reduce density to 1/2). Printouts fit both A4 and letter
+  paper. Supported graphics modes are CGA, EGA and VGA ones
+HIMEM line wrapping problem with man page, /TEST is for use
+  from prompt. Update /X /NOABOVE16 /LOG explanation
+LBACACHE size should be given in kbytes now. DRV is deprecated
+  and not explained correctly. No longer a device! The INFO
+  is for geeks, better use STAT now. ZERO added...
+MEM /C /P not explained. Recommend /c /p and /f /p (/f also
+  lists non-kernel devices, but /d is more verbose as well)
+MIRROR help should tell which options are still dummy ones
+MKEYB /T /L (both quite useful) not explained
+MODE explains the classic MODE. Should explain the new MODE!
+  Mention PARK (use BIOS, FDAPM now) and special baud rates
+  (use BAUDHARD option) for people who know classic mode...
+MORE has some strange /T4 option and allows wildcards. Mention
+  MORESYS as an alternative for (only!) the pipe usage of MORE
+MOVE help is outdated
+NANSI help (tells ANSI/NANSI is NANSI): Merge to NANSI help
+PAUSE can also display a message and is a batch command(?)
+SET /P not explained
+SHARE help and /? output could be more verbose, and the help
+  could explain the purpose / WhyTo of SHARE. If NLSFUNC help
+  is not removed, it should explain what NLSFUNC does and how
+  to work without it. NLSFUNC is some spread-CHCP hub only...
+SHSUCDX conditional-syntax not explained
+SORT /N nls explanation is wrong, /N should, as far as I
+  remember, just enable NLS/codepage/country based SORT ORDER
+SYS /L has a typo, SYS CONFIG and settings are not explained
+TICKLE explanation could be better. TICKLE reads the whole
+  floppy track at once when you first read anything in a track
+  - faster because the floppy has to revolve less often (but
+  TICKLEHD harddisk read ahead does not seem useful...!)
+TREE /V /S probably is something for PDTREE, not (FD)TREE!?
+XCOPY /D /F explained different to (far too long) XCOPY /?
+  output. XCOPY /I /L not explained
+(Are CDRcache, ATAPICDD, EDLINE, JOIN/SUBST/SWSUBST pages ok?)
+
+Config commands without man pages:
+FILESHIGH, LASTDRIVEHIGH, INSTALLHIGH, DOSDATA=UMB, SWITCHES
+(need /E in 2032-2034!), EECHO (working since 2035 only!)...
+(plus secondary BUFFERS (read ahead, ZERO...8) are n/a in
+FreeDOS, FCBS do not take extra RAM in FreeDOS, STACKS should
+be 0,0 or 9,256 or 9,something usually, COUNTRY only accepts
+one argument yet, there is no DRIVEPARM...)
+Is it possible to do 12? DEVICE=... (with space after ?)?
+You could add a sample config / autoexec somewhere, feel free
+to use mine (may have to update them first...) :-)
+
+

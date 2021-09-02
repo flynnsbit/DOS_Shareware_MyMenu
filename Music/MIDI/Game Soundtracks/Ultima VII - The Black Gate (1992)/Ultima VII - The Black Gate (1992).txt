@@ -1,0 +1,9 @@
+Game: Ultima VII: The Black Gate
+Year: 1992
+Composed by: Dana Karl Glover, Kirk Winterrowd, Herman Miller
+MIDI versions: Adlib, MT-32, GM, GS
+Platform: DOS
+
+Additional info: Adlib and MT-32 versions are actual rips from the game. GS version is rearranged for Sound Canvases by some guy that calls himself Telavar. GS2 version is Telavar's arrangement, but further rearranged by somebody else. I don't know who remade the GM version.
+
+https://www.karlsitretro.com/game_midi

@@ -1,0 +1,58 @@
+                             
+                             --------------------
+                             Virtual Pool Credits
+                             --------------------
+ For Celeris:
+-------------
+        Production Manager......................Steve Chaplin
+        Lead Programmer.........................Lee Morgenstern
+        Programmers.............................Matt Soares, Steve Chaplin
+        Simulation Modeling.....................Lee Morgenstern
+        Game Sound..............................Steve Chaplin
+        Game Design.............................Lee Morgenstern, Steve Chaplin
+        Program Design..........................Lee Morgenstern
+        MultiMedia Production Manager...........Ed Ritchie
+        Tutorial and Game Intro Script..........Ed Ritchie
+  
+ For Interplay:
+---------------
+        Executive Producer......................Alan Pavlish
+        Producer................................Ali Atabek
+        Line Producer...........................Paul Kellner
+        Additional 3D Modeling..................Chris Regalado
+        Quick-Start/Help System.................Paul Kellner
+
+
+        Quality Assurance
+        -----------------
+                 
+          Directory of Quality Assurance........Jeremy S. Barnes
+
+          Quality Assurance PC Technician.......Darren Monahan
+
+          Lead Tester...........................Yuki Furumi
+
+          Testers...............................Jeff Barnhart
+                                                Brian McInerny
+                                                Jack Parker
+                                                Steve Pendelton
+                                                Frank Pimentel
+                                                Kyle Shubel
+
+
+
+-------------------------------------------------------------------------------
+     Virtual Reality Effects Created Using 3DVX - (c) 1995 Celeris, Inc.
+-------------------------------------------------------------------------------
+
+
+  The Producers wish to thank the following people for their help on this
+  project:
+
+  Kevin Aguilar, Tony Bressickello, Paul Edelstein, Larry Fukuoka,
+  Travis Millman, Jay Patel, John Sawa, and Rick Thrasher.
+
+
+
+
+<End_Of_File>

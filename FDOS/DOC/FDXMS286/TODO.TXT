@@ -1,0 +1,13 @@
+* Is there a race while allocating a handle? Like this: a call to
+	xms_alloc_xms, interrupt occurs giving control to interrupt
+	routine that calls xms_alloc_xms -> bang!
+
+
+For much later:
+
+* Somebody (I've forgotten whom, sorry) suggested to show the trace
+        lines on a monocrome grafics adapter if installed. While I
+        think it's a good idea, I'm not inclined to do it as I don't
+        have the necessary hardware.
+
+

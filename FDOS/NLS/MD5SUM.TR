@@ -1,0 +1,37 @@
+# Help message
+
+0.0:Kullançm: MD5SUM [/TBV] [/C [dosya]] | [dosya...]
+0.1:MD5 mesaj îzetleri oluüturur ya da denetler
+0.2:    /C           ileti îzetlerini denetle (varsayçlan oluüturmadçr)
+0.3:    /[-]V        detaylç kipi etkinleütir ya da devre dçüç bçrak (vars. kapalç)
+0.4:    /[-]L        LFN kullançmçnç etkinleütir ya da devre dçüç bçrak (vars. aáçk)
+0.5:    /[-]R[num]   îzyinelemeyi etkinleütir ya da devre dçüç bçrak (vars. kapalç)
+0.6:                 num 1 ile 9 arasç bir sayçdçr ve îzyinelemeyi sçnçrlar (vars.=4)
+0.7:    /[-]S        /[-]R=] ile eüdeßerdir
+0.8:    /T           dosyalarç metin kipinde oku
+0.9:    /B           dosyalarç ikili kipte oku (varsayçlan; /T'yi geáersiz kçl)
+0.10:    /M[:|=]kip  îzet kipini seá (SHA veya MD5)
+0.11:/C iáin girdi, îzet oluüturdußunda bu program tarafçndan stdout Åzerinde
+ gîrÅntÅlenen dosya adlarç ve mesaj îzetleri olmalçdçr.
+0.13:/M iáin baßçmsçz deßiüken bir îzet kipi olmalçdçr ve bu MD5SUM'çn nasçl
+0.14:derlendißine baßlç olarak SHA, CRC32, SHA256, veya MD5 olabilir.
+
+# Various other messages
+
+1.0:ûunda geáersiz seáenek:
+1.1:Dosya mevcut deßil
+1.2:stdin Åzerinde okumada hata
+1.3:okumada hata
+1.4:tançnmayan satçr
+1.5:aáçlamaz
+1.6:BAûARISIZ OLDU
+1.7:üunun iáin denetleme baüarçsçz oldu:
+1.8:toplam
+1.9:dosya denetlemeyi geáemedi
+1.10:hiábir dosya denetlenmedi
+1.11:Dosya bir alt dizindir
+1.12:òkaz: LFN desteklenmemektedir
+1.13:Seáenekte baßçmsçz deßiüken (argÅman) eksik
+1.14:Geáersiz saßlama kipi
+1.15:Dizin mevcut deßil
+1.16:GÅncel dizinin alçnmasç baüarçsçz oldu

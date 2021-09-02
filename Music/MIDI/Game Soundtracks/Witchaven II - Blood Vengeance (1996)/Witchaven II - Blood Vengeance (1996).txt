@@ -1,0 +1,9 @@
+Game: Witchaven II: Blood Vengeance
+Year: 1996
+Composed by: Joe Abbati, Steve Newton
+MIDI versions: GM, FM
+Platform: DOS
+
+Additional info: There were many duplicates in the original rip, so I removed them all.
+
+https://www.karlsitretro.com/game_midi

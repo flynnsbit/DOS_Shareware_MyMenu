@@ -1,0 +1,60 @@
+FoxCalc's changes history.
+
+
+What's new in v0.92 [31 Dec 2007]:
+- Exponentiation to non-integer exponents is supported now,
+- Implemented overflow checking for exponentiation operations,
+- Copying the thousands separator symbol from OS settings,
+- Using the MPFR library as a backend to GMP,
+- Changed the modulo operation's behavior,
+- Upgraded the GNU Multi Precision Library (GMP) to v4.2.2 (was: 4.1.2),
+- Compiled with FreeBASIC v0.18.3 (was: v0.18.2),
+- Compiled with UPX 3.02d (was: 3.01d).
+
+What's new in v0.91 [14 Nov 2007]:
+- PGCopy sub replaced by the FreeBASIC's native PCOPY statement,
+- Calculation routine completely rewritten, and linked to the GNU Multiple
+  Precision Arithmetic Library (GMP) - floating point troubles fixed!,
+- Checking if numbers are integers before doing "x!" or "MOD" operations,
+- Minor TUI optimizations,
+- Compiled with FreeBASIC v0.18.2 (was: v0.18.1),
+- Compressed using UPX 3.01d (was: UPX 3.00d).
+
+What's new in v0.90 [30 Jun 2007]:
+- CWSDPMI swapping disabled (allows to run FoxCalc from a floppy disk),
+- Displays the key shortcuts list if no mouse detected (avail. under F1 too),
+- Fixed a bug in MouseRefresh (bad refresh if mouse was in a screen corner),
+- Using the system's decimal separator type when typing a fract number,
+- Compressed using UPX 3.00d (was: UPX 2.01d).
+
+What's new in v0.84 [01 Jun 2007]:
+- Modified the "C" button behavior (BackSpace): removes the last typed digit,
+  until "0" is displayed, then clears operation's data,
+- Restricted decimal resolution to 10 digits (internally still at 15 digits),
+- Overflow checking implementation,
+- General source-code cleaning,
+- Restoring the initial console screen before exiting.
+
+What's new in v0.83 [22 May 2007]:
+- Fixed a little mouse's cursor display bug when clicking on buttons,
+- Fixed thousand sep. insertion (appeared sometimes on the number's front),
+- Switching to scientific notation (00E+00) for numbers >= 1000000000000,
+- Added overflow checking for x!,
+- Compiled with the latest FreeBASIC v0.17b compiler.
+
+What's new in v0.82 [15 May 2007]:
+- Fixed the "divide by 0" MOD bug,
+- Updated the "LICENCE.TXT" file (FSF address has changed),
+- Added an descriptive *.LSM file to the package,
+- Added my email address to the "?" command,
+- Changed "%" behavior in case of addition or subtraction (x+y% = x+x*y%),
+- Codepage detection (buttons are ok on all codepages).. Thx DrV!,
+- Added thousand separator (taken from the operating system's settings).
+
+What's new in v0.81 [06 May 2007]:
+- Mouse bug fixed (mouse cursor visible / not crashing if no mouse driver),
+- Limit decimal resolution to 12 numbers (internal FPU still at 15 decimals),
+- Flushing the keyboard when displaying program's informations.
+
+What's new in v0.80 [05 May 2007]:
+- Initial release.

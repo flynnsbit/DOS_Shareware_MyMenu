@@ -1,0 +1,24 @@
+Augmented_Emotions (augmented_emotions.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=172184
+Renamed to "AUGEMOT.XM" because of DOS 8-character limit
+
+Summary
+
+    augmented_emotions.xm is a XM format module. 
+    Uploaded to modarchive.org on Mon 19th Mar 2012
+
+Info Info
+
+    Mod Archive ID: 172184
+    MD5: ef0be06e68e4fbadeb7ee98de4a0ad93
+    Format: XM
+    Channels: 10
+    Genre: Chiptune
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     Drozerix (https://modarchive.org/member.php?84702)

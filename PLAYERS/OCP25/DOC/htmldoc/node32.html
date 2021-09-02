@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>defaultconfig</TITLE>
+<META NAME="description" CONTENT="defaultconfig">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="next" HREF="node33.html">
+<LINK REL="previous" HREF="node31.html">
+<LINK REL="up" HREF="node30.html">
+<LINK REL="next" HREF="node33.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html465"
+ HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html463"
+ HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html457"
+ HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html466"
+ HREF="node33.html">sound</A>
+<B> Up:</B> <A NAME="tex2html464"
+ HREF="node30.html">Configuration</A>
+<B> Previous:</B> <A NAME="tex2html458"
+ HREF="node31.html">general</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00620000000000000000">
+defaultconfig</A>
+</H1>
+The <EM>defaultconfig</EM> section is very similar to the <EM>general</EM> section.
+But unlike the <EM>general</EM> section which is always processed the settings
+in the <EM>defaultconfig</EM> section can be ommited with an alternative section
+and the <TT>-c</TT> flag from the command line. If the <TT>-c</TT> flag is not
+present the <EM>defaultconfig</EM> section will be processed.<A NAME="tex2html37"
+ HREF="#foot1057"><SUP>6.4</SUP></A>
+<PRE>
+[defaultconfig] ; default configuration
+  link=mchasm devi sets smpbase plrbase mcpbase arcarj arczip \
+       arcrar arcumx arcbpa arclha arcace playcda playinp
+  prelink= ; preloaded dlls
+</PRE><DL COMPACT><DT>link
+<DD>just like in the <EM>general</EM> section this option defines which
+modules should be loaded at startup. You can delete some entries if you will
+not need them - however this is not recommended as they do not use much
+memory and do not require any processor power is not used.
+<DT>prelink
+<DD>these files will be loaded before starting the main module. If
+something goes wrong here <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP will continue to work.</DL>
+<P>
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot1057">... processed.</A><A NAME="foot1057"
+ HREF="node32.html#tex2html37"><SUP>6.4</SUP></A>
+<DD>Therefore
+it was named <EM>defaultconfig</EM>...
+
+</DL>
+<BR><HR>
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

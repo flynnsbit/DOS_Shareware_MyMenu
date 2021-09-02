@@ -1,0 +1,40 @@
+Author:                      Date:                 Licence:
+       Kurt Zammit                April 2001               GPL
+
+GNU CHCP is intended to clone the CHCP command found in DOS. However, it is
+not compatible. Never worry however, because IMHO GNU CHCP is superior to
+Microsoft's CHCP in that it comes with a sofware (GNU TTF2FNT) to convert
+TTF fonts to DOS fonts.
+
+This is absolutely the first of its kind. No other software exists capable of
+converting TTF files into DOS fonts.
+
+As if this were not enough, a set of free fonts comes with this package.
+
+GNU CHCP is a program written entirely in Turbo Pascal and assembly used to
+load different character sets used by different languages.
+
+GNU CHCP takes around 4096 bytes for the current font. It is very lean and
+does not munch away at your PC's resources.
+
+GNU CHCP is very small as a program and its source does not take up more than
+25 lines of Pascal code. I think it is compilable by TP5.5. I use TP7.
+If you want TP7 for free, go to Borland's (Inprise) web site in France and
+download it gratis.
+
+Features:
+Supports most DOS fonts
+Is compatible with other products
+It's GPLed
+Easy to use
+
+Syntax:
+CHCP [filename]
+  to load font
+CHCP -r
+  to restore system font
+
+
+
+
+

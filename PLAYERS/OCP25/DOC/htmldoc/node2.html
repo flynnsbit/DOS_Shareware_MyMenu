@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Installation and files</TITLE>
+<META NAME="description" CONTENT="Installation and files">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="next" HREF="node4.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="opencp.html">
+<LINK REL="next" HREF="node3.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html124"
+ HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html122"
+ HREF="opencp.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html116"
+ HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html125"
+ HREF="node3.html">Third party plugins</A>
+<B> Up:</B> <A NAME="tex2html123"
+ HREF="opencp.html">OPENCP 2.5</A>
+<B> Previous:</B> <A NAME="tex2html117"
+ HREF="node1.html">Foreword</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00200000000000000000">
+Installation and files</A>
+</H1>
+<FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP needs no special install procedure. Simply copy all files you found inside
+the archive into one directory. If you like you can add this directory to your
+path statement. Example:
+<BLOCKQUOTE>
+Install <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP into <code>C:\OPENCP</code> by typing:
+<UL>
+<LI><TT>C:</TT>
+<LI><code>CD \</code>
+<LI><TT>MD OPENCP</TT>
+<LI><TT>CD OPENCP</TT>
+<LI><code>PKUNZIP -D C:\[theRightDirectory]OPENCP</code>
+</UL>Then you can modify your <TT>autoexec.bat</TT> and add the new directory to
+the path statement. The new path might look like <BR>
+<code>path c:\windows;c:\windows\command;c:\opencp</code>.
+</BLOCKQUOTE>
+<P>
+The following files are (at least) required to start <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP <BR>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="RIGHT"><TT>cp.exe</TT></TD>
+<TD ALIGN="LEFT">the startup file used to start the <FONT SIZE="-1"> O<SMALL>PEN</SMALL></FONT>CP runtime system</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><TT>cp.ini</TT></TD>
+<TD ALIGN="LEFT">the initializition file read by cp.ini to configure itself</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><TT>cp.pak</TT></TD>
+<TD ALIGN="LEFT">the DLL library where all modules are stored</TD>
+</TR>
+</TABLE>
+<P>
+As <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP is a Watcom program it normally needs the DOS4GW extender to use
+protected mode. But DOS4GW has some minor bugs and is a huge program. The
+file <TT>cplaunch.exe</TT> is an alternative dos extender started automatically
+by <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP. You should include this file in the directory too.<A NAME="tex2html5"
+ HREF="#foot988"><SUP>2.1</SUP></A>
+
+<P>
+When <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP loads a module the information stored inside the file is read and
+stored in a special file (the <EM>module information chache</EM>). Actually the
+cache splits up into three files: <BR>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="RIGHT"><TT>cparcs.dat</TT></TD>
+<TD ALIGN="LEFT">Information about archives and files stored inside</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><TT>cpmdztag.dat</TT></TD>
+<TD ALIGN="LEFT">?</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><TT>cpmodnfo.dat</TT></TD>
+<TD ALIGN="LEFT">Informations about various modules</TD>
+</TR>
+</TABLE> <BR>
+If you delete these files all file information gathered is permanently lost.
+
+<P>
+If you install third party plugins they will be located in the main directory
+too and included into the <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP runtime system at startup.
+
+<P>
+The <TT>doc</TT> directory contains documentation files in various formats
+and release notes etc. You can savely delete this directory if you are running
+out of disk space.
+
+<P>
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot988">... too.</A><A NAME="foot988"
+ HREF="node2.html#tex2html5"><SUP>2.1</SUP></A>
+<DD>If you like
+your file to be started with DOS4GW you can type at the command prompt
+<TT>dos4gw cp.exe</TT> or delete the file <TT>cplaunch.exe</TT>. This is
+however not recommended!
+
+</DL>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html126"
+ HREF="node3.html">Third party plugins</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html124"
+ HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html122"
+ HREF="opencp.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html116"
+ HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html125"
+ HREF="node3.html">Third party plugins</A>
+<B> Up:</B> <A NAME="tex2html123"
+ HREF="opencp.html">OPENCP 2.5</A>
+<B> Previous:</B> <A NAME="tex2html117"
+ HREF="node1.html">Foreword</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

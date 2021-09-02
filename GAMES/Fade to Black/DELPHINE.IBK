@@ -1,0 +1,136 @@
+# SOUND SECTION
+
+PATH_VOICE              DATA\SOUND\
+PATH_SND                DATA\SOUND\
+NOISE_VOLUME            112
+MUSIC_VOLUME            122
+
+
+
+# INPUT DEVICE SECTION
+
+MOUSE                      OFF
+MOUSE_SENSIB_X             41
+MOUSE_SENSIB_Y             47
+KEYBOARD                   ON
+JOYSTICK                   OFF
+GAMEPAD                    OFF
+1STMAXXJOY                 1400
+1STMINXJOY                 0
+1STMINYJOY                 0
+1STMAXYJOY                 0
+
+
+
+# DISPLAY CONFIGURATION
+
+DRAFT_DISPLAY           NO
+MODE_DRAFT              NO
+VISIBLE_ICONES          YES
+LIGHT_COEF              256
+
+
+
+# ICONS VISIBILITY
+
+ICON_MOVE_VISIBLE            NO
+ICON_ACTION_VISIBLE          YES
+ICON_VIEW_VISIBLE            NO
+ICON_STEP_VISIBLE            NO
+ICON_CAM_VISIBLE             NO
+ICON_TOOLS_VISIBLE           NO
+ICON_GUN_VISIBLE             NO
+ICON_INV_VISIBLE             YES
+
+
+
+# SCREEN MODE 0:320x200 1:640x400 2:320x240
+
+SCREEN_MODE             1
+
+
+
+# ICONES POSITION IN PLAY MODE
+
+ICON_LR_MOVE_X            87
+ICON_LR_MOVE_Y            170
+ICON_HR_MOVE_X            146
+ICON_HR_MOVE_Y            174
+
+ICON_LR_VIEW_X             290
+ICON_LR_VIEW_Y             172
+ICON_HR_VIEW_X             292
+ICON_HR_VIEW_Y             92
+
+ICON_LR_STEP_X             250
+ICON_LR_STEP_Y             173
+ICON_HR_STEP_X             296
+ICON_HR_STEP_Y             173
+
+ICON_LR_CAM_X              0
+ICON_LR_CAM_Y              0
+ICON_HR_CAM_X              0
+ICON_HR_CAM_Y              0
+
+ICON_LR_TOOLS_X            5
+ICON_LR_TOOLS_Y            13
+ICON_HR_TOOLS_X            296
+ICON_HR_TOOLS_Y            36
+
+
+
+# INVENT. POSITION IN PLAY MODE
+
+ICON_LR_INV_X             12
+ICON_LR_INV_Y             135
+ICON_HR_INV_X             86
+ICON_HR_INV_Y             141
+
+
+
+# ICONS POSITION IN MAP MODE
+
+ICON_LR_MAP_MOVE_X         29
+ICON_LR_MAP_MOVE_Y         62
+ICON_HR_MAP_MOVE_X         43
+ICON_HR_MAP_MOVE_Y         28
+
+ICON_LR_MAP_ZOOM_X         79
+ICON_LR_MAP_ZOOM_Y         61
+ICON_HR_MAP_ZOOM_X         97
+ICON_HR_MAP_ZOOM_Y         28
+
+
+
+# CABINET ICONS POSITION
+
+ICON_LR_CAB_X              155
+ICON_LR_CAB_Y              164
+ICON_HR_CAB_X              309
+ICON_HR_CAB_Y              258
+
+
+
+# INFO SCANNER POSITION
+
+ICON_LR_SCAN_X             199
+ICON_LR_SCAN_Y             5
+ICON_HR_SCAN_X             256
+ICON_HR_SCAN_Y             90
+
+
+
+# SCREEN UNZOOMING FACTOR
+
+TXTY_MODE                  0
+
+
+
+# GAME LEVEL (EASY/NORMAL/HARD)
+
+PLAY_LEVEL                 NORMAL
+
+# OTHER FIELD(S)
+MUSIC           ON
+SOUND           ON
+GREY_SCALE              NO

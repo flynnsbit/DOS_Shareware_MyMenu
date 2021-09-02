@@ -1,0 +1,21 @@
+
+                        *** Mateusz's Saucy Editor ***
+
+
+Mateusz's  Saucy  Editor  (MSEDIT)  is a  simple  editor  working in  the DOS
+environment.  I decided to write it, because I had been using the Microsoft's
+EDIT editor for years, without finding any free alternative. Of course, there
+is plenty of  free DOS  editors out  there,  but no  one has  ever matched my
+expectations (or  should I  say, my  taste).  I guess  that's because  I  had
+already been "formatted" by the MS editor :-)
+You will  probably notice  that MSEDIT is  very similar to  Microsoft's EDIT.
+That's a pure coincidence,  and there is no connection at all between both of
+them!
+
+MSEDIT features also a FB mode (has to be invoked using the /fb switch). This
+mode allows to compile and run FreeBASIC source code from within the editor.
+
+I hope you will like MSEDIT as much as I do! ;-)
+
+Mateusz Viste <mateusz.viste@mail.ru>
+WEB: http://mateusz.viste.free.fr/dos

@@ -1,0 +1,202 @@
+                                
+                                -------------
+                                Control Keys                      
+                                -------------
+A:      Aim
+
+Move the mouse left or right to aim the cue.  Move the mouse forward or 
+back to change the up/down angle of the table.  Hold the left mouse button 
+and move the mouse back to zoom in.  Hold the left mouse button and move 
+the mouse forward to zoom out.  The view stays centered around the cue ball.
+The Status Area will inform you when you are in AIM MODE.
+
+S:      Shoot
+
+Hold the S key down and move the mouse back for your backstroke, and then 
+forward to strike the cue ball.  The faster you move the mouse forward, the 
+harder you will strike the cue ball.  As with a real pool cue, a smooth 
+stroke is very important.  The Status Area will inform you when you are in 
+Shoot Mode.
+
+V:      Change View
+
+Press V to select View Mode.  Move the mouse left and right to rotate 
+the table.  Moving the mouse forward and back changes the up/down angle of 
+the table.  Hold the left mouse button and move the mouse forward/back to 
+Zoom the view.  Hold the C key down and move the mouse to change the center 
+of view.  The center of view is the point the view rotates about.  Changing 
+to Aim mode will bring the view back to the cue ball (AIM) view.
+
+M:      Select and move ball
+
+Hold M down to move the currently selected ball.  Hold H down to change the 
+ball selection.  'Move'  will only work on the cue ball when you have ball 
+in hand during a game, or while  in practice mode.  H only works in 
+practice mode.            
+
+B:      Raise butt of cue
+
+For some advanced shots, such as the masse, you must hit the cue ball from 
+above.  Hold down B and move the mouse forward or back to bring the butt of 
+the cue up or down.  The Status Area will display the cue angle.  The angle 
+will be reset to normal after the shot.  
+
+C:      Move Center Point
+
+Hold C and move the mouse to move the center point of the view to a different 
+location on the screen.  Moving the view in this way does not affect the aim 
+of the shot.   
+
+E:      English:  Move cue tip
+
+Hold E and move the mouse to apply English (change the cue tip location on 
+the cue ball).  The dot on the cue ball indicates where the cue tip will hit.  
+English is used to place spin on the cue ball, and can be very helpful in 
+making what would otherwise be impossible shots.  Hitting the cue ball to the 
+left or right of center places a left or right spin on the ball.  Hitting the 
+cue ball above center puts a foward spin on the ball.  Hitting below center 
+puts a backwards spin on the cue ball.
+
+F:      Vary Force of Tracking hit
+
+This option is only available if (T)racking is turned on. While Tracking is on, 
+hold F down and move the mouse forward or back to change the force of the hit.  
+Tracking Lines get longer as the mouse is pushed forward (Increase Force), 
+shorter as the mouse is pulled back (Decrease Force).  The balls will all end 
+up exactly where the Tracking indicator shows if you hit the cue ball with 
+the specified amount of force.  Use the SPACE BAR to use exactly this amount 
+of force.   
+
+
+H:      Select a different ball to move
+
+You must first select M first to activate ball Move.  Then hold the H key and 
+move the green crosshair cursor with the mouse over the ball you wish selected.  
+When you release the H key the cursor will snap to the nearest ball.  Once the 
+ball is selected, hold the M key to move the ball to the desired location.  
+Only available in Practice Mode.
+
+Left Mouse Button: Zoom
+
+Hold the left mouse button down and move the mouse backwards (down) to zoom in, 
+move the mouse forward (up) to zoom out.
+
+Right Mouse Button: Opens Main Menu System
+
+Press the right mouse button to enter the Main Menu.  You may also access
+the Main Menu by pressing the F10 key or the Escape Key.
+
+Shift: toggle Amplify
+
+Press the shift key (no need to hold it) to toggle Amplify.  "Amplify" will 
+appear in red in the status area.  Mouse movements are exaggerated while 
+Amplify is turned on.  This option is used primarily for the break.
+
+Ctrl:   toggle Fine Tune
+
+Press the Ctrl key (no need to hold it) to toggle Fine Tune.  "Fine Tune" 
+will appear in red in the status area.  Mouse movements are much finer while 
+amplify is turned on.  Use this control for setting up trick shots or anytime 
+precision alignment is needed.  It also comes in handy for hitting the cue 
+ball softly.
+
+L:      Toggle table lines
+
+Press the L key to toggle the table lines on or off.
+
+
+P: Preference Color
+
+Changes the color of the table. 
+
+R:      Replay last shot
+
+Press R to replay the previous shot.  You can change the rate of replay (even 
+during replay) with the + and - keys.
+
+T:      Toggle Tracking
+
+The T key will toggle the Tracking Lines on and off.  Tracking shows you 
+the path of every ball on the table, based on the current aim and force setting.  
+Each ball's path is indicated by a line of the same color as the ball.  
+Striped balls have striped paths.  The Tracking lines end where the ball will 
+stop.  The exact path balls will follow is based partly on the force of the 
+hit.  To hit the cue ball with exactly the force shown by Tracking, press S 
+and then press the space bar instead of shooting the ball with the mouse.
+
+U:      Undo
+
+Press U to Undo the last shot.  The view will reset to the AIM and table 
+position of the previous shot.  This is very useful for practicing shots.  
+Undo is not available when playing a computer opponent, or when connected to
+a remote player via network or modem.
+
+Z:      Zip to result
+
+Press Z after you shoot to progress immediately to the end of the shot.  Z will 
+skip to the result of the shot, placing the balls where they would have ended 
+up if allowed to roll naturally to a stop.
+
++ (=) Increase replay rate
+
+The + key (or the = key) will increment the replay rate.  Replay rate can be 
+1/8 speed, 1/4 speed, 1/2 speed, or 1 (full) speed.  The replay rate is shown 
+at the top right of the status area.   Replay rate can be adjusted at any
+time, even during the replay.
+
+-       Decrease replay rate
+
+The - key will decrement the replay rate.  Replay rate can be 1/8 speed, 
+1/4 speed, 1/2 speed, or 1 (full) speed.  The replay rate is shown at the top 
+right of the status area.   Replay rate can be adjusted at any time, even 
+during the replay.
+
+Alt-C: Send communication to remote player
+
+Press Alt-C and you will be able to send a text notice to a remote player.  
+Your notice can only be one line across the screen.  If you need more room, 
+send the message in more than one piece.  Press Enter when you are done
+entering your message and it will be sent to the remote player.
+
+
+Alt-L: Load Saved Game or position
+
+Alt-L will load a previously saved game or shot.
+
+Alt-M Declare miscall on previous shot
+
+Most games require players to call their shots.  Usually the shot you are 
+attempting is obvious.  If a shot doesn't go in as you planned, the computer 
+doesn't know, so you are on the honor system to admit it.  Press Alt-M 
+and play will proceed to the next player.  Not available in Practice Mode.
+
+Alt-Q: Quit current match
+
+Alt-Q quits the current match.  You will be asked to confirm this option.  
+Game and Foul totals will reset to zero for both players.  
+
+Alt-S: Save game or position
+
+Alt-S saves the current game.  You can use this to save a game to resume 
+later, or you can use it to save trick shots.  You must enter a name to save 
+the shot under.  Not Available in Demo Version.
+
+Alt-T: Change player turn
+
+If you want to play "push out" rules, let your opponent try again, or just 
+got mixed up whose turn it was, press Alt-T and play will go to the other 
+player without the movement of any balls, or the assessment of any fouls. 
+Not Available in Demo Version.
+
+INS:    Spot selected ball
+
+Insert will spot the selected ball at the foot spot.  Available only in 
+Move Mode.
+
+DEL:    Pocket selected ball
+
+Delete will pocket the selected ball.  Available only in Move Mode.
+
+
+
+<End Of File>

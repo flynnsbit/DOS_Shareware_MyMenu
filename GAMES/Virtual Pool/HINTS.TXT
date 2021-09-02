@@ -1,0 +1,152 @@
+			     
+                             ---------------------
+			     Questions and Answers
+			     ---------------------
+
+  
+  Q:      How can I improve the look and performance of Virtual Pool?
+  A:      Using the proper Video Driver will enhance the resolution and 
+	  performance of Virtual Pool.  To set up your Video Driver, first
+	  select "VIDEO SETUP" from the Main Pool Menu within the game.
+	  A window will open, displaying the currently installed video
+          drivers.  Click on the proper driver to select it, then choose OK.
+          The game will then switch to high-res mode.  As the selection of
+          drivers is based upon the actual chip used in your video card, you
+          may wish to review the Video Setup Option on the Start-Up Menu for
+          more complete information on selecting the proper driver for your 
+          Video Card, or press (R) from the StartUp menu, and use the Auto-
+          detect Feature to scan for the correct driver to use.
+  
+ 
+  
+  Q:      There is no Video Driver included for my Video Card.
+          What should I do?
+  A:      Contact Interplay and see if a driver for your card is available.
+          Interplay Tech Support: 714.553.6678  -  BBS 714.252.2822
+
+  Q:      I called Interplay and there isn't a driver available for my Video
+          Card!  Now what?
+  A:      Sorry.  New brands of video cards are being manufactured all the 
+	  time, so it's possible that a driver for your card  will be available 
+	  soon.  Also note that some Video Cards are not powerful enough to 
+	  support Virtual Pool in High-Res Mode; therefore, no video drivers 
+	  can be created for them.  All Video Cards will however support the 
+	  default low-res mode.
+
+  
+  Q:      My mouse doesn't work -- what should I do?
+  A:      You either need to install a DOS Mouse Driver before starting Pool 
+	  or, even better, set the Serial Port Option in the "DEVICE SETUP"
+          Menu from within the game.  Use the ESCape key to bring up the Main
+          Pool Menu, the arrow keys to move the cursor to "DEVICE SETUP", and
+          the <enter> key to select.  On the Device Menu, switch to the
+          appropriate Serial Port for your mouse, then move the cursor to "OK"
+          and press <enter>.  Selecting a Serial Port will start the Virtual
+          Pool Mouse Driver, which has been specially designed for the game,
+          and may provide better performance.  If you make a mistake and select
+          the wrong Serial Port, simply re-enter the menu system,highlight the
+          proper selection; then press <enter>.  Note that your mouse must be
+          100% Microsoft Compatible to use the Virtual Pool Mouse Driver.
+          If you have a PS/2, or another type of system that uses a BUS style
+          mouse, you must use a DOS Mouse Driver when running Virtual Pool.
+  
+  Q:      My sound card was not listed under Sound Setup -- which sound card 
+	  do I select?
+  A:      Most sound cards are compatible with Sound Blaster, so try Sound 
+	  Blaster Pro 2 or 16.  If that doesn't work, try Sound Blaster 1, 1.5, 
+	  2, or Pro 1.  As a last resort, you may use the Adlib Driver.
+
+  
+  Q:      Why won't Tracking turn on and why doesn't Undo or Replay work?
+  A:      Tracking, Undo, and Replay are only available while in Practice Mode,
+          or while playing against another person on the same computer.
+
+  
+  Q:      Why don't the balls follow the paths shown by the tracking lines?
+  A:      Ball paths are highly dependent on cue ball speed.  If the cue ball 
+	  is not struck at the force shown by the tracking lines the balls may 
+	  not follow the paths.  This is especially true of the cue ball.  Use 
+	  the space bar to strike the balls with the force shown by the 
+	  tracking lines and the balls will follow the exact paths.  Hold down 
+	  the F key and move the mouse back (towards you) to Decrease the Force;
+	  move the mouse forwards (away from you) to Increase the Force.
+
+  
+  Q:      Sometimes I can't see the balls after shooting.  What can I do to 
+	  be able to see the entire shot? 
+  A:      One way is to zoom out during the shot by pressing the left mouse 
+	  button and moving the mouse up (away from you) (ZOOM OUT).
+	  Alternately, you may press "O", which will give you an overhead 
+	  view of the entire table.
+  
+  
+  Q:      I'm practicing a shot over and over and want to see the result  
+	  without waiting for all the balls to stop rolling.  How can I get 
+	  to the end of a shot quickly?
+  A:      Use the Zip (Z) key to automatically zip to the end of the shot.  
+	  The balls will all move to the position they would have ended up in 
+	  had they been allowed to roll to a stop naturally.
+  
+  
+  Q:      When I try to use the Remote Play Mode over my Local Area Network a 
+	  message saying "IPX driver not loaded" appears.  What's wrong?
+  A:      Virtual Pool requires an IPX driver for remote play over Local Area 
+	  Networks (LAN). Look for a file named IPX.COM in the software 
+	  supplied with your network card.  Install the IPX driver by typing 
+	  IPX in the directory with that contains the file IPX.COM. 
+
+
+  Q:      I'm trying to shoot a ball down the rail but the pocket is off the 
+	  screen.  If I zoom out far enough to see the pocket, the balls are 
+	  too small for accurate aiming.  Is there a way to see the pocket 
+	  without having to zoom out so far?
+  A:      Yes.  Use the Center (C) key to reposition the viewing center on the 
+	  screen.  Hold down the C key and move the mouse to change the view 
+	  center to the right or left screen edge.         
+
+  
+  Q:      I load a Trick Shot, but when I take the shot, it completly misses
+	  the target.  What are you guys trying to pull?
+  A:      Instead of using the mouse to make the shot, use "R" to replay the
+	  shot, and you'll see that it does in fact work correctly.  After
+	  watching the shot, press "U" to undo the shot and then try it 
+	  yourself.  Note that most trick shots are very difficult, and it might 
+	  take a bit of practice to make the shots yourself.
+
+  Q:      Virtual Pool runs too slow on my computer.  Is there anything I
+          can do to speed things up?
+  A:      Yes.  Select Preferences from the Main Menu, and turn off one or
+          more of the Display Options, (Show Background, Ball Numbers, Ball
+          Shadows, and/or Window size).  By reducing these display options,
+          Virtual Pool should run quickly on any computer that meet the
+          minimum requirements.
+  
+  Q:      I Still have Questions.  Where can I get more help?
+  A:      Check the other options on the Start-Up Menu for specific help on a 
+	  variety of topics.  Press F1 while in the Game to start the Virtual
+	  Pool Online Help System.  Read the Command Keys file for a listing
+	  and description of all the hot keys in Virtual Pool.  
+	  
+  Q:      Is there any other place I can get help?
+  A:      Yes.  Log on to the Interplay BBS and Join Conference 7, the
+	  Virtual Pool Conference.  While you're here you can read the 
+	  questions and answers left by other users, ask your own questions 
+	  to our Virtual Pool Expert, and even download new Trick Shots!    
+	  
+          Also check for other Virtual Pool Conferences or Forums on the 
+	  Internet, AOL, CompuServe, other Online Services, or your favorite 
+	  local BBS.
+
+		   
+                        Interplay BBS: 714.252.2822
+                        Internet:  support@interplay.com
+                        Interplay Tech Support: 714.553.6678  
+
+                        or write:    Interplay
+                                     Attn: Customer Service
+                                     17922 Fitch Avenue
+                                     Irvine, CA  92714
+
+
+
+<End_Of_File>

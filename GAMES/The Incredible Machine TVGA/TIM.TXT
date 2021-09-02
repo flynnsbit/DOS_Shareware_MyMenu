@@ -1,0 +1,128 @@
+
+   INSTRUCTIONS FOR THE INTERACTIVE DEMO OF THE INCREDIBLE MACHINE
+                              (10/07/92)
+
+Greetings fellow inventors, puzzlers, and gamesters!!  Welcome to the
+wacky and wondrous world of "The Incredible Machine".
+
+This interactive demo version lets you get a taste of the game to see
+for yourself if you want to buy the full version which will be
+available in stores and directly from Sierra On-Line in November 1992.
+
+INSTALLATION  (FROM DISK)
+
+1.     If you are reading this, you have the Demo disk in a floppy drive, 
+       and you are in the TIM directory. So, go to step 2.
+
+2.     Now type INSTALL <ENTER>.
+
+3.     Select COPY THE INCREDIBLE MACHINE to HARD
+       DRIVE from the Smart Start menu.
+
+4.     Follow the on-screen instructions.
+
+STARTING TIM
+
+Any time you wish to play TIM after it has been installed, follow
+these instructions:
+
+1.     Get into the TIM directory on the hard drive.
+       Probably by typing CD C:\DYNAMIX\TIM.
+
+2.     Type TIM to start the program.
+
+
+PLAYING TIM
+
+1.     From the Control Panel, click on either the arrow icon
+       or the picture of the playfield.  The Smart Cursor
+       will show the word PLAY.
+
+2.  Now all actions are controlled by the mouse and the Smart Cursor.
+Notice that when your cursor is over a part (where the part border is
+animating), one or more "handles" will be available to click on. The
+number of "handles" shown will be based upon what can be done to a
+part.  For example, if a part can not be flipped then the flip
+"handles" will not be shown.  These handles will perform the following
+actions when they are clicked on:
+
+PICKUP - (Smart Cursor is arrow with HAND icon) Pickup is active
+within the interior of the active part, or over the part icon if the
+Smart Cursor is over the parts bin.  After being picked up, a part can
+be placed anywhere on the screen as long as it does not overlap
+another part.  If it is overlapping another part, a large red "X" will
+appear over it.  The part can also be dropped back into the part bin.
+Click the mouse button to drop a part after it has been picked up.
+
+RECYCLE - (Smart Cursor is arrow with RECYCLE icon) This handle is in
+the upper left corner of the active part.  Recycle will immediately
+remove a part from the playfield and put it back into the parts bin.
+
+FLIP - (Smart Cursor is arrow with FLIP icons) These handles are in
+the lower left and lower right corners of the active part and allow
+the active part to be flipped left/right or up/down.
+
+RESIZE - (Smart Cursor is arrow with RESIZE icons) These handles are
+above, below, to the left, and to the right of the active object.
+Clicking on one of these handles activates resizing.  Moving the mouse
+will change the size of the active part.  Clicking the mouse a second
+time turns off resizing.
+
+3. Click on the STARTER icon (in the upper right corner of the screen)
+when you are ready to run your machine.  To stop a running machine,
+just click the mouse button.  Below the Starter icon are the Scroll
+Part Bin arrows.  If there are more than five different types of parts
+in the parts bin, these arrows allow you to scroll through them.  The
+Control Panel can be brought up by clicking the RIGHT mouse button.
+
+
+PUZZLES
+
+For this interactive demo, there are only eight puzzles, but in the
+real version there are over 100 puzzles.  The goals of each puzzle are
+described on the Control Panel.  In each puzzle there will be some
+parts that are already positioned on the playfield.  Note that you
+cannot pickup, recycle, flip, or resize any of these initial parts.
+
+Once a puzzle has been solved you will be given a password for later
+access.  This demo version of TIM always allows access to all puzzles,
+so you don't need to worry about the passwords.  After solving a
+puzzle, the next puzzle will automatically be loaded for you.  If you
+want to select a different puzzle, simply click on the Puzzle icon
+from the Control Panel, highlight the desired puzzle, and then click
+on the PLAY icon.  The puzzle that you have selected will be loaded.
+
+
+FREEFORM
+
+NOTE:  Freeform is not available in the demo version.
+
+From the Control Panel, click on the Wrench icon.  In this mode you
+have an unlimited number of parts and all the different types of parts
+are available for use.  You are also able to change the gravity and
+the air pressure.  You can build any machine you desire.  You can also
+save the machine to disk for later use.  Saved machines can also be
+uploaded to bulletin boards.
+
+
+PC SOUNDS
+
+NOTE: Although this demo version does not support PC speakers, it does
+support most major sound cards.
+
+
+Look for the full version of The Incredible Machine in November 1992.
+Please pass this version along to your friends.
+
+HAVE FUN!!
+
+Copyright 1992 Sierra On-Line
+
+TO ORDER THE INCREDIBLE MACHINE
+
+                         Sierra On-Line, Inc.
+                           Order Department
+                             P.O. Box 978
+                       Oakhurst, CA  93644-9899
+
+  Call (800) 326-6654 to place an order or get pricing information.

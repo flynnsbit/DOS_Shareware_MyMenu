@@ -1,0 +1,82 @@
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ ±±±± A_TYPE v1.2 ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ 
+        Display ASCII / ANSI / ANSI MUSIC / AVATAR files from Dos.
+
+
+
+                     Written by Ron Huiskes / Intersoft
+                  (c) Copyright 1991 All Rights Reserved
+ 
+                            Ron Huiskes / Interface
+                                 P.o. Box 528
+                              2280 AM Rijswijk
+                                   Holland
+
+                +31-70-3361380 / +31-70-3361381 / +31-70-3360698
+                      Netmail: [2:281/506@fidonet.eur]
+
+
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ ±±±± What can this thing do ?  ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+  
+  Because RemoteAccess 1.0 implemented a new feature: Avatar,
+  I needed an util that allowed me to quickly view Avatar files
+  from Dos.
+
+  I also make a lot of Doors for Ra, and wanted to included avatar
+  in my doors. Because of that I made an Avatar driver, and used
+  it to create this A_TYPE program. Mainly to test all the Avatar
+  functions...
+  
+  A_TYPE can display AVATAR files up to AVT/0+. RLE compression IS
+  supported!
+
+  While I was making the Avatar driver, I decided to include Ansi
+  Music also. Background music playing is supported! 
+  Hopefully Andrew Milner decides to implement this also in a future
+  version of Ra.
+
+  And now, this proggie can display ascii, ansi, ansi music and avatar
+  files quickly from dos.
+
+  Enjoy...!
+
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ ±±±± Command Line Options ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+  Syntax:  A_TYPE <filename> [/W]
+
+  To use A_TYPE you have to supply the name of the file you want
+  to display as parameter at A_TYPE's start.
+
+  To let A_TYPE pause at the end of the file you can supply the optional
+  '/W' parameter....
+
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ ±±±± Disclaimer ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+  A_TYPE is supplied as *CardWare*. If you are using this program
+  sent me a postcard of your city (looks great on my wall!) telling
+  me that you use A_TYPE.
+
+  A_TYPE comes with limited warranty: NONE.
+
+  In no event shall Ron Huiskes and/or InterSoft be liable for any
+  damages caused by A_TYPE. The Software is supplied as-is. If it
+  breaks in two, you own both halves...
+
+
+<EOF>

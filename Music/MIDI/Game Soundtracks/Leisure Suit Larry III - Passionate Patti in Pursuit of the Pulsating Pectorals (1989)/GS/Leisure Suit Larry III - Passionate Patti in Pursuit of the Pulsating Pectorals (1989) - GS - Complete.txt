@@ -1,0 +1,115 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ================================================
+               LEISURE SUIT LARRY 3:  PASSIONATE PATTI
+                IN PURSUIT OF THE PULSATING PECTORALS
+                                                        
+
+                            THE SOUNDTRACK
+                     (See below for song titles.)
+                Music Composed & Performed by Mike Dana
+                 "The Larry Theme" written by Al Lowe
+           ================================================
+                 Copyright (c)1989 Sierra On-Line, Inc.  
+           ================================================
+
+                          ROLAND GS VERSION
+
+           ** NOT FOR GENERAL MIDI ** NOT FOR YAMAHA XG **
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- Roland Sound Canvas GS MIDI device
+   (Must contain MT-32 and CM-32P variation tone sets.)
+
+
+This Standard MIDI File was recorded directly from Sierra's "Leisure Suit
+Larry 3" adventure game using Sierra's MT-32 driver.  It has been converted
+and arranged for playback on 100% Roland GS compatible devices.  GS cards and
+modules must contain both the MT-32 and CM-32P variation tone sets.  THIS
+FILE IS NOT DESIGNED FOR GENERAL MIDI OR YAMAHA XG PLAYBACK.
+
+EDITOR'S NOTE:
+When played through a Roland Sound Canvas GS card or module, playback will
+closely match the Roland MT-32 Sound Module version!  Most of the primary
+instruments used by Mike Dana to sequence this soundtrack were those found
+in the default timbre map of the MT-32.  Therefore, the MT-32 Variation Tone
+Bank of the Sound Canvas is utilized consistantly throughout this conversion.
+
+Recorded/converted/edited/compiled/arranged for Roland GS by Tom Lewandowski.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+       =================================================================
+                           TRACK SHEET  (GS VERSION)
+
+                    LEISURE SUIT LARRY 3: PASSIONATE PATTI
+                    -IN PURSUIT OF THE PULSATING PECTORALS
+       =================================================================
+
+   SONG TITLE                                      START MEASURE/TIME *
+   -------------------------------------------------------------------------
+   1. Sierra Fanfare                                      2  00:00:02
+   2. Introduction ("For Your Thighs Only")               8  00:00:16
+   3. Right Answer, Wrong Answer                         48  00:01:52
+   4. Nontoonyt Island Song                              51  00:02:00
+   5. Girl In The Binoculars                            112  00:04:26
+   6. Natives, Inc.                                     146  00:05:48
+   7. Nontoonyt Resort                                  174  00:06:55
+   8. Tawnee At The Beach                               236  00:09:24
+   9. The Comedy Hut (Paul Paul)                        289  00:11:31
+  10. The Burly Stage Manager                           336  00:13:24
+  11. Casino Showroom                                   346  00:13:48
+  12. Cherri And Larry's Casino Show                    381  00:15:12
+  13. Cherri Tart                                       425  00:16:57
+  14. Casino Lounge - Part 1                            506  00:20:12
+  15. Fat City                                          562  00:22:26
+  16. The Increadible Dork                              594  00:23:43
+  17. Bambi                                             640  00:25:33
+  18. Bambi's Video Workout                             675  00:26:57
+  19. You Score!                                        708  00:28:16
+  20. Larry Scores!                                     711  00:28:24
+  21. Crab Dance                                        732  00:29:14
+  22. Dewey, Cheatem, And Howe                          767  00:30:38
+  23. Patti's Theme                                     818  00:32:40
+  24. Patti's Theme II                                  869  00:34:43
+  25. Casino Lounge - Part 2                            935  00:37:21
+  26. Love Theme From Leisure Suit Larry 3              987  00:39:26
+  27. Patti's Quest                                    1227  00:49:02
+  28. The Burlesque Review                             1279  00:51:07
+  29. Chip 'N' Dale's                                  1320  00:52:43
+  30. Dale Carlsonian                                  1353  00:54:04
+  31. The Bamboo Jungle                                1417  00:56:38
+  32. The Bamboo Jungle - Part 2                       1470  00:58:45
+  33. The Bamboo Jungle - Part 3                       1518  01:00:40
+  34. The Bamboo Jungle - Part 4 (Death March)         1546  01:01:48
+  35. In Pursuit Of The Pulsating Pectorals            1570  01:02:45                                  
+  36. The Cliff Climb                                  1655  01:06:02
+  37. Patti, Just Say No!  (Marijuana Cliff)           1663  01:06:28
+  38. Rope Climbing For Beginners                      1692  01:07:38
+  39. Dance Of The Feral Pig                           1720  01:08:45
+  40. The River Log Ride                               1768  01:10:40
+  41. Nontoonyt Tribe Of Amazonian Women               1839  01:13:31
+      Lesbian Cannibal Natives                         ----  --------
+  42. The Reunion                                      1901  01:16:00
+  43. Falling Through The Nexus                        1944  01:17:43
+  44. SierraLand                                       1952  01:18:02
+  45. Police Quest Set                                 1980  01:19:09
+  46. Space Quest Set                                  1993  01:19:40
+  47. King's Quest Set                                 2035  01:21:21
+  48. The End                                          2050  01:21:51
+  49. Closing Theme                                    2056  01:22:12
+  --------------------------------------------------------------------------
+                                                TOTAL TIME:  01:23:24
+
+
+      * Note:  Start Times are approximate.
+

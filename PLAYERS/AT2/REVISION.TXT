@@ -1,0 +1,445 @@
+Ú-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ--ùú          ú
+ù /´DLiB TR/´CK3R ][ Revision History ù
+ú               úù-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-Ù
+
+For complete AT2 revision history refer to:
+http://www.adlibtracker.net/files/revision.htm
+
+
+* version 2.3.52
+  released: 10/27/2014
+
+   . fixed switchover from offline to normal debug mode with ^Enter
+   . fixed not working instrument selection with no 4OP track extension
+   . fixed position bugs in File Selector
+   . fixed lately introduced bug in Tone Portamento (arrgh)
+   . fixed treating Tone Portamento with offline Debug and Note Recorder
+   . fixed usage of non-NUMPAD asterisk (*) key for track ON/OFF flags
+   . fixed/improved Replace function and added new shortkey functions
+   . fixed pattern/order editor refresh bug occuring with small song speeds
+   . added synchronized instrument/command processing for selected tracks
+     when Note Recorder mode is armed
+   . added quick reset of track group selection (hotkey: [Alt] Q)
+   . added 'fps_down_factor' option to config file
+   . improved layout in Instrument Control panel
+
+
+* version 2.3.51
+  released: 09/05/2014
+
+   . changes in Note Recorder feature:
+     - fixed bug when deleting notes was operating in wrong track
+       if current track view on screen was moved by user;
+       fixed precision with high song speeds (all notes are deleted now :)
+     - added possibility to switch between using custom instrument
+       and using present instruments in tracks (hotkey: Space / [Alt] Space)
+     - improved keyboard reference on Help screen
+
+
+* version 2.3.50
+  released: 07/28/2014 (* 07/30/2014)
+
+   . fixed ADSR preview update with enhanced screen modes
+   . added Note Recorder feature (hotkey: ^Space);
+     changed hotkey for Synth! mode to [Alt] Space
+   * fixed some missing usage of non-NUMPAD +/- keys
+
+
+* version 2.3.49
+  released: 07/14/2014 (* 07/15/2014)
+
+   . improved current track movement in Debug Info window
+   . added macro details section to Debug Info window
+   . added flipped paste block feature (hotkey: Alt+Shift+V)
+   . fixed/improved File Browser and Replace window
+   . enhanced cursor movement in File Browser and Replace window
+   . enhanced Help screen navigation for effect columns
+   . added FX volume information processing in marked block
+   . small changes in user interface
+   * fixed deviation between real and OPL3-emulated playback
+     which was caused by misuse of FM-register macro;
+     updated AT2 player to version 0.41
+
+
+* version 2.3.48
+  released: 06/13/2014
+
+   . added 'Set Custom Speed Table' effect command (`xx)
+   . fixed conversion of FMK files
+   . fixed forced OPL3 port range to 1-FFFFh
+   . fixed processing of Force instrument volume effect
+     for 'AM' connections
+   . fixed bug in post-processing of Arpeggio effect
+   . small fixes in Arpeggio import from S3M files
+   . fixed/improved/enhanced ADSR preview feature
+   . optimized/enhanced color scheme options in config file
+   . added possibility to control config file options
+     with command line (refer to tip #25 in program documentation);
+     removed obsolete "/aXXXX" option for OPL3 autodetection
+   . fixed handling of ON/OFF flags for 4-OP track pair
+   . added positional memory for Song variables and Replace window
+   . majorily improved Debug Info window functionality (hotkey: ^D)
+   . AT2 player updated to version 0.40
+
+
+* version 2.3.47
+  released: 04/02/2014 (* 04/09/2014)
+
+   . fixed current instrument control in Macro Browser window
+   . fixed macro speed manipulation and Song Variables value update
+   . fixed keypress repeat between instrument/macro speed control
+   . fixed macro table preview bug with positive/negative columns
+   . added macro speed control to Instrument Editor window
+   . added FM-register macro table preview to Instrument Macro Browser
+   . improved layout in Arpeggio/Vibrato Macro Editor window
+   . improved positional memory logic
+   . added enhanced screen layouts from SDL version (refer to option
+     "screen_mode" in config file);
+     removed obsolete VESA support and options from config file
+   . major fixes/cleanups/optimizations of source code
+   . updated incomplete key reference information in Help and .doc file
+   . fixed some keyboard routines for potentially less hardware issues
+   . fixed not initialized song timer in AT2 Player
+   * fixed text cursor position issue with mouse driver under DOS
+   * reverted back to "FT" as default typing mode
+
+
+* version 2.3.46
+  released: 03/14/2014
+
+   . fixed general faulty behavior of save-required notification
+   . fixed wrong instrument naming when loading complete A2W bank
+   . fixed position behavior of instrument selection for load/paste
+     register data operation in Macro Editor window
+   . completely recoded refresh routines of realtime graphics
+     for more efficient CPU usage;
+     removed option "cpu_saving" from config file
+   . fixed arpeggio/vibrato macro table pointer in Macro Editor window
+
+
+* version 2.3.45
+  released: 03/11/2014
+
+   . improved debugging information on program crash screen
+   . added new modules from Diode Milliampere
+   . slightly fixed Synth! mode behavior in Pattern Editor window
+   . added fully-featured macro browser
+   . added bank browser for A2B and A2W files (finally :)
+   . added file-dependent positional memory to all bank browsers
+   . added positional memory to Macro Editor window
+   . fixed command typing bug in arpeggio macro table
+   . improved paste operation in more places of the tracker
+   . improved navigation system in Macro Editor window
+   . improved layout of Macro Editor window
+   . overall major improvements in macro data exchange and user handling
+
+
+* version 2.3.44
+  released: 02/11/2014
+
+   . fixed bug in playback calibration (macros were not processed)
+   . added command typing behavior mode handling in Macro Editor window
+   . added some new modules (Madbrain’s awesome A2M collection is
+     hopefully complete now :) and a bit put to order some old ones
+   . added instrument type indicators in Macro Editor window
+   . added instrument type indicators and possibility to change current
+     instrument in Instrument Editor window
+   . changed handling of F2/F3 related actions over instrument data
+
+
+* version 2.3.43
+  released: 02/06/2014
+
+   . fixed interface bugs in Transpose and Pattern List window
+   . changed F2/F3 related key combos:
+     - some quick-load functionality was disabled for safety reasons;
+       only single instruments and patterns can be quick loaded now
+     - all quick-save functionality disabled except for saving A2M file
+       in Pattern Editor / Pattern Order window
+     - hot key for saving instrument bank w/ macros ([Shift] ^F2)
+       in Instrument Control panel was simplified to [Shift] F2
+   . changed loading process of A2W files:
+     - only FM-register / FM-register Macro Table instrument data
+       is loaded within Instrument Control panel
+     - only Arpeggio/Vibrato Macro Table data is loaded within
+       Arpeggio/Vibrato Macro Table Editor window
+   . added some modules from OxygenStar, a.o. to Modules directory
+   . added new "AT" command typing behavior mode (like FT but without
+     cycling pattern moves) (hotkey: Shift+F11);
+     if not overriden by config file, this mode is set by default
+   . updated "techinfo.doc" file
+
+
+* version 2.3.42
+  released: 01/26/2014
+
+   . fixed bug in replay routine (playback never advanced to order #7f)
+   . added quick access key for Macro Editor window (^Q)
+   . added macro-preview mode for Arpeggio/Vibrato Macro Editor window
+   . added possibility to change current instrument directly within
+     Macro Editor window (new key combo: Ctrl+[])
+   . added possibility to change current instrument and octave while
+     macro-preview mode is activated
+
+
+* version 2.3.41
+  released: 01/22/2014
+
+   . fixed bug in replay routine (frequency data output for 4OP channels)
+   . fixed bug with channel calculation in 4OP binding mode
+   . added ADSR preview indication to Instrument Control panel
+   . updated AdT2 player to version 0.38 (full source code included)
+   . updated "techinfo.doc" file
+
+
+* version 2.3.40
+  released: 01/17/2014
+
+   . fixed program freeze with marking block at 4OP channel
+   . fixed bug with track binding not displayed without panning lock on
+     in Song Variables window
+   . fixed binding of two 4OP instruments in Instrument Control panel
+   . fixed toggle of ADSR preview (new key combo: [Ctrl] LShift/RShift)
+   . improved MPU-401 status reporting
+   . removed "timer_precision" option from config file
+
+
+* version 2.3.39
+  released: 01/17/2012 as 2.4.00 at Google Code by ijsf
+
+  . MPU-401 compatible MIDI slave mode, can be used to send notes
+    to Adlib Tracker II, also known as "synth mode"
+
+
+* version 2.3.38
+  released: 06/10/2007
+
+   . fixed bugs with command typing selection (ST/FT)
+   . added play state preview when in instrument control panel
+   . optimizations for running in DOSBox environment
+
+
+* version 2.3.37
+  released: 01/06/2006
+
+   . changed behavior of ZFF command (refer to "adtrack2.doc" file)
+   . slightly fixed off-tune bug with preview of macro-instruments
+   . fixed !xx and @xx command
+   . added playback control in instrument control panel (refer to tip #22)
+   . added activity indicators to instrument control panel
+   . fixed high CPU usage while playing w/o trace and some window is open
+   . fixed scrollbar bug
+   . fixed decimal values to hexadecimal in debug info and instrument editor
+   . fixed volume on testing instrument in song with volume_scaling set
+   . fixed arpeggio/vibrato table played on testing macro-instrument
+   . added compatibility text-mode (refer to "troubleshooting" options)
+   . improved CFF loader stability (implemented internal YsComp decompression)
+
+
+* version 2.3.36
+  released: 02/21/2004 (* 10/13/2004) never officially released
+
+   . added possibility to toggle off ADSR preview (hotkey: [ScrollLock])
+   . added possibility to quick-adjust loop begin and loop length
+           (hotkey: [Shift] ^Home,End and [Shift] ^PgUp,PgDown)
+   . added separated arpeggio/vibrato editing (hotkey: ^E)
+   . improved cursor navigation with Home,End and [Shift] Home,End keys
+   . improved song change indicator
+   . improved scrollbar accuracy
+   . improved speed of internal calculation routines
+   . improved replace feature
+   . improved macro editor convenience
+   . improved running program under Windows NT/2000/XP
+              (no system warnings - but no drive info either :)
+   . fixed jerky playback on setting octave in instrument control panel
+   . fixed marked pattern indicator in pattern list
+   . fixed timing bug in player
+   . fixed song tracing when pattern is delayed
+   . fixed pattern delay effect command
+   * improved tracing in pattern editor and pattern order window
+   * changed layout for on/off fm-registers (TVKS)
+
+
+* version 2.3.35
+  released: 01/28/2003
+
+   . added instrument w/ fm-register macro file format (A2F)
+   . added optional playback w/ sync (refer to tip #18)
+   . added CPU saving feature (refer to "troubleshooting" options)
+   . added note retrigger to FM-register macro-table (refer to tip #21)
+   . added ^Home and ^End as quick-adjust table length in macro editor
+   . added macro indicator to instrument control panel
+   . added [Alt] B as toggle last marked block
+   . added highlighting of currently played line number
+   . added some block marking intelligence (it's no Einstein, though :)
+   . added disabling columns in fm-register macro table (refer to tip #20)
+   . added checking key-off phase while testing instrument (refer to tip #17)
+   . added single-playing pattern (hotkey: [Alt] F6)
+   . added playback without synchronization (hotkey: [Alt] F5,F8,F9)
+   . added ADSR preview to instrument editor
+   . added full-view text-mode emulation (refer to "troubleshooting" options)
+   . added [Ctrl] F8 or [Ctrl] F9 as play from current line
+   . added [Shift] ^V or [Shift][Alt] P as partial block pasting
+   . added [Ctrl][Tab] V as multiple object pasting
+   . added pattern list (hotkey: ^P) (cool, isn't it? :)
+   . added behavior mode hotkeys (F11,F12) and behavior indicator
+   . fixed some keyboard routines (due to national keyboard drivers)
+   . fixed processing global volume in tracker
+   . fixed loading text font to graphic card's memory (hardware method used)
+   . fixed some bugs in player (it should not crash now ;)
+   . fixed slow movement in pattern order window
+   . fixed some interface bugs
+   . improved midiboard (note can be tracked while playing with no trace)
+   . improved decay bars and volume analyzer in both tracker and player
+   . improved several interface functions
+
+
+* version 2.3.34
+  released: 12/02/2002
+
+   . changed line counter (at status line) to decimal mode
+   . added optional OPLx latency (refer to "troubleshooting" options)
+   . fixed minor bugs in both tracker and player
+
+
+* version 2.3.33
+  released: 10/06/2002
+
+   . replay routine sourcecode changes:
+     sorcecode is both TMTPC and FPC compatible
+     added optional fading out
+     fixed minor bugs
+   . added text-mode emulation (refer to "troubleshooting" options)
+   . added screen saver
+   . added FMK file support
+   . added initial lock states to song variables
+   . added more FM-register control effect commands (#0x-#Cx)
+   . added extra fine vibrato and tremolo effect commands (~xy,^xy)
+   . added extra fine arpeggio effect command ($xy)
+   . added extra fine frequency slide effect commands (&Ex,&Fx)
+   . added extra fine volume slide effect commands (&Cx,&Dx)
+   . added extra fine global volume slide effect commands (&Ax,&Bx)
+   . added 4-op track extension (ogie dogie :)
+   . added force instrument volume effect command (=xx)
+   . added replace feature (hotkey: ^H)
+   . fixed mixing block bug in pattern editor
+   . fixed tremor effect command
+   . fixed retrig note and multi retrig note effect commands
+   . fixed loading FIN instruments
+   . fixed instrument preview
+   . improved autodetection of OPL3 interface
+   . improved program documentation
+   . improved debugging mode and playback navigation
+   . improved song timer
+   . improved importing AMD/S3M/SAT/SA2/XMS modules
+   . improved overall volume control (made a bit more logarithmic :)
+   . improved debug info window
+   . improved macro editor and instrument editor
+   . improved program interface
+
+
+* version 2.3.32
+  released: 04/05/2002
+
+   . major cosmetic improvements (finally had time to do that :)
+   . advanced macro frequency range (1000Hz should be enough, imho :)
+   . fixed behavior of global volume indicator
+   . fixed errors in macro editor
+
+
+* version 2.3.31
+  released: 01/08/2002 (* 03/21/2002)
+
+   . added lots of other things I can't remember now =)
+   . added lots of AdLib modules
+   . added instrument preview in file open dialog and bank browser
+   . added FIB and FIN file support
+   . added IBK file support
+   . added BNK file support
+   . added S3M file support
+   . added indicator of unsaved data
+   . added fine vibrato/tremolo switch commands (ZFD,ZFE)
+   . added pattern length and number of tracks settings
+   . added volume scaling switch
+   . added 2nd effect column (useful, isn't it? :)
+   . added global volume effects (%xx,&6x,&7x,&8x,&9x)
+   . added vibrato off and tremolo off effect commands (ZFB,ZFC)
+   . added tremolo effect command (Mxy); manual slide up/down has been
+           remapped to &4x,&5x (fine-tune up/down)
+   . added fixed-note system
+   . added percussion track extension (yep, yep :)
+   . improved file format (smaller files :)
+   . improved transpose feature
+   . improved instrument preview (chords can be done :)
+   . improved command typing (see tip #5 in doc file)
+   . improved importing AMD/XMS modules
+   . improved importing RAD modules
+   . improved importing SAT/SA2 modules
+   . improved importing CFF/DFM/HSC/MTK modules
+   . fixed pattern loop in combination with Bxx/Dxx effect commands
+   . fixed calculating frequency shift up/down
+   . fixed pattern delay effect command
+   . fixed saving tiny modules
+   . removed mouse requirement (mouse emulation keys: [Ctrl][Tab] Arrows)
+   . increased number of patterns and instruments available
+   . recoded task switching (looks like multi-tasking, eh? :)
+   . completely recoded timer and keyboard routines
+   * added swap arpeggio table effect command (!xx)
+   * added swap vibrato table effect command (@xx)
+   * added arpeggio/vibrato table swapping switch command (ZFF)
+   * added macro key-off loop command (ZEx)
+   * added instrument macro-definitions (yep! they kick EdLib's ass, imho :)
+   * added instrument bank with macros file format (A2W)
+   * fixed song change indicator
+   * fixed instrument testing/preview
+   * fixed loading older A2P/A2B/A2I file formats
+   * removed pattern/order editing restriction while song is played
+
+
+* version 2.3.30
+  released: 02/10/2001 (* 02/24/2001)
+
+   . added TMT Pascal port of replay routine
+   . added icon (adtrack2.ico) for the tracker (thanks to Corona688 :)
+   . added brandnew modules from Nula and Malfunction/Altair
+   . added drive identification in directory lister
+   . added active octave and instrument indicators
+   . added quick octave setting (hotkey: [Shift] 1..8)
+   . added remapping of instruments (hotkey: ^R)
+   . added instrument swapping in instrument control panel
+   . added note delay and note cut effect commands (&2x,&3x)
+   . added pattern delay effect commands (&0x,&1x)
+   . added pattern loop and recursive pattern loop effect commands (ZCx,ZDx)
+   . fixed replay of tone portamento with volume slide effect commands
+   . fixed sorting in directory lister
+   . fixed ZAx effect command
+   . fixed typing in effect command definitions
+   * added backup feature for song state (Hotkeys: /, [Shift] /)
+   * fixed loading pattern files
+   * fixed all (?) cosmetic bugs :))
+   * added FPC port of replay routine
+   * fixed TMT Pascal port of replay routine
+   * fixed instrument loading bug
+
+
+* version 2.3.29
+  released: 12/31/2000
+
+   . added brandnew modules from Nula and Malfunction/Altair
+   . added track panning and track volume control
+   . added pattern/song/track/block transpose (hotkey: ^T)
+   . added sequencing [5xy,6xy],[Gxy,Hxy],[Oxy,Pxy],[Rxy-Yxy] effect commands
+   . added frequency slide with volume slide effect commands (Rxy-Yxy)
+   . added changing of instrument parameters while playing
+   . fixed typing in "Jxy" effect command
+
+
+* version 2.3.28
+  released: 12/21/2000
+
+   . totally changed color scheme (hope you like it, guys :)
+   . improved module and tiny module file format
+   . implemented like 9 new effects (tremor, multi retrig, a.o.)
+   . implemented advanced song variables
+   . added support for DFM modules
+   . bugfixes ;-D

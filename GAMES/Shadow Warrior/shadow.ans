@@ -1,0 +1,2022 @@
+ ____  _               _                __        __              _
+/ ___|| |__   __ _  __| | _____      __ \ \      / /_ _ _ __ _ __(_) ___  _ __
+\___ \| '_ \ / _` |/ _` |/ _ \ \ /\ / /  \ \ /\ / / _` | '__| '__| |/ _ \| '__|
+ ___) | | | | (_| | (_| | (_) \ V  V /    \ V  V / (_| | |  | |  | | (_) | |
+|____/|_| |_|\__,_|\__,_|\___/ \_/\_/      \_/\_/ \__,_|_|  |_|  |_|\___/|_|
+
+              Shadow Warrior v1.2 On-Disk Technical Support Manual
+                   Copyright (c) 1997 3D Realms Entertainment
+                            http://www.3drealms.com/
+
+
+                  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                  ³TABLE OF CONTENTS AND HOW TO USE THIS FILE³
+                  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+    This document gives detailed instructions on how to play Shadow Warrior
+              and contains important troubleshooting information.
+
+This document is set up with a quick search capability.  If you press F7 at any
+time, you will get a listing of all the categories to look at in this file.
+Press F7 now to look at it.  In this menu, you can scroll up and down the
+listing of items to read, and then select one by pressing ENTER.  You will be
+taken directly to that item.  If you wish to search for a specific piece of
+text, you can hit F3 to enter any text to search for.  If you just wish to
+scroll up and down, you can use the arrow keys to move through the text.  You
+can also use the Home and End keys to quickly get to the top or the bottom of
+this file.  Press F7 now to see a listing of the categories in this document.
+
+
+                             ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                             ³SYSTEM REQUIREMENTS³
+                             ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+þ Shadow Warrior's minimum system requirements are:
+
+  A Pentium with 16 megabytes of memory and VGA graphics.  A CD-ROM is required
+  for the registered version.
+
+  We strongly recommend a Pentium 90 with more than 16 megs of memory and PCI
+  Local Bus Video (at least 2Mb of Video Memory), for optimal
+  performance.
+
+  For the SVGA modes, a VESA compliant video card is required.  Please see your
+  video card's manual for info on how to find out if your card is VESA
+  compliant.  If yours is not VESA compliant, you will need to use a software
+  driver to provide this compliance.  We suggest a driver such as Display
+  Doctor (formerly called UniVBE).  If you have the registered CD-ROM of Shadow
+  Warrior, Display Doctor can be found on the CD-ROM in the \goodies\univbe
+  directory. If you have the shareware version of Shadow Warrior, you must
+  obtain Univbe on your own.  It can be obtained at any of 3D Realms' online
+  support forums (See "3D Realms Online" at the bottom of this document for
+  contact information).  It can also be obtained directly from the program's
+  author (SciTech Software) at http://www.scitechsoft.com. To install Univbe,
+  copy the files from the \goodies\univbe directory on the CD-ROM to a
+  temporary directory on your hard drive, change to that directory, and type
+  "INSTALL".
+
+  NOTE: There are no versions of Shadow Warrior that have been optimized for
+        any specific video cards, chipsets, or VR devices from 3D Realms. If
+        such a version exists, it would have to have come from the people that
+        make your particular card/device.  Please contact them.
+
+þ For game play, the following devices are optionally supported: Keyboard,
+  Mouse, Joystick, Gravis GamePad, Flightstick, & ThrustMaster/Wingman.
+
+þ The following sound cards/devices are also optionally supported:
+
+  For Music: Gravis UltraSound, Sound Blaster (all of them), SoundMan16,
+             Pro Audio Spectrum, SoundScape, WaveBlaster, Sound Canvas,
+             Adlib, and General MIDI.
+
+  For SFX: Sound Blaster (all of them), Gravis UltraSound, SoundMan16,
+           Pro Audio Spectrum, SoundScape, Disney/Tandy Sound Sources.
+
+  There is no support for the PC Speaker.
+
+
+                            ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                            ³THE SHADOW WARRIOR STORY³
+                            ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+Lo Wang.  Master ninja assassin for 20 years.  A shadow warrior.
+
+Shadow warriors are the best of the best, and Lo Wang was the best of the
+shadow warriors.  Every top company in Japan had a shadow warrior...a
+protector, a negotiator, a cleaner.
+
+Lo Wang worked for Zilla Enterprises, a conglomerate with control in every
+major industry.  Too much control.  Power corrupts, and Master Zilla's
+corporation was corrupted to the core.
+
+Lo Wang discovered Master Zilla's demonic scheme to rule Japan, using creatures
+summoned from the dark side.  A man of honor, Lo Wang quit.  But one as
+powerful as Wang either must be on your side, or no one's side.  Master Zilla
+unleashes his creations for their first test: to kill a single man, a shadow
+warrior... Lo Wang.
+
+
+                           ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                           ³HOW TO PLAY SHADOW WARRIOR³
+                           ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+This section will give you general guidelines on how to play Shadow Warrior.
+Due to limitations of this document, pictures of the various objects and menus
+cannot be provided.  If you have the registered version of Shadow Warrior,
+please consult your manual for more detailed information, as well as for some
+example pictures.
+
+
+þ STARTING A NEW GAME
+
+  To start a game of Shadow Warrior, you need to go to your Shadow Warrior game
+  directory and type "SW" (without the quotation marks).  Once at the Main
+  Menu, select "New Game" to start a game.  If you want to learn how to start a
+  multi-player game, please see the section of this file titled, "How to Set Up
+  & Play a Network (or Modem/Serial) Game".  Remember, you can press F7 right
+  now to bring up the table of contents, which will let you jump to any part of
+  this file.
+  Once you've selected "New Game", you will be prompted for the name of the
+  episode you wish to play.  Once you make your selection, you will be prompted
+  to choose a difficulty level.  You can choose from four different difficulty
+  levels:
+
+  1) Tiny Grasshopper - The easiest mode.  Few enemies and lots of stuff.
+  2) I Have No Fear   - Normal difficulty.
+  3) Who Wants Wang   - The Default Setting.  For Experienced Players.
+  4) No Pain No Gain  - For Experts Only.  Loads of enemies!
+
+  Once you've made your selection, the game will load.
+
+þ CONTROLLING LO WANG
+
+  After you are in the game, you have many different keys that control Lo Wang.
+  You can get a complete listing of the default keys by pressing the F1 key
+  during gameplay.  Some of the basic controls used to play Shadow Warrior are:
+
+  Arrows -> Move LoWang ³ Shift    -> Run      ³ 1 to 0 -> Weapons
+  A      -> Jump        ³ CapsLock -> AutoRun  ³ Tab    -> Map
+  Z      -> Duck        ³ Ctrl     -> Fire     ³ [ or ] -> Inventory Select
+  Alt    -> Strafe      ³ Spacebar -> Open/Use ³ Enter  -> Use Inventory Item
+
+  You can also look up and down by pressing Page Up or Page Down.  Using the
+  Home and End keys aims up or down. You can use "U" to turn on a mouse aiming
+  control system, and "I" to turn on crosshairs for aiming.
+
+  There are more options than these:  press F1 during gameplay to see a
+  complete listing of all default controls.  Any of these controls can be
+  altered to whatever you want them to be by selecting the "Controller Setup"
+  option in the setup program.  Please see the section on "Advanced Controller
+  Setup for information regarding controlling your controller.
+
+þ THE STATUS BAR
+
+  During game play, the status bar at the bottom of the screen reveals plenty
+  of info.  If you cannot see the status bar on your screen, please use the +
+  and - keys to resize it (Press F1 in game for more info). Here is a
+  description of all the items in the status bar, from left to right:
+
+  HEALTH  - Shows Lo Wang's health level.  If this drops to zero, you're dead.
+  ARMOR   - Shows the percentage of Lo Wang's armor that is left.
+  WEAPONS - Shows the status of Lo Wang's weapons.  For each weapon, there are
+            two numbers seperated by a /.  The first number is the amount of
+            ammo you have for that weapon, and the second is the max amount of
+            ammo possible for that weapon.  If the numbers are brightly lit,
+            this means it is the currently selected weapon.  If it is of
+            medium brightness, it means you have the weapon, but it is not
+            currently selected.  If it is dark, it means you have not found
+            that weapon yet.
+  AMMO    - Shows the amount of ammo left for the currently selected weapon.
+  INV     - Shows the percentage and status (if applicable) of the currently
+            selected inventory item.  To change the currently selected item,
+            use either the [ or ] key.
+  KEYS    - Shows the keys currently in your possession.  Keys are required to
+            unlock certain doors in the game.  For example, the red key will
+            not open a yellow locked door, it will only open a red locked door.
+
+þ LO WANG'S WEAPONS
+  There are several weapons Lo Wang can have in his arsenal.  All of them
+  will be listed here.  Pressing the number of the weapon (using the top row
+  of your keyboard) during game play will activate that weapon, unless you
+  don't have it or have run out of ammo for it.  Weapons 8 through 10 are only
+  available in the registered version of Shadow Warrior.  Each of these weapons
+  can be recharged with ammo found scattered around the levels.  Each weapon
+  has its own type of ammo.  For example, if you find a Riot Gun ammo clip,
+  you cannot use it with the Missile Launcher.
+
+  1) Fist/Sword - These are the default weapons, and both share the same key,
+     that being 1.   You can never run out of "ammo" for your fist or your
+     sword, but they're nowhere near as effective as the other weapons in
+     the game.  NOTE: There is a secret attack mode for the fists when
+     used with a certain inventory item for stealth.
+
+  2) Shuriken - Small hand held "stars" that you throw at enemies.
+                Pick Up ammo, you get 9 shurikens, up to a max of 99
+                You throw three at a time.
+                You must have 3 or more in your possession to use.
+
+  3) Riot Gun - Quad barrel shotgun.
+                Picking up weapon gets you 8 shotshells; max of 52.
+                Picking up ammo drum gets 24 shotshells
+                Weapon has an autofire mode, press "3" again to alternate
+                between autofire and standard mode.
+
+  4) UZI Submachine Gun - Fast firing machine gun.
+                          Picking up weapon gets you 50 bullets; max of 200
+                          Picking up ammo clip gets you 50 bullets
+                          If you pick up a second UZI, you can wield two
+                          at the same time, John Woo style.
+
+  5) Missile Launcher / Heat Seeker / Nuke
+                        Picking up weapon gets 5 missiles; max of 50
+                        Picking up ammo pack gets you 5 missiles.
+                        This weapon has three modes, press "5" to alternate.
+                        (See the "Heat Card" description in the REGULAR GAME
+                        ITEMS section a few pages down for more info on this)
+                        The third mode will activate the Nuke.  Don't be
+                        near it when it goes off.
+
+  6) Grenade Launcher:
+                        Picking Up Weapon gets you 6 shells; max of 50
+                        Picking up ammo box gets you 8 shells
+
+  7) Sticky Bombs - Small bombs that stick to enemies, walls, you, and
+                    many other objects in the environment!
+                    Picking up a box of sticky bombs gives you 5 of them,
+                    you can have a max of 20 at once.
+
+               THERE ARE MORE WEAPONS IN THE REGISTERED VERSION!
+            PLEASE CHECK YOUR REGISTERED GAME MANUAL FOR MORE INFO.
+
+     NOTE: During a Multi-Player game, if you or your friends die, the dead
+           player will sometimes drop their currently selected weapon.  If
+           this weapon is picked up, all the ammo that was in that weapon will
+           transferred to whomever picked it up.  The amount of ammo obtained
+           from such a weapon pickup depends on how much ammo the player had
+           when they were killed.
+
+þ INVENTORY ITEMS
+
+  There are several items that Lo Wang can find and use to help him during the
+  game.  Unlike normal items, these are kept until you select and use them.
+  Here is a list of the items, along with a brief description of each:
+
+  1) Portable Medkit - A large white health pack.  This carries a maximum of
+     100% of additional health.  When you are low on health, you can select
+     this to bring your health back up to 100%.  The amount used to do this
+     will be subtracted from the amount stored in the Medkit.  A shortcut to
+     selecting and activating the Medkit is available by pressing the letter
+     "M" during gameplay.
+
+  2) Night Vision Goggles - When used, this makes enemies glow bright green.
+     This is necessary to see some of the characters who you cannot normally
+     see otherwise.  You can only have one of these at once, and has a gameplay
+     shortcut by pressing the letter "N".
+
+  3) Repair Kit - When used, you can repair one broken vehicle or other
+     broken device you may encounter during game play.
+
+  4) Caltrops - Small razor sharp talons of metallic death.  You throw
+     the Caltrops on the floor, and they lie there.  If someone steps on them,
+     they take some damage, and they will cry out in pain.  You can get 9
+     caltrops to a box (3 uses).  Three Caltrops are thrown per use.
+
+  5) Flash Bomb - Using this will blind nearby opponents and enemies for a
+     few seconds; you can have up to two of these at once.
+
+  6) Smoke Bomb - Using this will render you partially invisible for a few
+     seconds; you can only have one of these at a time.
+
+  7) Gas Grenade - Using this will cause the grenade to spray green noxious
+     gas, damaging any opponent or enemy who gets too close (will hurt YOU
+     as well).  You can only have one of these at a time.
+
+þ REGULAR GAME ITEMS
+
+  There are some other items that are not inventory items that Lo Wang will
+  encounter during game play.  These items are used immediately when hit, and
+  cannot be stored for later use like inventory items can.  They are:
+
+  1) Fortune Cookie  - Gives you a +50 health boost, up to a maximum of 200.
+  2) Small Medkit    - Gives you a +20 health boost, up to a max of 100.
+  3) Nuclear Warhead - (Max 1) This counts as its own ammo, and no missiles are
+                       required for use.
+  4) Heat Seeker Card- This card will allow your next 5 missiles to heat
+                       seek an opponent.
+  5) Armor Vest      - (Gray) Takes your armor count to 50.
+  6) Kevlar Armor    - (Red) Takes your armor count to 100.
+
+
+þ GAME ENEMIES
+
+  Here are the enemies that Lo Wang will encounter during the game:
+
+  1) Evil Ninja     - (Brown) Fires an UZI or throws shurikens.
+  2) Evil Ninja     - (Red) Fires UZI or missiles.
+  3) Evil Ninja     - (Green/Invisible) Fires UZI or two different forms of
+                      magical napalm.  Can flash bomb you, and is always
+                      partially invisible until he dies.
+  4) Coolie         - Walks around with a box of explosives.  If he gets near
+                      you, he blows up, causing severe damage.
+  5) Coolie Ghost   - Ghost of a Coolie. Sometimes rises from the remains of a
+                      Coolie. Floats around, spitting magical balls. Can fade
+                      in and out of visibility.
+  6) Ripper         - Big ape-like monster. Jumps around, can cling to walls.
+                      Will rip your heart out if you let him get too close.
+  7) Hornet         - Flies around and stings the player.
+  8) Accursed Heads,
+     Bettie Mines   - Lies in wait for the player, then leaps out at the player
+                      and generates various effects. They can spew caltrops,
+                      spew poison gas, explode, launch grenades, or flash bomb
+                      you.
+
+
+þ CD-ROM CONTROL
+
+Shadow Warrior has CD-ROM control in the game, which means you can listen to
+your favourite audio CD if you wish.  To control these features, you need to
+press the letter "T" during game play, which will bring up a place where you
+can type in "commands" to the game (and cheat codes).  After you type in "T",
+you can then enter any of these commands (which are listed here along with a
+short description of what they do).
+
+One other note: A CD audio cable must be connected to your sound card from
+your CD Drive if you are going to hear the music.  Please check your CD and
+your sound card documentation for more info on this.
+
+cd on
+   Re-enables the CD audio system after a "cd off" command.
+
+cd off
+   Shuts down the CD audio system.  No more music will be played unless it
+   is re-enabled.
+
+cd reset
+   Causes the CD audio to re-initialize.  This is useful if you change CDs
+   or insert the CD after you've already run Shadow Warrior.
+
+cd play <track number>
+   Plays the specified track one time.
+
+cd loop <track number>
+   Plays the specified track.  It will be repeated until either it is
+   manually stopped or another track is started.
+
+cd stop
+   Stops the currently playing track.
+
+cd resume
+   Will resume playback of a stopped track.
+
+cd eject
+   This is for CD players that do not have a manual eject button.
+
+cd remap <track1> <track2> <track3> ...
+   Allows you to switch what tracks are played.  This is especially useful
+   if you want to play music other than that on the SW CD.  If the CD
+   audio system is told to play track 1, it will instead play the 1st
+   track you specified.  For example: assuming a CD with 1 data track and
+   8 music tracks, the command "cd remap 1 9 8 7 6 5 4 3 2" would leave
+   the data alone and play the audio tracks as if they had been placed on
+   the CD in the opposite order.
+
+cd info
+   Reports information such as the number and types of tracks on the current
+   CD, what track (if any) is currently playing, and the playback volume.
+
+
+                          ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                          ³HOW TO USE THE SETUP PROGRAM³
+                          ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+If you want to play a network, modem, or serial game, you must use the
+SETUP.EXE program found in your game's directory.  You also need to run the
+setup program to configure your sound card, controller, and video mode.
+Here is a brief summary of the options available in the Shadow Warrior setup
+program:
+
+þ SOUND SETUP
+
+  This option will let you configure your sound and music options.  Use this
+  to tell the game which sound card and music card your computer has.
+
+  If you are using the registered version, there are no music setup controls.
+  This is because the registered version uses CD audio only.
+
+þ SCREEN SETUP
+
+  This option will let you pick which video mode you wish to play in.  The
+  SVGA options require the use of a VESA compliant video card.  Check your
+  video card's manual for info on whether your card is VESA compliant.
+
+þ CONTROLLER SETUP
+
+  This option will let you choose what controller(s) you wish to play with,
+  and will allow you to customize the controls for them.  If you wish to alter
+  the controller layout, this is the place to do it.  Please see the next
+  section, "Advanced Controller Setup" for information on some of the more
+  advanced uses of this section.
+
+þ NETWORK GAME
+
+  This option will let you configure and play a network game of Shadow Warrior.
+  Please see the section on "How to Set Up & Play a Network Game" for detailed
+  information on this.  Press F7 now to see an index of sections.
+
+þ MODEM GAME
+
+  This option will let you configure and play a modem game of Shadow Warrior.
+  Please see the section on "How to Set Up & Play a Modem Game" for detailed
+  information on this.  Press F7 now to see an index of sections.
+
+þ SERIAL GAME
+
+  This option will let you configure and play a serial game of Shadow Warrior.
+  Please see the section on "How to Set Up & Play a Serial Game" for detailed
+  information on this.  Press F7 now to see an index of sections.
+
+þ SEE THE SHADOW WARRIOR HELP FILE
+
+  This option will let you see the file you are currently viewing.
+
+þ USER LEVEL SELECTION (REGISTERED VERSION ONLY)
+
+  If you are using the registered version, you can select user created files
+  here.  The setup program will only recognize about 400 user levels, if you
+  have more than this (yikes!), then you should use some alternate method of
+  maintaining your user file database.
+
+þ CHANGE SETUP FILENAME
+
+  This option will let you alter the name of the configuration file you are
+  working on.  With this option, you can have multiple configurations per game.
+  This way, if a friend comes and plays on your machine, he can have his own
+  keyboard (or anything else) layout, and it won't upset your configuration.
+
+þ SAVE AND LAUNCH SHADOW WARRIOR
+
+  This will save your configuration file and launch Shadow Warrior in single
+  player mode. Do not use this option if you wish to play a multi-player game.
+
+
+                           ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                           ³ADVANCED CONTROLLER SETUP³
+                           ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+  Keyboard and FlightStick: (compatible with Microsoft SideWinder Joystick)
+  Keyboard and ThrustMaster: (compatible with Logitech Wingman)
+  Keyboard and GamePad: native support for the Gravis GamePad
+
+The support of these new joysticks means that the hat switch is supported on
+those joysticks possessing one, and that rudder support has been added for
+people owning an external rudder.  The GamePad no longer functions as an analog
+joystick but rather as a digital one.  A special setup menu has been created
+just for the purpose of setting up the GamePad.  For all other joysticks, the
+"Setup Joystick" menu should still be consulted for changing joystick options.
+Enabling the rudder can be done under the Setup Joystick menu as well.
+
+The second major improvement involves the menu known as advanced control
+options.  Advanced control options allows you to redefine a controller
+completely.  This is accomplished through redefinable analog axes and being
+able to assign buttons to digitized axes as well. An analog device is one which
+returns proportional values based on the speed or extent to which the device is
+manipulated.  Examples of analog devices are mice and most joysticks.  A
+digital device is one which returns on or off values when it is manipulated.
+Examples of digital devices are the keyboard and the gamepad. The new control
+system takes an analog input (such as the mouse or joystick) and digitizes it
+into an on or off.  Once this is done, it is possible to assign a button to the
+newly digitized input.  For example, suppose the mouse was setup in such a way
+that when it was moved up it translated into pressing the fire button and when
+it was moved down it translated into pressing the open button. This would
+probably not be an advantageous setup, but it demonstrates how an axis can have
+buttons assigned to it. At the same time, however it would be possible to still
+use the analog component of that axis to move the player forward and backward.
+In essence the player would always fire when moving forward and try to open
+things when moving backward.  The advanced control options menu is broken up
+into advanced mouse setup, advanced joystick setup, and advanced throttle /
+rudder setup. Each these sub-menus allow you to define the control parameters
+for two axes.  The mouse and joystick each have two axes, X and Y, and the
+throttle/rudder compromise a third set of X and Y axes. For each of these axes
+one can assign an analog function (either turning, strafing or moving) and
+optional digital ones.
+
+One should keep in mind that both analog and digital control options are active
+at the same time, so in most situations if you want to use an axes as an analog
+one, it should not be used a digital one as well.  When you first enter this
+menu, you will see how the axes are defined by default.  If you change any of
+the axes definitions, the only way to restore the default definitions is by
+deleting your setup file and starting over.
+
+Therefore, it is recommended that you understand how the system works before
+changing these advanced options.
+
+There is a new option located in the Setup Mouse menu, called "Mouse Aiming".
+When Mouse aiming is on, moving the mouse forward and backward pitches the
+player's head up and down.  Setup allows one to change the way in which the
+mode is activated.  The Mouse Aiming buttons is defaulted to be a toggle button
+meaning, that it must be pressed once to enter the "Mouse Aiming," and then
+pressed again to leave the mode.  If mouse aiming mode is set to momentary
+instead of togglable, "Mouse Aiming" is only active as long as the Mouse Aiming
+button is depressed.
+
+
+                      ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                      ³SHADOW WARRIOR HELP & TROUBLESHOOTING³
+                      ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+         Before contacting Technical Support, please try all of the things
+  listed in this file first!  If you do contact us, please do not do so unless
+   you provide the information requested at the bottom of this document.  We
+      cannot help if you do not provide us with the information requested.
+
+þ 3D Realms strongly recommends that you consult your hardware and software
+  manuals for your system before you make any suggested changes to your current
+  system setup.  Your manuals will tell you if you are about to make changes
+  that may irreparably alter your computer or its configuration. Modifying your
+  system or software can be dangerous if not done properly. 3D Realms will not
+  be able to assist you with any problems resulting from such modifications.
+
+þ If you get an error that has the words "Granular Limit Error" in it, you'll
+  have to try booting clean.  Info on "booting clean" is elsewhere in this
+  document. The only other thing it could be is some sort of configuration
+  setting in your BIOS, but unfortunately, we cannot recommend ideas for this,
+  as Granular Limit error is an extremely common problem.
+
+  The only other solution would be if you have a Ensoniq sound card.  If you
+  do, and get Granular Limit errors, it usually means that your sound card
+  drivers are not correctly installed.
+
+þ If you get random lockups, look at the contents of your config.sys file.
+  Look and see if a line similar to this appears: "device=emm386.exe noems".
+  If the noems appears, remove it.  Also, if you are using an alternate
+  memory manager such as QEMM, make sure it is providing EMS services.
+
+þ If you have a NexGen/586 CPU/Motherboard, you most likely can't get the game
+  running.  Try going into your CMOS and look for a setting called "Alternate
+  Instructions".  If it is set to OFF, set it to ON. If this doesn't work,
+  NexGen has a fix on their World Wide Web site called the Q87 floating point
+  emulator.  Their Web site can be reached at http://www.nexgen.com.
+
+þ If you get the error "Exec Error: No such file or directory", it's likely you
+  have selected the controller configuration "Keyboard and External".  Go back
+  and reconfigure your controller.  Do not select the "External" controller
+  unless you have a controller or a device that specifically tells you that you
+  need to select this.
+
+þ If you are using the Build editor that comes with the registered CD-ROM, and
+  you cannot correctly use the 3D mode, make sure to copy the contents of the
+  \goodies\build directory to the directory you have Shadow Warrior installed
+  to.  Build cannot be run from a different directory than the game itself.
+
+  Also, when you copy the files, DO NOT USE WINDOWS TO COPY THEM.  Doing so
+  will make the resultant copy read-only, and this will cause further problems.
+  MAKE SURE THAT YOU COPY THE FILES MANUALLY YOURSELF IN MS-DOS.  Make sure
+  that your Build files are not marked read only.  This will cause problems.
+
+þ If you run the game, and get an error that says "Cache Size of zero", or get
+  an error that three zeros in it, you most likely have a bad/altered/corrupt
+  SW.GRP file.  Check the size of the file on your HD vs the one in the
+  \swinst directory on the CD-ROM.  If it is incorrect, MANUALLY COPY THE
+  FILE yourself in DOS (do not use Windows).
+
+þ Help!  My directories are gone after playing Shadow Warrior! Check your DOS
+  environment. Type "SET" at the command line, and if it looks abnormal,
+  reboot. Specifically, you're looking for the DOS environment variable
+  DIRCMD. Try entering "SET DIRCMD=", and all should be OK.
+
+þ If you get a message saying "Invalid OpCode", it means you are most likely
+  running the game on a 386 computer.  It will not be possible to get around
+  this, Shadow Warrior was not designed to run on 386 or 486 computers.  Our
+  listed minimum for Shadow Warrior is a Pentium.
+
+þ If you are playing the game, and cannot get the RTS sounds to work, you need
+  to make sure you haven't turned "Kid Mode" on.  If Kid Mode is on, the RTS
+  system will not work.
+
+  If you bought your version at Walmart, then you most likely have the
+  restricted version.  Walmart will only sell a version that has parental lock
+  forced on.  To get around this, contact GT Interactive at
+  http://www.gtgames.com; they distribute a patch to correct this.
+
+þ If you notice the game running slowly on your system, here are a few
+  suggestions on improving game performance.
+
+  ¯ Enable your disk cache.  Before playing Shadow Warrior, enter "SMARTDRV
+    4000".  This should speed up access.
+
+  ¯ Disable your upper memory manager (QEMM, Qualitas Max 8, EMM386, etc).
+    Since Shadow Warrior is a protected mode game, the services of these
+    programs are not needed.
+
+  ¯ Try reducing the screen size.  When playing the game, you can press either
+    '-' to reduce your screen size, or '+' to increase it.
+
+  ¯ Try reducing the amount of digital channels that you have set for sound
+    effects.  Some system configurations have problems with having Shadow
+    Warrior set for higher than 4 digital channels.
+
+  ¯ Try reducing the mixing selection on your sound card from 16 bit to 8 bit.
+    This is done from the SETUP.EXE program, under the "SETUP SOUND FX" menu
+    item.  8 Bit Mono is the fastest music/sound combination there is in Shadow
+    Warrior, so if you have slowdown problems, try selecting 8 Bit Mono.
+
+  ¯ Use Scitech's Display Doctor.  See elsewhere in this document for info on
+    how to obtain/install/use this program.
+
+  ¯ Upgrade your video card.  Shadow Warrior runs very slow on older, ISA only
+    video machines.  There's nothing that can be done about this, these old
+    video cards are too slow.  The game really needs Local Bus Video to run
+    smoothly, preferably PCI local bus video.
+
+
+þ If you are playing with a MicroSoft Natural Keyboard, (or some other Windows
+  95 compatible keyboard that has the new "Windows Logo" keys) and hit them
+  during game play, you will note that your game will be interrupted and
+  control of your computer will go to Windows.  These keys can be disabled via
+  the use of a program that MicroSoft puts out called "DOSWINKY".  It is
+  available on MicroSoft's Kernel Toys Home Page, which is reachable at:
+  http://www.microsoft.com/windows/software/krnltoy.htm   This is also included
+  on the registered CD-ROM of this game in the \goodies\doswinky directory.
+  PLEASE DO NOT ASK US FOR HELP WITH THIS.  CONTACT MICROSOFT.
+
+þ To get the MicroSoft Sidewinder Pro 3D joystick working with Shadow Warrior,
+  you'll need to do these two things.
+
+  1) Move the switch on the bottom of the controller to "One".
+  2) Pick Flightstick as your controller in the Shadow Warrior setup program.
+
+þ Help! I can't get my MicroSoft Sidewinder Pro GamePad to work!
+
+  To our knowledge, there is no way to get this controller working with Shadow
+  Warrior. The reason for this is that this device will only work in Windows95.
+  This controller will not work in a pure DOS boot, which is the recommended
+  way to play the game. This controller will work in a Win95 DOS Box, however,
+  but we do not support that.
+
+þ If you are using a joystick and your performance seems erratic, make sure to
+  calibrate the joystick inside the setup program.  Also, check and make sure
+  that the joystick port you are using is speed adjustable.  If it is, then try
+  tinkering with the speed.  Check your port's manual for more info.
+
+  Please note that most game ports that are built into sound cards, I/O cards,
+  or motherboards are not speed adjustable.  Unless your port comes with
+  software that allows you to calibrate your port's speed, you can assume that
+  the port is not speed adjustable.
+
+  If your system does not have a speed adjustable game port, your only solution
+  may be to purchase one.  The reason for this is that most newer systems run
+  at a speed that is several orders of magnitude faster than your port can send
+  data.  In short, your system is outrunning your game port, and Shadow Warrior
+  can't see what the port is sending since it doesn't come in fast enough.
+  Fortunately, speed adjustable ports such as the Gravis Eliminator or JDR
+  Microdevices' MCT Micro-III are inexpensive solutions to this problem. (Note:
+  3D Realms does not endorse any of these products - they are listed here only
+  as examples of what is available.)
+  Finally, make sure you do not have more than one active joystick port on your
+  machine at any time unless you have a special game port card that has two
+  ports built onto it.  Two game ports cannot be active on two different cards,
+  since they use the same hardware address.  You must disable one port if your
+  system has two ports on two different cards.
+
+þ If you are having problems getting your joystick to function, you will need
+  to select it in the setup menu. Once in the control menu select CHOOSE
+  CONTROLLER TYPE and press enter.
+
+  Please select Keyboard & FlightStick.
+
+  Then save and launch Shadow Warrior. When starting up it will ask you to
+  calibrate. If it did not you did not select the FlightStick as your
+  Controller.
+
+þ If you can't get your mouse working, first make sure you have selected
+  "Keyboard & Mouse" as your controller in the Shadow Warrior setup program.
+  If that doesn't work, you'll need to first you will need to make sure that
+  you are completely out of windows. For Windows 3.11 and lower just exit to
+  dos. For Windows 95 you will need to select these buttons: <Start> <Shutdown>
+  <Restart the computer in MS-DOS mode>
+
+  Then from the dos prompt you will need to make sure that your mouse driver is
+  loaded. To do this you type in MOUSE at the dos prompt. It should come back
+  with Mouse Driver now Loaded.  If it does not, you will need to locate where
+  on your hard drive your DOS BASED MOUSE DRIVER is loaded, and run it.
+
+
+þ This game supports the VESA VBE standard for SuperVGA graphics.  Many Super
+  VGA graphics cards are VESA VBE compatible at the hardware level, requiring
+  no special action on your part to get the game running correctly.   If you
+  are having problems running this game with the graphics card in your
+  computer, try the following steps:
+
+  1) If you have the VESA VBE driver that came with your graphics card, then
+     install the driver and try to run the game.  Most VESA VBE drivers can be
+     installed from a program that you run at the DOS command line.  Consult
+     the documentation that came with your graphics card or computer system for
+     installation instructions and VESA VBE compatibility.
+
+  2) If you cannot find a VESA VBE driver for your graphics card, call your
+     graphics card or system manufacturer or dial up their BBS, CompuServe
+     forum, or Internet site.  You will most likely be able to download a
+     driver or have them send you one by mail.
+
+  3) If you do not have a VESA VBE driver for your graphics card or your VESA
+     VBE driver does not work with the game, then try the Universal VBE driver,
+     Display Doctor (formerly UniVBE).  Display Doctor is included with the
+     registered CD-ROM of Shadow Warrior, and can be found in the directory
+     \goodies\univbe on the CD.  Please note that while we have included
+     Display Doctor for your convenience on the CD, it is a shareware product
+     produced by a different company.  If it works for this game and solves
+     compatibility problems for you, then you may want to continue using it for
+     this and other games.  If you continue to use it, you should register the
+     program.  To register Display Doctor, follow the instructions onscreen
+     during the Display Doctor installation procedure.
+
+     To install Display Doctor, go to the \goodies\univbe directory on the
+     Shadow Warrior CD-ROM, and type install.  Installation instructions are on
+     screen. If you are having problems installing Display Doctor, please
+     contact Scitech. UniVBE is not a 3D Realms or Apogee program, we cannot
+     help with it.
+
+þ If you have an ATI Mach64 video card and cannot access the higher SVGA modes,
+  check your C:\MACH64 directory for the file m64vbe.com.  Run it before you
+  play Shadow Warrior, and you should be OK.  If you do not have this file,
+  contact ATI for an update.
+
+þ If you have a Matrox Millenium video card and cannot get your video working
+  properly, please make sure the BIOS on your video card is at least v2.0.  If
+  it is not, contact Matrox for a BIOS upgrade.  Please also note that there is
+  a problem with this video card and running at the 800x600 resolution. The
+  game should play right, but trying to save a game will usually cause the game
+  to crash.  We have no idea why this is happening.  All we can say is to not
+  play in 800x600.  At the time of the writing of this file, the current BIOS
+  version is v2.5.
+
+þ If you have a Diamond SpeedStar video card, disable Zero Wait State.
+
+þ If you are running a Compaq computer with a VGA card and the game tells you
+  that you do not have a VGA card, or if you experience lockups on a Compaq
+  computer with a VGA card, you will need to contact Compaq for a special video
+  driver.  The reason for this is that Compaq has some video cards that do not
+  conform to all proper detection methods.  There is a device driver available
+  from Compaq that will fix this problem.  The driver's name is FINDVGA.SYS.
+  This file used to be available on their BBS with the filename of SP0117.ZIP,
+  but as of the writing of this document, it is not available.  Please contact
+  Compaq if you cannot locate the file.
+
+
+þ I have the registered version, and I'm not hearing any of the CD-Audio.
+
+  a) Make sure your Shadow Warrior CD is in the drive.
+  b) Make sure your CD-ROM drive is active, and all drivers are loaded.
+  c) Make sure that your CD Audio cable is correctly installed and hooked
+     up to your sound card.  Please see the manuals for your sound card and
+     CD-ROM drive for more information on this.
+
+þ If you have a Creative Labs Sound Blaster 16 and some sort of daughterboard
+  add-on card like the WaveBlaster or Roland Sound Canvas daughterboard, you
+  may have trouble getting the MIDI music and SFX working properly.  To fix
+  this, first try selecting WaveBlaster as your music device, even if you don't
+  actually have a true WaveBlaster.  If this doesn't solve the problem, make
+  sure you are picking 8bit 11Khz sound in the Shadow Warrior setup program.
+  Picking values higher than this can sometimes cause problems.
+
+þ If you are playing the game, and have General MIDI selected as your music
+  card, or have one of the more advanced Sound Blaster cards (AWE32, AWE64),
+  and experience "pauses" during game play, make sure you are picking 8bit
+  11Khz sound in the Shadow Warrior setup program.  Selecting higher than
+  this will cause problems.
+
+þ If you hear static when you are playing with a Sound Blaster or compatible
+  card, make sure to turn the MIC and LINE volumes to zero. Your card may be
+  seeing input from these, resulting in static.  For a Sound Blaster Pro, the
+  program that adjusts these is called SBP-SET:  see your card's manual for
+  precise instructions on how to do this.  If you still continue to hear static
+  after doing this, try disconnecting any parallel port devices.  IRQ5 and
+  IRQ7, which are used by sound cards, are often frequently used by printers as
+  well.  If you have both plugged in, the result may be static and poor sound
+  performance.
+
+þ If you have an AWE32 PnP card, you should read this if you play in Windows95.
+  AWE32 PnP cards can have different base addresses in DOS and in Windows95.
+  Check your System Properties in Windows95 to see what base address Windows95
+  thinks your sound card is set at and use that in the Shadow Warrior Setup.
+  If you're running from DOS, use whatever base address you find in the
+  BLASTER variable (this means PURE dos, not a Win95 DOS Box). Sometimes the
+  music test will work with the incorrect base address, but the game will not.
+  NOTE: The worst part of this is that since setup defaults to your BLASTER
+  settings, the default setup might not always work under Windows95.
+
+þ If you have an AWE32 and are having problems initializing the sound, check
+  the SET BLASTER line.  Make sure that E620 is in there.  Check the section on
+  "WHAT IS THE SET BLASTER COMMAND.." in this document for more information.
+
+þ If you have an AWE32 Sound Card and get an "MPU-401 Initialization Error"
+  message, you will need to turn your computer totally OFF, wait about 5-10
+  seconds, and then turn it back on again.  Delete the SW.CFG file from your
+  game's directory, then run the SETUP.EXE program again and try reselecting
+  your music/sfx.  This error is caused by picking incorrect settings:  if you
+  pick the wrong settings for an AWE32, you need to power down and retry, not
+  just reboot.
+
+þ If it seems like sounds that should be coming out of your left speaker are
+  instead coming out of your right speaker (or vice-versa), you can fix this in
+  the sound menus of the SETUP.EXE program.  Go to the Main Shadow Warrior
+  menu, choose the options menu, and then the sounds menu.  From there, you can
+  toggle the "Flip Stereo" option on or off.  This should correct the problem.
+
+þ If you are getting an error that says "Cannot play due to an invalid or
+  conflicting IRQ", please see the following paragraph.
+
+þ If you have a Sound Blaster (or a Sound Blaster clone) card and you are not
+  getting sound effects, you most likely have your sound card configured
+  incorrectly.  Most clone cards' setup programs do not properly set up a SET
+  BLASTER line in your AUTOEXEC.BAT file, or do not set it up at all.  This is
+  also the case with some new systems that have sound cards already installed.
+  The SET BLASTER command is used by the game's sound engine to determine where
+  to send sound events for Sound Blaster and compatible cards. If this command
+  is incorrect or missing, you will either not hear sounds or will experience
+  sound distortion.  To correct this, please read the section of this file
+  titled "What is the 'SET BLASTER' Command?" (Press F7 right now to see a list
+  of sections).  Also, please consult your sound card's manual for information
+  regarding Sound Blaster Emulation to find out what port address (or "base
+  address"), IRQ, and DMA channel is being used by your card for Sound Blaster
+  Emulation.  This information will be needed in order for you to follow the
+  instructions in the "SET BLASTER" section of this document.
+
+  This problem sometimes also affects people with true Sound Blaster cards,
+  especially if you are running Windows 95 and are using the Win95 drivers. If
+  you are running Windows 95 and don't have any sounds when playing in MS-DOS
+  Mode, you probably do not have DOS-based Sound Blaster drivers loaded. Please
+  check your sound card's manual for info on loading DOS-based drivers for your
+  card.
+
+  If your card does not have information concerning the SET BLASTER command (or
+  loading DOS-based drivers) in its manual, or if your system or card did not
+  come with a sound card manual, please contact the company that made your
+  card or system (or the place you purchased the card or system from) before
+  calling 3D Realms Technical Support.  Since sound cards differ so much
+  from brand to brand (and sometimes even within the same brand and model), we
+  cannot provide detailed assistance for every sound card on the market.  Your
+  card or system manufacturer (or dealer) can usually provide much faster help
+  for basic sound card problems than 3D Realms' Technical Support can.
+
+  Here are a few more things you can try to get your sound card going:
+
+  1) Check your sound card's manual on Sound Blaster emulation.  There may be
+     some driver that you are not loading, or some switch you are not properly
+     setting.  This is especially true for Plug And Play cards when you are
+     running in DOS mode on a Win95 machine.
+
+  2) Load up your sw.cfg file (or the one you're using) into an ASCII text
+     editor, and look for the line "BlasterDMA16=5".  Change it to read
+     "BlasterDMA16=1", it may make a difference.
+
+  3) Check and make sure that you have the most up to date drivers for your
+     sound card.
+
+þ If you have a Gravis UltraSound and you are not getting sound effects, or if
+  your GUS sound effects are scratchy or distorted, make sure your GF1 IRQ is
+  set to 7 or lower.  This is controlled by the SET ULTRASND= command in your
+  AUTOEXEC.BAT file.  A sample of this command line would be:
+
+                        SET ULTRASND=220,1,1,7,5
+
+  The next to last digit on this line (the 7, in this example) is your GF1 IRQ.
+  This number must be 7 or less for Shadow Warrior to operate properly.  If it
+  is higher than 7, you will need to edit your AUTOEXEC.BAT and change it to 7
+  or lower.  Save the change, exit your editor, and reboot so that the change
+  will take effect.
+
+  Please note that this is not a limitation of the sound engine used by Shadow
+  Warrior.  Rather, it is a performance limitation imposed by the current
+  generation of DOS extender technology, including the DOS/4GW extender used to
+  create this game.  In almost every case, support for interrupts higher than 7
+  would result in an unacceptable slowdown of the game.
+
+þ If you are using an Ensoniq Soundscape, and can't get sound, you need to make
+  sure your DOS based sound drivers from Ensoniq are loaded.  If they are not,
+  please install them, and make sure they are loaded.  You should also check
+  that the following lines appear (IN THIS ORDER) in your autoexec.bat file:
+
+  SET BLASTER=A220 Ixx Dx T1
+  SET SNDSCAPE=C:\SNDSCAPE (or the directory your drivers are installed in)
+  C:\SNDSCAPE\SSINIT.EXE /I (or the directory your drivers are installed in)
+
+  In addition, the directory in the second line also must have a correctly
+  configured SNDSCAPE.INI file in it.  Please consult the Ensoniq documentation
+  for more info on this.
+
+  If this doesn't work, go to Ensoniq's web site and update your sound card
+  drivers.  This can be done by going to http://www.ensoniq.com, and then
+  picking these options:
+
+  1) Download
+  2) Multimedia Drivers
+  3) Choose Operating System
+  4) Follow the rest of the on screen instructions from Ensoniq.
+
+  This document was written on August 15th, 1997.  It's possible that Ensoniq
+  may have rearranged their web contents when you read this.  If you can't
+  find this info, contact their webmaster.
+
+þ If you have a Packard Bell computer and are using their combo modem/sound
+  card but can't get any sound, try this.  In your c:\sound144\utility
+  directory there should be a program called setmode.exe.  Change to this
+  directory, and type "setmode /sbp".  This will tell the card to operate in
+  Sound Blaster Pro mode.  If it is operating in Windows Sound System mode, you
+  will NOT get any sounds, because the Windows Sound System is not supported.
+  If this doesn't work, go back into the Shadow Warrior setup program, and
+  reselect your sound card, and make sure you pick "SOUND BLASTER (plain)", and
+  select 8 Bit 11Khz MONO sound.
+
+þ If you are simply not getting sound or bad sound, or Lo Wang is speaking
+  too fast or too slow, check and make sure your sound drivers (preferably
+  DOS based) are installed correctly.  After that, check and make sure that
+  your SET BLASTER line is truly set for what your sound card settings are
+  configured to at game runtime. (Check the help file for this game for
+  info on how to do that).
+
+  If this doesn't work, or even if it does, go into the Shadow Warrior setup
+  program, and reselect your sound card (making sure you pick "SOUND BLASTER
+  (plain)", and select 8bit 11Khz MONO 4 Voice Sound.
+
+  You may also wish to check and see if your card really is Sound Blaster
+  Compatible.  Not all cards are as compatible as they like to think they are.
+  If your sound card is set at (or hard coded to) IRQ9, pick IRQ2 in the
+  Shadow Warrior setup program.  IRQ's 9 & 2 are generally interchangeable.
+
+  "Failure to detect FM Chip" means that your sound drivers are either not
+  present, are incorrectly installed, or are not matching what your sound
+  card really is set at (either in native mode, or in Sound Blaster
+  Emulation Mode).
+
+( None of this will work if your card is not Sound Blaster compatible.
+  Truly compatible - a lot of cards that say they are really aren't. )
+
+
+þ If you are playing a network game, and get an error that reads something
+  like "General Failure reading Drive ..." it probably means you're trying to
+  play the game from a single shared copy on the network.  You can't do this,
+  you need to have the game installed on each local computer that wishes to
+  play the game.  Playing from a shared copy is not possible.
+
+  Additionally, it is not legal to install a single registered CD-ROM to more
+  than one machine.  Each copy playing must have it's own registered copy of
+  the game.  Please read the license.doc on the SW CD for more information.
+
+þ Shadow Warrior sends more packets per second than Duke Nukem 3D did.  This
+  means that while you can play at 9600bps, *MUCH* better performance would be
+  had if you played at 14400 (or 19200 - remember everyone has to have the same
+  port speed).  Also, Shadow Warrior is more easily affected by net lag than
+  Duke Nukem 3D was.  This means that if there is a lot of traffic and file
+  copying going on on your network, it can throw the game out of sync.
+
+þ If you are having modem and/or serial problems (they're solved the same way)
+  then read this. Followed correctly, this information will solve the vast bulk
+  of modem problems out there.
+
+  Make sure:
+
+  1) Both sides are using default, unmodified CON files.
+  2) Both sides have port speeds of 19200.
+  3) Both sides have 16550 serial ports.  You will always have problems if you
+     only have an 8250 or a 16450.
+
+  4) Also, make sure to manually enter the port settings and IRQ into the
+     Shadow Warrior setup program.   Don't let it use "default".
+
+  5) If this doesn't work, try repeating these steps, but putting the port
+     speed at 19200 for both sides.
+
+  6) That all players have the same version of the game.  If, for example, you
+     have Shadow Warrior v1.2, and your friend has v1.1, then you will not be
+     able to play; all players MUST have the same version.
+
+þ If you cannot get your modem recognized by Shadow Warrior, and you have a
+  "Winmodem" or "Plug 'N' Play" modem (the former is almost always the latter),
+  then read this:
+
+  If you are having problems using your Plug & Play Modem in DOS with our
+  Shadow Warrior (or any other of our modem games), the problem is this.  Plug
+  & Play modems were designed for environments (ex: Windows95) where the
+  environment does the initializing of the card.
+
+  The problem here is that if you are playing in MS-DOS mode, and bypassing the
+  Win95 GUI, your card is never being initialized, and as such, there's nothing
+  for our game to find.
+
+  What you will need to do is to find some way of initializing your PnP modem
+  in DOS.  Info on this would be in the manual for the modem that you have.
+  Quite often modems with the brand name of "Winmodem" fall under this
+  category, too.
+
+  Also, when you DO get the card configured in MS-DOS, make sure to take note
+  of the port address and IRQ number as well as the port number that the card
+  is initialized with.   These WILL BE IMPORTANT when you setup the Shadow
+  Warrior game.
+
+  VERY IMPORTANT!!!: If your modem is at IRQ 9 or higher, it may not be
+  possible to get it working.  You need to be using an IRQ of 7 or less (due to
+  limitations of the Dos Extender).
+
+  Once you have all this info from a properly initted PnP modem, go into the
+  Shadow Warrior setup program, and:
+
+  0) DO NOT PICK DEFAULT FOR ANY OF THESE.  ENTER INFO!
+  1) Select Modem Game
+  2) Select "Setup COM Port"
+  3) Select "Change Com Port" (If Necessary).  Enter the Com port Number here.
+  4) Select "Change IRQ" (If Necessary).  Enter the Com Port's IRQ # here.
+  5) Select "Change UART" (If Necessary).  *THIS IS NOT 8250 or 16550*.  This
+     is the hex address where your port resides at.  For example, a value to
+     put here would be 02e8.
+  6) Put the port speed at 9600.
+  7) If this doesn't work, repeat these steps, putting the port speed at 19200
+     on both sides.
+
+(This info is also useful if you don't have a PnP modem and are having problems
+with your modem not being recognized.)
+
+  We strongly urge you NOT TO CHANGE THE DEFAULT MODEM INIT STRINGS UNLESS YOU
+  ARE SURE THE CHANGED SETTINGS WILL WORK.  Changing them tends to cause
+  problems, and you should only change them if the defaults do not work.
+
+
+þ If you see the error message "IPX & NetBIOS not detected", it means that you
+  are trying to run a network game of Shadow Warrior without loading your
+  network drivers.  If this error occurs, consult the manual for your network
+  on how to load these drivers.  3D Realms cannot help with the setup and use
+  of your network.
+
+
+þ If you get an error message that says, "Not enough memory to run Shadow
+  Warrior" or "Shadow Warrior requires 9Mb free to execute", you need to make
+  more memory available.  The DOS MEM command should report 9,000K (or 9.0
+  megs) total memory free.", it means that you do not have enough free total
+  memory to run the game.  This is almost always caused by having such things
+  as memory managers (QEMM/EMM386), disk caches (SMARTDRV, Norton Cache), and
+  other programs loaded into memory.  These programs are usually loaded when
+  your system is first powered up (otherwise known as when you "boot" your
+  system).
+
+  The best way around this is to "BOOT CLEAN."  This means to boot your system
+  without loading any unnecessary memory resident programs.  The easiest way
+  to do this is to create a bootable floppy disk according to the instructions
+  in your DOS manual (see the FORMAT /S command) and create a file called
+  CONFIG.SYS and a file called AUTOEXEC.BAT on that disk.  Please refer to
+  your DOS manual for instructions on creating these files.
+
+  These files should contain the following lines:
+
+   CONFIG.SYS
+   ==========
+   FILES=30
+   BUFFERS=30
+   STACKS=9,256
+   <if your sound card requires a line in config.sys, put it here>
+   <if you use disk compression, make sure to load that driver>
+   <if you require a driver to access your hard drive, make sure to use it>
+
+   AUTOEXEC.BAT
+   ============
+   @echo off
+   <your path line>
+   <your prompt line>
+   <if your sound card requires a line in autoexec.bat, put it here>
+   MOUSE <if you play with a mouse>
+   SET BLASTER=<see section on SET BLASTER for more help on this line>
+
+  The <your path line> and <your prompt line> items in the sample
+  AUTOEXEC.BAT file refer to the lines that start with the words PATH and
+  PROMPT in the AUTOEXEC.BAT file that is on your C: drive.  These lines
+  are optional, but including them will make navigating your hard drive a
+  little easier.
+
+  If you are running Windows 95, you will need to to press the F8 key when you
+  see the "Starting Windows 95" message, and then pick the option that says
+  "Command Prompt Only".  This will prevent you from going into the GUI
+  (desktop) portion of Windows 95.  Windows 95 is still capable of having
+  multiple boot configurations, and we strongly urge you to create one.
+  Please note that if you do this, you may not have access to your sound card
+  or mouse when in DOS.  If so, you will need to load DOS-based drivers for
+  your sound card or mouse.  Please check the respective manuals for your
+  sound card and mouse for info on how to load drivers for them in DOS.
+
+  3D Realms has set up a section on our web site for multi-boot configurations
+  in Windows95.  This is our recommended way of playing with Windows.  Please
+  see http://www.3drealms.com/tech/multiboot.html for more information.
+
+  If you have DOS 5, you will need to create a boot disk and make
+  CONFIG.SYS and AUTOEXEC.BAT files, using the above examples.  If you have
+  DOS 6 or higher, you have two ways of booting clean without the need for
+  a boot disk.
+
+  For DOS 6 and higher, the fastest way is to reboot your computer and
+  watch for a message that says "Starting MS-DOS" (IBM versions will say
+  either "Starting PC DOS" or "Starting IBM DOS").  When you see this
+  message, press your F8 function key.  You will then be prompted to
+  confirm each line of your current CONFIG.SYS and AUTOEXEC.BAT files.
+  This will allow you to temporarily turn off the programs that you do not
+  need or that may be causing problems.  ONLY ANSWER "YES" TO THE LINES
+  SHOWN ABOVE AND THE "OK to process AUTOEXEC.BAT?"  QUESTION.  When
+  finished, you will be left at a plain C:\> prompt.
+
+  NOTE:  Pressing the Left Shift or F5 function key at the "Starting MS-DOS"
+         prompt will not work properly.  Shadow Warrior requires at least 30
+         available "file handles" to operate properly.  This is defined by the
+         FILES=30 statement in your CONFIG.SYS file.  If you bypass your
+         CONFIG.SYS file completely by pressing Left Shift or F5, you are stuck
+         with the DOS default of 8 file handles.  You will experience errors if
+         you attempt to run the game this way.
+
+  If you are more familiar with DOS, we strongly recommend that you set up
+  a multi-boot option.  These newer versions of DOS allow you to set up
+  multiple boot configuration sections in your CONFIG.SYS and AUTOEXEC.BAT
+  files, mostly eliminating the need for boot disks.  Again, please consult
+  your DOS manual for instructions on how to create a boot disk, or a
+  multi-boot configuration using the parameters stated above.
+
+  3D Realms has set up a section on our web site for multi-boot configurations
+  in Windows95.  This is our recommended way of playing with Windows.  Please
+  see http://www.3drealms.com/tech/multiboot.html for more information.
+
+  Shadow Warrior is a protected mode program, and as such does not require the
+  services of such memory managers as QEMM, EMM386, etc.  Please read the
+  section of this file on protected mode programs for more information.  Please
+  note that using MicroSoft's Memmaker or QEMM's Optimize will not do you any
+  good if you're out of memory.  You need to "boot clean".  Please see the
+  "Boot Clean" section of this tech file and the "Protected Mode" section for
+  more information.
+
+þ If your copy of Shadow Warrior locks up randomly and you have a sound card,
+  you might be experiencing a DMA conflict.  These are caused by having more
+  than one hardware device sharing a DMA (Direct Memory Access) channel with
+  your sound card.  DMA channels are used by Shadow Warrior to send sounds to
+  your sound card.  When you have more than one piece of hardware on a single
+  DMA channel, the chip on your motherboard that controls DMA transfers may
+  become confused and send the sound to the wrong place.  When this happens,
+  your system will lock up.
+
+  Devices that usually cause DMA conflicts include CD-ROM drives, older
+  dedicated FAX boards, tape backup drives connected to an accelerator card
+  (not including tape drives plugged into your floppy drive controller cable),
+  and in newer systems, the ECP/EPP parallel port on your I/O card or on the
+  motherboard itself.  If any of these devices are present on your system, they
+  may be the source of your lockups.
+
+  DMA conflicts cannot usually be spotted by diagnostic software (CheckIt, PC
+  Tools SI.EXE, Norton Utilities NDIAGS, etc.).  3D Realms does not recommend
+  the use of such software to determine if you have a DMA conflict. Instead, if
+  you suspect a DMA conflict, try the following test:
+
+       1.  Run the SETUP program and select NONE for your Sound FX card.
+       2.  Play Shadow Warrior and watch for lockups.
+
+  If the game no longer locks up, then you were definitely experiencing a DMA
+  conflict between your sound card and some other device.
+
+  The ONLY way to resolve a DMA conflict is to physically move the conflicting
+  device to another DMA channel.  In all but the rarest cases involving devices
+  that "download" their configuration at boot-up time, you cannot do this
+  through software.  You also cannot solve the problem by simply unloading the
+  driver for the conflicting device.  Since this is a true hardware conflict,
+  the problem can persist even if the device driver is not loaded when you boot
+  your machine. In laymen's terms, booting clean won't solve the problem.  You
+  will most likely have to move a "jumper" (see your manuals for a description)
+  to physically reconfigure the conflicting device.  If you need assistance
+  with reconfiguring your device(s), please consult your system's manuals or
+  contact the manufacturer of the device(s) in question.  3D Realms cannot
+  provide assistance for reconfiguring your hardware.
+
+  For best performance, do not move your sound card to a different channel:
+  leave it where it is (usually channel 1 for 8-bit cards, or channels 1 and 5
+  for 16-bit cards).  Instead, move the conflicting device.  After you have
+  resolved the DMA conflict, you may re-run the SETUP program and re-select
+  your sound card under the Sound FX setup.
+
+  If your copy of Shadow Warrior still locks up, you may wish to check some
+  settings in your CMOS configuration as a last resort.  If any of these are
+  on, then switch them off:   Hidden Refresh, Hardware Video Shadowing, Turbo
+  Switching. Also, if you have either of these, turn them on: HD1 Block Mode;
+  IDE HDD Block Mode.  Use these ONLY as a "last resort" fix - make sure you
+  read the rest of this file before you try these suggestions.
+
+
+                     ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                     ³SHADOW WARRIOR COMMAND LINE PARAMETERS³
+                     ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+þ There are a few command line parameters (also known as "switches") you
+  can use to alter game performance.  Some of these will help speed up the
+  game on slow computers, while others help to aid game play.
+
+  A command line parameter is something that you type on the command line
+  after the name of the program you're running.  The '/v' switch will be used
+  as an example.  To use that one, you would need to start the game like this:
+
+                                   SW -v1
+
+  The command line parameters for Shadow Warrior are stackable, which means
+  that you can use more than one at a time, if you need to.  An example of a
+  stacked set of command line parameters would look like this...
+
+                                   SW -v1 -l1
+
+  Please note that while these are intended for use with the game, you can use
+  them on the setup program.  The setup program will pass any command line
+  parameters that were given to it to the game.
+
+  Here is a list of the command line parameters you can use with Shadow
+  Warrior:  ('-' may be used instead of '/', <> text is optional)
+
+  -?                     This help message
+
+  -map <mapname>         Load a map
+                         In the registered version, this lets you load a
+                         custom map file via the command line.  If used, this
+                         needs to be the first command line switch.
+
+  -nocd<audio>           No CD Red Book Audio
+                         For the registered version only, this will disable
+                         the CD Audio detection.
+
+  -name [playername]     Player Name
+                         Overrides the player name in the sw.cfg file.
+
+  -s#                    Skill (1-4)
+                         Launches the game with a specific Skill level.
+
+  -f#                    Send Fewer Packets during Multi-Player Mode.  This
+                         should never be needed during a modem, serial, or
+                         network game, and is intended only for places like
+                         TEN who use a slightly different arrangement which
+                         requires less traffic.  This would also be useful
+                         for programs such as Kali, etc. # can be 2, 4, or 8.
+
+  -nopred<ict>           Disable Net Prediction Method
+                         This should never really be needed, but if you're
+                         having sync problems, you can try using this parameter
+                         to alleviate them.  This will slow down the game a
+                         bit, though.
+
+  -level#                Lets you launch the game at a specific level #.
+                         (For Shareware, it's 1-4, for full it's 1-28)
+
+  -dr[filename.dmo]      Demo record (You must use -level# with this)
+
+  -dp[filename.dmo]      Demo playback (You must use -level# with this)
+
+  -monst<ers>            No Monsters
+                         Turns off Game Monsters during game play.
+
+  -nodemo                No Demos - Ignores any game demos in directory.
+
+  -nometers              Turns off the boss and air meters during gameplay.
+  -movescale             Adjust movement scale: 256 = 1 unit
+
+  -turnscale             Adjust turning scale: 256 = 1 unit
+
+  -extcompat             Controller compatibility mode (with Duke 3D)
+
+NOTE: The following command line parameters should never be used during
+      standard game play.  These can seriously upset the stability of game
+      play, we do not recommend you use these unless you know exactly what you
+      are doing.
+
+  -debug                 Debug Help Options
+
+  -demosyncrecord        Demo sync record
+
+  -demosynctest          Demo sync test
+
+  -cam                   Camera test mode
+
+  -debugactor            No Actors
+
+  -debuganim             No Anims
+
+  -debugso               No Sector Objects
+
+  -debugsector           No Sector Movement
+
+  -debugpanel            No Panel
+
+  -mono                  Mono
+
+
+                      ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                      ³HOW TO SET UP AND PLAY NETWORK GAMES³
+                      ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+NOTE: In order to play a Network game, you must have IPX/SPX or NetBIOS
+      network protocols loaded.  Please see your network manual, or contact
+      your network administrator for info on how to load these.  3D Realms
+      cannot help you with setting up your network.  (We also cannot help with
+      support on playing the game over Ten, Kali, or Kahn or any other program
+      that emulates a network over TCP/IP.  Please contact the people who make
+      the program in question for using games on their software.)
+
+A network isn't something to find, or something you can share with your
+friends in other towns, and it doesn't involve just living in the same area. A
+network consists of a series of computers with network cards that physically
+link the computers by a network cable.  To network your systems together, all
+the computers would have to be in the same room or building.  The greater the
+distance (up to 300ft) increases the cost of the cable. You can find cards for
+around $20 each and cable will run from $15 for a 50ft patch cable to $130 for
+500ft. roll that you can cut for the desired length. If you need more info,
+check out a book from your library or book store like "LAN for dummies".   It
+explains it in plain English.
+
+Here is a short summary of how to play a network game.  A more detailed
+explanation will follow.
+
+1) Run the setup program.  Once in the setup program, select "Network Game".
+2) Alter any of the options you wish, and then select "Launch Shadow Warrior".
+3) Once all the players are found, the game will load.  Once the game is at
+   the Main Menu, select "New Game".
+4) If you are Player 1, you will choose the game options.  All other players
+   will have to wait for Player 1 to select the game options.
+5) If you are player 1, select the difficulty, level, etc, and select "Begin
+   Play".  You're in!
+
+Here's a more detailed description of the Network Game Options:
+
+1) Run the Setup program, and select "Network Game".  From here, you can alter
+   several game parameters before actually launching Shadow Warrior.  The
+   parameters you can change are:
+
+   Number of Players  -> This option will let you alter the total number of
+                         players to be found in your game.
+   Network Socket #   -> This will allow more than one simultaneous network
+                         game to occur at once.  If you change this, all people
+                         playing in your game must be using the same value, or
+                         you won't find each other.
+   Setup Macros       -> From here you can set up the text taunts you can use
+                         during WangBangs.  During play, you activate them by
+                         hitting Shift-F1 through Shift-F10.
+   Change RTS File    -> This will let you alter the RemoteRidicule (tm) sound
+                         file.  By default, this is SW.RTS.  The RTS file is
+                         the file that contains recorded voice taunts you can
+                         throw at your opponents during a WangBang.  These are
+                         activated by pressing Alt-F1 through Alt-F10.  NOTE:
+                         If you are using a custom RTS file, ALL players must
+                         have the same RTS file in order to hear your taunts.
+   Change Player Name -> When you are playing multi-player SW, you are known
+                         to other players by the name you choose here.
+   Launch Shadow Warr -> Once you've selected all your options, choose this
+                         to run the game!  DO NOT use the launch option from
+                         the Main Menu.  If you intend on playing a Network
+                         game, you must use this option.
+
+2) Once you've hit "Launch Shadow Warrior", the game will be run.  Once at the
+   Main Menu, hit "New Game".  If you are Player 1, then you will have a few
+   more things to do.  If you are any other player, you are done.  Just sit
+   wait for Player 1 to set all the options.
+
+NOTE: On a network game, Player #1 is determined by whomever has the lowest
+      network ID number.  There is no way to force the game to assign a
+      specific player to be #1.  You'll need to check with your network
+      administrator / network documentation to change network ID numbers.
+
+3) If you are Player 1, you have several items you need to select before the
+   game will actually start.  They are:
+
+   a) Game Type     -> There are three options here.  They are WangBang,
+                       WangBang [No Spawn], and Cooperative. Cooperative is
+                       a way of playing "against the game". In other words,
+                       you and your friend(s) both play with each other.
+                       WangBang means you and your buddies just blast each
+                       other! A WangBang game with no spawn means that the
+                       ammo, health, & items do not come back after having
+                       been picked up/used.
+   b) Level         -> This is a slidebar that allows you to select which
+                       level you will play in, and the name of the episode
+                       is shown on the next line.
+   c) Markers       -> Show respawn markers.  These will show or not show the
+                       small circles that "mark" a spot where an item will
+                       "respawn" back into the game.
+   d) Kill Limit    -> This is a slidebar that allows you to select the end
+                       of a WangBang if a certain number of kills has been
+                       reached.  By default this is unlimited, but it can
+                       be changed to any of the values on the slidebar here.
+                       You can choose any number from 10 to 100 in increments
+                       of ten.  This option is not available if you are
+                       playing CoOp.
+   e) Time Limit    -> This is similar to the kill limit slidebar except that
+                       the end of the game is determined by time, not kills.
+                       You can choose any of the options here which range from
+                       3 minutes to 60 minutes or unlimited.  This option is
+                       not available if you are playing CoOp.
+   f) Player Color  -> You can choose pants color with this.  NOTE: When using
+                       team play, this is how you determine teams.  Make sure
+                       that if you are playing in team mode, that your team
+                       chooses the same pants color.
+   g) Other Options -> There are four more options available under the "Other
+                       Options" menu. They are:
+                       1) Monsters: You can have no monsters, or three levels
+                                    of monster difficulty.
+                       2) Team Play: You can play in teams.  The way to tell
+                                     who is on a team is by the color of the
+                                     pants selected.  Make sure that all
+                                     players on the same team have the same
+                                     pants color. If you select CoOp play,
+                                     this option is not available.
+                       3) Hurt Teammate: If this is selected, you can hurt your
+                                         own teammate, or your friend if you
+                                         are playing CoOp.
+                       4) Play w/Nuke: If you wish to disable the "Nuke" weapon
+                                       you can do it here.  This will
+                                       eliminate any whining about
+                                       "unfair".
+
+   h) Start Game    -> Once the parameters have been selected, this starts!
+
+4) Select Option "h" (from the list above) and start your new game!
+
+þ NETWORK PLAY NOTES AND REMARKS
+
+  ¯ You cannot join a game in progress.  All players must be present at the
+    start of the game.  If you quit, you cannot rejoin without everyone else
+    quitting and restarting.
+
+  ¯ If you are playing a network game and any player quits the game, the rest
+    will continue to play.
+
+  ¯ If you are playing in Co-Operative mode, pressing the letter "K" during
+    play will let you see through the eyes of your teammates.
+
+  ¯ When playing a WangBang game, if you go to the next level in your game,
+    your weapons do not carry over to the next level.
+
+
+                      ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                      ³HOW TO SET UP AND PLAY A MODEM GAME³
+                      ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+NOTE: In order to play a Modem game of Shadow Warrior, you need a 100% Hayes
+      Compatible modem of at least 14400bps or faster.  We also strongly
+      recommend a serial port with a 16550 UART chip.  Older 16450's or 8250's
+      are not fast enough and can cause synchronization errors and slowdowns.
+      If you have one of these older ports, please upgrade to a serial card.
+      with a 16550 UART.  If you have a software supported or an emulated
+      port, it will not be detected as a 16550.  You need a TRUE 16550 for it
+      to be detected as such.
+
+Problems with Modem Play?  Please see the HELP!!! - Modem / Serial Play section
+of this document.  Press F7 now to see a list of sections.
+
+  We strongly urge you NOT TO CHANGE THE DEFAULT MODEM INIT STRINGS UNLESS YOU
+  ARE SURE THE CHANGED SETTINGS WILL WORK.  Changing them tends to cause
+  problems, and you should only change them if the defaults do not work.
+
+Here is a short summary of how to play a modem game.  A more detailed
+explanation will follow.
+
+1) Run the setup program.  Once in the setup program, select "Modem Game".
+2) Make sure your COM Port is set up correctly (Select Setup COM Port).  We
+   strongly recommend picking a port speed of only 19200 until you are sure you
+   can connect properly.
+3) If you are calling, select "Phone Number List" and pick a phone number to
+   call, then select "Dial Your Opponent".  After this, pick "Launch Shadow
+   Warrior" If you are the one being called, select "Wait For Call", and then
+   select "Launch Shadow Warrior".
+3) Once all the players are found, the game will load.  Once the game is at
+   the Main Menu, select "New Game".
+4) Set the options, and begin!
+
+Here's a more detailed description of the Modem Game Options:
+
+1) Run the Setup program and select "Modem game".  From here, you can alter
+   several game parameters before actually launching Shadow Warrior.  The
+   parameters you can change are as follows.
+
+   --  You can only choose one of the first three options at any one time. --
+        -- The rest of these options are modem configuration options. --
+
+   Already Connected  -> Choose this if you have already connected with a
+                         terminal software package such as Qmodem or Telix.
+
+   Wait For Call      -> Choose this if you are playing a modem game and wish
+                         to have your friend call you.
+
+   Dial your Opponent -> Choose this if you are playing a modem game and wish
+                         to be the one who dials the phone.
+
+   Setup Com Port     -> This option lets you configure the COM port you wish
+                         to use for playing Modem SW. This is where you would
+                         need to select COM 1 or 2, the IRQ, UART, and/or Port
+                         Speed.  We recommend against changing the IRQ or UART
+                         values unless instructed to by 3D Realms Tech Support,
+                         or unless you are 100% certain of what you are doing.
+
+   Setup Modem        -> Shadow Warrior used an advanced modem driver, and as
+                         such, you don't need to mess with fiddly init strings.
+                         The default of just "ATZ" will work with 99% of the
+                         modems out there.  If, for some reason, you find you
+                         need to alter your modem init string from ATZ, this is
+                         where you would do it.  Also, if you need to change
+                         from TONE to PULSE dialing, or add a 9 to get an
+                         outside line, or some other similar modem condition,
+                         this is where you would do it.
+
+   If you do need to change the init string, please consult your modem's
+   instruction manual, 3D Realms cannot help with setting up specific modem
+   strings.  All you need to do is to disable error correction and data
+   compression in your init string.
+
+   Setup Macros       -> This option lets you set up the text based taunts you
+                         can use during a WangBang game.
+
+   Change RTS File    -> This will let you pick a different RemoteRidicule(tm)
+                         sound file, if you have made or received one.  The
+                         default filename here is SW.RTS.  The RTS file is
+                         the file that contains recorded voice taunts you can
+                         throw at your opponents during WangBangs.  These are
+                         activated by pressing Alt-F1 through Alt-F10.  NOTE:
+                         If you are using a custom RTS file, ALL players must
+                         have the same RTS file in order to hear your taunts.
+
+   Change Player Name -> When you are playing multi-player SW, you are known
+                         to other players by the name you choose here.
+
+   Phone Number List  -> This option lets you set up a dialing directory of all
+                         your friends who play Modem SW, so you don't have to
+                         enter their phone numbers every time you want to play.
+
+Launch Shadow Warrior -> Once you've selected all the options for your modem
+                         game, select this to start!
+
+2) Once you've hit "Launch Shadow Warrior", the game will run.  Once at the
+   Main Menu, hit "New Game", and the pick the game options!
+
+3) When setting options, you have several items you need to select before the
+   game will actually start.  They are:
+
+   a) Game Type     -> There are three options here.  They are WangBang,
+                       WangBang [No Spawn], and CoOperative. Cooperative is
+                       a way of playing "against the game". In other words,
+                       you and your friend(s) both play with each other.
+                       WangBang means you and your buddies just blast each
+                       other! A WangBang game with no spawn means that the
+                       ammo, health, & items do not come back after having
+                       been picked up/used.
+   b) Level         -> This is a slidebar that allows you to select which
+                       level you will play in, and the name of the episode
+                       is shown on the next line.
+   c) Markers       -> Show respawn markers.  These will show or not show the
+                       small circles that "mark" a spot where an item will
+
+   d) Kill Limit    -> This is a slidebar that allows you to select the end
+                       of a WangBang if a certain number of kills has been
+                       reached.  By default this is unlimited, but it can
+                       be changed to any of the values on the slidebar here.
+                       You can choose any number from 10 to 100 in increments
+                       of ten.  This option is not available if you are
+                       playing CoOp.
+   e) Time Limit    -> This is similar to the kill limit slidebar except that
+                       the end of the game is determined by time, not kills.
+                       You can choose any of the options here which range from
+                       3 minutes to 60 minutes or unlimited.  This option is
+                       not available if you are playing CoOp.
+   f) Player Color  -> You can choose pants color with this.  NOTE: When using
+                       team play, this is how you determine teams.  Make sure
+                       that if you are playing in team mode, that your team
+                       chooses the same pants color.
+   g) Other Options -> There are four more options available under the "Other
+                       Options" menu. They are:
+                       1) Monsters: You can have no monsters, or three levels
+                                    of monster difficulty.
+                       2) Team Play: You can play in teams.  The way to tell
+                                     who is on a team is by the color of the
+                                     pants selected.  Make sure that all
+                                     players on the same team have the same
+                                     pants color. If you select CoOp play,
+                                     this option is not available.
+                       3) Hurt Teammate: If this is selected, you can hurt your
+                                         own teammate, or your friend if you
+                                         are playing CoOp.
+                       4) Play w/Nuke: If you wish to disable the "Nuke" weapon
+                                       you can do it here.
+
+   h) Start Game    -> Once the parameters have been selected, this starts!
+
+4) Select Option "H" and start your new game.
+
+
+                     ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                     ³HOW TO SET UP AND PLAY A SERIAL GAME³
+                     ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+NOTE: In order to play a serial game of Shadow Warrior, you will need a null
+      modem cable (not a serial cable with a null modem adapter).  We also
+      strongly recommend a serial card with a 16550 UART chip.  The older 16450
+      and 8250 chips can cause slowdowns and problems during setup and
+      gameplay.
+
+Playing a serial game of Shadow Warrior is quite easy.  All you need to do is
+make sure that you have your two computers connected via a null modem cable.
+After you have hooked the computers together, run the setup program and select
+"Serial Game".  From there, if you need to, you can configure your COM port
+(make sure it is using the correct port for your computer).  You can also alter
+such WangBang items as Text taunt macros, the RTS (RemoteRidicule) file to be
+used, and your Player Name.  Once you've done this, select "Launch Shadow
+Warrior".
+
+If you do not connect, check and make sure that the cable you are using is a
+true null modem cable.  Standard "straight-through" serial cables and (in most
+cases) serial cables with a null modem adapter will not work.  Also, check and
+make sure that both sides are opening the serial port at the same speed.  We
+strongly urge you to leave it at the default of 19200 until you are sure you
+can properly play the game.
+
+Player 1 and Player 2 are assigned at run time.  If you've been selected as
+Player 1, you have several items you need to select before the game will
+actually start.  They are:
+
+   a) Game Type     -> There are three options here.  They are WangBang,
+                       WangBang [No Spawn], and CoOperative. Cooperative is
+                       a way of playing "against the game". In other words,
+                       you and your friend(s) both play with each other.
+                       WangBang means you and your buddies just blast each
+                       other! A WangBang game with no spawn means that the
+                       ammo, health, & items do not come back after having
+                       been picked up/used.
+   b) Level         -> This is a slidebar that allows you to select which
+                       level you will play in, and the name of the episode
+                       is shown on the next line.
+   c) Markers       -> Show respawn markers.  These will show or not show the
+                       small circles that "mark" a spot where an item will
+                       "respawn" back into a game.
+   d) Kill Limit    -> This is a slidebar that allows you to select the end
+                       of a WangBang if a certain number of kills has been
+                       reached.  By default this is unlimited, but it can
+                       be changed to any of the values on the slidebar here.
+                       You can choose any number from 10 to 100 in increments
+                       of ten.  This option is not available if you are
+                       playing CoOp.
+   e) Time Limit    -> This is similar to the kill limit slidebar except that
+                       the end of the game is determined by time, not kills.
+                       You can choose any of the options here which range from
+                       3 minutes to 60 minutes or unlimited.  This option is
+                       not available if you are playing CoOp.
+   f) Player Color  -> You can choose pants color with this.  NOTE: When using
+                       team play, this is how you determine teams.  Make sure
+                       that if you are playing in team mode, that your team
+                       chooses the same pants color.
+   g) Other Options -> There are four more options available under the "Other
+                       Options" menu. They are:
+                       1) Monsters: You can have no monsters, or three levels
+                                    of monster difficulty.
+                       2) Team Play: You can play in teams.  The way to tell
+                                     who is on a team is by the color of the
+                                     pants selected.  Make sure that all
+                                     players on the same team have the same
+                                     pants color. If you select CoOp play,
+                                     this option is not available.
+                       3) Hurt Teammate: If this is selected, you can hurt your
+                                         own teammate, or your friend if you
+                                         are playing CoOp.
+                       4) Play w/Nuke: If you wish to disable the "Nuke" weapon
+                                       you can do it here.
+
+   h) Start Game    -> Once the parameters have been selected, this starts!
+
+
+            ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+            ³WHAT IS THE "SET BLASTER" COMMAND, AND WHY DO I NEED IT?³
+            ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+If you are using a Sound Blaster clone, then this section is of particular
+interest to you.  A good deal of Sound Blaster clones do not properly set up
+the SET BLASTER command.  If you have a clone card and do not get any sound (or
+poor/bad sound), this is probably why.
+
+Shadow Warrior (or any other Apogee/3D Realms game that uses the Sound Blaster)
+uses the SET BLASTER command to figure out where to send its sound output. A
+Sound Blaster card can have many different sound outputs, and since there are
+zillions of computers out there, a way needs to be used in order to tell the
+game where your sound card is located.  The SET BLASTER line is how we do it.
+Check to make sure that you have the SET BLASTER line in your AUTOEXEC.BAT
+file.  This code is an example, and isn't exactly what you need to put in your
+system, make sure to read the entire explanation of this command.
+
+NOTE: Some of these parameters (P, H, & E) are dependant on certain types of
+      cards.  For example, the E is only needed if you have an AWE32.  The
+      minimum requirements are to have the A, I, D, & T parameters.  The other
+      three may or may not be needed depending on what type of card you have.
+      Please read this entire section to see if you need any of them.  If you
+      are using a clone card, or some card that's not a "true" Sound Blaster,
+      then you will most likely only need A, I, D, & T.
+
+SET BLASTER=A220 I5 D1 T6 P330 H6 E620
+|   |       |    |  |  |  |    |  |
+|   |       |    |  |  |  |    |  |_______ AWE32 Only Parameter
+|   |       |    |  |  |  |    |__________ "High" DMA Channel
+|   |       |    |  |  |  |_______________ MIDI Port
+|   |       |    |  |  |__________________ Type of Card
+|   |       |    |  |_____________________ DMA Channel
+|   |       |    |________________________ Interrupt
+|   |       |_____________________________ Port Address
+|   |_____________________________________ Environment Variable
+|_________________________________________ DOS Command
+
+NOTE: There can be no spaces between the word BLASTER and the equal sign (=).
+If you have a space in there, your system will set the parameter incorrectly.
+Our games will not be able to recognize the command and will not work properly.
+
+These settings will most likely not be the ones you need for your board.  This
+is the case since the Port Address, Interrupt and DMA Channel can be set by
+adjusting "jumpers" on your sound card.  Some newer cards have this information
+controlled by software, so please consult your card's manual for more
+information on how to set these things.  You should also check your manual if
+you are unclear as to how to tell what settings your card is using.  This
+information *IS* important, so we recommended that you know precisely what the
+settings are.  If you are using a card that "emulates" the Sound Blaster, you
+should check your card's manual on how to set up the card for Sound Blaster
+emulation (if your card is not natively supported by this game).
+
+The settings shown in the above example are based on the defaults used for a
+Sound Blaster AWE32.  Here is an explanation of each setting, along with the
+most commonly used settings:
+
+The PORT ADDRESS is almost always 220.  This seems to be the default for
+most Sound Blasters and compatibles, regardless of brand.  Unless you know
+you've switched this away from 220, it's a safe bet it's still there.
+
+The INTERRUPT is something that varies from system to system.  IRQ 5 is most
+common on newer true Sound Blaster cards, while older Sound Blasters and some
+clones (regardless of age) default to IRQ 7.  While many IRQs are available,
+3D Realms does not recommend using IRQ 2 or IRQ 10.  Most of the people we
+run into who use IRQ 2 have difficulty getting their programs to run properly,
+unless they switch to a different IRQ channel.  Also, while IRQ 10 may work,
+we cannot guarantee that it will.  Finally, if you are using a Gravis
+Ultrasound or Ultrasound Max, you must use an IRQ of 7 or less.  The sound
+engine used in this game does not support the GUS default of 11.
+
+NOTE: Our sound engine doesn't support IRQ9 for Sound Cards.  If you have yours
+      at IRQ9, try picking IRQ2 in the setup program.  A lot of systems,
+      especially those running under Windows swap out IRQ9 and 2.
+
+The DMA CHANNEL is one that causes some people problems.  By default, this is
+almost always set at 1.  Unless you have a specific need to change this, it's
+probably still at 1.  If you're running into lockups using digitized sounds
+with our games, this is probably where your problem lies. If you get lockups
+with a 3D Realms game that has digitized sounds and you have this variable set
+properly, try turning off the digitized sounds.  If the game now plays without
+locking up, you probably have a DMA conflict.  Please see the "Shadow Warrior
+Detailed Help & TroubleShooting" section of this file for instructions on
+fixing this problem.
+
+The TYPE OF CARD is something that is fairly easy to check out.  If you're
+running a non-Creative Labs sound card, then you want this to either be 1 or 3,
+depending on which card it is.  In the majority of cases, it will be a 1 if
+you are not using a "true" Sound Blaster.  If you do have a "true" Sound
+Blaster, then the variable is one of these...
+
+      1 for an original (old) Sound Blaster.
+      2 for an original (old) Sound Blaster Pro.
+      3 for a newer Sound Blaster 2.0 (Sound Blaster deluxe edition).
+      4 for a newer Sound Blaster Pro (SB Pro 2.0)
+      5 for a MicroChannel Sound Blaster (IBM PS/2 MCA-bus systems only).
+      6 for a Sound Blaster 16, Vibra 16, or an AWE32.
+
+As shown here, the age of the card can make a difference.  If you have an older
+card like the Sound Blaster 1.5, choose the appropriate number.  Clone cards or
+cards that emulate the Sound Blaster usually have a T variable of 1.
+Experiment to see what works best for you.
+
+The MIDI PORT parameter will only be needed if you are using a card that has
+MIDI capabilities.  Your sound card manual will tell you if you need this.  It
+is generally used only on true Sound Blaster cards, specifically the SB16 and
+higher.  If your card requires it, this is where you define what MIDI port you
+are using.  330 seems to be the default for most cards, so if you have such a
+card, and you haven't changed anything from factory defaults, this is probably
+where it still is.
+
+The HIGH DMA CHANNEL is something that is used primarily on Sound Blaster 16,
+Vibra 16 (built into some motherboards), and AWE32 cards.  This is not the same
+as the standard (or "low") DMA channel:  this is a different one.  This is only
+used if you're using a 16 bit sound card capable of playing 16 bit Sound Blaster
+sounds.  By default, this is usually 5, so unless you know that it's something
+else, it's probably still 5.
+
+Please note that this parameter can cause lockups on some systems.  Creative
+Labs' installation programs warn that some motherboards cannot handle 16-bit
+DMA transfers, which is used if you select the default high DMA channel of 5.
+If you experience game lockups, try reconfiguring your card and this setting to
+use DMA channel 1 (i.e., the same channel that is used for the D parameter).
+See your card's documentation for details on this problem.
+
+The E620 parameter is something that is needed _only_ if you have a Creative
+Labs AWE32 sound card.  If you have one of these, this parameter will have been
+set up properly assuming you've installed the software that came with the card.
+Check your AWE32 documentation for a more thorough explanation of what this
+parameter is used for.
+
+We get a lot of questions from people wanting to know why they have to use this
+if they don't have a true Sound Blaster.  It's simple, really - the command has
+NOTHING to do with what brand of sound card you have.  3D Realms games that use
+digitized sounds expect Sound Blasters and compatibles to be at specific
+settings.  If they are not, then the game needs to be told this.  The way to do
+this is with the BLASTER environment variable.  That's why this is needed. Some
+of our newer programs (Shadow Warrior, Duke3D) have specific setup programs
+which let you set up this information manually, but they still require the SET
+BLASTER line to operate at 100% efficiency.
+
+Please remember to add this to AUTOEXEC.BAT, save the file back to disk,
+reboot your computer, and make sure to delete the game's config file
+(SW.CFG) before running the game again.  If you have any further questions,
+please drop 3D Realms a line.
+
+
+
+                       ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                       ³WINDOWS 95 AND OS/2 ISSUES³
+                       ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+Shadow Warrior is only officially supported under the following operating
+systems:
+
+                 Microsoft MS-DOS (versions 5.0 through 6.22)
+                     IBM PC DOS (versions 5.0 through 7.0)
+                                 Novell DOS 7
+
+This game was designed to be run only under these environments.  It was not
+designed for use under any other operating system, including Windows 95, OS/2
+Warp, or on a Macintosh using a DOS compatibility card.  For this reason, 3D
+Realms cannot provide technical support for problems running the game under
+these environments.  If you experience problems, contact the company that made
+your operating system.
+
+Please see http://www.3drealms.com/tech/multiboot.html for more information
+on Windows95 and booting into DOS mode.
+
+PLEASE NOTE:  While Microsoft Windows 95 has the ability to boot in "MS-DOS
+Mode", this is still not a supported environment.  Microsoft has made many
+changes to the version of MS-DOS (v7.0) that is integrated into Windows 95.
+These changes have been known to cause Shadow Warrior to fail to operate on
+some systems, while they have caused no problems on other systems.  If you
+choose to try to run Shadow Warrior in MS-DOS mode on your system, be advised
+that you do so at your own risk.  Neither 3D Realms Entertainment nor Apogee
+Software can be held responsible for any problems that you may encounter, nor
+can we provide technical support for such problems.
+
+
+                            ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                            ³WINDOWS NT ISSUES³
+                            ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+There is no known way to get this game running fully under Windows NT.  The
+problem lies with NT itself, as NT does not allow the same kind of hardware
+access to our product that other MicroSoft OS's do.
+
+The only known way to get Shadow Warrior running under NT is to play with no
+sound. Other than that, you'll need to boot over to DOS.
+
+
+                            ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                            ³WHAT IS PROTECTED MODE?³
+                            ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+As promised earlier in this document, here is an explanation of protected mode.
+This information is not necessary to get the game running, but it's included as
+background information for the curious.
+
+Historically, DOS programs have always required that you run them in the first
+640k of ram.  This was a limitation imposed on DOS back when v1.0 was the only
+thing around.  For compatibility's sake, this is the way things have remained.
+Any memory above 640k could only be used for data storage, not for program
+execution.  That's why you always saw those dreaded "Out of Memory" messages.
+
+As time went on, certain programs, (and later DOS itself) gained the ability to
+load part of themselves "high", leaving more conventional (the first 640k) of
+memory available.  You still had the limitation of the 640k barrier, but some
+more breathing room was made by these memory advances.
+
+More recently, advances were made in memory management so that programs could
+run in protected mode.  Protected mode is a special way of programming so that
+your program doesn't have the 640k barrier.  Depending on how the program is
+written, the entire thing is in protected mode, or it requires the use of a DOS
+"Extender" to run that way.  Shadow Warrior is such a program.  Shadow Warrior
+uses a DOS extender to access much more memory than it would have been able to
+if it were written the old way.  A game of this complexity would have never
+been able to have been written if the old 640k barrier method of programming
+was used.
+
+Well, you might be asking, what about my older programs?  Can't I just use a
+DOS extender, and have that run something like "Wolfenstein 3D", and never get
+those out of memory errors?  Well, it's not as simple as that.  If a program is
+using a DOS extender, it has to be written a special way.  A DOS extender isn't
+just a magic wand that you can use to wipe away your memory problems for
+non-protected mode programs.  The program has to be written a special way to
+make use of the DOS extender.
+
+To summarize, protected mode (sometimes referred to as the "flat memory" model)
+is a way for a DOS program (either by itself, or through the use of a DOS
+extender) to access more than just the first 640k of memory for program
+execution.  Because of this, more complex programs (such as SW) are able to
+be written.  If using the old 640k barrier method (sometimes referred to as a
+"segmented memory" model), this type of program would not have been possible.
+
+If you're still confused, don't worry about it.  As I said above, this
+information is not necessary for the proper play of Shadow Warrior.  It's in
+here for background information only.  If you're still inclined, check out some
+DOS programming books available at your library or a book store.  They have far
+more detailed explanations of this than would be possible in this document.
+
+
+                           ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                           ³CONTACTING TECHNICAL SUPPORT³
+                           ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+If you experience problems running or playing this product, you can use any
+of the following avenues to obtain assistance:
+TECHNICAL SUPPORT (U.S. & CANADA)
+
+Assistance Via World Wide Web
+
+Get up-to-the-minute technical information at the GT Interactive Software
+website, at http://www.gtinteractive.com, 24 hours a day, seven days a week.
+In the Support section you'll have access to our FAQs (Frequently Asked
+Questions), which contains our latest troubleshooting information.  You can
+also visit our Forums area, where you can swap email with other gamers, our
+FTP (File Transfer Protocol) area where you can download patches and new
+enhancements as soon as they become available, our Hints/Cheat Codes area, an
+E-Mail area where you can leave us your tech support problems and questions,
+and other areas where you can get valuable information on GT Interactive
+Software products.
+
+Assistance In The United States & Canada
+
+For automated phone assistance only, call GT Interactive Software's Tech
+Support at 716-871-6646. We have an Interactive Voice Response and Faxback
+system that is available 24 hours a day, seven days a week.  Since no live
+support is available for this product, it is to your advantage to use our
+automated support features which are provided free of charge.   These free
+features include automated voice-response solutions for known issues or
+information, an auto-faxback system where you can retrieve our FAQ (frequently
+asked questions) document and have it faxed-back or mailed to you, and our free
+cheat codes area.
+
+
+                                ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                                ³3D REALMS ONLINE³
+                                ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+3D Realms Technical Support can also be contacted via a variety of electronic
+media.  Several major online services are monitored, and our online contact
+points are listed below.   Also, a variety of Bulletin Board networks are
+monitored as well, and those are also listed.
+
+þ Major Online Services
+
+3D Realms has a forum on CompuServe!  Our forum has all of our shareware (as
+well as Apogee's, too!) available for download.  It also has other helpful
+files, as well as some user submitted files!  If you are on CompuServe, and
+haven't checked out our forum, why not try it today?
+
+     ¯ CompuServe: Type "GO REALMS" at any ! prompt
+
+þ Internet Services
+
+WORLD WIDE WEB:
+
+3D Realms has its own World Wide Web Site!  Point your Web Browser to the URL
+http://www.3drealms.com, and you'll reach us on the Web!  We have all kinds of
+cool files and information here, so if you like Apogee or 3D Realms and you're
+on the Web, you need to be here!  You can learn about future games, take a
+"virtual tour" of our headquarters, and participate in the lively message
+bases!
+
+INTERNET MAILING LIST:
+
+Join our Internet mailing list!  The Apogee mailing list is a list where you
+can receive press releases, general info, new game release notifications, and
+other miscellaneous items. Drop us a line at help@apogee1.com, and we'll send
+you more information about the list.  It doesn't cost anything, and all we need
+is your Internet E-Mail address!  Your friends are probably on the list - are
+you?
+
+FTP FILE TRANSFER:
+
+3D Realms an official Anonymous FTP site for our shareware downloads:
+
+               ftp://wuarchive.wustl.edu/systems/msdos/games/3dr/
+
+This is a standard Anonymous FTP site.  If you're getting an error like
+"Anonymous Access Denied", "Cannot Access File", or something like that, you're
+probably just running into the limit.  All Anonymous FTP sites have limits to
+the number of people that can access it at once.  Think of it as a busy signal,
+and try again later.  We also recommend talking to your local Internet Service
+provider (or the author of your FTP software) about how to properly use the
+Internet program you're trying to use.
+
+þ Bulletin Board Networks
+
+There are several BBS networks that are monitored for Apogee/3D Realms
+messages.  Our Online Support Representative monitors all of the following BBS
+networks:
+
+                                    Fidonet
+                                Relaynet (RIME)
+                                    Intelec
+                                     Ilink
+
+All of these BBS networks have Games, Shareware, and Apogee conferences.  Any
+3D Realms-related topics are also welcome in the Apogee conferences.  Private
+mail can also be sent to Apogee on Fidonet and Rime with the following
+addresses:
+
+    Fidonet       -> 1:124/9006              Rime       -> APOGEE (or 1674)
+
+Apogee also has a FDN on the Fidonet Filebone, where both Apogee and 3D Realms
+files are distributed.  Check with your local Fido Filebone administration for
+more info on how to get Apogee's and 3D Realms' shareware delivered right to
+your BBS!  Check FILEBONE.NA (available from your local Fido administration)
+for more info.
+
+
+       All trademarks mentioned in this manual are the property of their
+                               respective owners.
+

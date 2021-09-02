@@ -1,0 +1,566 @@
+LBAcache manual for  LBAcache 01sep2004,  written and conceived
+by  ( (c) 2001-2004, GPLed)  Eric Auer  <eric@coli.uni-sb.de>.
+
+
+Welcome to Erics GPLed* LBAcache hard disk cache! You need some
+XMS, at least a 386 CPU and some (...) drive to cache to use this.
+You can also cache diskettes, but this function is off by default.
+See caches.txt (8/2004) for a comparison of this and other caches.
+
+See the footnote on the GPL. It is GPL version 2, by the way.
+In short: "This is FREE open source software, intended to be useful,
+but WITHOUT ANY GUARANTEE". And it comes with the (NASM) source code.
+Please read COPYING.TXT which should also be in this directory,
+which contains the full license agreement. A short revision history
+of this LBAcache.txt can be found at the bottom, after the footnote.
+
+
+*** Limitations ***
+
+
+* Read cache only *
+
+
+Only read access is cached, so no waiting for that "It is now
+safe to turn off your PC" message - but also somehow suboptimal
+performance. I recommend setting BUFFERS to 4*(cluster size in
+KByte) + 2 in (fd)config.sys to (maybe!?) have some small write cache
+as well. By the way, smartdrv usually offers 32 write buffers and
+DR DOS NWCACHE usually has a multi purpose 16k buffer for floppy
+track read-ahead, write pooling and similar things. In MS DOS, you
+can set the "secondary buffers" to a non-zero value to get up to 4kB
+of read-ahead. The "write" statistics of LBAcache only tell you that
+cache contents got updated after disk writes, but the disk writes
+did happen at once and are not delayed in any way by the cache.
+
+
+* Disclaimer / Warning / Safety Information *
+
+
+Next, the usual WARNING: This is a beta version of a thing that
+interacts with your hardware very closely. So be warned that any
+bug I have not found yet may destroy your data! Do BACKUPS of
+your data before you start using this and once a while, stop
+using this cache to make fresh versions of those backups, etc.!
+
+You may have guessed it, but I would not have released this if it
+were destroying data all the time. So here are the good news:
+The cache has been NICE to my data recently, so I hope it will be
+to yours as well. Only drives supported by the BIOS are supported,
+but no special ones like CD drives and ZIP drives and similar.
+
+LBAcache will panic (stop to cache data until you unload it and
+load it again) when some "dangerous" things happen. It will show
+a message then. This means that the cache will pretend to be gone.
+You can simply continue to work with your system, no data should be
+lost. But you should still check why the cache got frightened: A
+cache which pretends to be gone will not speed up anything anymore!
+
+Some things which are known to scare LBAcache: MS FORMAT tries to set
+drive type (int 13.18) even for harddisks. This potentially changes
+sectors/track (but not head!) count and therefore causes a panic.
+No idea why MS FORMAT does that. Old versions of Norton Disk Doctor
+try to use special BIOS "cylinder offset" triggers (int 13.EE and
+int 13.EF) to reach > 1024 cylinders. Those triggers are handled
+by BIOS enhancement software like OnTrack / EzDrive, it seems. Use
+a newer NDD version which will use the more compatible LBA calls
+instead of using high cylinder numbers. Some other caches do support
+int 13.EE / 13.EF but I think those functions are obsolete. Found
+by Dimitry/IcE in NDD of Norton Utilities 5.x (from 2/1991). You will
+only see the warning once! Symptom of a shutdown is that the cache
+statistics stop to be updated after the cache has stopped itself.
+
+LBAcache will also act confused if floppy geometry changes in a
+"surprising" way. For example when you try to use 1.68 MB formatted
+disks in 1.44 MB drive, LBAcache can miss the change in certain
+cases. Then it will suppress floppy caching until the next disk
+change (and show an error message to tell you about that). Remember
+that floppy caching is only enabled at all if you use the FLOP
+option.
+
+CD-ROM caching can be done with CDRcache, which is a project based
+on the LBAcache source code and offers plain read caching without
+read-ahead or other funky things. It is a sys driver and can be
+controlled by echoing letters to the char device of the cache (no
+separate command line tool needed).
+
+
+*** How to use the cache ***
+
+
+* Usage as a "driver" (lbacache.com TSR) / caveats when using UMBs *
+
+
+You can load the cache in fdconfig.sys or config.sys using
+
+INSTALL=LBACACHE.COM [arguments]
+or
+INSTALLHIGH=LBACACHE.COM [arguments]
+
+(lbacache.sys removed 5/2004, so you have to use INSTALL
+instead of DEVICE now to load from config.sys!)
+or you can load it from the DOS prompt or in autoexec.bat using
+
+LBACACHE [arguments]
+or
+LOADHIGH LBACACHE.COM [arguments]
+
+which should all work roughly the same. If the cache shows bad side
+effects of loading HIGH, please load it LOW instead *and* tell me
+what happened! Already known problem: When UMBs are generated by
+UMBPCI, they are sometimes very slow. Loading LBAcache into such
+an UMB, can make LBAcache much slower than usual, too.
+There should be no DMA problems, though, because the cache does not
+buffer disk data locally. It uses the disk buffers which are used by
+the programs which use the cached disks instead. An *exception* are
+SCSI BIOSes: Those even need DMA for the stack for drive detection,
+so you should use the TUNS option to tell LBAcache to allocate stacks
+in low DOS memory, outside the UMB area (new 7/2004).
+TICKLE is different: It uses a local buffer, so you should take care
+to load TICKLE into an UMB where DMA is supported! Otherwise you
+might get data corruption, especially for diskettes and SCSI disks!
+Most EMM386 versions create DMA-enabled UMBs by default. For UDMA,
+you will need the VDS option of EMM386 and a VDS-aware UDMA driver.
+For SCSI, DMA support of EMM386 is not good enough: use TUNS switch.
+For UMBPCI (check the docs), some hardware allows no DMA in UMBs.
+
+
+* Usage to control the already loaded driver / general hints *
+
+
+Simply run one of the "when loaded..." commands as explained below.
+For example you can run
+LBACACHE STAT
+to have the current cache hit / miss statistics displayed. The
+statistics will describe instances of LBAcache which you have
+loaded as a "driver". The command "LBACACHE STAT" does NOT load a
+new resident instance, but simply returns to the prompt when done.
+
+When parts of the cache are actually empty, there will be less read and
+write misses than there are sectors in cache (sectors = 2 times the size
+of the cache in kilobytes). This means that a smaller cache would have
+been enough for what you have done. When the cache is smaller than the
+amount of data which you are processing, the miss count will be much
+higher, but you should NOT be too worried about that. As long as the
+hit PERCENTAGE still is high enough for you. Roberto Quiroga provides a
+nice example: With 5 MB cache, he gets 4347+1799=6146 misses. Fewer then
+10240, so he shrinks the cache to 3 MB. Now he gets 6302 misses, a bit
+more than the cache can handle. But only when he reduces cache size to
+1 MB (!), cache hit percentage drops "a lot": From 97% read  / 76% write
+to 86% read / 39% write. There are 27185 cache misses then, but this
+does NOT mean that it would be good to have a cache of 13.5 MB size!
+
+A "write hit", by the way, only means that the written sector was
+already known to the cache. LBAcache never delays writes. The write
+hit is still good because LBAcache does not have to store a new sector.
+It can simply update its knowledge about the contents of that sector.
+Unless you use the TUNW option (or have a pre-7/2004 LBAcache version),
+the cache contents will stay untouched in case of a write miss. ELSE,
+a "write miss" means that LBAcache stores a copy of the written sector
+in the cache - because it assumes that the sector will eventually be
+read later. Then the read can be served from cache without having to
+access the disk. But the write itself is always passed to disk at once.
+
+As a rule of thumb, use TUNW if your program uses temporary files or
+swap files a lot. If it just produces a lot of data but you do not need
+the data again right after that, *not* using TUNW will leave more space
+in the cache for caching reads. However, even installer type programs
+cause quite a bit of read-modify-write activity e.g. on the FAT and
+directory data, so TUNW will increase write hit percentage even there,
+possibly by almost 20% (as reported by Geraldo Netto), as well as
+increasing read hit percentage a little bit.
+
+For testing LBAcache efficiency, you will usually want to do
+something like that: load LBAcache, version and options at your choice.
+Then do: LBACACHE SYNC, LBACACHE ZERO, [something], LBACACHE STAT.
+The [something] is the action for which you want to know how well it
+gets cached, and the SYNC and ZERO actions empty the cache and reset
+statistics (to set the cache to a well-defined state). You will find
+that LBACACHE ZERO and LBACACHE SYNC should normally be used both right
+after each other (in 2 consecutive commands, not both on one line).
+
+
+* Details on the syntax *
+
+
+The argument syntax of the cache itself is currently as follows:
+
+To load:     LBACACHE  [size] [DRV drivelist] [FLOP] [TUNA] [TUNW] [TUNS]
+When loaded: LBACACHE  [INFO] [SYNC] [STOP] [STAT] [ZERO]
+To get help: LBACACHE  [HELP] [/?]
+
+LOAD options:
+
+  size      Specifies the buffer size. Default: 2048k. If 1-2 digits, unit
+            is 256k (in XMS), so default is to use 2 MB XMS. If > 2 digits,
+            unit is simply 1 kilobyte. Example: 'LBACACHE 8192'. Other
+            possible syntax: "BUF size" instead of "size".
+
+  FLOP      Enable the floppy cache (A: and B:, autodetected). To speed up
+            floppy use, load TICKLE, too! Please report if FLOP has bugs.
+            A bug can e.g. mean that the cache makes wrong assumptions on
+            floppy geometry which can lead to data corruption on the disk
+            or in files copied from disk. If you only use 1.44 MB disks
+            in an 1.44 MB drive, bugs are extremely unlikely, though...
+
+  DRV list  Selects which harddisks are cached. NULL means none.
+            It is strongly recommended to let LBAcache autodetect all
+            cacheable harddisks instead of using this option!
+            List consists of digits in 0..7, for BIOS drives 80h+x. E.g.:
+            023   caches BIOS drives 80h, 82h, 83h - first, third and   
+                  fourth harddisk (hda, hdc, hdd in Linux terminology).
+            Important: First BIOS harddisk means ALL drive letters which
+            are on the first physical harddisk.
+
+  TUNA      Fully associative cache: Search whole cache for a sector or
+            for free space in worst case. Slower for big caches but can
+            give more cache hits than the new (6/2004) default of searching
+            only up to N (current setting: 16) cache elements (current size
+            of an element: 8kB). Please TELL ME how much this changes speed
+            and cache hit percentages for YOUR own test scenario, thanks.
+            First tests suggest: slightly more cache hits but lower speed!
+
+  TUNW      Allocate on write: When data is written to disk, store a copy
+            in cache, EVEN if that means allocating new space in cache, in
+            anticipation of reading the data back later. Was the default
+            until 7/2004. Makes writes "consume" more cache, but is useful
+            for tasks which work with temp files a lot. If data was cached
+            anyway, the copy in cache is updated regardless of this option.
+
+  TUNS      Allocate 320 bytes of low DOS RAM for stacks (new 7/2004). Use
+            this option if you want to load LBAcache into EMM386's UMB or
+            otherwise "not very DMA friendly UMB" and have a SCSI system.
+            SCSI BIOSes seem to use DMA to stack for geometry check calls!
+            Note that this memory is *not* freed by LBAcache STOP, as the
+            unloading protocol would have to be changed too much for that.
+
+NON-LOAD options:
+
+  INFO      Shows cache statistics and details about resident LBAcaches.
+            Useful for debugging purposes, but somehow hard to understand.
+
+  STAT      Shows easier to understand cache statistics only.
+
+  ZERO      Reset the cache statistics counters to zero.
+
+  SYNC      Synchronizes all running LBAcache buffers for all drives. As   
+            LBAcache never delays writes, SYNC is just forget cached data.
+            This is done by calling int 13.46 (BIOS disk: eject) for all
+            cacheable drives (0, 1, 0x80 .. 0x87). Let me know if you get
+            unwanted side effects such as ejecting BIOS-driven CD-ROM.
+            It is recommeded to do LBACACHE ZERO after LBACACHE SYNC, will
+            make the statistics more intuitive to read.
+
+  STOP      Shuts down all running LBAcache instances and frees the XMS
+            and DOS RAM which they had allocated (removes them from RAM).
+            If the interrupt chain cannot be restored, LBAcache instances
+            are left in DOS RAM, but at a reduced size of < 500 bytes.
+            The XMS memory is always freed. When a single LBAcache is
+            loaded as last disk related resident program, complete unload
+            should work most of the time. When loading several LBAcache
+            instances, often only the last instance can be fully unloaded.
+
+  COOL      Puts the cache into "cool" mode: accessed sectors are frozen
+            into the cache (as much as possible - use TUNA to enhance the
+            effect). See the BINSEL explanations to find out whether this
+            experimental (9/2004) mode is useful for you.
+
+  WARM      Puts the cache into "melt" mode: accessed sectors are
+            unfrozen (defrosted? :-)) from the cache. See above. (9/2004)
+            Note: WARM, COOL and TEMP all display a diagnostic status
+            value for debugging, e.g. the current "locked element count".
+            After that, the normal STAT output is shown.
+
+  TEMP      Restores the cache to "normal temperature" mode: The frozen-
+            ness state of the current contents is preserved as far as
+            possible (if the cache gets really full, things will melt).
+            Now you have reserved part of the cache for frozen / locked
+            data and the rest of the cache space in classic mode. (9/2004)
+
+The NON-LOAD options affect only other LBAcache instances which are
+already in RAM. LBAcache will not create a new instance when a NON-LOAD
+option is used: e.g. "LBAcache STAT" displays statistics of a copy of
+LBAcache which you have loaded before. Then it returns to the prompt.
+
+LBAcache uses a local stack, as the global DOS stacks might be too small.
+[As there is no .sys version anymore, the problem that you could not free
+the DOS RAM which gets allocated by .sys instances is gone now, 5/2004.]
+
+
+* FLOPPY NOTE *
+
+
+Floppy caching exists in LBAcache since Jan 2002. Nov 2002, I
+have added default size detection at startup. In Mar / Apr 2003,
+I have finally added logics to automatically adjust to the new
+geometry as needed (and flush the affected data) on disk change
+and "resize". NEW feature warning: This MIGHT be buggy.
+
+* Update 23 Apr 2003: There WAS indeed a serious bug in the floppy
+* handling (chs2lba.asm, *geoFLOPPY did not use drive=dl...).
+* Please update to the 23 Apr 2003 version if you have the 1 Apr
+* 2003 version. Do not forget to delete the discontinued files
+* bin\lbacachd*.* before or after updating.
+
+* Update 26 Jun 2003: Now using DDPT sectors per track values
+* (["int 1e" + 4] byte) which are set by DOS based on the boot
+* sector contents and may differ from the "native" drive geometry.
+
+* Update 14 Apr 2004: LBAcache no longer starts to panic when a
+* floppy with unexpected size is detected. Instead, it accepts the
+* size (so if the size was indeed nonsense, it is your problem).
+* The geometry tracking has been improved.
+
+You can use -D... options to compile versions which do/do not report
+disk change, allow caching of disks without change line, never
+flush, etc.: DOSEMU 1.1.3 for example tells "has no change line",
+and if asked anyway, it reports "disk changed" all the time.
+
+
+* TICKLE explanation *
+
+
+You can load TICKLE after LBACACHE to speed up floppy reads. TICKLE
+takes about 10k of RAM (if you load it into an UMB, you must make
+sure that the UMB is suitable as floppy buffer - for example if you
+use UMBPCI (www.uwe-sieber.de), run DMACHK to verify that. TICKLE only
+makes sense if loaded after LBACACHE (or another int 13 cache) -with-
+floppy caching enabled (FLOP option). Otherwise, floppy reads will
+become slower, not faster!
+
+The working of TICKLE is simple: Whenever a track is read for the
+first time after a disk change or reboot (boot sector reads are
+excluded, as they may cause DOS to re-configure disk geometry as
+stored at ["int 1e"+4] byte), TICKLE will read the whole track
+(only up to 18 sectors if the track size is bigger - so for disk
+sizes above 1.44MB, the effect of TICKLE will be less). This will
+cause the track to be buffered by LBACACHE - TICKLE itself just
+ignores the actual track contents, only the side effect of
+"tickling" LBACACHE is important.
+
+TICKLE is experimental software under public domain license.
+First tests show that it can improve floppy read speed a lot.
+The program is meant to implement "pluggable read-ahead" for
+floppies, although the applied method is not a normal read-ahead:
+My idea is that reading a full track at a time is the fastest you
+can get (reading more or not track-aligned data is not supposed to
+be faster). Support for CHS / LBA harddisk readahead got added in
+7/2003 / 8/2003, and improved in 5/2004. Please read TICKLEHD.TXT for
+more information about harddisk read ahead. Linux 2.2, by the way,
+has 8 sector (4k) readahead for disks (configurable, recommended to
+use even less if you have mostly small files).
+
+
+* Common usage examples *
+
+
+Some popular command lines or config.sys lines for LBAcache:
+
+Load a fully associative but small cache, for all harddisks:
+  lbacache 2048 tuna
+Same with bigger cache but only 16-way (element) associative:
+  lbacache 8192
+Load a cache of 4 MB size and cache all floppy drives and harddisks:
+  install=lbacache.com 4096 flop
+Show cache statistics:
+  lbacache stat
+
+The defaults are to cache all cacheable BIOS harddisks (drive
+numbers 0x80 ... 0x87 are scanned, both CHS and LBA drives are
+supported) and set the buffer size to 2 MB.
+[NOTE: Default buffer size will often change!]
+[INFO and startup messages are more user friendly since Aug 25 2003]
+
+
+*** Technical stuff (read only if you have troubles / are curious) ***
+
+
+* Drive detection and LBA *
+
+
+If no LBA BIOS is found, reads will be converted from CHS to LBA
+and back again on demand, and you will even be able to do LBA reads
+after loading the cache. No such feature is planned for the *writes*
+for now. Mail me if you have use for them. Floppy access will always
+be converted to CHS style.
+
+[NEW as from 11/2002:] LBAcache will now scan for up to 8 harddisks
+and remember for each of them whether they support LBA (normally,
+a LBA capable BIOS will support LBA for almost any harddisk) and
+whether they seem suitable for caching. As of 4/2003, floppy size
+is checked both at startup and whenever it might change - older
+versions may horribly mess up floppy handling for unexpected sizes
+or size changes, please UPDATE.
+
+
+* Multi sector read speed up *
+
+
+Reads will be split up: A sector found in the cache will be read
+directly, while disk reads are collected and done in larger chunks
+if possible (since 1/2002). This will speed up reads by calling the
+BIOS less often. FreeDOS kernels older than 1.1.25 only do single
+sector reads anyway, so the speed up is irrelevant there.
+
+
+* BINSEL cleverness *
+
+
+The behaviour of the cache is to a very big extend controlled
+by selecting one of the binsel*.* as source of the binsel.asm,
+but only binsel*.asm (binsel.ni2) is maintained now. Maybe you
+have to adjust the others to work with the current version.
+
+The current version of binsel.asm uses a table with 8 bytes of DOS
+memory per main entry, which can hold up to 16 sub entries. The
+current setting is 16 sub entries per main entry - thus you need 1k
+of DOS memory for 1M of XMS memory (2k sectors). [NOTE: Has been 4
+sub entries until 11/2002 and 8 sub entries until 4/2004]
+
+[Older versions used more space for the tables and/or were dumber.
+Check the binsels.zip for the older versions. Currently, BINSEL2.ASM
+contains the two MAIN cleverness functions. See BINSEL2.TXT for some
+info on how to write your own versions of them!]
+
+The LBAcacheD.com has BINSEL2.ASM->NEWBIN debugging messages turned
+on: When LBAcacheD decides to throw away cached sectors to make room
+for new sectors, you will get a short message on the screen. Also
+helpful to determine the right size of my cache for your task :-).
+
+[The 13nov02 version of BINSEL2 uses a generic (possibly slow: up to
+some 6500 loop iterations to find back a sector in cache) scan for
+buffered sectors. The new method to allocate space for a NEW sector
+is pretty simple: If the sector cannot become part of an already
+existing bundle (of up to 16 sectors), a new bundle is allocated
+at the end of a circular buffer. You can mark the importance of a
+bundle as 255 to protect it from being reused. No *tool* is provided
+for doing this, yet! You *could* use this e.g. to make FAT/directory
+data stay in the cache forever, something like: "dir /s /b > nul" on
+all drives, run the "freeze contents" program and use the remaining
+cache space as usual after that. Even SYNC is impressed by freezing!]
+
+The 13nov02 was indeed too slow: Loading Descent took 40 seconds on
+133 MHz CPU with LBAcache (without cache: 4 seconds), so I have
+written code to speed up BINSEL2 by the use of a 256 entry by-hash-
+addressed MEMOIZATION lookup buffer. Should be fast enough now :-).
+The bad part is that a cache miss (sector not found in cache) can
+still be very slow. Further, the INFO screen got improved 15nov2002
+and 25aug2003.
+
+The 15nov02 version remembers 1 + 256 recently used disk/sector ->
+entry pairs to avoid slow search loops in most cases. However, on a
+cache MISS, it still has to search the whole table to make sure that
+the sector is certainly not cached yet (needed for consistency).
+
+The 6/2004 version only allows each given sector number to be in
+one of 16 table entries (instead of allowing it to be stored anywhere
+in the table), entries being chosen by the sector number itself.
+Technically speaking, the change is from "fully associative with
+257 element memoization for faster cache hit processing" to "16 way
+associative" - all for 8k elements, not on single sectors: Each
+sector can be stored in one of 16 elements (-> table entries) but
+each element contains 16 sectors of consecutive sectors, no free
+mix. This reduces search time (for big caches and if you have mostly
+cache misses) for machines with slow CPU / RAM drastically. However,
+it can degrade cache hit percentage. If you suspect this to be the
+case, please compare to the 5/2004 version and send me your
+comparison results, thanks. Starting with the 7/2004 version, you
+can re-enable the old behaviour with the TUNA option: Let me know
+if the bigger CPU consumption is worth the bigger hit percentage.
+
+First tests by Geraldo Netto (7/2004) suggest that read hits go up
+by as little as 2-3% (unless your cache size is very tight / small)
+while CPU consumption is considerably higher even for medium sized
+caches. In the end, you save some disk activity, but you will most
+likely not save time with TUNA. You are usually better off without.
+
+
+* Memory consumption details *
+
+
+LBAcache cannot use more than 64k DOS RAM. It will use 5k for fixed
+things and ??k more for the TABLE. XMS usage is limited to 32 MB
+(64k sectors). If you do not have enough XMS or DOS RAM free, limits
+will be lower. For 8kB element size (16 sub entries per main entry),
+you need 1 kB for the TABLE in DOS RAM for each MB of XMS. If element
+size is 4kB, you need 2kB per MB. In short: LBAcache of 5/2004 will
+use 5+20kB DOS RAM if you tell it to use 20 MB XMS.
+
+Bigger element size means that you need less DOS RAM, but might make
+caching less flexible / efficient.  On the other hand, it makes caching
+FASTER because the TABLE gets shorter with bigger elements. A test by
+Geraldo Netto shows that using 8k element size instead of 4k makes
+cache hit ratio during a Win98 install (install.exe /c /ie /im /iv /nr
+to prevent it from loading SMARTDRV) at most 0.5 percent worse for a
+6 MB cache :-) ... 55% read hits, 8% write hits, 210 MB written to disk
+and 64 MB read from disk. Thanks for testing.
+
+[In 5/2004 or newer versions, the "size 0 easter egg" is no longer
+available. Size can be up to 32 MB, given in kB or 1/4 MB units.
+All values in 1..99 range are interpreted as being in 1/4 MB units.
+Size is rounded up to the next multiple of 128k in 5/2004 version.
+Before 4/2004, default was 4kB element size (8 sub entries per main
+table entry) which meant 50.5kB table size for 24.75 MB cache size.]
+
+New in [NEW 11/2002]: When you make LBAcache so big that there would
+not be enough DOS RAM for the driver, the driver will display "..."
+while shrinking itself! XMS usage will *not* shrink, so loading will
+simply fail if not enough XMS is available. The "..." are meant as
+a warning to you to use a smaller value for the BUF size selection
+argument! So please unload, use a better value, and load again.
+
+Or edit your config.sys, reboot. You get my point :-). This is
+especially useful for INSTALLHIGH or LOADHI usage, when you are not
+sure if your UMBs are big enough. Be warned that UMBPCI UMBs are
+sometimes excluded from L1/L2 cache which can make LBAcache SLOW if
+you load it there! CDRcache has much bigger element size and there-
+fore a much smaller table, so slow UMBs are no real problem there.
+
+[LBAcache is packed with UPX. Code has to fit in RAM after unpacking.
+For the LBAcache.sys, this could crash because the UPX unpacking stub
+cannot find out if enough RAM is free during .sys unpacking. You can
+find UPX at http://upx.sourceforge.net/ ... To DEVLOAD the .sys of
+LBAcache, you had to use DEVLOAD 3.12 or newer, because older DEVLOAD
+versions would not tell LBAcache how much RAM they may use. Obsolete
+problems because LBAcache is no longer provided in a .sys version as
+of 5/2004...] [Update 9/2004: If LBAcache just does nothing at all
+when you try to load it into an UMB, then the UMB was too small for
+the cache. Without UPX, LBAcache would have shown an error message
+(because there is not enough space to dynamically allocate table RAM),
+but with UPX, the UPX stub aborts before the main part of LBAcache
+starts at all. Decompress LBAcache.com if you prefer the message.]
+
+
+*** Footnotes / Revision history ***
+
+
+* Footnote about GNU Public License / GPL *
+
+
+* free: as beer and speech and has to stay like that. Feel free to
+improve this, but please tell me about your new versions... And do
+not forget to mention me in the credits, or you will get bad karma!
+The working of the GPL allows you to use my code in your project
+ONLY IF your project will be open source, too. You may charge money
+for your product, but you cannot disallow users to give the source
+code of it to others, once they got it. This will help to create an
+evergrowing source of open code for all open minded programmers :-).
+
+
+* Revision history *
+
+
+Initial revision of this document: Jan 24 2002. Updated Apr 23,
+Jun 26 (new: TICKLE) and Aug 25 2003, and Apr 14/15 (new: UMB /
+DEVLOAD / UPX info, element size doubled, CDRcache) and May 01
+2004 (new: LBAcache.sys no longer provided, new options, general
+cleanup of syntax and documentation, int 13.ee/ef info, 1.68 MB
+floppy info, using stats to find good cache sizes). Added TICKLEHD
+note May 9 2004 - see TICKLEHD.TXT for more information. Cleanups,
+binsel algorithm improvement June 9 2004. Description of TUNA/TUNW
+added July 15 2004. Description of TUNS and purpose added July 24
+2004, also fixing the SYNC explanation: it does try to sync floppy.
+Update Sep 1 2004: Describe HEAT / COOL / TEMP functions. TICKLEHD.TXT
+got updated, too - considerably improved universal tickle.com in use.
+Update Sep 22 2004: Explained silent abort related to UPX compression,
+blatant caches.txt ad added ;-).

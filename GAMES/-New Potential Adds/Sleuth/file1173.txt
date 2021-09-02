@@ -1,0 +1,10 @@
+As you begin a game of SLEUTH a murder has just been committed.
+Your job is  to mingle  with the houseguests and  to search the
+contents of the house until you feel you have solved the crime.
+Every game of SLEUTH is different so you must fully explore the
+house each time that you play. As your investigation proceeds 
+the murderer  will begin to grow suspicious and  will most likely  
+start plotting your demise. If you have not figured out who the  
+murderer is by this  point in the game, your chances of survival 
+are slim.
+

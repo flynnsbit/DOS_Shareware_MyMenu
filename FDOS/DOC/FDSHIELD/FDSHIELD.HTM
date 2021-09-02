@@ -1,0 +1,535 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en-US">
+<head>
+<meta content=
+"HTML Tidy for OS/2 (vers 1st December 2002), see www.w3.org"
+      name="generator">
+<meta http-equiv="content-type" content=
+"text/html; charset=ISO-8859-1">
+<meta name="author" content=
+"Walt Gregg (drafted text) &lt;walt@w-gregg.juneau.ak.us&gt;">
+<title>FreeDOS FDSHIELD malware action blocker: help reduce virus
+activity (April 2005)</title>
+<meta name="copyright" content=
+"FdShield is &copy; by Eric Auer 6/2004-3/2005">
+<meta name="description" content=
+"FreeDOS FDSHIELD malware action blocker by Eric Auer offers DOS sessions generic resident malware (virus, trojan) protection similar to VSafe, VShield, and VWatch, but is free open source software.">
+<meta name="keywords" content=
+"antivirus, anti-virus, boot viruses, boot sectors, companion viruses, fdshield, file infectors, memory residents, malware, multipartite viruses, multi-partite viruses, terminate and stay ready programs, trojans, trojan horses, TSR, viruses, vsafe, vshield, vwatch">
+<meta name="robots" content="index,follow,imageindex,archive">
+<!-- The @ sign is deliberately munged -->
+<link rev="made" href="mailto:eric*CoLi.Uni-SB.DE" title=
+"FdShield.htm">
+<link rel="copyright" title="[Copyright]" href=
+"http://www.gnu.org/licenses/gpl.html">
+</head>
+<body link="blue" vlink="purple" alink="red" text="black"
+      bgcolor="#E0E0E0">
+<address><a href="http://www.coli.uni-sb.de/~eric/stuff/soft/specials/"
+  title="Download FdShield">Download FdShield</a>
+(www.coli.uni-sb.de/~eric/stuff/soft/specials/)<br>
+<!-- The @ sign is deliberately munged -->
+<a href="mailto:eric*CoLi.Uni-SB.DE" title="FdShield.htm">Email
+FdShield author</a> (Eric Auer
+&lt;eric*CoLi.Uni-sB.DE&gt;)</address>
+
+<h1>FreeDOS FDSHIELD malware action blocker and warner;<br>
+Helps reduce virus activity (April 2005)</h1>
+
+<p><strong>The FreeDOS FDSHIELD malware shield monitors DOS
+sessions and helps block dangerous activity typical of trojan
+horses, viruses, malware, and human error.</strong> It is not a
+virus scanner and does not check known virus signatures, but only
+monitors for known risky behavior. FdShield is designed for
+<a href="http://www.FreeDOS.org">FreeDOS</a> (www.freedos.org),
+but will also run on other DOS versions including the OS/2 DOS box.
+FdShield is &copy; by Eric Auer 6/2004-3/2005. It is free open source
+software under GNU public license (v2, see www.gnu.org).</p>
+
+<p><strong>FdShield is not interactive and cannot be
+unloaded.</strong> It simply denies writes that are prohibited, and
+halts the DOS session if obvious virus style activity is detected.
+This approach prevents the user from incorrectly allowing dangerous
+activities and makes it harder for malware to bypass the protection.
+</p>
+
+<p><strong>It would be trivial for malware which knows about
+FdShield to disable it, but most DOS viruses are much older than
+FdShield.</strong> Attempts to disable shields which were 'in' 10
+years ago, like VSafe, are detected by FdShield, a trap aimed
+especially at 'smart' malware, but the unprotected RAM means that
+FdShield is vulnerable to being disabled on-the-fly. And users
+will often be able to skip loading FdShield at all at boot time.
+</p>
+
+<p><strong>It might be a good idea to check disk caching setup
+before using FdShield.</strong>. FdShield flushes the more common
+caches to disk when it enters disk write protection mode. It is
+still possible that unwritten data gets lost when FdShield decides
+to halt the DOS session in reaction to malicious activity which it
+could not prevent beforehand. If you use delayed-write caches while
+disk or boot sector protection is on, DOS will fail to notice the
+write denial until the write-delay has elapsed, so delayed-write
+caches should not be used with disk write protection. Boot sectors
+are only written by FORMAT, SYS and similar lowlevel tools, so if
+such tools are not used, boot sector protection can be used even
+in combination with delayed-write caches. Be warned that FORMAT,
+FDISK and other disk tools can fail in the middle of processing
+when they hit boot sector protection. The same can happen with
+some BIOS virus protection functions.
+</p>
+
+<p><strong>FdShield can't prevent boot sector viruses on floppies
+from infecting the hard drive, so be sure to set CMOS to boot from
+the hard drive first.</strong> Virus protection works best if the
+protection is loaded before the virus. In particular, if you would
+boot from an infected diskette before loading FdShield, the shield
+would not help much anymore. There is the inconvenience of having
+to change CMOS when you really do need to boot from a floppy or
+CD-ROM drive, but a boot sector virus is far more inconvenient.</p>
+
+<p><strong>A note to OS/2 users</strong>. If you use dual boot,
+when you are in native DOS, hard disk boot sector protection (/B)
+could block the boot sector swap, although OS/2 seems to be able
+to bypass the protection (using non-DOS disk drivers). However,
+the system file write protection (/x /X) switch <em>will</em>
+block config/kernel file swap. Conclusion: Do <em>not</em> use
+&quot;boot /os2&quot; while FdShield /x or /X is active.</p>
+
+<h2>SUMMARY</h2>
+
+<p>Use the FdShield command to monitor your DOS session and help
+block trojan and viral activity.<br>
+Syntax:<br>
+&nbsp; &nbsp; &nbsp;FdShield [/v][/t][/T][/x][/X][/b][/B][/w][/W]<br>
+where:</p>
+
+<dl>
+<dt>No switches</dt>
+<dd>Basic protection. Halts the system if a program attempts to
+disable certain other common anti-virus monitors, and blocks certain
+potentially dangerous FCB-based deletes with wildcards in the file
+name extension. If you use FdShield in a DOS box, only the DOS in
+the box is stopped, not the whole system.</dd>
+<dt>/v</dt>
+<dd>Makes verbose. Verbose gives additional information on why an
+action was prohibited, and when FdShield halts the system, it will
+wait 20 seconds before automatically rebooting or closing the DOS
+box.</dd>
+<dt>/t</dt>
+<dd>Prohibits TSR. When this is selected, FdShield will print an
+system halted message and reboot or close the session if a program
+attempts to terminate and stay resident. This may help stop trojans
+and some resident file infectors and multipartite viruses. The DOS
+extenders CWSDPMI and RTM are explicitly allowed to load in this
+mode. Note that viruses tend to go resident without using the DOS
+functions for that, which allows them to bypass FdShield.</dd>
+<dt>/T</dt>
+<dd>Prohibits TSR. When this is selected, FdShield will print an
+system halted message and reboot or close the session if a program
+attempts to terminate and stay resident. This option works pretty
+much like the /t option. The CWSDPMI and RTM DOS extenders are not
+allowed to load in this mode. In OS/2 DOS box and similar, CWSDPMI
+is not needed anyway. Some other DOS extenders are not TSR at all
+and therefore work without problems with FdShield /T.</dd>
+<dt>/x</dt>
+<dd>Write protects program files with the com, exe, and sys suffix.
+When you select this option, FdShield prevents most attempts to
+write to system files, but does allow creating new program files in
+ways which explicitly avoid overwriting existing files. Many tools
+like compilers or archivers use other, unsafe, ways to create files,
+so they will get blocked by FdShield. You should boot without the
+FdShield /x protection if you plan to install or compile programs.
+If you do have /x protection on, however, many viruses will not be
+able to infect program files.</dd>
+<dt>/X</dt>
+<dd>Write protects system files with bat, com, exe, and sys suffix.
+This option does not permit creating system files at all. Batch
+files are no common target for viruses, but there are situations
+where you do not want them to be modified anyway. Neither the /x
+nor the /X protection prevent long file name based access to
+program files. This affects only DOS versions which support long
+file names in some way.</dd>
+<dt>/b</dt>
+<dd>Write protects floppy disk BOOT areas. This can prevent boot
+sector and multipartite viruses from spreading to diskettes in
+plain DOS. However, the protection does not work in OS/2 and NT
+DOS boxes.</dd>
+<dt>/B</dt>
+<dd>Write protects hard disk BOOT areas. This may prevent
+multipartite viruses from spreading to the hard drive partitions.
+It may not work in OS/2 and NT DOS boxes, but they have built in
+protection against boot sector modifications.</dd>
+<dt>/w</dt>
+<dd>Write protects floppy (/w) disks. Pipes do not work if the
+temp directory (if none set: current directory) is on a read-only
+disk. This protection does not work in OS/2 or NT DOS boxes.</dd>
+<dt>/W</dt>
+<dd>Write protects hard disks and all other non-diskette drives
+with FAT filesystem, like RAMDISKs. If DOS tries to write to a
+&quot;fixed&quot; disk, it can get stuck at a prompt which only
+lets you retry but not abort the write attempt. If you use both
+/w and /W at the same time, FdShield will make all files look as
+if they are readonly, which usually prevents DOS from trying to
+write to disk. The same warning about pipes and DOS boxes as for
+the /w protection holds for the /W protection.</dd>
+</dl>
+
+<p>Recommended settings:</p>
+<ul>
+<li>For native versions of DOS, FdShield /t /v /x /B /b</li>
+<li>For OS/2-DOS or NT DOS box, FdShield /t /v /x</li>
+<li>Native DOS on dual boot OS/2: As with native DOS, but reboot
+without FdShield before doing &quot;boot /os2&quot;</li></ul>
+
+<p>Reminders:</p>
+<ol>
+<li>Set your CMOS to boot first from the hard drive, so that boot
+sector viruses on removable media don't get a chance to infect your
+system.</li>
+<li>In native DOS it may be best to have the cache flush to disk
+before returning the command prompt (e.g. smartdrv c+ /f instead of
+/n) or to be a write-through cache (smartdrv c instead of c+).</li>
+<li>For a native DOS on a dual boot os/2 system, you must omit /x
+and /X to be able to 'boot os/2'. You should have to omit /B too,
+but currently don't have to.</li></ol>
+
+<h2>FDSHIELD OPTIONS AND KNOWN ISSUES</h2>
+
+<h3>BASIC PROTECTION (no switches)</h3>
+
+<p>Some basic protections are that FdShield halts the current
+session if it thinks there is an active virus. It also blocks
+certain file control block (FCB) based mass deletes where the
+extension contains wildcards.</p>
+
+<p>FdShield watches for attempts to disable TBAV, VSAFE, or VWATCH,
+common antivirus monitors. It simulates their system interfaces and
+attempts to use them to disable the simulated monitor should
+trigger the freeze/reboot function, though this is not guaranteed.
+</p>
+
+<h3>TERMINATE AND STAY RESIDENT (TSR) DENIAL (/t &amp; /T)</h3>
+
+<p><strong>Options /t or the more restrictive /T will help prevent
+trojans and other programs from going resident against your
+will.</strong> FdShield also watches the device chain for driver
+additions and modifications. However, it should be noted that DOS
+viruses often go resident without telling DOS about it, so they
+can bypass FdShield protection. If you only want to <em>know</em>
+if something stays in RAM, use /v, but that will <em>not</em> check
+the device chain. When using TSR denial, you must load all needed
+TSR programs before you load FdShield, as FdShield halts the DOS
+session when further TSRs show up. Using the lowercase /t makes
+exceptions for the DOS extenders RTM and CWSDPMI, which are used
+by many demos and games. Other DOS extenders like DOS4GW and DOS32A
+load as shells or libraries, not as resident programs, so they are
+not affected by TSR protection. If FdShield is loaded with /t, it
+halts the DOS session if any program except RTM or CWSDPMI goes
+resident against the will of the user who activated /t protection.
+The stricter /T option does not even allow RTM or CWSDPMI to load.
+Programs which can go resident and should therefore be loaded
+before you activate the /t or /T protection include:</p>
+
+<ul>
+<li>DOS tools: append, assign, fastopen, graftabl, graphics, join,
+keyb (or mkeyb), mscdex (or nwcdex or shsucdx), nlsfunc, print,
+share, smartdrv (or nwcache or lbacache), and subst. You should
+load them before FdShield if you plan to use them.</li>
+<li>Common drivers:
+<a href="http://cutemouse.sourceforge.net">ctmouse</a>
+(cutemouse.sourceforge.net); file system drivers such as ihpfs
+(ihfps129.arc, zip); sound system drivers such as Creative Lab's
+sbfmdrv.com, sbtalker, and sbp-mix; the Sydex 22nice cpm22 emulator
+(22nce142.zip), and any number of utilites, such as quickeys,
+shiftlock releasers, and screen blankers,</li>
+<li>Possibly, certain DOS extenders. See the
+<a href="#advanced">advanced issues</a> section for a discussion.
+</li>
+</ul>
+
+<p><strong>If you find that you can't use /T or the more permissive
+/t because you trigger needed TSRs too often, at least use the /v
+option.</strong> That allows FdShield to at least warn you when a
+program goes resident. For more discussion, see the
+<a href="#advanced">advanced issues</a> section.</p>
+
+<h3>VERBOSE (/v)</h3>
+
+<p><strong>Option /v shows messages about virus-shield detection
+calls, attempts to sabotage anti-virus shields, programs going
+resident, attempts to low-level format hard drives. Also shows
+messages about disk or file write attempts if they are blocked
+by other options.</strong>
+<!-- Cooperatively hooking disk handling may be reported. -->
+Regardless of switch status, attempts to mess with virus shields,
+except simple detection calls, all show a message on screen. Under
+a native DOS, the system then halts and requires a manual reboot.
+Under a DOS-OS/2 box or similar environment, it simply closes the
+current DOS session. The /v switch modifies this, providing a 20
+second delay before the session closes, and in a native DOS, it
+then automatically reboots. For details on interpreting FdShield
+messages, see the <a href="#advanced">advanced issues</a>
+section.</p>
+
+<h3>SYSTEM FILE WRITE DENIAL (/x or /X)</h3>
+
+<p><strong>The /x or /X option should help limit the spread of
+viruses and the damage done by trojans and user errors.</strong>
+The /x option provides significant write protection
+for program (com, exe, and sys) files, preventing deletion,
+renaming, and modification while permitting some safe ways of
+program file creation. But many programs, for example most exe
+packers and compilers, use potentially overwriting ways of exe
+creation. FdShield blocks those accesses if system file write
+denial is enabled. So these programs <em>will not</em> be able
+to create exe programs. You have been warned. The /X option even
+denies safe (never overwriting) file creation, and adds bat files
+to the protected class. FdShield can decide to force file access
+modes to read-only instead of completely blocking the access.
+The access failure is <em>delayed</em> until programs actually
+try to write to the file in that case. This is needed for programs
+which always try to open files in read-write mode even when they
+only read from the file later. Warning: Long file named based
+access to program files is not blocked. Renaming a file to a
+program file (e.g. &quot;ren temp.bin new.com) is allowed with /x
+protection but blocked by /X protection.</p>
+
+<p><strong>One problem with the /x and /X options is that they make
+the PC less fun to use and can interfere with too many
+programs.</strong> For example, some programs open their EXE
+file in read/write mode and may even modify it. This interaction is
+mitigated by converting the request to open in read-only mode. This
+allows many of these programs to run (e.g., Gasoline demo, Sint,
+Show 1.4). Those that actually attempt to write (e.g., Show 1.4)
+will have the write denied, but they may fail to notice. SHOW, for
+example, gets the license display wrong because of the write block.
+</p>
+
+<p><strong>Using only /x or /X also protects against user errors.
+</strong> Pilot error accounts for a lot more damage than one might
+expect, and if that's the main risk, these options can help protect
+program and system files.</p>
+
+<h3>HARD DISK BOOT SECTOR WRITE DENIAL (/B)</h3>
+
+<p><strong>Option /B helps prevent multipartite viruses from
+spreading to hard drive boot sectors.</strong> This only works
+if you load FdShield before the virus, and it does not work in
+OS/2 or Windows NT DOS boxes, but these operating systems claim
+to prevent int 13 and 26 writes to the hard drive on their own.
+You can also use BIOS boot sector virus protection functions.
+Some of them have a list of known-good operating systems, so
+you cannot use them while you have less widespread operating
+systems in use. Do not use /B option or BIOS virus protection
+when you want to SYS, FDISK or FORMAT your hard disk.
+</p>
+
+<ul>
+<li><strong>Be sure to configure your CMOS BIOS setup to boot from
+the hard drive first.</strong> The easiest way to get a boot sector
+infection is to reboot the computer while an infected floppy disk
+or CD-ROM is in the drive. With the default setup, most PCs will
+attempt to boot off of the removable media. <em>If it was infected
+with a boot sector virus, your hard drive will be infected.</em>
+To avoid this, set the CMOS to boot first from the hard drive.
+You will need to change the setting when you really do need to boot
+from removable media, but that is a minor inconvenience compared to
+getting a boot sector infection.</li>
+</ul>
+
+<h3>FLOPPY DISK BOOT SECTOR WRITE DENIAL (/b)</h3>
+
+<p><strong>Option /b helps prevent boot sector viruses from
+spreading to floppy disks, but it will spoil the formatting of
+floppy disks.</strong> Solutions: Reboot without FdShield before
+you format. Or use deltree as a format replacement -- which only
+works as far the exe delete protection of /x does not spoil it,
+of course. This protection does not affect OS/2 or Win32 FORMAT
+programs, even if you start them from within a DOS box!</p>
+
+<h3>GENERAL HARD/FLOPPY DISK WRITE DENIAL (/W /w)</h3>
+
+<p><strong>Options /w and /W together offer write-protection.
+</strong>
+Option /w write-protects the floppy disk and is generally harmless.
+However, option /W will cause writes to hard disks and to ramdisks
+and all other FAT drives (like ZIP drives) to fail. When used
+alone, this can can freak out DOS because DOS does not accept
+writes to non-removeable drives to fail. But if you use
+<em>both</em> /w and /W, FdShield activates a &quot;pretend that
+all files are readonly&quot; mode, which will usually prevent DOS
+from even trying to write to the readonly disks and thereby avoids
+the freakout. If you do run into a panic of this sort, it's
+annoying because you can't get out of the error message and have to
+reboot. But if you could, you couldn't save your data anyway,
+because your hard disk is write protected... Note that these
+write-protect options do not work in OS/2 and maybe also Windows NT
+DOX boxes.</p>
+
+<HR>
+
+<a name="advanced"></a>
+<h2>ADVANCED ISSUES</h2>
+
+<h3>LIVING WITH TSR PROTECTION</h3>
+
+<p><strong>As mentioned elsewhere, using FdShield's TSR protection
+can be problematic with transient resident programs.</strong> Sound
+card FM drivers come to mind. But a bigger issue is that many dos
+programs, including basically all DJGPP-compiled programs (e.g.
+dosfsck) as well as dos games (see sources such as
+<a href="http://www.dosgames.com">www.dosgames.com</a>)
+and dos demos (see sources such as
+<a href="http://www.scene.org">www.scene.org</a>)
+require DOS extenders for DOS protected mode interface (DPMI)
+memory support. DPMI memory is available without these extenders in
+<a href="http://www.dosemu.org">DOSEMU</a> (www.dosemu.org) and the
+OS/2 and Windows DOS box. But the extenders are essential in
+<a href="http://www.freedos.org">freedos</a> (www.freedos.org). or
+MS-DOS. For this reason, FdShield's standard TSR protection (/t)
+provides loopholes for two of the more common extenders:</p>
+<ul>
+<li>Borland's RTM (DPMI16BI). Example applications: Jazz JackRabbit
+and <a href="http://www.augos.com">AuGoS automatic Go player</a>
+(www.augos.com).</li>
+<li>CWSDPMI. Example applications:
+<a href="http://www.info-zip.org">info-zip's 32-bit zip</a>
+(www.info-zip.org); Groovy demo; and Rox demo. These applications
+can also be supported by
+<a href="http://www.sudleyplace.com">DPMIONE</a>
+(www.sudleyplace.com), which has a much smaller low memory footprint
+but larger high memory footprint than CWSDPMI.</li>
+<li>Other extenders are loaded by the client as library or shell,
+so they do not interfere with TSR protection anyway.</li>
+</ul>
+
+<p><strong>If DPMI support is preloaded in your environment, use
+the FdShield's /T (uppercase) option instead.</strong> If you
+don't need to allow RTM, and your DOS already provides DPMI
+services so CWSDPMI is not needed (common in DOS boxes), you
+can use /T instead of /t protection to get a bit of extra
+protection.</p>
+
+<p><strong>You can also preload DPMI support in FreeDOS and
+MS-DOS.</strong> DPMIONE is a good alternative to preloading
+CWSDPMI, but neither works nicely in combination with the RTM DOS
+extender. See <a href="#obscure">Obscure hints</a></p>
+
+<p><strong>If you can't use FdShield's strict /T or somewhat
+permissive /t, you might look into using a startup menu or using
+the TSR utilities.</strong> A bootup menu could let you select
+which (if any) resident support drivers you want preloaded. You
+might have one option load DPMIONE, supporting CWSDPMI
+applications; another load RTM, supporting RTM applications; and a
+third loading neither, for smoother operation of DOS4GW/DOS32A
+applications. Sound drivers might or might not be loaded. This will
+complicate \autoexec.bat (or possibly \config.sys) but can work
+around otherwise intractable problems. Another possibility would be
+to look into the use of <cite>The TSR Utilities</cite>
+(tsrcom35.zip, tsrsrc35.zip). They permit marking memory above TSRs
+and can remove a chain of them at need, so you might be able to
+reconfigure your setup without rebooting. But that approach might
+reduce security. Details of either approach must be left to the
+reader, since everyone's needs are different.</p>
+
+<h3>INTERPRETING FDSHIELD ERROR MESSAGES</h3>
+
+<p>A typical FDShield block message might read:</p>
+<pre>
+  FDSHIELD: 0021 Attempt to replace program
+  Registers AX BX CX DX DS: 3CD0 A947 0000 0D06 0476 Program: COMMAND at 0476
+  FILE: test.sys
+</pre>
+
+<p>This includes a summary of what interrupt call was halted, what
+function was attempted, by what program, and what the target file
+was, if available. It may also indicate the drive the way the
+interrupt does. In the above example, the high half of AX, 3C,
+indicates the manner of replacing the file. The class code 0021
+tells that a DOS function got blocked.</p>
+
+<p>Class codes are usually interrupt numbers: 13 is BIOS disk
+services, 16 is keyboard interface (VSAFE sabotage check uses
+this), 21 is DOS services, 26 is DOS lowlevel disk services,
+2700 is an old method to go resident, 2F is the multiplexer
+(used by some of the sabotage checks), 2F13 is an interface to
+modify DOS disk access (used by Windows), 40 are BIOS diskette
+legacy services. Other values are used by other sabotage checks.
+</p>
+
+<p>For interrupt 13 and 40, the last two digits of DX contain
+the physical drive number: 0, 1 for A:, B:, and 80, 81... for
+hard disks. For interrupt 26, the last two digits of DX are
+the drive letter (0 is A:, 1 is B:, 2 is C:, and so on).</p>
+<!-- int 21 does not always have drive letters in registers -->
+
+<a name="obscure"></a>
+<h2>OBSCURE HINTS</h2>
+
+<p>Preloading a DOS extender so that you can use /T, to block
+even resident DOS extenders from loading after FdShield, is an
+interesting idea but is problematic because of the various
+extenders that may be needed.</p>
+
+<ul>
+<li>You can preload RTM with the small RTMRES helper, followed
+by 'CWSDPMI -p -s-' (reverse order will not work, as RTM cannot
+be loaded under CWSDPMI), and then FdShield. But RTM blocks EMS,
+prevents <a href="http://www.tenberry.com">DOS4GW</a>
+(www.tenberry.com) applications from loading, and prevents
+<a href="http://dos32a.sourceforge.net">DOS32A</a>
+(dos32a.sourceforge.net) from successfully starting them as
+well.</li>
+<li>You can preload RTMRES and patch your CWSDPMI programs using
+exe2coff and cwsdstub to make cwsdpmi part of the application so
+that it doesn't have to load as a resident. But this may be more
+trouble than most users want to take. You use exe2coff to remove
+the exe headers (get a plain COFF file) and then concatenate
+cwsdstub and the coff file to get a new exe file with embedded
+CWSDPMI.</li>
+<li>You can preload DPMIONE, which has a much smaller low memory
+footprint than CWSDPMI. But RTM applications don't get along with
+it. It can also slow down DOS4GW applications (e.g., the
+<a href="http://www.cubic.org">OpenCubic</a> (www.cubic.org) dos
+shell, at least when using Crystal Clear Legacy Support's Sound
+Blaster emulation) whether you use DOS4GW or it's open
+source replacement DOS32A. DPMIONE also is incompatible with
+DOS16M applications (like the Raptor game).</li>
+</ul>
+
+<hr>
+
+<p style="font-size:small">
+<!-- The @ signs are deliberately munged -->
+FdShield was written by <a href="mailto:eric*CoLi.Uni-SB.DE"
+   title="FdShield.htm">Eric Auer</a> &lt;eric*CoLi.Uni-sB.DE&gt;.
+   This ridiculously long manual was drafted by <a href=
+   "mailto:walt*w-gregg.juneau.ak.us" title="FdShield.htm">Walt
+   Gregg</a> &lt;walt*w-gregg.juneau.ak.us&gt;. This page has been
+   tested to meet web content accessibility guides 1.0 priority 1
+   checkpoints and to be valid HTML. However, email addresses have
+   been deliberately munged. You'll need to correct them to send us
+   mail. 
+   <!-- Standard icon size is 31x88 but 41x116 needed for alt text to fit -->
+</p>
+
+<p style="font-size:x-small"><a href=
+"http://validator.w3.org/check?uri=referer"><img border="1"
+     height="41" width="116" alt="[Valid HTML 4.01!]" title=
+     "Verify Valid HTML" src=
+     "http://www.w3.org/Icons/valid-html401"></a> &nbsp;&nbsp;
+     <a href=
+     "http://www.CynthiaSays.com/org/cynthiatested.htm"><img border="1"
+     height="41" width="116" alt="[Cynthia Tested!]" title=
+     "About Cynthia Tested" src=
+     "http://www.CynthiaSays.com/images/Ctested.gif"></a>
+     &nbsp;&nbsp; <a target="_top" href=
+     "http://home.gci.net/cgi-bin/Count.cgi?df=fdshield.dat|dd=cd|ft=2|incr=T|md=5|pad=T|reload=F|srgb=255;255;255|prgb=225;221;221">
+<img border="1" height="41" width="116" alt="[Visits]" title=
+"Show Page Count GIF Image" src=
+"http://home.gci.net/cgi-bin/Count.cgi?df=fdshield.dat|dd=cd|ft=0|incr=T|md=5|pad=T|reload=F|srgb=255;255;255|prgb=225;221;221">
+</a></p>
+
+</body>
+</html>

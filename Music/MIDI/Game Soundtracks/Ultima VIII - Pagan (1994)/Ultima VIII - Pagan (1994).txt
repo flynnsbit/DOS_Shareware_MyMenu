@@ -1,0 +1,9 @@
+Game: Ultima VIII: Pagan
+Year: 1994
+Composed by: Nenad Vugrinec
+MIDI versions: GM, FM
+Platform: DOS
+
+Additional info: First half of XMI files is made for General MIDI, second half is made for FM. Two last tracks are a bit odd, they sound like a beginning of the first track but damaged, so I put them in a separate folder. 
+
+https://www.karlsitretro.com/game_midi

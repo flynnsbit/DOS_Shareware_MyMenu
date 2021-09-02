@@ -1,0 +1,119 @@
+
+* FDNPKG history file *
+
+
+FDNPKG v0.99.4 [20 Dec 2015]
+ - [new] FDINST returns non-zero error code if package fails to be installed,
+ - [new] checking files inside packages: non-8+3 packages are rejected,
+ - [new] improved memory usage in zip-loading routines,
+ - [fix] replaced the tinfl lib by zlib to avoid corruptions on 16bit target,
+ - [fix] FDINST do not freezes on stored files that are more than 32K in size,
+ - [fix] files that fail extraction are removed (were being left corrupted).
+
+FDNPKG v0.99.3 [23 Nov 2015]
+ - [fix] files zipped uncompressed are extracted correctly (v0.99.2 regress),
+ - [fix] closing file descriptors on install failure (no risk of fs trashing).
+
+FDNPKG v0.99.2 [26 Oct 2015]
+ - [new] added the FDINST tool: a very light package installer for 8086+,
+ - [mnt] adapted parts of the FDNPKG code for compatibility with FDINST,
+ - [mnt] FDNPKG is compiled with DJGPP v2.05 (removed all hacks from 2.04).
+
+FDNPKG v0.99.1 [15 Sep 2015] - thanks to Matej Horvath for the bug reports
+ - [fix] avoiding false 'directory already exists' alerts during pkg upgrade,
+ - [fix] FDNPKG UPDATE shows a progress status so users know it's not freezed.
+
+FDNPKG v0.99 [31 Aug 2015]
+ - [new] support for "link" files to include third-party apps into %PATH%,
+ - [fix] compiled FDNPKG with -lemu for 387 emu, so it runs on a 386 w/o FPU,
+ - [fix] during download, progress is shown on a single line (with refresh),
+ - [fix] version string parser recognizes v1.0.2 as being newer than v1.01,
+ - [fix] support for ZIP files that do not contain directory entries (zip -D),
+ - [fix] FDNPKG is not UPXed with LZMA anymore - loads 10x faster on my 386SX,
+ - [cfg] added repositories 'SOUND' and 'EDIT' to the default cfg file,
+ - [cfg] sources install switched OFF by default.
+
+FDNPKG v0.98 [15 Dec 2013]
+ - [new] removed the log message 'mkdir...' when installing packages,
+ - [new] using gzip index files: faster repo synch and better error detection,
+ - [new] added polish translations,
+ - [fix] fixed the download progress indicator for files bigger than 21M (thanks to Nilquader for the bug report),
+ - [fix] improved speed of db loading from cache (avoid sorting db entries twice),
+ - [fix] fixed crashes on pre-pentium CPUs caused by Watt32 using pentium opcodes (thx to sparky4 for the bug report, and Juan Guerrero for the DJGPP-related Watt32 fix),
+ - [fix] when a file is being downloaded, the 'Downloading...' string is properly localized now (if localization is available),
+ - [fix] updated Slovenian translations (thanks to Matej Horvat for the translation work).
+
+FDNPKG v0.97 [10 Oct 2013]
+ - [new] added a new action 'listfiles' to list files owned by a package,
+ - [new] added proxy support for HTTP repositories,
+ - [new] added slovenian translations (thanks to Matej Horvat).
+
+FDNPKG v0.96 [21 Jul 2013]
+ - [fix] replaced the inflate routine from kunzip by the tinfl library, because the former was crashing on some files compressed with 7za,
+ - [fix] package removal removes all directories of a package, even when there are more than 256 of them,
+ - [fix] lst files are written with correct line terminators (was ending lines with \r\r\n instead of \r\n),
+ - [fix] fixed a crash occuring because of memory corruption after a faulty free(),
+ - [new] when downloading a package, the package filename is displayed ("Downloading tree.zip..."),
+ - [new] added support for parsing (and understanding) versions with a single letter suffix (eg. 1.0a, 3.4c, etc),
+ - [new] optimized memory management - storing packages metadata consumes 2x to 3x less memory now (with current FreeDOS repositories, FDNPKG memory consumption dropped from 192 KB to 64 KB),
+ - [new] added a test checking the writeability of %TEMP% before proceeding to any actions,
+ - [new] additional check for ZIP archives pre-validation: reject files that lack a central directory entry (because it's probably a truncated archive),
+ - [new] encrypted archives are properly recognized, and a meaningful error message is provided to the user,
+ - [new] lowered the stack memory required by fdnpkg from 1M to 512K (this was possible due to recent reimplementation of zip and http modules),
+ - [new] added a warning at FDNPKG start when the available virtual memory seems dangerously low (less than 3 MiB),
+ - [new] added a simplistic http answer parser to recognize non-200 answers sent by http servers, thus aborting the download,
+ - [new] added support for http 'content-length', so FDNPKG show some % progress during download,
+ - [new] embedded the cwsdpmi stub into the fdnpkg.exe binary to make it fully standalone,
+ - [new] after a package is installed, fdnpkg prints the count of files extracted vs the count of extraction errors.
+
+FDNPKG v0.95 [11 Jul 2013]
+ - [fix] when updating a package, the new candidate is downloaded and checked before the current package is removed from the system (before we could end with our package being removed and none installed if the download failed on the new one),
+ - [fix] remote package is not downloaded anymore if it's already installed (unless we want to update it),
+ - [new] replaced the embedded UNZIP kludge by my own unzip implementation,
+ - [new] replaced the embedded htget kludge by my own, lighter & simpler http implementation,
+ - [new] the directory %DOSDIR%\packages is created automatically when installing the first package,
+ - [new] the 'install' action do not ask what package version to install, and installs the most recent one if it's possible to figure out the latest version automatically (otherwise asks the user as before),
+ - [new] added gopher support for online repositories storage,
+ - [new] added support for LZMA-compressed packages,
+ - [new] added a progress feedback when downloading files, so in case of big packages taking a long time to download, the user don't think anymore that fdnpkg freezed,
+ - [new] added the possibility to update all packages in the system to latest version at once (if newer versions are available), via 'fdnpkg update',
+ - [new] renamed the 'showinstalled' action to 'listlocal', as the latter is shorter/faster to type (but 'showinstalled' still works for backward compatibility),
+ - [new] refactored the whole networking code to make it much easier to integrate other tcp/ip stacks in the futur (mTCP maybe, if it makes it into the 32bit world?).
+
+FDNPKG v0.94 [19 Jun 2013]
+ - [fix] FDNPKG is quitting if networking (Watt32) fails to initialize (was trying to continue anyway, possibly leading to crashes),
+ - [new] added support for on-disk package repositories,
+ - [new] added the 'showinstalled' action (display the list of installed packages),
+ - [new] added the 'checkupdates' action (checks for availability of updates for installed packages),
+ - [new] added the 'update' action (updates given package to newer version from repositories),
+ - [new] added support for custom configuration file location via the FDNPKG.CFG environnement variable.
+
+FDNPKG v0.93a [20 Feb 2013]
+ - [fix] fixed a minor bug related to paths parsing, which made installing packages from local zip files failing in some situations (thanks to sparky4 for reporting this).
+
+FDNPKG v0.93 [17 Feb 2013]
+ - [fix] the CRC32 algorithm used for internal FDNPKG needs has been fixed to compute the same CRC32 sums as used by ethernet,
+ - [new] added CRC32 checksum verification on downloaded packages before installation,
+ - [new] added the CRC32 of packages in the vsearch output,
+ - [new] made the default 'install/don't install sources' choice configurable via the cfg file,
+ - [new] added the 'install-wsrc' action to force sources installation,
+ - [new] implemented configurable custom directories for different packages types (games, devel...),
+ - [new] truncating packages descriptions in 'search' and 'vsearch' outputs at screen's last column instead of using a fixed lenght of 63 bytes (provides a little bit more of descriptions and makes the list visually nicer),
+ - [new] storing absolute paths to installed files and directories in packages\*.lst listing files,
+ - [new] replaced the 'listrep' action by 'dumpcfg'.
+
+FDNPKG v0.92 [31 Jan 2013]
+ - [fix] fixed a bug in handling the tmp index in hardcoded c:\temp instead of relying on %TEMP% (thanks to Rugxulo and Bernd Blaauw for reporting this!),
+ - [fix] configured new official FreeDOS v1.1 repositories in the default configuration file,
+ - [new] FDNPKG checks for the presence of an APPINFO file prior to installing the package (thanks to sparky4 for the suggestion),
+ - [new] added the install-nosrc action allowing to install packages without their sources,
+ - [new] implemented a local package database cache to speed up searching through packages,
+ - [new] silently skipping the packages/pkgname.lst file, if present in the packages (because FDNPKG computes its own one).
+
+FDNPKG v0.91 [11 Nov 2012]
+ - [fix] fixed a memory leak when aborting package installation due to pkgname.lst file access error,
+ - [new] added support for the FreeDOS NLS system via the Kitten library (and bundled the fdnpkg.en template)
+ - [new] verifying that there is no collision between files in the package to be installed and any already existing local file before actual package installation.
+
+FDNPKG v0.9 [24 Sep 2012]
+ - [new] first public release.

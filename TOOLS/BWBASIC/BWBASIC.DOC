@@ -1,0 +1,1156 @@
+
+                    Bywater BASIC Interpreter, version 3.20
+                 ---------------------------------------------
+
+                  Copyright (c) 1993, Ted A. Campbell
+                  for bwBASIC version 2.10, 11 October 1993
+
+                  Copyright (c) 2014-2015, Howatd Wulf, AF5NE
+                  for bwBASIC version 3.00, 12 May 2015
+
+                  Copyright (c) 2015-2016, Howatd Wulf, AF5NE
+                  for bwBASIC version 3.10, 27 July 2016
+
+                  Copyright (c) 2016-2017, Howatd Wulf, AF5NE
+                  for bwBASIC version 3.20, 4 June 2017
+
+CONTENTS:
+
+
+   1. DESCRIPTION
+   2. TERMS OF USE
+   3. QUICK REFERENCE LIST OF COMMANDS, FUNCTIONS AND OPERATORS
+   4. GENERAL NOTES ON USAGE
+   5. PREDEFINED VARIABLES
+   6. UNIMPLEMENTED COMMANDS AND FUNCTIONS
+      and AGENDA FOR DEVELOPMENT
+   7. THE STORY OF Bywater BASIC
+   8. COMMUNICATIONS
+   9. EXPANDED REFERENCE FOR COMMANDS, FUNCTIONS AND OPERATORS
+
+   The author wishes to express his thanks to Mr. David MacKenzie, 
+   who assisted in the development Unix installation and configuration
+   for this version.
+
+1. DESCRIPTION
+
+
+   The Bywater BASIC Interpreter (bwBASIC) implements a large superset 
+   of the ANSI Standard for Minimal BASIC (X3.60-1978) and a significant 
+   subset of the ANSI Standard for Full BASIC (X3.113-1987), and many 
+   classic BASIC dialects in C.  
+
+   bwBASIC can be configured to enable commands, functions, operators 
+   and punctuation characters available in many classic dialects of BASIC; 
+   these are controlled by various OPTION commands.  bwBASIC does not attempt 
+   bug-level compatibility with any particular BASIC dialect nor does it 
+   currently support graphics.  bwBASIC seeks to be as portable as possible.
+
+   The interpreter is fairly slow.  Whenever faced with a choice
+   between conceptual clarity and speed, I have consistently chosen the 
+   former.  The interpreter is the simplest design available, and 
+   utilizes no system of intermediate code, which could speed up 
+   considerably its operation.  As it is, each line has only one 
+   command.  Multi-statement lines are internally broken into distinct 
+   lines as they are loaded.
+
+
+2. TERMS OF USE:
+
+
+   This version of Bywater BASIC is released under the terms of the 
+   GNU General Public License (GPL), which is distributed with this 
+   software in the file "COPYING".  The GPL specifies the terms under 
+   which users may copy and use the software in this distribution.
+
+   A separate license is available for commercial distribution,
+   for information on which you should contact the author.
+
+
+3. QUICK REFERENCE LIST OF COMMANDS, FUNCTIONS AND OPERATORS
+
+   
+   The complete list of over 500 commands, functions and operators is 
+   in the file "ALL.txt" in the DOCS directory.  Documentation for each 
+   BASIC dialect is in the other text files in the DOCS directory.  
+
+   A BASIC dialect is a selection of commands, functions, operators,
+   punctuation characters and other behaviors.  The OPTION VERSION 
+   command is used to choose a specific BASIC dialect.  Additional 
+   OPTION commands are available to fine-tune the behavior.
+
+   In bwBASIC, any function can be executed as a command.  For example, 
+   the function "OUT(X, Y)" can be executed as the command "OUT X, Y". 
+   You can overload functions by parameter signature (the number
+   and types of parameters), and user defined functions can replace
+   any instrinsic function, including INP, OUT, PEEK, POKE, and WAIT.
+   
+
+4. GENERAL NOTES ON USAGE:
+
+
+   4.a. Interactive Environment
+
+
+   An interactive environment is provided if the flag INTERACTIVE
+   is defined as TRUE in bwBASIC.h, so that a line with a
+   line number can be entered at the bwBASIC prompt and it will be
+   added to the program in memory.
+
+   Line numbers are not strictly required, but are useful if the
+   interactive enviroment is used for programming.  For longer
+   program entry one might prefer to use an ASCII text editor, and
+   in this case lines can be entered without numbers.  See also the
+   documentation below for the pseudo-command EDIT, in section 5.
+
+
+   4.b. Naming Conventions
+
+
+   Command, function, label, and variable names are not case sensitive,
+   so that "Run" and "RUN" and "run" are equivalent. 
+
+   The characters allowed in variable names depends upon the specific
+   BASIC dialect selected with the OPTION VERSION command.  Usually,
+   variable names can use any alphabetic characters, the period
+   and underscore characters and decimal digits (but not in the
+   first position) and they can be terminated with the various numeric 
+   type characters (!,@,#,%,&,~) or the string type character ($).
+   
+
+   4.c. Numerical Constants
+
+
+   Numerical constants may begin with a digit 0-9 (decimal), with
+   the "&H" or "&h" (hexadecimal) or the "&o" or "&O" (octal).
+   Numerical constants may include 'E' or 'e' followed by an 
+   exponent number to denote exponential notation.  Numerical 
+   constants may also be terminated by the various numeric type 
+   characters (!,@,#,%,&,~).
+
+
+   4.d. Command-Line Execution
+
+
+   A filename can be specified on the command line and will be
+   loaded and executed immediately, so that the command line
+
+      bwBASIC prog.bas
+
+   will load and execute "prog.bas".  If a program is executed
+   from the command line, control is returned to the operating 
+   system when the program terminates.
+
+
+   4.e. Program Storage
+
+
+   All programs are stored as ASCII text files.  
+
+
+   4.f. TRUE and FALSE
+
+
+   TRUE is defined as -1 and FALSE is defined as 0 in the default
+   distribution of bwBASIC.  Alhtough these definitions can be changed 
+   by those compiling bwBASIC (see file bwBASIC.h), any other values
+   are not supported.
+
+
+   4.g. Assignments
+
+
+   Assignment must be made to variables.  This differs from some
+   implementations of BASIC where assignment can be made to a
+   function.  Implication: "INSTR( 3, x$, y$ ) = z$" will not
+   work under bwBASIC.  The command "MID$(X$,...) = ..." is 
+   implemented and should be used instead.
+   
+   Some BASIC dialects allow the multiple variable assignments,
+   such as:
+      100 LET A = B = C = 0
+   In bwBASIC, only the first '=' is considered an assignment.
+   All other '=' are considered comparison operators.  To resolve
+   this issue, use commas to seperate the variables, such as:
+      100 LET A, B, C = 0
+   If these statements are only used to initialize the variable
+   values, then they may not needed in bwBASIC, since all numeric
+   variables are initialized to zero (0) and all string variables 
+   are initialized to the empty string ("").
+
+
+   4.h. Operators and Precedence
+
+
+   The available operators are determined by the OPTION VERSION
+   setting.  bwBASIC recognizes many operators, with their level of 
+   precedence fixed.  The precedence levels chosen for the various 
+   operators in bwBASIC were selected to be compatible with many 
+   dialects of BASIC.  If your application requires a specific order 
+   of evaluation, then use parentheses.
+   
+   The collating sequence (ASCII, EBCDIC, and so on) is determined 
+   by the C compiler.  As a consequenece, the results of string
+   comparisons may vary.  A simple check for collating sequence is
+   shown in the following example:
+   
+      100 REM Purpose: Verify collating sequence (sort order)
+      110 REM  Author: Howard Wulf, AF5NE
+      120 REM    Date: 2015-11-28
+      130 REM
+      200 IF "1" < "A" THEN 300
+      210 PRINT "EBCDIC"
+      220 GOTO 999
+      300 PRINT "ASCII"
+      999 END
+
+
+   4.i. Numerical Precision (NOT)
+
+
+   bwBASIC utilizes numbers with only one level of precision.
+   All numbers are internally represented using a C double.
+   
+   The various numeric type suffix characters (!,@,#,%,&,~), 
+   just like the string type suffix character ($), are part 
+   of the variable name.
+     
+   This version also supports type declarations, such as:
+      100 DIM X AS INTEGER
+      110 FUNCTION ABC( X AS INTEGER ) AS INTEGER
+      120   LET ABC = X * 2
+      130 END FUNCTION
+
+   For each type character there is an equivalent type declaration.
+      Type   Equivalent
+      Char   declaration
+      ====   ===========
+      $      STRING
+      #      DOUBLE
+      !      SINGLE
+      @      CURRENCY
+      &      LONG
+      %      INTEGER
+      ~      BYTE
+
+   However, combining both a type suffix character and a type 
+   declaration in the same statement is not supported.
+      100 DIM A$ AS INTEGER ' this is not supported
+   
+   The type of a variable is used to range-check the values.  
+   This allows many programs to run correctly, but does not 
+   handle all possible cases.  The current implementation is not 
+   complete for all possible uses of numeric type declarations.
+
+   In the current version, the type of numeric values is used
+   to select the appropriate operation.  As a consequence, 
+   integer division is used when dividing two integer values.
+   The MOD and \ operators use the rounded integer values of
+   their parameters and return a rounded integer result.
+   
+   Within an expression, the result of an operation is promoted
+   to the greater of:
+      the type of the left parameter,
+      the type of the right parameter, and
+      the type required to hold the result.
+
+   In bwBASIC, numeric constants are DOUBLE by default.  If you
+   wish to coerce a numeric constant, then add the appropriate
+   numeric type character immediately after the numeric digits.
+   Many BASIC dialects that allow numeric constants to have a
+   numeric type character adopt this convention. 
+   
+
+   4.j. OPTION VERSION and so on
+
+   
+   OPTION commands change how a BASIC program is parsed.  All OPTION commands 
+   should be in "profile.bas" so they are effective when a BASIC program
+   is loaded.  The first OPTION command should be OPTION VERSION to select a
+   specific BASIC dialect.  Additional OPTION commands fine-tune the available 
+   commands, functions, operators, punctuation characters and so on to support 
+   programs written in many different BASIC dialects.  All other OPTION commands 
+   must follow the OPTION VERSION command.  Conflicting and pathological OPTION 
+   combinations are not supported.
+
+   The OPTION VERSION command selects a specific BASIC dialect.
+      OPTION VERSION "BYWATER"        ' Bywater BASIC 3
+      OPTION VERSION "BYWATER-2"      ' Bywater BASIC 2
+      OPTION VERSION "CALL/360"       ' SBC CALL/360 Mainframe BASIC
+      OPTION VERSION "CBASIC-II"      ' CBASIC-II for CP/M
+      OPTION VERSION "DARTMOUTH"      ' Dartmouth DTSS BASIC
+      OPTION VERSION "ECMA-55"        ' ANSI Minimal BASIC
+      OPTION VERSION "ECMA-116"       ' ANSI Full BASIC
+      OPTION VERSION "GCOS"           ' GE 600 Mainframe BASIC
+      OPTION VERSION "HAARDT"         ' bas 2.4 by Michael Haardt
+      OPTION VERSION "HANDBOOK1"      ' The BASIC Handbook, 1st Edition
+      OPTION VERSION "HANDBOOK2"      ' The BASIC Handbook, 2nd Edition
+      OPTION VERSION "HEATH"          ' Heath Benton Harbor BASIC
+      OPTION VERSION "MARK-I"         ' GE 265 Mainframe BASIC
+      OPTION VERSION "MARK-II"        ' GE 435 Mainframe BASIC
+      OPTION VERSION "MBASIC"         ' Microsoft BASIC-80 for Xenix
+      OPTION VERSION "PDP-8"          ' DEC PDP-8 BASIC
+      OPTION VERSION "PDP-11"         ' DEC PDP-11 BASIC
+      OPTION VERSION "RBASIC"         ' Micronics RBASIC for 6809 FLEX
+      OPTION VERSION "RSTS-11"        ' DEC RSTS-11 BASIC-PLUS
+      OPTION VERSION "SYSTEM/360"     ' IBM System/360 Mainframe BASIC
+      OPTION VERSION "SYSTEM/370"     ' IBM System/370 Mainframe BASIC
+      OPTION VERSION "TRS-80"         ' TRS-80 Model I/III/4 LBASIC
+      OPTION VERSION "VINTAGE"        ' Vintage BASIC 1.0.1
+      OPTION VERSION "XBASIC"         ' TSC XBASIC for 6800 FLEX
+
+   For example, MOD is a function in OPTION VERSION "ECMA-116",
+   MOD is an operator in OPTION VERSION "MBASIC", and
+   MOD is a valid variable name in OPTION VERSION "CALL/360".  
+   
+   The OPTION VERSION command also sets the following OPTION commands:
+        OPTION STRICT        ON | OFF
+        OPTION ANGLE    DEGREES | RADIANS | GRADIANS
+        OPTION BUGS          ON | OFF
+        OPTION LABELS        ON | OFF
+        OPTION COMPARE   BINARY | DATABASE | TEXT
+        OPTION BASE          integer
+        OPTION RECLEN        integer
+        OPTION COVERAGE      ON | OFF
+        OPTION TRACE         ON | OFF
+        OPTION ERROR       GOTO | GOSUB
+        OPTION DATE          "format"
+        OPTION TIME          "format"
+        OPTION PUNCT COMMENT   "char"
+        OPTION PUNCT STATEMENT "char"
+        OPTION PUNCT PRINT     "char"
+        OPTION PUNCT IMAGE     "char"
+        OPTION PUNCT INPUT     "char"
+        OPTION USING DIGIT     "char"
+        OPTION USING COMMA     "char"
+        OPTION USING PERIOD    "char"
+        OPTION USING PLUS      "char"
+        OPTION USING MINUS     "char"
+        OPTION USING EXRAD     "char"
+        OPTION USING DOLLAR    "char"
+        OPTION USING FILLER    "char"
+        OPTION USING LITERAL   "char"
+        OPTION USING FIRST     "char"
+        OPTION USING ALL       "char"
+        OPTION USING LENGTH    "char"
+        OPTION PUNCT QUOTE     "char"
+        OPTION PUNCT STRING    "char"
+        OPTION PUNCT DOUBLE    "char"
+        OPTION PUNCT SINGLE    "char"
+        OPTION PUNCT CURRENCY  "char"
+        OPTION PUNCT LONG      "char"
+        OPTION PUNCT INTEGER   "char"
+        OPTION PUNCT BYTE      "char"
+        OPTION PUNCT LPAREN    "char"
+        OPTION PUNCT RPAREN    "char"
+        OPTION PUNCT FILENUM   "char"
+        OPTION PUNCT AT        "char"
+
+   The commands, functions, operators and settings for each BASIC dialect 
+   is documented in the text files in the DOCS directory.  
+   
+   OPTION DISABLE COMMAND
+   Disable a specific command.
+   
+   OPTION DISABLE FUNCTION
+   Disable a specific function.
+   
+   OPTION DISABLE OPERATOR
+   Disable a specific operator.
+      
+   OPTION ENABLE COMMAND
+   Enable a specific command.
+
+   OPTION ENABLE FUNCTION 
+   Enable a specific function.
+
+   OPTION ENABLE OPERATOR
+   Enable a specific operator.
+   
+   OPTION ERROR GOSUB
+   The program will GOSUB to the error handler.
+   The error handler exits with the RETURN command.
+   
+   OPTION ERROR GOTO
+   The program will GOTO to the error handler.
+   The error handler exits with the RESUME command.
+      
+   OPTION LABELS OFF
+   Disables textual labels.
+   
+   OPTION LABELS ON
+   Enables textual labels.
+      
+   Regardless of the OPTION LABELS setting, statements of the form 
+      IF x THEN label
+   are not allowed, instead use the form 
+      IF x THEN GOTO label
+   The reason for this rule is because 
+      IF x THEN y
+   is considered to be the same as
+       IF x THEN
+         y
+       END IF
+   where "y" is a command, function, or subroutine.  Many BASIC dialects
+   that allow textual labels adopt this convention.
+   
+   OPTION ROUND controls how floating point values are converted to
+   whole number values.  OPTION ROUNG MATH rounds toward the nearest
+   whole number, with halves rounding up to the next larger whole number,
+   as commonly expected by many scientific applications.  OPTION ROUND 
+   BANK rounds halves to the even whole numbers, as commonly expected 
+   by many financial applications.  OPTION ROUND TRUNCATE truncates to 
+   the next smaller whole number, as commonly expected by many 
+   applications written for an integer BASIC.  The selected rounding 
+   method is used whenever a whole number is required, including:
+   a) selection value for ON ... GOTO and ON ... GOSUB
+   b) any function parameter requiring a whole number
+   c) array subscripts and dimensions
+   d) string positions and lengths
+   e) CINT() and similar
+   The OPTION ROUND command does not change the results of INT() or FIX().
+   The default rounding method is OPTION ROUND BANK.
+
+   A comparison of the different OPTION ROUND settings upon the results of CINT()
+   
+                                                BANK           MATH           TRUNCATE
+   X              int(X)         fix(X)         cint(X)        cint(X)        cint(X)
+   -2.0           -2             -2             -2             -2             -2 
+   -1.6           -2             -1             -2             -2             -1 
+   -1.5           -2             -1             -2             -2             -1 
+   -1.4           -2             -1             -1             -1             -1 
+   -1.0           -1             -1             -1             -1             -1 
+   -0.6           -1              0             -1             -1              0 
+   -0.5           -1              0              0             -1              0 
+   -0.4           -1              0              0              0              0 
+    0.0            0              0              0              0              0 
+    0.4            0              0              0              0              0 
+    0.5            0              0              0              1              0 
+    0.6            0              0              1              1              0 
+    1.0            1              1              1              1              1 
+    1.4            1              1              1              1              1 
+    1.5            1              1              2              2              1 
+    1.6            1              1              2              2              1 
+    2.0            2              2              2              2              2 
+
+   The OPTION BUGS command determines the behavior of a number of BASIC keywords.  
+   BASIC programs which rely on these behaviors are non-portable and non-standard. 
+   I have considered several different names for this command, but have not yet 
+   thought of a better short name.
+      
+   OPTION BUGS ON disables the ANSI/ECMA/ISO standard behavior:
+   
+   FOR ...        ' values are evaluated left-to-right
+   GOTO X OF ...  ' an invalid value for X falls thru without ERROR
+   GOSUB X OF ... ' an invalid value for X falls thru without ERROR
+   ON X GOTO  ... ' an invalid value for X falls thru without ERROR
+   ON X GOSUB ... ' an invalid value for X falls thru without ERROR
+   X = VAL("X")   ' returns zero without ERROR
+   INPUT X        ' empty string returns zero without ERROR
+   INPUT X$       ' empty string returns ""   without ERROR
+   INPUT X$       ' allows unquoted character strings
+   variable names ' period and underscore are allowed
+   variable types ' the type characters #!@&% are allowed
+   PRINT "a" X    ' string concatenation is implied
+   1.2% is 1      ' the type characters #!@&% are allowed
+   1D1 is ERROR   ' 'D' is not allowed as exponent seperator
+   
+   OPTION BUGS OFF enables the ANSI/ECMA/ISO standard behavior:
+
+   FOR ...        ' values are evaluated according to standard
+   GOTO X OF ...  ' an invalid value for X is an ERROR
+   GOSUB X OF ... ' an invalid value for X is an ERROR
+   ON X GOTO  ... ' an invalid value for X is an ERROR
+   ON X GOSUB ... ' an invalid value for X is an ERROR
+   X = VAL("X")   ' raises an illegal function call (ERROR 5)
+   INPUT X        ' empty string retries input
+   INPUT X$       ' empty string retries input
+   INPUT X$       ' unquoted character strings retries input
+   variable names ' period and underscore are not allowed
+   variable types ' the type characters #!@&% are not allowed
+   PRINT "a";X    ' string concatenation is not implied
+   1.2% is ERROR  ' the type characters #!@&% are not allowed
+   1D1 is ERROR   ' 'D' is not allowed as exponent seperator
+
+
+   4.k. ERROR handling
+
+   
+   bwBASIC implements a simplified error handling strategy.
+   Errors are seperated into two categories:
+
+   a) Fatal errors.  These errors include:
+      - Unknown command
+      - FOR without NEXT
+      - NEXT without FOR
+      - WHILE without WEND
+      - WEND without WHILE
+      - and so on.
+   The program is scanned prior to running and if any of these errors is
+   detected, then the program is not allowed to run.  If these errors 
+   occur as the result of a DELETE or MERGE in a running program, then the 
+   program is terminated.
+    
+   b) Non-fatal errors.  If an error handler exists, then it is executed, 
+   otherwise the default behaivor is performed.  The correct action to 
+   take in an error handler depends upon the specific application.  
+      - Overflow (ERROR 6)
+         - the default behavior is to display a warning message.
+      - Division by zero (ERROR 11)
+         - the default behavior is to display a warning message.
+      - String too long (ERROR 15)
+         - the default behavior is to display a warning message.
+      - All other non-fatal errors
+         - the default behavior is to terminate the program.
+   
+   bwBASIC 2.61 used ON ERROR GOSUB for error trapping.
+   This version defaults to ON ERROR GOTO instead.
+
+
+   4.l.  Implementation rules for functions and commands
+
+   
+   In many BASIC dialects, keywords are seperated into three distinct groups:
+   Commands, Statements, and Functions.  In bwBASIC, keywords are seperated 
+   into only two groups:  Commands and Functions.  A keyword documented as a  
+   Command or Statament in a specific BASIC dialect may have been implemented 
+   in bwBASIC as a Function.  This is merely an implementation decision, which
+   may change in the future.  Each keyword should only be used as described in 
+   the reference document.  The following rules are considered when deciding
+   whether a BASIC keyword is implemented as a command or a function:
+   
+      a) If the keyword requires significant parsing,
+      then it is implemented as a command.  An example is "PRINT".
+      
+      b) If the keyword requires access to variables BYREF,
+      then it is implemented as a command.  An example is "SWAP".
+      
+      c) If the keyword changes the flow of control,
+      then it is implemented as a command.  An example is "GOTO".
+      
+      d) A function may be used as though it were a command, 
+      but a command cannot be used as though it were a function.
+      
+      e) The BASIC program can redefine a function, 
+      but the BASIC program cannot redefine a command.  
+      
+      f) The BASIC program can overload a function, 
+      but the BASIC program cannot overload a command.  
+      
+      g) Other than semantics, there is no practical difference
+      between a BASIC function and a BASIC subroutine.  The
+      return value of a BASIC subroutine, when called as a
+      function, is zero.  Calling a BASIC function as if it
+      were a subroutine simply discards the return value.
+   
+   These rules were chosen to maintain compatibility with 
+   many BASIC dialects.
+   
+   An example of the results of the above rules is "OUT".  
+   Since "OUT" is implemented as a function, you may:
+      a) call it as a subroutine like this:
+         100 OUT X, Y
+      b) call it as a function like this:
+         100 LET N = OUT( X, Y ) ' N = 0
+      c) redefine it as a subroutine like this:
+         SUB OUT( X, Y )
+             REM ...
+         END SUB
+      d) redefine it as a function like this:
+         FUNCTION OUT( X, Y )
+             REM ...
+         END FUNCTION
+      e) overload it using subroutines like these:
+         SUB OUT( X, Y )
+             REM ...
+         END SUB
+         SUB OUT( X, A$ )
+             REM ...
+         END SUB
+         SUB OUT( A$, X )
+             REM ...
+         END SUB 
+         SUB OUT( A$, B$ )
+             REM ...
+         END SUB 
+      f) overload it using functions like these:
+         FUNCTION OUT( X, Y )
+             REM ...
+         END FUNCTION
+         FUNCTION OUT( X, A$ )
+             REM ...
+         END FUNCTION
+         FUNCTION OUT( A$, X )
+             REM ...
+         END FUNCTION 
+         FUNCTION OUT( A$, B$ )
+             REM ...
+         END FUNCTION
+   
+
+   4.m.  Reference documentation
+
+
+   bwBASIC is preconfigured to support a number of specific BASIC dialects which were 
+   implemented using the following references, however bwBASIC does not attempt to be 
+   bug-level compatible and does not implement non-portable design choices.  A manual
+   for each dialect is in the DOCS directory to make you aware that a specific keyword
+   is implemented, however you should refer to the reference document for a proper 
+   understanding of how to use each keyword.  There are many other good books which 
+   describe these BASIC dialects in detail.  
+
+   OPTION VERSION "BYWATER"        ' Bywater BASIC 3
+      MANUAL:
+         BYWATER.TXT
+
+   OPTION VERSION "BYWATER-2"      ' Bywater BASIC 2
+      MANUAL:
+         BYWATER-2.TXT
+      NOT IMPLEMENTED:
+         DO NUM, DO UNNUM
+      NOTES:
+         SUB MAIN is not automatically called.
+         CALL requires parentheses around the function/subroutine parameters, 
+         so instead of 
+            CALL abc 1, 2, 3
+         use 
+            CALL abc( 1, 2, 3 )
+
+   OPTION VERSION "CALL/360"       ' SBC CALL/360 Mainframe BASIC
+      MANUAL:
+         CALL-360.TXT
+      NOT IMPLEMENTED:
+         MAT PRINT USING.
+      NOTES:
+         The APPENDIXES are implementation specific and are not supported.
+
+   OPTION VERSION "CBASIC-II"      ' CBASIC-II for CP/M
+      MANUAL:
+         CBASIC-II.TXT
+      ADDITIONAL INFORMATION:         
+         "CBASIC Language Reference Manual, 2nd Edition"
+         by Diigital Research
+         (c) 1982, Diigital Research
+         http://bitsavers.trailing-edge.com/pdf/digitalResearch/cb80/
+         CBASIC_Language_Reference_Manual_Oct82.pdf
+      NOT IMPLEMENTED:
+         CONSTAT%, CONCHAR% and compiler directives.
+      NOTES:
+         The APPENDIXES are implementation specific and are not supported.
+         The %INCLUDE directive is implemented, but only supports literal
+         unquoted filesnames without drive or directory, such as:
+            %INCLUDE LIBRARY.BAS            
+         Note that the %INCLUDE directive is executed as a file is being loaded, 
+         and as a result the %INCLUDE does not appear in the resulting listing.
+         Machine language functions and commands are not supported.
+         The parsing of command line parameters is implementation defined.
+         The specification of an array in a COMMON statement is the same as 
+         the specification in a DIM statement.
+         The SIZE() function assumes 1024 bytes and does not support wild-cards; 
+         if the file does not exist then SIZE() returns zero, otherwise SIZE() 
+         returns the number of 1024 bytes blocks required to contain the file;
+         an existing file of zero bytes returns a value of 1.
+
+   OPTION VERSION "DARTMOUTH"      ' Dartmouth DTSS BASIC
+      MANUAL:
+         DARTMOUTH.TXT
+      NOTES:
+         The APPENDICES are implementation specific and are not supported.
+         Sections 4.2 and 4.3 are implementation specific and are not supported.
+         Lines containing data to be READ must have a line number and a DATA command.
+      NOT IMPLEMENTED:
+         Card punch codes are not supported, use a comma or semicolon instead.
+
+   OPTION VERSION "ECMA-55"        ' ANSI Minimal BASIC
+      MANUAL:
+         ECMA-55.TXT
+      NOTES:
+         The APPENDICES are implementation specific and are not supported.
+         DIM is an executed statement in bwBASIC.  
+         This is a design decision to support the following example.
+            100 INPUT "How many?"; N
+            110 DIM A$(N)
+
+   OPTION VERSION "ECMA-116"       ' ANSI Full BASIC
+      MANUAL:
+         ECMA-116.TXT
+      NOT IMPLEMENTED:
+         Graphic commands, chapters 11 thru 15.
+      NOTES:
+         The APPENDICES are implementation specific and are not supported.
+         WORK-IN-PROGRESS.
+
+   OPTION VERSION "GCOS"           ' GE 600 Mainframe BASIC
+      MANUAL:
+         GCOS.TXT
+      NOT IMPLEMENTED:
+         HPS, LIN, RESTORE*, RESTORE$, VPS and binary files.
+      NOTES:
+         The APPENDIXES are implementation specific and are not supported.
+         Local variables in a multiline DEF are declared using DIM.
+         Line numbers are not written to, nor read from, data files.
+         FILES does not support passwords.
+         Literal values for file names are not supported, use string values instead.
+         This is a design decision to support the following:
+            100 INPUT "Which files?"; A$, B$, C$
+            110 FILES A$, B$, C$
+
+   OPTION VERSION "HAARDT"         ' bas 2.4 by Michael Haardt
+      MANUAL:
+         HAARDT.TXT
+      NOT IMPLEMENTED:
+         BBC syntax, use ANSI syntax instead.
+         ON ERROR statement(s) is not supported, use ON ERROR GOTO instead.
+         ON ERROR OFF, use ON ERROR GOTO 0 instead.
+         MAT REDIM, OPTION RUN, OPTION STOP, TRUNCATE, UNNUM and XREF.
+         DEC$(X,A$), ENVIRON$(X), FIND$(A$[,X]) and INSTR(A$,B$,X,Y).
+      NOTES:
+         POS and TAB are 1-based instead of 0-based.
+         ON ERROR GOTO 0 does not cause any error to occur, instead
+         ON ERROR GOTO 0 removes the current error handler and clears
+         ERL, ERR and ERROR$.
+         
+   OPTION VERSION "HANDBOOK1"      ' The BASIC Handbook, 1st Edition
+      MANUAL:
+         HANDBOOK1.TXT
+      NOT IMPLEMENTED:
+         Abbreviated commands (such as A.) and graphic commands.
+      NOTES:
+         The APPENDICES are implementation specific and are not supported.
+         The ERR function returns different values.
+
+   OPTION VERSION "HANDBOOK2"      ' The BASIC Handbook, 2nd Edition
+      MANUAL:
+         HANDBOOK2.TXT
+      NOT IMPLEMENTED:
+         Abbreviated commands (such as A.) and graphic commands.
+      NOTES:
+         The APPENDICES are implementation specific and are not supported.
+         The ERR function returns different values.
+
+   OPTION VERSION "HEATH"          ' Heath Benton Harbor BASIC
+      NOT IMPLEMENTED:
+         FREEZE, UNFREEZE, LOCK, UNLOCK, STEP
+      NOTES:
+         The APPENDICES are implementation specific and are not supported.
+         PRINT #-1 is sent to the printer.
+         INPUT #-1 is an ERROR.
+
+   OPTION VERSION "MARK-I"         ' GE 265 Mainframe BASIC
+      MANUAL:
+         MARK-I.TXT
+      ADDITIONAL REFERENCE:            
+         "Time-Sharing Service BASIC LANGUAGE EXTENSIONS Reference Manual"      
+         by Time-Sharing Service, Information Service Department, General Electric
+         (c) 1968, General Electric Company and Trustees of Dartmouth College
+         http://www.bitsavers.org/pdf/ge/MarkI_Timesharing/
+         802207A_Time-SharingServiceBASICLanguageExtensionsReferenceManual_Feb1968.pdf
+      NOTES:
+         The APPENDIXES are implementation specific and are not supported.
+      NOT IMPLEMENTED:
+         A series of variables seperated by equal signs is not supported, 
+         use a series of variables seperated by commas instead.
+         Literal values for file names are not supported, use string values instead.
+         This is a design decision to support the following:
+            100 INPUT "Which files?"; A$, B$, C$
+            110 FILES A$, B$, C$
+         CALL, to execute another compiled program, is not supported, use SHELL instead.
+
+   OPTION VERSION "MARK-II"        ' GE 435 Mainframe BASIC
+      MANUAL:
+         MARK-II.TXT
+      ADDITIONAL INFORMATION:         
+         "Basic Software Library" (Volumes 1 to 8)
+         by R. W. Brown
+         (c) 1977, Scientific Research Inst.
+      NOT IMPLEMENTED:
+         HPS, LIN, RESTORE*, RESTORE$, VPS and binary files.
+      NOTES:
+         The APPENDIXES are implementation specific and are not supported.
+         Local variables in a multiline DEF are declared using DIM.
+         Line numbers are not written to, nor read from, data files.
+         Literal values for file names are not supported, use string values instead.
+         This is a design decision to support the following:
+            100 INPUT "Which files?"; A$, B$, C$
+            110 FILES A$, B$, C$
+         FILES does not support passwords.
+
+   OPTION VERSION "MBASIC"         ' Microsoft BASIC-80 for Xenix
+      MANUAL:
+         MBASIC.TXT
+      NOTES:
+         The APPENDICES are implementation specific and are not supported.
+         The ERR function returns different values.
+         Specifying "D" in the exponent is not supported, instead use "E".
+
+   OPTION VERSION "PDP-8"          ' DEC PDP-8 BASIC
+      MANUAL:
+         PDP-8.TXT
+      NOT IMPLEMENTED:
+         NO RUBOUTS, RUBOUTS
+      NOTES:
+         The APPENDICES are implementation specific and are not supported.
+
+   OPTION VERSION "PDP-11"         ' DEC PDP-11 BASIC
+      MANUAL:
+         PDP-11.TXT
+      NOTES:
+         The APPENDICES are implementation specific and are not supported.
+
+   OPTION VERSION "RBASIC"         ' Micronics RBASIC for 6809 FLEX
+       MANUAL:
+         RBASIC.TXT
+      NOT IMPLEMENTED:
+         "+" command, COMPILE, CVT$, CVTF$, CVT$%, CVT$F
+      NOTES:
+         The APPENDICES are implementation specific and are not supported.
+         The ERR function returns different values.
+
+   OPTION VERSION "RSTS-11"        ' DEC RSTS-11 BASIC-PLUS
+      MANUAL:
+         RSTS-11.TXT
+      ADDITIONAL INFORMATION:         
+         "BASIC-PLUS Language Manual : for use with RSTS-11 (PDP-11 Resource Time-Sharing System)"
+         by Digital Equipment Corporation
+         (c) 1972, Digital Equipment Corporation
+         http://bitsavers.trailing-edge.com/pdf/dec/pdp11/rsts/V04/
+         DEC-11-ORBPA-A-D_BASIC-PLUS_LangMan_Oct72.pdf
+      ADDITIONAL INFORMATION:         
+         "PDP-11 : BASIC-PLUS Language Manual"
+         by Digital Equipment Corporation
+         (c) 1975, Digital Equipment Corporation
+         http://bitsavers.trailing-edge.com/pdf/dec/pdp11/rsts/V06/
+         DEC-11-ORBPB-A-D_BASIC-PLUS_LangMan_Jul75.pdf
+      NOT IMPLEMENTED:
+         HELLO, RENAME, REPLACE, COMPILE, LENGTH, TAPE, KEY, ASSIGN, DEASSIGN.
+         FOR ... WHILE, FOR ... UNTIL, statement modifiers.
+      NOTES:
+         The APPENDIXES are implementation specific and are not supported.
+         The ERR function returns different values.
+         The statemnet NAME ... AS does not support the <protection> specifier.
+
+   OPTION VERSION "SYSTEM/360"     ' IBM System/360 Mainframe BASIC
+      MANUAL:
+         SYSTEM-360.TXT
+      ADDITIONAL INFORMATION:
+         "IBM System/360 0S(TS0) ITF:BASIC Terminal User's Guide"
+         by International Business Machines Corporation
+         (c) 1971, International Business Machines Corporation
+         http://bitsavers.org/pdf/ibm/360/os/tso/
+         SC28-6840-0_TSO_ITF_BASIC_Terminal_UG_Apr71.pdf         
+      NOT IMPLEMENTED:
+         MAT PRINT USING.
+      NOTES:
+         The APPENDIXES are implementation specific and are not supported.
+
+   OPTION VERSION "SYSTEM/370"     ' IBM System/370 Mainframe BASIC
+      MANUAL:
+         SYSTEM-370.TXT
+      NOT IMPLEMENTED:
+         MAT PRINT USING.
+      NOTES:
+         The APPENDIXES are implementation specific and are not supported.
+
+   OPTION VERSION "TRS-80"         ' TRS-80 Model I/III/4 LBASIC
+      MANUAL:
+         TRS-80.TXT
+      NOT IMPLEMENTED:
+         CMD, SET EOF, cassette I/O.
+      NOTES:
+         The APPENDICES are implementation specific and are not supported.
+         The ERR function returns different values.
+         For the TRS-80 Model I   use "WIDTH 16,64" in "profile.bas".
+         For the TRS-80 Model III use "WIDTH 16,64" in "profile.bas".
+         For the TRS-80 Model 4   use "WIDTH 24,80" in "profile.bas".
+         bwBASIC requires a space around all keywords, so the LINEINPUT 
+         command must be written as LINE INPUT, and so on.
+         PRINT #-1 is sent to the printer.
+         INPUT #-1 is an ERROR.
+
+   OPTION VERSION "VINTAGE"        ' Vintage BASIC 1.0.1
+      MANUAL:
+         VINTAGE.TXT
+      NOTES:
+         The APPENDICES are implementation specific and are not supported.
+
+   OPTION VERSION "XBASIC"         ' TSC XBASIC for 6800 FLEX
+      MANUAL:
+         XBASIC.TXT
+      NOT IMPLEMENTED:
+         "+" command, COMPILE, CVT$, CVTF$, CVT$%, CVT$F
+      NOTES:
+         The APPENDICES are implementation specific and are not supported.
+         The ERR function returns different values.
+         
+
+5. PREDEFINED VARIABLES - no longer exist
+
+
+   BWB.EDITOR$
+   BWB.FILES$
+   BWB.PROMPT$
+   BWB.IMPLEMENTATION$
+
+   These preset variables no longer exist in bwBASIC.  They have 
+   been replaced with OPTION EDIT, OPTION FILES and OPTION PROMPT 
+   commands.
+   
+   The commands EDIT and FILES are pseudo-commands that launch
+   shell programs set by OPTION EDIT and OPTION FILES commands,
+   respectively.  The default values for these commands can
+   be changed in bwBASIC.h (DEF_EDITOR and DEF_FILES), and they
+   can be changed on the fly by the user.  It is expected that
+   the user will add the appropriate commands to "profile.bas" 
+   for their specific implementation; OPTION FILES "ls -l" on Unix 
+   systems and OPTION FILES "dir" on DOS systems.
+
+   The command OPTION PROMPT can be used to set the prompt
+   string for bwBASIC.  Again, it is suggested that a user-
+   selected prompt can be set up in a "profile.bas" to be
+   initialized each time bwBASIC starts.  Note that special
+   characters can be added to the prompt string, e.g.,
+
+      OPTION PROMPT "Ok"+CHR$(10)
+
+   will give an "Ok" prompt followed by a linefeed.
+
+   In previous versions, the preset variable BWB.IMPLEMENTATION$ 
+   would return "TTY" (IMP_IDSTRING) for the bwx_tty implementation.  
+   In previous versions of bwBASIC, the existance of the keywords CLS, 
+   COLOR and LOCATE were determined at compile and BWB.IMPLEMENTATION$ 
+   was used at runtime to determine whether these keywords existed.  
+   In the current version, these keywords always exist and are now 
+   controlled at runtime using the OPTION TERMINAL commands.  With 
+   OPTION TERMINAL NONE these keywords output nothing.
+
+
+6. UNIMPLEMENTED COMMANDS AND FUNCTIONS, and AGENDA FOR DEVELOPMENT
+
+
+   There are some items not implemented that have been so long
+   a part of some BASIC dialects that their absence may seem surprising.
+   In each case, though, their implementation would require 
+   operating-system-specific functions or terminal-specific functions
+   that cannot be universally provided.  Some specific examples are
+   detailed below.
+
+
+   INP reads a value from a hardware port.  In the current version,
+   using INP() will generate ERROR 73.  It is expected that you will 
+   provide a suitable implementation for your specific application. 
+   For example:
+       FUNCTION INP( X )
+           REM Return whatever value your application requires
+           INP = 0
+       END FUNCTION
+
+
+   OUT writes a value to a hardware port.  In the current version,
+   using OUT() will generate ERROR 73.  It is expected that you will 
+   provide a suitable implementation for your specific application. 
+   For example:
+       SUB OUT( X, Y )
+           REM do whatever your application requires
+       END SUB
+
+
+   PEEK reads a value from a memory location.  In the current version,
+   using PEEK() will generate ERROR 73.  It is expected that you will 
+   provide a suitable implementation for your specific application. 
+   For example:
+       FUNCTION PEEK( X )
+           REM Return whatever value your application requires
+           PEEK = 0
+       END FUNCTION
+         
+
+   POKE writes a value to a memory location.  In the current version,
+   using POKE() will generate ERROR 73.  It is expected that you will 
+   provide a suitable implementation for your specific application. 
+   For example:
+       SUB POKE( X, Y )
+           REM do whatever your application requires
+       END SUB
+
+
+   WAIT reads a value from a hardware port.  In the current version,
+   using WAIT() will generate ERROR 73.  It is expected that you will 
+   provide a suitable implementation for your specific application. 
+   For example:
+       SUB WAIT( X, Y )
+           REM do whatever your application requires
+       END SUB
+       SUB WAIT( X, Y, Z )
+           REM do whatever your application requires
+       END SUB
+
+
+   USR executes a machine code routine.  In the current version,
+   using USR() will generate ERROR 73.  It is expected that you will 
+   provide a suitable implementation for your specific application. 
+   For example:
+       FUNCTION USR( ... )
+           REM Return whatever value your application requires
+           USR = 0
+       END FUNCTION
+         
+
+   VARPTR reads a value from a memory location.  In the current version,
+   using VARPTR() will generate ERROR 73.  It is expected that you will 
+   provide a suitable implementation for your specific application. 
+   For example:
+       FUNCTION VARPTR( ... )
+           REM Return whatever value your application requires
+           VARPTR = 0
+       END FUNCTION         
+
+
+   There are other commands, functions, and implementation details
+   that I am working on, and which are on the agenda list for future
+   versions of bwBASIC.  These agenda include:
+
+      
+   PARACT i.e., the ability to execute PARallel ACTions. This
+     is described in ANSI BASIC, although I have not seen it
+     implemented before.  It will offer a rough, non-preemptive 
+     form of multitasking within the scope of a BASIC program.  
+     Programmers will note that the global My pointer provides 
+     one possible hook mechanism for PARACT in bwBASIC.  In the 
+     interim, you might use the "ON TIMER" command to implement 
+     a simple multitasking BASIC program.
+
+
+   XMEM  PC-type computers usually are able to use extended
+     memory.  If we could use extended memory for program
+     lines, variables, and function defitions, we could
+     write much longer programs.  This would entail,
+     however, a fairly serious rewriting of the program
+     to utilize memory handles for these storage features
+     instead of direct memory pointers.  In the interim,
+     you might use a "DOS Extender" which hooks calloc()
+     and free() to enable transparent access to EMS or XMS 
+     memory.
+
+
+   Windows The addition of memory handles in addition to the
+     non-preemptive execution of program lines (in a
+     crude form, already present) will make it possible
+     to develop implementations for Windows and perhaps
+     for other graphical user interfaces.  But what form
+     should this take?  I have in mind presently a BASIC
+     that would run in the background, appearing only
+     as an icon in the GUI space, with pop-up editors
+     and output windows. Thus, the interpreted language
+     would serve a purpose something like 'cron' (a task
+     scheduler) under Unix systems. You may have some
+     reflections that would help me in this.  
+
+
+   Graphics  Here we face fairly critical differences in different
+     styles and implementations of graphics, e.g., between
+     GWBASIC, ANSI BASIC, VisualBASIC, etc. But it's
+     possible that Graphics commands and functions could
+     be added.  These would all be OPTION VERSION specific.
+     In the interim, you might consider using ReGIS or Tektronix
+     graphics (ESC codes) with xterm.
+
+
+   The ANSI Standard for full BASIC does not specify which particular
+   commands or functions must be implemented, and in fact the standard
+   is very robust.  Perhaps no implementation of BASIC would ever
+   include all of the items, but some ANSI commands and functions which
+   remain unimplemented are:
+
+   ACCESS
+   AREA
+   ARRAY
+   ASK
+   BSTR
+   BVAL
+   CELLS
+   CLIP
+   COLLATE
+   CONNECT
+   DATUM
+   DEBUG
+   DECLARE
+   DEVICE
+   DISCONNECT
+   DISPLAY
+   DOT
+   DRAW
+   ERASE
+   EVENT
+   EXCEPTION
+   GRAPH
+   HANDLER
+   IMAGE
+   KEY
+   LINES
+   MIX
+   MULTIPOINT
+   OUTIN
+   OUTPUT
+   PARACT
+   PICTURE
+   PIXEL
+   PLOT
+   POINTS
+   RECEIVE
+   RENUMBER
+   REWRITE
+   ROTATE
+   SEIZE
+   SEND
+   SHIFT
+   TIMEOUT
+   TRACE
+   TRANSFORM
+   VIEWPORT
+   WAIT
+   VIEWPORT
+   ZONEWIDTH
+
+
+7. THE STORY OF Bywater BASIC
+
+
+   This program was originally begun in 1982 by my grandmother, Mrs.
+   Verda Spell of Beaumont, TX.  She was writing the program using
+   an ANSI C compiler on an Osborne I CP/M computer and although my
+   grandfather (Lockwood Spell) had bought an IBM PC with 256k of
+   RAM my grandmother would not use it, paraphrasing George Herbert
+   to the effect that "He who cannot in 64k program, cannot in 512k."
+   She had used Microsoft BASIC and although she had nothing against
+   it she said repeatedly that she didn't understand why Digital
+   Research didn't "sue the socks off of Microsoft" for version 1.0
+   of MSDOS and so I reckon that she hoped to undercut Microsoft's
+   entire market and eventually build a new software empire on
+   the North End of Beaumont. Her programming efforts were cut
+   tragically short when she was thrown from a Beaumont to Port
+   Arthur commuter train in the summer of 1986. I found the source
+   code to bwBASIC on a single-density Osborne diskette in her knitting
+   bag and eventually managed to have it all copied over to a PC
+   diskette. I have revised it slightly prior to this release. You
+   should know, though, that I myself am an historian, not a programmer.
+
+
+8. COMMUNICATIONS:
+
+
+   email:  tcamp@delphi.com
+
+
+9. EXPANDED REFERENCE FOR COMMANDS, FUNCTIONS AND OPERATORS
+
+   
+   bwBASIC provides a simple "HELP" command to refresh your memory
+   regarding the appropriate syntax for a specific command or function.
+   In the DOCS directory are text files which provide brief descriptions 
+   of every intrinsic command, function and operator available in BASIC
+   dialect available in bwBASIC; these files are not intented to be an 
+   authoritative or exhaustive reference.  Refer to the reference document 
+   for each dialect for details regarding each keyword.
+
+
+THE END

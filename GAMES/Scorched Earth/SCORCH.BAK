@@ -1,0 +1,60 @@
+;
+; scorch.cfg
+; Configuration File for Scorched Earth Version 1.50
+; Copyright (c) 1991-1995 Wendell Hicken
+; Feel free to copy and modify this file for your own use.
+;
+; Lines beginning with a semicolon (like this one) are comments.
+; Numbers in brackets, like [3] represent the default value of a given
+; option, numbers like 2..10 represent the valid range (2 thru 10 inclusive)
+; You don't need to know this, though, just use the Scorched Earth menus!
+;
+MAXPLAYERS=2
+MAXROUNDS=10
+SOUND=On
+FLY_SOUND=Off
+GRAPHICS_MODE=1024x768
+BIOS_KEYBOARD=On
+LOWMEM=Off
+POINTER=mouse
+MOUSE_RATE=0.50
+FIRE_DELAY=100
+FALLING_DELAY=10
+INTEREST_RATE=0.050000
+INITIAL_CASH=0
+COMPUTERS_BUY=On
+FREE_MARKET=Off
+SCORING=Standard
+AIR_VISCOSITY=0
+GRAVITY=0.200000
+SUSPEND_DIRT=0
+FALLING_TANKS=On
+EDGES_EXTEND=75
+ELASTIC=None
+SKY=Random
+MAX_WIND=200
+CHANGING_WIND=Off
+HOSTILE_ENVIRONMENT=On
+LAND1=20
+LAND2=20
+FLATLAND=Off
+RANDOM_LAND=Off
+MTN_PERCENT=20.000000
+FAST_COMPUTERS=Off
+TALKING_TANKS=Off
+TALK_PROBABILITY=100
+TALK_DELAY=18
+ATTACK_COMMENTS=talk1.cfg
+DIE_COMMENTS=talk2.cfg
+PLAY_MODE=Sequential
+STATUS_BAR=Off
+PLAY_ORDER=Random
+TEAM_MODE=None
+ARMS=4
+BOMB_ICON=Big
+TUNNELLING=On
+EXPLOSION_SCALE=Normal
+TRACE=Off
+EXTRA_DIRT=Off
+USELESS_ITEMS=Off
+DAMAGE_TANKS_ON_IMPACT=On

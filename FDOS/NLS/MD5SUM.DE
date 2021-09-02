@@ -1,0 +1,36 @@
+# Help message
+
+0.0:Benutzung: MD5SUM [/TBV] [/C [Datei]] | [Datei...]
+0.1:Generiert und šberprft MD5-Checksummen
+0.2:    /C          šberprfe Checksumme (Standard ist generieren)
+0.3:    /[-]V       aktiviere oder deaktiviere lange Meldungen (default: aus)
+0.4:    /[-]L       aktiviere oder deaktiviere LFN (default: automatisch)
+0.5:    /[-]R       aktiviere oder deaktiviere Rekursion (default: aus)
+0.6:                num ist die maximale Rekursionstiefe (0-9, B  default 4) 
+0.7:    /[-]S       Rekursiv arbeiten, wie bei /R
+0.8:    /T          Lese die Dateien im Textmodus
+0.9:    /B          lese die Dateien im Bin„rmodus (Standard; Uberschreibt /T)
+0.10:    /M[:!=]mode Digest Mode w„hlen 
+0.11:Die Eingabe von /C sollte die Liste von Hashes und Dateinamen sein
+0.12:dies wird vom Programm ausgegeben wenn es Schlssel generiert
+0.13:Das Argument fr /M ist der gewnschte Digest Mode, SHA
+0.14:CRC32, SHA256 oder MD5 (nicht alle md5sum.exe sind mit allen Modes compiliert)
+
+# Various other messages
+
+1.0:Ungltige Option in
+1.1:Datei existiert nicht
+1.2:Lesefehler von stdin
+1.3:Lesefehler
+1.4:unerkannte Zeile
+1.5:™ffnen unm”glich
+1.6:Fehlgeschlagen
+1.7:MD5-Check fehlgeschlagen fr
+1.8:von
+1.9:Fehlgeschlagener MD5 Check fr Datei(en)
+1.10:keine Dateien šberprft
+1.11:Datei ist ein Unterordner
+1.12:Warnung: LFNs nicht unterstzt
+1.13:Option vermisst Argument
+1.14:Ungltiger Prfsummenmodus
+1.15:Verzeichnis existiert nicht

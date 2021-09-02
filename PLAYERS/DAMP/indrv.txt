@@ -1,0 +1,92 @@
+INDRV.TXT - How to write an input driver for DAMP
+=================================================
+
+This purpose of this document is to describe how to go about
+writing an input driver for DAMP.
+
+As usual, I accept no responsibility for any damage or
+loss that occurs if you try and write an input driver. You
+do so at your own risk!
+
+Ok. Firstly I suggest you go and have a general browse through
+ICONSOLE.sc - an input driver I have written which demonstrates
+how to used standard keyboard input to control DAMP.
+
+I would also suggest that you read lcddrv.txt - to give you an idea
+about the DAMP driver philosophy.
+
+Right, now you've done that, you'll see that there are two
+basic functions you must provide, input_driver_init() and
+input_driver_poll().
+
+input_driver_init() should first set all the information
+variables to sensible values (as demonstrated in ICONSOLE.sc).
+It should then do whatever is necessary to initialise the
+input device you are writing a driver for.
+
+The second function, lcd_driver_poll() is called whenever
+DAMP wants to check for input (ie very regularly) - it should
+therefore complete in as little time as possible.  Its purpose
+is to check the input device, and take appropriate action. The
+appropriate action is to either just set input_driver_return_value
+to 0 if no input was detected, or to call the required util_*
+function and set input_driver_return_value to the return value
+of that function. (again, this is all clearly shown in the
+ICONSOLE.sc driver).  The util_* functions all have pretty obvious
+names, and are listed in dampinp.sh.  Everything else, I will
+give details of below:
+
+The functions you can call are:
+===============================
+
+<from dampcore.sh>:
+
+printf(char *,...)         - The standard C printf() function.
+sprintf(char *,char *,...) - Print the second string into the first.
+strlen(char *)             - Returns the length of the given string.
+gotoxy(int,int)            - Moves the console cursor.
+wherey()                   - Returns the y value of the console cursor.
+inportb(unsigned short)    - Get input from a port.
+outportb(unsigned short, unsigned char) - Output to a port.
+delay(int)                 - Wait for the given number of milliseconds.
+bioscom(int,char,int);     - Serial port input/output (see lcddrv.txt
+                             for a full description)
+
+<from dampinp.sh>
+
+kbhit()                    - Returns non-zero if a key has been pressed.
+getch()                    - Gets the character from the standard input.
+remove_keyboard()          - Removes the low-level DAMP keyboard driver.
+
+
+The variables you can access are:
+=================================
+
+<from dampcore.sh>
+
+damp_developer             - If this is not zero, you should output
+                             debugging information.
+
+<from dampinp.sh>
+
+char input_driver_name[256]            - The driver name
+char input_driver_author[256]          - Your name
+char input_driver_author_email[256]    - Your email address
+char input_driver_description[256]     - A short description of your driver
+float input_driver_version             - The version number of your driver
+
+
+The End?
+========
+This document is very short.  It is the first release.  I will update
+it with more information as and when I receive emails from people
+saying "I don't understand how to do...".
+
+All that remains is for me to ask that you send any drivers you write
+to drivers@damp-mp3.co.uk, along with a small (less than 10Kb) 2-colour
+.GIF file of any special wiring diagram your input device requires.
+
+Have fun!
+Matt Craven, Hedgehog Software.
+
+

@@ -1,0 +1,311 @@
+
+  лллл  лллллл   лллл   ллллллл ллллл     л    лл     
+ лл  лл  лл  лл   лл     лл   л  лл лл   лл      л
+лл       лл  лл   лл     лл      лл  лл   л     л      
+лл       ллллл    лл     лллл    лл  лл   л      л     
+лл       лл       лл     лл      лл  лл  ллл л лл  C   
+ лл  лл  лл       лл     лл   л  лл лл
+  лллл  лллл     лллл   ллллллл ллллл  Balthasar Szczepaфski
+
+  CPIED 1.3c - the CPI editor
+
+============================================================
+
+ 1. Description
+ 2. System requirements
+ 3. Features and limitations
+ 4. Controls
+ 5. Changes
+ 6. Planned features
+ 7. Known bugs
+ 8. Compiling, installing
+ 9. Files
+10. Contact information
+
+============================================================
+
+1. Description
+
+This program is a CPI file editor. It can edit CPI files
+which are used by DOS to store codepage information.
+Released under the terms of the
+GPL 3 license (see ccopying.txt)
+
+============================================================
+
+2. System requirements
+
+The program should be able to run on any IBM-PC compatible
+computer* with an IBM-VGA compatible video card and DOS** or
+Windows*** operating system or a DOS emulator****. To save
+CPX files UPX (upx.sourceforge.net) must be installed
+
+**The program should run on any DOS that is not older than
+3.3. It was tested on following systems:
+ MS-DOS  3.3  - no problems
+ PC-DOS  3.3  - no problems
+ MS-DOS  4.0  - no problems
+ MS-DOS  4.01 - no problems
+ MS-DOS  5.0  - no problems
+ MS-DOS  6.0  - no problems
+ MS-DOS  6.2  - no problems
+ MS-DOS  6.21 - no problems
+ MS-DOS  6.22 - no problems
+ MS-DOS  7.1  - no problems
+ FreeDOS 1.0  - no problems
+ FreeDOS 1.1  - no problems
+ PTS-DOS 6.8  - no problems, but in "safe mode" there is a
+                small display bug and cpx2cpi crashes the
+                system
+
+***The program should run without problems on any DOS-based
+version of Windows. It was tested on following systems:
+ Windows 3.11 for workgroups - no problems
+ Windows 98 SE               - no problems
+ 
+There can be problems in NT-based versions of windows:
+
+ On windows XP there can be display errors with some video
+ cards. It was tested on computers with Windows XP SP3 and
+ on some of them there were display errors. Propably, the
+ video card drivers are responsible for this.
+
+ On Windows Vista and 7, the system may refuse to launch
+ this program (or any other fullscreen DOS program) or not.
+ It depends on the video card driver.
+
+ On 64 bit systems the program will not run.
+
+****The program was tested on DOSBox 0.63 and 0.73 and there
+were no problems. The previous version of the program (1.0)
+does not run on DOSBox 0.63. No other emulators were tested.
+
+The program is not tested on all of the systemsafter every
+update!
+
+============================================================
+
+3. Features and limitations
+
+The following file formats are supported:
+
+1.FONT - used by MS-DOS, PC-DOS, Windows 1.x, 2.x, 3.x.
+2.FONT.NT - used by Windows NT, 2000, XP, Vista, 7.
+  This format is not fully supported. Files can be loaded in
+  this format, but can only be saved in FONT format.
+  Windows supports both formats, so this is not a problem.
+3.CPX - used by FreeDOS. To save CPX files
+  UPX (upx.sourceforge.net) must be installed
+
+The following file formats are not supported:
+
+4.DRFONT - used by DR-DOS
+
+Loaded files must meet the following restrictions:
+1.Number of all codepages cannot be 0 or bigger than 16.
+2.Codepages must have different numbers.
+3.Codepages cannot contain 0 or more than 3 fonts.
+4.Width of characters in a font must be equal to 8.
+5.Height of characters in font must be equal to 8, 14 or 16
+6.Fonts in a codepage must have different heights
+7.Fonts must contain exactly 256 characters
+8.All fonts must be screen fonts, not printer fonts.
+
+The following actions can be performed:
+ 1.creating a new CPI
+ 2.loading a CPI file
+ 3.saving a CPI file
+ 4.loading a codepage into VGAmemory using the mode command*
+ 5.editing the appearance of characters
+ 6.creating a new codepage
+ 7.changing a number of an existing codepage
+ 8.deleting an existing codepage
+ 9.creating a new font
+10.deleting an existing font
+
+*4 a CPI file is saved and used as a parameter to the DOS
+   "mode" command which loads a codepage into the video card
+   memory:
+
+   mode con:cp prep=((number) path)
+   mode con:cp sel=number
+  
+   This will not work if mode.com or display.sys are
+   not installed on the system. It will also not work on
+   Windows XP or newer or DOS 3.3. DOS will not be able to
+   load the codepage if the CPI file is bigger than 64KB. Do
+   not use this option if the codepage is not finished
+   because you will not be able to read anything you type
+   anymore.
+   
+============================================================
+
+4. Controls
+
+Everything can be controlled by the keyboard or mouse (if
+there is a mouse installed).
+
+Action             Keyboard    Mouse
+
+create a new CPI   F1          click the "1.new" text
+save a CPI file    F2          click the "2.save" text
+load a CPI file    F3          click the "3.load" text
+CP into VGA memory F4          click the "4.use" text
+change CP number   F5          click the "5.number" text
+new font           F6          click the "6.newF" text
+new codepage       F7          click the "7.newCP" text
+delete a font      F8          click the "8.delF" text
+delete a codepage  F9          click the "9.delCP" text
+close the program  F10         click the "10.end" text
+
+move the cursor    arrow keys  move the mouse
+select a character arrow keys* click the character
+set a pixel        Enter       left click the pixel
+unset a pixel      Backspace   right click the pixel
+change a pixel     Space       middle click the pixel
+switch edit/select Tab         changes automatically
+next codepage      PageDown    left click the "cp___" text
+previous codepage  PageUp      right click the "cp___" text
+select a codepage              click the number on the list
+next font          End         left click the "8x__" text
+previous font      Home        right click the "8x__" text
+
+*The function of arrow keys is changed with Tab.
+
+Dialog boxes:
+  Some actions require user input. Type your answer and 
+  press Enter. To cancel press Esc or leave an empty string.
+  When asked for a number everything that is not a number
+  will become 0.
+
+Command line:
+
+cpied [cpifile] - edir cpi or cpx files
+  cpifile - file to be loaded CPI or CPX
+
+cpx2cpi cpxfile cpifile [q] - convert cpx to cpi
+  cpxfile - input file, cpx
+  cpxfile - output file, cpi
+  q       - no console output
+
+============================================================
+
+5. Changes
+
+beta:
+ - First working version.
+1.0
+ - Change from CGA to VGA screen mode
+ - Support for character heights 14 and 16.
+ - Almost full FONT file format support
+ - Saving CPI files
+ - Command line parameter support
+ - Debug information removed from screen
+ - Fixed Function keys
+1.1a
+ - Full FONT flie format support
+ - FONT.NT file format support (read only)
+ - Codepage limit set from 6 to 16
+ - Creating new CPI's
+ - Creating new codepages
+ - Creating new fonts
+ - Removing codepages
+ - Removing fonts
+ - Failed file load no longer closes the program
+ - Dynamic memory allocation
+ - Optimized functions
+ - Fixed bugs
+ - Language changed to English
+1.1b
+ - Optimised graphic procedures - everything works faster
+ - Failed command line file load now closes the program
+   without entering graphic mode
+ - Fixed a bug that crashed the program when loading a file
+   from a long path
+1.2a
+ - Added mouse support
+1.2b
+ - Further optimization of graphic procedures
+ - Fixed a bug that placed the cursor outside the edited
+   character when switching between heights with the mouse.
+1.3a
+ - Added CPX support (read only)
+ - Added a list of codepages which is also clickable
+ - Removed dependancy on Borland's EGAVGA driver:
+   Code ported to Open Watcom, Borland's graphic functions
+  replaced with Open Watcom's equivalents
+1.3b
+ - Dialog boxes can now cancelled with Esc or empty string
+ - Added warnings before deleting a font, a codepage or
+   closing the program when a file is open
+1.3c
+ - Saving CPX files
+ 
+============================================================
+
+6. Planned features
+
+ - Exporting codepages to CP files
+ - Importing codepages from CP flies
+ - Exporting fonts to bitmaps
+ - Importing fonts from bitmaps
+
+============================================================
+
+7. Known bugs
+
+Filename is not checked for reserved symbols
+
+Coordinates of a deleted font are sometimes displayed.
+
+============================================================
+
+8. Compiling, installing
+
+Compiling:
+
+Requirements:
+ cpx2cpi:
+  ASM
+  Turbo C
+ cpied:
+  Open Watcom
+
+The makefile should be processed by a make program.
+I used Borland's make, the real-mode version, makeR. Open
+Watcom's wmake doesn't compile cpx2cpi.
+
+Installing:
+
+cpied.exe and cpx2cpi.com should be copied to somwere in the
+%PATH%.
+
+On Windows you may register *.cpi and*.cpx file extensions
+to CPIED.
+
+============================================================ 
+
+9. Files
+
+  CPIED   .EXE The CPI editor
+  CPX2CPI .COM CPX to CPI converter
+
+  CPIED   .CPP Source for the CPI editor
+  CPX2CPI .C   Source for the CPX to CPI converter
+  CPITRICK.ASM Source for the CPX to CPI converter
+  MAKEFILE     Makefile for both programs
+
+  COPYING .TXT License information
+  READTHIS.TXT This file
+
+cpitrick.asm and cpx2cpi.c contain code from FreeDOS mode.
+
+============================================================
+
+10. Contact information
+
+e-mail:   balthasar_s@interia.pl
+          rowerynaksiezycu@gmail.com
+www:      http://www.baltixy.w.interia.pl
+
+============================================================

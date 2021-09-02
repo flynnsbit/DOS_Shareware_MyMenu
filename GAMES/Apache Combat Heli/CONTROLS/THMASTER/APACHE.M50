@@ -1,0 +1,100 @@
+REM ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+REM บ                                                                 บ
+REM บ Macro definition file for APACHE LONGBOW by Digital Integration บ
+REM บ                                                                 บ
+REM ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+REM
+~MISCELLANEOUS
+~
+EndMission = CTL ESC
+PauseResume = p
+SelectTimeCompression = TAB
+CancelTimeCompression = CTL TAB
+JoystickOnOff = CTL j
+JoystickRecalibrate = ALT j
+Help = F1
+~
+~
+~
+~PRIMARY FLIGHT
+~
+CollectiveUp = q
+CollectiveDown = a
+TailRotorLeft = z
+TailRotorRight = x
+Brakes = b
+~
+~
+~
+~
+~
+~COCKPIT
+~
+NextLeftMFD = [
+PrevLeftMFD = SHF [
+LeftMFDOnOff = CTL [
+NextRightMFD = ]
+PrevRightMFD = SHF ]
+RightMFDOnOff = CTL ]
+LowerMagnification = ,
+RaiseMagnification = .
+IHADSSContrastAdjust = i
+NextWaypoint = n
+~continued ...
+~
+PrevWaypoint = SHF n
+NextTarget = BSP
+PrevTarget = SHF BSP
+LockUnlockTarget = l
+TADSView = t
+TADSRadarSelect = y
+HelmetView = h
+RadarMode = r
+RadarRange = g
+HoldResumeRadarUpdate = u
+~continued ...
+~
+TacticalDisplayRange = k
+PNVSOnOff = v
+ECMOnOff = e
+TransmitReconData = d
+~
+~
+~
+~
+~
+~
+~WEAPONS
+~
+ArmAndSelectWeapon = ENT
+UnarmWeapon = CTL ENT
+FireWeapon = SPC
+ReleaseChaff = c
+ReleaseFlare = f
+ReleaseChaffAndFlare = c f
+AutoChaffFlareOnOff = CTL c
+HydraPodsUp = w
+HydraPodsDown = s
+~
+~COCKPIT VIEWS
+~
+PilotFrontView = F2
+GunnerFrontView = F3
+LookLeft = F4
+LookRight = F5
+~
+~
+~
+~
+~
+~
+~EXTERNAL VIEWS
+~
+ApacheExternalView = F6
+WeaponView = F7
+WeaponTargetView = F8
+TargetLockView = F9
+RemoteView = F10
+SpectatorView = F11
+RotateExternalView = LALT
+

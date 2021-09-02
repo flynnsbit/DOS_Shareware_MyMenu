@@ -1,0 +1,107 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ===============================================
+             LEISURE SUIT LARRY 6: SHAPE UP OR SLIP OUT
+                                                        
+
+                       THE COMPLETE SOUNDTRACK
+                     (See below for song titles.)
+                              Dan Kehler
+           =============================================
+               Copyright (c)1994 Sierra On-Line, Inc.  
+           =============================================
+
+                         GENERAL MIDI VERSION
+                  (Designed for Roland Sound Canvas)
+
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- General MIDI sound card or module  (Roland SC or Yamaha XG recommended)
+
+
+This Standard MIDI File was recorded directly from Sierra's "Leisure Suit
+Larry 6" adventure game.  It has been recorded using Sierra's General
+MIDI sound driver and is therefore optimized for Roland Sound Canvas
+based MIDI cards and modules.  Satisfactory results can also be obtained
+on Yamaha XG devices.  See below for song titles.
+
+Recorded/edited/compiled/arranged for General MIDI by Tom Lewandowski.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+       =================================================================
+                                TRACK SHEET
+
+                  LEISURE SUIT LARRY 6: SHAPE UP OR SLIP OUT
+                       (Note:  Not all songs in order.)
+       =================================================================
+
+
+      SONG TITLE                                      START MEASURE/TIME *
+      ------------------------------------------------------------------
+   1. Sierra Fanfare                                        2   00:00:02
+   2. The Larry Theme (For Your Thighs Only)                9   00:00:19
+   3. Introduction                                         70   00:02:45
+      a. Muscle Beach                                      70   00:02:45
+      b. Stallions (Limo Ride)                            112   00:04:26
+   4. La Costa Lotta (Gammie's Theme)                     178   00:07:04
+   5. Larry's Room (The Larry Theme)                      248   00:09:52
+   6. The Kitchen                                         275   00:10:57
+   7. Health Spa                                          315   00:12:33
+   8. The Loose Tile (Same as "Gatehouse")                365   00:14:33
+   9. Weight Room (Larry Be Bad)                          409   00:16:19
+  10. Aerobics Classroom                                  458   00:18:16
+  11. Make-Up Classroom                                   497   00:19:50
+  12. Cell Block Love (Blues Bar)                         533   00:21:16
+  13. Blues Bar Theme #1                                  624   00:24:55
+  14. Blues Bar Theme #2                                  672   00:26:50
+  15. The Pool                                            733   00:29:16
+  16. Azfarazikan Sea (The Beach)                         779   00:31:07
+  17. Employee's Canteen & Dance Hall                     847   00:33:50
+  18. Rose                                                893   00:35:40
+  19. The High Cholonic                                   958   00:38:16
+  20. Gatehouse (Same as "The Loose Tile")               1006   00:40:12
+  21. Blues Bar Theme #3                                 1050   00:41:57
+  22. Shablee                                            1094   00:43:43
+  23. Penthouse                                          1157   00:46:14
+  24. Shamara (Closing Theme)                            1193   00:47:40
+  25. Big Band Larry (The Larry Theme)                   1251   00:50:00
+
+
+    THE GREATEST HITS OF LEISURE SUIT LARRY 6
+    Each theme played through one loop.  The song titles
+    listed are as they appear in the game.  This portion
+    plays as one continuous song.
+    ------------------------------------------------
+     1. The Larry Theme                                  1290   00:51:33
+     2. Air For Your G-String
+     3. Shock Your Booty
+     4. 2 Rump 2 Pump
+     5. Switch Hitt'n Kitt'n
+     6. Harry Palm Blues
+     7. Cell Block Love
+     8. Un Noche en Darlier
+     9. Samba de Hooters
+    10. Spanish Surprise
+    11. Larry Be Bad!
+    12. Muscrat Lust
+    13. No Pain, No Gain
+    14. Twist Till It Hurts
+    15. Hard Is Good, Right?
+    16. Kiss & Make Up
+    17. Not Ravel's Bolero
+    --------------------------------------------------------------------
+                                                TOTAL TIME:      1:10:09
+
+        * Start times are approximate.
+
+

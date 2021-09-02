@@ -1,0 +1,14 @@
+Begin3
+Title:          raread
+Version:        1.1
+Entered-date:   2001-08-10
+Description:    Reads the image for a floppy disk (that can be written using RAWRITE). Useful for creating disk images.
+Keywords:       raw, read, floppy, image
+Author:         Brian E. Reifsnyder (reifsnyderb _at_ mindspring.com)
+Maintained-by:  Brian E. Reifsnyder (reifsnyderb _at_ mindspring.com)
+Primary-site:   http://www.fdos.org/ripcord/rawrite/
+Alternate-site: http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/disk/
+Original-site:  http://www.fdos.org/ripcord/rawrite/
+Platforms:      DOS, FreeDOS
+Copying-policy: GNU General Public License, Version 2
+End

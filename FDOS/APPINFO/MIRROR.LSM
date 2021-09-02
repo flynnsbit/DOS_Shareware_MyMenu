@@ -1,0 +1,15 @@
+Begin3
+Title:          Mirror
+Version:        0.2
+Entered-date:   1999-03-24
+Description:    Records information about the disk for possible data recovery.
+Keywords:       freedos
+Author:         Brian E. Reifsnyder
+Maintained-by:  Brian E. Reifsnyder, reifsnyderb@mindspring.com
+Primary-site:   http://www.23cc.com/programs/
+Alternate-site: www.freedos.org
+Original-site:  www.freedos.org
+Platforms:      dos
+Copying-policy: GNU General Public License, Version 2
+Wiki-site:      http://wiki.freedos.org/wiki/index.php/Mirror
+End

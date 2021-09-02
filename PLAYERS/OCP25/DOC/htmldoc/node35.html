@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>fileselector</TITLE>
+<META NAME="description" CONTENT="fileselector">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="next" HREF="node36.html">
+<LINK REL="previous" HREF="node34.html">
+<LINK REL="up" HREF="node30.html">
+<LINK REL="next" HREF="node36.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html495"
+ HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html493"
+ HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html487"
+ HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html496"
+ HREF="node36.html">device configuration</A>
+<B> Up:</B> <A NAME="tex2html494"
+ HREF="node30.html">Configuration</A>
+<B> Previous:</B> <A NAME="tex2html488"
+ HREF="node34.html">screen</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00650000000000000000">
+fileselector</A>
+</H1>
+Except the first two options all options can also be specified at runtime by
+pressing <TT>&lt;ALT&gt;</TT>+<TT>&lt;z&gt;</TT> in the fileselector. However to make changes
+permanent you have to modify the <EM>fileselector</EM> section.
+<PRE>
+[fileselector] ; default fileselector section
+  modextensions=MOD S3M XM IT MDL DMF ULT AMS MTM 669 NST WOW \
+                OKT PTM MXM MID WAV RMI MP1 MP2 MP3 SID DAT \
+                PLS M3U PLT
+  movepath=  ; default path to move files
+  screentype=2
+  typecolors=on
+  editwin=on
+  writeinfo=on
+  scanmdz=on
+  scaninarcs=on
+  scanmnodinfo=on
+  scanarchives=on
+  putarchives=on
+  playonce=on
+  randomplay=on
+  loop=on
+  path=.
+</PRE><DL COMPACT><DT>modextensions
+<DD>files containing these extensions will be scanned by the
+fileselector. Only those files will be shown. If you want to load files with
+different extensions you have to specify them at the command line.<A NAME="tex2html48"
+ HREF="#foot794"><SUP>6.15</SUP></A>
+<DT>movepath
+<DD>the standard path to move files into. This is describend in
+section <A HREF="node8.html#fileselectoradvance">3.3</A>.
+<DT>screentype
+<DD>the textmode to use within the fileselector. The options are
+the same as in the <EM>screen</EM> section.
+<DT>typecolors
+<DD>show files in different colors depending on the file type
+<DT>editwin
+<DD>show the edit window at the bottom of the screen
+<DT>writeinfo
+<DD>write the info the to the information database located in the
+home directory of <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP. This speeds up the processing of directories, as files
+have to be scanned only once.
+<DT>scanmdz
+<DD>if <TT>.mdz</TT> files are found in the current directory, they
+will be scanned and the included information used.
+<DT>scanmodinfo
+<DD>scan inside the music files for module information.
+<DT>scanarchives
+<DD>if archives (like <TT>.zip</TT> or <TT>.rar</TT>) are
+found in the current directory the are scanned for modules.
+<DT>putarchives
+<DD>show archives in the fileselector, so they can be used just
+like subdirectories.
+<DT>playonce
+<DD>play ever file only once (thus not looping it) and then procede
+with the next file in the playlist. If the file contains a loop the loop
+command is ignored.
+<DT>randomplay
+<DD>play files in the playlist in random order.
+<DT>loop
+<DD>loop files after the end. This option has no effect if the file
+contains a loop command.
+<DT>path
+<DD>the default path to use when starting the fileselector the first
+time. The default is the current directory (.). If you keep all your music
+files in one directory you can specfiy this directory here.</DL>
+<P>
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot794">... line.</A><A NAME="foot794"
+ HREF="node35.html#tex2html48"><SUP>6.15</SUP></A>
+<DD>however
+files with different extensions are likely to be no valid module format, so they
+will be refused to load
+
+</DL><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html495"
+ HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html493"
+ HREF="node30.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html487"
+ HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html496"
+ HREF="node36.html">device configuration</A>
+<B> Up:</B> <A NAME="tex2html494"
+ HREF="node30.html">Configuration</A>
+<B> Previous:</B> <A NAME="tex2html488"
+ HREF="node34.html">screen</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

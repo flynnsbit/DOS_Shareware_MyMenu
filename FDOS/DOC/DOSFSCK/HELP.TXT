@@ -1,0 +1,13 @@
+usage: dosfsck [-aAflrtvVwy] [-d path -d ...] [-u path -u ...] device
+  -a       automatically repair the file system
+  -A       toggle Atari file system format
+  -d path  drop that file
+  -f       salvage unused chains to files
+  -l       list path names
+  -r       interactively repair the file system
+  -t       test for bad clusters
+  -u path  try to undelete that (non-directory) file
+  -v       verbose mode
+  -V       perform a verification pass
+  -w       write changes to disk immediately
+  -y       same as -a, for compat with other *fsck

@@ -1,0 +1,325 @@
+
+PG 1.16                                                    PG 1.16
+
+
+NAME
+        PG -- PaGer
+        A text file viewer presented by FreeDOS
+
+SYNOPSIS
+        PG [/? | filename ... | @file ]
+            /?       - displays a brief help on screen
+            filename - page through filename on the PC screen
+                     - filename maybe in wildcard format
+            ...      - support multiple filenames
+            @file    - response file with a list of files to view
+            if filename is omitted, read data from <stdin>
+
+        or  command | PG  like
+            dir /s  | PG
+
+DESCRIPTION
+        PG is a text file viewer presented by the FreeDOS.
+        It browses any text file and with more advanced features.
+        Read this manual carefully to get the most from PG.
+        With mouse interface now!
+
+CONTROL
+        Control is intuitive, Keys defined as:
+
+        PG Key      Meaning
+        ======      =======
+        Esc,Q,q     Exit program
+        B,b         Toggle bit 7 on/off
+        H,h         Hex view
+        W,w         Wrap long lines
+        Up          Scroll down 1 line
+        Down,Enter  Scroll up 1 line
+        Page Up     Scroll down 1 page
+        Page Down   Scroll up 1 page
+        Home        First page
+        End         Last page
+        Left        Pan view left 30 columns (1..256)
+        Right       Pan view right 30 columns (1..256)
+        1..0        Save current position to boomark #1..5
+        Alt-1..0    Jump to saved bookmark
+        Alt-D       Jump to DOS shell
+        Alt-E       Toggle VGA 25/28/50 Lines
+        Alt-F       Enter new path and file name
+        Backspace   Jump to a line as far as possible
+        F1          Online help (PG.MAN this file)
+        S-F1        One Line Chinese
+        F2          Continue to search backward (Case Insensitive) (CI)
+        S-F2        Continue to search backward (Case Sensitive) (CS)
+        F3          Continue to search forward  (CI)
+        S-F3        Continue to search forward  (CS)
+        F4          Enter search mode and input search string (CI)
+        S-F4        Recall search history
+        F5          Save 1 screenful of text to "PG.SAV"
+        S-F5        View "PG.SAV"
+        F6          Change the foreground color in text window
+        S-F6        Change the background color in text window
+        F7          Change to a different language font (immediate)
+        S-F7        Change to a different language font (deferred)
+        F8          Save filename, color and topline to "PG.PG"
+        S-F8        Recall saved filename from "PG.PG"
+        F9          Reload files from proceeding command line argument
+        S-F9        Remove "PG.PG"
+        F10         Reload files from following command line argument
+        S-F10       Remove "PG.SAV"
+        C-PgUp      View previous file
+        C-PgDn      View next file
+        Linux DOSEMU user may press 'n'/'p' for next/prev. file in TUI mode
+
+
+        Bookmarks #1..0
+            While viewing a text file, press any of the numeric keys
+            1..0 (under the Function keys), for instance, pressing
+            '1' to save the top position of the file you're viewing as
+            bookmark #1. Later on, when you want to return to the place
+            where you left bookmark #1, just press 'Alt'+'1' brings you
+            back no matter how far you've been.
+            Bookmarks are updated when keys '1'..'0' pressed again.
+
+        Filemarks
+            The path, filename, color, and topline are filemark.
+            Over 1000 filemarks can be saved to "PG.PG" in the path
+            if the environment variable %TEMP% or %TMP% defined.
+            F8 saves filemark and S-F8 recalls filemarks from "PG.PG"
+            Move mouse pointer over the filename and press S-F8 again
+            to restore.
+            "PG.PG" can be removed with S-F9.
+
+ Backspace  Jump to line
+            Prompt user to enter a line number, then jump as far
+            as possible.  Line number will be the top line and
+            displayed at the end of the top status line.
+
+        F1  Show you this manual with plugin
+
+        F2  (CI) continues to search backward for the next occurrence,
+            The cursor will move to the location where the string found,
+            with automatic panning feature, otherwise, nothing happens.
+
+        F3  (CI) continues to search forward for the next occurrence,
+            The cursor will move to the location where the string found,
+            with automatic panning feature, otherwise, nothing happens.
+
+        F4  Search text
+            Press F4 to enter search mode, prompt user to input a
+            string. The search start from the top line of the screen,
+            then to next line and so on. Follow with
+            F3 to search forward (CI);
+            F2 to search backward (CI);
+            Shift+F3 to search forward (CS);
+            Shift+F2 to search backward (CS);
+            The cursor will move to the location where the string found,
+            with automatic panning feature, otherwise, nothing happens.
+            Press F4 again to start a new search.
+
+        F5  Save screen to "PG.SAV"
+            When we're viewing a file, sometimes, we want to get an
+            extract from the source instead of retyping. PG saves
+            a screenful of text as we press the F5 key, a message
+            looks "!!! copy from filename line # !!!" will prepend
+            the text we want to copy, and saved to "PG.SAV" if the
+            environment variable %TEMP% or %TMP% defined.
+            "PG.SAV" can be removed with S-F10.
+
+       S-F2 (CS) search backward case sensitive as F2 above
+
+       S-F3 (CS) search forward case sensitive as F3 above
+
+    C-PgUp  Previous file
+            To view the previous file from the list.
+
+    C-PgDn  Next file
+            To view the next file from the list.
+
+MOUSE INTERFACE
+        As long as the mouse driver is found, PG and its plugins respond
+        to the mouse event to perform certain tasks such as:
+        1. right click at anywhere --> ESC exit;
+        2. left click in upper part of screen --> page up;
+        3. left click in lower part of the screen --> page down;
+        4. left click at the top status line --> previous file;
+        5. left click at the bottom status line --> next file;
+        6. move mouse pointer over a word press F4 starts a new search;
+        7. See What's new below;
+
+COPYING
+        This file and other related programs stored in PG116.ZIP are
+        distributed under the terms of the GNU General Public License.
+        See the file COPYING for details. And read the author's
+        "Legal stuff" declared in the comments of the program
+        source file.
+
+
+What's new is version 1.16
+        = reduce disk access with a 64k buffer
+        - view Chinese Big-5 and GB
+        - multi-language (single byte character) support (immed and deferred)
+        - 10 search strings to be recalled
+        - 10 bookmarks and many filemarks
+        - improved filemark that can be saved and restored
+        - save "PG.SAV" and "PG.PG" to %TEMP% or %TMP%
+        - user can view and remove "PG.SAV" and "PG.PG"
+
+Features
+        - view very large file (1024*1024 lines);
+        - multiple files viewing (256 in 1 directory);
+        - topline is restored as viewing multiple files;
+        - forward / reverse search (both sensitive and insensitive)
+        - save screens to a save file;
+        - view panning (max. 256 columns);
+        - online help;
+        - wrap long line;
+        - hex view;
+        - piping;
+        - 10 bookmarks;
+        - >1000 filemarks;
+        - support multiple arguments in command line
+        - support user input extra arguments
+        - interactive batch mode -- @file
+        - filename and color saved as history can be restored as @file
+        - multi-lanugages (single byte character) support
+        - keeps all filenames viewed
+        - bit 7 on / off;
+        - jump to line;
+        - jump to DOS shell;
+        - cursor moves to the location where a string is found;
+        - simple user interface;
+        - mouse interface;
+        - \x8 filtering;
+        - search history
+
+        Read the news file for development history / technical details
+
+
+Portability
+        Operating Systems:
+           1. Linux DOSEMU 1.2.0
+           2. FreeDOS native mode
+           3. M$DOS Windows 98 dos box
+           4. M$DOS native mode
+        Hardwares:
+           VGA, CGA, MONO
+
+
+PACKAGE (version 1.16) PG116.ZIP
+        BIN\PG.MAN            - Manual (this file)
+        BIN\PG.EXE            - the program
+        BIN\SVHEX.COM         - Plugin binary (hex)
+        BIN\SVTXT.COM         - Plugin binary (text)
+        SOURCE\PG\PG.C        - C source program
+        SOURCE\PG\PG.H        - C header
+        SOURCE\PG\PGASM.ASM   - assembly subroutines
+        SOURCE\PG\PG.MAK      - make file for Turbo C 2.01
+        SOURCE\PG\SVHEX.ASM   - Plugin source file (hex)
+        SOURCE\PG\SVTXT.ASM   - Plugin source file (text)
+        DOC\PG\NEWS           - anouncement
+        DOC\PG\COPYING        - GNU GPL copyright
+        DOC\PG.MAN            - Manual (this file)
+
+
+INSTALL PG (version 1.16)
+
+        To compile PG you need:
+        1. Borland Turbo C 2.01
+        2. Nasm 0.98.xx
+
+        Type:
+            tcc  -c pg.c
+            nasm -f obj pgasm.asm -o pgasm.obj
+            tlink lib\c0s pg pgasm,pg,,lib\cs
+            nasm -f bin svhex.asm -o svhex.com
+            nasm -f bin svtxt.asm -o svtxt.com
+
+        This will generate the PG.EXE program and plugins.
+
+        or
+            d:\>make -fpg.mak -Dtc=Turbo_C_Directory
+
+        Should you get any error, check if the path is correct
+        in "PG.MAK". Keep plugins in your path, and PG.MAN in
+        the same directory as PG.EXE.
+
+        Also messages from previous maintainer were outdated,
+        noted that:
+        If you like default color, try
+            d:\>make -fpg.mak -DCOLOR -Dtc=Turbo_C_Directory
+        for GNU notice in command line help, try
+            d:\>make -fpg.mak -DGNU -Dtc=Turbo_C_Directory
+
+
+Programming Resources
+
+        PG 1.16 -- Turbo C with Nasm
+          Borland Turbo C 2.01
+          NASM 0.98.39
+          Insight 1.10
+
+        Turbo C 2.01 is available at the Borland Software Museum.
+          http://community.borland.com/museum/
+
+        Nasm 0.98.xx is available at
+          http://nasm.sourceforge.net/
+
+        Insight 1.10
+          http://www.freedos.org/
+
+
+About Plugins
+        PG employs plugins to achieve extra capablities such as
+        on line help, long line wrapping, hexidecimal view.
+        Plugins are separate programs 1.4k each, tiny, simple
+        yet support piping and no file size limits. Plugins are
+        invoked with the F1, h,H,w,W key, and exit with exactly
+        the same key. Plugins synchronize the position of the
+        file with PG. Navigates with Up, Down, Page Up, Page Down,
+        Home, End keys and exit with ESC.
+        Plugins remember the starting position so recall is possible.
+        Recall with Alt-1. Plugins respond to mouse event that PG
+        sets up. Keep plugins together with PG.EXE and PG.MAN
+        in a %PATH% directory.
+
+
+Author  Bill Weinmen
+        E-mail : wew@bearnet.com
+        BAHCL (plugins)
+
+Maintainer  BAHCL
+        version : 1.01 - 1.16
+        E-mail  : bahcl@hotmail.com
+
+
+Messages from BAHCL:
+
+        PG is a full-fledged text file viewer now. With all new
+        features, PG just looks the same, but it is impressive if
+        you give it a shot. High performance, small footprint,
+        numerous useful features, minimun system resources, PG
+        has all the power required to rival similar softwares in
+        the market, "EVEN" the M$ realm. Yet PG is FREE and OPEN
+        SOURCE that serves as a great sample to beginner programmer.
+
+        Read the NEWS file for development history.
+
+        I'd like to express my thanks to the authors of HELPPC,
+        INSIGHT, TURBO C, NASM, IBM Tiny Editor. Without their
+        contribution, PG will not be possible.
+
+        This is the final chapter for the development of PG, I hope
+        you like it.
+
+        Thanks to Johnson Lam and Eric Auer for their help and
+        suggestion.
+
+BAHCL
+
+
+
+============================================================
+Messages from previous PG maintainer(s):
+Moved to the news file.
+

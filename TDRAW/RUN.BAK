@@ -1,0 +1,100 @@
+[?7h[40m[2J[0;1m:menu
+@echo off
+cls
+echo.
+echo Press 1 for Doom
+echo Press 2 for Doom II
+echo Press 3 for Heretic
+echo Press 4 to Quit
+echo.
+echo [36mGame Selector
+[37mecho.
+jchoice /C:1234 /N Please Choose:
+
+if errorlevel = 4 goto quit
+if errorlevel = 1 set GAME=DOOM1
+if errorlevel = 2 set GAME=DOOM2
+if errorlevel = 3 set GAME=HERETIC
+goto start
+
+
+:start
+set GAME=DOOM1
+cls
+echo.
+echo Press 1 for SoundBlaster
+echo Press 2 for Gravis Ultrasound
+echo Press 3 for Sound Canvas
+echo Press 4 to Quit
+echo.
+echo Sound Selector
+jchoice /C:1234 /N Please Choose:
+
+
+if errorlevel = 4 goto quit
+if errorlevel = 1 set SOUND=SB
+if errorlevel = 2 set SOUND=GUS
+if errorlevel = 3 set SOUND=SC
+
+
+cls
+echo.
+echo Press 1 for Single Player
+echo Press 2 for Multiplayer
+echo Press 3 to Quit
+echo.
+jchoice /C:123 /N Please Choose:
+echo.
+echo Mode Selector
+echo.
+
+if errorlevel = 3 goto quit
+if errorlevel = 1 set MODE=SINGLE
+if errorlevel = 2 set MODE=MULTI
+
+
+if %SOUND% == SB CONFIG -set "mididevice=default"
+if %SOUND% == SC CONFIG -set "mididevice=fluidsynth"
+if %SOUND% == GUS CONFIG -set "mididevice=default"
+if %GAME% == DOOM1 cd DOOM
+if %GAME% == DOOM2 cd DOOMII
+if %GAME% == HERETIC cd Heretic
+del DEFAULT.CFG
+if %SOUND% == SB copy .\SB16\*.*
+if %SOUND% == SC copy .\SC55\*.*
+
+cls
+echo.
+echo Press 1 for DOOM World's top 100 WADs
+echo Press 2 for Commercial WADs
+echo Press 3 for Really Shitty WADs
+echo Press 4 to Quit
+echo.
+jchoice /C:1234 /N Please Choose:
+echo.
+echo WAD Selector
+echo.
+
+if errorlevel = 4 goto quit
+if errorlevel = 3 goto SHIT
+if errorlevel = 2 goto COMM
+if errorlevel = 1 goto TOP
+
+:TOP
+cls
+echo.
+echo Press A for Crossing Acheron
+echo Press B for
+echo Press C for
+echo Press D for
+echo Press E for
+echo Press F for
+echo Press G for
+echo Press H for
+echo Press I for
+echo Press J for
+echo Press N for the Next Page
+echo Press Q to Quit
+echo.
+jchoice /C:ABCDEFGHIJNQ /N Please Choose:
+echo.[0m[255D

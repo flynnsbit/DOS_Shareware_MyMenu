@@ -1,0 +1,15 @@
+# Italian translation (CP850) based on version 1.4 09jul2004 by Roberto Mariottini
+#
+2.0:Parametro non valido\r\n
+0.0:    SORT [/R] [/+num] [/A] [/?] [file]\r\n
+0.1:    /R    Inverte l'ordine\r\n
+# 0.2:    /N    Enable NLS support\r\n - removed 7/2004
+0.2:    /A    Usa l'ordine ASCII invece dell'ordine di COUNTRY\r\n
+0.3:    /+num Ordina a partire dalla colonna num, a partire da 1\r\n
+0.4:    /?    Aiuto\r\n
+2.1:Errore durante la lettura delle tabelle di collazione NLS\r\n
+2.2:Uso l'ordine ASCII (vecchie versioni DOS).\r\n
+2.3:SORT: Impossibile aprire il file
+2.4: in lettura\r\n
+2.5:SORT: memoria insufficiente\r\n
+2.6:SORT: il numero di record supera il massimo consentito\r\n

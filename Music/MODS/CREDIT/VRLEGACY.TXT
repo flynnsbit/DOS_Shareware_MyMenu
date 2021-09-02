@@ -1,0 +1,24 @@
+Viral Legacy (viral_legacy.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=173936
+Renamed to "VRLEGACY.XM" because of DOS 8-character limit
+
+Summary
+
+    viral_legacy.xm is a XM format module.
+    Uploaded to modarchive.org on Sat 1st Jun 2013
+
+Info Info
+
+    Mod Archive ID: 173936
+    MD5: ee0b4eae39288e175a08847cacd3be9d
+    Format: XM
+    Channels: 8
+    Genre: n/a
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     Drozerix (https://modarchive.org/member.php?84702)

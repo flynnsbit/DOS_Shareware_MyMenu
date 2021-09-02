@@ -1,0 +1,219 @@
+                               CHARLIE DE EEND
+
+                           Versie 2.4 (Nederlands)
+         (C) Copyright 1996-2004, door Mike Wiering/Wiering Software
+               www.wieringsoftware.nl, info@wieringsoftware.nl
+
+
+LICENTIE
+
+     Zie LICENTIE.TXT voor de licentievoorwaarden.
+
+
+SYSTEEMEISEN
+
+     Om het spel Charlie te spelen, het je een PC nodig met:
+
+        -  286 processor of hoger (486 of Pentium aanbevolen)
+        -  VGA kaart
+        -  Tenminste 475K geheugen beschikbaar in DOS
+
+     Indien aanwezig, maakt dit spel ook gebruik van:
+
+        -  geluidskaart (MPU401 of Adlib)
+        -  joystick
+
+
+CHALRIE STARTEN
+
+     Heb je het speciale installatieprogramma voor Windows gebruikt, dan kun
+     je het spel eenvoudig opstarten door te klikken op het 'Charlie de Eend'-
+     icoontje op het bureaublad. Een andere manier is via: Start, Programma's,
+     Wiering Software, Charlie the Duck. Heb je een probleem met het spel,
+     start dan het programma 'Help mij!'.
+
+     Heb je het spel in DOS ge‹nstalleerd, dan kun je het opstarten met het
+     commando:
+
+        CHARLIE
+
+     Eventueel kunnen er opties meegegeven worden aan het spel:
+
+        CHARLIE -N    Start het spel op in het Nederlands.
+        CHARLIE -E    Start het spel op in het Engels.
+        CHARLIE -L    Gebruik een andere methode voor (vloeiend) scrollen.
+        CHARLIE -M    Detecteer geen MPU401 (Midi) geluid.
+        CHARLIE -A    Gebruik alleen AdLib, niet SoundBlaster (Pro).
+        CHARLIE -S    Gebruik PC speaker i.p.v. geluidskaart.
+        CHARLIE -P    Maak een CHARLIE.PIF bestand voor Windows.
+        CHARLIE -R    Registratiegegevens invullen.
+        CHARLIE -W    Maak een nieuwe CHARLIE.CFG aan met beginposities voor
+                      wereld 1, 2 en 3 (alleen geregistreerde versie).
+        CHARLIE -H    Toon een demonstratie van level 1-4 (grote vis).
+        CHARLIE -V    Versienummer en compilatiedatum van CHARLIE weergeven.
+
+     De meeste van de hierboven genoemde opties kunnen ook via het programma
+     HELPMIJ.BAT opgegeven worden. Je kunt dit programma vanuit DOS opstarten
+     met het commando:
+
+        HELPMIJ
+
+
+BESTURING
+
+     In het hele spel zijn de menuopties te veranderen met [Pijl Omhoog] /
+     [Pijl Omlaag]. Met [Spatie] of [Enter] kun je een keuze maken. Met [Esc]
+     kun je terug naar een vorige menu of het spel verlaten.
+
+     Heb je een joystick, ga dan vanuit het hoofdmenu naar INSTELLINGEN,
+     BESTURING, SOORT BESTURING en kies JOYSTICK om deze te configureren.
+
+     Charlie is als volgt te sturen:
+
+        [Pijl Links/Rechts]   -  Lopen
+        [Pijl Omlaag]         -  Duiken (in sommige poeltjes)
+        [Alt]                 -  Springen
+        [Ctrl]                -  Versnellen (samen met Pijl Links/Rechts)
+
+     Wil je hiervoor andere toetsen gebruiken, ga dan vanuit het hoofdmenu
+     naar INSTELLINGEN, BESTURING en dan TOETSEN.
+
+     Tijdens het spel zijn ook nog de volgende toetsen te gebruiken:
+
+        [F1]   -  Help
+        [F2]   -  Spel bewaren
+        [F3]   -  Spel laden
+        [F4]   -  Geluid aan/uit
+        [F5]   -  Andere manier van scrollen
+                    (probeer dit als het scherm niet vloeiend beweegt)
+        [P]    -  Pauze
+        [Esc]  -  Einde
+
+
+VEEL-GESTELDE VRAGEN
+
+     Hieronder vind je enkele vragen die vaak gesteld werden in de afgelopen
+     jaren:
+
+     -----
+
+     V:   Wat moet ik doen bij de grote vis in level 4?
+
+     A:   Je moet de vis vijf keer op z'n voorhoofd raken. Kom je hier niet
+          uit, bekijk dan de demonstratie door CHARLIE -H uit te voeren (of
+          via het HELPMIJ.BAT programma).
+
+     -----
+
+     V:   Heb je nog andere spellen gemaakt, behalve CHARLIE DE EEND?
+
+     A:   Ja, deze zijn te vinden op het Internet (zie de URL's aan het einde
+          van deze tekst).
+
+     -----
+
+     V:   Heb je al een nieuw spel gemaakt? Wanneer is de volgende klaar?
+
+     A:   Ik weet niet wanneer mijn volgende spel af is. Ik werk meestal
+          tegelijkertijd aan verschillende spellen en die maak ik helemaal af
+          voor ze beschikbaar zijn. Ik stel zelf ook geen deadlines voor m'n
+          spellen, maar neem alle tijd die nodig is om ze zo goed mogelijk te
+          maken.
+
+          En... als jullie zouden stoppen met mij hierover te mailen en te
+          bellen dan zou ik meer tijd en zin hebben om aan nieuwe te werken.
+
+     -----
+
+     V:   Ik zie totaal geen verschil tussen de complete versie en de demo-
+          versie. Hoe kan dat???
+
+     A:   Iedereen die tot nu toe deze vraag stelde bleek beide versies te
+          hebben en nog altijd de demo versie op te starten. Als je het spel
+          opnieuw installeert op een nieuwe locatie, zorg er dan voor dat je
+          eventuele snelkoppelingen naar het spel aanpast, zodat deze naar je
+          nieuwe versie wijzen.
+
+          De volledige versie begint ook wel met wereld 1, hetzelfde als de
+          demo versie, maar heeft ook wereld 2 en 3.
+
+          Als je het programma HELPMIJ.BAT gebruikt voor zowel het invoeren
+          van je registratiegegevens en het opstarten van het spel, dan moet
+          het wel goed gaan.
+
+     -----
+
+     V:   Hoe maak je zo'n spel?
+
+     A:   Het spel CHARLIE DE EEND is helemaal gemaakt in Borland Turbo
+          Pascal 7.0 (met veel inline assembly). De plaatjes heb ik getekend
+          in een eigen tekenprogramma GRED. Dit tekenprogramma staat ook op
+          mijn homepage met Pascal voorbeelden van hoe je het kunt gebruiken.
+
+     -----
+
+     V:   Ik kom niet voorbij level X, het is frustrerend. Kun je een stap-
+          voor-stap beschrijving geven en ook zeggen waar alle verborgen
+          voorwerpen te vinden zijn?
+
+     A:   Nee, ik denk niet dat je het nog lang leuk zou vinden als je alle
+          geheimen van het spel kende. Blijf gewoon oefenen, alle levels zijn
+          te spelen!
+
+     -----
+
+     V:   Ik heb Windows 95. Steeds als ik Charlie aan het spelen ben
+          verdwijnt het spel opeens en krijg ik het Windows bureaubladscherm
+          met de startbalk. Is daar iets aan te doen?
+
+     A:   Je drukt waarschijnlijk steeds op de toets tussen de [Ctrl] en de
+          [Alt] met het Windows logo erop. Een oplossing is om andere
+          toetsen te defini‰ren (INSTELLINGEN, BESTURING, TOETSEN).
+
+          Het is ook mogelijk om deze toets geheel uit te schakelen in DOS
+          met behulp van het programma DOSWINKY, dat op het Internet te
+          vinden is. Een andere oplossing is om uw PC opnieuw op te starten,
+          in MS-DOS modus, dan heb je dit probleem niet meer.
+
+     -----
+
+     V:   Hoe maak ik in Windows een snelkoppeling om Charlie op te starten?
+
+     A:   Dit kan nu met het HELPMIJ.BAT programma.
+
+     -----
+
+     V:   Het spel loopt heel erg langzaam. Is daar wat aan te doen?
+
+     A:   De instellingen voor de achtergrond kunnen veel uitmaken op sommige
+          (oudere) computers. Ga vanuit het hoofdmenu naar INSTELLINGEN,
+          ACHTERGROND. Standaard staat deze op PARALLAX, wat erg langzaam kan
+          zijn. Verander dit in STATISCH of GEEN.
+
+     -----
+
+     V:   Ik heb het spel bewaard in de tweede level van wereld drie (met
+          SPEL BEWAREN, WERELD 3). Als ik daarna het spel oplaad, kom ik
+          altijd weer in die tweede level. Is er een manier om weer aan het
+          begin van die wereld te beginnen?
+
+     A:   Ja, als je bij SPEL LADEN bij WERELD 3 de [Shift] toets ingedrukt
+          houdt terwijl je op [Enter] drukt, dan begint het spel helemaal aan
+          het begin van die wereld en niet in de level waar je gebleven was.
+
+
+CONTACT OPNEMEN MET DE AUTEUR
+
+     Vragen en opmerkingen over dit spel kun via e-mail (niet telefonisch)
+     sturen naar:
+
+        mike@wieringsoftware.nl
+
+     Ik hoor graag wat je van dit spel vindt. Heb je opmerkingen, suggesties
+     of heb je een fout gevonden, laat het mij weten.
+
+     De nieuwste informatie over mijn spellen zou je moeten kunnen vinden op
+     een van de volgende Internet sites:
+
+         http://www.wieringsoftware.nl/
+         http://home.wxs.nl/~mikewiering/

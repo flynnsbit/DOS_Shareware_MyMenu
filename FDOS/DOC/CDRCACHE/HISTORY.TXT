@@ -1,0 +1,30 @@
+  HIGHLIGHTS out of the history of LBAcache so far:
+
+  12.-13.10.2001 first working version (fixed 1024 sec buffer).
+      14.10.2001 added more verbosity, ... round-robin search. 860 lines ASM.
+  18.-20.11.2001 wrote a LBA (and CHS) big version (needs more DOS RAM).
+      23.11.2001 LBA version now does CHS and LBA, no CHS version anymore.
+
+      22.01.2002 multi sector read collection in read.asm, various patches...
+      10.11.2002 bigger element size (uses less DOS RAM), max 8 harddisks...
+  13.-15.11.2002 Made LBAcache fast again with memoization in binsel2,
+                 up to 25MB XMS... fixed unloading, improved messages a lot.
+
+  ...-23.04.2003 floppy: all sizes <= 1.44 MB should work now, bugs fixed.
+      26.06.2003 made TICKLE part of the package. (floppy read-ahead tool)
+      27.08.2003 ... Added LBA harddisk support to TICKLE (experimental).
+
+  *** 7 October 2003: Started CDRcache CD-ROM cache based on LBAcache. ***
+
+  07.-08.10.2003 Initial CDRcache release, many debugging messages enabled.
+      09.10.2003 Improved some messages and the user interface.
+      12.10.2003 Fixed a command line parsing bug (device path was req'd).
+  13.-14.10.2003 Added several/fixed options of the user interface: sleep,
+                 wake up, verbosity level, clear statistics, help message.
+
+      07.04.2004 Moved "flushed because of unknown disk change state" up to
+                 "show in verbose mode only". Improved the error message of
+                 "not cached because raw / redbook / invalid access".
+      13.05.2004 Added an user friendly "short statistics" display and  the
+                 ability to parse the "size" command line argument as a kBy
+                 value (code taken from the newest LBAcache version).

@@ -1,0 +1,13 @@
+# Latvian translation of FreeDOS SORT by Kristaps Kaupe <neons@hackers.lv>
+2.0:Nepareizs parameters\r\n
+0.0:    SORT [/R] [/+num] [/A] [/?] [file]\r\n
+0.1:    /R    K?rtot apgriezt? sec?b?\r\n
+# 0.2:    /N    Iesl?gt valodu atbalstu\r\n
+0.3:    /+num s?kt sort??anu ar kolonu num (b?ze ir 1)\r\n
+0.4:    /?    pal?dz?ba\r\n
+2.1:K??da nolasot valodas sal?dzin??anas tabulu\r\n
+2.2:Tikai DOS 3.3 un jaun?kiem ir valodu atbalsts!\r\n
+2.3:SORT: Nevaru atv?rt failu 
+2.4: las??anai\r\n
+2.5:SORT: Nepietiek atmi?as\r\n
+2.6:SORT: ierakstu skaits p?rsniedz maksimumu\r\n

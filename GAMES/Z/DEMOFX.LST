@@ -1,0 +1,193 @@
+# VFX.LST
+# Z Sound Priority Reference:
+# --------------------------
+
+
+#                              mono/  loop      
+# num     name       priority stereo  count   freq.   volume 
+
+# robot speech
+
+#0      loaded on demand (next line defines volume)
+#!80
+
+
+
+
+1       exp1.raw        100     M       0   11025      95
+2       exp2.raw        100     M       0   11025      95
+3       zexplo3.raw     100     M       0   11025     115
+4       zexplo4.raw     100     M       0   11025     115
+5       zexplo5.raw     100     M       0   11025     115
+
+
+21      ltankgun.raw    80      M       0   11025     127
+22      mtankgun.raw    80      M       0   11025     127
+18      htankgun.raw    80      M       0   11025     127
+32      mobimis2.raw    80      M       0   11025     127
+
+29      mobimiss.raw    70      M       0   11025     127
+
+25      ltgun.raw       65      M       0   11025     127
+30      grenade.raw     65      M       0   11025     127
+#31     grenlob2.raw     65      M       0   11025     100
+#31      grenlob.raw     65      M       0   11025     100
+31      grenlobx.raw    65      M       0   11025      50
+
+10      ricoch1.raw     60      M       0   11025      95
+23      jeepmgun.raw    60      M       -1  11025     127
+26      gattgun.raw     60      M       -1  11025     127
+27      rifle3.raw       60     M       0   11025      25
+#27      rifle.raw       60      M       0   11025      25
+28      machgun2.raw    60      M       -1  11025     110
+119     h2ojet.raw      60      M       -1   11025    127
+42      flamer.raw      60      M       -1  11025     100
+43      lasergun.raw    60      M       0   11025      80
+
+6          gyro5.raw    40      M       1   11025     100
+#6       objdest1.raw    40      M       1   11025     127
+8       volcglg2.raw     40      M       0   11025     50     #as splash1
+9       mudsplsh.raw     40      M       0   10050     40     #as splash2
+11      metgrnd.raw     40      M       0   11025     127
+44      recon2.raw      40      M       5   10075      35     
+46      recon3.raw      40      M       0   10075      30     #as per desert
+
+15      truckrol.raw    30      M       -1  11025      37     #
+17      truckrol.raw    30      M       -1   9050      37     # 
+19      truckrol.raw    30      M       -1  12000      37     #       ,,
+20      truckrol.raw    30      M       -1  10075      37     # 
+24      truckrol.raw    30      M       -1  13000      37     #
+
+12      jackhmmr.raw    20      M       -1  11025      30
+#45      tankfact.raw    20      M       -1  11025      30
+45      robfact5.raw    20      M       -1  11025      10     #
+47      robfact5.raw    20      M       -1   8000      10     #        ,,
+48      robfact5.raw    20      M       -1  11025      10     #
+16      radblip.raw     20      M       0   11025      48
+116     h2ojet.raw      20      M       -1  11025      20
+120     mudglug3.raw    20      M       0   10000      20     #volc wavelap
+118     lavaloop.raw    20      M       -1  11025      10     #volc streamlp
+
+101     volcspit.raw    20      M       0   11025      40     # new. triggers when fumaroles spit fire
+102     volcspt2.raw    20      M       0   11025      25     # new.                 ,,
+
+
+#moved by homer 7/7 (was in vehicle movement Priority bit but is an animal sound
+#7       objdest2.raw    10      M       0   11025     127
+7       objdest3.raw    10      M       0   10075      75
+115     anmlshot.raw    10      M       0   11025      30      #when animal is shot in corner
+121     vbrdshot.raw    10      M       0   11025      30
+122       vbird1.raw    10      M       0   11025      35
+
+
+126       bunny2.raw    10      M       0   11025      30       # for animals in corner
+127       bunny3.raw    10      M       0   11025      30 
+
+
+
+90       vbird1.raw      5      M        0  11025      20       # planet atmos
+91      beast7.raw       5      M        0  11025      15       #to be triggered 
+92      beast4.raw       5      M        0  11025      15       #randomly
+93      beast6.raw       5      M        0  11025      30
+94      volcglg2.raw     5      M        0  11025      20
+95      mudsplsh.raw     5      M        0  10050      25    
+96      volcglg.raw      5      M        0  11025      25
+97      volcspit.raw     5      M        0  11025      25     
+98      volcspt2.raw     5      M        0  11025      15
+99      mudglug3.raw     5      M        0  10000      10
+100     volcglg2.raw     5      M        0   9000      15
+
+128     	rob01.raw    255    M    0   11025      127
+129     	rob02.raw    255    M    0   11025      127
+130     	rob03.raw    255    M    0   11025      127
+131     	rob04.raw    255    M    0   11025      127
+132     	rob05.raw    255    M    0   11025      127
+133     	rob06.raw    255    M    0   11025      127
+134     	rob07.raw    255    M    0   11025      127
+135     	rob08.raw    255    M    0   11025      127
+136     	rob09.raw    255    M    0   11025      127
+137     	rob10.raw    255    M    0   11025      127
+138     	rob11.raw    255    M    0   11025      127
+139     	rob12.raw    255    M    0   11025      127
+140     	rob13.raw    255    M    0   11025      127
+141     	rob14.raw    255    M    0   11025      127
+142     	rob15.raw    255    M    0   11025      127
+143     	rob16.raw    255    M    0   11025      127
+144     	rob17.raw    255    M    0   11025      127
+145     	rob18.raw    255    M    0   11025      127
+146     	rob19.raw    255    M    0   11025      127
+147     	rob20.raw    255    M    0   11025      127
+148     	rob21.raw    255    M    0   11025      127
+149     	rob22.raw    255    M    0   11025      127
+150     	rob23.raw    255    M    0   11025      127
+151     	rob24.raw    255    M    0   11025      127
+152     	rob25.raw    255    M    0   11025      127
+153     	rob26.raw    255    M    0   11025      127
+154     	rob27.raw    255    M    0   11025      127
+155     	rob28.raw    255    M    0   11025      127
+156     	rob29.raw    255    M    0   11025      127
+157     	rob30.raw    255    M    0   11025      127
+158     	rob31.raw    255    M    0   11025      127
+159     	rob32.raw    255    M    0   11025      127
+160     	rob33.raw    255    M    0   11025      127
+161     	rob34.raw    255    M    0   11025      127
+162     	rob35.raw    255    M    0   11025      127
+163     	rob36.raw    255    M    0   11025      127
+164     	rob37.raw    255    M    0   11025      127
+165     	rob38.raw    255    M    0   11025      127
+166     	rob39.raw    255    M    0   11025      127
+167     	rob40.raw    255    M    0   11025      127
+168     	rob41.raw    255    M    0   11025      127
+169     	rob42.raw    255    M    0   11025      127
+170     	rob43.raw    255    M    0   11025      127
+171     	rob44.raw    255    M    0   11025      127
+172     	rob45.raw    255    M    0   11025      127
+173     	rob46.raw    255    M    0   11025      127
+174     	rob47.raw    255    M    0   11025      127
+175     	rob48.raw    255    M    0   11025      127
+176     	rob49.raw    255    M    0   11025      127
+177     	rob50.raw    255    M    0   11025      127
+178     	rob51.raw    255    M    0   11025      127
+179     	rob52.raw    255    M    0   11025      127
+180     	rob53.raw    255    M    0   11025      127
+181     	rob54.raw    255    M    0   11025      127
+182     	rob55.raw    255    M    0   11025      127
+183     	rob56.raw    255    M    0   11025      127
+184     	rob57.raw    255    M    0   11025      127
+185     	rob58.raw    255    M    0   11025      127
+186     	rob59.raw    255    M    0   11025      127
+187     	rob60.raw    255    M    0   11025      127
+188     	comp01.raw   254    M    0   11025      127
+189     	comp02.raw   254    M    0   11025      127
+190     	comp03.raw   254    M    0   11025      127
+191     	comp04.raw   254    M    0   11025      127
+192     	comp05.raw   254    M    0   11025      127
+193     	comp06.raw   254    M    0   11025      127
+194     	comp07.raw   254    M    0   11025      127
+195     	comp08.raw   254    M    0   11025      127
+196     	comp09.raw   254    M    0   11025      127
+197     	comp10.raw   254    M    0   11025      127
+198     	comp11.raw   254    M    0   11025      127
+199     	comp12.raw   254    M    0   11025      127
+200     	comp13.raw   254    M    0   11025      127
+201     	comp14.raw   254    M    0   11025      127
+202     	comp15.raw   254    M    0   11025      127
+203     	comp16.raw   254    M    0   11025      127
+204     	comp17.raw   254    M    0   11025      127
+205     	comp18.raw   254    M    0   11025      127
+206     	comp19.raw   254    M    0   11025      127
+207     	comp20.raw   254    M    0   11025      127
+208     	rob61.raw    255    M    0   11025      127
+209     	rob62.raw    255    M    0   11025      127
+210     	rob63.raw    255    M    0   11025      127
+211     	rob64.raw    255    M    0   11025      127
+212     	rob65.raw    255    M    0   11025      127
+213     	rob66.raw    255    M    0   11025      127
+214     	rob67.raw    255    M    0   11025      127
+215     	rob68.raw    255    M    0   11025      127
+216     	rob69.raw    255    M    0   11025      127
+217     	rob70.raw    255    M    0   11025      127
+218     	rob71.raw    255    M    0   11025      127
+219     	rob72.raw    255    M    0   11025      127
+220     	rob73.raw    255    M    0   11025      127
+

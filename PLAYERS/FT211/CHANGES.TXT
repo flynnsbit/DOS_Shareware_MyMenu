@@ -1,0 +1,80 @@
+Changes in v2.10:
+  - Removed broken GUS InterWave support, fixes GUS problems.
+  - Scrollbars are now less frustrating to use.
+  - Waveform polarity was wrong on scopes and in Smp. Ed.
+  - Max audio mixing rate was changed from 44000 to 44100.
+  - Channel numbers now start at 1 instead of 0.
+  - WAV loader has been improved and now supports weird files.
+  - Sample rate tuning (WAV playback freq.) when loading .wav.
+  - Changed default sample test play note from C-5 to C-4.
+  - Right mouse button = clear pattern mark.
+  - The scopes now show their number even while muted.
+  - Updated (and corrected some parts of) the help text.
+
+  - Bugfixes to prevent crashes:
+    * "Cut Pattern" on pattern lengths of 256/$100 (v2.09)
+    * "Morph Sample" could crash FT2 in some cases
+    * Editing empty patterns with lengths above 204/$0CC
+    * Using XM effect E7x (x >= 4) would freeze FT2 on notes
+
+  - General bugfixes:
+    * Improper Bxx (position jump) use would mess up the GUI
+    * Disk Op: .wav files were accidentally listed in module mode
+    * WAV loader now safely rejects non-supported files
+    * Properly clamp instrument data on load (prevent GUI mess)
+    * "Save Range" didn't support .wav mode
+    * Replen should never be set to below 2 when saving as .mod
+    * Use register $41 instead of $42 to set output rate on SB16
+    * You can now rename FT2.EXE and it will still run properly
+    * Fixed bugs with keyboard pattern marking
+    * Pattern mark. wasn't clamped when adding/removing chans
+    * "Song repeat start" is now cleared during song zapping
+    * Nibbles grid was wrongly rendered
+
+Changes in v2.10a:
+  - Two small general bugs fixed.
+  - List WAV files in module mode again (I see why now).
+  - Reject loading of WAV files in module mode.
+  - Refresh the Disk Op. directory after writing song to WAV.
+  - Fixed some critical bugs with save/load on track/pattern.
+
+Changes in v2.10b:
+  - SB/SB Pro: Fixed an error in audio rate calculation on
+    some rates (f.ex. 22050Hz stereo or 44100Hz mono).
+  - Changed some of the default audio settings.
+
+Changes in v2.10c:
+  - .MOD/.S3M/.STM import is now improved and bugfixed.
+  - Improved and bugfixed the .MOD saver.
+  - Fixed a really old bug with uninitialized values in the sample
+    headers while saving .XMs.
+  - Fixed sample rates being slighly off when importing .STMs.
+  - Added some missing keybindings to the help text.
+  - Removed some unneeded code.
+  - Removed unused graphics, making the .EXE almost 100kB
+    smaller.
+
+Changes in v2.11:
+  - Fixed a bug from FT2.10c where setting a sample's loop to
+    "pingpong" would crash the program if "Replen." was zero.
+  - XFade didn't work correctly on 16-bit pingpong samples and
+    could crash the program.
+  - Stereo samples from loaded XMs/XIs will no longer be
+    unplayable (but will still only contain the left channel data).
+  - .MOD/.S3M/.STM import is yet again improved and bugfixed.
+    Certain 15-sample MOD files may still load incorrectly though.
+  - Prevent system lock-up when loading very specific S3M files.
+  - Up/down pushbutton delay has been increased to prevent
+    accidentally skipping too much.
+  - Fixed a bug with the sampling position line (Smp. Ed.) after a
+    non-looping sample has been played.
+  - Inserting a key-off in edit mode where "Add." is 0 would
+    cause it to not be displayed until you move the row up/down.
+  - 44100Hz is now the default mixing frequency.
+  - The default amp is now 10x (doesn't affect GUS).
+  - SB16: Setting the mixing frequency to 44100Hz now gives a
+    true frequency of 45454Hz instead of 41666Hz.
+  - SB Pro/SB16: Added a config switch to not allow FT2 to
+    modify the SB mixer volumes. Handy for laptops with digital
+    volume controls, where FT2 would reset vol. to 100% at times.
+  - More small changes not worth of a mention.

@@ -1,0 +1,28 @@
+HELP
+
+This program restores a disk that has been formatted by using the MS-DOS command
+  "format drive: /q"
+
+This program is executed by the following syntax:
+
+UNFORMAT drive: [/J]
+UNFORMAT drive: [/U] [/L] [/TEST] [/P]
+UNFORMAT /PARTN [/L]
+UNFORMAT /?
+
+where:
+
+     drive:     Drive letter to unformat
+     /J         Verifies that the mirror files are synchronized with the disk.
+*    /U         Unformats without using the MIRROR files.
+     /L         Lists all files and directories found, or, when used with the
+		  /PARTN switch, displays current partition tables.
+    /PARTN      Restores the partition tables saved by MIRROR /PARTN.
+*   /TEST       Displays information, but does not write changes to disk.
+*   /P          Sends output messages to LPT1.
+    /?          Displays the help screen.
+
+* Indicates functions not yet available
+
+  
+  

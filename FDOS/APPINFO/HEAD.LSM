@@ -1,0 +1,14 @@
+Begin3
+Title:          HEAD
+Version:        1.0
+Entered-date:   2003-03-18
+Description:    displays a part of a file
+Keywords:       head
+Author:         Wolf Bergenheim
+Maintained-by:  Wolf Bergenheim
+Primary-site:   https://sourceforge.net/projects/dog/files/utils/Head/
+Alternate-site: http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/file/
+Original-site:  https://sourceforge.net/projects/dog/files/utils/Head/
+Platforms:      DOS, FreeDOS
+Copying-policy: GNU General Public License, Version 2
+End

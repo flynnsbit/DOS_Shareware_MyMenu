@@ -1,0 +1,107 @@
+NAME
+
+    KEYB - Localized language BIOS extension for DOS
+
+
+SYNOPSIS
+
+  KEYB  layoutName[,[CP][,filename]]  [/ID:nnn]  [/E] [/9] [/I] [/Dx] [/V]
+        [/L=m] [/NOHI] [/B] [/S]
+  KEYB [/U]
+  KEYB /?
+
+
+DESCRIPTION
+
+  KEYB enhances or replaces BIOS management of the keyboard, by admitting
+  international keyboard layouts. Required data is read from a keyboard
+  layout data file, a KL file or a compilation file (such as KEYBOARD.SYS),
+  which contains several keyboard descriptors.
+
+  The KEYB data is stored in a separate MCB, loaded in upper memory by
+  default.
+
+  A keyboard layout is identified by two labels, a string label, which is
+  mandatory (usually a two letter string, such as GR, FR or SP), and an
+  optional numeric identifier to distinguish different variants.
+
+
+OPTIONS
+
+  Parameterless KEYB will show information on the currently loaded KEYB.
+
+  LayoutName    string identifier
+
+  /ID:nnn       Specifies the numeric identifier nnn
+
+  CP            Codepage in which you want KEYB to start (if omitted,
+                DISPLAY.SYS and the system are checked)
+
+  filename      The KL file that contains the information for the given layout
+                If it is omitted, then KEYBOARD.SYS is tried, otherwise
+                <LayoutName>.KL
+
+  /E            Specifies that the keyboard is an AT enhanced keyboard
+                (this switch is incompatible with /9)
+
+  /9            Specifies that int9h management services must be activated
+                (this switch is incompatible with /E)
+
+  /I            Forces the installation over an already existing keyboard driver
+
+  /Dx           Sets the decimal separator character to x
+
+  /U            Unloads a KEYB previously loaded in memory
+
+  /V            Verbose: shows extra information
+
+  /L=m          Forces the ussage of submapping m, provided that it is compatible
+                with current codepage.
+
+  /NOHI         Avoids KEYB to load data into Upper memory, by loading it below
+                640Kb
+                
+  /B            Disables sound alerts (Beep)
+  
+  /S            Safemode: does not allow un-closed keyboard layout collections
+                and blocks strings and other critical commands                
+
+  /?            Shows the fast help
+
+
+EXAMPLES
+
+  KEYB SP,858
+
+  Loads KEYB with the layout for the Spanish distribution and codepage 858
+
+  KEYB GR,,GR.KL /E
+
+  Loads the German keyboard layout for KEYB, explicitely informing KEYB that
+  we are using an enhanced keyboard.
+  Use this if KEYB cannot identify the presence of an enhanced keyboard.
+
+
+BUGS
+
+   None known.
+  
+
+RELATED COMMANDS
+
+   KC           Keyboard descriptor files (in KEY) compiler
+
+
+NOTES
+   
+   Please refer to the manual Readme.txt for more detailed information.
+
+AUTHOR
+
+   Program:             Aitor SANTAMARIA MERINO  (aitor.sm@gmail.com)
+   This documentation:  Aitor SANTAMARIA MERINO  (aitor.sm@gmail.com)
+
+
+COPYING
+
+   FD-KEYB is distributed under the terms of the GNU GPL 2.0 license

@@ -1,0 +1,81 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ===============================================
+             POLICE QUEST: IN PURSUIT OF THE DEATH ANGEL
+                                                        
+
+                       THE COMPLETE SOUNDTRACK
+                     (See below for song titles.)
+                              Rob Atesalp
+           =============================================
+               Copyright (c)1992 Sierra On-Line, Inc.  
+           =============================================
+
+                         GENERAL MIDI VERSION
+                  (Designed for Roland Sound Canvas)
+
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- General MIDI sound card or module  (Roland SC or Yamaha XG recommended)
+
+
+This Standard MIDI File was recorded directly from Sierra's VGA remake of
+"Police Quest: In Pursuit Of The Death Angel" adventure game.  It has been
+recorded using Sierra's General MIDI sound driver and is therefore optimized
+for Roland Sound Canvas based MIDI cards and modules.  Satisfactory results
+can also be obtained on Yamaha XG devices.  See below for song titles.
+
+Recorded/edited/compiled/arranged for General MIDI by Tom Lewandowski.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+      ==================================================================
+                                TRACK SHEET
+
+                  POLICE QUEST: IN PURSUIT OF THE DEATH ANGEL
+      ==================================================================
+
+
+      SONG TITLE                                      START MEASURE/TIME *
+      ------------------------------------------------------------------
+   1. Sierra Fanfare                                        2   00:00:02
+   2. Introduction                                          9   00:00:19
+   3. The Briefing                                         52   00:02:02
+   4. Patrolling Lytton                                    96   00:03:48
+   5. Accident Scene                                      162   00:06:26
+   6. Caffeine Carol's                                    204   00:08:07
+   7. Wino Willy's                                        253   00:10:04
+   8. Back On Patrol                                      310   00:12:21
+   9. Sweet Cheek's Marie Wilkans                         347   00:13:50
+  10. Tawnee (Speeding Ticket)                            388   00:15:28
+  11. The Blue Room                                       472   00:18:50
+  12. The Story Of Kathy (Jack's Daughter)                513   00:20:28
+  13. Jack Cobb's Birthday Party                          541   00:21:36
+  14. William J. Barnum (The Drunk Driver)                620   00:24:45
+  15. Driving To Jail                                     654   00:26:07
+  16. Stolen Mercedes                                     704   00:28:07
+  17. Lytton Courthouse                                   790   00:31:33
+  18. Berk's Park Drug Deal                               838   00:33:28
+  19. Marie's In Jail (Planning The Sting)                878   00:35:04
+  20. The Hotel Delphoria                                 912   00:36:26
+  21. Sonny And Marie                                     953   00:38:04
+  22. Whitey And The Poker Game                          1006   00:40:12
+  23. The Penthouse                                      1054   00:42:07
+  24. Shoot Out With Jessie Bains                        1115   00:44:33
+  25. The Death Of Jessie Bains                          1145   00:45:45
+  26. Closing Theme                                      1179   00:47:07
+    --------------------------------------------------------------------
+                                                TOTAL TIME:     00:49:24
+
+        * Start times are approximate.
+
+

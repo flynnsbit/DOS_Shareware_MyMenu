@@ -1,0 +1,26 @@
+TEE ChangeLog
+
+2.0.3 :
+  - German translation (thanks to Achim Sondermann)
+  - Added error message when kittenopen() fails
+  - Implemented kitten support into getopt()
+  - Fixed some error messages to be more descriptive
+  - Added tee.lsm
+  - Added HTMLHELP files (thanks to Achim Sondermann)
+
+2.0.2 :
+  - Esperanto kitten translation (thanks to Rugxulo)
+  - Fixed bug with kitten support (thanks to Rugxulo)
+  - Added UPX compression support to makefile
+  - Added "make dist" option in makefile to automatically compress
+    folder
+  - Added getopt() support rather than my own options parser
+  - Fixed bug where reading from STDIN would stop once user hit \n 
+    rather than when they hit EOF
+
+2.0.1 :
+  - Cleaned up the code thanks to suggestions by Jim Hall
+
+2.0 :
+  - Rewrite of TEE v1.0 with added features (append, ignore interrupts,
+    and kitten i18n support)

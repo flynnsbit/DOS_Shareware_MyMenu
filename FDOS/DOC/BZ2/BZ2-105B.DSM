@@ -1,0 +1,63 @@
+#
+# DSM for Bzip2 1.0.5 binaries
+# Written by Juan Manuel Guerrero <juan.guerrero@gmx.de> 2008-03-31
+#
+
+dsm-file-version: 1.0
+dsm-name: bz2-105b
+dsm-version: 0.6.1
+
+type: binaries
+
+dsm-author: Juan Manuel Guerrero
+dsm-author-email: juan.guerrero@gmx.de
+
+name: bzip2
+version: 1.0.5 release 1
+manifest: bz2-105b
+sources-dsm: bz2-105s
+documentation-dsm: bz2-105d
+short-description: Binaries for Bzip2 version 1.0.5
+long-description: Bzip2 compresses files using the Burrows-Wheeler\n\
+block sorting text compression algorithm, and Huffman coding.\n\
+The command-line options are deliberately very similar to\n\
+those of GNU gzip, but they are not identical.
+
+license: BSD style License
+author: Julian Seward
+author-email: jseward@bzip.org
+maintainer: Julian Seward
+maintainer-email: jseward@bzip.org
+# For reporting bugs
+mailing-list: jseward@bzip.org
+# The home page of Bzip2.
+web-site: http://bzip.org
+# The ftp site of Bzip2.
+ftp-site: ftp://ftp.bzip.org
+# For discussing DJGPP- and DOS/Windows-specific aspects
+mailing-list: djgpp@delorie.com
+newsgroup: comp.os.msdos.djgpp
+
+porter: Juan Manuel Guerrero
+porter-email: juan.guerrero@gmx.de
+
+simtelnet-path: v2apps/
+zip: bz2-105b.zip
+changelog: contrib/bzip2-1.0-5/Changes
+
+pre-install-readme: contrib/bzip2-1.0-5/Readme
+pre-install-readme: contrib/bzip2-1.0-5/djgpp/readme
+
+requires: DPMI 0.9
+replaces: bzip2 < 1.0.5 release 1
+
+# To DTRT with setting time stamps of extracted files
+depends-on: djtzn
+# For reading docs
+depends-on: man
+depends-on: less
+# For running the scripts
+depends-on: cmp
+depends-on: diff
+depends-on: grep
+depends-on: mktemp

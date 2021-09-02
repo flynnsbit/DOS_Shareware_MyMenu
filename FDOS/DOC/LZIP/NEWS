@@ -1,0 +1,7 @@
+Changes in version 1.9:
+
+Lzip now returns at least 1 if closing stdout fails.
+
+Lintian warnings in Debian about man pages have been fixed.
+
+The "COPYING" file is no more used as data for testing.

@@ -1,0 +1,15 @@
+Begin3
+Title:          DU
+Version:        1.0
+Entered-date:   1994-05-13
+Description:    Display disk usage, ala UNIX 'du'
+Keywords:       du, display disk usage
+Author:         minyard _AT_ mindspring.com
+Maintained-by:  minyard _AT_ mindspring.com
+Primary-site:          http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/du.html
+Alternate-site: http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/disk/
+Platforms:      DOS, FreeDOS
+Copying-policy: GNU General Public License, Version 2
+Defunct-Original-Site: http://www.mindspring.com/~minyard/software.html
+Defunct-Primary-Site:  http://www.mindspring.com/~minyard/software.html
+End

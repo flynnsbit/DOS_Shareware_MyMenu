@@ -1,0 +1,9 @@
+Game: Nitemare 3D
+Year: 1994
+Composed by: David B. Schultz
+MIDI versions: OPL
+Platform: DOS
+
+Additional info: MIDI files are optimised for OPL, but it sounds quite alright on GM devices.
+
+https://www.karlsitretro.com/game_midi

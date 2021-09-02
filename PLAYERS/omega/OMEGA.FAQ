@@ -1,0 +1,28 @@
+          SoundBlaster AWE32 module file player by Cygnus X-1 v0.1
+
+             The first module player for the AWE32 with source!!
+
+   The reason I wrote this program is that I hate all GUS only demos out
+   there. The GUS is also a great soundcard, but it will be nice if GUS
+   lovers would accept the AWE32 because it is also a great sounding card.
+   I have spent a lot of time figuring out how the AWE32 works and this
+   is my first release. The code is far from perfect, but I will keep
+   working on it.
+
+   The player doesn't support to many effects, but effects are easy to
+   implement with the AWE32 when I know how they work.
+
+Features:
+   -it can only play 4 channel 31 sample general sound module files
+   -the only effects supported so far is: -Portamento up
+                                          -Portamento down
+                                          -Tone Portamento
+                                          -Vibrato
+                                          -Volume slide
+                                          -Position jump
+                                          -Set volume
+                                          -Patternbreak
+                                          -Set speed
+
+   -the source code include functions to set 8 different chorus & reverb
+    effect

@@ -1,0 +1,24 @@
+Begin3
+Title:          mode
+Version:        2015-11-25
+Entered-date:   2016-02-27
+Description:    Set the mode of your devices:
+- send ESC/P control codes for 80/132 cols and 6/8 lpi to printer
+- redirect printer to NUL or serial port
+- set serial port parameters
+- do codepage operations and display status of DISPLAY
+- select 40/80/132x25/28/43/50/60 screen mode or select x8/14/16 font,
+availability depending on your hardware. Shift CGA display sideways.
+- control and check switchar and keyboard (num/...) lock states
+- control keyboard repeat rate and delay
+Keywords:       freedos, mode, display
+Author:         K. Heidenstrom <kheidens@actrix.gen.nz>, Eric Auer <eric@coli.uni-sb.de>
+Maintained-by:  Eric Auer eric(#)coli.uni-sb.de
+Primary-site:          http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/mode.html
+Alternate-site: http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/mode/
+Platforms:      DOS
+Copying-policy: GNU General Public License, Version 2
+Wiki-site:      http://wiki.freedos.org/wiki/index.php/Mode
+Defunct-Original-Site: http://www.coli.uni-sb.de/~eric/stuff/soft/
+Defunct-Primary-Site:  http://www.coli.uni-sb.de/~eric/stuff/soft/
+End

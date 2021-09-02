@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>General</TITLE>
+<META NAME="description" CONTENT="General">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="next" HREF="node12.html">
+<LINK REL="previous" HREF="node10.html">
+<LINK REL="up" HREF="node10.html">
+<LINK REL="next" HREF="node12.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html234"
+ HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html232"
+ HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html226"
+ HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html235"
+ HREF="node12.html">Global functions</A>
+<B> Up:</B> <A NAME="tex2html233"
+ HREF="node10.html">Player</A>
+<B> Previous:</B> <A NAME="tex2html227"
+ HREF="node10.html">Player</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00510000000000000000">&#160;</A>
+<A NAME="playerGeneral">&#160;</A>
+<BR>
+General
+</H1>
+<FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP displays general (status) information in the first 4 rows. Some of these
+entries can be changed by the user, others are static for each module. The
+following list will explain every entry.<A NAME="tex2html17"
+ HREF="#foot393"><SUP>5.1</SUP></A>
+<DL COMPACT>
+<DT>vol
+<DD>The bar display the current playback volume. The default value is
+100
+will change the volume by one dot each time you press a key. The keys <TT>&lt;+&gt;</TT>
+and <TT>&lt;-&gt;</TT> on the numerik keypad will change the volume smoother.
+<DT>srnd
+<DD>Toggle this option with <TT>&lt;F4&gt;</TT> to enable a simple surround
+effect.
+<DT>pan
+<DD>If a voice should be played on the right speaker you can rearrange
+the stereo panning with this entry and <TT>&lt;F5&gt;</TT>,<TT>&lt;F6&gt;</TT>. To get mono sound
+adjust the two <EM>riders</EM> to the middle.
+<DT>bal
+<DD>Just like the device on your stereo this option works. Press
+<TT>&lt;F7&gt;</TT>,<TT>&lt;F8&gt;</TT> to adjust the stereo balance between full left and full
+right.
+<DT>spd
+<DD>The playback speed can be changed with <TT>&lt;F9&gt;</TT>,<TT>&lt;F10&gt;</TT>.
+<A NAME="tex2html18"
+ HREF="#foot1015"><SUP>5.2</SUP></A>
+<DT>ptch
+<DD>The pitch of the file can be altered with <TT>&lt;F11&gt;</TT>,<TT>&lt;F12&gt;</TT>
+<DT>row
+<DD>Most files of the module type are divided into rows and patterns.
+The first number shows the currently played row. The second number shows the
+total number of rows in the current pattern. All numbers are shown in hexadecimal
+format.
+<DT>ord
+<DD>Modules are divided into several orders consisting of patterns. The
+first number shows the currently played order. The second number shows the
+total number of orders.<A NAME="tex2html19"
+ HREF="#foot409"><SUP>5.3</SUP></A> All Numbers are shown in hex.
+<DT>tempo
+<DD>the current tempo of the file.
+<DT>bpm
+<DD>These are not the physical beats per minute, but rather the speed
+at which the file is played (only valid for module types). This option is
+often refered by Trackers as BPM.
+<DT>gvol
+<DD>Some file formats allow a global volume to be set.
+<DT>amp
+<DD>This option lets you adjust an amplification. You can adjust this value with
+<TT>&lt;CTRL&gt;</TT>+<TT>&lt;F2&gt;</TT>, <TT>&lt;CTRL&gt;</TT>+<TT>&lt;F3&gt;</TT>.<A NAME="tex2html20"
+ HREF="#foot1016"><SUP>5.4</SUP></A>
+<DT>filter
+<DD>You can select different types of interpolation by pressing <TT>&lt;backspace&gt;</TT>:
+<DL COMPACT>
+<DT>off
+<DD>no interpolation
+<DT>AOI
+<DD><FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP tries to determine if interpolation is really neccessary for each
+note and sample indepentantly. This is the default option and should be enabled.
+<DT>FOI
+<DD>every sample is always interpolated. This option uses more processor
+power as AOI.
+</DL><DT>module
+<DD>shows the filename currently played and the title of the file
+<DT>time
+<DD>time since starting the current file
+</DL>
+<P>
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot393">... entry.</A><A NAME="foot393"
+ HREF="node11.html#tex2html17"><SUP>5.1</SUP></A>
+<DD>Some special file types modify the
+appearance of the general field, but only static data is affected.
+
+<DT><A NAME="foot1015">...<TT>&lt;F10&gt;</TT>.
+</A><A NAME="foot1015"
+ HREF="node11.html#tex2html18"><SUP>5.2</SUP></A>
+<DD>By default the speed and pitch options are linked (indicated by a
+small 
+<!-- MATH: $\leftrightarrow$ -->
+<IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.gif"
+ ALT="$\leftrightarrow$">). To disable linkage press <TT>&lt;CTRL&gt;</TT>+<TT>&lt;F12&gt;</TT>.
+Note that this will not work with all supported file types.
+
+<DT><A NAME="foot409">... orders.</A><A NAME="foot409"
+ HREF="node11.html#tex2html19"><SUP>5.3</SUP></A>
+<DD>Not all orders have to be played, as modules
+can jump between different orders.
+
+<DT><A NAME="foot1016">...<TT>&lt;F3&gt;</TT>.</A><A NAME="foot1016"
+ HREF="node11.html#tex2html20"><SUP>5.4</SUP></A>
+<DD>This is not the same
+as Volume and <TT>&lt;F2&gt;</TT>, <TT>&lt;F3&gt;</TT>, because you are able to make the complete
+file louder than 100% with this option. Note that setting to values above
+100% might harm sound quality.
+
+</DL><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html234"
+ HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html232"
+ HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html226"
+ HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html235"
+ HREF="node12.html">Global functions</A>
+<B> Up:</B> <A NAME="tex2html233"
+ HREF="node10.html">Player</A>
+<B> Previous:</B> <A NAME="tex2html227"
+ HREF="node10.html">Player</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

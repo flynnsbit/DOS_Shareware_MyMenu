@@ -1,0 +1,12 @@
+INSTRUCTIONS for Gravis UltraSound users.
+
+DO NOT RUN THE BTHORNE.EXE OR THE SETUP.EXE PROGRAMS DIRECTLY!!!
+
+You must use the setupg.bat and bthorneg.bat files to run
+setup and blackthorne respectively.  These batch files 
+will prepare the UltraSound card for the game.
+
+
+Have Fun!!!
+
+

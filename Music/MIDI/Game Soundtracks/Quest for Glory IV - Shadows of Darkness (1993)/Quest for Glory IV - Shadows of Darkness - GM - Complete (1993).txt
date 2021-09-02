@@ -1,0 +1,100 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ===============================================
+                QUEST FOR GLORY - SHADOWS OF DARKNESS
+                                                        
+
+                       THE COMPLETE SOUNDTRACK
+                     (See below for song titles.)
+                            Aubrey Hodges
+           =============================================
+               Copyright (c)1993 Sierra On-Line, Inc.  
+           =============================================
+
+                         GENERAL MIDI VERSION
+                  (Designed for Roland Sound Canvas)
+
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- General MIDI sound card or module  (Roland SC or Yamaha XG recommended)
+
+
+This Standard MIDI File was recorded directly from Sierra's "Quest For
+Glory - Shadows Of Darkness" adventure game.  It has been recorded using
+Sierra's General MIDI sound driver and is therefore optimized for Roland
+Sound Canvas based MIDI cards and modules.  Satisfactory results can also
+be obtained on Yamaha XG devices.  See below for song titles.
+
+Recorded/edited/compiled/arranged for General MIDI playback by Quest Studios.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+   ======================================================================
+                               TRACK SHEET
+
+                   QUEST FOR GLORY - SHADOWS OF DARKNESS
+  =======================================================================
+
+      SONG TITLE                                START MEASURE/TIME *
+      ------------------------------------------------------------
+   1. Sierra Fanfare                                  2   00:00:02
+   2. Introduction                                    8   00:00:16
+   3. The Caves                                      93   00:03:40
+   4. Battle Of The Badders                         130   00:05:09
+   5. Outside The Caves                             167   00:06:38
+   6. Vorpal Bunny Battle                           208   00:08:16
+   7. Erana's Staff                                 259   00:10:19
+   8. Mordavia                                      323   00:12:52
+   9. The Burgomeister                              368   00:14:40
+  10. Hotel Mordavia                                418   00:16:40
+  11. Mordavia General Store (Olga)                 486   00:19:24
+  12. Hero's Guild Hall                             557   00:22:14
+  13. Wyvern Battle                                 658   00:26:16
+  14. Dr. Cranium (Hallway)                         713   00:28:28
+  15. Dr. Cranium (Laboratory)                      761   00:30:24
+  16. Hero's March                                  825   00:32:57
+  17. Rusalka                                       834   00:33:19
+  18. The Leshy                                     878   00:35:04
+  19. Thieve's Guild                                921   00:36:48
+  20. Erana's Garden                               1016   00:40:36
+  21. Mordavia Nights                              1106   00:44:12
+  22. Necrotaur Battle                             1177   00:47:02
+  23. Faery Fountain                               1257   00:50:14
+  24. Faery Battle                                 1308   00:52:16
+  25. Baba Yaga                                    1351   00:54:00
+  26. The Gypsy Camp                               1426   00:57:00
+  27. Graveyard                                    1562   01:02:26
+  28. The Castle                                   1592   01:03:50
+  29. Tanya And Toby                               1669   01:06:43
+  30. The Dream                                    1734   01:09:19
+  31. Monastery                                    1773   01:10:52
+  32. Wraith Battle                                1850   01:13:57
+  33. Punny Bones The Gnome (Jester)               1900   01:15:57
+  34. Meeting With Katrina                         1943   01:17:38
+  35. Escaping The Battle                          1969   01:18:40
+  36. The Revenant                                 2010   01:20:21
+  37. Chernovy Battle                              2061   01:22:24
+  38. Ad Avis Battle                               2124   01:24:55
+  39. Castle Dungeon                               2165   01:26:33
+  40. Katrina's Bedroom                            2201   01:28:00
+  41. Hexapod Battle                               2234   01:29:19
+  42. The Final Ritual                             2280   01:31:09
+  43. Katrina's Sacrifice                          2338   01:33:28
+  44. Death Of A Hero                              2413   01:36:28
+  45. Erana                                        2429   01:37:07
+  46. Finale                                       2465   01:38:33
+  ----------------------------------------------------------------
+                                            TOTAL TIME:   01:42:24
+
+      * Start Times are approximate.
+
+

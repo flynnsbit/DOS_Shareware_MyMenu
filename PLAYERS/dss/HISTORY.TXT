@@ -1,0 +1,120 @@
+
+                         Revision history of DSS
+                        =========================
+
+Plans:
+  Support for any DSP like equalizer/stereo expander/echo/delay/...
+  ...
+  And anything You want to be there. (But don't expect very much)
+
+v3.-1    ??-99   Watcom C++ v11.0 (PM) (under construction)
+---------------------------------------------------------
+  +  New player/recorder engine. ;) (Again)
+  +  New file types:
+       MPEG Audio Layer I,II,III(R)
+       General MIDI(R)
+  +  Much faster than any Pascal versions! ;)
+  +  Fileselector.
+  +  Read file description from ID3-TAG.
+  +  Scroll line filled with file description.
+  +  New video modes:
+       Spectrum/Wave voice print.
+       Point/Line oscilloscope flowers.
+       Stereo-diff phase graphs.
+  +  Auto-normalizing.
+  +  Vertical retrace sync added.
+  +  More accurate spectrum analyser.
+  +  Clip indicator's added (VU mode).
+  +  New playlist/mask playing routine. Support's Prev/Next jumping.
+  +  Random playlist playback added.
+  *  No questions on recording start.
+  +  Read CD-Audio description from DOS Navigator CD Description files.
+  *  Support 'ALBUM:' string in DOS Navigator CD Description files.
+  *  "Unexpected interrupt" error now cause sound device to reinitialize.
+  +  SB driver fixed.
+  +  And a lot of other features... ;)
+
+v2.4a   07-98   TMTP 2.10 (PM) (unreleased)
+--------------------------------------------
+  +  Fully new player & recorder.
+  +  Now there is only one file (DSS) consist of player, recorder,
+       convertor and setup utility.
+  +  New file types:
+       WAV(a-law) (R/W), WAV(mu-law) (R/W), WAV(IMA ADPCM) (R/W),
+       WAV(MS ADPCM) (R/W), CDA(CD-Audio reading) (R only) ;)
+  +  New sound devices support:
+       WSS (P/R), SB (P/R), OPTi (P/R), ESS (P/R), Aztech SG (P/R)
+       GUS Max/PnP (P/R)
+  +  New video modes:
+       Help!, Spectrum analysers, Psyhodelic lights, Phase graphs.
+  +  Many submodes in some of video modes such as:
+       Linear/log/power meter in VU.
+       Spectrum/flame in spectrum analyser.
+       Small/big oscilloscope.
+  *  Video mode routines moved to VMODE unit.
+  +  Rewind support!
+  +  Converor included! (Convert from playback-supported to
+       recording-supported file type).
+  +  Menu-based setup utility.
+  +  Software amplification.
+  +  Playlist/mask playing.
+  -  No vertical retrace syncronizing on video modes.
+       (How I can admit this?)
+
+v2.3    05-97   BP 7.0 RM
+--------------------------
+  +  Downsampling & downmixing on-the-fly!
+       Now You can play 44.1kHz 16-bit Stereo files on SB-Pro!
+
+v2.2    05-97   BP 7.0 RM
+--------------------------
+  +  Full error messages.
+  +  Setup utilites can use old values.
+  +  OSC mode now can use small RLE-compressed buffer for storage.
+       (If You doesn't have XMS, DSS will use low memory).
+  +  Support volume & recording level changes.
+  +  Support ASF,TGV & EAS file formats (from EA NFS I).
+  *  File reader moved to SNDFILE unit.
+  +  Command line options support! ;)
+  +  Can loop playing files.
+
+v2.1    04-97   BP 7.0 RM
+--------------------------
+  +  PC Speaker support.
+  +  Used own font for faster graphics.
+  +  Covox & Speaker support 16-bit stereo playing! ;)
+       (downsampling+downmixing)
+
+v2.0    03-97   BP 7.0 RM
+--------------------------
+  +  Added new video mode: OSC!
+       (Using XMS to store screen buffer -> No XMS - No OSC)
+  +  Slightly changed SB driver.
+  -  You can't enter Your own scroll line.
+
+v1.2    02-97   BP 7.0 RM
+--------------------------
+  +  Supporting selecting input for recording.
+  +  Added sound device detection routine.
+
+v1.1    01-97   BP 7.0 RM
+--------------------------
+  +  New device support: Super High Quality QUIET sound device(SHQ). ;)
+  +  Recorder included!
+       Recording supported on SB or SHQ.
+       Supported recording of WAV(PCM) files.
+  -  Setup utility divided to DSSSETUP & SDSETUP.
+  -  Config file divided to DSS.CFG & SDSETUP.CFG.
+  +  Config files placed in program directory.
+  *  Scroll line.
+  *  You can enter Your own string to scroll line.
+
+v1.0    06-96   BP 7.0 RM first release
+----------------------------------------
+  *  Supported devices: WSS,SB,Covox.
+  *  Supported file types: WAV(PCM),VOC(PCM).
+  *  Supported video modes: VU.
+  *  Using SDEVICE unit for sound device usage.
+  -  Supported format depends on playback device type.
+  -  Program represent by two files: DSSPLAY & DSSSETUP.
+  -  Fixed config file location: C:\DSSSETUP.CFG.

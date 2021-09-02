@@ -1,0 +1,14 @@
+Begin3
+Title:          shext
+Version:        2.0
+Entered-date:   1998-04-15
+Description:    Share Extender
+Keywords:       share extension
+Author:         Gennady S. Kolesnik
+Maintained-by:
+Primary-site:   http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/system/
+Alternate-site:
+Original-site:  http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/system/
+Platforms:      DOS, FreeDOS
+Copying-policy: GNU General Public License, Version 2
+End

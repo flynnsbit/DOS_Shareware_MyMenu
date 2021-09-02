@@ -1,0 +1,12 @@
+# TEE Kitten file for English
+0.0:Sauvegarde une copie du fichier d'entr‚e et l'imprime.
+0.1:Utilisation
+0.3:FICHIER(s)
+0.4:Joindre au(x) FICHIER(s) donn‚(s)
+0.5:Ignorer les interruptions g‚n‚r‚es par l'utilisateur
+0.6:Afficher ce message d'aide
+1.0:Option inconnue
+1.1:Erreur d'allocation d'espace pour les descripteurs de fichiers
+1.2:Erreur lors de l'ouverture du fichier de sortie
+1.3:Erreur lors de l'‚criture sur le fichier
+1.4:Erreur lors de la fermeture du fichier

@@ -1,0 +1,14 @@
+Begin3
+Title:          DAA2ISO
+Version:        0.1.7e
+Entered-date:   2013-02-01
+Description:    A tool for converting single and multipart DAA and GBI images to the original ISO format.
+Keywords:       daa2iso,poweriso
+Author:         Luigi Auriemma
+Maintained-by:
+Primary-site:   http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/daa2iso.html
+Alternate-site:
+Original-site:
+Platforms:      DOS
+Copying-policy: GNU General Public License, Version 2
+End

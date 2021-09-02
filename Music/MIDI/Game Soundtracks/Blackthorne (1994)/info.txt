@@ -1,0 +1,22 @@
+Archive created by -=MIRSOFT=-
+Look for game MIDs at http://go.to/gamemids
+
+*** Archive info ***
+Archiver: Mirsoft
+Type: Game rip
+Format: MID (GM) (Recorded from game using two computers with Gameport MIDI cable)
+Original Composer: Bill Roper, Rick Jackson, Glenn Stafford, Michael Morhaime
+Sequencer: Bill Roper, Rick Jackson, Glenn Stafford, Michael Morhaime
+Num of tunes: 8
+Complete: 100%
+
+*** Game info ***
+Name: Blackthorne
+Platform: PC
+Year: 1994
+Genre: Jump'n'Run
+Publisher: Blizzard
+Developer: Blizzard
+
+*** Additional info ***
+Finally it's here! :)

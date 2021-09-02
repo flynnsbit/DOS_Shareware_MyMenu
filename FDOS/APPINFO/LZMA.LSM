@@ -1,0 +1,13 @@
+Begin3
+Title:          LZMA Utils
+Version:        4.32.7
+Entered-date:   2008-12-09
+Description:    Works with .lzma compressed files (different from 7-zip)
+Keywords:       lzma
+Author:         Stuart Caie <kyzer@4u.net>
+Maintained-by:  Stuart Caie <kyzer@4u.net>
+Primary-site:   http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/file
+Original-site:  http://tukaani.org/lzma/
+Platforms:      DOS/DJGPP, Unix, Windows
+Copying-policy: GNU General Public License, Version 2
+End

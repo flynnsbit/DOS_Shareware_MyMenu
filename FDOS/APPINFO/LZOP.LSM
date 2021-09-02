@@ -1,0 +1,14 @@
+Begin3
+Title:           lzop
+Version:         0.96
+Entered-date:    2013-08-17
+Description:     a compressor similar to gzip, that favors speed over compression ratio
+Keywords:        lzop, compression
+Author:          Markus Oberhumer
+Maintained-by:   -
+Primary-site:   http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/lzop.html
+Alternate-site:  -
+Original-site:   -
+Platforms:       DOS
+Copying-policy:  GNU General Public License, Version 2
+End

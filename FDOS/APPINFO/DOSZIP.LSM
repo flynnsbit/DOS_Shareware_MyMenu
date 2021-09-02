@@ -1,0 +1,14 @@
+Begin3
+Title:           Doszip Commander
+Version:         2.52
+Entered-date:    2014-08-31
+Description:     a small LFN-aware file manager with built-in (un)zipper. It is built with JWasm and OpenWatcom.
+Keywords:        DOS FreeDOS
+Author:          Hjort Nidudsson (nidud _AT_ users.sourceforge.net)
+Maintained-by:   Hjort Nidudsson (nidud _AT_ users.sourceforge.net)
+Primary-site:    http://sourceforge.net/projects/doszip/
+Alternate-site:  http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/file/doszip/
+Original-site:   http://sourceforge.net/projects/doszip/
+Platforms:       DOS WIN32
+Copying-policy:  GNU General Public License, Version 2
+End

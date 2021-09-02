@@ -1,0 +1,41 @@
+NEWS.TXT
+
+News:
+
+
+Version History:
+
+Version 0.1  Basic functionality:  Records the boot sector, 1 FAT table,
+             and the root directory into a "storage location" near the end
+             of the disk.  On this version, if any data is near the end of
+             the disk it will be overwritten.  A future version of this
+             program will solve this problem.
+
+Version 0.2  Buffers are now dynamically created thereby reducing the size
+             of the executable.  
+
+             After testing it became apparent that the image is usually 
+             stored between the end of a logical drive and the beginning
+             of the next partition on a hard disk.  (This was true on version
+             0.1.)  FAT table modifications will still need to be made on a
+             floppy disk.
+
+             Modified the code so that the space used by the mirror image 
+             is marked as reserved in the FAT tables, if necessary.
+             (Currently works only on FAT-16 file systems.)
+
+             Added code to save a backup of the partition tables on the A:
+             drive by using MIRROR /PARTN.  (MIRROR /P works too!)  The
+             partition tables are stored in a file named "partnsav.fil"  The
+             partnsav.fil is not compatible with MS-DOS's; but will be 
+             recoverable with UNFORMAT version 0.8, to be released shortly.
+             For information regarding the format of the partnsav.fil, please
+             see the documentation in the source code.
+
+             Added the /? switch to display the help screen.
+
+
+
+
+
+

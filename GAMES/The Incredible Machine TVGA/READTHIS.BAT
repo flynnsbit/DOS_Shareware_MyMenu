@@ -1,0 +1,1 @@
+type tim.txt |more

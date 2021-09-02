@@ -1,0 +1,105 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+         ====================================================
+                        THE COLONEL'S BEQUEST
+                                                        
+
+                           THE SOUNDTRACK
+                     (See below for song titles.)
+                            By Ken Allen
+         ====================================================
+             Copyright (c)1989 Sierra Entertainment, Inc.  
+         ====================================================
+
+                      ROLAND GENERAL MIDI VERSION
+
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded System Exclusive data
+- General MIDI Sound Card  (Roland SC-55 GM Recommended)
+
+
+
+This Standard MIDI File was recorded directly from Sierra's "Colonel's
+Bequest" adventure game using Sierra's MT-32 driver.  It has been arranged
+for playback on Roland General MIDI compatible devices.  A Roland SC-55
+is highly recommended for optimal playback.  If your sound device supports
+DLS banks, use the Microsoft/Roland General MIDI DLS bank for playback of
+this soundtrack.
+
+
+    EDITING NOTE:
+    Due to the limitations of General MIDI, a complete translation of the
+    MT-32 soundtrack is not possible. The preceding measure of each
+    individual song file contains reset controller and SysEx data.  If you
+    wish to extract individual song files from this soundtrack, be sure to
+    include each song's preceding measure in order to ensure proper playback.
+
+
+
+Recorded/edited/compiled/arranged for General MIDI by Quest Studios.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+       =================================================================
+                       TRACK SHEET  (General MIDI VERSION)
+                          
+                             THE COLONEL'S BEQUEST
+       =================================================================
+
+   SONG TITLE                                      START MEASURE/TIME *
+
+INTRODUCTION --------------------------------------------------------
+   1. Copy Protection Theme                               2  00:00:02
+   2. Introduction                                       31  00:01:12
+   3. Title Theme                                        53  00:02:04
+   4. Tulane University                                 100  00:03:57
+   5. The Island                                        139  00:05:31
+   6. Jeeve's Welcome                                   197  00:07:50
+   7. The Colonel (Durring Dinner)                      219  00:08:43
+   ------------------------------------------------------------------
+   8. Act One - 7:00pm                                  289  00:11:31
+   9. Fifi And The Colonel                              305  00:12:09
+  10. The Shower Scene (Death)                          309  00:12:19
+  11. Spying                                            321  00:12:48
+  12. The Chapel                                        382  00:15:14
+  13. Billiard Room Victrola Theme #1                   414  00:16:31
+  14. Billiard Room Victrola Theme #2                   476  00:19:00
+  15. Billiard Room Victrola Theme #3                   511  00:20:24
+  16. Billiard Room Victrola Theme #4                   537  00:21:26
+  17. Billiard Room Player Piano Theme #1               560  00:22:21
+  18. Billiard Room Player Piano Theme #2               611  00:24:24
+  19. Billiard Room Player Piano Theme #3               630  00:25:09
+  20. Billiard Room Player Piano Theme #4               651  00:26:00
+  21. Billiard Room Player Piano Theme #5               668  00:26:40
+  22. Drunk Ethel                                       685  00:27:21
+  23. Murdered!                                         719  00:28:43
+  24. Fifi's Room Victrola Theme #1                     723  00:28:52
+  25. Fifi's Room Victrola Theme #2                     753  00:30:04
+  26. Celie                                             779  00:31:07
+  27. Rudy And Clarence Fight                           809  00:32:19
+  28. Fifi's Room Victrola Theme #3 (Fifi's Bolero)     822  00:32:50
+  29. Bodies In The Basement                            900  00:35:57
+  30. The Colonel Takes On Rudy                         924  00:36:55
+  31. Mighty Fine Shootin' For A Gal (Rudy Shot)        941  00:37:36
+  32. The End (Laura Leaves The Mansion)                974  00:38:55
+  33. The End II (Colonel Shot) **                     1008  00:40:16
+  34. The Long Ride Home (Closing Sequence)            1095  00:43:45
+
+
+     ** "The Island" (Track 4) theme has been omitted from the
+         the Closing Sequence to avoid further duplication.
+  --------------------------------------------------------------------------
+                                                TOTAL TIME:  00:46:09
+
+
+      * Note:  Start Times are approximate.
+

@@ -1,0 +1,336 @@
+
+                      ßßßßß    ßßßßß  ßßßßßßß ßßßßßßß
+                     ßß       ßß   ßß    ßßß  ßß
+                    ßßß  ßßßß ßßßßßßß   ßßß   ßßßßß
+                     ßß   ßß  ßß   ßß  ßßß    ßß
+                      ßßßßß   ßß   ßß ßßßßßßß ßßßßßßß
+
+(c) Jan L”nnberg/Recurzion 1998-2001
+
+Version 1.2
+
+		Introduction
+		ßßßßßßßßßßßß
+
+GAZE, or Graphics Analyser, Zoomer and Enhancer, is a viewer for graphics
+files in JPEG, BMP, Targa, LBM, PCX or PNG format. As its name suggests, GAZE
+has several functions beyond simply loading and displaying a picture. GAZE
+allows the user to pan and zoom the picture in a fluid manner using the mouse,
+where most viewers slowly zoom in steps, if at all. Moreover, GAZE has a few
+more tricks up its sleeve; when you stop zooming or panning, GAZE takes the
+opportunity to use its interpolation facilities to improve the quality of
+your zoomed picture. Moreover, GAZE automatically optimises the palette used
+in 8 bit modes after analysing the relative frequency of different colours.
+
+GAZE also supports "slide-show" viewing of pictures, with or without timed
+picture changes, as well as most SVGA modes and several VGA modes.
+
+                Reading the document
+		ßßßßßßßßßßßßßßßßßßßß
+
+If you are experiencing weird characters all over this file, you are not
+using an editor/viewer capable of displaying the full MS-DOS character set.
+Use MS-DOS Editor or some other DOS-based editor to view this file instead.
+If you can't find anything better, try typing MORE < GAZE.TXT at a DOS
+prompt or something.
+
+                Starting GAZE
+		ßßßßßßßßßßßßß
+
+To start GAZE, simply type GAZE at the DOS prompt (assuming GAZE is in the
+current directory), or double-click the GAZE.EXE file in the relevant folder
+or directory when using Windows '95 or NT.
+
+You may also supply a command-line argument for GAZE, which must be an
+unambiguous filename; i.e. wildcards are not allowed. This file will be
+loaded into GAZE. The file must be a valid picture and the extension must be
+specified.
+
+                GAZE Main Menu
+		ßßßßßßßßßßßßßß
+
+If you have started GAZE without a command-line argument, you will see the
+main menu, which looks approximately like this:
+
+GAZE v1.0 (c) Jan L”nnberg/Recurzion... Use cursor keys, [ENTER] or [ESC]...
+
+
+
+
+
+
+                             ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+                             ºOpen File         º
+                             ºQuit              º
+                             ºDisplay Setup     º
+                             ºMouse Setup       º
+                             ºDefault View Setupº
+                             ºTimer Setup       º
+                             ºReturn            º
+                             ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+
+
+
+Graphics resolution is 640x480 at 16 bit colour.
+Mouse speed is 100%.
+Automatic rescaling is On.
+Timer is off.
+
+
+
+When viewing a picture, pressing [SPACE] will show the main menu.
+
+                Open File
+                ßßßßßßßßß
+
+Selecting this item will open a picture. If you don't have any pictures
+previously selected, this will open a list of files. You can move in this list
+using the cursor keys, [PAGE UP] and [PAGE DOWN]. Please note that the list
+wraps around; i.e. pressing [CURSOR DOWN] at the end of the list will put you
+back at the start, for example. To open a file, move the cursor over it and
+press [ENTER]. To change directory or drive, move the cursor over it and,
+you guessed it, press [ENTER].
+
+Typing any other (printable) character will skip to the following file,
+directory or drive name starting with this letter.
+
+If you want to view several files in a row without going to the file list,
+you can select and unselect files from the file list by moving the cursor
+over them and pressing [SPACE]. To start the slide-show, press [BACKSPACE].
+Note that pressing [ENTER] is equivalent to pressing [SPACE] followed by
+[BACKSPACE], and that a file can only be shown once per slide-show; i.e.
+[SPACE] toggles the presence of the file in the slide-show.
+
+In other words, you can either toggle files on/off with [SPACE] then press
+[BACKSPACE] to start the sequence, or choose all the files except the last
+with [SPACE] then select the last file with [ENTER].
+
+Pressing [ESC] will unselect all files and return you to the main menu.
+
+If there are pictures left in the slide-show, choosing "Open File" will open
+the next picture in the slide-show. When viewing a picture, pressing [O] is
+equivalent to pressing [SPACE] to get the main menu and choosing "Open File".
+
+                Quit
+                ßßßß
+
+This is quite obvious; selecting this will end the program, returning you to
+whatever you started GAZE with; DOS prompt, DOS Shell, Windows or whatever.
+Pressing [ESC] while viewing a picture also quits.
+
+		Display Setup
+                ßßßßßßßßßßßßß
+
+Choosing this alternative, or pressing [D] while viewing a picture, allows you
+to choose the display resolution you wish to use while viewing pictures in
+GAZE. GAZE supports the following resolutions:
+
+	VGA:
+
+320x200   All VGA adapters allow 320x200 at 8-bit colour. This mode is fast.
+
+320x240   These modes work on most VGA adapters, are slightly slower than
+360x270   the standard 320x200 mode, but allow higher resolutions at 8 bit
+400x300   colour. Note that these resolutions may not work on all monitors.
+
+	SVGA:
+
+320x200   These resolutions can be run at 8, 15, 16, 24 or 32 bit colour
+640x480   depending on your graphics hardware. 32 bit colour can be considered
+800x600   equivalent to 24 bits colour, while 16 bit colour allows only a
+1024x768  marginal improvement on 15 bit colour. Most graphics cards
+1280x1024 support either 15 or 16 bit colour, as well as either 24 or 32.
+1600x1200 Practically all modes work in 8 bit if they work at all.
+
+You will first be prompted to select a resolution, then a colour depth. In
+both cases, you can leave the current setting by pressing [ESC] or by choosing
+"No change". If you select an illegal screen mode, you will be prompted to
+change it.
+
+While viewing, pressing [D] will take you to the display setup. This is
+especially useful when you have selected a mode unsupported by your monitor.
+
+		Mouse Setup
+                ßßßßßßßßßßß
+
+You can choose between 5 different mouse speeds. Changing the mouse speed
+affects both the panning and zooming speeds. Press [ESC] or "Cancel" to
+leave the mouse as it is. Press [M] while viewing to access this feature.
+
+		Default View Setup
+                ßßßßßßßßßßßßßßßßßß
+
+Here, you can choose whether pictures are automatically rescaled on opening
+to fit your screen or not. [ESC] or "Cancel" leaves this as it is.
+Press [V] to get here when viewing.
+
+		Timer Setup
+                ßßßßßßßßßßß
+
+Here, you can choose whether GAZE should automatically open the next file
+after a predetermined interval or not, and specify the interval.
+Press [T] to get here when viewing.
+
+		Return
+                ßßßßßß
+
+If a picture has been loaded, this feature returns to showing the picture.
+Press [ESC] at the menu to do this.
+
+                Viewing a picture
+		ßßßßßßßßßßßßßßßßß
+
+While viewing a picture, moving the mouse will pan the picture in the
+corresponding direction. Pressing (and holding) the left mouse button will
+start and accelerate the inward-zooming of the picture. In the same manner,
+pressing the right mouse button will start and accelerate outward-zooming of
+the picture, while holding down the middle button will continue the current
+zooming unaccelerated. Releasing all buttons will stop the zooming.
+
+Pressing [SPACE] will show the main menu, [ESC] will quit. See the other
+functions for their corresponding keys.
+
+Pressing [S] will dump the screen to output.png in the current directory.
+
+                Technical information
+		ßßßßßßßßßßßßßßßßßßßßß
+
+GAZE is written in DJGPP 2.0 and is therefore a 32-bit MS-DOS program, using
+DPMI for memory. If DPMI isn't provided otherwise, GAZE will automatically
+use the supplied CWSDPMI. The system requirements for GAZE are as follows:
+
+Processor:		486DX or better required, Pentium recommended.
+Graphics card:		VGA required, 1 MB VESA 2 SVGA recommended.
+Memory:                 2 MB required, 16 MB recommended.
+Free disk space:	Approximately 1 KB required, 30 MB recommended.
+Other requirements:	Keyboard, mouse (with MS-DOS driver installed).
+OS:			MS-DOS or compatible.
+User:			Human or compatible.
+
+GAZE uses a VESA-compatible driver, such as Scitech Display Doctor, FreeBE or
+your graphics card BIOS to provide SVGA features. VBE/AF, and VESA versions
+1, 2 and 3 are supported and utilised. If no VESA driver is found, VGA is
+assumed. If you don't have VGA, you'll have major problems selecting a
+display mode, won't you?
+
+Low-level graphics handling is done by the Allegro library which is (c)
+Shawn Hargreaves. JPEG handling is done by libjpeg by Eric Vannier, based on
+the The Independent JPEG Group's JPEG software (version 6a). All other code
+by Jan L”nnberg.
+
+GAZE does not write anything to the directory in which it is stored. The only
+file written to by GAZE is the GAZE.INI configuration file that is stored in
+the root directory of drive C. The DPMI provider used may write to a hard
+disk - CWSDPMI writes a swap file by default to C:\CWSDPMI.SWP.
+
+CWSDPMI is (c) Charles W Sandmann.
+
+                Uninstalling GAZE
+		ßßßßßßßßßßßßßßßßß
+
+Delete GAZE.EXE, GAZE.TXT, CWSDPMI.EXE, and C:\GAZE.INI (and C:\CWSDPMI.SWP
+if you've used CWSDPMI). That's it.
+
+                Known problems
+		ßßßßßßßßßßßßßß
+
+I don't have the slightest idea whether this program works under OS/2, Linux-
+based DOS emulation or anything like that. GAZE is designed to support DOS,
+Windows '95 and Windows '98. Under some circumstances, it works under NT. You
+may experience display problems running GAZE under Windows NT.
+
+Running GAZE from a DOS shell started within another program, such as an IDE
+(Borland C++ for DOS, RHIDE, et.c.) or sound/music player (OpenCP, Impulse
+Tracker, et.c.) may cause problems in timing, graphics handling, long file
+name handling et.c. and should therefore be avoided. If possible, run GAZE
+directly from a DOS prompt, Windows Explorer or any similar user interface.
+
+All problems mentioned here are caused by software displaying lack of
+compatibility with MS-DOS and/or using hardware resources required by GAZE.
+There is very little I can do about any of this, short of producing ports of
+GAZE to NT, Linux or whatever, which probably won't happen in the near
+future.
+
+                Legal information
+		ßßßßßßßßßßßßßßßßß
+
+This program, consisting of the files "GAZE.EXE" and "GAZE.TXT", will be
+known as "GAZE" in this document. GAZE is the copyrighted work of
+Jan L”nnberg. GAZE must always be distributed together with CWSDPMI.EXE
+in unchanged form or compressed using a compression tool available freely at
+no charge capable of reproducing the compressed files exactly. If GAZE is
+distributed in compressed form, the entire program and CWSDPMI.EXE must be
+contained in a single file.
+
+This public beta version of GAZE may be distributed for non-commercial
+purposes through BBSs, the Internet and suchlike, as long as they are open
+to the public for free access. If any fee is charged to allow access to the
+system through which GAZE can be accessed, permission from the
+author, Jan L”nnberg, is required, i.e. distributors of e.g. CD-ROMs or
+commercial BBSs must have the copyright holder's permission.
+
+Permission to distribute GAZE is considered implicitly granted to all to whom
+the copyright holder has copied the program with the express purpose of
+allowing the recipient of the program to distribute it. In other words, if
+GAZE is uploaded to a BBS by the copyright holder, this can be considered
+permission for this specific BBS to distribute GAZE.
+
+GAZE may be executed freely, but not reverse engineered, disassembled or
+or used as a basis for other software without the explicit permission of the
+author.
+
+Running GAZE under an emulator is allowed only insofar as the emulator is
+not used to reverse engineer, disassemble or otherwise modify the program.
+
+Selling GAZE or any package containing GAZE without the consent of the
+copyright holder is prohibited.
+
+                Version history
+		ßßßßßßßßßßßßßßß
+
+1.0á:   - First fully functional release, tested on several operating
+          systems.
+1.0á2:  - Automatically creates a default GAZE.INI if none is found.
+1.0á3:  - File selector directory/drive change fixed.
+        - Filename sorting failure when only one .JPG file exists in
+          directory fixed.
+        - GAZENT.BAT removed. First public beta.
+1.1:    - Fixed directory change problem on certain DOS versions.
+        - SVGA support now handled solely by VESA driver.
+        - Cancelling a file load no longer prevents colour depth changes
+          until a new file is loaded.
+        - BMP loader added.
+        - LBM loader added.
+        - PCX loader added.
+        - TGA loader added.
+        - Changed list display key to BACKSPACE.
+        - Added option to skip to next filename starting with a symbol by
+          typing that symbol.
+        - Cursor left and right, page up and down keys no longer wrap (this
+          was previously a bit confusing). Cursor up and down still do.
+        - Improved exit screen.
+        - Improved error reporting.
+1.2:	- PNG loader added.
+	- Screen dump function added.
+
+                Contacting the author
+                ßßßßßßßßßßßßßßßßßßßßß
+
+Jan L”nnberg, also known as Nova/Recurzion, has a web site at:
+
+WWW:	http://koti.mbnet.fi/lonnberg/
+
+and can be reached at the following address:
+
+E-mail:	lonnberg@mbnet.fi
+
+Bug reports, suggestions and questions should be sent to the author. Please
+try to be as specific as possible when reporting problems - telling me that
+the program doesn't work is useless. Telling me that a specific feature
+doesn't work under certain circumstances and how it malfunctions is far more
+helpful. Don't send me e-mail attachments without asking me for permission
+in advance - I'm stuck with a 56 kbps modem right now and the local phone
+company has raised its prices again.
+
+Updates can be found at the web site mentioned above.

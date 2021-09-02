@@ -1,0 +1,191 @@
+     KEYBOARD COMMAND REFERENCE FOR FD-KEYB 2.0
+     ==========================================
+
+  ===========================================================================
+
+   Keyboard command reference for FD-KEYB 2.0
+
+   Copyright (C) 2003-2006 by Aitor SANTAMARIA_MERINO
+   aitorsm@inicia.es
+
+   Version  : 1.10
+   Last edit: 2004-02-06 (ASM)
+      (Thanks to suggestions by Axel Frinke)
+
+   versión  : 1.20
+   Last edit: 2006-08-28 (ASM)
+      (ready for KEYB 2.0 )
+
+  ===========================================================================
+
+   DISCLAIMER:
+
+   THIS MATERIAL IS PROVIDED "AS IS"! USE AT YOUR OWN RISK! NO WARRANTIES,
+   NEITHER EXPRESSED NOR IMPLIED! I cannot be held responsible for any
+   problems caused by use or misuse of the software and/or information!
+
+
+
+A list of the command reference for FD-KEYB 2.0 follows. Commands are
+grouped in cathegories and the current status of implementation, and type are
+also noted.
+
+STATUS:
+2.0    Present in FD-KEYB 2.00
+-      To be implemented later
+
+TYPE: use this information to track the last required KEYB module
+
+TypeID Module#  Description
+-----------------------------------
+   d     1      Diacritic sequence starter
+   be    2      Beep
+   b     3      Basic command
+   e     4      Extended command
+   l     5      Standard Shift/locks
+   u     6      User defined keys
+   p     8      Power management commands
+   s    10      String invoker
+
+
+NUMBER    TYPE  STATUS DESCRIPTION
+===============================================================================
+      0   b     2.0    IGNORE. 
+                       The driver behaves as if this scancode/plane hadn't been
+                       found in the table.
+                       Possible scancode translation is not taken into account.
+
+  1- 79   s     2.0    Displays one of the strings from the string pool of the
+                       current submapping of the KeybCB.
+                       The command number indicates the string to be displayed.
+                       Therefore, a maximum of 79 strings is admissible.
+                       If the string does not exist, the string is sought in
+                       in the general submapping.
+                       If the string does neither exist there, the command is
+                       ignored.
+
+ 80- 89   l    -       STANDARD SHIFTS AND LOCKS OFF
+                       Clear the appropiate flag on BIOS variables.
+                       These commands perform the standard BIOS variable
+                       maintainnance due, and can be used to duplicate the key's
+                       behaviour.
+                          80:  Right CONTROL
+                          81:  Right  ALT (AltGr)
+                          82:  Right  SHIFT
+                          83:  Left   Shift
+                          84:  Left   Control
+                          85:  Left   Alt
+                          86:  Scroll Lock
+                          87:  Num    Lock
+                          88:  Caps   Lock
+                          89:  INSERT
+
+ 90- 99   l    -       STANDARD SHIFTS AND LOCKS ON
+                       Set the appropiate flag on BIOS variables.
+                       These commands perform the standard BIOS variable
+                       maintainnance due, and can be used to duplicate the key's
+                       behaviour.
+                          90:  Right CONTROL
+                          91:  Right  ALT (AltGr)
+                          92:  Right  SHIFT
+                          93:  Left   Shift
+                          94:  Left   Control
+                          95:  Left   Alt
+                          96:  Scroll Lock
+                          97:  Num    Lock
+                          98:  Caps   Lock
+                          99:  INSERT
+
+    100   b    2.0     DISABLE.
+                       Disables KEYB.
+
+    101   b    2.0     ENABLE first layout.
+102-119   e    -       ENABLE alternative layouts (command N enables layout
+                       N-100)
+
+120-139   e    2.0     CHANGE CURRENT SUBMAPPING.
+                       Command N changes the active submapping to the (N-119)
+                       submapping.
+                       Codepage is not checked. On a misdesigned KeybCB, it may
+                       cause a codepage change, leaving KEYB therefore in an
+                       inconsistent space.
+
+140-143   e    2.0     INTERRUPT TRIGGERING.
+                       These actions are performed by some standard key
+                       pressings, and may therefore be remapped.
+                          140: Print Screen (INT  5h)
+                          141: Reset        (INT 19h)
+                          142: Break        (INT 1Bh)
+                          143: SysReq       (INT 15h/ah=85h)
+
+                       NOTES ABOUT 143:
+                       - On activation of the command (usually after releasing a
+                         key) it will BOTH call the SysReq press / SysReq
+                         release functions one right after the other (provided
+                         that the function is supported, return AH=0)
+
+150-154   p     2.0     POWER COMMANDS: commands 150-152 are standard legacy
+                       power management commands, whereas 153-154 require
+                       APMBIOS 1.1+
+                          150: Flush disk caches
+                          151: Warm reboot
+                          152: Cold reboot
+                          153: Power off
+                          154: Suspend
+160       b     2.0    NO OPERATION. Does nothing (neither passing control to
+                       next KEYB).
+
+161       b     2.0    DECIMAL CHAR.
+                       On P4, prints the decimal char if defined by /Dx. If
+                        none was used, "." is used as default.
+                       On kb2  and later, prints the decimal char defined by
+                        the KeybCB or "." if none was defined. This can be
+                        overriden by using the /Dx parameter.
+
+162       be    2.0    BEEP.
+                       Produces a sound alert.
+
+163       e     2.0    PAUSE.
+                       Enters the PAUSE loop.
+
+164       e     2.0    TOGGLES.
+                       Turns on/off KEYB flags.
+                          164: Beeping on/off
+
+                       NOTE:
+                       Beeps will be produced on these circumstances:
+                       - Full keyboard buffer
+                       - Wrong diacritic combination
+                       - command 162
+                       Toggle 164 will disable all of them
+
+168-179   e     2.0     ALTERNATIVE CHARACTER INTRODUCTION.
+                       These commands duplicate the behaviour of the
+                       traditional Alt+Numpad character introduction.
+                          168:      Clear memory
+                          169:      Release character
+                          170-179:  New digit (0..9)
+
+                       NOTE: command 169 is automatically triggered upon
+                       releasing an ALT key, unless overriden.
+
+180-187   u     2.0    USER DEFINED KEYS OFF.
+                       It deactivates one of the eight user flags to be used to
+                       produce extra planes. Command N deactivates the
+                       (N-179)th user key.
+
+188-195   u     2.0    USER DEFINED KEYS ON.
+                       It activates one of the eight user flags to be used to
+                       produce extra planes. Command N activates the (N-187)th
+                       user key.
+
+200-234   d     2.0    DIACRITIC SEQUENCE STARTERS.
+                       These start up the 35 maximally admissible diacritic
+                       sequences.
+                       Command N will start the (N-199)th COMBI sequence
+                       found in current submapping.
+                       If the diacritic sequence does not exist, it is sought
+                       in the general submapping.
+                       If the sequence does neither exist there, the command
+                       is ignored.
+===============================================================================

@@ -1,0 +1,51 @@
+The program changes in these files are for general MIDI instruments and
+sound cards.  Some license was taken in selecting the instruments; and
+if that matters to you, here are the original Ultima 6 MT-32 patch 
+assignments:
+
+1: Ultima Theme             2:SYNBRASS 3
+			    3:PIZZICATO
+			    4:SYNBRASS 2
+			    5:SYN BASS 1
+
+2: Bootup                   2:WARM BELL
+			    3:FUNNY VOX
+
+3: Introduction             2:ELEC GUIT 2
+			    3:ELEC GUIT 1
+			    4:CONTRABASS
+			    5:TAIKO RIM
+			    6:TAIKO RIM
+
+4: Character Creation       2:HONKYTONK
+			    3:ACOU PIANO 3
+			    4:CHORALE
+
+5: Forest                   2:GUIT 2
+			    3:ELEC GUIT 1
+
+6: Captain Johne's Hornpipe 2:TRUMPET 1
+			    3:ELEC GUIT 1
+			    4:GUITAR 2
+
+7: Engagement and Melee     2:STR SECT 3
+			    3:SYN BRASS 4
+			    4:CLAVI 1
+			    5:HARPSI 2
+
+8: Stones                   2:HONKYTONK
+			    3:HARMO PAN
+
+9: Dungeon                  2:WARM BELL
+			    3:DEEP SNARE
+			    4:CONTRABASS
+
+0: Rule Britannia           2:PIPE ORGAN 2
+
+-: Audchar Gargl Zenmur     2:FUNNY VOX
+			    3:ELEC PIANO 4
+
+=: Endgame Music            2:FUNNY VOX
+			    3:PIPE ORGAN 2
+			    4:PIZZICATO
+			    5:BRASS SEC 1

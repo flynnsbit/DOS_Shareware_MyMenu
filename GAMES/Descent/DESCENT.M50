@@ -1,0 +1,50 @@
+REM          ษออออออออออออออออออออออออออออออออออป
+REM          บ       FLCS macro file (v1.0)     บ
+REM          บ               for                บ
+REM          บ DESCENT by Interplay Productions บ
+REM          บ       and Parallax Software      บ
+REM          ศออออออออออออออออออออออออออออออออออผ
+REM   Written & tested by Adam Pletcher, Parallax Software
+
+~Weapons
+~อออออออ
+Fire_Primary = LCTL
+Fire_Secondary = SPC
+Laser_Cannon = 1
+Vulcan_Cannon = 2
+Spreadfire_Cannon = 3
+Plasma_Cannon = 4
+Fusion_Cannon = 5
+Concussion_Missile = 6
+Homing_Missile = 7
+Proximity_Bombs = 8
+Smart_Missile = 9
+Mega_Missile = 10
+Drop_Bomb = B
+
+~Movement
+~ออออออออ
+Forward = A
+Reverse = Z
+Slide_Left = KP1
+Slide_Right = KP3
+Slide_Up = KP-
+Slide_Down = KP+
+Roll_Right = KP9
+Roll_Left = KP7
+
+~Multiplayer
+~อออออออออออ
+Kill_List = F7
+Team_IDs = F6
+Taunt_Macro1 = F9
+Taunt_Macro2 = F10
+Taunt_Macro3 = F11
+Taunt_Macro4 = F12
+
+~Misc
+~ออออ
+Rear_View = R
+Fire_Flare = F
+Automap = TAB
+

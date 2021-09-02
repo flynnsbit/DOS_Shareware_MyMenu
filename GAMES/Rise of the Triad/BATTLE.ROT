@@ -1,0 +1,307 @@
+;Rise of the Triad Battle Configuration File
+;                  (c) 1995
+;
+;You may change these options at you own risk.  Using any values
+;other than the ones documented may make the game unplayable.
+;If this happens, you may delete this file (BATTLE.ROT) and ROTT
+;will recreate it with the default values selected.
+;
+;With that in mind, have fun!
+;
+
+Version                          13
+
+;
+; Yes                        -   1
+; No                         -   0
+ShowKillCount                    1
+
+;
+; These are the time in seconds of the various powerups.
+; You could modify these to give you infinite Mercury mode,
+; stronger vests, or to make them persistant.
+;
+GodModeTime                  60
+DogModeTime                  60
+ShroomsModeTime              20
+ElastoModeTime               20
+AsbestosVestTime             60
+BulletProofVestTime          60
+GasMaskTime                  30
+MercuryModeTime              60
+GodModeRespawnTime           300
+DogModeRespawnTime           60
+ShroomsModeRespawnTime       60
+ElastoModeRespawnTime        60
+AsbestosVestRespawnTime      60
+BulletProofVestRespawnTime   60
+GasMaskRespawnTime           60
+MercuryModeRespawnTime       60
+
+;
+; Yes                        -   1
+; No                         -   0
+EKG                              0
+
+;
+; Here is a description of the possible values for each option:
+;
+; Gravity options:
+;    Low Gravity             -   10000
+;    Normal Gravity          -   30000
+;    High Gravity            -   250000
+;
+; Speed options:
+;    Normal Speed            -   0
+;    Fast Speed              -   1
+;
+; Ammo options:
+;    One Shot                -   0
+;    Normal Shots            -   1
+;    Infinite Shots          -   2
+;
+; Hitpoint options:
+;    Character Hitpoints     -   0
+;       1 Hitpoint           -   1
+;      25 Hitpoints          -   25
+;     100 Hitpoints          -   100
+;     500 Hitpoints          -   500
+;     250 Hitpoints          -   250
+;    4000 Hitpoints          -   4000
+;
+; SpawnDangers options:
+;    Spawn Dangers           -   1
+;    Don't Spawn Dangers     -   0
+;
+; SpawnHealth options:
+;    Spawn Health            -   1
+;    Don't Spawn Health      -   0
+;
+; SpawnMines options:
+;    Spawn Mines             -   1
+;    Don't Spawn Mines       -   0
+;
+; SpawnWeapons options:
+;    Spawn Weapons           -   1
+;    Don't Spawn Weapons     -   0
+;
+; RandomWeapons options:
+;    Randomize Weapons       -   1
+;    Don't Randomize Weapons -   0
+;
+; WeaponPersistence options:
+;    Weapons Persist         -   1
+;    Weapons don't Persist   -   0
+;
+; FriendlyFire options:
+;    Penalize Friendly Fire  -   1
+;    No penalty              -   0
+;
+; RespawnItems options:
+;    Respawn Items           -   1
+;    Don't Respawn Items     -   0
+;
+; LightLevel options:
+;    Dark                    -   0
+;    Normal Light Levels     -   1
+;    Bright                  -   2
+;    Fog                     -   3
+;    Periodic light          -   4
+;    Lightning               -   5
+;
+; PointGoal options:
+;           1 Point          -   1
+;           5 Points         -   5
+;          11 Points         -   11
+;          21 Points         -   21
+;          50 Points         -   50
+;         100 Points         -   100
+;      Random Points         -   -2
+;       Blind Points         -   -1
+;    Infinite Points         -   0
+;
+; DangerDamage options:
+;    Normal Damage           -   -1
+;    Low Damage              -   1
+;    Kill                    -   30000
+;
+; TimeLimit options:
+;     1 minute               -   1
+;     2 minute               -   2
+;     5 minutes              -   5
+;    10 minutes              -   10
+;    21 minutes              -   21
+;    30 minutes              -   30
+;    99 minutes              -   99
+;    No limit                -   0
+;
+; RespawnTime options:
+;     1 second               -   1
+;     1 minute               -   60
+;     2 minutes              -   120
+;       normal               -   30
+
+;
+; Standard battle options
+;
+Gravity            30000
+Speed              0
+Ammo               1
+Hitpoints          250
+SpawnDangers       1
+SpawnHealth        1
+SpawnMines         0
+SpawnWeapons       1
+RandomWeapons      0
+WeaponPersistence  0
+FriendlyFire       1
+RespawnItems       1
+LightLevel         1
+PointGoal          21
+DangerDamage       -1
+TimeLimit          0
+RespawnTime        30
+
+;
+; Score More battle options
+;
+Gravity            30000
+Speed              0
+Ammo               1
+Hitpoints          250
+SpawnDangers       1
+SpawnHealth        1
+SpawnMines         0
+SpawnWeapons       1
+RandomWeapons      0
+WeaponPersistence  0
+FriendlyFire       1
+RespawnItems       1
+LightLevel         1
+PointGoal          21
+DangerDamage       -1
+TimeLimit          0
+RespawnTime        30
+
+;
+; Collector battle options
+;
+Gravity            30000
+Speed              0
+Hitpoints          250
+SpawnDangers       1
+SpawnHealth        1
+SpawnMines         0
+RespawnItems       1
+LightLevel         1
+DangerDamage       -1
+TimeLimit          0
+RespawnTime        30
+
+;
+; Scavenger battle options
+;
+Gravity            30000
+Speed              0
+Ammo               1
+Hitpoints          250
+SpawnDangers       1
+SpawnHealth        1
+SpawnMines         0
+SpawnWeapons       1
+RandomWeapons      0
+WeaponPersistence  0
+RespawnItems       1
+LightLevel         1
+DangerDamage       -1
+TimeLimit          0
+RespawnTime        30
+
+;
+; Hunter battle options
+;
+Gravity            30000
+Speed              0
+Ammo               1
+Hitpoints          250
+SpawnDangers       1
+SpawnHealth        1
+SpawnMines         0
+SpawnWeapons       1
+RandomWeapons      0
+WeaponPersistence  0
+FriendlyFire       1
+RespawnItems       1
+LightLevel         1
+PointGoal          21
+DangerDamage       -1
+TimeLimit          1
+RespawnTime        30
+
+;
+; Tag battle options
+;
+Gravity            30000
+Speed              0
+Hitpoints          250
+SpawnDangers       1
+SpawnHealth        1
+SpawnMines         0
+FriendlyFire       1
+RespawnItems       1
+LightLevel         1
+PointGoal          21
+DangerDamage       -1
+TimeLimit          0
+RespawnTime        30
+
+;
+; Eluder battle options
+;
+Gravity            30000
+Speed              0
+SpawnDangers       1
+LightLevel         1
+PointGoal          21
+TimeLimit          0
+RespawnTime        30
+
+;
+; Deluder battle options
+;
+Gravity            30000
+Speed              0
+Ammo               1
+Hitpoints          250
+SpawnDangers       1
+SpawnHealth        1
+SpawnMines         0
+SpawnWeapons       1
+RandomWeapons      0
+WeaponPersistence  0
+RespawnItems       1
+LightLevel         1
+PointGoal          21
+DangerDamage       -1
+TimeLimit          0
+RespawnTime        30
+
+;
+; Capture the Triad battle options
+;
+Gravity            30000
+Speed              0
+Ammo               1
+Hitpoints          250
+SpawnDangers       1
+SpawnHealth        1
+SpawnMines         0
+SpawnWeapons       1
+RandomWeapons      0
+WeaponPersistence  0
+RespawnItems       1
+LightLevel         1
+PointGoal          1
+DangerDamage       -1
+TimeLimit          0
+RespawnTime        30

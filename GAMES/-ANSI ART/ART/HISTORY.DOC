@@ -1,0 +1,1002 @@
+v2.20แ1
+  Changed the WFC to FusioN's one screen one.
+  When a user is validated by NUV, he will get the proper flags.
+  Fixed problem with NUV comments not staying
+  Sped up ANSI/AVATAR autodetection
+  Sped up Baud Rate detection when you are not running from FD.
+  Made it so the BBS will check the current status screen for the ansi
+  for a pulldown menu and then check the textfile directory.  So the sysop
+  could allow the user to use different pulldowns in accordance to their
+  selected status screens.
+  Two new ACS codes:
+    Hx where the ACS Code is true if the user is using menu set x
+    Ix where the ACS Code is true if the user is using status screen set x
+  I think I fixed the email corruption bug.  Run EP.EXE and hopefully, no
+  more email will get crossed.
+  Made it so in the user listing in the editor, unvalidated users will be
+  highlighted.
+  Made it so the BBS will exit with the proper errorlevel with errorlevel
+  events.
+  Run DATACON.EXE, I need to add in some room to the data area record.
+  Made it so Newscanned Message Bases will not appear with mandatory
+  newscans
+  Wrote DATAMAIL.EXE data area import/exporter so you can now echomail data 
+  areas (BBS Lists, rumors) through echomail.
+  Made it so scrollback buffer will not delete lines from ansis.
+
+v2.20แ2
+  When a message was upload in QWK or by file in an EchoMail base,
+   --- Oblivion/2 x.xx would appear, not --- Oblivion/2 vx.xx
+  Sped up ObvMail importer.
+  Fixed baudrate detection problem
+  New command:
+    {D - If user can log on with account and pass (does not need system
+    password), failflag is set to false, otherwise set to true.
+  Wrote POINTFIX.EXE.  This should fix newscan pointer problems several
+  people have been having.  I have not tested this program very much.
+  If it does not work, it can do a lot more damage than it is supposed to
+  fix.  Only run it if NEWFIX does not solve your newscan pointer problems.
+  Before you run it, back up STATS., USER.LST, POINTERS. (The program does
+  that for you as well) before you run it and if it does not work, copy the
+  files you backed up back.
+  Anyway, this version should be stable enough to run without problems until
+  I am through with finals.  Let me put it this way, I am underestimating
+  finals in a big way and I need to do well on them.  I have some time to
+  study, but sysoping takes up quite some time, so I don't think another
+  Beta will come out until after June 10.  Thats when I go on summer
+  vacation and I'll start really working on v2.20.  It seems like I added some
+  stuff and am stabilizing it now.  We may do this repeatedly with v2.20 Betas
+  if I am to incorporate all of the recent suggestions.
+
+v2.20แ3
+   Possibly eliminated all of the chat lockups.
+   I think I actually fixed Email crossing.  I found something in the mail
+   forwarding that was definitely screwed up.  Run EP.EXE and see if
+   anything gets messed up.
+   Made it so QWK will really not update newscan pointers id QWK download
+   is unsuccessful.
+   Made the upload checker detect errors from the virus scanner and the
+   archive tester.
+   Made it so the BBS will drain the input buffer when a QWK d/l is selected
+   before prompting for protocol key.
+   If the user gets dropped into the BBS via {S or {X and there are commands
+   after {S or {X in the stack, they will be ignored
+   Added in configurable QWK make screen, QWKDN.ANS that is part of the
+   status screen libraries, the codes are as follows:
+     |L1 - Light #1, Creating control file
+     |L2 - Light #2, Creating door information file
+     |L3 - Light #3, Conference light
+     |L4 - Light #4, Base light
+     |L5 - Light #5, Post info light
+     |L6 - Light #6, archiving mail
+     |CP - Current Conference
+     |BP - Current Base
+     |TP - Total Posts
+     |NP - New Posts
+     |EP - Ending Place, where cursor goes when done
+     |B1 - Location of Bar and color of blocks drawn as being filled
+     |B2 - Color of Background of Bar
+   Added in configurable QWK process screen, QWKUP.ANS that is part of the
+   status screen libraries, the codes are as follows:
+     |BP - Base Place
+     |SP - Sent to Place
+     |TP - Title Place
+     |OP - Operation Place
+
+v2.20แ4
+  Made it so system stats show files today for files and posts today for
+    posts.
+  Fixed the bug where when paging and you chatted, chat would not start
+    until after the paging.
+  Sped up data area data listing
+  Made it so ^Y in the FSE will go to the beginning of the line
+  Made it so 8 and 2 work in the newscan config.
+  The BBS now tells the baud rate of the user once he gets to the matrix.
+  Made it so certain error messages in the file listings will show up in
+    the right place.
+  Added in QWK scan limiter date which when you made a QWK packet will exclude
+    new messages earlier than date.  No matter what, you will not see old 
+    messages.
+  New Command: QD, will update last read message to the first message
+    after date specified.
+  Added an option to toggle free space checking from the WFC which tends to 
+    screw up LANs.
+  In Minidos user is allowed to type CD.. and DIR /W
+  Last call date/time is now set to the time of login so users who stay
+    on through midnight, will get new time.
+  New Menu Command:
+    -#, sets timeleft to value in the CString
+  Fixed DataMail Purge
+  Made List ACS control access for listing an area.  It did just about
+    everything else
+  New Menu Command
+    F= - Toggles Scrollable file listing,
+    also, if CString is Y then Scrollable file listing is turned on
+    and if Cstring is N Scrollable file listing is turned off.
+  New option at config screen
+    T for toggle scrollable file list, pipeSF is the pipe code
+  Added in Alt-O, Toggle Input Time-out to help screen
+  New ACS Code:
+    Jx which is returned true if the user has Ansi and x is 0 or the user
+    has AVATAR and x is 1.
+
+v2.20แ5
+  Made "Invalid Filename" while uploading prompt configurable.
+  Fixed file listing bug.
+  Fixed file newscan/lastcall date screw up.
+
+v2.20แ6/7
+  Made split screen chat more code-efficient and hopefully fixed the
+    lockup/hangup/reboot bug.  I may have caused some bugs, so watch for 
+    them.
+  Made K for each point method of file valuing instead of points per 10k
+    Give the value you want in the config and reassign points in each
+    conference
+  In the case that a sysop has a file entering ansi when a user enters
+    ? at the file entering and gets a listing, when the screen redraws,
+    everything is messed up.  A new prompt that will be displayed after
+    a listing after a ? at the file entering prompt
+  Made batch menu prompt configurable.  I could make it a real menu though.
+  Made file search wildcard/string prompts configurable.
+  Made the daily log configurable.  The Ansi files that go into libraries 
+    are as follows:
+      DAILYSRT.ANS
+      DAILYMID.ANS
+        Codes:
+          |DT = Date
+          |NP = New Posts
+          |NF = New Files
+          |NC = Number of Calls
+          |TU = Time Used
+          |NU = New Users
+      DAILYEND.ANS
+  Made Quoting starting and ending strings configurable
+  New Codes for status screens:
+    %VN - Version Number
+    %VD - Version Date
+    %TF - Total Files
+    %TP - Total Posts
+  System Status Screen is now configurable.  The filename is SYSSTAT.ANS
+  Made File Information screen configurable.  The filename is FILEINFO.ANS
+  and the codes are as follows:
+    |FN - Filename
+    |UL - Uploader
+    |FP - File Points
+    |TD - Times Downloaded
+    |SZ - Size
+  Added configurable protocol listing.  The filenames are as follows:
+    PROT?SRT.ANS
+    PROT?MID.ANS
+      where the codes are:
+        |KE - Key
+        |DE - Protocol Description
+    PROT?END.ANS
+    where ? is
+      1 for download protocols
+      2 for upload protocols
+      3 for batch download protocols
+      4 for batch upload protocols
+      5 for resume protocols
+      6 for bidirectional protocols
+  Replaced inefficient status screen handler with a new one that is more
+    memory efficient.  There will be some problems with the screens though,
+    but they will be easily worked out.  The new handler uses heap space,
+    but not a whole lot.  You may have to lower your scrollback lines by 
+    about 20 lines if you get heap overflow errors.
+  Make sure no middle file of any listings are above 16k, if they are,
+    there will be serious problems.
+  I had to change the |CC in the HDR.ANS so it pads with spaces, not the
+    next character
+  There is a limit of 1024 bytes of PROT?MID.ANS.  There will be unpredicable
+    results if the file is bigger than that.
+  Configurable Topten listing:
+    TOP-??.ANS 
+      Codes are as following:
+        |TN - Topten Name
+        |N1 - User Name for #1
+        |V1 - Value for #1
+        |B1 - Bar for #1
+        |N2 - User Name for #2
+        |V2 - Value for #2
+        |B2 - Bar for #2
+	|N3 - User Name for #3
+        |V3 - Value for #3
+        |B3 - Bar for #3
+	|N4 - User Name for #4
+        |V4 - Value for #4
+        |B4 - Bar for #4
+	|N5 - User Name for #5
+        |V5 - Value for #5
+        |B5 - Bar for #5
+	|N6 - User Name for #6
+        |V6 - Value for #6
+        |B6 - Bar for #6
+	|N7 - User Name for #7
+        |V7 - Value for #7
+        |B7 - Bar for #7
+	|N8 - User Name for #8
+        |V8 - Value for #8
+        |B8 - Bar for #8
+	|N9 - User Name for #9
+        |V9 - Value for #9
+        |B9 - Bar for #9
+	|N0 - User Name for #10
+        |V0 - Value for #10
+        |B0 - Bar for #10
+    The filenames are as follows:
+      TOP-1.ANS  - Top ten best uploaders      
+      TOP-2.ANS  - Top ten worst uploaders
+      TOP-3.ANS  - Top ten best downloaders
+      TOP-4.ANS  - Top ten worst downloaders
+      TOP-5.ANS  - Top ten best PCRs    
+      TOP-6.ANS  - Top ten worst PCRs
+      TOP-7.ANS  - Top ten best uploaders in K      
+      TOP-8.ANS  - Top ten worst uploaders in K
+      TOP-9.ANS  - Top ten best downloaders in K
+      TOP-10.ANS - Top ten worst downloaders in K
+      TOP-11.ANS - Top ten best posters
+      TOP-12.ANS - Top ten worst posters
+      TOP-13.ANS - Top ten best callers      
+      TOP-14.ANS - Top ten worst callers
+  Made top ten character configurable.  Set it in the config.
+  Configurable Email Header
+    EMAILHDR.ANS, the codes are as follows:
+      |FM - From
+      |DT - Date
+      |TM - Time
+      |ST - Sent to
+      |UN - Sender user note
+      |TI - Title
+  Configurable Incoming Email List
+    INCSRT.ANS
+    INCMID.ANS
+      The codes are:
+        |NU - Mail Number
+        |TI - Title
+        |ST - Status ("New" or "Old")
+        |FM - From User
+    INCEND.ANS
+  Configurable Outgoing Email List
+    OUTSRT.ANS
+    OUTMID.ANS
+      The codes are:
+        |NU - Mail Number
+        |TI - Title
+        |ST - Status ("New" or "Old")
+        |TO - To User
+    OUTEND.ANS
+  Configurable Generic Menus
+    GENSRT.ANS
+      |MT - Menu Title
+    GENMID.ANS
+      In the config, you can set the number of options per line and the
+      following codes are used:
+        |K? - Keys for option number ? in the line
+        |D? - Description for option number ? in the line
+     The limit for the size of GENMID.ANS is 2048 bytes
+    GENEND.ANS
+   Much thanks to Mercury for the idea of the configurable generic menus.
+  Fixed hangup after chat bug.
+  Added in option to read the menu libs for the generic files.  If they are not
+    found there, the status screen libraries will be read.  This is so generic
+    menus can be implemented as menu sets.  To create them as such, you can just
+    run MENUCODE filename directory /G to only code the generic menu files.
+  If you are using menu libs for the generics, you can override the options
+    per line in the config by beginning the menu filename with the number of
+    opts per line you want.
+  Fixed problem with local node.
+
+v2.20แ8
+  STATCODE now codes the correct files for outgoing email listing
+  External Protocol Listing no longer displays the Codes in addition to the
+    info
+  Fixed run-time error 200 in file adding.
+  Fixed Dir /W in Minidos
+  Added in File Area Multipliers.  A value set will be multiplied by the file
+    points of the files in that area.  With this you could make file areas
+    that have files worth no points as well as those worth 10 times the value
+    from the size.  Run SETFAM.EXE to set all the values of the FAMs to 1. 
+  Added in free file areas where every file is free
+  Added in free files to the file record so specific files can be free.  If
+    a file area is free, every file in the area will be free independant of 
+    how the file is set.
+  I think I fixed the ObvMail import corruption bug.
+  Fixed Qfilenam.ext extraction quit bug.
+  Users that check or try to login that don't have accounts are logged.
+  Fixed problem with infoforms clearing when K is typed in the user editor,
+    but user is not deleted.
+  Added in Deleted List:
+    Run BLACKCON.EXE
+    The deleted list is a flexible blacklist.  Users have a file displayed to
+      them when they try to apply or check.  Their handle can be removed from
+      the deleted list, after they try to apply or check, after a certain date,
+      or never.  When users are deleted by NUV, they see a file called
+      NUVDOWN.ANS that is located in the textfile directory.  There is a
+      new option in the config for how many days a user will be on the deleted
+      list after being voted down by NUV.
+
+v2.20แ9
+  Fixed bug with screwed up daily log listing
+  Fixed user editor delete user scrolling bug.
+  Oblivion/2 now uses a file catalog for quick look up if you chose to use it.
+  The list is generated if it does not exist, if you kill an area, or reorder 
+  areas.  The catalog is changed when files are added, moved, and deleted.
+  I know Oblivion/2 isn't the first software with such a feature, but it is
+  the first one in which that idea works well.  
+  New Menu Command:
+    TG - Generate File Catalog
+  Changed the way logging works.  This will make sure that the log viewing 
+    from other nodes work.  Keep an eye out for bugs introduced by that.
+  Fixed PCR in topten.
+  Message reading will update your last read pointers as it should
+  Node Number now appears on the status line in boards set for multinode
+   operation
+  Fixed event editor add/delete so it behaves better and doesn't nuke events.
+  BBS Saves user record before computing topten thus making sure the most
+    current stats appear
+  NUV deleted user was not being added to the deleted list, this has been
+    corrected
+  When a sysop vetos NUV and deletes the user, the user is deleted and the
+    file that blames deletion on the voters is used
+  NUV Vetos are now logged as such
+  When a file was added to batch, the user jumped conferences and extracted
+    the file with the corresponding number and area in the current conference
+    would be used, this has been fixed
+  Added in quote headers.  They can be toggled in the config
+  Added in option to use greater than sign in quoting
+  When the fields of a file are changed by the sysop, they are updated
+    in the editor correctly
+  The FileMail is now not deleted until it is successfully transfered.
+  Decided to make the history file contain only the changes since the last
+    release
+  Removed ANSI+ to clear things up since it never worked
+  When a file is moved between file areas with different File Area
+    Multipliers, the uploader's credit is adjusted accordingly
+  Fixed file point commission so it works if the commission percent is less
+    than 100.
+  At upload status screen, up to 45 characters of file description can be
+    entered, I don't know how the screen will look afterwards however,
+    someone check it out
+  Fixed the message capture lock up bug.
+  Oblivion/2 will now advance a line when user joins normal multinode chat
+  After /U in FSE cursor is put in correct place
+  Fixed bug with reverse colors in file listings
+  Fixed bug where first letter of word was cut off when word was wrappe
+
+v2.20แ10
+  Fixed file adding bug where files were not being added unless catalog
+    searches were on.
+  Fixed bug where user was being sent to garbage file area after catalog 
+    generated
+  Made it so the catalog would not be generated when files are moved or deleted
+    since the BBS takes care of that
+  Added an option in the configure the number of lines per node in the
+    real time multinode chat
+  Killed Celerity pipe codes in messages since they would make RIP support
+    a total pain
+  Added in RIP Detection, I set the detection timeout to 1.2 seconds, if that
+    is too small and RIP is not detected, let me know.
+  The J ACS Code now functions as follows:
+    Yes if user has ansi as emulation and value at right is 0
+        or user has avatar and the value at right is 1
+        or user has rip and the value at right is 2
+  Made it so the mouse can be used in the pulldowns via RIP
+  That's about it for RIP and although this may not seem a lot, it leaves an
+    unbelievable amount of flexibiility to the sysop.  SearchLight (which was
+    among the first RIP supporting softwares) is just adding in RIP generic
+    menus which you can add, and the whole operation only took a couple of 
+    hours.
+  Fixed the bug with the wrong SUBS.X is to be viewed
+  Made it so FAM defaults to 1 when file area created
+  New code in FILEINFO.ANS, |FK, size in kilobytes
+  Qwk generation can be aborted by hitting escape twice
+  Oblivion/2 will now run any events that need to be run right after the user
+    logs off and before the BBS exits back to the front-end.
+
+v2.20แ11
+  Made it so the RT would not appear if the BBS did not know the message to
+    which the message being displayed was a reply.
+  Fixed it so the pipes were preserved if something that was not a code
+    followed so RIP would work
+  Fixed bug where BBS would exit with errorlevel of 255 even when run with
+    the -A option when an event run was done (Merci beaucoup a` Judas pour
+    decouvre cet un)
+  Fixed bug with the file area where when a file was found in the catalog,
+    the file was appropriated to the wrong area
+  Fixed bug where ANSI is turned off when RIP is turned on
+  Added in Look and Feel configuration into the config to make things more 
+    organized
+  Fixed multinode chat endless clearing bug
+  Oblivion/2 now rounds correctly for time and file points
+  Improved file moves so they work better and fiels that fail the upload
+    check are moved and if that does not work, deleted
+  Increased RIP Detection time to 1.8 seconds
+  The BBS now displays 0 as the file points of a free file
+  Eliminated need for MA (Close bases command) and without it, message bases
+    should not overwrite
+  Fixed an autodeleting multinode bug where it would not delete the right
+    messages
+  Fixed a bug if a message was the last in a base and then was deleted and it
+    was last read, the next message in the base would already be considered
+    read by users
+  Run SETIDS.EXE or no new messages posted will be marked as new
+  Finally fixed SUBS.X
+  Fixed bug where users voted down would overwrite others in deleted list
+  Emailing is now logged
+  New Menu Command:
+    -O, displays file with the name of CString in menu library
+  When a file fails the upload checks, a message is sent to the sysop in
+    the notices.  Anything else that could be useful for the sysop can be
+    added, tell me what is desired
+  Made enter comment for NUV prompt configurable.  Tell me what other
+    strings you want configurable and I'll make sure they are
+  Multiple message headers per status screen set can be used.  All that
+    has to be done is put a CString greater than 1 on the MH command,
+    and the bbs will display HEADER.X where X is the number.  If the
+    number is 0, the internal header is displayed, if it is 1,
+    HEADER.ANS is displayed
+  You can now put a CString on the [V (Daily Log) Command for the number
+    of days you want displayed
+  Fixed Origin Line shadow in message base editor
+  I misdocumented an MCI Code, the one for size in K of a file is pipeSK
+
+v2.20แ12
+  Really fixed split screen multinode chat
+  Fixed weird screen clearing when J is used in the file area editor
+  Made an option in the event editor whether or not to limit user's time, it
+    defaults to no now, but it limited none the less before, so be sure you
+    turn it on if you had events made for the sole purpose of limiting time
+  NOTE:
+    The time limiting only effects code execution and errorlevel events.
+  New Command line option -L, local logon
+  If you didn't run SETIDS.EXE immediately after getting แ11 and some bases
+    are screwed up, run FIXIDS.EXE which will fix the problem
+  Fixed interdirectory physical move
+  Added REP dupe checking
+  I fixed a bug that would prevent the BBS from going to the correct message
+   in a newscan.  I may have introduced others however
+  Fixed a bug where free files were checked for K ratio
+  Logs message/file confs that are newscanned
+  If search all is off in the config, the BBS will not search the file
+    catalog for the file, only the current area
+  New MCI Codes:
+    %CF - Current File Conference
+    %CM - Current Message Conference
+  Oblivion/2 now creates a semaphore file when there is mail that needs to
+    be exported called MAILOUT. in the BBS Directory
+  There is now a separate prompt for enter extended description for the
+    upload status screen.
+  Made it so a user can abort QWK packet d/l by typing ESC twice even when
+    the mailer is passing through a base with no messages
+  New key: Alt-Q, display KICKOFF.ANS, waits until output buffer clears
+    and drops carrier
+  New Menu Command:
+    -Z, waits until output buffer is empty
+  Added prompt to display .QWK file size.  You have to set it to get it to
+    display
+  If a user reading messages is forced into multinode chat, the BBS will
+    enter chat from the newscanning prompt.
+  Added in ACS user must have before he/she is asked if he/she wants to be
+    available for multinode chat.  If the user does not have the ACS to be
+    asked, the user will be put down as not available
+  User is now allowed to enter the correct number of characters for filenames
+    at the options in the file menu.
+  BBS no longer clears the screen before the message/file scanning prompts,
+    you can put that in by including a |CS in the prompt
+  If the user uploads a file already online, the BBS should detect the file
+    and delete it.  Test this please.
+  I think I may have fixed some of the newscan pointer screw ups.
+  Fixed infoform chat run-time error bug
+
+v2.20แ13
+  I think I fixed the newscan pointer screw-ups.  I'm not certain, but this
+    should do the trick
+  Fixed file adding bug when catalog was on
+  Oblivion/2 will now look for KICK-OFF.ANS in the textfile directory
+  Oblivion/2 now reports the correct conference in the logs when global
+    newscanning is enacted.
+  Fixed user overwrite in deleted list
+  I think I fixed the doors
+  Fixed redraw after chats so it redraws the entire screen
+  Oblivion/2 now determines the user number for new users by looking at the
+    user index file
+  Added in option to use/not use PRELOGON.ANS(X)
+  Added un option to use/not use WELCOME.X
+  Sped up message base creation
+    There is a new MBP included.  This should do the job quickly, but it may
+    cause some weird problems.  Let me know about them.
+  You can put a ; after the header for the topten and the BBS will not pause
+    after displaying the topten.  The ; will not be displayed.
+  Made it so message capture will capture entire message
+  BBS deletes .QWK file before zipping up the .QWK, so old and new .QWKs will
+    not be combined
+  BBS now checks to see if a file's name is valid before trying to run
+    the upload checker
+  Made some changes that should greatly increase display speed.  I had an
+    if statement to check if a character was a backspace and do the appropriate
+    action on the screen while the BBS was already parsing for ^H in just
+    about every output function.  Should make a noticable difference.
+  New Menu Command:
+    -+ Displays random WELCOME.X file
+    -| Makes sure user has all infoforms filled out, if not makes them fill
+      out the forms
+    -@ Reads Notices
+    MZ Executes News Scan
+    -_ If User is wanted, sysop is paged
+    &[ Set User as Available for Chat
+    &] Set User as Not Available for Chat
+  Added in option to System Options II:
+    Special Login, make sure this is no.
+    This option if on, will make it so the BBS will not do the regular login
+      options such as displaying the welcome, email scanning, etc.  This
+      option lets you have custom logins.  If you want to duplicate precisely
+      the BBS's usual login for modification later, add the following commands
+      to the _Beginning_ of the top menu:
+        Command 1 {Displays Welcome}
+          CKeys: -+
+        Command 2 {Displays Status Screen}
+          CKeys  : -N
+          CString: STATUS.ANS
+        Command 3 {Hit Return Prompt}
+          CKeys  : -(
+        Command 4 {Read Notices}
+          CKeys  : -@
+        Command 5 {Sets User as not available for multinode chat}
+          ACS    : [
+          CKeys  : &]
+        Command 6 {Prompt for chat availability}
+          ACS    : [&(whatever your chat availability ACS is)
+          CKeys  : &A
+        Command 7 {Scans for New Email}
+          CKeys  : EN
+        Command 8 {Checks for uncomplete infoforms}
+          CKeys  : -|
+        Command 9 {Execute Scan for New News}
+          CKeys  : MZ
+        Command 10 {Checks for unanswered voting questions}
+          CKeys  : VC
+        Command 11 {Pages Sysop if user is wanted}
+          CKeys  : -_
+  Made Kick off command not wait until buffer is empty if the user is logged
+    on locally
+  Made the following strings configurable:
+    Do you have ANSI
+    Do you have AVATAR
+    Use Yes/No Bars
+
+v2.20แ14
+  DUE TO THE AMOUNT OF TIME I'VE HAD TO WORK ON Oblivion/2 lately next to
+    none of these additions have been tested
+  Due to a conflict, the no pause topten heading ending has been changed
+    to *
+  You can now access files that have @ in the name
+  If the board is registered, the correct info now appears in the . screen
+  Added in new ACS Options for almost all //\\X?, so sysops can give cosysops
+   access to some //\\'s, but not all.
+  New Menu Command:
+    NY - Returns failflag if current base is not in newscan
+  New commands from message read menu, F and X, forward/backward title scan
+    with advance/retreat, finally
+  New Menu Commands
+    NF - Forward Title Scan with Advance
+    NX - Backward Title Scan with Retreat
+  Made it so when new mesasge bases are created, the pointers for that base
+    are okay and new messages will be seen as new.
+  Fixed 32767 File point bug, run TRANSFP.EXE or every user will have zero
+    file points
+  Limited number of lines that can be entered in editor to 200 from 250,
+    you can still send unlimited number of lines in uploads, QWKS, and nets.
+    This should fix the email crossing bug
+  Made it so Oblivion/2 does not pause after entry of system password if
+    PRELOGON is not to be used
+  Oblivion/2 now pauses after showing notices
+  Fixed post upload duplicate checking
+  Files sent up with errors will be deleted
+  Files that need to be resumed will not be sent through the upload checker
+  Log off after transfer now takes place before the upload checker is run
+  J in the file area newscanning should jump to the next area
+  New Menu Command:
+    FG - Custom File Operations
+    Lets say you want users to do certain things to certain files that is not
+      already covered in Oblivion/2, this option is for you.  It generates
+      a list of files selected (With path) in the work directory, called
+      FILELST and then calls a specified batch file.  The format for the
+      CString is
+      operation name,batchfile
+      The batchfile is called with the parameter of the work directory
+      For example if I wanted the BBS to zip all files that a user selects
+        into a certain file, I'd do it like this:
+      FG w/ CString of Zip together,DOZIP.BAT
+      The BBS would ask for up to 50 files to zip together, the batch file
+      DOZIP.BAT which is in the BBS directory would read as this:
+        C:\OBV\PKZIP.EXE %1WHATEVER.ZIP @%1FILESLST.
+      When called it would look this:
+        C:\OBV\PKZIP.EXE C:\OBV\WORK\WHATEVER.ZIP @C:\OBV\WORK\FILESLST.
+    This option can be used for many things, the intended purpose is to
+      allow the user to provide an interface with the tape door
+  Added option to toggle G and I message commands which lock some systems
+  Made it so you can go back a page in the scrollable file listings
+  Added Alt-Q to help
+  Made it so exit from Help and F3 user editor redraw current screen even
+    if BIOS writes are on
+  Made it so when the BBS runs events that needs it, it will continue until
+    all that need it have been done
+  Tweaked the events a bit, there should be no more event skipping.  By
+    the way, did anyone hear me explain, I've been doing really cool drugs.
+    I don't remember doing drugs, not do I think I would, but if I did them,
+    it was when I was programming the events.
+
+  I'm a little disappointed in how things are going.  Not in everyone else,
+    but myself.  Now that we have a powerful BBS laid done, there are few
+    necessary major additions needed.  There are however many minor things
+    that need to be added.  My suggestion file is over 500 lines, I can polish
+    away about 7 or 8 an hour, but its boring and tiring work.  I would have
+    liked to have gotten more done, but its tough to drag yourself in front
+    of a slow 286 to code after having already spent some time on the speedy
+    486 running the exciting board.  I don't intend to stop writing
+    Oblivion/2, but its very difficult to get a lot done while going to high
+    school and college, running a board, running a net, and hubbing 2 others.
+    I have people demanding a release and we owe it to ourselves to get a
+    stable release out, but its tough when there is so much to do.  There's no
+    real point to this statement, but stick with it.
+
+v2.20แ14Fix1
+  Fixed Event Reading Bug
+
+v2.20แ15
+  Fixed endless event bug
+  Fixed log updating bug
+  If user logs off after transfer, BBS takes phone off the hook before
+  continuing to do upload checking
+  Sysops can type I at the NUV prompt to display other infoforms
+  New Menu Command:
+    -X returns failflag if file specified by CString does not exist
+  Made it so if > are not used in quoting and an origin line is quoted,
+    the --- will be changed to -*- prevent the tag line cut-off bug
+  Fixed bug with BBS extracting the wrong file
+  I think I fixed the weird % Download Status bug
+  New ACS Codes:
+     Q - Number of Calls
+     R - Total Number of Calls
+
+v2.20แ16
+  Much thanks to Foxpass who's nagging and bug finding has helped this
+    version greatly.  If not for him, I don't know if v2.20แ16 would come out
+    at this, however delayed date.
+  Fixed bug where EVENTS.DAT was left open when it should have been closed
+  Fixed slow wildcard search bug
+  When Oblivion/2 is unable to create swap directory, it will report that
+    instead of unable to create work directory.
+  New command line parameter -d, doesn't check for work/swap directory
+    existence so you won't get locked out of your board if it can't create
+    those directories.
+  Fixed bug where files were left open when adding a file
+  I think I fixed the daily log minutes bug, thanks to Spyder
+    Man for discovering the cause
+  Fixed bug where users at matrix were seeing messages intended for the
+    previous user on that node
+  The correct number of file points is displayed in status screens now
+  Oblivion/2 now displays the correct infoform when I is used at NUV menu
+  Quoting change the " * " in origin lines to " X " to mailer does not cut
+  off the message at that point
+  You can include N in the CString of the [C command and the BBS will not ask
+    for a reason
+  After WFC operations, the node is set back to being Waiting for Call
+    in the multinode status
+  Added in Multiple Infoform sets.  The user can still only have 5 infoforms,
+    but they are not the same 5 infoforms for all users.  The -> command is
+    used to set the infoform name to the CString (it defaults to INFOFORM
+    though) and the user will be forced to fill out the infoforms which begin
+    with the Inofofrm name.  Thus you can have separate sets of infoforms for
+    users and can have a PD front without giving away what the board is
+    through Infoforms that ask for definitions, wares, etc.
+    Run SETINFN.EXE to set everyone's infoform to INFOFORM
+  Screen is no longer cleared after user enters system password regardless
+    of whether PRELOGON is used or not.
+  Oblivion/2 no longer clears the screen before prompting for handle if
+    external file USERLOG is used
+  New Command line parameters:
+    -T xxxx where xxxx is the time in minutes after midnight before which
+      users should be kicked off
+    -M xxxx where xxxx is the number of minutes to the next event before
+      which the user must be kicked off
+  You can now specify the entry to show or delete in the CString of the DD and
+    DS commands.
+  If you put L as the name in prompt for a pulldown menu, Left with be
+    interpreted as Up, Right will be interpreted as down
+  Previously undocumented feature:
+    If the pulldown filename is set to N, there are two more possible name
+      in prompt endings:
+        # - Get a character
+        ) - Get a character and echo it to the screen
+  Changed ) at the end of Name in Prompt so that it will only echo the
+    character back if it is a regular low-ASCII character
+  Note:
+    You can put the following characters in the keys of a menu using a
+      Name in prompt ending with # or )
+        Alt-200 - Up
+        Alt-208 - Down
+        Alt-205 - Right
+        Alt-203 - Left
+        Alt-199 - Home
+        Alt-207 - End
+  Added option so BBS does not hang up on callers (to be used when BBS is run
+    as door).  You need to run an option which defaults to false to on so
+    your board will continue to hang up on callers.  It is in system options 2,
+    REMEMBER TO SET IT.
+    BBS will still drop carrier on users if they tell it to log off after a
+    transfer or if they are kicked off by a sysop.  It will also do that if
+    they have a slow baud rate since if they can't access the BBS, they
+    shouldn't have access to try.  In addition it will do this if the user
+    ends up calling in the middle of an event, of course if Oblivion/2 is
+    run as a door, there should be no events that would kick off the users.
+  Fixed bug where files would be displayed in the file area in lowercase
+  When files are sorted by uploader, the sort will no longer be case-
+    sensitive.
+  New Menu Command:
+    FW - List users with access to current file area
+  Oblivion/2 now allows a configurable file to be displayed when ? is typed
+    at the file listing or message reading prompt.  The filenames are 
+    FILEHELP.ANS and MESHELP.ANS, and the option to use them is at the look
+    and feel menu.
+  Sped up QwkMail uploads by only having BBS update total number of messages
+    at the end
+  In QwkMail uploads, the number of posts today is updated
+  New codes for the Infofoms:
+    %XX - Accepts up to XX characters, repeats if nothing is entered
+    @   - Gets Input, repeats if nothing is entered
+  The (Y/n) characters in the new user application can be turned off by
+    an option in look and feel.  It defaults to no, and you probably want
+    it on
+  Made it so the deleted list type was no longer case sensitive
+  Users can no longer stay on past events by uploading and using the time
+    reimbursement
+  New Menu Commands:
+    EI - Lists Incoming Mail
+    EO - Lists Outgoing Mail
+  New Option in System Info 2, you can tell the BBS to generate a door file
+    before running MAINTAIN.BAT.  The file will be DORINFO1.DEF-type, but I'll
+    support others if they prove necessary.  The file is created in the door
+    directory, so if you are running multinode, you'll need to match the
+    parameter with the possible work directories to locate the file
+  Added in System Information 3, the first options there allow you to configure
+    where you want the BBS to swap when it shells.  The changes you make to
+    these options do not take effect until the BBS has been loaded again
+  In the Archive editor, you can now set the maximum errorlevel which will be
+    returned by the CRC verification in the upload checker and still pass.
+    This was added as a remedy to the problem in which files with an
+    authentication check failed, although more likely than not a zip ad was 
+    responsible.  This problem can beremedied by raising the maximum OK CRC to
+    1
+Note: All I need to add is the unlimited file description and we're ready for
+  release.
+
+v2.20แ17
+  Fixed a bug with the ACS events not limitting time properly.
+  Made it so you can access time bank if you have files in your batch,
+    since the time will be checked again when you go to download the files
+  Fixed bug where if you had less than 10 users, you'd see pipe codes in the
+    top-ten listing
+  You can now put %XX in place of |XX in data area entry adding ansis and
+    there will be mandatory entry
+  Fixed bug where if % was used in infoforms, the filled in infoform would
+    not display properly
+  Really fixed slow wildcard search bug
+  Fixed check account ANSI screw up bug
+  New Menu Command TH - Pack File Description File, should be done nightly
+  Made it so correct infoform is displayed in NUV when the sysop presses
+    I.
+  File Descriptions are now stored in a separate file.  You can enter up to
+    8 lines as a user and the DIZ can be as big 20 lines.  I can expand this
+    at any time however.  These were just convenient values.  You need to run
+    FCON.EXE, please make a backup of your FILES directory before running it.
+    Some things may be unstable with the file descriptions, so I added in
+    some extra info so I could write a file description reattacher if need be.
+    The description form is just appended onto the file description, so please
+    edit your description forms, because |Dx and |Xx is no longer needed or
+    supported
+  Fixed Pulldown Menu lock up bug
+  New Config option, open/close file description file, this is during file
+    listing and if on will slow down file listing considerably.  You should
+    only turn this on if you have more than 1 active node
+  Fixed memory problem which took place when you tried to Add tagged files
+    to batch and the bar had not been moved and no files were tagged.
+  Fixed bug where BBS was opening the AREADIR many times when global local
+    u/l was done
+  If File does not exist, the fact is only shown locally
+  Fixed some more instances of lower-case file bug
+  I think I fixed the end-less loop multinode real-time chat bug
+
+v2.20แ18
+  Fixed major bug in file extraction
+  Fixed blank screen file bug
+  Make it so description form defaults to blank for new systems
+  Fixed some more cases of lowercase file bug
+  Added in 21.6k and 28.8k rate detection when board answers on its own
+  Increased the delay for RIP detection, it may work now
+  Made it so @ would correctly display the forced answer in the infoform
+    display
+  Fixed wildcard search description display bug
+  Fixed complete file list generator
+  Fixed regular user change file lockup bug
+  Fixed bug where file area file was left open after global local u/l
+  Fixed borrowed download bidirection batch bug
+  Fixed extra blank lines no DIZ adding/uploading bug
+  You can put pipe codes in pulldown menu options to change the color, |- will
+    change the color back to the original (highlighted or unhighlighted) color
+  Fixed bug where the newscan pointers of a user creating a message base would
+    be screwed up
+  Temporary sysops cannot see or change the sysop password in the config
+  Lowered number of editor lines to 150 to prevent certain memory errors
+  BBS restores screen from before for all transfers and archive operations
+    including QWK
+  Fixed bug where when a file was deleted, it wasn't properly removed from the
+    catalog
+  New Menu Commands:
+    E+ - Makes it so user sees all mail
+    E- - Makes it so user sees only mail addressed to them
+    E$ - Sets Incoming Tag to value in Cstring (0-255)
+    E# - Sets Outgoing Tag to value in Cstring (0-255)
+  New Feature:
+    Email Tags - You can now give email a certain tag by using the
+      below-described menu command to change the tag before the user sends
+      mail.  And when you are set to a certain tag, you only see mail that has
+      that tag.  So by stacking the outgoing email tag changing menu command
+      before the feedback or apply commands, you could ensure that feedback
+      or new user application mail has a certain tag.  Then you could switch
+      the incoming tag to that value and see only NUA mail or feedback.
+      Also added is the menu command to allow the user to see all mail.  I
+      intend to use this so both me and my cosysop can read new user
+      application mail.  This can be accomplished by stacking E# w/ Cstring
+      1 before the apply command and E# w/ Cstring 0 after.  I'll then add
+      two menu commands to the email menu, one being E$ w/ Cstring 1 and
+      then an E+, the other being E$ w/ Cstring 0 followed by E-.
+    Note: When the tag is 0, you can see all mail, regardless of tag.
+  Fixed infoform color changing bug
+  May have fixed problem with hang up after download abort bug
+  Due to a conflict between Turbo Pascal and Norton Cache, I lost all changes
+    to the file section since before แ17 was released.  I made the changes
+    again, but did not verify them to the degree that I did before, and there
+    may be some new bugs.
+  Fixed bug where going back a page in the file listings would not go back
+    over very long descriptions
+
+v2.20แ19
+  Fixed email status inheriting bug that occured on systems not running with
+    a front end.
+  Fixed endlessly repeating multinode chat bug, really dumb mistake on my
+    part.
+  I think I fixed RIP detection
+  Fixed bug where forwarded mail would inherit the original tag instead of the
+    current tag.
+  Made it impossible to do the following operations through command
+    executions in MiniDos:
+      FORMAT
+      DEL
+      FDISK
+      REN (so you can't change FORMAT and FDISK to executable file names)
+  Fixed scrolling file listing redraw bug
+  Made it so BBS could detect 26400 and 31200
+  Fixed some bugs in which manually entered file descriptions would be screwed
+    up
+  Fixed bug where split screen multinode backspace would not work
+  File Description File Pack function will return to original file base and
+    conference now
+  Improved the way the ACS Parser handles parantheses, it also displays
+    'Bad ACS Code' if the number of open parantheses do not match the number
+    of closed parantheses.  There may have been some bugs in the handling of
+    ~ codes, if there were, they have been fixed 
+  Added in lock at 115.2k option.  I may have introduced some bugs along the 
+    way however, so please give things a good going-over
+
+v2.20แ20
+  New communication option: Wait Until Sent.  This will make the BBS pause
+    until the output buffer is empty after transfers.  This may remedy some
+    problems encountered while locking at 115.2k.  If this doesn't work,
+    I'll simply remove the option however.
+  Rewrote a bit of the registration routines.  Figured out how to get certain
+    protective measures I had added in earlier to work.  Hopefully, the new
+    routines will offer a little more protection than the old ones.
+  Made it so it was impossible to overwrite files with the Minidos COPY
+    command
+  Fixed bug where Q would not exit file change menu
+  I think I fixed the message base creating newscan pointer bug
+  New Option in Archiver Editor:
+    Checker Only, this means the archiver will only be employed in upload
+    checking or file viewing.  This will allow archivers that aren't really
+    archivers, but are viewers for certain file types.  This can be used to
+    add in ACiD's SAUCE ansi commenting standard by using a little program
+    to "extract" a DIZ, but in fact read the SAUCE info.  GIF specs are also
+    possible.
+  Made it so COMMAND.COM could not be run in Minidos
+  BBS now logs which node a user logs on to
+  New menu command
+    -! Displays current menu prompt using CString as name in prompt
+  Fixed bug in multinode split screen chat where if a user exited multinode
+    chat and someone filled his slot, the other nodes would not see any
+    characters until the number of characters entered by the new node
+    equals the number that had been entered by the previous resident in
+    that slot.
+  Made it so file displaying would pay attention to end of file markers
+    as not to incidentally display SAUCE information
+
+Here is how the SAUCE reader archiver should work as to get specs from ansis:
+ีอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออธ
+ณ Command :         (Q)uit  [,] Change Arc   Oblivion/2 Archiver Editor     ณ
+ิอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออพ
+ีอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออธ
+ณ (A) Archive Name   : Sauce Reader                                         ณ
+ณ (B) Archive Ext.   : ANS                                                  ณ
+ณ (C) Use Zip Viewer : No                                                   ณ
+ณ (D) Swap for Coms  : Yes                                                  ณ
+ณ (E) Compress Com   :                                                      ณ
+ณ (F) Extract Com    : RUNSPAN.BAT %1 %3                                    ณ
+ณ (G) View Com       : ANSVIEW.BAT %1 %3                                    ณ
+ณ (H) Delete F Com   :                                                      ณ
+ณ (I) Max Ok/Test Com: 0/                                                   ณ
+ณ (J) Add Comment Com:                                                      ณ
+ณ (K) Add Files Com  :                                                      ณ
+ณ (L) Sig String     :                                                      ณ
+ณ (M) Sig Location   : -128                                                 ณ
+ณ (N) List Prefix    : !                                                    ณ
+ณ (O) Checker Only   : Yes                                                  ณ
+ณ (=) Insert Archiver                                                       ณ
+ณ (-) Delete Archiver                                                       ณ
+ิอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออพ
+
+Signature should read: 5341554345
+
+RUNSPAN.BAT should be:
+@SAUCEPAN.EXE %1 TEMPL.ANS %2FILE_ID.DIZ
+
+ANSVIEW.BAT should be:
+@COPY %1 %2ARCLIST.>Nul
+
+TEMPL.ANS could read
+|TI 
+by |AU
+of |GR
+|CM
+
+This would make DIZs from SAUCE's read as follows:
+The Fringes
+by Beastie
+of ACiD Productions
+Whatever comments
+
+v2.25Pre
+  Oblivion/2 will now pay attention to end of file markers when printing
+    textfiles
+  Oblivion/2 will try 24000 when negotiating connect rate
+  If no exec string is defined for archiver operations, the BBS will not
+    do the action and report that the action was successful (errorlevel of
+    0)
+  If the BBS is unable to extract any files from the archive, the file will
+    not fail the age test (will work for non-SAUCE'd ansis, encrypted zips)
+  Oblivion/2 now checks for multinode messages at promptless, spread bars,
+    and one line bar menus.  Still it does not check for them at pulldown
+    menus since it may cause some errors in option placement so I have added
+    the &H menu command which will check for multinode messages.  You can
+    create an EACH command which will execute that command and precede it
+    with a cursor placement command.
+  Fixed bug where FS file searches would add the file to the batch, but
+    record the wrong area number.
+  Fixed some more isntances of the file capitalization bug.
+  If a bidirectional transfer is unsuccessful, the download batch will still
+    be saved.
+  Oblivion/2 will now only log the node logged in on if the system is running
+    multinode.
+  Oblivion/2 now checks for minimum free space before filemail uploads.
+  Fixed mail forwarding from the prompt which previously did not deleted
+    the piece of mail if told by the user.
+  Fixed bug in which forwarded mail would be cut off at the bottom.
+  Statcode now codes NUV.ANS into status screen libraries
+  Modified New user voting display without NUV.ANS which had :'s that did not
+    line up
+  Fixed bug in which whether an archiver was Checker Only was not displayed
+  Made it so the sysop could not enter wildcards for importing files into
+    messages
+  You can now put a negative sig location for an archiver and Oblivion/2 will
+    count backwards that many characters from the end of the file to look
+    for the sig.  I've changed the SAUCE example above to reflect this new
+    feature.

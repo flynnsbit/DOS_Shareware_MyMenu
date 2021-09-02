@@ -1,0 +1,34 @@
+# Help text
+
+0.0:Free XDEL Extended file delete    Ver
+0.1:Copyright (c) 2002 Alain Mouette - GNU GPL
+0.2:XDEL [/options] [@][d:][path]filename[.ext]... [/options]
+0.3:  @             the following filename is the name of a file list
+0.4:  d:            drive which xdel is to search
+0.5:  path          directory where search is to begin
+0.6:  filename.ext  file to be deleted (wildcards allowed)
+0.7:  /D            remove empty subdirectories
+0.8:  /N or /Y      delete specified files with no warning (CAREFUL!)
+0.9:  /O            overwrite before deleting - file contents PERMANENTLY LOST
+0.10:  /P            prompt before deleting each file
+0.11:  /R            delete read-only files
+0.12:  /S            delete files in subdirectories
+0.13:  /H or /?      this help message
+0.14:Multiple files may be specified on the command line.
+
+# Several messages
+
+1.0:Delete file [yn]
+1.1:No file name specified
+1.2:Invalid option in
+1.3:Invalid name in
+1.4:Could not delete file
+1.5:Could not delete Directory
+1.6:Error reading file
+1.7:Error: Out of Memory
+
+# Confirmation
+
+2.0:path
+2.1:file
+2.2:Is this what you wish to do? [yn]

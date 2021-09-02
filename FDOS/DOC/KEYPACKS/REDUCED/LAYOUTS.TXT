@@ -1,0 +1,65 @@
+Reduced Layout Pack - List of Layouts
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+Following is a list of layouts for XKeyb. Should the appropriate layout for your
+keyboard not work accordingly, please upgrade your XKeyb program.
+
+The layouts related to codepage 437 are actually stripped, simplified versions of
+the real keyboards, due to the fact that codepage 437 does not provide either the
+characters labeled or the accented characters available through combinations with
+dead keys. If you are using (at least) an EGA monitor, the layouts presenting all
+the keys of such keyboards can be found in the Full Layout Pack.
+
+Exceptions for the comment above are the american layouts, as well as the latin
+primary layouts for the russian and the bulgarian keyboards.
+
+Layout					Files			Codepages
+¯¯¯¯¯¯					¯¯¯¯¯			¯¯¯¯¯¯¯¯¯
+Belgium                                 be                      850, 858
+					be-cp437		437
+Brazil  				br274                   850, 858
+                	                br274437                437
+Canada (French)				cf			850, 858
+                                        cf-cp863	        863
+Czech Republic (Qwertz)			cz			852
+Denmark					dk			850, 858
+                                        dk-cp865                865
+Finland                                 su                      850, 858
+					su-cp437		437
+France                                  fr                      850, 858
+					fr-cp437		437
+Germany                                 gr                      850, 858
+					gr-cp437		437
+Hungary					hu, hu208		852
+Italy                                   it, it142               850, 858
+					it-cp437, it142437	437
+Latin America                           la                      850, 858
+                                        la-cp437		437
+Netherlands                             nl                      850, 858
+             				nl-cp437		437
+Norway					no			850, 858
+                                        no-cp865                865
+Poland					pl                      852
+Portugal				po			850, 858
+                                        po-cp860                860
+Slovakia (Qwertz)			sk			852
+Spain                                   sp                      850, 858
+					sp-cp437		437
+Sweden                                  sv                      850, 858
+					sv-cp437		437
+Switzerland (French)                    sf                      850, 858
+ 					sf-cp437		437
+Switzerland (German)                    sg                      850, 858
+					sg-cp437		437
+UK                                      uk, uk168               850, 858
+					uk-cp437, uk168437	437
+US					us			437, 858
+Yugoslavia (Latin)			yu			852
+
+
+Keyboard variations
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+
+All the layouts were developed according to their desktop variations. Some of them
+provide 101 keys, while some of them provide 102 keys or more. Generally, portable
+computer keyboards follow the same mappings. Should any of them differ anyhow from
+their desktop counterparts, any feedback would be greatly appreciated.

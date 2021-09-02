@@ -1,0 +1,62 @@
+                       ‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹
+                       €  ‹  ‹     ‹   ‹           €
+                       €  €  €     €   €           €
+                       €  €‹‹€ ‹‹‹ €‹‹ €‹‹ ‹‹‹ ‹‹‹ €
+                       €  €  € € € € € € € €‹€ €‹‹ €
+                       €  €  € €‹€ €‹€ €‹€ €‹‹ ‹‹€ €
+                       €‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹€
+
+   About a year ago, I completed my first set of fonts for THEDRAW, the
+Calvin family of fonts.  This event was met with wild applause and huzzahs
+and-- oh, who am I kidding?  The world barely noticed.  I am glad to note,
+however, that in recent months, I've called a couple of boards for the
+first time, and discovered that somebody had uploaded TDCALVIN.ZIP before I
+even got there.  While this didn't help my upload/download ratio very much,
+I did find it somewhat encouraging.  Even better, I found a board that uses
+all of the Calvin typefaces in its opening screens.
+
+   One would expect that a true ANSI artist would be sufficiently inspired
+by this to create at least one all-new typeface.  And I suppose that this
+is, in fact, the case.  However, I never claimed to be a true ANSI artist,
+so I just created another variation on the same old theme.  For most intents
+and purposes, I took the ol' Calvin font, and traced it over with solid
+blocks, instead of the old lines.  I call the result "Hobbes."  What else?
+
+This ZIP file should contain:
+   HOBBES.TDF     The all-new Hobbes typeface.
+   HOBBES.TXT     This document.  (No kidding!)
+   FILE_ID.DIZ    A brief description, for BBSes.
+   DESC.SDI       Ditto, for BBSes that don't recognize the .DIZ file.
+
+   Incidentally, if the ZIP file did NOT contain HOBBES.TXT, then I'll be
+pretty upset, so please let me know.  (In response to the obvious question,
+I figure that any computer user savvy enough to be using this typeface has a
+better than average chance of being psychic.  <g>)
+
+   A few letters were modified slightly from their Calvin incarnations, due
+to the nature of the characters used to construct them.  The one character
+which got pretty much trashed was the asterisk.  I tried about 28 different
+versions... and they all stunk to high heaven.  I finally threw up my arms
+in despair, and put in the wimpy cop-out version included here.
+
+   Still, overall, it's a pretty decent typeface... and one of the few which
+actually has both uppercase and lowercase letters.  As with TDCALVIN, a
+little manual kerning is necessary for the lowercase q.  You'll manage.  :-)
+
+   So, what do I want in exchange for the use of this typeface?  I still
+think a large extra-cheese pizza would be nice, but experiments have shown
+that they don't survive being mailed very well.  So I guess I'll just have
+to let people use this font for free, instead.  About the only thing I
+require is that it not be distributed without this text file.
+
+   Now, if I could just scrape up the cash to register my copy of THEDRAW
+already, I suppose everybody would be happy.  In any event, have a nice day,
+and enjoy the font!
+
+   ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+
+   This file, and the accompanying font, are Copyright 1995 by Shmuel Ross.
+   All rights reserved.  As are all wrongs.  And all lefts.  And just about
+everything else.
+
+   Kudos to Ben Fowler, for getting me started on all this.

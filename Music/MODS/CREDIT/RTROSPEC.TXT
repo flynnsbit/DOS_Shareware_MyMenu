@@ -1,0 +1,24 @@
+retrospective (musix-retrospective.mod)
+https://modarchive.org/index.php?request=view_by_moduleid&query=65133
+Renamed to "RTROSPEC.MOD" because of DOS 8-character limit
+
+Summary
+
+    musix-retrospective.mod is a MOD format module.
+    Uploaded to modarchive.org on Wed 5th Jul 2006
+
+Info Info
+
+    Mod Archive ID: 65133
+    MD5: 2ce6195d55482f79cb5c112891c25794
+    Format: MOD
+    Channels: 4
+    Genre: Demo Style
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     m0d (https://modarchive.org/member.php?69141)

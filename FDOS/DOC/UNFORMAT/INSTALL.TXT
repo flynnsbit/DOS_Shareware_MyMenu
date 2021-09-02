@@ -1,0 +1,20 @@
+Install
+
+To compile the source code you need:
+
+1.  Borland Turbo C++ 3.0 or compatible
+2.  The included source code for unformat.exe
+3.  A PC running some form of DOS.  (Probably 
+    equivalent to MS-DOS 4.1 or greater.)
+
+Instructions:
+
+Note:  I used Borland Turbo C++ 3.0 as a compiler, the instructions 
+       will vary depending upon the compiler used.
+
+1.  Run the GUI version of Borland Turbo C++ 3.0 by typing "tc"
+2.  Go under "File" on the menu bar at the top of the screen and load 
+    the source code.
+3.  Go under "Compile" on the menu bar and select "Build all."
+4.  Exit from the compiler and you will have the executable.
+

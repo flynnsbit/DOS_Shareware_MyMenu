@@ -1,0 +1,24 @@
+horizon's of freedo (horizonsfree.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=169044
+Renamed to "HFREEDO.XM" because of DOS 8-character limit
+
+Summary
+
+    horizonsfree.xm is a XM format module.
+    Uploaded to modarchive.org Thu 18th Feb 2010
+
+Info Info
+
+    Mod Archive ID: 169044
+    MD5: e1aa03a885db262065f721c1bd0646e4
+    Format: XM
+    Channels: 10
+    Genre: Ballad
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     JAM (https://modarchive.org/member.php?81691)

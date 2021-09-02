@@ -1,0 +1,3 @@
+
+USAGE: EATXMS #
+       # = amount of XMS (in KB) which should be allocated to nirvana.

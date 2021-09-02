@@ -1,0 +1,272 @@
+Hi,
+as George Bell was looking for a file tonight (luckily, he found it back
+without my help), I have played with undelete a bit.
+
+I have used the LINUX version of it. This means that you must give it a
+fake drive spec "x:" for output files and that it uses test.img (fixed
+file name) as source "drive". Otherwise, it works like the DOS version
+(the DOS version uses the current drive as input, output files must be
+on ANOTHER drive or undelete will refuse to write to them!). By the way,
+undelete refuses to overwrite existing files (gives a "write error") !
+
+In general, it is a good idea to backup a partition to an image before
+you try to fiddle with it. Then, either fiddle with the partition or
+with the image, not both. Of course you need to have enough space.
+
+I could have used:
+dd if=/dev/fd0 of=test.img
+to image the floppy in drive A:, but I was lazy and used an old FreeDOS
+install disk image full.bin file :-).
+
+You could also symlink /dev/fd0 to test.img instead of copying it, but
+this would violate the principle of never fiddling with the original
+without having a copy. Of course, my UNDELETE currently never writes to
+test.img, nor to the current partition in the DOS version, but future
+versions may not have that property.
+
+Next, I do:
+./undelete.elf follow 2 x:data.bin 2850
+Undelete follow automatically skips over used clusters. I tell it to
+save up to 2850 clusters (more than a floppy contains) starting from
+cluster 2 (the first cluster that DOS can use) to data.bin ...
+
+Data.bin happens to be 999k big, so there are indeed lots of free
+space on that floppy. I run strings to extract the text from that
+(I could use an hex editor to find and extract interesting hex data
+as well, but for the example, I only search for text):
+
+strings < data.bin > data.txt
+
+I read data.txt (only 3k now! Most of the empty clusters were really
+empty and never used before...) and see that it contains what looks
+like a batch file and then what looks like a readme. I cut and paste
+the parts to data1.bat and data2.txt therefore.
+
+Note that I CANNOT recover partially overwritten clusters with undelete
+in the current version, as undelete automatically skips over used
+clusters. Tell me if you want me to add a mode for following used
+cluster chains as well. You can, however, edit the size of a file with
+a disk editor to cluster size * N - 1 to extend a file to the full
+cluster and see the end of the cluster. Or you can deliberately delete
+the file and then undelete it again, with the bigger size. Be careful
+to have a backup when doing so. Okay, back to the main topic.
+
+Next I do this:
+
+./undelete.elf dirsave / x:root-dirsave.bin 0 > root-dirsave.txt
+
+IMPORTANT: I needed to give a length of 0 to select "autodetect",
+otherwise length will default to 1 sector for dirsave and 1 cluster
+for follow mode!!! The default length is useful at least in one
+case: When you have several single-cluster files, you do not need
+to enable autodetect nor to select a length by hand. Call it a bug
+or call it a feature.
+
+The file root-dirsave.txt looks like this (without the > ..., you
+would see the same stuff on the screen. You can also use | more
+instead of > logfile):
+
+Drive A: info: maxsecinclust=0 shlclusttosec=0 numressec=1, fats=2,
+rootdirents=224 firstdatasec=33 maxclustnum=2848, secperfat=9
+
+Dirsave: selected root directory
+DIRSAVE starting with sector 19, cluster 0
+Saving DIR until EOF or count reached...
+
+           FREEDOSB.7FL 20:44:56 07.09.2001 @00000, size 0000000000 label
+           KERNEL  .SYS 20:12:04 03.09.2001 @00002, size 0000075663 ro sys
+           COMMAND .COM 01:58:14 15.08.2001 @00150, size 0000086561 ro
+...
+           INST    .BAT 20:00:04 07.09.2001 @00850, size 0000002244
+...
+           PART    .INI 17:33:32 08.07.2001 @00632, size 0000021217
+UnDelAble: ?EAD    .ME  13:11:46 19.08.2001 @00674, size 0000000819
+           SYS     .COM 21:54:18 20.08.2001 @00676, size 0000008634
+...
+           NLS     .    17:14:20 19.08.2001 @00783, size 0000000000 dir
+Del/Lost:  ?ETA7   .TXT 20:17:48 07.09.2001 @00855, size 0000000824 a
+           READ    .ME  20:23:04 07.09.2001 @00855, size 0000000819<eof><eof><eo
+f><eof><eof><eof><eof><eof><eof><eof>
+
+Seems to be EOF
+
+
+You have to add 1 to the maxsecinclust to know the number of clusters
+- uhm - sectors per cluster. It is 1 in this example, meaning 512 byte
+per cluster. So the deleted ?ead.me file is 2 clusters big, starting
+from cluster 674. And there is a ?eta7.txt which I cannot undelete because
+read.me uses the same clusters (855 and following). I could, however, use
+the above trick to recover 824 - 819 = 5 bytes of the end of ?eta7.txt ...
+
+To recover ?ead.me, I do:
+
+./undelete.elf follow 674 x:readme.undelete 
+
+Do I ? NO. I must select 0 to force autodetect or 2 as the manually
+selected size of the file! Otherwise I would only get the first cluster!!!
+
+So I do:
+
+./undelete.elf follow 674 x:read2.me 2
+
+Drive A: info: maxsecinclust=0 shlclusttosec=0 numressec=1, fats=2,
+rootdirents=224 firstdatasec=33 maxclustnum=2848, secperfat=9
+
+Following FAT chain until EOF or count reached...
+Reading from empty areas according to FAT
+674->NIL/675->NIL/..............................................................
+................................................................................
+....................
+Done
+
+The file read2.me contains some garbage (00 chars) at the end, because
+it was only 674 bytes and undelete recovered 2 clusters of 512 bytes each.
+You can fix this with an editor if you want.
+
+I use mount -o loop test.img /somewhere to copy the current versions
+of inst.bat and read.me, for later comparison. I could have used mcopy
+for a real floppy (no image) or cp for a mounted partition...
+
+> diff -a read.me read2.me
+10c10
+< the subdirectories) to a directory FDBETA7 on your hard
+---
+> the subdirectories) to a directory FDBETA6 on your hard
+12c12
+< SET NLSPATH=C:\FDBETA7\NLS
+---
+> SET NLSPATH=C:\FDBETA6\NLS
+24a25
+> 
+\ No newline at end of file
+
+Looks as if I have found some old version of read.me!
+By the way, using wdiff -3 data2.txt read2.me tells me
+that no words (only whitespace) differ between data2.txt and read2.me,
+so I have recovered the same data in two different ways.
+
+This was the only undeleteable file, but the show goes on!
+In data.txt I had found a chunk that I have called data1.bat,
+but for which I could not find any directory entry. Probably
+the directory entry got overwritten. You would be lost with
+a normal undelete here. But my undelete found the data, so
+let us compare it to inst.bat (educated guess :-)):
+
+wdiff -3 -c data1.bat inst.bat
+
+======================================================================
+REM This batch file require FreeCOM to work correctly.
+{+REM This batch also makes use of character 255 (nonspace blank)
+CLS+}
+
+======================================================================
+ECHO [-Ripcord Beta06 H10 distribution-] {+FreeDOS Beta 7 ("SPEARS") Distributio
+ECHO [-.-] {+<FF>+}
+ECHO If you have not already created a DOS partition
+[-ECHO-] then you should
+{+ECHO run+} FDISK now, otherwise you may
+[-ECHO-] omit this step.  
+ECHO [-.-] {+<FF>+}  Follow the on-screen prompts to create a new
+[-ECHO .-] primary partition
+{+ECHO <FF>+}  and mark it as active.
+[-ECHO .-]  After running FDISK you will need to reboot.
+ECHO [-.-] {+<FF>+}  Just boot off the install boot floppy again,
+[-ECHO .  then-] {+&+} select no this prompt.
+
+======================================================================
+? FDISK
+{+REM We CLS here since if the person ran FDISK but didn't change
+REM anything, then the screen is cleared but the cursor is midway down.
+CLS+}
+ECHO [-.-] {+FreeDOS Installation
+ECHO FreeDOS Beta 7 ("SPEARS") Distribution
+ECHO <FF>+}
+ECHO If you just created a new partition for FreeDOS
+[-ECHO-] then you must FORMAT
+{+ECHO+} it now.  You may also format
+[-ECHO-] the partition if you wish to wipe it clean.
+ECHO WARNING: All data on your C: drive will be lost,
+[-ECHO .-] so only select YES
+{+ECHO <FF>+}        if you are sure. {+(You must also type 'Y' at Format's prom
+pt)
+
+======================================================================
+ECHO [-.-] {+<FF>+}
+ECHO You now need to make the drive bootable (that is
+[-ECHO-] copy the KERNEL and
+{+ECHO+} COMMAND to it along with
+[-ECHO-] setting up the boot record).
+
+======================================================================
+ECHO [-.-] {+<FF>
+pause+}
+
+======================================================================
+REM  ...
+{+CLS+}
+ECHO To finish the installation (install the included programs) 
+[-ECHO-] run the
+{+ECHO+} Install progam, ie type:
+ECHO {+<FF>+}  INSTALL
+
+======================================================================
+ECHO [-.-] {+<FF>+}
+
+======================================================================
+ECHO [-.-] {+<FF>+}
+
+
+Yes, seems that we have found another version of inst.bat!
+
+I hope I could clarify the use of my UNDELETE by those examples.
+I will add this mail to undelete-helpstuff.
+Undelete, with sources, DOS and Linux version, can be found at:
+http://www.coli.uni-sb.de/~eric/stuff/soft/
+
+Note that UNDELETE accepts both / and \ as directory slash, as
+you can see in the way I dirsave above. You can also dirsave a
+nameless deleted (!) directory by giving its cluster number. If
+you dirsave a directory with a name, the name must start with /
+or \ (NOT with "c:" or something and it may not be a relative
+name with .. in it, nor may it be a name in the current directory,
+just start with \ and think about it and you will get it right :-)).
+
+By the way, if I had done
+./undelete syssave root x:rootsave.bin 0
+(hm, sorry. no autodetection please, root dir has fixed size:)
+./undelete syssave root x:rootsave.bin
+I would have gotten a 7k dump file but no user-readable listing
+of the root directory! All syssave commands are meant as a means
+to make an exact copy of filesystem internal data, which experts
+can analyze or copy back later, for example after you accidentally
+started to format your drive. You do not need them for undeleting
+files, normally.
+
+Project summary:
+Source: test.img, 1474560 bytes.
+Step 1: data.bin, 999k, can be compresed to 2.5k, which gives us
+        the hint that not much really undeleteable data is in it.
+Step 2: data.txt, 2.7k, all text strings found in the "free" clusters.
+Step 3: data1.bat (1876 bytes) and data2.txt (842 bytes), parts of data.txt
+Step 4: Comparison shows that we have found inst.bat and read.me versions,
+        diff and wdiff are our friends. If you have less, wdiff -l ... | less
+        can highlight the differences (bold/underline...).
+Alternative way: NORMAL undelete, not undelete of ALL recoverable data.
+Step 1: root-dirsave.bin (only useful for experts, 1k, our selected size,
+        using auto-truncate by selecting size 0 is okay, too. This will
+        truncate after finding several empty directory slots) and
+        root-dirsave.txt, 1835 bytes, which gives a verbose technical directory
+        listing. We read in there:
+        
+        UnDelAble: ?EAD    .ME  13:11:46 19.08.2001 @00674, size 0000000819
+Step 2: read2.me, 1024 bytes (multiple of 512), recovered by undelete follow.
+        We gave the length as 2 clusters, but 0, auto, may have worked, too.
+        If your deleted file is fragmented, the recovered file gets too short
+        in autodetect lenght mode. If lots of empty clusters come after it,
+        those will be included in autodetect length mode and it will get too
+        long. So just calculate 819 / (512 * 1) = 2 clusters needed and use
+        this to select the length manually.
+
+Have fun with UNDELETEing with my tool!
+
+Cheers, Eric

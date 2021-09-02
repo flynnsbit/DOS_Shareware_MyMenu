@@ -1,0 +1,52 @@
+DISPLAY  devicename[:]=(hardwareType,[n|(n1[,n2]...)],[m|(m,p)]) [/V] [/C] [/NOHI]
+
+DISPLAY: Loads console codepage management capabilities
+
+   devicename    a valid device name (which in this version is ignored). Use any
+                 (such as CON)
+   hardwareType  a supported hardware type label (such as EGA or VGA)
+   n             default hardware codepage (for one hardware codepage). It will
+                 normally be 437
+   n1, n2,...    hardware codepages, if more than one (usually you'll have to use
+                 third party ARABIC/HEBREW drivers)
+   m             Number of buffer for prepared codepages (1 by default)
+   p             Extra hardware-specific parameter
+   
+   /C            exClusive: does not load if DISPLAY is already present
+   /NOHI         Disables ussage of XMS memory for prepared codepages
+   /V            Verbose: extended information 
+   
+
+
+Supported hardware:
+
+   VGA           VGA adapters. 3 subfonts will be used in any case
+
+                 EGA adapters
+   EGA           Automatically determine the number of subfonts to be used
+   EGA 14        Force to use two sub-fonts (8x8 and 8x14)
+   EGA 8         Force to use only one sub-font (8x8)
+   
+   LCD           LCD adapters (same as EGA 8)
+   
+                 For all the adapters above, the parameter p will try to force
+                 the number of subfonts to be used (1=8x8, 2=8x8,8x14, 3=8x8, 8x14, 8x16)
+                 whenever hardware allows it
+
+   CGA           CGA adapter (FreeDOS GRAFTABL). Parameter p is ignored
+
+
+Examples:
+
+   DISPLAY  CON=(VGA,437,1)
+   
+                 VGA adapter, whose BIOS standard codepage is 437. 1 buffer for
+                 software codepage is used.
+                 This is the standard for most users.
+                 
+   DISPLAY CON=(EGA,,2)
+   
+                 Graphics adapter is EGA or better, but is unknown. BIOS default
+                 codepage is also unknown. Two buffers are required.
+
+                 

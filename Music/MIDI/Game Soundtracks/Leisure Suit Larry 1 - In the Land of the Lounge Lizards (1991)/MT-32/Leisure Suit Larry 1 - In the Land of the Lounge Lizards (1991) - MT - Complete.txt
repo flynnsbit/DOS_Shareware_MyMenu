@@ -1,0 +1,97 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+         ====================================================
+                         LEISURE SUIT LARRY 1
+         LEISURE SUIT LARRY IN THE LAND OF THE LOUNGE LIZARDS
+                                                        
+
+                       THE COMPLETE SOUNDTRACK
+                     (See below for song titles.)
+                             Chris Brayman
+                       "Larry Theme" by Al Lowe
+         ====================================================
+              Copyright (c)1987, 1991 Sierra On-Line, Inc.  
+         ====================================================
+
+                        ROLAND MT-32 VERSION
+
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded System Exclusive data
+- Roland MT-32, MT-100, LAPC-I, CM-32L, CM-64
+- 100% MPU-401 Compatible MIDI Interface
+
+
+ NOTICE:   This MIDI file is NOT designed for playback on General MIDI
+           sound cards.  It contains a large amount of System Exclusive
+           data which can be read only by the Roland MT-32, MT-100,
+           CM-32L, CM-64, and LAPC-I.  
+
+
+This Standard MIDI File was recorded directly from Sierra's "Leisure Suit
+Larry 1" VGA adventure game using Sierra's MT-32 driver.  It is designed ONLY
+for the MIDI devices noted above and is not compatible with devices which
+can "emulate" the MT-32.  The MIDI file contains embedded SysEx data
+which will write new sounds to your MT-32.
+
+
+     NOTE:  The SysEx patch bank is embedded in
+            the first three measures of this file.
+            Therefore, normal playback begins with
+            the fourth measure.
+
+
+Recorded/edited/compiled/arranged for Standard MIDI by Tom Lewandowski.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+       =================================================================
+                          TRACK SHEET  (MT-32 VERSION)
+
+                               LEISURE SUIT LARRY
+                       IN THE LAND OF THE LOUNGE LIZARDS
+       =================================================================
+
+   SONG TITLE                                      START MEASURE/TIME *
+   -------------------------------------------------------------------------
+   1. Introduction                                        4  00:00:07
+   2. The Doggie                                         35  00:01:21
+   3. Lefty's                                            39  00:01:31
+   4. Fatal Flush                                       128  00:05:02
+   5. The Pimp                                          135  00:05:21
+      a. Soap Opera                                     135  00:05:21
+      b. Motel Commercial                               164  00:06:31
+      c. Musical Comedy                                 189  00:07:31
+      d. Documentary                                    204  00:08:07
+      e. Children's Show                                228  00:09:04
+      f. Cable Sports Network                           243  00:09:40
+      g. Master Piece Theatre                           262  00:10:26
+   6. Adult Television                                  281  00:11:12
+   7. The Hooker                                        341  00:13:36
+   8. Taxi Ride                                         363  00:14:28
+   9. Quiki-Mart                                        424  00:16:55
+  10. The Drunk                                         463  00:18:28
+  11. The Casino                                        471  00:18:48
+  12. Casino Showroom                                   560  00:22:21
+  13. The Disco                                         600  00:23:57
+  14. Disco Larry                                       683  00:27:16
+  15. Alley Incident (Remanufacturing Larry)            706  00:28:12
+  16. Quiki-Wed Wedding Chapel                          752  00:30:02
+  17. Honeymoon Suite                                   810  00:32:21
+  18. All Tied Up!                                      869  00:34:43
+  19. Faith                                             887  00:35:26
+  20. Eve                                               962  00:38:26
+  --------------------------------------------------------------------------
+                                                TOTAL TIME:  00:47:07
+
+
+      * Note:  Start Times are approximate.
+

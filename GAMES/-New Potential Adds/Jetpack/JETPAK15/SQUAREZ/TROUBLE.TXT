@@ -1,0 +1,50 @@
+
+                            *******************
+                            * TROUBLESHOOTING *
+                            *******************
+PROBLEM:
+     Not Enough Memory
+SOLUTION:
+     Try removing TSR's (such as mouse drivers) from your config.sys and
+     autoexec.bat files.
+     If you have DOS version 5 or above, include the line:
+
+          dos=high
+
+     in your config.sys file after "himem.sys" or another memory manager has
+     been loaded.
+
+
+PROBLEM:
+     Movement is erratic, or there is no movement
+SOLUTION:
+     Press [J] to adjust your joystick(s).
+     Most systems should work with automatic joystick detection.  If movement
+     is still erratic, try disabling joysticks in the command-line with
+     "Squarez /J".
+     You can also disable the mouse ("Squarez /M").
+
+
+PROBLEM:
+     Sound isn't working correctly, or the game locks up
+SOLUTION:
+     Use the command-line sound card override.
+     Load Squarez with one of the command-line options:
+
+          Squarez /S0    -    No Sound
+          Squarez /S1    -    PC Speaker
+          Squarez /S2    -    Adlib or Sound Blaster compatible
+
+SOUND BLASTER HELP
+------------------
+If your Sound Blaster or compatible card is not working in Squarez, try
+running the included utility "SETBLAST".  This will verify that your
+Sound Blaster or compatible is set correctly.
+
+If the game continually locks up and you have a Sound Blaster, as a last
+resort try disabling sound card usage by using the command line override
+(Squarez /S1).
+
+Squarez should have come without the configuration file "SQUAREZ.CFG"  If you
+can't solve the problems you are having, try erasing this file.  Squarez will
+create a new config file based on your system.

@@ -1,0 +1,52 @@
+
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+         ====================================================
+                    THE ADVENTURES OF WILLY BEAMISH          
+                                                             
+                               "SPIDER"                 
+                                  by                         
+                  Don Latarski and Christopher Stevens       
+         ====================================================
+                     Copyright (c)1991 Dynamix, Inc.         
+         ====================================================
+
+                         -- NEW LONGER VERSION --
+
+
+
+System Requirements:
+
+- MIDI File player
+- System Exclusive patch bank utility (i.e. MidiEx)
+- Roland MT-32, CM-32L, CM-64, or LAPC-1
+- MPU-401 compatible MIDI interface
+   (Not required for LAPC-1 users.)
+
+
+This Standard MIDI File (WB_3.MID) was recorded directly from Dynamix's
+"The Adventures of Willy Beamish" adventure game.  In order to obtain the
+proper sounds during playback, you must first transmit the included
+WILLY.SYX SysEx patch bank file to the MT-32.  Use any SysEx utility (MidiEx,
+Cakewalk, Quick Send, etc.) to transmit the patch bank to the MT-32
+prior to playback of the song file.
+
+
+
+Converted to Standard MIDI File format by Tom Lewandowski.
+Address E-Mail questions or comments to:
+
+      tom+di@netnet.net
+
+
+      Visit us on the Internet!
+
+      QUEST STUDIOS
+      http://bayland.net/~tom+di/quest/sierra.html
+
+      THE ROLAND MT-32 SOUND MODULE RESOURCE CENTER
+      http://bayland.net/~tom+di/quest/roland.html
+
+
+
+

@@ -1,0 +1,9 @@
+Game: Descent: Anniversary Edition
+Year: 1996
+Composed by: Ken Allen, Brian Luzietti, Larry Peacock, Leslie Spitzer, Jim Torres, Tim Wiles
+MIDI versions: GM
+Platform: DOS
+
+Additional info: The archive includes all tracks from Descent and the rest is from the Anniversary Edition.
+
+https://www.karlsitretro.com/game_midi

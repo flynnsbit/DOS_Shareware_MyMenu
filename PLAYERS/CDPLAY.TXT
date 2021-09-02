@@ -1,0 +1,93 @@
+This is SJGPLAY: The freeware Audio CD Player for DOS with Lyrics and more!
+
+SJGPLAY is a DOS CD player featuring both full-screen and command-line modes.
+The program is included in DOSBox-X with explicit permissions from the author.
+
+It appears as a standalone program named CDPLAY.EXE on the Z drive. The zip
+package of SJGPLAY 1.29 containing the full documentation (SJGPLAY.DOC) and
+some extras (named EXTRAS.ZIP) also appears as SJGPLAY.ZIP on the Z: drive.
+
+The official website of SJGPLAY for DOS is located at:
+http://www.6502.org/users/sjgray/software/sjgplay/sjgplay_dos.html
+
+Quick Usage Guide
+=================
+
+This is a quick usage guide of the Audio CD player built into DOSBox-X. A full
+documentation is available as SJGPLAY.DOC inside the zip package SJGPLAY.ZIP.
+
+You can simply type the command CDPLAY to start the CD player inside DOSBox-X.
+It has a full-screen text-based graphical interface with easy-to-use features.
+
+After the program is launched you can control it using either the keyboard or
+the mouse. Type H for the help screen, P or ENTER to play the current track,
+SPACE to pause/resume the playback, S to stop the track, or Q to quit program.
+
+It accepts command-line arguments too if you want to run in command-line mode.
+For example, you can play a track without launching its graphical interface.
+Below are control-mode arguments that it accepts:
+
+    NOTE: The following arguments can be shortened to the first 4 characters.
+          Where you see 'nn' substitute a number as indicated.
+          
+    Device control:
+
+    UNIT:nn ...Select drive unit# nn (1=first drive, 2=second drive etc)
+    EJECT .....Eject any type of CD
+    NODATA ....Eject CD-ROM's only
+    NOAUDIO ...Eject Audio CD's only
+    VOLUME:nn .Set Volume to nn (0 to 99)
+
+    Playback:  (to play a random track set nn to -1!)
+
+    PLAY:nn ...Play track nn (plays current track if nn not specified)
+    SINGLE:nn .Single-play track nn (stops at end of track)
+    NEXT ......Play next track
+    PREVIOUS ..Play previous track
+    STOP ......Stop CD playback
+    WAIT ......Waits for CD to stop, track to end, or keypress
+
+    Information:
+
+    INFO.......Display CD info including track titles and time, total time
+    TRACK......Display track name and number
+    TNUMBER....Display track number only
+    ELAPSED....Display track elapsed time
+    TITLE......Display CD title
+    
+    Conditionals:
+
+    The following arguments can be used to stop command line parsing if the
+    specified condition is false, or continue if the condition is true:
+
+    IFSTOPPED..If the CD is stopped then continue parsing CMDLIST
+    IFPLAYING..If the CD is playing then continue parsing CMDLIST
+    IFAUDIO ...If the CD is an Audio CD (more than 1 track) then continue
+    IFCD.......If a CD is inserted then continue parsing CMDLIST,
+               If not, then exit with ERRORLEVEL=1 (useful in batch files)
+
+       (if the condition is false then the remaining arguments on the
+        command-line are ignored)
+  
+    You can also specify a secondary configuration file with CONFIG:file.
+    See the full documentation for more details about the configuration file. 
+
+  Some examples for command-line usages:
+
+  CDPLAY CHECK ....................Run the program if a CD is in the drive
+  CDPLAY INFO .....................Display name, track titles of current CD
+  CDPLAY PLAY:1 ...................Play track 1 from the command-line
+  CDPLAY IFAUDIO PLAY:3 ...........If an audio disc is inserted then play
+                                    track 3 (put this in your AUTOEXEC!)
+  CDPLAY IFSTOPPED PLAY:5 .........Play track 5 if the CD is NOT playing
+  CDPLAY UNIT:1 STOP UNIT:2 PLAY ..Stop CD in unit 1 then start playing the
+                                    current track of unit 2
+  CDPLAY NOAUDIO ..................Eject the CD if it is an audio CD.
+                                    (maybe your system gets confused if an
+                                     audio disc is inserted?)
+  CDPLAY CONFIG:C:\MYCONFIG.CFG ...Specify a secondary config file called
+                                    "myconfig.cfg" located in the root
+                                    directory of drive C:
+  CDPLAY VOLU:99 PLAY:-1 NOEX .....Set full volume, play a random track,
+                                    then go to user interface
+  CDPLAY WAIT EJECT ...............Wait for track to finish, then eject CD

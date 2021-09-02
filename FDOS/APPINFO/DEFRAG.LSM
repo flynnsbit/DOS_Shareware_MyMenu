@@ -1,0 +1,15 @@
+Begin3
+Title:          Defrag
+Version:        1.3.2
+Entered-date:   2013-06-13
+Description:    Defragmentation utility.
+Keywords:       defragmenter
+Author:         Imre Leber <imre.leber -AT- telenet.be>
+Maintained-by:  Imre Leber <imre.leber -AT- telenet.be>
+Primary-site:   http://users.telenet.be/imre/FreeDOS/
+Alternate-site: http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/defrag/  http://users.pandora.be/imre/FreeDOS/
+Original-site:  http://users.telenet.be/imre/FreeDOS/
+Platforms:      FreeDOS
+Copying-policy: GNU General Public License, version 2
+Wiki-site:      http://wiki.freedos.org/wiki/index.php/Defrag
+End

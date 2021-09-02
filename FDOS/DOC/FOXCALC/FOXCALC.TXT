@@ -1,0 +1,92 @@
+
+FoxCalc v0.92 Copyright (C) Mateusz Viste "Fox" 2007
+
+
+FoxCalc is  a simple  calculator for  DOS with  a text  user interface. The
+program has a mouse suports,  so take care  to run your mouse driver before
+launching FoxCalc, it will be much easier to use it.
+
+If you really can't use a mouse,  you will find below the  list of shortcut
+keys.  That list should automatically appear anyway if FoxCalc can't find a
+mouse driver.
+
+ษออออออออออออออออออออออออออออออออออออออออออป
+บ Key          ณ  Function                 บ
+บฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤบ
+บ 0-9          ณ 0-9 (numbers)             บ
+บ "+"          ณ +   (addition)            บ
+บ "-"          ณ -   (subtraction)         บ
+บ "=" or ENTER ณ =   (return)              บ
+บ "."          ณ .   (comma)               บ
+บ "*"          ณ *   (multiplication)      บ
+บ "/"          ณ /   (division)            บ
+บ "%"          ณ %   (percent)             บ
+บ "]"          ณ ๛   (square root)         บ
+บ "["          ณ xý  (square)              บ
+บ "^"          ณ xü  (exponentiation)      บ
+บ "!"          ณ x!  (factorisation)       บ
+บ ":"          ณ MOD (modulo)              บ
+บ "m"          ณ M+  (memory addition)     บ
+บ "M"          ณ M-  (memory subtraction)  บ
+บ "r"          ณ MR  (memory Recall)       บ
+บ "c"          ณ MC  (memory Clear)        บ
+บ "\"          ณ +/- (change signum)       บ
+บ ESC          ณ OFF (exit)                บ
+บ DEL          ณ AC  (clear all)           บ
+บ BackSpace    ณ C   (clear)               บ
+บ "s"          ณ snd (sound on/off)        บ
+บ "?"          ณ ?   (about the program)   บ
+ศออออออออออออออออออออออออออออออออออออออออออผ
+
+
+CALCULATION
+FoxCalc is  making use of the GMP  (GNU Multi Precision Library)  and  MPFR
+libraries for all calculations. That makes it an accurate and very reliable
+tool.  All operations are  performed with a 60 digits resolution.  Floating
+point  numbers  which  don't fit  into  the window  are  truncated  without
+any rounding.
+When using the MOD function in FoxCalc,  you can get different results than
+in other computer calculators or  programming languages.  That's not a bug.
+The modulo operation on negative numbers can be done using several methods.
+Usually,  computers are  processing an "X MOD Y"  operation using  absolute
+values of X and Y, and changes the result's signum to the X's sign.  That's
+the easiest way, and that's how Intel processors work.  FoxCalc is behaving
+differently. Therefore, the "7 mod -3" operation may be computed as  "1" on
+other calculators, when FoxCalc will report "-2". Both results are correct.
+
+CODEPAGE & LOCALES
+As there are some buttons which are described with ASCII characters greater
+than ASCII #127,  FoxCalc is detecting the system's codepage and change the
+buttons  descriptions if  the codepage  can't display  them  correctly. For
+example, the square button is "๛" on CP437, and becomes "SQR" on CP850.
+The separators (decimal separator and thousands separator) are  copied from
+the system's settings.  If you would like to change them,  just change your
+system's settings (usually using COUNTRY.SYS).
+
+HARDWARE REQUIREMENTS
+FoxCalc doesn't have any  special requirements.  It runs in protected mode,
+therefore it will need at least an 80386 CPU.  A color EGA video card would
+be nice too,  as well as 1 MByte of memory.  I recommend to launch it under
+FreeDOS, but I guess any system compatible with MSDOS 5.0 will be okay.
+
+LEGAL MUMBO-JUMBO
+I will keep it short.  It's an open-source project,  so feel free to modify
+the source-code at your convenience,  and let me know of  any improvements.
+Go look into the GNU/GPL v2 (or higher) license for any details.
+
+CREDITS
+I would like to say a  big "thank you" to  people which  helped me with the
+FoxCalc developpment, that is:
+ * DrV (freebasic.net forum): Codepage detecting routine,  and many general
+    hints on using the FreeBASIC compiler.
+ * srvaldez (freebasic.net forum): Much help on  adaptating the  GMP & MPFR
+    libraries to be used with FoxCalc,  and gave me a hint for checking the
+    overflow of exponentiation operations.
+ * MichaelW  (freebasic.net  forum): Thousands   and   decimal   separators
+    retrieving routine.
+
+
+Mateusz Viste "Fox"
+
+homepage: http://mateusz.viste.free.fr/dos
+email: mateusz.viste@mail.ru

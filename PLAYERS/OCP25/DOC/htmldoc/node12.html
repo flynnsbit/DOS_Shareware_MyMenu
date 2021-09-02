@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Global functions</TITLE>
+<META NAME="description" CONTENT="Global functions">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="next" HREF="node13.html">
+<LINK REL="previous" HREF="node11.html">
+<LINK REL="up" HREF="node10.html">
+<LINK REL="next" HREF="node13.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html244"
+ HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html242"
+ HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html236"
+ HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html245"
+ HREF="node13.html">Text mode functions</A>
+<B> Up:</B> <A NAME="tex2html243"
+ HREF="node10.html">Player</A>
+<B> Previous:</B> <A NAME="tex2html237"
+ HREF="node11.html">General</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00520000000000000000">
+Global functions</A>
+</H1>
+Below the general information is a dark grey line. On the left side of the line
+the current screen mode is shown. In the middle a list of channels. Each file
+type has a maximum number of channels played simultaeniously. For example simple
+file formats as <TT>.wav</TT> can have one or to channels (responding to a mono
+or stereo sample). An audio CD always has 2 channels (left and right). Module
+file types can have many channels typically ranging from 4 to 32 channels.
+
+<P>
+The currently selected channel is displayed in light grey. To select another
+channel use <TT>&lt;
+<!-- MATH: $\leftarrow$ -->
+<IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\leftarrow$">&gt;</TT>,<TT>&lt;
+<!-- MATH: $\rightarrow$ -->
+<IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\rightarrow$">&gt;</TT>. You can also use
+<TT>&lt;<IMG
+ WIDTH="13" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$\uparrow$">&gt;</TT>,<TT>&lt;
+<!-- MATH: $\downarrow$ -->
+<IMG
+ WIDTH="13" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\downarrow$">&gt;</TT> which will loop through the channels if
+the left or right end is reached.
+
+<P>
+Pressing <TT>&lt;q&gt;</TT> will <EM>quiet</EM> the selected channel. This key is valid in
+every part of the player. To enable the channel press <TT>&lt;q&gt;</TT> a second time.
+The reverse logic can be accomplished with <TT>&lt;s&gt;</TT>. This disables all other
+channels than the selected, so only one channel plays solo. Another hit on
+<TT>&lt;s&gt;</TT> will <EM>unsolo</EM> the channel again, so playing all channels. You
+can use any combination of the above keys. An example: Select channel 1 and
+press <TT>&lt;s&gt;</TT>. Now you will hear only channel 1. No go with the cursor keys
+to channel 3 and press <TT>&lt;q&gt;</TT>. As the channel is currently turned of (quiet)
+is it now played again. so you hear channels 1 and 3. Now switch to channel 2
+and press <TT>&lt;s&gt;</TT>. Now only channel 2 will be played, whiche channel 1 and 3
+are turned off again. By pressing <TT>&lt;s&gt;</TT> again all channels are enabled.
+
+<P>
+You can directly <EM>solo</EM> the first 10 channels by pressing keys <TT>&lt;1&gt;</TT><IMG
+ WIDTH="23" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\ldots$"><TT>&lt;0&gt;</TT>.
+This will act as if you had changed to the appropriate channel and pressed
+<TT>&lt;s&gt;</TT>. Channels 11-20 are accessed through <TT>&lt;ALT&gt;</TT>+<TT>&lt;1&gt;</TT><IMG
+ WIDTH="23" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\ldots$"><TT>&lt;ALT&gt;</TT>+<TT>&lt;0&gt;</TT>.
+
+<P>
+To pause the file press <TT>&lt;p&gt;</TT>.
+
+<P>
+The current file can be restarted by pressing <TT>&lt;CTRL&gt;</TT>+<TT>&lt;Home&gt;</TT>. To
+move a bit forward use <TT>&lt;CTRL&gt;</TT>+<TT>&lt;
+<!-- MATH: $\rightarrow$ -->
+<IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\rightarrow$">&gt;</TT>. If a module is played this
+will skip the current order and start playing the next order. In other file
+types this command skips a certain amount of time, depending on the estimated
+playing time. <TT>&lt;CTRL&gt;</TT>+<TT>&lt;
+<!-- MATH: $\leftarrow$ -->
+<IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\leftarrow$">&gt;</TT> will rewind the music. This is
+not possible for all file type (midi or sid files). When playing modules the
+current order is skipped and the previous order is playing from the beginning.
+To skip a smaller amount of the file use <TT>&lt;CTRL&gt;</TT>+<TT>&lt;<IMG
+ WIDTH="13" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$\uparrow$">&gt;</TT> and
+<TT>&lt;CTRL&gt;</TT>+<TT>&lt;
+<!-- MATH: $\downarrow$ -->
+<IMG
+ WIDTH="13" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\downarrow$">&gt;</TT>. This will skip 8 rows when playing modules.
+If the files support jump or loop command using these functions can lead you
+to patterns not included in the original play order! Be aware that using these
+funtions can lead to somewhat crashed files.<A NAME="tex2html21"
+ HREF="#foot455"><SUP>5.5</SUP></A>
+
+<P>
+The next file in the playlist can be loaded with <TT>&lt;Enter&gt;</TT>. If no more files
+are left in the playlist the fileselector will be started so you can choose
+the next files. However the current module will continue playing. By pressing
+<TT>&lt;Esc&gt;</TT> you can switch back to the player again. The fileselector can also
+be invoked with <TT>&lt;f&gt;</TT>. The current playlist is shown and can be edited. When
+exiting the fileselector with <TT>&lt;Esc&gt;</TT> you can load the next module in the
+playlist with <TT>&lt;Enter&gt;</TT>. Leaving the fileselector with <TT>&lt;Enter&gt;</TT> will
+load the currently selected module and switching back to the player.
+
+<P>
+By default a module is looped after its end was reached. You can change this
+behaviour by configuring the file selector<A NAME="tex2html22"
+ HREF="#foot1017"><SUP>5.6</SUP></A> or with <TT>&lt;CTRL&gt;</TT>+<TT>&lt;l&gt;</TT>. When
+looping is disabled the next module in the playlist will be loaded once a
+module has ended. If no modules are left in the playlist the fileselector is
+started.
+
+<P>
+A DOS-Shell will be started when typing <TT>&lt;d&gt;</TT>. Note that <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP uses about
+200KB so not all programs might start or execure properly. However it should
+be enough to make simple tasks like copying, deleting etc. When running under
+Windows95 the free amount of memory should be the usual size.
+
+<P>
+The screen mode can be changed by pressing <TT>&lt;z&gt;</TT>. This will toggle
+between 25 and 50 rows textmode, while
+<TT>&lt;CTRL&gt;</TT>+<TT>&lt;z&gt;</TT> toggle between 30 and 60 row textmode.
+<TT>&lt;ALT&gt;</TT>+<TT>&lt;z&gt;</TT> will toggle between 80 and 132 column mode.<A NAME="tex2html23"
+ HREF="#foot471"><SUP>5.7</SUP></A>
+
+<P>
+The current configuration can be ''saved'' with <TT>&lt;ALT&gt;</TT>+<TT>&lt;F2&gt;</TT>. It is
+not stored permanently on hard disk, but only valid until <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP is quit. Normally
+the default configuration is loaded every time a new file is loaded. This
+function makes the current configuration the new default configuration. A
+previously saved configuration can be loaded with <TT>&lt;ALT&gt;</TT>+<TT>&lt;F3&gt;</TT>. The
+<EM>real</EM> default values are loaded with <TT>&lt;ALT&gt;</TT>+<TT>&lt;F4&gt;</TT>. To modify
+the default values permanently you have to change the <TT>cp.ini</TT> file
+as explained on page <A HREF="node30.html#cp.ini"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="cross_ref_motif.gif"></A>.
+
+<P>
+If the <EM>diskwriter</EM> device has been prepared you can manually start the
+harddisk sampling by pressing <TT>&lt;ALT&gt;</TT>+<TT>&lt;s&gt;</TT>. See chapter <A HREF="node30.html#cp.ini">5</A>
+for details on configuring <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP.
+
+<P>
+An online help is shown by <TT>&lt;h&gt;</TT>,<TT>&lt;?&gt;</TT> or <TT>&lt;F1&gt;</TT>. Use <TT>&lt;Pgup&gt;</TT> and
+<TT>&lt;Pgdown&gt;</TT> to scroll through this screen.
+
+<P>
+Users of SoundBlasterAWE, Terratex EWS and Gravis Ultrasound PnP can use <TT>&lt;CTRL&gt;</TT>+<TT>&lt;F5&gt;</TT>
+and <TT>&lt;CTRL&gt;</TT>+<TT>&lt;F6&gt;</TT> to adjust the onboard reverb effect. The SBAWE can
+also add a chorus effect which is controlled via <TT>&lt;CTRL&gt;</TT>+<TT>&lt;F7&gt;</TT> and
+<TT>&lt;CTRL&gt;</TT>+<TT>&lt;F8&gt;</TT>.
+
+<P>
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot455">... files.</A><A NAME="foot455"
+ HREF="node12.html#tex2html21"><SUP>5.5</SUP></A>
+<DD>This does not mean that
+<FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP itself crashed, but that the order of the music file can be disturbed so
+heavily, that the player is not able to play the correct music anymore.
+
+<DT><A NAME="foot1017">... selector</A><A NAME="foot1017"
+ HREF="node12.html#tex2html22"><SUP>5.6</SUP></A>
+<DD>see section
+<A HREF="node8.html#fileselectoradvance">3.3</A> for details
+
+<DT><A NAME="foot471">... mode.</A><A NAME="foot471"
+ HREF="node12.html#tex2html23"><SUP>5.7</SUP></A>
+<DD>80x25
+and 80x50 textmode are available on every VGA card. All other modes require a
+proper VESA bios (at least version 1.2) and may not be available on all cards.
+
+</DL><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html244"
+ HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html242"
+ HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html236"
+ HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html245"
+ HREF="node13.html">Text mode functions</A>
+<B> Up:</B> <A NAME="tex2html243"
+ HREF="node10.html">Player</A>
+<B> Previous:</B> <A NAME="tex2html237"
+ HREF="node11.html">General</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

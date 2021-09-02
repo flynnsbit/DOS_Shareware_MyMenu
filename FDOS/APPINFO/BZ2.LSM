@@ -1,0 +1,14 @@
+Begin3
+Title:          BZIP2
+Version:        1.0.5
+Entered-date:   2008-06-19
+Description:    BZIP2 compression program
+Keywords:       bzip, bunzip, zip, unzip, packer
+Author:         Julian R. Seward jseward-at-bzip.org
+Maintained-by:  BZIP2 project
+Primary-site:   http://www.bzip.org/
+Alternate-site: ftp://ftp.delorie.com/pub/djgpp/current/v2apps/
+Original-site:  http://www.bzip.org/
+Platforms:      DOS, FreeDOS, Linux, Windows
+Copying-policy: Open Source, see license.txt
+End

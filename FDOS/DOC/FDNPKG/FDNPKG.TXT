@@ -1,0 +1,104 @@
+
+     ##################################################################
+     #                                                                #
+     #  FDNPKG - a network-enabled package manager for FreeDOS        #
+     #  Copyright (C) 2012-2016 Mateusz Viste. All rights reserved.   #
+     #                                                                #
+     #                 http://fdnpkg.sourceforge.net                  #
+     #                                                                #
+     ##################################################################
+
+
+
+*** What is FDNPKG ***
+
+FDNPKG is an online update tool for FreeDOS. FDNPKG is released under the GNU
+GPL license. It allows to install/remove software on a FreeDOS installation
+using remote or local repositories. Remote (online) repositories can be either
+http or gopher URLs. FDNPKG is written by Mateusz Viste, for the FreeDOS (tm)
+Project, altough it can be used on other DOS systems as well. FDNPKG comes
+with a lightweight tool called FDINST that is suitable for old, pre-386
+systems with low amounts of memory. FDINST doesn't provide network support.
+FDNPKG stands for "FreeDOS Network Package manager".
+
+
+*** Configuration ***
+
+The FDNPKG configuration file is a text file that contains various directives,
+like repositories declarations, cache time, etc. I won't describe the
+configuration file here, because it's pretty well commented itself. FDNPKG
+looks for its configuration file into %DOSDIR%\BIN\FDNPKG.CFG by default, but
+you can make FDNPKG use a configuration file at any other location, by setting
+the FDNPKG.CFG environnement variable.
+Example:
+  SET FDNPKG.CFG=C:\MYDIR\FDNPKG.CFG
+
+
+*** Requirements ***
+
+To use FDNPKG, your system will need to fullfill following conditions:
+  - 80386 class CPU
+  - 3 MiB of free RAM or DPMI swap space (24 MiB if you wish to install
+    LZMA-compressed packages)
+  - at least as much free disk space in your %TEMP% directory as the size of
+    the biggest package you wish to be able to install,
+ and, if you'd like to use online repositories:
+  - a loaded packet driver
+  - a working WatTCP environnement (that is, a proper wattcp.cfg file)
+
+
+*** Usage ***
+
+Syntax: FDNPKG action [parameters]
+
+Where action is one of the following:
+ search [string]   - Search net repositories for package containing 'string'
+ vsearch [string]  - Same as 'search', but prints also source repositories
+ install pkg       - Install the package 'pkg' (or local zip file)
+ install-nosrc pkg - Install the package 'pkg' (or local zip file) w/o sources
+ install-wsrc pkg  - Install the package 'pkg' (or local zip file) with sources
+ remove pkgname    - Remove the package 'pkgname'
+ listlocal [str]   - List all local (installed) packages containing 'str'
+ listfiles pkg     - List files owned by the package 'pkg'
+ checkupdates      - check for available updates of packages and display them
+ update [pkg]      - update 'pkg' to last version (or all packages if no arg)
+ dumpcfg           - print out the configuration loaded from the cfg file
+ license           - print out the license of this program
+
+
+*** Some details about what a "package" is ***
+
+FDNPKG is handling FreeDOS packages. A "package" is an archive containing
+software in its binary and/or source code form. FreeDOS packages are in fact
+standard ZIP files that contain a predefined directory tree (eg. BIN/,
+SOURCE/, DOC/...). FDNPKG performs a set of tests on the package before trying
+to install it, and refuses to install packages that seem to be invalid.
+The ZIP format is a container that allows for multiple compression algorithms
+to be used. FDNPKG supports these: stored files (no compression), deflate and
+lzma.
+
+
+*** Bulding from source ***
+
+If you wish to build FDNPKG from sources, you will have to use the DJGPP
+compiler (v2.05 or newer), along with the 'make' tool and the Watt32
+library. The whole building procedure is automatized via a makefile file,
+therefore building it requires only to type 'make', and then the required
+magic should happen. You will need, however, to make sure that the Watt32
+static library file is available in 'watt32/bin/libwatt.a', and that all
+Watt32 header files are in the 'watt32/inc/' directory.
+
+
+*** License ***
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program. If not, see <http://www.gnu.org/licenses/>.

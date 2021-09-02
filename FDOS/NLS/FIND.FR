@@ -1,0 +1,12 @@
+#Translated by Mateusz Viste "Fox" / the.killer@wp.pl
+#
+0.0:Affiche les ligne d'un fichier correspondant … une expression recherch‚e.
+0.1:Compte les lignes contenant l'expression
+0.2:Ne diff‚rencie pas les majuscules/miniscules
+0.3:EnumŠre les lignes affich‚es, en commencant … 1
+0.4:Affiche les lignes ne contenant pas l'expression
+1.0:fichier
+1.1:expression
+2.0:Ouverture du fichier impossible
+2.1:Fichier non-existant
+2.2:Impossible de changer de r‚pertoire

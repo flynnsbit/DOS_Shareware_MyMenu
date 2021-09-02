@@ -1,0 +1,24 @@
+Girl From Mars (girl_from_mars.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=173935
+Renamed to "GRLFMARS.XM" because of DOS 8-character limit
+
+Summary
+
+    girl_from_mars.xm is a XM format module.
+    Uploaded to modarchive.org on Sat 1st Jun 2013
+
+Info Info
+
+    Mod Archive ID: 173935
+    MD5: 7fa3ccae09361970dfb08a05a6bd756c
+    Format: XM
+    Channels: 14
+    Genre: Chiptune
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     Drozerix (https://modarchive.org/member.php?84702)

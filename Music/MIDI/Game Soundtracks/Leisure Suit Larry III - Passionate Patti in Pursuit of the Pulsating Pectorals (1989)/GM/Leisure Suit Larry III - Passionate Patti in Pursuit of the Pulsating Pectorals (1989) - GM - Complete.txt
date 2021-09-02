@@ -1,0 +1,106 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ================================================
+               LEISURE SUIT LARRY 3:  PASSIONATE PATTI
+                IN PURSUIT OF THE PULSATING PECTORALS
+                                                        
+
+                            THE SOUNDTRACK
+                     (See below for song titles.)
+                Music Composed & Performed by Mike Dana
+                 "The Larry Theme" written by Al Lowe
+           ================================================
+                 Copyright (c)1989 Sierra On-Line, Inc.  
+           ================================================
+
+                          GENERAL MIDI VERSION
+                       (Roland Sound Canvas Mix)
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- General MIDI playback device
+   (Roland Sound Canvas or Yamaha XG recommended)
+
+
+This Standard MIDI File was recorded directly from Sierra's "Leisure Suit
+Larry 3" adventure game using Sierra's MT-32 driver.  It has been converted
+and arranged for playback on General MIDI devices.  The mix is best suited
+for Roland Sound Canvas but should also perform well on other GM devices.
+
+Recorded/converted/edited/compiled/arranged for General MIDI by Quest Studios.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+       =================================================================
+                      TRACK SHEET  (General MIDI VERSION)
+
+                    LEISURE SUIT LARRY 3: PASSIONATE PATTI
+                    -IN PURSUIT OF THE PULSATING PECTORALS
+       =================================================================
+
+   SONG TITLE                                      START MEASURE/TIME *
+   -------------------------------------------------------------------------
+   1. Sierra Fanfare                                      2  00:00:02
+   2. Introduction ("For Your Thighs Only")               9  00:00:19
+   3. Right Answer, Wrong Answer                         49  00:01:55
+   4. Nontoonyt Island Song                              53  00:02:04
+   5. Girl In The Binoculars                            113  00:04:28
+   6. Natives, Inc.                                     146  00:05:48
+   7. Nontoonyt Resort                                  174  00:06:55
+   8. Tawnee At The Beach                               235  00:09:21
+   9. The Comedy Hut (Paul Paul)                        288  00:11:28
+  10. The Burly Stage Manager                           335  00:13:21
+  11. Casino Showroom                                   345  00:13:45
+  12. Cherri And Larry's Casino Show                    380  00:15:09
+  13. Cherri Tart                                       424  00:16:55
+  14. Casino Lounge - Part 1                            506  00:20:12
+  15. Fat City                                          561  00:22:24
+  16. The Increadible Dork                              593  00:23:40
+  17. Bambi                                             639  00:25:31
+  18. Bambi's Video Workout                             674  00:26:55
+  19. You Score!                                        707  00:28:14
+  20. Larry Scores!                                     711  00:28:24
+  21. Crab Dance                                        731  00:29:12
+  22. Dewey, Cheatem, And Howe                          766  00:30:36
+  23. Patti's Theme                                     817  00:32:38
+  24. Patti's Theme II                                  867  00:34:38
+  25. Casino Lounge - Part 2                            933  00:37:16
+  26. Love Theme From Leisure Suit Larry 3              985  00:39:21
+  27. Patti's Quest                                    1226  00:49:00
+  28. The Burlesque Review                             1277  00:51:02
+  29. Chip 'N' Dale's                                  1316  00:52:36
+  30. Dale Carlsonian                                  1350  00:53:57
+  31. The Bamboo Jungle                                1415  00:56:33
+  32. The Bamboo Jungle - Part 2                       1468  00:58:40
+  33. The Bamboo Jungle - Part 3                       1516  01:00:36
+  34. The Bamboo Jungle - Part 4 (Death March)         1544  01:01:43
+  35. In Pursuit Of The Pulsating Pectorals            1568  01:02:40                                  
+  36. The Cliff Climb                                  1650  01:05:57
+  37. Patti, Just Say No!  (Marijuana Cliff)           1660  01:06:21
+  38. Rope Climbing For Beginners                      1689  01:07:31
+  39. Dance Of The Feral Pig                           1718  01:08:40
+  40. The River Log Ride                               1766  01:10:36
+  41. Nontoonyt Tribe Of Amazonian Women               1837  01:13:26
+      Lesbian Cannibal Natives                         ----  --------
+  42. The Reunion                                      1899  01:15:55
+  43. Falling Through The Nexus                        1949  01:17:36
+  44. SierraLand                                       1949  01:17:55
+  45. Police Quest Set                                 1977  01:19:02
+  46. Space Quest Set                                  1991  01:19:36
+  47. King's Quest Set                                 2033  01:21:16
+  48. The End                                          2049  01:21:55
+  49. Closing Theme                                    2055  01:22:09
+  --------------------------------------------------------------------------
+                                                TOTAL TIME:  01:23:19
+
+
+      * Note:  Start Times are approximate.
+

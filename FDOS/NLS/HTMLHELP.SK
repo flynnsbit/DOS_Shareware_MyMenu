@@ -1,0 +1,98 @@
+# Language: Slovakian (Kamenicky encoding)
+#### This file is part of the FreeDOS HTML Help Viewer
+#### and is licensed under its terms.
+
+# Program Usage Screen Strings
+1.0:FreeDOS HTML N†poveda
+1.1:Z†kladnÇ voåby
+1.2:Zobraz n†povedu na tejto tÇme 
+1.3:Zobraz t£to spr†vu
+1.4:Vyn£ü monochromatickò display
+1.5:Pouëi "fancy" farebn£ schÇmu
+1.6:Pouëi ASCII namiesto roz®°renòch znakov
+1.7:Nastav HTML k¢dov£ str†nku na nnn, namiesto detekcie
+1.8:Roz®°renÇ voåby
+1.9:Prep°® cestu k helpu
+1.10:Ak nieje ®pecifikovanò s£bor, predpoklad† sa index.htm
+1.11:Nahraj s£bor inò ako index.htm relat°vne k ceste n†povedy
+1.12:KeÉ uë°vateå stlaá° F1 alebo klikne na "help on help" n†poveda
+1.13:nahraje tento s£bor. Prednastavenò je help.htm
+1.14:PremennÇ prostredia
+1.15:Adres†r, ktorò obsahuje va®e s£bory n†povedy
+1.16:Vloëte sem /M, /A, F1, F2 ak si ich ëel†te prednastaviü
+
+#Error Message Strings
+2.0:Ned† sa rezervovaü pamÑü
+2.1:Chybnò argument
+2.2:Pros°m ®pecifikujte iba jedn£ tÇmu 
+2.3:Ned† sa pouëiü /f a /m s£áastne
+2.4:Nap°®te "HELP /?" pre pouëitie.
+2.5:TÇma s presne takòm n†zvom nen†jden†
+2.6:Ned† sa n†jsü tÇma
+2.7:Intern† chyba: Zmena veåkosti zlyhala
+2.8:Ned† sa á°taü komprimovanò s£bor
+2.9:Ned† sa otvoriü
+2.10:S£bor zipu je pr†zdny alebo po®kodenò
+2.11:Ned† sa n†jsü s£bor. Nahr†vanie prvÇho HTML s£boru v zipe
+2.12:Ned† sa n†jsü html s£bor v zazipovanom s£bor
+2.13:Pros°m nastavte spr†vne jazyk
+2.14:NepodporovanÇ k¢dovÇ str†nky
+2.15:PodporovanÇ k¢dovÇ str†nky
+
+#Menu Strings
+#### HTML Help will truncate strings 3.0 and 3.1
+#### if they exceed 14 characters.
+3.0:Koniec
+3.1:N†poveda
+#### HTML Help will truncate strings 3.2-3.5
+#### if they exceed 10 characters.
+3.2:SpÑü
+3.3:Dopredu
+3.4:Obsah
+3.5:Vyhåad†vaj
+
+#Button Label Strings
+#### HTML Help will truncate strings 4.0-4.2
+#### if they exceed 8 characters.
+4.0:OK
+4.1:SpÑü
+4.2:N†poveda
+
+#Status Bar Strings
+5.0:Vyhåd†va sa tÇma...
+5.1:PlnÇ vyhåad†vanie sa pripravuje...
+5.2:(STLAÄ ESC pre ukonáenie programu)...
+
+#Search Box Strings
+#### HTML Help will truncate strings:
+####    6.0      if it exceeds 35 characters;
+####    6.1      if it exceeds 20 characters;
+####    6.2-6.5  if they exceed 28 characters;
+####    6.6-6.13 if they exceed 35 characters.
+6.0:Vyhåadanie N†povedy
+6.1:Text na vyhåad†vanie:
+6.2:Rozl°®ovaü veåkÇ a malÇ p°smen†
+6.3:Iba celÇ slov†
+6.4:óplnÇ vyhåad†vanie
+6.5:na tejto str†nke
+#Help on Search:
+6.6:Äo to rob°
+#Lines 6.7-6.9 describe "Search":
+6.7:óplnÇ vyhåad†vanie:
+6.8:Prezri v®etky subory
+6.9:Zoznam na str†nke obsahu.
+#Line 6.10 can be used if you need more room.
+6.11:na tejto str†nke:
+6.12:Prezrieü otvorenÇ dokumenty
+6.13:iba.
+
+#Search Results Strings
+7.0:Vòsledok håadania
+7.1:Vyhåad†vanie vo v®etkòch s£boroch umiestnenòch na str†nke s obsahom
+# The following line, 7.2, is used as "Searched [FILENAME]"
+7.2:Vyhåad†vanie v
+# The following line, 7.3, is used as "for: [TEXT]"
+7.3:pre
+7.4:Prep†áte, ned† sa vyhåad†vat vo vòsledkoch håadania
+7.5:Preru®enÇ uë°vateåom
+7.6:V=ysledok nen†jdenò

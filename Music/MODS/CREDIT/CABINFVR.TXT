@@ -1,0 +1,24 @@
+Cabin Fever! (cabin_fever.xm)
+https://modarchive.org/index.php?request=view_by_moduleid&query=174833
+Renamed to "CABINFVR.XM" because of DOS 8-character limit
+
+Summary
+
+    cabin_fever.xm is a XM format module. 
+    Uploaded to modarchive.org on Sun 9th Mar 2014
+
+Info Info
+
+    Mod Archive ID: 174833
+    MD5: 868d46f0cccdc4d990c628fb01358c90
+    Format: XM
+    Channels: 4
+    Genre: n/a
+
+License License
+
+    Licensed under the Public Domain license
+
+artists Registered Artist(s):
+
+     Drozerix (https://modarchive.org/member.php?84702)

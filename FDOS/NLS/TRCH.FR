@@ -1,0 +1,12 @@
+# Language: French (CP850)
+
+0.0: Traduction des caractäres
+0.1: Ustilisation :
+1.0: Nombre d'arguments insuffisant
+1.1: Nombre d'arguments trop important
+2.0: fichier
+#0.0:Translates characters
+#0.1:Usage:
+#1.0:Not enough arguments
+#1.1:Too many arguments
+#2.0:file

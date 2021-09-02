@@ -1,0 +1,14 @@
+Begin3
+Title:	        GZIP
+Version:	    1.2.4
+Entered-date:   2007-04-23
+Description:	GNU zip compression - a file archiver tool, like PKZIP
+Keywords:	    gzip, zip, unzip, archiver, packer
+Author:	        Jean-loup Gailly, jloup -at- gzip.org
+Maintained-by:
+Primary-site:	http://www.gzip.org/
+Alternate-site:	http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/file/
+Original-site:	http://www.gzip.org/
+Platforms:	    DOS, FreeDOS, OS/2, Mac and a lot of others
+Copying-policy: GNU General Public License, Version 2
+End

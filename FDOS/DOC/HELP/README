@@ -1,0 +1,164 @@
+
+                    HTML Help System for FreeDOS
+                    ============================
+                    Version 1.0.5 / 1.0.6 / 1.0.7
+                     1 July 2004  / 30 March 2009
+
+
+See also the files COPYING, BUGS and HISTORY.
+
+Contents
+--------
+0 What's New
+1 Introduction
+2 Copyrights
+3 Usage
+4 Contacts
+5 Building HTML Help Viewer
+6 How to include new HTML files
+7 HTML Tags supported by the Viewer
+8 Acknowledgements
+
+0 What's New
+------------
+The replacement help content is here!
+Included is:
+
+- A new version of the help viewer: version 5.3.3
+ 
+- the html file set, (hhstndrd 1.0.6), has
+  various updates and fixes.
+
+1 Introduction
+--------------
+This is the FreeDOS clone of the MS-DOS 6.22 help command.
+
+Features include
+
+   * uses html - a widely available format
+   * support for compressed help (zip format)
+   * easy-to-use user interface
+   * search dialog box
+   * International features, include UTF-8 encoding support,
+     NLS string translation, and all Latin-1 character entities
+
+2 Copyrights
+------------
+The HTML Help viewer is Copyright (c) Express Software 1998-2003,
+protected under the Express Software Public License Agreement (see the
+file COPYING).
+
+The HTML Help content is a set of many files with various copyrights.
+The license for most of them is the GNU Free Documentation License,
+the licenses for all others are in the same spirit as the GNU FDL.
+Type "HELP fdl" for more information
+
+
+3 Usage
+-------
+To start the interactive help viewer (found in /bin) just type:
+
+   HELP
+
+and the contents page will be displayed. The standard set of html files
+can be browsed from here. To search for help on a particular
+topic, simply type:
+
+   HELP [topic]
+
+You can give a file name:
+
+   HELP [filename]
+   HELP /Lfilename
+
+If the /L switch is generally faster; with /L help won't check whether
+the filename is a topic first. To completely override the /help folder,
+use the /O switch:
+
+   HELP /O[x:][path][filename]
+
+For more information on using help, type
+
+   HELP help
+
+or
+
+   HELP /?
+
+
+4 Contacts
+----------
+The FreeDOS website:
+       http://www.freedos.org
+
+FreeDOS discussion list:
+       fd-dev - AT -topica.com
+
+The maintainer:
+       Rob Platt (worldwiderob - AT -yahoo.co.uk)
+
+The original developer of the viewer program:
+      Joe Cosentino (onehardmarine - AT - attbi.com)
+
+The actual maintainer of the help files:
+      W. Spiegl (fritz.mueller - AT - mail.com)
+
+
+5 Building the HTML Help viewer
+-------------------------------
+The help.exe binary is included for those who do not wish to modify help.
+
+It was built with "Borland Turbo C++ 3.0 for DOS", MASM, and TLINK, and uses
+Borland's Make.
+
+TASMHELP.MAK is included for those with the TASM assembler, but this hasn't
+been tested for a bit. CONIO.OBJ should have been included with the source
+code, so it is not necessary for you to have an assembler unless you wish to
+modify the low level video (which is in conio.asm).
+
+HELP.PRJ is a "Turbo C++ 3.0 for DOS" project file. It is now set up for
+optimised code.
+
+To debug:  Switch Source Debugging "ON" in the debugger options menu,
+and also set the compiler to include debug info in object files in the
+advance compiler options menu.
+
+To release a new verion, runs the GNU indent program on the source code,
+to reformat it to the FreeDOS coding conventions. Then move the exe file
+to the bin directory of the distribution. Delete all object files other than
+CONIO.OBJ.
+
+Links to the indent program and public domain version of MASM can be
+found at:
+
+   http://projects.freedos.net/htmlhelp
+
+
+6 How to include new HTML files
+-------------------------------
+If you wish to contribute to the help files, write a translation etc,
+you should first make contact by mailing the FreeDOS discussion forum,
+fd-dev@topica.com or to the maintainer at worldwiderob - AT - yahoo.co.uk
+
+There is a set of guidelines for authors in the html help content,
+listed under the miscellaneous section of index.htm.
+
+
+7 HTML Tags supported by the Viewer
+-----------------------------------
+You can get to the file:
+
+   HELP\HHSTNDRD\AUTHORS\TAGS.HTM
+
+from the Authors' Resources section in the hhstndrd file set.
+
+8 Acknowledgements
+------------------
+
+The ZIP support uses some neat code created by Gilles Vollant (MINIZIP)
+combined with the powerful ZLIB compression library.
+See
+    www.winimage.com/zLibDll/unzip.htm
+    www.zlib.org
+
+It also uses the catgets library written by Jim Hall.

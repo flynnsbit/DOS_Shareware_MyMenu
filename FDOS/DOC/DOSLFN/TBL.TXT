@@ -1,0 +1,51 @@
+Description of Volkov Commander table and DBCS extended table format
+
+1..32?	BYTE	Description of table (for displaying in VC)
+2	BYTE	0x0D,0x0A, =Terminator
+1	BYTE	Table Format Designator (0, 1, or 2)
+
+SWITCH (Table Format Designator)
+ CASE 0		SingleByte to SingleByte conversion table (not used by DOSLFN)
+256	BYTE	other character codes for characters 0x00 to 0xFF
+
+ CASE 1		SingleByte to 16bit Unicode conversion table
+128	WORD	Unicodes for characters 0x80 to 0xFF
+
+ CASE 2		DBCS to 16bit Unicode table (not defined by Volkov)
+1	BYTE	lowest TrailByte (>=0x40)
+1	BYTE	count of TrailBytes per LeadByte (<=0xC0) M
+128	WORD	[0x0000		unused (reserved) LeadByte
+		[0x0001-0x007F	LeadIndex into following 1-based DB table
+		[0x0080-0xFFFE	Unicode for Single Byte Character
+		[0xFFFF		unused Single Byte Character U+0xFFFF
+		The DB table following is made of columns indexed by
+		(TrailByte - lowest TrailByte).
+		The rows of each column M = see above
+		The number of columns N = (Maximum Lead Byte Index +1)
+N	M WORD	Unicodes for double-byte characters (=DB table)
+		Not assigned code points default to Unicode U+0xFFFF
+
+
+The DBCS=>Unicode table is defined to be reasonably compact.
+Conversion to Unicode can be done by one or two table accesses.
+Backward conversion requires only a single "repne scasw" assembly
+instruction, that's the fastest way for such a small table. The index
+result must only be subtracted and divided to get the DBCS characters.
+
+Typical sizes for this table are:
+SJIS	CP932	17.3K	"Shifted" Japanese Industry Standard
+GB2312	CP936	15.5K	Public Republic of China's "small" standard
+			(GB stands for Guojia Biaozhun = National Standard)
+GBK	CP936	48.4K	"full" standard (K stands for Kuozhan = Extended)
+			Note that GB2312 is a true, code-compatible sub-set of
+			GBK, containing the most often used 7500 characters.
+			Both GB2312 and GBK use Simplified Chinese
+Korea	CP949	47.4K	"Extended Wansung" ???
+BIG5	CP950	33.5K	Traditional Chinese used in Taiwan (and Hong Kong,
+			maybe yet)
+
+All tables fit into DOSLFNs memory management, at least it just fit to
+leave 1K free in CDROM mode.
+Maybe there is a reduced code table for Korea's CP949 too, please feedback!
+GBK seems to be not used in DOS, it's for Windows.
+At least the screen redirector "TechWay SCS V3.2" does only support GB2312.

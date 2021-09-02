@@ -1,0 +1,94 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ===============================================
+                 THE DAGGER OF AMON RA!  LAURA BOW II
+                                                        
+
+                       THE COMPLETE SOUNDTRACK
+                     (See below for song titles.)
+                            Chris Brayman
+           =============================================
+               Copyright (c)1992 Sierra On-Line, Inc.  
+           =============================================
+
+                         GENERAL MIDI VERSION
+                  (Designed for Roland Sound Canvas)
+
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- General MIDI sound card or module  (Roland SC or Yamaha XG recommended)
+
+
+This Standard MIDI File was recorded directly from Sierra's "Dagger Of
+Amon Ra!" adventure game.  It has been recorded using Sierra's General
+MIDI sound driver and is therefore optimized for Roland Sound Canvas
+based MIDI cards and modules.  Satisfactory results can also be obtained
+on Yamaha XG devices.  See below for song titles.
+
+Recorded/edited/compiled/arranged for General MIDI by Tom Lewandowski.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+       =================================================================
+                                  TRACK SHEET
+
+                     THE DAGGER OF AMON RA!  LAURA BOW II
+                (Not all themes in order as heard in the game.)
+       =================================================================
+
+   SONG TITLE                                      START MEASURE/TIME *
+   -------------------------------------------------------------------------
+   1. Sierra Fanfare                                      2  00:00:02
+   2. Introduction/Opening Scenes                        12  00:00:26
+   3. Act I - A Nose For News                           236  00:09:24
+   4. Taxi Ride                                         258  00:10:16
+   5. Police Station                                    277  00:11:02
+   6. Detective O'Riley                                 285  00:11:21
+   7. Luigi - The Street Vender                         343  00:13:40
+   8. LoFat's Laundry                                   378  00:15:04
+   9. The Harlem Swinger Speakeasy                      432  00:17:14
+      - Theme #1                                        432  00:17:14
+      - Theme #2                                        489  00:19:31
+      - Theme #3 (Archeaologist Song)                   560  00:22:21
+  10. The Leyendecker Museum                            582  00:23:14
+      - Taxi To Museum                                  582  00:23:14
+      - Wolf Heimlich Introduction (Security Chief)     593  00:23:40
+      - Museum Waltz                                    627  00:25:02
+  11. Steve Dorian                                      682  00:27:14
+  12. The Ancient Egypt Exibit                          752  00:30:02
+      - Pippin Carter's Body                            804  00:32:07
+  13. Questioning The Witnesses                         869  00:34:43
+      - Introduction to Ernie Leach                     894  00:35:43
+  14. Museum Investigation Theme                        911  00:36:24
+  15. Hiding                                           1019  00:40:43
+  16. Wolf Heimlich                                    1030  00:41:09
+  17. Yevette Delacroix                                1071  00:42:48
+  18. Whatney Little (Impersonating Dr. Carrington)    1125  00:44:57
+  19. Dr. Olympia Myklos                               1166  00:46:36
+  20. Stairway Theme                                   1209  00:48:19
+  21. Ernie Leach                                      1220  00:48:45
+  22. The Dagger Of Amon Ra!                           1253  00:50:04
+  23. The Secret Passage                               1267  00:50:38
+  24. Barney The Snake                                 1282  00:51:14
+  25. Countess Lavinia Waldolf-Carlton                 1311  00:52:24
+  26. Dr. Archibald Carrington's Body                  1353  00:54:05
+  27. Ziggy's Death                                    1379  00:55:07
+  28. Yevette's Men                                    1389  00:55:31
+  29. Running From Mr. X                               1424  00:56:55
+  30. Laura Dies                                       1531  01:01:12
+  31. Closing Themes                                   1538  01:01:28
+  --------------------------------------------------------------------------
+                                                TOTAL TIME:  01:08:40
+
+
+      * Note:  Start Times are approximate.
+

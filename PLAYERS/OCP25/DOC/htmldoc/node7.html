@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Usage of the fileselector</TITLE>
+<META NAME="description" CONTENT="Usage of the fileselector">
+<META NAME="keywords" CONTENT="opencp">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opencp.css">
+<LINK REL="next" HREF="node8.html">
+<LINK REL="previous" HREF="node6.html">
+<LINK REL="up" HREF="node5.html">
+<LINK REL="next" HREF="node8.html">
+</HEAD>
+<BODY bgcolor=#ffffff text=#000000 link=#0000ff vlink=#0000cc alink=#cccccc>
+<!--Navigation Panel-->
+<A NAME="tex2html177"
+ HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html175"
+ HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html169"
+ HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html178"
+ HREF="node8.html">Advanced usage</A>
+<B> Up:</B> <A NAME="tex2html176"
+ HREF="node5.html">Fileselector</A>
+<B> Previous:</B> <A NAME="tex2html170"
+ HREF="node6.html">Main screen</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00420000000000000000">&#160;</A>
+<A NAME="fileselector">&#160;</A>
+<BR>
+Usage of the fileselector
+</H1>
+The directory list shows you all files in the current directory which fit to
+the file mask set in the path window. Under the alphabetically sorted files
+the directories and drives are shown. Note: <TT>@:</TT> is a special drive
+which lets you configure <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP without editing the <TT>cp.ini</TT> file.<A NAME="tex2html11"
+ HREF="#foot1000"><SUP>4.1</SUP></A>
+Use the
+<TT>&lt;<IMG
+ WIDTH="13" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$\uparrow$">&gt;</TT> and <TT>&lt;
+<!-- MATH: $\downarrow$ -->
+<IMG
+ WIDTH="13" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\downarrow$">&gt;</TT> to browse through the files. If you
+press <TT>&lt;Enter&gt;</TT> the selected file will be loaded and played with the player.
+Pressing <TT>&lt;Enter&gt;</TT> while selecting a directory or drive will switch to the
+selected item and the directory will be read. <TT>&lt;Pgup&gt;</TT>, <TT>&lt;Pgdown&gt;</TT>,
+<TT>&lt;Home&gt;</TT> and <TT>&lt;End&gt;</TT> will work as expected.
+
+<P>
+If a module is played and you are in the player <TT>&lt;f&gt;</TT> will beam you to
+the fileselector. When you have edited a playlist after playing the last song
+the fileselector will be started automatically. You can always leave the
+fileselector by pressing <TT>&lt;Esc&gt;</TT> twice! If no module is playing the program
+will exit, while you will get back to the player if a module is played in the
+background.
+
+<P>
+Playlists are shown in the playlist window at the left side of the screen. The
+currently selected file is appended to the playlist by pressing <TT>&lt;
+<!-- MATH: $\rightarrow$ -->
+<IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\rightarrow$">&gt;</TT>
+or <TT>&lt;Ins&gt;</TT>. <TT>&lt;
+<!-- MATH: $\leftarrow$ -->
+<IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\leftarrow$">&gt;</TT> or <TT>&lt;Del&gt;</TT> will remove it again. You can
+insert files multiple times into the playlist be pressing the appropriate
+keys more than once. If you have files in the playlist exit the fileselector
+by pressing <TT>&lt;Esc&gt;</TT>! This might sound confusing in the beginning, but you
+will notice the logic very soon. In the player you start the next song in the
+playlist by pressing <TT>&lt;Enter&gt;</TT>.
+
+<P>
+Normally you will start the fileselector from the player by pressing <TT>&lt;f&gt;</TT>.
+The current module will continue playing in the background. After you habe
+selected a file you have to choices:
+<UL>
+<LI><TT>&lt;Enter&gt;</TT> will stop the currently playing module and load the selected
+one. Then you will get back to the player. Use this key if you want to play the
+selected module immiediatly.
+<LI><TT>&lt;Esc&gt;</TT> will change to the player. Then you can start the next songs
+in the playlist by pressing <TT>&lt;Enter&gt;</TT>. So you should insert the selected
+files into the playlist.
+</UL>
+<P>
+All files in the current directory will be inserted into the playlist by
+pressing <TT>&lt;CTRL&gt;</TT>+<TT>&lt;
+<!-- MATH: $\rightarrow$ -->
+<IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\rightarrow$">&gt;</TT> or <TT>&lt;CTRL&gt;</TT>+<TT>&lt;Ins&gt;</TT>. The
+playlist will be deleted by pressing <TT>&lt;CTRL&gt;</TT>+<TT>&lt;
+<!-- MATH: $\leftarrow$ -->
+<IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\leftarrow$">&gt;</TT> or
+<TT>&lt;CTRL&gt;</TT>+<TT>&lt;Del&gt;</TT>.
+
+<P>
+Although in the playlist window only the filename is shown, <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP stores the
+complete path information. So you can insert files into the playlist from
+totally different directories and drives. If files are inserted into the
+playlist you can change to the playlist window by pressing <TT>&lt;Tab&gt;</TT>. Inside
+the playlist window all keys have full functionality. So you can load the
+selected module immiediatly by pressing <TT>&lt;Enter&gt;</TT> or remove the file from
+the list by pressing <TT>&lt;
+<!-- MATH: $\leftarrow$ -->
+<IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\leftarrow$">&gt;</TT>. If you are in the playlist window
+you can move the currently selected file by pressing <TT>&lt;CTRL&gt;</TT>+<TT>&lt;<IMG
+ WIDTH="13" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$\uparrow$">&gt;</TT>
+and <TT>&lt;CTRL&gt;</TT>+<TT>&lt;
+<!-- MATH: $\downarrow$ -->
+<IMG
+ WIDTH="13" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\downarrow$">&gt;</TT>. This will affect the order in which files
+are processed. <TT>&lt;CTRL&gt;</TT>+{<TT>&lt;Pgup&gt;</TT>,<TT>&lt;Pgdown&gt;</TT>,<TT>&lt;Home&gt;</TT>,<TT>&lt;End&gt;</TT>}
+work as expected.
+
+<P>
+If many files are inside a directory selecting a module by the cursor keys can
+be annoying, because it takes a long time to browse through the list. If you
+know the filename you can start typing it on the keyboard. This enables the
+quickfind feature. Characters already typed are shown in the quickfind window.
+The current directory is searched for files matching the typed characters.
+Often you don't have to type the complete filename, as it can be already determined
+by the leading chars.
+
+<P>
+At the bottom of the screen the fileinformation window is located. If the
+file includes any additional information at will be shown at the appropriate
+fields. You can edit each entry manually. Note: <FONT SIZE="-1">all module information is read by
+the fileselector once if it runs along this module the first time. The data
+is stored in three files located in your home directory of <FONT SIZE="-1">O<SMALL>PEN</SMALL></FONT>CP refered as the <EM>module information chache</EM>. If the
+fileselector scans a directory and finds a module already stored in the
+module information chacheit will use the information found in the chache. This
+way you can overwrite the information fields of the module. If you change to
+a directory which has not been processed by the fileselector it may take some
+minutes to read all file information out of the files and store them in the
+module information chache.</FONT>
+
+<P>
+To switch to the module information window press <TT>&lt;SHIFT&gt;</TT>+<TT>&lt;Tab&gt;</TT>. You
+can use the cursor keys to select the entries. After pressing <TT>&lt;Enter&gt;</TT>
+the information can be edited. When pressing <TT>&lt;Enter&gt;</TT> again the changes
+are stored in the module information cache. Note: <EM>Do not change the entry
+<EM>type</EM> as the file could not be loaded properly when the wrong filetype
+is entered! Normally you never have to change this entry, except for old
+15 instruments amiga noisetracker modules!</EM>
+
+<P>
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot1000">... file.</A><A NAME="foot1000"
+ HREF="node7.html#tex2html11"><SUP>4.1</SUP></A>
+<DD>see page <A HREF="node8.html#specialdrive"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="cross_ref_motif.gif"></A>.
+
+</DL><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html177"
+ HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif.gif"></A> 
+<A NAME="tex2html175"
+ HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif.gif"></A> 
+<A NAME="tex2html169"
+ HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif.gif"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html178"
+ HREF="node8.html">Advanced usage</A>
+<B> Up:</B> <A NAME="tex2html176"
+ HREF="node5.html">Fileselector</A>
+<B> Previous:</B> <A NAME="tex2html170"
+ HREF="node6.html">Main screen</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+documentation by <a href="mailto:doj@cubic.org">doj</a> - homepage <a href="http://www.cubic.org">www.cubic.org</a>
+</ADDRESS>
+</BODY>
+</HTML>

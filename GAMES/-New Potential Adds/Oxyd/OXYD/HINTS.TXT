@@ -1,0 +1,101 @@
+Oxyd is designed as an adventure in science and exploration. Like
+your historic counterparts, you are thrust into unknown and 
+dangerous worlds that will challenge you with every step you 
+take. Don't ruin this wonderful and mind-expanding experience by 
+reading the hints provided below! Resist the temptation, and, if 
+you seriously get stuck somewhere, read only the hint provided 
+for that level.
+
+Level 1 introduces the basic game concept behind Oxyd. You will 
+see eight Oxyd tokens in the center of the screen. When you 
+bounce into one of them with your marble, the Oxyd will open up 
+and reveal a hidden color or pattern. Now try to find the 
+matching color hidden beneath on of the remaining Oxyds. Once all 
+Oxyds have been matched, the landscape is solved and you move on 
+to the next one. Patches of quicksand and the rotating Jack make 
+life difficult for you in this level.
+
+Level 2 contains six Oxyds that need to be paired off. However, 
+two of them are apparently sealed off in a room with no obvious 
+access. There is a note giving you a hint on how to solve this 
+puzzle. To pick up the note, roll over it with your marble, then 
+hit the left mouse button to read it.
+
+Level 3 consists of several rooms. Check the screen borders to 
+find out where the other rooms are. You will find the mirror 
+useful. It slides along the track if you hit it hard enough, and 
+it will turn if you touch it lightly.
+
+Level 4 has another room above, and you will notice some 
+interesting effects on the mouse there. In this level you will 
+have to learn how to shift objects in your personal inventory. 
+Everything you're carrying is displayed at the bottom of the 
+screen. Only the object in the left-most position of the 
+inventory may be activated. So, if you want to use the umbrella, 
+hit the tab key on your Mac (right mouse button on other 
+machines) and shift the token. Then hit the left mouse button to 
+activate it. If you want to get rid of the useless messages you 
+have collected in this level, activate them with the left mouse 
+button and cut the message short by hitting the tab key (right 
+mouse button).
+
+Level 5 is full of gadgets you will have to explore. The blinking 
+lights and the border pieces are very important. Listen for the 
+sound of doors opening! You can't see them, but maybe there's an 
+adjacent room somewhere! Sliding doors and switches, there is a 
+connection here. Remember how to fly, and how to shift tokens in 
+your inventory?
+
+Level 6 gives you an entire room full of dangerous toys. Get 
+bombs by bouncing into one of the dispensors. Ignite bombs by 
+placing a stick of dynamite next to them. The shovel fills in 
+dents you have created in the ground. Wooden blocks help bridge 
+chasms.
+
+Level 7 is deceptively easy. Start with the left-most object, or 
+else you'll get stuck.
+
+Level 8 takes you down a long corridor. Don't do anything until 
+you get to the end of it. Then activate the coffee break, collect 
+your wits, hit the left mouse button to resume the game, and 
+bring the marble to a complete stop just short of the swimming 
+pool. Now go looking for the Oxyds.
+
+Level 9 needs to be completed in just the right sequence. Start 
+with the wooden piece on the left, then blow up the blocking 
+pieces in the center and top left portion of the screen. You will 
+need a bomb and a stick of dynamite to remove the last blocking 
+piece.
+
+Level 10 is a meditation landscape. Watch the action for a short 
+while. The black holes will not destroy your marbles, so don't 
+worry. When marbles reappear on the left or right side of the 
+platforms, slowly drag one of them away toward a pocket and place 
+it there. When all four marbles are placed in their individual 
+pockets, let go of the mouse so that the marbles come to a 
+complete rest and you can advance to the next level.
+
+Slow dragging motions are the key to success here, and level 10 
+will tell you a lot about the quality of your mouse: Wobbly 
+movement, delayed action and similar control problems are a good 
+indication that your mouse needs to be cleaned. Dirt tends to 
+build up on the rollers inside the mouse, making it less precise 
+and responsive. You would not notice this problem very much 
+during your regular applications, but Oxyd's level 10 becomes 
+very frustrating if your mouse has dirty feet. Use a mouse 
+cleaner kit, or carefully scrape the built-up off the rolers with 
+a small screw driver.
+
+Level 11 may only be played up to the point where you encounter 
+the magic brick. The magic brick carries a page number, line and 
+column reference for use with the Oxyd book. There is no way 
+around it, other than typing in the magic formula found in the 
+Oxyd book. Order the Oxyd book from your local dealer, book store 
+or by sending a check to Dongleware Publishing ($ 39.00 plus 
+$ 3.00 shipping and handling. Massachusetts residents add 5% 
+sales tax).
+
+While you're waiting for your Oxyd book to arrive, enjoy the 
+first 10 levels of the dual player game with a friend. To do 
+this, you will have to link your computers by modem, null-modem 
+cable, MIDI cable (Atari only) or AppleTalk network.

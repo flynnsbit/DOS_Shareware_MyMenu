@@ -1,0 +1,14 @@
+Begin3
+Title:          GNU bc
+Version:        1.02
+Entered-date:   2013-02-01
+Description:    bc is an arbitrary precision numeric processing language. Syntax is similar to C, but differs in many substantial areas. It supports interactive execution of statements. bc is a utility included in the POSIX P1003.2/D11 draft standard.
+Keywords:       calculator, bc, gnubc
+Author:         Philip A. Nelson
+Maintained-by:
+Primary-site:   http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/gnubc.html
+Alternate-site:
+Original-site:
+Platforms:      DOS
+Copying-policy: GNU General Public License, Version 2
+End

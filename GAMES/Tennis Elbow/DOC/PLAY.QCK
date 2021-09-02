@@ -1,0 +1,68 @@
+
+                How to play quickly Tennis Elbow ?
+                ----------------------------------
+
+        1 - Launch Tennis.Exe
+        2 - Look at the introduction, or press 'Esc' to skip it.
+        3 - You are in the Main Menu
+        4 - Click on the upper left icon (the big yellow ball) with the mouse,
+            or move the small ball with the arrow keys and hit the ALT key
+            when reaching the icon
+        5 - You are in the Quick Play Menu
+        6 - Click on the upper left icon (The image: Player with 'PLAY')
+        7 - You start a game in mode "Training"
+        8 - Move your player with the arrow keys:
+            By default if you did not choose to the option "joystick" or
+            "mouse" to play during the setup, you will have to use the
+            keyboard to play.
+        9 - To serve you have to press the ALT or CTRL or even ALT+CTRL keys
+            together with one of the arrow keys.
+            If you do not maintain down the ALT, CTRL or ALT+CTRL Keys + 1
+            arrow while the service goes on, your service will be weak.
+             
+            When you keep ALT and CRTL down at the same time, you strongly
+            hit the ball: it's a super shot!
+
+            If you like to give a direction to your service, press either the
+            ALT or CTRL keys along with:
+            - The left arrow to send the ball to the left
+            - The right arrow to send the ball to the right
+       10 - When you can move your player and strike the ball, you are ready
+            to play a real match!
+       11 - Press 'Esc' and then "Y" to go back to the Main Menu
+       12 - Click on the lower right icon (Image: Board with ball)
+       13 - You are in the "Game Type" Menu
+       14 - Click on the upper right icon (Image: Board) = Match
+       15 - You have just selected to play a match and you automatically
+            go back to the "Quick Game" Menu
+       16 - Click on the icon "Play" (the upper left one)
+       17 - You are in the game
+       18 - The program will decide who will serve first: you or the CPU
+            player (by default your opponent is a CPU player).
+       19 - Follow the same procedure as above.
+       20 - Try to win the set! (by default it is a one-set game on clay)
+       21 - If you would like to know more about the game options, you
+            should read the complete file DOC.EXE.
+
+Note: ALT =  left mouse button  = left joystick button
+      CTRL = right mouse button = right joystick button
+
+
+                   All available strikes using the keyboard
+                         --------------------------
+
+        b1 = ALT; b2 = CTRL
+        up/down = up arrow and down arrow
+
+        b1 = normal strike
+        b2 = secured strike
+        b1+b2 = acceleration
+        b1 + up = short ball
+        b2 + up = slice
+        b1 + down = lift
+        b2 + down = defended lob
+        b1+b2+up = drop shot
+        b1+b2+down = fighting lob
+
+The Up and Down arrows are inverted when you control the player who is on
+the top of the screen.

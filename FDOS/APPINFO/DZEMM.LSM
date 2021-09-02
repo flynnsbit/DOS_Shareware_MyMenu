@@ -1,0 +1,14 @@
+Begin3
+Title:           DZEMM
+Version:         1.06
+Entered-date:    2016-07-10
+Description:     Doszip Expanded Memory Manager (EMM)
+Keywords:        DOS FreeDOS EMS XMS EMM
+Author:          Hjort Nidudsson (nidud _AT_ users.sourceforge.net)
+Maintained-by:   Hjort Nidudsson (nidud _AT_ users.sourceforge.net)
+Primary-site:    http://sourceforge.net/projects/doszip/
+Alternate-site:  http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/util/file/doszip/
+Original-site:   http://sourceforge.net/projects/doszip/
+Platforms:       DOS WIN32
+Copying-policy:  GNU General Public License, Version 2
+End

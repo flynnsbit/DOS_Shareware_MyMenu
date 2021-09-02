@@ -1,0 +1,13 @@
+Begin3
+Title:          Bootfix
+Version:        1.4
+Entered-date:   2009-02-15
+Description:    Bootfix is a boot sector testing and fixing tool.
+Keywords:       Bootfix, boot, sector, mbr, disk
+Author:         Arkady
+Maintained-by:  -
+Primary-site:   http://ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/repos/pkg-html/bootfix.html
+Alternate-site: -
+Platforms:      DOS
+Copying-policy: GNU General Public License, Version 2
+End

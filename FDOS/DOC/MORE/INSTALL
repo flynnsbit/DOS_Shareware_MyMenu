@@ -1,0 +1,25 @@
+To compile MORE:
+
+
+1. first, make sure you have compiled the "Cats" library for your
+   system.  Be sure to use the same memory model (this trips up a lot
+   of people.)
+
+2. Then, set the CATS macro in the makefile to the *base* path of the
+   CATDB.LIB library file (for example, use C:\SRC\CATS not
+   C:\SRC\CATS\LIB\CATS.LIB)
+
+
+3. Type:
+
+   make -fmakefile.bc
+
+
+That's it.
+
+
+Edit the NLS\MORE.EN file to add new English messages.  Feel free to
+provide translations of MORE.EN into other languages.  The new
+translated files should be named MORE.xx (where "xx" is the
+two-letter country abbreviation - for example, Germany would use
+MORE.DE and France would use MORE.FR)

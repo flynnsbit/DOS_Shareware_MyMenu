@@ -1,0 +1,753 @@
+
+   The program contained in this archive and described further down in
+   this text was written from scratch by JÅrgen Hoffmann using BORLAND
+   C++ Version 3.1 some time during the year 2011.  It is licensed un-
+   der the EUPL V.1.1  and offered  to the public free of charge.  The
+   english text  of this european  public licence  is included in this
+   archive.  Other, equally valid versions,  together with some useful
+   explanations for non-lawers are available in all official languages
+   of the european union and can be downloaded from here:
+   http://ec.europa.eu/idabc/eupl.
+
+   As the program is free, the author doesn't accept any responsibili-
+   ty beyond what can reasonably  be expected  from any other  kind of
+   gift as well. Even though the program was thoroughly tested it can-
+   not be excluded,  that undiscoverd  errors still arise.  Should you
+   find such a one, feel free to inform the author about it, using the
+   e-mail address shown at the end of this document.
+
+   
+
+
+FORM     (display a FORM on the screen) 
+
+   is a program that displays a form on the screen, accepts the user's
+   entries into this form and returns the data in one or more environ-
+   ment variables from where they can be further processed in any way.
+   The layout of the form is very flexible and is defined in a separa-
+   te layout file.  The main purpose of this program is to equip batch
+   files  with a forms oriented user dialogue  but it is also suitable
+   to furnish many command-line oriented programs with a (pseudo-)gra-
+   phical user interface.
+
+The correct syntax is:
+
+   FORM [ options ] <layout-file> [ <arg1> ... ]
+
+   and valid options are:
+      /D<n>   debug   1=list layout-file   2/4=dump internal data
+      /K      keep menu on exit
+      /I[lbl] layout (left justified <lbl>) included in batch file ("%0") 
+      /M[c]   minimalistic mode (no layout-file) c=color
+      /S      make SET command (also for testing)
+      /H /?   print this helptext
+
+   If the program is invoked  with the name  of a layout file as argu-
+   ment the form described by that file is displayed on the screen and
+   the user is expected to fill the input fields. By the <HOME>, <TAB>
+   <CURSOR-UP> and <CURSOR-DOWN> keys  the cursor can be moved  to the
+   various fields.  The effects of  <CURSOR-RIGHT>  and  <CURSOR-LEFT>
+   depend on the type of field the cursor is currently on.  In a field
+   for text entry  it moves the cursor within that field.  In addition
+   the <CTRL/CURSOR-RIGHT> and <CTRL/CURSOR-LEFT> key combinations mo-
+   ve the cursor to the last or first character and the <DEL> and <BS>
+   keys delete the character under the cursor  or the one to the left.
+   The <INSERT> key  moves the rest of the string  by one place to the
+   right and inserts a <BLANK> at the current cursor position if blank
+   is  a legal character  for the respective field,  otherwise it just
+   duplicates the character under the cursor.  If the cursor sits on a
+   field providing a list of values,  then <CURSOR-RIGHT> and <CURSOR-
+   LEFT> just select the next or previous value of that list and other
+   keys have no effect. On a checkbox field a <BLANK> clears the check-
+   box,  any printable character  (including 'X')  checks it and other
+   keys have no effect.  If the user is done pressing the <RETURN> key
+   confirms the data  and completes  the operation  while <ESC> aborts
+   the program prematurely.
+
+   The program's behaviour  can be modified by some command-line swit-
+   ches: /D which is followed by digit enables additional output help-
+   ful in debugging.  /K causes the form  to be conserved upon program
+   termination by default it will disappear when it's job is done. And
+   the switches /H or /? display some brief usage hints on the screen.
+
+   By default  FORM will write its results directly  into variables of
+   the environment of the parent process.  As this may not be possible
+   in all environments,  especially not in those  that only  emulate a
+   DOS system the /S switch  provides an alternative method.  If it is
+   set then FORM writes SET commands to stdout  which can be re-direc-
+   ted into an auxiliary batch file  and in-turn be called by the pri-
+   mary one to carry out the actual setting of the variables.  As this
+   method  does not make use  of any undocumented features,  it should
+   work under any flavor of a DOS system. If not re-directed to a file
+   the  /S  switch can furthermore serve as testing aid,  as it shows,
+   what it would do if it did something.
+
+   The downside of the great flexibility FORM offers for the layout of
+   the user form is that a file has to be set-up defining this layout.
+   This may be overkill if just a single question is to be answered by
+   a user.  These cases are covered by the minimalistic mode  which is
+   invoked by the /M switch. In this case  FORM provides a simple one-
+   line form on the screen-line the cursor happens to be on consisting
+   of a default prompt  followed by a general purpose input field  and
+   the output goes to a variable named FORM_RESPONSE. A possible addi-
+   tional argument  replaces the  default promt  and a second argument
+   (if present) will be used to preset the input field. A number imme-
+   diately following the switch like e.g. /M14  optionally defines the
+   color.  A "0"  is a short-cut  for inverse video  while values from
+   1 to 15 define a color on black background and values rangeing from
+   16 to 127 define a combination of foreground and background colors.
+
+   Unless the /M switch is set, FORM expects the name of a layout file
+   as  first argument  (additional arguments may follow).  Even though
+   there is no  default name for such a file,  a filetype of ".frm" is
+   assumed if no extension is given. This layout file is a simple text
+   file with a defined syntax  describing the layout of the form to be
+   displayed.  It holds a number of entries, most of them on a line of
+   its own and consisting of a keyword which can be written in any ca-
+   se followed by some arguments.  If an argument, especially a string
+   argument, contains a space character, it must be enclosed in quotes.
+   Otherwise the quotes ("") are optional.  Blank lines are acceptable
+   and a line beginning with a semicolon ";"  marks a comment which is
+   not further iterpreted.  Most entries may appear in any order.  The
+   various types of recognized entries are described further down.
+
+   Since version 1.1  it ist also possible  to include the layout des-
+   cription directly into  a batch file,  preferably the one that also
+   includes the FORM statment itself.  Users who are familiar with the
+   UNIX/LINUX system  may feel reminded of so-called "here-documents".
+   This mode of operation  is invoked  by the /I command line  switch.
+   Within this batch file, lines intended as data for the FORM program
+   must begin with a special label which must be left justified (begin
+   in column 1).  The name of that label  must be given as argument to
+   the /I switch. Any text (up to 15 characters) can be used as label,
+   but to prevent the batch processor of COMMAND.COM from misinterpre-
+   ting FORM data  as DOS commands,  it is advisable  to choose labels
+   starting with the character sequence "rem;"  (in either case).  All
+   entries that are part of a given form definition  must be placed in
+   a  contiguous  block of lines  all of them  prefixed with  the same
+   label,  but more than one such block  (each of them  using distinct
+   labels) can be placed  in the same batch file  allowing for several
+   form definitions  in one batch procedure.  If no label is specified
+   with  the /I switch  ";rem;" is assumed  by default.  Of course the
+   name of the batch file must also be given to FORM but many DOS-ver-
+   sions allow to express  the name of the current batch file as "%0".
+   If this is not possible a fully qualified name must be given.  
+
+   The following entries are recognized  either in a separate form de-
+   finition file or (prefixed with a label) as part of a batch file:
+
+LAYOUT  <rows> <columns> [ layout field-marker ]
+   This keyword must be the first one in the file and defines the num-
+   ber of rows and colums the form should consist of. At the same time
+   the <rows> entry defines how many lines  of plain text  immediately
+   following  this keyword-line  will be read  and the <columns> entry
+   determins how many characters of those following lines will be con-
+   siderd as  part of the form.  These plain text lines  show the form
+   how it should appear on the screen.  They may contain any printable
+   character including line- and other character based graphic charac-
+   ters with one single exception: The so-called "layout field-marker"
+   which by default  is the underscore ("_")  is used  to denote input
+   fields,  places into which a user will be able to enter text.  FORM
+   scans this form description  from left to right  and top to bottom,
+   identifying  any consecutive sequence  of the  layout  field-marker
+   character as  one such field,  numbering them from 1 to <n>  in the
+   order it encounters them.  Should the underscore as field-marker be
+   unsuitable it can be re-defined to any other printable character by
+   specifying this character as third argument to the LAYOUT keyword.
+
+DISPLAY <top-most row> <left-most column> [ display field-marker ]
+   As most forms will  not fill the whole screen  this keyword is used
+   to define the position of  the top-left corner of the form relative
+   to the screen. In addition it can be used to define how empty parts
+   of input fields should be displayed.  By default they are marked by
+   the same character as the layout-field marker  (which can be re-de-
+   clared itself) but it can be set to any other (printable) character,
+   including <BLANK>.  Defining it as <BLANK> may not be useful unless
+   the COLOR keyword  is used  to optically  distinguish  input fields
+   from the rest of the form. Since version 1.1 FORM requires this key-
+   word to follow immediately the plain text form description in other
+   words, it must be the second keyword in the file. Should one see an
+   error message like "Expected DISPLAY but found: ..." even though it
+   is the second keyword  found in the file  then an improper declara-
+   tion of the <rows> parameter of the LAYOUT keyword may be the cause.
+
+COLOR   <text-FG> [ text-BG [ field-FG [ field-BG ]]]
+   This keyword  can be used  to define  the foreground and background
+   colors  of the form  and the input fields.  The possible values for
+   foreground colors range from 0 to 15 and for background colors from
+   0 to 7. The numbers denote the following colors:
+           0 BLACK      1 BLUE           2 GREEN        3 CYAN
+           4 RED        5 MAGENTA        6 BROWN        7 LIGHTGRAY
+           8 DARKGRAY   9 LIGHTBLUE     10 LIGHTGREEN  11 LIGHTCYAN
+          12 LIGHTRED  13 LIGHTMAGENTA  14 YELLOW      15 WHITE
+
+FRAME   <n> (n: 1=| 2=≥ 3=∫)
+   This keyword  causes FORM  to draw a  rectangular frame  around the
+   form.  The argument <n>  allows to choose  between  three different
+   patterns which can be used to draw this frame: ASCII '|','+','-' or
+   sinlge or double lined graphic characters. The top and bottom lines
+   as well as the left and right most columns of the layout  should be
+   left empty as the frame will overwrite these.  An input field which
+   is in conflict with the frame will however overwrite the frame.  If
+   more elaborate patterns are desired  they must be defined  directly
+   in the  layout description  with the help  of an editor  capable to
+   cope with graphical characters.
+
+FIELD   <n> <type> [ expand-string1 [ expand-string2 ]]
+   This keyword serves to further qualify an input field.  Even though
+   it is optional,  it will be used  in many cases  to define a preset
+   string a different type of field or some kind of restriction to the
+   data that may be entered.  The number <n>  may range  from 1 to the
+   total number of fields  and tells to which field  the specification
+   applies. The <type> is a code which determins the kind of data that
+   the respective field holds.  It is described to greater detail fur-
+   ther down.  Any number  of entries  of this type  may appear in the
+   layout description but each field should be specified at most once.
+
+OUTPUT  <varname> <expression>
+   This keyword defines  where the data entered by the user  should go
+   to.  The environment variable <varname> will be set to <expression>
+   which may be  any string.  Within <expression>  a "$" followed by a
+   number expressed as one to three digits will be replaced by the con-
+   tent of  the field  referenced  by that number.  Any number of such
+   field references  may appear within an  <expression>  but the total
+   length (after expansion) is limited to 90 characters.  If a literal
+   digit  should immediately follow such a "$<n>" term,  then <n> must
+   be padded with leading "0"s  to three places,  as at most three di-
+   gits will be evaluated by "$". Any number of OUTPUT entries may ap-
+   pear in the file but as environment space is limited the system may
+   run out of such space.  In this case it may become necessary to in-
+   crease the environment space by the /E option of the command inter-
+   preter (e.g. command.com).
+
+WRITELN <expression> [ + | - <fieldnum> ]
+WRITE   <expression> [ + | - <fieldnum> ]
+   These keywords which are only available since version 1.2  evaluate
+   <expression> in the same way as OUTPUT does but don't store the re-
+   sult in an evironment variable, rather they send it directly to the
+   stdout channel from where it can be re-directed to a file  or piped
+   directly  into another program as input.  WRITELN automatically ap-
+   pends a newline to the output while WRITE does not and several con-
+   secutive WRITE statements  followed by one WRITELN  can be combined
+   to produce a long output line  that exceeds  the 90 character limit
+   of the internal  output buffer.  Any number  of WRITE/WRITELN stat-
+   ments can be specified to produce a multi-line output. A second op-
+   tional argument consisting of a plus ("+") or minus ("-") sign fol-
+   lowed by a number in the range of 1 up to the number of defined in-
+   put fields causes the respective WRITE/WRITELN statment  to only be
+   executed  if the field denoted by the number is _not_ empty (in the
+   case of "+") or  if it _is_ empty (in the case of "-").  A field is
+   considered empty if no non-blank character is stored in it.  Unlike
+   OUTPUT statments WRITE/WRITELN statments are always executed in the
+   order they are defined in the layout file.
+
+   WRITE/WRITELN cannot be used when the /s switch is in effect and it
+   cannot be combined with EXECUTE (see below), but it can be combined
+   with OUTPUT. In such a case all OUTPUT staments will be executed be-
+   fore all WRITE/WRITELN statments.  Please note however,  that in an
+   expression like "FORM layout-file > %OUTFILE%" the variable OUTFILE
+   will be evaluated  before FORM is invoked,  therefore setting  this
+   variable from within the form will not have the desired effect.
+
+EXECUTE <command> <argument-list>
+   If FORM just serves as a semi-graphical user interface to a command
+   line oriented  program,  it may seem  overkill  to create  an extra
+   batch file for that purpose.  In such a case this keyword allows to
+   define a <command> followed by arguments which is automatically in-
+   voked by FORM as soon as the form ist filled.  While <command> is a
+   constant string,  <argument-list>  is expanded  in the same way  as
+   the <expression> of OUTPUT. At most one EXECUTE may be defined in a
+   file and the combination with OUTPUT is only legal if used with the
+   /S switch and it will only be usefull in very rare cases anyway.
+
+ERRTEXT <n> <text>
+   As already stated above  FORM allows  to define restrictions to the
+   kind of data that may be entered into certain fields. If such a re-
+   striction is violated an error message is issued.  These error mes-
+   sages are pre-defined as short english-language texts which may not
+   be apropriate in any application.  Therefore this keyword allows to
+   individually re-define any of these. The default messages are:
+          Text1 = "file not found: "       Text2 = "file exists: "
+          Text3 = "minimum value: "        Text4 = "maximum value: "
+          Text5 = "misplaced character: "  Text6 = "minimum length: "
+   Each of these texts will be followed by an argument  which may be a
+   file name or a value. That should be taken into account when trans-
+   lating them into another langauge  or expressing them just in other
+   words.
+
+TIMEOUT <seconds> [ R ]
+   This keyword allows to define a time-out in seconds.  If it runs up
+   FORM will terminate as if the user had pressed the <ESC> key unless
+   the optional "R" is given as second argument.  In that case it will
+   act as if the user had confirmed the form  by pressing the <RETURN>
+   key.  This may fail if a field for which restrictions are in effect
+   is not filled with a suitable preset string.
+
+
+Environment variable
+
+   If  FORM  finds an environment variable named  FORM_DIR  at program
+   start it assumes that it holds the path to a directory where layout
+   files are stored. The content of this variable is prepended to each
+   layout  file name  passed as the  first parameter  unless it begins
+   with a dot (".")  or a backslash ("\").  This way it is possible to
+   store all layout files  in a centralized directory  and invoke FORM
+   with just a  short layout file name like  e.g. "FORM errormsg" from
+   anywhere in the directory tree.
+
+
+Return codes
+
+   Upon program termination  FORM will return back to DOS  one of four
+   possible values (also called error codes) depending on the cause of
+   termination. The batch command IF ERRORLEVEL allows to take differ-
+   ent branches for each of these situations.
+      code 0: regular program termination, the user filled the form
+           1: the user aborted the program by pressing <ESC>
+           2: the program only showed help or debug information
+           3: the program detected an error in the layout file
+   In addition the environment variables defined by the OUTPUT keyword
+   will only be set in the case of regular program termination. In all
+   other cases they will remain untouched,  the WRITE or WRITELN stat-
+   ments will not be executed  and the EXECUTE definition  will not be
+   processed either.
+
+
+Field types
+
+   FORM distinguishes several different types of input fields suitable
+   for various kinds of data.  These field types  are denoted by a one
+   or two character type code in any case.  Often the second character
+   of the type code is just a qualifier that further specifies the in-
+   put data.  This is especially true  for the codes "L" and "U" which
+   cause  the input data  in the respective field  to be automatically
+   converted to lower or upper case.  In addition  many type codes can
+   be complemented by a short decimal number  in the range of 1 to the
+   length of the field like e.g. A5. This indicates a required minimum
+   length for the data entered into this field.
+
+   All type code  specifications  are followed by  one or two strings.
+   Although these strings  have different roles,  they all  can be ex-
+   pressed in one of three ways: As a simple plain text string possib-
+   ly enclosed in quotes ("") which is just taken literally.  Alterna-
+   tively the string can begin  with a percent sign ("%")  followed by
+   the name of an evironment variable.  In this case it will be repla-
+   ced by the content of that variable.  And it can consist  of a hash
+   ("#")  followed by a single digit 0 to 9.  In that case  it will be
+   substituted  by one of  the additional arguments  passed to FORM at
+   program start. If a literal string has to begin with a hash or per-
+   cent sign that sign must be duplicated like %%text or ##2. A single
+   hash "#" all alone is a placeholder for an empty string.  It is re-
+   quired at places where a second string  is to be specified  but the
+   preceeding (first) string should be left empty.
+
+   The following field types can be specified:
+
+T[HLU] [ preset string ]
+   This type defines a general purpose input field for any kind of un-
+   restricted text.  As this is the default anyway it needs only to be
+   specified  if the field should be filled  with an (optional) preset
+   string  or if the field should be converted to lower or upper case.
+   The additional flag "H" (hidden) which is only available since ver-
+   sion 1.2  causes the content of the field to be shown as a sequence
+   of asterisks ("*")  which can be used  for data  that should not be
+   seen by everyone around like e.g. passwords.  Please note that this
+   flag cannot be combined with "L" or "U".
+
+A[LU][ml] [ preset string  [ character set ] ]           (All but ...)
+C[LU][ml]  <preset string> < character set>        (Consisting of ...)
+   These two types define input fields which may take text strings con-
+   sisting only of certain characters or which may NOT contain certain
+   characters. For the "C" type the second string, defining the allow-
+   able characters is mandatory  while the second string  for type "A"
+   fields defining characters that may NOT be entered  into that field
+   is optional. In addition for both types a minimum string length can
+   be required.
+
+L <sep><item><sep><item> ... <sep>item>
+   This type defines  a list of strings  from which  the user can pick
+   one.  This type takes one argument which may be enclosed in quotes.
+   The first character  of this string  defines the character which is
+   used to separate the different list items from each other like e.g.
+   ":Sun:Mon:Tue:Wed:Thu:Fri:Sat".  Any character that does not appear
+   itself within the list items can be used as separator.
+
+LD [ search path ]
+LF [ search path ]
+   These two types  also define a list from which the user can pick an
+   item. But instead of explicitly defining the individual items  FORM
+   generates  this list by itself  as a list of (sub-)directories (LD)
+   or a list  of (ordinary) files (LF)  at program start  according to
+   the search pattern  defined by the  optional "search path".  If not
+   specified "*.*" in the current directory is taken.
+
+F[LU] [ preset name [ path ]]
+N[LU] [ preset name [ path ]]
+   These two types define input fields which are expected to hold file
+   names.  This implies that certain characters cannot be entered into
+   these fields.  In addition FORM verifies that the file actually ex-
+   ists (F)  in the directory denoted  by the optional "path"  (or the
+   current directory) or does NOT exist (N) e.g. to prevent accidental
+   overwriting.  If the condition is not met FORM issues an error mes-
+   sage and offers the user the chance to enter a different name.
+
+H[LU][ml] [ preset value [[minimum]:[maximum]]
+O[ml]     [ preset value [[minimum]:[maximum]]
+R[ml]     [ preset value [[minimum]:[maximum]]
+S[ml]     [ preset value [[minimum]:[maximum]]
+U[ml]     [ preset value [[minimum]:[maximum]]
+   Fields of these types take a  hexadecimal (H), octal (O), real (R),
+   a signed (S) or unsigned (U) decimal number. All these type defini-
+   tions can take up to two optional string arguments.  The first one,
+   if present, defines a preset value  which will already be filled in
+   when the form appears on the screen but the user may overwrite this
+   value.  The second string may,  separated by a colon  but no spaces
+   inbetween, define a lower and an upper limit to restrict the values
+   that may be entered  into that field.  If only a lower limit is re-
+   qired a sinlge number is sufficient.  If only an upper limit should
+   be set, it must be preceded by a colon.  Both limits can be expres-
+   sed either as decimal, as octal (with a leading "0")  or as hexade-
+   cimal values (with "0x").  A real number ist actually just a signed
+   decimal number with an optional dot (".")  to separate the integral
+   from the fractional part and the value checking only consideres the
+   integral part.  For all these fields  also a minimum length  may be
+   defined.  This can  be useful  e.g.  for part numbers  or zip codes
+   where leading zeroes may be significant. If any of the restrictions
+   is violated  FORM  issues an  error message  and offers  the user a
+   chance to correct the value.
+
+X   <response text> [ X ]
+   An indicator "X" qualifies a field  as ckeckbox.  A checkbox always
+   has  a width of one,  no matter  how it was designed  in the layout
+   section  and it can only show the value "X" (for checked)  or blank
+   (for un-checked). The first argument which is mandatory does there-
+   fore not define a preset value, rather it is the string that is re-
+   turned if that field is checked.  If it is un-ckecked  nothing will
+   be returned. If the otional second argument is a "X" then the field
+   will be preset as ckecked.
+
+Xn  <response text> [ X ]
+   An indicator "X",  immediately followed  by a number  declares that
+   field  as member  of a set  of mutually exclusive checkboxes  (also
+   known as radio buttons).  Checking one member of such a set automa-
+   tically un-checks all other members of the same set.  As the number
+   may range from 1 to 15  a maximum of 15 such radio button sets  can
+   be defined. On termination, FORM will return the <response text> of
+   the currently checked member  of that set,  no matter which one was
+   actually referenced in the OUTPUT statment. The optional second "X"
+   argument can (and should be) used to check one member of the set at
+   program start.
+
+M[LU] <text> 
+   Fields of this type are special. Although they are technically spo-
+   ken ordinary fields,  FORM will display them  in text color  rather
+   than the one defined  for input fields  and it will never place the
+   cursor on such a field, so the user cannot enter any text. The man-
+   datory <text> argument may be a constant text but this is not real-
+   ly useful.  Rather it should be a reference to an environment vari-
+   able ("%varname") or a command line argument ("#1"). This way it is
+   possible to have variable parts  in the displayed text of the form.
+   One possible application of this feature may be message boxes.
+
+E[B] [ preset string ]
+   Whenever FORM detects an input field restriction violation it needs
+   a place where to put the error message. A field of tpye "E" (error)
+   defines such a place.  If a form applies restricted input fields it
+   must also define exactly one  such error field  otherwise it is not
+   necessary.  The field should not be too short to prevent truncation
+   of the error message.  The optional  preset string  is displayed as
+   long as no error occured  and can be used  to display general hints
+   like e.g. "press <RETURN> to confirm or <ESC> to abort". If the op-
+   tional subtype "B"  is specified  FORM will beep  when it detects a
+   restriction violation or the user attempts to enter an illegal cha-
+   racter otherwise it will operate silently.
+                                              
+
+Example #1 (text only)
+
+       LAYOUT 2 33
+        please insert a blank disquette
+        and press  <RETURN>   when done
+       DISPLAY 4 23
+       COLOR 0 7
+
+   This very simple layout which doesn't use any fields at all  is no-
+   thing but a more or less fancy replacement for the built-in command
+   PAUSE.
+
+
+Example #2 (message box)
+
+       LAYOUT 6 46
+       ⁄ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ ERROR ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒø
+       ≥                                            ≥
+       ≥ File not found: __________________________ ≥
+       ≥                                            ≥
+       ≥   ( press <ESC> or <RETURN> to continue )  ≥
+       ¿ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒŸ
+       DISPLAY 9 17
+       COLOR 14 4
+       FIELD 1 M #1
+       TIMEOUT 15
+
+   This example implements a message box that might pop-up when an er-
+   ror is detected.  Due to the TIMEOUT statment it will disappear all
+   by itself after 15 seconds  unless the user pressed <RETURN> before
+   the time ran-up.  It uses a command line parameter (#1) to pass the
+   name of the missing file. If it were stored in a file ERRMSG.FRM it
+   could typically be invoked from within a batch file in such a way:
+
+       IF NOT EXIST %FILNAM% FORM ERRMSG %FILNAM%
+
+   As the name of the file is stored in an environment variable anyway
+   it would of course also be possible to access that variable direct-
+   ly, like this:   FIELD 1 M %FILNAM    Please note that in the batch
+   file the variable name is enclosed in percent signs (%)  but in the
+   form file it is just preceded by a single one.
+
+
+Example #3 (graphical front-end)
+
+       LAYOUT 19 40
+
+
+           ⁄ƒƒ¬ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ¬ƒƒø
+           ≥  ≥                        ≥  ≥
+           ≥  ≥   Format Floppy Disk   ≥  ≥
+           ≥  ≥                        ≥  ≥
+           ≥  ≥   Drive: __ _ System   ≥  ≥
+           ≥  ≥                        ≥  ≥
+           ≥  ≥   Label: ___________   ≥  ≥
+           ≥  ≥                        ≥  ≥
+           ≥  ¿ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒŸ  ≥
+           ≥     ⁄ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒø  ≥
+           ≥     ≥€€€ﬂﬂﬂﬂ€€€€€€€€€     ≥  ≥
+           ≥     ≥€€€    €€€€€€€€€     ≥  ≥
+           ≥     ≥€€€    €€€€€€€€€     ≥  ≥
+           ¿ƒƒƒƒƒ¡€€€‹‹‹‹€€€€€€€€€ƒƒƒƒƒ¡ƒƒŸ
+
+
+            ______________________________
+       DISPLAY 4 20
+       COLOR 0 7
+       Field 1 L /A:/B:
+       Field 2 X /S
+       Field 3 A1 Floppy
+       Field 4 E " <RETURN> executes <ESC> aborts"
+       EXECUTE FORMAT "$1 $2 /V:$3"
+
+   This example illustrates the use of FORM as a front end for command
+   line oriented  DOS programs.  At the same time  it demonstrates the
+   graphical effects  that can be achieved very easily.  It uses three
+   input fields to gather all the information required for the command
+   which is invoked directly  by the EXECUTE keyword.  Input field one
+   is a list  of two entries "A:" and "B:"  and allows the user to se-
+   lect the drive  the operation shall be  performed on.  Field number
+   two is a check box. If checked the string "/S" will be added to the
+   argument list of the EXECUTE keyword otherwise it will remain empty.
+   Field number three  is a restricted input field  of type "A".  Even
+   it does not actually define a set of illegal characters, it demands
+   a minimum length of one which is equivalent to the requirement that
+   the field may not be left empty.  In addition it presets that field
+   with a default string.  Field number four  is of type "E".  No data
+   can be entered here,  rather it displayes the error message  if the
+   user violates the requirement of field number three.
+
+
+Example #4 (user dialoge)
+
+       LAYOUT 15 64 X
+                                                     /'''\
+                Datei: XXXXXXXXXXXX                 ( o o )
+                                           -----oOOO--(_)--OOOo-----
+             Nachname: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+           Vorname(n): XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+               Stra·e: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Nr: XXX
+
+                  PLZ: XXXXX  Ort: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+              Telefon: XXXXXXXXXXXXXXXXX   Geburtsdatum: XX.XXX.XXXX
+
+             XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+       DISPLAY 5 9 ˙
+       COLOR 10 5 0 7
+       FIELD  1 AU %filnam " <>=,;*?[]+|/\"
+       FIELD  2 A1
+       FIELD  3 A1
+       FIELD  4 A1
+       FIELD  5 U
+       FIELD  6 U5
+       FIELD  7 A1
+       FIELD  8 C  #  "0123456789/-"
+       FIELD  9 U  1 1:31
+       FIELD 10 L  :Jan:Feb:MÑr:Apr:Mai:Jun:Jul:Aug:Sep:Okt:Nov:Dez
+       FIELD 11 U  1980 1910:2010
+       FIELD 12 EB "   <ENTER> Eingaben bestÑtigen   <ESC> abbrechen"
+       OUTPUT FILNAM $1
+       OUTPUT NAME1 "$3 "
+       OUTPUT NAME2 "$2;"
+       OUTPUT ADDR1 "$4 $5;"
+       OUTPUT ADDR2 "$6;$7;"
+       OUTPUT MORE "$8;$9-$10-$11"
+       ERRTEXT 3 "Mindestwert: "
+       ERRTEXT 4 "Hîchstwert: "
+       ERRTEXT 5 "Falsches Zeichen: "
+       ERRTEXT 6 "MindestlÑnge: "
+
+   This more elaborate form applies  quite a number  of fields of dif-
+   ferent kinds. As the default layout field-marker character, the un-
+   derscore "_"  interferes with the graphic symbol in the upper right
+   corner of the form it was re-defined to a "X" in this case. In add-
+   ition the display field-marker was also re-defined  to a small cen-
+   tered dot. The language of this form is not english  and it applies
+   some restricted input fields  therefore the relevant error messages
+   were also re-defined to the language used in the form. All data en-
+   tered by the user go into several environment variables  from where
+   they can be further processed. Assumed it is stored in a file named
+   adressen.frm  this form could be invoked  by a batch file  like the
+   following one:
+
+       @echo off
+       set FILNAM=ADRESSEN.CSV
+       :loop
+       form adressen
+       if errorlevel 1 goto terminate
+       if exist "%FILNAM%" goto skip
+       echo name;street;zip-code;city;telefone;birthday > %FILNAM%
+       :skip
+       echo %NAME1%%NAME2%%ADDR1%%ADDR2%%MORE% >> %FILNAM%
+       goto loop
+       :terminate
+       set FILNAM=
+       set NAME1=
+       set NAME2=
+       set ADDR1=
+       set ADDR2=
+       set MORE=
+
+   The combination of this batchfile,  the program FORM.COM and the a-
+   bove layout file yields a simple data aquisition program for perso-
+   nal contact details. It may not be perfect but it works and is only
+   intended as a usage example anyway.
+
+
+Example #5 (form definition incuded into a batch file)
+
+       @echo off
+
+       rem;1layout 2 28
+       rem;1  _______: 192.168.___.___ 
+       rem;1  ________________________
+       rem;1display 3 24
+       rem;1color 0 7 15
+       rem;1field 1 m #1
+       rem;1field 2 u %net 0:255
+       rem;1field 3 u 1 1:254
+       rem;1field 4 e "press <RETURN> when done"
+       rem;1output gateway 192.168.$2.$3
+       rem;1output net $2
+
+       rem;2layout 2 28
+       rem;2  NETMASK: 255.255.___.___ 
+       rem;2  ________________________
+       rem;2display 3 24
+       rem;2color 0 7 15
+       rem;2field 1 u 255 0:255
+       rem;2field 2 u 0 0:0xF0
+       rem;2field 3 e "press <RETURN> when done"
+       rem;2output netmask 255.255.$1.$2
+
+       cls
+       set net=0
+       form /irem;1 %0 IP-ADDR
+       set ip-addr=%gateway%
+       form /irem;2 %0 
+       form /irem;1 %0 GATEWAY
+       set net=
+       set
+
+   This batch procedure presents the user  three different small forms
+   in sequence, asking for an ip-address, a netmask and a gateway add-
+   ress,  stores the rsults  in three different  environment variables
+   and eventually shows all environment variables on the screen.  Cer-
+   tainly  on could consolidate  all three queries  into a single form
+   and in a real life application  this would even be the prefered way
+   to do it,  but for the sake of the example  a different appoach was
+   chosen in this case.  Note that the first form definition  (the one
+   marked with label "rem;1") is actually used twice  by the first and
+   the third invocation of FORM with a parameter causing slightly dif-
+   ferent  display contents.  Whether one prefers  to include the form
+   definitions into the batch file  or rather prefers a strict separa-
+   ration of (menu-)data from (batch-)code may be a matter of personal
+   taste and also depend on the application. The program itself allows
+   for both methods.
+
+
+Example #6 (form used to generate a text file)
+
+       LAYOUT 9 33
+
+         Hostname   : _______________
+         Ip-address : ___.___.___.___
+         Netmask    : ___.___.___.___
+         Gateway    : ___.___.___.___
+         Nameserver1: ___.___.___.___
+         Nameserver2: ___.___.___.___
+         ____________________________
+
+       DISPLAY 8 15
+       FRAME 3
+       FIELD  2 u1 192 1:224
+       FIELD  3 u1 168 0:255
+       FIELD  4 u1 0   0:255
+       FIELD  5 u1 1   1:254
+       FIELD  6 u1 255 1:255
+       FIELD  7 u1 255 0:255
+       FIELD  8 u1 255 0:255
+       FIELD  9 u1 0   0:255
+       FIELD 10 u1 192 1:224
+       FIELD 11 u1 168 0:255
+       FIELD 12 u1 0   0:255
+       FIELD 13 u1 254 1:254
+       FIELD 14 u1 #   1:224
+       FIELD 15 u1 #   0:255
+       FIELD 16 u1 #   0:255
+       FIELD 17 u1 #   1:254
+       FIELD 18 u  #   0:224
+       FIELD 19 u  #   0:255
+       FIELD 20 u  #   0:255
+       FIELD 21 u  #   0:254
+       FIELD 22 E
+       WRITELN "MY_IP      = $2.$3.$4.$5"
+       WRITELN "HOSTNAME   = $1"                +1
+       WRITELN "NETMASK    = $6.$7.$8.$9"
+       WRITELN "GATEWAY    = $10.$11.$12.$13"
+       WRITELN "NAMESERVER = $14.$15.$16.$17"
+       WRITELN "NAMESERVER = $18.$19.$20.$21"   +18
+       WRITELN "TXBUFSIZE  = 8192"
+       WRITELN "RXBUFSIZE  = 8192"
+
+   This form (which only works in program versions 1.2 or newer)  used
+   with a command like "FORM example6 > %WATTCP.CFG%\wattcp.cfg" could 
+   be applyed to manually set-up a TCP/IP configuration file  for pro-
+   grams linked with the WATTCP library. (A similar form could be cre-
+   ated for mtcp). Please note that, due to the "+1" and "+18" clauses,
+   the "HOSTNAME" and the second "NAMESERVER" entries are only genera-
+   ted if the respective fields in the form are actually filled.
+
+
+   Version history:  The /I command line switch and the ability to in-
+   clude  form definitions  directly into a batch file  as well as the
+   FRAME keyword were introduced only in version 1.1 and not available
+   in prior versions.
+
+   The WRITE/WRITELN keywords as well as the "H" flag for the type "T"
+   field were only introduced in version 1.2 and not available in pri-
+   or versions.
+
+
+   JÅrgen Hoffmann   (2011)   j_hoff@hrz1.hrz.tu-darmstadt.de
+

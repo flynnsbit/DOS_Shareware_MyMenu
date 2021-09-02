@@ -1,0 +1,23 @@
+README.TXT--
+DZEMM Version 1.06
+
+    DZEMM is an Expanded Memory Manager (EMM), and the source is released
+    under the GNU General Public License. See the COPYING file for details.
+
+    For more information on the Lotus/Intel/Microsoft (LIM) Expanded Memory
+    Specification, see: http://www.phatcode.net/res/218/files/limems40.txt
+
+    The update KB2724197 prohibits EMS in XP, and this manager will provide
+    a solution for DOS applications that needs this memory.
+
+    To install the manager, copy the .SYS and .DLL files to a directory in
+    your %PATH%, %SystemRoot%\system32 preferred. You need to edit the file
+    CONFIG.NT in %SystemRoot%\system32 and add the line (change D: to your
+    Windows drive): device=D:\windows\system32\dzemm.sys
+
+    The CONFIG.NT file used for testing in XP:
+
+	dos=high, umb
+	device=D:\windows\system32\himem.sys
+	device=D:\windows\system32\dzemm.sys
+	files=40

@@ -1,0 +1,92 @@
+                
+                --------------------------------------------------
+                Essential Information  -  Quick Start Instructions
+                --------------------------------------------------
+
+  Pease take a few moments to read this short file, so you may enjoy the very
+  best that Virtual Pool has to offer.
+ 
+  Video/Sound Setup:
+  ------------------
+ 
+  When you start Virtual Pool for the first time, the configuration program
+  will run, allowing you to select your video driver and sound card.  If you
+  do not know what video driver to use, you can select the auto-detect option,
+  and the program will attempt to determine which video driver to use.
+  Depending on your system hardware, the auto-detect may not be able to
+  select the proper driver, and in some cases may hang your computer.  
+  
+  You may select the option "VIDEO SETUP" from the Start-Up Menu for a more 
+  detailed explanation on setting up the proper driver for your specific card.
+ 
+  If, at any time you wish to change these settings, you may do so by selecting
+  (R)eset Config. from the StartUp/Help Menu, or directly from within the game.
+
+
+
+  Quick Start Instructions:
+  -------------------------  
+
+  When Virtual Pool begins you will be in AIM MODE.  Simply move your mouse
+  Left or Right to change the AIM.  Moving the mouse forward and back tilts
+  the view of the table.  Holding down the left mouse button while moving the
+  mouse foward or backwards to increase or decrease the Zoom level.  
+
+  When you are satisfied with your aim, press and hold the S key.  Your Mouse 
+  is now connected to the cue stick.  As you move the mouse back and then 
+  forward, watch the cue stick move in response.  Move the mouse forward 
+  quickly for a powerful shot, slow for a light tap.   
+  
+  The Main Menu can be accessed by pressing F10, the Escape Key or the Right 
+  Mouse Button.  F1 opens the Virtual Pool Help System.  
+  
+  
+  Special Tips:
+  -------------
+  
+  If you need help lining up a shot, press "T" to turn on Tracking.  Colored 
+  Lines will appear, showing the paths of the balls using the current Aim.
+  You may then adjust your Aim more precisely.  Tracking lines are displayed 
+  based partly on the amount of Force used to hit the cue ball, so ball paths 
+  will vary depending on how hard you shoot.  To use exactly the amount of 
+  Force shown by Tracking, press S to enter SHOOT mode and then press the 
+  spacebar.  The spacebar makes the shot automatically, and the balls will 
+  then follow the exact paths shown by Tracking.  To change the amount of 
+  Force, hold down the "F" key while tracking is on, and move the mouse 
+  forward to increase force; backward to decrease force.  The colored Tracking 
+  lines will grow longer or shorter in response to your mouse movements.
+
+  Hold the E key while moving the mouse to adjust English.  Hold the B key
+  while moving the mouse to raise or lower the butt of the cue stick.  
+  To Undo a shot press "U".  To Replay a shot press "R".  For an Overhead
+  View press "O".
+
+  Be sure to Select the "Control Keys" option from the Start-Up Menu for a 
+  complete listing of all Virtual Pool Commands.
+
+
+  Trick Shots:                                                              
+  ------------
+  Included in this demo is a small assortment of Trick Shots.  To view Trick 
+  Shots select "Game Setup" from the Main Pool Menu and then choose 
+  Practice/Trick Shots.  Then, to Load a Trick Shot, press ALT-L, or choose 
+  "Game Options" from the Main Pool Menu and select "Load Position". Now 
+  select a trick shot from the menu.  The selected Trick Shot will then be 
+  loaded into the game.  Upon Loading a Trick Shot, the game will be in view 
+  Mode to allow you to move around the table to view the setup of the shot.  
+  You may wish to turn on Tracking (T) at this point to inspect the finer 
+  details of the shot.  When you're ready to watch the shot, press R, and the 
+  shot will be replayed. To slow down the replay rate press the - key; the 
+  + key increases the rate.  After watching the replay, try making the shot 
+  yourself by pressing "U" to UNDO the shot, "A" to enter AIM MODE,  then press 
+  "S" and use your mouse to attempt the shot.
+  
+
+
+
+     That should be enough to get you started.  We hope you enjoy playing
+     Virtual Pool as much as we've enjoyed making it for you!  
+
+
+
+<End_Of_File>

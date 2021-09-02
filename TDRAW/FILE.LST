@@ -1,0 +1,59 @@
+THEDRAW SHAREWARE VERSION 4.63 FILE LISTING
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴�
+The shareware version of TheDraw archive includes the following files.
+Please ensure every file is present.  If any are missing, then the archive
+is not complete, and should -not- be distributed to others.  Extra files
+should be removed.  The latest shareware release of TheDraw may be obtained
+directly from TheSoft Programming Services or the following bulletin board:
+
+    The Great American Dream Machine (sysop Dave Gentry)
+    Phone: 510-581-3019
+    Fidonet file requests: Node 1:215/215, Magic name "THEDRAW"
+
+
+Sysops in the Fidonet node list can also obtain TheDraw from the following:
+bulletin board during eastern national net hours:
+
+    The Late Night BBS (sysop Carter Downer)
+    Phone: 315-564-5700
+    Fidonet file requests: Node: 1:2608/15, Magic name "THEDRAW"
+
+
+Filename:           Purpose:
+컴컴컴컴컴컴        컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴�
+WHATSNEW.DOC        Brief listing of new additions/fixes for this release.
+
+MAILER              A registration form which when printed can be easily
+                    folded and mailed.  No envelope is needed.
+
+FILE_ID.DIZ         A short description file for BBS operators.
+
+FILE.LST            This text file.
+
+TDFONTS.EXE         TheDraw font editor utility.
+TDFONTS.TDF         TheDraw font database file.
+
+THEGRAB.EXE         TheGrab screen capture utility.
+
+SETUP.EXE           TheDraw setup utility.
+THEDRAW.EXE         Shareware version of TheDraw
+THEDRAW.DOC         TheDraw User's Manual
+
+PRINTDOC.EXE        Program to simplify printing out User's Manual
+                    Type "PRINTDOC [enter]" from the dos prompt.
+
+SHUTTLE2.ANS  \
+DEMO.TD        \    Example files showing off some of the capabilities
+SHADING.TD     /    of TheDraw, plus demonstrations of what is possible.
+EFFECTS.TD    /
+
+UNCRUNCH.ASM  \     Implementations of the algorithm needed to display
+UNCRUNCH.PAS   \    screen images compressed (crunched) by TheDraw.
+UNCRUNCH.H      >   The first is for assembly language, the second for
+UNCRUN_N.OBJ   /    Turbo Pascal, the third has external C declarations
+UNCRUN_F.OBJ  /     linking to routines in the UNCRUN_N & UNCRUN_F files.
+
+QB4UTIL.BI          QuickBasic 4.x display routine declarations.
+QB4UTIL.LIB         QuickBasic 4.x display routines in library form.
+MAKEQLB.BAT         Batch file to simplify making Quick Libraries
+                    (.QLB and .LIB) for use with QuickBasic.

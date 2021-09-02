@@ -1,0 +1,47 @@
+
+
+FoxType's evolution:
+
+
+FoxType v0.16 [01 Jun 2007]
+ * Compiled with FreeBASIC v0.17,
+ * Added new Unicode characters to the database.
+
+FoxType v0.15 [29 Sep 2006]
+ * Changed FoxType's status from FREEWARE to open-source on GNU/GPL licence,
+ * Small code optimizations,
+ * Added new Unicode characters to the database.
+
+FoxType v0.14 [01 Sep 2006]
+ * Few memory optimizations (some functions were wasting memory),
+ * Added graphical shading when exiting,
+ * Implemented "Back" function [experimental],
+ * Modified displaying method (uses a sprite/char instead working on pixels),
+ * Checking if 1280x1024x8 is supported by the video card before using it,
+ * Ignoring "Byte Order Marks" (U+FEFF & U+FFFE, used as UTF-8 file headers),
+ * Included a DPMI stub inside FoxType (doesn't need CWSDPMI.EXE anymore),
+ * Added new Unicode characters to the database.
+
+FoxType v0.13 [14 Aug 2006]
+ * Ported the source-code to FreeBASIC v0.16,
+ * Detecting FoxType's directory (can be launched from anywhere now),
+ * Implemented the VESA 1280x1024 resolution,
+ * Added new Unicode characters to the database.
+
+FoxType v0.12 [06 Aug 2006]
+ * Checking if the drive is writeable before saving screenshot,
+ * Displaying unsupported Unicode chars as red "?" marks,
+ * Added page counting,
+ * Minor keyboard's buffer flushing bug fixed,
+ * Added new Unicode characters to the database.
+
+FoxType v0.11 [03 Aug 2006]
+ * Detection of ill-formed UTF-8 characters (preventing hang-ups),
+ * Implemented word-wrapping,
+ * Redesigned fonts (Thank you, Henrique!),
+ * Screenshot function ("S" key), saves shots in BMP format,
+ * Added "Credits" and "Licence" help screens,
+ * Added new Unicode characters to the database.
+
+FoxType v0.10 [25 Jul 2006]
+ * Initial release.

@@ -1,0 +1,97 @@
+                         SIERRA ON-LINE, INC.
+            3-D Animated Adventure Game Soundtrack Series
+           ===============================================
+                 GABRIEL KNIGHT: SINS OF THE FATHERS
+                                                        
+
+                       THE COMPLETE SOUNDTRACK
+                     (See below for song titles.)
+                             Robert Holmes
+           =============================================
+               Copyright (c)1993 Sierra On-Line, Inc.  
+           =============================================
+
+                         GENERAL MIDI VERSION
+                           NEW VERSION v2.0
+
+                  (Designed for Roland Sound Canvas)
+
+
+
+System Requirements:
+
+- MIDI Playback Software capable of reading Type 1 Standard
+   MIDI File format and embedded SysEx data
+- General MIDI sound card or module  (Roland SC recommended)
+
+
+This Standard MIDI File was recorded directly from Sierra's "Gabriel Knight:
+Sins Of The Fathers" adventure game.  It has been recorded using Sierra's
+General MIDI sound driver and is therefore optimized for Roland Sound Canvas
+based MIDI cards and modules.  See below for song titles.
+
+Recorded/edited/compiled/arranged for General MIDI by Tom Lewandowski.
+Address questions or comments to:
+
+  Tom Lewandowski
+  tom@queststudios.com
+  QUEST STUDIOS
+  www.QuestStudios.com
+
+
+  =======================================================================
+                     TRACK SHEET  -  GENERAL MIDI VERSION
+
+                     GABRIEL KNIGHT:  SINS OF THE FATHERS 
+  =======================================================================
+                                                    START MEASURE/TIME *
+  -----------------------------------------------------------------------
+
+   1. Sierra Fanfare                                       3  00:00:04
+   2. Introduction - Opening Theme                        10  00:00:21
+   3. Introduction - The Nightmare                        80  00:03:09
+   4. Day One Chimes                                     104  00:04:07
+   5. St. George Book Shop                               122  00:04:50
+   6. New Orleans City Map                               181  00:07:12
+   7. The Blues Band                                     222  00:08:50
+   8. The Jazz Band                                      259  00:10:19
+   9. The Cajun Band                                     291  00:11:36
+  10. Grandmother Knight                                 315  00:12:33
+  11. Police Station                                     379  00:15:07
+  12. Historical Voodoo Museum                           427  00:17:02
+  13. Dixieland Drug Store                               466  00:18:36
+  14. St. Louis Cemetery #1                              518  00:20:40
+  15. Gabriel's Radio                                    569  00:22:43
+  16. Madame Loreli                                      608  00:24:16
+  17. Lake Ponchartrain                                  634  00:25:19
+  18. Detective Mosley                                   675  00:26:57
+  19. Gedde Estate                                       712  00:28:26
+  20. Malia Gedde                                        763  00:30:28
+  21. Magentia Moonbeam                                  803  00:32:04
+  22. Tulane University                                  833  00:33:16
+  23. St. Louis Cathedral                                878  00:35:04
+  24. Cazaunoux Residence                                918  00:36:40
+  25. Napolean House                                     973  00:38:52
+  26. Crash Interrogation                               1011  00:40:24
+  27. The Bayou                                         1050  00:41:57
+  28. Flight To Germany                                 1087  00:43:26
+  29. Ritter Castle - The Great Hall                    1116  00:44:36
+  30. Ritter Castle - Wolfgang's Bedroom                1151  00:46:00
+  31. Ritter Castle - Schattenjager Library             1186  00:47:24
+  32. Ritter Castle - The Chapel                        1244  00:49:43
+  33. Purification Dream                                1292  00:51:36
+  34. Africa                                            1349  00:53:55
+  35. Circle Within A Circle                            1389  00:55:31
+  36. Wolfgang Ritter                                   1429  00:57:07
+  37. Return To New Orleans - Day Ten Theme             1473  00:58:52
+  38. Gedde Haunfor                                     1524  01:00:55
+  39. Animal Room                                       1574  01:02:55
+  40. Ritual - Rada Drums                               1604  01:04:07
+  41. Malia Gedde Rescue                                1628  01:05:19
+  42. Closing Theme                                     1653  01:06:04
+  -----------------------------------------------------------------------
+                                                Total Time:   01:08:24
+
+
+        * Start times are approximate.
+

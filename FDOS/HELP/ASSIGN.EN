@@ -1,0 +1,132 @@
+
+     ASSIGN (1)                  08 August 1995                  ASSIGN (1)
+
+
+
+     NAME
+          assign - Assign a drive letter to a different drive
+
+
+     SYNOPSIS
+          assign [/m] [/shadow] /?
+          assign [/m] [/shadow] /status
+          assign [/m] [/shadow] /u
+          assign [/m] [/shadow] [{ dr1[:]=dr2[:] }]
+
+
+     DESCRIPTION
+          Assign maps  a  drive  letter  to  a  different drive.  This
+          mapping effects only the drive letter,  but  not  the  path,
+          what makes Assign different to Subst, e.g.:
+          With the  current  working  paths "C:\FREEDOS" and "B:\TEMP"
+          after the commands "assign B=C" and "cd C:\", the path  "B:"
+          also points to the directory "C:\".
+          Whereas after  the  commands "subst B: ."  and "cd C:\", the
+          path "B:" still points to "C:\FREEDOS".
+
+          Because this program is no TSR,  do  not  load  it  via  the
+          "LOADHIGH" or the "LH" command.
+
+     OPTIONS
+
+       /? Display a little help screen.
+
+       /SHADOW This  option  hides the resident portion of Assign from
+          being detected easily.  That includes:
+          1) The memory  block  containing  the  resident  portion  is
+          marked as a part of the system.
+          2) The  installation check interrupt returns "Not installed,
+          but not allowed to install" rather than "Installed" or  "Not
+          installed".
+
+          If the  resident  portion is installed with this option, but
+          subsequent invokations  are  made  without  this  option,  a
+          warning pops up, but the action is performed.
+
+          The option may be abbreviated down to /SH.
+
+       /STATUS Display all assigned drive letters in the form:
+          dr1: => dr2:
+          where dr1  is  the  assigned drive letter and dr2 the drive,
+          where dr1 points to.
+
+          If there  is  no  assigment  at  all,  no  output  will   be
+          displayed.
+
+          This option prevents the loading of the resident portion, if
+          it has not already been installed.
+
+          The option may be abbreviated down to /S.
+
+       /u Uninstall a previously installed Assign.
+
+
+
+                                      -1-
+
+
+     ASSIGN (1)                  08 August 1995                  ASSIGN (1)
+
+
+       dr1[:]=dr2[:] This defines a drive letter assignment, where dr1
+          shall point to dr2.  The colons ":" are optional.  There are
+          no whitespaces allowed between the drive letters, the colons
+          and the equal sign '='.
+
+          If the  resident  portion  is not already loaded, it will be
+          loaded without further notice.
+
+       /m Move the resident portion into the UMB  area,  if  possible.
+          This option is ignored, when the resident portion is already
+          installed.
+
+       no option If  there is neither /STATUS nor /u nor an assignment
+          specified on the command line, all existing assignments  are
+          broken, so that all letters point to themselfs in result.
+
+     KNOWN BUGS
+
+       o  Because Assign  is  no TSR itself, a loading with one of the
+          commands "LOADHIGH" or "LH" may fail.  If you want  to  load
+          the resident portion high, you must specify the /m option.
+
+       o  The options  /STATUS  and  /SHADOW  do not follow the option
+          standard because of compatibly to the original Assign.
+
+       o  Later installed  TSR's  or  a  secondary  command  processor
+          (shell) mostly prevent the uninstall process.  In this case,
+          Assign is  not suspended, but remains active in memory.  Use
+          ASSIGN without any option  to  clear  the  assignment  table
+          instead.
+
+       o  Some shells  prevent  that ASSIGN finds its resident copy in
+          memory, if ASSIGN is installed from a secondary copy of  the
+          shell.
+
+     SEE ALSO
+          Subst, Join
+
+     CONTRIBUTERS
+                                 Steffen Kaiser
+                             Mittelstraáe 112/B115
+                         53757 Sankt Augustin - Menden
+                             Deutschland - Germany
+
+                    e-mail: Steffen.Kaiser@FH-Rhein-Sieg.DE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      -2-
+

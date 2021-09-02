@@ -1,0 +1,176 @@
+ CD-MAN  Pre-release June 89                                           The Game
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+The purpose of the game is to clear the screen of dots
+while avoiding the nasties.
+
+However by eating one of the pulsating energy pills, the roles are reversed
+for a short time and you can gain points by catching the fleeing monsters.
+
+When the screen is cleared you proceed to the next level.
+
+Collect goodies, that appear every now and then, to gain bonus points.
+
+
+
+
+
+
+
+
+
+
+
+
+
+ CD-MAN  Pre-release June 89                                           The Menu
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+Move around the Menu with the cursor keys, choose item either by the
+up and down keys or the first letter of your choice.
+
+At any point any time you can always return to the Menu by pressing ESC.
+
+If you exit from gameplay with ESC you can always continue your game by
+choosing CONTINUE.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ CD-MAN  Pre-release June 89                                The Highscore Table
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+The highscore table shows the ten best scores, the players name and the time
+and date the game was played.
+It also holds these entries for the last player ( or players if the last game
+was a two-player game ).
+
+The highscore table is contained in the file HIGHSC.CDM.
+If you want to start over with an empty highscore table you can simply
+delete the file and CD-MAN will create a new one with the current
+date and time and reasonably low scores.
+
+OBS!  The highscore table will only be saved if you exit the game with the
+      QUIT option in the menu!
+
+
+
+
+
+
+
+
+
+
+ CD-MAN  Pre-release June 89                               The Statistics Table
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+If you press the spacebar at the highscore table you will see the
+statistics table.
+
+The entries are:
+
+Active game time  -  The time the game was actually played, that is the time
+                     spent in the menu, help screens and so on is not included.
+
+Screen / Level    -  The number of screens reached and the level on the
+                     last screen.
+
+Average speed     -  A measure of the average speed relatively to the other
+                     players.
+
+Moves made        -  Total number of moves made, one move being the distance
+                     between two dots.
+
+Monsters / Bonus  -  Total number of monsters resp. bonuses taken.
+
+
+
+
+ CD-MAN  Pre-release June 89                                        The Screens
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+Each screen has three levels.
+They differ in difficulty and bonus points.
+
+The agressiveness of the monsters increases as well for each screen.
+
+        The screens are:
+        컴컴컴컴컴컴컴컴
+
+        The Enchanted Forest                                    Complete
+                Tip: Take key to unlock gate...
+
+        The South Pacific                                       Complete
+
+        Deep Space                                              In Progress
+
+        Cities of the World                                     Initiated
+
+        The Dark Ages                                           Initiated
+
+
+
+
+ CD-MAN  Pre-release June 89                               Pre-release Specials
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+In this pre-release there is an endless life function for testing purposes.
+
+The endless life will only work in one player mode.
+
+At any point during gameplay you can press F1 ( that is the first function key )
+to gain endless life, you will still 'die' as usual but the number of lifes
+will not be decremented.
+
+If you press F1 a second time you will be mortal again and so on...
+
+There is no way ( exept dying ) to see what mode you are in, so you'll have
+to keep track of that yourself.
+
+At the start of a new game endless life is always off.
+
+
+
+
+
+
+
+
+ CD-MAN  Pre-release June 89                 Copyright Creative Dimensions 1989
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+This game was created by:
+
+Attila Biro                             Anders Moree
+Ladersattrav. 93  7tr                   Bolinderv. 79
+175 70  Jarfalla                        175 74 jarfalla
+SWEDEN                                  SWEDEN
+
+Tel: 758 53972                          Tel: 758 55953
+
+For info or to purchase CD-MAN VERSION 2.0 (awesome) please contact:
+
+Creative Dimensions                     Tel: (510) 484-5918     
+818 Main St. Suite F                    FAX: (510) 484-3292  
+Pleasanton, CA 94566                    BBS: (510) 484-4944
+
+Look for new releases from Creative Dimensions soon to come !
+
+Also read: README.CDM,  CD.TXT,  FOREIGN.TXT (foreign orders)
+
+  -  HAVE FUN!
+  -  featuring an amazing new class of 256 color graphics with 
+     flicker free, seamless motion made possible by the new
+     synchronized video engine we have developed.
+

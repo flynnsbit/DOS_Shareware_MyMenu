@@ -1,0 +1,234 @@
+	       ========================================
+	       DOS MP3 JUKEBOX  The Turntable Emulator 
+		    For Beta Testing Purposes                  22-07-2000
+	       ========================================       David Aranda
+
+
+
+1-Introduction
+~ ~~~~~~~~~~~~
+   Mp3 Jukebox is a Mp3, Mp2 (MPEG 1.0 and 2.0), Mod, S3m, Xm player for Dos,
+   that try to emulate a turntable.
+
+   The original idea was make a application to play songs file format like 
+   mp3 / xm / mod... that could emulate a turntable, to mix and manipulate
+   the songs like a vinyl. 
+   All the programs that mix mp3s or mods require that the user have see 
+   the monitor and to use the mouse, really I don´t like this method, I 
+   want a program that can be used only with the keyboard without a monitor, 
+   because for a DJ that is making a session only want heard the music,
+   manipule your mix table and theirs turntables, the Dj don't need to be 
+   seated, seeing a monitor to do a good mix or session. 
+
+2-General keys
+~ ~~~~~~~~~~~~
+
+ h         Help for the general keys
+
+ Enter     Search for songs on the drive specified in jukemp3.cfg
+	   and play a random one (If you specify 'x' as a drive
+	   the program will use the actual drive).
+	   If you want that jukemp3 read the songs from your drive d: 
+	   when the program starts, you have to edit the file jukemp3.cfg
+	   and write simply d in the first position of the file.
+
+ d         Change the drive of the songs.
+
+ #         Change directory of the songs
+	   You can specify the drive and the directory.
+
+ a         Play a random song of the list
+
+ q         Quit the player
+
+ m         Show the song file list loaded
+
+ t         Show the name and artist of the songs of the list and save
+	   them in tagsmp3.txt to be printed.
+
+ c         Play the next CD Audio Track
+
+ x         Play the previous CD Audio Track
+
+ w         Save Winamp songlist.m3u
+
+ b         Search a song
+
+ v         Repeat last seach
+
+ §         Open/Close CD door
+
+ .         Stop the sound
+
+ BackSpace <- Replay the last song played on the list
+
+ Num       Play the song of the list with the number Num
+	   If when you enter the number of the song it is not play
+	   automatically you have to press enter (The Scroll Lock led of
+	   keyboard indicates that you have to press enter).
+
+ +         Play the next song of the list
+
+ -         Play the previous song of the list
+
+
+3-Mp3/Mp2 Playing keys
+~ ~~~~~~~~~~~~~~~~~~~~
+
+
+ F1  - Hand slap up to the vinyl, like a Pitch Bend. 
+ F2  - Hand slap down to the vinyl.
+ F3  - Panning to the left
+ F4  - Panning to the right
+ F5  - Pitch Up  (classic)
+ F6  - Pitch Down
+ F7  - The classic striped vinyl effect
+ F8  - Volume to 0 / Volume to the max (mute)
+ F9  - Play forward
+ F10 - Play backward
+ F11 - Another Pitch Bend but without modify the tone (Time Streching) UP
+       Useful for ajust the song during a mixing between two songs.
+ F12 - Another Pitch Bend but without modify the tone (Time Streching) DOWN
+
+        Forward 5 seconds
+        Rewind 5 seconds 
+        Increase volume
+        Decrease volume
+  /      Pause
+  o      Decrease constant time streching
+  p      Increase time streching
+  <-     BackSpace Restart the song
+  Spc    Vinyl Stop
+  .      Stop the sound
+  s      Surround Sound
+  f      Go back to the original frequency of the song
+  Supr   Mark a song position
+  Insr   Goto to mark position
+  Home   Mark a song position #2 (This position will be saved on the file
+	 framemp3.cfg with the song number)
+  End    Goto to mark position #2 (Position will be loaded on the file 
+	 framemp3.cfg)
+  AvPg   Forward 2 minutes
+  RePg   Rewind 1 minute
+  Number Play the selected song of the songlist by the number
+  +      Play the next song of the list
+  -      Play the previous song of the list
+  i      Show the information about the current mp3 from ID3 tag.
+
+-In mp3 playing and CD-Audio playing: when a 1 minute remains for end of the
+ a song, the Caps Lock led will switch on, and when 15 seconds remains, the
+ Scroll Lock led of keyboard will switch on.
+
+
+4-Mod/Xm/S3m Playing keys
+~ ~~~~~~~~~~~~~~~~~~~~~~~
+
+      Next Pattern
+      Previous Pattern
+      Increase volume
+      Decrease volume
+  /    Mod Pause
+  <-   ReStart the song
+  F5   Pitch Up 
+  F6   Pitch Down
+  F8   Mute
+  Supr Mark a song pattern
+  Insr Goto to mark pattern
+  i    Show the list of samples/instruments
+
+
+5-CD AUDIO Playing keys
+~ ~~~~~~~~~~~~~~~~~~~~~
+
+  c    Play next CD Track
+  x    Play previous CD Track
+      Fast Forward (1 second)
+      Fast Rewind  (1 second)
+      Increase volume
+      Decrease volume
+  /    Pause
+  <-   BackSpace Restart the song
+ Supr  Mark a song position   (Mixing Utilities)
+ Insr  Goto to mark position
+ Home  Mark a song position -#2
+ End   Goto to mark position -#2
+ AvPg  Forward 2 minutes
+ RePg  Rewind 1 minute
+ F8  - Volume to 0 / Volume to the max (DJ mute)
+
+6-Jukemp3.cfg  Drive Configuration file
+~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ In this file you specify the drive when the songs (mod and mp3) will be
+ searched. If you put x like a drive the program will search in the current
+ drive when the program has been executed.
+
+ You can also specify the number of the CD-ROM drive, if you have several
+ CD-ROMs in your system and you can play CD-AUDIO music from the second CD-ROM
+ you must put the number 2 in jukemp3.cfg.
+
+
+7-Command line options
+~ ~~~~~~~~~~~~~~~~~~~~
+
+ General sintax:
+
+      jukemp3 [options] [songs]
+
+ You can specify songs to play from the command line.
+ Ej:  jukemp3 c:\sound\track2.mp3              -> Play c:\sound\track2.mp3
+      jukemp3 c:\trackers\*.xm c:\sound\*.mp3
+
+ or if you are in windows, you can drag and drop song files to jukemp3.exe
+ program.
+
+ also you can use Winamp playlists:
+      jukemp3 playlist.m3u
+
+ -Options:
+
+	-a     If you thing that the sound volumen is lower than the Windows
+	       players use this option to amplify, but remember that if
+	       you use it you won't be able to play talkover samples while
+	       a mp3 is playing (Alt + Number).
+
+	-nomp3 Any .mp3, .mp2 won't be inserted in the song list.
+
+	-nomod No .Xm, .Mod, .S3m will be inserted.
+
+	-fast  Use it if you need a instantly seek without delays in mp3 files
+	       without this option when you use fast forward/rewind or go to
+	       a marked position, the player spend a few miliseconds that
+	       can dislike to the users if they are mixing.
+	       This option is not recommended, I'm going to improve the seeking functions,
+	       but for now this is the only solution if you need that the
+	       player go quickly to a marked point of the song.
+
+8-Samples
+~ ~~~~~~~
+   You can play sample .wavs (like voices,effects, jingles, etc...) while 
+   a song is playing. You have to edit the file samples.ini, put one filename
+   of the .wav in each line.
+
+
+9-Author
+~ ~~~~~~
+  David Aranda Alonso (davidj@ozu.es)
+  C/12 de Octubre N§4 2-A
+  47005 Valladolid
+  Spain
+
+
+10-Web Page
+~~ ~~~~~~~~
+  http://jukemp3.20m.com
+
+11-THANKS!!!
+~~ ~~~~~~~~~
+ Jukemp3 would not exist without the work of this people:
+      Shawn Hargreaves    (Allegro will arrive long away)
+      Ove Kaaven 
+      Guan Foo Wah        (Modules by courtesy of his library JGMOD)
+      Brennan Underwood
+      and DJ Deloire      (DJGPP Cool!)
+
