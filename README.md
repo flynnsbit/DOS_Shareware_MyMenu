@@ -33,7 +33,8 @@ Features Include:
         First Letter Jump to Game, PgUp/Dn
                     
         Terminal Support for connecting to BBSs, and Playing
-        MP3's through BBonds MidiLink product directly on MiSTer, 
+        MP3's through BBonds MidiLink product 
+	(https://github.com/bbond007/MiSTer_MidiLink) directly on MiSTer, 
         Telnet, etc.
         COM support *MP3 support also built in if hardware 
         can support it (Pentium class and above)
