@@ -1,0 +1,92 @@
+==============================================================================
+                        Разработчики Dos Navigator (C)
+==============================================================================
+Команда Dos Navigator Open Source Project:
+  Сергей Абметко <2:450/86.380>
+  Михаил Авербух <aml at sandy.ru>
+  Марк Адлер
+  Павел Ануфриков <apaex at mail.ru>
+  Виталий Астафоркин (Gimly) <gymly at mail.ru>
+  Денис Афонин (De@D_M0r0Ze) <2:5015/133.37; root at afonin.i-connect.ru>
+  Сергей Бирюков (Flash) <2:5061/52.777; birya at km.ru>
+  Мариюз Борковский <mborkows at elka.pw.edu.pl>
+  Павел Бородин (I'am) <2:5025/3.22; realtor at pisem.net>
+  Иван Бородихин (EXCELLENCE) <2:5020/1252.444>
+  Игорь Вагин (Antares19) <2:5020/1507.42>
+  Максим Васильев (Пивамото) <2:5057/33.36; piwamoto at pisem.net>
+  Илья Вдовин (VIV)
+  Кирилл Водоносов (Kirill) <vodonosov at tut.by>
+  Максим Высоких (Force) <force at nordnet.ru>
+  Сергей Газизянов (DarkLord) <2:5004/43.50>
+  Марчин Грицкалис (dagoon) <dagoon at rs.math.uni.lodz.pl>
+  Ондрей Зары (Rainbow) <rnbw at geocities.com>
+  Владимир Захарычев (Bobby Z.)
+  Евгений Звягинцев (John_SW) <2:5004/18.60; dn_osp at pisem.net>
+  Павел Зиемиан <pawelz at aritech.com.pl>
+  Валерий Зубов
+  Юрий Каминский
+  Владимир Катков (Chemical)
+  Сергей Климов <2:5057/18.61>
+  Алексей Козлов (Cat) <2:5030/997.33>
+  Владимир Кораблин (VK) <2:5025/3.86>
+  Алексей Короп (AK155) <2:461/155; korop at online.kharkiv.net>
+  Сергей Коршунов (SeYKo) <2:5020/434.5>
+  Сергей Корякин <ksnk at bigfoot.com>
+  Алексей Косткин (Knave) <2:5020/968.67>
+  Константин Кузнецов (Dead Ded) <2:5020/549.22; dead at nm.ru>
+  Алексей Лузин <Aleksey at iis.nsk.su>
+  Майк Лыков <2:5057/44; nelescon at samaramail.ru>
+  Андрей Маршалко (ХимМАГ) <chimmag at command-conquer.ru>
+  Илья Марьясов (IVM) <ivm1999 at mail.ru>
+  Марчин Мейнарди <mrowa at student.uci.agh.edu.pl>
+  Михаил Меркурьев (Mercury) <m_mercuryev at yahoo.com>
+  Макс Морозов <salary at overta.ru>
+  Энди Неверовский <andy at edu.nsu.ru>
+  Алексей Немытов (Axel) <axx2000 at mail.ru>
+  Антон Новоселов (ForeverYoung) <foryoung at mail.ru>
+  Станислав Ольховик (NeCoder) <2:5030/647>
+  Ярослав Осадчий (JO) <2:5030/1082.53; Osadtchy at LO6105.spb.edu>
+  Вадим Очкин <2:5020/1365.44>
+  Владимир Пивен
+  Сергей Радкевич <2:5020/3113; SergeyRadkevitch at mtu-net.ru>
+  Олег Редут <2:5000/111; ovr at byte.nsk.su>
+  Дмитрий Сержанков (Sclex) <2:450/143.24; sclex at ring.by>
+  Павел Сколимовский (PaSkol) <paskol at friko2.onet.pl>
+  Денис Смирнов (Necromancer) <denisvs at aol.com>
+  Иржи Травничек (JITR) <jitr at jitr.cjb.net>
+  Антон Федоров (DataCompBoy) <2:5000/111.33; datacompboy at mail.ru>
+  Алексей Фельдгендлер (X-Man) <2:5000/111.27; xman at beep.ru>
+  Владимир Фонарев (VOL) <2:5020/2160>
+  Алексей Фролов (Sir Raorn) <2:5020/1437.4>
+  Денис Шамов <2:5057/40; dshamov at hippo.ru>
+  Лев Шумский (WildCat) <2:5042/7.45; Wildcat at tsl.ru>
+  Persistor <persistor at yandex.ru>
+
+Локализация для Венгрии:
+  MВszаros Csaba (csablak) <csablak at freemail.hu>
+
+Локализация для Польши:
+  Figo Fago <figafago at poczta.pf.pl>
+
+Команда Dos Navigator II:
+  Стефан Танурков
+  Слава Филимонов
+  Дмитрий Доценко (AxoNSoft)
+  Максим Масютин
+
+Отдельное спасибо:
+  Мариюсу Борковскому
+  Дмитрию Глухову (GD)
+  Димону Дёмкину (0xeL) за логотип
+  Йоргену Ибсену
+  Андрею Ковальчуку (Kolec) <kolec at post.pl>
+  Ульяне Матарыкиной за вдохновение, посетившее DataCompBoy
+  Антону Машихину (Antony)
+  Игорю Новоселову
+  Денису Петрову
+  Павлу Протасову <pprot at mail.ru>
+  Дмитрию Рублеву (DR)
+  Дмитрию Шестакову
+  Marinais <2:5020/2613.5>
+  ...и всем подписчикам RU.SHELL.DN
+==============================================================================

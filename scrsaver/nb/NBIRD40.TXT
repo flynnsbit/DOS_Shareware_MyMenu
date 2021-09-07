@@ -1,0 +1,32 @@
+Date: Sun, 16 Jun 1996 10:57:02 EDT
+From: nickc@netcom.com (Nicholas Centanni)
+To: MS-News@Simtel.Net (Simtel.Net Uploads Announce)
+Subject: nbird40.zip - Virtual reality simulation of birds in flight
+Newsgroups: comp.archives.msdos.announce
+Followup-To: comp.archives.msdos.d
+
+I have uploaded to Simtel.Net:
+
+simtelnet/msdos/screen/
+nbird40.zip     Virtual reality simulation of birds in flight
+
+Night Bird is a 3D animation of white birds flying endlessly over a
+forest at night.  Your viewpoint changes periodically as you swing around
+the birds in a great arc, or find yourself on the ground watching the
+birds flying by overhead.  The Registered Version can display up to 64
+birds, includes Password Security, an Editor for changing the 3D text
+which displays on the forest floor, and the necessary files for running
+the program as a DOS, Windows 3.1 or Windows 95 screen saver.
+
+Special requirements: 386 PC with VGA, or better.
+
+Changes: Multiple Birds, multiple views, increased realism.
+
+nbird40.zip has replaced nbird34.zip.
+
+Shareware.  Uploaded by the author.
+
+Nicholas Centanni, Glacier Point Software
+gp@glacierpoint.com
+CIS: 70431,2147
+http://www.glacierpoint.com

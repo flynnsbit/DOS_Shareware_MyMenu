@@ -1,0 +1,48 @@
+==============================================================================
+                          <patch title and version>
+              A Contribute to Dos Navigator Open Source Project
+            Based on Dos Navigator (C) 1991-1999 RIT Research Labs
+==============================================================================
+
+                Author(s): <author names and coordinates>
+
+                 Based on: <title and version of patch or the word Scratch>
+
+ Applicable to DN version: <starting with 1.51 (=1.51.00), DN Open Source
+                           versions increase the number after the second dot>
+
+              Description:
+[?] Patch description - what is added to DN, what bugs are fixed, what menu
+    commands, dialogs, hot keys are added or modified; please do not combine
+    changes not having much in common in a single patch.
+    Check out history.txt for examples.
+
+    Source files modified: <the list of source files updated>
+
+       Source files added: <the list of source files introduced, if any>
+
+  Affected DN language(s): <the list of resource languages affected or an
+                           asterisk if the patch is language independent (such
+                           as an archive support logic patch)>
+
+  Tools required to apply: <utilities along with the minimum versions required
+                           to apply the patch; this is the patch utility in
+                           most cases, but can be, for instance, some binary
+                           patch appliers>
+
+     Tools used to create: <utilities along with their versions used to create
+                           the patch; this is the diff utility in most cases,
+                           but can be, for instance, some binary comparison
+                           tools>
+
+  Known incompatibilities: <the list of other patches along with their
+                           versions, special cases of DN usage or other
+                           software used with DN that the patch is known to be
+                           incompatible to>
+
+               Known bugs: <bugs known to exist but still not having been
+                           fixed>
+
+                    To do: <desirable modifications and improvements>
+
+==============================================================================

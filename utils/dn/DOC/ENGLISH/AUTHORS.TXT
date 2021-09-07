@@ -1,0 +1,92 @@
+==============================================================================
+                            Dos Navigator (C) Team
+==============================================================================
+Dos Navigator Open Source Project Team:
+  Sergey Abmetko <2:450/86.380>
+  Mark Adler
+  Denis Afonin (De@D_M0r0Ze) <2:5015/133.37; root at afonin.i-connect.ru>
+  Pavel Anufrikov <apaex at mail.ru>
+  Vitaly Astaforkin (Gimly) <gymly at mail.ru>
+  Michael Averbukh <aml at sandy.ru>
+  Sergey Biryukov (Flash) <2:5061/52.777; birya at km.ru>
+  Mariusz Borkowski <mborkows at elka.pw.edu.pl>
+  Ivan Borodikhin (EXCELLENCE) <2:5020/1252.444>
+  Pavel Borodin (I'am) <2:5025/3.22; realtor at pisem.net>
+  Anton Fedorov (DataCompBoy) <2:5000/111.33; datacompboy at mail.ru>
+  Alexey Feldgendler (X-Man) <2:5000/111.27; xman at beep.ru>
+  Vladimir Fonarev (VOL) <2:5020/2160>
+  Alexey Froloff (Sir Raorn) <2:5020/1437.4>
+  Sergey Gazizyanov (DarkLord) <2:5004/43.50>
+  Marcin Gryszkalis (dagoon) <dagoon at rs.math.uni.lodz.pl>
+  Yuriy Kaminskiy
+  Vladimir Katkov (Chemical)
+  Sergey Klimov <2:5057/18.61>
+  Vladimir Korablin (VK) <2:5025/3.86>
+  Alexey Korop (AK155) <2:461/155; korop at online.kharkiv.net>
+  Sergey Korshunoff (SeYKo) <2:5020/434.5>
+  Sergei Koryakin <ksnk at bigfoot.com>
+  Alexey Kostkin (Knave) <2:5020/968.67>
+  Aleksej Kozlov (Cat) <2:5030/997.33>
+  Konstantin Kuznetsov (Dead Ded) <2:5020/549.22; dead at nm.ru>
+  Aleksey Luzin <Aleksey at iis.nsk.su>
+  Mike Lykov <2:5057/44; nelescon at samaramail.ru>
+  Andrey Marshalko (ChimMAG) <chimmag at command-conquer.ru>
+  Ilya Maryasov (IVM) <ivm1999 at mail.ru>
+  Marcin Meinardi <mrowa at student.uci.agh.edu.pl>
+  Michael Mercuryev (Mercury) <m_mercuryev at yahoo.com>
+  Max Morozov <salary at overta.ru>
+  Alexey Nemytov (Axel) <axx2000 at mail.ru>
+  Andy Neverowsky <andy at edu.nsu.ru>
+  Anton Novosyolov (ForeverYoung) <foryoung at mail.ru>
+  Vadim Ochkin <2:5020/1365.44>
+  Stanislav Olkhovik (NeCoder) <2:5030/647>
+  Jaroslaw Osadtchiy (JO) <2:5030/1082.53; Osadtchy at LO6105.spb.edu>
+  Vladimir Piven
+  Sergey Radkevitch <2:5020/3113; SergeyRadkevitch at mtu-net.ru>
+  Oleg Redut <2:5000/111; ovr at byte.nsk.su>
+  Dmitry Serzhankov (Sclex) <2:450/143.24; sclex at ring.by>
+  Denis Shamov <2:5057/40; dshamov at hippo.ru>
+  Lev Shumskii (WildCat) <2:5042/7.45; Wildcat at tsl.ru>
+  Pawel Skolimowski (PaSkol) <paskol at friko2.onet.pl>
+  Denis Smirnoff (Necromancer) <denisvs at aol.com>
+  Jiri Travnicek (JITR) <jitr at jitr.cjb.net>
+  Igor Vagin (Antares19) <2:5020/1507.42>
+  Max Vasilyev (Piwamoto) <2:5057/33.36; piwamoto at pisem.net>
+  Ilya Vdovin (VIV)
+  Kirill Vodonosov (Kirill) <vodonosov at tut.by>
+  Max Vysokikh (Force) <force at nordnet.ru>
+  Vladimir Zakharychev (Bobby Z.)
+  Ondrej Zary (Rainbow) <rnbw at geocities.com>
+  Pawel Ziemian <pawelz at aritech.com.pl>
+  Valerij Zubov
+  Eugeny Zvyagintzev (John_SW) <2:5004/18.60; dn_osp at pisem.net>
+  Persistor <persistor at yandex.ru>
+
+Hungarian Localization:
+  M‚sz ros Csaba (csablak) <csablak at freemail.hu>
+
+Polish Localization:
+  Figo Fago <figafago at poczta.pf.pl>
+
+Dos Navigator II Team:
+  Stefan Tanurkov
+  Slava Filimonov
+  Dmitry Dotsenko (AxoNSoft)
+  Max Masyutin
+
+Special thanks to:
+  Mariusz Borkowskii
+  Dimon Demkin (0xeL) for the logo
+  Dmitry Glukhov (GD)
+  Joergen Ibsen
+  Andrzej Kowalczyk (Kolec) <kolec at post.pl>
+  Antony Mashihin (Antony)
+  Uliana Matarikina for DataCompBoy's inspiration
+  Igor Novoselov
+  Denis Petrov
+  Pavel Protasov <pprot at mail.ru>
+  DimiteriY Roubliouph (DR)
+  Dmitry Shestakov
+  Marinais <2:5020/2613.5>
+  ...and to all RU.SHELL.DN subscribers
+==============================================================================

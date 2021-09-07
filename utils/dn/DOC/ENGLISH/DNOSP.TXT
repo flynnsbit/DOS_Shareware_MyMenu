@@ -1,0 +1,238 @@
+==============================================================================
+                      Dos Navigator Open Source Project
+            Based on Dos Navigator (C) 1991-1999 RIT Research Labs
+==============================================================================
+
+    Last revision date: Wednesday November 28 2001
+
+                              Table of Contents
+
+ 1. General issues
+ 2. Creating patches
+ 3. Programming style
+ 4. Applying patches
+ 5. [CHANGED] New DN versions distribution
+ 6. [CHANGED] Project coordinators
+
+                              1. General issues
+
+    Dos  Navigator  Open  Source  Project  is dedicated for development of the
+ popular  file  shell Dos Navigator (DN) through collective efforts of an open
+ group of programmers.
+    Programmers participating in the project do not carry out material profit,
+ but everyone is mentioned in the authors list of every consequential version.
+ The  project  participants  should  be aware that the source text they create
+ will  be  distributed publicly and is subject for free usage and modification
+ while preserving the author's copyrights.
+    Third  party  companies  and programmer groups can create products derived
+ from Dos Navigator Open Source while maintaining the following conditions:
+     1. Keeping all the project participants' and coordinators' names in the
+        About box and authors.txt file included with all new versions
+     2. Keeping dnosp.txt and authors.txt files in the distribution package
+     3. Including in the About box and in the text documentation the line
+        "Based on Dos Navigator Open Source"
+    Not  meeting  these  conditions  is  considered  a  violation  of  project
+ participants' copyrights.
+    The  collective  of  programmers  is  open, and no kind of registration is
+ required to enter or exit the project.
+    The  project  coordinator  accumulates  the  changes  made  by the project
+ participants,  compiles  new  versions  of  DN,  tests  the  new features for
+ collective functioning and periodically releases new versions.
+    All the changes the project participants make they send to the coordinator
+ on  the  source text level. The means of communication to the coordinator are
+ listed at the bottom of this document.
+    The coordinator is elected. In case of impossibility or the lack of desire
+ from  the  effective  coordinator  to continue his job, expressed either in a
+ public  message or in failing to communicate to project participants for more
+ than  a  month,  failing  to release new DN version for more than a month, or
+ failing  to communicate for more than two weeks without an explicit temporary
+ transfer  of  the  coordinatorship to another project participant, or also in
+ case  if  most  of  the  project  participants publicly express that they are
+ unsatisfied  by  the coordinator's work since he or she was last elected, the
+ coordinator  is re-elected. Anybody who publicly expresses so can participate
+ as  a candidate, and the coordinator is elected by a simple majority of votes
+ by the RU.SHELL.DN subscribers.
+    The  discussion  of  project  details  and the collaborative communication
+ between  the  programmers  that  is  of  interest  to a significant number of
+ subscribers  is  carried  out  in  the  RU.SHELL.DN  Fidonet  echo area. This
+ document  is  posted  to  RU.SHELL.DN  every  month or immediately when it is
+ modified.  The modifications are marked with [NEW] and [CHANGED] in the table
+ of contents.
+    Those  who  have  the  technical ability are recommended to post copies of
+ this  document to the appropriate Fidonet areas (shells, programming) as well
+ as to other computer networks.
+    Localization  is welcome. Localization for a national language can be done
+ by creating a new set of language resources (and not by derival of a separate
+ DN  version).  If  you  have  decided to start DN localization for a specific
+ language,  please communicate to the coordinator (see bottom of this document
+ for coordinates).
+    Translation of this document to other languages is welcome.
+
+                             2. Creating patches
+
+    The preferred form of submitting source code modifications is a patch. The
+ patch method is widely utilized in a number of large projects. For an example
+ see  the  Linux  operating  system  kernel, whose source text is available at
+ ftp://www.kernel.ru.org/pub/Linux/kernel/.
+    A  patch  is  the  text resulting from the comparison of two text files or
+ directories  with files. Patches are saved in such form that permits applying
+ a patch to one of those files (or directories) making it same with the other.
+    In  our  project  a  patch is a result of comparison between two DN source
+ code directories, first being the current (base) version of DN and the second
+ being the same version with some kind of modification made.
+    The  diff  utility is used to create patches. It was ported from UNIX and,
+ as  available  now,  works  in Win32 console mode and in 32-bit DOS protected
+ mode  -  DPMI (DOS/4GW). Please make sure that you have the diff port version
+ PORT.2  or  higher,  since  the  previous port could behave incorrectly. Full
+ description  of diff as well as its source code is available from the project
+ coordinator.
+    To compare two directories, the following command should be used:
+        diff -urN base_version_dir modified_version_dir >file.patch
+    It  is  considered  that  two  subdirectories of the current directory are
+ compared. The description of the -u, -r and -N options (which can be combined
+ in a single option) can be found in the built-in help text:
+        diff --help |more
+    All the options are case sensitive (this is the UNIX standard).
+    It is recommended to name patch files as shown:
+        dn-base_version-application_subject.patch
+    For example:
+        dn-1-51-phonebook-export.patch
+    Modification  can  span multiple files, include new (added) files and text
+ files other than pas files (resource definition files, etc).
+    It is not recommended to combine in one patch different modifications that
+ are not related to each other.
+    Please  note  the  patch  description template, which is recommended to be
+ used  to write patch description files. The name format recommended for these
+ files is:
+        dn-base_version-application_subject.info
+    Please  refrain  from  using space characters as well as more than one dot
+ character  in  the  names  of  patch file itself and its description file, as
+ these can cause problems under certain operating systems.
+    Both files should be packed together with an archiver supporting long file
+ names  (WinZip  is  recommended  -  http://www.winzip.com/),  and the archive
+ should be given a short name to avoid various mailing problems. Such archives
+ are  rather  compact,  making  it possible to send them UU-encoded in netmail
+ messages.
+    It  is  recommended  to  start  names  for this archives with the last two
+ digits  of the base version number. For example, 01dsvcen.zip is a reasonable
+ name for an archive containing a patch based on DN 1.51.01 sources.
+    Those project participants who do not have the technical ability to create
+ archives  in  accordance  to  the  recommendations  stated  above  can create
+ archives  in  the  way they find it possible and convenient, but in this case
+ the archives should be sent to the coordinator as private mail.
+
+                             3. Programming style
+
+    Due  to a rather large number of programmers participating in the project,
+ it   is  desirable  to  follow  the  recommendations  stated  below  to  make
+ collaboration easier.
+    The  project  is international at the present time, so all comments in the
+ source text should be written in English.
+    When  a  modification of language resources is necessary, change resources
+ only  for  the language you know, and include a note in the patch description
+ file  stating  for  what languages the modification was made. The coordinator
+ will   make   the  modifications  for  the  other  languages  himself  or  by
+ communicating to the native speakers of those languages.
+    All  the  messages, text, dialogs and other elements of the user interface
+ should  be  localizable.  This  means that these items should be based on the
+ language  resource contents. An exclusion can be made only for a special kind
+ of  fatal  error  messages  and  some  other occasions when it is technically
+ impossible to access the language resources.
+    If several lines are changed or added, these lines should be marked with a
+ comment  with the programmer's name or nickname, for example, { X-Man }. When
+ a  large  group of lines is added (like a whole function), its top and bottom
+ should be marked with such comments, each spanning a whole separate line.
+    When  adding a constant to a group of numeric constants (like cmXXXX), the
+ first  unoccupied value is recommended to be used for the new constant rather
+ than shifting values for a range of other constants.
+    If  a  feature  is  introduced  in  a  patch,  and  this feature is rather
+ standalone in the sense that it can be easily removed without impairing other
+ functionality,  this  feature  should  be  made  optional  at compile time by
+ surrounding   the  new  code  with  conditional  compilation  directives  and
+ including  a conditional define directive for the new feature in stdefine.inc
+ file.
+    When  adding  features that are based on some DOS virtual machine features
+ or services under a particular operating system, a service availability check
+ or  an  operating system check should be performed before actually using such
+ services  or  features.  For  the  operating  system check the opSys variable
+ should  be  analyzed. The opSys variable is defined in the Advance unit along
+ with  a  set  of  numeric constants representing different operating systems.
+ Values  of  the  constants  can  be  bitwisely  combined,  meaning  that  the
+ environment   provides  functionality  of  more  than  one  operating  system
+ (possible  under  some emulators). Feel free to add new constants to that set
+ and appropriately expanding the functionality of the CheckOS procedure.
+    Please  do  not include history.txt, authors.txt and the About box updates
+ in your patches. These changes are made by the project coordinator.
+
+                             4. Applying patches
+
+    The patch utility is complementary to diff and is used to apply patches.
+    To apply a patch, the following command should be used:
+        patch -p1 <file.patch
+        (assuming you have the ported patch tool version PORT.2 or higher)
+    It  is  considered  that  the  current directory is the directory with the
+ current DN version (the directory name is not significant).
+    The  version  of source code subject to patch application does not have to
+ be  identical  to  the  base  version.  Practically this means that the patch
+ utility has some amount of tolerance to the source code changes and different
+ patches  can  be  applied  to  the  same  sources  independently.  But  since
+ accumulation of sources text changes can lead to exhausting the patch utility
+ tolerance,  all patches should be created basing on the latest source version
+ available.
+    The patch utility automatically detects the situation when the patch being
+ applied  has  already  been  applied  to  the  source code. In this case, the
+ utility  works  in  reversed  mode,  removing the patch without affecting the
+ others.
+
+                       5. New DN versions distribution
+
+    New  DN versions are distributed by the project coordinator. The NAVIGATOR
+ fileecho  serves for this purpose. The new versions are also available at the
+ following Internet addresses:
+        http://www.dnosp.com
+    Each new version is released as four packages:
+        DN<version>S.RAR - source code (mainly for the project participants)
+        DN<version>B.RAR - binary distribution for DOS  real-mode  environment
+                           (for the end user)
+        DN<version>D.RAR - binary distribution for DOS protected-mode
+                           environment - DPMI (for the end user)
+        DN<version>P.RAR - a set of extra files for the end user
+    The  fourth  packet  contains screensavers, xlat tables, Windows icons and
+ examples of text configuration files. This package is not released with every
+ version but only when an update is necessary.
+    All  four  packets include the authors list (authors.txt) and the revision
+ history  (history.txt)  as well as this document (dnosp.txt). The source code
+ package  also  has  the patch description template (template.txt) inside. The
+ revision  history  for  the  period  of RIT Labs developing and support of DN
+ along  with  the  RIT Labs copyright information is placed in a separate file
+ (ritlabs.txt).
+    When  needed, other packages may be released as well, such as localization
+ sets for national languages.
+    With each new version, two more files are released:
+        PATCH<minor version>.RAR - patch collection since last release
+        <old minor version>TO<new minor version>.RAR - cumulative update patch
+    Beta  versions  may  be  released  when  necessary.  A  beta  version is a
+ supplementary  release  intended  solely  for  beta-testing purposes, not for
+ general usage. A person who is going to do beta-testing is encouraged to mail
+ the  project  coordinator  and  give information about which version would be
+ tested,  and in what hardware and software environment (regardless of whether
+ he or she did beta-testing of prior versions).
+    While  in  beta-state,  new  beta-versions are released each time when two
+ weeks  elapse  since  the  last  beta-version  was released and not less than
+ twenty new patches were installed, or when four weeks elapse.
+
+                           6. Project coordinators
+
+    First coordinator:
+        Max Vasilyev
+        2:5057/33.36@fidonet
+        piwamoto(at)pisem.net
+        http://www.sama.ru/~piwamoto/
+    Second coordinator:
+        Eugeny Zvyagintzev
+        2:5004/18.60@fidonet
+        dn_osp(at)pisem.net
+    Third coordinator:
+        check out our www pages and RU.SHELL.DN Fidonet echo area
+
+==============================================================================

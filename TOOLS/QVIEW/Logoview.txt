@@ -1,0 +1,144 @@
+Animated Startup Logo Page - Logoview Manual
+copyright AJAW 1996
+ 
+---------------------------------------------------------------------
+logoview.zip
+Download Logoview v0.94 alpha
+19961229, 10k bytes
+---------------------------------------------------------------------
+What is Logoview?
+ 
+Logoview is a simple DOS-based program, that allows you to view a 
+Windows95 animated startup logo file, without booting the system.
+ 
+Great for people developing their own logo's. Or, when you have downloaded
+a lot of them and don't want to reboot every time to view each logo animate
+(and to find our that there is no animation).
+You could even use it as a kind of screensaver...
+---------------------------------------------------------------------
+ 
+System Requirements
+ 
+Logoview was coded in good old C, and compiled to 16-bit DOS executable, 
+and it doesn't take many resources. Any MS-DOS would be nice, although this 
+program runs under Windows3.11 or Windows95 (of course) as well. 
+ 
+Logoview is freeware, use it at your own risk, and have fun with it!
+ 
+How to use Logoview?
+ 
+It's fairly simple. You don't have to be a computer guru to find out the 
+procedure. Just follow these easy steps:
+In DOS or in a DOS box under Windows:
+* Copy the Logoview.exe into any directory.
+* Execute the program using one command line argument: the file that contains
+  the startup logo you'd like to view. 
+* Logoview will now display your animated logo full-screen.
+* Press any key to stop the animation.
+You can find out about the many options in the program by executing 'Logoview'
+without any command line arguments. 
+Automatic lauching of a logo file under Windows:
+* Copy the Logoview.exe into any directory.
+* With Explorer, associate file with *.sys extension with Logoview.exe
+  (Assuming all your logo files have the extension *.sys).
+* Now, when you double click on any *.sys in Explorer, Logoview will start and
+  display your animated logo full-screen.
+* Press any key to stop the animation.
+ 
+Logoview command line options
+ 
+You can find out about the many options in the program by executing 'Logoview'
+without any command line arguments. 
+* -i: interactive mode. Displays the number of cycling colors and looping.
+* -1: only once. Display the animation and quit.
+* -s: play the animation slower.
+* -f: play the animation faster.
+* -k: play the animation step by step, every time key 's' is pressed. Stop with
+  any other key.
+* -b: display in 640x480x256 screen mode. 
+   
+  Overriding the animation parameters preset in the file:
+* -l: force the animation to loop back and forth.
+* -n: force the animation to not loop back and forth.
+* -r: force to play the animation backwards.
+* -c number: force the animation to use 'number' colors in the color cycling.
+  'number' must be between 0 and 255. Use the -i option to find the number
+  originally in the file.
+* -w file: write the animation to 'file'. The new file will have the parameters
+  of options -l, -n, -r or -c, if any was set. This way you can change an existing
+  logo to e.g. loop and use less colors in the animation.
+ 
+Error messages
+* Cannot open filename: check whether you included the correct filename and path.
+* File too short: probably not a correct file type. It must be a BMP file of
+  320x400 in 256 colors. Filesize is 129078 (or a bit more) bytes.
+* Invalid input file: the file is not a BMP 320x400 256 colors file.
+* Invalid option: all option must be separated by spaces.
+* File already exists: the 'file' in option -w will not be overwritten if it
+  existed.
+NOTE1: If Logoview does not display anything at all, your graphics card maybe 
+does not support the correct mode. Try option -b.
+NOTE2: Logoview uses display commands via VESA driver. If your graphics card BIOS
+does not support VESA, then download "UniVBE" from a shareware site.
+Better VESA recognition still to be added to Logoview.
+ 
+What is an animated startup logo?
+ 
+If you are a user of Windows95 you normally see the 'start logo' everytime 
+you power-up or reboot your system. The default logo is a cloudy blue 
+sky with the well-known Microsoft logo signs on it. On the bottom of the 
+screen a small blue line is scrolling sideways.
+ 
+You can easily change this screen with any picture that you like:
+(with a little help of a graphics utility)
+* first, be sure to backup your existing 'logo.sys' that you may already have
+  in directory C:\ to a save place.
+* take any picture that you like as startup logo
+* crop it to a size of 4:3 (e.g 640x480 or 800x600). It should still have the
+  correct aspect ratio.
+* resample or resize to 320x400. 
+* reduce or increase the number of colors to 256.
+* save the image as a BMP (not RLE compressed) file
+* now place the file as 'logo.sys' in the root directory C:\ 
+* next time you re-boot, voila, your startup logo appears.
+ 
+But how about an animated startup logo?
+ 
+Animation is created by changing the color palette of the file: some of the
+256 colors in the image will rotate. By clever assignment of colors to certain
+pixels in an image the effect of animation is created.
+See my homepage for a few examples of how this animation may look like.
+ 
+An animated startup logo is still the same type of file, but with a few 
+differences:
+* 2 bytes in the logo.sys file have a special meaning:
+  - animationlength: this indicates the number of colors to cycle
+  - animationloop: this indicates whether the animation loops back and forth
+* Their value can be viewed with 'Logoview -i filename'.
+ 
+How do I create my own animated startup logo?
+ 
+* Take any logo file you like.
+* Use a graphics utility to change the color palette.
+* Use Logoview to see what's happening if you change the 'animationlength' 
+  and 'animationloop' values (see the commandline options).
+* Once you're finished write the 'animation' values with the -w command
+  and place your logo in the root directory.
+ 
+Any examples?
+ 
+* Many examples of arithmatically generated logo images can be found at my
+  home page. Also some kind of short movie is available.
+* The programs used to create them are not (yet) available for general use.
+ 
+By the way, there is no animation possible on the 'closing' and 'shutdown'
+screens of Windows95.
+ 
+Where to find Logoview
+ 
+The latest version will be available at 
+http://www.inter.nl.net/hcc/A.Jaw.Venema
+E-MAIL to: A.Jaw.Venema@net.HCC.nl
+ 
+History overview
+0.94	19961229	alpha4

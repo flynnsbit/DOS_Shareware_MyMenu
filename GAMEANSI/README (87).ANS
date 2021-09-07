@@ -1,0 +1,43 @@
+[?7h[40m[2J[2C[0;34;46m€ﬂﬂ‹[2Cﬂ€ﬂﬂ‹[2C‹‹[4Cﬂ‹[2C‹ﬂﬂﬂ‹[1C‹ﬂ€ﬂﬂﬂﬂ[40m
+  [46m€[3C€[2C€[3C€[2C€[5C€[1C€[8C€[40m
+ [46mﬂ€ﬂﬂﬂ€[1Cﬂ€ﬂﬂﬂ€[2C€[5C€[2Cﬂﬂ‹‹[3C‹€‹‹[40m
+  [46m€[3C€[2C€[3C€[2C€[5C€[6C€[1Cﬂ[1C€[40m
+ [46m‹ﬂ[2C‹ﬂ[1Cﬂ[1Cﬂﬂﬂ[2C‹ﬂ‹‹‹‹‹ﬂ[1Cﬂ‹‹‹‹ﬂ[2C‹ﬂ‹‹‹‹[2C[1;37;40mf[30mb≥t
+[14C[37mA B U S E
+------------------------------------------------------------------------
+[8CGENRE: Action Shooter
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+[14CCONTROLS
+------------------------------------------------------------------------
+a : Toggle toolbar window.
+A : Disable auto lighting (when computer is too slow, lighting shuts off)
+b : Toggle background tile picker window.
+B : Make background window wider.
+c : Center on player.
+C : Clone object under cursor.
+d : Delete object under cursor.
+D : Toggle delays.
+E : Toggle enlarged render.
+f : Toggle foreground tile picker window.
+F : Make foreground tile picker window wider.
+g :
+h : Help!
+i : Invert color black (for foreground tile window, for discerning
+    transparent and non-transparent tiles)
+j : Jump player to mouse position.
+k : Kill first link of object under cursor.
+K : Kill last link of object under cursor.
+l : Toggle light picker window.
+L : Toggle layer show window.
+m : Toggle map.
+n : Next player focus (not working/useful).
+o : Toggle object picker window.
+p : Toggle palette picker window.
+P : Toggle profiler window.
+Q : Quit (does not ask permission).
+r : Raise/lower tile under cursor.
+s : Search for object. Not working yet.
+S : Save level.
+t : Flood fill the current tile. If "grabbing" a palette window, flood
+    fills with the palette pattern.[0m[255D
