@@ -1,0 +1,157 @@
+================================================================================
+    ßßß  ßßßß  ß   ß  ßßßß ßßßßß  ßßß  ß         ßßßß  ßßßß  ßßßß  ßßß  ß   ß
+   ß   ß ß   ß ß   ß ß       ß   ß   ß ß         ß   ß ß   ß ß    ß   ß ßß ßß
+   ß     ßßßß   ßßß   ßßß    ß   ßßßßß ß         ß   ß ßßßß  ßß   ßßßßß ß ß ß
+   ß   ß ß   ß   ß       ß   ß   ß   ß ß         ß   ß ß   ß ß    ß   ß ß   ß
+    ßßß  ß   ß   ß   ßßßß    ß   ß   ß ßßßß      ßßßß  ß   ß ßßßß ß   ß ß   ß
+================================================================================
+
+Crystal Dream is a result of many hours spoiling the schoolwork and other
+necessary dutys, sleepless nights, lots of fun developing, lots of hard work
+and a hell lot of debugging and finetuning. (mera k†d - mera buggar)
+We planned to contribute with it at Hackerence 5 in H„rn”sand, but we ran
+out of time and couldn't show a 100% version. Some time passed till we got
+all the inspiration needed to finnish the project, but 6 weeks later the
+product was ready for a release.
+
+
+REQUIREMENTS
+
+This demo requires a 12 MHz 286 with VGA graphics, but we recommend at least 
+a fast 386 computer. You'll need about 550 kb free memory. If you have a 
+386 or 486, make sure that there's no EMM386/QEMM386 driver or something 
+like that installed, because these programs slow down your computer while
+playing music.
+
+It supports SoundBlaster, SoundBlaster Pro (Stereo), parallell port D/A
+converter (Mono and Stereo) and internal speaker for the music. If you don't
+have a SoundBlaster card, we recommend you to build a D/A converter. The
+internal speaker has VERY poor sound quality.
+
+Howewer, you should be entertained by this demo when it is running on a true
+486 computer with a real stereo D/A converter or a SoundBlaster Pro card
+connected, in a dark room with a cold cc in your left hand (Why left? 
+[because it's red of course!]) and your bottom pressed into your most 
+comfortable chair. We hope it will amuse you even though it's only 16 colors 
+at the screen, but sometimes that might be an advantage.
+
+
+HISTORY
+
+The group "Triton" was formed from the old group "The Physical Crew" in 
+winter 91-92. The most succesful cooperation between TPC and Vogue was
+soon developing into a demo, and for this purpose, the name was changed.
+Some of the earlier TPC releases are "PC Demo" and "Vectra", but those
+demos were no products of some serious work. Vogue is originally an Amiga 
+programmer and was a member of Phenomena in 91. The name "Triton" is taken 
+from a moon of Neptune.
+
+ADRESSES
+
+VOGUE
+Magnus H”gdahl
+Skarvv„gen 7
+861 00 Timr†
+Sweden
+Tel. +46(0)60-576180  or 576467
+
+LOOT
+Anders Aldeng†rd
+Rigstav„gen 1039
+860 35 S”r†ker
+Sweden
+Tel. +46(0)60-41582
+
+MR. H
+Fredrik Huss
+Fl„derv„gen 12
+860 35 S”r†ker
+Tel. +46(0)60-41624
+
+        Some basic rules:
+ 
+ -  If you want to contact us - USE OUR REAL NAMES!!!
+ -  We do NOT want to swap software.
+ -  We won't join any groups with only some gfx-artists and musicians.
+ -  We won't join any other group either.
+ -  If you're a coder, you're very welcome to contact us. (Not LOOT)
+ -  Contact us if you want to inform us about any party beeing held somewere.
+ -  Contact us if you want to spread your latest demo.
+
+
+THE RAYTRACING STUFF
+
+If you're into raytracing and other vectormatematicaly based graphic
+producing, you should contact Vogue. The raytraced pictures were rendered
+in "Synthetic Image", which is my own raytracingscene editor. It was coded
+as my examswork in the last degree of the gymnasium. (Natur s† klart!)
+ 
+
+TECHNICAL INFO ABOUT THE MUSIC
+
+If you want to contact us about the music system, you should ask Mr. H, 
+he's the one behind the music software and hardware. (Teknisk linje, vad
+annars???)
+
+The music routine is very optimized since the last demo (Vectra). It can now
+play at 38 kHz on a 12 Mhz 286. As a result, it might sound a little poorer
+at lower frequences. 
+
+The SoundBlaster routine uses DMA and takes less CPU time than the normal 
+way. It is also possibe to use Stereo on a Pro card. Thanks to Shadow man in 
+TCB for GREAT help with this.
+
+You can now play Stereo on a D/A converter in the parallell port. This 
+requires an improved D/A converter with a REAL D/A, it won't work with
+resistors.
+
+If you still want to build a simple resistor D/A, here is a drawing:
+
+   Parallell port:
+Pin
+ 2  ÄÄÄÄ 3.2 Mê ÄÄÄ¿
+ 3  ÄÄÄÄ 1.6 Mê ÄÄÄ´
+ 4  ÄÄÄÄ 800 kê ÄÄÄ´
+ 5  ÄÄÄÄ 400 kê ÄÄÄ´
+ 6  ÄÄÄÄ 200 kê ÄÄÄ´         ÷ 0.1æF
+ 7  ÄÄÄÄ 100 kê ÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄ´ÃÄÄÄÄÄ
+ 8  ÄÄÄÄ  50 kê ÄÄÄ´                       To
+ 9  ÄÄÄÄ  25 kê ÄÄÄÙ                    amplifier:
+25  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+The real D/A converter with stereo is a bit more complicated, but here is a
+drawing. You can find the components in for example ELFA. It should work
+(it does for me), but don't blame me if you burn your parallell port...
+
+                                                   Mr. H
+
+                 + 9-12 V
+                    ÃÄÄÄÄÄÄÄÄÄÄ¿
+   To               ³          ³
+parallell           ³        3.3kê                           To amplifier:
+  port:        ÚÄÄÄÄÁÄÄÄÄÄÄÄ¿  ³
+               ³    +   RefAÃÄÄÅÄÄ 22kê ÄÄ -         ÷ 0.1æF
+     1  ÄÄÄÄÄÄÄ´A/B     RefBÃÄÄÙÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´ÃÄÄÄÄÄÄ Left ch.
+               ³            ³   ³ ÚÄÄÄÄ¿<-- ¬ LM324
+LSB  2  ÄÄÄÄÄÄÄ´DB0     RfbAÃÄÄÄÁÄ´Out ÃÄÄÄÄ -
+     :         ³:       OutAÃÄÄÄÄÄ´-IN ³  +
+     :         ³:           ³     ³+IN ÃÄÄ´
+     :         ³:       AgndÃÄÄÄ¿ ÀÄÂÄÄÙ10kê
+MSB  9  ÄÄÄÄÄÄÄ´DB7     OutBÃÄÄ¿ÀÄÄÄ´     ³
+               ³        RfbBÃ¿ ³    ÃÄÄÄÄÄÁÄ 10kê ÄÂ -
+   PM7528HP -->³            ³³ ³  ÚÄÁÄÄ¿           ³
+               ³DGnd CS WR  ³³ ³  ³+IN ÃÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄ Gnd
+               ÀÄÂÄÄÄÂÄÄÂÄÄÄÙ³ ÀÄÄ´-IN ÃÄÄÄÄ +
+    25  ÄÄÄÄÄÄÄÄÄÁÄÂÄÁÄÄÙ    ÀÄÂÄÄ´Out ³
+                   ³           ³  ÀÄÄÄÄÙ<-- ¬ LM324
+                   ³           ³                     ÷ 0.1æF
+                   -           ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´ÃÄÄÄÄÄÄ Right ch.
+
+The pins in the parallell port is used as follows:
+
+1       -  Selects left or right channel
+2 to 9  -  8 data bits (2 = Least Significant Bit , 9 = Most ...)
+14      -  Pin 1 inverted (isn't used in my D/A, but may be useful)
+25      -  Ground
+
+================================================================================

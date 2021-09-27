@@ -1,0 +1,61 @@
+-------------------------------------------------------------------------------
+REBELFUN DEMO (SPACEFUN II)				              
+Written by Remco de Berk
+For Ultra Force
+Copyright 1990
+-------------------------------------------------------------------------------
+
+You need:   EGA/VGA graphics card
+	    Soundblaster card
+	    A quick pc, AT prefered
+	    keyboard,monitor, etc etc etc
+
+You see:    A EGA demo with adlib sound and digitized voice
+	    
+
+
+Included:   START.BAT		; The starting batch file
+	    SBFMDRV.COM         ; The adlib sounddriver for SB
+	    CT-VOICE.DRV        ; The DAC Control file
+	    REBELFUN.COM        ; The main program
+	    SOUND1.REB          ; MUSIC FILE
+	    SOUND2.REB          ; MUSIC FILE
+	    SOUND3.REB          ; MUSIC FILE
+	    SOUND4.REB          ; MUSIC FILE	    
+	    REBELPIC.EGA        ; PICTURE FILE
+	    REBELFUN.DOC        ; This file
+
+Total       REBELFUN.ZIP        ; The file with include al the above
+
+
+Some facts:
+REBELFUN is public domain	
+I am not responsible for any damage that may occur while using SPACEFUN.
+If you like it Send us a postcard. (see contact adres)
+
+
+If you want to contact us:
+Call our BBS: 070-3585109  24hrs online at 1200-2400
+
+or write to: Ultra Force
+	     Postbus 63048           <-- Also for postcards
+	     3002 JA Rotterdam
+
+
+
+Also From Ultra Force:
+MACH3 (DEMO)         |
+COLDCUT              |
+JMPLAYER             |
+HAPPYBIRTHDAY        | - All these and more on us BBS
+VEGA                 |
+SPACEDEMO            |
+ULTRA WOW            |
+SPACEFUN             |
+
+
+SEE YOU
+
+-------------------------------------------------------------------------------
+
+ 

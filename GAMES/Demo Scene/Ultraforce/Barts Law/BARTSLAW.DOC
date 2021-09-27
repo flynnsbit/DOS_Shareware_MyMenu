@@ -1,0 +1,67 @@
+-------------------------------------------------------------------------------
+- Bart's Law preview                               (C) 1991 by UF Development -
+-------------------------------------------------------------------------------
+
+ To use this playable demo you need  -: VGA Graphics                       
+                                        Mouse + driver                     
+                                        Soundblaster (optional)            
+
+ Files included in the .ARJ file     -: Bartslaw.exe   demo file           
+                                     -: Bartslaw.doc   this file           
+
+ Startup -: BARTSLAW <Ù                                                    
+ This demo tries to be smart and will detect a SBcard if you have one.     
+ No SB no music!!                                                          
+
+ This is only a preview, which means that the real version could have some 
+ differences. (Yes a lot).
+ For instance i don't like te graphics, the samples and the code.
+ So the real playable Bart's Law will Have: Better Graphics 
+                                            Better Sounds   
+                                            Multiple frame animation
+                                            Scrolling Backdrops
+                                            More Soundcards support
+                                            Noisetracker music
+                                            Ega support (?????)
+
+ If you like the lookes of this demo preview please leave a
+ message on our BBS or write to our PO-BOXES, A postcard will do nicely
+ Yep, this is postware (so the PTT gets its share of our programming)
+ How more cards/messages we get, the sooner the REAL BART'S LAW will
+ be released. So start writing!!!
+
+ Don't start writing us telling that -]  It lookes like POW
+                                         or where are the Simpsons
+                                         etc etc etc
+
+ We know all those things, but keep in mind that this is the product of
+ one, someone with Low Programming, Sampling and Drawing capabilities
+
+ Programming : Remco de Berk   
+ Graphics    : Remco de Berk   
+ Sampling    : Remco de Berk   
+
+ But it was not all from me     -) BartsLaw Logo - Walter Pedro (Amiga)
+                                   Bartje        - Eric Oostendorp
+
+ thanks to Eric Oostendorp & Josha Munnik for Programming help
+
+
+ Members of Ultra Force are: Arjan Brusee    - Megademo/UltraWOW
+                             Remco de Berk   - VEGA/Spacefun/Rebelfun
+                             Bram Graveland  - Sphinxdemo
+                             Eric Oostendorp - Mach3/Coldcut
+                             Josha Munnik    - Birthday/JMplayer
+                             Eric Soonius    - PR/Sysop UF BBS
+                             Widi Riesebos   - Graphics
+                             Michel Hooymans - Graphics
+
+-------------------------------------------------------------------------------
+ How to contact us
+
+ Write to: Ultra Force              or          Ultra Force 
+           Po box 63048                         Po box 84373
+           3002 JA Rotterdam                    2508 AJ Den Haag
+
+ Call our BBS int 31-70-3585109 at 1200 / 38400bps 
+-------------------------------------------------------------------------------

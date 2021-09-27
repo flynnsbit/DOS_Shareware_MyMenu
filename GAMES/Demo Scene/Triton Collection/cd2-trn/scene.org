@@ -1,0 +1,44 @@
+  _________ _________   __________  _______    __________
+ /  ______/ \_   ___ \  \_   ____/  \      \   \_   ____/      Problems? Mail:
+ \_____  \  /    \  \/   |    _)_   /   |   \   |    _)_       ftp@scene.org
+ /        \ \     \____  |       \ /    |    \  |       \
+/_______  /  \______  / /______  / \____|__  / /______  /
+        \/          \/         \/          \/         \/  . ORG!
+      'elektronik free art' since 11 March 1996 
+
+MIRRORS:  ftp.jp.scene.org          (ftp.dti.ad.jp)        in /pub/scene
+          ftp.au.scene.org          (ftp.labyrinth.net.au) in /pub/scene
+
+MAIN SPONSOR:
+          Freeler                   (www.freeler.nl)
+
+CORPORATE SPONSORS:
+          Gaffer Software           (www.gaffer.org)
+          Firelight Multimedia      (www.fmod.org)
+          DemoGL                    (www.demogl.com)
+          Nixxes Software           (www.nixxes.com)
+          Twilight3D                (www.twilight3d.com)
+
+
+          How can you help?
+
+          * You can help by donating money to scene.org. All money will go
+            into upgrading the archive, and will allow us to improve our
+            services to you and the rest of the scene.
+
+          * We are also looking for corporate sponsors. The return on a
+            sponsorship involves advertising the company on the archive. This
+            is an ideal method for a company to reach a global potential
+            customer base of young, talented and motivated people in the
+            computer and design business.
+
+          * Thirdly, we are looking for mirrors for our archive. Mirrors help
+            us with lowering the demand on our main server and improve the
+            availability of the archive around the world.
+
+            For more info mail to staff@scene.org. If you feel ready to donate
+            money, look at the instructions at http://www.scene.org/bank.html
+
+            With regards,
+            Jeffry Sleddens (Redhound)
+            <redhound@scene.org>

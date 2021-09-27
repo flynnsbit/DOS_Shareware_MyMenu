@@ -1,0 +1,23 @@
+>>>  First Time Information For The UltraForce Development VECTORdemo <<<
+
+Hi everybody,
+
+First of all, this demo is for AT computers only, that is 80286 and higher !
+Then, it's for VGA-screens only. We use very fast tweaked routines to achieve
+the fast update cycle, and they may not work on your computer. Everything
+should run okay if your VGA card is FULLY REGISTER compatible.
+
+If you type VECTDEMO at the prompt, then everything should load okay...
+In the menu system you MUST first INSTALL the demo for your computer, please
+specify your AT-type, and then choose the SoundBlaster card. If the automatic
+detection fails, (for example if you have a lot of expansion cards in your
+computer), then you can copy your customized CT-VOICE.DRV into the directory
+of the vectordemo. Then install the demo again. If everything went okay,
+an install file will be saved, so that you can skip this step the next time
+you want to take a look at this demo.
+
+The rest of the menu's will give you some information about the guys behind
+this project, how you can contact them, and how you can obtain more demo's
+from this Dutch group called UltraForce Development !!!
+
+Have Fun !!!                      (For commandline options type VECTDEMO /?)
