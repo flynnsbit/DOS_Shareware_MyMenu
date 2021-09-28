@@ -1,0 +1,185 @@
+;Rise of the Triad Configuration File
+;                  (c) 1995
+
+Version            13
+
+;
+; 1 - Mouse Enabled
+; 0 - Mouse Disabled
+MouseEnabled       1
+
+;
+; 1 - Joystick Enabled
+; 0 - Joystick Disabled
+JoystickEnabled    0
+
+;
+; 1 - Joypad Enabled
+; 0 - Joypad Disabled
+JoypadEnabled      0
+
+;
+; 0 - Use Joystick Port 1
+; 1 - Use Joystick Port 2
+JoystickPort       0
+
+;
+; Size of View port.
+; (smallest) 0 - 10 (largest)
+ViewSize           7
+
+;
+; Sensitivity of Mouse
+; (lowest) 0 - 11 (highest)
+MouseAdjustment    5
+
+;
+; Threshold of Mouse and Joystick
+; (smallest) 1 - 15 (largest)
+Threshold          1
+
+;
+; 1 - Auto Detail on
+; 0 - Auto Detail off
+AutoDetail         1
+
+;
+; 1 - Light Diminishing on
+; 0 - Light Diminishing off
+LightDim           0
+
+;
+; 1 - Bobbing on
+; 0 - Bobbing off
+BobbingOn          1
+
+;
+; (slowest) 50 - 5 (fastest)
+DoubleClickSpeed   20
+
+;
+; Menu Flip Speed
+; (slowest) 100 - 5 (fastest)
+MenuFlipSpeed      15
+
+;
+; 0 - Detail Level Low
+; 1 - Detail Level Medium
+; 2 - Detail Level High
+DetailLevel        2
+
+;
+; 1 - Floor and Ceiling on
+; 0 - Floor and Ceiling off
+FloorCeiling       1
+
+;
+; 1 - Messages on
+; 0 - Messages off
+Messages           1
+
+;
+; 1 - AutoRun on
+; 0 - AutoRun off
+AutoRun            0
+
+;
+; 0 - Gamma Correction level 1
+; 1 - Gamma Correction level 2
+; 2 - Gamma Correction level 3
+; 3 - Gamma Correction level 4
+; 4 - Gamma Correction level 5
+GammaIndex         0
+
+;
+; Minutes before screen blanking
+BlankTime          2
+
+;
+; Scan codes for keyboard buttons
+Fire               29
+Strafe             56
+Run                54
+Use                57
+LookUp             73
+LookDn             81
+Swap               28
+Drop               83
+TargetUp           71
+TargetDn           79
+SelPistol          2
+SelDualPistol      3
+SelMP40            4
+SelMissile         5
+AutoRun            58
+LiveRemRid         88
+StrafeLeft         51
+StrafeRight        52
+VolteFace          14
+Aim                30
+Forward            72
+Right              77
+Backward           80
+Left               75
+Map                15
+SendMessage        20
+DirectMessage      44
+
+;
+; Mouse buttons
+MouseButton0       0
+MouseButton1       1
+MouseButton2       20
+DblClickB0         -1
+DblClickB1         3
+DblClickB2         -1
+
+;
+; Joystick buttons
+JoyButton0         0
+JoyButton1         1
+JoyButton2         2
+JoyButton3         3
+DblClickJB0        -1
+DblClickJB1        -1
+DblClickJB2        -1
+DblClickJB3        -1
+
+;
+; Joystick calibration coordinates
+JoyMaxX            0
+JoyMaxY            0
+JoyMinX            0
+JoyMinY            0
+
+;
+; Easy             -   0
+; Medium           -   1
+; Hard             -   2
+; Crezzy           -   3
+DefaultDifficulty      3
+
+;
+; Taradino Cassatt   -   0
+; Thi Barrett        -   1
+; Doug Wendt         -   2
+; Lorelei Ni         -   3
+; Ian Paul Freeley   -   4
+DefaultPlayerCharacter   0
+
+;
+; Gray             -   0
+; Brown            -   1
+; Black            -   2
+; Tan              -   3
+; Red              -   4
+; Olive            -   5
+; Blue             -   6
+; White            -   7
+; Green            -   8
+; Purple           -   9
+; Orange           -   10
+DefaultPlayerColor     0
+
+;
+SecretPassword         7d7e4a2d3b6a0319554654231c

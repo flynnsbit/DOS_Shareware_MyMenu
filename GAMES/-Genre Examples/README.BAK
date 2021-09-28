@@ -8,7 +8,7 @@
  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
  ³ You can create Genre folders using³
  ³ the following structure:[10C³
- ³ C:\GAMES\-Genre\ `[16C³
+ ³ C:\GAMES\-Genre\[18C³
  ³[12CÀGenre Name[12C³
  ³[14CÀGame Name[11C³
  ³[16CÃautorun.bat[7C³
@@ -18,7 +18,7 @@
  ³ @echo off[25C³
  ³ c:\games\doom\doom.exe[12C³
  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
-
+[34C[30mf[0mb³t
 
 
 

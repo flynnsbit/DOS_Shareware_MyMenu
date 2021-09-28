@@ -1,0 +1,90 @@
+;Rise of the Triad Sound File
+;                  (c) 1995
+
+Version            13
+
+;
+; Music Modes
+; 0  -  Off
+; 1  -  UltraSound
+; 2  -  Sound Blaster
+; 3  -  Sound Man 16
+; 4  -  Pro Audio Spectrum
+; 5  -  Awe32
+; 6  -  SoundScape
+; 7  -  Wave Blaster
+; 8  -  General Midi
+; 9  -  Sound Canvas
+; 10 -  Adlib
+MusicMode          8
+
+;
+; FX Modes
+; 0  -  Off
+; 1  -  UltraSound
+; 2  -  Sound Blaster
+; 3  -  Sound Man 16
+; 4  -  Pro Audio Spectrum
+; 5  -  Awe32
+; 6  -  SoundScape
+; 7  -  Adlib
+; 8  -  Disney Sound Source
+; 9  -  Tandy Sound Source
+; 10 -  PC Speaker
+FXMode             2
+
+;
+; Music Volume
+; (low) 0 - 255 (high)
+MusicVolume      196
+
+;
+; FX Volume
+; (low) 0 - 255 (high)
+FXVolume         196
+
+;
+; Number of Voices
+; 1 - 8
+NumVoices          8
+
+;
+; Stereo or Mono
+; 1 - Mono
+; 2 - Stereo
+NumChannels        2
+
+;
+; Resolution
+; 8 bit
+; 16 bit
+NumBits            8
+
+;
+; Midi Addresses
+; $300
+; $310
+; $320
+; $330
+; $340
+; $350
+; $360
+; $370
+; $380
+MidiAddress        $330
+
+;
+; ReverseStereo
+; 0 no reversal
+; 1 reverse stereo
+StereoReverse        0
+
+;
+; Sound Blaster Settings
+SBType             4
+SBPort             $220
+SBIrq              5
+SBDma8             1
+SBDma16            -1
+SBMidi             $ffffffff
+SBEmu              $220

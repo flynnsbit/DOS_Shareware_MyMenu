@@ -1,0 +1,2 @@
+@C:\GAMES\SPEEDH~1\SPEED.EXE 
+fdapm COLDboot
