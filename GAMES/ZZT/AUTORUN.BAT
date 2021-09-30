@@ -1,0 +1,1 @@
+C:\GAMES\ZZT\ZZT.EXE 
