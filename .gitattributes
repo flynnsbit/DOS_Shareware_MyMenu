@@ -1,5 +1,5 @@
 # Handle line endings automatically for files detected as text 
 # and leave all files detected as binary untouched.
-#*		-text
+*		text=false
 *.ans   text eol=crlf
 *.ini   text eol=crlf
