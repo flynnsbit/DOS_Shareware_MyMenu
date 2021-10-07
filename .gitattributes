@@ -6,4 +6,5 @@
 *.ini   text eol=crlf
 *.txt   text eol=crlf
 *.bat   text eol=crlf
+*.bak   text eol=crlf
 
