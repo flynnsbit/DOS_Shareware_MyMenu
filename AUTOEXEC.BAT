@@ -1,7 +1,7 @@
 @ECHO OFF
 
 ::DOS Variables
-SET PATH=%dosdir%\BIN;c:\utils;c:\tools\lbx;c:\tools;c:\tools\wbat;c:\mymenu;c:\tdraw;C:\ADDOS;c:\tools\pictview
+SET PATH=%dosdir%\BIN;c:\utils;c:\tools\lbx;c:\tools;c:\tools\wbat;c:\mymenu;d:\tdraw;C:\ADDOS;c:\tools\pictview
 SET DOSDIR=C:\FDOS
 SET SOUND=C:\SOUND
 SET BLASTER=A220 I5 D1 T4
