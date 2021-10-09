@@ -1,4 +1,4 @@
 @echo off
 cd\
-cd\scrsaver\nb
+cd\scrsavers\nb
 nbird.exe -K0 -M1

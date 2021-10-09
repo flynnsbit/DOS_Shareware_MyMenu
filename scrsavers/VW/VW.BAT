@@ -1,4 +1,4 @@
 @echo off
 cd\
-cd\scrsaver\vw
+cd\scrsavers\vw
 vwint.exe -M1
