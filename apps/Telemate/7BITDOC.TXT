@@ -1,0 +1,15 @@
+
+7BITDOC.EXE is a utility that convert the 8 bit documents to 7 bit
+printable documents.
+
+Usage:
+    C> 7BITDOC
+
+It will convert the following files automatically.
+
+    TELEAMTE.TXT  ->  TELEMATE.PRN
+    TMSCRIPT.TXT  ->  TMSCRIPT.PRN
+    TMSTAT.TXT    ->  TMSTAT.PRN
+    TMHOST.TXT    ->  TMHOST.PRN
+
+

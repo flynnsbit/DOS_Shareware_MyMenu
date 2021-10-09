@@ -1,0 +1,81 @@
+
+A number of VESA video drivers are packed into the self-extracting file
+VESA.EXE. Type "VESA" at the DOS command line to unpack the drivers into
+their own directories.
+
+These directories contain terminate and stay resident (TSR) versions of
+most Super VGA card's VESA BIOS Extensions implementations. The TSRs
+have been placed in the public domain by the various graphics card
+manufacturers. They may be freely copied and distributed.
+
+There is no way for us to insure that these are the latest drivers from
+the various graphic card companies. We take no responsibility for the
+drivers and make absolutely no warranties as to their use. The safest
+option is to obtain the appropriate Vesa driver directly from your
+graphics card manufacturer.
+
+We will say that if you have a HiColor graphics card, then the Tseng
+driver is one that you might try after trying the driver for your
+specific graphics card. If the video chips for your graphics card were
+made by Chips & Technologies, then you may want to try the driver
+provided by Chips & Technologies in addition to a driver which was made
+for your graphics card. If your video card is based on the Western
+Digital 24 bit chipset, you may want to try the vesa driver from Western
+Digital in DIAMOND2.ZIP which supports the Diamond 24X.
+
+Once you have find the driver for your adapter, simply put it into your
+AUTOEXEC.BAT and all VESA-aware programs will be benefit from it.
+
+This collection of graphics card VESA drivers is provided without charge
+or support, and is only provided for your convenience. NO WARRANTIES ARE
+APPLICABLE.
+
+
+About the Butterfly virus
+=========================
+
+It is unfortunate that the previous distribution of
+
+    TM411-4.ZIP
+    GIFLK110.ZIP
+    GIFLK111.ZIP
+
+contains a self-extracting VESA.EXE. Inside the VESA.EXE,
+
+    OAK\37VESA.COM
+    OAK\67VESA.COM
+
+are infected by a new "Butterfly" virus. If you see any of the ZIP files
+in a BBS, please ask the sysop to remove the files immediately. The files
+have since been replaced by
+
+    TM411-4A.ZIP
+    GIFLK112.ZIP
+
+The virus is not found to be dangerous. It is based on the Civil War
+Virus. It is only infects .COM files increasing length by 302 bytes. The
+virus is 307 bytes long. On execution of an infected program the virus
+will search for and infect the next .COM file in the directory list.
+
+The virus can be detected by
+
+    F-Prot 2.08a in heuristic and quick scan modes
+    ThunderByte anti-virus 6.02
+    Norton anti-virus 2.1 (21A08def)
+    Virex 2.9
+
+ThunderByte and Norton anti-virus can disinflect the files. F-Prot is
+working on a removal program. Unforetunately, McAFEE SCAN 106 DOES NOT
+detect the virus but McAREE said SCAN 107 will be able to detect it.
+
+To ensure this distribution is virus-free, we scan all the files with
+five independent anti-virus softwares, namely
+
+    McAfee SCAN 106
+    F-Prot 2.08a
+    ThunderByte anti-virus 6.03
+    InVircible anti-virus 5.01
+    Virex 2.9
+    Microsoft anti-virus
+
+

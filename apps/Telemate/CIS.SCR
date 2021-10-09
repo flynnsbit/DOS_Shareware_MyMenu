@@ -1,0 +1,21 @@
+;
+; CIS.SCR is a log on script for CompuServe Information Service
+;
+
+string ID
+ID = "12345,6789"          ; put your ID here
+
+SET AutoStop,On              ; stop script if carrier is lost
+Waitfor 0                  ; wait until string matched
+
+Put
+
+Waitfor "Host Name:  "
+Put "cis"
+
+Waitfor "User ID: "
+Put ID
+
+Waitfor "Password: "
+Put "^&"
+

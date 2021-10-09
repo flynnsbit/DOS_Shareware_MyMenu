@@ -1,0 +1,13 @@
+
+CONVERT.EXE converts PROCOMM+ 1.x, QMODEM 4.2x or TELIX 3.xx phone
+directory to TELEMATE phone directory
+
+Usage: CONVERT /P <PROCOMM+ phone directory> <TELEMATE phone directory>
+       CONVERT /Q <QMODEM phone directory> <TELEMATE phone directory>
+       CONVERT /T <TELIX phone directory> <TELEMATE phone directory>
+
+ e.g.  CONVERT /P PCPLUS.DIR TM.FON
+       CONVERT /Q QMODEM.FON TM.FON
+       CONVERT /T TELIX.FON TM.FON
+
+

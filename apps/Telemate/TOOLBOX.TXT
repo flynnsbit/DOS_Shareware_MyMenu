@@ -1,0 +1,6 @@
+
+The toolbox scripts are packed into the self-extracting file TOOLBOX.EXE.
+To unpack the toolbox scripts, type "TOOLBOX" at the DOS command line.
+Then follow TMSCRIPT.TXT for usage.
+
+

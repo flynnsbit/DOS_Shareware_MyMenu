@@ -1,0 +1,234 @@
+
+
+
+
+
+
+
+
+
+
+     İÛÛÛÛÛÛÛÛÛ  İÛÛÛÛÛÛÛÛÛİ İÛÛÛÛÛÛÛİ İÛÛÛÛÛÛÛÛÛ İÛÛÛÛÛÛÛİ İÛÛÛÛÛÛÛÛÛ
+         İÛİ     İÛİ İÛİ İÛİ İÛİ           İÛİ    İÛİ   İÛİ     İÛİ
+         İÛİ     İÛİ İÛİ İÛİ İÛİ           İÛİ    İÛİ   İÛİ     İÛİ
+         İÛİ     İÛİ İÛİ İÛİ İÛİİÛÛÛÛİ     İÛİ    İÛİİÛÛÛÛİ     İÛİ
+         İÛİ     İÛİ İÛİ İÛİ       İÛİ     İÛİ    İÛİ   İÛİ     İÛİ
+         İÛİ     İÛİ İÛİ İÛİ       İÛİ     İÛİ    İÛİ   İÛİ     İÛİ
+         İÛİ     İÛİ İÛİ İÛİ İÛÛÛÛÛÛÛİ     İÛİ    İÛİ   İÛİ     İÛİ
+
+
+
+
+                               Version 4.21
+
+
+
+
+                    By  Tsung Hu, White River Software
+
+
+
+
+
+
+               Copyright (c) 1988-1996 White River Software.
+
+                            All rights reserved.
+
+
+
+
+Using TMStat
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    TMStat is a small utility that takes information in TM.USE, the usage
+    file, and produces a useful statistical report on your usage of
+    Telemate. The command line format of TMSTAT.EXE is
+
+        TMStat [usage.USE] [phone.FON] [/ddd] [/LDnnn.nn] [/p]
+
+        usage.USE : uses a different usage file instead of TM.USE
+        phone.FON : uses a different phone directory instead of TM.FON
+        /ddd      : reports for the last ddd days
+        /LDnnn.nn : calculates long distance charge nnn.nn per minute
+        /p        : pauses after each screenful of information
+
+    where <usage.USE> is the name of the usage file, default is TM.USE,
+    <phone.FON> is the name of the phone directory, default is TM.FON and
+    <ddd> refers to the last <ddd> days to report on. The '/LD' option
+    estimates how much it cost if <nnn.nn> dollar per minute is charged in
+    long distance service. The '/p' option pauses the display after
+    each screenful of information.
+
+    For example, if you would like  TMSTAT to compile a report with long
+    distance evaluation on your usage for the past week you would type at
+    the DOS command line:
+
+          TMStat TM.USE /7 /LD0.25 /p
+
+    Below is a sample report for a 10 day period. Almost everything in
+    the report is self-explanatory, but a few comments are added in the
+    brackets [ ].
+
+      TMStat Version 4.21
+
+      Session time    8:24:33  [how long Telemate is executed]
+      Online time     5:07:48  [how long Telemate is online]
+      Receive time    1:40:01  [time used for receiving files]
+      Send time       0:42:16  [time used for sending files]
+
+      Transfer     Receive    Receive    Send       Send        Average
+      Protocol     Number     K bytes    Number     K bytes         CPS
+      -----------------------------------------------------------------
+      Zmodem            4         175         1         180         258
+      Ymodem-G          8         620         0           0         282
+      -----------------------------------------------------------------
+      Total:           12         795         1         180         270
+
+
+      BBS Name         Connection   Time   Receive   Send   CPS      LD
+      -----------------------------------------------------------------
+      SouthWest Connect      15    3:46:02     620    180   277   56.50
+      Southern Reaches        3    1:21:46     175      0   253
+      -----------------------------------------------------------------
+      Total:   2 BBS         18    5:07:48     795    180   270   56.50
+
+
+
+                Telemate Usage Chart             Online  °°°°°°°°°°
+                                                Session  ±±±±±±±±±±
+                ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+           1.3  ³                                              ±   ³
+           1.2  ³                                          ±   ±   ³
+           1.2  ³                                         °±   ±   ³
+           1.1  ³                                         °± ±°±   ³
+           1.0  ³                                         °± ±°±   ³
+           0.9  ³                                         °± ±°±   ³
+           0.8  ³                                         °± ±°±   ³
+           0.8  ³                             ±           °± ±°±   ³
+           0.7  ³                          °± ±   ±       °± ±°±   ³
+           0.6  ³                          °± ±   ±       °± ±°±   ³
+           0.5  ³                          °±°±  °±       °±°±°±   ³
+           0.4  ³                          °±°±  °±       °±°±°±   ³
+           0.3  ³   °±                     °±°±  °±      ±°±°±°± ± ³
+           0.2  ³   °±                 °±  °±°± ±°±      ±°±°±°± ± ³
+           0.2  ³ °±°±                 °±  °±°±°±°±     °±°±°±°±°± ³
+           0.1  ³ °±°±                 °±  °±°±°±°±     °±°±°±°±°± ³
+       Number   ³  1 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 ³
+      of Hours  ³  2 1 2 3 4 5 6 7 8 9 0 1 2 1 2 3 4 5 6 7 8 9 0 1 ³
+                ÀÄÄÄÄÄÄÄÄ AM Hours ÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄ PM Hours ÄÄÄÄÄÄÄÙ
+
+
+The Long Distance Flag in TM.FON
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Telemate Version 3.0 and higher has a 'Long Distance' flag in the phone
+    directory. TMStat checks the flag to determine if it is a long
+    distance phone call. In the example above, 'Southern Reaches' does
+    not have the flag set in TM.FON, so the LD field appears blank.
+
+    IMPORTANT: Edits your phone directory and sets the flags for all long
+               distance entries. Otherwise, TMStat will not report the
+               LD cost correctly.
+
+
+More About Long Distance Charge Calculation
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Although the /LDnnn.nn option gives you an approximate amount of your
+    phone bill, you may want to calculate the cost according to the phone
+    company discount rate in different hour of a day or different day
+    of a week. In addition, different areas may have differents rates.
+
+    You can provide these information in the optional TMSTAT.CFG. If
+    the file is present, TMSTAT.EXE will use it to calculate the long
+    distance charge. The format of TMSTAT.CFG is as follows:
+
+    1. Lines start with a '%' are comments. For example,
+
+            % This is my TMSTAT.CFG
+
+
+
+    2. There should be a line starting with '>'. This line is the cost
+       specification for all boards unless there is other specification for
+       a particular board. This line will be overrided by the 'LDnnn.nn' if
+       present.
+
+       The format of the cost specification after the '>' is
+
+            cost [SAT cost] [SUN cost]
+
+       The [SAT cost] and [SUN cost] fields are optional which represent
+       the cost specification of Saturday and Sunday respectively.
+
+       The <cost> field can be further divided into several sub-fields:
+
+            common_cost [the_hour:cost_per_minute] [...]
+            common_cost [from_hour-to_hour:cost_per_minute] [...]
+
+       The first sub-field is the cost per minute of the day unless
+       otherwise specified. For example,
+            > 0.4
+       denotes a $0.40 per minute for the day.
+
+       The following sub-fields are optional. They can be of two formats.
+       The first format is
+            the_hour:cost_per_minute
+       which denotes the cost is <cost_per_minute> for every minute of
+       <the_hour>. <the_hour> is in 24 hour format. For example,
+            > 0.4 22:0.25
+       denotes a $0.40 per minute for the day except the hour from 10:00pm
+       to 10:59pm which is $0.25 per minute.
+
+       The second format
+            from_hour-to_hour:cost_per_minute
+       allows you to specify a range of hours. For example,
+            > 0.4 0-7:0.25 20-22:0.25
+       denotes a $0.40 per minute for the day except the hours from 12:00am
+       to 7:59am and 8:00pm to 22:59pm which is $0.25 per minute.
+
+       You can mix the two formats in one line. For example,
+            > 0.4 0-7:0.25 20-22:0.25 23:0.2
+       which is almost the same as the previous example except that it is
+       $0.20 per minute for the hour 11:00pm to 11:59pm.
+
+       Phone companies usually offer a lower rate on Saturday and Sunday.
+       For example,
+            > 0.4 SAT 0.3 SUN 0.2
+       denotes a $0.40 per minute from Monday to Friday, $0.30 on Saturday
+       and $0.20 on Sunday. This is a simple example, but you can apply
+       the optional sub-fields to the cost specification of Saturday
+       and Sunday too.
+
+
+
+    3. To specify the cost for a particular board:
+
+            board name > cost [SAT cost] [SUN cost]
+
+       The <board name> should be an exact match with the one in the usage
+       file TM.USE. But it need not be in your phone directory TM.FON.
+       For example,
+            User To User > 0.4 SAT 0.3 SUN 0.25
+       denotes the cost specification for the board 'User To User'.
+
+       You can have as many specifications as you like.
+
+    For example, the TMSTAT.CFG may look like this:
+
+            %
+            % > cost [SAT cost] [SUN cost]
+            % board name > cost [SAT cost] [SUN cost]
+            %
+
+            > 0.4 0-7:0.25 20-22:0.25 23:0.2 sat 0.3 0-7:0.25 sun 0.25
+
+            PC Connect > 0.4 SAT 0.3 SUN 0.3
+            User To User > 0.4 SAT 0.25 SUN 0.25
+
+
+    With the TMSTAT.CFG, you should be able to compile a more accurate
+    phone cost report and perpare for the phone bill.
+
+

@@ -1,0 +1,24 @@
+;
+; SPITFIRE.SCR is a log on script file for SpitFire BBS
+;
+
+string FirstName, LastName, Color
+FirstName = "first"          ; put you name here
+LastName = "last"
+Color = "Y"                  ; "Y"es or "N"o
+
+SET AutoStop,On              ; stop script if carrier is lost
+Waitfor 0                    ; unlimited waiting time
+
+Waitfor "Do you want ANSI COLOR GRAPHICS? [y/N]"
+Put Color,
+
+Waitfor "first name"
+Put FirstName
+
+Waitfor "last name"
+Put LastName
+
+Waitfor "your password:"
+Put "^&"
+

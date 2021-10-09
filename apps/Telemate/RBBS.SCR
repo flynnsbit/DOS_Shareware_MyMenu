@@ -1,0 +1,19 @@
+;
+; RBBS.SCR is a log on script file for RBBS
+;
+
+string FirstName, LastName
+FirstName = "first"          ; put your name here
+LastName = "last"
+
+SET AutoStop,On              ; stop script if carrier is lost
+Waitfor 0                    ; unlimited waiting time
+
+Waitfor "first"
+Put FirstName
+Delay 5
+Put LastName
+
+Waitfor "password",5
+Put "^&"
+

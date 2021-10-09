@@ -1,0 +1,16 @@
+;
+; QBBS.SCR is a log on script file for Quick BBS
+;
+
+string Name
+Name="first last"            ; put your name here
+
+SET AutoStop,On              ; stop script if carrier is lost
+Waitfor 0                    ; unlimited waiting time
+
+Waitfor "last name?"
+Put Name
+
+Waitfor "password"
+Put "^&"
+

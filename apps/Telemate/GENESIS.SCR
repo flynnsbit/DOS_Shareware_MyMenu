@@ -1,0 +1,23 @@
+;
+; GENESIS.SCR is a logon script file for Genesis BBS
+;
+
+string Name, Phone
+Name = "First Last"          ; put your name here
+Phone = "1234"               ; last 4 digits
+
+Set AutoStop,On              ; stop script if carrier is lost
+Waitfor 0                    ; wait until string matched
+
+When "-More-(Y,N,C): ","n"
+When "<Press A Key>","^M"
+
+Waitfor "[>"
+Put Name
+
+Waitfor "Enter Password: "
+Put "^&"
+
+Waitfor "digits of your phone #: "
+Put Phone
+

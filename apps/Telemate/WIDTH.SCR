@@ -1,0 +1,42 @@
+;
+; WIDTH.SCR, set the terminal window width
+;
+; If you have a 132 column screen, Telemate will use it. However,
+; Telemate will restrict screen output to 80 column only to 
+; maintain compatibility with remote systems that are expecting
+; 80 columns. ANSI and VT102 terminal emulation defined a 132
+; column control code which will switch Telemate to 132 column
+; mode. Most remote systems that use 132 column will send the
+; special control code automatically.
+;
+; This script allows you to switch between 80 and 132 column
+; mode manually by sending the appropriating column control code.
+;
+
+integer term, w
+string choice, s
+
+if width <> 132
+  print "This script run 132 column screen only"
+  stop
+endif
+   
+query terminal,term
+if term=1 or term=3 or term=4
+  print
+  print "What terminal width do you like ?"
+  print " 1. 80 columns"
+  print " 2. 132 columns"
+  print "Select: ",
+  input choice
+  print "^[[2J",
+  concat s,choice
+  atoi s,w
+  switch w
+    case 1: print "^[[?3l",
+    case 2: print "^[[?3h",
+  endswitch
+else
+  print "This script run on ANSI, VT102 and AVATAR only"
+endif
+

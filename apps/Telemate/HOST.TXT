@@ -1,0 +1,6 @@
+
+The host script is packed into the self-extracting file HOST.EXE.
+To unpack the host script, type "HOST" at the DOS command line.
+Then follow TMHOST.TXT for installation.
+
+

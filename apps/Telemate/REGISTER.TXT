@@ -1,0 +1,100 @@
+
+
+    Telemate is NOT FREE. You MUST REGISTER after the 30-day evaluation
+    period.
+
+    Telemate is a Shareware product. It is distributed through public
+    access channels so that prospective buyers can have the opportunity to
+    evaluate the product before making a decision to buy. If you decide to
+    use this software, then you are under both legal and moral obligations
+    to register it with the author. It is fully protected by State,
+    Federal and International copyright laws.
+
+    If you continue to use Telemate after the 30-day evaluation period you
+    must register it.
+
+        Registration Fee  :     US$ 49 / CAD$ 55
+
+    To register your copy of Telemate, fill in the order form and mail
+    it along with your cheque or money order in US or CAD funds to the
+    address of the appropriate RegSite of your choice as indicated in
+    the form. Because of the high service charge to collect cheques
+    from overseas, we only accept overseas orders in the form of
+    international Money Order or Credit Card.  All Money Orders and
+    cheques should be made payable to the appropriate RegSite that you
+    select to use.
+
+    CompuServe users can register Telemate with CompuServe's shareware
+    registration service. GO SWREG and search for Telemate.
+
+    For credit card orders, please call RegSites.
+
+    When you register, you will receive the program diskettes with the
+    latest version and your registration number. Registration entitles
+    you to continue using the current version and all future DOS
+    versions. The registration number will remove any annoying functions
+    in the unregistered version of all Telemate releases.
+
+    As a registered user, you can write to us or call the support BBS's
+    if you have any questions or problems. We appreciate suggestions and
+    ideas; most new Telemate features come from user feedback.
+
+    ====== Telemate 4.21 ============================== Order Form ======
+    Please send cheque or money order payable to "White River Software"
+    in US or CAD. Overseas order in money order only. (Note that the
+    current postage from US to Canada is $0.46.) For multi-user licenses,
+    please contact us.
+
+               White River Software
+               P.O.Box 73031
+               Limeridge Mall Postal Outlet
+               Hamilton, Ont. L9A 5H7
+               Canada
+    ---------------------------------------------------------------------
+       Qty.     Item                                 US/CAD    Amount
+
+       ___  Telemate for DOS Registration         @ $49/$55  $________
+            (with latest version and document on disk, and the
+            registration number that remove the ending screen)
+
+       ___  Telemate for Windows Registration     @ $39/$45  $________
+            (with latest version and document on disk, and the
+            registration number that remove the annoying functions)
+
+       ___  Telemate for Windows Registration     @ $19/$25  $________
+            (upgrade from the DOS version, registration number
+            for the DOS versoin __________________)
+
+       ___  GIFLink Registration                  @ $30/$35  $________
+            (Look! A X/Y/Zmodem/QuickB external protocol driver that
+            displays transmitting GIF images in SuperVGA 256 colors!)
+
+       ___  GIFLITE Registration                  @ $30/$35  $________
+            (A GIF-to-GIF Compressor that reduces GIF size by 30%
+            and yet preserves the same quality and resolution!)
+
+               Less $10 discount if you order any two or
+                    $20 discount if you order three or more  $(______)
+
+
+           Shipping and handling outside US and Canada @ $4  $________
+
+                                                    Subtotal $________
+
+
+           Ontario resident please add Prov. Sales Tax (8%)  $________
+
+     Canadian resident please add Goods & Services Tax (7%)  $________
+
+
+                                       Total  US$________/CAD$________
+
+    Name     ____________________________________________________________
+
+    Address  ____________________________________________________________
+
+             ____________________________________________________________
+
+    Country  _____________________  Phone   (______)_____________________
+
+    =====================================================================

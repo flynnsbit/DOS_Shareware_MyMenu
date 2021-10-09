@@ -1,0 +1,24 @@
+;
+; TBBS.SCR is a log on script file for TBBS
+;
+
+string FirstName, LastName
+FirstName = "first"          ; put your first name
+LastName = "last"            ;  and last name here
+
+SET AutoStop,On              ; stop script if carrier is lost
+Waitfor 0                    ; unlimited waiting time
+
+Waitfor "First Name? "
+Put FirstName
+
+Waitfor "Last Name? "
+Put LastName
+
+Waitfor "Is this correct? "
+Put "y",
+
+Waitfor "Enter Your Password: "
+Put "^&"
+
+

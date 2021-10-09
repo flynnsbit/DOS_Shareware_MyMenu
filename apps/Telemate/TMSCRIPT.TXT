@@ -1,0 +1,4592 @@
+
+
+
+
+
+
+
+
+
+
+
+
+     İÛÛÛÛÛÛÛÛÛÛÛ İÛÛÛÛÛÛÛÛÛİ  İÛÛÛÛÛÛ                 İÛ             İÛ
+          İÛİ     İÛİ İÛİ İÛİ  İÛİ                                    İÛ
+          İÛİ     İÛİ İÛİ İÛİ  İÛİ      İÛÛÛÛİ  İÛÛÛÛ  İÛ   İÛÛÛÛÛÛ İÛÛÛÛÛ
+          İÛİ     İÛİ İÛİ İÛİ  İÛÛÛÛÛÛ  İÛ      İÛ     İÛ   İÛ   İÛ   İÛ
+          İÛİ     İÛİ İÛİ İÛİ       İÛ  İÛ      İÛ     İÛ   İÛ   İÛ   İÛ
+          İÛİ     İÛİ İÛİ İÛİ       İÛ  İÛ      İÛ     İÛ   İÛ   İÛ   İÛ
+          İÛİ     İÛİ İÛİ İÛİ  İÛÛÛÛÛÛ  İÛÛÛÛİ  İÛ     İÛ   İÛÛÛÛÛÛ   İÛÛÛ
+                                                            İÛ
+                                                            İÛ
+                                                            İÛ
+
+
+
+
+                           Telemate Script Language
+
+                                 Version 4.21
+
+
+
+                      By  Tsung Hu, White River Software
+
+
+
+
+
+                 Copyright (c) 1988-1996 White River Software.
+
+                              All rights reserved.
+
+
+TELEMATE SCRIPT                                     TABLE OF CONTENTS    i
+
+TABLE OF CONTENTS
+
+INTRODUCTION                                                             1
+    Using TMS.EXE, the Script Compiler  . . . . . . . . . . . . . . . .  1
+    To Run a Script . . . . . . . . . . . . . . . . . . . . . . . . . .  2
+    What Is Your Name . . . . . . . . . . . . . . . . . . . . . . . . .  2
+
+DATA TYPES                                                               3
+    Integer . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  3
+    String  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  3
+    Character . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  3
+    Boolean . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  4
+    Date  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  4
+    Time  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  5
+
+VARIABLES                                                                6
+    Variable Identifiers  . . . . . . . . . . . . . . . . . . . . . . .  6
+    Variable Declarations . . . . . . . . . . . . . . . . . . . . . . .  6
+    Predefined Variables  . . . . . . . . . . . . . . . . . . . . . . .  6
+       CONNECTED  . . . . . . . . . . . . . . . . . . . . . . . . . . .  7
+       FOUND  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  8
+       SUCCESS  . . . . . . . . . . . . . . . . . . . . . . . . . . . .  8
+       LOGGING  . . . . . . . . . . . . . . . . . . . . . . . . . . . .  9
+       WIDTH  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  9
+       HEIGHT . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+
+EXPRESSIONS                                                             11
+    Rule Of Precedence  . . . . . . . . . . . . . . . . . . . . . . . . 11
+    Arithmetic Operators  . . . . . . . . . . . . . . . . . . . . . . . 11
+    Boolean Operators . . . . . . . . . . . . . . . . . . . . . . . . . 12
+    Relational Operators  . . . . . . . . . . . . . . . . . . . . . . . 12
+
+STATEMENTS                                                              14
+    Comment . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+    Assignment Statement  . . . . . . . . . . . . . . . . . . . . . . . 14
+    If Statement  . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+    Switch Statement  . . . . . . . . . . . . . . . . . . . . . . . . . 16
+    While Loop  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+    Repeat Loop . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+    Exit Statement  . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+    #include Directive  . . . . . . . . . . . . . . . . . . . . . . . . 18
+
+PROCEDURES                                                              19
+    Procedure Declaration . . . . . . . . . . . . . . . . . . . . . . . 19
+    Parameter Declaration . . . . . . . . . . . . . . . . . . . . . . . 20
+    Calling Procedure and Parameter Passing . . . . . . . . . . . . . . 20
+    Nested Procedures and Scope of Variables  . . . . . . . . . . . . . 22
+    Return Statement  . . . . . . . . . . . . . . . . . . . . . . . . . 23
+
+
+TELEMATE SCRIPT                                    TABLE OF CONTENTS    ii
+
+
+BUILT IN PROCEDURES BY CATEGORY                                         24
+    Console I/O . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+       Print Statement  . . . . . . . . . . . . . . . . . . . . . . . . 24
+    COM I/O . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+       Put Statement  . . . . . . . . . . . . . . . . . . . . . . . . . 25
+       Waitfor Statement  . . . . . . . . . . . . . . . . . . . . . . . 25
+    File Handling . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+    String Handling . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+    Miscellaneous Routines  . . . . . . . . . . . . . . . . . . . . . . 26
+
+BUILT IN PROCEDURES                                                     27
+    Alarm . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+    Append  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+    At  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+    Atoi  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+    ChDir . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+    Clear COM . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+    Clear Key . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+    Clear Text  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+    Close . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+    ComInCount  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+    ComOutCount . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+    Concat  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+    Create  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+    Date  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+    Delay . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+    Delete  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+    Dial  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+    Dos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+    ExitTelemate  . . . . . . . . . . . . . . . . . . . . . . . . . . . 34
+    FileExist . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35
+    FileSize  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35
+    Get . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35
+    GetCh . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36
+    HangUp  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36
+    Image . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36
+    Input . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+    InputCh . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+    Itoa  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 38
+    Keystroke . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 38
+    Length  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39
+    LoadFon . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39
+    LoadKey . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+    LoadMac . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+    LoadPad . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+    LogOff  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 41
+    LogOn . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 41
+    LogPause  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 42
+    LogResume . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 42
+    Open  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 42
+    Print . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 43
+
+TELEMATE SCRIPT                                   TABLE OF CONTENTS    iii
+
+
+    Put . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 44
+    Query . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 45
+    Read  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 46
+    ReadCh  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 47
+    Receive . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 48
+    Rename  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
+    Script  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
+    Seek  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 50
+    Send  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 50
+    Set . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52
+    Stop  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 55
+    StrDel  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 55
+    StrIns  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 56
+    StrPos  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 56
+    StrSet  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 57
+    SubStr  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 57
+    Tell  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 58
+    Time  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 58
+    Usage . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 59
+    Waitfor . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 59
+    WaitUntil . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 61
+    When  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 61
+    WhenIdle  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 62
+    WhereX  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 63
+    WhereY  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 63
+    Write . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 63
+
+TOOLBOX PROCEDURES                                                      65
+    Toolbox #1                                                          65
+       Color Values and ANSI Color Codes  . . . . . . . . . . . . . . . 66
+       EchoToLocal and EchoToRemote . . . . . . . . . . . . . . . . . . 66
+       Echo and EchoInt . . . . . . . . . . . . . . . . . . . . . . . . 66
+       EchoBkColor  . . . . . . . . . . . . . . . . . . . . . . . . . . 67
+       EchoBlink  . . . . . . . . . . . . . . . . . . . . . . . . . . . 68
+       EchoBlock  . . . . . . . . . . . . . . . . . . . . . . . . . . . 68
+       EchoBox  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 69
+       EchoClearScreen  . . . . . . . . . . . . . . . . . . . . . . . . 69
+       EchoColor  . . . . . . . . . . . . . . . . . . . . . . . . . . . 70
+       EchoGotoXY . . . . . . . . . . . . . . . . . . . . . . . . . . . 70
+       EchoHiLite . . . . . . . . . . . . . . . . . . . . . . . . . . . 70
+       EchoNormal . . . . . . . . . . . . . . . . . . . . . . . . . . . 71
+       EchoReverse  . . . . . . . . . . . . . . . . . . . . . . . . . . 71
+    Toolbox #2                                                          72
+       GetN . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 72
+       InputN . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 73
+       ReadN  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 73
+       isalpha  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 74
+       isalnum  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 74
+       iscntl . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 74
+       isdigit  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 75
+
+TELEMATE SCRIPT                                    TABLE OF CONTENTS    iv
+
+
+    Toolbox #3                                                          75
+       ConvertDate  . . . . . . . . . . . . . . . . . . . . . . . . . . 75
+       DiffDate . . . . . . . . . . . . . . . . . . . . . . . . . . . . 76
+       DiffTime . . . . . . . . . . . . . . . . . . . . . . . . . . . . 77
+       PhoneDirectory . . . . . . . . . . . . . . . . . . . . . . . . . 78
+       PhoneFind  . . . . . . . . . . . . . . . . . . . . . . . . . . . 78
+       PhoneRead  . . . . . . . . . . . . . . . . . . . . . . . . . . . 79
+       PhoneSize  . . . . . . . . . . . . . . . . . . . . . . . . . . . 79
+       PhoneWrite . . . . . . . . . . . . . . . . . . . . . . . . . . . 80
+
+APPENDIX A: ERROR MESSAGES                                              81
+    Compiler Error Messages . . . . . . . . . . . . . . . . . . . . . . 81
+    Runtime Error Messages  . . . . . . . . . . . . . . . . . . . . . . 83
+
+INDEX                                                                   84
+
+TELEMATE SCRIPT                                          INTRODUCTION    1
+
+
+INTRODUCTION
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    TMScript allows you to write procedures to perform repetitive
+    functions, such as a log on script, as well as specific applications,
+    such as the host mode.
+
+    TMScript is designed to be a easy-to-use language. TMScript looks
+    similar to the Pascal language and the syntax is as loose as that of
+    BASIC language. For most of the users, only the WAITFOR, PUT and maybe
+    the WHEN statements are necessary. For those users who have experience
+    in the other programming language, TMScript is a powerful tool for
+    communication related application.
+
+    A script file can be created using almost all editors. The source file
+    is a normal ASCII text file which contains a sequence of instructions
+    telling Telemate what to perform next. The source file should use the
+    extension .SCR to indicate that it is a SCRipt file.
+
+
+Using TMS.EXE, the Script Compiler
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Once the source file is written, it must be compiled (translated) to a
+    form that Telemate can load and interpret quickly. To compile a source
+    file, type
+
+         TMS [/d] filename
+
+    where <filename> is the filename of the source file. The extension can
+    be omitted if it is .SCR. TMS.EXE compiles the file 'filename.SCR' and
+    produces the compiled script file 'filename.TMS'. For example, typing
+    'TMS \TM\HOST', TMS compiles '\TM\HOST.SCR' and produces
+    '\TM\HOST.TMS'.
+
+    If a syntax error is encountered in the source file, the compiler
+    reports the line number and the type of the error. You should edit the
+    source file and recompile until there is no more errors.
+
+    If the optional /d parameter is specified, the compiler will consider
+    undeclared variable as an error. This option can be used when writing
+    larger script and you want to ensure you declare all the variables and
+    to avoid spelling mistake on the variable name.
+
+
+
+TELEMATE SCRIPT                                          INTRODUCTION    2
+
+
+To Run a Script
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    There are several ways to run a script.
+
+    1. Pressing [Alt S] at the Terminal Window opens the File Dialog and
+       you are asked to identify which script file to be executed.
+
+    2. Put the script name in the link-script field of the phone
+       directory. When the BBS is connected, the link-script is executed
+       automatically. Link-scripts are sometimes referred as logon scripts
+       because they perform repetitive logon procedure.
+
+    3. Type 'TM <scriptname>' at the DOS command line. For example,
+         C>TM HOST
+       put Telemate in host mode when start.
+
+    4. You may assign a function key to execute a script file using the
+       "^\" macro sequence. For example, the function key [Alt 4] is
+       "^\host", when you press [Alt 4], the host script will be executed.
+
+    5. The SCRIPT statement allows you run another script in a script
+       program. Please refer the description of the SCRIPT statement.
+
+
+What Is Your Name
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    The first example program is a simple logon script. It waits for the
+    logon prompts and sends the response to the remote system.
+
+         WAITFOR "What is your name?"; wait for the logon prompt
+         PUT "my name"               ; send your name to remote system
+         WAITFOR "is your password?" ; wait for the password prompt
+         PUT "my password"           ; send your name to remote system
+
+    A script can be as simple as that and it will help you to logon to the
+    remote system automatically.
+
+TELEMATE SCRIPT                                            DATA TYPES    3
+
+
+DATA TYPES
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    TMScript provides two basic data types, integer and string, and four
+    extended data types, character, boolean, date and time.
+
+
+Integer
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Ordinary number notation is used for integers. Decimal and engineering
+    notation (e or E followed by an exponent) is not supported. Integer
+    must within the range from -2147483648 to 2147483647.
+
+
+String
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    A string is a sequence of zero or more characters from extended ASCII
+    character set (0-255), enclosed by quotation marks. A string with
+    nothing in it is called a empty string. Two sequential quotation marks
+    in a string denote a single character, an quotation mark.
+
+    TMScript allows control characters to be embedded in strings. The '^'
+    character followed by a letter (A-Z, a-z), '@' or '[' denotes a
+    character of the ASCII code [Ctrl A] to [Ctrl Z], NULL, or ESC
+    respective.
+
+    Here are some examples of strings
+
+         "TELEMATE"
+         "This is a '""'."
+         "^K^D"              ; [Ctrl K] [Ctrl D]
+
+
+Character
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Character is represented as a string that contains only one character.
+    For example, "A" is a character. Control codes are often used in
+    script programs and are represented as
+
+         Code   String Description
+         ÄÄÄÄÄÄ ÄÄÄÄÄÄ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         Ctrl-@  "^@"  NULL
+         Ctrl-A  "^A"
+          ...     ..
+         Ctrl-H  "^H"  Backspace
+         Ctrl-I  "^I"  TAB
+         Ctrl-J  "^J"  LF, line feed
+          ...     ..
+
+TELEMATE SCRIPT                                            DATA TYPES    4
+
+
+         Ctrl-M  "^M"  CR, Carriage Return, [Enter]
+          ...     ..
+         Ctrl-Z  "^Z"
+         Ctrl-[  "^["  Escape
+
+
+Boolean
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Boolean (TRUE or FALSE) is represented as a integer. A integer is said
+    to be TRUE if it is not equal to zero, FALSE if it is equal to zero.
+    When testing a boolean condition, you should not use the following
+    code,
+
+         IF CONNECTED=1
+            ...
+         ENDIF
+
+    because the variable CONNECTED may have other values. Instead, you
+    should use
+
+         IF CONNECTED
+            ...
+         ENDIF
+
+    to test if CONNECTED is TRUE. And
+
+         IF NOT CONNECTED
+            ...
+         ENDIF
+
+    to test if CONNECTED is FALSE.
+
+
+Date
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Date is represented as a string with the format "MM-DD-YY". When a
+    date string is compared with another date string, they are first
+    converted to the internal format "YYMMDD" so that the comparison
+    returns the correct result.
+
+    Note that the date format option in the main program does not affect
+    the format in the script. For date conversion, see ConvertDate command
+    in toolbox #3.
+
+
+
+TELEMATE SCRIPT                                            DATA TYPES    5
+
+
+Time
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Time is also represented as a string but with the format "HH:MM:SS".
+    When two time strings are being compared, they are converted to the
+    internal format "HHMMSS" such that the comparison can the correct
+    result.
+
+
+
+TELEMATE SCRIPT                                             VARIABLES    6
+
+
+VARIABLES
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Variable Identifiers
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    A variable identifier can contain letters and digits. However, a
+    variable can only start with a letter. Case is not significant, in the
+    other word, the variable <notdone> is the same as <NotDone>. A
+    variable identifier can be of any length, but only the first 8
+    characters are significant.  For examples, the variable identifier
+    <Number12> is the same as <Number123>.
+
+
+Variable Declarations
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    A variable declaration embodies a list of identifiers that designate
+    new variables and their type. For example,
+
+         INTEGER lower,upper,step    ; integers
+         STRING  message,filename    ; strings
+         INTEGER true,false          ; boolean
+         STRING  ch,letter           ; character
+
+    The variable declaration part should be placed at the beginning of a
+    script or of a procedure. In TMScript, variables need not declared
+    before use if no procedure is defined. Therefore, the variable
+    declaration part can be skipped.
+
+
+Predefined Variables
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    TMScript built in procedures do not return value. Several predefined
+    variables are set to the resulting value. They are CONNECTED, FOUND,
+    SUCCESS, LOGGING, WIDTH and HEIGHT.
+
+
+
+TELEMATE SCRIPT                                             VARIABLES    7
+
+
+CONNECTED
+
+    CONNECTED is set to the number of the connected entry (from 1 to
+    1000). The variable CONNECTED returns to FALSE as soon as the carrier
+    lost. On the other hand, if the state of the carrier changes from OFF
+    to ON, CONNECTED is set to TRUE.
+
+         IF NOT CONNECTED
+            PRINT "It is not connected to a remote system."
+            STOP
+         ENDIF
+         SWITCH CONNECTED
+           CASE 1: PRINT "connected to #1"
+           CASE 3: PRINT "connected to #3"
+           CASE 6: PRINT "connected to #6"
+         ENDSWITCH
+
+    The CONNECTED variable is also used in conjunction with the DIAL
+    statement. If the dialing is successful and connect to a remote
+    system, the variable is set to the number of the connected entry. If
+    the DIAL statement aborts without connection, the variable CONNECTED
+    is set to FALSE, indicating that the DIAL statement is aborted by
+    operator or the number of attempt exceeds the dial attempt setting.
+    For example,
+
+         DIAL "1 3 6"
+         IF NOT CONNECTED
+            PRINT "Dialing process aborted"
+            STOP
+         ENDIF
+         SWITCH connected
+           CASE 1: PRINT "connected to #1"
+           CASE 3: PRINT "connected to #3"
+           CASE 6: PRINT "connected to #6"
+         ENDSWITCH
+
+    Note that this variable reflects the online status only if your modem
+    reports so. You should check your modem manual to ensure that the
+    modem CD (carrier detect) signal is reflecting the actual online
+    status. Most modems use a "&C1" AT command to set it and you should
+    add it to the modem init string.
+
+
+
+TELEMATE SCRIPT                                             VARIABLES    8
+
+
+FOUND
+
+    This variable is set to resulting value after the WAITFOR statement is
+    executed. It is set to FALSE if time exceeded. Otherwise, it is set to
+    the string number of the matched string. For example,
+
+         WAITFOR "NO CARRIER","thanks for calling","hang up now",100
+         SWITCH FOUND
+            CASE 1: PRINT "'NO CARRIER' found"
+            CASE 2: PRINT "'thanks for calling' found"
+            CASE 3: PRINT "'hang up now' found"
+         ENDSWITCH
+
+
+SUCCESS
+
+    This variable is used by several statements. The resulting values and
+    descriptions is shown in the following table.
+
+    Statement    Value    Description
+    ÄÄÄÄÄÄÄÄÄ    ÄÄÄÄÄ   ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Append       TRUE     the file is successfully opened or created
+                 FALSE    cannot create file
+
+    ChDir        TRUE     directory changed
+                 FALSE    invalid path
+
+    Close        TRUE     file closed
+                 FALSE    cannot close file
+
+    Create       TRUE     the file is successfully created
+                 FALSE    cannot create file
+
+    Delete       TRUE     the file is successfully deleted
+                 FALSE    cannot delete file
+
+    FileSize     TRUE     the file size is determined successfully
+                 FALSE    cannot open file
+
+    InputCh ch   TRUE     a character is read into <ch>
+                 FALSE    no character is available
+
+    LoadFon      TRUE     the phone directory is successfully opened
+                 FALSE    the phone directory cannot be opened
+
+    LoadKey      TRUE     the keyboard file is successfully opened
+                 FALSE    the keyboard file cannot be opened
+
+    LoadMac      TRUE     the macro table is successfully opened
+                 FALSE    the macro table cannot be opened
+
+
+TELEMATE SCRIPT                                             VARIABLES    9
+
+
+    LoadPad      TRUE     the keypad table is successfully opened
+                 FALSE    the keypad table cannot be opened
+
+    LogOn        TRUE     the log file is successfully opened
+                 FALSE    the log file cannot be created
+
+    Open         TRUE     the file is successfully opened
+                 FALSE    the file does not exist
+
+    Read str     TRUE     a line is read into <str>
+                 FALSE    end of file encountered.
+
+    ReadCh ch    TRUE     a character is read into <ch>
+                 FALSE    end of file encountered.
+
+    Receive      TRUE     all files are received successfully
+                 FALSE    file transfer aborted
+
+    Rename       TRUE     the file is successfully renamed
+                 FALSE    cannot rename file
+
+    Seek         TRUE     the file pointer is moved successfully
+                 FALSE    disk error
+
+    Send         TRUE     all files are sent successfully
+                 FALSE    file transfer aborted
+
+    Tell pos     TRUE     the file pointer is stored in <pos>
+                 FALSE    disk error
+
+    Write        TRUE     write successary to file
+                 FALSE    cannot write to file
+
+
+LOGGING
+
+    This variable reflects the current file log status and has the values
+
+         0   log file close or log file not in use
+         1   log file open and capturing incoming data
+         2   log file in pause state
+
+
+WIDTH
+
+    This variable stored the width of the zoomed terminal window which is
+    equal to the screen width. Possible values are 80 or 132.
+
+
+
+TELEMATE SCRIPT                                            VARIABLES    10
+
+
+HEIGHT
+
+    This variable is the height of the zoomed terminal window which is
+    calculated as
+
+         HEIGHT = screen height
+         if ( menu bar present )
+                 HEIGHT = HEIGHT - 1
+         if ( status line present )
+                 HEIGHT = HEIGHT - 1
+         if ( HEIGHT < 24 )
+                 HEIGHT = 24
+
+    For example, on EGA 43 line mode with both menu bar and status line
+    present, HEIGHT is equal to 41. But on 25 line mode, HEIGHT is equal
+    to 24, not 23, because Telemate's terminal has at least 24 lines
+    though only 23 lines may be shown on screen. In this case, terminal
+    will shift up and down to justify the display region.
+
+    This variable may alter between two instructions if the users press
+    [Alt -] to toggle the menu bar and status line. When programming full
+    screen procedure, you should assume there are 23 lines in the screen
+    and DO NOT scroll the screen by going to the last line and perform a
+    line feed.
+
+
+TELEMATE SCRIPT                                          EXPRESSIONS    11
+
+
+EXPRESSIONS
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Rule Of Precedence
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Expressions are made up of operators and operands. In complex
+    expressions, rule of precedence clarify the order in which operations
+    are performed.
+
+         Operators           Precedence
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ      ÄÄÄÄÄÄÄÄÄÄÄÄ
+         *,/                 first (high)
+         +,-                 second
+         =,<>,<,>,<=,>=      third
+         not                 fourth
+         and, or, xor        fifth (low)
+
+    There are the rules of precedence
+
+      1. First, an operand between two operators of difference precedence
+         is bound to the operator with higher precedence.
+      2. Second, an operand between two equal operators is bound to the
+         one on its left.
+      3. Third, expressions within parentheses are evaluated prior to
+         being treated as a single operand.
+
+
+Arithmetic Operators
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    The types of operands for arithmetic operators are shown in the
+    following table.
+
+         Operators   Operation        Operand Type
+         ÄÄÄÄÄÄÄÄÄ   ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ   ÄÄÄÄÄÄÄÄÄÄÄÄ
+             +       addition         integer
+             -       subtraction      integer
+             *       multiplication   integer
+             /       division         integer
+
+    For example, the formula to convert Fahrenheit temperature to Celsius
+    equivalents is
+
+         celsius = (fahr-32) * 5 / 9
+
+
+
+TELEMATE SCRIPT                                          EXPRESSIONS    12
+
+
+Boolean Operators
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    The types of operands for arithmetic operators are shown in the
+    following table.
+
+         Operators   Operation     Operand Type
+         ÄÄÄÄÄÄÄÄÄ   ÄÄÄÄÄÄÄÄÄÄÄ   ÄÄÄÄÄÄÄÄÄÄÄÄ
+            not      negation      boolean
+            and      logical and   boolean
+            or       logical or    boolean
+            xor      logical xor   boolean
+
+    Normal Boolean logic governs the results of these operations. For
+    instance, 'a and b' is TRUE only if both <a> an <b> are TRUE.
+
+
+Relational Operators
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    The types of operands for arithmetic operators are shown in the
+    following table. They all have the same precedence.
+
+         Operators Operation    Operand Types
+         ÄÄÄÄÄÄÄÄÄ ÄÄÄÄÄÄÄÄÄÄÄÄ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+            =      equal to     integer, string, date, time
+            <>     not equal to integer, string, date, time
+            >      greater than integer, string, date, time
+            >=     greater or   integer, string, date, time
+                   equal to
+            <      less then    integer, string, date, time
+            <=     less then or integer, string, date, time
+                   equal to
+
+    When the operands are integer, date or time, the comparison will
+    produce the usual result such as
+
+            Condition          Result   Operands Type
+     ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ   ÄÄÄÄÄÄ   ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+              1 > 2            FALSE    integer
+     "12-31-89" < "01-01-90"   TRUE     date
+     "00:00:00" > "23:59:59"   FALSE    time
+
+    However, if the operands are strings, the operators "<", ">" and "<>"
+    have another meaning such that you can determine if a string is a sub-
+    string of another string.
+
+        s1 <  s2    if   s1 is a sub-string of s2
+        s3 >  s4    if   s3 is a super-string of s4
+        s5 <> s6    if   s5 is not a sub-string of s6 and
+                         s5 is not a super-string of s6
+
+TELEMATE SCRIPT                                          EXPRESSIONS    13
+
+
+    For example,
+
+           Condition         Result   Explanation
+      ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ   ÄÄÄÄÄÄ   ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+        "hello" =  "Hello"   TRUE     TMScript is not case sensitive.
+      "goodbye" <  "bye"     TRUE     "bye" is a sub-string of "goodbye"
+          "dog" <> "car"     TRUE     The string is not equal
+          "abc" >= "xyz"     FALSE    "abc" is not a super-string of
+                                      "xyz" and they are not equal.
+
+TELEMATE SCRIPT                                STRUCTURED STATEMENTS    14
+
+
+STATEMENTS
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Statements describe algorithmic actions that can be executed.
+
+
+Comment
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Any characters after ";" are ignored by the TMScript compiler.
+
+
+Assignment Statement
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Assignment statements replace the current value of a variable with a
+    new value specified by an expression. The expression must be
+    assignment-compatible with the type of the variable.
+
+    The program prints the following table of Fahrenheit temperatures and
+    their centigrade or Celsius equivalents.
+
+         0     -17
+         20    -6
+         40    4
+         ...   ...
+         280   137
+         300   148
+
+    Here is the program itself.
+
+         ; Print Fahrenheit-Celsius table
+         ;       for f = 0, 20, ... , 300
+
+         INTEGER lower,upper,step
+         INTEGER fahr,celsius
+
+         lower = 0       ; lower limit of temperature table
+         upper = 300     ; upper limit
+         step  = 20      ; step size
+
+         fahr  = lower                    ; first item in the table
+         WHILE fahr <= upper
+            celsius = (fahr-32) * 5 / 9   ; calcuate the values
+            PRINT fahr,"^I",celsius       ; print the result
+            fahr = fahr + step            ; next item in the table
+         ENDWHILE
+
+
+
+TELEMATE SCRIPT                                STRUCTURED STATEMENTS    15
+
+
+If Statement
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    The general form for IF statement is
+
+         IF condition
+            statements
+         ENDIF
+
+    The <statements> is executed only if <condition> is TRUE. Another form
+    is
+
+         IF condition
+            statements-1
+         ELSE
+            statements-2
+         ENDIF
+
+    One and only one of the two statements associated with an <if-else> is
+    done. If the <condition> is true, <statements-1> is executed; if not,
+    <statements-2> is executed.
+
+    The construction
+
+         IF condition-1
+            statements-1
+         ELSE
+            IF condition-2
+               statements-2
+            ELSE
+               IF condition-3
+                  statements-3
+               ENDIF
+            ENDIF
+         ENDIF
+
+    occurs so often that it is worth a new keyword ELSEIF. The statement
+    can be re-written as
+
+         IF     condition-1
+               statements-1
+         ELSEIF condition-2
+               statements-2
+         ELSEIF condition-3
+               statements-3
+         ENDIF
+
+
+
+TELEMATE SCRIPT                                STRUCTURED STATEMENTS    16
+
+
+Switch Statement
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    The SWITCH statement is a special multi-way decision maker that tests
+    whether an expression matches one of a number of values, an branches
+    accordingly. The syntax for SWITCH statement is
+
+         SWITCH expression
+           CASE value-1:
+              statements-1
+           CASE value-2,value-3:
+              statements-2
+           OTHERWISE:
+              statements-3
+         ENDSWITCH
+
+    The SWITCH evaluates the expression and compares its value to all the
+    cases. Each cases must be labeled by the values of the same type as
+    the expression. Several values can be separated by comma. If a case
+    matches the expression value, execution starts at that case and ends
+    at the next case label. The case labeled OTHERWISE is executed if none
+    of the other cases is satisfied. A OTHERWISE is optional; if it isn't
+    there and if none of the cases matches, no action at all takes place.
+    However, OTHERWISE, if exists, must be placed after all the case
+    labels.
+
+    The program counts digits, blanks, others.
+
+         nDigit = 0          ; digit
+         nBlank = 0          ; blank
+         nOther = 0          ; others
+         OPEN "MYFILE"       ; open the file "MYFILE"
+         READCH ch           ; read the first character
+         WHILE success       ; if not end of file
+            SWITCH ch
+              CASE "0","1","2","3","4","5","7","8","9":  ; is digit
+                 nDigit = nDight + 1
+              CASE " ":                                  ; is blank
+                 nBlank = nBlank + 1
+              OTHERWISE:                                 ; others
+                 nOther = nOther + 1
+            ENDSWITCH
+            READCH ch        ; read next character
+         ENDWHILE
+         CLOSE               ; close the file
+         PRINT nDigit        ; print the results
+         PRINT nBlank
+         PRINT nOther
+
+
+
+TELEMATE SCRIPT                                STRUCTURED STATEMENTS    17
+
+
+While Loop
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    The WHILE loop is the most general loop. The syntax is
+
+         WHILE condition
+            statements
+         ENDWHILE
+
+    The <condition> is tested. If it is true, the body of the loop (all
+    the statements before the keyword ENDWHILE is executed. Then the
+    condition is re-tested, and if true, the body is executed again. When
+    the test becomes false the loop ends, and execution continues at the
+    statements that follows the loop.
+
+    For example, to print the value from 1 to 100, you can write
+
+         i = 1               ; start from 1
+         WHILE i<=100        ; check if it in the range
+            PRINT i          ; print the number
+            i = i + 1        ; increase the counter by 1
+         ENDWHILE
+
+
+Repeat Loop
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    While the WHILE loop test the condition at the top, the REPEAT loop
+    test it at the bottom. It tests at the bottom after making each pass
+    through the loop body; the body is always executed at least once.
+    Consider the loop
+
+         REPEAT
+            statements
+         UNTIL condition
+
+    The statements is executed, then the condition is evaluated. If it is
+    false, the statements is evaluated again, and so on. If the condition
+    becomes true, the loop terminates.
+
+    For example, to print the value from 1 to 100, you can write
+
+         i = 1               ; start from 1
+         REPEAT
+            PRINT i          ; print the number
+            i = i + 1        ; increase the counter by 1
+         UNTIL i>100         ; repeat until it is NOT in the range
+
+
+
+TELEMATE SCRIPT                                STRUCTURED STATEMENTS    18
+
+
+Exit Statement
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    It is sometimes convenient to be able to control loop exits other than
+    by testing at the top or bottom. The EXIT statement provides an early
+    exit from the loops. A EXIT statement causes the innermost loop to be
+    exited immediately.
+
+    The following program accept strings from keyboard, using a EXIT to
+    exit from the loop when the string contains an [Esc] ("^[").
+
+         REPEAT
+            INPUT s
+            IF "^[" <= s     ; test if [Esc] is a sub-string of s
+               EXIT          ;   before printing it
+            ENDIF
+            PRINT s
+         UNTIL s = ""        ; repeat until an empty string is entered
+
+
+#include Directive
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    This compiler directive allows you to write reusable procedures in a
+    separate file and imports the procedures conveniently. The syntax is
+
+         #include "includefile"
+
+    The <includefile> will be inserted as if it is physical appear in this
+    point. The <includefile> must be a pathname with extension. For
+    example,
+
+         #include "TOOLBOX.SCR"
+         #include "MYLIB.SCR"
+
+    inserts the TOOLBOX.SCR and MYLIB.SCR into this point.
+
+    The #include directive can be nested as deep as 10 levels.
+
+
+TELEMATE SCRIPT                                            PROCEDURE    19
+
+
+PROCEDURE
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    In TMScript, a procedure is equivalent to a subroutine or function in
+    Fortran, or procedure in Pascal, C etc. A procedure provides a
+    convenient way to encapsulate some computation in a black box, which
+    can then be used without worrying about its innards.
+
+    For example, to swap the values of two variables, <i> and <j>, you
+    have to write three lines as follows
+
+         temp = i       ; put <i> into a temporary variable
+         i = j          ; put <j> into <i>
+         j = temp       ; now put the value of <i> into <j>
+
+    Suppose in your script there are a lot of swapping, it will be
+    convenient to define a procedure called <swap> to perform the
+    swapping. Then your main program will look like
+
+         i = 1
+         j = 2
+         swap i,j       ; now i=2, j=1
+         PRINT i        ; 2
+         PRINT j        ; 1
+
+    This is only a small usage of procedure. Imagine if the procedure is
+    very complex, you can use it again and again once it is tested and
+    performs what you need.
+
+
+Procedure Declaration
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    The syntax of a procedure definition is
+
+         PROCEDURE <procname> <parameter declaration>
+         <local variable declaration>
+         <statement part>
+         ENDPROC
+
+    <procname> is any valid identifier. <parameter declaration> can be
+    omitted if the procedure does not required parameters. See next
+    section for details on parameter declaration.
+
+    <local variable declaration> made within a given procedure are visible
+    only within that procedure. This part should ALWAYS be included in
+    order to make the program easy to be traced although the declarations
+    may be omitted.
+
+    <statement part> can be considered as a sub-program of the main
+    program and obeys all the rule described above.
+
+TELEMATE SCRIPT                                            PROCEDURE    20
+
+
+Parameter Declaration
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Parameter declaration is similar to variable declaration. For example,
+
+         PROCEDURE sample STRING s,t,INTEGER i,j
+
+    declares the procedure <sample> with two string parameters <s> and <t>
+    and two integer parameters <i> and <j>. You may use any combination of
+    STRING and INTEGER to define parameters. For example,
+
+         PROCEDURE sample INTEGER i,STRING p,q,r,s,INTEGER j,k,STRING z
+
+    We can write the <swap> procedure as
+
+         PROCEDURE swap INTEGER value1,value2 ; swap two integers
+         INTEGER temp        ; declare a local variable
+         temp = value1       ; store the first value
+         value1 = value2     ; replace with the second value
+         value2 = temp       ; replace with the first value
+         ENDPROC
+
+    After that, the main program may look like
+
+         i = 1
+         j = 2
+         k = 3
+         swap i,j            ; now i=2, j=1
+         swap j,k            ; now j=3, k=1
+         PRINT i,j,k         ; 2,3,1
+
+
+Calling Procedure and Parameter Passing
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Once the procedure is defined, it can be called by putting the
+    procedure name in the statement part. In the example, the statements
+
+         i = 1
+         j = 2
+         swap i,j            ; now i=2, j=1
+         PRINT i,j           ; 2,1
+
+    call the <swap> procedure with the parameters <i> and <j>.
+
+    In the above example, the method used to pass <i> and <j> to the
+    procedure <swap> is called 'pass by reference' because <i> and <j> can
+    be changed when return. There is another method called 'pass by value'
+    of which the parameter cannot be changed.
+
+
+TELEMATE SCRIPT                                            PROCEDURE    21
+
+
+    Consider the following procedure
+
+         PROCEDURE countDown INTEGER num ; print from <num> to 1
+         WHILE num >= 1              ; check if it is in the range
+            PRINT num                ; print it
+            num = num-1              ; decrease until num=0
+         ENDWHILE
+         ENDPROC
+
+         countDown 100               ; pass by value
+         n = 100
+         countDown n*2               ; pass by value (200)
+         PRINT n                     ; n = 100
+         countDown (n)               ; pass by value (100)
+         PRINT n                     ; n = 100
+         countDown n                 ; pass by reference
+         PRINT n                     ; n = 0 !
+
+    If we supply <countDown> with the parameter 100, n*2 or (n), they are
+    'pass by value'. On the other hand, <n> is 'pass by reference' in the
+    last statement.
+
+    The general rule of method of passing parameters is:
+
+         When the parameter is a constant, an expression or surrounded
+         by parentheses, it is 'pass by value'. Otherwise, it is a
+         variable and is 'pass by reference'.
+
+    The rule applies to string parameter as well. To prevent confusion, we
+    should rewrite the <countDown> procedure by introducing a local
+    variable.
+
+         PROCEDURE countDown INTEGER num ; print from <num> to 1
+         INTEGER count               ; introduce a local variable
+         count = num                 ;  if neccessary
+         WHILE count >= 1            ; check if it is in the range
+            PRINT count              ; print it
+            count = count-1          ; decrease until 0
+         ENDWHILE
+         ENDPROC                     ; this does not change <num>
+
+
+
+TELEMATE SCRIPT                                            PROCEDURE    22
+
+
+Nested Procedures and Scope of Variables
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    TMScript allows nested procedures; you can declare one procedure
+    inside of another. For example,
+
+         PROCEDURE outer
+         STRING i,j
+
+            PROCEDURE inner
+            INTEGER i
+            i = 100
+            PRINT "i = ",i
+            PRINT "j = ",j
+            ENDPROC
+
+         i = "This is string 'i'."
+         j = "This is string 'j'."
+         inner
+         PRINT "i = ",i
+         PRINT "j = ",j
+         ENDPROC
+
+    The <outer> procedure declares two string variables, <i> and <j>.
+    These two variables can be accessed by both the <outer> procedure and
+    the <inner> one because they are declared before the <inner>
+    procedure.
+
+    The <inner> procedure declares an integer variable <i>. Although the
+    two <i>'s share the same name, they are not identical. The inner <i>
+    is visible in the <inner> procedure but not in the <outer> procedure.
+    On the other hand, the outer <i> can no longer be accessible in the
+    <inner> procedure. The statement
+
+         i = 100
+
+    does not affect the outer <i>. This is called the scope rule.
+
+    The output of the program is
+
+         i = 100
+         j = This is string 'j'.
+         i = This is string 'i'.
+         j = This is string 'j'.
+
+
+
+TELEMATE SCRIPT                                            PROCEDURE    23
+
+
+Return Statement
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Like the EXIT statement, it is sometimes convenient to be able to
+    return from a procedure at the middle of the procedure.
+
+    The following procedure accept strings from keyboard and print it,
+    using a RETURN to return from the procedure when the string contains
+    an [Esc] ("^[").
+
+         PROCEDURE acceptString STRING s
+         INPUT s
+         IF "^[" <= s     ; test if [Esc] is a sub-string of s
+            RETURN        ;   before printing it
+         ENDIF
+         PRINT s
+         ENDPROC
+
+TELEMATE SCRIPT                      BUILT IN PROCEDURES BY CATEGORY    24
+
+
+BUILT IN PROCEDURES BY CATEGORY
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Console I/O
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    There are eight statements in the group of console input and output.
+    Namely,
+
+     Input, InputCh, Print, AT, Clear Text, Clear Key, WhereX, WhereY
+
+PRINT Statement
+
+    Output is simple, the PRINT statement can print variable or constant
+    of types integer or string to the terminal window. For example,
+
+         PRINT "hello, world"
+
+    print the words
+
+         hello, world
+
+    to the terminal window.
+
+    PRINT supplies a newline automatically. However, if a comma ","
+    follows the string, no newline is supplied. The statement above could
+    just as well have been written
+
+         PRINT "hello, ",
+         PRINT "world",
+         PRINT
+
+    to produce an identical output. The last PRINT statement supplies a
+    newline.
+
+    PRINT statement accepts more than one argument. Each two arguments are
+    separated by a comma. For example,
+
+         PRINT "x = ",x
+         PRINT "My name is ",firstName," ",lastName
+         PRINT
+
+
+COM I/O
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    As a communication program, TMScript provides thirteen I/O statements
+    that communicate with the remote system. They are
+
+         Get, GetCh, Put, Clear COM, ComInCount, ComOutCount
+         HangUp, Receive, Send, Waitfor, When, WhenIdle
+
+TELEMATE SCRIPT                      BUILT IN PROCEDURES BY CATEGORY    25
+
+
+PUT Statement
+
+    COM output is as simple as console output, the PUT statement can send
+    variable or constant of types integer or string to the remote system.
+    For example,
+
+         PUT "first last"
+
+    send the words
+
+         first last
+
+    and a carriage return [Ctrl M] to the remote system.
+
+    PUT supplies a carriage return automatically. However, if a comma ","
+    follows the string, no carriage return is supplied. The statement
+    above could just as well have been written
+
+         PUT "first ",
+         PUT "last",
+         PUT
+
+    to produce an identical output. The last PUT statement supplies a
+    carriage return only.
+
+    PUT statement accepts more than one argument. Each two arguments are
+    separated by a comma. For example,
+
+         PUT firstName,";",lastName,";",password
+
+
+WAITFOR Statement
+
+    The WAITFOR statements waits for specified stirngs from the remote
+    system in a specified time. In TMScript, you can specify more than one
+    string to wait for. If any of them is received, the FOUND variable is
+    set to a non-zero value (TRUE). Combined with the PUT statement, you
+    can tell Telemate when to send a string to the remote system.
+
+      Syntax                         Description
+      ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ     ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+      WAITFOR t                      Set default waiting time
+      WAITFOR s1,s2, ... , sN        Wait until one of the strings is
+                                     received
+      WAITFOR s1,s2, ... , sN, t     Wait until one of the strings is
+                                     received or waiting time exceeded
+
+
+TELEMATE SCRIPT                      BUILT IN PROCEDURES BY CATEGORY    26
+
+
+    For example, the following code segment are usally used in a logon
+    script program.
+
+         WAITFOR "first",30        ; wait for "first" in 30 seconds
+         IF NOT FOUND
+            STOP                   ; stop if prompt not found
+         ENDIF
+         PUT "my name"             ; send the name
+
+         WAITFOR "password",5      ; wait for "password" in 5 seconds
+         IF NOT FOUND
+            STOP                   ; stop if prompt not found
+         ENDIF
+         PUT "^&"                  ; send the password field (^&) in
+                                   ;  in the phone directory
+
+
+File Handling
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    One text file is allowed to open at a time. The file is open or
+    created as a read/write file. The file handling procedures are
+
+       Open, Created, Append, Read, ReadCh, Write, Seek, Tell, Close,
+       ChDir, Delete, Rename, FileExist, FileSize
+
+    The predefined variable SUCCESS is set to FALSE if there is any error.
+
+
+String Handling
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    A string is a sequence of character. The limit of the length of a
+    string is 512 characters. When referring to a character position, the
+    position is counted from 1. The string handling procedures are
+
+     Atoi, Concat, Itoa, Length, StrDel, StrIns, StrPos, StrSet, SubStr
+
+
+Miscellaneous Routines
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+     Alarm, Atoi, Date, Delay, Dial, Dos, ExitTelemate, Image, Itoa,
+     Keystroke, LoadFon, LoadKey, LoadMac, LoadPad, LogOff, LogOn,
+     LogPause, LogResume, Query, Script, Set, Time, WaitUntil
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    27
+
+
+BUILT IN PROCEDURES
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Alarm
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Pop-up the alarm dialog.
+
+Syntax       ALARM
+             ALARM message
+
+Remarks      If the string <message> is specified, it is displayed in
+             the alarm dialog.
+
+             If the message is too long, it can be split to several
+             lines by putting a "^J" between each line.
+
+Return       If the operator press [Enter] or click the OK button in
+             the alarm dialog, SUCCESS is set to TRUE (non-zero).
+
+             If the operator press [Esc] or the alarm time excess,
+             SUCCESS is set to FALSE (zero).
+
+See also     Set AlarmSound, Set AlarmTime
+
+Example
+
+     RECEIVE "s"
+     IF NOT SUCCESS
+        ALARM "Warning: File transfer aborted"
+        IF NOT SUCCESS  ; if timeout, print message on screen
+           PRINT "Warning: File transfer aborted"
+        ENDIF
+     ENDIF
+
+     ALARM "Alarm:^JThis is a^Jvery long message"
+
+
+Append
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Opens a text file, creates it if necessary, and moves the
+             file pointer to the end of the file.
+
+Syntax       APPEND filename
+
+Remark       APPEND opens the text file as a read/write file and strip the
+             ending EOF [Ctrl Z].
+
+Return       Upon successful completion, SUCCESS is set to TRUE. If the
+             file cannot be created, SUCCESS is set to FALSE.
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    28
+
+
+See also     Create, Open
+
+
+At
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Positions cursor in terminal window.
+
+Syntax       AT column,row
+
+Remark       AT moves the cursor to the position within the terminal
+             window. The upper left corner is (0,0) and the lower right
+             corner is (79,24) if a 25 rows terminal is used.
+
+See also     Print
+
+
+Atoi
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Converts a string to an integer.
+
+Syntax       ATOI s,i
+
+Return       <i> contains the converted value or 0 if <s> cannot be
+             converted to a number.
+
+See also     Itoa
+
+
+ChDir
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Changes current directory.
+
+Syntax       CHDIR path
+
+Remark       CHDIR causes the directory specified by <path> to become the
+             current working directory. <path> must specify an existing
+             directory.
+
+             A drive can also be specified in <path> but it changes only
+             the current directory on that drive; it doesn't change the
+             active drive.
+
+Return       Upon successful completion, SUCCESS is set to TRUE;
+             otherwise, SUCCESS is FALSE.
+
+See also     Delete, FileExist, Rename
+
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    29
+
+
+Clear COM
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Clears the COM buffer.
+
+Syntax       CLEAR COM
+
+Remark       Data being sent and received are placed in a COM buffer,
+             sometimes it is necessary to clear the buffer before
+             processing.
+
+See also     Get, GetCh, Put
+
+Example
+
+     GET s      ; get a string
+     DELAY 50   ; wait for 5 seconds
+     CLEAR COM  ; clear the received data in the last 5 seconds
+     GET s      ; get another string
+
+
+Clear Key
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Clears the keyboard buffer and gives up keyboard control
+             after a INPUT or INPUTCH statement.
+
+Syntax       CLEAR KEY
+
+Remark       CLEAR KEY clears the content of the keyboard buffer. Keyboard
+             input before this statement are thrown away.
+
+             When the INPUT or INPUTCH statement in the script is
+             executed, the following input characters are placed in a
+             keyboard buffer no matter if we want to read the next key
+             or not. As a result, the following characters are NOT sent to
+             the remote system automatically. It is important to give up
+             the control of keyboard whenever no more keyboard input is
+             needed and the clear key statement is built for this purpose.
+
+See also     Input, InputCh
+
+Example
+
+     PRINT "Input filename:"
+     INPUT filename      ; ask the user to input a filename
+     CLEAR KEY           ; give up keyboard control such that
+                         ;  following keys are sent to remote
+                         ;  system automatically
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    30
+
+
+Clear Text
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Clears the terminal window.
+
+Syntax       CLEAR TEXT
+
+Remark       CLEAR TEXT clears the terminal window and positions the
+             cursor to the upper-left corner. It sets the display
+             attribute to the initial setup.
+
+
+Close
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Closes a file.
+
+Syntax       CLOSE
+
+Return       Upon successful completion, SUCCESS is set to TRUE;
+             otherwise, SUCCESS is FALSE.
+
+See also     Open, Read, Write
+
+
+ComInCount
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Gets the number of characters in the incoming COM buffer.
+
+Syntax       COMINCOUNT count
+
+Remark       Telemate has an incoming COM buffer of 8000 bytes.
+
+Return       <count> contains the number of characters in the incoming COM
+             buffer.
+
+See also     Clear COM
+
+
+ComOutCount
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Gets the number of characters in the outgoing COM buffer.
+
+Syntax       COMOUTCOUNT count
+
+Remark       Telemate has an outgoing COM buffer of 2000 bytes.
+
+Return       <count> contains the number of characters in the outgoing COM
+             buffer.
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    31
+
+
+See also     Clear COM
+
+
+Concat
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Appends one string to another
+
+Syntax       CONCAT dest,src
+
+Remark       CONCAT appends a copy of <src> to the end of the string
+             <dest>.
+
+             If the backspace character "^H" is encountered in <src>, the
+             last character of the concatenating string is erased.
+
+Return       <dest> contains the concatenated string.
+
+See also     Length, StrDel, StrIns
+
+Example
+
+     s = "abc"           ; s = "abc"
+     CONCAT s,"xyz"      ; s = "abcxyz"
+     CONCAT s,"^H"       ; s = "abcxy"
+     CONCAT s,"pq"       ; s = "abcxypq"
+
+
+Create
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Creates a new text file or rewrites an existing one.
+
+Syntax       CREATE filename
+
+Remark       CREATE creates the new text file <filename>. If the file
+             already exists, the old file is deleted.
+
+Return       Upon successful completion, SUCCESS is set to TRUE;
+             otherwise, SUCCESS is FALSE.
+
+See also     Append, Open
+
+
+Date
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Gets system date.
+
+Syntax       DATE today
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    32
+
+
+Remark       DATE fills the string <today> with the current date.
+
+             Dates can be compared with the usual '<', '>' and '='
+             relational operator.
+
+             The date format option in the main program does not affect
+             the format in the script language.
+
+Return       <today> contains the system current date in MM-DD-YY
+             format.
+
+See also     Time, ConvertDate
+
+Example
+
+     DATE today
+     IF today>="01-01-91" AND today<"01-05-91"
+        PRINT "Happy New Year!"
+     ENDIF
+
+
+Delay
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Suspends script execution for an interval.
+
+Syntax       DELAY t
+
+Remark       With a call to DELAY, the script program is suspended from
+             execution for the number of tenth seconds specified by <t>.
+
+Example
+
+     DELAY 15  ; wait for one and a half second
+
+
+Delete
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Deletes one or more files
+
+Syntax       DELETE filename
+
+Remark       DELETE deletes one or more files specified by <filename>.
+
+             Wildcards are allowed in <filename>.
+
+Return       On successful completion, SUCCESS is set to TRUE;
+             otherwise, SUCCESS is FALSE.
+
+See also     FileExist, Rename
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    33
+
+
+Dial
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Dials a list of entries or redials the current list.
+
+Syntax       DIAL
+             DIAL list
+
+Remark       DIAL redials the the current list of entries. If <list> is
+             specified, the current list is replaced by <list> and start
+             dialing.
+
+             The <DialAttempt> option is the maximum of number of dialing
+             attempt.
+
+             The <DialList> option can be used to specify the current dial
+             list.
+
+Return       DIAL sets CONNECTED to the number of the connected entry. If
+             the operator press [Esc] to abort the dialing process or the
+             attempts excess the <DialAttempt> option, CONNECTED is set to
+             0 (FALSE).
+
+See also     Set AutoRedial, Set DialAttempt, Set DialList, Set DialPause,
+             Set DialTime, Set MultiLine
+
+Example
+
+     SET DialAttempt,3     ; try each entry once
+     SET DialList,"1 3 6"  ; set the dial list
+     DIAL                  ; equivalent to a DIAL "1 3 6" statement
+     IF NOT CONNECTED
+        PRINT "All boards are busy."
+     ELSE
+        SWITCH CONNECTED
+          CASE 1: PRINT "connected to #1"
+          CASE 3: PRINT "connected to #3"
+          CASE 6: PRINT "connected to #6"
+        ENDSWITCH
+     ENDIF
+     SET DialAttempt,0     ; unlimit the maximum attempt
+
+
+Dos
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Jumps to DOS or issues a DOS command.
+
+Syntax       DOS
+             DOS command
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    34
+
+
+Remark       The DOS statement invokes the DOS COMMAND.COM file to execute
+             a DOS command, batch file, or other program named by the
+             string <command>. the program must be in the current
+             directory or in one of the directories listed in the PATH
+             environment string.
+
+             If <command> is not specified, the DOS statement jumps to DOS
+             and return when users enter 'EXIT' in the DOS command line.
+
+             If the <SwapToEms> or the <SwapToDisk> option is turned on,
+             Telemate swaps part of itself to second storage and, hence,
+             leaves more memory space for the DOS shell.
+
+             The COMSPEC envirnoment string is used to find the
+             COMMAND.COM file. If your COMMAND.COM is not in the root
+             directory - suppose in the C:\DOS directory, you should
+             include the following in the AUTOEXEC.BAT startup file.
+
+                   SET COMSPEC=C:\DOS\COMMAND.COM
+
+See also     Set SwapToDisk, Set SwapToEms, Set MaxDosShell
+
+Example
+
+     QUERY SwapToEms,ems     ; store the original options
+     QUERY SwapToDisk,disk
+     QUERY MaxDosShell,max
+     SET SwapToEms,on        ; provide more working space
+     SET SwapToDisk,on       ;  for external program
+     SET MaxDosShell,off     ;
+     DOS "TMSTAT TM.USE"     ; run the TMSTAT.EXE program
+     SET SwapToEms,ems
+     SET SwapToDisk,disk     ; restore the original options.
+     SET MaxDosShell,max
+
+
+ExitTelemate
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Terminates Telemate's execution.
+
+Syntax       EXITTELEMATE
+             EXITTELEMATE exitCode
+
+Remark       EXITTELEMATE terminates Telemate and return to DOS. The file
+             in the Edit window is saved automatically if necessary.
+
+             If <exitCode> is not specified, Telemate exits to DOS with
+             the error level 0. Otherwise, the error level is set to
+             <exitCode>. Typically a value of 0 is used to indicate a
+             normal exit, and a nonzero value indicates some errors.
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    35
+
+
+FileExist
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Determines if a file or directory is exist.
+
+Syntax       FILEEXIST filename,existFlag
+
+Remark       FILEEXIST checks the file named by <filename> to determines
+             if it is exists.
+
+             Wildcards are allowed in <filename>.
+
+Return       If the file is exist, <existFlag> is set to TRUE; otherwise,
+             <existFlag> is FALSE.
+
+See also     Delete, Rename
+
+
+FileSize
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Gets file size in bytes.
+
+Syntax       FILESIZE filename,size
+
+Remark       FILESIZE returns the length, in bytes, of the file
+             specified by <filename>.
+
+Return       If <filename> exist, <size> is set to the file size and
+             SUCCESS is set to TRUE; otherwise, SUCCESS is set to FALSE.
+
+See also     Read, Seek
+
+
+Get
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Gets a string from remote system.
+
+Syntax       GET s
+
+Remark       GET collects a string, terminated by a carriage return, from
+             the remote system.
+
+             GET does not eliminate the BackSpace character [Ctrl H] from
+             the input, therefore a CONCAT statement should be perform
+             after the GET statement to eliminate the BackSpace character.
+
+Return       <s> contains the collected string. The ending carriage return
+             is discarded.
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    36
+
+
+See also     Clear COM, ComInCount, GetCh
+
+Example
+
+     GET s               ; get a string from remote system
+     filename = ""       ; prepare the variable
+     CONCAT filename,s   ; eliminate the BackSpace
+
+
+GetCh
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Gets a character from remote system.
+
+Syntax       GETCH ch
+
+Remark       GETCH gets a single character from the remote system. If no
+             character is available, GETCH return immediately. GETCH
+             statement, like the INKEY$ function in BASIC, does not wait.
+
+Return       If a character is successfully read into <ch>, SUCCESS is set
+             to TRUE; otherwise, SUCCESS is set to FALSE.
+
+See also     Get
+
+Example
+
+     REPEAT         ; to wait for a character,
+        GETCH ch    ;  repeat the GETCH until
+     UNTIL SUCCESS  ;  a character is available
+
+
+HangUp
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     HangUps the modem.
+
+Syntax       HANGUP
+
+Remark       HANGUP sends the modem hangup string to modem. If the hangup
+             string is the "^#" macro sequence, Telemate hangs up the
+             modem by dropping DTR.
+
+
+Image
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Captures the terminal screen into an image file.
+
+Syntax       IMAGE
+             IMAGE filename
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    37
+
+
+Remark       IMAGE captures the terminal screen into an image file by
+             appending the screen to the file <filename>. If no <filename>
+             is supplied, the last image filename is used.
+
+
+Input
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Reads a string from the keyboard.
+
+Syntax       INPUT s
+
+Remark       INPUT collects a string, terminated by a [Enter],
+             from the keyboard.
+
+             When the INPUT statement in the script is executed, the
+             following input characters are placed in a keyboard buffer
+             no matter if they are to be read or not. As a result, they
+             NOT sent to the remote system automatically. It is important
+             to give up the control of keyboard whenever no more keyboard
+             input is needed using the CLEAR KEY statement.
+
+             INPUT does not eliminate the BackSpace character [Ctrl H]
+             from the input, therefore a CONCAT statement should be
+             perform after the INPUT statement to elimate the BackSpace
+             character.
+
+Return       <s> contains the collected string. The ending [Enter] is
+             discarded.
+
+See also     Clear Key, InputCh
+
+Example
+
+     INPUT s             ; get a string from remote system
+     filename = ""       ; prepare the variable
+     CONCAT filename,s   ; eliminate the BackSpace
+     CLEAR KEY           ; give up keyboard control such that
+                         ;  following keys are sent to remote
+                         ;  system automatically
+
+InputCh
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Reads a character from the keyboard.
+
+Syntax       INPUTCH ch
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    38
+
+
+Remark       INPUTCH gets a single character from the keyboard. If no
+             character is available, INPUTCH returns immediately.
+             INPUTCH statement, like the INKEY$ function in BASIC, does
+             not wait.
+
+             When the INPUTCH statement in the script is executed, the
+             following input characters are placed in a keyboard buffer no
+             matter if they are to be read or not. As a result, they are
+             NOT sent to the remote system automatically. It is important
+             to give up the control of keyboard whenever no more keyboard
+             input is needed using the CLEAR KEY statement.
+
+Return       If a character is successfully read into <ch>, SUCCESS is set
+             to TRUE; otherwise, SUCCESS is set to FALSE.
+
+See also     Clear Key, Input
+
+Example
+
+     REPEAT         ; to wait for a character,
+        INPUTCH ch  ;  repeat the INPUTCH until
+     UNTIL SUCCESS  ;  a character is available
+     CLEAR KEY      ; give up keyboard control such that
+                    ;  following keys are sent to remote
+                    ;  system automatically
+
+Itoa
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Converts an integer to a string.
+
+Syntax       ITOA i,s
+
+Remark       ITOA converts the integer <i> to a string and store it into
+             <s>.
+
+Return       <s> contains the string representation of the value <i>.
+
+See also     Atoi
+
+
+Keystroke
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Simulates keystrokes.
+
+Syntax       KEYSTROKE s
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    39
+
+
+Remark       KEYSTROKES simulates keystrokes as if they are generated by
+             the keyboard, including [Alt] keys. It is equivalent to the
+             '^-' keystroke simulation macro, except that the string <s>
+             does not include the '^-' symbol.
+
+Example
+
+     KEYSTROKE "`1200`2e00`1400`1900"
+
+     ; generates [Alt E] [Alt C] [Alt T] [Alt P] which switch to the
+     ; editor, copy the marked text to the clipboard, switch to the
+     ; terminal and paste the content in the clipboard to the remote
+     ; system.
+
+
+Length
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Calculates the length of a string.
+
+Syntax       LENGTH s,len
+
+Return       <len> is the length of <s>. If <s> is an empty, <len>
+             is 0.
+
+
+LoadFon
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Loads a phone directory.
+
+Syntax       LOADFON phoneDir
+
+Remark       LOADFON loads the <phoneDir> with extension .FON and the
+             corresponding memo file .MEM into the dial window.
+
+             If <phoneDir> does not include a directory, the Telemate
+             directory is used. The extension .FON can be omitted.
+
+Return       Upon successful completion, SUCCESS is set to TRUE; if
+             <phoneDir> does not exist, SUCCESS is FALSE.
+
+See also     Dial
+
+Example
+
+     LOADFON "LONGDIST.FON"
+
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    40
+
+
+LoadKey
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Loads a keyboard definition table.
+
+Syntax       LOADKEY keyTable
+
+Remark       LOADKEY loads the <keyTable> with extension .KEY.
+
+             If <keyTable> does not include a directory, the Telemate
+             directory is used. The extension .KEY can be omitted.
+
+Return       Upon successful completion, SUCCESS is set to TRUE; if
+             <keyTable> does not exist, SUCCESS is FALSE.
+
+Example
+
+     LOADKEY "EUROPE.KEY"
+
+
+LoadMac
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Loads a macro definition table.
+
+Syntax       LOADMAC macroTable
+
+Remark       LOADMAC loads the <macroTable>, with extension .MAC into
+             the macro window.
+
+             If <macroTable> does not include a directory, the Telemate
+             directory is used. The extension .MAC can be omitted.
+
+Return       Upon successful completion, SUCCESS is set to TRUE; if
+             <macroTable> does not exist, SUCCESS is FALSE.
+
+Example
+
+     LOADMAC "CIS.MAC"
+
+
+LoadPad
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Loads a keypad definition table.
+
+Syntax       LOADPAD keypadTable
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    41
+
+
+Remark       LOADPAD loads the <keypadTable>, with extension .PAD into the
+             macro window.
+
+             If <keypadTable> does not include a directory, the Telemate
+             directory is used. The extension .PAD can be omitted.
+
+Return       Upon successful completion, SUCCESS is set to TRUE; if
+             <keypadTable> does not exist, SUCCESS is FALSE.
+
+Example
+
+     LOADPAD "VT102DEL.PAD"
+
+
+LogOff
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Closes the log file.
+
+Syntax       LOGOFF
+
+Remark       LOGOFF closes a previous opened log file.
+
+Return       LOGGING is set to 0 (FALSE).
+
+See also     LogOn, LogPause, LogResume
+
+
+LogOn
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Opens a log file and captures incoming data into the file.
+
+Syntax       LOGON
+             LOGON filename
+
+Remark       LOGON opens the log file <filename> and starts capturing the
+             incoming data into it.
+
+             If <filename> is not supplied, the filename specified in the
+             last LOGON statement is used. If there is no prevous LOGON
+             statement, the one in the log file field of the phone
+             directory is used. If this field is empty, "TM.LOG" is used.
+
+Return       Upon successful completion, SUCCESS is set to TRUE and
+             LOGGING is set to 1 (TRUE); otherwise, SUCCESS is 0 (FALSE).
+
+See also     LogOff, LogPause, LogResume
+
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    42
+
+
+LogPause
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Pauses capturing incoming data into the log file.
+
+Syntax       LOGPAUSE
+
+Remark       LOGPAUSE pauses capturing incoming data. The LOGGING variable
+             should be checked to determine if a log file open. A value of
+             1 indicates a log file is open.
+
+Return       LOGGING is set to 2.
+
+See also     LogOff, LogOn, LogResume
+
+
+LogResume
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Resumes capturing incoming data into the log file.
+
+Syntax       LOGRESUME
+
+Remark       LOGRESUME resumes capturing incoming data. The LOGGING
+             variable should be checked to determine if the log file is in
+             pause. A value of 2 indicates the log file is in pause.
+
+Return       LOGGING is set to 1.
+
+See also     LogOff, LogOn, LogPause
+
+
+Open
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Opens a text file for reading or writing.
+
+Syntax       OPEN filename
+
+Remark       OPEN opens the text file <filename> for reading and writing
+             and strip the ending EOF [Ctrl Z].
+
+             OPEN closes the previously open file automatically if no
+             CLOSE command is issued to that file.
+
+Return       Upon successful completion, SUCCESS is set to TRUE. If
+             <filename> does not exist, SUCCESS is FALSE.
+
+See also     Append, Close, Create, FileExist, FileSize, Read, Seek, Tell,
+             Write
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    43
+
+
+Example
+
+     OPEN "MYFILE"       ; open the file "MYFILE"
+     IF NOT SUCCESS      ; report if not found
+        PRINT "File not found."
+        STOP
+     ENDIF
+     READ s              ; read the first line
+     PRINT s             ; print it
+     CLOSE               ; close the file
+
+     OPEN "FILE1"        ; open FILE1
+     OPEN "FILE2"        ; close FILE1 and open FILE2
+
+
+Print
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Prints integers or strings to the terminal screen.
+
+Syntax       PRINT
+             PRINT s
+             PRINT i
+             PRINT s1,s2,i1,i2,s3, ...
+             PRINT s1,s2,i1,i2,s3, ... ,
+
+Remark       PRINT outputs variables or constants of integer or string to
+             the terminal screen. Each two arguments are separated by a
+             comma.
+
+             PRINT supplies a newline by default. If a comma follows, no
+             newline is supplied.
+
+See also     At, WhereX, WhereY
+
+Example
+
+     PRINT "hello, world"   ; say hello to everyone
+     PRINT "hello, ",       ; say that again
+     PRINT "world",
+     PRINT
+
+     PRINT "x = ",x         ; output multiple strings or integers
+     PRINT "My name is ",firstName," ",lastName
+
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    44
+
+
+Put
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Sends strings or integers to the remote system.
+
+Syntax       PUT
+             PUT s
+             PUT i
+             PUT s1,s2,i1,i2,s3, ...
+             PUT s1,s2,i1,i2,s3, ... ,
+
+Remark       Like the PRINT statement, PUT sends variables or constants of
+             types integer or string to the remote system. Each two
+             arguments are separated by a comma. Integers are converted to
+             their string representation automatically before transmitting
+             to the remote system.
+
+             PUT supplies a carriage return [Ctrl M] by default. If a
+             comma follows, no carriage return is supplied.
+
+             Control characters can be sent by using the '^' prefix. For
+             example, "^C" represents the [Ctrl C], "^M" the carriage
+             return [Enter] and "^[" the Escape key [Esc].
+
+             The following macro sequences have special meanings.
+
+                  ^^     the character '^'
+                  ^~     the character '~'
+                  ~      pause 0.5 second
+                  ^#     drop DTR signal to hangup modem
+                  ^%     break signal
+                  ^$     memo field in phone directory
+                  ^&     password field in phone directory
+                  ^*     modem hangup string
+                  ^(     modem init string
+                  ^)     modem answer string
+
+See also     Clear COM, ComOutCount, Waitfor
+
+Example
+
+     PUT "first last"    ; transmit first name and last name
+                         ;  then a carriage return (^M)
+     PUT "first ",       ; same as above
+     PUT "last",
+     PUT
+
+     PUT                 ; these two lines are
+     PUT "^M",           ;  equivalent
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    45
+
+
+     firstName = "first" ; set first and last name
+     lastName = "last"
+     password = "^&"     ; use the password field in TM.FON
+     PUT firstName," ",lastName,"^M~~~~",password
+            ; send name, [Enter], wait for 2 seconds then send
+            ;  the password, [Enter]
+
+     PUT "~^#~~^)",      ; wait 0.5 second, drop DTR,
+                         ;  wait 1 second, then sends the
+                         ;  modem answer string
+
+
+Query
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Queries option value.
+
+Syntax       QUERY <OPTION>,<VALUE>
+
+Remark       The QUERY statement gives you the ability to peek most of the
+             system options.
+
+             All the options that the SET command accept can be queried by
+             the QUERY command. The returning value is the same as that in
+             the SET command. In addition, the following options are
+             accepted by the QUERY command:
+
+     <OPTION>          <VALUE>     Description
+     ÄÄÄÄÄÄÄÄÄÄÄÄÄ     ÄÄÄÄÄÄÄÄ    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+     Board             "..."       return the board name of the
+                                   connected entry
+     Phone             "..."       return the phone number of the
+                                   connected entry
+     Password          "..."       return the password of the
+                                   connected entry
+     Total             nnn         return the total number of
+                                   connection of the connected entry
+     LastCall          "MM-DD-YY"  return the date of the connected
+                                   entry
+     Memo              "..."       return the memo of the connected
+                                   entry
+
+             This command should be used to store the value of an option
+             before modifying the option and then restore the option to
+             its original before the execution stops.
+
+See also     Set
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    46
+
+
+Example
+
+     QUERY zAutoDownload,autoZmodem
+     SET zAutoDownload,off
+     RECEIVE "z"
+     SET zAutoDownload,autoZmodem
+
+     QUERY board,bbs
+     QUERY password,pw
+     QUERY memo,mm
+     PRINT "#",CONNECTED,"   ",bbs,"   ",pw,"   ",mm
+
+     QUERY diallist,list
+     PRINT list
+
+     QUERY connection,conn
+     SWITCH conn
+       CASE 0: PRINT "Modem"
+       CASE 1: PRINT "Computer"
+       CASE 2: PRINT "Fossil"
+       CASE 3: PRINT "BIOS"
+     ENDSWITCH
+
+     QUERY parity,par
+     SWITCH par
+       CASE 0: PRINT "None"
+       CASE 1: PRINT "Odd"
+       CASE 2: PRINT "Even"
+       CASE 3: PRINT "Space"
+       CASE 4: PRINT "Mark"
+     ENDSWITCH
+
+     QUERY terminal,term
+     SWITCH term
+       CASE 0: PRINT "TTY"
+       CASE 1: PRINT "ANSI"
+       CASE 2: PRINT "VT52"
+       CASE 3: PRINT "VT102"
+       CASE 4: PRINT "AVATAR"
+       CASE 5: PRINT "PRISM"
+     ENDSWITCH
+
+
+Read
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Reads a string from a text file.
+
+Syntax       READ s
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    47
+
+
+Remark       READ reads characters from the file into <s>.
+
+             READ does not place the newline sequence CR-LF into the
+             string.
+
+Return       On success, <s> contains the string read and SUCCESS is set
+             to TRUE. SUCCESS is FALSE on end-of-file or error.
+
+See also     Close, Open, ReadCh, Seek, Tell
+
+Example
+
+     OPEN "MYFILE"       ; count lines in the file MYFILE
+     IF NOT SUCCESS
+        PRINT "File not found."
+        STOP             ; stop if file not found
+     ENDIF
+     n = 0               ; number of line = 0
+     READ str            ; read a line
+     WHILE SUCCESS       ; repeat until end of file
+        n = n + 1        ; increase counter
+        READ str         ; read the next string
+     ENDWHILE
+     CLOSE               ; close the file
+     PRINT "There are ",n," lines in the file"
+     OPEN "TM.FON"       ; read a record from the phone directory
+     recno = 10          ; read the record #10
+     reclen = 131        ; record length of a entry
+     SEEK recno*reclen   ; seek to the record position
+     READ record         ; read the record
+     CLOSE
+
+
+ReadCh
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Reads a character from a text file.
+
+Syntax       READCH ch
+
+Remark       READCH reads a single character from the file into <ch>.
+
+             In a text file, a CR [Ctrl M] followed by a LF [Ctrl J]
+             indicates end-of-line.
+
+Return       On success, <ch> contains the character read and SUCCESS is
+             set to TRUE. SUCCESS is FALSE on end-of-file or error.
+
+See also     Close, Open, ReadCh, Seek, Tell
+
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    48
+
+
+Receive
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Receives (Downloads) one or more files from the remote
+             system.
+
+Syntax       RECEIVE protocol
+             RECEIVE protocol,filename
+
+Remark       RECEIVE receives (download) one or more files from the remote
+             system using the protocol <protocol>. <protocol> can be one
+             of the following or the menu key for external protocol.
+
+             <protocol>     Protocol        <filename> needed
+             ÄÄÄÄÄÄÄÄÄÄ     ÄÄÄÄÄÄÄÄ        ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+                "Z"         Zmodem                 No
+                "Y"         Ymodem                 No
+                "G"         Ymodem-G               No
+                "B"         Batch Ymodem           No
+                "X"         Xmodem                 Yes
+                "O"         Xmodem-1K              Yes
+                "R"         Relaxed Xmodem         Yes
+                "T"         Telink                 No
+                "S"         SEAlink                No
+                "M"         Modem7                 No
+                "K"         Kermit                 No
+                "C"         CIS Quick B            No
+                "A"         ASCII                  Yes
+
+             For protocols, such as Xmodem, which does not pass the name,
+             <filename> should contains the name being received. Wildcards
+             are not allowed. If <filename> is "" and <GuessFile> option
+             is on, the guessing name is used.
+
+             Zmodem has the ability to start automatically which is called
+             Zmodem AutoDownload - the <zAutoDownload> option. To prevent
+             the download starts before the command RECEIVE "Z" is issued,
+             the <zAutoDownload> option should be turned off before
+             telling the remote system to start the transfer.
+
+Return       If the file transfer is successful, SUCCESS is set to TRUE;
+             SUCCESS is FALSE if the transfer abort.
+
+             For external protocols, SUCCESS is always set to TRUE.
+
+See also     Send, Set GuessFile, Set zAutoDownload, Waitfor
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    49
+
+
+Example
+
+     RECEIVE "x","file.zip"   ; Xmodem needs the filename
+     RECEIVE "y"              ; Ymodem doesn't
+
+     RECIEVE "x",""           ; use the guessing name as filename
+
+     QUERY zAutoDownload,auto ; store the auto download option
+     SET zAutoDownload,off    ; you must turn it off before you tell
+     WAITFOR "command",10     ;  the remote system to send the files,
+     PUT "d z *.zip"          ;  otherwise, the system's AutoDownload
+     RECEIVE "z"              ;  procedure will take the control and
+                              ;  the RECEIVE command will return a
+                              ;  wrong SUCCESS value, after the
+     SET zAutoDownload,auto   ;  transfer, you may restore it
+     IF SUCCESS
+        PRINT "File received successfully"
+     ELSE
+        PRINT "File transfer aborted"
+     ENDIF
+
+
+Rename
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Renames a file.
+
+Syntax       RENAME oldname,newname
+
+Remark       RENAME changes the name of a file from <oldname> to
+             <newname>.
+
+             Directories in <oldname> and <newname> need not be the same,
+             therefore, RENAME can be used to move a file from one
+             directory to another. Wildcards are not allowed.
+
+Return       On successfully renameing the file, SUCCESS is set to TRUE;
+             otherwise, SUCCESS is FALSE.
+
+See also     Delete, FileExist
+
+
+Script
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Executes another script program.
+
+Syntax       SCRIPT scriptName
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    50
+
+
+Remark       SCRIPT terminates the execution of the current script and
+             executes the script program <scriptName>.
+
+             <scriptName> may not contain the extension part of a
+             filename. If <scriptName> does not include a path, the Script
+             directory is used.
+
+Example
+
+     SCRIPT "HOST" ; executes the HOST.SCR in the Script directory
+
+
+Seek
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Repositions the file pointer.
+
+Syntax       SEEK filepos
+
+Remark       SEEK sets the file pointer to the new position <filepos>. At
+             the beginning of a file, the file pointer is 0.
+
+             If <filepos> is -1, the file pointer is moved to the end of
+             the file.
+
+Return       If the pointer is successfully moved, SUCCESS is set to TRUE;
+             otherwise, SUCCESS is FALSE.
+
+See also     Read, ReadCh, Tell, Write
+
+Example                                   
+
+     ; suppose TM.FON is open, to read record #10 without changing
+     ; the file position, the TELL statement should be used
+     TELL filepos     ; store file position
+     SEEK 10*131      ; move to record #10, each record is 131 bytes
+     READ record      ; read the record
+     SEEK filepos     ; move back to previous position
+
+
+Send
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Sends (uploads) one or more files to remote system.
+
+Syntax       SEND protocol,filenames
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    51
+
+
+Remark       SEND sends (uploads) one or more files to the remote system
+             using the protocol <protocol>. <protocol> can be one of the
+             following or the menu key for external protocol.
+
+             <protocol>     Protocol        Send multiple files
+             ÄÄÄÄÄÄÄÄÄÄ     ÄÄÄÄÄÄÄÄ        ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+                "Z"         Zmodem                 Yes
+                "Y"         Ymodem                 No
+                "G"         Ymodem-G               Yes
+                "B"         Batch Ymodem           Yes
+                "X"         Xmodem                 No
+                "O"         Xmodem-1K              No
+                "R"         Relaxed Xmodem         No
+                "T"         Telink                 Yes
+                "S"         SEAlink                Yes
+                "M"         Modem7                 Yes
+                "K"         Kermit                 Yes
+                "C"         CIS Quick B            Yes
+                "A"         ASCII                  No
+
+             <filenames> is a list of filenames to be sent, wildcard
+             characters '*' and '?' can be used. If <filename> is "" and
+             <GuessFile> option is on, the guessing name is used. Multiple
+             files are separated by a space. For example,
+                "\TM\TM210-1.ZIP \TM\TM\210-2.ZIP"
+                "*.ZIP \UTIL\*.EXE *.TXT"
+
+             For protocols, such as Xmodem, which cannot transfer multiple
+             files, only the first file in <filenames>.
+
+Return       If the file transfer is successful, SUCCESS is set to TRUE;
+             SUCCESS is FALSE if the transfer abort.
+
+             For external protocols, SUCCESS is always set to TRUE.
+
+See also     Receive, Set GuessFile, Waitfor
+
+Example                                   
+
+     SEND "z","a:*.zip b:*.zip"      ; Zmodem batch upload
+     IF SUCCESS
+        PRINT "File sent successfully"
+     ELSE
+        PRINT "File transfer aborted"
+     ENDIF
+
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    52
+
+
+Set
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Sets option value.
+
+Syntax       SET <OPTION>,<VALUE>
+             SET <OPTION>,<TOKEN>
+
+Remark       The SET statement gives you control over many of the system
+             options. The possible options and values are listed below.
+
+     <OPTION>          <VALUE>     Description
+     ÄÄÄÄÄÄÄÄÄÄÄÄÄ     ÄÄÄÄÄÄÄÄ    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+     AddLineFeed       0 / 1       when On, a line feed is supplied
+                                   after a carriage return [Ctrl M]
+                                   is received
+     AddReturn         0 / 1       when On, a carriage return is
+                                   supplied after a line feed is
+                                   received
+     AlarmSound        0 - 999     in second, amount of time that
+                                   the alarm music is to be played
+     AlarmTime         0 - 999     in second, amount of time that
+                                   the alarm window is to be shown
+     AltKeys           0 / 1       when Off, all [Alt] keys, [PgUp],
+                                   [PgDn], [Ctrl Home] and [Ctrl PrtSc]
+                                   are disabled
+     AutoRedial        0 / 1       when On, the remaining in the
+                                   dial list will be dialed upon
+                                   carrier lost
+     AutoStop          0 / 1       when On, the script will stop
+                                   automatically upon carrier lost,
+                                   this setting is reset to Off at
+                                   the beginning of every script
+     AutoWrap          0 / 1       when On, character after column 80
+                                   is wrapped to the new line.
+     Baud            300 - 115200  set baud rate (300,1200,2400,4800,
+                                   9600,19200,38400,57600,115200)
+     Bell              0 / 1       when Off, no bell when [Ctrl G]
+                                   received
+     Capture           0 / 1       when Off, the backscroll buffer
+                                   stops capturing the incoming data
+     CharPacing        0 - 99      in tenth second, amount of time
+                                   that the Paste or ASCII upload
+                                   pause when a character is sent
+     ConfirmHangUp     0 / 1       when On, confirm if required if
+                                   [Alt H] is pressed
+     Connection        0 - 3       set the connection type
+     Data              7 / 8       set data bits
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    53
+
+
+     DateFormat        0 - 8       set the date format, note that
+                                   this option does not affect
+                                   the date format in the script
+                                   language
+     DestBs            0 / 1       set destructive backspace
+     DialAttempt       0 - 999     the number of attempt that the
+                                   dialing process will perform,
+                                   0 to dial until connected
+     DialList          "..."       set the dial list
+     DialPause         0 - 999     in second, amount of time to be
+                                   wait between two dials
+     DialTime          0 - 999     in second, amount of time to be
+                                   wait after a number is dialed
+     DirEdit           "..."       set the edit directory
+     DirDownload       "..."       set the download directory
+     DirImage          "..."       set the image directory
+     DirLog            "..."       set the log directory
+     DirScript         "..."       set the script directory
+     DirTelemate       "..."       set the telemate directory
+     DirUpload         "..."       set the upload directory
+     DirView           "..."       set the view directory
+     DirWrite          "..."       set the write directory
+     ExpandBlankLine   0 / 1       when On, blank lines are
+                                   expanded to lines containing
+                                   a space
+     ExtAlarm          0 / 1       when On, external alarm is used
+     ExtendedPacing    0 - 99      in tenth second, amount of time
+                                   that the Put command or the macro
+                                   keys pause when a character is
+                                   sent
+     GuessFile         0 / 1       when On, guessed name is put in
+                                   the file selection box
+     GuessInitial      0 / 1       when On, guessed initial is put
+                                   in the quote string
+     Incoming          0 / 1       set incoming translation
+     LinePacing        0 - 99      in tenth second, amount of
+                                   time that the Paste function
+                                   pause when a [Ctrl M] is sent
+     LocalEcho         0 / 1       when On, characters are
+                                   displayed in the terminal
+     LogFilter         0 / 1       when On, terminal emulation
+                                   control characters are not
+                                   recorded into the log file
+     LogHeading        0 / 1       when On, a brief heading is
+                                   inserted into the log file
+                                   before recording the incoming
+                                   data
+     MaxDosShell       0 / 1       when On, Telemate swaps most of
+                                   itself out during a DOS shell
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    54
+
+
+     MultiLine         0 / 1       when On, board names similar to
+                                   the board just connected are
+                                   discarded from the dial list
+     Music             0 / 1       when Off, the music string
+                                   is not interpreted
+     Outgoing          0 / 1       set outgoing translation
+     PaceChar          0 - 255     in ASCII, the character to be
+                                   wait before pasting each line,
+                                   0 to disable this function
+     Parity            0 - 4       set parity
+     Port              1 - 8       set COM port number
+     Prefix            1 - 4       set the dialing prefix
+     Printer           0 / 1       when On, received data is
+                                   sent to printer
+                                   DOS shell
+     QuoteString       "..."       set the quote string
+     RtsCts            0 / 1       set RTS/CTS flow control
+     ScreenSaver       0 - 99      set screen saver
+     ScriptEcho        0 / 1       when Off, incoming text are not
+                                   displayed on the screen
+     Stop              1 / 2       set stop bits
+     StripHighBit      0 / 1       when On, the 8th bit is stripped
+                                   from the incoming data
+     Suffix            1 - 4       set the dialing suffix
+     SwapToDisk        0 / 1       when On, Telemate swaps part
+                                   of itself to disk during DOS
+                                   shell
+     SwapToEms         0 / 1       when On, Telemate swaps part
+                                   of itself to EMS/XMS during
+     Tag               0 - 2       set the tag separator
+     Terminal          0 - 5       set the terminal type
+     UsageLog          0 / 1       set usage log
+     XonXoff           0 / 1       set XON/XOFF flow control
+                                   is received
+     zASCII            0 / 1       when On, Zmodem indicates that
+                                   the upload is a ASCII file
+     zAutoDownload     0 / 1       when Off, Zmodem does not
+                                   download automatically
+     zRecovery         0 / 1       when Off, Zmodem does not
+                                   recover aborted transfer
+
+             Some options allow the use of tokens. Options accept either
+             0 or 1 can use Off for 0 and On for 1. The following lists
+             the options that tokens and the corresponding value of the
+             token:
+
+     Connection, Modem(0)/Computer(1)/Fossil(2)/BIOS(3)
+     Parity, None(0)/Odd(1)/Even(2)/Space(3)/Mark(4)
+     Terminal, TTY(0)/ANSI(1)/VT52(2)/VT102(3)/AVATAR(4)/PRISM(5)
+     Tag, Space(0)/Crlf(1)/Comma(2)
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    55
+
+
+See also     Alarm, Dial, Dos, Query, Receive, Send
+
+Example
+
+     baudRate = 2400
+     SET baud,baudRate   ; set baud rate to 2400
+     SET baud,2400       ; same as above
+     SET incoming,on     ; turn on incoming translation
+     SET terminal,VT102  ; set terminal type to VT102
+
+
+Stop
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Terminates the execution of the current script program.
+
+Syntax       STOP
+
+Remark       STOP is usually used when an error is encountered.
+
+See also     ExitTelemate
+
+Example
+
+     OPEN "MYFILE"               ; open a file
+     IF NOT SUCCESS
+        PRINT "File not found."
+        STOP                     ; terminate if file not found
+     ENDIF
+
+
+StrDel
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Deletes characters from a string.
+
+Syntax       STRDEL str,pos,count
+
+Remark       STRDEL deletes <count> characters from the position <pos>
+             of the string <str>.
+
+             The first character position is 1.
+
+Return       <str> contains the new string.
+
+See also     Concat, Length, StrIns, StrPos, SetSet, SubStr
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    56
+
+
+Example
+
+     str = "abcXYZdef"
+     STRDEL str,4,3      ; delete "XYZ"
+     PRINT str           ; "abcdef"
+
+
+StrIns
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Inserts a string into another string.
+
+Syntax       STRINS str,substr,pos
+
+Remark       STRINS inserts a string <substr> into another string <str>
+             at position <pos>.
+
+             If <pos> is larger than the length of <str>, the gap is
+             filled with spaces. The first character position is 1.
+
+Return       <str> contains the new string.
+
+See also     Concat, Length, StrDel, StrPos, SetSet, SubStr
+
+Example
+
+     str = "abcdef"
+     STRINS str,"XYZ",4  ; insert "XYZ"
+     PRINT str           ; "abcXYZdef"
+
+     str = "abc"
+     STRINS str,"xyz",10 ; <count> is larger than the length of <str>
+     PRINT str           ; "abc      xyz"
+
+
+StrPos
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Scans a string for the occurrence of a given substring.
+
+Syntax       STRPOS str,substr,pos
+
+Remark       STRPOS scans <str> for the first occurrence of the substring
+             <substr>.  Case is not sensitive.
+
+             The first character position is 1.
+
+Return       If <substr> is a substring of <str>, <pos> is the position of
+             the substring; otherwise, <pos> is 0.
+
+See also     Concat, Length, StrDel, StrIns, SetSet, SubStr
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    57
+
+
+Example
+
+     STRPOS "abcdef","def",pos
+     PRINT pos                   ;  4
+
+
+StrSet
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Sets part of a string to a given character.
+
+Syntax       STRSET str,ch,pos,count
+
+Remark       STRSET sets the string <str> starting from position <pos>
+             with <count> character <ch>.
+
+             If <pos> is larger than the length of <str>, the gap is
+             filled with spaces. The first character position is 1.
+
+Return       <str> contains the new string.
+
+See also     Concat, Length, StrDel, StrIns, SetPos, SubStr
+
+Example
+
+     str = "abc"
+     STRSET str,"X",3,10
+     PRINT str           ; "abXXXXXXXXXX"
+
+
+SubStr
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Returns a substring from a given string.
+
+Syntax       SUBSTR src,pos,count,dest
+
+Remark       SUBSTR returns a substring in the string <src> starting at
+             <pos> of length <count> into the string <dest>.
+
+             The first character position is 1.
+
+Return       <dest> contains the substring.
+
+See also     Concat, Length, StrDel, StrIns, SetPos, StrSet
+
+Example
+
+     SUBSTR "abcdef",1,3,dest
+     PRINT dest                  ; "abc"
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    58
+
+
+Tell
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Function     Returns the current file pointer.
+
+Syntax       TELL filepos
+
+Remark       TELL returns the current file pointer. <filepos> is measured
+             in bytes from the beginning of the file. At the beginning of
+             the file, <filepos> is 0.
+
+             Sometime it is neccessary to open more than one file, you can
+             implement it by storing the file position of the original
+             file, then restore it after the other file operation is
+             completed.
+
+Return       <filepos> is the current file pointer.
+
+See also     Seek, Read, Write
+
+Example
+
+     i = 1
+     filepos = 0                 ; at at beginning of file
+     WHILE i<=10
+        OPEN "bbsname"           ; open data file
+        SEEK filepos             ; move the previous position
+        READ name                ; read a bbs name
+        TELL filepose            ; store the current position
+        CLOSE                    ; close the file
+        PhoneFind name,number    ; find the board in TM.FON
+                                 ;  suppose the PhoneFind procedure
+                                 ;  open the TM.FON
+        IF number<>0             ; yes, it is in TM.FON
+           PRINT name," found is entry #",number
+        ENDIF
+     ENDWHILE
+
+
+Time
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Gets system time.
+
+Syntax       TIME now
+
+Remark       TIME fills the string <now> with the current time.
+
+             Times can be compared with the usual '<', '>' and '='
+             relational operator.
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    59
+
+
+Return       <now> contains the system current date in HH:MM:SS 24 hour
+             format.
+
+See also     Date
+
+Example
+
+     TIME now
+     IF now>"07:00:00" AND now<="07:59:59"
+        PRINT "Good morning."
+     ENDIF
+
+
+Usage
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Puts a string into the usage file.
+
+Syntax       USAGE <usageString>
+
+Remark       USAGES puts the string <usageString> into the usage file
+             TM.USE. The current time and date are added to the beginning
+             of the line automatically.
+
+Example
+
+     USAGE "Switching to Host mode"
+
+
+Waitfor
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Waits for one of the given strings from the remote
+             system.
+
+Syntax       WAITFOR t
+             WAITFOR s1,s2, ... , sN
+             WAITFOR s1,s2, ... , sN, t
+
+Remark       The 'WAITFOR t' format set the default waiting time to <t>,
+             in second. If <t> is 0, no time checking is performed. If
+             <t> is -1, no time checking is performed, but the waiting
+             time is considered to be exceeded when a key is hit.
+
+             The 'WAITFOR s1,s2, ... , sN' format waits until one of the
+             given string is received from the remote system or the
+             default waiting time exceeded.
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    60
+
+
+             The 'WAITFOR s1,s2, ... , sN,t' format set the default
+             waiting time to <t>, in second and waits until one of the
+             given string is received from the remote system or the
+             waiting time exceeded.
+
+             Case is not sensitive when comparing the given string with
+             the characters received from the remote system.
+
+             Sometimes the remote system need a slight delay between the
+             prompt and the response, you can use DELAY or the "~" half-
+             second marco before the PUT command.
+
+Return       If the waiting time exceeded, FOUND is set to 0 (FALSE);
+             otherwise, FOUND is set the string number of the matched
+             string.
+
+See also     Delay, Put, Receive, Send, WaitUntil, When, WhenIdle
+
+Example
+
+     WAITFOR "first",30        ; wait for "first" in 30 seconds
+     IF NOT FOUND
+        PRINT "Not found."     ; if not found, stop
+        STOP
+     ELSE
+        DELAY 5
+        PUT "my name"          ; else send the first and
+     ENDIF                     ;  last names
+
+     ; The following is usually placed at the end of a script file.
+     ; It waits for disconnection and print which string is found.
+     WAITFOR "NO CARRIER","thanks for calling","hang up now",0
+     PRINT "Ending connection"
+
+     ; The following simulates the AutoDownload feature for protocols
+     ; does not support this feature.
+     WAITFOR "Download protocol is",0
+     WAITFOR "Xmodem","Ymodem","SEAlink",5
+     IF FOUND
+        SWITCH FOUND
+           CASE 1: RECEIVE "x","" ; Xmodem, use guessing name
+           CASE 2: RECEIVE "y"    ; Ymodem download
+           CASE 3: RECEIVE "s"    ; SEAlink download
+        ENDSWITCH
+     ENDIF
+
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    61
+
+
+WaitUntil
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Waits until the specified time exceeded.
+
+Syntax       WAITUNTIL t
+
+Remark       WAITUNTIL pauses the execution and waits until the time <t>,
+             in HH:MM:SS 24 hour format, exceeded.
+
+See also     Wait
+
+Example
+
+     WAITUNTIL "23:10:30"  ; pause until 11:10:30pm.
+
+
+When
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Sends a response string to the remote system whenever a given
+             string is matched.
+
+Syntax       WHEN <waitString>,<resonseString>
+             WHEN <waitString>,""
+
+Remark       The WHEN statement is usually used in the beginning of the
+             script file and it is active until the end of the script
+             file.
+
+             Whenever the <waitString> is received from the remote system,
+             the <responseString> is transmitted. The response string can
+             be changed. To cancel a WHEN statement, "" should be put in
+             in <responseString>.
+
+             Case is not sensitive when comparing the <waitString> with
+             the characters received from the remote system.
+
+See also     Waitfor, WhenIdle
+
+Example
+
+     WHEN "Press ENTER","^M"     ; set response strings
+     WHEN "More [y,n]?","y^M"
+     WAITFOR "main menu",0       ; wait for "main menu"
+     WHEN "Press ENTER",""       ; cancel response string
+     WHEN "More [y,n]?","n^M"    ; change response string
+     REPEAT                      ; make the WHEN statements
+     UNTIL NOT CONNECTED         ; active until disconnected.
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    62
+
+
+WhenIdle
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Sends a string to the remote system if there is no COM
+             Input/Output in the specified time.
+
+Syntax       WHENIDLE t,s
+
+Remark       WHENIDLE monitors the COM Input/Output and sends the string
+             <s> to the remote system if COM I/O is idle for the specified
+             time <t>, in second.
+
+             Like the WHEN statement, WHENIDLE is active until the end of
+             the script program.
+
+             <s> can contain macro sequence, such as "^*", the modem
+             hangup string.
+
+             If <t> is equal to 0 or <s> is a empty string, the WHENIDLE
+             statement will be cancel.
+
+See also     Waitfor, When
+
+Example
+
+     WAITFOR "message command",0 ; wait for command prompt
+     PUT "r"                     ; read message
+     WHENIDLE 30," ^H"           ; prevent inactive timeout
+     REPEAT                      ; make the WHENIDLE statement
+     UNTIL NOT CONNECTED         ; active until disconnected
+
+     ; There are several usages of this command. The above example
+     ; shows the way to prevent inactive timeout. However, it can
+     ; also be used to handle inactive timeout in the host script
+     ; mode.  For example,
+
+     WHENIDLE 180,"Inactive timeout^M^J~^*"
+
+     ; this command checks if the COM I/O is idle for 3 minuates,
+     ; sends a timeout message to the user and, finally, sends the
+     ; hangup string, the hangup macro sequence "^*", to the modem.
+
+     ; Sometimes the phone line is too noisy that some characters
+     ; cannot be received correctly. The worst case is that those
+     ; characters appear in the WAITFOR string. To prevent inactive
+     ; timeout or waste of connect time, the WHENIDLE can be used as
+     ; follows.
+
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    63
+
+
+     WHENIDLE 5,"^M"             ; send a carriage return if idle
+                                 ; for 5 seconds
+     WAITFOR "first name"        ; now start the log on sequence
+     PUT "first last"
+     WAITFOR "password"          ; send password macro
+     PUT "^&"
+     WHENIDLE 0,""               ; cancel the WHENIDLE statement
+
+
+WhereX
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Gives the horizontal cursor position within the terminal
+             window.
+
+Syntax       WHEREX column
+
+Remark       WHEREX returns the x-coordinate of the terminal window. The
+             left-most column is 0.
+
+Return       <column> is the horizontal cursor position.
+
+See also     At, WhereX
+
+
+WhereY
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Gives the vertical cursor position within the terminal
+             window.
+
+Syntax       WHEREY row
+
+Remark       WHEREY returns the y-coordinate of the terminal window. The
+             top-most row is 0.
+
+Return       <row> is the vertical cursor position.
+
+See also     At, WhereY
+
+
+Write
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Writes integers or strings to a text file.
+
+Syntax       WRITE
+             WRITE s
+             WRITE i
+             WRITE s1,s2,i1,i2,s3, ...
+             WRITE s1,s2,i1,i2,s3, ... ,
+
+TELEMATE SCRIPT                                  BUILT IN PROCEDURES    64
+
+
+Remark       Like the PRINT statement, WRITE sends variables or constants
+             of types integer or string to the remote system. Each two
+             arguments are separated by a comma. Integers are converted to
+             their string representation automatically before transmitting
+             to the remote system.
+
+             WRITE supplies a carriage return [Ctrl M] and a line feed
+             [Ctrl J] by default. If a comma follows, no carriage return
+             and line feed is supplied.
+
+Return       Upon successful completion, SUCCESS is set to TRUE;
+             otherwise, SUCCESS is FALSE.
+
+See also     Read, Seek, Tell
+
+Example
+
+     CREATE "COUNT"      ; write a hundred line into "COUNT"
+     counter = 1         ; initiate the counter
+     WHILE counter<=100  ; repeat 100 times
+        WRITE "This is line ",counter
+     ENDWHILE
+     CLOSE               ; close the file
+
+     newname = "New board name                "
+     OPEN "TM.FON"       ; change the name field of a record
+     recno = 10          ; change the record #10
+     reclen = 131        ; record length of a entry
+     SEEK recno*reclen   ; seek to the record position
+     WRITE newname,      ; write the name
+     CLOSE
+
+TELEMATE SCRIPT                                   TOOLBOX PROCEDURES    65
+
+
+TOOLBOX PROCEDURES
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    The toolboxes are a collection of useful script procedures. They are
+    written as a supplement of the built-in procedures. You may freely
+    modify the procedures and you are encourage to share your experience
+    with the other users.
+
+    The first toolbox defines ANSI color codes and supplies useful video
+    procedures. The second one includes three input procedures and four
+    character-type-checking procedures. The third one provides a standard
+    method to access the phone directory and calculates the difference
+    between two date/time string.
+
+    To use the toolboxes, you should add the lines
+
+         #include "toolbox1.scr"         ,
+         #include "toolbox2.scr"         and/or
+         #include "toolbox3.scr"
+
+    at the beginning of your script file. To reduce the size of the
+    compiled script file, you should include only the toolbox(es) that
+    contain the procedures you need.
+
+
+Toolbox #1
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    This toolbox defines video color values, ANSI color codes and a set of
+    video procedures which output to local screen and/or remote system.
+
+    To use this toolbox, you should add the line
+
+       #include "toolbox1.scr"       ; include the toolbox
+       TRUE = 1                      ; define boolean value
+       FALSE = 0                     ;  for your convenience
+
+    at the beginning of your script file. This will increase the file size
+    of the compiled script file .TMS by about 4K. To minimum the overhead,
+    you should cut and paste the procedures that you used into your script
+    file. For example, the <EchoBox> and <EchoBlock> procedures may be
+    excluded.
+
+
+
+TELEMATE SCRIPT                                   TOOLBOX PROCEDURES    66
+
+
+Color Values and ANSI Color Codes
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    The following table shows the colors values and its corresponding
+    foreground and background ANSI codes.
+
+        Color    Symbolic    Foreground     Background
+        Value    Name        ANSI code      ANSI code
+      ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+          0      BLACK       FGBLACK        BKBLACK
+          1      BLUE        FGBLUE         BKBLUE
+          2      GREEN       FGGREEN        BKGREEN
+          3      RED         FGRED          BKRED
+          4      CYAN        FGCYAN         BKCYAN
+          5      MAGENTA     FGMAGENTA      BKMAGENTA
+          6      YELLOW      FGYELLOW       BKYELLOW
+          7      WHITE       FGWHITE        BKWHITE
+
+    You can use the symbolic names to access a color. For example, the
+    statement
+
+        PRINT FGYELLOW,BKBLUE
+
+    to set the local color to yellow on blue. Or you can use the toolbox
+    procedures EchoColor and EchoBkColor to set the color. For example,
+
+        EchoColor YELLOW
+        EchoBkColor BLUE
+
+    have similar effect to the above.
+
+
+EchoToLocal and EchoToRemote
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    The <EchoToLocol> and <EchoToRemote> variables tell the Echo
+    procedures where the output is to be sent. If <EchoToLocal> is TRUE,
+    the output is sent to the local screen, default is TRUE. If
+    <EchoToRemote> is TRUE, the output is sent to the remote system,
+    default is TRUE. These variables can both be TRUE.
+
+
+Echo and EchoInt
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Function     Output a string or an integer to local screen and/or
+             remote system.
+
+Syntax       Echo s
+             EchoInt i
+
+
+TELEMATE SCRIPT                                   TOOLBOX PROCEDURES    67
+
+
+Remark       ECHO outputs the string <s> while ECHOINT outputs the integer
+             <i> to the local screen and/or remote system according to the
+             the variables <EchoToLocal> and <EchoToRemote>.
+
+             If <EchoToLocal> is TRUE, the output is sent to the local
+             screen.
+
+             If <EchoToRemote> is TRUE, the output is sent to the remote
+             system.
+
+             Both variables can both be TRUE. In this case, the output is
+             sent to both the local screen and the remote system.
+
+             All the procedures in this toolbox use these two procedures
+             for output. As a result, the output destination depends on
+             the varaibles <EchoToLocal> and <EchoToRemote> too.
+
+Example
+
+     TRUE  = 1           ; define boolean value
+     FALSE = 0
+
+     EchoToLocal = TRUE  ; echo to local screen
+     EchoToRemote = FALSE;  but not to remote system
+     Echo "This only display on local screen"
+
+     EchoToRemoate = TRUE; now echo to remote system too
+     EchoColor YELLOW    ; set yellow foreground
+     EchoHiLite          ; high intensity
+     EchoBkColor BLUE    ; set blue background
+     Echo "Now both local screen and remote system is"
+     Echo "yellow on blue"
+
+
+EchoBkColor
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Sets background color.
+
+Syntax       ECHOBKCOLOR color
+
+Remark       ECHOBKCOLOR sets the background color to <color> by outputing
+             the corresponding background ANSI color code.
+
+             <color> can be one of the following: BLACK, BLUE,GREEN, CYAN,
+             RED, MAGENTA, YELLOW AND WHITE.
+
+See also     EchoColor
+
+
+TELEMATE SCRIPT                                   TOOLBOX PROCEDURES    68
+
+
+Example
+
+     EchoBkColor BLUE    ; blue background
+
+     EchoColor BLACK     ; black on CYAN
+     EchoBkColor CYAN
+
+
+EchoBlink
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Sets blink attribute.
+
+Syntax       ECHOBLINK
+
+See also     EchoHiLite, EchoNormal, EchoReverse
+
+Example
+
+     EchoColor GREEN     ; green foreground
+     EchoBlink           ; blink
+
+
+EchoBlock
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Draws a solid block of a character.
+
+Syntax       ECHOBLOCK left,top,right,bottom,style,fillchar
+
+Remark       ECHOBLOCK draws a filled-in, rectangular block.
+
+             The upper left and lower right corners of the rectangle are
+             given by (left,top) and (right,bottom). The top-left corner
+             is (0,0).
+
+             <style> selects the type of block
+                   0     spaces                      ' '
+                   1     widely spaced block         '°'
+                   2     spaced block                '±'
+                   3     closely spaced block        '²'
+                   4     solid block                 'Û'
+                   5     user-defined fill character <fillchar>
+
+             <fillchar> should be set to "" for <style> not equal to 5.
+
+See also     EchoBox
+
+
+TELEMATE SCRIPT                                   TOOLBOX PROCEDURES    69
+
+
+Example
+
+     EchoBlock 5,10,50,15,3,""   ; fill a block with closely spaced
+                                 ;  block '²'
+     EchoBlock 0,0,79,24,5,"ß"   ; fill the screen with thick
+                                 ;  horizontal line 'ßßßßßßßß'
+
+
+EchoBox
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Draws a box.
+
+Syntax       ECHOBOX left,top,right,bottom,style,fillchar,hollow
+
+Remark       ECHOBOX draws a rectangular box.
+
+             The upper left and lower right corners of the rectangle are
+             given by (left,top) and (right,bottom). The top-left corner
+             is (0,0).
+
+             <style> selects the type of block
+                   0     spaces
+                   1     single line
+                   2     double line
+                   3     single vertical line, double horizontal line
+                   4     double vertical line, single horizontal line
+                   5     user-defined fill character <fillchar>
+
+             <fillchar> should be set to "" for <style> not equal to 5.
+
+             If <hollow> is TRUE, the inside of the box is cleared.
+
+See also     EchoBlock
+
+Example
+
+     EchoBox 5,10,50,15,2,"",1   ; draw a double-line box and
+                                 ;  clear the inside of it
+     EchoBox 0,0,79,24,5,"Û",0   ; draw a solid border but do not
+                                 ;  clear the center
+
+
+EchoClearScreen
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Clears the screen and home cursor.
+
+Syntax       ECHOCLEARSCREEN
+
+
+TELEMATE SCRIPT                                   TOOLBOX PROCEDURES    70
+
+
+Remark       ECHOCLEARSCREEN clears the screen with the current color and
+             positions cursor to the top-left corner.
+
+See also     EchoColor, EchoBkColor
+
+
+EchoColor
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Sets foreground color.
+
+Syntax       ECHOCOLOR color
+
+Remark       ECHOCOLOR sets the foreground color to <color> by outputing
+             the corresponding foreground ANSI color code.
+
+             <color> can be one of the following: BLACK, BLUE, GREEN,
+             CYAN, RED, MAGENTA, YELLOW AND WHITE.
+
+See also     EchoBkColor
+
+Example
+
+     EchoColor YELLOW    ; yellow foreground
+
+     EchoColor BLACK     ; black on white
+     EchoBkColor WHITE
+
+
+EchoGotoXY
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Positions cursor.
+
+Syntax       ECHOGOTOXY column,row
+
+Remark       ECHOGOTOXY moves the cursor to the position (column,row). The
+             upper left corner is (0,0) and the lower right corner is
+             (79,24) if a 25 rows terminal is used.
+
+
+EchoHiLite
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Sets high intensity.
+
+Syntax       ECHOHILITE
+
+See also     EchoBlink, EchoNormal, EchoReverse
+
+
+TELEMATE SCRIPT                                   TOOLBOX PROCEDURES    71
+
+
+Example
+
+     EchoColor GREEN     ; green foreground
+     EchoHiLite          ; light green
+
+
+EchoNormal
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Sets normal intensity and reset color to white on black.
+
+Syntax       ECHONORMAL
+
+Remark       ECHONORMAL not only set the normal intensity, but also reset
+             the current color to white on black. There is no ANSI code to
+             turn off high intensity.
+
+             To turn off high intensity only, three statements must be
+             used. You should keep track of the <foreground> and
+             <background> color.
+                 EchoNormal
+                 EchoColor   foreground
+                 EchoBkColor background
+
+See also     EchoBlink, EchoHiLite, EchoReverse
+
+
+EchoReverse
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Sets reverse attribute.
+
+Syntax       ECHOREVERSE
+
+See also     EchoBlink, EchoHiLite, EchoNormal
+
+Example
+
+     EchoColor YELLOW    ; yellow on blue
+     EchoBkColor BLUE
+     EchoReverse         ; blue on yellow
+
+
+
+TELEMATE SCRIPT                                   TOOLBOX PROCEDURES    72
+
+
+Toolbox #2
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    This toolbox defines three I/O procedures and four character-type-
+    checking procedures.
+
+    To use this toolbox, you should add the line
+       #include "toolbox2.scr" at the beginning of your script file. This
+    will increase the file size of the compiled script file .TMS by about
+    2K. To minimum the overhead, you should cut and paste the procedures
+    that you used into your script file. For example, the <InputN> and
+    <ReadN> procedures may be excluded.
+
+
+GetN
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Gets one or more characters from remote system.
+
+Syntax       GETN s,n
+
+Remark       GETN gets <n> characters from remote system or until CR
+             [Ctrl M] is encountered.
+
+             The input characters are displayed on local screen.
+
+             BackSpace character [Ctrl H] deletes the last character of
+             the inputing string. You should leave a space before your
+             input prompt.
+
+             The CLEAR KEY should be issued if you no longer need keyboard
+             input.
+
+Return       <s> contains the input string. If the length of <s> is less
+             than <n>, CR is encountered.
+
+See also     Clear COM, Get, GetCh
+
+Example
+
+     PUT "Press a key to continue"
+     GetN enter,1        ; wait for a key or [Enter]
+
+     ; Note: a space is required here ------------v for backspace
+     PUT "Enter the filename you want to download: "
+     GetN filename,50    ; let it handle backspace
+
+
+
+TELEMATE SCRIPT                                   TOOLBOX PROCEDURES    73
+
+
+InputN
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Gets one or more characters from keyboard.
+
+Syntax       INPUTN s,n
+
+Remark       INPUTN gets <n> characters from keyboard or until [Enter] is
+             pressed.
+
+             BackSpace character [Ctrl H] deletes the last character of
+             the inputing string.
+
+Return       <s> contains the input string. If the length of <s> is less
+             than <n>, [Enter] is pressed.
+
+See also     At, Clear Key, Input, InputCh
+
+Example
+
+     PRINT "Press a key to continue"
+     InputN enter,1      ; wait for a key or [Enter]
+
+     PRINT "Enter the filename you want to display: "
+     InputN filename,50  ; let it handle backspace
+
+
+ReadN
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Gets one or more characters from a file.
+
+Syntax       READN s,n
+
+Remark       READN gets <n> characters from the file or until the CR-LF
+             newline sequence is encountered. The CR-LF is skipped in
+             the file and discarded in the string.
+
+             BackSpace character [Ctrl H] DOES NOT delete the last
+             character of the inputing string.
+
+             This procedure is usually used to get a field from a data
+             file.
+
+Return       <s> contains the input string. If the length of <s> is less
+             than <n>, newline is encountered.
+
+See also     Read, ReadCh, Seek, Tell
+
+
+TELEMATE SCRIPT                                   TOOLBOX PROCEDURES    74
+
+
+Example
+
+     OPEN "TM.FON"       ; open the phone directory
+     SEEK 10*131         ; move to entry #10, each entry is 131 bytes
+     ReadN name,30       ; read the name field
+     CLOSE               ; close the phone directory
+
+
+isalpha
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Determines if a character is a letter.
+
+Syntax       ISALPHA ch,result
+
+Return       If <ch> is a letter, <result> is set to TRUE; otherwise
+             <result> is FALSE.
+
+See also     isalnum, iscntl, isdigit
+
+Example
+
+     InputN ch,1         ; get one character
+     PRINT
+     isalpha ch,result
+     IF result
+        PRINT "yes, it is a letter"
+     ELSE
+        PRINT "no, it is not"
+     ENDIF
+
+
+isalnum
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Determines if a character is a letter or a digit.
+
+Syntax       ISALNUM ch,result
+
+Return       If <ch> is a letter or a digit, <result> is set to TRUE;
+             otherwise <result> is FALSE.
+
+See also     isalpha, iscntl, isdigit
+
+
+iscntl
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Determines if a character is a control character.
+
+Syntax       ISCNTL ch,result
+
+TELEMATE SCRIPT                                   TOOLBOX PROCEDURES    75
+
+
+Return       If <ch> is a control character ([Ctrl A] to [Ctrl Z]),
+             <result> is set to TRUE; otherwise <result> is FALSE.
+
+See also     isalpha, isalnum, isdigit
+
+
+isdigit
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Determines if a character is a digit.
+
+Syntax       ISDIGHT ch,result
+
+Return       If <ch> is a digit, <result> is set to TRUE; otherwise
+             <result> is FALSE.
+
+See also     isalpha, isalnum, iscntl
+
+
+Toolbox #3
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    This toolbox defines several procedures to access the phone directory
+    and two procedures to calculate the difference between two date/time
+    strings.
+
+    To use this toolbox, you should add the line
+       #include "toolbox3.scr" at the beginning of your script file. This
+    will increase the file size of the compiled script file .TMS by about
+    5K. To minimum the overhead, you should cut and paste the procedures
+    that you used into your script file. For example, the <DiffTime> and
+    <DiffDate> procedures may be excluded.
+
+
+ConvertDate
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Converts one date format to another date format.
+
+Syntax       CONVERTDATE format1,date1,format2,date2
+
+Remark       CONVERTDATE converts the date string <date1> of data format
+             integer <format1> to <date2> of <format2>.
+
+
+TELEMATE SCRIPT                                   TOOLBOX PROCEDURES    76
+
+
+Return       <date2> is the equivalent date of the <date1> but <date2> is
+             in date format <format2> and <date1> is in date format
+             <format2>.
+
+             TMScript only recognizes date string in MM-DD-YY format (i.e.
+             format 0). If you change the date format, it is important
+             to convert it back to the MM-DD-YY before passing it into
+             TMScript internal command, for example comparing two date
+             strings.
+
+See also     Date
+
+Example
+
+     DATE today0         ; MM-DD-YY (date format 0)
+
+     ConvertDate 0,today0,1,today1
+     PRINT today1        ; convert it to DD-MM-YY (date format 1)
+
+     ConvertDate 1,today1,0,today0
+     PRINT today0        ; back to MM-DD-YY (date format 0)
+
+
+DiffDate
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Computes the difference between two dates.
+
+Syntax       DIFFDATE date1,date2,days
+
+Remark       DIFFDATE calculates the elapsed days from <date1> to
+             <date2> as if
+                 <days> = <date2> - <date1>
+
+             <date1> and <date2> must be in MM-DD-YY format.
+
+Return       <days> is the elapsed days from <date1> to <date2>. <days>
+             is always a non-negative integer.
+
+             If <date1> is equal to <date2>, <days> is equal 0.
+
+             If <date1> is larger than <date2>, it is assumed that <date2>
+             pass a century and 100 years is added to <date2> before the
+             calculation.
+
+See also     Date, DiffTime
+
+
+TELEMATE SCRIPT                                   TOOLBOX PROCEDURES    77
+
+
+Example
+
+     DiffDate "02-01-88","02-01-89",days
+     PRINT days          ; 366
+
+     DiffDate "02-01-91","03-01-91",days
+     PRINT days          ; 28
+
+     DiffDate "12-31-99","01-01-00",days ; 1999 - 2000
+     PRINT days          ; 1
+
+
+DiffTime
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Computes the difference between two times.
+
+Syntax       DIFFTIME time1,time2,seconds
+
+Remark       DIFFTIME calculates the elapsed seconds from <time1> to
+             <time2> as if
+                 <seconds> = <time2> - <time1>
+
+             <time1> and <time2> must be in HH:MM:SS format.
+
+Return       <seconds> is the elapsed seconds from <time1> to <time2>.
+             <seconds> is always a non-negative integer.
+
+             If <time1> is equal to <time2>, <seconds> is equal 0.
+
+             If <time1> is larger than <time2>, it is assumed that <time2>
+             pass midnight and 24 hours is added to <time2> before the
+             calculation.
+
+See also     DiffDate, Time
+
+Example
+
+     DiffTime "12:30:40","12:31:30",seconds
+     PRINT seconds       ; 50
+
+     DiffTime "23:59:50","00:00:01",seconds  ; pass mid-night
+     PRINT seconds       ; 11
+
+
+
+TELEMATE SCRIPT                                   TOOLBOX PROCEDURES    78
+
+
+PhoneDirectory
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    The <PhoneDirectory> variable tells the Phone's procedures which phone
+    directory is to be access. Default is the "TM.FON".
+
+Example
+
+     PhoneDirectory = "MYPHONE.FON"
+     PhoneFind "South",number,1  ; search the word "South" in
+                                 ; MYPHONE.FON
+
+
+PhoneFind
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Finds a phone directory entry.
+
+Syntax       PHONEFIND name,number,startPoint
+
+Remark       PHONEFIND finds an entry by <name> starting from
+             <startPoint>.
+
+Return       If <name> matches an entry, <number> is set the entry number;
+             otherwise, <number> is 0.
+
+             <success> is FALSE if the phone directory cannot be open.
+
+Caution      This procedure will close the formly opened file since the
+             OPEN command is used. You should close the file before
+             issuing this procedure and reopen the file after this
+             procedure.
+
+See also     PhoneDirectory, PhoneRead, PhoneSize, PhoneWrite
+
+Example
+
+     ; To start from the beginning of the phone directory
+     PhoneFind "South",number,1
+     IF NOT FOUND
+        PRINT "String not found"
+        STOP
+     ENDIF
+
+     PhoneRead number,name,password,link,log,phone,total,last
+     PRINT "...."
+
+     ; To go on search, supply <startPoint> with the next number
+     PhoneFind "South",number,number+1
+     PRINT "...."
+
+
+TELEMATE SCRIPT                                   TOOLBOX PROCEDURES    79
+
+
+PhoneRead
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Reads a phone directory entry
+
+Syntax       PHONEREAD number,name,password,linkscript,logfile,phone,
+                       total,last
+
+Remark       PHONEREAD reads the entry # <number> into the variables.
+             <total> is an integer variable. The others are string
+             variables.
+
+             You must provide a valid entry <number>. The size of the
+             phone directory can be obtained by the PHONESIZE procedure.
+
+Return       <name> is the name field,
+             <password> is the password field,
+             <linkscript> is the script field,
+             <logfile> is the log file field,
+             <phone> is the phone number,
+             <total> is the total number connected, an integer,
+             <last> is the last logon date.
+             Tailing spaces in each variables are discarded.
+
+             <success> is FALSE if the phone directory cannot be open.
+
+Caution      This procedure will close the formly opened file since the
+             OPEN command is used. You should close the file before
+             issuing this procedure and reopen the file after this
+             procedure.
+
+See also     PhoneDirectory, PhoneFind, PhoneSize, PhoneWrite
+
+Example
+
+     PhoneSize size              ; get the size
+     number = 1                  ; start the counter
+     WHILE number <= size        ; display all entries
+        PhoneRead number,name,password,link,log,phone,total,last
+        PRINT "BBS name:",name," phone:",phone," last on:",last
+        number = number + 1      ; next entry
+     ENDIF
+
+
+PhoneSize
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Gets the number of entries in a phone directory.
+
+Syntax       PHONESIZE size
+
+
+TELEMATE SCRIPT                                   TOOLBOX PROCEDURES    80
+
+
+Remark       PHONESIZE calculated the phone directory size by
+               <size> = <file size of .fon> / 131
+             Each entries is 131 bytes.
+
+Return       <success> is FALSE if the phone directory cannot be open.
+
+See also     PhoneDirectory, PhoneFind, PhoneRead, PhoneWrite
+
+
+PhoneWrite
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Function     Writes a phone directory entry
+
+Syntax       PHONEWRITE number,name,password,linkscript,logfile,
+                        phone,total,last
+
+Remark       PHONEWRITE writes the entry # <number> from the variables.
+             <total> is an integer variable. The others are string.
+
+             <name> is the name field,
+             <password> is the password field,
+             <linkscript> is the script field,
+             <logfile> is the log file field,
+             <phone> is the phone number,
+             <total> is the total number connected, an integer,
+             <last> is the last logon date.
+             Tailing spaces in each variables should have been
+             discarded.
+
+Return       <success> is FALSE if the phone directory cannot be open.
+
+Caution      This procedure will close the formly opened file since the
+             OPEN command is used. You should close the file before
+             issuing this procedure and reopen the file after this
+             procedure.
+
+See also     PhoneDirectory, PhoneFind, PhoneRead, PhoneSize
+
+Example
+
+     PhoneRead 10,name,password,link,log,phone,total,last
+     total = total+1     ; total is an integer variable
+     DATE last           ; get today's date
+     PhoneWrite 10,name,password,link,log,phone,total,last
+
+TELEMATE SCRIPT                           APPENDIX A: ERROR MESSAGES    81
+
+
+APPENDIX A: ERROR MESSAGES
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Compiler Error Messages
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+'CASE' expected
+
+Declaration error
+
+    A symbol is placed in wrong sequence the declaration part. You may
+    have forgotten the comma between two variables.
+
+'ENDIF' expected
+'ENDPROC' expected
+'ENDSWITCH' expected
+'ENDWHILE' expected
+
+Identifier expected
+
+    An identifier was expected at this point. You may be trying to use a
+    reserved word as an variable.
+
+Invalid expression
+
+    This symbol cannot participate in an expression in the way it does.
+    You may have forgotten to write an operator between two operands.
+
+Invalid option
+
+    You have mistyped the option or forgotten the comma between the option
+    and the value.
+
+Invalid parameter
+
+    Too many or too few parameter in calling a procedure.
+
+Invalid sequence
+
+    An unexpected symbol appears in a statement.
+
+Invalid string operation
+
+    An arithmetic operator is applied to string expression. To concat two
+    strings, use the 'ConCat' function.
+
+Misplacing Exit statement
+
+    The EXIT can only be placed in WHILE and REPEAT loop. You may have put
+    it outside a loop.
+
+
+TELEMATE SCRIPT                           APPENDIX A: ERROR MESSAGES    82
+
+
+New line expected
+
+    Every statement should be in a line.
+
+Nested too deep
+
+    TMScript allows no more than 10 nested procedures.
+
+Number out of range
+
+    Integer must within the range from -2147483648 to 2147483647.
+
+Numeric expression expected
+
+    The preceding expression must be of integer type.
+
+Program Incomplete - Unexpected end of file
+
+    Your source file ends due to unbalanced begins and ends. Check the IF
+    statement, SWITCH statement, WHILE loop, REPEAT loop and procedure
+    definition.
+
+Script file not found
+
+    The include script of the #include directive does not exist. You may
+    have forgotten the extension .SCR or not having the include script in
+    the current directory.
+
+String expression expected
+
+    The preceding expression must be of string type.
+
+String incomplete
+
+    You have most likely forgotten the ending quote in a string constant.
+
+Syntax error
+
+    An illegal character was found in the source file. You may have
+    forgotten the quotes around a string constant.
+
+Too many include scripts
+
+    TMScript allows no more than 10 nested include file.
+
+Type mismatch
+
+    This is due to incompatible types of the variable and the expression
+    in an assignment statement or incompatible types of operands in an
+    expression.
+
+
+TELEMATE SCRIPT                           APPENDIX A: ERROR MESSAGES    83
+
+
+'UNTIL' expected
+',' expected
+':' expected
+')' expected
+'=' expected
+'"' expected
+
+
+Runtime Error Messages
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Division by zero
+
+    A number is divided by a expression of zero.
+
+Invalid format in script file
+
+    Make sure the .TMS file is a compiled script file. You should compile
+    the script file using TMS.EXE. If you are using a newer version, you
+    must delete the old .TMS files and re-compile it with the new TMS.EXE.
+
+Out of memory
+
+    This error occurs when TM.EXE is run out of memory and cannot allocate
+    enough memory to the script file.
+
+Stack overflow
+
+    This error is reported on entry to a procedure when there is not
+    enough stack space to allocate the procedure's local variables. Try to
+    reduce the number of varibles or check for infinate recursive
+    procedure.
+
+
+TELEMATE SCRIPT                                                INDEX    84
+
+
+INDEX
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    .SCR file, 1                       COM I/O, 24
+    .TMS file, 1                       ComInCount, 30
+                                       ComOutCount, 30
+    A                                  Comment, 14
+                                       Comparison, 12
+    AddLineFeed, 52                    Comma, 54
+    AddReturn, 52                      Compiling Script, 1
+    Alarm, 27                          Compiler Error Message, 81
+    AlarmSound, 52                     Computer, 54
+    AlarmTime, 52                      Concat, 21
+    AltKeys, 52                        ConfirmHangUp, 52
+    ANSI, 54                           CONNECTED, 7, 33
+    ANSI Color Code, 66                Connection, 52
+    Append, 8, 27                      Console I/O, 24
+    Arithmetic Operators, 11           Control Code, 3
+    Assignment, 14                     ConvertDate, 75
+    At, 28                             Create, 8, 31
+    Atoi, 28                           Crlf, 54
+    AutoRedial, 52
+    AutoStop, 52                       D
+    AutoWrap, 52
+    Avatar, 54                         Data Type, 3
+                                       Data, 52
+    B                                  Date, 4, 31
+                                       DateFormat, 53
+    Background Color Code, 66          Delay, 32
+    Baud, 52                           Delete, 8, 32
+    Bell, 52                           DestBs, 53
+    BIOS, 54                           Dial, 33
+    Board, 45                          DialAttempt, 53
+    Boolean, 4                         DialList, 53
+    Boolean Operators, 12              DialPause, 53
+    Built In Procedures, 24, 27        DialTime, 53
+                                       DiffDate, 76
+    C                                  DiffTime, 77
+                                       DirEdit, 53
+    Calling Procedure, 20              DirDownload, 53
+    Capture, 52                        DirImage, 53
+    Character, 3                       DirLog, 53
+    CharPace, 52                       DirScript, 53
+    ChDir, 8, 28                       DirTelemate, 53
+    Clear COM, 29                      DirUpload, 53
+    Clear Key, 29                      DirView, 53
+    Clear Text, 30                     DirWrite, 53
+    Close, 8, 30                       Dos, 33
+    Color Code, 66                     Download, 48
+    Color Value, 66
+
+
+TELEMATE SCRIPT                                                INDEX    85
+
+
+    E                                  H
+
+    Echo, 66                           HangUp, 36
+    EchoBkColor, 67                    Height, 10
+    EchoBlink, 68
+    EchoBlock, 68                      I
+    EchoBox, 69
+    EchoClearScreen, 69                If, 15
+    EchoColor, 70                      Image, 36
+    EchoGotoXY, 70                     Incoming, 53
+    EchoHiLite, 70                     Include Directive, 18
+    EchoNormal, 71                     Input, 37
+    EchoReverse, 71                    InputCh, 37
+    EchoInt, 66                        InputN, 73
+    EchoToLocal, 66                    Integer, 3
+    EchoToRemote, 66                   Isalpha, 74
+    Else, 15                           Isalnum, 74
+    ElseIf, 15                         Iscntl, 74
+    EndIf, 15                          Isdigit, 75
+    EndSwitch, 16                      Itoa, 38
+    EndWhile, 17
+    Error Messages, 81                 K
+    Even, 54
+    Exit, 18                           Keystroke, 38
+    ExitTelemate, 34
+    ExpandBlankLine, 53                L
+    Expression, 11
+    ExtAlarm, 53                       LastCall, 45
+    ExtendedPacing, 53                 Length, 39
+                                       LinePacing, 53
+    F                                  LoadFon, 8, 39
+                                       LoadKey, 8, 40
+    FALSE, 4                           LoadMac, 8, 40
+    File Handling, 26                  LoadPad, 9, 40
+    FileExist, 35                      LocalEcho, 53
+    FileSize, 8, 35                    LogFilter, 53
+    Foregound Color Code, 66           Logging, 9, 41, 42
+    Fossil, 54                         LogHeading, 53
+    FOUND, 8, 25, 60                   LogOff, 41
+                                       LogOn, 9, 41
+    G                                  LogPause, 42
+                                       LogResume, 42
+    Get, 35
+    GetCh, 36
+    GetN, 72
+    GuessFile, 53
+    GuessInitial, 53
+
+
+TELEMATE SCRIPT                                                INDEX    86
+
+
+    M                                  Q
+
+    Mark, 54                           Query, 45
+    MaxDosShell, 53                    QuoteString, 54
+    Memo, 45
+    Miscellaneous Routines, 26         R
+    Modem, 54
+    MultiLine, 54                      Read, 9, 46
+    Music, 54                          ReadCh, 9, 47
+                                       ReadN, 73
+    N                                  Receive, 9, 48
+                                       Relational Operators, 12
+    Nested Procedures, 22              Rename, 49
+    None, 54                           Repeat, 17
+                                       Return, 23
+    O                                  RtsCts, 54
+                                       Rule of Precedance, 11
+    Odd, 54                            Running Script, 1
+    Open, 9, 42                        Runtime Error Messages, 83
+    Otherwise, 16
+    Outgoing, 54                       S
+
+    P                                  ScreenSaver, 54
+                                       Script, 49
+    PaceChar, 54                       ScriptEcho, 54
+    Parity, 54                         Scope of Variables, 22
+    Parameter Declaration, 20          Seek, 9, 50
+    Parameter Passing, 20              Send, 9, 50
+    Password, 45                       Set, 52
+    Phone, 45                          Space, 54
+    PhoneDirectory, 78                 Statement, 14
+    PhoneFind, 78                      Stop, 45, 55
+    PhoneRead, 79                      StrDel, 55
+    PhoneSize, 79                      String, 3
+    PhoneWrite, 80                     String Handling, 26
+    Port, 54                           StrIns, 56
+    Precedence, 11                     StripHighBit, 54
+    Predefined Variables, 6            StrPos, 56
+    Prefix, 54                         StrSet, 57
+    Print, 24, 43                      SubStr, 57
+    Printer, 54                        SUCCESS, 8
+    Procedure Declaration, 19          Suffix, 54
+    Procedure, 19                      SwapToDisk, 54
+    Protocol, 48, 51                   SwapToEMS, 54
+    Put, 25, 44                        Switch, 16
+
+
+TELEMATE SCRIPT                                                INDEX    87
+
+
+    T                                  W
+
+    Tag, 54                            Waitfor, 2, 8, 25, 59
+    Tell, 9, 58                        WaitUntil, 61
+    Terminal, 54                       When, 61
+    Time, 5, 58                        WhenIdle, 62
+    Toolbox Procedures, 65             WhereX, 63
+    Toolbox #1, 65                     WhereY, 63
+    Toolbox #2, 72                     While, 17
+    Toolbox #3, 75                     Width, 9
+    Total, 45                          Write, 9, 63
+    TRUE, 4
+    TTY, 54                            X
+
+    U                                  XonXoff, 54
+
+    Until, 17                          Z
+    Upload, 50
+    Usage, 59                          zASCII, 54
+    UsageLog, 54                       zAutoDownload, 54
+    Using TMS.EXE, 1                   zRecovery, 54
+
+    V
+
+    Variable, 6
+    Variable Identifier, 6
+    Variable Declaration, 6
+    VT52, 54
+    VT102, 54
+
+

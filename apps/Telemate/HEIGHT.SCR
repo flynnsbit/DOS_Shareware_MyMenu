@@ -1,0 +1,48 @@
+;
+; HEIGHT.SCR, set the terminal window height
+;
+; You cannot reduce the size of the screen. However, you can reduce
+; the size of the terminal window by using the scroll margin command
+; defined in VT102 and ANSI terminal emulations.
+;
+
+integer term, h
+string choice, s
+
+query terminal,term
+if term=1 or term=3 or term=4
+  print
+  print "What terminal height do you like ?"
+  print " 0. full height"
+  if height > 24
+     print " 1. 24 lines"
+  endif
+  if height > 25
+    print " 2. 25 lines"
+  endif
+  if height > 35
+    print " 3. 35 lines"
+  endif      
+  if height > 43
+    print " 4. 43 lines"
+  endif
+  if height > 50
+    print " 5. 50 lines"
+  endif
+  print "Select: ",
+  input choice
+  print "^[[2J",
+  concat s,choice
+  atoi s,h
+  switch h
+    case 0: print "^[[0;0r",
+    case 1: print "^[[0;24r",
+    case 2: print "^[[0;25r",
+    case 3: print "^[[0;35r",
+    case 4: print "^[[0;43r",
+    case 5: print "^[[0;50r",
+  endswitch
+else
+  print "This script run on ANSI, VT102 and AVATAR only"
+endif
+

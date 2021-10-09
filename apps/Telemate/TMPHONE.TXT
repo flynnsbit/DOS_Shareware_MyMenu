@@ -1,0 +1,18 @@
+
+TMPHONE.EXE helps you maintain the phone directory. It allow you to
+change the size of the phone directory, insert entries, delete entries,
+reorder entries, sort directories, clear the total fields, zap connect
+date fields, change the phone directory size and print the directory. To
+maintain a phone directory, at the DOS command line, type the following:
+
+     TMPHONE [<name of phone directory>]
+
+and press [Enter]. If no phone directory name is supplied, TM.FON and
+TM.MEM will be used in the maintenance program.
+
+The phone directory files can be modified with a text editor. However,
+you will cause you to lose track of the memo field. Therefore, you
+should always use this utility program to maintain the phone
+directory.
+
+

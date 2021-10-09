@@ -1,0 +1,41 @@
+;
+; WILDCAT.SCR is a log on script file for Wildcat BBS
+;
+
+string FirstName, LastName
+integer SkipToMainMenu
+
+FirstName = "first"          ; put your name here
+LastName = "last"
+
+SkipToMainMenu = 1           ; bypass all the bulletin, 0 for manual operation
+
+Set AutoStop,On              ; stop script if carrier is lost
+Waitfor 0                    ; unlimited waiting time
+
+if SkipToMainMenu            ; bypass front-end messager
+   When "escape","^[^["
+   When "<esc> twice","^[^["
+   When "esc key","^[^["
+   When "[N]onStop:","s"     ; skip all the bulletin
+   When "press return","^M"
+   When "press [Enter]","^M"
+endif
+
+Waitfor "What is your First Name"
+Put FirstName
+
+Waitfor "What is your Last Name"
+Put LastName
+
+Waitfor "Password: "
+Put "^&"
+
+if SkipToMainMenu
+   WhenIdle 5,"^M"
+   Waitfor "bulletin menu [y/N]? ",120
+   if found
+      Put "n"
+   endif
+endif
+

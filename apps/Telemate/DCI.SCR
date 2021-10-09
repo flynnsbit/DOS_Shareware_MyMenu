@@ -1,0 +1,61 @@
+; DCI.SCR  --  Telemate script to logon DCI BBS
+;
+; 12/20/1991   Nordevald Software
+;
+; DCI.SCR is a general logon script file for DCI BBS.  It will logon
+; to DCI boards including those running front ends such as BinkleyTerm
+; and D'Bridge.
+;
+; You can use this script for all the DCI boards you call.  On each
+; dialing entry enter DCI in the script field and enter your usernumber
+; and password in the password field in the format usernumber;password.
+;
+; For instance, if on one DCI board, your usernumber is 83 and your
+; password is SESAME, enter 83;SESAME in the password field of this
+; board's dialing entry.
+;
+; Do the same for other DCI boards that you call.
+;
+; The script will log you on using ^& to send your usernumber and
+; password for each DCI board.
+;
+;
+
+SET AutoStop,On              ; stop script if carrier is lost
+SET Tag,Crlf                 ; set file tag separator to CR/LF
+SET Terminal,ANSI            ; use ANSI emulation for full screen editor
+SET Music,Off                ; command used for editing instead
+
+while found < 6
+  Waitfor "Irwin","BinkleyTerm","ESC","r <E> to End Connection:","continue? [Y]/n","Enter Name or ",120
+  if found < 4
+    delay 5
+  endif
+  switch found
+    case 1 : Put "^[^["         ; send two ESCAPE characters
+    case 2 : Put "^[^["         ; send two ESCAPE characters
+    case 3 : Put "^[^["         ; send two ESCAPE characters
+    case 4 : Put "1"            ; send menu selection
+    case 5 : Put "^M"           ; event scheduled?
+    case 6 : Put "^&"           ; save password as <usernumber>;<password>
+  endswitch
+endwhile
+
+if not found
+  hangup
+  stop
+endif
+
+
+When "Press any key", "^M"      ; send CR at "Press any key" prompts
+
+When "*MORE*", "^M"             ; send CR at *MORE* prompts
+
+Waitfor "Enter Command ("       ; wait for base prompt
+if not found
+  hangup
+  stop
+endif
+
+Alarm "  Your turn!"
+

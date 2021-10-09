@@ -1,0 +1,71 @@
+
+This file describes how to use the music player ROLALARM.EXE as the
+external alarm in Telemate.
+
+
+1. Before you can run ROLALARM.EXE, you must have the following files:
+
+        SOUND.COM       the sound driver for Adlib music card and
+                        SoundBlaster music card
+        STANDARD.BNK    the music instrument bank
+        *.ROL           any ROL music file
+
+   If you cannot find the SOUND.COM or SB-SOUND.COM, you should call
+   your dealer or your music card producer for them. Or you can
+   download TMALARM.ZIP or .ARJ from our support BBSs:
+
+    Telemate Support BBS   Phone Number  Baud          Location
+    컴컴컴컴컴컴컴컴컴컴�  컴컴컴컴컴컴  컴컴컴컴컴컴  컴컴컴컴�
+    S.R.O. BBS             817-542-7388  28800 DS      Texas
+    Terminator BBS!        414-867-3670  28800 DS      Wisconsin
+    The Blackboard         914-354-1913  14400 V32bis  New York
+    Com-Dat BBS            503-681-0543  14400 V32bis  Oregon
+
+2. You MUST run SOUND.COM or SB-SOUND.COM BEFORE you run Telemate. The
+   sound driver is a TSR utility that will stay in your memory. It is
+   a good idea to add it to your AUTOEXEC.BAT, for example, add the
+   line
+        SOUND           or
+        SB-SOUND
+   in your AUTOEXEC.BAT.
+
+3. Choose one of your .ROL music files and copy it to ALARM.ROL in the
+   Telemate directory.
+
+4. Copy STANDARD.BNK to the Telemate directory.
+
+5. You should have TMALARM.BAT in the Telemate directory. It is the
+   batch file Telemate run when it activates the external alarm.
+   In this batch file, you can run anything you like, say a music
+   player or a picture viewer, anything.
+
+   Telemate comes with a music player called ROLALARM.EXE. The default
+   TMALARM.BAT has the line
+        ROLALARM ALARM.ROL /S%2 /T%3
+   It tells ROLALARM to play the ALARM.ROL music file. You can replace
+   ALARM.ROL with any .ROL music files. Here, we use ALARM.ROL as an
+   example.
+
+6. You should have ROLALARM.EXE in the Telemate directory. It is a
+   music player that play a .ROL music file. It requires the SOUND.COM
+   installed in your memory. And it needs the STANDARD.BNK at run time.
+   You should be able to play ALARM.ROL using
+        ROLALARM ALARM.ROL
+   in the DOS command line.
+
+7. Run Telemate and turn ON the 'External Alarm' option under the
+   Options/General dialog.
+
+
+Now you have installed the ROLALARM.EXE as your external alarm. Since
+ROLALARM.EXE requires quite a lot of memory, you may need to turn ON
+the 'Swap Telemate to XMS/EMS' or 'Swap Telemate to Disk' options
+under the Options/General dialog. This suggests that you should only
+use the external alarm if you have XMS or EMS or you have a fast hard
+disk.
+
+
+Have fun and don't be afraid to experience in using the other music
+players as your external alarm.
+
+

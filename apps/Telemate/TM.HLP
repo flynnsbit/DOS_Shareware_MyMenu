@@ -1,0 +1,600 @@
+
+ İÛÛÛÛÛÛÛÛÛ İÛÛÛÛÛÛ İÛİ     İÛÛÛÛÛÛ İÛÛÛÛÛÛÛÛÛİ İÛÛÛÛÛÛÛİ İÛÛÛÛÛÛÛÛÛ İÛÛÛÛÛÛ
+     İÛİ    İÛ      İÛİ     İÛ      İÛİ İÛİ İÛİ İÛİ   İÛİ     İÛİ    İÛ
+     İÛİ    İÛ      İÛİ     İÛ      İÛİ İÛİ İÛİ İÛİ   İÛİ     İÛİ    İÛ
+     İÛİ    İÛÛÛÛÛİ İÛİ     İÛÛÛÛÛİ İÛİ İÛİ İÛİ İÛİİÛÛÛÛİ     İÛİ    İÛÛÛÛÛİ
+     İÛİ    İÛ      İÛİ     İÛ      İÛİ İÛİ İÛİ İÛİ   İÛİ     İÛİ    İÛ
+     İÛİ    İÛ      İÛİ     İÛ      İÛİ İÛİ İÛİ İÛİ   İÛİ     İÛİ    İÛ
+     İÛİ    İÛÛÛÛÛÛ İÛÛÛÛÛÛ İÛÛÛÛÛÛ İÛİ İÛİ İÛİ İÛİ   İÛİ     İÛİ    İÛÛÛÛÛÛ
+
+
+                                 Version 4.21
+
+     Copyright (c) 1988-1995 White River Software.  All rights reserved.
+
+                                                         [F1 for next topic]
+
+
+
+
+
+    Telemate Support BBS   Phone Number  Baud          Location
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ  ÄÄÄÄÄÄÄÄÄÄÄÄ  ÄÄÄÄÄÄÄÄÄÄÄÄ  ÄÄÄÄÄÄÄÄÄ
+    S.R.O. BBS             817-542-7388  28800 DS      Texas
+    Terminator BBS!        414-867-3670  28800 DS      Wisconsin
+    The Blackboard         914-354-1913  14400 V32bis  New York
+    Com-Dat BBS            503-681-0543  14400 V32bis  Oregon
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Registration                       [PgDn for more, F1 for next topic]
+    ÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Telemate is NOT FREE. You MUST REGISTER after the 30-day evaluation
+    period.
+
+    Telemate is a Shareware product. It is distributed through public
+    access channels so that prospective buyers can have the opportunity
+    to evaluate the product before making a decision to buy. If you
+    decide to use this software, then you are under both legal and moral
+    obligations to register it with the author. It is fully protected by
+    State, Federal and International copyright laws.
+
+    If you continue to use Telemate after the 30-day evaluation period
+    you must register it.
+
+        Registration Fee  :     US$ 49 / CAD$ 55
+
+    To register your copy of Telemate, fill in the order form and mail it
+    along with your cheque or money order in US or CAD funds to the
+    address of the appropriate RegSite of your choice as indicated in the
+    form. Because of the high service charge to collect cheques from
+    overseas, we only accept overseas orders in the form of international
+    Money Order or Credit Card. All Money Orders and cheques should be
+    made payable to the appropriate RegSite that you select to use.
+
+    CompuServe users can register Telemate with CompuServe's shareware
+    registration service. GO SWREG and search for Telemate.
+
+    For credit card orders, please call RegSites.
+
+
+    When you register, you will receive the program diskettes with the
+    latest version and your registration number. Registration entitles
+    you to continue using the current version and all future versions.
+    The registration number will remove any annoying functions in the
+    unregistered version of all Telemate releases.
+
+    As a registered user, you can write to us or call the support BBS's
+    if you have any questions or problems. We appreciate suggestions and
+    ideas; most new Telemate features come from user feedback.
+
+
+
+
+
+
+
+
+
+    Windows                            [PgDn for more, F1 for next topic]
+    ÄÄÄÄÄÄÄ
+
+    A window allows you to see and interact with the data on the other
+    side; how much you can see is limited by the size and position of the
+    windows. To gain access to more information, what you do is resize,
+    move or zoom the windows.
+
+     ÚÄ Help [F1]                ÚÄ 1st [Alt E] select Edit window
+     ³           [Alt W]         ÃÄ 2nd [Alt E] pop down Edit menu
+     ³    ÚÄ Window menu         ³
+                                              Real time clock ÄÄÄ¿
+    ÛğÛÛWindowÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛEditÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ12:32:08Û
+       ÕÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¸      ÕÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¸
+       ³ Zoom   [Alt Z] ³      ³ûMark     [F10] ³
+       ³ Resize         ³      ³....          ³
+       ³ Move           ³       ³           ÀÄÄ Quick key
+       ³ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ³       ³
+       ³ ...            ³       ÀÄÄ Check mark denotes the action/option
+       ³ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ³                       is active/ON
+       ³ Exit   [Alt X] ³ ÄÄ Exit Telemate
+       ÔÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¾
+
+    Each major window in Telemate has an accompanying pull down menu. To
+    use a window simply type the first letter in the name of the window
+    while holding down the [Alt] key. For example, to use the Edit window
+    type [Alt E] .
+
+    The Window Borders
+
+    In Telemate the window borders are mouse sensitive. Click the main
+    mouse key on the window edges makes things happen!
+
+      Close ÄÄÄÄÄ¿       ÚÄÄ Move window             ÚÄÄ Zoom [Alt Z]
+      window               [Alt W][M]                 window
+      [Esc]      ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍş
+                 º                                    Ä [Up]
+                 º        ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ ° Ä [Page Up]
+                 ºÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ                ² Ä Reposition
+                 º                                  ° Ä [Page Down]
+                 º          ÀÄÄ Mark text [F10]      °
+                 º                                    Ä [Down]
+                 È°°°°°°²°°°°°°°°°°°°°°°°°°°°°°°°°°
+                                                
+         [Left] ÄÄÙ   ³  ÀÄ Reposition ³  [Right] ÄÄÙÀÄÄ Resize window
+        [Ctrl Left] ÄÄÙ                ÀÄÄ [Ctrl Right]   [Alt W][R]
+
+
+
+
+    Dial                               [PgDn for more, F1 for next topic]
+    ÄÄÄÄ                      
+
+       [Enter] twice     Ä¿  ÚÄ [F2] saves this list to TM.CFG and
+       redial the list    ³  ³  recalls it next time Telemate start
+      ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ Dial ÍÍÍ
+      º Enter dial list  ( 1 3 4 6 )
+      º [Space] Select  [Enter] Redial  [PgUp,Up]
+      º [Ins] Insert entry and dial     [PgDn,Dn]    If SW.SCR does not
+      ºßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß    exist, Telemate
+      º   #   Name                         Script    enters Learn script
+      º   3  S.R.O. BBS                    SRO  ÄÄÄ mode automatically
+                                         
+          ³  ³  ³  ÀÄ [Spacebar] selects the ³  [F9] loads the script
+          ³  ³  ³  number under the dial bar ÀÄ SW.SCR to the editor
+          ³  ³  ³
+          ³  ³  ÀÄ [Ins] inserts the number and start dialing
+          ³  ³
+          ³  ÀÄ typing 'S' finds this entry quickly
+          ³
+          ÀÄ typing the number also selects the number
+
+    Select/Unselect phone entry . . . . . . . . . . . . . . .  [Spacebar]
+    Recall last dial list . . . . . . . . . . . . . . . . . . . . [Enter]
+    Insert phone entry and start dialing  . . . . . . . . . . . . . [Ins]
+    Save the dial list  . . . . . . . . . . . . . . . . . . . . . .  [F2]
+    Load phone directory and memo file  . . . . . . . . . . . . . .  [F3]
+    Find entry  . . . . . . . . . . . . . . . . . . . . . . . . . .  [F4]
+    Repeat last find  . . . . . . . . . . . . . . . . . . . . . . .  [F5]
+    Edit entry  . . . . . . . . . . . . . . . . . . . . . . . . . .  [F6]
+    Go to entry . . . . . . . . . . . . . . . . . . . . . . . . . .  [F7]
+    Manual dial . . . . . . . . . . . . . . . . . . . . . . . . . .  [F8]
+    Revise script file  . . . . . . . . . . . . . . . . . . . . . .  [F9]
+    Append 10 blank entries . . . . . . . . . . . . . . . . . . . . [F10]
+    Hang up phone . . . . . . . . . . . . . . . . . . . . . . . . [Alt H]
+    Learn script file . . . . . . . . . . . . . . . . . . . . . . [Alt N]
+
+    Start the dialing process again . . . . . . . . . . . . . . . Recycle
+    Aborts the dialing process  . . . . . . . . . . . . . . . . . . Abort
+    Aborts without disconnecting the line . . . . . . . . . . . . . Break
+    Insert the number under the dial bar to the dial list . . . .  Insert
+    Delete the current number from the dial list  . . . . . . . .  Delete
+    Subtract seconds from the dial time . . . . . . . . . . . .  [Gray -]
+    Add seconds to the dial time  . . . . . . . . . . . . . . .  [Gray +]
+
+    Mouse: Clicking on a directory entry selects that entry.
+           Double clicking on an entry starts dialing.
+
+
+
+    Terminal                           [PgDn for more, F1 for next topic]
+    ÄÄÄÄÄÄÄÄ
+
+      ÉÍEdit/View/BackÍ»         Clipboard         ÉÍÍÍÍÍ Term ÍÍÍÍÍ»
+      º                º         °°°°°°°°°         º ....           º
+      º                º  Copy   °°°°°°°°°  Paste  º ÛÛÛÛÛÛÛÛÛÛÛ    º
+      º    ÛÛÛÛÛÛÛÛÛÛÛ ÄÄÄÄÄÄÄÄÄ°ÛÛÛÛÛÛ°°ÄÄÄÄÄÄÄÄº ÛÛÛÛÛÛÛÛÛ      º
+      º ÛÛÛÛÛÛ         º [Alt C] °ÛÛÛÛ°°°° [Alt P] º ...........    º
+      º               º         °°°°°°°°°         º .....          º
+      ÈÍÍÍÍÍÍÍÍÍ³ÍÍÍÍÍÍ¼             ³             ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+                ÀÄ Mark text [F10]   ³
+                                     ³             ÉÍÍÍÍÍ Term ÍÍÍÍÍ»
+     Telemate allows you to Mark     ³             º                º
+     and Copy text in the Edit,      ³    Quote    º >ÛÛÛÛÛÛÛÛÛÛÛ   º
+     View and Back windows, then     ÀÄÄÄÄÄÄÄÄÄÄÄÄº >ÛÛÛÛÛÛÛÛÛ     º
+     Paste it or Quote it to the         [Alt Q]   º ...            º
+     terminal window.                              º ....           º
+                                                   ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+    Toggle status line and menu bar . . . . . . . . . . . . . . . [Alt -]
+    Send (upload) files to remote system  . . . . . . . . . . . .  [PgUp]
+    Receive (download) files from remote system . . . . . . . . .  [PgDn]
+    Capture received text to log file   . . . . . . . . . . . . . [Alt L]
+    Execute script file . . . . . . . . . . . . . . . . . . . . . [Alt S]
+    Learn script file . . . . . . . . . . . . . . . . . . . . . . [Alt N]
+    Paste text from clipboard . . . . . . . . . . . . . . . . . . [Alt P]
+    Quote text from clipboard . . . . . . . . . . . . . . . . . . [Alt Q]
+    Copy the content of terminal to image file  . . . . . . . . . [Alt I]
+    Command stack with previous commands  . . . . . . . . . . . . [Alt Y]
+    Chat mode . . . . . . . . . . . . . . . . . . . . . . . . . . [Alt C]
+    Originate mode  . . . . . . . . . . . . . . . . . . . . . . . [Alt G]
+    Answer mode . . . . . . . . . . . . . . . . . . . . . . . . . [Alt A]
+    Doorway mode  . . . . . . . . . . . . . . . . . . . . . . . . [Alt =]
+    Hang up phone . . . . . . . . . . . . . . . . . . . . . . . . [Alt H]
+    Clear terminal text . . . . . . . . . . . . . . . . . . . [Ctrl Home]
+    Send break signal to remote system  . . . . . . . . . . .  [Ctrl End]
+    Print received text . . . . . . . . . . . . . . . . . .  [Ctrl PrtSc]
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Edit                               [PgDn for more, F1 for next topic]
+    ÄÄÄÄ
+
+      ÉÍÍÍÍÍ Edit ÍÍÍÍÍ»         Clipboard         ÉÍÍÍÍÍ Term ÍÍÍÍÍ»
+    ÚÄÄÄÄ ........... º         °°°°°°°°°         º                º
+    ³ º ......         º  Copy   °°°°°°°°°  Paste  º ÛÛÛÛÛÛÛÛÛÛÛ    º
+    ³ º    ÛÛÛÛÛÛÛÛÛÛÛ ÄÄÄÄÄÄÄÄÄ°ÛÛÛÛÛÛ°°ÄÄÄÄÄÄÄÄº ÛÛÛÛÛÛÛÛÛ      º
+    ³ º ÛÛÛÛÛÛ         º [Alt C] °ÛÛÛÛ°°°° [Alt P] º .....          º
+    ³ º               º         °°°°°°°°°         º ...            º
+    ³ ÈÍÍÍÍÍÍÍÍÍ³ÍÍÍÍÍÍ¼           ³   ³           ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+    ³           ÀÄ Mark text       ³   ³  [Alt K]
+    ³              [F10]           ³   ³  ÉÍÍÍÍÍ»  |o|           |o|
+    ³                              ³   ³  ºPrintº  |o| ÛÛÛÛÛÛÛÛÛ |o|
+    ³             Paste            ³   ³  ÈÍÍÍÍÍ¼  |o| ÛÛÛÛÛÛ    |o|
+    ÀÄÄÄÄ ® ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ ® ÄÄÄÄÙ   ÀÄÄÄÄÄÄÄÄÄÄ|o|           |o|
+                 [Alt P]                         ÖÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ·
+                                                ßßßßßßßßßßßßßßßßßßßßßßß
+     Though the clipboard, you can Paste        ßßßßßßß Printer ßßßßßßß
+     prepared messages to the terminal,         ÛÛÛÛÛÛÛÜÜÜÜÜÜÜÜÜÛÛÛÛÛÛÛ
+     Print it out or even Paste it back                
+     to the editor itself.
+
+    New file  . . . . . . . . . . . . . . . . . . . . . . . . . . [Alt N]
+    Save file . . . . . . . . . . . . . . . . . . . . . . . . . . .  [F2]
+    Load file . . . . . . . . . . . . . . . . . . . . . . . . . . .  [F3]
+    Find text . . . . . . . . . . . . . . . . . . . . . . . . . . .  [F4]
+    Repeat last find or replace . . . . . . . . . . . . . . . . . .  [F5]
+    Replace text  . . . . . . . . . . . . . . . . . . . . . . . . .  [F6]
+    Go to a specified line  . . . . . . . . . . . . . . . . . . . .  [F7]
+    Filter - strip high bit . . . . . . . . . . . . . . . . . . . .  [F8]
+    Reformat paragraph  . . . . . . . . . . . . . . . . . . . . . .  [F9]
+    Mark/Unmark text  . . . . . . . . . . . . . . . . . . . . . . . [F10]
+    Copy marked text to clipboard . . . . . . . . . . . . . . . . [Alt C]
+    Copy marked text to clipboard and delete it . . . . . . . . . [Alt U]
+    Tag file names in marked text to clipboard  . . . . . . . . . [Alt G]
+    Paste text from clipboard . . . . . . . . . . . . . . . . . . [Alt P]
+    Quote text from clipboard . . . . . . . . . . . . . . . . . . [Alt Q]
+    Write (append) marked text to file  . . . . . . . . . . . . . [Alt A]
+    Delete marked text  . . . . . . . . . . . . . . . . . . . . . . [Del]
+
+
+
+
+
+
+
+
+
+
+
+    View                               [PgDn for more, F1 for next topic]
+    ÄÄÄÄ
+
+      ÉÍÍÍÍÍ View ÍÍÍÍÍ»         Clipboard         ÉÍÍ Edit/Term ÍÍÍ»
+      º                º         °°°°°°°°°         º                º
+      º                º  Copy   °°°°°°°°°  Quote  º >ÛÛÛÛÛÛÛÛÛÛÛ   º
+      º    ÛÛÛÛÛÛÛÛÛÛÛ ÄÄÄÄÄÄÄÄÄ°ÛÛÛÛÛÛ°°ÄÄÄÄÄÄÄÄº >ÛÛÛÛÛÛÛÛÛ     º
+      º ÛÛÛÛÛÛ         º [Alt C] °ÛÛÛÛ°°°° [Alt Q] º ....           º
+      º               º         °°°°°°°°°         º ..             º
+      ÈÍÍÍÍÍÍÍÍÍ³ÍÍÍÍÍÍ¼             ³             ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+                ÀÄ Mark text [F10]   ³   [Alt K]
+                                     ³   ÉÍÍÍÍÍ»   |o|           |o|
+                                     ³   ºPrintº   |o| ÛÛÛÛÛÛÛÛÛ |o|
+    The View window can be used      ³   ÈÍÍÍÍÍ¼   |o| ÛÛÛÛÛÛ    |o|
+    as a reference to the messages   ÀÄÄÄÄÄÄÄÄÄÄÄÄ|o|           |o|
+    you are replying (in a log file).            ÖÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ·
+                                                ßßßßßßßßßßßßßßßßßßßßßßß
+                                                ßßßßßßß Printer ßßßßßßß
+                                                ÛÛÛÛÛÛÛÜÜÜÜÜÜÜÜÜÛÛÛÛÛÛÛ
+
+    New file  . . . . . . . . . . . . . . . . . . . . . . . . . . [Alt N]
+    Load file . . . . . . . . . . . . . . . . . . . . . . . . . . .  [F3]
+    Find text . . . . . . . . . . . . . . . . . . . . . . . . . . .  [F4]
+    Repeat last find  . . . . . . . . . . . . . . . . . . . . . . .  [F5]
+    Go to a specified line  . . . . . . . . . . . . . . . . . . . .  [F7]
+    Filter - strip high bit . . . . . . . . . . . . . . . . . . . .  [F8]
+    Mark/Unmark text  . . . . . . . . . . . . . . . . . . . . . . . [F10]
+    Copy marked text to clipboard . . . . . . . . . . . . . . . . [Alt C]
+    Tag file names in marked text to clipboard  . . . . . . . . . [Alt G]
+    Quote marked text to remote system  . . . . . . . . . . . . . [Alt Q]
+    Write (append) marked text to file  . . . . . . . . . . . . . [Alt A]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Back                               [PgDn for more, F1 for next topic]
+    ÄÄÄÄ
+                                                     Simply Mark the text
+      ÉÍÍÍÍÍ Back ÍÍÍÍÍ»         ÉÍÍÍÍÍ Term ÍÍÍÍÍ»  in Back window and
+      º    ÛÛÛÛÛÛÛÛÛÛÛ º         º                º  Quote it to the
+      º ÛÛÛÛÛÛ       º  Quote  º >ÛÛÛÛÛÛÛÛÛÛÛ   º  terminal.
+      º        ³    ÀÄÂÄÄÄÄÄÄÄÄÄº >ÛÛÛÛÛÛÛÛÛ     º
+      º Mark [F10]    ³º [Alt Q] º .....          º  This lets everyone
+      ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ³¼         ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼  know what you are
+                                  _________         refering to.
+      Clipboard       ³           / File    \ÄÄÄÄÄ¿  
+      °°°°°°°°°       ³   Write   ³ .....         ³  
+      °°°°°°°°°  Copy ³  (Append) ³ .......       ³  Use the Write function
+      °ÛÛÛÛÛÛ°°ÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄ³ ....          ³  to keep a record of
+      °ÛÛÛÛ°°°° [Alt C]  [Alt A]  ³ ÛÛÛÛÛÛÛÛÛÛÛ   ³  useful information.
+      °°°°°°°°°                   ³ ÛÛÛÛÛÛÛÛÛ     ³ 
+                                  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ 
+                                    
+       ON / OFF   
+      ÉÍÍÍÍÍÍÍÍ»  If [Scroll Lock] is OFF, the cursor is placed at the
+      º Scroll º  the bottom when the Back window is moved to the top.  
+      º Lock   º  If it is ON, the cursor is placed at the previous 
+      ÈÍÍÍÍÍÍÍÍ¼  position (lock the backscroll position).
+                  
+    Show Back window                   Hide Back window
+
+      ÉÍÍÍÍÍÍÍÍ» Press [Center] in the   ÉÍÍÍÍÍÍÍÍ» Press [Center] again
+      º Center º terminal shows the      º Center º hides the Back window
+      º  (5)   º Back window as if       º  (5)   º as if [Esc] is pressed.
+      ÈÍÍÍÍÍÍÍÍ¼ [Alt B] is pressed.     ÈÍÍÍÍÍÍÍÍ¼
+                   
+      ÉÍÍÍÍÍÍÍÍ» Same as above but       ÉÍÍÍÍÍÍÍÍ» 
+      º Ctrl   º this combo is for       º Ctrl   º Same as above.
+      º    UP  º 101 keyboard.           º   DOWN º
+      ÈÍÍÍÍÍÍÍÍ¼                         ÈÍÍÍÍÍÍÍÍ¼
+
+    Pause capturing . . . . . . . . . . . . . . . . . . . . . . . . [Ins]
+    Find text . . . . . . . . . . . . . . . . . . . . . . . . . . .  [F4]
+    Repeat last find  . . . . . . . . . . . . . . . . . . . . . . .  [F5]
+    Go to a specified line  . . . . . . . . . . . . . . . . . . . .  [F7]
+    Filter - strip high bit . . . . . . . . . . . . . . . . . . . .  [F8]
+    Reformat paragraph  . . . . . . . . . . . . . . . . . . . . . .  [F9]
+    Mark/Unmark text  . . . . . . . . . . . . . . . . . . . . . . . [F10]
+    Copy marked text to clipboard . . . . . . . . . . . . . . . . [Alt C]
+    Copy marked text to clipboard and delete it . . . . . . . . . [Alt U]
+    Tag file names in marked text to clipboard  . . . . . . . . . [Alt G]
+    Quote marked text to remote system  . . . . . . . . . . . . . [Alt Q]
+    Write (append) marked text to file  . . . . . . . . . . . . . [Alt A]
+    Clear buffer  . . . . . . . . . . . . . . . . . . . . . . . . [Alt N]
+
+    Macro                              [PgDn for more, F1 for next topic]
+    ÄÄÄÄÄ
+
+    In addition to accepting standard alpha-numeric text, Telemate also
+    uses certain symbols which when passed through the phone lines
+    perform specific functions. For example, the character "^M" in a
+    macro translates as [Enter] on the other end. Below is a table of
+    symbols you can incorporate in your macros:
+
+     ÕÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¸  ÕÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¸
+     ³ Symbol ³ ASCII           ³  ³ Symbol ³ Function               ³
+     ÃÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´  ÃÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+     ³   ^@   ³ Null            ³  ³   ~    ³ Pause 0.5 second       ³
+     ³   ^A   ³ Ctrl A          ³  ³   ^#   ³ Drop DTR               ³
+     ³   ...  ³                 ³  ³   ^%   ³ Send break signal      ³
+     ³   ^M   ³ Carriage Return ³  ³   ^$   ³ Send memo              ³
+     ³   ^J   ³ Line feed       ³  ³   ^&   ³ Send password          ³
+     ³   ^L   ³ Form feed       ³  ³   ^*   ³ Send hang up string    ³
+     ³   ...  ³ ...             ³  ³   ^(   ³ Send init string       ³
+     ³   ^Z   ³ Ctrl Z          ³  ³   ^)   ³ Send answer string     ³
+     ³   ^[   ³ Esc             ³  ³   ^-   ³ Keystroke simulation * ³
+     ³   ^^   ³ ^               ³  ³   ^=   ³ Execute command      * ³
+     ³   ^~   ³ ~               ³  ³   ^\   ³ Run script file      * ³
+     ÔÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¾  ÔÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¾
+
+     *  This macro symbol must appear at the beginning of the macro.
+
+
+    The '^-' Keystroke Simulation Macro Symbol
+
+    This macro symbol simulates keystrokes as if they are generated by
+    the keyboard, including [Alt] keys. The syntax is
+
+       '^-' [keystroke] [keystroke] [...]
+
+
+    The '^=' Hot Key Macro Symbol
+
+    With the hot key macro symbol, you can define as many DOS commands or
+    external protocols as the number of the function keys. The syntax is
+
+       '^=' [command] ['^='] ['^M'] ['^[']
+
+
+    The '^\' Run Script Macro Symbol
+
+    With this macro symbol, a script file can be started by pressing one
+    function key.
+
+
+    Options                            [PgDn for more, F1 for next topic]
+    ÄÄÄÄÄÄÄ
+
+      ÕÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¸
+      ³  Key           ³  Function            ³
+      ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+      ³  Tab           ³  Next group          ³
+      ³  Shift Tab     ³  Previous group      ³
+      ³  Down          ³  Next item           ³
+      ³  Up            ³  Previous item       ³
+      ³  Spacebar      ³  Turn on/off option  ³
+      ³  Enter         ³  Accept changes      ³
+      ³  Esc           ³  Abort changes       ³
+      ÔÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¾
+
+    Radio Buttons:
+                               Radio buttons refer to black dots
+      Ú Mouse Type ÄÄÄÄÄÄÄ¿    inside the parenthesis ( ) that you
+      ³  ( ) None         ³    see in the Mouse selection box. Press
+      ³  (*) MicroSoft    ³    [Spacebar] and the button jumps from
+      ³  ( ) MouseSystem  ³    button to button and only one item in
+      ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ    each group can be selected.
+
+    Check Boxes:
+                               Some options are simple YES or NO
+      ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿    type choices. These appear in a pair
+      ³  [X] Music        ³    of brackets [ ]. Press the [Spacebar]
+      ³  [ ] Bell         ³    an [X] appears means YES. An empty
+      ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ    bracket [ ] means NO. Use [Down] to
+                               to move to the next option.
+    Text Boxes: ÿ
+
+      ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+      ³   Download Directory   C:\TM\DOWNLOAD\_______   ³
+      ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+    There are some options which require you to type in your choice. You
+    can use [Ins] to toggle the insert mode, [Ctrl Y] or [Ctrl Left] to
+    erase the whole field, [Alt P] to paste text from the clipboard,
+    [Alt C] to copy text to the clipboard and [Shift Alt C] to append
+    text to the clipboard.
+
+
+
+
+
+
+
+
+
+    DOS Command                        [PgDn for more, F1 for next topic]
+    ÄÄÄÄÄÄÄÄÄÄÄ
+
+    This is a full screen DOS command function. Several DOS commands can
+    be executed without shelling to DOS and three commands are added.
+
+    If an external command or a program name is entered, Telemate shells
+    to DOS, execute it and return as quick as possible. The screen is
+    preserved and shown in the window.
+
+    This window also stores the last 10 commands. You can recall them by
+    pressing [Up] keys.
+
+      ÕÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¸
+      ³ Command       ³  Description                                   ³
+      ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+      ³ A:,B:, ....   ³  Change drive                                  ³
+      ³ CD            ³  Change directory                              ³
+      ³ CLS           ³  Clear the DOS command window                  ³
+      ³ COPY          ³  Copy files                                    ³
+      ³ DEL,ERASE     ³  Delete files                                  ³
+      ³ DIR           ³  Display directory                             ³
+      ³ REN,RENAME    ³  Rename a file (single file)                   ³
+      ³ TYPE          ³  Type a file                                   ³
+      ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+      ³ MOVE          ³  Move files among directories or disk          ³
+      ³ INS, INSIDE   ³  Display content of a .ZIP, .PAK, .ARC, .LZH   ³
+      ³               ³   or .ARJ files                                ³
+      ³ ;             ³  Quick DOS shell (no swapping)                 ³
+      ³ ;command      ³  Quick execute command (no swapping)           ³
+      ÔÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¾ 
+
+      ÕÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¸
+      ³ Example             ³ Description                              ³
+      ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+      ³ MOVE \DL\*.* \UL    ³ Moves to different directory             ³
+      ³ MOVE C:\*.ZIP D:\DL ³ Moves to different drive                 ³
+      ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+      ³ INS TM*.ZIP         ³ Searches all TM*.ZIP                     ³
+      ³ INS *.ZI?           ³ Searches all *.ZI? files, including      ³
+      ³                     ³  xxxxxxxx.ZI1, xxxxxxxx.ZI2, etc.        ³
+      ³ INSIDE *            ³ Without extension, it searches all *.ZIP,³
+      ³                     ³  *.PAK, *.ARC, *.LZH and *.ARJ files     ³
+      ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+      ³ ;                   ³ Jumps to DOS (no swapping)               ³
+      ³ ;CHKDSK             ³ Runs CHKDSK (no swapping)                ³
+      ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+      ³ TMPHONE             ³ Runs TMPHONE.EXE (swap if options on)    ³
+      ÔÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¾ 
+
+    Terminal Command Stack             [PgDn for more, F1 for next topic]
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    The command stack provides a convenient way to recall the previously
+    entered command or prepare a short note. There are several usages.
+
+      ÕÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¸
+      ³ Usage          ³ Description                                   ³
+      ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+      ³ Recall command ³ It stores the previous commands which you     ³
+      ³                ³ typed in the terminal window such that you    ³
+      ³                ³ can recall it by pressing [Alt Y] [Up].       ³
+      ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+      ³ Type-ahead     ³ Some systems are charged by connect time.     ³
+      ³                ³ While you are waiting for a command prompt,   ³
+      ³                ³ you could type the next command here and      ³
+      ³                ³ simply press [Enter] when the prompt appear.  ³
+      ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+      ³ Chat mode      ³ It allows you to type and edit the whole line ³
+      ³                ³ before sending it to remote system.  That     ³
+      ³                ³ means it is a line based chat mode.           ³
+      ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+      ³ Prepare short  ³ You could prepare a short multi-lines message ³
+      ³  note          ³ in this window.  See the following example.   ³
+      ÔÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¾
+
+    For example, to write a three-lines note, you could type
+
+      [Ctrl Home]THIS IS THE FIRST LINE [Ctrl Enter]
+                 THIS IS THE SECOND ONE [Ctrl Enter]
+                 THIS IS THE LAST ONE   [Ctrl Enter]
+      [Up] [Up] [Up] [Enter] [Enter] [Enter]
+
+    The [Ctrl Home] clears the window and let you start from the top. The
+    [Ctrl Enter] performs a line feed but does not send the line. To send
+    these lines, you could move the cursor to the first line and press
+    [Enter] three times.
+
+    COPY and PASTE functions are allowed in this window. The COPY [Alt C]
+    function copies the current line to the clipboard.
+
+    The PASTE [Alt P] function pastes the clipboard text to this window.
+    If there are more than  one lines in the clipboard, text is inserted
+    until the cursor reach the bottom of the window.
+
+
+
+
+
+
+

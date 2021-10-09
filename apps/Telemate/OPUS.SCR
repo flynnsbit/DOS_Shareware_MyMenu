@@ -1,0 +1,16 @@
+;
+; OPUS.SCR is a log on script file for Opus BBS
+;
+
+string Name
+Name = "first last"          ; put your name here
+
+SET AutoStop,On              ; stop script if carrier is lost
+Waitfor 0                    ; unlimited waiting time
+
+Waitfor "first name"
+Put Name," y"
+
+Waitfor "password"
+Put "^&"
+

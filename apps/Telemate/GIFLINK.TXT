@@ -1,0 +1,1453 @@
+
+     ====== GIFLink 1.20 =========================== Order Form ======
+
+     Please send cheque or money order made payable to "White River
+     Software", overseas order in money order, please. (Note that the
+     current postage from US to Canada is $0.40.) For multi-user
+     license, please contact us.
+
+             White River Software
+             P.O.Box 73031
+             Limeridge Mall Postal Outlet
+             Hamilton, Ont. L9A 5H7
+             Canada
+     -----------------------------------------------------------------
+       Qty.     Item                                 US/CAD    Amount
+
+       ___  GIFLink Registration                  @ $30/$35  $________
+            (with latest version and document on disk, and the
+            registration number to remove any annoying functions)
+
+       ___  Telemate Registration                 @ $49/$55  $________
+            (Full feature integrated communication program,
+            simply the best in the market)
+
+       ___  GIFLITE Registration                  @ $30/$35  $________
+            (A GIF-to-GIF Compressor that reduces GIF size by 30%
+            and yet preserves the same quality and resolution!)
+
+                  Less $10 discount if you order any two or
+                       $20 discount if you order all three   $(______)
+
+
+           Shipping and handling outside US and Canada @ $4  $________
+
+                                                   Subtotal  $________
+
+
+           Ontario resident please add Prov. Sales Tax (8%)  $________
+
+     Canadian resident please add Goods & Services Tax (7%)  $________
+
+
+                                       Total  US$________/CAD$________
+
+                   Disk size:  [ ] 5.25   [ ] 3.5   (Please check one)
+
+
+     Name     ________________________________________________________
+
+     Address  ________________________________________________________
+
+              ________________________________________________________
+
+     Country  _____________________  Phone  (______) _________________
+
+     Where did you first hear about GIFLink ?_________________________
+
+     Comments ________________________________________________________
+
+     =================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                     GIFLink (tm) 1.20
+
+
+                                     ________________________________
+
+
+
+                                     User Manual
+
+
+
+
+
+
+                                     (c) Copyright 1993-1995
+
+                                     White River Software
+                                     All Rights Reserved.
+
+                                     14 June 1995
+
+
+
+
+
+                                     P.O.Box 73031
+                                     Limeridge Mall Postal Outlet
+                                     Hamilton, Ont. L9A 5H7
+                                     Canada
+
+
+
+
+
+
+
+                                TABLE OF CONTENTS
+
+
+
+
+
+         INTRODUCTION                                                 1
+
+             What is GIFLink  . . . . . . . . . . . . . . . . . . . . 1
+
+
+         REGISTRATION                                                 2
+
+             Evaluation Version . . . . . . . . . . . . . . . . . . . 2
+             License  . . . . . . . . . . . . . . . . . . . . . . . . 3
+             Multi-user License . . . . . . . . . . . . . . . . . . . 3
+             Disclaimer . . . . . . . . . . . . . . . . . . . . . . . 3
+             Trademarks . . . . . . . . . . . . . . . . . . . . . . . 3
+
+
+         USING GIFLINK                                                4
+
+             Command Line . . . . . . . . . . . . . . . . . . . . . . 4
+
+                 rz      Zmodem receive       (batch protocol)
+                 rb      Batch Ymodem receive (batch protocol)
+                 rb -g   Ymodem-G receive     (batch protocol)
+                 rg      Ymodem-G receive     (same as rb -g)
+                 ry      Ymodem receive
+                 ro      Xmodem-1K receive
+                 rx      Xmodem receive
+                 sz      Zmodem send          (batch protocol)
+                 sb      Batch Ymodem send    (batch protocol)
+                 sb -g   Ymodem-G send        (batch protocol)
+                 sg      Ymodem-G send        (same as sb -g)
+                 sy      Ymodem send
+                 so      Xmodem-1K send
+                 sx      Xmodem send
+                 qb      CompuServe Quick B send and receive
+                 view    View GIF images
+
+             Running GIFLink  . . . . . . . . . . . . . . . . . . . . 5
+
+                 [Esc]   Abort transfer
+                 [K]     Keep partial
+                 [D]     Delete received
+                 [R]     Resume aborted
+                 [S]     Skip file
+
+
+
+         COMMAND OPTIONS                                              7
+
+             -b      Define the baud rate you want to use . . . . . . 7
+             -c      Define the connection you want to use  . . . . . 7
+             -d      Delete received files  . . . . . . . . . . . . . 8
+             -e      Define the effective baud rate . . . . . . . . . 8
+             -f      Specify a file transfer directory  . . . . . . . 8
+             -fifo   Disable 16550 FIFO buffer  . . . . . . . . . . . 9
+             -hs     Enable slow handshake  . . . . . . . . . . . . . 9
+             -k      Do not keep partially received files . . . . . . 9
+             -l      Specify a DSZ-type log file  . . . . . . . . . . 9
+             -m      Use monochrome 64 grey scale display mode  . . . 9
+             -p      Define the COM port you are using  . . . . . .  10
+             -p      Define the COM base address and IRQ  . . . . .  10
+             -r      Enable Zmodem crash recovery . . . . . . . . .  11
+             -rg     Enable Zmodem crash recovery and GIF recovery   11
+             -tm     Enable direct Telemate support . . . . . . . .  11
+             -v      Specify the display mode . . . . . . . . . . .  12
+             -w      Wait a number of seconds between files . . . .  12
+
+
+         ENVIRONMENT VARIABLES                                       13
+
+             SET GIFLINK=<Options>  . . . . . . . . . . . . . . . .  13
+             SET TMCFG=<TM.CFG> . . . . . . . . . . . . . . . . . .  13
+             SET DSZPORT=<Port> . . . . . . . . . . . . . . . . . .  14
+             SET DSZPORT=<Base,IRQ> . . . . . . . . . . . . . . . .  14
+             SET DSZLOG=<DSZ.LOG> . . . . . . . . . . . . . . . . .  14
+             SET DIRRX=<Download Directory> . . . . . . . . . . . .  15
+
+
+         CALLING GIFLINK FROM COMMUNICATION PROGRAMS                 16
+
+             Installing GIFLink in Telemate . . . . . . . . . . . .  16
+             Customizing your GIFLink . . . . . . . . . . . . . . .  17
+             Auto Download Sequence . . . . . . . . . . . . . . . .  17
+
+
+         ERRORLEVEL EXIT VALUES                                      18
+
+
+         EXAMPLES                                                    19
+
+
+         PRODUCT LINE                                                22
+
+             What is Telemate . . . . . . . . . . . . . . . . . . .  22
+                 What's Special in Telemate?
+             What is GIFLink  . . . . . . . . . . . . . . . . . . .  24
+             What is GIFLITE  . . . . . . . . . . . . . . . . . . .  24
+
+
+     GIFLINK                                          INTRODUCTION    1
+
+
+     INTRODUCTION
+     __________________________________________________________________
+
+
+         High resolution VGA's and full color scanners have led to the
+         availability of a mass volume of high quality digitized
+         images. Most of the images found on Bulletin Board Systems
+         (BBS's) are stored in the Graphics Interchange Format (GIF).
+
+         Do you spend a lot of time in transferring those GIF images?
+         Would you like to preview the images while you are downloading
+         them? Or maybe abort the transfer (or skip the images) as soon
+         as you realize you do not like the GIF images? (Think about
+         all the download credit you can save!)
+
+
+     WHAT IS GIFLINK
+
+         GIFLink is an easy to use external protocol driver that allows
+         you to view the transmitting GIF images in stunning SuperVGA
+         graphics. And it is the first protocol driver that uses full
+         screen computer graphics in SuperVGA mode.
+
+         GIFLink supports most of the popular file transfer protocols
+         such as Zmodem, Batch Ymodem, Ymodem-G, Xmodem and CompuServe
+         QuickB. If the files being transmitted are not GIF images,
+         GIFLink will work just like a normal protocol drivers. This
+         allows GIFLink to transmitted any files, not just GIF images.
+
+         GIFLink also has a special VIEW mode so that you can look at
+         the received GIF images in a slideshow format or preview the
+         images you are going to sent.
+
+         Using GIFLink is much like using the other protocol drivers.
+         If you have used any external protocol driver, you will find
+         yourself already familiar with the command structure and
+         options. And it is easy to install as an external protocol for
+         most communication softwares.
+
+         If you have any questions, you can write to us, or leave e-
+         mail to "Winfred Hu" in the following BBSs' TELEMATE
+         conference or in CompuServe to [72070,3515]. We appreciate
+         suggestions and ideas.
+
+          Land of the Gypsy's    503-297-0626  28800 V34     Louisiana
+          S.R.O. BBS             817-542-7388  28800 DS      Texas
+          Terminator BBS!        414-867-3670  28800 DS      Wisconsin
+          The Blackboard         914-354-1913  14400 V32bis  New York
+          Com-Dat BBS            503-681-0543  14400 V32bis  Oregon
+          Crystal Bear BBS       360-446-1849  14400 V32bis  Washington
+
+
+     GIFLINK                                          REGISTRATION    2
+
+
+     REGISTRATION
+     __________________________________________________________________
+
+
+         GIFLink is NOT FREE.  You MUST REGISTER after the 15-day
+         evaluation time period.
+
+             Registration Fee  :           $ 30.0 US
+                                       or  $ 35.0 CAD
+
+         GIFLink is a Shareware product. It is distributed through
+         public access channels so that you can have the opportunity to
+         evaluate the product before making a decision to buy. If you
+         decide to use this software, then you are under both legal and
+         moral obligation to register it with the author. It is fully
+         protected by State, Federal and International copyright laws.
+
+         To register your copy of GIFLink, fill in the order form and
+         mail along with a cheque or money order of US$30 / CAD$35
+         payable to "White River Software" to
+
+                          White River Software
+                          P.O.Box 73031
+                          Limeridge Mall Postal Outlet
+                          Hamilton, Ont. L9A 5H7
+                          Canada
+
+         CompuServe users can register GIFLink through the new
+         Shareware registration service. GO SWREG and search for
+         GIFLink.
+
+         When you register, you will receive the program diskette of
+         the latest version and your registration number. Registration
+         entitles you to continue using the current version and all
+         future versions. The registration number will remove any
+         limitation and annoying functions in the unregistered version
+         of the current and the FUTURE releases.
+
+
+     EVALUATION VERSION
+
+         The evaluation version or the unregistered version distributed
+         through the Shareware channel has the following limitation and
+         annoying functions:
+
+          1. Only the first 2 images are shown in SuperVGA full color.
+             The rest are shown in 64 grey-scale level.
+
+          2. An ending screen and a flashing 'PLEASE REGISTER' label
+             appears reminding you that it is a evaluation copy.
+
+          3. A random time delay is added at the end of the program.
+
+         All limitation and annoying functions are removed in the
+         registered version.
+
+
+     GIFLINK                                          REGISTRATION    3
+
+
+     LICENSE
+
+         You are free to copy and distribute GIFLink for NON-COMMERCIAL
+         use IF:
+
+               NO FEE IS CHARGED FOR USE, COPYING OR DISTRIBUTION,
+                       AND IT IS NOT MODIFIED IN ANY WAY.
+
+         Computer user groups or clubs may make copies of GIFLink for
+         distribution to members for a fee that covers copying and
+         other administrative costs.  Bulletin Board Systems (BBS) that
+         operate through subscription fees may post GIFLink for
+         download by its subscribers.
+
+         Shareware vendors distribute GIFLink, which includes the
+         program and the document, for a fee under US$8 which covers
+         copying and other administrative costs. Otherwise, the
+         distributors have to obtain a written permission from the
+         author. THIS DOCUMENTATION MUST BE DISTRIBUTED TOGETHER WITH
+         THE PROGRAM!
+
+         CD-ROM producers have to obtain a written permission from the
+         author.
+
+
+     MULTI-USER LICENSE
+
+         We offers multi-user licenses to schools, companies and other
+         associations. Orders for less than 10 users include the same
+         amount of GIFLink programs on disk. For orders of more than 10
+         users, a master copy of GIFLink is provided and the licensee
+         is responsible for copying the disks. The prices are as
+         follows:
+
+           Number of Users:      Price (US)       Discount
+
+               1 - 10              @ $ 30       (no discount)
+              11 - 20              @ $ 27            10 %
+              21 - 50              @ $ 24            20 %
+              51 - 100             @ $ 21            30 %
+             100+                  $ 3000       (one time fee)
+
+
+     DISCLAIMER
+
+         This program is provided AS IS without any warranty, expressed
+         or implied, including but not limited to fitness for a
+         particular use.
+
+
+     TRADEMARKS
+
+         GIFLink, GIFLITE and Telemate are trademarks of White River
+         Software. Graphics Interchange Format and GIF are trademarks
+         of CompuServe Inc. Many specific products found in this manual
+         are trademarks of specific companies.
+
+     GIFLINK                                         USING GIFLINK    4
+
+
+     USING GIFLINK
+     __________________________________________________________________
+
+
+         GIFLink requires an IBM PC/AT/fully compatible computer, DOS
+         3.0 or higher, VGA or SuperVGA display card, a modem and a
+         minimum of 240K bytes of memory.
+
+         GIFLink supports most major SuperVGA adapters, including
+         Ahead, ATI, Chips & Tech, Everex, Genoa, Paradise, Oak,
+         Trident (both 8800 and 8900, 9000), Tseng (both 3000 and 4000
+         chipsets), Video7 and video cards with VESA capability.
+
+         Note: If your communication program have the ability to swap
+         itself out when running an external program, you should enable
+         the feature so that GIFLink can have enough memory to run.
+
+
+     COMMAND LINE
+
+         All the commands used can be entered on the command line at
+         the DOS prompt. These options tell GIFLink to carry out
+         certain commands when the program is loaded.
+
+         The GIFLink command line structure is:
+
+            GIFLINK [Options] Command [Files] [@ListFile]
+
+         Parameters lists in [] are optional. If no option and command
+         is specified, GIFLink will display a help screen listing the
+         basic options, commands and examples.
+
+         [Options] are the GIFLink options that you can specify. The
+         following is a summary of all options available.
+
+             -b      Define the baud rate you want to use
+             -c      Define the connection you want to use
+             -d      Delete received files
+             -e      Define the effective baud rate
+             -f      Specify a file transfer directory
+             -fifo   Disable 16550 FIFO buffer
+             -hs     Enable slow handshake
+             -k      Do not keep partially received files
+             -l      Specify a DSZ-type log file
+             -m      Use monochrome 64 grey scale display mode
+             -p      Define the COM port you are using
+             -r      Enable Zmodem crash recovery
+             -rg     Enable Zmodem crash recovery and GIF recovery
+             -tm     Enable direct Telemate support
+             -v      Specify the display mode
+             -w      Wait a number of seconds between files
+
+         <Command> tells GIFLink to receive or send files using one of
+         the many file transfer protocols, or view GIF images. It is
+         not optional and must be present in the GIFLink command line.
+         The following is a summary of the commands:
+
+     GIFLINK                                         USING GIFLINK    5
+
+
+             rz      Zmodem receive       (batch protocol)
+             rb      Batch Ymodem receive (batch protocol)
+             rb -g   Ymodem-G receive     (batch protocol)
+             rg      Ymodem-G receive     (same as rb -g)
+             ry      Ymodem receive
+             ro      Xmodem-1K receive
+             rx      Xmodem receive
+             sz      Zmodem send          (batch protocol)
+             sb      Batch Ymodem send    (batch protocol)
+             sb -g   Ymodem-G send        (batch protocol)
+             sg      Ymodem-G send        (same as sb -g)
+             sy      Ymodem send
+             so      Xmodem-1K send
+             sx      Xmodem send
+             qb      CompuServe QuickB send and receive
+             view    View GIF images
+
+         [Files] is one of more file names to be transferred. It can
+         contains wildcard character '*' and '?' in a batch protocol.
+
+         [@ListFile] is a file containing a list of the files to be
+         sent. It can only be used when you are sending or viewing the
+         files. You should used this list file when the files cannot be
+         expressed as a wildcard easily. The names in the list file are
+         separated by a space or a carriage return and the names can
+         contain wildcard characters.
+
+
+     RUNNING GIFLINK
+
+         Starting GIFLink is easy, just type
+
+             GIFLINK -p2 rz
+
+         in the DOS command line. It tells GIFLink to use COM2 at the
+         current speed and receive files using Zmodem. More advanced
+         options will be described in the next section, the CALLING
+         GIFLINK FROM COMMUNICATION PROGRAMS and the EXAMPLES section.
+
+         When GIFLink is running, it shows the transmitting GIF images
+         in the optimal size so that the full image always fits in the
+         screen. And it also displays a number of useful information
+         such as COM port, baud rate, file name, estimated transfer
+         time, image resolutions and so on.
+
+         Now let's look at what you can do inside GIFLink.
+
+
+     [Esc]   Abort transfer
+
+         To abort the transfer, press the [Esc] key. GIFLink will abort
+         the transfer and exit. If you are calling GIFLink from a
+         communication program, it will return to the communication
+         program. You may need to press [Ctrl X] several times to abort
+         the transfer.
+
+
+     GIFLINK                                         USING GIFLINK    6
+
+
+     [K]     Keep partial
+
+         Pressing the [K] key will toggle the 'Keep partial' option. It
+         is equivalent to the -k command line option. When this option
+         is on, GIFLink will keep the aborted or skipped files.
+         Otherwise, the partially received files will be deleted.
+
+
+     [D]     Delete received
+
+         Pressing the [D] key will toggle the 'Delete received' option.
+         It is equivalent to the -d command line option. When this
+         option is on, the current file will be deleted after it is
+         received! It is very useful when you have limited disk space
+         or do not wish to keep the GIF images being transmitted.
+
+         This option does not delete all the received files. It only
+         deletes the current file after it is received. On the other
+         word, you can choose which files you want to keep and which
+         ones you want to delete during the transmission.
+
+
+     [R]     Resume aborted
+
+         Pressing the [R] key will toggle the 'Resume aborted' option
+         (Zmodem crash recovery and GIF recovery). This option is
+         equivalent to the -rg command line option and it is available
+         for Zmodem receive command only.
+
+
+     [S]     Skip file
+
+         Zmodem has a special mechanism to skip a file without aborting
+         a batch transfer. Pressing the [S] key will skip the current
+         file and start to receive the next file. This option is
+         available for Zmodem receive command only.
+
+
+     GIFLINK                                       COMMAND OPTIONS    7
+
+
+     COMMAND OPTIONS
+     __________________________________________________________________
+
+
+         All command options must be preceded by a '-' or '/'
+         character. Of the many options, the -p<Port> option is the
+         most important one and should be included in the command line.
+         All the options are described below.
+
+
+     -b<Baud>   Define the baud rate you want to use.
+
+         This option allows you to define the baud rate you want to
+         use. The valid <Baud> values are
+
+             300, 1200, 2400, 4800, 9600, 19200, 38400, 57600, 115200
+
+         For example, -b2400 tells GIFLink to use 2400 baud.
+
+         If you are using a high speed modem which has a 14400 bps or
+         higher throughput, you should use the 19200 or 38400 baud rate
+         in GIFLink and lock the modem at that transfer rate. Please
+         refer to the modem manual for locking the transfer rate.
+
+         Normally, there is no need to specify this option because
+         GIFLink will detect which baud rate the COM port is currently
+         using.
+
+
+     -c<Connection>      Define the connection you want to use.
+
+         GIFLink can use a number of methods to talk to the remote
+         system (connections), namely Modem, Computer, FOSSIL and BIOS.
+         The valid <Connection> values are
+
+             M      Direct modem connection
+             C      Direct computer-to-computer connection
+             F      Connect through FOSSIL driver
+             B      Connect through BIOS 14H
+
+         For example, -cF specifies a FOSSIL connection.
+
+         The default method is Modem connection and GIFLink will use
+         its own high performance COM interrupt routines to send and
+         receive data. RTS/CTS flow control is used if the CTS signal
+         is active initially.
+
+         You should use the Computer connection if you are using a null
+         modem or a direct computer-to-computer cable. With this
+         connection, GIFLink will skip detecting the carrier signal
+         which may not present in the null modem or cable. Like the
+         Modem connection, the Computer connection uses the RTS/CTS
+         flow control if the CTS signal is active initially.
+
+
+     GIFLINK                                       COMMAND OPTIONS    8
+
+
+         A FOSSIL driver is a COM interrupt driver which is commonly
+         used by Bulletin Board System softwares. There is no need to
+         use the driver unless you encounter some compatibility problem
+         with the GIFLink's internal COM interrupt routines or you need
+         a special service in a FOSSIL driver (e.g. IRQ sharing).
+
+         A BIOS connection is only useful if you use a computer network
+         and your network driver overrides the BIOS 14H interrupt and
+         provides high performance data transmission. Otherwise, you
+         should not use this option because you will encounter data
+         lost at 2400 baud or above.
+
+
+     -d      Delete received files.
+
+         This special option allows you to delete the files after it is
+         received! It is very useful when you have limited disk space
+         or do not wish to keep the GIF images being transmitted.
+
+         You can also press the [D] key to toggle this option when
+         GIFLink is running. The GIF image is not deleted until it is
+         received.
+
+
+     -e<Baud>   Define the effective baud rate.
+
+         Some modems allows you to lock the COM port at a higher baud
+         rate then the actual baud rate in order to yield the maximum
+         throughput. However, this influences the estimation of the
+         maximum cps (character per second) rate. This option corrects
+         the estimation.
+
+         For example, -e14400 tells GIFLink to estimate the maximum cps
+         rate at 14400 baud.
+
+
+     -f<Directory>      Specify a file transfer directory.
+
+         Depends on the transfer command, this option specifies either
+         the upload (for send command) or download (for receive
+         command) directory. For example, -fD:\TRANSFER specifies
+         D:\TRANSFER as the file transfer directory.
+
+         All files are assumed in the file transfer directory unless a
+         pathname is specified. If both the file transfer directory and
+         a pathname are not given, the current directory will be used.
+
+         The DIRRX environment variable also indicate where GIFLink
+         should put the received files. For example,
+
+             SET DIRRX=D:\DOWNLOAD
+
+         have the same effect as the -fD:\DOWNLAOD option for a receive
+         command. The -f option always overrides the environment
+         variable.
+
+
+     GIFLINK                                       COMMAND OPTIONS    9
+
+
+     -fifo      Disable 16550 FIFO buffer.
+
+         By default, GIFLink will use the FIFO buffer when a 16550 UART
+         chip is found. The FIFO buffer will provide extra protection
+         against data lost. If this option is specified, the FIFO
+         buffer will be disabled.
+
+         This option has no effect on a FOSSIL or BIOS connection. The
+         FOSSIL driver or the network driver should have its own option
+         to control the FIFO buffer.
+
+
+     -hs     Enable slow handshake.
+
+         Some computers encounter COM data lost during disk I/O. In
+         this case, you should specify this option so that GIFLink will
+         lower the RTS signal (which suspend COM activity) during disk
+         I/O.
+
+         If you are using a disk cache program, you should also disable
+         the caching mechanism before running GIFLink.
+
+
+     -k      Do not keep partially received files.
+
+         By default, GIFLink keeps partially received files. This
+         option allows you to delete an aborted files.
+
+         You can press the [K] key to toggle this option when GIFLink
+         is running.
+
+
+     -l<DSZ.LOG>      Specify a DSZ-type log file.
+
+         GIFLink can generate a DSZ-type log file if you specify this
+         options. For example, -l\COMM\DSZ.LOG will put the usage log
+         into the \COMM\DSZ.LOG file.
+
+         The DSZLOG environment variable can indicate where GIFLink
+         should put the usage log. For example,
+
+             SET DSZLOG=\COMM\DSZ.LOG
+
+         have the same effect as the -l\COMM\DSZ.LOG option. The -l
+         option always overrides the environment variable.
+
+         If both the DSZLOG environment variable and the -l option are
+         NOT present, GIFLink will not generate a DSZ-type log file.
+
+
+     -m      Use monochrome 64 grey-scale display mode.
+
+         Normally, GIFLink displays the GIF images in SuperVGA 256
+         color display mode. If you have a black and white monitor, you
+         may want to specify this option.
+
+
+     GIFLINK                                      COMMAND OPTIONS    10
+
+
+     -p<Port>      Define the COM port you are using.
+
+         This is the most important option for GIFLink. It tells
+         GIFLink which COM port it should use. The range for <Port> is
+         1 to 8. For example, if you are using COM2, you should use -p2
+         in the GIFLink command line.
+
+         The DSZPORT environment variable can indicate which COM port
+         GIFLink should use. For example,
+
+             SET DSZPORT=2
+
+         have the same effect as the -p2 option. The -p option always
+         overrides the environment variable. If you are using only one
+         modem, you should use the DSZPORT environment variable so that
+         you do not need to specify the -p<Port> option every time.
+
+         By default, GIFLink use COM1 if both the -p<Port> option and
+         the DSZPORT environment variable are not specified.
+
+
+     -p<Base,IRQ>  Define the COM base address and IRQ you are using.
+
+         GIFLink uses the following base address and IRQ number:
+
+             Port     Base address     IRQ
+             ----     ------------     ---
+             COM1       3F8 (Hex)       4
+             COM2       2F8             3
+             COM3       3E8             4
+             COM4       2E8             3
+             COM5      3220             4
+             COM6      3228             3
+             COM7      4220             4
+             COM8      4228             3
+
+         If you have a different setting, you can use the -p<Base,IRQ>
+         option to specify the base address and IRQ number. For
+         example, -p3E8,5 tells GIFLink to use 3E8 as the COM base
+         address and IRQ5. GIFLink will indicate COM5 is being used
+         because it always redefines COM5 to the new base address and
+         IRQ, although the actual COM port may not be COM5.
+
+         You should NOT use the -p<Port> option when you are using the
+         -p<Base,IRQ> option.
+
+         The DSZPORT environment variable can indicate which COM base
+         address and IRQ number GIFLink should use For example,
+
+             SET DSZPORT=3E8,5
+
+         have the same effect as the -p3E8,5 option. The -p<Base,IRQ>
+         option always overrides the environment variable.
+
+
+
+     GIFLINK                                      COMMAND OPTIONS    11
+
+
+     -r      Enable Zmodem crash recovery.
+
+         This option enables Zmodem crash recovery which allows you to
+         resume an aborted transfer. It is available for the Zmodem
+         receive command only. Before resuming an aborted transfer,
+         GIFLink performs a date check to ensure that it is the same
+         file. If the date check fail, GIFLink renames the new file
+         instead of resuming the transfer.
+
+
+     -rg     Enable Zmodem crash recovery and GIF recovery.
+
+         In addition to the Zmodem crash recovery, GIFLink have a
+         special option called GIF recovery. When a GIF file is being
+         resumed, GIFLink will display the interrupted GIF image before
+         starting the recovery process. It is available for the Zmodem
+         receive command only.
+
+         Without this option, the recovering GIF image will not be
+         displayed.
+
+
+     -tm<TM.CFG>     Enable direct Telemate support.
+
+         GIFLink supports Telemate (the best communication program)
+         directly. It will read a Telemate configuration file and
+         enable or disable certain options.
+
+         If the configuration file is not found, this option is discard
+         and do not generate any error. If it is found, GIFLink will
+         write the log into the Telemate usage log file TM.USE directly
+         using the proper format. If you want to generate a DSZ-type
+         log file instead, you must specify the -l<DSZ.LOG> option to
+         override the -tm option.
+
+         For example, -tmC:\TELEMATE\TM.CFG tells GIFLink where to find
+         the Telemate configuration file.
+
+         If you have defined the TMCFG environment variable, you can
+         simply specify the -tm option without the filename. For
+         example, -tm will read the Telemate configuration file
+         indicated by the TMCFG environment variable. If the
+         environment variable is not defined, GIFLink will attempt to
+         read TM.CFG from the current directory. The following option
+         in the Telemate configuration file have effect on GIFLink:
+
+             COM port
+             COM base, IRQ
+             Connection
+             Zmodem crash recovery
+             16550 FIFO
+             RTS/CTS flow control
+             Upload directory
+             Download directory
+             Log directory
+             Usage log
+
+     GIFLINK                                      COMMAND OPTIONS    12
+
+
+         You should specify the -tm option as the first option and then
+         use the other options to override the setting in the Telemate
+         configuration file.
+
+
+     -v<Width,Height,Color>      Specify the display mode.
+
+         GIFLink supports a broad range of SuperVGA adapters and
+         display modes. The following display modes are supported:
+
+              1024,768,256
+               800,600,256
+               640,480,256
+               640,400,256
+              1024,768,16  (grey-scale)
+               800,600,16  (grey-scale)
+               640,480,16  (grey-scale)
+
+         All 16 color modes displays the GIF images in 16 grey-scale
+         level. 256 color modes displays the GIF images in full colors.
+         (UNREGISTERED version only displays the first 2 GIF images in
+         full colors. The rest are displayed in 64 grey-scale level.)
+
+         For example, -v1024,768,16 tells GIFLink to switch to 1024x768
+         in 16 grey-scale display mode. If the display mode you
+         specified is not supported by your display adapter, GIFLink
+         will switch to a lower resolution automatically.
+
+         You can also use abbreviate resolution. For example, -v800
+         specifies 800x600 256 color display mode and -v640,400
+         specifies the 640x400 256 color display mode.
+
+         If GIFLink cannot find the display mode your display adapter
+         actually support, you should look for a VESA driver in the
+         driver diskette that come with your adapter. If you do not
+         have one, please contact your dealer for the VESA driver. Most
+         major SuperVGA producers have their own drivers to ensure
+         compatibility with other programs.
+
+
+     -w<Second>      Wait a number of seconds after each file.
+
+         You can define a delay after each file transfer. The delay
+         allows you to look at the GIF image before the next transfer.
+         The delay should not be more than 10 seconds. Otherwise, the
+         remote system may abort the file transfer. For example, -w5
+         specifies a 5 seconds delay. The default delay is 1 second.
+
+
+
+     GIFLINK                                ENVIRONMENT VARIABLES    13
+
+
+     ENVIRONMENT VARIABLES
+     __________________________________________________________________
+
+
+         GIFLink supports a number of common environment variables used
+         by other external protocol drivers. It makes the GIFLink
+         command line a lot shorter, and easier to set up if you are
+         using other external protocol drivers.
+
+         You should put the statements in the AUTOEXEC.BAT so that they
+         are defined automatically every time you turn on your
+         computer. In case if DOS reports that it is running out of
+         environment space, you can put the following line in the
+         CONFIG.SYS.
+
+             SHELL=\COMMAND.COM /p /e:1200
+
+         The /e:1200 enlarges the environment space to 1200 bytes. Use
+         a larger number of you run out of space again.
+
+         The environment variables are read in the following order and
+         the later options will override an earlier ones.
+
+             DSZPORT
+             DSZLOG
+             DIRRX
+             GIFLINK
+            (GIFLink command line options)
+
+
+     SET GIFLINK=<Options>
+
+         You can put the most frequently used options in the GIFLINK
+         environment variable. For example,
+
+              SET GIFLINK=-tm -v800 -rg
+
+         enables direct Telemate support, specifies 800x600 256 color
+         display mode and enables Zmodem crash recovery and GIF
+         recovery.
+
+         You should not put the receive command or send command (e.g.
+         rz/rb/sz/sb) in the variable. Otherwise, you will not be able
+         to override it in the GIFLink command line.
+
+
+     SET TMCFG=<TM.CFG>
+
+         This environment variable helps GIFLink and Telemate to locate
+         the Telemate configuration file. If you use the -tm option in
+         GIFLink which enables direct Telemate support, GIFLink will
+         find the Telemate configuration file automatically if you have
+         this environment variable defined. For example
+
+             SET GIFLINK=-tm
+             SET TMCFG=C:\TELEMATE\TM.CFG
+
+     GIFLINK                                ENVIRONMENT VARIABLES    14
+
+
+         tells GIFLink to use C:\TELEMATE\TM.CFG as the Telemate
+         configuration file.
+
+         Note: This environment variable is not read until you specify
+         the -tm option.
+
+
+     SET DSZPORT=<Port>
+
+         This environment variables defines the COM port you want to
+         use. For example,
+
+             SET DSZPORT=2
+
+         tells GIFLink to use COM2. You can use the -p<Port> option in
+         the GIFLink command line to override this variable.
+
+         If you are using only one modem, you should use the DSZPORT
+         environment variable so that you do not need to specify the -p
+         option every time.
+
+
+     SET DSZPORT=<Base,IRQ>
+
+         This environment variables defines the COM base address and
+         IRQ you want to use. For example,
+
+             SET DSZPORT=3E8,5
+
+         tells GIFLink to use 3E8 as the COM base address and IRQ5. You
+         can use the -p<Base,IRQ> option in the GIFLink command line to
+         override this variable.
+
+         Again, if you are using only one modem, you should use this
+         environment variable so that you do not need to specify the -p
+         option every time.
+
+
+     SET DSZLOG=<DSZ.LOG>
+
+         This environment variable defines the location of the DSZ-type
+         log file. For example,
+
+             SET DSZLOG=C:\COMM\DSZ.LOG
+
+         tells GIFLink to put the DSZ-type log in C:\COMM\DSZ.LOG. You
+         can use the -l<DSZ.LOG> or -tm<TM.CFG> option to override this
+         variable.
+
+
+
+     GIFLINK                                ENVIRONMENT VARIABLES    15
+
+
+     SET DIRRX=<Download Directory>
+
+         This environment variable specifies the download directory.
+         For example,
+
+             SET DIRRX=D:\DOWNLOAD
+
+         tells GIFLink to put the received file into the D:\DOWNLOAD
+         directory. You can use the -f<Directory> option to override
+         this variable.
+
+
+
+     GIFLINK           CALLING GIFLINK FROM COMMUNICATION PROGRAMS   16
+
+
+     CALLING GIFLINK FROM COMMUNICATION PROGRAMS
+     __________________________________________________________________
+
+
+         GIFLink can be installed easily as an external protocol in
+         most modern communication programs. Normally, a batch file is
+         called to run an external protocol. And we will use the batch
+         files GIFZ-U.BAT and GIFZ-D.BAT in the following example.
+
+         The GIFZ-U.BAT contains the Zmodem send command:
+
+             GIFLINK -p%2 sz %3 %4 %5 %6 %7 %8 %9
+
+         where %2 is the COM port currently used by Telemate. %3 and
+         the rest are the files to be sent. Other communication
+         programs may pass the COM port and file name in different
+         orders. Please refer to the document of your communication
+         program for details on parameter passing.
+
+         Similarly, the GIFZ-D.BAT contains the Zmodem receive command:
+
+             GIFLINK -p%2 rz
+
+         GIFLink supports a rich number of file transfer protocols and
+         Zmodem is generally recommended because of its reliability and
+         flexibility. That is why we put the Zmodem send and receive
+         commands in the batch files respectively. You can put other
+         protocol commands (e.g. sb/rb) into your own batch files.
+
+         IMPORTANT: If your communication program have the ability to
+         swap itself out when running an external program, you should
+         enable the feature so that GIFLink can have enough memory to
+         run.
+
+         If GIFLink cannot find the display mode your display adapter
+         actually support, you should look for a VESA driver in the
+         driver diskette that come with your adapter. If you do not
+         have one, please contact your dealer for the VESA driver. Most
+         major SuperVGA producers have their own drivers to ensure
+         compatibility with other programs.
+
+
+     Installing GIFLink in Telemate
+
+         If you are using Telemate 4.00 or higher, the default Telemate
+         configuration has already set up GIFLink as an external
+         protocol. All you have to do is to customize your GIFLink
+         setting in the GIFZ-U.BAT and GIFZ-D.BAT batch files or the
+         GIFLINK environment variable.
+
+         Note: You should enable the 'Maximize DOS Shell' option under
+         the Options/General dialog so that GIFLink can have enough
+         memory to run.
+
+         If your Telemate configuration does not have GIFLink, please
+         following the steps below:
+
+     GIFLINK           CALLING GIFLINK FROM COMMUNICATION PROGRAMS   17
+
+
+         First, copy GIFLINK.EXE, GIFZ-D.BAT and GIFZ-U.BAT into your
+         Telemate directory, or into a directory included in your PATH
+         environment variable.
+
+         Then run Telemate and go to the Options/External protocol
+         dialog. You can install GIFLink in one of the empty slot.
+         Press [Tab] to go to the field and fill in the content as
+         follows:
+
+              Field                     Content
+              -----                     -------
+              Protocol Name             GIFLink
+              Key                       F
+              Upload Batch              GIFZ-U
+              Download Batch            GIFZ-D
+              Prompt Download name      (blank)
+              Auto Download Sequence    (blank)
+
+         Then press [Enter] to end the dialog and select the Save
+         Options in the Options menu to save the changes.
+
+         Now you have installed GIFLink as an external protocol in
+         Telemate.
+
+
+     Customizing your GIFLink
+
+         Although you can edit the GIFZ-U.BAT and GIFZ-D.BAT to
+         customize your GIFLink, you can use the GIFLINK environment
+         variable to define the default setting. For example, you can
+         put the following in your AUTOEXEC.BAT.
+
+             SET GIFLINK=-tm -v800 -k
+
+         This command enables direct Telemate support, uses 800x600 256
+         color display modem and erases partially received files.
+
+
+     Auto Download Sequence
+
+         If you are using GIFLink as your Zmodem protocol driver, you
+         should turn OFF the 'Zmodem Auto-Download' option under the
+         Telemate Options/Protocol dialog. Otherwise, Telemate internal
+         Zmodem will kick in before you can activate GIFLink.
+
+         You can define the Auto Download Sequence as "*^XB00" under
+         the Telemate Options/External protocol dialog to activate the
+         download process whenever the sequence is received.
+
+
+
+     GIFLINK                                ERRORLEVEL EXIT VALUES   18
+
+
+     ERRORLEVEL EXIT VALUES
+     __________________________________________________________________
+
+
+         When exit, GIFLINK sets the ERRORLEVEL exit value to one of
+         the following:
+
+         0, Success: All files are transferred successfully.
+
+         1, Failure: Any error that aborts the program, for example,
+         invalid command line, file not found, not enough memory or a
+         failure in transmission.
+
+
+     GIFLINK                                             EXAMPLES    19
+
+
+     EXAMPLES
+     __________________________________________________________________
+
+
+      1. The simplest form of GIFLINK is
+
+             GIFLINK rz
+
+         In this example, GIFLink receives (downloads) from the remote
+         system using Zmodem. It uses the following default setting:
+
+             COM Port                  COM1 (unless DSZPORT is defined)
+             Baud rate                 Current speed in COM1
+             Connection                Modem
+             Display mode              640x480 256 color (or lower)
+             Zmodem recovery           Off
+             GIF recovery              Off
+             Direct Telemate support   Off
+             16550 FIFO buffer         On (if found)
+             RTS/CTS flow control      On (if CTS is active initially)
+             Slow handshake            Off
+             Keep partial              On
+             Delete received           Off
+             DSZ-type Log              Off (unless DSZLOG is defined)
+             Wait time after file      1 seconds
+
+
+      2. The following illustrates the use of COM2 and Zmodem crash
+         recovery.
+
+             GIFLINK -p2 rz -r
+
+         In this example, GIFLink receives files using COM2 at the
+         current speed. Zmodem with crash recovery is used. Although it
+         resumes an aborted transfer, it does not display an interrupt
+         GIF image. If you want to display the interrupted GIF image
+         before the resume process, you should use the -rg GIF recovery
+         options. For example,
+
+             GIFLINK -p2 rz -rg
+
+
+      3. For Ymodem-G with slow handshake,
+
+             GIFLINK -hs -fD:\DOWNLOAD rb -g
+             GIFLINK -hs -fD:\DOWNLOAD rg
+
+         Both commands use Ymodem-G with slow handshake. COM activity
+         is suspended during disk I/O. It prevents any conflict of the
+         COM and disk activity. If you are using a disk cache software,
+         you should disable the caching mechanism before running
+         GIFLink.
+
+         The -fD:\DOWNLOAD option also tells GIFLink to put the
+         received file into the D:\DOWNLOAD directory.
+
+
+     GIFLINK                                             EXAMPLES    20
+
+
+      4. For Xmodem with a FOSSIL connection,
+
+             GIFLINK -cF -k rx D:\DOWNLOAD\GIFLINK.GIF
+
+         This example uses Xmodem and saves the received file into
+         D:\DOWNLOAD\GIFLINK.GIF. The -cF option tells GIFLink to use a
+         FOSSIL driver to talk to the modem. The -k option erases
+         partially received file.
+
+
+      5. In case if you do not want to keep the received files,
+
+             GIFLINK -d rb
+
+         This example uses Batch Ymodem to transfer the files. The -d
+         option allows you to delete the current file after it is
+         received! It is very useful when you have limited disk space
+         or do not wish to keep the GIF images being transmitted.
+
+
+      6. If you are using a black and white monitor,
+
+             GIFLINK -m -fifo sy GIFLINK.GIF
+
+         This example sends GIFLINK.GIF files using Ymodem. The -m
+         option tells GIFLink to display the GIF image in 64 grey-scale
+         level. The -fifo option disables the 16550 FIFO buffer.
+
+
+      7. To generate a DSZ-type log file,
+
+             GIFLINK -l\COMM\DSZ.LOG sb @LIST.TXT
+
+         This example sends all the files specified in LIST.TXT using
+         Batch Ymodem and creates a \COMM\DSZ.LOG log file in DSZ
+         format. If you want to create a Telemate usage log, you should
+         use the -tm option. For example,
+
+             GIFLINK -tm\TELEMATE\TM.CFG sb @LIST.TXT
+
+         The command creates a Telemate usage log TM.USE in the
+         Telemate log directory.
+
+
+      8. To send or receive file using CompuServe QuickB, you should
+         first select upload or download and enter the file name in the
+         CompuServe command line, then run GIFLink.
+
+             GIFLINK qb
+
+         Note: You should NOT use the internal CompuServe QuickB as the
+         default protocol in your communication programs.
+
+
+
+     GIFLINK                                             EXAMPLES    21
+
+
+      9. If you want to preview the GIF images you are going to sent,
+         or look at the received images,
+
+             GIFLINK -v800 -w10 view *.GIF
+
+         The view command displays all the GIF images in the current
+         directory. The -v800 option specifies the 800x600 256 color
+         display mode. The -w10 option specifies a 10 seconds delay
+         after each GIF image.
+
+
+     GIFLINK                                         PRODUCT LINE    22
+
+
+     PRODUCT LINE
+     __________________________________________________________________
+
+
+         If you enjoy this Shareware, we invite you to try out the rest
+         of our high quality Sharewares. We produce top rated programs
+         and those who try them love them. And we believe you will like
+         them too.
+
+         You will find our Sharewares under the following file names
+         (or similar ones if an update is available).
+
+          Telemate  TM420-1.ZIP  TM420-2.ZIP  TM420-3.ZIP  TM420-4.ZIP
+          GIFLink   GIFLK120.ZIP
+          GIFLITE   GIFLT200.ZIP
+
+         If you cannot find them in a local BBS, you can find them in
+         our Support BBS's and most large BBS's:
+
+          Land of the Gypsy's    503-297-0626  28800 V34     Louisiana
+          S.R.O. BBS             817-542-7388  28800 DS      Texas
+          Terminator BBS!        414-867-3670  28800 DS      Wisconsin
+          The Blackboard         914-354-1913  14400 V32bis  New York
+          Com-Dat BBS            503-681-0543  14400 V32bis  Oregon
+          Crystal Bear BBS       360-446-1849  14400 V32bis  Washington
+
+
+
+     WHAT IS TELEMATE
+
+         Telemate is a full featured communications program with an
+         easy-to-learn and easy-to-use integrated environment. Its
+         multithreading feature allows you to prepare messages, view
+         files while you are downloading and printing files. Each task
+         run in its own movable and resizable window. The Windows-like
+         mouse interfaces let you complete a connection and select
+         options without touching a key.
+
+         The back scroll buffer works just like the built-in editor and
+         viewer and you can save parts of the content to files. Through
+         the clipboard, you can cut and paste text among windows and
+         quote message from the back scroll buffer to the remote
+         system.
+
+         Telemate has the most popular protocols built-in, including
+         Zmodem, Ymodem-G, Xmodem, Kermit and CompuServe QuickB.
+         Writing a script program is as simple as writing a BASIC or
+         PASCAL program. The learn script mode can also generate script
+         files for you.
+
+
+
+     GIFLINK                                         PRODUCT LINE    23
+
+
+     What's Special in Telemate?
+
+       Integrated Environment: Telemate is much more than a tele-
+         communications program. Telemate is a flexible, full featured
+         environment, with an interface that is easy to learn and use.
+         An editor, viewer and mouse support are built into Telemate.
+         All of these features are accessible from menus and keyboard.
+
+       Multithreading: Telemate has multithreading (or internal
+         multitasking) built-in. While you are dialing or downloading,
+         you can prepare messages, view files, or scroll back to the
+         last connection. You can have them all at the same time,
+         running in their own windows.
+
+       Mouse Support: While the other communication programs still
+         require a mouse-menu TSR to emulate their function keys,
+         Telemate considers the mouse as an integral part of its
+         design, providing a smooth user interface, regardless of the
+         input method you prefer.
+
+       Built-in Editor and Viewer: The editor allows you to prepare
+         your messages, edit documents or type letters. And the viewer
+         can display files without disturbing the editor.
+
+       Back Scroll: The very large back scroll buffer works just like
+         an editor. Portions of the buffer can be saved to disk. By
+         pressing just a few keys, you can tag file names, quote a
+         message and search the buffer for matches.
+
+       Clipboard: Through the clipboard, you can cut and paste text
+         among windows. You can prepare a message in the editor and
+         then copy or paste it to the terminal, or you can tag file
+         names from the back scroll buffer and paste them to the
+         terminal.
+
+       File Transfer Protocols: Telemate has the most popular protocols
+         built-in, including Zmodem, Ymodem-G, Xmodem, Kermit and
+         CompuServe QuickB. In addition, there are eight slots for
+         external protocols.
+
+       Easy-to-learn Script Language: Writing a Telemate script program
+         is as simple as writing a BASIC or PASCAL program. If you
+         don't have any programming experience, the Learn Script mode
+         can generate script files for you.
+
+       Enhanced Video support: Without any additional hardware,
+         Telemate lets you select a screen height from 25 to 32 lines
+         on your normal CGA adapter and 7 choices of screen height on
+         an EGA or VGA adapter.
+
+
+
+     GIFLINK                                         PRODUCT LINE    24
+
+
+     WHAT IS GIFLINK
+
+         GIFLink is an easy to use protocol driver that allows you to
+         view the transmitting GIF images in stunning SuperVGA
+         graphics. And it is the first protocol driver that uses full
+         screen computer graphics in SuperVGA mode.
+
+         GIFLink supports most of the popular file transfer protocols
+         such as Zmodem, Batch Ymodem, Ymodem-G, Xmodem and CompuServe
+         QuickB. If the files being transmitted are not GIF images,
+         GIFLink will work just like a normal protocol driver. So
+         GIFLink will transmit any files, not just GIF images.
+
+         GIFLink also has a special VIEW mode so that you can look at
+         the received GIF images in a slideshow format or preview the
+         images you are going to sent.
+
+
+     WHAT IS GIFLITE
+
+         GIFLITE is a high quality GIF-to-GIF image compression
+         program. It compresses the GIF files so that they will require
+         much less disk space yet still preserve the same quality and
+         resolution.
+
+         With GIFLITE, digitized GIF images can be further compressed
+         by an average of 30%. What makes GIFLITE special is that the
+         resulting GIF files are almost identical to the original file.
+         Human eyes can hardly tell them apart.
+
+         GIFLITE conforms to both GIF87a and GIF89a standards. All non-
+         image information is preserved in the resulting GIF files. The
+         compressed images can be read by standard GIF decoders, such
+         as VPIC v4+, CSHOW v8.3+ and GIFLink.
+
+         Using GIFLITE is much like using the other file compressors.
+         If you have used any file compressor, you will find yourself
+         already familiar with the command structure and options.
+
+
+

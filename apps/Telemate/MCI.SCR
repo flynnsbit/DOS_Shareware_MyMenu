@@ -1,0 +1,18 @@
+;
+; MCI.SCR is a log on script file for MCI Mail
+;
+
+string Name
+Name = "first last"          ; put your name here
+
+Waitfor 0          ; wait until string matched
+set autostop,on
+
+Put
+
+Waitfor "name"
+Put Name
+
+Waitfor "password:"
+Put "^&"
+

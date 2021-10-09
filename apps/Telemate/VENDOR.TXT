@@ -1,0 +1,34 @@
+Telemate v4.21  White River Software    Registration $ 49.00
+COMM JAN96 TERMINAL ANSI AVATAR VT102 VT52 MOUSE 16550FIFO
+FILES: tm421-1.zip tm421-2.zip tm421-3.zip tm421-4.zip
+
+Minor Update
+
+Telemate is a full featured communications program with an
+easy-to-learn and easy-to-use integrated environment. Its
+multithreading feature allows you to prepare messages, view
+files while you are downloading and printing files. Each task
+run in its own movable and resizable window. The Windows-like
+mouse interfaces let you complete a connection and select
+options without touching a key.
+
+The back scroll buffer works just like the built-in editor and
+viewer and you can save parts of the content to files. Through
+the clipboard, you can cut and paste text among windows and
+quote message from the back scroll buffer to the remote system.
+
+Telemate has the most popular protocols built-in, including
+Zmodem, Ymodem-G, Xmodem, Kermit and CompuServe QuickB, with
+batch file transfer status and multiple upload and download
+directories. Writing a script program is as simple as writing
+a BASIC and PASCAL program. The learn script mode can also
+generate script files for you.
+
+
+
+Hardware Requirements : IBM PC, PC-compatible or MS-DOS computer
+640k RAM, hard drive and modem.
+
+Other Requirements : DOS 3.x or higher.
+
+

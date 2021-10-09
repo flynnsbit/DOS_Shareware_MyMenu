@@ -1,0 +1,10 @@
+;
+; ACTIVE.SCR sends space and a backspace once a second
+; in order to prevent inactive timeout
+;
+
+while connected
+     put "  ^H^H",
+     delay 50
+endwhile
+

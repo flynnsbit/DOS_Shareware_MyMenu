@@ -1,0 +1,18 @@
+;
+; AT&T.SCR is a log on script file for AT&T Mail
+;
+
+string Name
+Name = "first last"          ; put your name here
+
+Waitfor 0          ; wait until string matched
+set autostop,on
+
+Put
+
+Waitfor "User Name:"
+Put Name
+
+Waitfor "Password:"
+Put "^&"
+

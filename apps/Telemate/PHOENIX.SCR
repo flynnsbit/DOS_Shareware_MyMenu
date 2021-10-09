@@ -1,0 +1,20 @@
+;
+; PHOENIX.SCR is a log on script file for Phoenix BBS
+;
+
+string Name, Color
+Name = "first last"          ; put your name here
+Color = "Y"                  ; "Y"es or "N"o
+
+SET AutoStop,On              ; stop script if carrier is lost
+Waitfor 0                    ; unlimited waiting time
+
+Waitfor "ANSI Color Graphics [y/N]?"
+Put Color
+
+Waitfor "first name"
+Put Name
+
+Waitfor "password"
+Put "^&"
+

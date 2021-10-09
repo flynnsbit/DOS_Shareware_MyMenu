@@ -1,0 +1,19 @@
+;
+; PCBOARD.SCR is a log on script file for PCBoard
+;
+
+string Name, Color
+Name = "first last"          ; put your name here
+Color = "Y^M"                ; "Y"es or "N"o
+
+When "graphics",Color
+
+SET AutoStop,On              ; stop script if carrier is lost
+Waitfor 0                    ; unlimited waiting time
+
+Waitfor "first name?"
+Put Name
+
+Waitfor "Password"
+Put "^&"
+

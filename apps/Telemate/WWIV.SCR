@@ -1,0 +1,24 @@
+;
+; WWIV.SCR is a log on script file for WWIV BBS
+;
+
+string ID, Phone, Graphics
+ID = "1"                     ; put your ID here
+Phone = "1212"               ; the last 4 digits of your phone number
+Graphics = "Y"               ; "Y"es or "N"o
+
+SET AutoStop,On              ; stop script if carrier is lost
+Waitfor 0                    ; unlimited waiting time
+
+Waitfor "graphics?"
+Put Graphics
+
+Waitfor "NN:"
+Put ID
+
+Waitfor "password:","PW:"
+Put "^&"
+
+Waitfor "-###-"
+Put Phone
+

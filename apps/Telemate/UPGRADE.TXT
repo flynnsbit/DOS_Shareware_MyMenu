@@ -1,0 +1,88 @@
+Upgrading from v4.1x and v4.20 to v4.21
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    Upgrading from previous version is simple, you can replace the
+    following     files with the new ones
+
+        TM.EXE          the main program
+        TM.OVL          the main program (overlay)
+        TM.RES          the resource file
+        TM.HLP          the help file
+        TMS.EXE         the script compiler
+        TMINST.EXE      the installation program
+        TMSTAT.EXE      the statistic program
+        TMPHONE.EXE     the phone maintenance utility
+        HOST.EXE        the self-extract host scripts
+        TOOLBOX.EXE     the self-extract toolbox scripts
+
+    There is no change in the configuration file format.
+    Note: DO NOT change the version number in TM.CFG. It should read
+          4.11 even you are running 4.21.
+
+
+Upgrading from v3.xx and v4.00 to v4.21
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    To upgrade from v3.xx and 4.00, you can replace the following files
+    with the new ones
+
+        TM.EXE          the main program
+        TM.OVL          the main program (overlay)
+        TM.RES          the resource file
+        TM.HLP          the help file
+        TMS.EXE         the script compiler
+        TMINST.EXE      the installation program
+        TMSTAT.EXE      the statistic program
+        TMPHONE.EXE     the phone maintenance utility
+        HOST.EXE        the self-extract host scripts
+        TOOLBOX.EXE     the self-extract toolbox scripts
+
+    Then run "UPGRADE TM.CFG" to upgrade your configuration file to the
+    new format.
+
+
+
+Upgrading from v2.xx to v4.21
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    This upgrade procesure assumes that you have Telemate already installed
+    in the directory \TM,
+
+    1. Before you do anything, MAKE A BACKUP of the \TM directory. You WILL
+       NEED some files from it later.
+    2. Copy all files (or extract them from the .ZIP) to \TM. You can
+       overwrite all the files.
+    3. Copy the TM.CFG from your backup to \TM and at the DOS prompt run
+       "UPGRADE TM.CFG".
+    4. Copy the TM.FON and TM.MEM from your backup to \TM.
+    5. Delete all *.TMS files.
+    6. Run TMINST.EXE to check if all the options are setup correctly.
+    7. If you are using the HOST script, you can run HOST.EXE to extract
+       the host script, copy the HUSER.HST from the backup to \TM and
+       then run the script HCONFIG.SCR to setup the host mode.
+
+    If you want to install v4.11 in a different directory, say C:\TM4,
+
+    1. Copy all the files (or extract them from .ZIP) to C:\TM4.
+    2. Copy the TM.CFG from \TM to C:\TM4 and at the DOS prompt run
+       "UPGRADE TM.CFG".
+    3. Edit TM.CFG and changes the lines to
+           DirTelemate="C:\TM4\"
+           DirScript="C:\TM4\"
+       * It is VERY IMPORTANT that you have the directory set up correctly.
+         Otherwise, Telemate will not run.
+    4. Edit your AUTOEXEC.BAT and change (or add) the line
+           SET TMCFG=C:\TM4\TM.CFG
+    5. Copy the TM.FON and TM.MEM from \TM to C:\TM4.
+    6. Run TMINST.EXE to check if all the options are setup correctly.
+
+    Notes:
+    1. The new *.MAC and *.PAD are not compatible with the old ones. You
+       will have to set up your macro again.
+    2. If you are using a 101-key keyboard, you should turn ON the 'Enhanced
+       Keyboard' option under the Options/Mouse & Keyboard dialog.
+    3. The VT102 keypad table is changed in order to emulate the actual
+       terminal more accurately. Please refer to Appendix B in the file
+       TELEMATE.DOC for details on the keyboard assignment.
+
+
