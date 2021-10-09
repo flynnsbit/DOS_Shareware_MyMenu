@@ -1,4 +1,4 @@
 @echo off
 cd\
-cd\ssavers\fw
+cd\scrsaver\fw
 swood.exe -T0 -M1
