@@ -21,7 +21,7 @@ goto quit
 :MIDI
 mt32-pi -g -v
 cls
-@wolf3dsm
+@wolf3dsw
 goto quit
 
 :quit
