@@ -1,0 +1,47 @@
+ _______ _______ ______  ______  ______ ____   ___  XXX XXX XXX
+|     __|__   __|   ___||   ___|| _____|    \ |   | X X X X X X
+|__     |__| |__|  |_---|  |_---| ____||   |\     | XXX XX  X X
+|_______|_______|____   |____   |______|___| \____| X   X X XXX
+                     |__|    |__|                   X Version 2
+                                                     Revision D
+DESCRIPTION
+-----------
+Short....
+Generates Signature File ASCII-Art Letters. Windows.
+
+Full....
+SiggenPro 2D Generates ASCII-Art Letters for your signature file.
+Includes 14 character sets. Many others available. Make your own 
+using the Built-in character set editor or import DOS Figlets. 
+A windows program.
+
+SPECIAL REQUIREMENTS: Requires VBRUN300.DLL
+
+INSTALLATION
+------------
+* In Windows run the unzipped SETUP.EXE.
+* An ICON and group will be automatically created.
+
+TO RUN - BASIC USAGE
+--------------------
+* Click on the SiggenPro Icon.
+* Enter Text in 'Request' box and click on 'GENERATE' button.
+* Choose 'Save As' to save the generated .SIG!
+
+FREEWARE/REGISTRATION/SUPPORT
+-----------------------------
+This program is FREEWARE.
+
+E-MAIL SIGGEN@BAGLEY.DEMON.CO.UK With your comments for
+registration and support. 
+
+SiggenPro WWW Page
+http://uptown.turnpike.net/B/bagley/siggen.html
+
+try SnailMail
+Ian Bagley, 6 Pippin Court, Staines Road, Bedfont, Middlesex
+TW14 8PA, United Kingdom
+
+Feel free to ask for notification of new versions.
+
+Written By : Ian Bagley

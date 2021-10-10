@@ -1,0 +1,119 @@
+
+
+
+                      What's new in Scream Tracker 3.21
+                      ---------------------------------
+
+     Bugs fixed:
+
+     * The 'Out of Gravis memory' message appearing whenever loading
+       instruments through the instrument library has been fixed to
+       appear only when appropriate.
+
+
+
+                       What's new in Scream Tracker 3.2
+                       --------------------------------
+
+       As we promised in the last version of Scream Tracker, if enough
+     bugs are found, a new version will be released. This file is a
+     compilation of the bugs that were found and the features that have
+     been added to ST. The fact still remains, there are no guarantees of
+     a new version of Scream Tracker or any updates. Bug reports will still
+     be received at edge@xgw.fi, though.
+       This list of bugs is so that everyone knows what to avoid doing if
+     forced to use the old ST for some reason. Also, these bugs should no
+     longer be reported. The smallest bugs aren't listed here because they
+     usually aren't fatal and don't affect composing in any remarkable way.
+
+     Bugs fixed:
+
+     * The pattern loop default loop point is now the beginning of the
+       pattern, not the row the loop command is on.
+
+     * Cutting a sample longer than 64000 bytes no longer corrupts the
+       sample.
+
+     * Approximate Length function stops the song. It used to corrupt the
+       pattern data if the song was being played.
+
+     * Loading a sample from the intrument library didn't release the
+       memory, which usually ended up crashing the tracker after a while
+       (a long while, that is).
+
+     * The sample offset command didn't repeat the last value given to it.
+
+     * The swap sample command in the instrument list increased the total
+       space taken up by the patterns by about 7 kb.
+
+     * The palette couldn't be customized. More specifically, the palette
+       was reset every time ST was loaded.
+
+     * In the polychannel mode, the editing screen didn't always follow the
+       cursor.
+
+     * When a patterndelay and a pattern break are on the same row, the delay
+       comes before the break.
+
+     * When a patternloop and a pattern break are on the same row, the loop
+       comes before the break.
+
+     * When loading a song and pressing N at the "are you sure"-prompt, the
+       song filename was changed, resulting in the overwriting of the song
+       which was being loaded.
+
+     * Two SBx (x<>0) commands on the same row caused an infinite loop.
+
+     * The "free GUS memory" field works properly.
+
+     * Tremor with a value of 00 now repeats the value of the last row.
+
+     * ALT+K with an area of one row doesn't crash the tracker anymore.
+
+     Features added:
+
+     * Flip sample command - converts an Amiga sample to a PC sample and
+       vice versa. Text files have to be flipped after they are loaded into
+       memory so they can be viewed.
+
+     * Save sample without header (ALT-W) command.
+
+     * Maximize volume now loads samples to GUS memory automatically.
+
+     * Skip value of 0. (ALT-0)
+
+     * A sample can now be cut at the loop end point in the instrument list.
+
+     * Fine Vibrato command. (Four times more accurate than normal vibrato)
+
+     * Glissando Control command.
+
+     * Set channel panning command. (Only on a GUS!)
+
+     * Channel default pan settings. (Only on a GUS!)
+
+     * Channel pan position visible on infopage. (Only on a GUS!)
+
+     * Fast volumeslides option for old ST2 and ST3 modules that were created
+       with the player that used to slide the volume with the D, K and L
+       commands on every frame.
+
+     * Gravis ultraclick removal by using 16, 24 or 32 GUS channels
+       (the more channels, the lower the sound quality will be in KHz,
+       but the clicks will lessen considerably).
+
+     * The position counters and Channelscope now work with GUS, too.
+
+     * When saving a MOD, all conversion errors are shown.
+
+     * A new "Mod Edit Mode", which turns all non-compatible pattern data
+       red while editing.
+
+     * Selectable distance between the dark grey bars in the pattern edit
+       mode for writing songs in 3/4 and the like.
+
+
+                                                       Signed,
+
+                                                       Edge and PSI
+

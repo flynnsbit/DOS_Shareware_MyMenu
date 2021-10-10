@@ -1,0 +1,10 @@
+UNIVBE v5.1: Universal VESA BIOS driver
+ makes SVGA cards compatible with VESA BIOS
+ (VBE 2.0) standards so that games, CD-ROMs,
+ utilities and other applications will work
+ properly (and faster) in high resolution
+ modes. Also includes: chip detection, power
+ management, monitor centering and
+ compatibility & performance testing
+ utilities. Now supporting over 160 different
+ SVGA chips. Previous Downloads: 10,145+

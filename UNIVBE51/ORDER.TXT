@@ -1,0 +1,59 @@
+
+                        UniVBE Order/Registration Form
+
+    SciTech Software                                           ___/___/___
+    5 Governors Lane, Suite D                                  MM/DD /YY
+    Chico, CA 95926 USA
+    Toll free/Phone/Fax: 800-4UNIVBE/916-894-8400/510-208-8026
+
+PLEASE PRINT OR TYPE CLEARLY!
+
+    Name: __________________________________________________________________
+
+    Company: _______________________________________________________________
+
+    Address: _______________________________________________________________
+
+             __________________________________Zip/Postal Code______________
+
+             ______________________________________ Country ________________
+
+    Phone: ___________________________________  Fax: _______________________
+
+    Email: _________________________________________________________________
+
+    Register product(s) to: [ ] Company     [ ] Individual
+
+    Pay By:   [ ] Cheque (USA only)  [ ] Money Order  [ ] Credit Card
+
+    Credit Card Orders: MasterCard / Visa / American Express(circle one):
+
+        Card Number ___________________________________ Expires ___/___
+
+        Exact name on card (print) ____________________________________
+
+SHIPPING CHARGES: If a disk & manual are ordered from outside of the
+    USA, the shipping charge is US$7 and will be delivered via airmail. 
+    For orders within the USA, the shipping charge is US$3. Orders without
+    disk & manual will receive a receipt and registration code via airmail
+    for no additional shipping charge.
+
+      Price List                                 Cost        Qty   Price
+      ------------------ ------------------      -----       ---   ------
+      Upgrade from UniVBE/Pro 4.x (registered)   US$16*      ___ $ ______
+      UniVBE/Pro 5.x                             US$28*      ___ $ ______
+      Manual + Disk     [ ] 3.5"   [ ] 5.25"     US$10       ___ $ ______
+
+    *Includes all 5.x upgrades (available online)
+
+      Subtotal:                                                  $ ______
+      CA residents add 7.25% sales tax:                          $ ______
+      Shipping Charges (See above for amount!):                  $ ______
+
+      Total Enclosed:                                            $ ______
+
+    I have read and agree to abide by the enclosed license agreement and I 
+    agree to be bound by my credit card agreement.
+
+      (Signature required) ________________________________________________
+

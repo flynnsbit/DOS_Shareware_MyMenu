@@ -1,0 +1,92 @@
+Supported soundcards in Mpxplay:
+(some cards were not tested fully (by myself), report me the bugs please)
+
+PCI cards with native hardware access (no drivers needed):
+
+modell name (chip)           |freq (kHz)| bits |chan| comment
+-----------------------------+----------+------+----+-------------------------
+CMI 8338/8738                |   6-48   |  16  |  2 |
+-----------------------------+----------+------+----+-------------------------
+Intel ICH, NForce            |   8-48   | 16,20|  2 | 20bit:ICH4 only
+-----------------------------+----------+------+----+-------------------------
+SB Live, SB PCI512 (emu10k1) |   4-48   |  16  |  2 | ie: CT4760P,4790,48xx
+-----------------------------+----------+------+----+-------------------------
+SB Audigy 1 (emu10k2)        |   4-96   |  16  |  2 | ie: SB0090,SB0160
+-----------------------------+----------+------+----+-------------------------
+SB Audigy 2 Value (CA0108)   |   4-96   |  16  |  2 | ie: SB0400
+-----------------------------+----------+------+----+-------------------------
+SB Audigy 2 & 4 (emu10k2)    | 4-96,192 | 16,24|  2 | ie: SB0240,SB0350,SB0380
+-----------------------------+----------+------+----+-------------------------
+SB Live 24, AudigyLS (CA0106)| 48,96,192| 16,24|  2 | ie: SB0310,SB0410,SB0438
+-----------------------------+----------+------+----+-------------------------
+VIA 82686,8233,8235,8237     |   4-48   |  16  |  2 | onboard audio
+-----------------------------+----------+------+----+-------------------------
+
+notes:
+- PCI cards detected/initialized automatically under DOS (under Win9x they
+  are disabled in the autodetection) (Linux,OS/2 and other OSes are not detected,
+  card will work like in DOS), maybe under Win2K and XP they won't work at all
+- digital/spdif outputs are not tested (maybe the analog output works only)
+- maybe some cards require "Plug & Play aware OS" = "No" setting in BIOS 
+  (else BIOS will not initialize it)
+- if Mpxplay finds an other card (or ignore the card under Win), then try
+  to use -scs option
+- bits: default is 16, you can select a different one with the -ob option
+- chan: there are many 5.1,7.1 cards on the list, but Mpxplay handles them
+        in 2 channel (stereo) mode only (yet)
+- freq: Mpxplay tries to set the freq of the card to the freq of the song,
+  if the required freq is not supported by the card, then the program makes
+  the conversion between the input and output freqs
+- Mpxplay doesn't use IRQ for PCI cards (this cannot cause problems)
+
+- Audigy 2/4:
+ - 192kHz is supported in 24-bit mode only (else 96kHz is the max)
+ - 24-bit mode supports 48k,96k,192k only
+ - in 24-bit mode the sent data is 32-bit, so -ob 24 is really -ob 32 (equals)
+ - see sc_sbliv.c for a detailed SB-PCI soundcard list
+- ICH & VIA: maybe some cards support 48k only, use -of 48000 (at wrong playing speed)
+
+==============================================================================
+
+ISA cards or emulation (usually requires DOS drivers):
+
+modell name                  |  freq    | bits |chan| environment variable
+-----------------------------+----------+------+----+-------------------------
+SB16 or compatible (DSP 4.x) |  4k-48k  | 16   | 2  | BLASTER=A220 I5 D1 H5 T6
+-----------------------------+----------+------+----+-------------------------
+ESS 688,868,869,878,887,etc. |  4k-48k  | 16   | 2  | BLASTER=A220 I5 D1 H5
+-----------------------------+----------+------+----+-------------------------
+WSS (Crystal Sound, Yamaha)  |  6k-48k  | 16   | 2  | ULTRA16=530,1,5,0
+-----------------------------+----------+------+----+-------------------------
+GUS MAX                      | 22k-44k  | 16   | 2  | ULTRASND=240,5,5,5,5
+-----------------------------+----------+------+----+-------------------------
+SB 1.0,2.0,2.01,Pro          |  4k-22k  | 8    | 1,2| BLASTER=A220 I5 D1 T4
+-----------------------------+----------+------+----+-------------------------
+
+notes:
+- Environment variables are examples only, Port, Irq and Dma values depends
+  on your hardware/driver settings.
+- The program usually can autodetect the card if you don't set an environment
+  variable, but it's better (faster starting), if You do this before starting
+  of the program (use the env. variable from the -sct)
+- The program does not set/modify the volume of the soundcard automatically.
+  If the playing starts, but you don't hear sound, try/use the -scv option.
+- If the playing starts, but it runs very fast (4x-10x faster) or
+  it plays a short block of music, after that it stops (or the program freezes),
+  then your DMA (or the IRQ) value is incorrect.
+  Try the -sct option, maybe it shows the correct value(s).
+- Mpxplay detects the 0,1,3,5,6,7 DMA channels only, if you use a different one,
+  you must configure it manually (with the environment variable).
+
+==============================================================================
+
+Other audio outputs:
+
+name                  |  freq    |bits|chan| comment
+----------------------+----------+----+----+----------------------------------
+WAV (pcm) file output |512Hz-??Hz|8-32| 1,2| decoding input to a wav (-o)
+----------------------+----------+----+----+----------------------------------
+bitstream output      |   -      |  - |  - | AAC,AC3,DTS,MP2,MP3 (-o -obs)
+----------------------+----------+----+----+----------------------------------
+null-output/speed-test|   -      |  - |    | -t
+----------------------+----------+----+----+----------------------------------

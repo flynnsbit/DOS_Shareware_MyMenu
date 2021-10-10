@@ -1,0 +1,145 @@
+ TERMINATOR 2 is copyright (C) 1996 to George Collins and all rights
+ not specifically assigned in the licence agreement visible upon
+ installation are reserved to George Collins.
+
+ There is *NO* drop dead code in this program but this version of
+ TERMINATOR 2 may not be lawfully copied nor distributed after
+ 5 June 1996. Please read the file \DOCUMENT\LICENCE.DOC created upon
+ installation for the exact terms together with additional conditions
+ and exclusions of liability
+
+ INSTALLATION
+ ~~~~~~~~~~~~
+ TERMINATOR 2 is a brand new program - so you MUST start afresh with
+ a new directory structure separate, distinct and apart from any old
+ directory structure in which obsolete versions or files of this (or,
+ of course, other programs) may already exist.
+
+ TERMINATOR 2 is my trademark. It's important that you always write
+ it in capitals and always with an arabic (as opposed to Roman)
+ numeral `2'. I would prefer it if you use the full TERMINATOR 2 name
+ the first time you write it and then, subsequently, it may be
+ abbreviated to `T2'
+
+ The various different letter versions of TERMINATOR 2 - this one is
+ `a' - may contain very significant new features and bug fixes so that
+ is why I have changed the distribution archive naming scheme:
+
+ I would very much prefer it if you distribute my original PKware ZIP
+ TERMINATOR 2 archives intact and with exactly the same 0204T2A?.ZIP
+ names since my authenticity verification (# JRU603 -AV) will then be
+ preserved.
+
+ If you *must* re-archive my distribution archives then please, please
+ DO keep the generic file naming scheme of 0204T2An.*  (where n is the
+ archive part number and * stands for an appropriate archive extension
+ eg: ZIP, RAR, LHA, ARJ, ARC, ZOO, SQZ, etc)!!!
+
+旼컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴커
+� 같같 Getting started quickly 같같같같같같같같같같같같같같같같같같� �
+읕컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴켸
+
+At the Operating System prompt, enter: INSTALL
+
+(TERMINATOR 2 is WARP aware and should automatically detect the OS/2
+environment if you have OS2COMSPEC set and act accordingly)
+
+{Please note that we can NOT help you with the English Language Test
+you must pass before installation continues. We want to be sure that
+people understand enough English to give their INFORMED consent to our
+licencing terms...}
+                                  *
+
+After a successful installation, enter:         T.BAT
+and the first time the program runs it will attempt an intelligent
+configuration.
+
+For people who don't know much about serial communication and modems:
+- don't worry about all the options!
+
+IMPORTANT: If you don't understand a toggle or option do not change it
+           - just leave it as it is. The options have already been set
+           to give the best performance for the majority.
+
+                                  *
+
+All options have been set as sensible defaults for normal use, and
+there is no immediate need to change much - although you may need to
+set up the following things if the intelligent configuration failed
+or you aborted it:
+
+Port Parameters:-
+To change these, press [Alt] and [P] simultaneously from the Terminal
+window.
+After you have made your changes, hit "OK" for a temporary change for
+that session only, or "Update" to permanently write the changes in
+your configuration.
+
+If you have a faster modem than 2400 bps, you should set your bps rate
+to 19200 or 38400 or even faster (see below).
+
+Fast modems can use data compression and if you only use 9600, you
+will not be making the best of the hardware you possess for fast
+transfers since your low port speed will act as a bottleneck.
+
+Normally, for most BBS use, you use 8 databits, no parity, 1 stopbit.
+
+If you DO have a slow modem and are using 2400 or slower, you should
+disable Hardware RTS/CTS flowcontrol in the "Change Configuration,
+Communication Setup" menu.
+
+9600bps and faster modems use Hardware RTS/CTS flowcontrol, which is a
+safer way of sending data when using a comport at 19200 or above.
+(Don't ever run 57600 bps or faster on external modems, unless you are
+sure that your cable is protected from noise - try 38400 first.)
+
+Remember you must also set RTS/CTS flowcontrol in your modem - look in
+the modem manual. RTS/CTS flowcontrol requires an internal modem OR an
+external modem AND a proper modem cable which has the RTS and CTS
+(Request to send/Clear to send) pins connected.
+
+"Dialling and modem" configuration menu:-
+If you did not allow the program to install a modem from the pick
+list at first installation, you might choose "Install modem" from
+this menu now.
+
+If your modem does not feature in the pick list of modems, you must
+set the following things manually - or at least check if they work
+(Look in your modem manual to check for further details. Remember
+factory defaults on your modem may mean you won't have to change
+anything...):
+
+Carrier Detect (CD) follows line (usually &C1)
+
+Type AT&C1 and press enter
+
+When DTR is low, line must be dropped, (Usually &D2 or &D3)
+
+Type AT&D2 and press enter
+
+Not all modems like this, if you can't hangup your modem, move to the
+"Modem & dialling" menu and Enter a 0 at the hang-up options which
+will allow TERMINATOR 2 to send a hangup string to your modem instead.
+
+Type ATS0=0
+Then your modem will not pick up the phone - leaving TERMINATOR 2 to
+make the decision.
+
+If you can save your setup in your modem, type AT&W, otherwise you
+must use the initstring which combines these various commands:
+AT&C1&D2S0=0^M
+
+If your modem string is not sent because the carrier is high when you
+start up TERMINATOR 2, you should use the switch "Force init string"
+in the "Dialling and modem" menu..
+
+If your modem is a normal Hayes compatible you don't need to set up
+anything else, everything has been set up already.
+
+                                  *
+
+Now you should be ready to press [Alt][D] for the phonebook and call
+some of the great BBS's listed there - or make some entries of your
+own...
+
+Have fun!

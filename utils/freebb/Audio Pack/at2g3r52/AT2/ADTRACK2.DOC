@@ -1,0 +1,2682 @@
+
+ Ú-ÄÄÄÄÄÄÄÄÄ--ùú                                                 úù-ÄÄÄÄÄÄÄ-¿
+ ù                                                                          ³
+ ú                                                                          ³
+                              subz3ro's                                     ³
+                                  ÄÂÄ       ÄÄ                              ³
+                             /´DLiB³R/´CK3R ³³ G3                           ³
+                              ³       ³     ÄÄ                              ³
+                                        2.3.52                              ³
+                                                                            ³
+                                                                            ³
+                                                                            ³
+                                                                            ³
+ SYSTEM REQUiREMENTS                                                        ù
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ                                                        ú
+
+ MiNiMAL
+
+  ş CPU 386DX
+  ş VGA card
+  ş VGA monitor
+  ş 230k free conventional memory
+  ş 5MB+ free extended memory
+  ş Yamaha YMF262 / OPL3 (compatible) sound card
+  ş MS-DOS 3.0 (compatible) operating system
+
+ RECOMMENDED
+
+  ş Pentium processor
+  ş SVGA PCI card
+  ş SVGA monitor (VESA DDC/2B compliant)
+  ş 400k free conventional memory
+  ş 8MB+ free extended memory
+  ş 100k free disk space
+  ş SoundBlaster 16/AWE32/AWE64 (AWE64 with Reverb 15% and Chorus 25%)
+  ş mouse driver installed
+  ş DOS console under Windows 98
+
+
+ CONTENTS
+
+    I. PROLOGUE
+   II. SCREEN LAYOUT
+  III. KEY REFERENCE
+   IV. iNSTRUMENTS
+    V. EFFECTS
+   VI. SONG VARiABLES
+  VII. GETTiNG STARTED
+ VIII. MIDI SYNTH MODE
+   IX. USEFUL TiPS
+    X. KNOWN PROBLEMS
+   XI. EPiLOGUE
+
+
+Ú-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ--ùú  ú
+ù I. PROLOGUE                ù
+ú         úù-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-Ù
+
+
+ AdLib tracker is a 9-channel FM tracker for the OPL2-compatible
+ chips found on most sound cards.
+ A few years ago, there was a huge variety of AdLib trackers.
+ The most common were:
+
+ Zwerg Zwack/Chicken's HSC-Tracker,
+ Jens-Christian Huus' EdLib,
+ Shayde's Reality AdLib Tracker,
+ Erik Pojar's Surprise! AdLib Tracker,
+ and the latest piece of cake - Conqueror's Amusic.
+
+ This new way of AdLib tracking was just that missing part in scene,
+ splitting the two different worlds: a world of ugly CMF shit,
+ as Chicken used to say, and a world of sample based trackers, such as
+ FastTracker or Impulse Tracker.
+
+ The above trackers became pretty popular and were used to produce
+ very nice FM music, short on size but high on quality. Such tunes were
+ included in many BBS intros and demos. Unfortunately, the things
+ went wrong, and AdLib tracking has come to fruition.
+
+ Nowadays, at the end of second Millennium, i decided to revive this part
+ of tracking history. Ladies and gentlemen, subz3ro is proud to present
+ you a brandnew AdLib tool - /´DLiB TR/´CK3R ][.
+
+ You may probably ask WHY? Let me use the words of Jens-Christian Huus,
+ one of the most common people in C64 and AdLib programming, the author
+ of EdLib:
+
+ "People begun to actually hate FM sounds. The arrival of GUS and AWE32
+  made wavetable techniques very popular and indeed it sounds very good,
+  but there are some things in the old FM standard that is unique.
+  You can't fiddle with samples in the same way as you can with FM.
+  I personally never quite liked sampling, i find it downright boring.
+  With a FM chip it is like on a C64; you have a few parameters and
+  everything you do has to be done within these parameters.
+  These boundaries makes it funny to make music, to see how far you can
+  actually push AdLib. To do sounds on FM requires expertice but
+  if you're good at it, almost any instrument can be reproduced properly,
+  except perhaps drums."
+
+
+ HiGHLiGHTS
+ ÄÄÄÄÄÄÄÄÄÄ
+
+ ş supports 4-op instruments, melodic and percussion instruments
+
+ ş supports up to 255 instruments, 128 patterns, 128 order list entries,
+   87 effect commands, and 16 extended commands
+
+ ş features 2 effect columns, instrument macro-definitions,
+   MPU-401 MIDI slave mode (SYNTH!)
+
+ ş loads following song formats:
+     A2M (AdT2)
+     A2P (AdT2) [pattern]
+     A2T (AdT2) [tiny module]
+ N1/ AMD (Amusic)
+     CFF (BoomTracker 4.0)
+     DFM (Digital-FM)
+ N2/ FMK (FM-Kingtracker)
+     HSC (HSC AdLib Composer / HSC-Tracker)
+     MTK (MPU-401 tr’kkîr)
+     RAD (Reality AdLib Tracker)
+ N3/ S3M (Scream Tracker 3.x)
+ N4/ SAT (Surprise! AdLib Tracker)     {ver.1,5,6}
+ N4/ SA2 (Surprise! AdLib Tracker 2.0) {ver.8,9}
+ N1/ XMS (XMS-Tracker)
+
+ NOTE 1
+ Because of bug in Amusic's (and its crack XMS-Tracker's) replay routine,
+ the Arpeggio effect used to generate buggy sounds. Since /´DLiB TR/´CK3R ][
+ ain't got a support for such buggy things, the Arpeggio effect may differ.
+
+ NOTE 2
+ After conversion, the Tremolo and Vibrato effects may sound different,
+ because FM-Kingtracker uses slow speed table (not 100% emulated in AT2)
+ and optional waveform definitions that are currently not supported.
+ Also the Retrig Note effect is slightly different (if i should be honest,
+ i really couldn't get any sense of Sami's frame counting; all i could
+ do to make this effect sound way "authentic" was the frame correction during
+ conversion phase--and this ain't perfect, though :)
+ The OPL3 setting is ignored, Stereo setting is accepted, Rhythm mode is
+ not supported, because it was incorrectly implemented in earlier
+ versions of the tracker, and the author himself stopped supporting it.
+ Also the pattern order list will be truncated to 128 if exceeds.
+
+ NOTE 3
+ Conversion of these (primarily sample based) modules may not be 100% exact.
+ Therefore Slide Up/Down, Vibrato, and Tone Portamento effects may be
+ inaccurate after importing to /´DLiB TR/´CK3R ][.
+ Anyway, some experimental methods are used to fix up the fine-tuning
+ and frequency slide based Scream Tracker's effects during
+ conversion phase (experimental understand as "non-perfect" :)
+ Note that the optional vibrato/tremolo waveforms are not supported.
+ Also the pattern order list will be truncated to 128 if exceeds.
+
+ NOTE 4
+ Since Surprise! AdLib Tracker uses non-standard Volume Slide procedure
+ in replay routine, Volume Slide based effects may differ after importing
+ to /´DLiB TR/´CK3R ][. Anyway, an experimental method to fix up
+ this difference is used during conversion phase (blabla, same as above :)
+ The special arpeggio is also currently not supported (anyway, there are
+ no SA2 modules using that feature, afaik :)
+
+ ş loads following instrument formats:
+     A2i (AdT2)
+     A2F (AdT2) [w/fm-register macro]
+     CiF (BoomTracker 4.0)
+     FiN (FM-Kingtracker)
+     iNS (HSC-Tracker/RAD-Tracker, SAdT, Amusic/AdLib instrument)
+     SBi (Creative Labs FM instrument)
+     SGi (Sound Generator 3.0)
+
+ Note that the type of "ins" file can be set up in configuration file
+ if neccessary (see option "force_ins").
+
+ ş loads following bank formats:
+     A2B (AdT2)
+     A2W (AdT2) [w/macros]
+     BNK (AdLib instrument bank) {ver.1.0}
+     FiB (FM-Kingtracker)
+     iBK (Creative Labs FM instrument bank)
+
+ ş The tracker supports block operations, and has an instrument editor.
+   In addition, it features Tracing, Debugging, and a MidiBoard.
+
+ ş The tracker reads many of its settings from a configuration file.
+   It has strong support geared for row by row tracing, pausing,
+   and playing from any line in a pattern.
+
+
+Ú-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ--ùú  ú
+ù II. SCREEN LAYOUT          ù
+ú         úù-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-Ù
+
+
+ The main window of the tracker is roughly composed of 5 parts:
+
+   A. The upper left hand window shows the Status of the song
+      (paused, playing, etc.), row number and order/pattern position,
+      current speed/tempo, time playing and file information.
+
+   B. The upper right hand window is the Pattern Order.
+      There the user can build the order by which the patterns are played.
+
+   C. The main window is the Pattern Editor with total count of 18/20 tracks,
+      5 tracks visible at a time, where the user can compose the song,
+      enter the notes, commands, number of instrument, and effects.
+
+   D. The Status Line at the bottom where the user can keep track
+      of the different modes and the active mode which is
+      highlighted (MBoard, Trace, Debug, Tracking), active octave,
+      active instrument, behavior mode, a.o. The user should experiment
+      to gain familiarity with different modes that can be activated.
+
+   E. The bottom window under Pattern Editor shows the Volume Analyzer.
+      User have to scroll up the rest of main screen to see it.
+      You can get all the volume information (carrier and modulator
+      output level, overall volume and global song volume,
+      approximate intensity in dB) there.
+
+
+ KEYBOARD CONVENTiONS
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ [A]          means the 'a' key on your keyboard
+ [^A]         means the 'a' key + [Ctrl]
+ [Shift] A    means the 'a' key + [Shift]
+ [Alt] A      means the 'a' key + [Alt]
+ [Shift] ^A   means the 'a' key + [Ctrl] + [Shift]
+ [Alt] ^A     means the 'a' key + [Ctrl] + [Alt]
+
+ In case of composite shortkeys, it is recommended to use following
+ order of pressing the keys:
+
+ 1st: [Ctrl] (if any)
+ 2nd: [Alt] or [Shift] or [Tab] (if any)
+ 3rd: "ordinary" key (if any :)
+
+ Note that sometimes when running /´DLiB TR/´CK3R ][ in Windows
+ environment, some of the Ctrl+Shift+xx (where "xx" is an ordinary
+ character key) keys may stop responding. It is caused by some Windows
+ programs or Windows itself overriding the DOS keyboard driver.
+ Therefore, it is recommended to use pure MS-DOS mode or terminate such
+ Windows programs.
+
+
+Ú-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ--ùú  ú
+ù III. KEY REFERENCE         ù
+ú         úù-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-Ù
+
+
+ III/1. GENERAL KEY REFERENCE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ F1                       Help
+ F2 (^S)                  Save file
+ F3 (^L)                  Load file
+ F4 (^A)                  Toggle Nuke'm dialog
+ F5                       Play
+ F6                       Pause
+ F7                       Stop
+ F8                       Play song from current pattern or order
+ F9                       Play current pattern or order only
+ [Ctrl] F8                @F8 from current line ¿
+ [Ctrl] F9                @F9 from current line Ã (Pattern Editor)
+ [Alt] F6                 Single-play pattern   Ù (Shift toggles trace)
+ [Alt] F5                 @F5 ¿
+ [Alt] F8                 @F8 Ã without synchronization
+ [Alt] F9                 @F9 Ù
+ [Shift] F2               Quick Save
+ [Shift] F3               Quick Load
+ [Shift] F5               F5 with Trace
+ [Shift] F6               Toggle Debug mode from position at cursor
+ [Shift] F8               F8 with Trace
+ [Shift] F9               F9 with Trace
+ [Shift] Space            Toggle MidiBoard mode ON/OFF
+ ^Space                   Toggle Note Recorder mode ON/OFF
+ [Alt] Space              Toggle Synth! mode ON/OFF (if available)
+ [Shift] +,-              Skip to next/previous pattern while Tracing
+ +,-                      Same as above; play pattern from start
+
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ WHEN iN NOTE RECORDER MODE                                         ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ ^Left,^Right ³ Select group of tracks for recording                ³
+ ³ Enter        ³ Start recording from current position (*)           ³
+ ³ Space        ³ Toggle using custom instrument for all tracks ¿     ³
+ ³ [Alt] Space  ³ Toggle using present instruments in tracks    Ã (*) ³
+ ³ MBoard keys  ³ Write notes to corresponding tracks           ³     ³
+ ³ F8,F9        ³ Toggle pattern repeat OFF/ON                  Ù     ³
+ ³ Backspace    ³ Clear note/instrument sequence in tracks            ³
+ ³ Up,Down      ³ Rewind/Fast-Forward while recording                 ³
+ ³ [Shift] F6   ³ Continue in Debug mode from position at cursor      ³
+ ³ F7           ³ Stop recording and reset starting position;         ³
+ ³              ³ current group of tracks can be modified             ³
+ ³ [Alt] 1..9,0 ³ Toggle corresponding track ON/OFF                   ³
+ ³ [Alt] R      ³ Reset flags on all tracks                           ³
+ ³ *            ³ Reverse ON/OFF on all tracks                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ In case you need non-continuos track selection, you can choose     ³
+ ³ from already selected group a subset of tracks where notes will be ³
+ ³ written by manipulating track ON/OFF flags.                        ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ Note that playing with Trace and playing without synchronization can be
+ set up in configuration file (see options "trace_by_default"
+ and "nosync_by_default")
+
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ WHiLE SONG iS PLAYED WiTH TRACE           ³
+ ÃÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Enter ³ Remove Trace and pause playing    ³
+ ³ Esc   ³ Remove Trace and continue playing ³
+ ÀÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ ^Enter                   Play next pattern according to order
+ ^Left  (Up)              Rewind current pattern (with Trace)
+ ^Right (Down)            Fast-Forward (with Trace)
+ [Ctrl][Alt] <hold down>  Temporarily show Debug Info window
+ ^D                       Toggle Debug Info window
+ ^Q                       Toggle Instrument Macro Editor window
+ ^E                       Toggle Arpeggio/Vibrato Macro Editor window
+ ^F                       Toggle Song Variables window
+ ^H                       Toggle Replace window
+ ^I                       Toggle Instrument Control panel
+ ^O                       Toggle Octave Control panel
+ ^P                       Toggle Pattern List window
+ ^R                       Toggle Remap Instrument window
+ ^T                       Toggle Transpose window
+ ^1..^8                   Quick-set octave
+ [Alt] +,-                Adjust overall volume
+ [Alt] C                  Copy object to clipboard (with selection)
+ [Alt] P                  Paste object from clipboard
+ [Alt] M                  Toggle marking lines ON/OFF
+ [Alt] L                  Toggle Line Marking Setup window
+ [Alt] 1..9,0             Toggle corresponding track ON/OFF
+ [Alt] S                  Set all OFF except current track (solo)
+ [Alt] R                  Reset flags on all tracks
+ *                        Reverse ON/OFF on all tracks
+ F10                      Toggle Quit Program dialog
+ [Shift] F11              Toggle default (AdT2) behavior mode (optional)
+ F11                      Toggle FastTracker behavior mode (optional)
+ F12                      Toggle Scream Tracker behavior mode (optional)
+ [Ctrl][Tab] Arrows       Scroll screen contents (mouse emulation)
+
+
+ III/2. PATTERN ORDER KEY REFERENCE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Up,Down,Left,Right       Cursor navigation
+ PgUp,PgDn                Move up/down 32 patterns
+ Home,End                 Move to the top/end of pattern order
+ Tab,[Shift] Tab          Move to next/previous entry
+ Insert                   Insert new entry
+ Delete                   Delete entry
+ Backspace                Clear entry
+ ^Space                   Enter skip mark
+ ^C                       Copy entry to clipboard
+ ^V                       Paste entry from clipboard
+ +,-                      Adjust entry
+ ^F2                      Save module in tiny format
+ Enter                    Switch to Pattern Editor
+
+ Note that 80-FF pattern number range causes a jump in pattern order.
+ syntax: order_number[hex](+80h); e.g. "9A" jumps to order 1A
+
+
+ III/3. PATTERN EDiTOR KEY REFERENCE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Up,Down,Left,Right       Cursor navigation
+ PgUp,PgDn                Move up/down 16 lines
+ Home,End                 Move to the top/end of current pattern
+ Tab,[Shift] Tab          Move to next/previous track
+ [Shift] PgDn,PgUp (+,-)  Move to next/previous pattern
+ [Shift] Home,End         Move fwd./bckwd. to the first/last pattern
+ ^Home,^End               Move to the end/top of previous/next pattern
+ Space                    Advance to next row
+ ^PgUp,^PgDn              Transpose note (block) halftone up/down
+ Backspace                Remove note or clear attributes
+ Insert                   Insert new line (within track only)
+ Delete                   Delete line (within track only)
+ [Shift] Insert           Insert new line
+ [Shift] Delete           Delete line
+ [Shift] Enter            Toggle fixed and regular note
+ ^K                       Insert Key-Off
+ ^C                       Copy object at cursor to clipboard
+ ^V                       Paste object from clipboard
+ [Ctrl][Tab] V            Multiple paste object from clipboard
+ {Ctrl} "[","]"           Change current instrument
+ [Alt] F2                 Save current pattern to file
+ ^F2                      Save module in tiny format
+ [Shift] F3               Quick load recent pattern data
+ Enter                    Switch to Pattern Order
+
+ NOTE SYSTEM: C,C#,D,D#,E,F,F#,G,G#,A,A#,B(H)
+ VALiD NOTE ENTRiES: C,C-,C#,C1,C-1,C#1...
+
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ BLOCK OPERATiONS iN PATTERN EDiTOR                               ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Starting to mark a block: [Shift] Up,Down,Left,Right             ³
+ ³ When at least one row in one track is marked, you can continue   ³
+ ³ marking also with PgUp,PgDn,Home,End (Shift is still held down!) ³
+ ³ Quick mark: [Alt] Q (1x-2x-3x) track Ä pattern Ä discard       ³
+ ³ Toggle last marked block: [Alt] B                                ³
+ ÃÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ ^B ³ Blank block  ³ Insert blank block to pattern                ³
+ ³ ^C ³ Copy block   ³ Copy block to clipboard                      ³
+ ³ ^D ³ Delete block ³ Remove block from pattern                    ³
+ ³ ^N ³ Nuke block   ³ Clear block contents                         ³
+ ³ ^V ³ Paste block  ³ Paste block from clipboard to pattern (*)    ³
+ ³ ^X ³ Cut block    ³ Combine both Copy and Delete operation       ³
+ ÃÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ (*) PASTE BLOCK OPERATiON VARiANTS                               ³
+ ³ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                               ³
+ ³ "Paste block" operation has three other functional variants      ³
+ ³ with different key shortcuts for activation:                     ³
+ ³ 1. [Alt] V toggles "Mix block" operation, when block data        ³
+ ³    from clipboard is applied without overwriting existing data;  ³
+ ³ 2. [Shift] ^V toggles "Selective paste block" operation,         ³
+ ³    when only block data from clipboard corresponding to current  ³
+ ³    cursor position is being applied (i.e. note, instrument,      ³
+ ³    1st effect or 2nd effect);                                    ³
+ ³ 3) [Alt][Shift] V toggles "Flipped paste block" operation,       ³
+ ³    when block data from clipboard is applied vertically flipped. ³
+ ³                                                                  ³
+ ³ MANiPULATiON WiTH FX VOLUME iNFORMATiON                          ³
+ ³ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                          ³
+ ³ When there is block marked, which contains some effect           ³
+ ³ commands carrying volume information, you can increase/decrease  ³
+ ³ their values with +/- keys.                                      ³
+ ³ Effect commands are processed with following priority:           ³
+ ³   1) Set instrument volume (Cxx),                                ³
+ ³      Force instrument volume (=xx)                               ³
+ ³   2) Set modulator volume (9xx)                                  ³
+ ³   3) Set carrier volume (Ixx)                                    ³
+ ³   4) Set global volume (%xx)                                     ³
+ ³ If effect command with higher priority has been processed,       ³
+ ³ all remaining effect commands with lower priority are skipped.   ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+ III/4. PATTERN LiST WiNDOW KEY REFERENCE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Up,Down                  Cursor navigation
+ PgUp,PgDn                Move up/down 20 patterns
+ Home,End                 Move to the top/end of pattern list
+ Space                    Mark/Unmark pattern
+ ^Space                   Unmark all marked patterns
+ [Shift] ^Space           Reverse marks on all patterns
+ [Alt] C (^C)             Copy pattern to clipboard
+ [Alt] P (^V)             Paste pattern from clipboard
+ [Shift] ^V               Paste pattern data from clipboard
+ [Alt] ^V                 Paste pattern name from clipboard
+ ^W                       Swap marked patterns
+ [Shift] ^W               Swap marked patterns w/o names
+ [Shift] Insert           Insert new pattern
+ [Shift] Delete           Delete pattern
+ Enter                    Rename pattern / Multiple paste
+ [Shift] F3               Quick load recent pattern data
+ Esc                      Return to Pattern Editor or Pattern Order
+
+
+ III/5. iNSTRUMENT CONTROL PANEL KEY REFERENCE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Up,Down                  Cursor navigation
+ PgUp,PgDn                Move up/down 16 instruments
+ Home,End                 Move to the top/end of instrument list
+ Space                    Mark/Unmark instrument
+ MBoard keys <hold down>  Preview instrument
+ Enter                    Rename instrument
+ ^C                       Copy instrument to clipboard
+ [Shift] ^C               Copy instrument also with macro-definitions
+ ^V                       Paste instrument(s) from clipboard
+ [Shift] ^V               Paste instrument data from clipboard
+ [Alt] V                  Paste instrument name(s) from clipboard
+ ^W                       Swap marked instruments
+ [Shift] ^W               Swap marked instruments W/o names
+ Tab                      Toggle Instrument Editor window
+ [Shift] Tab              Toggle Macro Editor window
+ [Shift] M,B,S,T,C,H      Toggle melodic and percussion (BD,SD,TT,TC,HH)
+ [Shift] F2               Save instrument w/ fm-register macro to file
+ [Alt] F2                 Save instrument bank to file
+ ^F2                      Save instrument bank w/ all macros to file
+ [Shift] F3               Quick load recent instrument data
+ Esc                      Return to Pattern Editor or Pattern Order
+
+
+ III/6. iNSTRUMENT EDiTOR WiNDOW KEY REFERENCE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Up,Down,Left,Right,
+ Home,End                 Cursor navigation
+ Tab                      Jump to next setting
+ [Shift] Tab              Jump to previous setting
+ +,- (PgUp,PgDn)          Adjust value
+ Space                    Select item
+ ^Space                   Toggle ADSR preview ON/OFF (if necessary)
+ [Ctrl] "[","]"           Change current instrument
+ [Ctrl][Shift] "[","]"    Change macro speed
+ MBoard keys <hold down>  Preview instrument
+ Enter                    Toggle carrier and modulator slot settings
+ [Shift] M,B,S,T,C,H      Toggle melodic and percussion (BD,SD,TT,TC,HH)
+ [Shift] F2               Save instrument w/ fm-register macro to file
+ Esc                      Return to Instrument Control panel
+
+
+ III/7. iNSTRUMENT MACRO EDiTOR WiNDOW KEY REFERENCE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Up,Down,Left,Right
+ Home,End                 Cursor navigation
+ PgUp,PgDown              Move up/down 16 lines
+ Tab (Enter)              Jump to next field in order
+ [Shift] Tab              Jump to previous field in order
+ [Shift] Up,Down          Synchronous navigation within tables
+ [Shift] Home,End         Move to the start/end of current line in table
+ ^Left,^Right             Switch between macro tables
+ [Shift] ^Left,^Right     Navigate to start/end of macro table
+ ^PgUp,^PgDown            Change current arpeggio/vibrato table
+ [Ctrl] "[","]"           Change current instrument
+ [Ctrl][Shift] "[","]"    Change macro speed
+ ^C                       Copy line in table (whole table respectively)
+ [Shift] ^C               Copy column in table
+ ^V                       Paste object from clipboard
+ ^Enter                   Paste data from instrument registers
+ [Shift] Enter            Paste data to instrument registers
+ [Shift] ^Enter           Paste data from instrument registers w/ selection
+ Backspace                Clear current item in table
+ [Shift] Backspace        Clear line in table
+ [Shift] +,-              Adjust value at cursor / current item in table
+ ^Home,^End               Quick-adjust table length
+ [Shift] ^Home,^End       Quick-adjust loop begin position
+ [Shift] ^PgUp,^PgDown    Quick-adjust loop length
+ Insert                   Insert new line in table
+ Delete                   Delete line in table
+ ^N                       Toggle note retrigger ON/OFF       ¿
+ [Alt] ^N                 Reset flags on all rows            ³
+ ^Backspace               Toggle corresponding column ON/OFF Ã FM-register
+ [Alt] S                  Set all OFF except current column  ³ table
+ [Alt] R                  Reset flags on all columns         ³
+ *                        Reverse ON/OFF on all columns      Ù
+ \                        Toggle current item (switch types only)
+ Space                    Toggle macro-preview mode
+ ^Space                   Toggle Key-Off loop within macro-preview mode
+ ^F2                      Save instrument bank w/ all macros to file
+ Esc                      Leave Instrument Macro Editor window
+
+
+ III/8. APREGGiO/ViBRATO MACRO EDiTOR WiNDOW KEY REFERENCE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Up,Down,Left,Right
+ Home,End                 Cursor navigation
+ PgUp,PgDown              Move up/down 16 lines
+ Tab (Enter)              Jump to next field in order
+ [Shift] Tab              Jump to previous field in order
+ [Shift] Up,Down          Synchronous navigation within tables
+ ^Left,^Right             Switch between macro tables
+ [Shift] ^Left,^Right     Navigate to start/end of macro table
+ ^PgUp,^PgDown            Change current arpeggio/vibrato table
+ [Ctrl] "[","]"           Change current instrument
+ [Ctrl][Shift] "[","]"    Change macro speed
+ ^C                       Copy line in table (whole table respectively)
+ [Shift] ^C               Copy column in table
+ ^V                       Paste object from clipboard
+ Backspace                Clear current item in table
+ [Shift] Backspace        Clear line in table
+ [Shift] +,-              Adjust value at cursor / current item in table
+ ^Home,^End               Quick-adjust table length
+ [Shift] ^Home,^End       Quick-adjust loop begin position
+ [Shift] ^PgUp,^PgDown    Quick-adjust loop length
+ Esc                      Leave Arpeggio/Vibrato Macro Editor window
+
+
+ III/9. iNSTRUMENT MACRO BROWSER KEY REFERENCE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Up,Down,PgUp,PgDown
+ Home,End                 Cursor navigation
+ [Shift] Up,Down          Move up/down in macro table
+ [Shift] Left,Right       Move left/right in macro table
+ [Shift] PgUp,PgDown      Move page up/down in macro table
+ [Shift] Home,End         Move to the start/end of macro table
+ [Ctrl] Home,End          Move to the start/end of line in macro table
+ Enter                    Load selected macro data
+ ^Enter                   Load all macro data from bank (if available)
+ [Ctrl] "[","]"           Change current instrument (if possible)
+ [Ctrl][Shift] "[","]"    Change macro speed
+ MBoard keys <hold down>  Preview instrument with selected macro data
+ Tab                      Switch to Arpeggio/Vibrato Macro Browser window
+ Esc                      Leave Instrument Macro Browser window
+
+
+ III/10. ARPEGGiO/ViBRATO MACRO BROWSER KEY REFERENCE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Up,Down,PgUp,PgDown
+ Home,End                 Cursor navigation
+ [Shift] Left,Right       Move left/right in arpeggio table      ¿
+ [Shift] PgUp,PgDown      Move page left/right in arpeggio table ³
+ ^Left,^Right             Move left/right in vibrato table       Ã refer to
+ ^PgUp,^PgDown            Move page left/right in vibrato table  ³ (*)
+ [Shift] Space            Toggle arpeggio table selection        ³
+ ^Space                   Toggle vibrato table selection         Ù
+ [Shift] Home,End         Navigate to start/end of arpeggio table
+ ^Home,^End               Navigate to start/end of vibrato table
+ [Ctrl] "[","]"           Change current instrument (if possible)
+ [Ctrl][Shift] "[","]"    Change macro speed
+ MBoard keys <hold down>  Preview instrument with selected macro data
+ Enter                    Load selected macro data
+ ^Enter                   Load all macro data from bank (if available)
+ Esc                      Leave Arpeggio/Vibrato Macro Browser window
+
+ (*) Key combination with Ctrl+Shift applies action to both tables
+
+
+ III/11. DEBUG iNFO WiNDOW KEY REFERENCE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Up,Down,PgUp,PgDown
+ Home,End                 Change current track
+ Tab                      Toggle details
+ Backspace                Toggle pattern repeat
+ Space                    Enter Debug mode / Proceed step (if possible)
+ ^Space                   Exit Debug mode
+ [Shift] +,-              Skip to next/previous pattern
+ +,-                      Same as above; play pattern from start
+ ^Enter                   Play next pattern according to order
+ ^Left                    Rewind current pattern
+ ^Right                   Fast-Forward
+ [Alt] 1..9,0             Toggle corresponding track ON/OFF
+ [Alt] S                  Set all OFF except current track (solo)
+ [Alt] R                  Reset flags on all tracks
+ *                        Reverse ON/OFF on all tracks
+ Esc                      Return to Pattern Editor or Pattern Order
+
+
+ III/12. REMAP iNSTRUMENT WiNDOW KEY REFERENCE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Up,Down,Left,Right
+ Home,End                 Cursor navigation
+ PgUp,PgDown              Move up/down 16 instruments
+ Tab                      Jump to next selection
+ [Shift] Tab              Jump to previous selection
+ MBoard keys <hold down>  Preview instrument
+ Enter                    Remap
+ Esc                      Return to Pattern Editor or Pattern Order
+
+
+ III/13. REPLACE WiNDOW KEY REFERENCE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Up,Down,Left,Right,
+ Home,End                 Cursor navigation
+ Tab                      Jump to next selection
+ [Shift] Tab              Jump to previous selection
+ ^K                       Insert Key-Off in note column
+ ^N                       Mark "new" field to clear found item
+ ^W                       Swap "to find" and "replace" mask content
+ Delete,Backspace         Delete current/previous character
+ ^Backspace               Delete "to find" or "replace" mask content
+ [Shift] ^Backspace       Delete content of both masks
+ Enter                    Replace
+ Esc                      Return to Pattern Editor or Pattern Order
+
+
+ III/14. SONG VARiABLES WiNDOW KEY REFERENCE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Up,Down,Left,Right       Cursor navigation
+ Tab (Enter)              Jump to next variable field
+ [Shift] Tab              Jump to previous variable field
+ Space                    Select item
+ Esc                      Return to Pattern Editor or Pattern Order
+
+
+ III/15. FiLE BROWSER KEY REFERENCE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Up,Down,Left,Right,
+ Home,End                 Cursor navigation
+ \                        Navigate to drive root
+ Backspace                Navigate to parent directory
+ MBoard keys <hold down>  Preview instrument (instrument files only)
+ Enter                    Choose file under cursor / read instrument bank
+ Esc                      Leave without choosing file
+
+
+ III/16. iNPUT FiELD KEY REFERENCE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Left,Right               Move left/right
+ Home,End                 Move to the begin/end
+ ^Left,^Right             Move word left/right
+ Backspace,Delete         Delete character left/right
+ ^Backspace,^T            Delete word left/right
+ ^Y                       Delete string
+ Insert                   Toggle input and overwrite mode
+
+
+ III/17. MiDiBOARD KEY REFERENCE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Use to enter notes while in MBoard mode (if not already active,
+ Shift+Space activates this mode if song is Stopped, or if song is Paused
+ with no Trace).
+
+
+      C#  D#      F#  G#  A#      C#  D#      F#  G#  A#      C#  D#
+
+   ŞÛÛ  ŞÛ  ŞÛÛŞÛÛ  ŞÛ  ŞÛ  ŞÛÛŞÛÛ  ŞÛ  ŞÛÛŞÛÛ  ŞÛ  ŞÛ  ŞÛÛŞÛÛ  ŞÛ  ŞÛÛ
+   ŞÛÛ  ŞÛ  ŞÛÛŞÛÛ  ŞÛ  ŞÛ  ŞÛÛŞÛÛ  ŞÛ  ŞÛÛŞÛÛ  ŞÛ  ŞÛ  ŞÛÛŞÛÛ  ŞÛ  ŞÛÛ
+   ŞÛÛ SŞÛ DŞÛÛŞÛÛ GŞÛ HŞÛ JŞÛÛŞÛÛ 2ŞÛ 3ŞÛÛŞÛÛ 5ŞÛ 6ŞÛ 7ŞÛÛŞÛÛ 9ŞÛ 0ŞÛÛ
+   ŞÛÛ  ŞÛ  ŞÛÛŞÛÛ  ŞÛ  ŞÛ  ŞÛÛŞÛÛ  ŞÛ  ŞÛÛŞÛÛ  ŞÛ  ŞÛ  ŞÛÛŞÛÛ  ŞÛ  ŞÛÛ
+   ŞÛÛ  ŞÛ  ŞÛÛŞÛÛ  ŞÛ  ŞÛ  ŞÛÛŞÛÛ  ŞÛ  ŞÛÛŞÛÛ  ŞÛ  ŞÛ  ŞÛÛŞÛÛ  ŞÛ  ŞÛÛ
+   ŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛ
+   ŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛ
+   ŞİZŞŞİXŞŞİCŞŞİVŞŞİBŞŞİNŞŞİMŞŞİQŞŞİWŞŞİEŞŞİRŞŞİTŞŞİYŞŞİUŞŞİIŞŞİOŞŞİPŞ
+   ŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛ
+   ŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛŞÛÛÛ
+
+     C   D   E   F   G   A   B   C   D   E   F   G   A   B   C   D   E
+
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ WHiLE TRACKER iS iN MBOARD MODE                                       ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ MBoard key copies note in note field, plays it, and advances song     ³
+ ³ to next row. If used with Left-Shift key and line marking toggled ON, ³
+ ³ it advances song to next highlighted row.                             ³
+ ³ If used with Right-Shift key, it makes a fixed note.                  ³
+ ³ Space plays row and advances song by one row.                         ³
+ ³ ` inserts Key-Off, releases playing note and advances to next row.    ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+Ú-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ--ùú  ú
+ù IV. iNSTRUMENTS            ù
+ú         úù-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-Ù
+
+
+ ATTACK RATE
+ ÄÄÄÄÄÄÄÄÄÄÄ
+
+ Indicates how fast the sound volume goes to maximum.
+ 1=slow, 15=fast. 0 means no attack phase.
+
+
+ DECAY RATE
+ ÄÄÄÄÄÄÄÄÄÄ
+
+ Indicates how fast the sound goes from maximum level to sustain level.
+ 1=slow, 15=fast. 0 means no decay phase.
+
+
+ SUSTAiN LEVEL
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Indicates the sustain level.
+ 1=loudest, 15=softest. 0 means no sustain phase.
+
+
+ RELEASE RATE
+ ÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Indicates how fast the sound goes from sustain level to zero level.
+ 1=slow, 15=fast. 0 means no release phase.
+
+
+ OUTPUT LEVEL
+ ÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Ranges from 0 to 63, indicates the attenuation according to the
+ envelope generator output. In Additive synthesis, varying
+ the output level of any operator varies the volume of its corresponding
+ channel. In FM synthesis, varying the output level of carrier varies
+ the volume of its corresponding channel, but varying the output of
+ the modulator will change the frequency spectrum produced by the carrier.
+
+
+ WAVEFORM SELECT
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Specifies the output waveform type.
+ The first is closest to pure sine wave, the last is most distorted.
+
+ [0] SiNE
+
+      
+      ³
+      ³     __                      __
+      ³   /    \                  /    \
+      ³ /        \              /        \
+     ÄÅÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄ
+      ³             \        /              \        /
+      ³               \    /                  \    /
+      ³                 ~~                      ~~
+      ³          ã/2          ã          3/2ã         2ã
+
+
+ [1] HALF-SiNE
+
+      
+      ³
+      ³     __                      __
+      ³   /    \                  /    \
+      ³ /        \              /        \
+     ÄÅÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄ
+      ³
+      ³          ã/2          ã          3/2ã         2ã
+      ³
+      ³
+
+
+ [2] ABS-SiNE
+
+      
+      ³
+      ³     __         __           __         __
+      ³   /    \     /    \       /    \     /    \
+      ³ /        \ /        \   /        \ /        \
+     ÄÅÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄ
+      ³
+      ³          ã/2          ã           3/2ã        2ã
+      ³
+      ³
+
+
+ [3] PULSE-SiNE
+
+      
+      ³
+      ³    _           _           _           _
+      ³  /  |        /  |        /  |        /  |
+      ³/    |      /    |      /    |      /    |
+     ÄÅÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄ
+      ³
+      ³    ã/4   ã/2   3/4ã   ã    5/4ã  3/2ã  7/4ã   2ã
+      ³
+      ³
+
+
+ [4] SiNE, EVEN PERiODS ONLY (EPO)
+
+      
+      ³
+      ³
+      ³ /~\                     /~\
+      ³/   \                   /   \
+     ÄÅÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄ
+      ³      \   /                   \   /
+      ³       \_/                     \_/
+      ³
+      ³    ã/4   ã/2   3/4ã   ã    5/4ã  3/2ã  7/4ã   2ã
+
+
+ [5] ABS-SiNE, EVEN PERiODS ONLY (EPO)
+
+      
+      ³
+      ³
+      ³ /~\   /~\               /~\   /~\
+      ³/   \ /   \             /   \ /   \
+     ÄÅÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄ
+      ³
+      ³    ã/4   ã/2   3/4ã   ã    5/4ã  3/2ã  7/4ã   2ã
+      ³
+      ³
+
+
+ [6] SQUARE
+
+      
+      ³
+      ³
+      Ã-----------¿           Ú-----------¿
+      |           |           |           |
+     ÄÅÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄ
+      ³           |           |           |           |
+      ³           À-----------Ù           À-----------Ù
+      ³
+      ³          ã/2          ã          3/2ã         2ã
+
+
+ [7] DERiVED SQUARE
+
+      
+      ³
+      |\                      |\
+      | ~~__                  | ~~__
+      |     ~~--__            |     ~~--__
+     ÄÅÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄ
+      ³            ~~--__     |            ~~--__     |
+      ³                  ~~__ |                  ~~__ |
+      ³                      \|                      \|
+      ³          ã/2          ã          3/2ã         2ã
+
+
+ KEY SCALiNG LEVEL (KSL)
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ When set, makes the sound softer at higher frequencies.
+ With musical instruments, volume decreases as pitch increases.
+ Level key scaling values are used to simulate this effect.
+ If any (not zero), the diminishing factor can be 1.5 dB/octave,
+ 3.0 dB/octave, or 6.0 dB/octave.
+
+
+ PANNiNG
+ ÄÄÄÄÄÄÄ
+
+ Gives you ability of controlling output, going to left or right channel,
+ standing in the middle respectively.
+ The parameter corresponds either with carrier and modulator, therefore
+ it is listed only once (within the carrier slot).
+
+
+ FiNE-TUNE
+ ÄÄÄÄÄÄÄÄÄ
+
+ This is not a hardware parameter.
+ Ranges from -127 to 127, it indicates the number of frequency units
+ shifted up or down for any note playing with the corresponding instrument.
+ The parameter corresponds either with carrier and modulator, therefore
+ it is listed only once (within the carrier slot).
+
+
+ FEEDBACK STRENGTH
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Ranges from 0 to 7, it indicates the modulation depth
+ for the modulator slot FM feedback.
+
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÒÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄ¿
+ ³ FEEDBACK   º [0] ³ [1] ³ [2] ³ [3] ³ [4] ³ [5] ³ [6] ³ [7] ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄ×ÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄÅÄÄÄÄÄ´
+ ³ MODULATiON º  0  ³ã/16 ³ ã/8 ³ ã/4 ³ ã/2 ³  ã  ³ 2ã  ³ 4ã  ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄĞÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÙ
+
+ The parameter corresponds either with carrier and modulator, therefore
+ it is listed only once (within the carrier slot).
+
+
+ CONNECTiON TYPE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Frequency modulation means that the modulator slot modulates the carrier.
+ Additive synthesis means that both slots produce sound on their own.
+
+ [FM] FREQUENCY MODULATiON
+
+
+         ÚÄÄÄÄÄÄÄÄÄÄÄÄ¿
+         ³            ³
+             ÉÍÍÍÍ»  ³         ÉÍÍÍÍ»
+  P1 ÄÄ(+)ÄÄº MO ÇÄÄÁÄÄ(+)ÄÄº CA ÇÄÄ OUT
+              ÈÍÍÍÍ¼           ÈÍÍÍÍ¼
+                           ³
+
+                           P2
+
+ [ADDiTiVE SYNTHESiS] AM
+
+
+         ÚÄÄÄÄÄÄÄÄÄÄÄÄ¿
+         ³            ³
+             ÉÍÍÍÍ»  ³
+  P1 ÄÄ(+)ÄÄº MO ÇÄÄÁÄÄÄÄ¿
+              ÈÍÍÍÍ¼       ³
+                           
+                          (+)ÄÄ OUT
+                           
+              ÉÍÍÍÍ»       ³
+  P2 ÄÄÄÄÄÄÄÄº CA ÇÄÄÄÄÄÄÄÙ
+              ÈÍÍÍÍ¼
+
+ The parameter corresponds either with carrier and modulator, therefore
+ it is listed only once (within the carrier slot).
+ This parameter is also very important when making 4-op instruments,
+ because the combination of two instrument connections specifies
+ the connection of the 4-op instrument as shown below:
+
+ [FM/FM]
+
+         ÚÄÄÄÄÄÄÄÄÄÄÄÄ¿
+         ³            ³
+             ÉÍÍÍÍ»  ³         ÉÍÍÍÍ»         ÉÍÍÍÍ»         ÉÍÍÍÍ»
+  P1 ÄÄ(+)ÄÄº M1 ÇÄÄÁÄÄ(+)ÄÄº C1 ÇÄÄ(+)ÄÄº M2 ÇÄÄ(+)ÄÄº C2 ÇÄÄ OUT
+              ÈÍÍÍÍ¼           ÈÍÍÍÍ¼        ÈÍÍÍÍ¼        ÈÍÍÍÍ¼
+                           ³              ³              ³
+
+                           P2             P3             P4
+
+ [FM/AM]
+
+         ÚÄÄÄÄÄÄÄÄÄÄÄÄ¿
+         ³            ³
+             ÉÍÍÍÍ»  ³         ÉÍÍÍÍ»
+  P1 ÄÄ(+)ÄÄº M1 ÇÄÄÁÄÄ(+)ÄÄº C1 ÇÄÄÄÄ¿
+              ÈÍÍÍÍ¼           ÈÍÍÍÍ¼    ³
+                           ³              ³
+                                          
+                           P2            (+)ÄÄ OUT
+                                          
+                                          ³
+              ÉÍÍÍÍ»            ÉÍÍÍÍ»    ³
+  P3 ÄÄÄÄÄÄÄÄº M2 ÇÄÄÄÄÄ(+)ÄÄº C2 ÇÄÄÄÄÙ
+              ÈÍÍÍÍ¼           ÈÍÍÍÍ¼
+                           ³
+
+                           P4
+
+ [AM/FM]
+
+         ÚÄÄÄÄÄÄÄÄÄÄÄÄ¿
+         ³            ³
+             ÉÍÍÍÍ»  ³
+  P1 ÄÄ(+)ÄÄº M1 ÇÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+              ÈÍÍÍÍ¼                                     ³
+                                                         ³
+                                                         ³
+                                                         ³
+              ÉÍÍÍÍ»            ÉÍÍÍÍ»         ÉÍÍÍÍ»    
+  P2 ÄÄÄÄÄÄÄÄº C1 ÇÄÄÄÄÄ(+)ÄÄº M2 ÇÄÄ(+)ÄÄº C2 ÇÄÄ(+)ÄÄ OUT
+              ÈÍÍÍÍ¼           ÈÍÍÍÍ¼        ÈÍÍÍÍ¼
+                           ³              ³
+
+                           P3             P4
+
+ [AM/AM]
+
+         ÚÄÄÄÄÄÄÄÄÄÄÄÄ¿
+         ³            ³
+             ÉÍÍÍÍ»  ³
+  P1 ÄÄ(+)ÄÄº M1 ÇÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+              ÈÍÍÍÍ¼                      ³
+                                          ³
+                                          ³
+                                          ³
+              ÉÍÍÍÍ»            ÉÍÍÍÍ»    
+  P2 ÄÄÄÄÄÄÄÄÄº C1 ÇÄÄÄÄÄ(+)ÄÄº M2 ÇÄÄ(+)ÄÄ OUT
+              ÈÍÍÍÍ¼           ÈÍÍÍÍ¼    
+                           ³              ³
+                                          ³
+                           P3             ³
+              ÉÍÍÍÍ»                      ³
+  P4 ÄÄÄÄÄÄÄÄº C2 ÇÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+              ÈÍÍÍÍ¼
+
+
+ TREMOLO (AMPLiTUDE MODULATiON)
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ When set, turns tremolo (volume vibrato) ON for the corresponding slot.
+ The repetition rate is 3.7Hz, the depth is optional (1dB/4.8dB).
+
+
+ ViBRATO
+ ÄÄÄÄÄÄÄ
+
+ When set, turns frequency vibrato ON for the corresponding slot.
+ The repetition rate is 6.1Hz, the depth is optional (7%/14%).
+
+
+ KEY SCALE RATE (KSR)
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ When set, makes the sound shorter at higher frequencies.
+ With normal musical instruments, the attack and decay rate becomes faster
+ as the pitch increases. The key scale rate controls simulation of
+ this effect. An offset (rof) is added to the individual attack, decay,
+ and release rates depending on the following formula:
+
+ actual_rate = (rate * 4) + rof
+
+ The "rof" values for corresponding "rate" value and KSR state are shown
+ in the following table:
+
+ ÚÄÄÄÄÄÄÄÄÒÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄÂÄÄÄ¿
+ ³ %rate% º 0 ³ 1 ³ 2 ³ 3 ³ 4 ³ 5 ³ 6 ³ 7 ³ 8 ³ 9 ³ A ³ B ³ C ³ D ³ E ³ F ³
+ ÆÍÍÍÍÍÍÍÍÎÍÍÍØÍÍÍØÍÍÍØÍÍÍØÍÍÍØÍÍÍØÍÍÍØÍÍÍØÍÍÍØÍÍÍØÍÍÍØÍÍÍØÍÍÍØÍÍÍØÍÍÍØÍÍÍµ
+ ³ [OFF]  º 0 ³ 0 ³ 0 ³ 0 ³ 1 ³ 1 ³ 1 ³ 1 ³ 2 ³ 2 ³ 2 ³ 2 ³ 3 ³ 3 ³ 3 ³ 3 ³
+ ÃÄÄÄÄÄÄÄÄ×ÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄÅÄÄÄ´
+ ³ [ON]   º 0 ³ 1 ³ 2 ³ 3 ³ 4 ³ 5 ³ 6 ³ 7 ³ 8 ³ 9 ³ A ³ B ³ C ³ D ³ E ³ F ³
+ ÀÄÄÄÄÄÄÄÄĞÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÁÄÄÄÙ
+
+
+ SUSTAiN (ENVELOPE GENERATOR TYPE)
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ When set, the sustain level of the voice is maintained until released.
+ When clear, the sound begins to decay immediately after hitting
+ the sustain phase.
+
+ [OFF]                /\  DR
+                    /    \
+                  /     ...\...SL
+            AR  /            \
+              /                \  RR
+            /                    \
+       _ _/                        \_ _ _
+          .
+          :
+          ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+       ÄÄÄÙ     KEY ON
+
+
+ [ON]                 /\  DR
+                    /    \      SL
+                  /        \ _ _ _ _ _
+            AR  /                      \
+              /                       :  \  RR
+            /                         :    \
+       _ _/                           :      \_ _ _
+          .                           :
+          :                           :
+          ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿  KEY OFF
+       ÄÄÄÙ     KEY ON                ÀÄÄÄÄÄÄÄÄÄÄÄÄ
+
+
+ FREQUENCY DATA MULTiPLiER
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Sets the multiplier for the frequency data specified by block and
+ F-number. This multiplier is applied to the FM carrier or modulation
+ frequencies. The multiplication factor and corresonding harmonic types are
+ shown in the following table:
+
+ ÚÄÄÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ MULT. ³  x  ³ HARMONiC                           ³
+ ÆÍÍÍÍÍÍÍØÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍµ
+ ³  [0]  ³ 0.5 ³ 1 octave below                     ³
+ ³  [1]  ³  1  ³ at the voice's specified frequency ³
+ ³  [2]  ³  2  ³ 1 octave above                     ³
+ ³  [3]  ³  3  ³ 1 octave and a 5th above           ³
+ ³  [4]  ³  4  ³ 2 octaves above                    ³
+ ³  [5]  ³  5  ³ 2 octaves and a Major 3rd above    ³
+ ³  [6]  ³  6  ³ 2 octaves and a 5th above          ³
+ ³  [7]  ³  7  ³ 2 octaves and a Minor 7th above    ³
+ ³  [8]  ³  8  ³ 3 octaves above                    ³
+ ³  [9]  ³  9  ³ 3 octaves and a Major 2nd above    ³
+ ³  [A]  ³ 10  ³ 3 octaves and a Major 3rd above    ³
+ ³  [B]  ³ 11  ³ " "       "   " "     "   "        ³
+ ³  [C]  ³ 12  ³ 3 octaves and a 5th above          ³
+ ³  [D]  ³ 13  ³ " "       "   "     "              ³
+ ³  [E]  ³ 14  ³ 3 octaves and a Major 7th above    ³
+ ³  [F]  ³ 15  ³ " "       "   " "     "   "        ³
+ ÀÄÄÄÄÄÄÄÁÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+Ú-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ--ùú  ú
+ù V. EFFECTS                 ù
+ú         úù-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-Ù
+
+
+ [0xy] ARPEGGiO
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command causes the note to quickly cycle through three notes:
+ the note playing, a note 'x' halftones above,
+ and a note 'y' halftones above.
+ This causes an effect similar to old C64 chords.
+ Note that the song speed has to be greater or equal to three
+ in order to perform arpeggio effect completely.
+
+
+ [1xx] FREQUENCY SLiDE UP
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command slides the frequency up (pitch bend).
+ Parameter 'xx' gives speed of slide.
+
+
+ [2xx] FREQUENCY SLiDE DOWN
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command slides the frequency down (pitch bend).
+ Parameter 'xx' gives speed of slide.
+
+
+ [3xx] TONE PORTAMENTO
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command is used together with a note and will slide to its frequency.
+ Parameter 'xx' gives speed of slide.
+ If you specify 'xx' as '00' then the previous value will be used.
+
+
+ [4xy] ViBRATO
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command causes the frequency to oscillate with depth 'y' at speed 'x'.
+ If you specify 'xy' as '00' then the previous value will be used.
+
+
+ [5xy] TONE PORTAMENTO WiTH VOLUME SLiDE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command executes both Tone portamento and Volume slide.
+ Parameter 'xy' gives speed of volume slide:
+
+   'x' is speed of slide up,
+   'y' is speed of slide down.
+
+ If you specify 'xy' as '00' then the previous value will be used.
+
+
+ [6xy] ViBRATO WiTH VOLUME SLiDE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command executes both Vibrato and Volume slide.
+ Parameter 'xy' gives speed of volume slide:
+
+   'x' is speed of slide up,
+   'y' is speed of slide down.
+
+ If you specify 'xy' as '00' then the previous value will be used.
+
+
+ [7xx] FiNE FREQUENCY SLiDE UP
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command slides the frequency up (pitch bend) once per row.
+ Parameter 'xx' gives speed of slide.
+
+
+ [8xx] FiNE FREQUENCY SLiDE DOWN
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command slides the frequency down (pitch bend) once per row.
+ Parameter 'xx' gives speed of slide.
+
+
+ [9xx] SET MODULATOR VOLUME
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command sets the volume of modulator slot.
+ Value of 'xx' ranges from 0 to 3F (softest -> loudest).
+
+
+ [Axy] VOLUME SLiDE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command fades the volume up or down at the given speed.
+ Parameter 'xy' gives speed of volume slide:
+
+   'x' is speed of slide up,
+   'y' is speed of slide down.
+
+ If you specify 'x' then 'y' is not used, and vice versa.
+
+
+ [Bxx] PATTERN JUMP
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command causes the song to jump to order 'xx'.
+ This is often used to create looping songs.
+ If two 'Bxx' commands are given, then the command in the
+ higher track will take effect.
+
+
+ [Cxx] SET iNSTRUMENT VOLUME
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command sets the absolute volume of the instrument.
+ It is equal to Ixx command when instrument uses FM connection,
+ otherwise both carrier and modulator volume is updated.
+ Value of 'xx' ranges from 0 to 3F (softest -> loudest).
+
+
+ [Dxx] PATTERN BREAK
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command signifies the end of the current pattern, and also that
+ the next pattern should be played from row 'xx'.
+ If two 'Dxx' commands are given, then the command in the
+ higher track will take effect.
+
+
+ [Exx] SET TEMPO
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command changes the song tempo (also known as BPM).
+ Parameter 'xx' gives hexadecimal value of refresh rate in Hz.
+ If two 'Exx' commands are given, then the command in the
+ higher track will take effect.
+
+
+ [Fxx] SET SPEED
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command changes the song speed.
+ Parameter 'xx' gives how many frames to wait before advancing row.
+ If two 'Fxx' commands are given, then the command in the
+ higher track will take effect.
+
+
+ [Gxy] TONE PORTAMENTO WiTH FiNE VOLUME SLiDE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command executes both Tone portamento and Fine volume slide.
+ Parameter 'xy' gives speed of volume slide:
+
+   'x' is speed of slide up,
+   'y' is speed of slide down.
+
+ If you specify 'xy' as '00' then the previous value will be used.
+
+
+ [Hxy] ViBRATO WiTH FiNE VOLUME SLiDE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command executes both Vibrato and Fine volume slide.
+ Parameter 'xy' gives speed of volume slide:
+
+   'x' is speed of slide up,
+   'y' is speed of slide down.
+
+ If you specify 'xy' as '00' then the previous value will be used.
+
+
+ [Ixx] SET CARRiER VOLUME
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command sets the volume of carrier slot.
+ Value of 'xx' ranges from 0 to 3F (softest -> loudest).
+
+
+ [Jxy] SET WAVEFORM
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command changes the waveform of carrier or modulator slot.
+ Parameter 'x' gives carrier and 'y' modulator waveform type as following:
+
+   '0'-'7' means type of waveform,
+   'F' means "no change".
+
+ For more information see chapter IV, part "Waveform select".
+
+
+ [Kxy] FiNE VOLUME SLiDE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command fades the volume up or down at the given speed,
+ once per row.
+ Parameter 'xy' gives speed of volume slide:
+
+   'x' is speed of slide up,
+   'y' is speed of slide down.
+
+ If you specify 'x' then 'y' is not used, and vice versa.
+
+
+ [Lxx] RETRiG NOTE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command retriggs the note after 'xx' frames.
+ If no note is specified, last given is used.
+ The lower is the interval, the faster is the retrigger.
+
+
+ [Mxy] TREMOLO
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command causes the volume to oscillate with depth 'y' at speed 'x'.
+ If you specify 'xy' as '00' then the previous value will be used.
+ Tremolo acts like vibrato, but changing the volume instead of the pitch.
+
+
+ [Nxy] TREMOR
+ ÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command causes the volume to remain normal for 'x' frames,
+ then fades the volume to zero for 'y' frames.
+
+
+ [Oxy] ARPEGGiO WiTH VOLUME SLiDE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command executes both Arpeggio and Volume slide.
+ Parameter 'xy' gives speed of volume slide:
+
+   'x' is speed of slide up,
+   'y' is speed of slide down.
+
+ If you specify 'xy' as '00' then the previous value will be used.
+
+
+ [Pxy] ARPEGGiO WiTH FiNE VOLUME SLiDE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command executes both Arpeggio and Fine volume slide.
+ Parameter 'xy' gives speed of volume slide:
+
+   'x' is speed of slide up,
+   'y' is speed of slide down.
+
+ If you specify 'xy' as '00' then the previous value will be used.
+
+
+ [Qxy] MULTi RETRiG NOTE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command retriggs the note after 'x' frames with specified
+ volume change. Parameter 'y' gives type of volume change:
+
+   '0' is None,    '8' is Unused,
+   '1' is -1,      '9' is +1,
+   '2' is -2,      'a' is +2,
+   '3' is -4,      'b' is +4,
+   '4' is -8,      'c' is +8,
+   '5' is -16,     'd' is +16,
+   '6' is *2/3,    'e' is *3/2,
+   '7' is *1/2,    'f' is *2.
+
+ If no note is specified, last given is used.
+ The lower is the interval, the faster is the retrigger.
+
+
+ [Rxy] FREQUENCY SLiDE UP WiTH VOLUME SLiDE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command executes both Frequency slide up and Volume slide.
+ Parameter 'xy' gives speed of volume slide:
+
+   'x' is speed of slide up,
+   'y' is speed of slide down.
+
+ If you specify 'xy' as '00' then the previous value will be used.
+
+
+ [Sxy] FREQUENCY SLiDE DOWN WiTH VOLUME SLiDE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command executes both Frequency slide down and Volume slide.
+ Parameter 'xy' gives speed of volume slide:
+
+   'x' is speed of slide up,
+   'y' is speed of slide down.
+
+ If you specify 'xy' as '00' then the previous value will be used.
+
+
+ [Txy] FiNE FREQUENCY SLiDE UP WiTH VOLUME SLiDE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command executes both Fine frequency slide up and Volume slide.
+ Parameter 'xy' gives speed of volume slide:
+
+   'x' is speed of slide up,
+   'y' is speed of slide down.
+
+ If you specify 'xy' as '00' then the previous value will be used.
+
+
+ [Uxy] FiNE FREQUENCY SLiDE DOWN WiTH VOLUME SLiDE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command executes both Fine frequency slide down and Volume slide.
+ Parameter 'xy' gives speed of volume slide:
+
+   'x' is speed of slide up,
+   'y' is speed of slide down.
+
+ If you specify 'xy' as '00' then the previous value will be used.
+
+
+ [Vxy] FREQUENCY SLiDE UP WiTH FiNE VOLUME SLiDE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command executes both Frequency slide up and Fine volume slide.
+ Parameter 'xy' gives speed of volume slide:
+
+   'x' is speed of slide up,
+   'y' is speed of slide down.
+
+ If you specify 'xy' as '00' then the previous value will be used.
+
+
+ [Wxy] FREQUENCY SLiDE DOWN WiTH FiNE VOLUME SLiDE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command executes both Frequency slide down and Fine volume slide.
+ Parameter 'xy' gives speed of volume slide:
+
+   'x' is speed of slide up,
+   'y' is speed of slide down.
+
+ If you specify 'xy' as '00' then the previous value will be used.
+
+
+ [Xxy] FiNE FREQUENCY SLiDE UP WITH FiNE VOLUME SLiDE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command executes both Fine frequency slide up and Fine volume slide.
+ Parameter 'xy' gives speed of volume slide:
+
+   'x' is speed of slide up,
+   'y' is speed of slide down.
+
+ If you specify 'xy' as '00' then the previous value will be used.
+
+
+ [Yxy] FiNE FREQUENCY SLiDE DOWN WiTH FiNE VOLUME SLiDE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command executes both Fine frequency slide down and Fine volume slide.
+ Parameter 'xy' gives speed of volume slide:
+
+   'x' is speed of slide up,
+   'y' is speed of slide down.
+
+ If you specify 'xy' as '00' then the previous value will be used.
+
+
+ [Z0x] SET TREMOLO DEPTH
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command changes the Tremolo depth of all 36 operators.
+ Parameter 'x' gives depth:
+
+   '0' is 1dB,
+   '1' is 4.8dB.
+
+
+ [Z1x] SET ViBRATO DEPTH
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command changes the Vibrato depth of all 36 operators.
+ Parameter 'x' gives depth:
+
+   '0' is 7%,
+   '1' is 14%.
+
+
+ [Z2x] SET MODULATOR'S ATTACK RATE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ ADSR command. Parameter 'x' gives the value.
+ For more information see chapter IV, part "Attack rate".
+
+
+ [Z3x] SET MODULATOR'S DECAY RATE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ ADSR command. Parameter 'x' gives the value.
+ For more information see chapter IV, part "Decay rate".
+
+
+ [Z4x] SET MODULATOR'S SUSTAiN LEVEL
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ ADSR command. Parameter 'x' gives the value.
+ For more information see chapter IV, part "Sustain level".
+
+
+ [Z5x] SET MODULATOR'S RELEASE RATE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ ADSR command. Parameter 'x' gives the value.
+ For more information see chapter IV, part "Release rate".
+
+
+ [Z6x] SET CARRiER'S ATTACK RATE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ ADSR command. Parameter 'x' gives the value.
+ For more information see chapter IV, part "Attack rate".
+
+
+ [Z7x] SET CARRiER'S DECAY RATE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ ADSR command. Parameter 'x' gives the value.
+ For more information see chapter IV, part "Decay rate".
+
+
+ [Z8x] SET CARRiER'S SUSTAiN LEVEL
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ ADSR command. Parameter 'x' gives the value.
+ For more information see chapter IV, part "Sustain level".
+
+
+ [Z9x] SET CARRiER'S RELEASE RATE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ ADSR command. Parameter 'x' gives the value.
+ For more information see chapter IV, part "Release rate".
+
+
+ [ZAx] SET FEEDBACK STRENGTH
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command changes the Feedback strength of current instrument.
+ Parameter 'x' gives the value.
+ For more information see chapter IV, part "Feedback strength".
+
+
+ [ZBx] SET PANNiNG POSiTiON
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command changes the panning of current instrument.
+ Parameter 'x' gives position:
+
+   '0' is center,
+   '1' is left,
+   '2' is right.
+
+
+ [ZCx] PATTERN LOOP
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Syntax: ZC0 - Set loopback point
+         ZCx - Loop x times.
+
+ This pattern space-saving feature will cause the pattern
+ to be looped 'x' times back to the last ZC0 command.
+ Note that you can only loop within the pattern, and each track
+ has its own loopback information, so you are supposed to have
+ corresponding ZC0 and ZCx commands in the same track in order to operate.
+ If ZCx commands are put in both effect columns, only the one in first
+ column will operate.
+
+
+ [ZDx] RECURSiVE PATTERN LOOP
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ Syntax: ZD0 - Set loopback point
+         ZDx - Loop x times.
+
+ This command is recursive variant of ZCx effect command.
+ It means that when such kind of loop is located inside other "parent" loop,
+ it is proceeded any time it is passed by this loop.
+ Note that using ZC0 instead of ZD0 command has the same effect.
+ Please keep in mind that ZDx command should not be used in combination
+ with ZCx command in other effect column, otherwise it will cause an
+ endless loop.
+
+
+ [ZEx] MACRO KEY-OFF LOOP
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command temporarily turns on-or-off looping
+ of Key-Off phase in macro-table for current instrument.
+ Parameter 'x' gives the state of looping:
+
+   '0' is OFF,
+   '1' is ON.
+
+ Note that "temporarily" means that the change is valid until there is
+ different than the current instrument set.
+
+
+ [ZF0] RELEASE SUSTAiNiNG SOUND
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command causes the track volume to fade down immediately.
+ Note that it nulls current Attack rate, Decay rate,
+ Sustain level, and Release rate.
+
+
+ [ZF1] RESET iNSTRUMENT VOLUME
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command resets back to modulator and carrier volume
+ defined in modulator and carrier slot of current instrument.
+
+
+ [ZF2] LOCK TRACK VOLUME
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command enables the Volume Lock.
+ It means, that the track volume will remain constant for entire track.
+ This constance is updated when using volume effect commands,
+ or when using new instrument.
+
+
+ [ZF3] DiSABLE VOLUME LOCK
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command disables the Volume Lock.
+
+
+ [ZF4] LOCK VOLUME PEAK
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command enables the Peak Lock.
+ It means, that when performing a Volume Slide, the upper limit of track
+ volume will remain lower or equal to volume level specified in carrier
+ and modulator slot of corresponding instrument.
+ Note that lock affects Volume Slide and Fine Volume Slide effects
+ as well as Tremolo, Tremor and Multi Retrig Note effects.
+
+
+ [ZF5] DiSABLE PEAK LOCK
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command disables the Peak Lock.
+
+
+ [ZF6] TOGGLE MODULATOR VOLUME SLiDES
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command toggles volume slide for modulator slot only. If used together
+ with ZF7 effect command, it toggles volume slide for both slots.
+ Note that command will affect Volume Slide and Fine Volume Slide effects
+ as well as Tremolo, Tremor and Multi Retrig Note effects.
+
+
+ [ZF7] TOGGLE CARRiER VOLUME SLiDES
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command toggles volume slide for carrier slot only. If used together
+ with ZF6 effect command, it toggles volume slide for both slots.
+ Note that command will affect Volume Slide and Fine Volume Slide effects
+ as well as Tremolo, Tremor and Multi Retrig Note effects.
+
+
+ [ZF8] TOGGLE DEFAULT VOLUME SLiDES
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command toggles default volume slides.
+ It means, that replay routine will distinguish which slot (carrier or both)
+ to proceed from connection type (see chapter IV, part "Connection type").
+ Note that command will affect Volume Slide and Fine Volume Slide effects
+ as well as Tremolo, Tremor and Multi Retrig Note effects.
+
+
+ [ZF9] LOCK TRACK PANNiNG
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command enables the Panning Lock.
+ It means, that the panning position is forced for entire track,
+ and can be updated only by ZBx effect command.
+
+
+ [ZFA] DiSABLE PANNiNG LOCK
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command disables the Panning Lock.
+
+
+ [ZFB] ViBRATO OFF
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command marks the end of Vibrato effect.
+ It will restore the last frequency before Vibrato effect.
+
+
+ [ZFC] TREMOLO OFF
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command marks the end of Tremolo effect.
+ It will restore the last volume before Tremolo effect.
+
+
+ [ZFD] FORCE FiNE ViBRATO
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command has to be used together with 4xy, 6xy or Hxy effect command.
+ It will cause the Vibrato effect to be performed once per row
+ instead of every frame.
+ Note that the switch is reset at the end of effect.
+
+
+ [ZFE] FORCE FiNE TREMOLO
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command has to be used together with Mxy effect command.
+ It will cause the Tremolo effect to be performed once per row instead
+ of every frame.
+ Note that the switch is reset at the end of effect.
+
+
+ [ZFF] FORCE NO RESTART FOR MACRO TABLES
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ 1) This command can be used together with !xx (@xx) effect command.
+    It will cause that the arpeggio (vibrato) table is swapped
+    without restarting position. It means that the current position
+    is maintained as the starting point in new table.
+ 2) This command can be used while new note is triggered and the instrument
+    that is played is using FM-register macro (arpeggio macro, vibrato
+    macro resp.) In such case the macro is not restarted, which means that
+    the current position in FM-register (arpeggio, vibrato resp.) macro
+    table is maintained.
+
+
+ [!xx] SWAP ARPEGGiO TABLE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command temporarily swaps the arpeggio table for current instrument.
+ Parameter 'xx' gives number of new table.
+ Note that the number of arpeggio table in instrument macro-table
+ remains intact, and "temporarily" means that the change is valid until
+ there is another note or instrument set.
+
+
+ [@xx] SWAP ViBRATO TABLE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command temporarily swaps the vibrato table for current instrument.
+ Parameter 'xx' gives number of new table.
+ Note that the number of vibrato table in instrument macro-table
+ remains intact, and "temporarily" means that the change is valid until
+ there is another note or instrument set.
+
+
+ [=xx] FORCE iNSTRUMENT VOLUME
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command is a variant of Cxx (Set Instrument volume) effect command.
+ The difference is in modulator's role when affecting volume, because
+ it scales the modulator volume according to 'xx' value, no matter what is
+ the connection type of the instrument.
+ Note that the carrier volume is set as usual.
+ Value of 'xx' ranges from 0 to 3F (softest -> loudest).
+
+
+ [%xx] SET GLOBAL VOLUME
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command sets the global volume of song.
+ Value of 'xx' ranges from 0 to 3F (softest -> loudest).
+
+
+ [#0x] SET CONNECTiON TYPE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command sets the connection type of current instrument.
+ Parameter 'x' gives the value.
+ For more information see chapter IV, part "Connection type".
+
+
+ [#1x] SET MODULATOR'S MULTiPLiER
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command sets the modulator's multiplier of current instrument.
+ Parameter 'x' gives the value.
+ For more information see chapter IV, part "Frequency data multiplier".
+
+
+ [#2x] SET MODULATOR'S KSL
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command sets the modulator's scaling level of current instrument.
+ Parameter 'x' gives the value.
+ For more information see chapter IV, part "Key scaling level".
+
+
+ [#3x] SET MODULATOR'S TREMOLO
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command sets the modulator's tremolo on-or-off for current instrument.
+ Parameter 'x' gives the state:
+
+   '0' is OFF,
+   '1' is ON.
+
+ For more information see chapter IV, part "Tremolo (Amplitude modulation)".
+
+
+ [#4x] SET MODULATOR'S ViBRATO
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command sets the modulator's vibrato on-or-off for current instrument.
+ Parameter 'x' gives the state:
+
+   '0' is OFF,
+   '1' is ON.
+
+ For more information see chapter IV, part "Vibrato)".
+
+
+ [#5x] SET MODULATOR'S KSR
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command sets the modulator's KSR on-or-off for current instrument.
+ Parameter 'x' gives the state:
+
+   '0' is OFF,
+   '1' is ON.
+
+ For more information see chapter IV, part "Key scale rate".
+
+
+ [#6x] SET MODULATOR'S SUSTAiN
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command sets the modulator's sustain on-or-off for current instrument.
+ Parameter 'x' gives the state:
+
+   '0' is OFF,
+   '1' is ON.
+
+ For more information see chapter IV, part "Sustain (Envelope generator)".
+
+
+ [#7x] SET CARRiER'S MULTiPLiER
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command sets the carrier's multiplier of current instrument.
+ Parameter 'x' gives the value.
+ For more information see chapter IV, part "Frequency data multiplier".
+
+
+ [#8x] SET CARRiER'S KSL
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command sets the carrier's scaling level of current instrument.
+ Parameter 'x' gives the value.
+ For more information see chapter IV, part "Key scaling level".
+
+
+ [#9x] SET CARRiER'S TREMOLO
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command sets the carrier's tremolo on-or-off for current instrument.
+ Parameter 'x' gives the state:
+
+   '0' is OFF,
+   '1' is ON.
+
+ For more information see chapter IV, part "Tremolo (Amplitude modulation)".
+
+
+ [#Ax] SET CARRiER'S ViBRATO
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command sets the carrier's vibrato on-or-off for current instrument.
+ Parameter 'x' gives the state:
+
+   '0' is OFF,
+   '1' is ON.
+
+ For more information see chapter IV, part "Vibrato)".
+
+
+ [#Bx] SET CARRiER'S KSR
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command sets the carrier's KSR on-or-off for current instrument.
+ Parameter 'x' gives the state:
+
+   '0' is OFF,
+   '1' is ON.
+
+ For more information see chapter IV, part "Key scale rate".
+
+
+ [#Cx] SET CARRiER'S SUSTAiN
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command sets the carrier's sustain on-or-off for current instrument.
+ Parameter 'x' gives the state:
+
+   '0' is OFF,
+   '1' is ON.
+
+ For more information see chapter IV, part "Sustain (Envelope generator)".
+
+
+ [&0x] PATTERN DELAY (FRAMES)
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command will delay the pattern 'x' frames.
+ If two '&0x' commands are given, then the command in the
+ higher track will take effect.
+
+
+ [&1x] PATTERN DELAY (ROWS)
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command will cause a pause on the row for effectively 'x' rows longer.
+ If two '&1x' commands are given, then the command in the
+ higher track will take effect.
+
+
+ [&2x] NOTE DELAY
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command will delay the note 'x' frames.
+
+
+ [&3x] NOTE CUT
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command cuts the note (Key-Off will be performed) after 'x' frames.
+
+
+ [&4x] FiNE-TUNE UP
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command fine-tunes frequency up.
+ If used together with a note, it overrides the default note frequency
+ before the note is outputted (acts like fine-tune parameter
+ included in instrument data).
+ Parameter 'x' gives frequency shift.
+
+
+ [&5x] FiNE-TUNE DOWN
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command fine-tunes frequency down as stated above.
+
+
+ [&6x] GLOBAL VOLUME SLiDE UP
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command fades the global volume up at the given speed.
+ Parameter 'x' gives speed of slide.
+
+
+ [&7x] GLOBAL VOLUME SLiDE DOWN
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command fades the global volume down at the given speed.
+ Parameter 'x' gives speed of slide.
+
+
+ [&8x] FiNE GLOBAL VOLUME SLiDE UP
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command fades the global volume up at the given speed,
+ once per row.
+ Parameter 'x' gives speed of slide.
+
+
+ [&9x] FiNE GLOBAL VOLUME SLiDE DOWN
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command fades the global volume down at the given speed,
+ once per row.
+ Parameter 'x' gives speed of slide.
+
+ [&Ax] EXTRA FiNE GLOBAL VOLUME SLiDE UP
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command fades the global volume up at the given speed,
+ once every four frames.
+ Parameter 'x' gives speed of slide.
+
+
+ [&Bx] EXTRA FiNE GLOBAL VOLUME SLiDE DOWN
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command fades the global volume down as stated above.
+
+
+ [&Cx] EXTRA FiNE VOLUME SLiDE UP
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command fades the volume up at the given speed,
+ once every four frames.
+ It means that you can do four times more accurate slide effects.
+ Parameter 'x' gives speed of slide.
+
+
+ [&Dx] EXTRA FiNE VOLUME SLiDE DOWN
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command fades the volume down as stated above.
+
+
+ [&Ex] EXTRA FiNE FREQUENCY SLiDE UP
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command slides frequency up (pitch bend), once every four frames.
+ It means that you can do four times more accurate slide effects.
+ Parameter 'x' gives speed of slide.
+
+
+ [&Fx] EXTRA FiNE FREQUENCY SLiDE DOWN
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command slides frequency down as stated above.
+
+
+ [$xy] EXTRA FiNE ARPEGGiO
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command is a variant of 0xy (Arpeggio) effect command.
+ It executes the arpeggio once every four frames.
+ It means that you can do four times more accurate arpeggio effects.
+ Note that the song speed doesn't have to be greater or equal to three
+ as it is in case of normal arpeggio.
+
+
+ [~xy] EXTRA FiNE ViBRATO
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ This command is a variant of 4xy (Vibrato) effect command.
+ It executes the vibrato once every four frames.
+ It means that you can do four times more accurate vibrato effects.
+
+
+ [^xy] EXTRA FiNE TREMOLO
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ This command is a variant of Mxy (Tremolo) effect command.
+ It executes the tremolo once every four frames.
+ It means that you can do four times more accurate tremolo effects.
+
+
+ [`xx] SET CUSTOM SPEED TABLE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ This command sets custom speed table for Vibrato/Tremolo effect,
+ which is generated according given parameter 'xx':
+
+   '00'     Reset default speed table
+   '01-FF'  Calculate custom speed table with parameters
+            table size, maximum value and processing speed factor
+
+           ÚÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄ¿
+           ³ PARAMETER  ³ SiZE ³ MAX.   ³ FACTOR ³
+           ÆÍÍÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍµ
+           ³ [01]..[EF] ³ 32   ³ 01..EF ³ x1     ³
+           ³ [F0]..[F3] ³ 32   ³ FF     ³ x1..x4 ³
+           ³ [F4]..[F7] ³ 64   ³ FF     ³ x1..x4 ³
+           ³ [F8]..[FB] ³ 128  ³ FF     ³ x1..x4 ³
+           ³ [FC]..[FF] ³ 256  ³ FF     ³ x1..x4 ³
+           ÀÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÙ
+
+ For more information about mentioned speed tables please refer
+ to file "techinfo.doc", chapter C. ViBRATO/TREMOLO SPEED TABLES.
+
+
+Ú-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ--ùú  ú
+ù VI. SONG VARiABLES         ù
+ú         úù-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-Ù
+
+
+ SONGNAME
+ ÄÄÄÄÄÄÄÄ
+
+ You can specify how should be the song called here.
+ The maximal length of string is 42 characters.
+
+
+ COMPOSER
+ ÄÄÄÄÄÄÄÄ
+
+ You can specify who was the creative person that made the song here.
+ The maximal length of string is 42 characters.
+
+
+ iNSTRUMENTS, PATTERNS, ORDER LiST ENTRiES
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ These are just values for information about number of common items used.
+ You cannot change them since they are calculated by the tracker.
+
+
+ SONG TEMPO
+ ÄÄÄÄÄÄÄÄÄÄ
+
+ With range 1-255, you can specify what will be the initial song tempo here.
+ The value is decimal, the unit used is "frames per second" (Hz).
+ However, you can calculate the tempo also in "beats per minute" (BPM)
+ with the following formula:
+
+   (tempo_in_Hz * 2.5) = tempo_in_BPM
+
+
+ SONG SPEED
+ ÄÄÄÄÄÄÄÄÄÄ
+
+ With range 1-FF, you can specify what will be the initial song speed here.
+ The value is hexadecimal, the unit used is "frames per row".
+ There is also an Update switch beside the song speed field.
+ You can specify there, whether the song speed should be reset to "initial"
+ when song loops back to order 0.
+
+
+ MACRODEF. x
+ ÄÄÄÄÄÄÄÄÄÄÄ
+
+ With optional range, you can specify what will be the multiplying factor
+ for macro-definitions here.
+
+ i.e. 1 means that the macro commands will be triggered once per frame,
+      2 means twice per frame (speed-up is 2),
+      3 means three times per frame (speed-up is 3), and so on.
+
+
+ TRACK VOLUME LOCK
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ You can specify the initial Volume Lock state here.
+ If Volume Lock is set, you can also set its initial settings for all
+ available tracks in the Initial Lock Settings.
+ For more information see chapter V, part "Lock track volume".
+
+
+ TRACK PANNiNG LOCK
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ You can specify the initial Panning Lock state here.
+ If Panning Lock is set, you can also set its initial settings for all
+ available tracks in the Initial Lock Settings.
+ For more information see chapter V, part "Lock track panning".
+
+
+ VOLUME PEAK LOCK
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ You can specify the initial Peak Lock state here.
+ If Peak Lock is set, you can also set its initial settings for all
+ available tracks in the Initial Lock Settings.
+ For more information see chapter V, part "Lock volume peak".
+
+
+ 4-OP TRACK EXTENSiON
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ You can specify whether to use the 4-operator track extension
+ on corresponding tracks here.
+ Note that this adjusts the number of tracks if neccessary.
+ THiS MODE iS A BiT COMPLiCATED SO iT iS RECOMMENDED
+ TO EXPERiMENT TO GAiN FAMiLiARiTY WiTH MAKiNG 4-OP iNSTRUMENTS :-)
+
+
+ TREMOLO DEPTH
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ You can specify the initial tremolo depth here.
+ See also chapter V, part "Tremolo".
+
+
+ ViBRATO DEPTH
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ You can specify the initial vibrato depth here.
+ See also chapter V, part "Vibrato".
+
+
+ PATTERN LENGTH
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ With range 1-256, you can specify what will be the pattern length here.
+ Note that the pattern length value affects whole song.
+
+
+ NUMBER OF TRACKS
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ With range 1-20, you can specify what will be the number of tracks here.
+ Note that value above 18 automatically toggles percussion mode ON.
+
+
+ PERCUSSiON TRACK EXTENSiON (BD,SD,TT,TC,HH)
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ You can specify whether to use 5 percussion tracks here.
+ Note that percussion mode automatically changes the number of tracks to 20,
+ but you can decrease the value as neccessary though.
+ THiS MODE iS SLiGHTLY HARD TO USE (PARTiCULARLY THE "SD/TT/TC/HH" TRACKS)
+ SO iT iS NOT RECOMMENDED UNLESS YOU KNOW HOW iT WORKS OR GAiN FAMiLiARiTY
+ WiTH iT AFTER SEVERAL EXPERiMENTS :-)
+
+
+ VOLUME SCALiNG
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ (iMPORTANT OPTiON)
+ You can specify whether to use volume scaling mode here.
+ Volume scaling mode differs from default mode in handling the volume
+ when performing effect commands. When in default mode, the volume is set to
+ value requested in effect column whatever is the base volume specified in
+ carrier or modulator cell of instrument.
+ When in volume scaling mode, any change of volume with effect command is
+ calculated as scaled base volume of instrument.
+
+
+ iNiTiAL LOCK SETTiNGS
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ You can specify the initial settings of Panning Lock, Volume Slide type,
+ Volume Lock, and Peak Lock for corresponding track here.
+
+
+Ú-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ--ùú  ú
+ù VII. GETTiNG STARTED       ù
+ú         úù-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-Ù
+
+
+ Any piece of music written with the /´DLiB TR/´CK3R ][ is built up
+ from patterns. Each pattern is built up from 1 to 18/20 tracks.
+ A pattern is 1 to 256 lines long. The line where the cursor is always
+ the one you edit. If you need shorter patterns and you don't want
+ to shorten the overall pattern length in song variables,
+ use the Pattern Break effect command (Bxx).
+ A track is built up like this:
+
+              ÚÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄ
+              ³LiNE³ 1                 ³ 2
+              ÃÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄ
+              ³ 37 ³ úúú  úú  úúú  úúú ³ úúú
+              ³ 38 ³ A#5  01  úúú  úúú ³ úúú
+              ³ 39 ³ A-4  úú  330  úúú ³ C-2
+              ³ 3A ³ úúú  úú  300  úúú ³ şşş
+              ³ 3B ³ úúú  úú  300  úúú ³ úúú
+              ³ 3C ³ úúú  úú  úúú  úúú ³ D#2
+              ³ 3D ³ D#1  02  úúú  úúú ³ şşş
+              ³ 3E ³ C-2  01  úúú  úúú ³ úúú
+              ³ÜÜÜÜ³ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ³ÜÜÜÜ
+   current Ä ³Û3FÛ³ÛC-4ÛÛ01ÛÛC20ÛÛ201Û³ÛC-2
+   line       ³ßßßß³ßßßßßßßßßßßßßßßßßßß³ßßßß
+              ³    ³                   ³
+              ³    ³                   ³
+              ÀÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄ
+                                
+                     ³    ³   ³    ³
+                     ³    ³   ³    ÀÄ effect command 2
+               note ÄÙ    ³   ³
+                          ³   ÀÄ effect command 1
+                          ³
+                          ÀÄ instrument
+
+ The C-4 is the note being played at pattern position 3F,
+ 01 is the instrument number, and the following six digits are the
+ two effect commands, in this case, Set Volume to 20 Hex, and Frequency
+ Slide Down by 1 unit per frame. Remember that values for instruments
+ and effects are always hexadecimal!
+ You can enter the note by switching into MBoard mode while the song
+ is Stopped or while the song is Paused with no Trace or by setting this
+ mode OFF (Shift+Space to toggle) then by just typing the note into
+ the corresponding fields.
+ Likewise, you can either type in the instrument number.
+ The instrument number corresponds to the active instrument.
+ You can check the active instrumet at the bottom of main screen or directly
+ in the Instrument Control panel.
+ If in MBoard mode, this will be entered automatically when a note
+ is entered through the keyboard (MBoard keys).
+ Typing in the instrument number (if "update_ins" option is ON) will affect
+ the numbers in following lines and the active instrument in Instrument
+ Control panel. After you have edited all your patterns, you have
+ to determine the pattern order. For that simply use the Pattern Order
+ editor. Enter (while the song is Stopped or while it is
+ Played with no Trace) will toggle the Pattern Order editor.
+ Furthermore, you can define a restart position.
+ Here's an example:
+
+ Let's say you have entered three patterns (numbers 0, 1 and 2) and
+ want to play the pattern 2 twice, then pattern 0 and finally
+ pattern number 1 three times. Afterwards the music should start
+ from order 2 (with the pattern 0) again.
+ Edit the pattern order like this:
+
+              ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+              ³ 00 02 ³ 04 01
+              ³ 01 02 ³ 05 01
+              ³ 02 00 ³ 06 82 ÄÄÄÄ jump to order 2
+              ³ 03 01 ³ 07 80
+              ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+                  
+                ³  ³
+                ³  ÀÄ pattern number (entry)
+                ³
+
+              order number
+
+ To enter the notes /´DLiB TR/´CK3R ][ uses a piano-like keyboard layout
+ when in MBoard mode (see chapter III, part "I" for the layout).
+ The program supports 8 octaves. You can see the active octave in the bottom
+ of main screen or directly in the Octave Control panel.
+ When both MBoard and Tracking mode are OFF, you can type in the notes
+ into their corresponding fields.
+
+
+Ú-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ--ùú ú
+ù VIII. MIDI SYNTH MODE     ù
+ú        úù-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-Ù
+
+/´DLiB TR/´CK3R ][ features mode called MIDI Synth Mode (SYNTH!).
+It can be activated by enabling MIDI port interface (e.g. 330h)
+with option "mpu_port=330" in the config file.
+
+This mode allows you to interface the tracker as a MIDI slave to any
+MIDI master host connected through the MPU-401 interface of the computer.
+
+The MPU-401 interface is set up in UART mode and can only receive note on/off
+and MIDI program change events. The MIDI program represents the selected
+instrument. MIDI channels will correspond to the available pattern tracks,
+with the exception of so called "mapped channels". These represent the five
+percussion channels that can be mapped to specific MIDI channels (see the
+configuration file).
+In all, this means that multiple instruments (on different channels/tracks)
+can indeed be played simultaneously.
+
+It is always necessary to explicitly select the MIDI program on the MIDI
+master host, before any notes can be played. This will load the selected
+instrument (MIDI program) on the appropriate track (MIDI channel).
+
+Issues may occur if, in synth mode, notes are played through the keyboard
+(and not through MIDI), or if instruments are activated in any other way
+than through MIDI (e.g. playing a pattern). These issues can usually be
+fixed by reselecting the MIDI program through the MIDI master host.
+
+An example setup is a host running a Digital Audio Workstation (DAW),
+connecting to /´DLiB TR/´CK3R ][ through MIDI and with the Sound Blaster
+output line routed back into the DAW. This, in effect, gives you a REAL OPL3
+MIDI synthesizer!
+
+
+Ú-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ--ùú  ú
+ù IX. USEFUL TiPS            ù
+ú         úù-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-Ù
+
+
+ TiP 1   The tracker is capable of highlighting corresponding lines.
+         You can toggle this mode on-and-off with Alt+M, and setup by Alt+L.
+
+ TiP 2   You can preview an instrument before loading it.
+         In the file open dialog or bank browser, use MBoard keys while
+         cursor is positioned on instrument you want to preview.
+
+ TiP 3   When in Debug mode, you can trace the song row by row
+         with Space key from Pattern Editor as well as from Debug info
+         window toggled by holding Ctrl+Alt. When the song is played
+         with Trace, you can temporarily turn on Debug mode and process
+         row by row playing with Space key directly from Debug info window.
+
+ TiP 4   When transposing patterns, it's sometimes useful to keep some of
+         notes intact from changes (e.g. drums).
+         You can do that by holding Right-Shift key while putting notes
+         using MBoard keys, or you can remark already put notes to-or-from
+         fixed state in single steps or in blocks by Shift+Enter.
+
+ TiP 5   You can force /´DLiB TR/´CK3R ][ to behave like Scream Tracker or
+         FastTracker when typing in commands within the Pattern Editor
+         and Macro Editor window.
+
+                                               ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                                               ³ ADTRACK2.iNi SETTiNGS  ³
+                                               ³ FOR DEFAULT MODE:      ³
+         ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄ´ "command_typing=" AND  ³
+         ³ TYPiNG MODE      ³ FLAG ³ KEY COMBO ³ "cycle_pattern="       ³
+         ÆÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍµ
+         ³ Adlib Tracker II ³  AT  ³ Shift+F11 ³       1/OFF            ³
+         ³ FastTracker      ³  FT  ³    F11    ³       1/ON             ³
+         ³ Scream Tracker   ³  ST  ³    F12    ³       2/OFF            ³
+         ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+         You can set each of these modes as default mode on program start
+         with corresponding settings in configuration file as shown
+         in the above table. You can, however, switch over these modes
+         anytime later, using respective combination of keys.
+         Please note that when you set command typing to 0 (mOrOn),
+         you cannot switch over any of these modes.
+
+ TiP 6   You are reminded of changes you have made to the song.
+         In the status window, a small diskette icon appears in case there
+         were changes since last loading or saving.
+
+ TiP 7   You can get information about track properties while Playing,
+         Debugging, Tracking or even if song is Paused in the
+         upper area of Pattern Editor (beside corresponding track number).
+
+         ÚÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+         ³ ()  ³ panning Center           ³
+         ³ (   ³ panning Left             ³Ä if panning indicator
+         ³  )  ³ panning Right            ³   changes color, it means that
+         ÃÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´   the Panning Lock has been
+         ³1'4OP³ first 4-op track (main)  ³   activated/deactivated;
+         ³2'4OP³ second 4-op track        ³   for more information,
+         ³ BD  ³ Bass Drum track          ³   see chapter V, effect ZBx,
+         ³ SD  ³ Snare Drum track         ³   and effect ZF9, and also
+         ³ TT  ³ Tom Tom track            ³   chapter VI, part "Track Panning
+         ³ TC  ³ Top Cymbal track         ³   Lock"
+         ³ HH  ³ Hi-Hat track             ³
+         ÃÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+         ³ M  ³ Modulator volume slides  ³Ä for more information,
+         ³ C  ³ Carrier volume slides    ³   see chapter V, effects ZF6,
+         ³ &  ³ Car w/ Mod volume slides ³   ZF7 and ZF8
+         ÃÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+         ³ P+  ³ Peak Lock active         ³Ä for more information,
+         ³ V+  ³ Volume Lock active       ³   see chapter V, effect ZF2,
+         ÀÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ   and effect ZF4
+
+ TiP 8   You are able to gain different setups for corresponding directory
+         by creating directory-specific configuration.
+         Simply place your "ini" file where you want to use corresponding
+         setup, and run the tracker from within this directory (it's useful
+         to make a batch file there).
+
+ TiP 9   You can use shortkey [BackSpace] for upper-dir and [\] for root
+         in File Selector.
+
+ TiP 10  You can play your songs one after another by pressing Shift+Enter
+         instead of Enter key in File Selector.
+
+ TiP 11  While working with 4-op tracks, marking instruments
+         in Instrument Control panel will choose a set of instruments
+         for corresponding 4-op tracks. Two instruments will be then
+         always used as "current" instead of one.
+         You can keep track of them in the Instrument Control panel as well
+         as in the Status Line.
+
+ TiP 12  While working with 4-op tracks, panning works within both
+         channels if you have used some AM connection at least in one
+         of the two instruments. You are then able for example play some
+         operators in one channel and others elsewhere.
+
+ TiP 13  While working with instrument macro-definitions, don't forget
+         to paste appropriate instrument data to FM-register table
+         first in order to use it. You can do that with ^Enter key, which
+         pastes default instrument data to current row.
+
+ TiP 14  While working with clipboard, you can use multiple paste to a single
+         or multiple destination--pattern(s) with [Ctrl][Tab] V key:
+         Simply copy the object to clipboard as usual, and press
+         [Ctrl][Tab] V key. Then the Pattern List will appear, where
+         you can select a single pattern or multiple patterns with [Space]
+         as a destination. Then press Enter key to apply.
+
+ TiP 15  You can load a pattern to a multiple destination--pattern(s) when
+         in Pattern List and there are some marked patterns.
+         Simply mark one or several patterns with [Space] and load
+         desired pattern file.
+
+ TiP 16  If working with percussion mode (respect then :) percussion
+         tracks SD/TT/TC/HH may stop responding. Go to the File Variables
+         window and set the percussion mode switch off-and-on.
+         After 1-3 retries the tracks should start responding again.
+
+ TiP 17  While testing/previewing an instrument within Instrument Control,
+         Instrument Editor or bank browser, you can check the key-off
+         phase of this instrument. Simply hold [Ctrl] key before releasing
+         the MBoard key. To stop key-off phase, release the [Ctrl] key.
+         Furthermore, you can check the key-off phase with "key-off loop"
+         if using macro-definitions. In this case, hold the Ctrl+Alt keys
+         pressed when releasing the MBoard key.
+
+ TiP 18  The tracker features both simple playback mode and playback mode
+         with synchronization. The advantage of synchro-playback is that
+         you can gain authentic and accurate sound at any time and any point.
+         The playback is synchronized everytime when it's neccassary, so
+         all the playing effects, song tempo, song speed, song timer a.o. are
+         just the same as they are when playing whole song from start.
+         The disadvantage is that it sometimes takes awhile (maybe longer :)
+         when playback synchronizes (depending on CPU and song structure)
+         Anyway, you can leave the sync-mode using [Alt] variant of playback
+         shortkey (i.e. Alt+F5, Alt+F8 and Alt+F9) even if the song
+         is already playing. Note that you can set up playing without
+         synchronization as the default action in configuration file (set
+         option "nosync_by_default" to ON).
+
+ TiP 19  You can play the current pattern in single-playing mode.
+         It means, that you are able to play patterns that are not signed
+         in pattern order. The whole pattern is played with repeating then.
+         You can toggle this playback mode with Alt+F6.
+
+ TiP 20  If working with macro-definitions, you can disable one or more
+         columns in FM-register table. This is useful when you need
+         to change only single or a few parameters (i.e. volume fading,
+         pitch sliding) with macro-definitions and other parameters
+         with pattern effects. This mode works similary as disabling tracks
+         in Pattern Editor, but using Ctrl+Backspace for single
+         ON/OFF instead.
+
+ TiP 21  When making macro-instruments, it's sometimes useful to reset
+         the ADSR envelope several times during macro-cycle. You can do this
+         by setting the note rettriger for appropriate row of macro-table;
+         Ctrl+N toggles ON the retrigger for corresponding row and Ctrl+Alt+N
+         resets flags on all rows.
+
+ TiP 22  You can control the playback from within the Instrument Control
+         panel. Following commands are functional:
+
+         F5              Play
+         F6              Pause
+         F7              Stop
+         F9              Play current pattern or order only
+         [Shift] +,-   * Skip to next/previous pattern while Tracing
+         +,-           * Same as above; play pattern from start
+
+         NOTE: Commands marked with asterisk (*) work only while the name
+               of instrument is not being edited.
+
+ TiP 23  You can control current instrument directly in Macro Editor window
+         using Ctrl+[] keys. It is even possible to control current instrument
+         and octave while in macro-preview mode.
+
+ TiP 24  When working with /+DLiB TR/+CK3R ][ native bank files (A2B, A2W),
+         you can force loading complete bank instead of going to bank browser.
+         This can be done easily by pressing Shift+Enter instead of Enter key
+         in File Selector.
+
+ TiP 25  All options from config file can be controlled also directly
+         from command line. Syntax for usage is as following:
+
+           "adtrack2.exe [[/cfg:option] [...]]"
+           e.g. "adtrack2.exe /cfg:adlib_port=388 /cfg:opl_latency=1"
+
+
+
+Ú-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ--ùú  ú
+ù X. KNOWN PROBLEMS          ù
+ú         úù-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-Ù
+
+
+ Autodetection of OPL3 interface may fail under some circumstances. In this
+ case, force the base address of OPL3 interface (set option "adlib_port"
+ to proper value; usually 388h).
+
+ You may encounter playback problems when you are using some older
+ soundcard with OPL2 chip or with derived OPL3 chip. In this case, toggle on
+ the safety OPLx latency (set option "opl_latency" to 1).
+
+ You may encounter problems scrolling the screen up/down when your computer
+ is equipped with a GeForce2 MX 200/400 with VGA BIOS version 3.11.01.2x,
+ and VGA BIOS version 3.11.01.3x (up to version 3.11.01.37, afaik :)
+ In this case, you are supposed to update your VGA BIOS to resume from
+ hanging-up computer (recommended VGA BIOS version is 3.11.01.44 or higher).
+
+ You will encounter text-mode problems when your computer is equipped with
+ an ATI Radeon chipset graphic card.
+
+ You may encounter playback sync/timing problems when running
+ /´DLiB TR/´CK3R ][ on slower CPUs.
+
+ The tracker is supposed to be run under Windows NT/2000/XP systems, but
+ soon you will see there are some restrictions (jerky playback a.o.)
+
+ NOTE: In case of startup problems, discover recovery point by using
+       option "/debug" in command-line.
+
+
+Ú-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ--ùú  ú
+ù X. EPiLOGUE                ù
+ú         úù-ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-Ù
+
+
+ HONEST 'THANK YOU' TO FOLLOWiNG PEOPLE
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+ (in random order)
+
+ TMT Development Corp. [TMT Pascal Compiler Lite 3.90]
+ Borland International [Turbo Assembler 4.1]
+ Charles Scheffold & Thomas Pytel [PMODE/W 1.33]
+ Joergen Ibsen [aPLib 0.26b]
+ Markus Oberhumer, Laszlo Molnar & John Reiser [UPX 3.91d]
+
+ (further in alphabetical order :)
+
+ Cecill Etheredge (ijsf)
+ Daniel Illgen (insane/Altair)
+ Maan M. Hamze
+ Mikkel Hastrup (encore)
+ PissMasterPlus
+ Slawomir Bubel (Malfunction/Altair)
+ Sven Renner (NeuralNET)
+ Tyler Montbriand (Corona688)
+
+
+ GET THE LATEST VERSiON FROM
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ http://www.adlibtracker.net
+
+
+ For complete AT2 revision history please refer to:
+ http://www.adlibtracker.net/files/revision.htm
+
+
+ For complete AT2 file format description please refer to:
+ http://www.adlibtracker.net/files/techinfo.htm
+
+
+ SEND YOUR QUESTiONS, SUGGESTiONS, AND CRiTiCiSM TO
+ ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ subz3ro.altair@gmail.com
+                                                                            ú
+ú                                                                           ù
+ù                                                                           ³
+À-ÄÄÄÄÄÄÄÄÄÄÄÄÄ--ùú           úù-ÄÄÄÄÄÄÄ--ùú                 úù-ÄÄÄÄÄÄÄÄÄÄÄ-Ù
+
+ This document was last updated on October 27, 2014.

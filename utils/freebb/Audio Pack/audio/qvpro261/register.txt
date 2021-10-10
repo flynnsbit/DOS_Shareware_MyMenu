@@ -1,0 +1,43 @@
+QuickView registration information
+----------------------------------
+
+QuickView is distributed as shareware. You are welcome to test QuickView
+without charge for an evaluation period of three weeks. If you continue to
+use it after the trial period, you are obligated to register by paying a
+license fee. If you like and use this program then please register.
+
+When you register, you'll get:
+- Latest registered version of QuickView, with reference to "unregistered"
+  removed, plus any enhancements that have been added since this version
+  was released. You will receive your registered version via email. 
+- Further functions (see QV.TXT)
+- Free support from the author via email.
+- Notification of updates through email.
+- All updates are free provided the registration fee hasn't changed. 
+
+The prices are as follows:
+QuickView registration for personal use     20 EURO or $25US
+QuickView Light version for personal use    10 EURO or $15US
+        (no additional command line parameters)
+QuickView registration for students         10 EURO or $15US
+QuickView registration for commercial use   35 EURO or $50US
+
+A QuickView registration is only valid for use on a single CPU. If you want
+to use QuickView on several computers you must register it for each one.
+
+For a student version you must send a certificate that you are a student.
+A commercial use of this version is not allowed.
+
+Please ask for the conditions of
+- Multiple licences and site licenses.
+- Dealer pricing.
+- Special versions tailored to your application.
+  One modification could be a Multimedia presentation program including AVI
+  or MP4 without Windows! This might be interesting for business.
+
+You can easily register online and pay with your credit card or via PayPal
+under
+http://multimediaware.com/qv/register
+
+For other ways of payment like cash, cheque or bank wire transfer please
+contact me under http://www.multimediaware.com/qv/contact

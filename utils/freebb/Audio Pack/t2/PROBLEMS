@@ -1,0 +1,157 @@
+ INSTALLATION PROBLEMS ?
+ ~~~~~~~~~~~~~~~~~~~~~~~
+  When you run INSTALL.EXE, the files 0204TER1._XE and
+  0204TER2._XE (and, optionally, other files 0204TER?._XE)
+  all need to be in the same directory.
+
+  If you encounter any problems with our low level
+  installation routines (music, screen, etc,) then:
+
+  1)   run     INSTALL.EXE /NOINTRO      instead...
+
+  OR
+
+  2)   Try rebooting with a `vanilla flavour'  CONFIG.SYS
+       and AUTOEXEC.BAT with no Terminate and Stay Resident
+       software (`TSR's) and make sure you specify AT LEAST
+       Files=40
+
+
+  If INSTALL.EXE finished work, but you're having problems
+  starting T2.EXE, then try to run T2.EXE with appropriate
+  parameters:
+
+         /NOEMS  - to disable use of EMS
+  and/or
+         /NOXMS  - to disable use of XMS
+  and/or
+         /FASTCONFIG[=port[,speed]] - to pass through all the
+                                      configuration questions
+                                      and configure TERMINATOR 2
+                                      manually (by setting the
+                                      port, bps, etc, etc)
+
+  or, to see the available command-line switches, run:    T.BAT ?
+
+
+ MEMORY REQUIREMENTS
+ ~~~~~~~~~~~~~~~~~~~
+ TERMINATOR 2 needs at least 550k of conventional (`below 640k')
+ free memory to run.
+ (2MB extended or expanded memory can be used when you shell out
+ and is, therefore, highly recommended but will not remove the
+ REQUIREMENT for at least 550k of conventional (`below  640k')
+ memory so use another terminal program if you can not achieve
+ this minimum figure!)
+
+ To gain conventional free memory, experiment with the /BUF
+ command line switch to decrease the amount of memory used by the
+ overlay (at the expense of a slight speed penalty. eg:
+ T2 /BUF:64
+ is the minimum memory needed by TERMINATOR 2'S overlay (100 will
+ be a better compromise for many)
+
+ If you load TERMINATOR 2 using the /DBG switch you will be able
+ to keep an eye on memory useage...
+
+
+ MOUSE PROBLEMS ?
+ ~~~~~~~~~~~~~~~~
+ Try toggling PECULIAR MOUSE in CHANGE CONFIGURATION, TOGGLES
+ ( [ALT][O], [O], toggle Peculiar mouse on/off )
+
+
+ PROBLEMS IN MULTITASKING ENVIRONMENTS
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Absence of an adequate FIFO Chip (eg: 16550 UART) may cause
+ problems with data loss (refer to further technical
+ documentation...)
+
+ If you experience Screen corruption or data loss even with an
+ adequate FIFO, then try using FOSSIL (such as Ray Gwinn's SIO
+ for OS/2 Warp) or increase the VDM session priority.
+
+ Unexpected CARRIER DROP - try to increase session priority or
+ try to use a FOSSIL driver instead of direct COM port access.
+
+
+ DATA LOSS PROBLEMS UNDER DOS
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Problems may also occur when running TERMINATOR 2 on 'slow'
+ computers or if the TERMINATOR 2 overlay file is not able to
+ load into EMS or XMS.
+ These problems relate to TERMINATOR 2's internal 'multitasking'
+ kernel and are similar to problems in a multitasking
+ environment.
+
+ Our suggestions are:
+  1. Do not open windows other than the terminal window before
+     and during file transfers
+  2. Try to increase the input buffer size in Communication
+     setup, Receive Buffer Size:
+     [Alt][O], [C], select device, [Enter], [R]
+  3. Try to decrease Bps of port:
+     [Alt][O], [C], select device, [Enter], [B]
+
+
+ KEYBOARD
+ ~~~~~~~~
+ If you are using an 83-keys keyboard, change Enhanced keyboard
+ setting in toggles:
+ [Alt][O], [O], Enhanced keyboard OFF
+
+
+ UNRESOLVED PROBLEM(S)
+ ~~~~~~~~~~~~~~~~~~~~~
+ If you STILL have problems, check out the comms gurus on your
+ local BBS or the various nets.
+
+ But NOT before you have tried a `vanilla flavoured' system:
+
+ 1) Create backup and archived copies of your original AUTOEXEC.BAT
+    and CONFIG.SYS files
+
+ 2) Edit both files to remark out ALL lines that are not ABSOLUTELY
+    VITAL to boot your system: especially TSR's and Soundblaster
+    drivers and including memory management software such as QEMM.
+    (type "rem " at the beginning of each line you wish to render
+    temporarily operational)
+
+    Make sure, though, that you have a
+    Files=25
+    statement (25 is the absolute minimum number of file handles
+    needed) and, of course, whatever keyboard driver you need.
+    Remove the mouse driver at this point, though.
+
+ 3) Reboot your system and TERMINATOR 2 should run OK.
+
+ 4) Reinstate each line you previously remarked out until you
+    discover the culprit line that causes hiccups anew.
+
+
+    If the unpack procedure completed normally, and you've tried all
+    the advice above, but you STILL have problems, then please run
+    REPORT.BAT ? to create a report file for us.
+
+User to user support is available for TERMINATOR 2 in the SHAREWARE
+public conferences of FidoNet, ILink and RIME available on many fine
+Bulletin Board Systems.
+
+Please be aware that these are all moderated conferences and differing
+messaging standards apply - so please read the appropriate guidelines
+for the particular conference before posting.
+
+In each and every case, please check that your proposed question has
+not *ALREADY* been answered in an older message in the conference or
+in \DOCUMENT\FAQ.DOC
+
+I shall make an effort to maintain at least a weekly presence in each
+of these conference, but travel and work commitments may mean that
+short absences are unavoidable..."
+
+
+
+Если у Вас возникли какие-либо пpоблемы пpи
+pаботе с пpогpаммой, или Вы хотите высказать
+свои пpедложения, напишите нам по адpесу
+2:469/38@fidonet

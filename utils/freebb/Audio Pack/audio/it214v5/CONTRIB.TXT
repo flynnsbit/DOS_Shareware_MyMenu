@@ -1,0 +1,296 @@
+
+      To all of the following people listed, I offer my heartfelt thanks.
+              Impulse Tracker would not be the same without them.
+
+                       ---------------------------------
+                         Demosongs for Impulse Tracker
+                       ---------------------------------
+
+        IT1.00 - "Firestorm"            - Chris Jarvis
+        IT1.01 - "Pale Dreams"          - Chris Jarvis
+        IT1.03 - "Firepower"            - Chris Jarvis
+        IT1.05 - "Sidewalk"             - Chris Jarvis
+        IT1.06 - "Creation of Gaia"     - Sherman Wu (ZaStaR)
+        IT2.00 - "Fallen World"         - Chris Jarvis
+        IT2.01 - "A Hidden Fate"        - Chris Jarvis
+        IT2.04 - "Winter's Dream"       - Andy Sega (Necros)
+        IT2.08 - "Acid Dreams"          - Liam Widdowson (Legend)
+        IT2.14 - "Blue Flame"           - Chris Jarvis
+
+
+                   -----------------------------------------
+                     Additional Coding for Impulse Tracker
+                   -----------------------------------------
+
+        Impulse Tracker Font Customiser - Sherman Wu (ZaStaR)
+        Impulse Tracker Text Importer   - Sherman Wu (ZaStaR)
+        Music Module Compression        - Emmanual Giasson (Zirconia)
+        Keyboard Configuration files    - Stefan Kucharik (Eliot)
+
+
+                             ----------------------
+                               Website Management
+                             ----------------------
+
+        USA Site                - Shawn Mativetsky (Shawn202)
+                                  http://www.citenet.net/noise/it
+        UK Site                 - Andi Simpson (Perception)
+                                  http://www.mixbbs.demon.co.uk
+        European Site           - Joost Baaij (CH:ilm)
+                                  (no longer operational)
+        Spanish Site            - Javier Gutierrez
+                                  http://www.redestb.es/personal/khz/it.htm
+                                  http://www.geocities.com/Vienna/4802/it.htm
+        Music and Tracking Site - Matthias Ziegs (MAZ)
+                                  http://www.maz-sound.com
+        IT Resource Central     - Matthew Gardner
+                                  http://www.unidev.com/~logic/music/it
+
+
+                             ----------------------
+                               Documentation Help
+                             ----------------------
+
+        ASCII Logos               - Ze`ev Nissan (Cruel Creator)
+        FILE_ID.DIZ               - Ze`ev Nissan (Cruel Creator)
+        MIDI Output documentation - Andre Pang (Ozone)
+
+
+--------------------------------------------------------------------------------
+
+                                Hardware Thanks
+
+                    (Sorted alphabetically by company name)
+
+                    ---------------------------------------
+
+Company:  Advanced Micro Devices (AMD)
+Products: Interwave
+Received: LT2 Interwave Board
+Website:  http://www.amd.com
+Notes:    AMD has discontinued the production of the Interwave chips.
+          Nonetheless, thank-you to Christopher Cox for his excellent service.
+
+                    ---------------------------------------
+
+Company:  Creative Laboratories
+Products: Sound Blaster series, Video Blaster, etc. etc.
+Received: Sound Blaster AWE32
+Website:  http://www.creaf.com
+
+                    ---------------------------------------
+
+Company:  Hanmesoft / Hoontech, Korea
+Products: Sound Track '42
+          Sound Track '42 PCI
+          Sound Track '97 Gold
+          Sound Track '97 Ruby
+          Sound Track '97 PCI
+          PCI Modems
+Received: Sound Track '97
+          Sound Track '97 PCI
+Website:  http://www.hoontech.com
+Notes:    The Sound Track '97 PCI is the worlds first fully SBPro and WSS
+          compatible PCI card and has some of the best features ever seen
+          on a soundcard! For bangs per buck, it's hard to beat one of these!
+
+          Thanks go to Haejin Park and to Seungho Pak!
+
+                    ---------------------------------------
+
+Company:  Synergy Advanced Technology (Taiwan)
+Product:  ViperMAX
+Received: ViperMAX
+Website:  http://www.synergy.ca/pctoybox
+Notes:    For a fully compatible Gravis UltraSound card with perfect Sound
+          Blaster compatibility, check out the ViperMAX cards - providing
+          the best of two worlds without the troubles of PnP.
+
+          Special thanks go to James Hsu, Synergy Advanced Technology.
+
+                    ---------------------------------------
+
+Company:  TerraTec International
+Products: AudioSystem EWS64XL
+          SoundSystem Maestro 32/96
+          SoundSystem Maestro 16/96
+          SoundSystem Gold 16/96
+          SoundSystem Base1
+Received: AudioSystem EWS64XL
+          SoundSystem Maestro 32/96
+          SoundSystem Maestro 16/96
+          SoundSystem Gold 16/96
+          SoundSystem Base1
+Website:  http://www.terratec.de
+Notes:    Terratec produces extremely high quality soundcards to cover
+          everyone's needs - check out their high end EWS64XL cards!
+
+          Thanks go to the entire Terratec Team, especially Kay Bruns,
+          Wim Roegels and Sascha Kamps - 3 of the team that I've had
+          the pleasure to come in contact with!
+
+
+--------------------------------------------------------------------------------
+
+                                 Contributions
+                               -----------------
+
+(sorted in alphabetical order, listing is Full Name / Alias / Country + notes)
+
+Name                 Alias         Country         Notes
+-------------------------------------------------------------------------------
+
+                     KjWise        Iceland
+Egor Abramov                       Russia
+Steven Anderson                    USA         Big contribution, thanks!
+Nicolas Arrouet      Onix4MAN      France
+Brandon Bannerman    Catspaw       USA
+John Barger                        USA         HUGE contribution, thanks!!
+Claus Bartels                      Germany
+Jonathan Bartlett
+Michael Baumann                    Germany
+Allen Bettilyon                    USA
+Bastiaan Bijl        Thanatos      Netherlands
+Mike Blaine
+Christian Bode                     Germany
+Fabian Boes                        Germany
+Nathan Bonfiglio     Ash                       Please contact me!
+Eman Borg                          Malta
+Alexander Brandon    Siren         USA
+Yannis Brown         Yannis        Australia
+Michael Buchholtz                  Germany     Big contribution, thanks!
+J”rg Burbach                       Germany
+Jim Cairns                         Canada
+Mike Cantelon        Foolish Bird  Canada
+Zach Cappelletti     Shams Kitz    USA
+Michael Carlsson     Silverstance  Sweden
+Hector Chang         ZoneSeek      Canada      Big contribution, thanks!
+Eric Charlent        Spher-X       France
+Andy Chen                          USA
+Rick Christy         GrymmJack     USA
+Matt Cramer                        USA
+Jim Crawford         Pfister       USA
+Daniel Cunningham                  Ireland
+Ben Dany
+Barthelemy Defossez                France
+                     Dire          Portugal
+Benoit De Greift     BS4           Belgium
+Luciano Di Lucrezia                            Big contribution, thanks!
+Asaf Dor
+Andrew Dun
+Brendan Ebel                       USA
+John Ehmann                        Canada
+Alexander Ewering    Internal      Germany
+Nick Feldman
+Reuben Firmin        Rubz          Scotland    Big contribution, thanks!
+Matt Friedly         Subliminal    USA
+Sebastian Grillmaier               Germany
+Moritz Grimm         Maxx          Germany
+John Goforth                       USA
+David Goodale                      Canada
+Sylvian Guiraud                    France      Big contribution, thanks!
+Joe Hahn                           USA
+Peter Hajba          Skaven        Finland
+Tim Hamers                         Netherlands
+John Harris                        USA
+Joshua Hastey        Ith           USA
+Raymon Hoving                      Finland
+Shu Hung                           Canada      Big contribution, thanks!
+Ryan Hunt            Pinion        USA
+David Hunter                       USA
+Shane Jackson        MetaMan       Canada
+Chris Jarvis                       Australia
+Jan Jirak                          Czechoslovakia
+Robert Johnson       Xenopraxis
+Frank Kane                         USA
+Thomas Karolczak     Mindflyer XS
+Keith Kelly          Syrinx        USA
+Mehran Khalili       Screamager    Luxembourg
+Martin Kleinman      Brain         Netherlands
+Martin Klossek                     Germany
+Alexander Koenig                   Germany
+Evan Korzon                        USA
+Peter Kunath                       Germany
+Rich La Bonte        Flatrich      USA
+Michael Ladanyi                    Canada
+Eliot Lee            PrOtoCoL      USA         Big contribution, thanks!
+Rik Ling                           USA
+Sami M„kinen                       Finland
+Anthony Marin        Verminator    USA
+Norman Mark          Nothing More  Canada
+Mike Ma'rton                       Hungary
+Akos Matte           Bat & Cyborg  Hungary
+David Menkes         Behemoth      USA
+Pirnat Miklavz
+Mauro Molinari       DjM           Italy
+Lutz M”ller                        Germany
+Paul Munson                        Canada      PLEASE WRITE TO ME!
+                                               I CAN'T CONTACT YOU!
+Joachim Nentwich                   Germany
+Anthony Oetzmann     AiRON         Germany
+Jonathan Pak                       Australia
+Andre Pang           Ozone         Australia
+Jourden Parks        AllenKray     USA
+Jean-Luc Pedneault                 Canada
+Eddie Plaskur        Mexican Beans Australia
+Harout Pogossian
+Eric Pomerleau       O'Realitea    Canada
+Pascal Q. Porcupine  Spikey        USA         Big contribution, thanks!
+Alexander Rahm                     Germany     HUGE contribution, thanks!
+Hazhir Ranjram       Balk          USA
+Alessandro Rascazzo  Antitesi      Italy
+Pasi Rastas                        Finland
+Justin Ray           Zinc          Canada
+Tobias Reckhard      Jester        Germany
+Jimmy Redfern        Jimmy         Ireland
+Owyn Richen
+Josh Rodman          K8to          USA         MEGA HUGE contribution..
+                                               Thanks doesn't come close to
+                                               saying enough..
+Jens Roeben                        Germany
+Nick Rose            Phantasm      Canada
+Keijo Ruonamaa       Gze           Finland     Please write to me!
+Mark Sanders                       USA
+Adi Sapir            Doc           Israel
+Gerben Schmidt                     Netherlands
+Wolfgang Schwarz                   Germany     Big contribution, thanks!
+Kristian Sergiejew                 Poland
+Ryan Shaw                          USA
+Josh Silvey                        USA
+Michael Soutar       MSoutar       Australia
+Ian Stocker          RabiteMan     USA         Big contribution, thanks!
+Mark Straver         Moonchild     Netherlands
+Jer Sypult                         USA
+Patrice Tarabbia     Mercure       France
+Thor Teague                        USA
+Jaymz Thompson
+Jason Tracer         Electric Keet USA
+Nash Trajkowski                    Australia
+Eric Tremblay        DeltaX        Canada
+Michael Twarkowsky                 Germany
+Jani V„is„nen                      Finland
+David Van Dromme                   Belgium
+Marti Van Lin
+Erik Van Hengstum                  Netherlands
+Ernst Van Rossum                   Netherlands
+H.R. Scheper-Keuter  Josuf         Netherlands
+Filip Van Schoor     Cantaloup     Belgium
+Jan Van Stiphout
+Maarten Van Strien   Crystal Score Netherlands
+Benjamin Vogt                      Australia
+Arno Vryman                        Netherlands
+Gerd Wagner                        Germany
+Tom Walter           Subsonic      Australia
+Timothy Weller       Flukey        USA
+Jemi White                         Australia
+Brian Wickman        CD            USA
+Liam Widdowson       Legend        Australia
+John Williams        Jackal        USA
+John Wilson                        USA
+Tobias Wilton                      Sweden      Big contribution, thanks!
+David Zearing                      USA
+Matthias Ziegs       MAZ           Germany
+
+... where's your name? :)
+
+

@@ -1,0 +1,458 @@
+DAMP - The DOS MP3 Player and Visualisation Program
+By Matt Craven
+Using Ove Kaaven's LibAMP library.
+
+=========================== CHANGE LOG ==================================
+
+Version 0.96
+============
+- Compiled with latest WIP of Allegro.
+- ID3 Genre support.
+- Added damp_id3_genre to damplcd.sh
+- Added damp_shared_int, damp_shared_char[1024], and
+  damp_shared_float to dampcore.sh, in case you want to pass information
+  between input and output drivers...
+- Fixed the time display when in graphics mode (thanks to Michael for
+  spotting that bug!)
+- More joystick support: DB9 on LPT ports, TurboGrafx on LPT ports, and
+  IFSega ISA or PCI
+- Added display_lines to the [lcd] section of DAMP.ini, and
+  lcd_display_lines for LCD drivers to use (none of the current drivers
+  make use of this setting as of 9th April 2000)
+
+Version 0.95 WIP 9
+==================
+- New gfx modifiers: pearlglass, tristar, spikes, waterfall, wavyzoom,
+  ripple, warp, sucker.
+- Made gf_blur_heavy the default graphics filter.
+- New gfx waveform: blobs
+- Added volume_fine to the [joystick_control] section of DAMP.ini
+- Should now support playback of .MP2 files directly (ie you don't need
+  to rename them to .mp3), but this is untested.
+- Added PREVIOUS_N_TRACKS and NEXT_N_TRACKS to the joystick controls, so
+  a joystick can be used to skip several tracks at once.
+- Added -sleep <n> option which quits DAMP after <n> minutes. If you set
+  the "sleep_fade" option to "yes" in DAMP.ini, then it will also fade
+  out.
+- A few little changes to readme.txt - general bits n pieces. I'd recommend
+  that anyone who hasn't read the readme for several releases should
+  probably do so.
+
+Version 0.95 WIP 8
+==================
+- Added the abiltity to skip forwards and backwards several tracks at
+  once using the cursor right/left keys. The number of tracks skipped
+  is determined by the "large_skip" setting in DAMP.INI
+- Can now also use the backspace key to skip to previous track. (Just to
+  fit in with using ENTER to go forward a track).
+- Can now toggle "time remaining" display on and off by pressing V
+- Exported util_time_remain_toggle() for input drivers to use.
+- "Time Remaining" is now more accurate and should be correct for all
+  formats of MP3.
+- Time display now updates properly when rewinding with "time remaining"
+  enabled.
+- New option in DAMP.ini for LCD displays: display_width  - now you can
+  customize the display width and get a nice output on your 40x2 LCD :-)
+  I've had to update all the drivers, so if you're using a driver downloaded
+  from the DAMP web site, you'll have to download it again.
+- New variable for LCD drivers to use: lcd_display_width contains the width
+  as specified in DAMP.ini - I've already altered the existing drivers to
+  use this, but anyone currently writing a driver should look at LCDWIRE1.SC
+  to see how it's done (basically change "16" to "lcd_display_width")
+- LCD now has a symbol to show whether continuous play is enabled or not.
+  I've set this to "C" by default, but LCD drivers are free to change it
+  (the variable is lcd_continuous_symbol).
+- Can now press F1 (if not in gfx mode or GUI) to show a DAMP help page
+  which gives a summary of the keys.
+- You can now see the playlist in the GUI, although all you can do with it
+  at the moment is scroll up and down it...
+- 3 new modifers for gfx mode: spiral_left, spiral_right, sincos.
+
+Version 0.95 WIP 7
+==================
+- Added the -skip <n> option to skip the first <n> tracks. Eg -skip 2
+  will skip the first two tracks and start playing at track 3.
+- Changed the sb_* settings in DAMP.INI to sound_* as they work for other
+  cards, not just SoundBlasters.
+- If it hangs but you can still press ENTER to skip through tracks, set
+  the port,irq and dma settings in the [sound] section of DAMP.INI to
+  values that match those of your sound card, and see if that helps.
+- If a playlist entry is in fact another playlist, then that playlist
+  will also be played by DAMP.  You can therefore create a hierarchy of
+  playlists within playlists...
+- Added the [graphics] section which allows you to specify a filter that
+  gets applied to the graphics. So you're no longer stuck with the same
+  blur effect - you can make your own!
+- Screen resolution when using the GUI is now configureable via the [gui]
+  section of DAMP.INI
+- Colours of the GUI are configureable via DAMP.INI
+- Minor change to the licence, re: Commercial Use.
+- Added the -remaining option, which makes DAMP display track time remaining
+  instead of time elapsed. NOTE: I haven't tested this on anything other
+  than 16-bit 128Kbps stereo MP3s - it could be wrong on files encoded
+  differently.
+- Added the ability to toggle continuous play on and off by pressing C.
+- Added the ability to toggle sync to beats on and off by pressing B.
+- Made "beautify filenames" make all words start with uppercase and
+  continue in lowercase (eg THIS becomes This).
+- Added damp_time_remaining for LCD drivers to use.
+- Added util_contiuous_toggle() and util_sync_toggle() for input drivers
+  to use.
+
+Version 0.95 WIP 6
+==================
+- Fixed a bug that caused DAMP to crash under plain DOS
+- It may now hang under DOS when it starts to play - although I cannot
+  verify that this isn't just something to do with my system setup -
+  so I'd like people to report their experiences of running DAMP under
+  DOS (either let me know it works, or tell me it hangs).
+
+Version 0.95 WIP 5
+==================
+- Fixed a bug that stopped the numeric keypad from working.
+- Fixed a bug that stopped LCD drivers working.
+- Fixed a bug that could stop the GUI working.
+- Fixed GUI window titles (removed the ^ character off the end of them)
+- Added the -paused option and start_paused ini setting, so you can
+  start DAMP in pause mode.
+- Added the damp_playlist_filename and damp_playlist_filename_short for
+  LCD drivers to use.
+
+Version 0.95 WIP 4
+==================
+- Added the ffwd_rew_speed and vol_up_down_speed settings to DAMP.ini
+- Added the startup_mp3 setting to DAMP.ini
+- Added the SPHERE gfx modifier (like fisheye, but more spherical).
+- Added the CONCENTRIC gfx waveform (draws concentric circles).
+- Added the ROTATE_LEFT and ROTATE_RIGHT modifiers, as well as
+  ROTATE_LEFT_ZOOM and ROTATE_RIGHT_ZOOM, which zoom in as well as
+  rotating.
+- Joysticks now calibrate before use. NOTE: Calibration instructions
+  are printed to the DOS prompt, so if you're using DAMP without a
+  monitor, I suggest you plug a monitor in, calibrate, and check
+  it works before going back to a monitor-less setup.
+  Also note, set your joystick type using the "type" setting in the
+  [joystick] section of DAMP.ini BEFORE calibrating.
+- Support for Gravis GrIP, Playstation pads, N64 pads, and the
+  Wingman Warrior joystick.
+- Possibly supports Soundblaster Live and other poor SB clones now,
+  (ones that used to get static) but this is untested.
+- Possibly supports WSS (Windows Sound System) cards, but this is untested.
+- Added the EXIT_CODE_* joystick actions for frontend authors (though
+  this is untested).
+
+Version 0.95 WIP 3
+==================
+- Added the damp_track_number and damp_selection_buffer variables for
+  LCD drivers to use.
+- DAMP now outputs the current track number along with the track title.
+- Joystick can now control the random toggle.
+- A "controls" window is now present in the gui.
+- Removed common things from damplcd.sh and put them in dampcore.sh
+  ready for input drivers.  damplcd.sh now #include's dampcore.sh, so
+  existing LCD drivers still function correctly.
+- Input driver system is now in and ready for people to write drivers.
+
+Version 0.95 WIP 2
+==================
+- Added the -fnfnoquit option.
+- Added the following variables to the LCD driver (LCD display customisation
+  is now possible!):
+  damp_random_play, damp_surround, damp_paused, damp_volume,
+  damp_status, damp_filename, damp_id3_title, damp_id3_artist,
+  damp_id3_album, damp_id3_year, damp_id3_comment, damp_time
+  Also added the strcmp() function.
+- Updated lcddrv.txt with more info on the bioscom() function.
+- When selecting a track or playlist with the keypad whilst in text mode,
+  the number is displayed alongside the vu-meter.
+- Fixed a problem with DAMP not reading the ini file.
+- Preliminary gui (enabled with -gui option or use_gui=yes in DAMP.ini).
+- Added posterize_graphics setting to DAMP.ini
+- Added the keypad_timeout setting to DAMP.ini
+- Pressing your "next track" key/button whilst numbers are in the track
+  selection buffer causes it to skip to that track/playlist immediately.
+- Pressing your "previous track" key/button whilst numbers are in the
+  track selection buffer causes it to cancel your selection.
+
+Version 0.95 WIP 1
+==================
+- Added the "beautify_filenames" and "show_file_info" options to DAMP.ini
+- Added the -beep option
+- Exported the "damp_vu" variable for use in LCD drivers.
+- Updated lcddrv.txt slightly.
+- Support for second joystick (with 2 buttons)
+
+Version 0.94 (Fourth Public Release)
+============
+- LCD driver system in and working.
+- DAMP now hides the cursor in text-mode (to stop it flickering whilst
+  drawing the vu-meter).
+- Added the bioscom() function to the available LCD driver functions,
+  which should make it possible to write a driver for a serial-port
+  LCD display.
+
+Version 0.93
+============
+- Totally re-wrote the LCD driver system, using C scripts rather than
+  the values stored in the ini file.
+- Added a "Getting the best sound quality" section to the readme.
+- Removed the possibility of LCD driver support causing sound stuttering.
+- Improved keyboard/joystick response time whilst LCD is in use.
+
+Version 0.92
+============
+- More enhancements to "sync-to-beats".
+- Can now configure the character used when displaying the text-mode
+  vu-meter via an option in DAMP.ini
+- Fixed the problem with rewind and fast-forward getting slower the further
+  into a song you were.
+- Klaus Peichl spotted the error in my LCD driver. This is now fixed and
+  we're back to driver-based LCD support again.
+- Added the AND and OR commands to the lcd driver, to hopefully add support
+  for different wiring schemes.
+
+Version 0.91 (23rd private beta)
+============
+- The driver-based LCD system didn't work, so the old method is back in.
+  Looks like I'll just have to assume most LCDs are compatible, but add
+  support for different wiring schemes instead.
+
+Version 0.90 (22nd private beta)
+============
+- LCD support now uses a driver-based system, so it could be possible
+  to support other types of LCD display. See lcddrv.txt for details
+  on how to write a driver.
+- Improved the textmode vu-meter and sync-to-beats method. (Thanks to
+  Klaus Peichl).
+
+Version 0.89 (21st private beta)
+============
+- Stopped track title from fading in gfx mode during rewind/ffwd.
+- Hopefully fixed the time-display LCD bug.
+- Added "Help with DAMP.ini" to readme.txt
+- Added support for more joystick functionality (up to 8 buttons!).
+- Added the [joystick] section to DAMP.ini so you can select exactly
+  which joystick driver to use.
+
+Version 0.88 (20th private beta)
+============
+- Stopped LCD from flickering.
+- Fixed bug where DAMP would crash when you pressed ENTER during the
+  last track.
+
+Version 0.87 (19th private beta)
+============
+- More tweaks to LCD code, plus configureable scroll speed in DAMP.ini
+- Ability to display track time when in graphics mode, via an option
+  in DAMP.ini
+- AMMENDED THE LICENCE AGREEMENT to include the following:
+    "If you want to use DAMP in a commercial product, (something you make
+    money out of), you MUST contact me first at damp@craven4.freeserve.co.uk
+    to arrange a commercial licence."
+
+Version 0.86 (18th private beta)
+============
+- Experimental support for parallel port LCD display (use the -lcd option
+  to enable it).
+- Fix bug when using -q 0 which would cause DAMP not to auto-continue
+  to the next track.
+
+Version 0.85 (17th private beta)
+============
+- Added rewind and fast-forward functions using the "[" and "]" keys (and
+  of course assignable to joystick control).
+- Added -beatsync option to let the user specify a beat-sensitivity
+  threshold.
+
+Version 0.84 (Third Public Beta)
+============
+- Minor changes.
+- User-configureable visualisation options.
+
+Version 0.83 (16th private beta)
+============
+- More developer output when processing command line options.
+- Added -keypadhack option to attempt to overcome keypad troubles.
+
+Version 0.82 (15th private beta)
+============
+- Fixed problem where DAMP always looked for DAMP.ini in the directory
+  it was run from, rather than the directory where it lives.
+- Fixed (hopefully) problem of looping sound between tracks when playing
+  from a slower device such as a CD-R.
+- Made developer mode also output sound driver description.
+
+Version 0.81 (14th private beta)
+============
+- Can save screenshots by pressing TAB.
+- Added -surround option and surround_sound setting in DAMP.ini to let
+  you enable surround sound by default.
+
+Version 0.80 (13th private beta)
+============
+- Added -noscope option to disable text-mode volume meter.
+- Added more developer output to keypad track selection.
+
+Version 0.79 (12th private beta)
+============
+- Multiple playlist support with previous/next playlist keys (z
+  and x), and playlist selection using CTRL+Numpad, and of course
+  user-defineable joystick control for previous/next playlist.
+- Ability to disable id3 tag support with -noid3 option, in case it
+  causes DAMP not to work in some cases.
+- Playlist filename no longer needs to be the first item on the command
+  line.
+- Can now use a mix of MP3 filenames and playlist filenames on the
+  command line (it plays the MP3s first, then the playlists).
+- Fixed a small memory leak.
+- Random playlist order added with -rp or -randomplaylists option,
+  or through the random_playlists option in DAMP.ini
+
+Version 0.78 (11th private beta)
+============
+- Preliminary, experimental support for ID3 tags.  If the MP3 has a tag,
+  it will be displayed. So this feature is no use in a graphics mode.
+  There may be some problems with it.
+  It doesn't output "track" or "genre" yet either...
+- Uses the ID3 artist/title info for scrolling across in graphics mode.
+- Broke the code up a lot more to ease maintenace/enhancement of DAMP.
+- Added user-defineable joystick controls (suggested by Heiko Valnion)
+
+Version 0.77 (Second Public Beta)
+============
+- Minor documentation alterations.
+
+Version 0.76 (10th private beta)
+============
+- Added digital joystick functionality (suggested by Joe Rybacek)
+
+Version 0.75 (9th private beta)
+============
+- Attempted to speed up loading of *.mp3 under plain DOS.
+- You can "fix" the bug of MP3s playing too fast on some machines
+  by altering the "sb_freq" parameter in DAMP.ini
+
+Version 0.74 (8th private beta)
+============
+- Fixed crashes (I hope) when running under plain DOS
+  (ie not under Windows).
+
+Version 0.73 (7th private beta)
+============
+- Made skip to previous and skip to next work properly on
+  playlists (spotted by Jerod).
+- Added the -c option to enable continuous (looped) playback.
+
+Version 0.72 (6th private beta)
+============
+
+- Added [sound] section to DAMP.ini, which allows you to set the
+  sound options for DAMP. The most important option is the
+  "quality" setting, which if set to 2 will interpolate the
+  sample output, giving far superior sound quality than previous
+  versions of DAMP.
+- Improved the keypad functionality based on suggestions by Jerod.
+
+Version 0.71
+============
+- Implemented DAMP.ini
+  DAMP will now read options from DAMP.ini, so you don't need to
+  type them on the command line every time (but you still can
+  if you want to!) Command line options override ini options.
+- Fixed (again) the bug where DAMP would report that none of the playlist
+  entries existed when the playlist contained no drive/path info.
+- Added keypad functionality, at the request of Jerod.
+
+Version 0.7 (Fifth private beta)
+===========
+- Added developer mode.
+- Added a bit more checking to help stop things going wrong.
+- Fixed a bug where DAMP would report that none of the playlist
+  entries existed when the playlist contained no drive/path info.
+- Made the "sync to beats" method more accurate.
+- Added a -q 0 option to guarantee best sound quality, and to try
+  and combat problems where MP3s would play too fast. This option
+  will degrade visual output quality considerably.
+- The -t option is now deprecated, use -s <threshold value> instead,
+  or -s followed by no value to use default threshold.
+- Fixed a potential problem with options requiring a value being the
+  last option on the command line and not having a value.
+
+Version 0.6 (First public beta)
+===========
+Changes since v0.5:
+- The -t option works again. From 0 (low sensitivity) to 10 (high
+  sensitivity). The default is 5.
+- Documented the -v option.
+- Added the ability to display the track title by pressing T
+- Fixed the pause function to actually pause (and fade out the
+  graphics if necessary).
+
+Version 0.5 (Fourth private beta)
+===========
+Changes since v0.4:
+- Can give it multiple MP3 filenames, anywhere on the command
+  line, even with options in between them!
+  (eg: damp.exe -r blah.mp3 -q 1 fred.mp3 -g -s cool.mp3)
+  (NB: if using a playlist, it MUST be the first argument).
+- Can use wildcards like: damp.exe c:\tunes\*.mp3
+- Can use +/- to alter volume
+- Now quits if the specified file doesn't exist
+- If using playlists, it skips non-existent files (and even tells
+  you how many were missing)
+- Added support for "Sonique" playlists (.PLS files) - though this has
+  not been extensively tested
+- Changed the sync to beats method to do away with all the thresholding
+  nonsense and use differencing instead. I've left the old code in, just
+  in case I decide this version isn't better (but I think it probably
+  is). Note this will make the -t option defunct. Or more likely I'll use
+  it to allow a user-defineable "sensitivity threshold".
+- Added "Surround Sound". Press S to turn on and off.
+- Added multiple zoom styles
+- Added -z option, to turn off zoom style changing when sync to beats is on
+
+Version 0.4 (Third private beta)
+===========
+Changes since v0.3:
+- Added -t option.
+- Added parameter to the -n option.
+- Added graphics toggle button.
+- Added -m option.
+
+Version 0.3 (Second private beta)
+===========
+Changes since v0.2:
+- Improved sync to beats auto threshold.
+- Added -n option
+- Can press P to pause a track. This doesn't stop the audio output
+  though, so you'll hear the current bit looping over and over, so I'm
+  not sure whether pause is a good idea or not...
+- Modified the playback call again, this time making the "jerkiness"
+  a bit worse, but improving the sync to beats and playback quality.
+- Modified palette generation to create a better visual effect.
+- Added the -q option, so no jerkiness+good sound is possible! :)
+- Modified the playlist reader to ignore files which don't have
+  an MP3 extension (to stop it trying to play WAVs, MODs etc).
+  (This wasn't actually happening under older versions).
+- Fixed a problem where sync to beats would take ages to kick in
+  if playing a quiet track after a loud one.
+- Added the -bnw option.
+- Added the verbose command line options.
+- Added another waveform.
+
+Version 0.2 (First private beta)
+===========
+Changes since v0.1:
+- Added a version number :)
+- Used a blurring rather than a fading in the graphics routine. This
+  looks much nicer!
+- Made the rendering smoother by calling poll_amp() in an interrupt
+  than letting run_amp() do the work.
+- Made "sync to beats" not quite work as well as it used to :(
+- Tidied up and commented the code thoroughly.
+
+Version 0.1
+===========
+- It plays MP3 files.
+- Basic graphics with simple synchronisation.
+

@@ -1,0 +1,121 @@
+LCD configuration in Mpxplay:
+
+- you can configure the LCD in the [LCDdisplay] part of MPXPLAY.INI
+- enable the LCD with the LCDport variable (LPT1,LPT2,COM1,COM2,etc.)
+- configure your display with the LCDtype,LCDlines,LCDrows
+- configure the displaying with the LCD_items lines
+- you can find more hardware infos in the display\lcd.c source file (mpxsrc.zip)
+
+LCD hardware types (LCDtype=):
+-on LPT port:
+  type 1 : HD44780 8-bit mode
+  type 2 : HD44780 4-bit mode
+  type 3 : Noritake VFD (series 800)
+  type 4 : Toshiba T6963C
+-on COM port:
+  type 5 : HD44780 or compatible
+  type 6 : Matrix Orbital
+  type 7 : EDE702
+  type 8 : VT100 terminal output
+
+LCD_items line configuration:
+
+ LCD_items=linepos,rowpos,ITEM1,ITEM2,"userstring",ITEM3,etc.
+ LCD_items=linepos,rowpos,ITEM4,"anything",ITEM5
+ LCD_items=linepos,a_align,ITEM6       (a_align can be a_left,a_center,a_right)
+ LCD_itemsN=linepos,rowpos,ITEM7,ITEM8 (put items on the N. virtual page (select/skip with ctrl-'g'-key))
+
+ - you can declare more LCD_items lines too (not limited)
+ - you can use the same linepos in 2 (or more) LCD_items lines (program will join them)
+ - you can use lower and upper case too at the items
+ - virtual page number (N) may be 0-3 (max. 4 pages)(no number equal to 0)
+ - linepos may be between 1 and 16 (depending on the LCD display too)
+ - rowpos may be between 1 and 511 (you can put an item out of the real-display, but
+				     use the LINESCROLL if you want to see it...)
+
+Display (standard text) items:
+
+ artist     - artist of song  (from ID3TAG) (editorhighline)
+ title      - title of song   (-"-)         (-"-)
+ album      - album name      (-"-)         (-"-)
+ year       - date of song    (-"-)         (-"-)
+ genre      - genre of song   (-"-)         (-"-)
+ comment    - comment of song (-"-)         (-"-)
+ tracknum   - track number    (-"-)         (-"-)
+ filename   - file name (without path)      (-"-)
+ pathname   - path of file                  (-"-)
+ songtime   - length of song in mm:ss       (-"-)
+ entrynum   - playlist entry number of song (-"-)
+ allsongnum - number of songs in the current editorside
+ allsongtime- total playtime of the current editorside
+
+ p_artist   - artist of song  (from ID3TAG) (currently playing song (aktfilenum))
+ p_title    - title of song   (-"-)         (-"-)
+ p_album    - album name      (-"-)         (-"-)
+ p_year     - date of song    (-"-)         (-"-)
+ p_genre    - genre of song   (-"-)         (-"-)
+ p_comment  - comment of song (-"-)         (-"-)
+ p_tracknum - track number    (-"-)         (-"-)
+ p_filename - file name (without path)      (-"-)
+ p_pathname - path of file                  (-"-)
+ p_songtime - length of song in mm:ss       (-"-)
+ p_songfreq - freq of file                  (-"-)
+ p_songchan - number of audio channels      (-"-)
+ p_bitrate  - bit/rate info                 (-"-)
+ p_filetype - file/audio type               (-"-)
+ p_entrynum - playlist entry number of song (-"-)
+ p_timepos  - time position of currently playing song in mm:ss or h:mm:ss if more than 1 hour)
+ p_framepos - frame position of currently playing song
+ p_allsongnum - number of songs in the playlist (playside)
+ p_allsongtime - total playtime of the playlist (playside)
+
+ mix_vol    - sound volume (in software mixer)
+ mix_sur    - surround value
+ mix_spd    - speed value
+ mix_bal    - balance value
+ mix_bass   - bass value
+ mix_treble - treble value
+ auc_vol    - soundcard hardware (master) volume 
+
+ s_re       - status of replay (R1/RE/re : 1 song replay/list replay/disabled)
+ s_rn       - -"- random mode     (RN/rn : ENABLED/disabled)
+ s_av       - -"- auto volume     (AV/av)
+ s_cf       - -"- crossfade-use   (CF/cf)
+ s_fo       - -"- fade-out        (FO/fo)
+ s_fi       - -"- fade-in         (FI/fi)
+ s_sw       - -"- swap channels   (SW/sw)
+ s_hq       - -"- hq-mode         (HQ/hq)
+ s_ap       - -"- auto pause      (AP/ap)
+ s_pn       - -"- pause next song (PN/pn)
+ s_play     - PAUSED/Fade-Out/CrosFade/Fade--In/-=SCAN=- messages
+
+ currlist    - song/playlist/dirscan-mask (without path)
+ currlistp   - path of song/playlist/dirscan-mask
+ currdrive   - current drive (letter) of directory browser (1 char)(C,D,E,etc.)
+ volmeter    - volume meter indicator (in the full width of LCD)
+ systime     - system time/clock (hh:mm:ss)
+ sysdate     - system date (yyyy-mm-dd)
+
+ editorhline   - infos of playlist-editor-highline (in "ENTRYNUM. ARTIST:TITLE (MM:SS)" format)
+ editorhlinep1 - -"- +1
+ editorhlinep2 - -"- +2
+ editorhlinep3 - -"- +3
+ editorhlinem1 - -"- -1
+
+Control items:
+
+ linescroll - scroll the specified line (where the linescroll item is used)
+ a_left     - align item to left   (eq to 'LCD_items=linepos,1,etc.')
+ a_center   - align item to center (in the real LCD width (LCD_rows))
+ a_right    - align item to right  (-"-)
+  - you can use aligns instead of rowpos too (LCD_items=1,a_center,ITEM)
+  - you can align 1 display-item only, you can't align a group of items
+
+Examples:
+
+ LCD_items=1,1,artist," - ",title," (",p_timepos,"/",songtime,")",linescroll
+ LCD_items=2,a_left,year,a_right,genre
+ LCD_items=3,1,volmeter
+ LCD_items=4,a_center,"Mpxplay"
+ LCD_items1=1,1,"Volume:",mix_vol," Surround:",mix_sur
+ LCD_items1=2,1,"Speed:",mix_spd," Balance:",mix_bal
