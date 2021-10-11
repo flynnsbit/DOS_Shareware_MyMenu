@@ -1,5 +1,5 @@
 @echo off
 cd\
-cd explosiv
+cd\SCRSAVER\explosiv
 explosiv.com
 
