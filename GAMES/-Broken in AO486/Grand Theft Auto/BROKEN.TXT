@@ -1,2 +1,0 @@
-uvconfig -c2
-broken video drivers
