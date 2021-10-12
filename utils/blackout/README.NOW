@@ -1,0 +1,143 @@
+
+	OpenDOS loading screen toolkit
+	==============================
+
+Although windows 95 has many kernel bugs and undesirable features, one thing
+it does have is a loading screen.
+
+Most versions of DOS do not have loading screens, so here is a way for you
+to make your own.
+
+
+Contents
+========
+
+The toolkit consists of three programs: 
+
+	Blackout
+	Banner
+	Gif2Raw
+
+Source is provided for all except gif2raw.
+
+
+Blackout  by Dr. G Lokhorst
+--------
+
+Blackout is the core of this toolkit.  It prevents drivers in your startup
+files (autoexec.bat, config.sys) from being able to print to the screen.
+
+Although it is a device driver, it can also be run from the command line, or
+your autoexec.bat file.   Indeed, this is needed to let programs talk to the
+screen again.
+
+Quick guide to usage:
+
+	Add this line to the START of the CONFIG.SYS file:
+
+	DEVICE=C:\BLACKOUT\BLACKOUT.EXE
+
+	Add these lines near the END of the AUTOEXEC.BAT file:
+
+	C:\BLACKOUT\BLACKOUT.EXE
+	MODE CO80
+
+	Perferably before the taskmanager! (If you use it)
+
+
+Banner
+------
+
+If you were to only use BLACKOUT, your boot sequence would be 50 seconds of
+black screen.  I find this more annoying than watching the programs start, as
+there is absolutely nothing to see.
+
+Banner is a quick program to display a loading screen while your startup files
+are being processed.
+
+The loading screen must be in the root of drive C and called 'OPENINIT.RAW'.
+To make sure it is there, type
+
+	dir c:\openinit.raw
+
+You can draw the loading screen in any program you like.
+
+Here are the restrictions:
+
+	1. It must be saved as (or converted to) a .GIF file (GIF87 format)
+	   You can use Graphics Workshop or something to do this.
+
+	2. It must be 320x200 in size, with 256 colours.
+
+	3. You must use GIF2RAW to make it usable.
+
+	4. Leave the top two lines of the screen black (colour 0).
+
+
+Using Banner:
+
+	Edit your CONFIG.SYS file, so it starts like this:
+
+	DEVICE=C:\BLACKOUT\BLACKOUT.EXE
+	INSTALL = C:\BLACKOUT\BANNER.COM
+
+GIF2RAW
+-------
+
+GIF2RAW is a program I wrote recently.
+It's sole purpose is to convert GIF87 images into the primitive RAW format.
+
+(the first version of banner had a GIF decoder but it crashed in tiny model)
+
+
+Usage:
+
+	GIF2RAW input.gif output.raw
+
+Example:
+
+To convert the provided OPENINIT.GIF file to raw, you would run this from the
+dos prompt:
+
+	GIF2RAW openinit.gif openinit.raw
+
+
+
+Notes and Bugs
+==============
+
+1. I do not know what will happen if GIF2RAW encounters a GIF89 image.
+   GIF89's compress WORSE than GIF87, so why bother with them?
+
+2. Some device drivers do not use the int29 interface that BLACKOUT traps.
+   These drivers will print into the first two lines of the screen, which is
+   why they should be left blank.
+
+3. Some device drivers clear the screen.  This ruins the effect.
+   You will have to re-arrange your startup files so that they are run last.
+
+4. Because BLACKOUT has to remain resident to trap int29, it will leave a
+   memory hole when it ends.  This is typically <1k.
+
+5. The source code for Banner has two versions: C and ASM.
+   They are the same (I hope!), but the C version is bigger when compiled.
+
+The rawfile format
+------------------
+
+It's well.. raw!
+
+The first 768 bytes are the palette, in standard RGB order, levels 0-63.
+The rest is the raw image data, 64000 bytes long, 320x200.  One byte per pixel.
+
+
+CONTACTS
+========
+
+If you have any problems or queries, contact me:
+
+university:	jpmorris@csm.uwe.ac.uk
+home:		boff@globalnet.co.uk
+web:		http://members.tripod.com/~JPMorris
+
+

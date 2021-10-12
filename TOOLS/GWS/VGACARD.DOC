@@ -1,0 +1,73 @@
+
+VGA Card Analyzer
+€€€€€€€€€€€€€€€€€€€€€€€€€€€€
+
+The VGACARD program will attempt to work out what type of display 
+hardware is in your system, such that it can advise you about 
+selecting a suitable driver for Alchemy Mindworks' software. It's 
+applicable to Graphic Workshop for DOS, Image Gallery and Desktop 
+Paint 256.
+
+Note that while VGACARD is usually right, the considerable 
+variety of display card types could manage to confuse it. As 
+such, its results should be filtered through common sense.
+
+To use VGACARD, type:
+
+        VGACARD
+
+at the DOS prompt. It will tell you whether it finds:
+
+- A standard VGA BIOS... this should be present in all VGA cards.
+- A VESA BIOS, and the modes thereof.
+- A super VGA card of a type supported by Alchemy Mindworks' 
+  software.
+
+It may advise you about the suitability of your display hardware 
+for specific applications.
+
+If VGACARD indicates that your card has VESA capabilities, the 
+VESA drivers in Alchemy Mindworks' applications should work, even 
+if your card type is unrecognized.
+
+If your card does not support VESA and no driver is available for 
+it in its native mode, you can probably use a TSR VESA 
+interpreter to temporarily provide it with VESA calls. A 
+collection of such programs is available by calling the Alchemy 
+Mindworks bulletin board at (416) 729-4609. (The area code for 
+Alchemy Mindworks' non-800 numbers will change from 416 to 905 
+after October 4, 1993.) 
+
+NOTE: If no hardware-specific driver is available for your card 
+you can still use it in the standard VGA modes with Graphic 
+Workshop and Image Gallery. You cannot use it with Desktop Paint 
+256.
+
+There are a number of drivers provided with Graphic Workshop and 
+Image Gallery which support cards that VGACARD will not detect, 
+primarily drivers written by third parties. If VGACARD says 
+there's no driver for your system, look at the section of GWS.DOC 
+or GAL.DOC, or at the super VGA driver page of their respective 
+installers, to see if your card is supported.
+
+
+LEGAL DOGMA
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+VGACARD is copyright (c) 1992 Alchemy Mindworks Inc. 
+
+Neither the author nor Alchemy Mindworks Inc. assumes 
+responsibility for any damage or loss caused by the use of these 
+programs, however it comes down. If you can think of a way a 
+picture program can cause you damage or loss you've a sneakier 
+mind than mine.
+
+All the registered trademarks used herein are registered to 
+whoever it is that owns them. This notification is given in lieu 
+of any specific list of trademarks and their owners, which would 
+not be as inclusive and would probably take a lot longer to type. 
+
+Graphic Workshop, Desktop Paint and Image Gallery, are trademarks 
+of Alchemy Mindworks Inc.
+ 
+That's it...
+

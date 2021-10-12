@@ -1,0 +1,3487 @@
+
+Graphic Workshop
+ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ
+
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+If you like this program, please:
+
+Send us $40.00, the normal user fee for Graphic Workshop.
+
+Registered users of Graphic Workshop are entitled to phone support, 
+notification of upgrades and good karma. When you register it, 
+we'll send you a copy of the latest version. Please tell us the 
+version number of your copy of Graphic Workshop when you register. Our 
+address can be found in the Registration section of this 
+document.
+
+NOTE: You can register Graphic Workshop with a Visa card by 
+calling 1-800-263-1138 (toll free) from the United States or 
+1-416-729-4969 from other places. (The area code for Alchemy 
+Mindworks' non-800 numbers will change from 416 to 905 after 
+October 4, 1993.) 
+
+NOTE: British users of Graphic Workshop should contact our UK 
+distributor, The Public Domain & Shareware Library Ltd., 
+Winscombe House, Beacon Road, Crowborough, Sussex, TN6 1UL, 
+England, telephone 0892 663298, FAX 0892 667473, BBS 0892 661149.
+
+NOTE: Danish users of Graphic Workshop should contact Prof 
+Shareware, Benloese Skel 4 G, DK 4100, Ringsted, Denmark.
+
+NOTE: French users of Graphic Workshop should contact our French 
+distributor, DP Tool Club, 102 rue des fusilles, 59650 Villeneuve 
+d'Ascq, France, telephone (33) 20 56 55 33, fax (33) 20 56 55 25. 
+
+NOTE: German users of Graphic Workshop should contact our German 
+distributor, PD-SERVICE-LAGE, Postfach 1743, D-4937 Lage, West 
+Germany. 
+
+NOTE: We now have a bulletin board system. See the section on 
+contacting Alchemy Mindworks for more information.
+
+NOTE: Registered users of Graphic Workshop will receive the 
+Graphic Workshop accessory disk and the Graphic Workshop screen 
+capture utility at no extra cost.
+
+WARNING: Do not use earlier versions of GWS.RES with this version 
+of Graphic Workshop.
+
+
+CONTENTS
+ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ
+
+Introduction
+
+Hardware and Software
+
+File Formats
+   Macpaint
+   GEM/IMG
+   PC Paintbrush PCX
+   CompuServe GIF
+   TIFF
+   WordPerfect Graphics WPG
+   Deluxe Paint/Amiga IFF/LBM
+   PC Paint Pictor PIC
+   Truevision Targa
+   Windows 3 BMP
+   Microsoft Paint MSP
+   Encapsulated PostScript EPS
+   Self-displaying EXE pictures 
+   Text files
+   Halo CUT 
+   Windows 3 RLE
+   PFS:First Publisher Art files
+        
+24-bit files
+
+Using the Main Menu
+   Help
+   Control keys
+   Viewing and colour adjustment
+   Printing
+   Conversion
+   Dithering
+   Getting file information
+   Cropping
+   Reversing
+   Transforming
+   Special effects
+   Scanning
+
+Screen Capture
+
+Configuration
+   Runtime editing
+   Screen driver selection
+   Printer driver selection
+
+DesqView, QEMM and Other Environments
+
+Script Language
+
+Ventura Tricks
+
+Corel Draw Tricks
+
+A Word About Memory
+
+A Word About Mice
+
+If you Encounter a Problem
+
+Contacting Alchemy Mindworks Inc.
+
+Shareware Registration
+
+Bundling Graphic Workshop
+
+Source Code and Books
+
+Graphic Workshop Accessory Disk
+
+Shareware Distributors
+
+Revision History
+
+Legal Dogma
+
+
+INTRODUCTION
+ßßßßßßßßßßßßßßßßßßßß
+Graphic Workshop is a program for working with bitmapped graphic files. It 
+will handle most of the popular formats, as listed in the 
+contents section of this document.
+
+Graphic Workshop is a simple, menu driven environment which will 
+let you perform the following operations on the aforementioned 
+files.
+
+- View them.
+- Convert between any two formats (with a few restrictions).
+- Print them to any LaserJet Plus compatible or PostScript laser     
+  and many dot matrix printers. Graphic Workshop can print colour   
+  pictures to colour PostScript and inkjet printers.
+- Dither and threshold the colour ones to black and white.
+- Reverse them.
+- Rotate and flip them.
+- Scale them.
+- Reduce the number of colours in them and do colour dithering.
+- Sharpen, soften and otherwise wreak special effects on them.
+- Crop them down to smaller files
+- Scan in completely new files, assuming that you have a 
+  supported scanner.
+- Adjust the brightness, contrast and colour balance of the 
+  colour ones.
+- Capture your screen to a PCX file in most of the popular VGA 
+  and super VGA text and graphic modes.
+
+Using Graphic Workshop, you can have your image files in the 
+formats that your software recognizes, all without keeping track 
+of numerous funky utilities. In addition, using the halftoning 
+and dithering facilities of Graphic Workshop, you can convert 
+full colour digitized photographs for use as superb black and 
+white clip art, suitable for inclusion in your documents.
+
+Graphic Workshop will handle image files of any size. It will use 
+extended or expanded memory if you have some, and disk space if 
+you don't. It has a fast and easily understood user interface. 
+Hopefully, it lacks even the merest vestiges of bugs... a likely 
+story, but we hope so.
+
+Graphic Workshop will work with a Microsoft-compatible mouse if you 
+have a suitable mouse driver loaded in your system prior to 
+running GWS.EXE.
+
+Graphic Workshop will drive all of the popular display cards. A 
+complete discussion of display cards can be found later in this 
+document.
+
+As it comes out of the box... or out of the ZIP... 
+Graphic Workshop is configured like as follows. If you want to 
+change some of these parameters, see the installation section of 
+this document.
+
+- It attempts to autodetect the display card type.
+- It uses virtual memory.
+- It uses colour text.
+- It prints titles on its hard copy.
+- It uses the commonly required file format defaults.
+
+
+HARDWARE AND SOFTWARE
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Graphic Workshop will run on any PC compatible system with at 
+least 384 kilobytes of memory. We strongly recommend that you 
+have at least 640 kilobytes. A few megabytes of extended or 
+expanded memory will make Graphic Workshop a lot faster and more 
+useful if you'll be working with large files.
+
+In the absence of extra memory, a lot of free hard drive space 
+will help.
+
+Graphic Workshop can drive most graphics cards. A more complete 
+discussion of graphics cards can be found later in this document. 
+If you have a CGA, EGA, stock VGA or Hercules card in your 
+system, Graphic Workshop will probably be able to detect it and 
+set itself up accordingly. If you have a super-VGA card in your 
+system, Graphic Workshop must be configured to use it. If you do 
+not do this, it will default to treating it as a stock VGA card.
+
+Configuration is discussed in detail later in this document.
+
+Graphic Workshop will run under DOS 2.0 or better. We recommend 
+that you use at least DOS 3.3. You will need a suitable expanded 
+or extended memory driver in your system for Graphic Workshop to 
+recognize your extra memory.
+
+You should have received the following files in the 
+Graphic Workshop package:
+
+- GWS.EXE - The Graphic Workshop program itself.
+- GWS.RES - The Graphic Workshop resource file.
+- GWS.DOC - Yes, you're reading it now.
+- GWSHELP.RES - The on line help resource.
+- GWSDRV.RES - All the super-VGA screen drivers.
+- GWSPDR.RES - All the dot matrix printer drivers.
+- GWSSCN.RES - All the scanner drivers.
+- GWSINSTL.EXE - The Graphic Workshop configuration utility.
+- EXAMPLE1.BMP - A monochrome picture file.
+- EXAMPLE2.GIF - A sixteen-colour picture file.
+- EXAMPLE3.GIF - A 256-colour picture file.
+- VGACARD.COM - A tool to help select a screen driver.
+- VGACARD.DOC - Read this before you use VGACARD.COM.
+
+There is no EXAMPLE4, a 24-bit picture file, as the smallest one 
+we could find ran to over 400 kilobytes. There are several 24-bit 
+files on our bulletin board, should you want one to look at.
+
+Registered users will also receive:
+- ACCESS.ZIP - The Graphic Workshop accessory disk contents.
+- GWSCAP.COM - The GWSCAP screen capture utility.
+- GWSCAP.DOC - The documentation for the screen capture.
+
+
+FILE FORMATS
+ßßßßßßßßßßßßßßßßßßßß
+Graphic Workshop works exclusively with bitmapped image files. 
+This is as opposed to vector or line art files. Vector files 
+include DXF, GEM, CDR, Harvard Graphics, Lotus PIC and CGM files, 
+among others. Graphic Workshop does not support vector files, nor 
+is it likely to in the immediate future.
+
+In most cases, the specifications for image files are pretty 
+standardized, and Graphic Workshop will reliably import image 
+files in its supported formats without difficulty. There are a 
+few exceptions to this, as will be discussed in detail throughout 
+this section.
+
+Each of the formats listed here also includes the maximum number 
+of bits of colour the format will support. You can work out the 
+number of colours this represents as 2 to the power of the number 
+of bits. Hence, an eight-bit file has 2^^8 possible colours, or 
+256. Twenty-four bit files have essentially an infinite number of 
+possible colours.
+
+
+MACPAINT FILES - MAXIMUM BITS: 1
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+These can come in two flavours. The most common one is straight 
+ported MacPaint files, that is, files having the "MacBinary" 
+header. The other is "headerless" files, these being the ones 
+used with PFS:First Publisher. Graphic Workshop reads both types, 
+but if you convert a file from a different format to MacPaint 
+format the file will be written in accordance with the setting of 
+the MacBinary header field in GWSINSTL. You can override this 
+with the appropriate command line switches.
+
+Files converted to the MacPaint format from other formats will be 
+cropped or padded out as necessary to fit in the MacPaint 
+format's 576 by 720 format. Only monochrome files can be 
+converted to MacPaint files, since MacPaint in a monochrome-only 
+format.
+
+
+GEM/IMG FILES - MAXIMUM BITS: 24
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+There are actually quite a few variations on IMG files... they 
+handle monochrome and grey level images. The primary application 
+for IMG files is as the bitmapped image file format of Ventura 
+Publisher. Graphic Workshop supports files with up to 256 levels 
+of grey and 24-bit colour IMG files. Note that 24-bit IMG files 
+are only read and written by Ventura Publisher version 4.0 or 
+better.
+
+
+PCX FILES - MAXIMUM BITS: 24
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+These are the files used to hold images for Z-Soft's PC 
+Paintbrush package. These can range from monochrome to 24-bit 
+images. All the various formats are supported by 
+Graphic Workshop.
+
+Note that some FAX boards which export PCX files do so in a 
+peculiar way... they include one fewer lines of image data than 
+the files purport to contain. Graphic Workshop regards these as being
+corrupted files. If you encounter these files, the PCXPATCH 
+utility available on the Graphic Workshop accessory disk, 
+discussed elsewhere in this document, will fix the problem.
+
+
+GIF FILES - MAXIMUM BITS: 8
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+These can range from monochrome to 256-colour images in any size 
+you can find 'em. Graphic Workshop supports both the 87a and 89a 
+versions of the GIF standard. It will read the first image of GIF 
+files having multiple images.
+
+The Details function of the Get Info box will display the entire 
+structure of a GIF file. Many newer GIF files contain text 
+information along with their images.
+
+By default Graphic Workshop writes GIF 89a files. If you require 
+GIF 87a files, use the /G87 command line switch.
+
+
+TIFF FILES - MAXIMUM BITS: 24
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+The TIFF options in Graphic Workshop can get a bit involved. The 
+TIFF format offers lots of options to make it applicable to a 
+wide variety of applications... which entails a certain amount of 
+confusion, as well. Registered users of Graphic Workshop are 
+welcome to contact us for help in unraveling the TIFF options if 
+needs be.
+
+Graphic Workshop supports monochrome, colour and grey scale TIFF 
+files. Grey scale TIFF files can be created by converting any 
+colour format into TIFF with Graphic Workshop set up to produce 
+grey scale TIFF files, either through GWSINSTL or by using the 
+/TCG switch. These import into desktop publishing packages such 
+as Ventura for sharp looking PostScript halftones.
+
+Note that as of this writing Ventura will read grey scale TIFF 
+files correctly. It seems to invert colour TIFF files. 
+
+Colour TIFF files are useful in Corel Draw, among other places. 
+Corel Draw 2.0 will import colour TIFF files for inclusion in 
+CDR graphics. This is preferable to importing colour PCX files, 
+as the size of a TIFF file in Corel Draw is preserved.
+
+Some applications have trouble reading grey scale TIFF files 
+which have been compressed... Gray F/X chokes on them as of this 
+writing, for example. Others read 'em fine. For this reason, 
+Graphic Workshop defaults to creating compressed grey scale TIFF 
+files but you can tell it not to compress them if you're not sure 
+that whatever you'll be importing them into will read them. There 
+are command line switches to set up these options.
+
+Note that due to the wide variations among the programs which 
+produce TIFF files, Graphic Workshop would be lying rather badly 
+if it claimed to be able to read all TIFF files. Specifically, 
+it does not read Huffman or LZW compressed TIFF files as yet, as 
+we haven't devised code to do this in a reasonable amount of 
+space. Colour TIFF files are another area in which 
+Graphic Workshop only handles files from some sources.
+
+When you're creating TIFF files which will be used as desktop 
+publishing art or in other situations wherein they'll be printed 
+to a PostScript printer, you should create them with greyscale 
+expansion enabled. If they will be displayed on a monitor or 
+edited in a paint program, you may want to create them with 
+greyscale expansion disabled. 
+
+Whether you create colour or grey scale TIFF files will be 
+largely dependant on the application you want your TIFF files to 
+be read by. Here are a few guidelines:
+        
+- If you want to import TIFF files into Ventura or PageMaker so 
+  they'll output as halftones to a PostScript printer, use grey 
+  scale TIFF files with grey scale expansion enabled.
+
+- If you want to import colour TIFF files into Corel Draw to 
+  print to a colour output device, use colour TIFF files... the 
+  grey scale expansion doesn't matter.
+
+- If you want to import colour TIFF files into Corel Draw to 
+  print to a monochrome output device, use grey scale TIFF files 
+  with the grey scale expansion enabled.
+
+- If you want to import grey scale TIFF files into a paint or 
+  image editing package, such as ImageIn or Desktop Paint 256, 
+  use grey scale TIFF files with the grey scale expansion 
+  disabled.
+
+Note also that Graphic Workshop packs TIFF files with an eye to 
+maximum unpacking speed, rather than for optimum compression. As 
+such, pictures with between 32 and 256 colours will be promoted 
+to 256 colours. Pictures with between four and sixteen colours 
+will be promoted to sixteen colours.
+
+We have found a fairly small number of applications which will 
+read colour TIFF files, and hence have not had much opportunity 
+to test the colour TIFF facility of Graphic Workshop with real 
+world software. The TIFF files it works with are correct 
+according to the TIFF specifications... but this rarely means a 
+lot. We will be most grateful for any feedback in this area. 
+        
+
+WPG FILES - MAXIMUM BITS: 8 (OR MAYBE 4)
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+These are the native import graphic files for WordPerfect. These 
+files can contain both bitmaps and line art, or vector graphics. 
+Graphic Workshop can only deal with the bitmapped parts of them. 
+If you view, print or convert a WPG file containing both 
+bitmapped and vector elements, the vector elements will be 
+discarded.
+
+WPG files which refuse to read with Graphic Workshop are usually 
+those which contain only vector elements and no bitmaps. If you 
+use the F4 function on a WPG file which does not read, the 
+comments field of the file information box will say "Vector file" 
+if this is the case.
+
+Graphic Workshop will deal with WPG files having one, four or 
+eight bits of colour information, that is, monochrome files, 
+sixteen-colour files and 256-colour files. 
+
+The WPG specification allows for 256-colour files. As of this 
+writing, WordPerfect itself would not read them. If you wish to 
+use 256-colour images in a WordPerfect document, you might want 
+to either reduce them to sixteen colours or dither them to 
+monochrome, depending upon what you'll be outputting them to.
+
+
+MSP FILES - MAXIMUM BITS: 1
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+These are the image files used by the paint program which came 
+with Microsoft Windows version 2. Don't confuse these with PCX 
+files... some versions of Windows 2 came with a Windows 
+implementation of PC Paintbrush from ZSoft as well. The two 
+programs... and the two file formats... are not compatible. MSP 
+files are monochrome only.
+
+
+IFF/LBM FILES - MAXIMUM BITS: 8
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+These started out on the Amiga. The IFF file standard is 
+extremely flexible, and allows all sorts of things besides 
+images to be stored in IFF files. IFF files are found on the PC 
+having been ported from Amiga systems. They are also created on 
+the PC by several applications such as Electronic Arts' Deluxe 
+Paint package and Digital Vision's Computer Eyes video scanner 
+board. In the first case they are given the extension LBM. In 
+the second they are given the extension CE. The basic file 
+structure is the same, however.
+
+Deluxe Paint is a bit of a problem in the way it deals 
+with IFF files, actually. This affects 256 colour files. Its 
+native format is a subclass of IFF called PBM, and compresses its 
+images as bytes. It's somewhat unique to Deluxe Paint, and 
+Electronic Arts won't tell anyone quite how it works. You can 
+actually work it out to a large degree, but every so often a file 
+created in this format in the way it seems like it should be done 
+refuses to load into Deluxe Paint.
+
+The standard form for IFF image files is called ILBM, 
+compressing all images as planes. This is much slower, but it 
+means that files thus compressed will be readable by pretty well 
+all IFF readers... even if you port 'em back to the Amiga. This 
+is how Graphic Workshop creates IFF files. Unfortunately, there's 
+a problem with old versions of Deluxe Paint which will 
+occasionally cause them to stop reading one of these files part way 
+through the image. This happens to IFF files from sources other 
+than Graphic Workshop, so it's probably a bug in these versions 
+of Deluxe Paint. It appears to have been rectified in more recent 
+releases.
+
+If you encounter an image which, when converted into an 
+IFF file will not read into Deluxe Paint, use the /IFN command 
+line switch when you run Graphic Workshop. This will disable the 
+IFF compression. Uncompressed files read into Deluxe Paint with 
+no difficulty.
+
+You can permanently set IFF compression off when you install 
+Graphic Workshop if you like.
+
+Note that Graphic Workshop only reads "pure" IFF files, and will 
+not handle the countless variations on the format which have 
+appeared on the Amiga. Specifically, it does not read hold and 
+modify, or HAM, files.
+
+
+BMP FILES - MAXIMUM BITS: 24
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+These are the files which are used as "wallpaper" under Windows 
+3. They can be created using the version of PC Paintbrush 
+supplied with Windows.
+
+BMP files use no image compression, as the intention appears to 
+be to make them fast to load. Plan on your BMP files being very 
+large.
+
+There is a very important aspect of colour BMP files which you 
+should bear in mind when you use this format. Windows uses a 
+fixed palette which Windows Paint cannot go about changing, as 
+doing so would make the screen and border colours change too. 
+
+This means that transferring an image to the BMP format will 
+generally result in some colour shifts when BMP files are 
+imported into Windows applications.
+
+The BMP format can support 24-bit files, which Graphic Workshop 
+does generate. However, as of this writing importing a 24-bit 
+BMP image into Windows Paint results in a noticeable colour 
+shift. This appears to be a peculiarity of Windows Paint.
+
+
+PIC FILES - MAXIMUM BITS: 8
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+These should not be confused with Lotus 1-2-3 PIC drawing files.
+
+PIC files are created by PC Paint (not PC Paintbrush) and are 
+used by Grasp, among other things. They come in many flavours. 
+Graphic Workshop has been tested with the most common ones. In 
+theory it should support them all, but that's only a theory.
+
+PIC files are structured exceedingly weirdly, especially in their 
+sixteen-colour manifestations. For this reason, it's necessary 
+for Graphic Workshop to create a temporary scratch file while 
+it's packing or unpacking a sixteen-colour PIC file. You will 
+note that upon beginning to read or write one, the bar graph will 
+appear to pause for a few seconds before it starts to move.
+
+By default, the temporary file will be written to the current 
+directory. However, you can direct it to somewhere else by 
+including the following line in your environment, for example:
+
+        SET TEMP=H:\
+
+This will cause the temporary file to be written to the root 
+directory of drive H:. You can, of course, specify any path you 
+like. If drive H: is a RAM drive, this will speed up the packing 
+and unpacking of sixteen-colour PIC files considerably.
+
+
+TGA FILES - MAXIMUM BITS: 24
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+The Truevision Targa format is used by several high end paint 
+programs and things like ray tracing packages. It can handle 
+images with up to sixteen million unique colours. You might want 
+to read the discussion of images with 24-bit colour elsewhere in 
+this document.
+
+There are a lot of variations on TGA files, and Graphic Workshop 
+does not handle them all as yet. Specifically, it only handles 
+uncompressed and run length compressed files. It ignores all 
+alpha channel information.
+
+You can configure Graphic Workshop to write 24-bit images to the 
+Targa format with either 24 or 16 bits of colour. Selecting 24 
+bits will give you the best colour fideltiy, but it will also 
+create pretty large fils. Selecting 16 bits will reduce the file 
+size by about a third, at the the cost of a bit of colour 
+resolution. In practice, it takes a pretty good eye to tell the 
+difference. If you're using a high colour screen driver with 
+Graphic Workshop you won't be able to tell the difference at all, 
+as high colour boards only show you 16 bits of colour.
+
+
+EPS FILES - MAXIMUM BITS: 8
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+The EPS format... encapsulated PostScript... isn't really a 
+bitmapped format at all. However, it may contain bitmapped data.
+
+PostScript cannot be interpreted directly by most PC 
+applications. As such, an EPS file which is to be imported into 
+an application such as Ventura Publisher or PageMaker also 
+includes a "preview". A preview is a small black and white TIFF 
+image which will show you a rough idea of what the EPS file will 
+look like.
+
+If you import an EPS file into Ventura, for example, the screen 
+image you see will be the preview but the data printed to your 
+printer will be the PostScript data itself.
+
+Graphic Workshop can transform other file formats with between 
+one and eight bits of colour information... between two and 256 
+colours... into EPS files. Images with more than two colours will 
+be turned into PostScript halftones.
+
+If you attempt to view or otherwise read an EPS file from within 
+Graphic Workshop, you will see the preview image, not the actual 
+PostScript data. This will look the same as the source data if 
+you have translated a monochrome file to EPS, and it will look 
+like a very coarse Bayer dither of the source otherwise.
+
+Please note that the EPS files which Graphic Workshop creates are 
+only intended to be printed. You cannot read them into 
+applications such as Corel Draw or Adobe Illustrator. These 
+applications will not accept the large mounts of bitmapped data 
+which a Graphic Workshop EPS file contains.
+
+For the most part, using EPS files in this way is no longer 
+necessary. Applications which import EPS files will usually allow 
+you to import TIFF files as well, which will provide you with 
+much better halftoning and screen control.
+
+If you tell Graphic Workshop to include a preview image in the 
+EPS files it creates, it will write a temporary file to your disk 
+while it's writing the actual PostScript data. You will 
+note that the bar graph will pause for a while at the end of its 
+travel during the write process.
+
+By default, the temporary file will be written to the current 
+directory. However, you can direct it to somewhere else by 
+including the following line in your environment, for example:
+
+        SET TEMP=H:\
+
+This will cause the temporary file to be written to the root 
+directory of drive H:. You can, of course, specify any path you 
+like. If drive H: is a RAM drive, this will speed up the packing 
+and EPS files with preview images considerably.
+
+Note that if you attempt to convert or print an EPS file under 
+Graphic Workshop, the TIFF preview image will be read, not the 
+actual EPS information.
+
+Note also that if you attempt to read an EPS file without a 
+preview, Graphic Workshop will tell you that it has encountered a 
+file read error. The EPS file itself may be fine... 
+Graphic Workshop however, can only read previews.
+
+
+EXE FILES (SELF DISPLAYING PICTURES) - MAXIMUM BITS: 8
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+You can convert images with between two and 256 colours to files 
+with the extension EXE. Such files are self displaying pictures. 
+For example, if you have a file called PICTURE.GIF and you use 
+Graphic Workshop to translate it to PICTURE.EXE, typing PICTURE 
+from the command line will cause the picture to display on your 
+screen.
+
+Pictures written into the EXE format can subsequently be read 
+back into any other format. However, note that Graphic Workshop 
+can only read EXE files which it has created. Use the F4 key to 
+check out EXE files if you aren't sure whether they're pictures 
+or programs.
+
+Graphic Workshop will not read self displaying pictures written 
+by applications not created by Alchemy Mindworks.
+
+In order for an EXE picture to display, the system which you 
+attempt to run it on must have a card which supports enough 
+colours to show the picture under Graphic Workshop. Specifically, 
+you will need a VGA card to display an EXE picture with 256 
+colours, at least an EGA card to display one with 16 colours and 
+so on.
+
+EXE picture files support CGA, EGA, VGA and Hercules cards only.
+
+Pictures displayed by converting them to EXE files and running 
+them can't be panned around, even if they're larger than your 
+screen. Hitting any key will return you to DOS.
+
+An EXE picture created by Graphic Workshop will attempt to 
+autodetect the display card type in the machine it's run on. Some 
+cards are sufficiently weird that this isn't always possible. The 
+VGA cards in PS/2 systems are an example of this... IBMs are no 
+longer really IBM compatible in this regard. To get around this, 
+you can run EXE pictures with display card command line 
+overrides. These are the command line switches an EXE picture 
+will accept:
+
+/CGA    - Assume there's a CGA card in the system.
+/EGA    - Assume there's an EGA card in the system.
+/VGA    - Assume there's a VGA card in the system.
+/HER    - Assume there's a Hercules card in the system.
+/VER    - Display the version number of the EXE file.
+/PAR    - Assume there's a Paradise card in the system.
+/ATI    - Assume there's an ATI card in the system.
+/TNG    - Assume there's a Tseng 4000 card in the system.
+/TRI    - Assume there's a Trident 8900 card in the system.
+/OAK    - Assume there's an Oak Technologies card in the system.
+/VSA    - Assume there's a VESA card in the system.
+/DIS    - Disable the return to text mode.
+/Wnn    - Wait nn (00 through 99) seconds and then return to DOS.
+/KEY    - Allow keyboard hits to abort waiting  
+/FAD    - Fade in and out (VGA cards only)
+
+If you run an EXE picture with a question mark as its command 
+line argument, it will display a list of its command line 
+switches, just like Graphic Workshop itself.
+
+The command line switches assume that you're using DOS 3.0 or 
+better.
+
+In its standard VGA or autodetection modes, an EXE picture will 
+only display 256 colours at 320 by 200 pixels. If you use one of 
+the super VGA override switches from the list above, your picture 
+will display in 640 by 480 pixels at 256 colours. This assumes 
+that you select the appropriate switch, that your card has at 
+least 512 kilobytes of memory in board and that your monitor will 
+sync at this resolution. 
+
+You can create EXE picture files either compressed or 
+uncompressed. This can be selected either permanently through 
+GWSINSTL or by using the appropriate command line  
+switches when you run GWS.EXE. Uncompressed files 
+display quickly but take up a lot of disk space. Compressed files 
+usually save space but display a bit slower. Note that especially 
+in complex scanned or dithered images, you might find that 
+compression actually results in a larger file than leaving an 
+image uncompressed.
+
+If you don't have need of self booting pictures, you might wish 
+to remove the EXE resource from Graphic Workshop's resource file, 
+as it will cause the main file finder screen to become cluttered 
+with other, unrelated EXE files which may be lying around your 
+directories. One EXE file looks pretty much like another until 
+Graphic Workshop attempts to unpack it. See the section on 
+resources in the accessory disk for help in doing this.
+
+Note that when you hit a key to end the display of a picture, the 
+ASCII code of the key will be returned as a DOS error level, 
+which can be trapped in a batch file. If your picture terminates 
+because of the /Wnn switch instead, the error level will be zero.
+
+You can use the /DIS, /Wnn, /KEY and /FAD switches to create 
+slide shows and interactive displays. Use a batch file to set up 
+the pictures you want to work with. The /DIS switch will make the 
+transition between images clean... just make sure you omit it 
+from the last image you display.
+
+Here's a typical batch file:
+
+        ECHO OFF
+        PICTURE1 /FAD /DIS /W10 
+        PICTURE2 /FAD /DIS /W10 
+        PICTURE3 /FAD /W10      
+
+Note that if you use the /W00 switch, your image will return 
+immediately to DOS or to whatever application spawned it. This is 
+useful, for example, should you want to use an EXE picture to 
+display an image and then have the program that called it further 
+modify the screen contents.
+
+The /FAD switch times its fades based on the vertical refresh 
+rate of your monitor, something which doesn't change from system 
+to system. As such, its fades should take about the same amount 
+of time no matter what machine you run your EXE pictures on. 
+Likewise, the time delays set by the /Wnn switch are based on the 
+system clock, and are processor independent.
+
+
+TXT FILES (TEXT FILES) - MAXIMUM BITS: 1
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Graphic Workshop will create a 640 by 400 pixel, two colour image 
+from any ASCII text file. The text will by truncated at 80 
+columns and 25 lines if exceeds either dimension. It can contain 
+both alphabetic characters and high order IBM block graphic 
+characters. Tabs are expanded and all other control characters 
+except for carriage returns are ignored.
+
+Note that a suitable text file must be in pure ASCII, not a 
+proprietary word processor format. It must have the extension 
+TXT.
+
+Note that the TXT format is only capable of reading files. You 
+cannot write a TXT file from Graphic Workshop... there's no 
+sensible way for Graphic Workshop to create a text file from a 
+graphic. 
+
+Note that as long as you're attempting to read files, you can 
+treat text files just like other monochrome graphic files from 
+within Graphic Workshop. As such, you can view them, convert from 
+TXT and so on.
+
+As with the EXE file format, you might wish to remove the TXT 
+resource from Graphic Workshop if you don't need it and find it's 
+causing a lot of spurious TXT files to be displayed in the 
+Graphic Workshop file finder screen... assuming you use the TXT 
+extension for something. 
+
+
+HALO CUT FILES - MAXIMUM BITS: 8
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+The CUT format is exceedingly awkward, and Graphic Workshop makes 
+a few assumptions about how CUT files will be used in order to 
+make it workable. To begin with, CUT files don't know how many 
+colours they have in them. They rely on a second file, called a 
+PAL file, to define their colours.
+
+Graphic Workshop looks for a PAL file to decide whether a CUT 
+file has two bits or eight bits of colour. If it doesn't find a 
+PAL file with the same name as your CUT file, it assumes that the 
+CUT file in question only has two bits of colour. Otherwise, it 
+assumes that there are 256 colours in the file.
+
+Files written to the CUT format from Graphic Workshop will appear 
+as two-colour files if they started out that way or as 256-colour 
+files if they had more than two colours initially.
+
+If you're using CUT files and have any suggestions to improve 
+Graphic Workshop's handling of them, or if you encounter problems 
+with its CUT files, please get in touch with us. The CUT format, 
+while occasionally requested, turned out to be very weird.
+
+You can use the CUT format to fool Graphic Workshop into 
+promoting monochrome pictures to 256 colour pictures. Here's how 
+to do it. In this example, we'll convert the EXAMPLE1.IMG file 
+included with this package to a 256-colour GIF file.
+
+1. Convert EXAMPLE1.IMG to EXAMPLE1.CUT.
+2. Convert EXAMPLE2.GIF to EXAMPLE2.CUT
+3. Hit S to shell to DOS.
+4. Rename EXAMPLE2.PAL to EXAMPLE1.PAL.
+5. Type EXIT to return to Graphic Workshop.
+6. Convert EXAMPLE1.CUT to EXAMPLE1.GIF.
+
+Having done this, EXAMPLE1.GIF will prove to have 256 colours. 
+You can delete all the CUT and PAL files involved.
+
+This procedure works because it creates a PAL file for 
+EXAMPLE1.CUT, even though by rights it shouldn't have one. 
+Graphic Workshop will thereupon assume that EXAMPLE1.CUT is a 
+256-colour image, since there's a PAL file for it. 
+
+The original EXAMPLE2.GIF's palette has black for colour zero and 
+something approaching white for colour one... these are the 
+colours that will be assigned to the original black and white 
+pixels in EXAMPLE1.CUT. If you have Desktop Paint 256 or some 
+other paint package that will let you change colour values 
+around, you might want to create a version of EXAMPLE2.GIF with 
+its first colour set to pure black and its second colour set to 
+pure white for this procedure.
+
+
+WINDOWS RLE FILES - MAXIMUM BITS: 8
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+The RLE format is actually a variation on the BMP format 
+discussed previously. It has two primary uses under Windows. It 
+can be used to create compressed wallpaper files and it can be 
+used to replace the opening Windows logo screen with one of your 
+own choosing.
+
+The RLE format uses compression, unlike BMP files, and as such 
+wallpaper created as RLE files will occupy less space on your 
+disk. At least, it should. If you store very complex scanned or 
+dithered images in the RLE format, they may confuse the run 
+length encoding procedure and actually result in larger files 
+than they would have created as BMP files.
+
+To use an RLE file as wallpaper, place the file you wish to use 
+in your \WINDOWS subdirectory. Use the Windows control panel to 
+select your wallpaper file as you normally would... the only 
+difference is that you will have to type in the name of the RLE 
+file you wish to use, as the file selector in the control panel 
+only looks for BMP files.
+
+Technically, RLE files used as wallpaper should take a little 
+longer to load. In practice, this is rarely noticeable.
+
+Using an RLE file to change the startup Windows logo is a bit 
+tricky, but it's arguably worth the effort if you're tired of 
+looking at the Microsoft ad. You will need a sixteen-colour RLE 
+image of the dimensions 640 by 480... 640 by 350 if you use an 
+EGA card. The RLE file should be no larger than 40 or 50 
+kilobytes, and smaller if possible. For this example, we'll allow 
+that the file is called NEWLOGO.RLE, located in the \WINDOWS 
+subdirectory.
+
+Go to the \WINDOWS\SYSTEM subdirectory and issue the following 
+command at the DOS prompt.
+
+COPY /B WIN.CNF+VGALOGO.LGO+C:\WINDOWS\NEWLOGO.RLE C:\WINDOWS\WIN2.COM
+
+This will create a new program called WIN2.COM. If you start 
+Windows by typing WIN2, rather than WIN, you will see your logo 
+rather than Microsoft's. This will not affect your normal WIN.COM 
+program.
+
+There are several things to be aware of in this procedure. The 
+most important is that the resulting WIN2.COM cannot be bigger 
+than 65535 bytes, which is why you must keep your RLE file down 
+to a modest size. If it exceeds these limits, WIN2.COM will 
+refuse to run.
+
+Secondly, if your RLE file is of dimensions other than those of 
+your screen, it will appear incorrectly placed.
+
+Thirdly, if you will be using an EGA card, replace the 
+VGALOGO.LGO file, above, with EGALOGO.LGO.
+
+Note that when a file is converted to the sixteen-colour RLE 
+format by Graphic Workshop, it is permanently remapped to the 
+Windows default palette. This may result in a noticeable colour 
+shift for some images.
+
+Graphic Workshop will read most RLE files from other sources. One 
+known exception is the VGALOGO.RLE file provided with Windows 
+3.1.
+
+
+PFS ART FILES - MAXIMUM BITS - 1
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+These are files used by Spinnaker's PFS applications. They store 
+graphics as uncompressed monochrome images. Graphic Workshop will 
+only read and write uncompressed ART files. The F4 function will 
+tell you if you have a compressed ART file.
+
+
+SCREEN CAPTURE
+ßßßßßßßßßßßßßßßßßßßßßß
+Registered users of Graphic Workshop will receive the Graphic 
+Workshop screen capture utility, GWSCAP. This will capture 
+graphic screens from most of the VGA and super VGA graphic screen 
+modes to PCX files. It will also capture text screens to sixteen-
+colour PCX files, effectively making a picture out of your text. 
+It's very small... occupying about eight kilobytes of memory... 
+and dead easy to use.
+
+Please read GWSCAP.DOC for more information about configuring and 
+using the screen capture. 
+
+
+24-BIT FILES
+ßßßßßßßßßßßßßßßßßßßß
+Most of the image file formats commonly found in use on a PC 
+which support colour do so using a palette structure, as this is 
+the way most PC full colour display cards work. An image stored 
+in a palette structure file will have a maximum of 256 unique 
+colours, drawn from a potential palette of 16 million. In fact, a 
+VGA card can only support a potential palette of about a quarter 
+of a million colours. There is some theoretical loss in colour 
+resolution in displaying, say, a GIF file on a VGA card.
+
+For practical purposes this colour arrangement is sufficient to 
+reproduce pretty convincing colour photographs. However, for a 
+number of reasons, high end photographic manipulation software, 
+colour separation software and so on works better with a non-
+palette image, one in which every pixel is represented as a 
+distinct colour. In these images, every pixel consists of three 
+bytes of colour information, one each for the red, green and blue 
+components of the pixel's colour. Such pictures are referred to 
+as RGB or 24-bit pictures.
+
+Among the formats which currently support 24-bit images are 
+Targa, PCX, BMP and TIFF.
+
+Viewing a 24-bit image on a PC equipped with a VGA or super-VGA 
+card presents Graphic Workshop with something of a problem. Such 
+an image can have up to sixteen million different colours in it, 
+while a VGA card can support only 256 different colours at a 
+time.
+
+In order to deal with 24-bit images, Graphic Workshop must 
+"dither" them. Dithering involves creating a simplified... albeit 
+coarser... version of the source image. Dithered images in the 
+view mode of Graphic Workshop will give you an idea of what you 
+24-bit picture looks like, but they're always an approximation.
+
+If you attempt to view a 24-bit image on a system equipped with 
+an EGA or VGA card, a menu will appear to ask you how you'd like 
+the 24-bit file to be handled. You can display it as a grey scale 
+image if you just want to see what the picture looks like. This 
+is the fastest way to view such a picture. Alternately, you can 
+choose the Bayer colour dithering option
+
+Note that the Bayer colour screen dither has been designed to be 
+reasonably fast, rather than accurate. When you create a 256-
+colour dither, as discussed in the next paragraph, the results 
+will be a whole lot nicer to look at.
+
+In order to convert a 24-bit image into a palette based format... 
+for example, to convert a 24-bit PCX file into a GIF file... you 
+must use the colour reduction function of the F9 special effects 
+key. This will perform a full 256-colour dither, which will 
+usually result in a 256-colour image which is almost as good as 
+the original 24-bit image was.
+
+The colour reduction function also contains options to allow you 
+to reduce a 24-bit file to lesser numbers of colours. Choosing 
+fewer than 256 colours will produce a smaller file in some cases, 
+but it will also leave you with a less faithful representation of 
+your original colour image.
+
+The fixed eight colour option will produce a destination image 
+file dithered something like the eight colour screen preview. 
+These files have a fixed eight colour palette with the colours 
+black, cyan, magenta, yellow, red, green, blue and white.
+
+It's also worth noting that this is the same dither used to print 
+files to impact and inkjet colour printers, such as the Hewlett-
+Packard PaintJet. A fixed eight colour dither will look more or 
+less like the colour hard copy from one of these printers.
+
+
+A WORD ABOUT MEMORY
+ßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Graphic Workshop will use whatever memory you have going. If you 
+ask it to do something which needs a large amount of memory, it 
+will attempt to allocate space in your extended or expanded 
+memory pool, or use DOS memory if there isn't enough extra 
+memory. If your extra memory type is set to virtual, it will try 
+to allocate DOS memory first.
+
+There are three sorts of "extra" memory which Graphic Workshop 
+can use, to wit, extended, expanded and virtual. Extended memory 
+is also called XMS memory, and is only available on AT and 386 
+systems. Expanded memory, also called EMS or LIM memory, is 
+available if you have a LIM board and driver in your machine. 
+Virtual memory means using a big disk file and making believe 
+it's memory. Virtual memory is very slow compared to real 
+memory.
+
+You must tell Graphic Workshop what to do about extra memory 
+when you install it. See the section on installation.
+
+In addition to the three foregoing types of extra memory, 
+Graphic Workshop can be configured to use "extended or virtual" or 
+"expanded or virtual" memory. If one of these options is chosen, 
+Graphic Workshop will attempt to allocate a buffer from extended 
+or expanded memory if it can't do so with DOS memory. If it's 
+unable to allocate a buffer in extra memory, it will switch to 
+virtual memory and see if its luck improves. If there's no room 
+for a virtual memory buffer, it will give up and return an error 
+saying that it can't allocate memory.
+
+By default, Graphic Workshop configured to use virtual memory 
+will use the current drive and directory to write its temporary 
+files. You can change this by adding a line to your environment 
+with the SET command such as:
+
+        TEMP=H:\
+
+In this case, any virtual memory temporary files which 
+Graphic Workshop wants to create will be written to the root 
+of drive H:. If you have a RAM disk, you should use the TEMP 
+environment variable to tell Graphic Workshop to use it for virtual memory 
+operations, as this will speed things up considerably.
+
+Graphic Workshop can run in restricted memory, such as that 
+which is found on a really old PC or when running "shelled out" 
+of another program. However, it can do nasty things when it's 
+really starved for memory. Some virtual memory operations will 
+not work in this condition, and if it's really stuck for RAM... 
+if there's only a few tens of kilobytes free... it may manage to 
+crash. Try not to run it when there's almost no room left for it 
+to store things. The help menu will tell you how much memory is 
+free.
+
+Graphic Workshop frequently swaps blocks of code and data in and 
+out of memory. In addition to the memory required for your 
+pictures, Graphic Workshop must have memory to manage its 
+resources and to allocate small scratch buffers. This is called 
+memory "overhead". It's possible for Graphic Workshop to allocate 
+a lot of DOS memory for a picture file and subsequently be unable 
+to allocate enough memory for the resource which will manipulate 
+the picture.
+
+To avoid this situation, Graphic Workshop reserves a fixed amount 
+of memory for its own use before it attempts to allocate an image 
+buffer. The amount of this fixed memory is adjustable through the 
+GWSINSTL program, as is discussed in the section on installation. 
+As it's set in the distribution version of the software, it 
+should be adequate for all the operations the package can 
+perform. There are a few hypothetical cases in which this might 
+not prove true, for example, in unpacking enormously wide GIF 
+files. If you run into problems with allocating scratch buffers or 
+resource buffers, try increasing the memory overhead.
+
+Note that Graphic Workshop comes configured to use virtual memory. 
+Use GWSINSTL to change this when you're sure what sort of extra 
+memory is in your system.
+
+Finally, note that in order to access the extended or expanded 
+memory in your system, Graphic Workshop must be able to locate a 
+suitable extended or expanded memory driver. Simply having 
+several megabytes of chips on your motherboard will not make that 
+memory accessible unless you have the appropriate driver in place 
+and working.
+
+To help you better understand how Graphic Workshop is using the 
+memory in your system, have a look at the Wait box that appears 
+when a file is being processed. If extra memory of some type is 
+being used, the word "Wait" will be printed in the same colour as 
+the text below the status bar. If conventional DOS memory is 
+being used, the word "Wait" will be printed in a different 
+colour.
+
+
+A WORD ABOUT MICE
+ßßßßßßßßßßßßßßßßßßßßßßßßß
+With the 6.1r release of Graphic Workshop, you can now use a mouse to 
+operate the software, as well as the conventional keyboard 
+interface. Because Graphic Workshop is primarily a text mode application, 
+there are limits to what the mouse support can provide. We've 
+tried to apply mouse functions where they made sense and to 
+ignore the mouse where having it available would have really 
+meant stretching a point.
+
+You most have a Microsoft-compatible mouse driver loaded for the 
+mouse to work under Graphic Workshop. This will be handled by 
+running MOUSE.COM... usually a fixture of your AUTOEXEC.BAT 
+file... or by having MOUSE.SYS included in your CONFIG.SYS file. 
+If no mouse functions are available under Graphic Workshop, you 
+don't have a mouse driver loaded or your mouse is not Microsoft 
+compatible.
+
+The mouse cursor will appear as a white diamond. Note that there 
+are two other mouse options available... no mouse support at all 
+or the conventional text mode block cursor. Alternate drivers to 
+handle these are available on the Graphic Workshop accessory disk, 
+discussed elsewhere in this document.
+
+Here's a quick overview of what the mouse does under Graphic Workshop.
+
+- You can select a file from the main menu by clicking on it.
+- You can toggle a file's tagged status by double clicking with 
+  the left mouse button.
+- You can view a file by double clicking with the right mouse 
+  button.
+- You can select "Yes" for any dialog that prompts you for a 
+  decision by clicking inside the box and "No" by clicking 
+  outside it.
+- You can banish a message box by clicking anywhere on the 
+  screen.
+- You can invoke the function of any key with a prompt by 
+  clicking on the prompt.
+- You can page up in the main menu by clicking at the right side 
+  of the screen and page down by clicking at the left side of the 
+  screen.
+- You can exit the View mode by clicking with the right mouse 
+  button.
+
+
+IF YOU ENCOUNTER A PROBLEM
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+While we have tested Graphic Workshop thoroughly, it's possible 
+that you may encounter a situation we hadn't anticipated, and 
+perhaps a file which will not read. If this happens, we would be 
+interested in knowing about it so we can deal with it in the next 
+release of Graphic Workshop. Here's how to report a problem to 
+us.
+
+Copy your CONFIG.SYS and AUTOEXEC.BAT files onto a floppy. 
+Include a screen dump of each page of GWSINSTL as it was set up 
+when the problem occurred. Alternately, write down the settings.
+
+Copy the image files which resulted in the problem and provide a 
+description of what you did and what happened.
+
+If we can't recreate it, we probably won't be able to fix it.
+
+Before you contact us with a problem in Graphic Workshop, please 
+make sure you've read this document thoroughly and that you 
+understand how the software should work. Many problem reports 
+which receive aren't problems with the software at all. 
+
+You can also ZIP up your problem files and upload them to our 
+bulletin board.
+
+
+USING THE MAIN MENU
+ßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Graphic Workshop always shows you all the names of the image 
+files it knows how to deal with in the current directory, along 
+with all the visible subdirectory names, if any are present. If 
+you are in a subdirectory, you will also see a subdirectory entry 
+which is two periods.
+
+The cursor mover keys will move the file selector bar around. If 
+you move it to a directory entry... shown in dim text... and hit 
+Enter, you will move into that directory. If you select the two 
+period entry, you will move back up your directory tree by one 
+step.
+
+If there are too many files in your current directory to see all 
+at once, Graphic Workshop will organize them into pages. The PgUp 
+and PgDn keys will step you through the pages. Clicking at the 
+right and left sides of the main menu screen will also invoke the 
+paging functions.
+
+Here are the keys which Graphic Workshop recognizes for basic 
+file handling and session functions. Clicking in the appropriate 
+prompts if you have a mouse will perform the same functions.
+
+Hitting the question mark or clicking in the "? for Help" message 
+at the top of the screen will cause Graphic Workshop to display 
+a menu of the keys which control the main file screen 
+of Graphic Workshop. This box also tells you how much free DOS 
+memory is available, the display card you have Graphic Workshop 
+configured to use and the type of extra memory it's set up for.
+ 
+The Esc key will allow you to quit Graphic Workshop and return to 
+DOS.
+
+If you hit "T" the currently selected file name will be 
+"tagged". The "U" key will untag it. The batch operations 
+described below will work with multiple files if you have some of 
+them tagged. If you hit "C", all the tags will be cleared. 
+Clicking on a file name with the left mouse button will toggle 
+its tagged status.
+
+Note that for the graphic functions of Graphic Workshop... the 
+ones accessed by the function keys... the currently selected file 
+will be processed if there are no tagged files. Otherwise, each 
+of the tagged files will be processed in turn.
+
+If you hit "L" Graphic Workshop will allow you to log in a new 
+disk drive. A box will appear prompting you for the drive letter 
+you want to log into.
+
+If you hit "D" you will be prompted to delete the current file. 
+Note that this is not a batch command... it only works on one 
+file at a time. 
+
+If you hit "R" you can rename the current file. Note that it the 
+renamed file will have the same extension as the old one, no 
+matter what extension you give it.
+
+If you hit "S", Graphic Workshop will attempt to shell out to the 
+DOS prompt. If you do this, Graphic Workshop will still be in 
+memory. Type EXIT at the DOS prompt to return to it right where 
+you left off. If you change drives or subdirectories while you 
+have the DOS prompt active, Graphic Workshop will restore the 
+previous drive and subdirectory when you return to it.
+
+The alphabetic control keys can be upper or lower case. Other 
+keys will be ignored.
+
+
+HELP
+ÄÄÄÄÄÄÄÄÄÄÄ
+If you get lost, hit ? for help, or click in the help prompt in 
+the upper right corner of the screen. Hit ? again or click in the 
+quick help screen for detailed topical help. 
+
+When the detailed help window opens, select a topic by using the 
+cursor mover keys to position the highlighted item selector or 
+just click on one of the dimmed topic names with the left button 
+of your mouse.
+
+Clicking with the right button of the mouse or hitting Esc will 
+move backward through help topics. Clicking with the left mouse 
+button outside the help window will close the help and return to 
+the main menu of Graphic Workshop. Clicking in the prompts at the 
+bottom of the help window will invoke their functions.
+
+
+VIEWING FILES AND ADJUSTING COLOUR
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+If you place the selector bar on a file name and hit Enter, 
+Graphic Workshop will attempt to show you the file. It will start 
+by showing you a wait box, which has a bar graph in it to 
+indicate the status of what you've asked Graphic Workshop to do. 
+When the picture is fully unpacked, Graphic Workshop will switch 
+to your display card's graphic mode and show you the picture.
+
+Double clicking on a file name with your right mouse button will 
+also invoke the View function.
+
+You can always abort any operation when the wait box is visible 
+by hitting the Esc key.
+
+If the picture is larger than your screen, the cursor keys will 
+allow you to pan around it. Normally you will pan around in small 
+increments. If you hold down either shift key when you hit a 
+cursor key, you will move around in increments of half your 
+screen dimensions.
+
+Esc will return you to the main screen, as will clicking with 
+your right mouse button.
+
+If the Ctrl key is held down when a file is selected for viewing, 
+you can control the screen mode it's displayed in... assuming 
+that your display card has more than one display mode. If your 
+card is supported by a driver of version 2.0 or lower, holding 
+down the Ctrl key will force the screen into its lowest 
+resolution mode. For example, if you're looking at a 256-colour 
+picture on a super VGA card, holding down the Ctrl key will force 
+the screen into the 320 by 200 pixel standard VGA mode.
+
+If you're using a driver of version 2.1 or better, holding down 
+the Ctrl key will cause a menu to appear offering you a choice of 
+the available display modes with the most appropriate one 
+highlighted. Select a mode and hit Enter or hit Esc to let 
+Graphic Workshop select the most appropriate mode, that is, what 
+it would have done had you not held down the Ctrl key. 
+
+Note that you must take your finger off the Ctrl key before you 
+try to move the menu item selector. Note also that the Ctrl key 
+must be held down when you hit Enter to select a file... you can 
+release it thereafter. The menu will not appear until the wait 
+bar finishes its travel.
+
+You can see what version your screen driver is by looking in the 
+"?" box from the main menu. Also, be aware that some drivers only 
+have one screen mode available. In this case, no menu will 
+appear.
+
+Several things can go wrong in viewing a file. If you have 
+installed Graphic Workshop for the wrong kind of display card, 
+you might see random characters rather than a picture. In this 
+case, check your installation.
+
+If Graphic Workshop could not find enough memory to unpack your 
+picture into, it will abort the process and say so.
+
+Finally, if your picture requires more colours than your card can 
+display, Graphic Workshop will tell you this. Specifically, it 
+will pop up a menu which will ask you how you want it to deal 
+with the colour problem. The available options will vary with the 
+type of display adapter you're using and the number of colours in 
+your source image.
+
+You can force this menu to appear when you view an image by 
+holding down the left Shift key when you hit the Enter key. You 
+might wish to do this to view some pictures in ways other than a 
+normal displayed. For example, you can preview an image dithered 
+this way.
+
+This is what the menu options do:
+
+
+Display normally
+----------------------
+This will display the picture as if you hadn't reached this menu. 
+This option will always be disabled if the menu pops up by 
+itself.
+
+
+Display as grey
+---------------------
+This is the fastest way to see what a picture with too many 
+colours looks like. It will show you the image in grey scale.
+
+
+Bayer dither mono
+-----------------------
+
+Floyd dither mono
+-----------------------
+
+Burkes dither mono
+------------------------
+
+Stucki dither mono
+------------------------
+These four options will dither your image down to monochrome. You 
+might want to see the discussion on dithering later in this 
+document to better understand them.
+
+
+Threshold
+---------------
+This will display your image as a high contrast black and white 
+picture.
+
+
+Bayer dither colour
+-------------------------
+This option will display your image as a fixed eight-
+colour dither. It's a pretty reasonable representation of a 
+colour image for a quick 'n nasty preview. Dithering a 24-bit 
+file down 256 colours will result in a much better display, but 
+it will take considerably longer. 
+
+
+Display reversed
+----------------------
+This option will display your image reversed. Colour images will 
+appear as negatives. 
+
+In the sixteen and 256 colour display modes, you can make 
+adjustments to the VGA colour palette while a picture is being 
+displayed. The 'r' and 'R' keys will increase and decrease the 
+amount of red in a picture, the 'g' and 'G' keys will adjust the 
+amount of green, the 'b' and 'B' keys will adjust the amount of 
+blue. The 'i' and 'I' keys will adjust the overall intensity of 
+the picture. The 'c' and 'C' keys will adjust the contrast. The 
+'=' key will return the picture to its normal state. Note that 
+these adjustments only affect the original picture that you're 
+viewing... they do not alter the palette in the file on your disk 
+unless you save the changes to a new file.
+
+If you hold down the left shift key when you hit the Esc key to 
+leave the view mode, a file format menu will pop up. Select a 
+format and you can save the file you've viewed and adjusted the 
+colours of. The new file will be saved with "A_" before the file 
+name... if your viewed and adjusted PICTURE.GIF, it would be 
+saved as "A_PICTUR.GIF". In fact, you can have it saved as any 
+suitable file type.
+
+If you hit the Esc key when the file format menu pops up your new 
+file will not be saved.
+
+You can zoom in on a graphic in view mode by hitting the Z key. 
+This will cause it to be scaled to fill your screen. In fact, the 
+scale factor will be fiddled a bit such that it will usually fill 
+your screen in one dimension only, such that it isn't distorted. 
+Hitting Z again will unzoom it back to its normal perspective. 
+The zoom mode will allow you to see an overview large graphics 
+without a lot of panning around.
+
+Note that there is a loss of displayed resolution when you zoom 
+in on graphics, especially if you image has been dithered. 
+
+None of the colour adjustments or panning functions will work 
+while an image is zoomed in. If you hit Shift ESc to save a file 
+while in zoomed mode, the un-zoomed image will be saved. To 
+create a permanently zoomed file, use the scale function.
+
+
+PRINTING - F1
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+You can print to any sort of LaserJet Plus compatible printer 
+with one megabyte of memory or more or any sort of PostScript 
+printer. You can print to any dot matrix or inkjet printer which 
+is supported by a Graphic Workshop external printer driver. Note 
+that if you attempt to print PostScript data to a LaserJet or a 
+dot matrix printer you'll get reams of meaningless ASCII text.
+
+Graphic Workshop comes with built in PostScript and LaserJet 
+print drivers. This includes colour PostScript and LaserJet II 
+and III series printers. You only need an external print driver 
+if you wish to print to a dot matrix or inkjet printer.
+
+Having said this, if you will be printing colour or grey scale 
+pictures to a LaserJet-compatible printer you might want to 
+experiment with the external Laserjet III/4 driver supplied with 
+Graphic Workshop... it will, in fact, drive any series of 
+LaserJet-compatible printer. It's typically slower than the 
+internal drivers and prints larger images, but you might find you 
+like its results better. See the section on configuration later 
+in this document.
+
+Graphic Workshop allows you to print a picture in four 
+resolution modes to laser printers. These allow you to print your 
+pictures in four possible sizes. You might want to experiment 
+with them to see what they can do.
+
+If you want your picture to fill as much of the printed page as 
+possible, select the appropriate autosize mode. This will cause 
+Graphic Workshop to choose the resolution and orientation which 
+is most appropriate for each picture you print. Note that it will 
+still select one of the four available resolutions, so your 
+picture probably will not print right to the edge of the page. 
+
+Colour and grey scale pictures printed to black and white 
+PostScript printers will be reproduced as halftones. If you 
+attempt to print a colour or grey scale picture to a LaserJet or 
+dot matrix printer, the image will be dithered for you. The 
+dither type is set using GWSINSTL. You might want to consult the 
+section on dithering elsewhere in this document to help you 
+choose a suitable dither.
+
+Colour images can be printed in colour to a colour PostScript 
+device and to a colour inkjet or dot matrix printer with a 
+suitable driver. Colour PostScript printing can be enabled 
+through GWSINSTL or with the appropriate command line switches.
+
+Graphic Workshop will drive several colour ink jet printers though 
+external drivers, as loaded through GWSINSTL, notably the 
+Hewlett Packard Desktjet 500C and PaintJet printers. Note that 
+these work a bit differently than monochrome printing does. They 
+run at the maximum resolution of the printer, and dither the 
+images. If you select a higher expansion factor, each pixel of 
+the source image will be presented by a larger dither block, and 
+as such will come closer to the source colour. This means that 
+printing pictures larger will not only result in output that 
+looks sharper, but it will also print with more accurate colours.
+
+The inkjet drivers will also handle monochrome graphics, although 
+the results aren't usually all that good. You can do 
+substancially better using the Hewlett Packard inkjet printers 
+if you use the black ink cartridge and select one of the internal 
+LaserJet drivers.
+
+Laser output can be printed in either portrait or landscape 
+mode. You can set this up using GWSINSTL or the appropriate 
+command line switches. Note that if you print to a PostScript 
+printer in landscape mode, the printer itself will rotate the 
+image data. This isn't actually all that fast for many printers. 
+If you have a lot of images to print in landscape mode, you'll 
+probably find that it's quicker to have Graphic Workshop rotate 
+them and then print the rotated files.
+
+The orientation setting has no effect for dot matrix printing.
+
+You can print to ports LPT1, LPT2 or LPT3. The default printer 
+port can be set up using GWSINSTL or the appropriate command line 
+switches. Note that the printer port settings are ignored by 
+some external printer drivers. All of the standard dot matrix 
+drivers included with Graphic Workshop print to LPT1. The inkjet 
+drivers will print to the printer port selected through 
+GWSINSTL.
+
+You can cause Graphic Workshop to print to a file, rather than 
+directly to the disk, by using the appropriate command line 
+switch. The command line switches are discussed elsewhere in this 
+document. Print files are named using the name of your source 
+image file and the extension PRN. Note that you can only print to 
+a file for laser printer output. Dot matrix and inkjet drivers 
+will ignore the print to file switch.
+
+Each page of Graphic Workshop output can include any combination 
+of data about the picture on it you like. See the installation 
+section for more information about enabling this feature. 
+
+The size and resolution of dot matrix printing is determined by 
+the driver being used. 
+
+Note that if you have a printer for which there is no driver 
+available, one of the Epson FX-80 drivers will probably work, as 
+most dot matrix printers support the Epson FX-80 standard. The 
+print might not be as good as your printer can manage, but it'll 
+be better than a blank sheet of paper.
+
+In order to print correctly to most black and white laser 
+printers, colour and grey scale images must be "expanded", that 
+is, their grey scales must be adjusted to compensate for the non-
+linear grey scale of the output device. The amount of 
+compensation varies among different laser printers. The 
+compensation values for Graphic Workshop have been chosen to suit 
+an average PostScript laser printer. However, you can fine tune 
+these by adjusting the Print halftone brightness and Print 
+halftone contrast values in GWSINSTL. There's a more complete 
+discussion of these fields in the configuration section elsewhere 
+in this document.
+
+If you liked the older fixed contrast expansion curve from 
+previous versions of Graphic Workshop, change both these fields 
+to 65535.
+
+Printing is a batch function. If you tag multiple files and then 
+hit F1, each will be printed.
+
+
+CONVERTING - F2
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Graphic Workshop allows you to convert a file of any format into 
+a file of any other format... with a few restrictions. The new 
+file will have the same name as the original but a new extension. 
+Converting PICTURE.MAC into an IMG file will create PICTURE.IMG. 
+PICTURE.MAC will not be affected.
+
+You can batch convert any mixture of file types using 
+Graphic Workshop. Any files which are inappropriate for the 
+conversion you've requested will simply be ignored. The ongoing 
+status will appear at the bottom of the screen.
+
+You cannot convert pictures having more bits of colour than the 
+destination format can handle. For example, you cannot convert a 
+24-bit Targa file directly to an 8-bit GIF file. You would have 
+to use the F9 colour reduction facility to do this. Likewise, to 
+convert a colour file to a monochrome one, you'd have to use the 
+F3 dithering function.
+
+There are a few other useful things to note about conversion. You 
+can't convert to TXT files. You can convert from EXE files, 
+provided they were created by Graphic Workshop. You can convert 
+from EPS files, but the resulting image will be the monochrome 
+TIFF preview, and probably won't look very good. You can't 
+convert from files which Graphic Workshop won't read. For 
+example, you can't convert from a vector WPG file.
+
+
+DITHERING - F3
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Dithering is a sort of magical process by which colour images can 
+be converted into pretty attractive black and white versions for 
+reproduction on a monochrome screen or a black and white laser 
+printer. 
+
+Note that source files for dithering must have more than one bit 
+of colour information. 
+
+Dithering often works a lot better if you scale the original 
+image up. Graphic Workshop lets you dither with images of 
+anywhere from "size as" up to 500 percent expansion if you have 
+enough memory.
+
+You can see what an image will look like dithered by using the 
+view options menu in the view mode.
+
+Note that the F3 function only dithers to monochrome. Colour 
+dithering is handled by one of the functions of the F9 key.
+
+Dithering is a fairly slow process, and the better the dithering 
+algorithm, the slower it gets. Big files and really good 
+dithering can take half an hour or more on a slower computer, 
+although the results are usually worth it.
+
+At its best, dithering can look better than halftoning, and a 
+dithered file can be printed on both PostScript and LaserJet 
+printers. Dithered files sent to a PostScript printer will print 
+faster than halftoned files.
+
+If you have Graphic Workshop dither a file, it will create a new 
+file for you of the type selected and with "D_" before the name. 
+Thus PICTURE.GIF could be dithered to D_PICTUR.IMG, for example. 
+PICTURE.GIF would be left untouched.
+
+The simplest... and fastest... form of dithering is a Bayer 
+dither. This does not produce great results, but it's extremely 
+quick. 
+
+The remaining three dithering algorithms use what is called 
+"error diffusion". These produce really nice looking dithers, but 
+they're quite slow. The fastest... and least attractive... is 
+Floyd-Steinberg. The best... and by far the slowest... is Stucki. 
+The Burkes dither is somewhere in the middle.
+
+All three of these dithers come in two flavours, UD... 
+unidirectional... and BD... bidirectional. These options will 
+produce slightly different results.
+
+You should plan to experiment with the dithering options of 
+Graphic Workshop a bit to see what it's capable of.
+
+Dithering scans an image line by line, starting in the upper left 
+corner and working down to the lower right corner. For this 
+reason, you will find that if you rotate an image by ninety 
+degrees, dither it and then rotate the dithered version by a 
+further two hundred and seventy degrees, you'll get different 
+results than you would have had you dithered the original image.        
+
+The dithering function also includes a thresholding option. This 
+will reduce a colour or grey scale image to a high contrast black 
+and white graphic. If you select this option, you will see a menu 
+allowing you to select the threshold level. This is the source 
+pixel intensity above which destination pixels will be white. 
+Setting it higher will make your destination image darker.
+
+In dithering an image, the original brightness levels of the 
+source graphic will be expanded a bit to improve the quality of 
+the dither. The amount by which the grey levels are expanded is 
+set by the Dither brightness and Dither contrast items of 
+GWSINSTL. This will be discussed in detail later in this 
+document. You might want to experiment with these values if you 
+aren't happy with the quality of the dithered images Graphic 
+Workshop is producing. Note that you can use the old expansion 
+map by setting both these values to 65535.
+
+Dithering is a batch function. You can tag a number of files and 
+then set them up to dither unattended.
+
+
+GET INFO - F4
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+This box will show you some basic information about one or more 
+selected files. Among other things, it will tell you how much 
+memory the file needs to unpack into. You can use this number to 
+figure out whether the file in question will fit in your 
+available DOS memory or whether extra memory will be required, as 
+was discussed previously. The amount of available DOS memory is 
+available by hitting the "?" key from within the main screen.
+
+Having said this, it's worth mentioning that this number actually 
+represents the lowest memory requirement for the image in 
+question. Some functions will require significantly more memory.
+
+The last field in the Get Info box displays the file comments if 
+there were any. The comments vary from format to format. In some 
+cases, having nothing better to say, they'll tell you what 
+software created the file.
+
+Some file formats actually contain a lot more information than 
+can be displayed in the normal Get Info box. TIFF files, for 
+example, can contain the name of the artist responsible for them, 
+the type of software used to create them and so on. You can get 
+at this sort of optional information for formats which support it 
+by using the "details" option of the F4 box when it's available. 
+The arrow keys will scroll you through the detail window. Details 
+are available, for example, if you get information about GIF, 
+TIFF or IFF/LBM files.
+
+If the "F4 for Details" prompt is visible, clicking in the Get 
+Info box will invoke the details option too. Once the details 
+appear, clicking in the upper half of the box will scroll up and 
+clicking in the lower half will scroll down.
+
+Note that the Get Info and details information for EPS files 
+actually pertain to the TIFF preview.
+
+You may need some external assistance in fully interpreting the 
+details. 
+
+
+CROPPING - F5
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+This function will prompt you for a destination file type and 
+then display your selected file on a dithered monochrome cropping 
+screen. Your image will be scaled to fit the screen, no matter 
+how big it is in real life. Initially, the exterior of the image 
+will be framed by a cropping box. If you hold down the left shift 
+key, the four arrow keys will adjust the upper left corner of the 
+box. Note that you'll have to use the down and right keys before 
+the up and left keys will do anything. If you hold down the right 
+shift key, the arrow keys will move the lower right corner of the 
+box. If you hit the Home key, the box will snap back to its 
+original position. The co-ordinates of the upper left and lower 
+right corners as well as the dimensions of the cropped fragment 
+will be displayed at the top of the screen.
+
+If you hit F10, your cropped fragment will be written to a new 
+file. The file will have the name of your original file with "C_" 
+appended to the front of it and the extension of the destination 
+format you selected. 
+
+If you hit Esc no destination file will be written.
+
+The cropping function requires a revision two screen driver. 
+Most of the current Graphic Workshop screen drivers will work... 
+a few of the unusual ones may not have been updated. The revision 
+level of revision two drivers can be found in the screen driver 
+installation screen of GWSINSTL.
+
+Cropping is a batch function. Note that if you use Esc to abort 
+one cropped file in a batch, the rest of the batch will be 
+aborted.
+
+The Crop function does not have mouse support.
+
+
+REVERSE - F6
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+This function will create a reversed version of any image file. 
+The new file will have the same name as the original file, with 
+"R_" appended to the front of it. Thus, reversing PICTURE.MAC 
+will leave you with R_PICTUR.MAC. If you reverse a colour image, 
+you'll get a colour negative. These look weird... we haven't 
+found a use for them as yet.
+
+Reversing is a batch function.
+
+
+TRANSFORM - F7
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+This key will pop up a menu offering you five image 
+transformations. You can rotate an image in ninety degree 
+increments and you can flip it horizontally or vertically. These 
+functions work on images of any number of colours. 
+
+Note that the ninety and two hundred and seventy degree rotation 
+functions will take a very long time if your images are large and 
+require the use of virtual memory... this assumes that you lack 
+extended or expanded memory. Them's the breaks.
+
+Transformed images will be stored in files with "T_" in front of 
+the names. Thus PICTURE.GIF will become T_PICTUR.GIF after any of 
+the five transformations have been wrought upon it. If you rotate 
+it and then flip the rotated image, for example, it will become 
+T_T_PICT.GIF, and so on, with intermediate files along the way.
+
+Transforming is a batch function.
+
+
+SCALE - F8
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+This key will allow you to scale files from 25 to 500 percent or 
+to a specific dimensions. 
+
+Your original files will not be altered when you scale them. New 
+files with the prefix "S_" will be created. Thus, PICTURE.GIF 
+will produce S_PICTUR.GIF after scaling.
+
+Scaling a picture can produce some really ugly results, depending 
+on what you scale. Bear in mind that scaling by integral 
+values... down to seventy five or fifty percent, up to two 
+hundred percent and so on... will produce less ugly results than 
+scaling by arbitrary values.
+
+There are three scaling modes available... proportional, 
+anamorphic and by size. Proportional scaling will scale files by 
+a percentage in both directions. Anamorphic will scale them by 
+different percentages in each direction. Scaling by size will 
+scale files by whatever percentages are necessary to make them 
+fit in a defined number of pixels.
+
+The scaling values you enter will be rounded to the nearest lower 
+integral value. Thus, 42.5 percent will really be 42 percent.
+
+You can scale by size to any dimensions in the range of 16 though 
+32767 pixels.
+
+Scaling is fairly time consuming.
+
+You should probably avoid scaling dithered monochrome pictures 
+down. Nothing terribly bad will happen, but for reasons which 
+will become obvious if you think about it, the results will 
+almost always be really ugly.
+
+Note that the scaling percentage you enter determines the size of 
+the destination image relative to the source image, not the 
+actual percentage of scaling. Thus, entering 25 will produce a 
+destination image which is one quarter... 25 percent... of the 
+original image. Entering 200 will create a destination image 
+twice as big... 200 percent of... the original. Entering 100 will 
+produce a destination image identical to the source image.
+
+By default, scaling will be the same in both dimensions. If you 
+hit F8 while the scaling box is visible, you will be able to 
+enter independent horizontal and vertical values. Hit F8 again 
+and you will be able to enter the actual dimensions you want your 
+destination image scaled to. 
+
+Scaling is a batch function.
+
+
+SPECIAL EFFECTS - F9
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+This function has a submenu which will allow you to access a 
+number of special tools for working with colour image files under 
+Graphic Workshop. 
+
+All of these are batch functions. The destination files will have 
+"X_" in front of their names. Note that these functions require 
+substantial amounts of memory.
+
+
+Colour reduction
+----------------------
+This function allows you to create destination files with fewer 
+colours than the source files they're derived from. You can use 
+this function, for example, to reduce a 256-colour file down to a 
+16-colour one. It's particularly useful for reducing 24-bit files 
+down to 256-colour files.
+
+Whenever you reduce the number of colours in a file, some image 
+information will get lost. The simplest form of colour reduction 
+is "remapping". This simply means that the destination image will 
+have the best colour palette it can, and that all the pixels in 
+it will be replaced with colours from that palette. The results 
+aren't usually very attractive.
+
+Colour dithering, also available in this function, can produce 
+decidedly better results. With colour dithering, you can reduce 
+24-bit files down to eight bits with very little loss of detail 
+or colour resolution.
+
+The palette used in colour reduction can be either quantized or 
+fixed. A quantized palette is derived from the source image, 
+while a fixed palette is predefined. In theory a quantized 
+palette should be preferable, but in fact this is not always the 
+case. A picture with a wide range of colour or small details 
+which are markedly different from the rest of the image can fool 
+the quantization algorithm into assigning too few colours to 
+parts of your image you're interest in. In many cases you'll find 
+that the "256 colour orthogonal" palette choice will produce the 
+most attractive results.
+
+Note that you can change the fixed palette to one of your own 
+devising using the NEWCMAP function of the Graphic Workshop 
+accessory disk, discussed elsewhere in this document.
+
+The "Windows 16 colours" choice will use a palette identical to 
+the one used by a sixteen-colour Windows screen driver. This is 
+useful if you're creating files to be used as Windows wallpaper, 
+or in other applications wherein they'll be displayed by Windows 
+in sixteen colours.
+
+
+Grey scale
+----------------
+This function creates a grey scale destination image from a 
+colour source image. The number of bits of colour will remain the 
+same.
+
+
+Sharpen
+-------------
+This function will create a destination image with more contrast 
+than its source image.
+
+
+Soften
+------------
+This function will create a destination image with less contrast 
+than its source image. This function is particularly useful for 
+minimizing the effects of scanning moire patterns caused when you 
+attempt to scan a previously screened original. In less technical 
+terms, if you scan pictures of nude women from magazines, 
+softening the image files will reduce the interference patterns.
+
+
+Smudge
+------------
+This function will create a destination image which looks like 
+it's being viewed through water drops.
+
+
+Spatial posterization
+---------------------------
+This function will create a destination image in which the image 
+is made up of large square areas. This effect is similar to the 
+one used by television news to obscure the faces of people whose 
+identities are to be kept secret.
+
+
+Promote to 24 bits
+------------------------
+This function will create a 24-bit file with the same image 
+information as a file with fewer colours. 
+
+
+SCANNING - F10
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+This function will inhale images into Graphic Workshop from a 
+scanner, assuming that you loaded a suitable scanner driver when 
+you installed the software. 
+
+Note that scanner drivers are pretty specific to the scanners 
+they're written for. The Scanjet Plus driver, for example, will 
+only drive a Scanjet Plus and will be of no real use if you have 
+a different sort of scanner. We will be creating more scanner 
+drivers in time... check with the Alchemy Mindworks bulletin 
+board for more information about new drivers.
+
+All the current drivers check to see if they're really connected 
+to the scanners they were designed for. 
+
+If you select the Scan function, a menu will pop up with the 
+following functions:
+
+
+Scan
+----------
+This item will cause the current image to be scanned using the 
+existing settings.
+
+
+Set mode
+--------------
+This item will allow you to choose the number of bits of colour 
+to scan your image with. Some of the options may be inaccessible, 
+depending upon the capabilities of your scanner.
+
+
+Set area
+--------------
+This item will allow you to have only a portion of your image 
+scanned. In effect, it allows you to crop a coarse pre-scanned 
+image and then applies this window to an image with higher 
+resolution. See the section of cropping elsewhere in this 
+document for instructions on using this window.
+
+
+Set resolution
+--------------------
+This item will allow you to select the number of dots per inch at 
+which your scanner will scan the current image.
+
+
+Test scanner
+------------------
+This item will allow you to make sure your scanner is still 
+working properly. This test is performed every time you select 
+the Scan function, so you need not perform it explicitly unless 
+you think something has gone wrong.
+
+
+Check error
+-----------------
+This item will display the most recent error message from your 
+scanner. Most of the time this will be "No error".
+
+
+Get info
+--------------
+This item will tell you how big a file your current image would 
+create if it were to be scanned as well as the number of colours 
+or grey levels it would contain. Note that the "Packed size" 
+field of this box is largely meaningless.
+
+
+Reset scanner
+-------------------
+This item will reset the scanner to its power-up defaults. It 
+will also delete any image data you have in memory from a 
+previous scan... be warned.
+
+
+Set intensity
+-------------------
+This item will allow you to set the brightness of the current 
+scan. It must be set prior to scanning.
+
+
+Set contrast
+------------------
+This item will allow you to set the contrast of the current 
+scan. It must be set prior to scanning.
+
+
+Save file
+---------------
+This item will allow you to select a format to save your current 
+file in. It will then save it and return you to the main screen. 
+Any formats which are incapable of supporting your current image 
+will be inaccessible.
+
+
+Abort
+-----------
+This item will leave the scanning menu without scanning or saving 
+anything. If you have previously scanned an image which has not 
+been saved it will ask if you want to save it before you go. The 
+Esc key also works.
+
+
+Other Options
+-------------------
+The items after Save file in the scanning menu are defined by the 
+scanner driver for your scanner. See your manual for more 
+information about how to use them. As a rule, they default to 
+safe values.
+
+
+SCRIPT LANGUAGE AND COMMAND LINE MODE
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+In addition to being run through its menus, Graphic Workshop can 
+handle script files. A script file is a list of Graphic Workshop 
+commands. Having been given a script file to work with, 
+Graphic Workshop can perform a number of functions and then 
+return to DOS or to the program which called it.
+
+The Graphic Workshop script language facility is primarily for 
+use in situations in which another application wishes to call 
+Graphic Workshop, have it convert, print, view or otherwise 
+manipulate some files in the background and then return control 
+to the program which called it.
+
+The Graphic Workshop script language and command line mode are 
+discussed in detail in the documentation for the Graphic Workshop 
+accessory disk, as found elsewhere in this document. 
+
+
+CONFIGURATION
+ßßßßßßßßßßßßßßßßßßßßß
+Making permanent changes to the modifiable features of 
+Graphic Workshop involves using the installer, GWSINSTL.EXE. 
+The configuration of Graphic Workshop is handled by a separate program in 
+order to keep GWS.EXE as small as possible, leaving lots of 
+memory for putting graphics in.
+
+The GWSINSTL program actually modifies GWS.EXE. In order for it 
+to work, GWS.EXE and GWSINSTL.EXE must be in the same directory 
+and must be so named. Both programs must be of the same version. 
+Be aware that as it directly modifies GWS.EXE, there is the 
+outside chance that a bug in the installer might crop up and kill 
+GWS.EXE beyond repair. Make sure you have a virgin copy of 
+GWS.EXE somewhere before you use the installer.
+
+Place GWSINSTL.EXE and GWS.EXE in the same directory and type 
+GWSINSTL. A menu will appear which will let you edit the runtime 
+settings, add or change your screen driver and add or change your 
+dot matrix printer driver.
+
+Note that the screen drivers are contained in a file called 
+GWSDRV.RES. The printer drivers are contained in a file called 
+GWSPDR.RES. These files must be in the same directory as GWSINSTL 
+for it to be able to find them. If one or both of them is 
+missing, the corresponding options in the main screen of GWSINSTL 
+will not be available.
+
+
+EDIT RUNTIME - F1
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+If you select this option, you'll see a screen which will allow 
+you to fine tune Graphic Workshop's performance to suit your 
+requirements and hardware. You can use the up and down arrow keys 
+and the Home and End keys to move through the items of this 
+screen. Hitting Enter when the cursor is over an item which toggles 
+will change its state. Hitting Enter when the cursor is over an 
+editable field will allow you to type in a new data.
+
+Note that you can run GWSINSTL and select this screen as often as 
+you want to adjust the settings of its various parameters. 
+
+When you're done changing things, hit F10 to get back to the main 
+GWSINSTL menu.
+
+Note that these items can be overridden by using command line 
+switches when you run GWS.EXE, should you need them set 
+differently from time to time.
+
+
+Screen colours
+--------------------
+This item allows you to set the screen colours. By default, there 
+are two sets of screen colours, to wit, a colour set which is 
+predominantly blue and a monochrome set. If you don't like either 
+of these, hit F1 when the cursor is on this item to create a 
+custom set.
+
+
+Memory type
+-----------------
+Hit Enter when the cursor is on this item to move through the 
+available extra memory options. See the section dealing with 
+memory elsewhere in this document for more information about 
+selecting the correct memory type.
+
+
+Display type
+------------------
+This item allows you to select the type of video card your system 
+will be using. It defaults to AUTODETECT, which will cause 
+Graphic Workshop to attempt to figure out what sort of card is in 
+your system. You may have to change this if you have a multiple 
+mode card which causes it to guess incorrectly. You will have to 
+change it if you have a super VGA card wish to use it in its 
+higher resolution modes.
+
+If you have a super VGA card, set this field to SUPER VGA & 
+OTHER and use the screen driver setup screen, discussed later in 
+this section, to select a suitable driver.
+
+
+Printer port
+------------------
+This item selects which parallel printer port to print images to. 
+Note that you can only select LP1, LPT2 or LPT3. Note also that 
+this selection only affects laser printers. See the section on 
+printing elsewhere in this document for more information.
+
+
+Memory overhead (Kbytes)
+------------------------------
+This is an editable item. It selects the number of kilobytes of 
+memory overhead which Graphic Workshop will reserve. See the 
+section on memory elsewhere in this document for more 
+information.
+
+
+Colour PostScript printing
+--------------------------------
+This item selects whether to assume that your PostScript printer 
+can print in colour.
+
+
+Default print dither
+--------------------------
+This item selects the type of dithering to use if you attempt to 
+print a colour or grey scale picture to a LaserJet or dot matrix 
+printer. This defaults to BAYER, which is fast but ugly. Select 
+one of the other options if you'd like better results.
+
+
+PostScript orientation
+----------------------------
+This item selects the default orientation for printing graphics 
+to a PostScript printer.
+
+
+Print filenames
+---------------------
+
+Print dates
+-----------------
+
+Print image size
+----------------------
+
+Print image colours
+-------------------------
+
+Print output resolution
+-----------------------------
+These items allow you to determine what, if anything, will be 
+printed at the bottoms of pages which Graphic Workshop prints.
+
+
+Graphic Workshop path
+---------------------------
+This should be a complete path to the subdirectory and drive 
+where GWS.EXE and GWS.RES live. For example:
+  
+        C:\GRAPHICS\
+   
+When this item is set correctly, you will be able to run 
+Graphic Workshop from anywhere on your hard drive if its location 
+is in your DOS path.
+
+This field will initially default to the current directory when 
+you run GWSINSTL for the first time. This will be correct in most 
+situations.
+
+
+Registration name
+-----------------------
+When you have registered Graphic Workshop, type your name into this field. 
+This, in conjunction with the registration number provided when 
+you registered the software will disable the closing beg notice. 
+Note that you must enter your name exactly as it is written on 
+the page with your registration number. Case, spaces and 
+punctuation matter. 
+
+
+Registration number
+-------------------------
+Enter your registration number in this field. 
+
+
+EDIT FORMATS - F2
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+This page will let you fine tune the way Graphic Workshop writes 
+some types of files. 
+
+
+MacPaint header
+---------------------
+This item allows you to determine whether MacPaint files 
+generated by Graphic Workshop will have MacBinary headers in 
+them. Leave this on if you don't know what these are. Note that 
+this does not affect how Graphic Workshop reads MacPaint files... 
+it will handle both types no matter you set this item.
+
+
+IFF/LBM compression
+-------------------------
+This item determines whether IFF/LBM files will be compressed. 
+Some old versions of Deluxe Paint choked on compressed files.
+
+
+EPS preview
+-----------------
+This item determines whether EPS files will be created with TIFF 
+previews.
+         
+
+TIFF compression
+----------------------
+This item determines whether TIFF files will be created 
+compressed. Some applications, such as Gray F/X, don't like 
+compressed files.
+
+
+TIFF grey scale expansion
+-------------------------------
+This item determines whether TIFF grey scale files should be 
+created with their grey scales expanded. This should be set ON if 
+you'll be importing grey scale files into a desktop publishing 
+package or otherwise using them to print with and to OFF if 
+you'll be editing them.
+
+
+TIFF colour/grey scale
+----------------------------
+This item determines whether TIFF files with more than one bit of 
+colour will be created as colour or grey scale images. The grey 
+scale expansion item will be ignored if this item is set to 
+COLOUR.
+
+
+EXE file compression
+--------------------------
+This item determines whether self-displaying EXE pictures will be 
+compressed. See the section on EXE pictures elsewhere in this 
+document for more information.
+
+
+GIF file type
+-------------------
+This item allows you to determine whether Graphic Workshop should 
+write old-style GIF87a files or the newer GIF89a files. 
+
+
+Targa true colour bits
+----------------------------
+This item allows you to determine whether 24 bit images written 
+to Targa files should be written with 24 or 16 bits of colour. 
+See the discussion of Targa files elsewhere in this dcoument for 
+more information.
+
+
+Dither brightness
+-----------------------
+
+Dither halftones
+----------------------
+In dithering an image, the original brightness levels of the 
+source graphic will be expanded a bit to improve the quality of 
+the dither. The amount by which the grey levels are expanded is 
+set by the Dither brightness and Dither contrast items. You 
+should experiment with these items if you aren't happy with the 
+quality of the dithered images Graphic Workshop is producing. 
+Note that you can use the original expansion map by setting both 
+these values to 65535.
+
+
+Printed halftone brightness
+---------------------------------
+
+Printed halftone contrast
+-------------------------------
+In order to print correctly to most black and white laser 
+printers, colour and grey scale images must be "expanded", that 
+is, their grey scales must be adjusted to compensate for the non-
+linear grey scale of the output device. The amount of 
+compensation varies among different laser printers. The 
+compensation values for Graphic Workshop have been chosen to suit 
+an average PostScript laser printer. However, you can fine
+tune these if you like. These values should range from zero to 
+about sixty-four, with twenty or thirty being about right for 
+most output devices.
+
+If you liked the older fixed contrast expansion curve from 
+previous versions of Graphic Workshop, change both these fields 
+to 65535.
+
+
+EDIT SCREEN DRIVER - F3
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+This page will allow you to select a super-VGA screen driver. You 
+must select a driver which is in keeping with the super VGA card 
+you have in your system. If you attempt to display a large 
+graphic in Graphic Workshop and the display misbehaves, chances 
+are you have the wrong super-VGA screen driver installed.
+
+Note that some drivers are intended for use with cards having a 
+half megabyte or more of memory. If you have a 256 kilobytes VGA 
+card, choose a suitable 256 kilobyte driver.
+
+Note that not all the drivers support higher resolution modes. If 
+you have a card which can display pictures in 1024 by 768 pixel 
+resolution, you also need a driver which can drive it in that 
+mode. As a rule, all the super VGA drivers will handle 640 by 480 
+pixels. Some can do better than this, but not all of them. We're 
+working on improving the high end drivers.
+
+Note that the cropping and scanning functions require revision 
+2.0 screen drivers or better. The F2 screen display will show you 
+the revision numbers of drivers with revision two or better.
+
+Finally, as of version 6.1e of Graphic Workshop, the drivers 
+can set up a menu to allow you to select a screen mode if you 
+hold down the Ctrl key when you go to view a file. This facility 
+is only available if you have a driver of version 2.1 or better 
+for your card. New drivers are coming... if your card is not 
+supported by a version 2.1 driver yet, please be patient. All the 
+other driver based features will still be available.
+
+The following are some details about the drivers. Some of these 
+drivers have been written by users of Graphic Workshop. If you'd 
+like to write a driver, see the section on the Graphic Workshop 
+accessory disk.
+
+
+Amstrad 16 colour 640x200
+-------------------------------
+This driver was developed by Marcel Ward in Aberystwyth, Wales. 
+It allows owners of Amstrad PCs having the custom sixteen-colour 
+display cards supplied with these systems to look at colour 
+images. We haven't tested this driver, lacking an Amstrad, but 
+the source code looks right. 
+
+
+VGA in pseudo 640x480
+---------------------------
+This is a very clever driver by Gregory Weeks which displays 640 
+pixel wide 256-colour files on a 320 pixel wide screen by leaving 
+out every alternate pixel. As the author notes, nothing is free 
+and some detail is lost. However, if you have a VGA card with no 
+640 pixel wide, 256-colour mode... or one which there is no 
+driver for as yet... you'll find that this driver is often 
+preferable to the stock 320 by 200 pixel MCGA mode.     
+
+
+Ahead B
+-------------
+This is a driver for the Ahead B super VGA cards by David 
+Mikelson of Solvang, California. This is a fairly basic driver... 
+it does not support cropping, but it does handle the Ahead B 
+super VGA modes. The author notes:
+
+        This driver is for the SVGA card commonly referred to as 
+        an "AHEAD B" card.  The card might also be referred to as 
+        a "Standard Technologies VGA800C", an "Ahead Systems VGA 
+        V-5000B", or a "Standard Technologies VGA CARD, REV B". 
+
+        The card must have at least 512K memory on board.
+
+        Note that an "AHEAD B" card is NOT the same as an "AHEAD 
+        A". An Ahead A card uses different video modes, so this 
+        driver won't work for an AHEAD A card.
+
+Thanks to all these authors for their drivers.
+
+
+Orchid Fahrenheit 1280
+----------------------------
+This is a driver to support most Orchid Technologies Fahrenheit 
+1280 cards... some of the really early ones with very funky VESA
+implementations may not behave themselves. This driver assumes 
+that your card has one megabyte of memory and a Sierra DAC for 
+the high colour modes. We've only been able to test it on a 
+limited number of Orchid cards, and we know that there have been 
+a lot of revisions to this hardware. Let us know if you have 
+difficulties with it. Also, note that Orchid Technologies was 
+providing free BIOS upgrades as of this writing for the older 
+cards... this cures a multitude of problems.
+
+This driver supports high colour as well as the usual super VGA 
+modes, that is, you can view 24-bit image directly with it.
+
+Users of other cards with VESA BIOSs should note that the Orchid 
+driver is a VESA driver at heart, with some modifications to make 
+it behave itself in this implementation. It has some facilities 
+which our standard VESA driver does not, most notably high 
+colour support. If you have a high end card with a VESA BIOS, 
+you might want to try this driver.
+
+
+General VESA
+------------------
+The VESA standard is supported by a number of super VGA cards in 
+addition to their own proprietary standards. If your card 
+supports VESA, either directly or through the use of a TSR, you 
+can use this driver. This is especially handy if your card is not 
+supported by a dedicated driver as yet. This card provides 256-
+colour resolution out to 1280 by 1024 pixels assuming your card 
+supports this mode. Note that the driver will only attempt to 
+select display modes which your card actually supports... if you 
+call for a mode which does not exist on your card, the nearest 
+available mode will be used.
+
+If you have a fairly new display card and are uncertain whether 
+it supports VESA, try this driver. If you attempt to view 
+EXAMPLE3.GIF and only see the frog... with no text... your card 
+does not support VESA.
+
+This driver does not work with some fairly flaky VESA 
+implementations, such as the one on the Orchid Fahrenheit 1280 
+card.
+
+
+Oak Tech 640 by 480
+-------------------------
+
+Oak Tech 800 by 600
+-------------------------
+These drivers support cards which use the Oak Technologies chip 
+set. The higher resolution drivers also support the lower 
+resolution modes, and will select the appropriate mode 
+automatically. 
+
+
+Tseng 4000 640 by 480
+---------------------------
+
+Tseng 4000 800 by 600
+---------------------------
+
+Tseng 4000 1024 by 768
+----------------------------
+
+Tseng 4000X 1024 by 768
+-----------------------------
+These drivers support cards which use the Tseng Labs chip set. 
+The higher resolution drivers also support the lower resolution 
+modes, and will select the appropriate mode automatically. The 
+Tseng 4000X driver will support 1024 by 768 pixels at 256 
+colours, and 640 by 480 or 800 by 600 pixels of 24-bit colour. 
+You'll need a Tseng 4000 board with the Sierra DAC on it to use 
+this driver. It will allow you to view 24-bit images directly.
+
+
+Hercules TIGA 31.5k
+-------------------------
+This driver supports the Hercules Graphic Station card. Note that 
+unlike a Graphic Station card, a VGA card only actually does 18-
+bit colour. The 24-bit colour mode of the Graphic Station card 
+has a resolution of 512 by 480 pixels. Its aspect ratio isn't all 
+that good, but you can fiddle the monitor controls... for most 
+monitors... to get pretty reasonable pictures. This driver should 
+work on other cards supporting the Texas Instrument TIGA chip, 
+but no promises. Note that this is a VGA level driver only... it 
+does not do 24 bits directly.
+
+
+Trident 
+--------------
+Drivers are included to drive Trident 8900 series cards to 1024 
+by 768 pixels in 256 colours and 800 by 600 in sixteen colours and 
+monochrome. Choose the one which is appropriate for your 
+hardware. The two lower resolution drivers have also been tested 
+on the older 8800 series Trident chips.
+
+
+Video Seven 1024i
+-----------------------
+This is a driver for the Headland Technologies Video Seven VRAM 
+and Video Seven 1024i cards. It supports the 640 by 480 line 256-
+colour mode. 
+
+
+Paradise Plus Card
+------------------------
+This is a full featured driver for the Western Digital Paradise 
+Plus card. This driver also works with the Dell super-VGA card, 
+which is actually a Paradise sixteen-bit card.
+
+
+Paradise Pro Card
+-----------------------
+This is a driver for the Paradise Professional card (and clones 
+thereof). It supports both the 640 by 400 and 640 by 480 pixel, 
+256 colour modes.
+
+
+Paradise D 640 by 480
+---------------------------
+
+Paradise D 800 by 600
+---------------------------
+
+Paradise D 1024 by 768
+----------------------------
+These are drivers for the newer Paradise cards which use the D 
+series chips. You can tell if you have one by the markings on the 
+large chip... you'll find the number 90C30 thereon. The 1024 by 
+768 driver requires a megabyte on board. It supports the Paradise 
+true colour mode, which means that if you have a RAMDAC on your 
+card it will allow you to look at 24-bit images directly in 640 
+by 480 and 800 by 600 pixel resolution. Stunning.
+
+
+Dell Super VGA 256K
+-------------------------
+This is a version of the Paradise Plus driver, above. It has been 
+modified so as not to use the 800 by 600 pixel EGA and monochrome 
+modes of the Paradise card, as this causes the super-VGA monitor 
+on a Dell to click a (loud) internal relay every time it changes 
+modes. If you don't mind the relay, or you want the 800 by 600 
+modes, use the Paradise Plus driver.
+
+
+Dell Super VGA 512K
+-------------------------
+This is a 512K version of the Dell Super VGA driver, that is, a 
+Paradise driver with the 800 by 600 pixel monochrome mode 
+disabled.
+
+Note: rumour has it that some Dell systems have been shipped with 
+Headland Video 7 cards rather than Paradise cards. If your Dell 
+system is so equipped... or if you can't get GWS to work in the 
+super-VGA modes with one of the above two drivers... try 
+VIDEO7.DRV.
+
+
+ATI VGA Wonder
+--------------------
+Drivers are included to drive ATI VGA Wonder series cards to 1024 
+by 768 pixels in 256 colours and 800 by 600 in sixteen colours and 
+monochrome, as well as to various lesser resolutions. Choose the 
+one which is appropriate for your hardware. There is also a 
+driver for the ATI-XL card, which adds 24-bit colour support at 
+640 by 480 pixels. This requires a full megabyte of memory on 
+your card.
+                
+
+Standard VGA 320 x 400
+----------------------------
+This is a "gadget" driver for a stock VGA card which reprograms 
+the beast into an undocumented 320 by 400 line mode. It should 
+work on any VGA card, but being undocumented one cannot be sure. 
+In any case, while interesting, this mode has such a squashed 
+aspect ratio that it's not really useful for anything. In 
+addition, having heavily interlaced memory, it's painfully slow 
+to update.
+
+
+Standard VGA 360 x 480
+----------------------------
+This is another undocumented mode. It gets still more on the 
+screen, with still more distortion.
+
+
+EDIT EXTERNAL PRINTER DRIVER - F4
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+This page will allow you to select an external printer driver. 
+You do not need an external printer driver if you will be 
+printing to a PostScript printer or any sort of LaserJet or 
+LaserJet compatible printer.
+
+For the most part, external printer drivers are used to drive 
+black and white dot matrix printers. Graphic Workshop does 
+support external colour printers. At present, the only colour 
+driver available is for the Hewlett-Packard PaintJet and Kodak 
+Diconix inkjet printers.
+
+If you don't find a driver for your printer in the available list 
+of drivers, you can probably use the Epson FX-80 driver. Most dot 
+matrix printers emulate this standard. If you'd like to write a 
+driver, see the section on the Graphic Workshop accessory disk 
+elsewhere in this document.
+
+Note that the Epson LQ and LX drivers, the IBM ProPrinter drivers 
+and the Panasonic and Roland drivers were all written by Chris 
+Rogers of Ashtree Software. They're particularly slick, in that 
+they will ask you what resolution you want to print at. We have 
+not tested these, but they look to be well written.
+
+The LaserJet III/4 driver is an alternate way to print halftones from 
+colour and grey scale images to a LaserJet-compatible printer. 
+You might find that you like it better than the internal LaserJet 
+drivers. You should experiment with this one to see if it suits 
+your needs.
+
+
+EDIT SCANNER DRIVER - F5
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+This page will let you select a scanner driver. At present, only 
+the Hewlett-Packard Scanjet Plus and Scanjet IIC are supported. 
+We will be creating more scanner drivers if registrations 
+indicate that this feature is of interest. 
+
+
+COMMAND LINE SWITCHES
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+When you run Graphic Workshop by typing GWS at the command line, 
+it will run using the default settings, as configured by 
+GWSINSTL. There may be times when you'll want to override these 
+settings temporarily, and rather than running the installer, you 
+can use the command line switches. These only change the 
+configuration of Graphic Workshop when they're used. The next 
+time you run Graphic Workshop, it will return to its default 
+configuration.
+
+As a rule, command line switches should only be required in 
+special circumstances.
+
+You can always see a complete list of the command line switches 
+by running Graphic Workshop as
+
+     GWS ?
+
+In using the command line switches, make sure that each one is 
+separated on the command line by a space. Note that they are not 
+case-sensitive. For example, this is a legal invocation of 
+Graphic Workshop with some command line switches.
+
+     GWS /SVG /vir /Psc
+
+This has told Graphic Workshop to work with a super VGA card, 
+virtual memory and a colour PostScript printer.
+
+If you're using Graphic Workshop both under DOS and under 
+Windows, you can add command line switches to the command line 
+field of the Windows PIF file for Graphic Workshop to adjust its 
+configuration if needs be.
+
+The following are the command line switches which 
+Graphic Workshop recognizes. Most of these options correspond to 
+installation options in GWSINSTL.
+
+
+MEMORY SWITCHES
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+/VIR - use virtual memory
+/EMS - use expanded memory
+/XMS - use extended memory
+/XMV - use extended or virtual memory
+/EMV - use expanded or virtual memory
+
+
+VIDEO DRIVER SWITCHES
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+/CGA - use the CGA card driver
+/EGA - use the EGA card driver
+/VGA - use the VGA card driver
+/HER - use the Hercules card driver 
+/SVG - use the currently installed super VGA driver (if any)
+
+
+PRINTER SWITCHES
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+/PFN - enable printing filenames
+/PDT - enable printing dates
+/PPS - enable printing image size
+/PCL - enable printing number of colours
+/PRS - enable printing resolution
+/PRD - disable all the foregoing print options
+/POR - print in portrait orientation on PostScript printers
+/LAN - print in landscape orientation on PostScript printers
+/PFN - print to a file, rather than to the printer
+/PSM - assume a monochrome PostScript printer
+/PSC - assume a colour PostScript printer
+/PHn - set print dither (n=B:Bayer, F:Floyd-Steinberg, U:Burkes, S:Stucki)
+/LPn - set printer port (n=1,2 or 3)
+/Snn - set Postscript screen size (n=10, 20, 30, 40, 50, 60, 70 or 80)
+/SDF - set PostScript halftone screen to the printer's default
+/PRBn - set print brightness to n
+/PRCn - set print contrast to n 
+
+
+FILE FORMAT SWITCHES
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+/EPP - enable EPS preview creation
+/EPN - disable EPS preview creation
+/IFN - No compression on IFF files
+/IFC - RL compression on IFF files
+/MBH - MacPaint MacBinary header on
+/MBN - MacPaint MacBinary header off
+/TCL - Create colour TIFF files
+/TCG - Create grey TIFF files
+/TGN - TIFF files no compression
+/TGC - TIFF files RL compression
+/TXP - Expand TIFF grey scale
+/TXN - Do not expand TIFF grey scale
+/EXC - Compress EXE pictures
+/EXN - Do not compress EXE pictures
+/G87 - Write GIF files as GIF 87a
+/G89 - Write GIF files as GIF 89a
+/T16 - Write true colour Targa files with 16 bits of colour
+/T24 - Write true colour Targa files with 24 bits of colour
+
+
+RUNTIME SWITCHES
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+/DRBn - set dither brightness to n
+/DRCn - set dither contrast to n
+
+
+DESQVIEW, QEMM AND OTHER ENVIRONMENTS
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Graphic Workshop has not been written to run under DesqView, and 
+in some cases may not do so reliably. It gets into trouble when 
+it switches into a super-VGA graphics mode, which DesqView is 
+unable to detect. Quarterdeck maintains that it does behave 
+itself under recent releases of their package in other 
+circumstances... we have not had the opportunity to test this as 
+of this writing. 
+
+Because of the way Graphic Workshop uses memory, we don't 
+recommend running it under multi-tasking or task switching 
+environments, with the exception of Windows 3. Things like 
+Double-DOS, GeoWorks and such may cause it to misbehave. 
+
+
+VENTURA PUBLISHER TRICKS
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Graphic Workshop is great for getting images into Ventura 
+Publisher documents. Here are a few tips for getting the most out 
+of it.
+
+Monochrome bitmapped images should be converted into IMG files 
+for use with Ventura. Note that while Ventura will import colour 
+PCX files with up to 16 colours, the results are rarely pretty. 
+You'll do much better to halftone or dither colour PCX files for 
+use with Ventura.
+
+Having poured an image into a frame, use the Sizing and Scaling 
+box in the Frames menu to select "By Scale Factors." Set the 
+scale width to the natural size of the image... as it defaults 
+to... or to some integral multiple of it. This will eliminate 
+distortion or plaiding of the image.
+
+You can create halftones from colour images by converting them to 
+grey scale TIFF files. Ventura allows you a great deal of control 
+over the way the grey scale and screening information is handled 
+in a TIFF file.
+
+You can also create halftones in Ventura by converting colour and 
+grey scale files to IMG files and importing these. The only 
+drawback to this over using grey scale TIFF files is that the 
+grey scale and screening information will not be adjustable. Note 
+that as of this writing the Windows and Macintosh implementations 
+of Ventura did not seem to like IMG files with more than one bit 
+of colour.
+
+If you use the Define Colours option of the Frame menu to display 
+colours as shades of grey rather than as colours... and if you're 
+using an EGA or VGA monitor... grey scale TIFF files will appear 
+in your chapters as pretty slick little photographs.
+
+Note that if you will be creating grey scale TIFF files for use 
+with Ventura, you should enable grey scale TIFF and grey scale 
+expansion.
+
+
+CORELDRAW TRICKS
+ßßßßßßßßßßßßßßßßßßßßßßßß
+If you import bitmapped images into Corel Draw, you can decide 
+how they'll be handled once they get there by choosing the image 
+type you use. Imported PCX files will be scaled to an arbitrary 
+size upon entering Corel Draw, with the result that it's almost 
+impossible to adjust them to get a one to one relationship 
+between the image pixels and the printer pixels. This will make 
+many PCX files print badly.
+
+TIFF files, on the other hand, import initially with one to one 
+scaling. If you use TIFF files and leave them at their initial 
+size, or stretch them to integral multiples of their original 
+sizes, they'll print without distortion or plaiding.
+
+Grey scale TIFF files imported into Corel Draw come up as 
+PostScript halftones... these can look very slick as part of a 
+line drawing. Colour TIFF files are useful if you'll be 
+outputting your Corel Draw files to a colour output device or if 
+you'll be getting them separated.
+
+You might want to check out "Mastering Corel Draw 3" by Steven 
+William Rimmer, published by Sybex Books.
+
+
+GRAPHIC WORKSHOP ACCESSORY DISK
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+The Graphic Workshop accessory disk provides you with tools to:
+
+- Write a custom super-VGA screen driver for Graphic Workshop
+- Write a custom scanner driver for Graphic Workshop.
+- Write a custom external printer driver for Graphic Workshop
+- Use the command line and script language of Graphic Workshop.
+- Manipulate the resource files of Graphic Workshop.
+- Fix problems with PCX files generated by some FAX boards.
+- Change the way Graphic Workshop uses your mouse.
+- Remove the on line help to speed up Graphic Workshop booting.
+- Use the NEWCMAP function to change the default orthogonal 
+  palette for colour dithering and remapping to one of your own 
+  devising.
+
+The disk includes the source code for a skeletal super-VGA 
+driver, the source code for a printer driver, the source code for 
+a scanner driver and a script resource, among other things. You 
+will need MASM and LINK or TLINK to create drivers in addition to 
+the tools provided with this disk. You'll also need a moderate 
+level of ability in 8088-series assembly language programming to 
+write drivers.
+
+Complete instructions for using the script language interface are 
+also included.
+
+The Graphic Workshop accessories disk is included with all registered 
+versions of Graphic Workshop
+
+
+CONTACTING ALCHEMY MINDWORKS INC.
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+We hope you'll contact us to register Graphic Workshop... see the 
+section about registering your software elsewhere in this 
+document. 
+
+You can contact us by mail by writing to us at:
+
+Alchemy Mindworks Inc.
+P.O. Box 500
+Beeton, Ontario
+L0G 1A0
+Canada
+
+You can register Graphic Workshop with a Visa card by calling 
+1-800-263-1138 from the United States or 1-416-729-4969 from 
+other places. Please note that this number is for ordering only. 
+(The area code for Alchemy Mindworks' non-800 numbers will change 
+from 416 to 905 after October 4, 1993.)
+
+We will attempt to answer questions from unregistered users who 
+write to us to the extent that their answers are needed for you 
+to fully determine whether this software will suit your 
+requirements. 
+
+We can also be reached through the Alchemy Mindworks bulletin 
+board. It's available twenty-four hours a day at (416) 729-4609. 
+As of this writing, the protocol was 300, 1200 or 2400 baud, or 
+9600 baud v.32bis, eight data bits, no parity and one stop bit. 
+(The area code for Alchemy Mindworks' non-800 numbers will change 
+from 416 to 905 after October 4, 1993.)
+
+The bulletin board always has the most recent versions of all our 
+shareware on it, plus bug fixes, drivers and other relevant 
+information. It only exists to support Alchemy Mindworks' 
+shareware... it does not have a general file area.
+
+If you encounter problems with a file, you're welcome to upload 
+the errant file to our bulletin board. Actually, you can upload 
+any picture files you like to the board... we enjoy getting 
+pictures.
+
+If you have a question about Graphic Workshop, feel free to leave it 
+on the bulletin board. We try to answer all questions within 
+twenty-four hours. Note that you must call back to retrieve your 
+answer... please don't ask us to phone you or to leave the answer 
+on another bulletin board.
+
+Registered users of Graphic Workshop will receive our voice number 
+for immediate technical support. The voice number is only 
+available for use from 10:00am to 5:00pm EST. If you call and get 
+our answering machine... it does happen... please leave us a 
+message or call back later. We are only able to return long 
+distance calls if we can call you collect. In this regard, please 
+note that as of this writing Canada has a very peculiar 
+electronic voice mail collect call system... if the phone 
+company's computer starts talking when you pick up the phone, 
+it's probably us returning your call.
+
+We ask that in contacting us you appreciate that we are a small 
+company with limited resources. If you have not registered this 
+software we will not tell you to go to hell, but please don't ask 
+us for half an hour of free technical support.
+
+
+REGISTRATION
+ßßßßßßßßßßßßßßßßßßßß
+If you like Graphic Workshop and find it useful, you are requested to 
+support it by sending us $40.00. This will entitle you to 
+telephone support, notification of updates, a free copy of the 
+latest version of this software and other worthwhile things. It 
+will also avail you of a registration number to shut off the 
+closing beg notice. More to the point, though, it'll make you 
+feel good. We've not infested Graphic Workshop with excessive beg notices, 
+crippled it or had it verbally insult you after ten days. We 
+trust you to support this software if you like it.
+
+If you want to see additional features in Graphic Workshop, register 
+it. If we had an Arcturian mega-dollar for everyone who has said 
+they'd most certainly register their copy if we'd add just one 
+more thing to it, we could buy ourselves a universe and retire.
+
+Oh yes, should you fail to support this program and continue to 
+use it, a leather winged demon of the night will tear itself, 
+shrieking blood and fury, from the endless caverns of the nether 
+world, hurl itself into the darkness with a thirst for blood on 
+its slavering fangs and search the very threads of time for the 
+throbbing of your heartbeat. Just thought you'd want to know 
+that.
+
+Our address is:
+
+Alchemy Mindworks Inc.
+P.O. Box 500
+Beeton, Ontario
+L0G 1A0
+Canada
+
+You can register Graphic Workshop with a Visa card by calling       
+1-800-263-1138 from the United States or 1-416-729-4969 from 
+other places. (The area code for Alchemy Mindworks' non-800 
+numbers will change from 416 to 905 after October 4, 1993.)
+
+If you have previously registered Graphic Workshop, you can update 
+your copy to the current release for $20.00.
+
+If you have a FAX number, please include it in your registration. 
+We're hoping to be able to handle notification of future updates 
+of this software by FAX where we can. This is both considerably 
+faster and a lot cheaper than mail.
+
+You can FAX your order to us at (416) 729-4156. You'll find an 
+order form in this ZIP to make this easier. (The area code for 
+Alchemy Mindworks' non-800 numbers will change from 416 to 905 
+after October 4, 1993.)
+
+When you register Graphic Workshop, please specify the disk size you 
+require. In addition, please state whether you require dual 
+density disks... some of our packages normally ship on quad 
+density disks. You should only require dual density disks if 
+you're using an old-style 8088-based XT system.
+
+Please note that we are not able to accept purchase orders for 
+fewer than six copies of Graphic Workshop at a time. We cannot 
+ship software COD.
+
+
+CANADIAN USERS
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+The registration fee for Graphic Workshop is $40.00 (CDN) plus 
+seven percent GST, or $42.80. We sincerely regret collecting this 
+tax on behalf of several levels of government which will only 
+squander it. If you sincerely regret having to pay it, we urge 
+you to express your regret by voting in the next federal and 
+provincial elections. 
+
+
+AMERICAN USERS
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+The registration fee for Graphic Workshop is $40.00 (US). The 
+exchange on US funds pretty well covers the extra postage to the 
+States.
+
+Please note that when you send us your order... and then when we 
+send you your update back... two distinct post offices get to 
+deal with the ensuing mail. It can take a few weeks for things to 
+get through this system... we ask that you be patient. We don't 
+fully understand why it takes less time for a package to get to 
+Australia than it does to send one to Cleveland... some things 
+are best left as mysteries.
+
+
+OTHER USERS
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+The registration fee for Graphic Workshop is $40.00 (US). If you pay 
+us by cheque, please make sure that it's a cheque drawn on an 
+international bank, and that it will be negotiable in Canada. It 
+must have a North American clearing office. If there's no bank 
+clearance number along the bottom of the cheque, it will not 
+clear. 
+
+We cannot accept payment by Eurocheques... they are not 
+negotiable outside Europe.
+
+Payment from countries outside Canada must be in US dollars.
+
+
+PAYING BY CREDIT CARD
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+We can accept payment by Visa only. We need your Visa card number 
+and expiry date and the name which appears on your card. We also 
+need written authorization to debit your Visa account for the 
+specific amount you're sending us.
+
+We cannot accept MasterCard, American Express or other credit 
+cards.
+
+
+SOURCE CODE AVAILABILITY AND BOOKS
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+It isn't.
+
+After considerable meditation and several bad experiences, we 
+have decided not to release the source code for Graphic Workshop.
+We do license parts of them for specific applications... if you 
+want more information about using some of the functions of 
+this package in your software, please contact us.
+
+If you're interested in writing programs which use graphics, 
+you'll find everything you need to know in Bitmapped Graphics, 
+second edition, by Steven William Rimmer. It's published by TAB 
+Windcrest Books, (TAB book 3558). It features code to pack and 
+unpack MacPaint, IMG, PCX, GIF and TIFF files, as well as 
+chapters on screen drivers, dithering and printing.
+
+An additional book on this subject, Supercharged Bitmapped 
+Graphics, (TAB Book 4102), discusses the GIF 89a, WordPerfect, 
+BMP, IFF/LBM, TGA, MSP, 24-bit PCX and colour TIFF file formats, 
+as well as such subjects as colour dithering and colour printing.
+
+Super VGA Graphics, by Steven William Rimmer and published by TAB 
+Windcrest, includes source code to read and write GIF and PCX 
+files, and to do extensive graphics in the sixteen, 256 and 
+32,768 colour screen modes of popular super VGA cards. There is a
+chapter about printing graphics to a variety of printers... 
+ranging from simple dot matrix printers though laser printers to 
+colour ink jet printers. The book also includes a chapter about 
+writing animated super-VGA arcade games.
+
+If you'd like to write applications which use menus, icons, 
+windows and all the other paraphernalia of a graphical user 
+interface, you might find the book PC Graphical User Interfaces 
+handy. It's published by TAB Books (TAB Book 3875). It includes 
+the C source for a complete graphical user interface library, 
+related code to manage fonts and bitmaps and a tiny paint 
+program. 
+
+Bitmapped Graphics for Windows, by Steven William Rimmer, 
+published by TAB Windcrest, deals with the most popular image 
+file formats in a Windows environment. It also discusses 
+printing, viewing and dithering images in Windows applications.
+
+A complete discussion of graphic file formats for use in word 
+processing documents and desktop publishing chapters can be found 
+in The Graphic File Toolkit, by Steven William Rimmer, published 
+by Addison-Wesley. This is an invaluable reference for anyone who 
+wants to use graphic files but does not want to become a 
+programmer in the process.
+
+If your local bookstore doesn't have these books, they can be 
+mail or phone ordered from Christies of Cookstown, P.O. Box 392, 
+Cookstown, Ontario L0L 1L0, Canada. Their phone number is (705) 
+458-1562. It has a FAX machine on it after hours. As of this 
+writing, they're open seven days a week.
+
+
+BUNDLING GRAPHIC WORKSHOP
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+If you'd like to include Graphic Workshop with your product, please 
+get in touch with us. We have several ways to help you do this so 
+your users get the most out of our software and we won't have to 
+set our leather winged demon of the night on 'em.
+
+
+SHAREWARE DISTRIBUTORS
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+We will, at our discretion, send out disks of our shareware 
+applications to shareware distributors. Alternately, you can 
+download the current versions of our applications from CompuServe 
+in the PICS forum or from our bulletin board at (416) 729-4609. 
+
+We encourage you to use our bulletin board, as it will allow you 
+to keep your copies of our applications up to date.
+
+If you obtain current copies of our shareware, you have our 
+permission to distribute them under the following terms. No 
+written permission from us is required if you abide by these 
+terms.
+
+- That nothing be added to, deleted from or changed in the 
+  archive files which contain our packages. This includes adding 
+  ZIP file comments to them.
+
+- That our shareware is not included in or bundled with other 
+  hardware or software without our written permission.
+
+- That no printed documentation regarding our shareware is 
+  included with the package without our written permission.
+
+- That hard copy explaining that our packages are shareware is 
+  included with the disks.
+
+- That no more than $10.00 (US) be charged for the distribution 
+  of whatever package our applications are part of. If you will 
+  be charging more than this, please get in touch with us for 
+  bundling rates.
+
+You do have our permission to copy the ZIP files from our quad 
+density disk to multiple lower density disks for distribution.
+
+Please note that if you would like to distribute Graphic Workshop 
+in "rack" packaging, that is, in a store rather than directly 
+from a shareware distributor, we request that you contact us for 
+permission to do so. We will require a proof copy of the 
+packaging you intend to use prior to giving our consent for rack 
+packaging.
+
+
+OTHER ALCHEMY MINDWORKS SHAREWARE
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+The following are the other shareware packages we have available 
+as of this writing. Our newsletter, available for the asking, 
+will list all the current ones.
+
+
+GRAPHIC WORKSHOP
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+This is the last word in image programs. It converts, prints, 
+views, dithers, thresholds, transforms, flips, rotates, scales, 
+crops, colour adjusts, scans, quantizes and wreaks special 
+effects on MacPaint, GEM/Ventura IMG, PCX, GIF, TIFF, WPG, MSP, 
+IFF/LBM, BMP, RLE, Halo CUT, Targa, ART, EXE, TXT and EPS files. 
+It drives CGA, Hercules, EGA, VGA and pretty well all super VGA 
+cards. It will drive PostScript and LaserJet Plus laser printers, 
+colour PostScript printers, colour inkjets and most dot matrix 
+printers. It features batch processing, extended and expanded 
+memory support, an intuitive user interface and easy to follow 
+menus. It allows you to convert colour image files into superb 
+black and white clip art for desktop publishing, among other 
+things. 
+
+
+GRAPHIC WORKSHOP FOR WINDOWS (RELEASE 1.1)
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Offering the same functionality as Graphic Workshop for DOS, the 
+Windows implementation of this package offers a traditional 
+Windows interface, multitasking and lots of things to click on. 
+It converts, prints, views, dithers, thresholds, transforms, 
+flips, rotates, scales, crops, colour adjusts, scans, quantizes 
+and wreaks special effects on MacPaint, GEM/Ventura IMG, PCX, 
+GIF, TIFF, JPG, WPG, MSP, IFF/LBM, BMP, RLE, Halo CUT, Targa, 
+ART, text and EXE picture files. Graphic Workshop for Windows 
+will display and print on any card and printer respectively that 
+can be driven by Windows. It features batch processing, an 
+intuitive user interface and easy to follow menus. The 1.1 
+release adds a thumbnail preview mode, context sensitive help, 
+easier installation and all sorts of new features. Includes 
+several unicorns.
+
+
+IMAGE GALLERY (RELEASE 1.1)
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Image Gallery is a visual database to help you keep track of a 
+large number of image files quickly and effectively. It will 
+create database files... galleries... of any combination of 
+bitmapped image files, displaying them as small ``thumbnail'' 
+images. It works with all the file formats supported by Graphic 
+Workshop, with the exceptions of EPS, EXE and TXT. You can search 
+a gallery visually or by key words. Each entry in a gallery 
+supports key word and comment fields, as well as the dimensions, 
+location and other specifics of each image. You can also print 
+all or part of a gallery, producing hard copy catalogs of your 
+images when you need them. Image Gallery will run with any VGA 
+card. It uses a Microsoft compatible mouse and will drive any 
+PostScript or LaserJet Plus compatible laser printer, and most 
+dot matrix printers. Release 1.1 includes a full colour view 
+function, colour thumbnails, exporting and multiple selection.
+
+
+DESKTOP PAINT 256 (RELEASE TWO)
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+This is a complete rewrite of our popular super VGA paint 
+package. Desktop Paint 256 is a powerful painting application. It 
+will let you create and edit pictures stored in the MacPaint, 
+GEM/Ventura IMG, PCX, GIF, TIFF, WPG, MSP, IFF/LBM, BMP, Halo 
+CUT, and Targa formats. It features a rich selection of drawing 
+and image manipulation tools, XMS and EMS support to work on 
+large images and a user friendly interface. Looking very much 
+like monochrome Desktop Paint in colour, it's a powerful 
+application which will be equally useful for picture collectors, 
+artists and desktop publishing users. It supports Paradise (and 
+compatibles), Headland Video 7, Tseng Labs 4000 series cards, 
+Trident cards which use 8900 series chips, Oak Technologies 
+cards, ATI VGA Wonder cards and all cards with VESA capabilities. 
+Note that you must have one of these super-VGA cards to use 
+Desktop Paint 256... it does not run in the standard 320 by 200 
+pixel "standard" VGA mode. Desktop Paint 256 requires a 
+Microsoft-compatible mouse.
+
+
+DESKTOP PAINT 16
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Desktop Paint 16 is a VGA paint package for use with images 
+having up to sixteen colours. As with the monochrome 
+implementation of Desktop Paint, it will read and write image 
+files in the MacPaint, GEM/IMG, PCX files, GIF, TIFF, WPG, MSP, 
+IFF/LBM, BMP and PIC formats. It has EMS and XMS support to 
+handle images of virtually any size, an intuitive user interface 
+and a wide selection of image creation and manipulation tools. 
+Desktop Paint 16 can utilize fonts from many other sources, 
+including Ventura Publisher, Macintosh FONT and NFNT resources 
+and Windows FNT files. It requires a VGA card and a Microsoft-
+compatible mouse.
+
+
+DESKTOP PAINT (RELEASE THREE)
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Desktop Paint is a powerful monochrome paint package fine tuned 
+for use with desktop publishing applications. It will read and 
+write image files in all the formats Graphic Workshop supports 
+with the exceptions of EPS and RLE. It has EMS and XMS support to 
+handle images of virtually any size, an intuitive user interface 
+and a wide selection of image creation and manipulation tools. 
+Desktop Paint can utilize fonts from many other sources, 
+including Ventura Publisher, Macintosh FONT and NFNT resources 
+and Windows FNT files. Desktop Paint requires a Microsoft-
+compatible mouse.
+
+
+GRAFCAT (RELEASE 3.1)
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+GrafCat prints a visual catalog of your image files, with             
+fifteen or sixteen pictures to a page, depending on the image 
+orientation you choose. It supports all the file types that 
+Graphic Workshop handles, and will drive any PostScript or 
+LaserJet Plus compatible laser printer, including LaserJet II and 
+LaserJet III series printers. This is a complete re-write of 
+GrafCat... it now supports a file finder screen like the one in 
+Graphic Workshop and numerous print options. It will also 
+generate catalog images... arrays of full colour thumbnails... 
+and has in internal image viewing function.
+
+If you can't obtain them from the usual sources of shareware, 
+they're available from us for $40.00 each preregisterd. They're 
+also all available for downloading from our bulletin board at 
+(416) 729-4609. (The area code for Alchemy Mindworks non-800 
+numbers will change from 416 to 905 after October 4, 1993.)
+
+
+
+REVISION HISTORY
+ßßßßßßßßßßßßßßßßßßßßßßßß
+
+For them what cares...
+
+Version 6.1v - Added VESA support to the EXE format. Added 
+printer driver to do halftones on LaserJet-compatible printers. 
+Added contrast expansion adjustments for halftone printing and 
+dithering. Sped up the function that builds the file list in the 
+main window and allowed it to find directories with extensions. 
+Improved the image buffer allocation strategy. Added a DOS screen 
+capture function.
+
+Version 6.1u - Added drivers for the Diamond Speedstar 24X cards 
+and improved the VESA support. The VESA drivers now handle high 
+colour, and work with even the most unusual VESA 
+implementations... we hope. Added zooming to the view mode. 
+Improved the error trapping in most of the functions. Added 
+support for the PFS ART format. Improved the Targa colour 
+handling for Targa 16 files. Added orthogonal and Windows palette 
+options to the colour reduction function. Added a thresholding 
+option to the monochrome dithering function. Moves the help 
+resources out of the main GWS.RES file to speed up the boot. 
+Improved the EXE format video card detection... it should behave 
+itself with PS/2s now. Added the VGACARD utility to help select a 
+super VGA driver.
+
+Version 6.1t - Added Deskjet 500C printer support, and 
+considerably improved the handling of non-laser printers in 
+general. Graphic Workshop can now handle external drivers with 
+multiple modes. Fixed another inconsistency in the WPG format... 
+this one caused some WPG files to be read with several lines 
+missing from the bottom of the image. Fixed the PCX format to 
+write sixteen-colour files that get along with more recent 
+versions of PC Paintbrush. Added screen drivers for the Orchid 
+Fahrenheit 1280 and Ahead B cards.
+
+Version 6.1s - Fixed a problem with converting eight-bit files 
+and modified the F9 colour reduction function to use sorted 
+palettes. This sets up the reduced palette such that the darkest 
+colours appear first in the palette, and hence the border will be 
+dark when the file is displayed. Improved the PIC resource to 
+write VGA-format PIC files. Added an option to write true-colour 
+images to the Targa format with either 16 or 24 bits of colour. 
+Added detailed on-line topical help.
+
+Version 6.1r - Added mouse support. Fixed a problem with the WPG 
+format that caused it to abort on WPG files created by the 
+WordPerfect screen capture utility. Added fades and Oak 
+Technologies to the EXE format. Fixed a bug in the script 
+language that caused the scale function to choose the wrong 
+destination file format. Fixed a bug in the extended memory 
+support, and one in the BMP resource that caused problems in 
+writing some 24-bit files.
+
+Version 6.1q - Added drivers for Oak Technologies VGA cards. 
+Largely rewrote the GIF format resource to make it a bit more 
+bulletproof. Added a GIF 89a write option. Added contrast 
+adjustment to the view mode. Simplified the view mode options 
+menu a lot, deleted some of the obsolete options and replaced the 
+error diffused dither with eight-colour Bayer dithering, which is 
+much faster for a quick preview image.
+
+Version 6.1p - Added Windows RLE support, allowing 
+Graphic Workshop to create compressed Windows wallpaper and to            
+change the initial Window logo. Added a scale to size option in 
+the F8 scaling function. Added a time delay option for EXE 
+pictures... make your own slide shows. Added new tags to the TIFF 
+format to create TIFF files which will import correctly into 
+CorelDRAW 3.0. Modified GWSINSTL to make the GWS.RES path in 
+the F1 page default to the current directory.
+
+Version 6.1o - Implemented registration numbers to disable the 
+closing beg notice for registered users, fixed a bug in the EXE 
+resource and added super-VGA support to it. Fixed several bugs in 
+the LBM resource.
+
+Version 6.1n - Improved the TIFF support for certain fairly 
+obtuse types of colour TIFF files. Fixed an irregularity in the 
+Stucki dithers.
+
+Version 6.1m - Fixed an inconsistency in the way WPG files were 
+being written. Added 24-bit IMG capability. Added a VESA screen 
+driver. Fixed a bug which made sixteen-colour EXE files convert 
+oddly now and again. Fixed a bug in the printing function of the 
+script language. History lurches erratically forward... 
+
+Version 6.1l - Fixed several bugs in the PIC and WPG format 
+resources and one in GWSINSTL, which caused the EPS preview flag 
+to be set incorrectly.
+
+Version 6.1k - Improved the TIFF file format resource to handle 
+still more TIFF file variations. TIFF files and Tory politicians 
+were sent here to vex us... it's a shame you can't look forward 
+to voting TIFF files into oblivion. Fixed a minor bug in the 24-
+bit to monochrome dithering code.
+
+Version 6.1j - Fixed a bug in the WPG format which caused some 
+really huge WPG files not to read correctly.
+
+Version 6.1i - Considerably sped up the colour remapping code for 
+the F9 effects functions. This will shorten the time it takes to 
+do colour remapping, dithering, softening, sharpening and spatial 
+posterization. Added a Tseng 4000X driver to support Tseng cards 
+with the Sierra DAC. This will allow users of these cards to view 
+24-bit files directly. Fixed a bug in the TIFF format which 
+prevented it from properly decoding some TIFF files, most notably 
+those from Corel Draw. Improved the EXE format to display 
+sixteen-colour grey scale files correctly on VGA cards.
+
+Version 6.1h - Fixed a potential memory allocation bug in the 
+file finder screen. Added new Paradise D series drivers, 
+including one for the one megabyte Paradise card with a RAMDAC. 
+If you have this card, the new drivers will let you view 24-bit 
+files directly. Added a work-around for the EXE file format's 
+problem detecting some types of display cards and improved the 
+Hercules card detection. Added a tag all command to the main file 
+finder. Added a mode selection menu to the RGB display mode.
+
+Version 6.1g - Fixed a bug in the quantized dither view function. 
+Added Promote to 24 bits to the F9 effects menu. Added an ATI-XL 
+true colour driver. Fixed a bug in the remap to grey view 
+function which only turned up after adding the ATI-XL driver. 
+Fixed a bug in the Targa format which caused true colour images 
+with palettes to be read incorrectly. Why would a true colour 
+image require a palette, you ask... Added landscape printing for 
+LaserJet printers and autosize modes for PostScript and LaserJet 
+printing. Fixed a bug in the PCX format which caused some eight-
+colour PCX files to view improperly. Improved the precompensation 
+for printing multiple-bit images to PostScript printers... this 
+should make them print out with more lifelike halftones. Improved 
+the precompensation for expanded grey scale TIFF files as well... 
+same curve. Added new drivers for ATI and Trident cards. Busy 
+week, this one.
+
+Version 6.1f - Fixed a bug in the rotate function which would 
+cause monochrome files rotated by 90 or 270 degrees to get 
+mangled or crash Graphic Workshop, depending on how big they 
+were. Very nasty.
+
+Version 6.1e - Added a menu so that screen drivers can prompt you 
+for a display mode in viewing. Updated the Hercules driver to 
+version 2.0 so it supports cropping. Fixed a bug the the rename 
+function which caused it to lock up occasionally. Fixed a bug in 
+the WordPerfect Graphics format which caused it to abort on some 
+files. Fixed two bugs in the TIFF format... one which kept 
+Macintosh TIFF files from reading properly and another which 
+caused four bit grey scale TIFF files to be written incorrectly.
+
+Version 6.1d - Fixed another bug in the Targa format which caused 
+some 16-bit files to be read with the wrong colour intensity. 
+Fixed a bug in the IFF/LBM format which caused some odd sized IFF 
+files to be read incorrectly. Fixed a bug in the cropping 
+function which caused it to behave erratically now and again. 
+Added a wait box for the virtual memory allocation. Fixed a bug 
+in several of the file format resources which caused F9 special 
+effects to mangle sixteen-colour images and the scale and print 
+functions to misbehave for some files.
+
+Version 6.1c - Fixed a bug in the Targa format which caused the 
+red and blue pixel values to be interchanged in some types of 24-
+bit files. Disabled several features in the the view mode options 
+menu which should have been disabled all along. Added large step 
+panning in the view mode.
+
+Version 6.1b - Fixed a bug in the Hercules card driver. Added
+foreign language support.
+
+Version 6.1a - Added cropping, scanning and interactive colour 
+adjustment. The currently supported scanners include the HP 
+ScanJet Plus and the HP ScanJet 2C. Almost all the screen drivers 
+got updated. Added Halo CUT file support and we fixed a bug in 
+several of the image file formats which would cause certain types 
+of very large image files to compress poorly. We fixed the 
+virtual memory manager, which previously declined to delete its 
+scratch files if there was no TEMP variable in the environment. 
+We upgraded the VGA screen drivers to display sixteen-colour 
+images with no colour shift.
+
+Version 6.0d - Fixed several PostScript printing bugs and 
+improved the way the Graphic Workshop file format resources 
+manage memory.
+
+Version 6.0c - Fixed a bug in the GIF format resource which 
+caused GIF files to be written with bad screen descriptors. This 
+bothered some other applications which read them. Also, replaced 
+the Tseng Labs drivers... these seem to get along better with 
+some of the newer cards.
+
+Version 6.0b - Added details to the GIF format. Fixed a bug in 
+GWSINSTL that caused an "Error loading GRAF" message if the 
+display type was set to VGA.
+
+Version 6.0a - Fixed a bug which causes 16 x 16 pixel spatial 
+posterization to hang or crash back to DOS and one which caused 
+the view function to omit the last line in 256-colour images.
+
+Version 6.0 - A complete rewrite with countless new and improved 
+features (a likely story, this.)
+
+
+LEGAL DOGMA
+ßßßßßßßßßßßßßßßßßßß
+Neither the author nor Alchemy Mindworks Inc. assumes 
+responsibility for any damage or loss caused by the use of these 
+programs, however it comes down. If you can think of a way a 
+picture program can cause you damage or loss you've a sneakier 
+mind than mine.
+
+All the registered trademarks used herein are registered to 
+whoever it is that owns them. This notification is given in lieu 
+of any specific list of trademarks and their owners, which would 
+not be as inclusive and would probably take a lot longer to type. 
+
+If you register Graphic Workshop, we will assume that you are doing 
+so having tested the shareware version and ascertained that it's 
+suitable for your hardware and requirements. We cannot provide 
+refunds for shareware registration if you subsequently change 
+your mind.
+
+Graphic Workshop, Desktop Paint, Image Gallery, GrafCat, GWSCAP 
+and Storyteller are trademarks of Alchemy Mindworks Inc.
+ 
+That's it...
+

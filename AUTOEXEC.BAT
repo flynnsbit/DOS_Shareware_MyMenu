@@ -37,9 +37,13 @@ alias auto=edit %0
 REM cd tools
 REM eatxms 50000000
 
-cls
+::MyMenu
 cd games
+
+C:\UTILS\BLACKOUT\BLACKOUT.EXE
+MODE CO80
+
 mymenu
-cls
+
 echo Type "menu" to return to MyMenu 
 

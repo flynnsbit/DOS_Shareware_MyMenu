@@ -1,0 +1,13 @@
+Give DOS a startup screen like Win95/98
+Prevents drivers in CONFIG.SYS and AUTOEXEC.BAT
+from being able to print on the screen and
+optionally loading a RAW graphic image in its
+place (similar to the Win95/98 startup screen
+when you turn on a computer with Win95/98)
+There is a GIF to RAW utility so you can use
+any GIF image once it is 320x200 by 256
+colours. Although the included graphic is for 
+Caldera's DOS, it should work fine for 
+MSDOS and PCDOS.
+Freeware with source code included.
+
