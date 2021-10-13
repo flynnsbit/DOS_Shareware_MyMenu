@@ -1,0 +1,497 @@
+Falcon 3.0 Demo - Spectrum HoloByte
+
+ABOUT THE DEMO
+Falcon 3.0 is the most complete combat flight simulator ever created.
+Modeled after the F-16 Fighting Falcon, Falcon 3.0 continues the long line
+of quality flight simulators brought to you by Spectrum HoloByte. The demo
+version of Falcon 3.0 gives you a taste of dogfighting action with the
+spirit of modern aerial combat. This demo is a pre-release, limited version
+of the actual program, so there may be some modifications, corrections and
+additions made to the final released version.
+
+SYSTEM REQUIREMENTS
+The Falcon 3.0 demo requires an IBM AT or compatible (8 MHz 80286 minimum)
+with at least 640K RAM and VGA graphics. You must have 560K free RAM in
+order to run this demo. If you don't have 560K free RAM, disable any ram-
+resident programs (mouse drivers, virus checkers, etc.) and then reboot
+your computer. Sound can be played through either the internal speaker, an
+Ad Lib sound card or SoundBlaster sound card. See the LOADING section for
+more instructions.
+
+INSTALLING TO A HARD DRIVE
+This procedure is described below:
+
+1.  Insert Sampler Disk 1 into floppy drive A.
+2.  From the DOS prompt, type A: and then press Enter.
+3.  Type CD\ and then press Enter to be sure that you are in the root
+    directory.
+4.  Type INSTALL and then press Enter to start the installation
+    program. Once it has loaded, simply follow the directions
+    onscreen to install your demo.
+
+LOADING FROM A HARD DRIVE
+The following instructions assume you have already installed the Falcon 3.0
+demo to your hard drive:
+
+1.  From the DOS prompt, type C: and then press Enter.
+2.  Type CD\FALCON3 and then press Enter.
+3.  To start the demo, type FALCON3 and then press Enter.
+
+LOADING FROM A FLOPPY DRIVE
+Before playing, be sure you have made a backup copy of your original disk.
+
+1.  Insert Sampler Disk 1 into floppy drive A.
+2.  From the DOS prompt, type A: and then press Enter.
+3.  To start the demo, type FALCON3 and then press Enter.
+
+INSTRUCTIONS FOR USE
+The demo version of Falcon 3.0 is an interactive demo. This means that you
+will be able to fly around in the simulation. Due to space limitations and
+other constraints, this demo is by no means a complete game. Many of the
+functions have been removed in order to save space and to simplify game
+play.
+
+About Falcon 3.0...
+-------------------
+The object of the demo version of Falcon 3.0 is to fly around the world and
+destroy any enemy plane you encounter. Any ground targets you find are
+enemy forces, so fire at will. Your game will end after about 10 minutes
+(when your fuel runs out) or if you are shot down. Keep a careful eye on
+your wingman; he's out there to help save your hide. So, power up, happy
+hunting and check six for that MiG-29. He's a killer.
+
+Introduction screens:
+--------------------
+After you load the program, there will be a couple of introduction screens
+with basic information on the game. After these screens have passed by
+there will be an animation sequence. You can press any key to bypass each
+screen as it appears, or Esc to skip all screens. Once the animation has
+finished, you will be in the cockpit.
+
+Flight controls:
+---------------
+Following are the keys you need to control your F-16's flight:
+
+J, left arrow    Bank left
+L, right arrow   Bank right
+I, up arrow      Nose down
+M, down arrow    Pull up
+
+These control keys are duplicated on the numeric keypad as well with the 4,
+6, 8 and 2 keys respectively.
+
+The following keys control your acceleration:
+
++  Increase throttle
+-  Decrease throttle
+/  Afterburner/Military power toggle
+>  Increase afterburner stage
+<  Decrease afterburner stage
+
+It is to your advantage not to fly in afterburner while dogfighting because
+of the tendency to overshoot your target. Use afterburner only to increase
+to combat speed or to evade an enemy plane.
+
+Weapon selection and firing:
+---------------------------
+Following are the keys to select and fire your weapons:
+
+Enter     Select air-to-air weapons
+Backspace Select air-to-ground weapons
+Spacebar  Fire selected weapon
+T         Select new target (air-to-air or air-to-ground)
+
+When you hear a high pitched tone, your missile has locked onto a target.
+This is the best time to fire your air-to-air missiles.
+
+On the joystick, one button controls weapons firing while the other toggles
+through the various air-to-air weapons.
+
+Front cockpit and displays:
+--------------------------
+There are a number of items that are in your front cockpit field of view.
+These are graphically represented below (see the corresponding number for
+information on that item):
+
+                       +-------------------+
+                      /                     \
+                     +                       +
+                     |                       |
+                     |                       |
+                     |                       |
+                     |           1           |
+                     |                       |
+                   +-+                       +-+
+                   | |                       | |
+                   | |                       | |
+                   | |                       | |
+   +---------------+-+-----------------------+-+---------------+
+  /           +---+   +---------------------+   +---+           \
+ /   +----+  /     \  |                     |  /     \           \
++   /  4  | |   3   | |                     | |   6   |           +
+|  /      |  \     /  |                     |  \     /            |
+| +-------+   +---+   |                     |   +---+             |
+|                     |                     |                     |
+| +-----------------+ |          2          | +---+-----+-------+ |
+| |                 | |                     | |   |  7  |       | |
+| |                 | |                     | |   +-----+       | |
+| |        5        | |                     | |   |  8  |   10  | |
+| |                 | |                     | |   +-----+       | |
+| |                 | |                     | |   |  9  |       | |
+| +-----------------+ +---------------------+ +---+-----+-------+ |
++-----------------------------------------------------------------+
+
+1.  Head Up Display (HUD). This is the most important display in your
+    cockpit. It contains heading, altitude, speed and weapon information
+    vital to your survival. During combat, you will be looking here most
+    of the time. See the HUD section for more details.
+2.  Radar/Electro-Optical display (REO). The REO contains data on
+    incoming planes, their speed, altitude and targeting information. If
+    there are no targets within range of your radar, this display will
+    be blank. See the REO section for more details.
+3.  Threat Warning Azimuth Indicator (TWAI). The TWAI shows the direction
+    of incoming threats. In this display, your F-16 is located in the
+    center of the circle. The upper half of the circle is in front of
+    your plane, while the lower half of the circle is behind your plane.
+4.  Threat Warning Panel. Two lights can appear on this panel: the Lock-
+    on (LCK) light and the Launch (LNH) light. When the LCK light
+    appears, it means that an enemy plane has a lock on your F-16. You
+    should try evasive maneuvers in an effort to try to shake him. If the
+    LNH light appears, it means that the enemy plane has launched a
+    missile at your aircraft. You must try evasive maneuvers and dump
+    chaff/flares (see numbers 8 and 9 below) to try to shake the missile.
+5.  Stores Control Panel (SCP). The SCP displays what weapon system you
+    have currently loaded. The number on the first line indicates how
+    many of the current weapon you have loaded. (In this demo version,
+    you have an unlimited amount of every weapon.) The different air-to-
+    air weapons are as follows: AIM9P and AIM9M (Sidewinder), AIM120
+    (AMRAAM) and M61 (Internal Gun). The air-to-ground weapons are as
+    follows: AGM65B (Maverick) and M61 (Internal Gun).
+6.  RPM Gauge. This tells you what percentage of thrust you are applying
+    to your engine. When in afterburner mode, this gauge will always read
+    at 100%. To find out your true airspeed (TAS), look at the Airspeed
+    Scale on the HUD.
+7.  Mil/AB Indicator. This indicator shows you whether you are using
+    standard engine power (MIL) or afterburner power (AB1 - AB5) to power
+    your F-16.
+8.  Flare Indicator. This displays the amount of infrared flares you have
+    remaining. Flares are used to spoof heat-seeking missiles. (In this
+    demo version, you have an unlimited amount of flares.) Hit Insert to
+    dispense flares.
+9.  Chaff Indicator. This displays the amount of chaff packets you have
+    remaining. Chaff are packets of tiny foil strips designed to fool
+    radar-guided missiles. (In this demo version, you have an unlimited
+    amount of chaff.) Hit Delete to dispense chaff.
+10. Aircraft Status Control Panel. There are a number of lights that can
+    illuminate on this panel. These are listed below:
+    FLAP   This light turns on when you use your flaps to slow down.
+    AUTO   When you engage the autopilot, this light will illuminate. If
+           there is an enemy nearby, engaging the autopilot will make
+           your F-16 track the enemy plane and fire the currently
+           selected weapon if it is within firing range.
+    WHEEL  This light will turn on if you lower the landing gear (the G
+           key).
+    BRAKE  If you use the speed brakes for slowing the plane, this light
+           will illuminate.
+
+The Head-Up Display (HUD):
+-------------------------
+The HUD is the most critical piece of equipment on your F-16. Everything
+you need to fly is contained on the HUD. Following is the essential items
+on the HUD, in clockwise order starting from the upper left hand corner:
+
+      +-------------------+
+     / 1        2          \
+    +                       +
+    |           6           |
+    |                       |
+    |                       |
+    |  5        7        3  |
+    |                       |
+  +-+                       +-+
+  | |                       | |
+  | |                       | |
+  | |           4           | |
+--+-+-----------------------+-+--
+
+1.  G Force Indicator. This indicator is located just above the Airspeed
+    scale and measures how many G's you are currently pulling.
+2.  Directional Indicator. When there is an enemy plane within radar
+    range, a line will appear from this crosshair. This line shows the
+    direction to find the enemy plane.
+3.  Altitude Scale. This scale is located on the far right hand side of
+    the HUD and shows your current altitude in thousands of feet. There
+    is a digital display of your altitude in the lower right hand corner
+    of the HUD.
+4.  Heading Scale. The Heading Scale is located at the bottom of every
+    air-to-air HUD (top of every air-to-ground HUD) and displays your
+    current direction in tens of degrees. 
+5.  Airspeed Scale. This scale is located on the far left hand side of
+    the HUD and shows your current airspeed in tens of knots.
+6.  Aiming Reticle. In air-to-air missile mode (AIM9P, AIM9M and AIM120),
+    this circle in the middle of the HUD will flash when you have a lock
+    on an enemy plane. If you fire a missile without this circle
+    flashing, you are most likely to miss your target. In air-to-air gun
+    mode (M61), there is a "funnel" showing the path of your bullets.
+    In air-to-ground missile mode (GBU15 and AGM65B), there will be a
+    crosshair to target ground objects. Finally, in air-to-ground gun
+    mode (M61), there will be a small reticle to indicate the path of the
+    bullets.
+7.  Pitch Ladder. These bars, located in the center of your HUD, show you
+    whether you are climbing (solid lines) or diving (dashed lines). The
+    positive numbers indicate climb rate while the negative numbers
+    indicate dive rate.
+
+The Radar/Electro-Optical Display (REO):
+---------------------------------------
+The REO displays important information about enemy targets. Your F-16 is
+considered to be at the bottom center of the REO. Enemy aircraft will
+appear from the top of the display and make their way to the bottom. The
+closer an enemy plane is to the bottom of the display, the closer he is to
+your aircraft. The following information will be displayed on the REO when
+an enemy plane comes within the 20 mile range of your radar:
+
++---------------------+
+|    1            2   |
+|                     |
+|                     |
+|                     |
+|                     |
+|          3          |
+|                     |
+|               5     |
+|               6     |
+|  4            7     |
+|                  8  |
++---------------------+
+
+1.  REO Mode. If there are no enemy planes in the vicinity, this will
+    read "20 ACM" (Air Combat Mode). When an enemy plane comes within 10
+    miles of the forward half of your aircraft, this will change to
+    "10 STT" (Single Target Track). The radar has been greatly simplified
+    for this demo.
+2.  Enemy Altitude. This number indicates the enemy aircraft's altitude
+    (in thousands of feet).
+3.  Waterline/Horizon Reference. The "W" indicates the position of your
+    aircraft relative to the horizon. If the ends of the bar are pointing
+    upward, your plane is inverted.
+4.  Enemy Bearing/Distance. The first number here shows the bearing of
+    the enemy plane relative to the position of your F-16. The second
+    number shows the distance to the enemy plane (in miles).
+5.  Enemy Heading. This shows what compass direction the enemy plane is
+    heading. If you are flying with a heading of 0 degrees and his
+    heading is 90 degrees, he is heading due right of you.
+6.  Enemy Airspeed. This is the velocity (in knots) of the targeted enemy
+    plane.
+7.  Intercept Angle. This indicates the angle (in degrees) you need to
+    take in order to intercept the enemy plane.
+8.  Closure Rate. This number (measured in knots) indicates the rate you
+    are gaining or losing on the enemy. A positive number indicates that
+    you are closing, while a negative number indicates that the plane is
+    moving away.
+
+Views:
+-----
+There are a number of different views to see the action. The keys and
+description of them are listed below:
+
+1   Satellite view. From here, you can view your F-16 as if looking down
+    from a satellite.
+2   Ground view. This view is the opposite of the Satellite view. Here,
+    you are looking at your F-16 from the ground.
+3   Front view. This view accesses your HUD and many other important
+    instruments.
+4   Left view. This view shows some secondary instruments.
+5   Right view. This view shows your caution lights and an actual clock!
+6   Rear view. This view gives you access to the rear of your plane (your 
+    "six").
+8   Padlock view. This view gives you 360 degree targeting in a combat
+    situation. This will be described in a separate section.
+9   Track view. This outside view shows your plane from directly behind
+    as if you were holding the plane out on a stick. The plane itself
+    will not change direction or move, while the horizon and landscape
+    will.
+0   Chase view. This outside view is from the perspective of another
+    plane "chasing" your F-16.
+
+The following keys can be used in the Satellite, Ground, Track and Chase
+plane views:
+
+F1  Zoom in.
+F2  Zoom out.
+F3  Rotate X axis. (If you hold down the Shift and F3 keys together,
+    you can rotate the opposite direction.)
+F4  Rotate Y axis. (If you hold down the Shift and F4 keys together,
+    you can rotate the opposite direction.)
+
+Padlock view:
+------------
+This is a 360 degree view that is utilized in air-to-air combat. There are
+four main areas on this screen and these are described below:
+
+The upper left hand display shows all the relative information about your 
+current target and the status of your aircraft.
+
+TARGET  This is the currently selected target. To switch to the next
+        target, press the T key. (To switch to the last selected target,
+        press Shift and the T key.)
+ALT     This is the current altitude of your F-16.
+YAW     This is the amount of yaw (horizontal movement) that your plane
+        is incurring.
+PITCH   This is the amount of pitch (climb or dive) that your plane is
+        incurring.
+SPEED   This is your F-16's current airspeed (in knots).
+
+The upper middle display shows where an enemy target is relative to the
+front of your F-16. The red box is the current viewing area, while the "+" 
+shows the currently selected target. Your objective is to get the red box 
+into the lower center of this display (where the small representation of
+the HUD is).
+
+The upper right display shows a miniature version of your HUD with a
+target locator line in red. It also shows the current horizon line.
+
+The lower large window shows your current eye position. In the padlock
+view, your eye is constantly on the current target, regardless of which
+direction you are flying.
+
+To use the padlock view, first look at the upper middle display to 
+determine where your current view is. Then, look at the upper right display
+and follow the locator line until both your target and HUD appear in the
+lower window. Then fly as normal until you achieve a lock on and fire a
+missile. REMEMBER: Keep your eye on the upper right-hand display for most
+of your flying. You won't be confused if you fly according to these
+instructions.
+
+The Menu Bar:
+------------
+Pressing the Esc key brings up the menu bar. From here, you can select
+from three menus: File, Control and Options. These are described below:
+
+FILE:
+Return to game  This will bring you back to the demo. The Esc key will
+                also do this function.
+Start over      This will restart your game and bring you back to the
+                title screen. Ctrl-R will also restart your game without
+                having to come to this menu.
+Quit to DOS     This will exit the program to DOS. You can use Ctrl-C to
+                exit to DOS without coming to this menu.
+
+CONTROL:
+Keyboard        Select this option if you want to fly using the keyboard.
+Joystick        This option has two sub-selections: Default and Calibrate.
+                If you wish to adjust your joystick, select Calibrate and
+                follow the instructions.
+
+OPTIONS:
+The three choices on the Options menu have been automatically chosen for
+you by the program. These are directly related to the speed of your
+computer. If you adjust any of these options, you may decrease the speed
+and playability of the demo.
+
+World Detail    There are three options here: High, Medium and Low. Medium
+                detail removes the gradient horizon and reduces the amount
+                of terrain displayed. Low detail further reduces the amount
+                of terrain you can view.
+Terrain         There are two options here: On and Off. This simply turns
+                the 3-D terrain on or off and otherwise has no influence
+                on the World Detail option.
+Change Scale    This option will change the size of the aircraft objects in
+                the demo. Increasing the scale of the objects will allow
+                you to see them better, but may also decrease the speed of
+                the demo.
+
+LIST OF KEYS
+Following is a complete list of keys that you can use in Falcon 3.0:
+
+A         Autopilot
+B         Speed brakes
+F         Flaps
+G         Landing gear
+I         Nose down
+J         Bank left
+L         Bank right
+M         Pull up
+P         Pause game
+S         All sound on/off
+T         Target select
+1         Satellite view
+2         Ground view
+3         Front view
+4         Left view
+5         Rear view
+6         Right view
+8         Padlock view
+9         Track view
+0         Chase view
++         Increase throttle
+-         Decrease throttle
+/         Afterburner on/off
+>         Increase afterburner stage
+<         Decrease afterburner stage
+Enter     Select air-to-air weapons
+Backspace Select air-to-ground weapons
+Esc       Menu bar
+F1        Zoom in
+F2        Zoom out
+F3        Rotate X
+F4        Rotate Y
+F5        Engine sound on/off
+F6        Missile sound on/off
+F10       Falcon 3.0 message bar on/off
+Ctrl-C    Exit to DOS
+Ctrl-R    Restart game
+
+Numeric keypad:
+--------------
+1         Front view
+2         Pull up
+3         Rear view
+4         Bank left
+6         Bank right
+7         Left view
+8         Nose down
+9         Right view
+Ins       Flares
+Del       Chaff
+*         Padlock view
++         Increase throttle
+-         Decrease throttle
+/         Afterburner on/off
+Enter     Select air-to-air weapons
+
+
+GAME FEATURES
+The complete version of Falcon 3.0 contains the following features:
+
+* 256-color VGA graphics
+* Full music and sound for all major sound cards
+* 3-D contoured terrain for 270,000 square miles of actual territory
+* Three theaters of conflict: Kuwait, Panama and Israel
+* Accurate flight model and avionics
+* Digitized video animation sequences
+* 360 degree padlock view for dogfighting
+* Skill levels to suit any pilot from beginning to advanced
+* Campaign mode where your missions control the course of the war
+* Instant action mode for quick combat excitement
+* Mission editor to create your own scenarios
+* Training missions to learn how to operate your F-16
+* Head-to-head play using direct-connect, modem or network
+* Replay feature to show your action from any angle
+
+The retail price for Falcon 3.0 is $69.95. Check your local retailer or,
+for Visa/MasterCard orders only, call
+
+                       1 - 8 0 0 - 6 9 5 - G A M E
+            (1-800-695-4263 / 24 hours a day / 7 days a week)
+     For product availability or Customer Support, call 415-522-1164
+
+                            Spectrum HoloByte
+                          2061 Challenger Drive
+                            Alameda, CA  94501
+
+---------------------------------------------------------------------------
+Falcon 3.0 game, demo and documentation Copyright 1991 Sphere, Inc. All
+rights reserved. Falcon 3.0 is a trademark and Spectrum HoloByte is a
+registered trademark of Sphere, Inc. All other trademarks are owned by
+their respective holders.
