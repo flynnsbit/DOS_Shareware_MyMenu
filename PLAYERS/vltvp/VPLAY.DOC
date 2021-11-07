@@ -1,0 +1,426 @@
+
+                            ¯-> Vplay V1.02 <-®
+                                -----------
+
+                                User Manual
+
+
+
+
+                  (c) Copyright 1996 by Velvet Development
+
+                            All rights reserved
+
+
+
+
+
+
+                             Table of contents
+                             -----------------
+
+   1........................................................Introduction
+
+   2.........................................................Using VPlay
+      2.1................................................Playing modules
+      2.2........................................................Display
+      2.3...........................................................Keys
+      2.4..................................................Configuration
+   3..........................................................Known Bugs
+   4.........................................................Information
+   5...........................................................Addresses
+
+
+----------------------------------------------------------------------------
+
+
+   DISCLAIMER
+
+   This  program is freeware. You may copy it and use it as much as  you
+   like,  as  long  as  the contents of  the  original  archive  remains
+   unchanged  and  as long as  the program and/or  documentation is  not
+   altered  in any  way. You may  not  sell this  program for  your  own
+   profit.  If  you would like to include this program in  a  commercial
+   product like a CD-Rom, please contact us to get an agreement.
+     The  authors  cannot be  held responsible  for any loss of data  or
+   damage  directly  or  indirectly  caused  by  this  software  due  to
+   incorrect or careless usage or by interference from other programs.
+
+
+----------------------------------------------------------------------------
+
+   1.Introduction
+   ==============
+
+   Here it is! A new music player hits the computer world! As if there
+   weren't enough of them already, I hear you grumble...
+     Yes, we know that there are alot of players out there, and some of
+   them are even very good, but in fact, NONE of them handles the most
+   advanced format currently available correctly. The best
+   implementation that we have heard sounded terrible, so we decided to
+   create a player that was able to play this marvellous format, called
+   AMS, 100% perfect...And as a matter of fact, while doing this, we
+   figured that we could play other formats perfectly well too, since
+   the AMS format is so complex and contains everything that is
+   supported by the other formats it was a piece of cake.
+     So here you've got a player that is able to play your modules
+   perfectly well! Supported formats are:
+
+      AMS - Velvet Studio.
+      XM  - FastTracker v2.x
+      S3M - Screamtracker v3
+      STM - Screamtracker v2
+      MOD - Protracker/Taketracker etc etc
+      ULT - Ultratracker
+      MTM - Multitracker
+
+   Those formats are the most common ones, as far as we know, and
+   therefore we think it is enough to support them. Exotic formats can
+   be converted to these "standards" anyway.
+
+   VPlay supports the following soundcards:
+
+      Soundblaster / Pro / 16 / Awe32
+      Gravis Ultrasound	/ MAX / PNP
+
+   If you're fond of fancy displays and cool graphical analyzers this is
+   not a program for you. We have mainly concentrated on creating a
+   player that actually plays the music correctly. From the beginning it
+   was meant to be a simple commandline player, but then we thought that
+   a little interface could be nice. Building it in textmode was the
+   simplest thing to do. We wanted it to be a player that could be
+   integrated in for example Norton Commander easily.
+
+
+----------------------------------------------------------------------------
+
+   2.Using VPlay
+   =============
+
+   Vplay is built to be as simple as possible. Currently I'm sitting
+   here wondering if anyone really needs this document at all. Well, a
+   program needs a documentation to be respected, doesn't it?
+     Okay, I'll write some basic stuff to make it easy for you to get
+   into the player...
+
+
+   2.1.Playing modules
+   -------------------
+
+   VPlay is smart and will detect your soundcards for you. When you
+   start it, VPlay will scan your environment variables for all kinds of
+   cards, and the best one found will be chosen for playing the music.
+   (If you want to override this, remove your envs...)
+     To start VPlay you need to specify the modules to play on the
+   commandrow. VPlay has (currently) no diskoptions inside the program.
+
+      Examples:
+
+
+      To play one single module:
+
+         VPLAY c:\modules\jazz.ams
+
+      This will play the AMS tune "JAZZ.AMS".
+
+
+      To play several modules:
+
+         VPLAY c:\modules\rock.mod c:\modules\other\blues.ams
+
+      This will play the MOD "ROCK.MOD" and then the AMS tune
+      "BLUES.AMS" in the "modules\other" directory.
+
+
+      To play several modules using wildcards:
+
+         VPLAY *.XM
+
+      This will play all XM modules in the current directory.
+
+
+      Combining the techniques:
+
+         VPLAY *.MOD c:\modules\jazz.ams d:\goodluck.s3m e:\*.*
+
+      This commandline will play all MODs in the current directory, then
+      play "JAZZ.AMS" followed by "GOODLUCK.S3M" on the D: drive and end
+      with playing all modules found on the E: drive.
+
+   If VPlay finds a file that is not a supported module format, or maybe
+   not a module at all, it will display an error message and proceed to
+   the next tune.
+     If you have some valid modules to play, you should now be able to
+   enter the VPlay menus.
+
+
+   2.2.Display
+   -----------
+
+   The VPlay Mainscreen is built of three blocks. The upper block
+   contains playing information for the song and key commands that are
+   available. The lower part is always a spectrum analyzer and the
+   middle part may contain different things depending on your choice.
+     Let's begin with the upper part. The upper left window contains the
+   name of the song currently playing (or the filename if loading), the
+   name of the composer (only used in AMS songs) and the format of the
+   song. Error messages and other messages will also be displayed in
+   these fields.
+     Below this window there is a small, grey window containing the
+   playtime and the total time. As you would expect, the playtime is the
+   time that the current module has played, and the total time is how
+   long you've been using VPlay. Amazing or what? :)
+     To the right of the key window there is a window full of nice
+   information. Position, pattern and row tells you the exact position
+   currently playing in the song. The digits to the right of the slash
+   ("/") tells you how many of the different things that the song or
+   pattern consists of. For example, in AMS songs, the nr of rows aren't
+   always 64. It can be from 1 to 255...
+     Channels is the current number of channels used in the pattern. Max
+   is the maximum amount of channels used on a pattern in the whole
+   song. This is also AMS specific, since the amount of channels used
+   may vary from pattern to pattern.
+     The volume tells you the current playing volume.
+     Last, but not least (hmmm...), is the PattName. This is a feature
+   used in AMS, where you can give each pattern an own name.
+     The keywindow will be discussed in the next section...
+
+   The middle part of the screen may contain four different windows.
+   These are:
+
+      * Equalizer   A nice equalizer displaying hits on each channel.
+                    For AMS compatibility, channel names are also
+                    displayed on each side of the equalizers.
+      * Instruments Displays all instruments used in the song. When an
+                    instrument is used, a little led will indicate that
+                    the instrument is triggered. If more than 32
+                    instruments is used you can scroll up and down in
+                    the list by using cursor up/down.
+      * Description The AMS has a nice possibility to add entire texts
+                    describing your music piece, instead of destroying
+                    all your samplenames. This window displays the
+                    description text for a module. If there is more text
+                    than the window can display, use cursor keys to
+                    scroll.
+      * Config      This window is used for configurating VPlay.
+
+
+   The lower part of the mainscreen always contains a spectrum analyzer.
+   Unfortunately it's not a real FFT analyzer. It just reacts when notes
+   a triggered on a channel.
+
+
+   2.3.Keys
+   --------
+
+   In the upper part of the VPlay Mainscreen you can see a small window
+   describing all available key commands. This is a more verbose
+   explanation of them...
+
+                 C : Bring up the Config window. Read more in the
+                     configuration section (2.4).
+		 D : Bring up the Description window. Read more in the
+                     Display section (2.2).
+		 E : Bring up the Equalizer window. Read more in the
+                     Display section (2.2).
+		 I : Bring up the Instrument window. Read more in the
+                     Display section (2.2).
+	       ESC : Used for quitting VPlay. Depending on your
+                     configuration settings VPlay will or will not fade
+                     out music/graphics in a nice way.
+	       Del : By pressing the Del key you can delete a song from
+                     disk. This is very useful if you've just got a lot
+                     of new modules from a friend and you want to erase
+                     some of them and just keep the good ones. Just make
+                     VPlay play all of them, and when you hear a bad
+                     module, just press Del. You will of course be
+                     prompted before if you really want to delete the
+                     module. Just press Y or N to answer the requester.
+      Cursor right : By pressing cursor key right you will fast forward
+                     the module. For each press you will skip to the
+                     next position in the song.
+       Cursor left : Opposite to the above. Rewinds the module.
+	  Keypad + : Used to increase the master volume. This is useful
+                     if you use headphones without adjustable volume.
+	  Keypad - : Opposite to the above. Decreases the master volume.
+		 N : Normally VPlay will automatically load the next
+                     module when the current is finished, but if you
+                     want to load the next one immediately you can press
+                     this key.
+	     Space : Use this to pause the module. When paused, you can
+                     resume playing with this key too.
+		 J : This key command will drop you out in a dosshell.
+                     The music will continue playing, but the automatic
+                     loading of the next module won't work.
+		 M : This key is only valid in reduced mode. It will
+                     bring up the mainscreen. Read more about the
+                     reduced mode in the config section (2.4).
+
+   Cursor keys up and down are used in the Instrument window if there
+   are more instruments that aren't displayed (indicated by a plus in
+   the right corner). They are also used in the same way for the
+   description window, if there is more text outside the window (also
+   indicated by a plus.) In the config window, you use the cursor keys
+   to move to the wanted option, and then you use Return to toggle the
+   options. (I know that I may seem silly to set the default
+   mastervolume with Return but you know, lazy programmers...)
+
+
+   2.4.Configuration
+   -----------------
+
+   The configuration window is a nice piece of textmode graphics...Here
+   is an explanation of all the options available:
+
+      * Auto Load next module
+
+	If you for some reason don't like that VPlay automatically loads
+        the next module when the current is finished, you can disable it
+        with this option. Modules will loop (or stop depending on the
+        end of the module) eternally until you exit VPlay or manually
+        choses to load next song.
+
+
+      * Exit after last module
+
+	When VPlay notices that there is nothing more to play it will
+        exit if you turn this on. Otherwise it will keep playing the
+        last module endlessly.
+
+
+      * Reduced mode
+
+	If you don't like the graphical interface that VPlay offers you,
+        maybe you are more comfortable with this reduced mode. It
+        enables you to uses VPlay as if it was a commandline player with
+        no interface at all. The mainscreen will not appear when you
+        start VPlay. Only some brief text will be written to the normal
+        DOS screen, telling you what module that is currently playing.
+        All key commands are still available (although you won't see
+        anything) like ffw and rewind. If you want to display the main
+        screen you can press M. By using this in combination with the
+        dosshell you get a powerful musicplayer to be used when working
+        in an dos environment.
+
+
+      * Default middle screen
+
+	This is a matter of taste. Some like the equalizers, some prefer
+        to watch the instruments. By setting this default choice, you
+        can have your favourite displayed right when you start up VPlay.
+        It's like a dream :)
+
+
+      * Default mastervolume
+
+	For the headphone guys...If you cannot adjust the volume of your
+        receiver, this may come in handy. Set the volume to the desired
+        default level and you will avoid ear damage caused by too loud
+        volume in your phones...Increase the value by pressing return.
+        Silly? Yes, I know :)
+
+
+      * Exit in 50 line mode
+
+	Although I can't understand that people want to work in other
+        dos modes than 80*50 or higher, I added this because I guess
+        somebody will use it. If you disable this, VPlay will exit in
+        80*25 mode.
+
+
+      * Fade in when starting
+
+	If this is enabled VPlay will fade up the program menus when
+        entering the program from DOS.
+
+
+      * Fade out when exiting
+
+	Fades out the palette and the music before exiting VPlay. Gives
+        the program a nicer touch, but some prefer faster access, so you
+        can disable it if you want.
+
+
+   Yes, that's all options. By pressing S you can save the config to
+   disk. It will be saved in the same directory as the exe file is
+   placed. If you want the default values back, just delete the config
+   file called VPLAY.CFG and the default options will be used.
+
+
+----------------------------------------------------------------------------
+
+   3.Known Bugs
+   ============
+
+   VPlay has been thouroughly tested during many intensive hours. We
+   believe that we have found and eliminated all serious bugs, and that
+   the player should run without any problems on most configurations.
+   However there may still be bugs that we have missed, and by reporting
+   them to us you do us a great favour. Please get in touch with us! The
+   address is listed at the end of this document.
+
+   We are aware that this program may experience problems if run under
+   Windows 3.11 or earlier. It is entirely designed to be run under DOS.
+   But if you use OS/2 or Win95 there should not be any problems. We
+   have not extensively tested this yet, but it looks okay.
+
+
+----------------------------------------------------------------------------
+
+   4.Information
+   =============
+
+   The VPlay interface is entirely coded in 100% Assembler by Pontus
+   Munck (aka Vicious/Velvet) during a period about two weeks, from the
+   end of February 1996 to the beginning of March 1996.
+     The player code, which is the main stone of the product, is
+   directly imported from our musicprogram Velvet Studio. It is coded
+   100% in Assembler by Patrik Oscarsson (aka Baldric/Velvet) during a
+   much longer period, from the start of 1992 until now. The first
+   versions of the player (back in 1992) was however not very good, but
+   still it could play 4-channel MODs supporting most of the commands,
+   and that was impressive back then. I guess this has developed a bit
+   since then, and also expanded to an entire music program.
+
+
+----------------------------------------------------------------------------
+
+   5.Addresses
+   ===========
+
+   Well, if you want to contact us (for info about Velvet Studio,
+   bugreporting, membership, anything) try the following (in order of
+   preferrence) addresses:
+
+                                  E-Mail:
+
+                               da94ospa@hj.se
+                           vicious@cryonics.ct.se
+
+
+                                 Snailmail:
+
+                                 Velvet HQ
+                              Hermansvagen 44
+                              554 53 Jonkoping
+                                   Sweden
+
+   Or call us:
+
+                              +46(0)36-711593
+
+   Please, we speak only swedish or english. Someone phoned and tried to
+   talk french with us once, and it was impossible :) So, do not call if
+   you aren't familiar with at least one of those languages, and please
+   NO calls between 00:00 CET and 08:00 CET. Thank you.
+
+
+
+
+
+
+
+
+
+                                                    Velvet Development 1996
+
