@@ -162,7 +162,7 @@ unzip -o "/tmp/FastDoom*.zip" -d "${fastdoom_dir}/"
 rsync '/tmp/fastdoom/' /tmp/shareware_vhd/C/GAMES/DOOM/  -r -I -v
 
 #Rsync all the updates to the VHDs that are mounted
-rsync -crv "${extract_dir}"/ "${mount_dir}"/ 
+rsync -crv "${extract_dir}"/ "${mount_dir}/C" 
 echo ""
 
 # Clean up everything
