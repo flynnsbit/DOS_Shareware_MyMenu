@@ -46,12 +46,12 @@ extract_dir=/tmp/dos_extract
 #3rd party addons repos
 fastdoom_repo="viti95/FastDoom"
 wolfmidi_repo="ericvids/wolfmidi"
-wolfdosmpu_repo="ericvids/wolfdosmpu"
+#wolfdosmpu_repo="ericvids/wolfdosmpu"
 
 #3rd party zip extraction temp locations used to sync changes into VHD
 fastdoom_dir=/tmp/fastdoom
 wolfmidi_dir=/tmp/wolfmidi
-wolfdosmpu_dir=/tmp/wolfdosmpu
+#wolfdosmpu_dir=/tmp/wolfdosmpu
 
 # Ansi color code variables
 red="\e[0;91m"
@@ -175,7 +175,7 @@ unzip -o "/tmp/wolfmidi*.zip" -d "${wolfmidi_dir}/"
 #Rsync 3rd party game mods
 rsync '/tmp/fastdoom/' /tmp/shareware_vhd/C/GAMES/DOOM/  -r -I -v
 rsync '/tmp/wolfmidi/' /tmp/shareware_vhd/C/GAMES/Wolfenstein\ 3d//  -r -I -v
-rsync '/tmp/wolfdosmpu/' /tmp/shareware_vhd/C/GAMES/Wolfenstein\ 3d/  -r -I -v
+#rsync '/tmp/wolfdosmpu/' /tmp/shareware_vhd/C/GAMES/Wolfenstein\ 3d/  -r -I -v
 
 
 #Rsync all the updates to the VHDs that are mounted
@@ -185,8 +185,9 @@ echo ""
 # Clean up everything
 rm /tmp/minor.zip
 rm /tmp/FastDoom*.zip
-rm /tmp/S*.EXE
-rm /tmp/W*.EXE
+rm /tmp/wolfmidi*.zip
+#rm /tmp/S*.EXE
+#rm /tmp/W*.EXE
 
 #sync VHD and unmount
 sync
