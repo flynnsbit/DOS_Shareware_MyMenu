@@ -2,6 +2,10 @@ SET DOSDIR=C:\FDOS
 DOS=HIGH,UMB
 DOSDATA=UMB
 
+REM Splash screen and hide fdconfig and autoexec execution from user
+DEVICE=C:\UTILS\BLACKOUT\BLACKOUT.EXE
+INSTALL=C:\UTILS\BLACKOUT\BANNER.COM
+
 REM Memory Management
 DEVICE=C:\FDOS\BIN\HIMEMX.EXE /MAX=32768
 
