@@ -1,0 +1,146 @@
+HOW TO PLAY THIS DEMO:
+
+CONTROLS:
+
+Move your character with either the numeric keypad or by holding the
+right mouse button down while moving the mouse.
+
+Move the reticle (game cursor) with either the mouse, the cursor keys,
+or the keyboard (the A, W, S and D keys are the default setting).
+
+Right-click or use the Enter key to open doors or acquire useful items.
+Be careful though, when the cross hairs are near the edges of the
+screen, the outer corner reticle brackets disappear and the inner
+brackets become purple.  When this occurs, right-clicking or pressing
+the Enter key does not pick up items or open doors.  It selects icons and
+other options.
+
+To attack, press (or hold down for automatic fire) the left mouse
+button or space bar.  Attacks are always aimed at the center of the cross
+hairs.
+
+To jump, select the Jump Jet Icon or press the gray + key.
+
+Everything is described in greater detail below.
+
+
+CHARACTER MOVEMENT:
+
+    Keyboard options:
+Use the numeric keypad located at the right of your keyboard for movement.
+
+These keys will work as follows:
+    1-- Slide left
+    2-- Back up (while facing forward)
+    3-- Slide right
+    4-- Turn left
+    5-- Back up (while facing forward)
+    6-- Turn right
+    7-- Move forward while turning left
+    8-- Move forward
+    9-- Move forward while turning right
+    /-- Look down
+    *-- Look up
+    +-- Jump
+
+To make your character move faster (run), hold down the Shift key during
+movement.
+
+    Mouse:
+To move with the mouse, hold down the right mouse button and point the
+mouse in the direction that you would like to travel.  This option may
+not be selected while the reticle is close to the edges of the screen.
+
+When the mouse is being used to move the character, it cannot be used to
+move the reticle.  When using the mouse to move the character, a small "+"
+appears in the center of the reticle.  When this "+" is moved outside the
+inner reticle brackets, an arrow appears showing the direction of
+movement.  The further the "+" moves from the reticle center, the faster
+the character moves.  Movement ceases while the "+" is within the inner
+reticle brackets.
+
+Use the mouse to move the cursor to the top of the screen and "push"
+against the top edge of the screen to make the character look up.  Push
+against the bottom edge to make the character look down.  Push the cursor
+to either side of the screen to turn the character in place. This can be
+used to have the character turn in place without right-clicking.
+
+Movement directions for the mouse are:
+    Bottom left of reticle-- Slide left
+    Bottom center of reticle-- Back up while facing forward
+    Bottom right of reticle-- Slide right
+    Center left of reticle-- Turn left
+    Center of reticle-- No movement
+    Center right of reticle-- Turn right
+    Top left of reticle-- Move forward while turning left
+    Top center of reticle-- Move forward
+    Top right of reticle-- Move forward while turning right
+    Jump Jet icon-- Jump
+
+
+MOVING THE RETICLE (game cursor):
+
+Move the reticle with the cursor keys.  The reticle moves in the
+direction shown by the 	arrows on these keys.  The A, S, D, and W keys
+may also be used to position the reticle:
+    A-- moves the reticle left,
+    S-- moves the reticle down,
+    D-- moves the reticle right,
+    W-- moves the reticle up.
+
+Moving the mouse moves the reticle in the direction that you point it.
+Remember that the reticle will not move while the right mouse button is
+being pressed.  See the readme.txt file accompanying this demo for
+details on changing the setup of your keyboard.
+
+
+USING THE CROSS HAIRS:
+
+    To Attack:
+Center the cross hairs on the target and press the left mouse button or
+the space bar.  To fire a weapon as rapidly as possible, hold down the
+left mouse button or space bar.
+
+    To Open/Close Doors:
+Place the center of the cross hairs over the door.  The reticle will turn
+purple.  Press the right mouse button or Enter key to open the door.  You
+have to be relatively close to a door to open it.  If you attempt to open
+a door from too far away, you will receive an "out of range" message.
+Secret doors will also be located by the color change of the reticle.
+Clicking on an open door will close it.
+
+    To Get Things:
+To get something, select it while the cross hairs are green.  Like doors,
+your character must be relatively close to an item to acquire it.  If you
+are too far away and try to get an item, you will get an "out of range"
+message.
+
+
+USING ITEMS:
+
+Once an item has been acquired, it will go into your inventory.  In order
+to use the item, you have to right click on the inventory icon, and then
+right click on the item itself.  Once the item has been used, it will
+disappear from your inventory.
+
+
+CHANGING WEAPONS:
+
+Once a new weapon has been acquired, you must ready it for use.  Right
+click on the ammunition counter on the right side of the screen.  This
+will show you all of the weapons at your disposal.  Right-clicking on the
+weapon that you are currently using will ready your hand weapon.
+Right-click on the weapon that you want to ready.
+
+AUTOMAP:
+
+Right-click on the Automap icon or press the M key.  While the automap is
+in use, play freezes.  The automap can be rotated by using the two arrow
+buttons at the bottom of the screen.  Clicking on the options to the left
+of the map will turn the corresponding element on or off.  This can
+sometimes help in determining where you are.  You appear as a large red
+arrow.  Selecting exit will return to the game.	Pressing the left mouse
+button and dragging will scroll the map.  Dragging the right mouse button
+will move the "flashlight" and rotate it.  This will show you a view in
+the world at the location that you placed it and it can only be placed in
+an area that you have already been in.

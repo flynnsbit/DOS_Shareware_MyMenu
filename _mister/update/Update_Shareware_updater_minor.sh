@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-ver="v.20.1"
+ver="v.20.3"
 
 # ======== BEGIN USER OPTIONS ========
 
@@ -34,13 +34,24 @@ source_ini
 
 # ========= END USER OPTIONS =========
 
+
+#main repo and disk image name
 github_repo="flynnsbit/DOS_Shareware_MyMenu"
-fastdoom_repo="viti95/FastDoom"
 primary_disk_image="Shareware Pack-fbit.vhd"
+
+#main repo temp locations for sync changes into VHD
 mount_dir=/tmp/shareware_vhd
 extract_dir=/tmp/dos_extract
-fastdoom_dir=/tmp/fastdoom
 
+#3rd party addons repos
+fastdoom_repo="viti95/FastDoom"
+wolfmidi_repo="ericvids/wolfmidi"
+wolfdosmpu_repo="ericvids/wolfdosmpu"
+
+#3rd party zip extraction temp locations used to sync changes into VHD
+fastdoom_dir=/tmp/fastdoom
+wolfmidi_dir=/tmp/wolfmidi
+wolfdosmpu_dir=/tmp/wolfdosmpu
 
 # Ansi color code variables
 red="\e[0;91m"
@@ -144,7 +155,8 @@ set -e
 # Download latest release zip
 get_latest_release "${fastdoom_repo}"
 get_latest_release "${github_repo}"
-
+get_latest_release "${wolfdosmpu_repo}"
+get_latest_release "{wolfmidi_repo}"
 
 # Mount partition 2 for secondary and 1 for primary in the disk image for C and E
 mkdir "${mount_dir}"
@@ -157,9 +169,14 @@ echo ""
 # Extract updates from repos, rsync files to both vhds
 unzip -o /tmp/minor.zip -d "${extract_dir}/"
 unzip -o "/tmp/FastDoom*.zip" -d "${fastdoom_dir}/"
+unzip -o "/tmp/wolfmidi*.zip" -d "${wolfmidi_dir}/"
+#unzip -o "/tmp/wolfdosmpu*.zip" -d "${wolfdosmpu_dir}/"
 
-#Fast doom copy
+#Rsync 3rd party game mods
 rsync '/tmp/fastdoom/' /tmp/shareware_vhd/C/GAMES/DOOM/  -r -I -v
+rsync '/tmp/wolfmidi/' /tmp/shareware_vhd/C/GAMES/Wolfenstein\ 3d//  -r -I -v
+rsync '/tmp/wolfdosmpu/' /tmp/shareware_vhd/C/GAMES/Wolfenstein\ 3d/  -r -I -v
+
 
 #Rsync all the updates to the VHDs that are mounted
 rsync -crv "${extract_dir}"/ "${mount_dir}/C" 
@@ -168,10 +185,18 @@ echo ""
 # Clean up everything
 rm /tmp/minor.zip
 rm /tmp/FastDoom*.zip
+rm /tmp/S*.EXE
+rm /tmp/W*.EXE
+
+#sync VHD and unmount
 sync
 unmount_pimage "${primary_disk_image}" "${mount_dir}/C"
+
 rm -r "${mount_dir}"
 rm -r "${extract_dir}"
 rm -r "${fastdoom_dir}"
+rm -r "${wolfmidi}"
+rm -r "${wolfdosmpu}"
+
 echo ""
 echo -e "${green}Successfully updated to ${tag_name}!${reset}"
