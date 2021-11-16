@@ -155,7 +155,7 @@ set -e
 # Download latest release zip
 get_latest_release "${fastdoom_repo}"
 get_latest_release "${github_repo}"
-get_latest_release "${wolfdosmpu_repo}"
+#get_latest_release "${wolfdosmpu_repo}"
 get_latest_release "{wolfmidi_repo}"
 
 # Mount partition 2 for secondary and 1 for primary in the disk image for C and E
