@@ -46,12 +46,12 @@ extract_dir=/tmp/dos_extract
 #3rd party addons repos
 fastdoom_repo="viti95/FastDoom"
 wolfmidi_repo="ericvids/wolfmidi"
-#wolfdosmpu_repo="ericvids/wolfdosmpu"
+wolfdosmpu_repo="ericvids/wolfdosmpu"
 
 #3rd party zip extraction temp locations used to sync changes into VHD
 fastdoom_dir=/tmp/fastdoom
 wolfmidi_dir=/tmp/wolfmidi
-#wolfdosmpu_dir=/tmp/wolfdosmpu
+wolfdosmpu_dir=/tmp/wolfdosmpu
 
 # Ansi color code variables
 red="\e[0;91m"
@@ -77,6 +77,17 @@ get_latest_release()
 	echo Downloading "${tag_name}"...
 	cd /tmp && { curl -k -L "${download_url}" -O ; cd -; }
 }
+
+get_wolfdosmpu_release()
+{
+        local api_url="https://api.github.com/repos/${1}/releases/latest"
+        local download_url
+
+        read -r tag_name download_url < <(echo $(curl -k -s "${api_url}" | jq -r ".tag_name, .assets[9].browser_download_url"))
+        echo Downloading "${tag_name}"...
+        cd /tmp/wolfdosmpu && { curl -k -L "${download_url}" -O ; cd -; }
+}
+
 
 # Arg $1: Path to image
 # Arg $2: Partition number 
@@ -149,14 +160,22 @@ rm /tmp/minor.zip 2>/dev/null
 unmount_pimage "${primary_disk_image}" "${mount_dir}/C" 2>/dev/null
 rm -r "${mount_dir}" 2>/dev/null
 rm -r "${extract_dir}" 2>/dev/null
+rm -r "${wolfdosmpu_dir}" 2>/dev/null
+rm -r "${wolfmidi_dir}" 2>/dev/null
 
 set -e
 
-# Download latest release zip
-get_latest_release "${fastdoom_repo}"
-get_latest_release "${github_repo}"
-#get_latest_release "${wolfdosmpu_repo}"
+# Download latest releases from GitHub
+
+#3rd party releases
 get_latest_release "${wolfmidi_repo}"
+mkdir /tmp/wolfdosmpu
+get_wolfdosmpu_release "${wolfdosmpu_repo}"
+get_latest_release "${fastdoom_repo}"
+
+#main release
+get_latest_release "${github_repo}"
+
 
 # Mount partition 2 for secondary and 1 for primary in the disk image for C and E
 mkdir "${mount_dir}"
@@ -170,12 +189,11 @@ echo ""
 unzip -o /tmp/minor.zip -d "${extract_dir}/"
 unzip -o "/tmp/FastDoom*.zip" -d "${fastdoom_dir}/"
 unzip -o "/tmp/wolfmidi*.zip" -d "${wolfmidi_dir}/"
-#unzip -o "/tmp/wolfdosmpu*.zip" -d "${wolfdosmpu_dir}/"
 
 #Rsync 3rd party game mods
 rsync '/tmp/fastdoom/' /tmp/shareware_vhd/C/GAMES/DOOM/  -r -I -v
 rsync '/tmp/wolfmidi/' /tmp/shareware_vhd/C/GAMES/Wolfenstein\ 3d//  -r -I -v
-#rsync '/tmp/wolfdosmpu/' /tmp/shareware_vhd/C/GAMES/Wolfenstein\ 3d/  -r -I -v
+rsync '/tmp/wolfdosmpu/' /tmp/shareware_vhd/C/GAMES/Wolfenstein\ 3d/  -r -I -v
 
 
 #Rsync all the updates to the VHDs that are mounted
@@ -186,8 +204,7 @@ echo ""
 rm /tmp/minor.zip
 rm /tmp/FastDoom*.zip
 rm /tmp/wolfmidi*.zip
-#rm /tmp/S*.EXE
-#rm /tmp/W*.EXE
+
 
 #sync VHD and unmount
 sync
@@ -197,7 +214,7 @@ rm -r "${mount_dir}"
 rm -r "${extract_dir}"
 rm -r "${fastdoom_dir}"
 rm -r "${wolfmidi_dir}"
-#rm -r "${wolfdosmpu}"
+rm -r "${wolfdosmpu_dir}"
 
 echo ""
 echo -e "${green}Successfully updated to ${tag_name}!${reset}"
