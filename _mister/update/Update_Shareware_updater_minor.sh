@@ -156,7 +156,7 @@ set -e
 get_latest_release "${fastdoom_repo}"
 get_latest_release "${github_repo}"
 #get_latest_release "${wolfdosmpu_repo}"
-#get_latest_release "{wolfmidi_repo}"
+get_latest_release "${wolfmidi_repo}"
 
 # Mount partition 2 for secondary and 1 for primary in the disk image for C and E
 mkdir "${mount_dir}"
@@ -169,12 +169,12 @@ echo ""
 # Extract updates from repos, rsync files to both vhds
 unzip -o /tmp/minor.zip -d "${extract_dir}/"
 unzip -o "/tmp/FastDoom*.zip" -d "${fastdoom_dir}/"
-#unzip -o "/tmp/wolfmidi*.zip" -d "${wolfmidi_dir}/"
+unzip -o "/tmp/wolfmidi*.zip" -d "${wolfmidi_dir}/"
 #unzip -o "/tmp/wolfdosmpu*.zip" -d "${wolfdosmpu_dir}/"
 
 #Rsync 3rd party game mods
 rsync '/tmp/fastdoom/' /tmp/shareware_vhd/C/GAMES/DOOM/  -r -I -v
-#rsync '/tmp/wolfmidi/' /tmp/shareware_vhd/C/GAMES/Wolfenstein\ 3d//  -r -I -v
+rsync '/tmp/wolfmidi/' /tmp/shareware_vhd/C/GAMES/Wolfenstein\ 3d//  -r -I -v
 #rsync '/tmp/wolfdosmpu/' /tmp/shareware_vhd/C/GAMES/Wolfenstein\ 3d/  -r -I -v
 
 
@@ -185,7 +185,7 @@ echo ""
 # Clean up everything
 rm /tmp/minor.zip
 rm /tmp/FastDoom*.zip
-#rm /tmp/wolfmidi*.zip
+rm /tmp/wolfmidi*.zip
 #rm /tmp/S*.EXE
 #rm /tmp/W*.EXE
 
@@ -196,7 +196,7 @@ unmount_pimage "${primary_disk_image}" "${mount_dir}/C"
 rm -r "${mount_dir}"
 rm -r "${extract_dir}"
 rm -r "${fastdoom_dir}"
-#rm -r "${wolfmidi}"
+rm -r "${wolfmidi_dir}"
 #rm -r "${wolfdosmpu}"
 
 echo ""
