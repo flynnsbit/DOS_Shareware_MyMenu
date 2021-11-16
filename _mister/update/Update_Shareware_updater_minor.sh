@@ -159,7 +159,7 @@ unzip -o /tmp/minor.zip -d "${extract_dir}/"
 unzip -o "/tmp/FastDoom*.zip" -d "${fastdoom_dir}/"
 
 #Fast doom copy
-rsync '/tmp/fastdoom/' /tmp/dos_vhds/C/games/DOOM/  -r -I -v
+rsync '/tmp/fastdoom/' /tmp/shareware_vhd/C/GAMES/DOOM/  -r -I -v
 
 #Rsync all the updates to the VHDs that are mounted
 rsync -crv "${extract_dir}"/ "${mount_dir}"/ 
