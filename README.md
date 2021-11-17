@@ -3,6 +3,11 @@
 ---------------------------------
 Everything sourced for this pack is 100% Shareware, Freeware, or OpenSource and can be distributed openly.
 
+Full Release VHD here: https://github.com/flynnsbit/DOS_Shareware_MyMenu/releases/tag/v0.1.20
+Use https://raw.githubusercontent.com/flynnsbit/DOS_Shareware_MyMenu/main/_mister/Update_Shareware_Pack_Minor_Release.sh to update to the minor releases of v20.
+
+
+
 Brand new MyMenu Frontend developed from scratch by BinaryBond007
 Features Include: 
         Dynamically generated MyMenu items based on 
