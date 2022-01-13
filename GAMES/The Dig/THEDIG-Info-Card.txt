@@ -1,0 +1,84 @@
+==============================================================================
+DOS Games Archive Game Info Card                                     Version 3
+==============================================================================
+* General Information *
+
+Game title              : The Dig
+Alternate title(s)      : None
+Developer               : LucasArts Entertainment Company
+Publisher               : LucasArts Entertainment Company
+Country of origin       : USA
+Distribution model      : Commercial
+
+* Release Information *
+
+Release type            : Demo (interactive)
+Exclusive level(s)      : No
+Version                 : pre-release
+Release date            : 1995/06/16
+Language                : English
+License file(s)         : README.TXT
+License/Permissions     : Not stated
+
+* Distribution Information *
+
+Distribution type       : Physical media (CD-ROM)
+Installer provided      : No
+Original location       : Lucas Arts Sampler CD, magazine coverdisks
+Retrieved from          : SBG Magazine #4
+
+Additional files        : None
+
+Maintainer              : MrFlibble <mrflibble86@gmail.com>
+==============================================================================
+* Note for DOSBox users *
+
+This software is fully installed and configured to run in the DOSBox emulator.
+You can simply drag and drop the file THEDIG.BAT over the DOSBox icon to start
+playing. Experienced DOSBox users may choose other methods of startup.
+
+The software was configured and tested to work with the official DOSBox build
+v0.74-3 available from www.dosbox.com. It may or may not work with any other
+third-party DOSBox distributions that are available.
+
+For playing instructions and other information, please refer to the README.TXT
+file found in the CD.ROM\DEMOS\THEDIG directory.
+==============================================================================
+* Game related websites *
+
+Official website (access via the Wayback Machine):
+http://www.lucasarts.com/static/digsite/digmenu.htm
+
+Publisher (Brazil) website (access via the Wayback Machine):
+http://www.brasoft.com.br/produtos/dig/index.htm
+
+NOTE: Some sites are only available as copies made by the Wayback Machine:
+http://web.archive.org/
+==============================================================================
+* Disclaimer *
+
+THE GAME DATA IN THIS ARCHIVE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING AND NOT LIMITED TO ANY IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+All game content is copyright to their respective owners.
+
+No files from the original software package provided by the developer and/or
+publisher were modified except for the configuration files needed to set up
+sound devices and input methods.
+
+This software was tested to work with the current official DOSBox build
+(v0.74-3) and was scanned by an antivirus/anti-malware tool.
+
+You use this software at your own risk. DOS Games Archive is not liable for
+any unwanted consequences that may arise from your using this software.
+==============================================================================
+* Download and online play *
+
+This demo is available from DOS Games Archive at:
+https://www.dosgamesarchive.com/download/the-dig/
+
+It can be played online at:
+https://www.dosgamesarchive.com/play/the-dig/
+
+--- END OF FILE (2020/09/01) ---
