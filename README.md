@@ -79,6 +79,9 @@ Initial Shareware and Freeware games sourced from
 http://vieju.net/pcdosmini/, Additions and removal based around 
 compatibility with FreeDOS and MiSTer core speed.
 
+14 Screensavers are included and accessible using ALT-S in MyMenu.
+The top one in the list in MyMenu.INI will be the default one used.
+
 Demo Scene examples included.
 
 Tested MIDI, MOD, XM, IT, MP3, SID, and A2M players included in the pack
