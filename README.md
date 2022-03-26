@@ -3,6 +3,8 @@
 ---------------------------------
 Everything sourced for this pack is 100% Shareware, Freeware, or OpenSource and can be distributed openly.
 
+You can submit PR's of tested Shareware DOS games on the MiSTer AO486 Core that have been configured with both an autorun.bat and a readme.ans.
+
 Full VHD download-- extract zip and drop in your /games/AO486/ directory on your MiSTer and mount in the AO486 core. 
 
 Full Release VHD Download: https://github.com/flynnsbit/DOS_Shareware_MyMenu/releases/tag/v0.1.20
@@ -77,19 +79,21 @@ Initial Shareware and Freeware games sourced from
 http://vieju.net/pcdosmini/, Additions and removal based around 
 compatibility with FreeDOS and MiSTer core speed.
 
-Demo Scene examples
+14 Screensavers are included and accessible using ALT-S in MyMenu.
+The top one in the list in MyMenu.INI will be the default one used.
+
+Demo Scene examples included.
+
+Tested MIDI, MOD, XM, IT, MP3, SID, and A2M players included in the pack
+in C:\PLAYERS and MyMenu has been configured to use them already.
+
+Example MIDI and MOD music files are included in the C:\MUSIC directory
  
 FreeDOS is the base with Memory configurations for HIMEMX, 
-JEMM386, and JEMMEX options.
+JEMM386, and JEMMEX options. These might not be compatible with all DOS games.  
+You can switch to EMM386 by grabbing that from a commercial version of DOS and 
+changing the FDCONFIG.SYS for more compatibility. 
 
 Various opensource tools and utilities included as part of 
 the base image.
 
-Github integration and updates planned.
-
-------------------------------------
-v.001 3/10/2021 Alpha Release, new frontend, ANSI art created
-
-v.002 6/15/2021 Bug Fixes, MyMenu Features, fix memory issues
-
-v.003 9/1/2021 Bug Fixes, MyMenu Features, Genre Examples, ANSI Art, Autorun option
