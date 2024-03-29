@@ -7,7 +7,7 @@ You can submit PR's of tested Shareware DOS games on the MiSTer AO486 Core that 
 
 Full VHD download-- extract zip and drop in your /games/AO486/ directory on your MiSTer and mount in the AO486 core. 
 
-Full Release VHD Download: https://github.com/flynnsbit/DOS_Shareware_MyMenu/releases/tag/v0.1.20
+Full Release VHD Download: [https://github.com/flynnsbit/DOS_Shareware_MyMenu/releases/tag/v0.1.20](https://github.com/flynnsbit/DOS_Shareware_MyMenu/releases/tag/v0.1.20.6)
 
 Minor releases that update the Major Release VHD above:
 
