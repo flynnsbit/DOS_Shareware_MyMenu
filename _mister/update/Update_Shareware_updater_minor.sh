@@ -88,6 +88,26 @@ get_wolfdosmpu_release()
         cd /tmp/wolfdosmpu && { curl -k -L "${download_url}" -O ; cd -; }
 }
 
+# Arg $1: GitHub repo (owner/name). Picks the newest non-draft release whose
+# asset list contains a file named exactly "minor.zip" (an incremental update),
+# skipping Major full-pack releases that ship Shareware-Pack-fbit.zip. Needed
+# because /releases/latest returns whichever release was published last,
+# regardless of artifact type.
+get_latest_minor_release()
+{
+        local api_url="https://api.github.com/repos/${1}/releases?per_page=30"
+        local tag_name download_url
+
+        read -r tag_name download_url < <(echo $(curl -k -s "${api_url}" | \
+                jq -r '[.[] | select(.draft==false) | select(.assets[]?.name=="minor.zip")][0] | .tag_name, (.assets[] | select(.name=="minor.zip") | .browser_download_url)'))
+        if [ -z "${tag_name}" ] || [ "${tag_name}" = "null" ]; then
+                echo "ERROR: no release with a minor.zip asset found in ${1}." >&2
+                exit 1
+        fi
+        echo Downloading "${tag_name}" "(minor)"...
+        cd /tmp && { curl -k -L "${download_url}" -O ; cd -; }
+}
+
 
 # Arg $1: Path to image
 # Arg $2: Partition number 
@@ -173,8 +193,8 @@ mkdir /tmp/wolfdosmpu
 get_wolfdosmpu_release "${wolfdosmpu_repo}"
 get_latest_release "${fastdoom_repo}"
 
-#main release
-get_latest_release "${github_repo}"
+#main release (minor delta only; full Major packs are applied via Grab_Full_*.sh)
+get_latest_minor_release "${github_repo}"
 
 
 # Mount partition 2 for secondary and 1 for primary in the disk image for C and E
